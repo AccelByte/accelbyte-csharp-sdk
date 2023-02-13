@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public List<string>? ListBlockedUserId { get; set; }
 
     }
+
+
 }

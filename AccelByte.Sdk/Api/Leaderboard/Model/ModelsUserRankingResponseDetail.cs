@@ -23,4 +23,22 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public long? Rank { get; set; }
 
     }
+
+    public class ModelsUserRankingResponseDetail<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("hidden")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Hidden { get; set; }
+
+        [JsonPropertyName("point")]
+        public double? Point { get; set; }
+
+        [JsonPropertyName("rank")]
+        public long? Rank { get; set; }
+
+    }
+
 }

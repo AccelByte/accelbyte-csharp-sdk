@@ -51,4 +51,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? ReadableId { get; set; }
 
     }
+
+
 }

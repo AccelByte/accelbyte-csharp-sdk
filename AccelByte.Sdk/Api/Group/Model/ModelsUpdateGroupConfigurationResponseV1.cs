@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? Name { get; set; }
 
     }
+
+
 }

@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<Order>? Orders { get; set; }
 
     }
+
+
 }

@@ -73,7 +73,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         }
         #endregion
         
-        public List<string>? GetAdminEmailConfiguration(GetAdminEmailConfiguration input) {
+        public List<string>? GetAdminEmailConfiguration(GetAdminEmailConfiguration input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +106,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListPersonalDataResponse? AdminGetListPersonalDataRequest(AdminGetListPersonalDataRequest input) {
+        public Model.ModelsListPersonalDataResponse? AdminGetListPersonalDataRequest(AdminGetListPersonalDataRequest input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +115,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUserPersonalDataResponse? AdminGetUserPersonalDataRequests(AdminGetUserPersonalDataRequests input) {
+        public Model.ModelsUserPersonalDataResponse? AdminGetUserPersonalDataRequests(AdminGetUserPersonalDataRequests input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +124,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDataRetrievalResponse? AdminRequestDataRetrieval(AdminRequestDataRetrieval input) {
+        public Model.ModelsDataRetrievalResponse? AdminRequestDataRetrieval(AdminRequestDataRetrieval input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -137,7 +141,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUserDataURL? AdminGeneratePersonalDataURL(AdminGeneratePersonalDataURL input) {
+        public Model.ModelsUserDataURL? AdminGeneratePersonalDataURL(AdminGeneratePersonalDataURL input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +150,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUserPersonalDataResponse? PublicGetUserPersonalDataRequests(PublicGetUserPersonalDataRequests input) {
+        public Model.ModelsUserPersonalDataResponse? PublicGetUserPersonalDataRequests(PublicGetUserPersonalDataRequests input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,7 +159,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDataRetrievalResponse? PublicRequestDataRetrieval(PublicRequestDataRetrieval input) {
+        public Model.ModelsDataRetrievalResponse? PublicRequestDataRetrieval(PublicRequestDataRetrieval input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -169,7 +176,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUserDataURL? PublicGeneratePersonalDataURL(PublicGeneratePersonalDataURL input) {
+        public Model.ModelsUserDataURL? PublicGeneratePersonalDataURL(PublicGeneratePersonalDataURL input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

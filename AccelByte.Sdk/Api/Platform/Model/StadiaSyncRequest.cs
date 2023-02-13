@@ -24,4 +24,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? StadiaPlayerId { get; set; }
 
     }
+
+
 }

@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminGetAllConfigV1(op);
         }
-
         public static Lobby.Model.ModelsConfigReq? Execute(
             this AdminGetConfigV1.AdminGetConfigV1Builder builder,
             string namespace_
@@ -33,7 +32,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminGetConfigV1(op);
         }
-
         public static Lobby.Model.ModelsConfigReq? Execute(
             this AdminUpdateConfigV1.AdminUpdateConfigV1Builder builder,
             ModelsConfigReq body,
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminUpdateConfigV1(op);
         }
-
         public static Stream? Execute(
             this AdminExportConfigV1.AdminExportConfigV1Builder builder,
             string namespace_
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminExportConfigV1(op);
         }
-
         public static Lobby.Model.ModelsImportConfigResponse? Execute(
             this AdminImportConfigV1.AdminImportConfigV1Builder builder,
             string namespace_
@@ -71,6 +67,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminImportConfigV1(op);
         }
-
     }
 }

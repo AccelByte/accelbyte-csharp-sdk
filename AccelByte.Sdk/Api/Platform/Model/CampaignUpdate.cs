@@ -62,6 +62,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CampaignUpdateRedeemType : StringEnum<CampaignUpdateRedeemType>
     {
         public static readonly CampaignUpdateRedeemType ITEM

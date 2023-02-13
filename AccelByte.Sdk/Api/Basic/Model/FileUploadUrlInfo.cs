@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? Url { get; set; }
 
     }
+
+
 }

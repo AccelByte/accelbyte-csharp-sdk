@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
+
+
     public class NamespaceStatusUpdateStatus : StringEnum<NamespaceStatusUpdateStatus>
     {
         public static readonly NamespaceStatusUpdateStatus ACTIVE

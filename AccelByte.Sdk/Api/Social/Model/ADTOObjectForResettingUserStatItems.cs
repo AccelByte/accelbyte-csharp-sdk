@@ -17,4 +17,16 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? StatCode { get; set; }
 
     }
+
+    public class ADTOObjectForResettingUserStatItems<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("statCode")]
+        public string? StatCode { get; set; }
+
+    }
+
 }

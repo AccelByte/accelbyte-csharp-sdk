@@ -39,6 +39,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class EntitlementHistoryInfoAction : StringEnum<EntitlementHistoryInfoAction>
     {
         public static readonly EntitlementHistoryInfoAction DECREMENT

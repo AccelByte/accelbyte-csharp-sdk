@@ -69,7 +69,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
         
-        public Model.ModelDevicesResponseV4? AdminGetDevicesByUserV4(AdminGetDevicesByUserV4 input) {
+        public Model.ModelDevicesResponseV4? AdminGetDevicesByUserV4(AdminGetDevicesByUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +78,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceBannedResponseV4? AdminGetBannedDevicesV4(AdminGetBannedDevicesV4 input) {
+        public Model.ModelDeviceBannedResponseV4? AdminGetBannedDevicesV4(AdminGetBannedDevicesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +87,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceBansResponseV4? AdminGetUserDeviceBansV4(AdminGetUserDeviceBansV4 input) {
+        public Model.ModelDeviceBansResponseV4? AdminGetUserDeviceBansV4(AdminGetUserDeviceBansV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +104,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceBanResponseV4? AdminGetDeviceBanV4(AdminGetDeviceBanV4 input) {
+        public Model.ModelDeviceBanResponseV4? AdminGetDeviceBanV4(AdminGetDeviceBanV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,7 +129,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceTypesResponseV4? AdminGetDeviceTypesV4(AdminGetDeviceTypesV4 input) {
+        public Model.ModelDeviceTypesResponseV4? AdminGetDeviceTypesV4(AdminGetDeviceTypesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +138,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceBansResponseV4? AdminGetDeviceBansV4(AdminGetDeviceBansV4 input) {
+        public Model.ModelDeviceBansResponseV4? AdminGetDeviceBansV4(AdminGetDeviceBansV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -141,7 +147,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceIDDecryptResponseV4? AdminDecryptDeviceV4(AdminDecryptDeviceV4 input) {
+        public Model.ModelDeviceIDDecryptResponseV4? AdminDecryptDeviceV4(AdminDecryptDeviceV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -157,7 +164,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelDeviceUsersResponseV4? AdminGetUsersByDeviceV4(AdminGetUsersByDeviceV4 input) {
+        public Model.ModelDeviceUsersResponseV4? AdminGetUsersByDeviceV4(AdminGetUsersByDeviceV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

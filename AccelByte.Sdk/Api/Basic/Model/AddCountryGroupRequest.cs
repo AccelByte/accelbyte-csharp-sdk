@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? CountryGroupName { get; set; }
 
     }
+
+
 }

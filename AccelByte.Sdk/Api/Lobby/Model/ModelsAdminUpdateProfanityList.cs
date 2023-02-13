@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public string? NewName { get; set; }
 
     }
+
+
 }

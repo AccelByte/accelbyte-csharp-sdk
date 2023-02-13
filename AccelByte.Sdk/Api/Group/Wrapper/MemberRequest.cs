@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         }
         #endregion
         
-        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1 input) {
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInvitationRequestPublicV1(GetGroupInvitationRequestPublicV1 input) {
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInvitationRequestPublicV1(GetGroupInvitationRequestPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInviteRequestPublicV2(GetGroupInviteRequestPublicV2 input) {
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupInviteRequestPublicV2(GetGroupInviteRequestPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +72,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV2(GetGroupJoinRequestPublicV2 input) {
+        public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV2(GetGroupJoinRequestPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +81,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetMemberRequestsListResponseV1? GetMyGroupJoinRequestV2(GetMyGroupJoinRequestV2 input) {
+        public Model.ModelsGetMemberRequestsListResponseV1? GetMyGroupJoinRequestV2(GetMyGroupJoinRequestV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +90,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCancelInvitationGroupResponseV2? CancelInvitationGroupMemberV2(CancelInvitationGroupMemberV2 input) {
+        public Model.ModelsCancelInvitationGroupResponseV2? CancelInvitationGroupMemberV2(CancelInvitationGroupMemberV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

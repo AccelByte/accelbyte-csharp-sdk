@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public List<ModelsCreateScreenshotRequestItem>? Screenshots { get; set; }
 
     }
+
+
 }

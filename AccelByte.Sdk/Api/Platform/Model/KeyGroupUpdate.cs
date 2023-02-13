@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class KeyGroupUpdateStatus : StringEnum<KeyGroupUpdateStatus>
     {
         public static readonly KeyGroupUpdateStatus ACTIVE

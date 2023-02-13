@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetInputValidations(op);
         }
-
         public static void Execute(
             this AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder builder,
             List<ModelInputValidationUpdatePayload> body
@@ -33,7 +32,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateInputValidations(op);
         }
-
         public static void Execute(
             this AdminResetInputValidations.AdminResetInputValidationsBuilder builder,
             string field
@@ -45,7 +43,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetInputValidations(op);
         }
-
         public static Iam.Model.ModelInputValidationsPublicResponse? Execute(
             this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
         )
@@ -55,6 +52,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidations(op);
         }
-
     }
 }

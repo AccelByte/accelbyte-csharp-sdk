@@ -55,6 +55,53 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class IAPConsumeHistoryInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("clientRequestParameter")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ClientRequestParameter? ClientRequestParameter { get; set; }
+
+        [JsonPropertyName("consumeItems")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ConsumeItem>? ConsumeItems { get; set; }
+
+        [JsonPropertyName("iapType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public IAPConsumeHistoryInfoIapType? IapType { get; set; }
+
+        [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("requestBody")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? RequestBody { get; set; }
+
+        [JsonPropertyName("requestHistories")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<RequestHistory>? RequestHistories { get; set; }
+
+        [JsonPropertyName("requestUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestUrl { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public IAPConsumeHistoryInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserId { get; set; }
+
+    }
+
+
     public class IAPConsumeHistoryInfoIapType : StringEnum<IAPConsumeHistoryInfoIapType>
     {
         public static readonly IAPConsumeHistoryInfoIapType APPLE

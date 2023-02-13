@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? DisplayName { get; set; }
 
     }
+
+
 }

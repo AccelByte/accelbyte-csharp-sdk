@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Tag { get; set; }
 
     }
+
+
 }

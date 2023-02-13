@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? ProfileName { get; set; }
 
     }
+
+
 }

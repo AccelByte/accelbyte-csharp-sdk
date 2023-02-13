@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonNamespaceRole>? Roles { get; set; }
 
     }
+
+
 }

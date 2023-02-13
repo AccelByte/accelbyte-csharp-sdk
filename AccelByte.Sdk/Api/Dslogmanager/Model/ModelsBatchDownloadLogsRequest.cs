@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public List<ModelsDownloadLogsRequest>? Downloads { get; set; }
 
     }
+
+
 }

@@ -14,4 +14,6 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         public List<ValidationError>? Detail { get; set; }
 
     }
+
+
 }

@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Quantity { get; set; }
 
     }
+
+
 }

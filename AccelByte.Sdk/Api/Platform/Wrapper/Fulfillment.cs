@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillmentHistories(QueryFulfillmentHistories input) {
+        public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillmentHistories(QueryFulfillmentHistories input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? FulfillItem(FulfillItem input) {
+        public Model.FulfillmentResult? FulfillItem(FulfillItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +59,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? RedeemCode(RedeemCode input) {
+        public Model.FulfillmentResult? RedeemCode(RedeemCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input) {
+        public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

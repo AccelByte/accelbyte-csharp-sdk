@@ -42,4 +42,41 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? TicketID { get; set; }
 
     }
+
+    public class ApiTicket<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("latencies")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, long>? Latencies { get; set; }
+
+        [JsonPropertyName("matchPool")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MatchPool { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("partySessionID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PartySessionID { get; set; }
+
+        [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ApiPlayerData>? Players { get; set; }
+
+        [JsonPropertyName("ticketAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? TicketAttributes { get; set; }
+
+        [JsonPropertyName("ticketID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TicketID { get; set; }
+
+    }
+
 }

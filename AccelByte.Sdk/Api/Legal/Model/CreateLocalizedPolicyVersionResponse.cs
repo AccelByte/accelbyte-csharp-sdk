@@ -29,4 +29,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public DateTime? UpdatedAt { get; set; }
 
     }
+
+
 }

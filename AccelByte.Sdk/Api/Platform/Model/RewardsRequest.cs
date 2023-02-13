@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class RewardsRequestOrigin : StringEnum<RewardsRequestOrigin>
     {
         public static readonly RewardsRequestOrigin Epic

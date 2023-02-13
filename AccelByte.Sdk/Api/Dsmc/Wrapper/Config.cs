@@ -70,7 +70,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
-        public Model.ModelsListConfigResponse? ListConfig(ListConfig input) {
+        public Model.ModelsListConfigResponse? ListConfig(ListConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +90,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelsDSMConfigRecord? GetConfig(GetConfig input) {
+        public Model.ModelsDSMConfigRecord? GetConfig(GetConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +99,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigRecord? CreateConfig(CreateConfig input) {
+        public Model.ModelsDSMConfigRecord? CreateConfig(CreateConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +116,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigRecord? UpdateConfig(UpdateConfig input) {
+        public Model.ModelsDSMConfigRecord? UpdateConfig(UpdateConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,7 +133,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigRecord? AddPort(AddPort input) {
+        public Model.ModelsDSMConfigRecord? AddPort(AddPort input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -137,7 +142,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigRecord? DeletePort(DeletePort input) {
+        public Model.ModelsDSMConfigRecord? DeletePort(DeletePort input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +151,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDSMConfigRecord? UpdatePort(UpdatePort input) {
+        public Model.ModelsDSMConfigRecord? UpdatePort(UpdatePort input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,7 +160,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? ExportConfigV1(ExportConfigV1 input) {
+        public Stream? ExportConfigV1(ExportConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -161,7 +169,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportResponse? ImportConfigV1(ImportConfigV1 input) {
+        public Model.ModelsImportResponse? ImportConfigV1(ImportConfigV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

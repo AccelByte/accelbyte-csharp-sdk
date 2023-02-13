@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeCampaign(op);
         }
-
         public static void Execute(
             this AnonymizeEntitlement.AnonymizeEntitlementBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeEntitlement(op);
         }
-
         public static void Execute(
             this AnonymizeFulfillment.AnonymizeFulfillmentBuilder builder,
             string namespace_,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeFulfillment(op);
         }
-
         public static void Execute(
             this AnonymizeIntegration.AnonymizeIntegrationBuilder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeIntegration(op);
         }
-
         public static void Execute(
             this AnonymizeOrder.AnonymizeOrderBuilder builder,
             string namespace_,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeOrder(op);
         }
-
         public static void Execute(
             this AnonymizePayment.AnonymizePaymentBuilder builder,
             string namespace_,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizePayment(op);
         }
-
         public static void Execute(
             this AnonymizeSubscription.AnonymizeSubscriptionBuilder builder,
             string namespace_,
@@ -109,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeSubscription(op);
         }
-
         public static void Execute(
             this AnonymizeWallet.AnonymizeWalletBuilder builder,
             string namespace_,
@@ -123,6 +116,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeWallet(op);
         }
-
     }
 }

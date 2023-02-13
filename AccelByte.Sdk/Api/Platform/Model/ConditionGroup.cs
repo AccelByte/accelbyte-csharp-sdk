@@ -22,6 +22,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ConditionGroupOperator : StringEnum<ConditionGroupOperator>
     {
         public static readonly ConditionGroupOperator And

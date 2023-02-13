@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

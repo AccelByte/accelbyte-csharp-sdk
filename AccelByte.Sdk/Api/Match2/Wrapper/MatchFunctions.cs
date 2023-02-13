@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
         
-        public Model.ApiListMatchFunctionsResponse? MatchFunctionList(MatchFunctionList input) {
+        public Model.ApiListMatchFunctionsResponse? MatchFunctionList(MatchFunctionList input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

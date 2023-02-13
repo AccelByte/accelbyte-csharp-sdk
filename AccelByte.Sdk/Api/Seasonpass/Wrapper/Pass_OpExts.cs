@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).QueryPasses(op);
         }
-
         public static Seasonpass.Model.PassInfo? Execute(
             this CreatePass.CreatePassBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).CreatePass(op);
         }
-
         public static Seasonpass.Model.PassInfo? Execute(
             this GetPass.GetPassBuilder builder,
             string code,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GetPass(op);
         }
-
         public static void Execute(
             this DeletePass.DeletePassBuilder builder,
             string code,
@@ -71,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).DeletePass(op);
         }
-
         public static Seasonpass.Model.PassInfo? Execute(
             this UpdatePass.UpdatePassBuilder builder,
             string code,
@@ -87,7 +83,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).UpdatePass(op);
         }
-
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserPass.GrantUserPassBuilder builder,
             string namespace_,
@@ -101,6 +96,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GrantUserPass(op);
         }
-
     }
 }

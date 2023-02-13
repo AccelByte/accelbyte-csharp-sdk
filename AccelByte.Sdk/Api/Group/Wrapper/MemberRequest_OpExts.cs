@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV1(op);
         }
-
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupInvitationRequestPublicV1.GetGroupInvitationRequestPublicV1Builder builder,
             string namespace_
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInvitationRequestPublicV1(op);
         }
-
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupInviteRequestPublicV2.GetGroupInviteRequestPublicV2Builder builder,
             string groupId,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInviteRequestPublicV2(op);
         }
-
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupJoinRequestPublicV2.GetGroupJoinRequestPublicV2Builder builder,
             string groupId,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV2(op);
         }
-
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetMyGroupJoinRequestV2.GetMyGroupJoinRequestV2Builder builder,
             string namespace_
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetMyGroupJoinRequestV2(op);
         }
-
         public static Group.Model.ModelsCancelInvitationGroupResponseV2? Execute(
             this CancelInvitationGroupMemberV2.CancelInvitationGroupMemberV2Builder builder,
             string groupId,
@@ -93,6 +88,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).CancelInvitationGroupMemberV2(op);
         }
-
     }
 }

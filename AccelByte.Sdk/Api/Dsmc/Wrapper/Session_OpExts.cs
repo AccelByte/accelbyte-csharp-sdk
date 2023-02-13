@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Session)builder.WrapperObject!).CreateSession(op);
         }
-
         public static void Execute(
             this ClaimServer.ClaimServerBuilder builder,
             ModelsClaimSessionRequest body,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Session)builder.WrapperObject!).ClaimServer(op);
         }
-
         public static Dsmc.Model.ModelsSessionResponse? Execute(
             this GetSession.GetSessionBuilder builder,
             string namespace_,
@@ -53,6 +51,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Session)builder.WrapperObject!).GetSession(op);
         }
-
     }
 }

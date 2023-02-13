@@ -57,7 +57,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.PaymentNotificationPagingSlicedResult? QueryPaymentNotifications(QueryPaymentNotifications input) {
+        public Model.PaymentNotificationPagingSlicedResult? QueryPaymentNotifications(QueryPaymentNotifications input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +66,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderPagingSlicedResult? QueryPaymentOrders(QueryPaymentOrders input) {
+        public Model.PaymentOrderPagingSlicedResult? QueryPaymentOrders(QueryPaymentOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +75,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<string>? ListExtOrderNoByExtTxId(ListExtOrderNoByExtTxId input) {
+        public List<string>? ListExtOrderNoByExtTxId(ListExtOrderNoByExtTxId input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +84,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderInfo? GetPaymentOrder(GetPaymentOrder input) {
+        public Model.PaymentOrderInfo? GetPaymentOrder(GetPaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +93,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderInfo? ChargePaymentOrder(ChargePaymentOrder input) {
+        
+        public Model.PaymentOrderInfo<T1>? GetPaymentOrder<T1>(GetPaymentOrder input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PaymentOrderInfo? ChargePaymentOrder(ChargePaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +112,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NotificationProcessResult? SimulatePaymentOrderNotification(SimulatePaymentOrderNotification input) {
+        
+        public Model.PaymentOrderInfo<T1>? ChargePaymentOrder<T1>(ChargePaymentOrder input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.NotificationProcessResult? SimulatePaymentOrderNotification(SimulatePaymentOrderNotification input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +131,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderChargeStatus? GetPaymentOrderChargeStatus(GetPaymentOrderChargeStatus input) {
+        
+        public Model.NotificationProcessResult<T1>? SimulatePaymentOrderNotification<T1>(SimulatePaymentOrderNotification input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PaymentOrderChargeStatus? GetPaymentOrderChargeStatus(GetPaymentOrderChargeStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +150,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderInfo? CreateUserPaymentOrder(CreateUserPaymentOrder input) {
+        public Model.PaymentOrderInfo? CreateUserPaymentOrder(CreateUserPaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,10 +159,31 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderInfo? RefundUserPaymentOrder(RefundUserPaymentOrder input) {
+        
+        public Model.PaymentOrderInfo<T1>? CreateUserPaymentOrder<T1>(CreateUserPaymentOrder input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PaymentOrderInfo? RefundUserPaymentOrder(RefundUserPaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.PaymentOrderInfo<T1>? RefundUserPaymentOrder<T1>(RefundUserPaymentOrder input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

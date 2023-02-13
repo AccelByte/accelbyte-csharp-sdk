@@ -65,6 +65,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class SubscriptionActivityInfoAction : StringEnum<SubscriptionActivityInfoAction>
     {
         public static readonly SubscriptionActivityInfoAction CANCEL

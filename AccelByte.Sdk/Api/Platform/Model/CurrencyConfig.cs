@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? CurrencySymbol { get; set; }
 
     }
+
+
 }

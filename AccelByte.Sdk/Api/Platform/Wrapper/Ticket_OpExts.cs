@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Ticket)builder.WrapperObject!).GetTicketDynamic(op);
         }
-
         public static void Execute(
             this DecreaseTicketSale.DecreaseTicketSaleBuilder builder,
             string boothName,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Ticket)builder.WrapperObject!).DecreaseTicketSale(op);
         }
-
         public static Platform.Model.TicketBoothID? Execute(
             this GetTicketBoothID.GetTicketBoothIDBuilder builder,
             string boothName,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Ticket)builder.WrapperObject!).GetTicketBoothID(op);
         }
-
         public static Platform.Model.TicketSaleIncrementResult? Execute(
             this IncreaseTicketSale.IncreaseTicketSaleBuilder builder,
             string boothName,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Ticket)builder.WrapperObject!).IncreaseTicketSale(op);
         }
-
         public static Platform.Model.TicketAcquireResult? Execute(
             this AcquireUserTicket.AcquireUserTicketBuilder builder,
             string boothName,
@@ -83,6 +79,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Ticket)builder.WrapperObject!).AcquireUserTicket(op);
         }
-
     }
 }

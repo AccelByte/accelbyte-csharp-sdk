@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserChannels(op);
         }
-
         public static void Execute(
             this AdminDeleteAllUserContents.AdminDeleteAllUserContentsBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserContents(op);
         }
-
         public static void Execute(
             this AdminDeleteAllUserGroup.AdminDeleteAllUserGroupBuilder builder,
             string namespace_,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserGroup(op);
         }
-
         public static void Execute(
             this AdminDeleteAllUserStates.AdminDeleteAllUserStatesBuilder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserStates(op);
         }
-
         public static void Execute(
             this DeleteAllUserChannel.DeleteAllUserChannelBuilder builder,
             string namespace_,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserChannel(op);
         }
-
         public static void Execute(
             this DeleteAllUserContents.DeleteAllUserContentsBuilder builder,
             string namespace_,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserContents(op);
         }
-
         public static void Execute(
             this DeleteAllUserGroup.DeleteAllUserGroupBuilder builder,
             string namespace_,
@@ -109,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserGroup(op);
         }
-
         public static void Execute(
             this DeleteAllUserStates.DeleteAllUserStatesBuilder builder,
             string namespace_,
@@ -123,6 +116,5 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserStates(op);
         }
-
     }
 }

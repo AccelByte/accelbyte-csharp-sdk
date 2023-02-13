@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? ErrorMessage { get; set; }
 
     }
+
+
 }

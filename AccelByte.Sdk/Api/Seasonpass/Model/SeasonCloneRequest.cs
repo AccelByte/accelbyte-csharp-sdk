@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public DateTime? Start { get; set; }
 
     }
+
+
 }

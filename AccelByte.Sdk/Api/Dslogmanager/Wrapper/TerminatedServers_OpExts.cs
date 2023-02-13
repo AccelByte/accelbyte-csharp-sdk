@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).ListTerminatedServers(op);
         }
-
         public static Stream? Execute(
             this DownloadServerLogs.DownloadServerLogsBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).DownloadServerLogs(op);
         }
-
         public static Dslogmanager.Model.ModelsLogFileStatus? Execute(
             this CheckServerLogs.CheckServerLogsBuilder builder,
             string namespace_,
@@ -51,6 +49,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).CheckServerLogs(op);
         }
-
     }
 }

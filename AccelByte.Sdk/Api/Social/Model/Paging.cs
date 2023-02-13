@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

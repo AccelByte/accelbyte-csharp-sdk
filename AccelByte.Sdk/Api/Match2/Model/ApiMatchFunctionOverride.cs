@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public List<string>? Validation { get; set; }
 
     }
+
+
 }

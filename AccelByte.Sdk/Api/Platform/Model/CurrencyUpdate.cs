@@ -14,4 +14,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, string>? LocalizationDescriptions { get; set; }
 
     }
+
+
 }

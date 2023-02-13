@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public Dictionary<string, string>? MessageVariables { get; set; }
 
     }
+
+
 }

@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicDownloadCount)builder.WrapperObject!).AddDownloadCount(op);
         }
-
     }
 }

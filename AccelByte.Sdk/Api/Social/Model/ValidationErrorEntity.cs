@@ -20,4 +20,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public List<FieldValidationError>? Errors { get; set; }
 
     }
+
+
 }

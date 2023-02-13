@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public ModelsPagingCursor? Paging { get; set; }
 
     }
+
+
 }

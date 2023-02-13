@@ -26,4 +26,25 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ModelDeviceUserResponseV4<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("ip")]
+        public string? Ip { get; set; }
+
+        [JsonPropertyName("lastLoginTime")]
+        public long? LastLoginTime { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+    }
+
 }

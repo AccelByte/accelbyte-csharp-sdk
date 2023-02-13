@@ -37,4 +37,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public ModelsWeeklyConfig? Weekly { get; set; }
 
     }
+
+
 }

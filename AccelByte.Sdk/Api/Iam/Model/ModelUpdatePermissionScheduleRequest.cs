@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<string>? SchedRange { get; set; }
 
     }
+
+
 }

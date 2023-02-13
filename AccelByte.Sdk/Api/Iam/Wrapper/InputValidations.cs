@@ -37,7 +37,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
         
-        public Model.ModelInputValidationsResponse? AdminGetInputValidations(AdminGetInputValidations input) {
+        public Model.ModelInputValidationsResponse? AdminGetInputValidations(AdminGetInputValidations input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +62,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelInputValidationsPublicResponse? PublicGetInputValidations(PublicGetInputValidations input) {
+        public Model.ModelInputValidationsPublicResponse? PublicGetInputValidations(PublicGetInputValidations input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -26,7 +26,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).CreateUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetAdminUsersResponse? Execute(
             this GetAdminUsersByRoleID.GetAdminUsersByRoleIDBuilder builder,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetAdminUsersByRoleID(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUserResponse? Execute(
             this GetUserByLoginID.GetUserByLoginIDBuilder builder,
@@ -52,7 +50,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByLoginID(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUserResponse? Execute(
             this GetUserByPlatformUserID.GetUserByPlatformUserIDBuilder builder,
@@ -69,7 +66,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByPlatformUserID(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ForgotPassword.ForgotPasswordBuilder builder,
@@ -84,7 +80,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ForgotPassword(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUsersResponse? Execute(
             this GetUsersByLoginIds.GetUsersByLoginIdsBuilder builder,
@@ -97,7 +92,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUsersByLoginIds(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ResetPassword.ResetPasswordBuilder builder,
@@ -112,7 +106,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ResetPassword(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelSearchUsersResponse? Execute(
             this SearchUser.SearchUserBuilder builder,
@@ -125,7 +118,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).SearchUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this GetUserByUserID.GetUserByUserIDBuilder builder,
@@ -140,7 +132,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByUserID(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpdateUser.UpdateUserBuilder builder,
@@ -157,7 +148,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpdateUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUser.DeleteUserBuilder builder,
@@ -172,7 +162,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this BanUser.BanUserBuilder builder,
@@ -189,7 +178,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).BanUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this GetUserBanHistory.GetUserBanHistoryBuilder builder,
@@ -204,7 +192,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserBanHistory(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this DisableUserBan.DisableUserBanBuilder builder,
@@ -221,7 +208,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).DisableUserBan(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this EnableUserBan.EnableUserBanBuilder builder,
@@ -238,7 +224,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).EnableUserBan(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ListCrossNamespaceAccountLink.ListCrossNamespaceAccountLinkBuilder builder,
@@ -255,7 +240,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ListCrossNamespaceAccountLink(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DisableUser.DisableUserBuilder builder,
@@ -272,7 +256,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DisableUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this EnableUser.EnableUserBuilder builder,
@@ -287,7 +270,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).EnableUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserInformation? Execute(
             this GetUserInformation.GetUserInformationBuilder builder,
@@ -302,7 +284,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserInformation(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserInformation.DeleteUserInformationBuilder builder,
@@ -317,7 +298,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserInformation(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this GetUserLoginHistories.GetUserLoginHistoriesBuilder builder,
@@ -332,7 +312,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserLoginHistories(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdatePassword.UpdatePasswordBuilder builder,
@@ -349,7 +328,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).UpdatePassword(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveUserPermission.SaveUserPermissionBuilder builder,
@@ -366,7 +344,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SaveUserPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddUserPermission.AddUserPermissionBuilder builder,
@@ -387,7 +364,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AddUserPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserPermission.DeleteUserPermissionBuilder builder,
@@ -406,7 +382,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.AccountcommonUserLinkedPlatform>? Execute(
             this GetUserPlatformAccounts.GetUserPlatformAccountsBuilder builder,
@@ -421,7 +396,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserPlatformAccounts(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetUserMapping? Execute(
             this GetUserMapping.GetUserMappingBuilder builder,
@@ -438,7 +412,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserMapping(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetUserJusticePlatformAccountResponse? Execute(
             this GetUserJusticePlatformAccount.GetUserJusticePlatformAccountBuilder builder,
@@ -455,7 +428,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserJusticePlatformAccount(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformLink.PlatformLinkBuilder builder,
@@ -474,7 +446,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PlatformLink(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformUnlink.PlatformUnlinkBuilder builder,
@@ -491,7 +462,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PlatformUnlink(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetPublisherUserResponse? Execute(
             this GetPublisherUser.GetPublisherUserBuilder builder,
@@ -506,7 +476,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetPublisherUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveUserRoles.SaveUserRolesBuilder builder,
@@ -523,7 +492,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SaveUserRoles(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddUserRole.AddUserRoleBuilder builder,
@@ -540,7 +508,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AddUserRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserRole.DeleteUserRoleBuilder builder,
@@ -557,7 +524,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccount.UpgradeHeadlessAccountBuilder builder,
@@ -574,7 +540,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpgradeHeadlessAccount(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccountWithVerificationCode.UpgradeHeadlessAccountWithVerificationCodeBuilder builder,
@@ -591,7 +556,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpgradeHeadlessAccountWithVerificationCode(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UserVerification.UserVerificationBuilder builder,
@@ -608,7 +572,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).UserVerification(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SendVerificationCode.SendVerificationCodeBuilder builder,
@@ -625,7 +588,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SendVerificationCode(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelAgeRestrictionResponse? Execute(
             this AdminGetAgeRestrictionStatusV2.AdminGetAgeRestrictionStatusV2Builder builder,
@@ -638,7 +600,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetAgeRestrictionStatusV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelAgeRestrictionResponse? Execute(
             this AdminUpdateAgeRestrictionConfigV2.AdminUpdateAgeRestrictionConfigV2Builder builder,
@@ -653,7 +614,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateAgeRestrictionConfigV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.AccountcommonCountryAgeRestriction>? Execute(
             this GetListCountryAgeRestriction.GetListCountryAgeRestrictionBuilder builder,
@@ -666,7 +626,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetListCountryAgeRestriction(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelCountry? Execute(
             this UpdateCountryAgeRestriction.UpdateCountryAgeRestrictionBuilder builder,
@@ -683,7 +642,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpdateCountryAgeRestriction(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelSearchUsersByPlatformIDResponse? Execute(
             this AdminSearchUsersV2.AdminSearchUsersV2Builder builder,
@@ -698,7 +656,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSearchUsersV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this AdminGetUserByUserIdV2.AdminGetUserByUserIdV2Builder builder,
@@ -713,7 +670,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByUserIdV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this AdminUpdateUserV2.AdminUpdateUserV2Builder builder,
@@ -730,7 +686,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this AdminBanUserV2.AdminBanUserV2Builder builder,
@@ -747,7 +702,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBanUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this AdminGetUserBanV2.AdminGetUserBanV2Builder builder,
@@ -762,7 +716,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserBanV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDisableUserV2.AdminDisableUserV2Builder builder,
@@ -779,7 +732,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDisableUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminEnableUserV2.AdminEnableUserV2Builder builder,
@@ -794,7 +746,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminEnableUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminResetPasswordV2.AdminResetPasswordV2Builder builder,
@@ -811,7 +762,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminResetPasswordV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeletePlatformLinkV2.AdminDeletePlatformLinkV2Builder builder,
@@ -828,7 +778,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeletePlatformLinkV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminPutUserRolesV2.AdminPutUserRolesV2Builder builder,
@@ -845,7 +794,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPutUserRolesV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminCreateUserRolesV2.AdminCreateUserRolesV2Builder builder,
@@ -862,7 +810,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminCreateUserRolesV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonCountry? Execute(
             this PublicGetCountryAgeRestriction.PublicGetCountryAgeRestrictionBuilder builder,
@@ -877,7 +824,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetCountryAgeRestriction(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserCreateResponse? Execute(
             this PublicCreateUserV2.PublicCreateUserV2Builder builder,
@@ -892,7 +838,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicCreateUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicForgotPasswordV2.PublicForgotPasswordV2Builder builder,
@@ -907,7 +852,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicResetPasswordV2.PublicResetPasswordV2Builder builder,
@@ -922,7 +866,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicResetPasswordV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this PublicGetUserByUserIDV2.PublicGetUserByUserIDV2Builder builder,
@@ -937,7 +880,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByUserIDV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserResponse>? Execute(
             this PublicUpdateUserV2.PublicUpdateUserV2Builder builder,
@@ -954,7 +896,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpdateUserV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this PublicGetUserBan.PublicGetUserBanBuilder builder,
@@ -969,7 +910,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserBan(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicUpdatePasswordV2.PublicUpdatePasswordV2Builder builder,
@@ -986,7 +926,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpdatePasswordV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelGetUserMapping>? Execute(
             this GetListJusticePlatformAccounts.GetListJusticePlatformAccountsBuilder builder,
@@ -1001,7 +940,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetListJusticePlatformAccounts(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicPlatformLinkV2.PublicPlatformLinkV2Builder builder,
@@ -1020,7 +958,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformLinkV2(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicDeletePlatformLinkV2.PublicDeletePlatformLinkV2Builder builder,
@@ -1037,7 +974,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicDeletePlatformLinkV2(op);
         }
-
         public static Iam.Model.ModelGetUsersResponseWithPaginationV3? Execute(
             this ListAdminsV3.ListAdminsV3Builder builder,
             string namespace_
@@ -1049,7 +985,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).ListAdminsV3(op);
         }
-
         public static Iam.Model.ModelAgeRestrictionResponseV3? Execute(
             this AdminGetAgeRestrictionStatusV3.AdminGetAgeRestrictionStatusV3Builder builder,
             string namespace_
@@ -1061,7 +996,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetAgeRestrictionStatusV3(op);
         }
-
         public static Iam.Model.ModelAgeRestrictionResponseV3? Execute(
             this AdminUpdateAgeRestrictionConfigV3.AdminUpdateAgeRestrictionConfigV3Builder builder,
             ModelAgeRestrictionRequestV3 body,
@@ -1075,7 +1009,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateAgeRestrictionConfigV3(op);
         }
-
         public static List<Iam.Model.ModelCountryV3Response>? Execute(
             this AdminGetListCountryAgeRestrictionV3.AdminGetListCountryAgeRestrictionV3Builder builder,
             string namespace_
@@ -1087,7 +1020,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetListCountryAgeRestrictionV3(op);
         }
-
         public static Iam.Model.ModelCountryV3Response? Execute(
             this AdminUpdateCountryAgeRestrictionV3.AdminUpdateCountryAgeRestrictionV3Builder builder,
             ModelCountryAgeRestrictionV3Request body,
@@ -1103,7 +1035,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateCountryAgeRestrictionV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminGetUserByPlatformUserIDV3.AdminGetUserByPlatformUserIDV3Builder builder,
             string namespace_,
@@ -1119,7 +1050,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByPlatformUserIDV3(op);
         }
-
         public static Iam.Model.ModelGetUsersResponseWithPaginationV3? Execute(
             this GetAdminUsersByRoleIdV3.GetAdminUsersByRoleIdV3Builder builder,
             string namespace_,
@@ -1133,7 +1063,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetAdminUsersByRoleIdV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminGetUserByEmailAddressV3.AdminGetUserByEmailAddressV3Builder builder,
             string namespace_
@@ -1145,7 +1074,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByEmailAddressV3(op);
         }
-
         public static Iam.Model.ModelListUserInformationResult? Execute(
             this AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder builder,
             ModelUserIDsRequest body,
@@ -1159,7 +1087,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListUserIDByUserIDsV3(op);
         }
-
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this AdminInviteUserV3.AdminInviteUserV3Builder builder,
             ModelInviteUserRequestV3 body,
@@ -1173,7 +1100,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminInviteUserV3(op);
         }
-
         public static Iam.Model.ModelLinkingHistoryResponseWithPaginationV3? Execute(
             this AdminQueryThirdPlatformLinkHistoryV3.AdminQueryThirdPlatformLinkHistoryV3Builder builder,
             string namespace_,
@@ -1187,7 +1113,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminQueryThirdPlatformLinkHistoryV3(op);
         }
-
         public static Iam.Model.AccountcommonListUsersWithPlatformAccountsResponse? Execute(
             this AdminListUsersV3.AdminListUsersV3Builder builder,
             string namespace_
@@ -1199,7 +1124,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListUsersV3(op);
         }
-
         public static Iam.Model.ModelSearchUsersResponseWithPaginationV3? Execute(
             this AdminSearchUserV3.AdminSearchUserV3Builder builder,
             string namespace_
@@ -1211,7 +1135,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSearchUserV3(op);
         }
-
         public static Iam.Model.ModelListUserResponseV3? Execute(
             this AdminGetBulkUserByEmailAddressV3.AdminGetBulkUserByEmailAddressV3Builder builder,
             ModelListEmailAddressRequest body,
@@ -1225,7 +1148,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetBulkUserByEmailAddressV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminGetUserByUserIdV3.AdminGetUserByUserIdV3Builder builder,
             string namespace_,
@@ -1239,7 +1161,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByUserIdV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminUpdateUserV3.AdminUpdateUserV3Builder builder,
             ModelUserUpdateRequestV3 body,
@@ -1255,7 +1176,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserV3(op);
         }
-
         public static Iam.Model.ModelGetUserBanV3Response? Execute(
             this AdminGetUserBanV3.AdminGetUserBanV3Builder builder,
             string namespace_,
@@ -1269,7 +1189,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserBanV3(op);
         }
-
         public static Iam.Model.ModelUserBanResponseV3? Execute(
             this AdminBanUserV3.AdminBanUserV3Builder builder,
             ModelBanCreateRequest body,
@@ -1285,7 +1204,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBanUserV3(op);
         }
-
         public static Iam.Model.ModelUserBanResponseV3? Execute(
             this AdminUpdateUserBanV3.AdminUpdateUserBanV3Builder builder,
             ModelBanUpdateRequest body,
@@ -1303,7 +1221,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserBanV3(op);
         }
-
         public static void Execute(
             this AdminSendVerificationCodeV3.AdminSendVerificationCodeV3Builder builder,
             ModelSendVerificationCodeRequestV3 body,
@@ -1319,7 +1236,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSendVerificationCodeV3(op);
         }
-
         public static void Execute(
             this AdminVerifyAccountV3.AdminVerifyAccountV3Builder builder,
             ModelUserVerificationRequest body,
@@ -1335,7 +1251,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminVerifyAccountV3(op);
         }
-
         public static Iam.Model.ModelVerificationCodeResponse? Execute(
             this GetUserVerificationCode.GetUserVerificationCodeBuilder builder,
             string namespace_,
@@ -1349,7 +1264,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserVerificationCode(op);
         }
-
         public static Iam.Model.ModelUserDeletionStatusResponse? Execute(
             this AdminGetUserDeletionStatusV3.AdminGetUserDeletionStatusV3Builder builder,
             string namespace_,
@@ -1363,7 +1277,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserDeletionStatusV3(op);
         }
-
         public static void Execute(
             this AdminUpdateUserDeletionStatusV3.AdminUpdateUserDeletionStatusV3Builder builder,
             ModelUpdateUserDeletionStatusRequest body,
@@ -1379,7 +1292,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserDeletionStatusV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminUpgradeHeadlessAccountV3.AdminUpgradeHeadlessAccountV3Builder builder,
             ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
@@ -1395,7 +1307,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpgradeHeadlessAccountV3(op);
         }
-
         public static void Execute(
             this AdminDeleteUserInformationV3.AdminDeleteUserInformationV3Builder builder,
             string namespace_,
@@ -1409,7 +1320,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserInformationV3(op);
         }
-
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this AdminGetUserLoginHistoriesV3.AdminGetUserLoginHistoriesV3Builder builder,
             string namespace_,
@@ -1423,7 +1333,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserLoginHistoriesV3(op);
         }
-
         public static void Execute(
             this AdminResetPasswordV3.AdminResetPasswordV3Builder builder,
             ModelUserPasswordUpdateV3Request body,
@@ -1439,7 +1348,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminResetPasswordV3(op);
         }
-
         public static void Execute(
             this AdminUpdateUserPermissionV3.AdminUpdateUserPermissionV3Builder builder,
             AccountcommonPermissions body,
@@ -1455,7 +1363,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserPermissionV3(op);
         }
-
         public static void Execute(
             this AdminAddUserPermissionsV3.AdminAddUserPermissionsV3Builder builder,
             AccountcommonPermissions body,
@@ -1471,7 +1378,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminAddUserPermissionsV3(op);
         }
-
         public static void Execute(
             this AdminDeleteUserPermissionBulkV3.AdminDeleteUserPermissionBulkV3Builder builder,
             List<ModelPermissionDeleteRequest> body,
@@ -1487,7 +1393,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserPermissionBulkV3(op);
         }
-
         public static void Execute(
             this AdminDeleteUserPermissionV3.AdminDeleteUserPermissionV3Builder builder,
             long action,
@@ -1505,7 +1410,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserPermissionV3(op);
         }
-
         public static Iam.Model.AccountcommonUserLinkedPlatformsResponseV3? Execute(
             this AdminGetUserPlatformAccountsV3.AdminGetUserPlatformAccountsV3Builder builder,
             string namespace_,
@@ -1519,7 +1423,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserPlatformAccountsV3(op);
         }
-
         public static List<Iam.Model.ModelGetUserMapping>? Execute(
             this AdminGetListJusticePlatformAccounts.AdminGetListJusticePlatformAccountsBuilder builder,
             string namespace_,
@@ -1533,7 +1436,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetListJusticePlatformAccounts(op);
         }
-
         public static Iam.Model.ModelGetUserMappingV3? Execute(
             this AdminGetUserMapping.AdminGetUserMappingBuilder builder,
             string namespace_,
@@ -1549,7 +1451,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserMapping(op);
         }
-
         public static Iam.Model.ModelCreateJusticeUserResponse? Execute(
             this AdminCreateJusticeUser.AdminCreateJusticeUserBuilder builder,
             string namespace_,
@@ -1565,7 +1466,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminCreateJusticeUser(op);
         }
-
         public static void Execute(
             this AdminLinkPlatformAccount.AdminLinkPlatformAccountBuilder builder,
             ModelLinkPlatformAccountRequest body,
@@ -1581,7 +1481,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminLinkPlatformAccount(op);
         }
-
         public static void Execute(
             this AdminPlatformUnlinkV3.AdminPlatformUnlinkV3Builder builder,
             ModelUnlinkUserPlatformRequest body,
@@ -1599,7 +1498,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformUnlinkV3(op);
         }
-
         public static void Execute(
             this AdminPlatformLinkV3.AdminPlatformLinkV3Builder builder,
             string ticket,
@@ -1617,7 +1515,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformLinkV3(op);
         }
-
         public static Iam.Model.ModelTokenThirdPartyLinkStatusResponse? Execute(
             this AdminGetThirdPartyPlatformTokenLinkStatusV3.AdminGetThirdPartyPlatformTokenLinkStatusV3Builder builder,
             string platformToken,
@@ -1635,7 +1532,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetThirdPartyPlatformTokenLinkStatusV3(op);
         }
-
         public static void Execute(
             this AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder builder,
             List<string> body,
@@ -1651,7 +1547,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserRolesV3(op);
         }
-
         public static void Execute(
             this AdminSaveUserRoleV3.AdminSaveUserRoleV3Builder builder,
             List<ModelNamespaceRoleRequest> body,
@@ -1667,7 +1562,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSaveUserRoleV3(op);
         }
-
         public static void Execute(
             this AdminAddUserRoleV3.AdminAddUserRoleV3Builder builder,
             string namespace_,
@@ -1683,7 +1577,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminAddUserRoleV3(op);
         }
-
         public static void Execute(
             this AdminDeleteUserRoleV3.AdminDeleteUserRoleV3Builder builder,
             string namespace_,
@@ -1699,7 +1592,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserRoleV3(op);
         }
-
         public static void Execute(
             this AdminUpdateUserStatusV3.AdminUpdateUserStatusV3Builder builder,
             ModelUpdateUserStatusRequest body,
@@ -1715,7 +1607,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserStatusV3(op);
         }
-
         public static void Execute(
             this AdminVerifyUserWithoutVerificationCodeV3.AdminVerifyUserWithoutVerificationCodeV3Builder builder,
             string namespace_,
@@ -1729,7 +1620,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminVerifyUserWithoutVerificationCodeV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminGetMyUserV3.AdminGetMyUserV3Builder builder
         )
@@ -1739,7 +1629,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetMyUserV3(op);
         }
-
         public static Iam.Model.ModelCountryV3Response? Execute(
             this PublicGetCountryAgeRestrictionV3.PublicGetCountryAgeRestrictionV3Builder builder,
             string countryCode,
@@ -1753,7 +1642,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetCountryAgeRestrictionV3(op);
         }
-
         public static Iam.Model.AccountcommonUserPlatforms? Execute(
             this PublicListUserIDByPlatformUserIDsV3.PublicListUserIDByPlatformUserIDsV3Builder builder,
             ModelPlatformUserIDRequest body,
@@ -1769,7 +1657,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListUserIDByPlatformUserIDsV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicGetUserByPlatformUserIDV3.PublicGetUserByPlatformUserIDV3Builder builder,
             string namespace_,
@@ -1785,7 +1672,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByPlatformUserIDV3(op);
         }
-
         public static Iam.Model.ModelLinkRequest? Execute(
             this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
             string namespace_,
@@ -1800,6 +1686,19 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetAsyncStatus(op);
         }
 
+        public static Iam.Model.ModelLinkRequest<T1>? Execute<T1>(
+            this PublicGetAsyncStatus.PublicGetAsyncStatusBuilder builder,
+            string namespace_,
+            string requestId
+        )
+        {
+            PublicGetAsyncStatus op = builder.Build(
+                namespace_,
+                requestId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetAsyncStatus<T1>(op);
+        }
         public static Iam.Model.ModelPublicUserInformationResponseV3? Execute(
             this PublicSearchUserV3.PublicSearchUserV3Builder builder,
             string namespace_
@@ -1811,7 +1710,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSearchUserV3(op);
         }
-
         public static Iam.Model.ModelUserCreateResponseV3? Execute(
             this PublicCreateUserV3.PublicCreateUserV3Builder builder,
             ModelUserCreateRequestV3 body,
@@ -1825,7 +1723,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicCreateUserV3(op);
         }
-
         public static void Execute(
             this CheckUserAvailability.CheckUserAvailabilityBuilder builder,
             string namespace_,
@@ -1841,7 +1738,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).CheckUserAvailability(op);
         }
-
         public static Iam.Model.ModelListBulkUserResponse? Execute(
             this PublicBulkGetUsers.PublicBulkGetUsersBuilder builder,
             ModelUserIDsRequest body,
@@ -1855,7 +1751,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicBulkGetUsers(op);
         }
-
         public static void Execute(
             this PublicSendRegistrationCode.PublicSendRegistrationCodeBuilder builder,
             ModelSendRegisterVerificationCodeRequest body,
@@ -1869,7 +1764,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendRegistrationCode(op);
         }
-
         public static void Execute(
             this PublicVerifyRegistrationCode.PublicVerifyRegistrationCodeBuilder builder,
             ModelVerifyRegistrationCode body,
@@ -1883,7 +1777,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicVerifyRegistrationCode(op);
         }
-
         public static void Execute(
             this PublicForgotPasswordV3.PublicForgotPasswordV3Builder builder,
             ModelForgotPasswordRequestV3 body,
@@ -1897,7 +1790,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordV3(op);
         }
-
         public static Iam.Model.ModelUserInvitationV3? Execute(
             this GetAdminInvitationV3.GetAdminInvitationV3Builder builder,
             string invitationId,
@@ -1911,7 +1803,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetAdminInvitationV3(op);
         }
-
         public static Iam.Model.ModelUserCreateResponseV3? Execute(
             this CreateUserFromInvitationV3.CreateUserFromInvitationV3Builder builder,
             ModelUserCreateFromInvitationRequestV3 body,
@@ -1927,7 +1818,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).CreateUserFromInvitationV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this UpdateUserV3.UpdateUserV3Builder builder,
             ModelUserUpdateRequestV3 body,
@@ -1941,7 +1831,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpdateUserV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicPartialUpdateUserV3.PublicPartialUpdateUserV3Builder builder,
             ModelUserUpdateRequestV3 body,
@@ -1955,7 +1844,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPartialUpdateUserV3(op);
         }
-
         public static void Execute(
             this PublicSendVerificationCodeV3.PublicSendVerificationCodeV3Builder builder,
             ModelSendVerificationCodeRequestV3 body,
@@ -1969,7 +1857,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendVerificationCodeV3(op);
         }
-
         public static void Execute(
             this PublicUserVerificationV3.PublicUserVerificationV3Builder builder,
             ModelUserVerificationRequestV3 body,
@@ -1983,7 +1870,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUserVerificationV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicUpgradeHeadlessAccountV3.PublicUpgradeHeadlessAccountV3Builder builder,
             ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
@@ -1997,7 +1883,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpgradeHeadlessAccountV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicVerifyHeadlessAccountV3.PublicVerifyHeadlessAccountV3Builder builder,
             ModelUpgradeHeadlessAccountV3Request body,
@@ -2011,7 +1896,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicVerifyHeadlessAccountV3(op);
         }
-
         public static void Execute(
             this PublicUpdatePasswordV3.PublicUpdatePasswordV3Builder builder,
             ModelUserPasswordUpdateV3Request body,
@@ -2025,7 +1909,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpdatePasswordV3(op);
         }
-
         public static Iam.Model.ModelCreateJusticeUserResponse? Execute(
             this PublicCreateJusticeUser.PublicCreateJusticeUserBuilder builder,
             string namespace_,
@@ -2039,7 +1922,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicCreateJusticeUser(op);
         }
-
         public static void Execute(
             this PublicPlatformLinkV3.PublicPlatformLinkV3Builder builder,
             string ticket,
@@ -2055,7 +1937,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformLinkV3(op);
         }
-
         public static void Execute(
             this PublicPlatformUnlinkV3.PublicPlatformUnlinkV3Builder builder,
             ModelUnlinkUserPlatformRequest body,
@@ -2071,7 +1952,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformUnlinkV3(op);
         }
-
         public static void Execute(
             this PublicPlatformUnlinkAllV3.PublicPlatformUnlinkAllV3Builder builder,
             string namespace_,
@@ -2085,7 +1965,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformUnlinkAllV3(op);
         }
-
         public static void Execute(
             this PublicForcePlatformLinkV3.PublicForcePlatformLinkV3Builder builder,
             string ticket,
@@ -2101,7 +1980,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForcePlatformLinkV3(op);
         }
-
         public static Iam.Model.ModelWebLinkingResponse? Execute(
             this PublicWebLinkPlatform.PublicWebLinkPlatformBuilder builder,
             string namespace_,
@@ -2115,7 +1993,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebLinkPlatform(op);
         }
-
         public static string Execute(
             this PublicWebLinkPlatformEstablish.PublicWebLinkPlatformEstablishBuilder builder,
             string namespace_,
@@ -2131,7 +2008,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebLinkPlatformEstablish(op);
         }
-
         public static void Execute(
             this ResetPasswordV3.ResetPasswordV3Builder builder,
             ModelResetPasswordRequestV3 body,
@@ -2145,7 +2021,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ResetPasswordV3(op);
         }
-
         public static Iam.Model.ModelPublicUserResponseV3? Execute(
             this PublicGetUserByUserIdV3.PublicGetUserByUserIdV3Builder builder,
             string namespace_,
@@ -2159,7 +2034,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByUserIdV3(op);
         }
-
         public static Iam.Model.ModelGetUserBanV3Response? Execute(
             this PublicGetUserBanHistoryV3.PublicGetUserBanHistoryV3Builder builder,
             string namespace_,
@@ -2173,7 +2047,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserBanHistoryV3(op);
         }
-
         public static Iam.Model.AccountcommonDistinctPlatformResponseV3? Execute(
             this PublicListUserAllPlatformAccountsDistinctV3.PublicListUserAllPlatformAccountsDistinctV3Builder builder,
             string namespace_,
@@ -2187,7 +2060,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListUserAllPlatformAccountsDistinctV3(op);
         }
-
         public static Iam.Model.AccountcommonUserInformationV3? Execute(
             this PublicGetUserInformationV3.PublicGetUserInformationV3Builder builder,
             string namespace_,
@@ -2201,7 +2073,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserInformationV3(op);
         }
-
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this PublicGetUserLoginHistoriesV3.PublicGetUserLoginHistoriesV3Builder builder,
             string namespace_,
@@ -2215,7 +2086,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserLoginHistoriesV3(op);
         }
-
         public static Iam.Model.AccountcommonUserLinkedPlatformsResponseV3? Execute(
             this PublicGetUserPlatformAccountsV3.PublicGetUserPlatformAccountsV3Builder builder,
             string namespace_,
@@ -2229,7 +2099,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserPlatformAccountsV3(op);
         }
-
         public static List<Iam.Model.ModelGetUserMappingV3>? Execute(
             this PublicListJusticePlatformAccountsV3.PublicListJusticePlatformAccountsV3Builder builder,
             string namespace_,
@@ -2243,7 +2112,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListJusticePlatformAccountsV3(op);
         }
-
         public static void Execute(
             this PublicLinkPlatformAccount.PublicLinkPlatformAccountBuilder builder,
             ModelLinkPlatformAccountRequest body,
@@ -2259,7 +2127,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicLinkPlatformAccount(op);
         }
-
         public static void Execute(
             this PublicForceLinkPlatformWithProgression.PublicForceLinkPlatformWithProgressionBuilder builder,
             ModelLinkPlatformAccountWithProgressionRequest body,
@@ -2275,7 +2142,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForceLinkPlatformWithProgression(op);
         }
-
         public static Iam.Model.ModelGetPublisherUserV3Response? Execute(
             this PublicGetPublisherUserV3.PublicGetPublisherUserV3Builder builder,
             string namespace_,
@@ -2289,7 +2155,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetPublisherUserV3(op);
         }
-
         public static void Execute(
             this PublicValidateUserByUserIDAndPasswordV3.PublicValidateUserByUserIDAndPasswordV3Builder builder,
             string password,
@@ -2305,7 +2170,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicValidateUserByUserIDAndPasswordV3(op);
         }
-
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicGetMyUserV3.PublicGetMyUserV3Builder builder
         )
@@ -2315,7 +2179,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyUserV3(op);
         }
-
         public static Iam.Model.ModelGetLinkHeadlessAccountConflictResponse? Execute(
             this PublicGetLinkHeadlessAccountToMyAccountConflictV3.PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder builder,
             string oneTimeLinkCode
@@ -2327,7 +2190,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetLinkHeadlessAccountToMyAccountConflictV3(op);
         }
-
         public static void Execute(
             this LinkHeadlessAccountToMyAccountV3.LinkHeadlessAccountToMyAccountV3Builder builder,
             ModelLinkHeadlessAccountRequest body
@@ -2339,7 +2201,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).LinkHeadlessAccountToMyAccountV3(op);
         }
-
         public static void Execute(
             this PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder builder,
             ModelSendVerificationLinkRequest body
@@ -2351,7 +2212,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendVerificationLinkV3(op);
         }
-
         public static string Execute(
             this PublicVerifyUserByLinkV3.PublicVerifyUserByLinkV3Builder builder
         )
@@ -2361,6 +2221,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicVerifyUserByLinkV3(op);
         }
-
     }
 }

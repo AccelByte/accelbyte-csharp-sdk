@@ -38,4 +38,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public int? Priority { get; set; }
 
     }
+
+
 }

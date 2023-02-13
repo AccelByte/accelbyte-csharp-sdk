@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? Namespace { get; set; }
 
     }
+
+
 }

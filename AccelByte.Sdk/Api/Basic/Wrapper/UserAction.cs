@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         #endregion
         
-        public List<Model.Action>? GetActions(GetActions input) {
+        public List<Model.Action>? GetActions(GetActions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +66,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForEqu8UserBanStatus>? GetBannedUsers(GetBannedUsers input) {
+        public List<Model.ADTOObjectForEqu8UserBanStatus>? GetBannedUsers(GetBannedUsers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +83,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ADTOObjectForEqu8UserStatus? GetUserStatus(GetUserStatus input) {
+        public Model.ADTOObjectForEqu8UserStatus? GetUserStatus(GetUserStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

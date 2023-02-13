@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedContent(op);
         }
-
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetFollowedUsers.GetFollowedUsersBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedUsers(op);
         }
-
         public static Ugc.Model.ModelsUserFollowResponse? Execute(
             this UpdateUserFollowStatus.UpdateUserFollowStatusBuilder builder,
             ModelsUserFollowRequest body,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).UpdateUserFollowStatus(op);
         }
-
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetPublicFollowers.GetPublicFollowersBuilder builder,
             string namespace_,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowers(op);
         }
-
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetPublicFollowing.GetPublicFollowingBuilder builder,
             string namespace_,
@@ -79,6 +75,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowing(op);
         }
-
     }
 }

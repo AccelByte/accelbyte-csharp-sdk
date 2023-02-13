@@ -24,4 +24,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public Dictionary<string, string>? MessageVariables { get; set; }
 
     }
+
+
 }

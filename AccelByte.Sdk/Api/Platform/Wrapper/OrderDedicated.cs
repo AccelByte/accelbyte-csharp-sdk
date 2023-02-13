@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.OrderSyncResult? SyncOrders(SyncOrders input) {
+        public Model.OrderSyncResult? SyncOrders(SyncOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

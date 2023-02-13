@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public List<ModelsDeleteBulkLeaderboardFailedResp>? Failed { get; set; }
 
     }
+
+
 }

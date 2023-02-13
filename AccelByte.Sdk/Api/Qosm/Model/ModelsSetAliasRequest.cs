@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Qosm.Model
         public string? Alias { get; set; }
 
     }
+
+
 }

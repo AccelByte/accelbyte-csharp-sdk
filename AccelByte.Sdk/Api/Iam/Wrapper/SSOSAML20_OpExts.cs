@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOSAML20)builder.WrapperObject!).PlatformAuthenticateSAMLV3Handler(op);
         }
-
     }
 }

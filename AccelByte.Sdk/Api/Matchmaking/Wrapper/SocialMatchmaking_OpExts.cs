@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.SocialMatchmaking)builder.WrapperObject!).UpdatePlayTimeWeight(op);
         }
-
     }
 }

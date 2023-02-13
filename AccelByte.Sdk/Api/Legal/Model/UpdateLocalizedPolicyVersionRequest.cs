@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? Description { get; set; }
 
     }
+
+
 }

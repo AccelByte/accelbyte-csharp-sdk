@@ -30,6 +30,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PlatformRewardType : StringEnum<PlatformRewardType>
     {
         public static readonly PlatformRewardType CURRENCY

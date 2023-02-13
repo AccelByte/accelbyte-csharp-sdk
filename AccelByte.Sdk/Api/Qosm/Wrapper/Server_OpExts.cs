@@ -23,6 +23,5 @@ namespace AccelByte.Sdk.Api
 
             ((Qosm.Wrapper.Server)builder.WrapperObject!).Heartbeat(op);
         }
-
     }
 }

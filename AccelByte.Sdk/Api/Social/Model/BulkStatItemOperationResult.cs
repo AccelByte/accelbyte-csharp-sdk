@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Social.Model
         public bool? Success { get; set; }
 
     }
+
+    public class BulkStatItemOperationResult<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("details")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Details { get; set; }
+
+        [JsonPropertyName("statCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StatCode { get; set; }
+
+        [JsonPropertyName("success")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Success { get; set; }
+
+    }
+
 }

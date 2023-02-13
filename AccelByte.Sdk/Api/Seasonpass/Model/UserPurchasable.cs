@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? TierItemId { get; set; }
 
     }
+
+
 }

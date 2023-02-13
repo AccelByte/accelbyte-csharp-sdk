@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetUserProfiles(op);
         }
-
         public static Social.Model.GameProfileInfo? Execute(
             this GetProfile.GetProfileBuilder builder,
             string namespace_,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetProfile(op);
         }
-
         public static List<Social.Model.UserGameProfiles>? Execute(
             this PublicGetUserGameProfiles.PublicGetUserGameProfilesBuilder builder,
             string namespace_,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserGameProfiles(op);
         }
-
         public static List<Social.Model.GameProfileHeader>? Execute(
             this PublicGetUserProfiles.PublicGetUserProfilesBuilder builder,
             string namespace_,
@@ -69,7 +66,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserProfiles(op);
         }
-
         public static void Execute(
             this PublicCreateProfile.PublicCreateProfileBuilder builder,
             string namespace_,
@@ -83,7 +79,6 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicCreateProfile(op);
         }
-
         public static Social.Model.GameProfileInfo? Execute(
             this PublicGetProfile.PublicGetProfileBuilder builder,
             string namespace_,
@@ -99,7 +94,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfile(op);
         }
-
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateProfile.PublicUpdateProfileBuilder builder,
             string namespace_,
@@ -115,7 +109,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateProfile(op);
         }
-
         public static void Execute(
             this PublicDeleteProfile.PublicDeleteProfileBuilder builder,
             string namespace_,
@@ -131,7 +124,6 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicDeleteProfile(op);
         }
-
         public static Social.Model.Attribute? Execute(
             this PublicGetProfileAttribute.PublicGetProfileAttributeBuilder builder,
             string attributeName,
@@ -149,7 +141,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAttribute(op);
         }
-
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateAttribute.PublicUpdateAttributeBuilder builder,
             string attributeName,
@@ -167,6 +158,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateAttribute(op);
         }
-
     }
 }

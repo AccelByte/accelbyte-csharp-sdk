@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class AvailablePredicateObjectPredicateType : StringEnum<AvailablePredicateObjectPredicateType>
     {
         public static readonly AvailablePredicateObjectPredicateType EntitlementPredicate

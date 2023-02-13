@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
         
-        public Model.ApimodelsConfigurationTemplateResponse? AdminCreateConfigurationTemplateV1(AdminCreateConfigurationTemplateV1 input) {
+        public Model.ApimodelsConfigurationTemplateResponse? AdminCreateConfigurationTemplateV1(AdminCreateConfigurationTemplateV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsConfigurationTemplatesResponse? AdminGetAllConfigurationTemplatesV1(AdminGetAllConfigurationTemplatesV1 input) {
+        public Model.ApimodelsConfigurationTemplatesResponse? AdminGetAllConfigurationTemplatesV1(AdminGetAllConfigurationTemplatesV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +59,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsConfigurationTemplateResponse? AdminGetConfigurationTemplateV1(AdminGetConfigurationTemplateV1 input) {
+        public Model.ApimodelsConfigurationTemplateResponse? AdminGetConfigurationTemplateV1(AdminGetConfigurationTemplateV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +68,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsConfigurationTemplateResponse? AdminUpdateConfigurationTemplateV1(AdminUpdateConfigurationTemplateV1 input) {
+        public Model.ApimodelsConfigurationTemplateResponse? AdminUpdateConfigurationTemplateV1(AdminUpdateConfigurationTemplateV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +77,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ResponseError? AdminDeleteConfigurationTemplateV1(AdminDeleteConfigurationTemplateV1 input) {
+        public Model.ResponseError? AdminDeleteConfigurationTemplateV1(AdminDeleteConfigurationTemplateV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

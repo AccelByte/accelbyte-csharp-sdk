@@ -21,4 +21,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public long? Total { get; set; }
 
     }
+
+
 }

@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServerPerNamespace(op);
         }
-
         public static Qosm.Model.ModelsListServerResponse? Execute(
             this ListServer.ListServerBuilder builder
         )
@@ -33,6 +32,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServer(op);
         }
-
     }
 }

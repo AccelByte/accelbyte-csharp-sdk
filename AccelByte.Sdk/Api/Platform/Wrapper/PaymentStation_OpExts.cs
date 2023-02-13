@@ -28,7 +28,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).GetPaymentCustomization(op);
         }
-
         public static Platform.Model.PaymentUrl? Execute(
             this PublicGetPaymentUrl.PublicGetPaymentUrlBuilder builder,
             string namespace_
@@ -40,7 +39,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicGetPaymentUrl(op);
         }
-
         public static List<Platform.Model.PaymentMethod>? Execute(
             this PublicGetPaymentMethods.PublicGetPaymentMethodsBuilder builder,
             string namespace_,
@@ -54,7 +52,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicGetPaymentMethods(op);
         }
-
         public static Platform.Model.PaymentOrderDetails? Execute(
             this PublicGetUnpaidPaymentOrder.PublicGetUnpaidPaymentOrderBuilder builder,
             string namespace_,
@@ -68,7 +65,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicGetUnpaidPaymentOrder(op);
         }
-
         public static Platform.Model.PaymentProcessResult? Execute(
             this Pay.PayBuilder builder,
             string namespace_,
@@ -82,7 +78,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).Pay(op);
         }
-
         public static Platform.Model.PaymentOrderPaidResult? Execute(
             this PublicCheckPaymentOrderPaidStatus.PublicCheckPaymentOrderPaidStatusBuilder builder,
             string namespace_,
@@ -96,7 +91,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicCheckPaymentOrderPaidStatus(op);
         }
-
         public static Dictionary<string, object>? Execute(
             this GetPaymentPublicConfig.GetPaymentPublicConfigBuilder builder,
             string namespace_,
@@ -112,7 +106,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).GetPaymentPublicConfig(op);
         }
-
         public static byte[]? Execute(
             this PublicGetQRCode.PublicGetQRCodeBuilder builder,
             string namespace_,
@@ -126,7 +119,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicGetQRCode(op);
         }
-
         public static void Execute(
             this PublicNormalizePaymentReturnUrl.PublicNormalizePaymentReturnUrlBuilder builder,
             string namespace_,
@@ -146,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicNormalizePaymentReturnUrl(op);
         }
-
         public static Platform.Model.TaxResult? Execute(
             this GetPaymentTaxValue.GetPaymentTaxValueBuilder builder,
             string namespace_,
@@ -162,6 +153,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).GetPaymentTaxValue(op);
         }
-
     }
 }

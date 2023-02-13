@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).QueryRewards(op);
         }
-
         public static Seasonpass.Model.RewardInfo? Execute(
             this CreateReward.CreateRewardBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).CreateReward(op);
         }
-
         public static Seasonpass.Model.RewardInfo? Execute(
             this GetReward.GetRewardBuilder builder,
             string code,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).GetReward(op);
         }
-
         public static void Execute(
             this DeleteReward.DeleteRewardBuilder builder,
             string code,
@@ -71,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).DeleteReward(op);
         }
-
         public static Seasonpass.Model.RewardInfo? Execute(
             this UpdateReward.UpdateRewardBuilder builder,
             string code,
@@ -87,7 +83,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).UpdateReward(op);
         }
-
         public static Seasonpass.Model.ClaimableRewards? Execute(
             this PublicClaimUserReward.PublicClaimUserRewardBuilder builder,
             string namespace_,
@@ -102,6 +97,19 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).PublicClaimUserReward(op);
         }
 
+        public static Seasonpass.Model.ClaimableRewards<T1, T2>? Execute<T1, T2>(
+            this PublicClaimUserReward.PublicClaimUserRewardBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicClaimUserReward op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).PublicClaimUserReward<T1, T2>(op);
+        }
         public static Seasonpass.Model.ClaimableRewards? Execute(
             this PublicBulkClaimUserRewards.PublicBulkClaimUserRewardsBuilder builder,
             string namespace_,
@@ -116,5 +124,18 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).PublicBulkClaimUserRewards(op);
         }
 
+        public static Seasonpass.Model.ClaimableRewards<T1, T2>? Execute<T1, T2>(
+            this PublicBulkClaimUserRewards.PublicBulkClaimUserRewardsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicBulkClaimUserRewards op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Reward)builder.WrapperObject!).PublicBulkClaimUserRewards<T1, T2>(op);
+        }
     }
 }

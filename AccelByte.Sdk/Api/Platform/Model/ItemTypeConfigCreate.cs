@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ItemTypeConfigCreateItemType : StringEnum<ItemTypeConfigCreateItemType>
     {
         public static readonly ItemTypeConfigCreateItemType APP

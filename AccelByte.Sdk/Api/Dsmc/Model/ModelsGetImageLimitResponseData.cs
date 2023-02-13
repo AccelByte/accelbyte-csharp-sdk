@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public int? NonPersistentImageUsedInDeploymentNumber { get; set; }
 
     }
+
+
 }

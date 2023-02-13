@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.ServicePluginConfigInfo? GetServicePluginConfig(GetServicePluginConfig input) {
+        public Model.ServicePluginConfigInfo? GetServicePluginConfig(GetServicePluginConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -41,7 +42,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ServicePluginConfigInfo? UpdateServicePluginConfig(UpdateServicePluginConfig input) {
+        public Model.ServicePluginConfigInfo? UpdateServicePluginConfig(UpdateServicePluginConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

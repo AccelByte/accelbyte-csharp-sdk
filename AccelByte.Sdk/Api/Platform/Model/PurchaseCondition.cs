@@ -14,4 +14,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<ConditionGroup>? ConditionGroups { get; set; }
 
     }
+
+
 }

@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public string? Text { get; set; }
 
     }
+
+
 }

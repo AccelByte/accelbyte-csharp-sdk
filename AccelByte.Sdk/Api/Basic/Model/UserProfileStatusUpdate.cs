@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
+
+
     public class UserProfileStatusUpdateStatus : StringEnum<UserProfileStatusUpdateStatus>
     {
         public static readonly UserProfileStatusUpdateStatus ACTIVE

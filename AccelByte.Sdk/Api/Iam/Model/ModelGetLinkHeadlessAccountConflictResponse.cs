@@ -27,4 +27,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? PlatformLinkConflict { get; set; }
 
     }
+
+
 }

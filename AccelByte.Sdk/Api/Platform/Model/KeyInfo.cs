@@ -46,6 +46,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class KeyInfoStatus : StringEnum<KeyInfoStatus>
     {
         public static readonly KeyInfoStatus ACQUIRED

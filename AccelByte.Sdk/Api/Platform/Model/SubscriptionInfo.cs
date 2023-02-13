@@ -176,6 +176,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class SubscriptionInfoChargeStatus : StringEnum<SubscriptionInfoChargeStatus>
     {
         public static readonly SubscriptionInfoChargeStatus CHARGED

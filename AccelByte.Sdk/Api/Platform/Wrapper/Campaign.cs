@@ -81,7 +81,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.CampaignPagingSlicedResult? QueryCampaigns(QueryCampaigns input) {
+        public Model.CampaignPagingSlicedResult? QueryCampaigns(QueryCampaigns input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +90,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CampaignInfo? CreateCampaign(CreateCampaign input) {
+        public Model.CampaignInfo? CreateCampaign(CreateCampaign input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CampaignInfo? GetCampaign(GetCampaign input) {
+        public Model.CampaignInfo? GetCampaign(GetCampaign input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +108,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CampaignInfo? UpdateCampaign(UpdateCampaign input) {
+        public Model.CampaignInfo? UpdateCampaign(UpdateCampaign input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +117,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CampaignDynamicInfo? GetCampaignDynamic(GetCampaignDynamic input) {
+        public Model.CampaignDynamicInfo? GetCampaignDynamic(GetCampaignDynamic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +126,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CodeInfoPagingSlicedResult? QueryCodes(QueryCodes input) {
+        public Model.CodeInfoPagingSlicedResult? QueryCodes(QueryCodes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,7 +135,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CodeCreateResult? CreateCodes(CreateCodes input) {
+        public Model.CodeCreateResult? CreateCodes(CreateCodes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -137,7 +144,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? Download(Download input) {
+        public Stream? Download(Download input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +153,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.BulkOperationResult? BulkDisableCodes(BulkDisableCodes input) {
+        public Model.BulkOperationResult? BulkDisableCodes(BulkDisableCodes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,7 +162,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.BulkOperationResult? BulkEnableCodes(BulkEnableCodes input) {
+        public Model.BulkOperationResult? BulkEnableCodes(BulkEnableCodes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -161,7 +171,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RedeemHistoryPagingSlicedResult? QueryRedeemHistory(QueryRedeemHistory input) {
+        public Model.RedeemHistoryPagingSlicedResult? QueryRedeemHistory(QueryRedeemHistory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -169,7 +180,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CodeInfo? GetCode(GetCode input) {
+        public Model.CodeInfo? GetCode(GetCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -177,7 +189,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CodeInfo? DisableCode(DisableCode input) {
+        public Model.CodeInfo? DisableCode(DisableCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -185,7 +198,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CodeInfo? EnableCode(EnableCode input) {
+        public Model.CodeInfo? EnableCode(EnableCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -193,7 +207,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RedeemResult? ApplyUserRedemption(ApplyUserRedemption input) {
+        public Model.RedeemResult? ApplyUserRedemption(ApplyUserRedemption input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

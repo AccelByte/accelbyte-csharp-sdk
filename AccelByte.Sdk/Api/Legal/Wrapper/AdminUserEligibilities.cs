@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
         
-        public Model.RetrieveUserEligibilitiesIndirectResponse? AdminRetrieveEligibilities(AdminRetrieveEligibilities input) {
+        public Model.RetrieveUserEligibilitiesIndirectResponse? AdminRetrieveEligibilities(AdminRetrieveEligibilities input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class UserTierGrantSource : StringEnum<UserTierGrantSource>
     {
         public static readonly UserTierGrantSource PAIDFOR

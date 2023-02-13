@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetMemberRolesListAdminV1(op);
         }
-
         public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this CreateMemberRoleAdminV1.CreateMemberRoleAdminV1Builder builder,
             ModelsCreateMemberRoleRequestV1 body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).CreateMemberRoleAdminV1(op);
         }
-
         public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this GetSingleMemberRoleAdminV1.GetSingleMemberRoleAdminV1Builder builder,
             string memberRoleId,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetSingleMemberRoleAdminV1(op);
         }
-
         public static void Execute(
             this DeleteMemberRoleAdminV1.DeleteMemberRoleAdminV1Builder builder,
             string memberRoleId,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRoleAdminV1(op);
         }
-
         public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this UpdateMemberRoleAdminV1.UpdateMemberRoleAdminV1Builder builder,
             ModelsUpdateMemberRoleRequestV1 body,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRoleAdminV1(op);
         }
-
         public static Group.Model.ModelsMemberRoleResponseV1? Execute(
             this UpdateMemberRolePermissionAdminV1.UpdateMemberRolePermissionAdminV1Builder builder,
             ModelsUpdateMemberRolePermissionsRequestV1 body,
@@ -97,7 +92,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRolePermissionAdminV1(op);
         }
-
         public static Group.Model.ModelsGetMemberRolesListResponseV1? Execute(
             this GetMemberRolesListPublicV1.GetMemberRolesListPublicV1Builder builder,
             string namespace_
@@ -109,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetMemberRolesListPublicV1(op);
         }
-
         public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
             this UpdateMemberRolePublicV1.UpdateMemberRolePublicV1Builder builder,
             ModelsAssignRoleToMemberRequestV1 body,
@@ -125,7 +118,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRolePublicV1(op);
         }
-
         public static void Execute(
             this DeleteMemberRolePublicV1.DeleteMemberRolePublicV1Builder builder,
             ModelsRemoveRoleFromMemberRequestV1 body,
@@ -141,7 +133,6 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRolePublicV1(op);
         }
-
         public static Group.Model.ModelsGetMemberRolesListResponseV1? Execute(
             this GetMemberRolesListPublicV2.GetMemberRolesListPublicV2Builder builder,
             string namespace_
@@ -153,7 +144,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).GetMemberRolesListPublicV2(op);
         }
-
         public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
             this UpdateMemberRolePublicV2.UpdateMemberRolePublicV2Builder builder,
             ModelsAssignRoleToMemberRequestV1 body,
@@ -171,7 +161,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupRoles)builder.WrapperObject!).UpdateMemberRolePublicV2(op);
         }
-
         public static void Execute(
             this DeleteMemberRolePublicV2.DeleteMemberRolePublicV2Builder builder,
             ModelsRemoveRoleFromMemberRequestV1 body,
@@ -189,6 +178,5 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.GroupRoles)builder.WrapperObject!).DeleteMemberRolePublicV2(op);
         }
-
     }
 }

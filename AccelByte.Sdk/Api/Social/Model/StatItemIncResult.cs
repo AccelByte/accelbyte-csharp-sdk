@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public double? CurrentValue { get; set; }
 
     }
+
+
 }

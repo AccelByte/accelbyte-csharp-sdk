@@ -38,6 +38,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentOrderRefundResultStatus : StringEnum<PaymentOrderRefundResultStatus>
     {
         public static readonly PaymentOrderRefundResultStatus AUTHORISED

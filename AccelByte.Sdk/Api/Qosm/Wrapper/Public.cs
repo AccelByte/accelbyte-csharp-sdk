@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
         }
         #endregion
         
-        public Model.ModelsListServerResponse? ListServerPerNamespace(ListServerPerNamespace input) {
+        public Model.ModelsListServerResponse? ListServerPerNamespace(ListServerPerNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -37,7 +38,8 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListServerResponse? ListServer(ListServer input) {
+        public Model.ModelsListServerResponse? ListServer(ListServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

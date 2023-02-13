@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<ModelsPlayerResultResponse>? Players { get; set; }
 
     }
+
+
 }

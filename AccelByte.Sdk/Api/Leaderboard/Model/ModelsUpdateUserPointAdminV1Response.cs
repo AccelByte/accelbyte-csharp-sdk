@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

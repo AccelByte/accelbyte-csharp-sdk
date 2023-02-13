@@ -54,7 +54,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.KeyGroupPagingSlicedResult? QueryKeyGroups(QueryKeyGroups input) {
+        public Model.KeyGroupPagingSlicedResult? QueryKeyGroups(QueryKeyGroups input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -62,7 +63,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.KeyGroupInfo? CreateKeyGroup(CreateKeyGroup input) {
+        public Model.KeyGroupInfo? CreateKeyGroup(CreateKeyGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -72,7 +74,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.KeyGroupInfo? GetKeyGroupByBoothName(GetKeyGroupByBoothName input) {
+        public Model.KeyGroupInfo? GetKeyGroupByBoothName(GetKeyGroupByBoothName input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +84,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.KeyGroupInfo? GetKeyGroup(GetKeyGroup input) {
+        public Model.KeyGroupInfo? GetKeyGroup(GetKeyGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.KeyGroupInfo? UpdateKeyGroup(UpdateKeyGroup input) {
+        public Model.KeyGroupInfo? UpdateKeyGroup(UpdateKeyGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +102,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.KeyGroupDynamicInfo? GetKeyGroupDynamic(GetKeyGroupDynamic input) {
+        public Model.KeyGroupDynamicInfo? GetKeyGroupDynamic(GetKeyGroupDynamic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +111,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.KeyPagingSliceResult? ListKeys(ListKeys input) {
+        public Model.KeyPagingSliceResult? ListKeys(ListKeys input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +120,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.BulkOperationResult? UploadKeys(UploadKeys input) {
+        public Model.BulkOperationResult? UploadKeys(UploadKeys input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

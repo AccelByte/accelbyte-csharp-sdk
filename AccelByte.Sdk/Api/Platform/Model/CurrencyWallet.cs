@@ -37,4 +37,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<WalletInfo>? WalletInfos { get; set; }
 
     }
+
+
 }

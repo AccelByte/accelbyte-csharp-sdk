@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeUserProfile(op);
         }
-
     }
 }

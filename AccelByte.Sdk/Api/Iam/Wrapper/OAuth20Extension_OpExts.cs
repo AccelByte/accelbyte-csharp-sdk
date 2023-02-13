@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UserAuthenticationV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this AuthenticationWithPlatformLinkV3.AuthenticationWithPlatformLinkV3Builder builder,
             string clientId,
@@ -45,7 +44,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticationWithPlatformLinkV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder builder,
             string linkingToken
@@ -57,7 +55,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV3(op);
         }
-
         public static Iam.Model.OauthmodelOneTimeLinkingCodeResponse? Execute(
             this RequestOneTimeLinkingCodeV3.RequestOneTimeLinkingCodeV3Builder builder,
             string platformId
@@ -69,7 +66,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestOneTimeLinkingCodeV3(op);
         }
-
         public static Iam.Model.OauthmodelOneTimeLinkingCodeValidationResponse? Execute(
             this ValidateOneTimeLinkingCodeV3.ValidateOneTimeLinkingCodeV3Builder builder,
             string oneTimeLinkCode
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).ValidateOneTimeLinkingCodeV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this RequestTokenByOneTimeLinkCodeResponseV3.RequestTokenByOneTimeLinkCodeResponseV3Builder builder,
             string clientId,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenByOneTimeLinkCodeResponseV3(op);
         }
-
         public static Iam.Model.OauthmodelCountryLocationResponse? Execute(
             this GetCountryLocationV3.GetCountryLocationV3Builder builder
         )
@@ -105,7 +99,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GetCountryLocationV3(op);
         }
-
         public static void Execute(
             this Logout.LogoutBuilder builder
         )
@@ -115,7 +108,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).Logout(op);
         }
-
         public static Iam.Model.OauthmodelGameTokenCodeResponse? Execute(
             this RequestGameTokenCodeResponseV3.RequestGameTokenCodeResponseV3Builder builder,
             string clientId,
@@ -129,7 +121,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenCodeResponseV3(op);
         }
-
         public static string Execute(
             this PlatformAuthenticationV3.PlatformAuthenticationV3Builder builder,
             string platformId,
@@ -143,7 +134,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformAuthenticationV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this RequestGameTokenResponseV3.RequestGameTokenResponseV3Builder builder,
             string code
@@ -155,6 +145,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenResponseV3(op);
         }
-
     }
 }

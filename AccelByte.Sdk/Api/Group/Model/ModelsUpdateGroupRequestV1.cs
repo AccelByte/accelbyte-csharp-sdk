@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? GroupType { get; set; }
 
     }
+
+
 }

@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? PartyID { get; set; }
 
     }
+
+
 }

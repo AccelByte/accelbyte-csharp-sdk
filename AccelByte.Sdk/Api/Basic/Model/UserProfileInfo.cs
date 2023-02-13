@@ -71,6 +71,69 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
+    public class UserProfileInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("avatarLargeUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarLargeUrl { get; set; }
+
+        [JsonPropertyName("avatarSmallUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarSmallUrl { get; set; }
+
+        [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarUrl { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonDateTimeConverter("yyyy-MM-dd")]
+        public DateTime? DateOfBirth { get; set; }
+
+        [JsonPropertyName("firstName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? FirstName { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("lastName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LastName { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("publicId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PublicId { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public UserProfileInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("timeZone")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TimeZone { get; set; }
+
+        [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserId { get; set; }
+
+        [JsonPropertyName("zipCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ZipCode { get; set; }
+
+    }
+
+
     public class UserProfileInfoStatus : StringEnum<UserProfileInfoStatus>
     {
         public static readonly UserProfileInfoStatus ACTIVE

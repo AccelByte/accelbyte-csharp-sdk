@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).QueryChanges(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this PublishAll.PublishAllBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishAll(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this PublishSelected.PublishSelectedBuilder builder,
             string namespace_,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishSelected(op);
         }
-
         public static void Execute(
             this SelectAllRecords.SelectAllRecordsBuilder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecords(op);
         }
-
         public static Platform.Model.CatalogChangeStatistics? Execute(
             this GetStatistic.GetStatisticBuilder builder,
             string namespace_,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).GetStatistic(op);
         }
-
         public static void Execute(
             this UnselectAllRecords.UnselectAllRecordsBuilder builder,
             string namespace_,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectAllRecords(op);
         }
-
         public static void Execute(
             this SelectRecord.SelectRecordBuilder builder,
             string changeId,
@@ -111,7 +105,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectRecord(op);
         }
-
         public static void Execute(
             this UnselectRecord.UnselectRecordBuilder builder,
             string changeId,
@@ -127,6 +120,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectRecord(op);
         }
-
     }
 }

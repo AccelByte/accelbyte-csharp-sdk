@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Invoice)builder.WrapperObject!).DownloadInvoiceDetails(op);
         }
-
         public static Platform.Model.InvoiceSummary? Execute(
             this GenerateInvoiceSummary.GenerateInvoiceSummaryBuilder builder,
             string namespace_,
@@ -43,6 +42,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Invoice)builder.WrapperObject!).GenerateInvoiceSummary(op);
         }
-
     }
 }

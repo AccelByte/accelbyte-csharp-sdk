@@ -10,4 +10,6 @@ namespace AccelByte.Sdk.Api.Group.Model
     public class ModelsGroupRuleResponseV1GroupCustomRule : AccelByte.Sdk.Core.Model
     {
     }
+
+
 }

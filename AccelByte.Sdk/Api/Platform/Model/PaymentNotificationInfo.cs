@@ -50,6 +50,48 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class PaymentNotificationInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("externalId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ExternalId { get; set; }
+
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("notification")]
+        public T1? Notification { get; set; }
+
+        [JsonPropertyName("notificationSource")]
+        [JsonStringEnum]
+        public PaymentNotificationInfoNotificationSource? NotificationSource { get; set; }
+
+        [JsonPropertyName("notificationType")]
+        public string? NotificationType { get; set; }
+
+        [JsonPropertyName("paymentOrderNo")]
+        public string? PaymentOrderNo { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonStringEnum]
+        public PaymentNotificationInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("statusReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StatusReason { get; set; }
+
+        [JsonPropertyName("updatedAt")]
+        public DateTime? UpdatedAt { get; set; }
+
+    }
+
+
     public class PaymentNotificationInfoNotificationSource : StringEnum<PaymentNotificationInfoNotificationSource>
     {
         public static readonly PaymentNotificationInfoNotificationSource ADYEN

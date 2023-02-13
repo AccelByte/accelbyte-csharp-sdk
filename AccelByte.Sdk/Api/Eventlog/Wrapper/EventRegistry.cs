@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsEventRegistry? GetRegisteredEventsHandler(GetRegisteredEventsHandler input) {
+        public Model.ModelsEventRegistry? GetRegisteredEventsHandler(GetRegisteredEventsHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -75,7 +76,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsEventRegistry? GetRegisteredEventIDHandler(GetRegisteredEventIDHandler input) {
+        public Model.ModelsEventRegistry? GetRegisteredEventIDHandler(GetRegisteredEventIDHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -108,7 +110,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsEventRegistry? GetRegisteredEventsByEventTypeHandler(GetRegisteredEventsByEventTypeHandler input) {
+        public Model.ModelsEventRegistry? GetRegisteredEventsByEventTypeHandler(GetRegisteredEventsByEventTypeHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

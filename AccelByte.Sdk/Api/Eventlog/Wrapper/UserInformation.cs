@@ -38,7 +38,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsEventResponse? GetUserActivitiesHandler(GetUserActivitiesHandler input) {
+        public Model.ModelsEventResponse? GetUserActivitiesHandler(GetUserActivitiesHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -60,7 +61,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsUserLastActivity? LastUserActivityTimeHandler(LastUserActivityTimeHandler input) {
+        public Model.ModelsUserLastActivity? LastUserActivityTimeHandler(LastUserActivityTimeHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

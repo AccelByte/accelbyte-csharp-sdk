@@ -61,6 +61,8 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     }
 
+
+
     public class StatInfoSetBy : StringEnum<StatInfoSetBy>
     {
         public static readonly StatInfoSetBy CLIENT

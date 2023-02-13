@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? UseCount { get; set; }
 
     }
+
+
 }

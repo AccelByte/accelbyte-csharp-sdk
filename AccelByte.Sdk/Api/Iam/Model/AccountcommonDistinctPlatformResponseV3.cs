@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonDistinctLinkedPlatformV3>? Platforms { get; set; }
 
     }
+
+
 }

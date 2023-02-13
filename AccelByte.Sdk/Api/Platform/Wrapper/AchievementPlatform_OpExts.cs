@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UnlockSteamUserAchievement(op);
         }
-
         public static Platform.Model.ADTOObjectForQueryingXboxUserAchievements? Execute(
             this GetXblUserAchievements.GetXblUserAchievementsBuilder builder,
             string namespace_,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).GetXblUserAchievements(op);
         }
-
         public static void Execute(
             this UpdateXblUserAchievement.UpdateXblUserAchievementBuilder builder,
             string namespace_,
@@ -55,6 +53,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UpdateXblUserAchievement(op);
         }
-
     }
 }

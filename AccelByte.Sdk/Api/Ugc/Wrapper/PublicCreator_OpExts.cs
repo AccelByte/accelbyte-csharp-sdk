@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicSearchCreator(op);
         }
-
         public static Ugc.Model.ModelsCreatorResponse? Execute(
             this PublicGetCreator.PublicGetCreatorBuilder builder,
             string namespace_,
@@ -37,6 +36,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicGetCreator(op);
         }
-
     }
 }

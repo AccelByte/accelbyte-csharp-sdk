@@ -30,4 +30,29 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public long? LastLoginTime { get; set; }
 
     }
+
+    public class ModelDeviceResponseV4<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("ban")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelDeviceBanResponseV4? Ban { get; set; }
+
+        [JsonPropertyName("deviceId")]
+        public string? DeviceId { get; set; }
+
+        [JsonPropertyName("deviceType")]
+        public string? DeviceType { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("ip")]
+        public string? Ip { get; set; }
+
+        [JsonPropertyName("lastLoginTime")]
+        public long? LastLoginTime { get; set; }
+
+    }
+
 }

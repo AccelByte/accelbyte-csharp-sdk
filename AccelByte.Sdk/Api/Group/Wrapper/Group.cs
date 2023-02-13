@@ -109,7 +109,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         }
         #endregion
         
-        public Model.ModelsGetGroupsListResponseV1? GetGroupListAdminV1(GetGroupListAdminV1 input) {
+        public Model.ModelsGetGroupsListResponseV1? GetGroupListAdminV1(GetGroupListAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,10 +118,21 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? GetSingleGroupAdminV1(GetSingleGroupAdminV1 input) {
+        public Model.ModelsGroupResponseV1? GetSingleGroupAdminV1(GetSingleGroupAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGroupResponseV1<T1>? GetSingleGroupAdminV1<T1>(GetSingleGroupAdminV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -133,7 +145,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetGroupsListResponseV1? GetGroupListPublicV1(GetGroupListPublicV1 input) {
+        public Model.ModelsGetGroupsListResponseV1? GetGroupListPublicV1(GetGroupListPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -141,7 +154,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? CreateNewGroupPublicV1(CreateNewGroupPublicV1 input) {
+        public Model.ModelsGroupResponseV1? CreateNewGroupPublicV1(CreateNewGroupPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -149,7 +163,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? GetSingleGroupPublicV1(GetSingleGroupPublicV1 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? CreateNewGroupPublicV1<T1>(CreateNewGroupPublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? GetSingleGroupPublicV1(GetSingleGroupPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -157,10 +182,31 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateSingleGroupV1(UpdateSingleGroupV1 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? GetSingleGroupPublicV1<T1>(GetSingleGroupPublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateSingleGroupV1(UpdateSingleGroupV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateSingleGroupV1<T1>(UpdateSingleGroupV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -173,7 +219,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdatePatchSingleGroupPublicV1(UpdatePatchSingleGroupPublicV1 input) {
+        public Model.ModelsGroupResponseV1? UpdatePatchSingleGroupPublicV1(UpdatePatchSingleGroupPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -181,7 +228,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupCustomAttributesPublicV1(UpdateGroupCustomAttributesPublicV1 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdatePatchSingleGroupPublicV1<T1>(UpdatePatchSingleGroupPublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomAttributesPublicV1(UpdateGroupCustomAttributesPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -189,7 +247,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupCustomRulePublicV1(UpdateGroupCustomRulePublicV1 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupCustomAttributesPublicV1<T1>(UpdateGroupCustomAttributesPublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomRulePublicV1(UpdateGroupCustomRulePublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -197,10 +266,31 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupPredefinedRulePublicV1(UpdateGroupPredefinedRulePublicV1 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupCustomRulePublicV1<T1>(UpdateGroupCustomRulePublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupPredefinedRulePublicV1(UpdateGroupPredefinedRulePublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupPredefinedRulePublicV1<T1>(UpdateGroupPredefinedRulePublicV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -213,7 +303,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? CreateNewGroupPublicV2(CreateNewGroupPublicV2 input) {
+        public Model.ModelsGroupResponseV1? CreateNewGroupPublicV2(CreateNewGroupPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -221,7 +312,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetGroupsResponseV1? GetListGroupByIDsV2(GetListGroupByIDsV2 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? CreateNewGroupPublicV2<T1>(CreateNewGroupPublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetGroupsResponseV1? GetListGroupByIDsV2(GetListGroupByIDsV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -229,10 +331,21 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdatePutSingleGroupPublicV2(UpdatePutSingleGroupPublicV2 input) {
+        public Model.ModelsGroupResponseV1? UpdatePutSingleGroupPublicV2(UpdatePutSingleGroupPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdatePutSingleGroupPublicV2<T1>(UpdatePutSingleGroupPublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -245,7 +358,8 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdatePatchSingleGroupPublicV2(UpdatePatchSingleGroupPublicV2 input) {
+        public Model.ModelsGroupResponseV1? UpdatePatchSingleGroupPublicV2(UpdatePatchSingleGroupPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -253,7 +367,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupCustomAttributesPublicV2(UpdateGroupCustomAttributesPublicV2 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdatePatchSingleGroupPublicV2<T1>(UpdatePatchSingleGroupPublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomAttributesPublicV2(UpdateGroupCustomAttributesPublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -261,7 +386,18 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupCustomRulePublicV2(UpdateGroupCustomRulePublicV2 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupCustomAttributesPublicV2<T1>(UpdateGroupCustomAttributesPublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupCustomRulePublicV2(UpdateGroupCustomRulePublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -269,10 +405,31 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGroupResponseV1? UpdateGroupPredefinedRulePublicV2(UpdateGroupPredefinedRulePublicV2 input) {
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupCustomRulePublicV2<T1>(UpdateGroupCustomRulePublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGroupResponseV1? UpdateGroupPredefinedRulePublicV2(UpdateGroupPredefinedRulePublicV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGroupResponseV1<T1>? UpdateGroupPredefinedRulePublicV2<T1>(UpdateGroupPredefinedRulePublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Name { get; set; }
 
     }
+
+
 }

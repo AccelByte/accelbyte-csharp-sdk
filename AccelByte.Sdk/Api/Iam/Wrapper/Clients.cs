@@ -119,7 +119,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ClientmodelClientResponse>? GetClients(GetClients input) {
+        public List<Model.ClientmodelClientResponse>? GetClients(GetClients input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -130,7 +131,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ClientmodelClientCreationResponse? CreateClient(CreateClient input) {
+        public Model.ClientmodelClientCreationResponse? CreateClient(CreateClient input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -141,7 +143,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ClientmodelClientResponse? GetClient(GetClient input) {
+        public Model.ClientmodelClientResponse? GetClient(GetClient input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -152,7 +155,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ClientmodelClientResponse? UpdateClient(UpdateClient input) {
+        public Model.ClientmodelClientResponse? UpdateClient(UpdateClient input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -218,7 +222,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ClientmodelClientResponse>? GetClientsbyNamespace(GetClientsbyNamespace input) {
+        public List<Model.ClientmodelClientResponse>? GetClientsbyNamespace(GetClientsbyNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -229,7 +234,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ClientmodelClientCreationResponse? CreateClientByNamespace(CreateClientByNamespace input) {
+        public Model.ClientmodelClientCreationResponse? CreateClientByNamespace(CreateClientByNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -249,7 +255,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ClientmodelClientsV3Response? AdminGetClientsByNamespaceV3(AdminGetClientsByNamespaceV3 input) {
+        public Model.ClientmodelClientsV3Response? AdminGetClientsByNamespaceV3(AdminGetClientsByNamespaceV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -257,7 +264,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ClientmodelClientV3Response? AdminCreateClientV3(AdminCreateClientV3 input) {
+        public Model.ClientmodelClientV3Response? AdminCreateClientV3(AdminCreateClientV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -265,7 +273,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ClientmodelClientV3Response? AdminGetClientsbyNamespacebyIDV3(AdminGetClientsbyNamespacebyIDV3 input) {
+        public Model.ClientmodelClientV3Response? AdminGetClientsbyNamespacebyIDV3(AdminGetClientsbyNamespacebyIDV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -281,7 +290,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ClientmodelClientV3Response? AdminUpdateClientV3(AdminUpdateClientV3 input) {
+        public Model.ClientmodelClientV3Response? AdminUpdateClientV3(AdminUpdateClientV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

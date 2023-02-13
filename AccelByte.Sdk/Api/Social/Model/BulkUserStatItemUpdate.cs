@@ -34,6 +34,32 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     }
 
+    public class BulkUserStatItemUpdate<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("additionalKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AdditionalKey { get; set; }
+
+        [JsonPropertyName("statCode")]
+        public string? StatCode { get; set; }
+
+        [JsonPropertyName("updateStrategy")]
+        [JsonStringEnum]
+        public BulkUserStatItemUpdateUpdateStrategy? UpdateStrategy { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+        [JsonPropertyName("value")]
+        public double? Value { get; set; }
+
+    }
+
+
     public class BulkUserStatItemUpdateUpdateStrategy : StringEnum<BulkUserStatItemUpdateUpdateStrategy>
     {
         public static readonly BulkUserStatItemUpdateUpdateStrategy INCREMENT

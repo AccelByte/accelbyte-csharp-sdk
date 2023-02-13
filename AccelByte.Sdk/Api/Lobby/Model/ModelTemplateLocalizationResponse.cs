@@ -25,4 +25,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public List<ModelTemplateLocalization>? TemplateLocalization { get; set; }
 
     }
+
+
 }

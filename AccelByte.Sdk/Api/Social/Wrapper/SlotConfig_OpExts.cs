@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetNamespaceSlotConfig(op);
         }
-
         public static Social.Model.NamespaceSlotConfigInfo? Execute(
             this UpdateNamespaceSlotConfig.UpdateNamespaceSlotConfigBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateNamespaceSlotConfig(op);
         }
-
         public static void Execute(
             this DeleteNamespaceSlotConfig.DeleteNamespaceSlotConfigBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteNamespaceSlotConfig(op);
         }
-
         public static Social.Model.UserSlotConfigInfo? Execute(
             this GetUserSlotConfig.GetUserSlotConfigBuilder builder,
             string namespace_,
@@ -61,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetUserSlotConfig(op);
         }
-
         public static Social.Model.UserSlotConfigInfo? Execute(
             this UpdateUserSlotConfig.UpdateUserSlotConfigBuilder builder,
             string namespace_,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateUserSlotConfig(op);
         }
-
         public static void Execute(
             this DeleteUserSlotConfig.DeleteUserSlotConfigBuilder builder,
             string namespace_,
@@ -89,6 +84,5 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteUserSlotConfig(op);
         }
-
     }
 }

@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
         
-        public Model.ApiListMatchPoolsResponse? MatchPoolList(MatchPoolList input) {
+        public Model.ApiListMatchPoolsResponse? MatchPoolList(MatchPoolList input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiMatchPool? MatchPoolDetails(MatchPoolDetails input) {
+        public Model.ApiMatchPool? MatchPoolDetails(MatchPoolDetails input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiMatchPool? UpdateMatchPool(UpdateMatchPool input) {
+        public Model.ApiMatchPool? UpdateMatchPool(UpdateMatchPool input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

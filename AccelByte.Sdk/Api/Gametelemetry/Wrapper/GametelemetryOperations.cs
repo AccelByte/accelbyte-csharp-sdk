@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet input) {
+        public Dictionary<string, object>? ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

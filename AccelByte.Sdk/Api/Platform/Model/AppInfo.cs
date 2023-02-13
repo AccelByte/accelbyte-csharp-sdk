@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("platformRequirements")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public Dictionary<string, object>? PlatformRequirements { get; set; }
+        public Dictionary<string, List<Requirement>>? PlatformRequirements { get; set; }
 
         [JsonPropertyName("platforms")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -82,6 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? WebsiteUrl { get; set; }
 
     }
+
+
 
     public class AppInfoGenres : StringEnum<AppInfoGenres>
     {

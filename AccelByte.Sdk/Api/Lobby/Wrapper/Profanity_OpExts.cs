@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDebugProfanityFilters(op);
         }
-
         public static Lobby.Model.ModelsAdminGetProfanityListFiltersV1Response? Execute(
             this AdminGetProfanityListFiltersV1.AdminGetProfanityListFiltersV1Builder builder,
             string list,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListFiltersV1(op);
         }
-
         public static void Execute(
             this AdminAddProfanityFilterIntoList.AdminAddProfanityFilterIntoListBuilder builder,
             ModelsAdminAddProfanityFilterIntoListRequest body,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilterIntoList(op);
         }
-
         public static void Execute(
             this AdminAddProfanityFilters.AdminAddProfanityFiltersBuilder builder,
             ModelsAdminAddProfanityFiltersRequest body,
@@ -71,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilters(op);
         }
-
         public static void Execute(
             this AdminImportProfanityFiltersFromFile.AdminImportProfanityFiltersFromFileBuilder builder,
             List<long> body,
@@ -87,7 +83,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminImportProfanityFiltersFromFile(op);
         }
-
         public static List<Lobby.Model.ModelsProfanityFilter>? Execute(
             this AdminDeleteProfanityFilter.AdminDeleteProfanityFilterBuilder builder,
             ModelsAdminDeleteProfanityFilterRequest body,
@@ -103,7 +98,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityFilter(op);
         }
-
         public static List<Lobby.Model.ModelsAdminGetProfanityListsListResponse>? Execute(
             this AdminGetProfanityLists.AdminGetProfanityListsBuilder builder,
             string namespace_
@@ -115,7 +109,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityLists(op);
         }
-
         public static void Execute(
             this AdminCreateProfanityList.AdminCreateProfanityListBuilder builder,
             ModelsAdminCreateProfanityListRequest body,
@@ -129,7 +122,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminCreateProfanityList(op);
         }
-
         public static void Execute(
             this AdminUpdateProfanityList.AdminUpdateProfanityListBuilder builder,
             ModelsAdminUpdateProfanityList body,
@@ -145,7 +137,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminUpdateProfanityList(op);
         }
-
         public static void Execute(
             this AdminDeleteProfanityList.AdminDeleteProfanityListBuilder builder,
             string list,
@@ -159,7 +150,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityList(op);
         }
-
         public static Lobby.Model.ModelsProfanityRule? Execute(
             this AdminGetProfanityRule.AdminGetProfanityRuleBuilder builder,
             string namespace_
@@ -171,7 +161,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityRule(op);
         }
-
         public static void Execute(
             this AdminSetProfanityRuleForNamespace.AdminSetProfanityRuleForNamespaceBuilder builder,
             ModelsAdminSetProfanityRuleForNamespaceRequest body,
@@ -185,7 +174,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminSetProfanityRuleForNamespace(op);
         }
-
         public static Lobby.Model.ModelsAdminVerifyMessageProfanityResponse? Execute(
             this AdminVerifyMessageProfanityResponse.AdminVerifyMessageProfanityResponseBuilder builder,
             ModelsAdminVerifyMessageProfanityRequest body,
@@ -199,6 +187,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminVerifyMessageProfanityResponse(op);
         }
-
     }
 }

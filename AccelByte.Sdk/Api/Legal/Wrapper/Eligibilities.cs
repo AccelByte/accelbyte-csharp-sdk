@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
         
-        public List<Model.RetrieveUserEligibilitiesResponse>? RetrieveEligibilitiesPublic(RetrieveEligibilitiesPublic input) {
+        public List<Model.RetrieveUserEligibilitiesResponse>? RetrieveEligibilitiesPublic(RetrieveEligibilitiesPublic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -37,7 +38,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RetrieveUserEligibilitiesIndirectResponse? RetrieveEligibilitiesPublicIndirect(RetrieveEligibilitiesPublicIndirect input) {
+        public Model.RetrieveUserEligibilitiesIndirectResponse? RetrieveEligibilitiesPublicIndirect(RetrieveEligibilitiesPublicIndirect input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

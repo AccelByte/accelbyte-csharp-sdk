@@ -42,4 +42,41 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? UserId { get; set; }
 
     }
+
+    public class UserProfilePublicInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("avatarLargeUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarLargeUrl { get; set; }
+
+        [JsonPropertyName("avatarSmallUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarSmallUrl { get; set; }
+
+        [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarUrl { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("publicId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PublicId { get; set; }
+
+        [JsonPropertyName("timeZone")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TimeZone { get; set; }
+
+        [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserId { get; set; }
+
+    }
+
 }

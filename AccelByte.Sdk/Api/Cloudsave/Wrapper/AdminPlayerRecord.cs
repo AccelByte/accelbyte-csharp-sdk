@@ -70,7 +70,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
         
-        public Model.ModelsBulkGetPlayerRecordSizeResponse? BulkGetPlayerRecordSizeHandlerV1(BulkGetPlayerRecordSizeHandlerV1 input) {
+        public Model.ModelsBulkGetPlayerRecordSizeResponse? BulkGetPlayerRecordSizeHandlerV1(BulkGetPlayerRecordSizeHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -80,7 +81,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsListPlayerRecordKeysResponse? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input) {
+        public Model.ModelsListPlayerRecordKeysResponse? ListPlayerRecordHandlerV1(ListPlayerRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +91,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelsListPlayerRecordKeysResponse? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input) {
+        public Model.ModelsListPlayerRecordKeysResponse? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +100,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminGetPlayerRecordHandlerV1(AdminGetPlayerRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? AdminGetPlayerRecordHandlerV1(AdminGetPlayerRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +109,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminPutPlayerRecordHandlerV1(AdminPutPlayerRecordHandlerV1 input) {
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminGetPlayerRecordHandlerV1<T1>(AdminGetPlayerRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlayerRecordResponse? AdminPutPlayerRecordHandlerV1(AdminPutPlayerRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,10 +128,31 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminPostPlayerRecordHandlerV1(AdminPostPlayerRecordHandlerV1 input) {
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminPutPlayerRecordHandlerV1<T1>(AdminPutPlayerRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlayerRecordResponse? AdminPostPlayerRecordHandlerV1(AdminPostPlayerRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminPostPlayerRecordHandlerV1<T1>(AdminPostPlayerRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -129,7 +165,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminGetPlayerPublicRecordHandlerV1(AdminGetPlayerPublicRecordHandlerV1 input) {
+        public Model.ModelsPlayerRecordResponse? AdminGetPlayerPublicRecordHandlerV1(AdminGetPlayerPublicRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -137,7 +174,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminPutPlayerPublicRecordHandlerV1(AdminPutPlayerPublicRecordHandlerV1 input) {
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminGetPlayerPublicRecordHandlerV1<T1>(AdminGetPlayerPublicRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlayerRecordResponse? AdminPutPlayerPublicRecordHandlerV1(AdminPutPlayerPublicRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,10 +193,31 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordResponse? AdminPostPlayerPublicRecordHandlerV1(AdminPostPlayerPublicRecordHandlerV1 input) {
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminPutPlayerPublicRecordHandlerV1<T1>(AdminPutPlayerPublicRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlayerRecordResponse? AdminPostPlayerPublicRecordHandlerV1(AdminPostPlayerPublicRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsPlayerRecordResponse<T1>? AdminPostPlayerPublicRecordHandlerV1<T1>(AdminPostPlayerPublicRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -161,7 +230,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPlayerRecordSizeResponse? AdminGetPlayerRecordSizeHandlerV1(AdminGetPlayerRecordSizeHandlerV1 input) {
+        public Model.ModelsPlayerRecordSizeResponse? AdminGetPlayerRecordSizeHandlerV1(AdminGetPlayerRecordSizeHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

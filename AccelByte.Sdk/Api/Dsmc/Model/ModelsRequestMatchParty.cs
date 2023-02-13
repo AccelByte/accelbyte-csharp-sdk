@@ -19,4 +19,18 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public List<ModelsRequestMatchMember>? PartyMembers { get; set; }
 
     }
+
+    public class ModelsRequestMatchParty<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("party_attributes")]
+        public T1? PartyAttributes { get; set; }
+
+        [JsonPropertyName("party_id")]
+        public string? PartyId { get; set; }
+
+        [JsonPropertyName("party_members")]
+        public List<ModelsRequestMatchMember>? PartyMembers { get; set; }
+
+    }
+
 }

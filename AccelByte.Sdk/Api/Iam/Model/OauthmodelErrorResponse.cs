@@ -57,4 +57,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public OauthmodelUserBan? UserBan { get; set; }
 
     }
+
+
 }

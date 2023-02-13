@@ -77,4 +77,76 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ModelsCreateContentResponse<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("channelId")]
+        public string? ChannelId { get; set; }
+
+        [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ContentType { get; set; }
+
+        [JsonPropertyName("createdTime")]
+        public string? CreatedTime { get; set; }
+
+        [JsonPropertyName("creatorName")]
+        public string? CreatorName { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("fileExtension")]
+        public string? FileExtension { get; set; }
+
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("isHidden")]
+        public bool? IsHidden { get; set; }
+
+        [JsonPropertyName("isOfficial")]
+        public bool? IsOfficial { get; set; }
+
+        [JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("parentNamespace")]
+        public string? ParentNamespace { get; set; }
+
+        [JsonPropertyName("payloadURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsPayloadURL>? PayloadURL { get; set; }
+
+        [JsonPropertyName("preview")]
+        public string? Preview { get; set; }
+
+        [JsonPropertyName("previewURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsPreviewURL>? PreviewURL { get; set; }
+
+        [JsonPropertyName("shareCode")]
+        public string? ShareCode { get; set; }
+
+        [JsonPropertyName("subType")]
+        public string? SubType { get; set; }
+
+        [JsonPropertyName("tags")]
+        public List<string>? Tags { get; set; }
+
+        [JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        [JsonPropertyName("updatedTime")]
+        public string? UpdatedTime { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+    }
+
 }

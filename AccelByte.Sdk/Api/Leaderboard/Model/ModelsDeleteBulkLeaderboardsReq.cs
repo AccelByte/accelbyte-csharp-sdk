@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public List<string>? LeaderboardCodes { get; set; }
 
     }
+
+
 }

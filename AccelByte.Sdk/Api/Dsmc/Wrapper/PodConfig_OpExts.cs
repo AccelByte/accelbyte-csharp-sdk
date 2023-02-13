@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetLowestInstanceSpec(op);
         }
-
         public static Dsmc.Model.ModelsListPodConfigResponse? Execute(
             this GetAllPodConfig.GetAllPodConfigBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetAllPodConfig(op);
         }
-
         public static Dsmc.Model.ModelsPodConfigRecord? Execute(
             this GetPodConfig.GetPodConfigBuilder builder,
             string name,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetPodConfig(op);
         }
-
         public static Dsmc.Model.ModelsPodConfigRecord? Execute(
             this CreatePodConfig.CreatePodConfigBuilder builder,
             ModelsCreatePodConfigRequest body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).CreatePodConfig(op);
         }
-
         public static void Execute(
             this DeletePodConfig.DeletePodConfigBuilder builder,
             string name,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).DeletePodConfig(op);
         }
-
         public static Dsmc.Model.ModelsPodConfigRecord? Execute(
             this UpdatePodConfig.UpdatePodConfigBuilder builder,
             ModelsUpdatePodConfigRequest body,
@@ -97,6 +92,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).UpdatePodConfig(op);
         }
-
     }
 }

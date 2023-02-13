@@ -81,7 +81,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
         
-        public Model.ApimodelsPartyQueryResponse? AdminQueryParties(AdminQueryParties input) {
+        public Model.ApimodelsPartyQueryResponse? AdminQueryParties(AdminQueryParties input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +90,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicPartyJoinCode(PublicPartyJoinCode input) {
+        public Model.ApimodelsPartySessionResponse? PublicPartyJoinCode(PublicPartyJoinCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +99,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicGetParty(PublicGetParty input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicPartyJoinCode<T1>(PublicPartyJoinCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicGetParty(PublicGetParty input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +118,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicUpdateParty(PublicUpdateParty input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicGetParty<T1>(PublicGetParty input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicUpdateParty(PublicUpdateParty input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +137,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicPatchUpdateParty(PublicPatchUpdateParty input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicUpdateParty<T1>(PublicUpdateParty input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicPatchUpdateParty(PublicPatchUpdateParty input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +156,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicGeneratePartyCode(PublicGeneratePartyCode input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicPatchUpdateParty<T1>(PublicPatchUpdateParty input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicGeneratePartyCode(PublicGeneratePartyCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,10 +175,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicRevokePartyCode(PublicRevokePartyCode input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicGeneratePartyCode<T1>(PublicGeneratePartyCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicRevokePartyCode(PublicRevokePartyCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicRevokePartyCode<T1>(PublicRevokePartyCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -145,7 +212,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicPromotePartyLeader(PublicPromotePartyLeader input) {
+        public Model.ApimodelsPartySessionResponse? PublicPromotePartyLeader(PublicPromotePartyLeader input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,10 +221,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicPartyJoin(PublicPartyJoin input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicPromotePartyLeader<T1>(PublicPromotePartyLeader input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPartySessionResponse? PublicPartyJoin(PublicPartyJoin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicPartyJoin<T1>(PublicPartyJoin input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -177,7 +266,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsKickResponse? PublicPartyKick(PublicPartyKick input) {
+        public Model.ApimodelsKickResponse? PublicPartyKick(PublicPartyKick input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -185,7 +275,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicCreateParty(PublicCreateParty input) {
+        public Model.ApimodelsPartySessionResponse? PublicCreateParty(PublicCreateParty input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -193,10 +284,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ApimodelsPartySessionResponse>? PublicQueryMyParties(PublicQueryMyParties input) {
+        
+        public Model.ApimodelsPartySessionResponse<T1>? PublicCreateParty<T1>(PublicCreateParty input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ApimodelsPartySessionResponse>? PublicQueryMyParties(PublicQueryMyParties input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public List<Model.ApimodelsPartySessionResponse<T1>>? PublicQueryMyParties<T1>(PublicQueryMyParties input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

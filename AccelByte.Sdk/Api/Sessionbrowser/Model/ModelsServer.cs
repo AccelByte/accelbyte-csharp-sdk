@@ -76,4 +76,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
     }
+
+
 }

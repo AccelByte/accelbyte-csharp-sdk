@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Chat)builder.WrapperObject!).PersonalChatHistory(op);
         }
-
         public static List<Lobby.Model.ModelChatMessageResponse>? Execute(
             this AdminChatHistory.AdminChatHistoryBuilder builder,
             string friendId,
@@ -43,7 +42,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Chat)builder.WrapperObject!).AdminChatHistory(op);
         }
-
         public static List<Lobby.Model.ModelChatMessageResponse>? Execute(
             this GetPersonalChatHistoryV1Public.GetPersonalChatHistoryV1PublicBuilder builder,
             string friendId,
@@ -57,6 +55,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Chat)builder.WrapperObject!).GetPersonalChatHistoryV1Public(op);
         }
-
     }
 }

@@ -41,4 +41,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? SessionId { get; set; }
 
     }
+
+
 }

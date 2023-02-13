@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.Admin)builder.WrapperObject!).GetServerLogs(op);
         }
-
     }
 }

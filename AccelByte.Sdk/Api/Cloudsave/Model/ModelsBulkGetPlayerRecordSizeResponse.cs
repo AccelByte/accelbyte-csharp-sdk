@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         public List<ModelsPlayerRecordSizeResponse>? Data { get; set; }
 
     }
+
+
 }

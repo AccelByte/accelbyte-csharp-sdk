@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public double? Reference { get; set; }
 
     }
+
+
 }

@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicGetPaymentAccounts(op);
         }
-
         public static void Execute(
             this PublicDeletePaymentAccount.PublicDeletePaymentAccountBuilder builder,
             string id,
@@ -43,6 +42,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicDeletePaymentAccount(op);
         }
-
     }
 }

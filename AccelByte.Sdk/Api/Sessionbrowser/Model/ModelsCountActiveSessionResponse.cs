@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public long? Total { get; set; }
 
     }
+
+
 }

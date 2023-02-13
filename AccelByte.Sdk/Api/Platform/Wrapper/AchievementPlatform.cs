@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ADTOObjectForQueryingXboxUserAchievements? GetXblUserAchievements(GetXblUserAchievements input) {
+        public Model.ADTOObjectForQueryingXboxUserAchievements? GetXblUserAchievements(GetXblUserAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

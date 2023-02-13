@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedContentDownloadResponse? GetFollowedContent(GetFollowedContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? GetFollowedContent(GetFollowedContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedCreatorOverviewResponse? GetFollowedUsers(GetFollowedUsers input) {
+        public Model.ModelsPaginatedCreatorOverviewResponse? GetFollowedUsers(GetFollowedUsers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +59,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUserFollowResponse? UpdateUserFollowStatus(UpdateUserFollowStatus input) {
+        public Model.ModelsUserFollowResponse? UpdateUserFollowStatus(UpdateUserFollowStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +68,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedCreatorOverviewResponse? GetPublicFollowers(GetPublicFollowers input) {
+        public Model.ModelsPaginatedCreatorOverviewResponse? GetPublicFollowers(GetPublicFollowers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +77,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedCreatorOverviewResponse? GetPublicFollowing(GetPublicFollowing input) {
+        public Model.ModelsPaginatedCreatorOverviewResponse? GetPublicFollowing(GetPublicFollowing input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

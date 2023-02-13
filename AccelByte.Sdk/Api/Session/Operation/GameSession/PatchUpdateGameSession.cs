@@ -124,6 +124,25 @@ namespace AccelByte.Sdk.Api.Session.Operation
             
             throw new HttpResponseException(code, payloadString);
         }
+
+        public Model.ApimodelsGameSessionResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        {            
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }            
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ApimodelsGameSessionResponse<T1>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ApimodelsGameSessionResponse<T1>>(payload);
+            }
+            
+            var payloadString = Helper.ConvertInputStreamToString(payload);            
+            throw new HttpResponseException(code, payloadString);
+        }
     }
 
 }

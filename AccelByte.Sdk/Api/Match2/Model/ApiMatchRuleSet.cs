@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? Name { get; set; }
 
     }
+
+
 }

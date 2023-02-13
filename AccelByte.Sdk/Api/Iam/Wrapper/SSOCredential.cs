@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
         
-        public List<Model.ModelSSOPlatformCredentialResponse>? RetrieveAllSSOLoginPlatformCredentialV3(RetrieveAllSSOLoginPlatformCredentialV3 input) {
+        public List<Model.ModelSSOPlatformCredentialResponse>? RetrieveAllSSOLoginPlatformCredentialV3(RetrieveAllSSOLoginPlatformCredentialV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelSSOPlatformCredentialResponse? RetrieveSSOLoginPlatformCredential(RetrieveSSOLoginPlatformCredential input) {
+        public Model.ModelSSOPlatformCredentialResponse? RetrieveSSOLoginPlatformCredential(RetrieveSSOLoginPlatformCredential input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +59,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelSSOPlatformCredentialResponse? AddSSOLoginPlatformCredential(AddSSOLoginPlatformCredential input) {
+        public Model.ModelSSOPlatformCredentialResponse? AddSSOLoginPlatformCredential(AddSSOLoginPlatformCredential input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +76,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelSSOPlatformCredentialResponse? UpdateSSOPlatformCredential(UpdateSSOPlatformCredential input) {
+        public Model.ModelSSOPlatformCredentialResponse? UpdateSSOPlatformCredential(UpdateSSOPlatformCredential input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

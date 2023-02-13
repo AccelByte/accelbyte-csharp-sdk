@@ -201,7 +201,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelNotificationTemplateResponse>? GetAllNotificationTemplatesV1Admin(GetAllNotificationTemplatesV1Admin input) {
+        public List<Model.ModelNotificationTemplateResponse>? GetAllNotificationTemplatesV1Admin(GetAllNotificationTemplatesV1Admin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -225,7 +226,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetAllNotificationTemplateSlugResp? GetTemplateSlugLocalizationsTemplateV1Admin(GetTemplateSlugLocalizationsTemplateV1Admin input) {
+        public Model.ModelGetAllNotificationTemplateSlugResp? GetTemplateSlugLocalizationsTemplateV1Admin(GetTemplateSlugLocalizationsTemplateV1Admin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -241,7 +243,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLocalization? GetSingleTemplateLocalizationV1Admin(GetSingleTemplateLocalizationV1Admin input) {
+        public Model.ModelLocalization? GetSingleTemplateLocalizationV1Admin(GetSingleTemplateLocalizationV1Admin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -273,7 +276,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetAllNotificationTopicsResponse? GetAllNotificationTopicsV1Admin(GetAllNotificationTopicsV1Admin input) {
+        public Model.ModelGetAllNotificationTopicsResponse? GetAllNotificationTopicsV1Admin(GetAllNotificationTopicsV1Admin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -289,7 +293,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelNotificationTopicResponseV1? GetNotificationTopicV1Admin(GetNotificationTopicV1Admin input) {
+        public Model.ModelNotificationTopicResponseV1? GetNotificationTopicV1Admin(GetNotificationTopicV1Admin input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -345,7 +350,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelTemplateResponse>? GetGameTemplate(GetGameTemplate input) {
+        public List<Model.ModelTemplateResponse>? GetGameTemplate(GetGameTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -361,7 +367,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelTemplateLocalizationResponse? GetSlugTemplate(GetSlugTemplate input) {
+        public Model.ModelTemplateLocalizationResponse? GetSlugTemplate(GetSlugTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -377,7 +384,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelTemplateLocalization? GetLocalizationTemplate(GetLocalizationTemplate input) {
+        public Model.ModelTemplateLocalization? GetLocalizationTemplate(GetLocalizationTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -409,7 +417,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelTopicByNamespacesResponse? GetTopicByNamespace(GetTopicByNamespace input) {
+        public Model.ModelTopicByNamespacesResponse? GetTopicByNamespace(GetTopicByNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -425,7 +434,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelNotificationTopicResponse? GetTopicByTopicName(GetTopicByTopicName input) {
+        public Model.ModelNotificationTopicResponse? GetTopicByTopicName(GetTopicByTopicName input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

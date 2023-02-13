@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).DeregisterLocalServer(op);
         }
-
         public static Dsmc.Model.ModelsServer? Execute(
             this RegisterLocalServer.RegisterLocalServerBuilder builder,
             ModelsRegisterLocalServerRequest body,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterLocalServer(op);
         }
-
         public static Dsmc.Model.ModelsServer? Execute(
             this RegisterServer.RegisterServerBuilder builder,
             ModelsRegisterServerRequest body,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterServer(op);
         }
-
         public static void Execute(
             this ShutdownServer.ShutdownServerBuilder builder,
             ModelsShutdownServerRequest body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).ShutdownServer(op);
         }
-
         public static Dsmc.Model.ModelsServerSessionResponse? Execute(
             this GetServerSession.GetServerSessionBuilder builder,
             string namespace_,
@@ -81,6 +77,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSession(op);
         }
-
     }
 }

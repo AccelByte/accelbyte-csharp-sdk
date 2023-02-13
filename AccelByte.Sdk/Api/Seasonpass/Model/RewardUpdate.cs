@@ -38,6 +38,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class RewardUpdateType : StringEnum<RewardUpdateType>
     {
         public static readonly RewardUpdateType CURRENCY

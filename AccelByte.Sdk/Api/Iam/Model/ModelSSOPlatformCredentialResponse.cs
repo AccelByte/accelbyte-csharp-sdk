@@ -40,4 +40,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? TruncatedApiKey { get; set; }
 
     }
+
+
 }

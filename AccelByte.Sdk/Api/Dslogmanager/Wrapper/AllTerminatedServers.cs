@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         #endregion
         
-        public Stream? BatchDownloadServerLogs(BatchDownloadServerLogs input) {
+        public Stream? BatchDownloadServerLogs(BatchDownloadServerLogs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -37,7 +38,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListTerminatedServersResponse? ListAllTerminatedServers(ListAllTerminatedServers input) {
+        public Model.ModelsListTerminatedServersResponse? ListAllTerminatedServers(ListAllTerminatedServers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

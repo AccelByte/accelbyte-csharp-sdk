@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetPlatformWalletConfig(op);
         }
-
         public static Platform.Model.PlatformWalletConfigInfo? Execute(
             this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdatePlatformWalletConfig(op);
         }
-
         public static Platform.Model.PlatformWalletConfigInfo? Execute(
             this ResetPlatformWalletConfig.ResetPlatformWalletConfigBuilder builder,
             string namespace_,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ResetPlatformWalletConfig(op);
         }
-
         public static List<Platform.Model.CurrencyWallet>? Execute(
             this QueryUserCurrencyWallets.QueryUserCurrencyWalletsBuilder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryUserCurrencyWallets(op);
         }
-
         public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
             this ListUserCurrencyTransactions.ListUserCurrencyTransactionsBuilder builder,
             string currencyCode,
@@ -83,7 +79,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactions(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this CheckWallet.CheckWalletBuilder builder,
@@ -102,7 +97,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckWallet(op);
         }
-
         public static Platform.Model.WalletInfo? Execute(
             this CreditUserWallet.CreditUserWalletBuilder builder,
             string currencyCode,
@@ -118,7 +112,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).CreditUserWallet(op);
         }
-
         public static Platform.Model.PlatformWallet? Execute(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
             string currencyCode,
@@ -134,7 +127,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PayWithUserWallet(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this GetUserWallet.GetUserWalletBuilder builder,
@@ -151,7 +143,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetUserWallet(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this DebitUserWallet.DebitUserWalletBuilder builder,
@@ -168,7 +159,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWallet(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DisableUserWallet.DisableUserWalletBuilder builder,
@@ -185,7 +175,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).DisableUserWallet(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this EnableUserWallet.EnableUserWalletBuilder builder,
@@ -202,7 +191,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).EnableUserWallet(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.DetailedWalletTransactionPagingSlicedResult? Execute(
             this ListUserWalletTransactions.ListUserWalletTransactionsBuilder builder,
@@ -219,7 +207,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserWalletTransactions(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletPagingSlicedResult? Execute(
             this QueryWallets.QueryWalletsBuilder builder,
@@ -232,7 +219,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryWallets(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this GetWallet.GetWalletBuilder builder,
@@ -247,7 +233,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWallet(op);
         }
-
         public static Platform.Model.PlatformWallet? Execute(
             this PublicGetMyWallet.PublicGetMyWalletBuilder builder,
             string currencyCode,
@@ -261,7 +246,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetMyWallet(op);
         }
-
         public static Platform.Model.PlatformWallet? Execute(
             this PublicGetWallet.PublicGetWalletBuilder builder,
             string currencyCode,
@@ -277,7 +261,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetWallet(op);
         }
-
         public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
             this PublicListUserWalletTransactions.PublicListUserWalletTransactionsBuilder builder,
             string currencyCode,
@@ -293,6 +276,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicListUserWalletTransactions(op);
         }
-
     }
 }

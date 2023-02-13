@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         public string? Type { get; set; }
 
     }
+
+
 }

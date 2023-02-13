@@ -36,4 +36,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? SteamId { get; set; }
 
     }
+
+
 }

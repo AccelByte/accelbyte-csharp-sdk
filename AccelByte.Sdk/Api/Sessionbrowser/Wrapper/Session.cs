@@ -101,7 +101,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         }
         #endregion
         
-        public Model.ModelsSessionQueryResponse? AdminQuerySession(AdminQuerySession input) {
+        public Model.ModelsSessionQueryResponse? AdminQuerySession(AdminQuerySession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -109,7 +110,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCountActiveSessionResponse? GetTotalActiveSession(GetTotalActiveSession input) {
+        public Model.ModelsCountActiveSessionResponse? GetTotalActiveSession(GetTotalActiveSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +119,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsActiveCustomGameResponse? GetActiveCustomGameSessions(GetActiveCustomGameSessions input) {
+        public Model.ModelsActiveCustomGameResponse? GetActiveCustomGameSessions(GetActiveCustomGameSessions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,7 +128,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsActiveMatchmakingGameResponse? GetActiveMatchmakingGameSessions(GetActiveMatchmakingGameSessions input) {
+        public Model.ModelsActiveMatchmakingGameResponse? GetActiveMatchmakingGameSessions(GetActiveMatchmakingGameSessions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +137,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAdminSessionResponse? AdminGetSession(AdminGetSession input) {
+        public Model.ModelsAdminSessionResponse? AdminGetSession(AdminGetSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -141,7 +146,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAdminSessionResponse? AdminDeleteSession(AdminDeleteSession input) {
+        public Model.ModelsAdminSessionResponse? AdminDeleteSession(AdminDeleteSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -149,7 +155,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetSessionHistorySearchResponseV2? AdminSearchSessionsV2(AdminSearchSessionsV2 input) {
+        public Model.ModelsGetSessionHistorySearchResponseV2? AdminSearchSessionsV2(AdminSearchSessionsV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -157,7 +164,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input) {
+        public List<Model.ModelsGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -165,7 +173,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionQueryResponse? UserQuerySession(UserQuerySession input) {
+        public Model.ModelsSessionQueryResponse? UserQuerySession(UserQuerySession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -173,7 +182,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? CreateSession(CreateSession input) {
+        public Model.ModelsSessionResponse? CreateSession(CreateSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -181,7 +191,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionByUserIDsResponse? GetSessionByUserIDs(GetSessionByUserIDs input) {
+        public Model.ModelsSessionByUserIDsResponse? GetSessionByUserIDs(GetSessionByUserIDs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -189,7 +200,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? GetSession(GetSession input) {
+        public Model.ModelsSessionResponse? GetSession(GetSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -197,7 +209,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? UpdateSession(UpdateSession input) {
+        public Model.ModelsSessionResponse? UpdateSession(UpdateSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -205,7 +218,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? DeleteSession(DeleteSession input) {
+        public Model.ModelsSessionResponse? DeleteSession(DeleteSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -213,7 +227,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? JoinSession(JoinSession input) {
+        public Model.ModelsSessionResponse? JoinSession(JoinSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -221,7 +236,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? DeleteSessionLocalDS(DeleteSessionLocalDS input) {
+        public Model.ModelsSessionResponse? DeleteSessionLocalDS(DeleteSessionLocalDS input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -229,7 +245,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAddPlayerResponse? AddPlayerToSession(AddPlayerToSession input) {
+        public Model.ModelsAddPlayerResponse? AddPlayerToSession(AddPlayerToSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -237,7 +254,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAddPlayerResponse? RemovePlayerFromSession(RemovePlayerFromSession input) {
+        public Model.ModelsAddPlayerResponse? RemovePlayerFromSession(RemovePlayerFromSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -245,7 +263,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? UpdateSettings(UpdateSettings input) {
+        public Model.ModelsSessionResponse? UpdateSettings(UpdateSettings input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -253,7 +272,8 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsRecentPlayerQueryResponse? GetRecentPlayer(GetRecentPlayer input) {
+        public Model.ModelsRecentPlayerQueryResponse? GetRecentPlayer(GetRecentPlayer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

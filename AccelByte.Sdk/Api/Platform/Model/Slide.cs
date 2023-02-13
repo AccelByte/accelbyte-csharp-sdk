@@ -39,6 +39,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class SlideType : StringEnum<SlideType>
     {
         public static readonly SlideType Image

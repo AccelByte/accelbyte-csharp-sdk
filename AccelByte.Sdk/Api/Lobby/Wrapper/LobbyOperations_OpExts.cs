@@ -28,6 +28,21 @@ namespace AccelByte.Sdk.Api
             return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1(op);
         }
 
+        public static Lobby.Model.ModelsPartyData<T1>? Execute<T1>(
+            this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
+            ModelsPartyPUTCustomAttributesRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminUpdatePartyAttributesV1 op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1<T1>(op);
+        }
         public static void Execute(
             this AdminJoinPartyV1.AdminJoinPartyV1Builder builder,
             string namespace_,
@@ -43,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminJoinPartyV1(op);
         }
-
         public static List<Lobby.Model.LogAppMessageDeclaration>? Execute(
             this PublicGetMessages.PublicGetMessagesBuilder builder
         )
@@ -53,6 +67,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).PublicGetMessages(op);
         }
-
     }
 }

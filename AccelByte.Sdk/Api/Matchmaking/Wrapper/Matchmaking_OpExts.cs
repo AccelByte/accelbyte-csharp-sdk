@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllChannelsHandler(op);
         }
-
         public static Matchmaking.Model.ModelsCreateChannelResponse? Execute(
             this CreateChannelHandler.CreateChannelHandlerBuilder builder,
             ModelsChannelRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).CreateChannelHandler(op);
         }
-
         public static void Execute(
             this DeleteChannelHandler.DeleteChannelHandlerBuilder builder,
             string channel,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteChannelHandler(op);
         }
-
         public static Matchmaking.Model.ModelsMatchResultResponse? Execute(
             this StoreMatchResults.StoreMatchResultsBuilder builder,
             ModelsMatchResultRequest body,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).StoreMatchResults(op);
         }
-
         public static Matchmaking.Model.ModelsRebalanceResponse? Execute(
             this Rebalance.RebalanceBuilder builder,
             ModelsRebalanceRequest body,
@@ -79,7 +75,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).Rebalance(op);
         }
-
         public static void Execute(
             this QueueSessionHandler.QueueSessionHandlerBuilder builder,
             ModelsMatchmakingResult body,
@@ -93,7 +88,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).QueueSessionHandler(op);
         }
-
         public static void Execute(
             this DequeueSessionHandler.DequeueSessionHandlerBuilder builder,
             ModelsDequeueRequest body,
@@ -107,7 +101,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DequeueSessionHandler(op);
         }
-
         public static Matchmaking.Model.ModelsMatchmakingResult? Execute(
             this QuerySessionHandler.QuerySessionHandlerBuilder builder,
             string matchID,
@@ -122,7 +115,20 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).QuerySessionHandler(op);
         }
 
-        public static Dictionary<string, object>? Execute(
+        public static Matchmaking.Model.ModelsMatchmakingResult<T1>? Execute<T1>(
+            this QuerySessionHandler.QuerySessionHandlerBuilder builder,
+            string matchID,
+            string namespace_
+        )
+        {
+            QuerySessionHandler op = builder.Build(
+                matchID,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).QuerySessionHandler<T1>(op);
+        }
+        public static Dictionary<string, List<Matchmaking.Model.ModelsMatchingParty>>? Execute(
             this GetAllPartyInAllChannel.GetAllPartyInAllChannelBuilder builder,
             string namespace_
         )
@@ -134,6 +140,17 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInAllChannel(op);
         }
 
+        public static Dictionary<string, List<Matchmaking.Model.ModelsMatchingParty<T1>>>? Execute<T1>(
+            this GetAllPartyInAllChannel.GetAllPartyInAllChannelBuilder builder,
+            string namespace_
+        )
+        {
+            GetAllPartyInAllChannel op = builder.Build(
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInAllChannel<T1>(op);
+        }
         public static List<Matchmaking.Model.ModelsMatchmakingResult>? Execute(
             this BulkGetSessions.BulkGetSessionsBuilder builder,
             string namespace_
@@ -146,6 +163,17 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).BulkGetSessions(op);
         }
 
+        public static List<Matchmaking.Model.ModelsMatchmakingResult<T1>>? Execute<T1>(
+            this BulkGetSessions.BulkGetSessionsBuilder builder,
+            string namespace_
+        )
+        {
+            BulkGetSessions op = builder.Build(
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).BulkGetSessions<T1>(op);
+        }
         public static Stream? Execute(
             this ExportChannels.ExportChannelsBuilder builder,
             string namespace_
@@ -157,7 +185,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).ExportChannels(op);
         }
-
         public static Matchmaking.Model.ModelsImportConfigResponse? Execute(
             this ImportChannels.ImportChannelsBuilder builder,
             string namespace_
@@ -169,7 +196,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).ImportChannels(op);
         }
-
         public static Matchmaking.Model.ModelsChannelV1? Execute(
             this GetSingleMatchmakingChannel.GetSingleMatchmakingChannelBuilder builder,
             string channelName,
@@ -183,7 +209,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetSingleMatchmakingChannel(op);
         }
-
         public static void Execute(
             this UpdateMatchmakingChannel.UpdateMatchmakingChannelBuilder builder,
             ModelsUpdateChannelRequest body,
@@ -199,7 +224,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).UpdateMatchmakingChannel(op);
         }
-
         public static List<Matchmaking.Model.ModelsMatchingParty>? Execute(
             this GetAllPartyInChannel.GetAllPartyInChannelBuilder builder,
             string channelName,
@@ -214,6 +238,19 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInChannel(op);
         }
 
+        public static List<Matchmaking.Model.ModelsMatchingParty<T1>>? Execute<T1>(
+            this GetAllPartyInChannel.GetAllPartyInChannelBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            GetAllPartyInChannel op = builder.Build(
+                channelName,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInChannel<T1>(op);
+        }
         public static List<Matchmaking.Model.ModelsMatchmakingResult>? Execute(
             this GetAllSessionsInChannel.GetAllSessionsInChannelBuilder builder,
             string channelName,
@@ -228,6 +265,19 @@ namespace AccelByte.Sdk.Api
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllSessionsInChannel(op);
         }
 
+        public static List<Matchmaking.Model.ModelsMatchmakingResult<T1>>? Execute<T1>(
+            this GetAllSessionsInChannel.GetAllSessionsInChannelBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            GetAllSessionsInChannel op = builder.Build(
+                channelName,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllSessionsInChannel<T1>(op);
+        }
         public static void Execute(
             this AddUserIntoSessionInChannel.AddUserIntoSessionInChannelBuilder builder,
             ModelsMatchAddUserIntoSessionRequest body,
@@ -245,7 +295,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).AddUserIntoSessionInChannel(op);
         }
-
         public static void Execute(
             this DeleteSessionInChannel.DeleteSessionInChannelBuilder builder,
             string channelName,
@@ -261,7 +310,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteSessionInChannel(op);
         }
-
         public static void Execute(
             this DeleteUserFromSessionInChannel.DeleteUserFromSessionInChannelBuilder builder,
             string channelName,
@@ -279,7 +327,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteUserFromSessionInChannel(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ServiceGetSessionHistorySearchResponse? Execute(
             this SearchSessions.SearchSessionsBuilder builder,
@@ -296,7 +343,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).SearchSessions(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ServiceGetSessionHistoryDetailedResponseItem>? Execute(
             this GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder builder,
@@ -311,7 +357,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetSessionHistoryDetailed(op);
         }
-
         public static List<Matchmaking.Model.ModelsChannelV1>? Execute(
             this PublicGetAllMatchmakingChannel.PublicGetAllMatchmakingChannelBuilder builder,
             string namespace_
@@ -323,7 +368,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).PublicGetAllMatchmakingChannel(op);
         }
-
         public static Matchmaking.Model.ModelsChannelV1? Execute(
             this PublicGetSingleMatchmakingChannel.PublicGetSingleMatchmakingChannelBuilder builder,
             string channelName,
@@ -337,7 +381,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).PublicGetSingleMatchmakingChannel(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ServiceGetSessionHistorySearchResponseV2? Execute(
             this SearchSessionsV2.SearchSessionsV2Builder builder,
@@ -354,6 +397,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).SearchSessionsV2(op);
         }
-
     }
 }

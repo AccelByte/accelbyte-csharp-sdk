@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? IsComply { get; set; }
 
     }
+
+
 }

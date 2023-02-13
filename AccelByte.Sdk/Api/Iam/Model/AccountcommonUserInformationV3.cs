@@ -36,4 +36,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? XboxUserId { get; set; }
 
     }
+
+
 }

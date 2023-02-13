@@ -145,6 +145,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ItemSnapshotAppType : StringEnum<ItemSnapshotAppType>
     {
         public static readonly ItemSnapshotAppType DEMO

@@ -20,4 +20,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Password { get; set; }
 
     }
+
+
 }

@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? WalletId { get; set; }
 
     }
+
+
 }

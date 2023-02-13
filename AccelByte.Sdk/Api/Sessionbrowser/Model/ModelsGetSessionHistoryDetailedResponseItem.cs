@@ -56,4 +56,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? Status { get; set; }
 
     }
+
+
 }

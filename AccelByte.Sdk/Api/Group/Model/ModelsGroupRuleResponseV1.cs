@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public List<ModelsRuleResponseV1>? GroupPredefinedRules { get; set; }
 
     }
+
+
 }

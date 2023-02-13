@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         }
         #endregion
         
-        public Model.ModelsListDeletionDataResponse? AdminGetListDeletionDataRequest(AdminGetListDeletionDataRequest input) {
+        public Model.ModelsListDeletionDataResponse? AdminGetListDeletionDataRequest(AdminGetListDeletionDataRequest input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDeletionData? AdminGetUserAccountDeletionRequest(AdminGetUserAccountDeletionRequest input) {
+        public Model.ModelsDeletionData? AdminGetUserAccountDeletionRequest(AdminGetUserAccountDeletionRequest input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsRequestDeleteResponse? AdminSubmitUserAccountDeletionRequest(AdminSubmitUserAccountDeletionRequest input) {
+        public Model.ModelsRequestDeleteResponse? AdminSubmitUserAccountDeletionRequest(AdminSubmitUserAccountDeletionRequest input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +84,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsRequestDeleteResponse? PublicSubmitUserAccountDeletionRequest(PublicSubmitUserAccountDeletionRequest input) {
+        public Model.ModelsRequestDeleteResponse? PublicSubmitUserAccountDeletionRequest(PublicSubmitUserAccountDeletionRequest input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +101,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDeletionStatus? PublicGetUserAccountDeletionStatus(PublicGetUserAccountDeletionStatus input) {
+        public Model.ModelsDeletionStatus? PublicGetUserAccountDeletionStatus(PublicGetUserAccountDeletionStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

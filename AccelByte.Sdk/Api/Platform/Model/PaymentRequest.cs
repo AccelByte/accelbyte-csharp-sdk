@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentRequestWalletPlatform : StringEnum<PaymentRequestWalletPlatform>
     {
         public static readonly PaymentRequestWalletPlatform Epic

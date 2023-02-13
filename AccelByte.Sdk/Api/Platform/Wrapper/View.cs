@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public List<Model.ListViewInfo>? ListViews(ListViews input) {
+        public List<Model.ListViewInfo>? ListViews(ListViews input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullViewInfo? CreateView(CreateView input) {
+        public Model.FullViewInfo? CreateView(CreateView input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullViewInfo? GetView(GetView input) {
+        public Model.FullViewInfo? GetView(GetView input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +72,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullViewInfo? UpdateView(UpdateView input) {
+        public Model.FullViewInfo? UpdateView(UpdateView input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,10 +89,21 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ViewInfo>? PublicListViews(PublicListViews input) {
+        public List<Model.ViewInfo>? PublicListViews(PublicListViews input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public List<Model.ViewInfo<T1>>? PublicListViews<T1>(PublicListViews input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

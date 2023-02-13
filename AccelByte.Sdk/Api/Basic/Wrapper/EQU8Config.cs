@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         #endregion
         
-        public Model.Equ8Config? GetConfig(GetConfig input) {
+        public Model.Equ8Config? GetConfig(GetConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.Equ8Config? UpdateConfig(UpdateConfig input) {
+        public Model.Equ8Config? UpdateConfig(UpdateConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

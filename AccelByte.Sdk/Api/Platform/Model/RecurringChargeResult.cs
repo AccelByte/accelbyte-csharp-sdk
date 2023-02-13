@@ -21,4 +21,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Triggered { get; set; }
 
     }
+
+
 }

@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

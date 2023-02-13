@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonRoleManagerV3>? Managers { get; set; }
 
     }
+
+
 }

@@ -43,4 +43,42 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? GroupType { get; set; }
 
     }
+
+    public class ModelsGroupResponseV1<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("configurationCode")]
+        public string? ConfigurationCode { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("groupDescription")]
+        public string? GroupDescription { get; set; }
+
+        [JsonPropertyName("groupIcon")]
+        public string? GroupIcon { get; set; }
+
+        [JsonPropertyName("groupId")]
+        public string? GroupId { get; set; }
+
+        [JsonPropertyName("groupMaxMember")]
+        public int? GroupMaxMember { get; set; }
+
+        [JsonPropertyName("groupMembers")]
+        public List<ModelsGroupMember>? GroupMembers { get; set; }
+
+        [JsonPropertyName("groupName")]
+        public string? GroupName { get; set; }
+
+        [JsonPropertyName("groupRegion")]
+        public string? GroupRegion { get; set; }
+
+        [JsonPropertyName("groupRules")]
+        public ModelsGroupRuleResponseV1? GroupRules { get; set; }
+
+        [JsonPropertyName("groupType")]
+        public string? GroupType { get; set; }
+
+    }
+
 }

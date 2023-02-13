@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetActions(op);
         }
-
         public static void Execute(
             this BanUsers.BanUsersBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).BanUsers(op);
         }
-
         public static List<Basic.Model.ADTOObjectForEqu8UserBanStatus>? Execute(
             this GetBannedUsers.GetBannedUsersBuilder builder,
             string namespace_,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetBannedUsers(op);
         }
-
         public static void Execute(
             this ReportUser.ReportUserBuilder builder,
             string namespace_
@@ -61,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).ReportUser(op);
         }
-
         public static Basic.Model.ADTOObjectForEqu8UserStatus? Execute(
             this GetUserStatus.GetUserStatusBuilder builder,
             string namespace_,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetUserStatus(op);
         }
-
         public static void Execute(
             this UnBanUsers.UnBanUsersBuilder builder,
             string namespace_
@@ -87,7 +82,6 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).UnBanUsers(op);
         }
-
         public static void Execute(
             this PublicReportUser.PublicReportUserBuilder builder,
             string namespace_,
@@ -101,6 +95,5 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).PublicReportUser(op);
         }
-
     }
 }

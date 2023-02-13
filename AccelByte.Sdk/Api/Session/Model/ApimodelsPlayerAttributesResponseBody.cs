@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? UserID { get; set; }
 
     }
+
+    public class ApimodelsPlayerAttributesResponseBody<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("crossplayEnabled")]
+        public bool? CrossplayEnabled { get; set; }
+
+        [JsonPropertyName("data")]
+        public T1? Data { get; set; }
+
+        [JsonPropertyName("platforms")]
+        public List<ModelsUserPlatformInfo>? Platforms { get; set; }
+
+        [JsonPropertyName("userID")]
+        public string? UserID { get; set; }
+
+    }
+
 }

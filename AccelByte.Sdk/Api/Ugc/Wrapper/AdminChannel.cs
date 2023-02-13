@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGetChannelResponse? SingleAdminGetChannel(SingleAdminGetChannel input) {
+        public Model.ModelsPaginatedGetChannelResponse? SingleAdminGetChannel(SingleAdminGetChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? AdminCreateChannel(AdminCreateChannel input) {
+        public Model.ModelsChannelResponse? AdminCreateChannel(AdminCreateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? SingleAdminUpdateChannel(SingleAdminUpdateChannel input) {
+        public Model.ModelsChannelResponse? SingleAdminUpdateChannel(SingleAdminUpdateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +84,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedGetChannelResponse? AdminGetChannel(AdminGetChannel input) {
+        public Model.ModelsPaginatedGetChannelResponse? AdminGetChannel(AdminGetChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +93,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? AdminUpdateChannel(AdminUpdateChannel input) {
+        public Model.ModelsChannelResponse? AdminUpdateChannel(AdminUpdateChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

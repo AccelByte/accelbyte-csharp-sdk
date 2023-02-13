@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

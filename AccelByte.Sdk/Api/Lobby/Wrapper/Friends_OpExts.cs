@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsUpdated(op);
         }
-
         public static List<Lobby.Model.ModelGetUserIncomingFriendsResponse>? Execute(
             this GetUserIncomingFriends.GetUserIncomingFriendsBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriends(op);
         }
-
         public static List<Lobby.Model.ModelGetUserOutgoingFriendsResponse>? Execute(
             this GetUserOutgoingFriends.GetUserOutgoingFriendsBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriends(op);
         }
-
         public static void Execute(
             this UserRequestFriend.UserRequestFriendBuilder builder,
             ModelUserRequestFriendRequest body,
@@ -61,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRequestFriend(op);
         }
-
         public static void Execute(
             this UserAcceptFriendRequest.UserAcceptFriendRequestBuilder builder,
             ModelUserAcceptFriendRequest body,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserAcceptFriendRequest(op);
         }
-
         public static void Execute(
             this UserCancelFriendRequest.UserCancelFriendRequestBuilder builder,
             ModelUserCancelFriendRequest body,
@@ -89,7 +84,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserCancelFriendRequest(op);
         }
-
         public static void Execute(
             this UserRejectFriendRequest.UserRejectFriendRequestBuilder builder,
             ModelUserRejectFriendRequest body,
@@ -103,7 +97,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRejectFriendRequest(op);
         }
-
         public static Lobby.Model.ModelUserGetFriendshipStatusResponse? Execute(
             this UserGetFriendshipStatus.UserGetFriendshipStatusBuilder builder,
             string friendId,
@@ -117,7 +110,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserGetFriendshipStatus(op);
         }
-
         public static void Execute(
             this UserUnfriendRequest.UserUnfriendRequestBuilder builder,
             ModelUserUnfriendRequest body,
@@ -131,7 +123,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserUnfriendRequest(op);
         }
-
         public static void Execute(
             this AddFriendsWithoutConfirmation.AddFriendsWithoutConfirmationBuilder builder,
             ModelBulkAddFriendsRequest body,
@@ -147,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).AddFriendsWithoutConfirmation(op);
         }
-
         public static Lobby.Model.ModelGetFriendsResponse? Execute(
             this GetListOfFriends.GetListOfFriendsBuilder builder,
             string namespace_,
@@ -161,6 +151,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetListOfFriends(op);
         }
-
     }
 }

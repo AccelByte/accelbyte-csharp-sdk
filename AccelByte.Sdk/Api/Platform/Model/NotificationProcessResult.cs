@@ -30,6 +30,28 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class NotificationProcessResult<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Code { get; set; }
+
+        [JsonPropertyName("customParam")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomParam { get; set; }
+
+        [JsonPropertyName("severity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Severity { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public NotificationProcessResultStatus? Status { get; set; }
+
+    }
+
+
     public class NotificationProcessResultStatus : StringEnum<NotificationProcessResultStatus>
     {
         public static readonly NotificationProcessResultStatus ERROR

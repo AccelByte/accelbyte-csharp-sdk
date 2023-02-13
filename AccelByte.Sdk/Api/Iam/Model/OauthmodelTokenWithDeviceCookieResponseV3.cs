@@ -77,4 +77,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Xuid { get; set; }
 
     }
+
+
 }

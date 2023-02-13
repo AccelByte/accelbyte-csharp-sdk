@@ -41,6 +41,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class FulfillmentItemItemType : StringEnum<FulfillmentItemItemType>
     {
         public static readonly FulfillmentItemItemType APP

@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public DateTime? TimeStamp { get; set; }
 
     }
+
+
 }

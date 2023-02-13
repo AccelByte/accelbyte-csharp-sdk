@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminListAchievements(op);
         }
-
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminCreateNewAchievement.AdminCreateNewAchievementBuilder builder,
             ModelsAchievementRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievement(op);
         }
-
         public static Stream? Execute(
             this ExportAchievements.ExportAchievementsBuilder builder,
             string namespace_
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ExportAchievements(op);
         }
-
         public static Achievement.Model.ServiceImportConfigResponse? Execute(
             this ImportAchievements.ImportAchievementsBuilder builder,
             string namespace_
@@ -61,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ImportAchievements(op);
         }
-
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminGetAchievement.AdminGetAchievementBuilder builder,
             string achievementCode,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminGetAchievement(op);
         }
-
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminUpdateAchievement.AdminUpdateAchievementBuilder builder,
             ModelsAchievementUpdateRequest body,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievement(op);
         }
-
         public static void Execute(
             this AdminDeleteAchievement.AdminDeleteAchievementBuilder builder,
             string achievementCode,
@@ -105,7 +99,6 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminDeleteAchievement(op);
         }
-
         public static void Execute(
             this AdminUpdateAchievementListOrder.AdminUpdateAchievementListOrderBuilder builder,
             ModelsAchievementOrderUpdateRequest body,
@@ -121,7 +114,6 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementListOrder(op);
         }
-
         public static Achievement.Model.ModelsPublicAchievementsResponse? Execute(
             this PublicListAchievements.PublicListAchievementsBuilder builder,
             string namespace_,
@@ -135,7 +127,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicListAchievements(op);
         }
-
         public static Achievement.Model.ModelsPublicAchievementResponse? Execute(
             this PublicGetAchievement.PublicGetAchievementBuilder builder,
             string achievementCode,
@@ -151,6 +142,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievement(op);
         }
-
     }
 }

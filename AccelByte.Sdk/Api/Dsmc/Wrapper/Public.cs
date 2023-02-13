@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
-        public Model.ModelsDefaultProvider? GetDefaultProvider(GetDefaultProvider input) {
+        public Model.ModelsDefaultProvider? GetDefaultProvider(GetDefaultProvider input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -41,7 +42,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<string>? ListProviders(ListProviders input) {
+        public List<string>? ListProviders(ListProviders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +51,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDefaultProvider? ListProvidersByRegion(ListProvidersByRegion input) {
+        public Model.ModelsDefaultProvider? ListProvidersByRegion(ListProvidersByRegion input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

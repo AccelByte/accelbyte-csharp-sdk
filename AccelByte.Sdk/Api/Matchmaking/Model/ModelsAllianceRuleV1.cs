@@ -25,4 +25,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public int? PlayerMinNumber { get; set; }
 
     }
+
+
 }

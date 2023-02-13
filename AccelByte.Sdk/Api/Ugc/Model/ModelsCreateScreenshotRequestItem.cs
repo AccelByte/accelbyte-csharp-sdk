@@ -23,6 +23,8 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
     }
 
+
+
     public class ModelsCreateScreenshotRequestItemFileExtension : StringEnum<ModelsCreateScreenshotRequestItemFileExtension>
     {
         public static readonly ModelsCreateScreenshotRequestItemFileExtension Bmp

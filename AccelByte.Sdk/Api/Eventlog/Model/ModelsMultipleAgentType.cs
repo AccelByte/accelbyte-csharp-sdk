@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public List<ModelsAgentType>? AgentTypes { get; set; }
 
     }
+
+
 }

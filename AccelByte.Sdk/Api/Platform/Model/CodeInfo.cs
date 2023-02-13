@@ -81,6 +81,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CodeInfoRedeemType : StringEnum<CodeInfoRedeemType>
     {
         public static readonly CodeInfoRedeemType ITEM

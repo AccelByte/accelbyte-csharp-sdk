@@ -44,6 +44,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ItemNamingItemType : StringEnum<ItemNamingItemType>
     {
         public static readonly ItemNamingItemType APP

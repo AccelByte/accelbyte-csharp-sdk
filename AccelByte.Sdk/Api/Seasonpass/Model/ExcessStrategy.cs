@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class ExcessStrategyMethod : StringEnum<ExcessStrategyMethod>
     {
         public static readonly ExcessStrategyMethod CURRENCY

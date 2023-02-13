@@ -39,6 +39,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PredicateObjectComparison : StringEnum<PredicateObjectComparison>
     {
         public static readonly PredicateObjectComparison Excludes

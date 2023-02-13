@@ -65,7 +65,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGroupResponse? SingleAdminGetAllGroups(SingleAdminGetAllGroups input) {
+        public Model.ModelsPaginatedGroupResponse? SingleAdminGetAllGroups(SingleAdminGetAllGroups input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +74,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? AdminCreateGroup(AdminCreateGroup input) {
+        public Model.ModelsCreateGroupResponse? AdminCreateGroup(AdminCreateGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +83,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? SingleAdminGetGroup(SingleAdminGetGroup input) {
+        public Model.ModelsCreateGroupResponse? SingleAdminGetGroup(SingleAdminGetGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +92,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? SingleAdminUpdateGroup(SingleAdminUpdateGroup input) {
+        public Model.ModelsCreateGroupResponse? SingleAdminUpdateGroup(SingleAdminUpdateGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +109,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? SingleAdminGetGroupContents(SingleAdminGetGroupContents input) {
+        public Model.ModelsPaginatedContentDownloadResponse? SingleAdminGetGroupContents(SingleAdminGetGroupContents input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +118,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedGroupResponse? AdminGetAllGroups(AdminGetAllGroups input) {
+        public Model.ModelsPaginatedGroupResponse? AdminGetAllGroups(AdminGetAllGroups input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +127,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? AdminGetGroup(AdminGetGroup input) {
+        public Model.ModelsCreateGroupResponse? AdminGetGroup(AdminGetGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,7 +136,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? AdminUpdateGroup(AdminUpdateGroup input) {
+        public Model.ModelsCreateGroupResponse? AdminUpdateGroup(AdminUpdateGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +153,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? AdminGetGroupContents(AdminGetGroupContents input) {
+        public Model.ModelsPaginatedContentDownloadResponse? AdminGetGroupContents(AdminGetGroupContents input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

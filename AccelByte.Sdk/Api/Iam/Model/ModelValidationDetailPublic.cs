@@ -61,4 +61,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<string>? SpecialCharacters { get; set; }
 
     }
+
+
 }

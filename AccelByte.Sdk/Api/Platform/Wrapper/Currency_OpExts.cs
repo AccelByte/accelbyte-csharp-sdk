@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).ListCurrencies(op);
         }
-
         public static Platform.Model.CurrencyInfo? Execute(
             this CreateCurrency.CreateCurrencyBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).CreateCurrency(op);
         }
-
         public static Platform.Model.CurrencyInfo? Execute(
             this UpdateCurrency.UpdateCurrencyBuilder builder,
             string currencyCode,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).UpdateCurrency(op);
         }
-
         public static Platform.Model.CurrencyInfo? Execute(
             this DeleteCurrency.DeleteCurrencyBuilder builder,
             string currencyCode,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).DeleteCurrency(op);
         }
-
         public static Platform.Model.CurrencyConfig? Execute(
             this GetCurrencyConfig.GetCurrencyConfigBuilder builder,
             string currencyCode,
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencyConfig(op);
         }
-
         public static Platform.Model.CurrencySummary? Execute(
             this GetCurrencySummary.GetCurrencySummaryBuilder builder,
             string currencyCode,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencySummary(op);
         }
-
         public static List<Platform.Model.CurrencyInfo>? Execute(
             this PublicListCurrencies.PublicListCurrenciesBuilder builder,
             string namespace_
@@ -103,6 +97,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).PublicListCurrencies(op);
         }
-
     }
 }

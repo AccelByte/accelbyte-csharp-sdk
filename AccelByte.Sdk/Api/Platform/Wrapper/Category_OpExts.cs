@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).GetRootCategories(op);
         }
-
         public static Platform.Model.FullCategoryInfo? Execute(
             this CreateCategory.CreateCategoryBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).CreateCategory(op);
         }
-
         public static List<Platform.Model.BasicCategoryInfo>? Execute(
             this ListCategoriesBasic.ListCategoriesBasicBuilder builder,
             string namespace_
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).ListCategoriesBasic(op);
         }
-
         public static Platform.Model.FullCategoryInfo? Execute(
             this GetCategory.GetCategoryBuilder builder,
             string categoryPath,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).GetCategory(op);
         }
-
         public static Platform.Model.FullCategoryInfo? Execute(
             this UpdateCategory.UpdateCategoryBuilder builder,
             string categoryPath,
@@ -79,7 +75,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).UpdateCategory(op);
         }
-
         public static Platform.Model.FullCategoryInfo? Execute(
             this DeleteCategory.DeleteCategoryBuilder builder,
             string categoryPath,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).DeleteCategory(op);
         }
-
         public static List<Platform.Model.FullCategoryInfo>? Execute(
             this GetChildCategories.GetChildCategoriesBuilder builder,
             string categoryPath,
@@ -109,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).GetChildCategories(op);
         }
-
         public static List<Platform.Model.FullCategoryInfo>? Execute(
             this GetDescendantCategories.GetDescendantCategoriesBuilder builder,
             string categoryPath,
@@ -123,7 +116,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).GetDescendantCategories(op);
         }
-
         public static List<Platform.Model.CategoryInfo>? Execute(
             this PublicGetRootCategories.PublicGetRootCategoriesBuilder builder,
             string namespace_
@@ -135,7 +127,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).PublicGetRootCategories(op);
         }
-
         public static List<Platform.Model.HierarchicalCategoryInfo>? Execute(
             this DownloadCategories.DownloadCategoriesBuilder builder,
             string namespace_
@@ -147,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).DownloadCategories(op);
         }
-
         public static Platform.Model.CategoryInfo? Execute(
             this PublicGetCategory.PublicGetCategoryBuilder builder,
             string categoryPath,
@@ -161,7 +151,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).PublicGetCategory(op);
         }
-
         public static List<Platform.Model.CategoryInfo>? Execute(
             this PublicGetChildCategories.PublicGetChildCategoriesBuilder builder,
             string categoryPath,
@@ -175,7 +164,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).PublicGetChildCategories(op);
         }
-
         public static List<Platform.Model.CategoryInfo>? Execute(
             this PublicGetDescendantCategories.PublicGetDescendantCategoriesBuilder builder,
             string categoryPath,
@@ -189,6 +177,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Category)builder.WrapperObject!).PublicGetDescendantCategories(op);
         }
-
     }
 }

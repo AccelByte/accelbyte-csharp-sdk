@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrievePolicies(op);
         }
-
         public static void Execute(
             this UpdatePolicy.UpdatePolicyBuilder builder,
             string policyId
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Policies)builder.WrapperObject!).UpdatePolicy(op);
         }
-
         public static void Execute(
             this SetDefaultPolicy1.SetDefaultPolicy1Builder builder,
             string policyId
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy1(op);
         }
-
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
             this RetrieveLatestPolicies.RetrieveLatestPoliciesBuilder builder,
             string countryCode
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPolicies(op);
         }
-
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
             this RetrieveLatestPoliciesPublic.RetrieveLatestPoliciesPublicBuilder builder,
             string namespace_
@@ -71,7 +67,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPoliciesPublic(op);
         }
-
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
             this RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
             string countryCode,
@@ -85,6 +80,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublic(op);
         }
-
     }
 }

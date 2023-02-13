@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentHistories(op);
         }
-
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillItem.FulfillItemBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItem(op);
         }
-
         public static Platform.Model.FulfillmentResult? Execute(
             this RedeemCode.RedeemCodeBuilder builder,
             string namespace_,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RedeemCode(op);
         }
-
         public static void Execute(
             this FulfillRewards.FulfillRewardsBuilder builder,
             string namespace_,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewards(op);
         }
-
         public static Platform.Model.FulfillmentResult? Execute(
             this PublicRedeemCode.PublicRedeemCodeBuilder builder,
             string namespace_,
@@ -79,6 +75,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCode(op);
         }
-
     }
 }

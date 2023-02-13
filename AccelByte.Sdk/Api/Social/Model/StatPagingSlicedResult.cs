@@ -17,4 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public Paging? Paging { get; set; }
 
     }
+
+
 }

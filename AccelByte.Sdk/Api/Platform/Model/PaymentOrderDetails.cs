@@ -40,4 +40,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Title { get; set; }
 
     }
+
+
 }

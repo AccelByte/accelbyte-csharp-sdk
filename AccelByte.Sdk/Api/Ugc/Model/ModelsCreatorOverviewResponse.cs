@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public long? TotalLikedContent { get; set; }
 
     }
+
+
 }

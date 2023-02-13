@@ -23,4 +23,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

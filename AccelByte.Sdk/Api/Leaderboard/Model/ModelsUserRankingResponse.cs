@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public ModelsUserRankingResponseDetail? Weekly { get; set; }
 
     }
+
+
 }

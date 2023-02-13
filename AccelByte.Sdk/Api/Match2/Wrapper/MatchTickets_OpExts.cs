@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchTickets)builder.WrapperObject!).CreateMatchTicket(op);
         }
-
         public static Match2.Model.ApiMatchTicketStatus? Execute(
             this MatchTicketDetails.MatchTicketDetailsBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchTickets)builder.WrapperObject!).MatchTicketDetails(op);
         }
-
         public static void Execute(
             this DeleteMatchTicket.DeleteMatchTicketBuilder builder,
             string namespace_,
@@ -53,6 +51,5 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchTickets)builder.WrapperObject!).DeleteMatchTicket(op);
         }
-
     }
 }

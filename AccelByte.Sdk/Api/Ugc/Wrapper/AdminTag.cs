@@ -37,7 +37,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGetTagResponse? AdminGetTag(AdminGetTag input) {
+        public Model.ModelsPaginatedGetTagResponse? AdminGetTag(AdminGetTag input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -45,7 +46,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateTagResponse? AdminCreateTag(AdminCreateTag input) {
+        public Model.ModelsCreateTagResponse? AdminCreateTag(AdminCreateTag input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +55,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateTagResponse? AdminUpdateTag(AdminUpdateTag input) {
+        public Model.ModelsCreateTagResponse? AdminUpdateTag(AdminUpdateTag input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

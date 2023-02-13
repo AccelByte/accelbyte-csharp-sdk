@@ -29,6 +29,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.AdminUserEligibilities)builder.WrapperObject!).AdminRetrieveEligibilities(op);
         }
-
     }
 }

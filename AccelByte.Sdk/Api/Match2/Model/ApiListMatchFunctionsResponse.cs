@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public ModelsPagination? Pagination { get; set; }
 
     }
+
+
 }

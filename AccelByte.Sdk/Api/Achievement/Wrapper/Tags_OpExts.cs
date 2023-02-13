@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Tags)builder.WrapperObject!).AdminListTags(op);
         }
-
         public static Achievement.Model.ModelsPaginatedTagResponse? Execute(
             this PublicListTags.PublicListTagsBuilder builder,
             string namespace_
@@ -35,6 +34,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Tags)builder.WrapperObject!).PublicListTags(op);
         }
-
     }
 }

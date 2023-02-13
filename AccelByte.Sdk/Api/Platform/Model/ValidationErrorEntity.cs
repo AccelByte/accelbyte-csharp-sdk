@@ -20,4 +20,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<FieldValidationError>? Errors { get; set; }
 
     }
+
+
 }

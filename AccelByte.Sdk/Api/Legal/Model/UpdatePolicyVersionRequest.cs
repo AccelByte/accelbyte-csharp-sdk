@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? IsCommitted { get; set; }
 
     }
+
+
 }

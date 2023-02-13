@@ -58,6 +58,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class RegionDataItemCurrencyType : StringEnum<RegionDataItemCurrencyType>
     {
         public static readonly RegionDataItemCurrencyType REAL

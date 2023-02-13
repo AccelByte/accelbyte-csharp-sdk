@@ -16,4 +16,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ModelsPartyMember<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("extra_attributes")]
+        public T1? ExtraAttributes { get; set; }
+
+        [JsonPropertyName("user_id")]
+        public string? UserId { get; set; }
+
+    }
+
 }

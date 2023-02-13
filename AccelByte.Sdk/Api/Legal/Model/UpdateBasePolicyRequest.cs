@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public List<string>? Tags { get; set; }
 
     }
+
+
 }

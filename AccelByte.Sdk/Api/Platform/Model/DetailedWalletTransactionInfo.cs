@@ -49,6 +49,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class DetailedWalletTransactionInfoWalletAction : StringEnum<DetailedWalletTransactionInfoWalletAction>
     {
         public static readonly DetailedWalletTransactionInfoWalletAction CREDIT

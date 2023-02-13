@@ -14,4 +14,13 @@ namespace AccelByte.Sdk.Api.Social.Model
         public Dictionary<string, object>? AdditionalData { get; set; }
 
     }
+
+    public class StatResetInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? AdditionalData { get; set; }
+
+    }
+
 }

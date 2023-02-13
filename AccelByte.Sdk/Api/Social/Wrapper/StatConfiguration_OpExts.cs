@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStats(op);
         }
-
         public static Social.Model.StatInfo? Execute(
             this CreateStat.CreateStatBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat(op);
         }
-
         public static Stream? Execute(
             this ExportStats.ExportStatsBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ExportStats(op);
         }
-
         public static Social.Model.StatImportInfo? Execute(
             this ImportStats.ImportStatsBuilder builder,
             string namespace_
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ImportStats(op);
         }
-
         public static Social.Model.StatPagingSlicedResult? Execute(
             this QueryStats.QueryStatsBuilder builder,
             string namespace_,
@@ -73,7 +69,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).QueryStats(op);
         }
-
         public static Social.Model.StatInfo? Execute(
             this GetStat.GetStatBuilder builder,
             string namespace_,
@@ -87,7 +82,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStat(op);
         }
-
         public static void Execute(
             this DeleteStat.DeleteStatBuilder builder,
             string namespace_,
@@ -101,7 +95,6 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteStat(op);
         }
-
         public static Social.Model.StatInfo? Execute(
             this UpdateStat.UpdateStatBuilder builder,
             string namespace_,
@@ -115,7 +108,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).UpdateStat(op);
         }
-
         public static void Execute(
             this DeleteTiedStat.DeleteTiedStatBuilder builder,
             string namespace_,
@@ -129,7 +121,6 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteTiedStat(op);
         }
-
         public static Social.Model.StatInfo? Execute(
             this CreateStat1.CreateStat1Builder builder,
             string namespace_
@@ -141,6 +132,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat1(op);
         }
-
     }
 }

@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         }
         #endregion
         
-        public List<Model.PassInfo>? QueryPasses(QueryPasses input) {
+        public List<Model.PassInfo>? QueryPasses(QueryPasses input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? CreatePass(CreatePass input) {
+        public Model.PassInfo? CreatePass(CreatePass input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? GetPass(GetPass input) {
+        public Model.PassInfo? GetPass(GetPass input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +80,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PassInfo? UpdatePass(UpdatePass input) {
+        public Model.PassInfo? UpdatePass(UpdatePass input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +89,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input) {
+        public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? ErrorMessage { get; set; }
 
     }
+
+
 }

@@ -23,6 +23,5 @@ namespace AccelByte.Sdk.Api
 
             ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
         }
-
     }
 }

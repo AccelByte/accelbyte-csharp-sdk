@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public V2Pagination? Paging { get; set; }
 
     }
+
+
 }

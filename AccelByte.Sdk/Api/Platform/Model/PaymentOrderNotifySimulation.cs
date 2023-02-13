@@ -36,6 +36,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentOrderNotifySimulationNotifyType : StringEnum<PaymentOrderNotifySimulationNotifyType>
     {
         public static readonly PaymentOrderNotifySimulationNotifyType CHARGE

@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).BulkGetPlayerRecordSizeHandlerV1(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this ListPlayerRecordHandlerV1.ListPlayerRecordHandlerV1Builder builder,
@@ -38,7 +37,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).ListPlayerRecordHandlerV1(op);
         }
-
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this AdminRetrievePlayerRecords.AdminRetrievePlayerRecordsBuilder builder,
             string namespace_,
@@ -52,7 +50,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminRetrievePlayerRecords(op);
         }
-
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminGetPlayerRecordHandlerV1.AdminGetPlayerRecordHandlerV1Builder builder,
             string key,
@@ -69,6 +66,21 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminGetPlayerRecordHandlerV1.AdminGetPlayerRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminPutPlayerRecordHandlerV1.AdminPutPlayerRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -87,6 +99,23 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPutPlayerRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminPutPlayerRecordHandlerV1.AdminPutPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPutPlayerRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminPostPlayerRecordHandlerV1.AdminPostPlayerRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -105,6 +134,23 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPostPlayerRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminPostPlayerRecordHandlerV1.AdminPostPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPostPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPostPlayerRecordHandlerV1<T1>(op);
+        }
         public static void Execute(
             this AdminDeletePlayerRecordHandlerV1.AdminDeletePlayerRecordHandlerV1Builder builder,
             string key,
@@ -120,7 +166,6 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminDeletePlayerRecordHandlerV1(op);
         }
-
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminGetPlayerPublicRecordHandlerV1.AdminGetPlayerPublicRecordHandlerV1Builder builder,
             string key,
@@ -137,6 +182,21 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerPublicRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminGetPlayerPublicRecordHandlerV1.AdminGetPlayerPublicRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerPublicRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerPublicRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminPutPlayerPublicRecordHandlerV1.AdminPutPlayerPublicRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -155,6 +215,23 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPutPlayerPublicRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminPutPlayerPublicRecordHandlerV1.AdminPutPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPutPlayerPublicRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminPostPlayerPublicRecordHandlerV1.AdminPostPlayerPublicRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -173,6 +250,23 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPostPlayerPublicRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
+            this AdminPostPlayerPublicRecordHandlerV1.AdminPostPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPostPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminPostPlayerPublicRecordHandlerV1<T1>(op);
+        }
         public static void Execute(
             this AdminDeletePlayerPublicRecordHandlerV1.AdminDeletePlayerPublicRecordHandlerV1Builder builder,
             string key,
@@ -188,7 +282,6 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminDeletePlayerPublicRecordHandlerV1(op);
         }
-
         public static Cloudsave.Model.ModelsPlayerRecordSizeResponse? Execute(
             this AdminGetPlayerRecordSizeHandlerV1.AdminGetPlayerRecordSizeHandlerV1Builder builder,
             string key,
@@ -204,6 +297,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerRecordSizeHandlerV1(op);
         }
-
     }
 }

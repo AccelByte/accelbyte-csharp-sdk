@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutGameRecordConcurrentHandlerV1(op);
         }
-
         public static void Execute(
             this PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
@@ -45,7 +44,6 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1(op);
         }
-
         public static void Execute(
             this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
@@ -63,6 +61,5 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1(op);
         }
-
     }
 }

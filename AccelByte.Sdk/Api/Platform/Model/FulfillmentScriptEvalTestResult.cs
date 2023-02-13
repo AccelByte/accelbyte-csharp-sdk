@@ -18,4 +18,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, object>? Result { get; set; }
 
     }
+
+    public class FulfillmentScriptEvalTestResult<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("errorStackTrace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ErrorStackTrace { get; set; }
+
+        [JsonPropertyName("result")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Result { get; set; }
+
+    }
+
 }

@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CreditRequestOrigin : StringEnum<CreditRequestOrigin>
     {
         public static readonly CreditRequestOrigin Epic

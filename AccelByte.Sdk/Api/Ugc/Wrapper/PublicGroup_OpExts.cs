@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroups(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this CreateGroup.CreateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).CreateGroup(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this GetGroup.GetGroupBuilder builder,
             string groupId,
@@ -57,7 +55,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroup(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this UpdateGroup.UpdateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -75,7 +72,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).UpdateGroup(op);
         }
-
         public static void Execute(
             this DeleteGroup.DeleteGroupBuilder builder,
             string groupId,
@@ -91,7 +87,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).DeleteGroup(op);
         }
-
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this GetGroupContent.GetGroupContentBuilder builder,
             string groupId,
@@ -107,6 +102,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupContent(op);
         }
-
     }
 }

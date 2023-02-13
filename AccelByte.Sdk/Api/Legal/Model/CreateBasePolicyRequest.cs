@@ -38,4 +38,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? TypeId { get; set; }
 
     }
+
+
 }

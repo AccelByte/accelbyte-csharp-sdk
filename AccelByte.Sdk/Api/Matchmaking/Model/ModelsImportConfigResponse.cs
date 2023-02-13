@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<string>? ReplacedConfigs { get; set; }
 
     }
+
+
 }

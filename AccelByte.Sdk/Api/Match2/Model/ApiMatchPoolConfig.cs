@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public int? TicketExpirationSeconds { get; set; }
 
     }
+
+
 }

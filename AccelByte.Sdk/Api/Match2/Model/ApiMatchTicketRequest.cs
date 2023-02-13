@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? SessionID { get; set; }
 
     }
+
+    public class ApiMatchTicketRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("attributes")]
+        public T1? Attributes { get; set; }
+
+        [JsonPropertyName("latencies")]
+        public Dictionary<string, long>? Latencies { get; set; }
+
+        [JsonPropertyName("matchPool")]
+        public string? MatchPool { get; set; }
+
+        [JsonPropertyName("sessionID")]
+        public string? SessionID { get; set; }
+
+    }
+
 }

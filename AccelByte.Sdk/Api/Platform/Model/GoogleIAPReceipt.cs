@@ -37,4 +37,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Region { get; set; }
 
     }
+
+
 }

@@ -49,6 +49,47 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class ExtensionFulfillmentSummary<T1, T2> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("grantedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? GrantedAt { get; set; }
+
+        [JsonPropertyName("itemClazz")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemClazz { get; set; }
+
+        [JsonPropertyName("itemExt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? ItemExt { get; set; }
+
+        [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("itemType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public ExtensionFulfillmentSummaryItemType? ItemType { get; set; }
+
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T2? Metadata { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get; set; }
+
+        [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserId { get; set; }
+
+    }
+
+
     public class ExtensionFulfillmentSummaryItemType : StringEnum<ExtensionFulfillmentSummaryItemType>
     {
         public static readonly ExtensionFulfillmentSummaryItemType APP

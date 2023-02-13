@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUploadUrl(op);
         }
-
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this GeneratedUserUploadContentUrl.GeneratedUserUploadContentUrlBuilder builder,
             string namespace_,
@@ -43,7 +42,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUserUploadContentUrl(op);
         }
-
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this PublicGeneratedUploadUrl.PublicGeneratedUploadUrlBuilder builder,
             string folder,
@@ -59,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUploadUrl(op);
         }
-
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this PublicGeneratedUserUploadContentUrl.PublicGeneratedUserUploadContentUrlBuilder builder,
             string namespace_,
@@ -75,6 +72,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUserUploadContentUrl(op);
         }
-
     }
 }

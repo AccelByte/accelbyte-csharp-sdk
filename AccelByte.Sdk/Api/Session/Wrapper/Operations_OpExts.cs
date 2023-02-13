@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfo(op);
         }
-
         public static void Execute(
             this GetHealthcheckInfoV1.GetHealthcheckInfoV1Builder builder
         )
@@ -31,6 +30,5 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfoV1(op);
         }
-
     }
 }

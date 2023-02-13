@@ -85,4 +85,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? TerminationReason { get; set; }
 
     }
+
+
 }

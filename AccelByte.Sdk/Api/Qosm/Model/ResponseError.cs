@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Qosm.Model
         public string? Message { get; set; }
 
     }
+
+
 }

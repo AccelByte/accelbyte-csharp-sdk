@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolList(op);
         }
-
         public static void Execute(
             this CreateMatchPool.CreateMatchPoolBuilder builder,
             ApiMatchPool body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchPools)builder.WrapperObject!).CreateMatchPool(op);
         }
-
         public static Match2.Model.ApiMatchPool? Execute(
             this MatchPoolDetails.MatchPoolDetailsBuilder builder,
             string namespace_,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolDetails(op);
         }
-
         public static Match2.Model.ApiMatchPool? Execute(
             this UpdateMatchPool.UpdateMatchPoolBuilder builder,
             ApiMatchPoolConfig body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).UpdateMatchPool(op);
         }
-
         public static void Execute(
             this DeleteMatchPool.DeleteMatchPoolBuilder builder,
             string namespace_,
@@ -81,6 +77,5 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchPools)builder.WrapperObject!).DeleteMatchPool(op);
         }
-
     }
 }

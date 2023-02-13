@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
         
-        public Model.ApiListRuleSetsResponse? RuleSetList(RuleSetList input) {
+        public Model.ApiListRuleSetsResponse? RuleSetList(RuleSetList input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiMatchRuleSet? RuleSetDetails(RuleSetDetails input) {
+        public Model.ApiMatchRuleSet? RuleSetDetails(RuleSetDetails input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiMatchRuleSet? UpdateRuleSet(UpdateRuleSet input) {
+        public Model.ApiMatchRuleSet? UpdateRuleSet(UpdateRuleSet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

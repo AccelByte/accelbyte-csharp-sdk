@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).ListServer(op);
         }
-
         public static Dsmc.Model.ModelsCountServerResponse? Execute(
             this CountServer.CountServerBuilder builder,
             string namespace_
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).CountServer(op);
         }
-
         public static Dsmc.Model.ModelsDetailedCountServerResponse? Execute(
             this CountServerDetailed.CountServerDetailedBuilder builder,
             string namespace_
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).CountServerDetailed(op);
         }
-
         public static Dsmc.Model.ModelsListServerResponse? Execute(
             this ListLocalServer.ListLocalServerBuilder builder,
             string namespace_
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).ListLocalServer(op);
         }
-
         public static void Execute(
             this DeleteLocalServer.DeleteLocalServerBuilder builder,
             string name,
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteLocalServer(op);
         }
-
         public static Dsmc.Model.ModelsServer? Execute(
             this GetServer.GetServerBuilder builder,
             string namespace_,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).GetServer(op);
         }
-
         public static void Execute(
             this DeleteServer.DeleteServerBuilder builder,
             string namespace_,
@@ -105,7 +99,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteServer(op);
         }
-
         public static Dsmc.Model.ModelsListSessionResponse? Execute(
             this ListSession.ListSessionBuilder builder,
             string namespace_,
@@ -121,7 +114,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).ListSession(op);
         }
-
         public static Dsmc.Model.ModelsCountSessionResponse? Execute(
             this CountSession.CountSessionBuilder builder,
             string namespace_
@@ -133,7 +125,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).CountSession(op);
         }
-
         public static void Execute(
             this DeleteSession.DeleteSessionBuilder builder,
             string namespace_,
@@ -147,6 +138,5 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteSession(op);
         }
-
     }
 }

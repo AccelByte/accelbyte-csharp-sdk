@@ -55,6 +55,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class ListSeasonInfoStatus : StringEnum<ListSeasonInfoStatus>
     {
         public static readonly ListSeasonInfoStatus DRAFT

@@ -52,4 +52,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public string? UserID { get; set; }
 
     }
+
+
 }

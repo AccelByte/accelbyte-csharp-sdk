@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCampaigns(op);
         }
-
         public static Platform.Model.CampaignInfo? Execute(
             this CreateCampaign.CreateCampaignBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCampaign(op);
         }
-
         public static Platform.Model.CampaignInfo? Execute(
             this GetCampaign.GetCampaignBuilder builder,
             string campaignId,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaign(op);
         }
-
         public static Platform.Model.CampaignInfo? Execute(
             this UpdateCampaign.UpdateCampaignBuilder builder,
             string campaignId,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).UpdateCampaign(op);
         }
-
         public static Platform.Model.CampaignDynamicInfo? Execute(
             this GetCampaignDynamic.GetCampaignDynamicBuilder builder,
             string campaignId,
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaignDynamic(op);
         }
-
         public static Platform.Model.CodeInfoPagingSlicedResult? Execute(
             this QueryCodes.QueryCodesBuilder builder,
             string campaignId,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCodes(op);
         }
-
         public static Platform.Model.CodeCreateResult? Execute(
             this CreateCodes.CreateCodesBuilder builder,
             string campaignId,
@@ -105,7 +99,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCodes(op);
         }
-
         public static Stream? Execute(
             this Download.DownloadBuilder builder,
             string campaignId,
@@ -119,7 +112,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).Download(op);
         }
-
         public static Platform.Model.BulkOperationResult? Execute(
             this BulkDisableCodes.BulkDisableCodesBuilder builder,
             string campaignId,
@@ -133,7 +125,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkDisableCodes(op);
         }
-
         public static Platform.Model.BulkOperationResult? Execute(
             this BulkEnableCodes.BulkEnableCodesBuilder builder,
             string campaignId,
@@ -147,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkEnableCodes(op);
         }
-
         public static Platform.Model.RedeemHistoryPagingSlicedResult? Execute(
             this QueryRedeemHistory.QueryRedeemHistoryBuilder builder,
             string campaignId,
@@ -161,7 +151,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryRedeemHistory(op);
         }
-
         public static Platform.Model.CodeInfo? Execute(
             this GetCode.GetCodeBuilder builder,
             string code,
@@ -175,7 +164,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCode(op);
         }
-
         public static Platform.Model.CodeInfo? Execute(
             this DisableCode.DisableCodeBuilder builder,
             string code,
@@ -189,7 +177,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).DisableCode(op);
         }
-
         public static Platform.Model.CodeInfo? Execute(
             this EnableCode.EnableCodeBuilder builder,
             string code,
@@ -203,7 +190,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).EnableCode(op);
         }
-
         public static Platform.Model.RedeemResult? Execute(
             this ApplyUserRedemption.ApplyUserRedemptionBuilder builder,
             string namespace_,
@@ -217,6 +203,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).ApplyUserRedemption(op);
         }
-
     }
 }

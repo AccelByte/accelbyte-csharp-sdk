@@ -31,4 +31,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public int? Width { get; set; }
 
     }
+
+
 }

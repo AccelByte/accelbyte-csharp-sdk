@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Type { get; set; }
 
     }
+
+
 }

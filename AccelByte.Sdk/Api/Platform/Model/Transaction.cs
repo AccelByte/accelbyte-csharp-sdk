@@ -92,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class TransactionProvider : StringEnum<TransactionProvider>
     {
         public static readonly TransactionProvider ADYEN

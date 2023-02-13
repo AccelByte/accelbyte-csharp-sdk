@@ -64,6 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class EntitlementSummaryClazz : StringEnum<EntitlementSummaryClazz>
     {
         public static readonly EntitlementSummaryClazz APP

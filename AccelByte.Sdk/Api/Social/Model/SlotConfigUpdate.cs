@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public int? MaxSlots { get; set; }
 
     }
+
+
 }

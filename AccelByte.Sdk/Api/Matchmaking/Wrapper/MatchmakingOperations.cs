@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
+        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

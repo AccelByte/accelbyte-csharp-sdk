@@ -20,4 +20,19 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? Proceed { get; set; }
 
     }
+
+    public class AcceptAgreementResponse<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("comply")]
+        public bool? Comply { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("proceed")]
+        public bool? Proceed { get; set; }
+
+    }
+
 }

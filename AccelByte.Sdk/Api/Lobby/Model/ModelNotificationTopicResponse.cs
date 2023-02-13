@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public string? Topic { get; set; }
 
     }
+
+
 }

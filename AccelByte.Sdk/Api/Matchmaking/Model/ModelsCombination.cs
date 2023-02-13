@@ -25,4 +25,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public int? RoleFlexingSecond { get; set; }
 
     }
+
+
 }

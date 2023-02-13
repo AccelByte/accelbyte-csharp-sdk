@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).GetServicePluginConfig(op);
         }
-
         public static Platform.Model.ServicePluginConfigInfo? Execute(
             this UpdateServicePluginConfig.UpdateServicePluginConfigBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UpdateServicePluginConfig(op);
         }
-
         public static void Execute(
             this DeleteServicePluginConfig.DeleteServicePluginConfigBuilder builder,
             string namespace_
@@ -47,6 +45,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).DeleteServicePluginConfig(op);
         }
-
     }
 }

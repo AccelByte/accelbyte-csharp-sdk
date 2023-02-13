@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminListUserAchievements(op);
         }
-
         public static void Execute(
             this AdminResetAchievement.AdminResetAchievementBuilder builder,
             string achievementCode,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminResetAchievement(op);
         }
-
         public static void Execute(
             this AdminUnlockAchievement.AdminUnlockAchievementBuilder builder,
             string achievementCode,
@@ -57,7 +55,6 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminUnlockAchievement(op);
         }
-
         public static Achievement.Model.ModelsPaginatedUserAchievementResponse? Execute(
             this PublicListUserAchievements.PublicListUserAchievementsBuilder builder,
             string namespace_,
@@ -71,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicListUserAchievements(op);
         }
-
         public static void Execute(
             this PublicUnlockAchievement.PublicUnlockAchievementBuilder builder,
             string achievementCode,
@@ -87,6 +83,5 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicUnlockAchievement(op);
         }
-
     }
 }

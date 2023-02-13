@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentOrderChargeRequestPaymentProvider : StringEnum<PaymentOrderChargeRequestPaymentProvider>
     {
         public static readonly PaymentOrderChargeRequestPaymentProvider ADYEN

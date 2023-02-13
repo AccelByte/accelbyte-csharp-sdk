@@ -25,4 +25,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public long? TotalTax { get; set; }
 
     }
+
+
 }

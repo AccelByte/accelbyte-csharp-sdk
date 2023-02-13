@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).GetPaymentCallbackConfig(op);
         }
-
         public static Platform.Model.PaymentCallbackConfigInfo? Execute(
             this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
             string namespace_
@@ -35,6 +34,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).UpdatePaymentCallbackConfig(op);
         }
-
     }
 }

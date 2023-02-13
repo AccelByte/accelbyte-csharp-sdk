@@ -39,6 +39,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class OrderHistoryInfoAction : StringEnum<OrderHistoryInfoAction>
     {
         public static readonly OrderHistoryInfoAction CHARGEBACK

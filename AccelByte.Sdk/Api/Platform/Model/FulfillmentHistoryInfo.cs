@@ -64,6 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class FulfillmentHistoryInfoStatus : StringEnum<FulfillmentHistoryInfoStatus>
     {
         public static readonly FulfillmentHistoryInfoStatus FAIL

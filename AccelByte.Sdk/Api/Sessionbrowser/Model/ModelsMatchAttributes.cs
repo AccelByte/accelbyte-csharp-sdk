@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public long? FirstTicketCreatedAt { get; set; }
 
     }
+
+
 }

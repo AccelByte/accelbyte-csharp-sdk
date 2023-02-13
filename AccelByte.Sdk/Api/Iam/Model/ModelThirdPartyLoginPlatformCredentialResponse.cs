@@ -95,4 +95,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<string>? Scopes { get; set; }
 
     }
+
+
 }

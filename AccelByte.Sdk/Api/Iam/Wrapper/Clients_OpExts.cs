@@ -22,7 +22,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).GetClients(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ClientmodelClientCreationResponse? Execute(
             this CreateClient.CreateClientBuilder builder,
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).CreateClient(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ClientmodelClientResponse? Execute(
             this GetClient.GetClientBuilder builder,
@@ -48,7 +46,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).GetClient(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ClientmodelClientResponse? Execute(
             this UpdateClient.UpdateClientBuilder builder,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).UpdateClient(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteClient.DeleteClientBuilder builder,
@@ -76,7 +72,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).DeleteClient(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdateClientPermission.UpdateClientPermissionBuilder builder,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).UpdateClientPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddClientPermission.AddClientPermissionBuilder builder,
@@ -108,7 +102,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AddClientPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteClientPermission.DeleteClientPermissionBuilder builder,
@@ -125,7 +118,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).DeleteClientPermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdateClientSecret.UpdateClientSecretBuilder builder,
@@ -140,7 +132,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).UpdateClientSecret(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ClientmodelClientResponse>? Execute(
             this GetClientsbyNamespace.GetClientsbyNamespaceBuilder builder,
@@ -153,7 +144,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).GetClientsbyNamespace(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ClientmodelClientCreationResponse? Execute(
             this CreateClientByNamespace.CreateClientByNamespaceBuilder builder,
@@ -168,7 +158,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).CreateClientByNamespace(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteClientByNamespace.DeleteClientByNamespaceBuilder builder,
@@ -183,7 +172,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).DeleteClientByNamespace(op);
         }
-
         public static Iam.Model.ClientmodelClientsV3Response? Execute(
             this AdminGetClientsByNamespaceV3.AdminGetClientsByNamespaceV3Builder builder,
             string namespace_
@@ -195,7 +183,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminGetClientsByNamespaceV3(op);
         }
-
         public static Iam.Model.ClientmodelClientV3Response? Execute(
             this AdminCreateClientV3.AdminCreateClientV3Builder builder,
             ClientmodelClientCreationV3Request body,
@@ -209,7 +196,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminCreateClientV3(op);
         }
-
         public static Iam.Model.ClientmodelClientV3Response? Execute(
             this AdminGetClientsbyNamespacebyIDV3.AdminGetClientsbyNamespacebyIDV3Builder builder,
             string clientId,
@@ -223,7 +209,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminGetClientsbyNamespacebyIDV3(op);
         }
-
         public static void Execute(
             this AdminDeleteClientV3.AdminDeleteClientV3Builder builder,
             string clientId,
@@ -237,7 +222,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminDeleteClientV3(op);
         }
-
         public static Iam.Model.ClientmodelClientV3Response? Execute(
             this AdminUpdateClientV3.AdminUpdateClientV3Builder builder,
             ClientmodelClientUpdateV3Request body,
@@ -253,7 +237,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminUpdateClientV3(op);
         }
-
         public static void Execute(
             this AdminUpdateClientPermissionV3.AdminUpdateClientPermissionV3Builder builder,
             AccountcommonClientPermissionsV3 body,
@@ -269,7 +252,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminUpdateClientPermissionV3(op);
         }
-
         public static void Execute(
             this AdminAddClientPermissionsV3.AdminAddClientPermissionsV3Builder builder,
             AccountcommonClientPermissionsV3 body,
@@ -285,7 +267,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminAddClientPermissionsV3(op);
         }
-
         public static void Execute(
             this AdminDeleteClientPermissionV3.AdminDeleteClientPermissionV3Builder builder,
             long action,
@@ -303,7 +284,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminDeleteClientPermissionV3(op);
         }
-
         public static void Execute(
             this AdminUpdateClientSecretV3.AdminUpdateClientSecretV3Builder builder,
             ClientmodelV3ClientUpdateSecretRequest body,
@@ -319,6 +299,5 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminUpdateClientSecretV3(op);
         }
-
     }
 }

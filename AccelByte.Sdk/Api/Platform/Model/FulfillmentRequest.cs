@@ -66,6 +66,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class FulfillmentRequestOrigin : StringEnum<FulfillmentRequestOrigin>
     {
         public static readonly FulfillmentRequestOrigin Epic

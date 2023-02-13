@@ -201,7 +201,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
         
-        public Model.AccountCreateTestUsersResponseV4? AdminCreateTestUsersV4(AdminCreateTestUsersV4 input) {
+        public Model.AccountCreateTestUsersResponseV4? AdminCreateTestUsersV4(AdminCreateTestUsersV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -209,7 +210,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListValidUserIDResponseV4? AdminBulkCheckValidUserIDV4(AdminBulkCheckValidUserIDV4 input) {
+        public Model.ModelListValidUserIDResponseV4? AdminBulkCheckValidUserIDV4(AdminBulkCheckValidUserIDV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -217,7 +219,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminUpdateUserV4(AdminUpdateUserV4 input) {
+        public Model.ModelUserResponseV3? AdminUpdateUserV4(AdminUpdateUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -241,7 +244,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListUserRolesV4Response? AdminListUserRolesV4(AdminListUserRolesV4 input) {
+        public Model.ModelListUserRolesV4Response? AdminListUserRolesV4(AdminListUserRolesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -249,7 +253,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListUserRolesV4Response? AdminUpdateUserRoleV4(AdminUpdateUserRoleV4 input) {
+        public Model.ModelListUserRolesV4Response? AdminUpdateUserRoleV4(AdminUpdateUserRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -257,7 +262,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListUserRolesV4Response? AdminAddUserRoleV4(AdminAddUserRoleV4 input) {
+        public Model.ModelListUserRolesV4Response? AdminAddUserRoleV4(AdminAddUserRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -273,7 +279,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminUpdateMyUserV4(AdminUpdateMyUserV4 input) {
+        public Model.ModelUserResponseV3? AdminUpdateMyUserV4(AdminUpdateMyUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -297,7 +304,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAuthenticatorKeyResponseV4? AdminGenerateMyAuthenticatorKeyV4(AdminGenerateMyAuthenticatorKeyV4 input) {
+        public Model.ModelAuthenticatorKeyResponseV4? AdminGenerateMyAuthenticatorKeyV4(AdminGenerateMyAuthenticatorKeyV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -305,7 +313,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? AdminGetMyBackupCodesV4(AdminGetMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? AdminGetMyBackupCodesV4(AdminGetMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -313,7 +322,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? AdminGenerateMyBackupCodesV4(AdminGenerateMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? AdminGenerateMyBackupCodesV4(AdminGenerateMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -329,7 +339,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? AdminDownloadMyBackupCodesV4(AdminDownloadMyBackupCodesV4 input) {
+        public Stream? AdminDownloadMyBackupCodesV4(AdminDownloadMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -337,7 +348,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? AdminEnableMyBackupCodesV4(AdminEnableMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? AdminEnableMyBackupCodesV4(AdminEnableMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -369,7 +381,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelEnabledFactorsResponseV4? AdminGetMyEnabledFactorsV4(AdminGetMyEnabledFactorsV4 input) {
+        public Model.ModelEnabledFactorsResponseV4? AdminGetMyEnabledFactorsV4(AdminGetMyEnabledFactorsV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -385,7 +398,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelInviteUserResponseV3? AdminInviteUserV4(AdminInviteUserV4 input) {
+        public Model.ModelInviteUserResponseV3? AdminInviteUserV4(AdminInviteUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -393,7 +407,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountCreateUserResponseV4? PublicCreateTestUserV4(PublicCreateTestUserV4 input) {
+        public Model.AccountCreateUserResponseV4? PublicCreateTestUserV4(PublicCreateTestUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -401,7 +416,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountCreateUserResponseV4? PublicCreateUserV4(PublicCreateUserV4 input) {
+        public Model.AccountCreateUserResponseV4? PublicCreateUserV4(PublicCreateUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -409,7 +425,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountCreateUserResponseV4? CreateUserFromInvitationV4(CreateUserFromInvitationV4 input) {
+        public Model.AccountCreateUserResponseV4? CreateUserFromInvitationV4(CreateUserFromInvitationV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -417,7 +434,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicUpdateUserV4(PublicUpdateUserV4 input) {
+        public Model.ModelUserResponseV3? PublicUpdateUserV4(PublicUpdateUserV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -433,7 +451,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountUserResponseV4? PublicUpgradeHeadlessAccountWithVerificationCodeV4(PublicUpgradeHeadlessAccountWithVerificationCodeV4 input) {
+        public Model.AccountUserResponseV4? PublicUpgradeHeadlessAccountWithVerificationCodeV4(PublicUpgradeHeadlessAccountWithVerificationCodeV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -441,7 +460,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountUserResponseV4? PublicUpgradeHeadlessAccountV4(PublicUpgradeHeadlessAccountV4 input) {
+        public Model.AccountUserResponseV4? PublicUpgradeHeadlessAccountV4(PublicUpgradeHeadlessAccountV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -465,7 +485,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAuthenticatorKeyResponseV4? PublicGenerateMyAuthenticatorKeyV4(PublicGenerateMyAuthenticatorKeyV4 input) {
+        public Model.ModelAuthenticatorKeyResponseV4? PublicGenerateMyAuthenticatorKeyV4(PublicGenerateMyAuthenticatorKeyV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -473,7 +494,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? PublicGetMyBackupCodesV4(PublicGetMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? PublicGetMyBackupCodesV4(PublicGetMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -481,7 +503,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? PublicGenerateMyBackupCodesV4(PublicGenerateMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? PublicGenerateMyBackupCodesV4(PublicGenerateMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -497,7 +520,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? PublicDownloadMyBackupCodesV4(PublicDownloadMyBackupCodesV4 input) {
+        public Stream? PublicDownloadMyBackupCodesV4(PublicDownloadMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -505,7 +529,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelBackupCodesResponseV4? PublicEnableMyBackupCodesV4(PublicEnableMyBackupCodesV4 input) {
+        public Model.ModelBackupCodesResponseV4? PublicEnableMyBackupCodesV4(PublicEnableMyBackupCodesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -545,7 +570,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelEnabledFactorsResponseV4? PublicGetMyEnabledFactorsV4(PublicGetMyEnabledFactorsV4 input) {
+        public Model.ModelEnabledFactorsResponseV4? PublicGetMyEnabledFactorsV4(PublicGetMyEnabledFactorsV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -32,4 +32,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? RoleName { get; set; }
 
     }
+
+
 }

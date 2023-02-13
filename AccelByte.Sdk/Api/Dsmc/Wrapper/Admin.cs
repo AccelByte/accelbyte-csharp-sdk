@@ -61,7 +61,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
-        public Model.ModelsListServerResponse? ListServer(ListServer input) {
+        public Model.ModelsListServerResponse? ListServer(ListServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +70,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCountServerResponse? CountServer(CountServer input) {
+        public Model.ModelsCountServerResponse? CountServer(CountServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +79,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDetailedCountServerResponse? CountServerDetailed(CountServerDetailed input) {
+        public Model.ModelsDetailedCountServerResponse? CountServerDetailed(CountServerDetailed input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListServerResponse? ListLocalServer(ListLocalServer input) {
+        public Model.ModelsListServerResponse? ListLocalServer(ListLocalServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +105,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServer? GetServer(GetServer input) {
+        public Model.ModelsServer? GetServer(GetServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +122,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListSessionResponse? ListSession(ListSession input) {
+        public Model.ModelsListSessionResponse? ListSession(ListSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,7 +131,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCountSessionResponse? CountSession(CountSession input) {
+        public Model.ModelsCountSessionResponse? CountSession(CountSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

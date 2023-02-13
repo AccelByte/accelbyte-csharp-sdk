@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public List<string>? UserIDs { get; set; }
 
     }
+
+
 }

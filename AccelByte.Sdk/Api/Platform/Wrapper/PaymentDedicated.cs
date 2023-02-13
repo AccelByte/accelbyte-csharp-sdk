@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.PaymentOrderCreateResult? CreatePaymentOrderByDedicated(CreatePaymentOrderByDedicated input) {
+        public Model.PaymentOrderCreateResult? CreatePaymentOrderByDedicated(CreatePaymentOrderByDedicated input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -41,7 +42,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderRefundResult? RefundPaymentOrderByDedicated(RefundPaymentOrderByDedicated input) {
+        public Model.PaymentOrderRefundResult? RefundPaymentOrderByDedicated(RefundPaymentOrderByDedicated input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +51,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderSyncResult? SyncPaymentOrders(SyncPaymentOrders input) {
+        public Model.PaymentOrderSyncResult? SyncPaymentOrders(SyncPaymentOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

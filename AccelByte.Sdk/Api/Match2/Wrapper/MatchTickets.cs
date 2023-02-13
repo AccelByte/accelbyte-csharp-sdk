@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
         
-        public Model.ApiMatchTicketResponse? CreateMatchTicket(CreateMatchTicket input) {
+        public Model.ApiMatchTicketResponse? CreateMatchTicket(CreateMatchTicket input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -41,7 +42,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiMatchTicketStatus? MatchTicketDetails(MatchTicketDetails input) {
+        public Model.ApiMatchTicketStatus? MatchTicketDetails(MatchTicketDetails input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

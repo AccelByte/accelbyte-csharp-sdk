@@ -56,6 +56,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class WalletInfoStatus : StringEnum<WalletInfoStatus>
     {
         public static readonly WalletInfoStatus ACTIVE

@@ -21,6 +21,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DsmcOperations)builder.WrapperObject!).PublicGetMessages(op);
         }
-
     }
 }

@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
         
-        public List<Model.RetrievePolicyResponse>? RetrievePolicies(RetrievePolicies input) {
+        public List<Model.RetrievePolicyResponse>? RetrievePolicies(RetrievePolicies input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +70,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPolicies(RetrieveLatestPolicies input) {
+        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPolicies(RetrieveLatestPolicies input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +79,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesPublic(RetrieveLatestPoliciesPublic input) {
+        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesPublic(RetrieveLatestPoliciesPublic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesByNamespaceAndCountryPublic(RetrieveLatestPoliciesByNamespaceAndCountryPublic input) {
+        public List<Model.RetrievePolicyPublicResponse>? RetrieveLatestPoliciesByNamespaceAndCountryPublic(RetrieveLatestPoliciesByNamespaceAndCountryPublic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

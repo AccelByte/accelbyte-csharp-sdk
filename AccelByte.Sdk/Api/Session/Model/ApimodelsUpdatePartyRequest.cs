@@ -34,4 +34,33 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? Version { get; set; }
 
     }
+
+    public class ApimodelsUpdatePartyRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("attributes")]
+        public T1? Attributes { get; set; }
+
+        [JsonPropertyName("inactiveTimeout")]
+        public int? InactiveTimeout { get; set; }
+
+        [JsonPropertyName("inviteTimeout")]
+        public int? InviteTimeout { get; set; }
+
+        [JsonPropertyName("joinability")]
+        public string? Joinability { get; set; }
+
+        [JsonPropertyName("maxPlayers")]
+        public int? MaxPlayers { get; set; }
+
+        [JsonPropertyName("minPlayers")]
+        public int? MinPlayers { get; set; }
+
+        [JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        [JsonPropertyName("version")]
+        public int? Version { get; set; }
+
+    }
+
 }

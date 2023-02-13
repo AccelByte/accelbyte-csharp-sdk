@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public Dictionary<string, ModelsSubGameMode>? SubGameModes { get; set; }
 
     }
+
+
 }

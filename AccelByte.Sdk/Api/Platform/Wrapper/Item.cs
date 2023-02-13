@@ -197,7 +197,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public List<Model.ItemTypeConfigInfo>? ListItemTypeConfigs(ListItemTypeConfigs input) {
+        public List<Model.ItemTypeConfigInfo>? ListItemTypeConfigs(ListItemTypeConfigs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -213,7 +214,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemTypeConfigInfo? SearchItemTypeConfig(SearchItemTypeConfig input) {
+        public Model.ItemTypeConfigInfo? SearchItemTypeConfig(SearchItemTypeConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -221,7 +223,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemTypeConfigInfo? GetItemTypeConfig(GetItemTypeConfig input) {
+        public Model.ItemTypeConfigInfo? GetItemTypeConfig(GetItemTypeConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -229,7 +232,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemTypeConfigInfo? UpdateItemTypeConfig(UpdateItemTypeConfig input) {
+        public Model.ItemTypeConfigInfo? UpdateItemTypeConfig(UpdateItemTypeConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -245,7 +249,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? SyncInGameItem(SyncInGameItem input) {
+        public Model.FullItemInfo? SyncInGameItem(SyncInGameItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -253,7 +258,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? CreateItem(CreateItem input) {
+        
+        public Model.FullItemInfo<T1>? SyncInGameItem<T1>(SyncInGameItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? CreateItem(CreateItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -261,7 +277,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? GetItemByAppId(GetItemByAppId input) {
+        
+        public Model.FullItemInfo<T1>? CreateItem<T1>(CreateItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? GetItemByAppId(GetItemByAppId input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -269,7 +296,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingSlicedResult? QueryItems(QueryItems input) {
+        
+        public Model.FullItemInfo<T1>? GetItemByAppId<T1>(GetItemByAppId input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemPagingSlicedResult? QueryItems(QueryItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -277,7 +315,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BasicItem>? ListBasicItemsByFeatures(ListBasicItemsByFeatures input) {
+        public List<Model.BasicItem>? ListBasicItemsByFeatures(ListBasicItemsByFeatures input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -285,7 +324,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? GetItemBySku(GetItemBySku input) {
+        public Model.FullItemInfo? GetItemBySku(GetItemBySku input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -293,7 +333,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PopulatedItemInfo? GetLocaleItemBySku(GetLocaleItemBySku input) {
+        
+        public Model.FullItemInfo<T1>? GetItemBySku<T1>(GetItemBySku input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PopulatedItemInfo? GetLocaleItemBySku(GetLocaleItemBySku input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -301,7 +352,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemId? GetItemIdBySku(GetItemIdBySku input) {
+        
+        public Model.PopulatedItemInfo<T1, T2>? GetLocaleItemBySku<T1, T2>(GetLocaleItemBySku input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemId? GetItemIdBySku(GetItemIdBySku input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -309,7 +371,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ItemId>? GetBulkItemIdBySkus(GetBulkItemIdBySkus input) {
+        public List<Model.ItemId>? GetBulkItemIdBySkus(GetBulkItemIdBySkus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -317,7 +380,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ItemInfo>? BulkGetLocaleItems(BulkGetLocaleItems input) {
+        public List<Model.ItemInfo>? BulkGetLocaleItems(BulkGetLocaleItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -325,7 +389,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.AvailablePredicateObject>? GetAvailablePredicateTypes(GetAvailablePredicateTypes input) {
+        
+        public List<Model.ItemInfo<T1, T2>>? BulkGetLocaleItems<T1, T2>(BulkGetLocaleItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.AvailablePredicateObject>? GetAvailablePredicateTypes(GetAvailablePredicateTypes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -333,7 +408,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ItemPurchaseConditionValidateResult>? ValidateItemPurchaseCondition(ValidateItemPurchaseCondition input) {
+        public List<Model.ItemPurchaseConditionValidateResult>? ValidateItemPurchaseCondition(ValidateItemPurchaseCondition input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -341,7 +417,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingSlicedResult? SearchItems(SearchItems input) {
+        public Model.FullItemPagingSlicedResult? SearchItems(SearchItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -349,7 +426,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingSlicedResult? QueryUncategorizedItems(QueryUncategorizedItems input) {
+        public Model.FullItemPagingSlicedResult? QueryUncategorizedItems(QueryUncategorizedItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -357,7 +435,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? GetItem(GetItem input) {
+        public Model.FullItemInfo? GetItem(GetItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -365,10 +444,31 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? UpdateItem(UpdateItem input) {
+        
+        public Model.FullItemInfo<T1>? GetItem<T1>(GetItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? UpdateItem(UpdateItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.FullItemInfo<T1>? UpdateItem<T1>(UpdateItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -381,7 +481,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemAcquireResult? AcquireItem(AcquireItem input) {
+        public Model.ItemAcquireResult? AcquireItem(AcquireItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -389,7 +490,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullAppInfo? GetApp(GetApp input) {
+        public Model.FullAppInfo? GetApp(GetApp input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -397,7 +499,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullAppInfo? UpdateApp(UpdateApp input) {
+        public Model.FullAppInfo? UpdateApp(UpdateApp input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -405,7 +508,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? DisableItem(DisableItem input) {
+        public Model.FullItemInfo? DisableItem(DisableItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -413,7 +517,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemDynamicDataInfo? GetItemDynamicData(GetItemDynamicData input) {
+        
+        public Model.FullItemInfo<T1>? DisableItem<T1>(DisableItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemDynamicDataInfo? GetItemDynamicData(GetItemDynamicData input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -421,7 +536,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? EnableItem(EnableItem input) {
+        public Model.FullItemInfo? EnableItem(EnableItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -429,7 +545,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? FeatureItem(FeatureItem input) {
+        
+        public Model.FullItemInfo<T1>? EnableItem<T1>(EnableItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? FeatureItem(FeatureItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -437,7 +564,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? DefeatureItem(DefeatureItem input) {
+        
+        public Model.FullItemInfo<T1>? FeatureItem<T1>(FeatureItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? DefeatureItem(DefeatureItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -445,7 +583,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PopulatedItemInfo? GetLocaleItem(GetLocaleItem input) {
+        
+        public Model.FullItemInfo<T1>? DefeatureItem<T1>(DefeatureItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PopulatedItemInfo? GetLocaleItem(GetLocaleItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -453,10 +602,31 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemInfo? UpdateItemPurchaseCondition(UpdateItemPurchaseCondition input) {
+        
+        public Model.PopulatedItemInfo<T1, T2>? GetLocaleItem<T1, T2>(GetLocaleItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemInfo? UpdateItemPurchaseCondition(UpdateItemPurchaseCondition input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.FullItemInfo<T1>? UpdateItemPurchaseCondition<T1>(UpdateItemPurchaseCondition input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -469,7 +639,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemInfo? PublicGetItemByAppId(PublicGetItemByAppId input) {
+        public Model.ItemInfo? PublicGetItemByAppId(PublicGetItemByAppId input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -477,7 +648,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemPagingSlicedResult? PublicQueryItems(PublicQueryItems input) {
+        
+        public Model.ItemInfo<T1, T2>? PublicGetItemByAppId<T1, T2>(PublicGetItemByAppId input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemPagingSlicedResult? PublicQueryItems(PublicQueryItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -485,7 +667,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemInfo? PublicGetItemBySku(PublicGetItemBySku input) {
+        public Model.ItemInfo? PublicGetItemBySku(PublicGetItemBySku input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -493,7 +676,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ItemInfo>? PublicBulkGetItems(PublicBulkGetItems input) {
+        
+        public Model.ItemInfo<T1, T2>? PublicGetItemBySku<T1, T2>(PublicGetItemBySku input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ItemInfo>? PublicBulkGetItems(PublicBulkGetItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -501,7 +695,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ItemPurchaseConditionValidateResult>? PublicValidateItemPurchaseCondition(PublicValidateItemPurchaseCondition input) {
+        
+        public List<Model.ItemInfo<T1, T2>>? PublicBulkGetItems<T1, T2>(PublicBulkGetItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ItemPurchaseConditionValidateResult>? PublicValidateItemPurchaseCondition(PublicValidateItemPurchaseCondition input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -509,7 +714,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemPagingSlicedResult? PublicSearchItems(PublicSearchItems input) {
+        public Model.ItemPagingSlicedResult? PublicSearchItems(PublicSearchItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -517,7 +723,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AppInfo? PublicGetApp(PublicGetApp input) {
+        public Model.AppInfo? PublicGetApp(PublicGetApp input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -525,7 +732,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ItemDynamicDataInfo? PublicGetItemDynamicData(PublicGetItemDynamicData input) {
+        public Model.ItemDynamicDataInfo? PublicGetItemDynamicData(PublicGetItemDynamicData input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -533,7 +741,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PopulatedItemInfo? PublicGetItem(PublicGetItem input) {
+        public Model.PopulatedItemInfo? PublicGetItem(PublicGetItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -541,7 +750,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingSlicedResult? QueryItems1(QueryItems1 input) {
+        
+        public Model.PopulatedItemInfo<T1, T2>? PublicGetItem<T1, T2>(PublicGetItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullItemPagingSlicedResult? QueryItems1(QueryItems1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

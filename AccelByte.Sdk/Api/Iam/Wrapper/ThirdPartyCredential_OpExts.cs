@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static List<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this RetrieveThirdPartyLoginPlatformCredentialV3.RetrieveThirdPartyLoginPlatformCredentialV3Builder builder,
             string namespace_,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this AddThirdPartyLoginPlatformCredentialV3.AddThirdPartyLoginPlatformCredentialV3Builder builder,
             ModelThirdPartyLoginPlatformCredentialRequest body,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AddThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static void Execute(
             this DeleteThirdPartyLoginPlatformCredentialV3.DeleteThirdPartyLoginPlatformCredentialV3Builder builder,
             string namespace_,
@@ -79,7 +75,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this UpdateThirdPartyLoginPlatformCredentialV3.UpdateThirdPartyLoginPlatformCredentialV3Builder builder,
             ModelThirdPartyLoginPlatformCredentialRequest body,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelPlatformDomainResponse? Execute(
             this UpdateThirdPartyLoginPlatformDomainV3.UpdateThirdPartyLoginPlatformDomainV3Builder builder,
             ModelPlatformDomainUpdateRequest body,
@@ -111,7 +105,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformDomainV3(op);
         }
-
         public static void Execute(
             this DeleteThirdPartyLoginPlatformDomainV3.DeleteThirdPartyLoginPlatformDomainV3Builder builder,
             ModelPlatformDomainDeleteRequest body,
@@ -127,7 +120,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformDomainV3(op);
         }
-
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
             string namespace_
@@ -139,7 +131,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(op);
         }
-
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveActiveOIDCClientsPublicV3.RetrieveActiveOIDCClientsPublicV3Builder builder,
             string namespace_,
@@ -153,6 +144,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveActiveOIDCClientsPublicV3(op);
         }
-
     }
 }

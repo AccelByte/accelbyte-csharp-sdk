@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedTagResponse? AdminListTags(AdminListTags input) {
+        public Model.ModelsPaginatedTagResponse? AdminListTags(AdminListTags input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -37,7 +38,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedTagResponse? PublicListTags(PublicListTags input) {
+        public Model.ModelsPaginatedTagResponse? PublicListTags(PublicListTags input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

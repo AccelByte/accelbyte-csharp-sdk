@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<ModelDeviceResponseV4>? Devices { get; set; }
 
     }
+
+
 }

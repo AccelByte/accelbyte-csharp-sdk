@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).GetConfig(op);
         }
-
         public static void Execute(
             this DeleteConfig.DeleteConfigBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).DeleteConfig(op);
         }
-
         public static Basic.Model.Equ8Config? Execute(
             this UpdateConfig.UpdateConfigBuilder builder,
             string namespace_
@@ -47,6 +45,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).UpdateConfig(op);
         }
-
     }
 }

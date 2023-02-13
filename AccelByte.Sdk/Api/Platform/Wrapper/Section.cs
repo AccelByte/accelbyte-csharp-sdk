@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.SectionPagingSlicedResult? QuerySections(QuerySections input) {
+        public Model.SectionPagingSlicedResult? QuerySections(QuerySections input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,10 +58,21 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullSectionInfo? CreateSection(CreateSection input) {
+        public Model.FullSectionInfo? CreateSection(CreateSection input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.FullSectionInfo<T1>? CreateSection<T1>(CreateSection input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -73,7 +85,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullSectionInfo? GetSection(GetSection input) {
+        public Model.FullSectionInfo? GetSection(GetSection input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,10 +94,31 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullSectionInfo? UpdateSection(UpdateSection input) {
+        
+        public Model.FullSectionInfo<T1>? GetSection<T1>(GetSection input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FullSectionInfo? UpdateSection(UpdateSection input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.FullSectionInfo<T1>? UpdateSection<T1>(UpdateSection input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -97,10 +131,21 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.SectionInfo>? PublicListActiveSections(PublicListActiveSections input) {
+        public List<Model.SectionInfo>? PublicListActiveSections(PublicListActiveSections input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public List<Model.SectionInfo<T1, T2>>? PublicListActiveSections<T1, T2>(PublicListActiveSections input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

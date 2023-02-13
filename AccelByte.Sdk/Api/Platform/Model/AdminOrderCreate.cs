@@ -60,6 +60,58 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class AdminOrderCreate<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("currencyCode")]
+        public string? CurrencyCode { get; set; }
+
+        [JsonPropertyName("currencyNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CurrencyNamespace { get; set; }
+
+        [JsonPropertyName("discountedPrice")]
+        public int? DiscountedPrice { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("itemId")]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("options")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ADTOObjectForOrderCreationOptions? Options { get; set; }
+
+        [JsonPropertyName("platform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public AdminOrderCreatePlatform? Platform { get; set; }
+
+        [JsonPropertyName("price")]
+        public int? Price { get; set; }
+
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get; set; }
+
+        [JsonPropertyName("region")]
+        public string? Region { get; set; }
+
+        [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ReturnUrl { get; set; }
+
+        [JsonPropertyName("sandbox")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Sandbox { get; set; }
+
+    }
+
+
     public class AdminOrderCreatePlatform : StringEnum<AdminOrderCreatePlatform>
     {
         public static readonly AdminOrderCreatePlatform Epic

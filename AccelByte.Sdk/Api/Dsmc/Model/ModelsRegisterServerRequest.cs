@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? PodName { get; set; }
 
     }
+
+
 }

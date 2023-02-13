@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Group.Model
         public List<string>? GroupIDs { get; set; }
 
     }
+
+
 }

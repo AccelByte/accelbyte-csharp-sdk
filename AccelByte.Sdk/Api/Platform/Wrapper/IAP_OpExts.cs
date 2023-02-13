@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetAppleIAPConfig(op);
         }
-
         public static Platform.Model.AppleIAPConfigInfo? Execute(
             this UpdateAppleIAPConfig.UpdateAppleIAPConfigBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateAppleIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteAppleIAPConfig.DeleteAppleIAPConfigBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteAppleIAPConfig(op);
         }
-
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this GetEpicGamesIAPConfig.GetEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetEpicGamesIAPConfig(op);
         }
-
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this UpdateEpicGamesIAPConfig.UpdateEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -71,7 +67,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateEpicGamesIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteEpicGamesIAPConfig.DeleteEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -83,7 +78,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteEpicGamesIAPConfig(op);
         }
-
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this GetGoogleIAPConfig.GetGoogleIAPConfigBuilder builder,
             string namespace_
@@ -95,7 +89,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetGoogleIAPConfig(op);
         }
-
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this UpdateGoogleIAPConfig.UpdateGoogleIAPConfigBuilder builder,
             string namespace_
@@ -107,7 +100,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteGoogleIAPConfig.DeleteGoogleIAPConfigBuilder builder,
             string namespace_
@@ -119,7 +111,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteGoogleIAPConfig(op);
         }
-
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this UpdateGoogleP12File.UpdateGoogleP12FileBuilder builder,
             string namespace_
@@ -131,7 +122,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleP12File(op);
         }
-
         public static Platform.Model.IAPItemConfigInfo? Execute(
             this GetIAPItemConfig.GetIAPItemConfigBuilder builder,
             string namespace_
@@ -143,7 +133,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemConfig(op);
         }
-
         public static Platform.Model.IAPItemConfigInfo? Execute(
             this UpdateIAPItemConfig.UpdateIAPItemConfigBuilder builder,
             string namespace_
@@ -155,7 +144,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateIAPItemConfig(op);
         }
-
         public static void Execute(
             this DeleteIAPItemConfig.DeleteIAPItemConfigBuilder builder,
             string namespace_
@@ -167,7 +155,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteIAPItemConfig(op);
         }
-
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this GetPlayStationIAPConfig.GetPlayStationIAPConfigBuilder builder,
             string namespace_
@@ -179,7 +166,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetPlayStationIAPConfig(op);
         }
-
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this UpdatePlaystationIAPConfig.UpdatePlaystationIAPConfigBuilder builder,
             string namespace_
@@ -191,7 +177,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdatePlaystationIAPConfig(op);
         }
-
         public static void Execute(
             this DeletePlaystationIAPConfig.DeletePlaystationIAPConfigBuilder builder,
             string namespace_
@@ -203,7 +188,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeletePlaystationIAPConfig(op);
         }
-
         public static Platform.Model.StadiaIAPConfigInfo? Execute(
             this GetStadiaIAPConfig.GetStadiaIAPConfigBuilder builder,
             string namespace_
@@ -215,7 +199,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetStadiaIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteStadiaIAPConfig.DeleteStadiaIAPConfigBuilder builder,
             string namespace_
@@ -227,7 +210,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteStadiaIAPConfig(op);
         }
-
         public static Platform.Model.StadiaIAPConfigInfo? Execute(
             this UpdateStadiaJsonConfigFile.UpdateStadiaJsonConfigFileBuilder builder,
             string namespace_
@@ -239,7 +221,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateStadiaJsonConfigFile(op);
         }
-
         public static Platform.Model.SteamIAPConfig? Execute(
             this GetSteamIAPConfig.GetSteamIAPConfigBuilder builder,
             string namespace_
@@ -251,7 +232,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetSteamIAPConfig(op);
         }
-
         public static Platform.Model.SteamIAPConfigInfo? Execute(
             this UpdateSteamIAPConfig.UpdateSteamIAPConfigBuilder builder,
             string namespace_
@@ -263,7 +243,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateSteamIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteSteamIAPConfig.DeleteSteamIAPConfigBuilder builder,
             string namespace_
@@ -275,7 +254,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteSteamIAPConfig(op);
         }
-
         public static Platform.Model.TwitchIAPConfigInfo? Execute(
             this GetTwitchIAPConfig.GetTwitchIAPConfigBuilder builder,
             string namespace_
@@ -287,7 +265,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetTwitchIAPConfig(op);
         }
-
         public static Platform.Model.TwitchIAPConfigInfo? Execute(
             this UpdateTwitchIAPConfig.UpdateTwitchIAPConfigBuilder builder,
             string namespace_
@@ -299,7 +276,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateTwitchIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteTwitchIAPConfig.DeleteTwitchIAPConfigBuilder builder,
             string namespace_
@@ -311,7 +287,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteTwitchIAPConfig(op);
         }
-
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this GetXblIAPConfig.GetXblIAPConfigBuilder builder,
             string namespace_
@@ -323,7 +298,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetXblIAPConfig(op);
         }
-
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this UpdateXblIAPConfig.UpdateXblIAPConfigBuilder builder,
             string namespace_
@@ -335,7 +309,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblIAPConfig(op);
         }
-
         public static void Execute(
             this DeleteXblAPConfig.DeleteXblAPConfigBuilder builder,
             string namespace_
@@ -347,7 +320,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteXblAPConfig(op);
         }
-
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this UpdateXblBPCertFile.UpdateXblBPCertFileBuilder builder,
             string namespace_
@@ -359,7 +331,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFile(op);
         }
-
         public static Platform.Model.IAPOrderPagingSlicedResult? Execute(
             this QueryUserIAPOrders.QueryUserIAPOrdersBuilder builder,
             string namespace_,
@@ -373,7 +344,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPOrders(op);
         }
-
         public static Platform.Model.IAPOrderPagingSlicedResult? Execute(
             this QueryAllUserIAPOrders.QueryAllUserIAPOrdersBuilder builder,
             string namespace_,
@@ -387,7 +357,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAllUserIAPOrders(op);
         }
-
         public static Platform.Model.IAPConsumeHistoryPagingSlicedResult? Execute(
             this QueryUserIAPConsumeHistory.QueryUserIAPConsumeHistoryBuilder builder,
             string namespace_,
@@ -401,7 +370,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPConsumeHistory(op);
         }
-
         public static void Execute(
             this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
             string namespace_,
@@ -415,7 +383,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItem(op);
         }
-
         public static void Execute(
             this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
             string namespace_,
@@ -429,7 +396,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillAppleIAPItem(op);
         }
-
         public static List<Platform.Model.EpicGamesReconcileResult>? Execute(
             this SyncEpicGamesInventory.SyncEpicGamesInventoryBuilder builder,
             string namespace_,
@@ -443,7 +409,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncEpicGamesInventory(op);
         }
-
         public static Platform.Model.GoogleReceiptResolveResult? Execute(
             this PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder builder,
             string namespace_,
@@ -457,7 +422,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItem(op);
         }
-
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder builder,
             string namespace_,
@@ -471,7 +435,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStore(op);
         }
-
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
             string namespace_,
@@ -485,7 +448,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreWithMultipleServiceLabels(op);
         }
-
         public static void Execute(
             this SyncStadiaEntitlement.SyncStadiaEntitlementBuilder builder,
             string namespace_,
@@ -499,7 +461,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncStadiaEntitlement(op);
         }
-
         public static void Execute(
             this SyncSteamInventory.SyncSteamInventoryBuilder builder,
             string namespace_,
@@ -513,7 +474,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamInventory(op);
         }
-
         public static void Execute(
             this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
             string namespace_,
@@ -527,7 +487,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement(op);
         }
-
         public static List<Platform.Model.XblReconcileResult>? Execute(
             this SyncXboxInventory.SyncXboxInventoryBuilder builder,
             string namespace_,
@@ -541,6 +500,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncXboxInventory(op);
         }
-
     }
 }

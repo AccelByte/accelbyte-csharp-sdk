@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).QueryTiers(op);
         }
-
         public static List<Seasonpass.Model.Tier>? Execute(
             this CreateTier.CreateTierBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).CreateTier(op);
         }
-
         public static Seasonpass.Model.Tier? Execute(
             this UpdateTier.UpdateTierBuilder builder,
             string id,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).UpdateTier(op);
         }
-
         public static void Execute(
             this DeleteTier.DeleteTierBuilder builder,
             string id,
@@ -71,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).DeleteTier(op);
         }
-
         public static Seasonpass.Model.Tier? Execute(
             this ReorderTier.ReorderTierBuilder builder,
             string id,
@@ -87,7 +83,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).ReorderTier(op);
         }
-
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserExp.GrantUserExpBuilder builder,
             string namespace_,
@@ -101,7 +96,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserExp(op);
         }
-
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserTier.GrantUserTierBuilder builder,
             string namespace_,
@@ -115,6 +109,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserTier(op);
         }
-
     }
 }

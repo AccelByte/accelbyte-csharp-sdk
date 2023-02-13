@@ -79,7 +79,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.OauthcommonJWKSet? GetJWKS(GetJWKS input) {
+        public Model.OauthcommonJWKSet? GetJWKS(GetJWKS input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -90,7 +91,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.OauthmodelTokenResponse? PlatformTokenRequestHandler(PlatformTokenRequestHandler input) {
+        public Model.OauthmodelTokenResponse? PlatformTokenRequestHandler(PlatformTokenRequestHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -112,7 +114,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.OauthapiRevocationList? GetRevocationList(GetRevocationList input) {
+        public Model.OauthapiRevocationList? GetRevocationList(GetRevocationList input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +148,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.OauthmodelTokenResponse? TokenGrant(TokenGrant input) {
+        public Model.OauthmodelTokenResponse? TokenGrant(TokenGrant input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -156,7 +160,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.OauthmodelTokenResponse? VerifyToken(VerifyToken input) {
+        public Model.OauthmodelTokenResponse? VerifyToken(VerifyToken input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

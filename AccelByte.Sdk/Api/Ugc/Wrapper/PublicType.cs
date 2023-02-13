@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGetTypeResponse? GetType(GetType input) {
+        public Model.ModelsPaginatedGetTypeResponse? GetType(GetType input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

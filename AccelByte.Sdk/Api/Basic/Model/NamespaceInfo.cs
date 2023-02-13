@@ -42,6 +42,8 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
+
+
     public class NamespaceInfoStatus : StringEnum<NamespaceInfoStatus>
     {
         public static readonly NamespaceInfoStatus ACTIVE

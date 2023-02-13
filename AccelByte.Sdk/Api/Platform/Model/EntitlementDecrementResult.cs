@@ -113,6 +113,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class EntitlementDecrementResultAppType : StringEnum<EntitlementDecrementResultAppType>
     {
         public static readonly EntitlementDecrementResultAppType DEMO

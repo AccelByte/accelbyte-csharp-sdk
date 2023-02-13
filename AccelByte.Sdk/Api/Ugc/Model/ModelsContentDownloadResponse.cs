@@ -92,4 +92,91 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ModelsContentDownloadResponse<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("channelId")]
+        public string? ChannelId { get; set; }
+
+        [JsonPropertyName("createdTime")]
+        public string? CreatedTime { get; set; }
+
+        [JsonPropertyName("creatorFollowState")]
+        public ModelsCreatorFollowState? CreatorFollowState { get; set; }
+
+        [JsonPropertyName("creatorName")]
+        public string? CreatorName { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("downloadCount")]
+        public int? DownloadCount { get; set; }
+
+        [JsonPropertyName("fileExtension")]
+        public string? FileExtension { get; set; }
+
+        [JsonPropertyName("groups")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Groups { get; set; }
+
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("isHidden")]
+        public bool? IsHidden { get; set; }
+
+        [JsonPropertyName("isOfficial")]
+        public bool? IsOfficial { get; set; }
+
+        [JsonPropertyName("likeCount")]
+        public int? LikeCount { get; set; }
+
+        [JsonPropertyName("likeState")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsLikeState? LikeState { get; set; }
+
+        [JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Payload { get; set; }
+
+        [JsonPropertyName("payloadURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsPayloadURL>? PayloadURL { get; set; }
+
+        [JsonPropertyName("previewURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsPreviewURL>? PreviewURL { get; set; }
+
+        [JsonPropertyName("screenshots")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsScreenshotResponse>? Screenshots { get; set; }
+
+        [JsonPropertyName("shareCode")]
+        public string? ShareCode { get; set; }
+
+        [JsonPropertyName("subType")]
+        public string? SubType { get; set; }
+
+        [JsonPropertyName("tags")]
+        public List<string>? Tags { get; set; }
+
+        [JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        [JsonPropertyName("updatedTime")]
+        public string? UpdatedTime { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+    }
+
 }

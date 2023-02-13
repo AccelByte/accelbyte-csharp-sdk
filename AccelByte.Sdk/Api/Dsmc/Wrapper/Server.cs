@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServer? RegisterLocalServer(RegisterLocalServer input) {
+        public Model.ModelsServer? RegisterLocalServer(RegisterLocalServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServer? RegisterServer(RegisterServer input) {
+        public Model.ModelsServer? RegisterServer(RegisterServer input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +75,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsServerSessionResponse? GetServerSession(GetServerSession input) {
+        public Model.ModelsServerSessionResponse? GetServerSession(GetServerSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

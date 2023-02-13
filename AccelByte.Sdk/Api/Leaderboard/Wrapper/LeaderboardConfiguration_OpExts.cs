@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).GetLeaderboardConfigurationsAdminV1(op);
         }
-
         public static Leaderboard.Model.ModelsLeaderboardConfigReq? Execute(
             this CreateLeaderboardConfigurationAdminV1.CreateLeaderboardConfigurationAdminV1Builder builder,
             ModelsLeaderboardConfigReq body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).CreateLeaderboardConfigurationAdminV1(op);
         }
-
         public static Leaderboard.Model.ModelsDeleteBulkLeaderboardsResp? Execute(
             this DeleteBulkLeaderboardConfigurationAdminV1.DeleteBulkLeaderboardConfigurationAdminV1Builder builder,
             ModelsDeleteBulkLeaderboardsReq body,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).DeleteBulkLeaderboardConfigurationAdminV1(op);
         }
-
         public static Leaderboard.Model.ModelsGetLeaderboardConfigResp? Execute(
             this GetLeaderboardConfigurationAdminV1.GetLeaderboardConfigurationAdminV1Builder builder,
             string leaderboardCode,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).GetLeaderboardConfigurationAdminV1(op);
         }
-
         public static Leaderboard.Model.ModelsGetLeaderboardConfigResp? Execute(
             this UpdateLeaderboardConfigurationAdminV1.UpdateLeaderboardConfigurationAdminV1Builder builder,
             ModelsUpdateLeaderboardConfigReq body,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).UpdateLeaderboardConfigurationAdminV1(op);
         }
-
         public static void Execute(
             this DeleteLeaderboardConfigurationAdminV1.DeleteLeaderboardConfigurationAdminV1Builder builder,
             string leaderboardCode,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).DeleteLeaderboardConfigurationAdminV1(op);
         }
-
         public static Leaderboard.Model.ModelsGetAllLeaderboardConfigsPublicResp? Execute(
             this GetLeaderboardConfigurationsPublicV1.GetLeaderboardConfigurationsPublicV1Builder builder,
             string namespace_
@@ -107,7 +101,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).GetLeaderboardConfigurationsPublicV1(op);
         }
-
         public static Leaderboard.Model.ModelsLeaderboardConfigReq? Execute(
             this CreateLeaderboardConfigurationPublicV1.CreateLeaderboardConfigurationPublicV1Builder builder,
             ModelsLeaderboardConfigReq body,
@@ -121,7 +114,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).CreateLeaderboardConfigurationPublicV1(op);
         }
-
         public static Leaderboard.Model.V2GetAllLeaderboardConfigsPublicResp? Execute(
             this GetLeaderboardConfigurationsPublicV2.GetLeaderboardConfigurationsPublicV2Builder builder,
             string namespace_
@@ -133,6 +125,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).GetLeaderboardConfigurationsPublicV2(op);
         }
-
     }
 }

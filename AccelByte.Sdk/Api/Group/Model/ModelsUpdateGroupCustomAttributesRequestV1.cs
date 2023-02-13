@@ -13,4 +13,12 @@ namespace AccelByte.Sdk.Api.Group.Model
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
     }
+
+    public class ModelsUpdateGroupCustomAttributesRequestV1<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("customAttributes")]
+        public T1? CustomAttributes { get; set; }
+
+    }
+
 }

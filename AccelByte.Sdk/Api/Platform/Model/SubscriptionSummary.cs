@@ -46,6 +46,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class SubscriptionSummaryStatus : StringEnum<SubscriptionSummaryStatus>
     {
         public static readonly SubscriptionSummaryStatus ACTIVE

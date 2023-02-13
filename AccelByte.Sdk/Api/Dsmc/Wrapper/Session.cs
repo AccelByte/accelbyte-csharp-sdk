@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
-        public Model.ModelsSessionResponse? CreateSession(CreateSession input) {
+        public Model.ModelsSessionResponse? CreateSession(CreateSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsSessionResponse? GetSession(GetSession input) {
+        public Model.ModelsSessionResponse? GetSession(GetSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

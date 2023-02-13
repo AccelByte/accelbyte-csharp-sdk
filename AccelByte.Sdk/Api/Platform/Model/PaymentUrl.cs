@@ -37,6 +37,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentUrlPaymentProvider : StringEnum<PaymentUrlPaymentProvider>
     {
         public static readonly PaymentUrlPaymentProvider ADYEN

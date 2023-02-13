@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         public string? ErrorMessage { get; set; }
 
     }
+
+
 }

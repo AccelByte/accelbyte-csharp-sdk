@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).CreateReward(op);
         }
-
         public static Platform.Model.RewardPagingSlicedResult? Execute(
             this QueryRewards.QueryRewardsBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).QueryRewards(op);
         }
-
         public static Stream? Execute(
             this ExportRewards.ExportRewardsBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).ExportRewards(op);
         }
-
         public static void Execute(
             this ImportRewards.ImportRewardsBuilder builder,
             string namespace_,
@@ -61,7 +58,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Reward)builder.WrapperObject!).ImportRewards(op);
         }
-
         public static Platform.Model.RewardInfo? Execute(
             this GetReward.GetRewardBuilder builder,
             string namespace_,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).GetReward(op);
         }
-
         public static Platform.Model.RewardInfo? Execute(
             this UpdateReward.UpdateRewardBuilder builder,
             string namespace_,
@@ -89,7 +84,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).UpdateReward(op);
         }
-
         public static Platform.Model.RewardInfo? Execute(
             this DeleteReward.DeleteRewardBuilder builder,
             string namespace_,
@@ -103,7 +97,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).DeleteReward(op);
         }
-
         public static Platform.Model.ConditionMatchResult? Execute(
             this CheckEventCondition.CheckEventConditionBuilder builder,
             string namespace_,
@@ -117,7 +110,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).CheckEventCondition(op);
         }
-
         public static void Execute(
             this DeleteRewardConditionRecord.DeleteRewardConditionRecordBuilder builder,
             string namespace_,
@@ -131,7 +123,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Reward)builder.WrapperObject!).DeleteRewardConditionRecord(op);
         }
-
         public static Platform.Model.RewardInfo? Execute(
             this GetRewardByCode.GetRewardByCodeBuilder builder,
             string namespace_,
@@ -145,7 +136,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).GetRewardByCode(op);
         }
-
         public static Platform.Model.RewardPagingSlicedResult? Execute(
             this QueryRewards1.QueryRewards1Builder builder,
             string namespace_
@@ -157,7 +147,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).QueryRewards1(op);
         }
-
         public static Platform.Model.RewardInfo? Execute(
             this GetReward1.GetReward1Builder builder,
             string namespace_,
@@ -171,6 +160,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Reward)builder.WrapperObject!).GetReward1(op);
         }
-
     }
 }

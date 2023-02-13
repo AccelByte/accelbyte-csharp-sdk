@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public int? Port { get; set; }
 
     }
+
+
 }

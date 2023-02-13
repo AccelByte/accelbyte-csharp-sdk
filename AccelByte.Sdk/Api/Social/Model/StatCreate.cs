@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     }
 
+
+
     public class StatCreateSetBy : StringEnum<StatCreateSetBy>
     {
         public static readonly StatCreateSetBy CLIENT

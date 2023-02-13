@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public int? EventType { get; set; }
 
     }
+
+
 }

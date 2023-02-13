@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserData)builder.WrapperObject!).GetUserLeaderboardRankingsAdminV1(op);
         }
-
     }
 }

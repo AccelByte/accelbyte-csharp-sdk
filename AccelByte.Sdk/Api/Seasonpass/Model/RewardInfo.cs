@@ -55,6 +55,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class RewardInfoItemType : StringEnum<RewardInfoItemType>
     {
         public static readonly RewardInfoItemType APP

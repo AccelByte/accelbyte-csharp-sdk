@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public int? TargetOrder { get; set; }
 
     }
+
+
 }

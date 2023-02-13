@@ -28,7 +28,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.UserInformation)builder.WrapperObject!).GetUserActivitiesHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserActivitiesHandler.DeleteUserActivitiesHandlerBuilder builder,
@@ -43,7 +42,6 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.UserInformation)builder.WrapperObject!).DeleteUserActivitiesHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsUserLastActivity? Execute(
             this LastUserActivityTimeHandler.LastUserActivityTimeHandlerBuilder builder,
@@ -58,6 +56,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.UserInformation)builder.WrapperObject!).LastUserActivityTimeHandler(op);
         }
-
     }
 }

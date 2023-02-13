@@ -17,4 +17,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public ModelsPreviewURL? PreviewURL { get; set; }
 
     }
+
+
 }

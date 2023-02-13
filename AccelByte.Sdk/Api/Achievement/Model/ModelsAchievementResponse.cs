@@ -57,4 +57,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public DateTime? UpdatedAt { get; set; }
 
     }
+
+
 }

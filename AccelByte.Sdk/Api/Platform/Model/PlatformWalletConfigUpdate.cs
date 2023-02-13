@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PlatformWalletConfigUpdateAllowedBalanceOrigins : StringEnum<PlatformWalletConfigUpdateAllowedBalanceOrigins>
     {
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Epic

@@ -28,6 +28,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class XsollaPaywallConfigDevice : StringEnum<XsollaPaywallConfigDevice>
     {
         public static readonly XsollaPaywallConfigDevice DESKTOP

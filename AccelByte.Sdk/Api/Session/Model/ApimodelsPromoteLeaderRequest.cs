@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? LeaderID { get; set; }
 
     }
+
+
 }

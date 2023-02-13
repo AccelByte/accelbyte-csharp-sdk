@@ -73,7 +73,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         #endregion
         
-        public List<Model.ModelsProfanityFilter>? AdminDebugProfanityFilters(AdminDebugProfanityFilters input) {
+        public List<Model.ModelsProfanityFilter>? AdminDebugProfanityFilters(AdminDebugProfanityFilters input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +82,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAdminGetProfanityListFiltersV1Response? AdminGetProfanityListFiltersV1(AdminGetProfanityListFiltersV1 input) {
+        public Model.ModelsAdminGetProfanityListFiltersV1Response? AdminGetProfanityListFiltersV1(AdminGetProfanityListFiltersV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +115,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsProfanityFilter>? AdminDeleteProfanityFilter(AdminDeleteProfanityFilter input) {
+        public List<Model.ModelsProfanityFilter>? AdminDeleteProfanityFilter(AdminDeleteProfanityFilter input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +124,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsAdminGetProfanityListsListResponse>? AdminGetProfanityLists(AdminGetProfanityLists input) {
+        public List<Model.ModelsAdminGetProfanityListsListResponse>? AdminGetProfanityLists(AdminGetProfanityLists input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -153,7 +157,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsProfanityRule? AdminGetProfanityRule(AdminGetProfanityRule input) {
+        public Model.ModelsProfanityRule? AdminGetProfanityRule(AdminGetProfanityRule input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -169,7 +174,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAdminVerifyMessageProfanityResponse? AdminVerifyMessageProfanityResponse(AdminVerifyMessageProfanityResponse input) {
+        public Model.ModelsAdminVerifyMessageProfanityResponse? AdminVerifyMessageProfanityResponse(AdminVerifyMessageProfanityResponse input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

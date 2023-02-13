@@ -21,6 +21,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Utility)builder.WrapperObject!).CheckReadiness(op);
         }
-
     }
 }

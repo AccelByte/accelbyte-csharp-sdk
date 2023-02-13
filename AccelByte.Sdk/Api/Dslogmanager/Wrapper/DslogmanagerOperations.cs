@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         #endregion
         
-        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
+        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? SkipNotif { get; set; }
 
     }
+
+
 }

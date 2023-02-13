@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public List<string>? UserIDs { get; set; }
 
     }
+
+
 }

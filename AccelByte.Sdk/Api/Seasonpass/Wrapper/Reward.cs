@@ -49,7 +49,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         }
         #endregion
         
-        public List<Model.RewardInfo>? QueryRewards(QueryRewards input) {
+        public List<Model.RewardInfo>? QueryRewards(QueryRewards input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RewardInfo? CreateReward(CreateReward input) {
+        public Model.RewardInfo? CreateReward(CreateReward input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RewardInfo? GetReward(GetReward input) {
+        public Model.RewardInfo? GetReward(GetReward input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +84,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RewardInfo? UpdateReward(UpdateReward input) {
+        public Model.RewardInfo? UpdateReward(UpdateReward input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +93,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ClaimableRewards? PublicClaimUserReward(PublicClaimUserReward input) {
+        public Model.ClaimableRewards? PublicClaimUserReward(PublicClaimUserReward input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,10 +102,31 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ClaimableRewards? PublicBulkClaimUserRewards(PublicBulkClaimUserRewards input) {
+        
+        public Model.ClaimableRewards<T1, T2>? PublicClaimUserReward<T1, T2>(PublicClaimUserReward input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ClaimableRewards? PublicBulkClaimUserRewards(PublicBulkClaimUserRewards input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ClaimableRewards<T1, T2>? PublicBulkClaimUserRewards<T1, T2>(PublicBulkClaimUserRewards input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

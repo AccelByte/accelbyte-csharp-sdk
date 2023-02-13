@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
         #endregion
         
-        public List<Model.SlotInfo>? GetUserNamespaceSlots(GetUserNamespaceSlots input) {
+        public List<Model.SlotInfo>? GetUserNamespaceSlots(GetUserNamespaceSlots input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +62,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public byte[]? GetSlotData(GetSlotData input) {
+        public byte[]? GetSlotData(GetSlotData input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +71,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.SlotInfo>? PublicGetUserNamespaceSlots(PublicGetUserNamespaceSlots input) {
+        public List<Model.SlotInfo>? PublicGetUserNamespaceSlots(PublicGetUserNamespaceSlots input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public byte[]? PublicGetSlotData(PublicGetSlotData input) {
+        public byte[]? PublicGetSlotData(PublicGetSlotData input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -93,7 +97,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SlotInfo? PublicUpdateUserNamespaceSlot(PublicUpdateUserNamespaceSlot input) {
+        public Model.SlotInfo? PublicUpdateUserNamespaceSlot(PublicUpdateUserNamespaceSlot input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -109,7 +114,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SlotInfo? PublicUpdateUserNamespaceSlotMetadata(PublicUpdateUserNamespaceSlotMetadata input) {
+        public Model.SlotInfo? PublicUpdateUserNamespaceSlotMetadata(PublicUpdateUserNamespaceSlotMetadata input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

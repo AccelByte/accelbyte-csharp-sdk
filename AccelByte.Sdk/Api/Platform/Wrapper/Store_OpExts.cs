@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ListStores(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this CreateStore.CreateStoreBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStore(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.StoreInfo? Execute(
             this ImportStore.ImportStoreBuilder builder,
@@ -48,7 +46,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this GetPublishedStore.GetPublishedStoreBuilder builder,
             string namespace_
@@ -60,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this DeletePublishedStore.DeletePublishedStoreBuilder builder,
             string namespace_
@@ -72,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).DeletePublishedStore(op);
         }
-
         public static Platform.Model.StoreBackupInfo? Execute(
             this GetPublishedStoreBackup.GetPublishedStoreBackupBuilder builder,
             string namespace_
@@ -84,7 +79,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStoreBackup(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this RollbackPublishedStore.RollbackPublishedStoreBuilder builder,
             string namespace_
@@ -96,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).RollbackPublishedStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this GetStore.GetStoreBuilder builder,
             string namespace_,
@@ -110,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this UpdateStore.UpdateStoreBuilder builder,
             string namespace_,
@@ -124,7 +116,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).UpdateStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this DeleteStore.DeleteStoreBuilder builder,
             string namespace_,
@@ -138,7 +129,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).DeleteStore(op);
         }
-
         public static Platform.Model.StoreInfo? Execute(
             this CloneStore.CloneStoreBuilder builder,
             string namespace_,
@@ -152,7 +142,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CloneStore(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
             this ExportStore.ExportStoreBuilder builder,
@@ -167,7 +156,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore(op);
         }
-
         public static List<Platform.Model.StoreInfo>? Execute(
             this PublicListStores.PublicListStoresBuilder builder,
             string namespace_
@@ -179,7 +167,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).PublicListStores(op);
         }
-
         public static Platform.Model.ImportStoreResult? Execute(
             this ImportStore1.ImportStore1Builder builder,
             string namespace_
@@ -191,7 +178,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore1(op);
         }
-
         public static Stream? Execute(
             this ExportStore1.ExportStore1Builder builder,
             string namespace_,
@@ -205,6 +191,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1(op);
         }
-
     }
 }

@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public double? Value { get; set; }
 
     }
+
+
 }

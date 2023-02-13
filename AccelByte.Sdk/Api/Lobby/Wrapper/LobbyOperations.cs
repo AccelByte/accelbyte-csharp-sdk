@@ -33,10 +33,21 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         #endregion
         
-        public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input) {
+        public Model.ModelsPartyData? AdminUpdatePartyAttributesV1(AdminUpdatePartyAttributesV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsPartyData<T1>? AdminUpdatePartyAttributesV1<T1>(AdminUpdatePartyAttributesV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -49,7 +60,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input) {
+        public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

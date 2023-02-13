@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(op);
         }
-
         public static Dictionary<string, object>? Execute(
             this ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet.ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetBuilder builder,
             string steamId
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(op);
         }
-
         public static void Execute(
             this ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutBuilder builder,
             string playtime,
@@ -55,6 +53,5 @@ namespace AccelByte.Sdk.Api
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(op);
         }
-
     }
 }

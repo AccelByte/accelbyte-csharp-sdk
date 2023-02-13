@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).AdminRetrieveUserThirdPartyPlatformTokenV3(op);
         }
-
         public static void Execute(
             this RevokeUserV3.RevokeUserV3Builder builder,
             string namespace_,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20)builder.WrapperObject!).RevokeUserV3(op);
         }
-
         public static string Execute(
             this AuthorizeV3.AuthorizeV3Builder builder,
             string clientId,
@@ -55,7 +53,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).AuthorizeV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenIntrospectResponse? Execute(
             this TokenIntrospectionV3.TokenIntrospectionV3Builder builder,
             string token
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenIntrospectionV3(op);
         }
-
         public static Iam.Model.OauthcommonJWKSet? Execute(
             this GetJWKSV3.GetJWKSV3Builder builder
         )
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).GetJWKSV3(op);
         }
-
         public static void Execute(
             this SendMFAAuthenticationCode.SendMFAAuthenticationCodeBuilder builder,
             string clientId,
@@ -93,7 +88,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20)builder.WrapperObject!).SendMFAAuthenticationCode(op);
         }
-
         public static void Execute(
             this Change2faMethod.Change2faMethodBuilder builder,
             string factor,
@@ -107,7 +101,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Change2faMethod(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this Verify2faCode.Verify2faCodeBuilder builder,
             string code,
@@ -125,7 +118,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Verify2faCode(op);
         }
-
         public static Iam.Model.OauthmodelTokenThirdPartyResponse? Execute(
             this RetrieveUserThirdPartyPlatformTokenV3.RetrieveUserThirdPartyPlatformTokenV3Builder builder,
             string namespace_,
@@ -141,7 +133,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).RetrieveUserThirdPartyPlatformTokenV3(op);
         }
-
         public static string Execute(
             this AuthCodeRequestV3.AuthCodeRequestV3Builder builder,
             string platformId,
@@ -155,7 +146,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).AuthCodeRequestV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponse? Execute(
             this PlatformTokenGrantV3.PlatformTokenGrantV3Builder builder,
             string platformId
@@ -167,7 +157,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).PlatformTokenGrantV3(op);
         }
-
         public static Iam.Model.OauthapiRevocationList? Execute(
             this GetRevocationListV3.GetRevocationListV3Builder builder
         )
@@ -177,7 +166,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).GetRevocationListV3(op);
         }
-
         public static void Execute(
             this TokenRevocationV3.TokenRevocationV3Builder builder,
             string token
@@ -189,7 +177,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenRevocationV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenWithDeviceCookieResponseV3? Execute(
             this TokenGrantV3.TokenGrantV3Builder builder,
             string grantType
@@ -201,7 +188,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenGrantV3(op);
         }
-
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this VerifyTokenV3.VerifyTokenV3Builder builder,
             string token
@@ -213,6 +199,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).VerifyTokenV3(op);
         }
-
     }
 }

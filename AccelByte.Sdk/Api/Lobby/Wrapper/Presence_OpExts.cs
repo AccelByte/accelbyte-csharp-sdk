@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV1(op);
         }
-
     }
 }

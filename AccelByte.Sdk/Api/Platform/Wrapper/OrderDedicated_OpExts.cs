@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.OrderDedicated)builder.WrapperObject!).SyncOrders(op);
         }
-
     }
 }

@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class TicketBoothIDType : StringEnum<TicketBoothIDType>
     {
         public static readonly TicketBoothIDType CAMPAIGN

@@ -31,4 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ViewId { get; set; }
 
     }
+
+
 }

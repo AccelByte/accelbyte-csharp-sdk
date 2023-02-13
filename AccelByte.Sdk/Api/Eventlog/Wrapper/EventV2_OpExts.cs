@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).QueryEventStreamHandler(op);
         }
-
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetEventSpecificUserV2Handler.GetEventSpecificUserV2HandlerBuilder builder,
             string namespace_,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetEventSpecificUserV2Handler(op);
         }
-
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetPublicEditHistory.GetPublicEditHistoryBuilder builder,
             string namespace_,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetPublicEditHistory(op);
         }
-
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetUserEventsV2Public.GetUserEventsV2PublicBuilder builder,
             string namespace_,
@@ -67,6 +64,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetUserEventsV2Public(op);
         }
-
     }
 }

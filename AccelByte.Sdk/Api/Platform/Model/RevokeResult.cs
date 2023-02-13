@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class RevokeResultStatus : StringEnum<RevokeResultStatus>
     {
         public static readonly RevokeResultStatus COMPLETED

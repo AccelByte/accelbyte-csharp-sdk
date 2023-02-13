@@ -61,7 +61,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
         #endregion
         
-        public Model.StatPagingSlicedResult? GetStats(GetStats input) {
+        public Model.StatPagingSlicedResult? GetStats(GetStats input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +70,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatInfo? CreateStat(CreateStat input) {
+        public Model.StatInfo? CreateStat(CreateStat input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +79,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? ExportStats(ExportStats input) {
+        public Stream? ExportStats(ExportStats input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatImportInfo? ImportStats(ImportStats input) {
+        public Model.StatImportInfo? ImportStats(ImportStats input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -93,7 +97,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatPagingSlicedResult? QueryStats(QueryStats input) {
+        public Model.StatPagingSlicedResult? QueryStats(QueryStats input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +106,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatInfo? GetStat(GetStat input) {
+        public Model.StatInfo? GetStat(GetStat input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +123,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatInfo? UpdateStat(UpdateStat input) {
+        public Model.StatInfo? UpdateStat(UpdateStat input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +140,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StatInfo? CreateStat1(CreateStat1 input) {
+        public Model.StatInfo? CreateStat1(CreateStat1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? Tax { get; set; }
 
     }
+
+
 }

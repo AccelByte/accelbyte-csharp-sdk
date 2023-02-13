@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).ListConfig(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveConfig.SaveConfigBuilder builder,
@@ -34,7 +33,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Config)builder.WrapperObject!).SaveConfig(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this GetConfig.GetConfigBuilder builder,
             string namespace_
@@ -46,7 +44,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).GetConfig(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this CreateConfig.CreateConfigBuilder builder,
             ModelsCreateDSMConfigRequest body,
@@ -60,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).CreateConfig(op);
         }
-
         public static void Execute(
             this DeleteConfig.DeleteConfigBuilder builder,
             string namespace_
@@ -72,7 +68,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Config)builder.WrapperObject!).DeleteConfig(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this UpdateConfig.UpdateConfigBuilder builder,
             ModelsUpdateDSMConfigRequest body,
@@ -86,7 +81,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).UpdateConfig(op);
         }
-
         public static void Execute(
             this ClearCache.ClearCacheBuilder builder,
             string namespace_
@@ -98,7 +92,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Config)builder.WrapperObject!).ClearCache(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this AddPort.AddPortBuilder builder,
             ModelsCreatePortRequest body,
@@ -114,7 +107,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).AddPort(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this DeletePort.DeletePortBuilder builder,
             string name,
@@ -128,7 +120,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).DeletePort(op);
         }
-
         public static Dsmc.Model.ModelsDSMConfigRecord? Execute(
             this UpdatePort.UpdatePortBuilder builder,
             ModelsUpdatePortRequest body,
@@ -144,7 +135,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).UpdatePort(op);
         }
-
         public static Stream? Execute(
             this ExportConfigV1.ExportConfigV1Builder builder,
             string namespace_
@@ -156,7 +146,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).ExportConfigV1(op);
         }
-
         public static Dsmc.Model.ModelsImportResponse? Execute(
             this ImportConfigV1.ImportConfigV1Builder builder,
             string namespace_
@@ -168,6 +157,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).ImportConfigV1(op);
         }
-
     }
 }

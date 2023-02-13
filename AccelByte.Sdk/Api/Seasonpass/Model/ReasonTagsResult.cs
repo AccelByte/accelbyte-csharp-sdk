@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public List<string>? Tags { get; set; }
 
     }
+
+
 }

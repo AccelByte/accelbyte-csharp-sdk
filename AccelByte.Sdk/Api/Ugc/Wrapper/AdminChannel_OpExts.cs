@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).SingleAdminGetChannel(op);
         }
-
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this AdminCreateChannel.AdminCreateChannelBuilder builder,
             ModelsChannelRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).AdminCreateChannel(op);
         }
-
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this SingleAdminUpdateChannel.SingleAdminUpdateChannelBuilder builder,
             ModelsChannelRequest body,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).SingleAdminUpdateChannel(op);
         }
-
         public static void Execute(
             this SingleAdminDeleteChannel.SingleAdminDeleteChannelBuilder builder,
             string channelId,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).SingleAdminDeleteChannel(op);
         }
-
         public static Ugc.Model.ModelsPaginatedGetChannelResponse? Execute(
             this AdminGetChannel.AdminGetChannelBuilder builder,
             string namespace_,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).AdminGetChannel(op);
         }
-
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this AdminUpdateChannel.AdminUpdateChannelBuilder builder,
             ModelsChannelRequest body,
@@ -99,7 +94,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).AdminUpdateChannel(op);
         }
-
         public static void Execute(
             this AdminDeleteChannel.AdminDeleteChannelBuilder builder,
             string channelId,
@@ -115,6 +109,5 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminChannel)builder.WrapperObject!).AdminDeleteChannel(op);
         }
-
     }
 }

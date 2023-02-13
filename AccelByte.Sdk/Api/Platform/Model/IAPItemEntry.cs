@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class IAPItemEntryItemIdentityType : StringEnum<IAPItemEntryItemIdentityType>
     {
         public static readonly IAPItemEntryItemIdentityType ITEMID

@@ -10,4 +10,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
     public class ModelsGameRecordRequest : AccelByte.Sdk.Core.Model
     {
     }
+
+
 }

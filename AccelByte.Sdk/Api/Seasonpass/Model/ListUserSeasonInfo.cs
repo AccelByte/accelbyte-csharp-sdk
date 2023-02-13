@@ -37,4 +37,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

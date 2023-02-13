@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? ZipCode { get; set; }
 
     }
+
+
 }

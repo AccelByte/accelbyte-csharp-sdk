@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QuerySeasons(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this CreateSeason.CreateSeasonBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CreateSeason(op);
         }
-
         public static Seasonpass.Model.SeasonSummary? Execute(
             this GetCurrentSeason.GetCurrentSeasonBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentSeason(op);
         }
-
         public static List<Seasonpass.Model.UserSeasonSummary>? Execute(
             this BulkGetUserSeasonProgression.BulkGetUserSeasonProgressionBuilder builder,
             string namespace_
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).BulkGetUserSeasonProgression(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this GetSeason.GetSeasonBuilder builder,
             string namespace_,
@@ -73,7 +69,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetSeason(op);
         }
-
         public static void Execute(
             this DeleteSeason.DeleteSeasonBuilder builder,
             string namespace_,
@@ -87,7 +82,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).DeleteSeason(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this UpdateSeason.UpdateSeasonBuilder builder,
             string namespace_,
@@ -101,7 +95,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UpdateSeason(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this CloneSeason.CloneSeasonBuilder builder,
             string namespace_,
@@ -115,7 +108,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CloneSeason(op);
         }
-
         public static Seasonpass.Model.FullSeasonInfo? Execute(
             this GetFullSeason.GetFullSeasonBuilder builder,
             string namespace_,
@@ -129,7 +121,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetFullSeason(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this PublishSeason.PublishSeasonBuilder builder,
             string namespace_,
@@ -143,7 +134,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublishSeason(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this RetireSeason.RetireSeasonBuilder builder,
             string namespace_,
@@ -157,7 +147,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).RetireSeason(op);
         }
-
         public static Seasonpass.Model.SeasonInfo? Execute(
             this UnpublishSeason.UnpublishSeasonBuilder builder,
             string namespace_,
@@ -171,7 +160,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UnpublishSeason(op);
         }
-
         public static Seasonpass.Model.ListUserSeasonInfoPagingSlicedResult? Execute(
             this GetUserParticipatedSeasons.GetUserParticipatedSeasonsBuilder builder,
             string namespace_,
@@ -185,7 +173,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserParticipatedSeasons(op);
         }
-
         public static Seasonpass.Model.Ownership? Execute(
             this ExistsAnyPassByPassCodes.ExistsAnyPassByPassCodesBuilder builder,
             string namespace_,
@@ -199,7 +186,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ExistsAnyPassByPassCodes(op);
         }
-
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GetCurrentUserSeasonProgression.GetCurrentUserSeasonProgressionBuilder builder,
             string namespace_,
@@ -213,7 +199,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentUserSeasonProgression(op);
         }
-
         public static void Execute(
             this CheckSeasonPurchasable.CheckSeasonPurchasableBuilder builder,
             string namespace_,
@@ -227,7 +212,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CheckSeasonPurchasable(op);
         }
-
         public static void Execute(
             this ResetUserSeason.ResetUserSeasonBuilder builder,
             string namespace_,
@@ -241,7 +225,6 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ResetUserSeason(op);
         }
-
         public static Seasonpass.Model.ExpGrantHistoryPagingSlicedResult? Execute(
             this QueryUserExpGrantHistory.QueryUserExpGrantHistoryBuilder builder,
             string namespace_,
@@ -255,7 +238,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistory(op);
         }
-
         public static Seasonpass.Model.ReasonTagsResult? Execute(
             this QueryUserExpGrantHistoryTag.QueryUserExpGrantHistoryTagBuilder builder,
             string namespace_,
@@ -269,7 +251,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistoryTag(op);
         }
-
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this GetUserSeason.GetUserSeasonBuilder builder,
             string namespace_,
@@ -286,6 +267,21 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeason(op);
         }
 
+        public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
+            this GetUserSeason.GetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            GetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeason<T1, T2>(op);
+        }
         public static Seasonpass.Model.LocalizedSeasonInfo? Execute(
             this PublicGetCurrentSeason.PublicGetCurrentSeasonBuilder builder,
             string namespace_
@@ -297,7 +293,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentSeason(op);
         }
-
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
             string namespace_,
@@ -312,6 +307,19 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeason(op);
         }
 
+        public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
+            this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetCurrentUserSeason op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeason<T1, T2>(op);
+        }
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
             string namespace_,
@@ -328,5 +336,20 @@ namespace AccelByte.Sdk.Api
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeason(op);
         }
 
+        public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
+            this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            PublicGetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeason<T1, T2>(op);
+        }
     }
 }

@@ -707,7 +707,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserCreateResponse? CreateUser(CreateUser input) {
+        public Model.ModelUserCreateResponse? CreateUser(CreateUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -718,7 +719,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelGetAdminUsersResponse? GetAdminUsersByRoleID(GetAdminUsersByRoleID input) {
+        public Model.ModelGetAdminUsersResponse? GetAdminUsersByRoleID(GetAdminUsersByRoleID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -729,7 +731,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelPublicUserResponse? GetUserByLoginID(GetUserByLoginID input) {
+        public Model.ModelPublicUserResponse? GetUserByLoginID(GetUserByLoginID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -740,7 +743,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelPublicUserResponse? GetUserByPlatformUserID(GetUserByPlatformUserID input) {
+        public Model.ModelPublicUserResponse? GetUserByPlatformUserID(GetUserByPlatformUserID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -762,7 +766,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelPublicUsersResponse? GetUsersByLoginIds(GetUsersByLoginIds input) {
+        public Model.ModelPublicUsersResponse? GetUsersByLoginIds(GetUsersByLoginIds input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -784,7 +789,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelSearchUsersResponse? SearchUser(SearchUser input) {
+        public Model.ModelSearchUsersResponse? SearchUser(SearchUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -795,7 +801,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? GetUserByUserID(GetUserByUserID input) {
+        public Model.ModelUserResponse? GetUserByUserID(GetUserByUserID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -806,7 +813,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? UpdateUser(UpdateUser input) {
+        public Model.ModelUserResponse? UpdateUser(UpdateUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -828,7 +836,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserBanResponse? BanUser(BanUser input) {
+        public Model.ModelUserBanResponse? BanUser(BanUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -839,7 +848,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelUserBanResponse>? GetUserBanHistory(GetUserBanHistory input) {
+        public List<Model.ModelUserBanResponse>? GetUserBanHistory(GetUserBanHistory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -850,7 +860,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserBanResponse? DisableUserBan(DisableUserBan input) {
+        public Model.ModelUserBanResponse? DisableUserBan(DisableUserBan input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -861,7 +872,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserBanResponse? EnableUserBan(EnableUserBan input) {
+        public Model.ModelUserBanResponse? EnableUserBan(EnableUserBan input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -905,7 +917,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserInformation? GetUserInformation(GetUserInformation input) {
+        public Model.ModelUserInformation? GetUserInformation(GetUserInformation input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -927,7 +940,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelLoginHistoriesResponse? GetUserLoginHistories(GetUserLoginHistories input) {
+        public Model.ModelLoginHistoriesResponse? GetUserLoginHistories(GetUserLoginHistories input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -982,7 +996,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.AccountcommonUserLinkedPlatform>? GetUserPlatformAccounts(GetUserPlatformAccounts input) {
+        public List<Model.AccountcommonUserLinkedPlatform>? GetUserPlatformAccounts(GetUserPlatformAccounts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -993,7 +1008,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelGetUserMapping? GetUserMapping(GetUserMapping input) {
+        public Model.ModelGetUserMapping? GetUserMapping(GetUserMapping input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1004,7 +1020,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelGetUserJusticePlatformAccountResponse? GetUserJusticePlatformAccount(GetUserJusticePlatformAccount input) {
+        public Model.ModelGetUserJusticePlatformAccountResponse? GetUserJusticePlatformAccount(GetUserJusticePlatformAccount input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1037,7 +1054,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelGetPublisherUserResponse? GetPublisherUser(GetPublisherUser input) {
+        public Model.ModelGetPublisherUserResponse? GetPublisherUser(GetPublisherUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1081,7 +1099,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? UpgradeHeadlessAccount(UpgradeHeadlessAccount input) {
+        public Model.ModelUserResponse? UpgradeHeadlessAccount(UpgradeHeadlessAccount input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1092,7 +1111,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? UpgradeHeadlessAccountWithVerificationCode(UpgradeHeadlessAccountWithVerificationCode input) {
+        public Model.ModelUserResponse? UpgradeHeadlessAccountWithVerificationCode(UpgradeHeadlessAccountWithVerificationCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1125,7 +1145,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelAgeRestrictionResponse? AdminGetAgeRestrictionStatusV2(AdminGetAgeRestrictionStatusV2 input) {
+        public Model.ModelAgeRestrictionResponse? AdminGetAgeRestrictionStatusV2(AdminGetAgeRestrictionStatusV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1136,7 +1157,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelAgeRestrictionResponse? AdminUpdateAgeRestrictionConfigV2(AdminUpdateAgeRestrictionConfigV2 input) {
+        public Model.ModelAgeRestrictionResponse? AdminUpdateAgeRestrictionConfigV2(AdminUpdateAgeRestrictionConfigV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1147,7 +1169,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.AccountcommonCountryAgeRestriction>? GetListCountryAgeRestriction(GetListCountryAgeRestriction input) {
+        public List<Model.AccountcommonCountryAgeRestriction>? GetListCountryAgeRestriction(GetListCountryAgeRestriction input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1158,7 +1181,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelCountry? UpdateCountryAgeRestriction(UpdateCountryAgeRestriction input) {
+        public Model.ModelCountry? UpdateCountryAgeRestriction(UpdateCountryAgeRestriction input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1169,7 +1193,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelSearchUsersByPlatformIDResponse? AdminSearchUsersV2(AdminSearchUsersV2 input) {
+        public Model.ModelSearchUsersByPlatformIDResponse? AdminSearchUsersV2(AdminSearchUsersV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1180,7 +1205,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? AdminGetUserByUserIdV2(AdminGetUserByUserIdV2 input) {
+        public Model.ModelUserResponse? AdminGetUserByUserIdV2(AdminGetUserByUserIdV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1191,7 +1217,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? AdminUpdateUserV2(AdminUpdateUserV2 input) {
+        public Model.ModelUserResponse? AdminUpdateUserV2(AdminUpdateUserV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1202,7 +1229,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserBanResponse? AdminBanUserV2(AdminBanUserV2 input) {
+        public Model.ModelUserBanResponse? AdminBanUserV2(AdminBanUserV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1213,7 +1241,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelUserBanResponse>? AdminGetUserBanV2(AdminGetUserBanV2 input) {
+        public List<Model.ModelUserBanResponse>? AdminGetUserBanV2(AdminGetUserBanV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1290,7 +1319,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.AccountcommonCountry? PublicGetCountryAgeRestriction(PublicGetCountryAgeRestriction input) {
+        public Model.AccountcommonCountry? PublicGetCountryAgeRestriction(PublicGetCountryAgeRestriction input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1301,7 +1331,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserCreateResponse? PublicCreateUserV2(PublicCreateUserV2 input) {
+        public Model.ModelUserCreateResponse? PublicCreateUserV2(PublicCreateUserV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1334,7 +1365,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelUserResponse? PublicGetUserByUserIDV2(PublicGetUserByUserIDV2 input) {
+        public Model.ModelUserResponse? PublicGetUserByUserIDV2(PublicGetUserByUserIDV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1345,7 +1377,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelUserResponse>? PublicUpdateUserV2(PublicUpdateUserV2 input) {
+        public List<Model.ModelUserResponse>? PublicUpdateUserV2(PublicUpdateUserV2 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1356,7 +1389,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelUserBanResponse>? PublicGetUserBan(PublicGetUserBan input) {
+        public List<Model.ModelUserBanResponse>? PublicGetUserBan(PublicGetUserBan input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1378,7 +1412,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelGetUserMapping>? GetListJusticePlatformAccounts(GetListJusticePlatformAccounts input) {
+        public List<Model.ModelGetUserMapping>? GetListJusticePlatformAccounts(GetListJusticePlatformAccounts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1409,7 +1444,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelGetUsersResponseWithPaginationV3? ListAdminsV3(ListAdminsV3 input) {
+        public Model.ModelGetUsersResponseWithPaginationV3? ListAdminsV3(ListAdminsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1417,7 +1453,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAgeRestrictionResponseV3? AdminGetAgeRestrictionStatusV3(AdminGetAgeRestrictionStatusV3 input) {
+        public Model.ModelAgeRestrictionResponseV3? AdminGetAgeRestrictionStatusV3(AdminGetAgeRestrictionStatusV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1425,7 +1462,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAgeRestrictionResponseV3? AdminUpdateAgeRestrictionConfigV3(AdminUpdateAgeRestrictionConfigV3 input) {
+        public Model.ModelAgeRestrictionResponseV3? AdminUpdateAgeRestrictionConfigV3(AdminUpdateAgeRestrictionConfigV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1433,7 +1471,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelCountryV3Response>? AdminGetListCountryAgeRestrictionV3(AdminGetListCountryAgeRestrictionV3 input) {
+        public List<Model.ModelCountryV3Response>? AdminGetListCountryAgeRestrictionV3(AdminGetListCountryAgeRestrictionV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1441,7 +1480,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelCountryV3Response? AdminUpdateCountryAgeRestrictionV3(AdminUpdateCountryAgeRestrictionV3 input) {
+        public Model.ModelCountryV3Response? AdminUpdateCountryAgeRestrictionV3(AdminUpdateCountryAgeRestrictionV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1449,7 +1489,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminGetUserByPlatformUserIDV3(AdminGetUserByPlatformUserIDV3 input) {
+        public Model.ModelUserResponseV3? AdminGetUserByPlatformUserIDV3(AdminGetUserByPlatformUserIDV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1457,7 +1498,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetUsersResponseWithPaginationV3? GetAdminUsersByRoleIdV3(GetAdminUsersByRoleIdV3 input) {
+        public Model.ModelGetUsersResponseWithPaginationV3? GetAdminUsersByRoleIdV3(GetAdminUsersByRoleIdV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1465,7 +1507,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminGetUserByEmailAddressV3(AdminGetUserByEmailAddressV3 input) {
+        public Model.ModelUserResponseV3? AdminGetUserByEmailAddressV3(AdminGetUserByEmailAddressV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1473,7 +1516,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListUserInformationResult? AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3 input) {
+        public Model.ModelListUserInformationResult? AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1481,7 +1525,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelInviteUserResponseV3? AdminInviteUserV3(AdminInviteUserV3 input) {
+        public Model.ModelInviteUserResponseV3? AdminInviteUserV3(AdminInviteUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1489,7 +1534,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLinkingHistoryResponseWithPaginationV3? AdminQueryThirdPlatformLinkHistoryV3(AdminQueryThirdPlatformLinkHistoryV3 input) {
+        public Model.ModelLinkingHistoryResponseWithPaginationV3? AdminQueryThirdPlatformLinkHistoryV3(AdminQueryThirdPlatformLinkHistoryV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1497,7 +1543,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonListUsersWithPlatformAccountsResponse? AdminListUsersV3(AdminListUsersV3 input) {
+        public Model.AccountcommonListUsersWithPlatformAccountsResponse? AdminListUsersV3(AdminListUsersV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1505,7 +1552,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelSearchUsersResponseWithPaginationV3? AdminSearchUserV3(AdminSearchUserV3 input) {
+        public Model.ModelSearchUsersResponseWithPaginationV3? AdminSearchUserV3(AdminSearchUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1513,7 +1561,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListUserResponseV3? AdminGetBulkUserByEmailAddressV3(AdminGetBulkUserByEmailAddressV3 input) {
+        public Model.ModelListUserResponseV3? AdminGetBulkUserByEmailAddressV3(AdminGetBulkUserByEmailAddressV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1521,7 +1570,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminGetUserByUserIdV3(AdminGetUserByUserIdV3 input) {
+        public Model.ModelUserResponseV3? AdminGetUserByUserIdV3(AdminGetUserByUserIdV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1529,7 +1579,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminUpdateUserV3(AdminUpdateUserV3 input) {
+        public Model.ModelUserResponseV3? AdminUpdateUserV3(AdminUpdateUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1537,7 +1588,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetUserBanV3Response? AdminGetUserBanV3(AdminGetUserBanV3 input) {
+        public Model.ModelGetUserBanV3Response? AdminGetUserBanV3(AdminGetUserBanV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1545,7 +1597,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserBanResponseV3? AdminBanUserV3(AdminBanUserV3 input) {
+        public Model.ModelUserBanResponseV3? AdminBanUserV3(AdminBanUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1553,7 +1606,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserBanResponseV3? AdminUpdateUserBanV3(AdminUpdateUserBanV3 input) {
+        public Model.ModelUserBanResponseV3? AdminUpdateUserBanV3(AdminUpdateUserBanV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1577,7 +1631,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelVerificationCodeResponse? GetUserVerificationCode(GetUserVerificationCode input) {
+        public Model.ModelVerificationCodeResponse? GetUserVerificationCode(GetUserVerificationCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1585,7 +1640,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserDeletionStatusResponse? AdminGetUserDeletionStatusV3(AdminGetUserDeletionStatusV3 input) {
+        public Model.ModelUserDeletionStatusResponse? AdminGetUserDeletionStatusV3(AdminGetUserDeletionStatusV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1601,7 +1657,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminUpgradeHeadlessAccountV3(AdminUpgradeHeadlessAccountV3 input) {
+        public Model.ModelUserResponseV3? AdminUpgradeHeadlessAccountV3(AdminUpgradeHeadlessAccountV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1617,7 +1674,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLoginHistoriesResponse? AdminGetUserLoginHistoriesV3(AdminGetUserLoginHistoriesV3 input) {
+        public Model.ModelLoginHistoriesResponse? AdminGetUserLoginHistoriesV3(AdminGetUserLoginHistoriesV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1665,7 +1723,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonUserLinkedPlatformsResponseV3? AdminGetUserPlatformAccountsV3(AdminGetUserPlatformAccountsV3 input) {
+        public Model.AccountcommonUserLinkedPlatformsResponseV3? AdminGetUserPlatformAccountsV3(AdminGetUserPlatformAccountsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1673,7 +1732,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelGetUserMapping>? AdminGetListJusticePlatformAccounts(AdminGetListJusticePlatformAccounts input) {
+        public List<Model.ModelGetUserMapping>? AdminGetListJusticePlatformAccounts(AdminGetListJusticePlatformAccounts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1681,7 +1741,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetUserMappingV3? AdminGetUserMapping(AdminGetUserMapping input) {
+        public Model.ModelGetUserMappingV3? AdminGetUserMapping(AdminGetUserMapping input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1689,7 +1750,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelCreateJusticeUserResponse? AdminCreateJusticeUser(AdminCreateJusticeUser input) {
+        public Model.ModelCreateJusticeUserResponse? AdminCreateJusticeUser(AdminCreateJusticeUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1721,7 +1783,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelTokenThirdPartyLinkStatusResponse? AdminGetThirdPartyPlatformTokenLinkStatusV3(AdminGetThirdPartyPlatformTokenLinkStatusV3 input) {
+        public Model.ModelTokenThirdPartyLinkStatusResponse? AdminGetThirdPartyPlatformTokenLinkStatusV3(AdminGetThirdPartyPlatformTokenLinkStatusV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1777,7 +1840,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? AdminGetMyUserV3(AdminGetMyUserV3 input) {
+        public Model.ModelUserResponseV3? AdminGetMyUserV3(AdminGetMyUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1785,7 +1849,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelCountryV3Response? PublicGetCountryAgeRestrictionV3(PublicGetCountryAgeRestrictionV3 input) {
+        public Model.ModelCountryV3Response? PublicGetCountryAgeRestrictionV3(PublicGetCountryAgeRestrictionV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1793,7 +1858,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonUserPlatforms? PublicListUserIDByPlatformUserIDsV3(PublicListUserIDByPlatformUserIDsV3 input) {
+        public Model.AccountcommonUserPlatforms? PublicListUserIDByPlatformUserIDsV3(PublicListUserIDByPlatformUserIDsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1801,7 +1867,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV3(PublicGetUserByPlatformUserIDV3 input) {
+        public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV3(PublicGetUserByPlatformUserIDV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1809,7 +1876,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLinkRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input) {
+        public Model.ModelLinkRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1817,7 +1885,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelPublicUserInformationResponseV3? PublicSearchUserV3(PublicSearchUserV3 input) {
+        
+        public Model.ModelLinkRequest<T1>? PublicGetAsyncStatus<T1>(PublicGetAsyncStatus input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelPublicUserInformationResponseV3? PublicSearchUserV3(PublicSearchUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1825,7 +1904,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserCreateResponseV3? PublicCreateUserV3(PublicCreateUserV3 input) {
+        public Model.ModelUserCreateResponseV3? PublicCreateUserV3(PublicCreateUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1841,7 +1921,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListBulkUserResponse? PublicBulkGetUsers(PublicBulkGetUsers input) {
+        public Model.ModelListBulkUserResponse? PublicBulkGetUsers(PublicBulkGetUsers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1873,7 +1954,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserInvitationV3? GetAdminInvitationV3(GetAdminInvitationV3 input) {
+        public Model.ModelUserInvitationV3? GetAdminInvitationV3(GetAdminInvitationV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1881,7 +1963,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserCreateResponseV3? CreateUserFromInvitationV3(CreateUserFromInvitationV3 input) {
+        public Model.ModelUserCreateResponseV3? CreateUserFromInvitationV3(CreateUserFromInvitationV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1889,7 +1972,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? UpdateUserV3(UpdateUserV3 input) {
+        public Model.ModelUserResponseV3? UpdateUserV3(UpdateUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1897,7 +1981,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicPartialUpdateUserV3(PublicPartialUpdateUserV3 input) {
+        public Model.ModelUserResponseV3? PublicPartialUpdateUserV3(PublicPartialUpdateUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1921,7 +2006,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicUpgradeHeadlessAccountV3(PublicUpgradeHeadlessAccountV3 input) {
+        public Model.ModelUserResponseV3? PublicUpgradeHeadlessAccountV3(PublicUpgradeHeadlessAccountV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1929,7 +2015,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicVerifyHeadlessAccountV3(PublicVerifyHeadlessAccountV3 input) {
+        public Model.ModelUserResponseV3? PublicVerifyHeadlessAccountV3(PublicVerifyHeadlessAccountV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1945,7 +2032,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelCreateJusticeUserResponse? PublicCreateJusticeUser(PublicCreateJusticeUser input) {
+        public Model.ModelCreateJusticeUserResponse? PublicCreateJusticeUser(PublicCreateJusticeUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -1985,7 +2073,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelWebLinkingResponse? PublicWebLinkPlatform(PublicWebLinkPlatform input) {
+        public Model.ModelWebLinkingResponse? PublicWebLinkPlatform(PublicWebLinkPlatform input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2009,7 +2098,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelPublicUserResponseV3? PublicGetUserByUserIdV3(PublicGetUserByUserIdV3 input) {
+        public Model.ModelPublicUserResponseV3? PublicGetUserByUserIdV3(PublicGetUserByUserIdV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2017,7 +2107,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetUserBanV3Response? PublicGetUserBanHistoryV3(PublicGetUserBanHistoryV3 input) {
+        public Model.ModelGetUserBanV3Response? PublicGetUserBanHistoryV3(PublicGetUserBanHistoryV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2025,7 +2116,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonDistinctPlatformResponseV3? PublicListUserAllPlatformAccountsDistinctV3(PublicListUserAllPlatformAccountsDistinctV3 input) {
+        public Model.AccountcommonDistinctPlatformResponseV3? PublicListUserAllPlatformAccountsDistinctV3(PublicListUserAllPlatformAccountsDistinctV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2033,7 +2125,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonUserInformationV3? PublicGetUserInformationV3(PublicGetUserInformationV3 input) {
+        public Model.AccountcommonUserInformationV3? PublicGetUserInformationV3(PublicGetUserInformationV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2041,7 +2134,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelLoginHistoriesResponse? PublicGetUserLoginHistoriesV3(PublicGetUserLoginHistoriesV3 input) {
+        public Model.ModelLoginHistoriesResponse? PublicGetUserLoginHistoriesV3(PublicGetUserLoginHistoriesV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2049,7 +2143,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonUserLinkedPlatformsResponseV3? PublicGetUserPlatformAccountsV3(PublicGetUserPlatformAccountsV3 input) {
+        public Model.AccountcommonUserLinkedPlatformsResponseV3? PublicGetUserPlatformAccountsV3(PublicGetUserPlatformAccountsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2057,7 +2152,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelGetUserMappingV3>? PublicListJusticePlatformAccountsV3(PublicListJusticePlatformAccountsV3 input) {
+        public List<Model.ModelGetUserMappingV3>? PublicListJusticePlatformAccountsV3(PublicListJusticePlatformAccountsV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2081,7 +2177,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetPublisherUserV3Response? PublicGetPublisherUserV3(PublicGetPublisherUserV3 input) {
+        public Model.ModelGetPublisherUserV3Response? PublicGetPublisherUserV3(PublicGetPublisherUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2097,7 +2194,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserResponseV3? PublicGetMyUserV3(PublicGetMyUserV3 input) {
+        public Model.ModelUserResponseV3? PublicGetMyUserV3(PublicGetMyUserV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -2105,7 +2203,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetLinkHeadlessAccountConflictResponse? PublicGetLinkHeadlessAccountToMyAccountConflictV3(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input) {
+        public Model.ModelGetLinkHeadlessAccountConflictResponse? PublicGetLinkHeadlessAccountToMyAccountConflictV3(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         public string? UserID { get; set; }
 
     }
+
+
 }

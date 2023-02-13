@@ -69,7 +69,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.DLCItemConfigInfo? GetDLCItemConfig(GetDLCItemConfig input) {
+        public Model.DLCItemConfigInfo? GetDLCItemConfig(GetDLCItemConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.DLCItemConfigInfo? UpdateDLCItemConfig(UpdateDLCItemConfig input) {
+        public Model.DLCItemConfigInfo? UpdateDLCItemConfig(UpdateDLCItemConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -93,7 +95,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformDLCConfigInfo? GetPlatformDLCConfig(GetPlatformDLCConfig input) {
+        public Model.PlatformDLCConfigInfo? GetPlatformDLCConfig(GetPlatformDLCConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +104,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformDLCConfigInfo? UpdatePlatformDLCConfig(UpdatePlatformDLCConfig input) {
+        public Model.PlatformDLCConfigInfo? UpdatePlatformDLCConfig(UpdatePlatformDLCConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +121,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserDLC? GetUserDLC(GetUserDLC input) {
+        public Model.UserDLC? GetUserDLC(GetUserDLC input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

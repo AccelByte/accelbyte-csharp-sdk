@@ -23,6 +23,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentAccountType : StringEnum<PaymentAccountType>
     {
         public static readonly PaymentAccountType Card

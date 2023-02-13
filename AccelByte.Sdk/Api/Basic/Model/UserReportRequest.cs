@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

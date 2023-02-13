@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

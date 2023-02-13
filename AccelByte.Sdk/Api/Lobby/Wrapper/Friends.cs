@@ -65,7 +65,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         #endregion
         
-        public List<Model.ModelGetUserFriendsResponse>? GetUserFriendsUpdated(GetUserFriendsUpdated input) {
+        public List<Model.ModelGetUserFriendsResponse>? GetUserFriendsUpdated(GetUserFriendsUpdated input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +74,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelGetUserIncomingFriendsResponse>? GetUserIncomingFriends(GetUserIncomingFriends input) {
+        public List<Model.ModelGetUserIncomingFriendsResponse>? GetUserIncomingFriends(GetUserIncomingFriends input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +83,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelGetUserOutgoingFriendsResponse>? GetUserOutgoingFriends(GetUserOutgoingFriends input) {
+        public List<Model.ModelGetUserOutgoingFriendsResponse>? GetUserOutgoingFriends(GetUserOutgoingFriends input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +124,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserGetFriendshipStatusResponse? UserGetFriendshipStatus(UserGetFriendshipStatus input) {
+        public Model.ModelUserGetFriendshipStatusResponse? UserGetFriendshipStatus(UserGetFriendshipStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +149,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetFriendsResponse? GetListOfFriends(GetListOfFriends input) {
+        public Model.ModelGetFriendsResponse? GetListOfFriends(GetListOfFriends input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -189,7 +189,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.AppleIAPConfigInfo? GetAppleIAPConfig(GetAppleIAPConfig input) {
+        public Model.AppleIAPConfigInfo? GetAppleIAPConfig(GetAppleIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -197,7 +198,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AppleIAPConfigInfo? UpdateAppleIAPConfig(UpdateAppleIAPConfig input) {
+        public Model.AppleIAPConfigInfo? UpdateAppleIAPConfig(UpdateAppleIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -213,7 +215,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.EpicGamesIAPConfigInfo? GetEpicGamesIAPConfig(GetEpicGamesIAPConfig input) {
+        public Model.EpicGamesIAPConfigInfo? GetEpicGamesIAPConfig(GetEpicGamesIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -221,7 +224,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.EpicGamesIAPConfigInfo? UpdateEpicGamesIAPConfig(UpdateEpicGamesIAPConfig input) {
+        public Model.EpicGamesIAPConfigInfo? UpdateEpicGamesIAPConfig(UpdateEpicGamesIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -237,7 +241,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GoogleIAPConfigInfo? GetGoogleIAPConfig(GetGoogleIAPConfig input) {
+        public Model.GoogleIAPConfigInfo? GetGoogleIAPConfig(GetGoogleIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -245,7 +250,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GoogleIAPConfigInfo? UpdateGoogleIAPConfig(UpdateGoogleIAPConfig input) {
+        public Model.GoogleIAPConfigInfo? UpdateGoogleIAPConfig(UpdateGoogleIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -261,7 +267,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GoogleIAPConfigInfo? UpdateGoogleP12File(UpdateGoogleP12File input) {
+        public Model.GoogleIAPConfigInfo? UpdateGoogleP12File(UpdateGoogleP12File input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -269,7 +276,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.IAPItemConfigInfo? GetIAPItemConfig(GetIAPItemConfig input) {
+        public Model.IAPItemConfigInfo? GetIAPItemConfig(GetIAPItemConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -277,7 +285,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.IAPItemConfigInfo? UpdateIAPItemConfig(UpdateIAPItemConfig input) {
+        public Model.IAPItemConfigInfo? UpdateIAPItemConfig(UpdateIAPItemConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -293,7 +302,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlayStationIAPConfigInfo? GetPlayStationIAPConfig(GetPlayStationIAPConfig input) {
+        public Model.PlayStationIAPConfigInfo? GetPlayStationIAPConfig(GetPlayStationIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -301,7 +311,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlayStationIAPConfigInfo? UpdatePlaystationIAPConfig(UpdatePlaystationIAPConfig input) {
+        public Model.PlayStationIAPConfigInfo? UpdatePlaystationIAPConfig(UpdatePlaystationIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -317,7 +328,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StadiaIAPConfigInfo? GetStadiaIAPConfig(GetStadiaIAPConfig input) {
+        public Model.StadiaIAPConfigInfo? GetStadiaIAPConfig(GetStadiaIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -333,7 +345,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StadiaIAPConfigInfo? UpdateStadiaJsonConfigFile(UpdateStadiaJsonConfigFile input) {
+        public Model.StadiaIAPConfigInfo? UpdateStadiaJsonConfigFile(UpdateStadiaJsonConfigFile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -341,7 +354,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SteamIAPConfig? GetSteamIAPConfig(GetSteamIAPConfig input) {
+        public Model.SteamIAPConfig? GetSteamIAPConfig(GetSteamIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -349,7 +363,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SteamIAPConfigInfo? UpdateSteamIAPConfig(UpdateSteamIAPConfig input) {
+        public Model.SteamIAPConfigInfo? UpdateSteamIAPConfig(UpdateSteamIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -365,7 +380,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TwitchIAPConfigInfo? GetTwitchIAPConfig(GetTwitchIAPConfig input) {
+        public Model.TwitchIAPConfigInfo? GetTwitchIAPConfig(GetTwitchIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -373,7 +389,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TwitchIAPConfigInfo? UpdateTwitchIAPConfig(UpdateTwitchIAPConfig input) {
+        public Model.TwitchIAPConfigInfo? UpdateTwitchIAPConfig(UpdateTwitchIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -389,7 +406,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.XblIAPConfigInfo? GetXblIAPConfig(GetXblIAPConfig input) {
+        public Model.XblIAPConfigInfo? GetXblIAPConfig(GetXblIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -397,7 +415,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.XblIAPConfigInfo? UpdateXblIAPConfig(UpdateXblIAPConfig input) {
+        public Model.XblIAPConfigInfo? UpdateXblIAPConfig(UpdateXblIAPConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -413,7 +432,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.XblIAPConfigInfo? UpdateXblBPCertFile(UpdateXblBPCertFile input) {
+        public Model.XblIAPConfigInfo? UpdateXblBPCertFile(UpdateXblBPCertFile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -421,7 +441,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.IAPOrderPagingSlicedResult? QueryUserIAPOrders(QueryUserIAPOrders input) {
+        public Model.IAPOrderPagingSlicedResult? QueryUserIAPOrders(QueryUserIAPOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -429,7 +450,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.IAPOrderPagingSlicedResult? QueryAllUserIAPOrders(QueryAllUserIAPOrders input) {
+        public Model.IAPOrderPagingSlicedResult? QueryAllUserIAPOrders(QueryAllUserIAPOrders input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -437,7 +459,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.IAPConsumeHistoryPagingSlicedResult? QueryUserIAPConsumeHistory(QueryUserIAPConsumeHistory input) {
+        public Model.IAPConsumeHistoryPagingSlicedResult? QueryUserIAPConsumeHistory(QueryUserIAPConsumeHistory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -461,7 +484,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.EpicGamesReconcileResult>? SyncEpicGamesInventory(SyncEpicGamesInventory input) {
+        public List<Model.EpicGamesReconcileResult>? SyncEpicGamesInventory(SyncEpicGamesInventory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -469,7 +493,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GoogleReceiptResolveResult? PublicFulfillGoogleIAPItem(PublicFulfillGoogleIAPItem input) {
+        public Model.GoogleReceiptResolveResult? PublicFulfillGoogleIAPItem(PublicFulfillGoogleIAPItem input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -477,7 +502,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PlayStationReconcileResult>? PublicReconcilePlayStationStore(PublicReconcilePlayStationStore input) {
+        public List<Model.PlayStationReconcileResult>? PublicReconcilePlayStationStore(PublicReconcilePlayStationStore input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -485,7 +511,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PlayStationReconcileResult>? PublicReconcilePlayStationStoreWithMultipleServiceLabels(PublicReconcilePlayStationStoreWithMultipleServiceLabels input) {
+        public List<Model.PlayStationReconcileResult>? PublicReconcilePlayStationStoreWithMultipleServiceLabels(PublicReconcilePlayStationStoreWithMultipleServiceLabels input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -517,7 +544,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.XblReconcileResult>? SyncXboxInventory(SyncXboxInventory input) {
+        public List<Model.XblReconcileResult>? SyncXboxInventory(SyncXboxInventory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

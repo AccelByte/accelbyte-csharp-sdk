@@ -13,4 +13,12 @@ namespace AccelByte.Sdk.Api.Group.Model
         public Dictionary<string, object>? GroupCustomRule { get; set; }
 
     }
+
+    public class ModelsUpdateGroupCustomRuleRequestV1<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("groupCustomRule")]
+        public T1? GroupCustomRule { get; set; }
+
+    }
+
 }

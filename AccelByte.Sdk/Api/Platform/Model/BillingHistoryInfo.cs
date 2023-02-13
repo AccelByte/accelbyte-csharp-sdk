@@ -97,6 +97,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class BillingHistoryInfoStatus : StringEnum<BillingHistoryInfoStatus>
     {
         public static readonly BillingHistoryInfoStatus CHARGED

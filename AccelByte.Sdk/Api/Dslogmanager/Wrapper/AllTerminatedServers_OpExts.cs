@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
         }
-
         public static Dslogmanager.Model.ModelsListTerminatedServersResponse? Execute(
             this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
         )
@@ -33,6 +32,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListAllTerminatedServers(op);
         }
-
     }
 }

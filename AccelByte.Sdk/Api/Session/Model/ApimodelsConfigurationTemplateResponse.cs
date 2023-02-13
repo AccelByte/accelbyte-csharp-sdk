@@ -55,4 +55,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? UpdatedAt { get; set; }
 
     }
+
+
 }

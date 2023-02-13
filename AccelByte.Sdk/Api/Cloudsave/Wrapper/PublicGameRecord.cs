@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
         
-        public Model.ModelsBulkGetGameRecordResponse? GetGameRecordsBulk(GetGameRecordsBulk input) {
+        public Model.ModelsBulkGetGameRecordResponse? GetGameRecordsBulk(GetGameRecordsBulk input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input) {
+        public Model.ModelsGameRecordResponse? GetGameRecordHandlerV1(GetGameRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +59,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? PutGameRecordHandlerV1(PutGameRecordHandlerV1 input) {
+        
+        public Model.ModelsGameRecordResponse<T1>? GetGameRecordHandlerV1<T1>(GetGameRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGameRecordResponse? PutGameRecordHandlerV1(PutGameRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,10 +78,31 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? PostGameRecordHandlerV1(PostGameRecordHandlerV1 input) {
+        
+        public Model.ModelsGameRecordResponse<T1>? PutGameRecordHandlerV1<T1>(PutGameRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGameRecordResponse? PostGameRecordHandlerV1(PostGameRecordHandlerV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsGameRecordResponse<T1>? PostGameRecordHandlerV1<T1>(PostGameRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

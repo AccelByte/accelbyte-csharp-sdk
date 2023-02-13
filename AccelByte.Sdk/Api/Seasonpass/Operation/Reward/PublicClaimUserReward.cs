@@ -134,6 +134,25 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             
             throw new HttpResponseException(code, payloadString);
         }
+
+        public Model.ClaimableRewards<T1, T2>? ParseResponse<T1, T2>(HttpStatusCode code, string contentType, Stream payload)
+        {            
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }            
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ClaimableRewards<T1, T2>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ClaimableRewards<T1, T2>>(payload);
+            }
+            
+            var payloadString = Helper.ConvertInputStreamToString(payload);            
+            throw new HttpResponseException(code, payloadString);
+        }
     }
 
 }

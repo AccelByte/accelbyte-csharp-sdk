@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Description { get; set; }
 
     }
+
+
 }

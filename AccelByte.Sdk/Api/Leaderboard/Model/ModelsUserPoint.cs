@@ -23,4 +23,22 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ModelsUserPoint<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("hidden")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Hidden { get; set; }
+
+        [JsonPropertyName("point")]
+        public double? Point { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+    }
+
 }

@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public string? ApiKey { get; set; }
 
     }
+
+
 }

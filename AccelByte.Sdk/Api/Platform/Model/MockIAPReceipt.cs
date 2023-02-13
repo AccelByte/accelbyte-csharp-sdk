@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class MockIAPReceiptItemIdentityType : StringEnum<MockIAPReceiptItemIdentityType>
     {
         public static readonly MockIAPReceiptItemIdentityType ITEMID

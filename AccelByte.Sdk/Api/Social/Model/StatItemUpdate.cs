@@ -24,6 +24,22 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     }
 
+    public class StatItemUpdate<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("updateStrategy")]
+        [JsonStringEnum]
+        public StatItemUpdateUpdateStrategy? UpdateStrategy { get; set; }
+
+        [JsonPropertyName("value")]
+        public double? Value { get; set; }
+
+    }
+
+
     public class StatItemUpdateUpdateStrategy : StringEnum<StatItemUpdateUpdateStrategy>
     {
         public static readonly StatItemUpdateUpdateStrategy INCREMENT

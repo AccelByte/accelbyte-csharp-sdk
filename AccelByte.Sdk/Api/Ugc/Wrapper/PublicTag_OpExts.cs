@@ -23,6 +23,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicTag)builder.WrapperObject!).GetTag(op);
         }
-
     }
 }

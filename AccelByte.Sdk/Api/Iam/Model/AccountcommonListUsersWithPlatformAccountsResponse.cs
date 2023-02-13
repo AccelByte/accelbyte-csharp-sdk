@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public long? TotalData { get; set; }
 
     }
+
+
 }

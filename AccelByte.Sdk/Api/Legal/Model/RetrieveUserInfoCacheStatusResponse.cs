@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? Namespace { get; set; }
 
     }
+
+
 }

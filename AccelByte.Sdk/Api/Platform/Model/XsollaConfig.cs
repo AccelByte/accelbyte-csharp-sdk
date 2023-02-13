@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ProjectSecretKey { get; set; }
 
     }
+
+
 }

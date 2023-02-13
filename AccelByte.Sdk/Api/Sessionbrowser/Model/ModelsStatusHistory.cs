@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public DateTime? TimeStamp { get; set; }
 
     }
+
+
 }

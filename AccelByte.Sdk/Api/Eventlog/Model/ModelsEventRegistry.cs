@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public int? UX { get; set; }
 
     }
+
+
 }

@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).GetAdminEmailConfiguration(op);
         }
-
         public static void Execute(
             this UpdateAdminEmailConfiguration.UpdateAdminEmailConfigurationBuilder builder,
             List<string> body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).UpdateAdminEmailConfiguration(op);
         }
-
         public static void Execute(
             this SaveAdminEmailConfiguration.SaveAdminEmailConfigurationBuilder builder,
             List<string> body,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).SaveAdminEmailConfiguration(op);
         }
-
         public static void Execute(
             this DeleteAdminEmailConfiguration.DeleteAdminEmailConfigurationBuilder builder,
             string namespace_,
@@ -65,7 +62,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).DeleteAdminEmailConfiguration(op);
         }
-
         public static Gdpr.Model.ModelsListPersonalDataResponse? Execute(
             this AdminGetListPersonalDataRequest.AdminGetListPersonalDataRequestBuilder builder,
             string namespace_
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetListPersonalDataRequest(op);
         }
-
         public static Gdpr.Model.ModelsUserPersonalDataResponse? Execute(
             this AdminGetUserPersonalDataRequests.AdminGetUserPersonalDataRequestsBuilder builder,
             string namespace_,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetUserPersonalDataRequests(op);
         }
-
         public static Gdpr.Model.ModelsDataRetrievalResponse? Execute(
             this AdminRequestDataRetrieval.AdminRequestDataRetrievalBuilder builder,
             string namespace_,
@@ -105,7 +99,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminRequestDataRetrieval(op);
         }
-
         public static void Execute(
             this AdminCancelUserPersonalDataRequest.AdminCancelUserPersonalDataRequestBuilder builder,
             string namespace_,
@@ -121,7 +114,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminCancelUserPersonalDataRequest(op);
         }
-
         public static Gdpr.Model.ModelsUserDataURL? Execute(
             this AdminGeneratePersonalDataURL.AdminGeneratePersonalDataURLBuilder builder,
             string password,
@@ -139,7 +131,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGeneratePersonalDataURL(op);
         }
-
         public static Gdpr.Model.ModelsUserPersonalDataResponse? Execute(
             this PublicGetUserPersonalDataRequests.PublicGetUserPersonalDataRequestsBuilder builder,
             string namespace_,
@@ -153,7 +144,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGetUserPersonalDataRequests(op);
         }
-
         public static Gdpr.Model.ModelsDataRetrievalResponse? Execute(
             this PublicRequestDataRetrieval.PublicRequestDataRetrievalBuilder builder,
             string password,
@@ -169,7 +159,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicRequestDataRetrieval(op);
         }
-
         public static void Execute(
             this PublicCancelUserPersonalDataRequest.PublicCancelUserPersonalDataRequestBuilder builder,
             string namespace_,
@@ -185,7 +174,6 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicCancelUserPersonalDataRequest(op);
         }
-
         public static Gdpr.Model.ModelsUserDataURL? Execute(
             this PublicGeneratePersonalDataURL.PublicGeneratePersonalDataURLBuilder builder,
             string password,
@@ -203,6 +191,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGeneratePersonalDataURL(op);
         }
-
     }
 }

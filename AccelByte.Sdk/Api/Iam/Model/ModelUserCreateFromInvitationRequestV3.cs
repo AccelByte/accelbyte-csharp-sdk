@@ -37,6 +37,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
     }
 
+
+
     public class ModelUserCreateFromInvitationRequestV3AuthType : StringEnum<ModelUserCreateFromInvitationRequestV3AuthType>
     {
         public static readonly ModelUserCreateFromInvitationRequestV3AuthType EMAILPASSWD

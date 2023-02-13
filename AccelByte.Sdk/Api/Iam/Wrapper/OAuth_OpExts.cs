@@ -28,7 +28,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).Authorization(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthcommonJWKSet? Execute(
             this GetJWKS.GetJWKSBuilder builder
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).GetJWKS(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthmodelTokenResponse? Execute(
             this PlatformTokenRequestHandler.PlatformTokenRequestHandlerBuilder builder,
@@ -54,7 +52,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).PlatformTokenRequestHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RevokeUser.RevokeUserBuilder builder,
@@ -69,7 +66,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth)builder.WrapperObject!).RevokeUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthapiRevocationList? Execute(
             this GetRevocationList.GetRevocationListBuilder builder
@@ -80,7 +76,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).GetRevocationList(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RevokeToken.RevokeTokenBuilder builder,
@@ -93,7 +88,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth)builder.WrapperObject!).RevokeToken(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RevokeAUser.RevokeAUserBuilder builder,
@@ -106,7 +100,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth)builder.WrapperObject!).RevokeAUser(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthmodelTokenResponse? Execute(
             this TokenGrant.TokenGrantBuilder builder,
@@ -119,7 +112,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).TokenGrant(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthmodelTokenResponse? Execute(
             this VerifyToken.VerifyTokenBuilder builder,
@@ -132,6 +124,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth)builder.WrapperObject!).VerifyToken(op);
         }
-
     }
 }

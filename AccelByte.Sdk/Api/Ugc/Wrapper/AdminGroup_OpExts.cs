@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetAllGroups(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminCreateGroup.AdminCreateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminCreateGroup(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this SingleAdminGetGroup.SingleAdminGetGroupBuilder builder,
             string groupId,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroup(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this SingleAdminUpdateGroup.SingleAdminUpdateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminUpdateGroup(op);
         }
-
         public static void Execute(
             this SingleAdminDeleteGroup.SingleAdminDeleteGroupBuilder builder,
             string groupId,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminDeleteGroup(op);
         }
-
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this SingleAdminGetGroupContents.SingleAdminGetGroupContentsBuilder builder,
             string groupId,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroupContents(op);
         }
-
         public static Ugc.Model.ModelsPaginatedGroupResponse? Execute(
             this AdminGetAllGroups.AdminGetAllGroupsBuilder builder,
             string namespace_,
@@ -109,7 +103,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetAllGroups(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminGetGroup.AdminGetGroupBuilder builder,
             string groupId,
@@ -125,7 +118,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroup(op);
         }
-
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminUpdateGroup.AdminUpdateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -143,7 +135,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminUpdateGroup(op);
         }
-
         public static void Execute(
             this AdminDeleteGroup.AdminDeleteGroupBuilder builder,
             string groupId,
@@ -159,7 +150,6 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminDeleteGroup(op);
         }
-
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this AdminGetGroupContents.AdminGetGroupContentsBuilder builder,
             string groupId,
@@ -175,6 +165,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroupContents(op);
         }
-
     }
 }

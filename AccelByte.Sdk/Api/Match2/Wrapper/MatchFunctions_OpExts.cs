@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).MatchFunctionList(op);
         }
-
         public static void Execute(
             this CreateMatchFunction.CreateMatchFunctionBuilder builder,
             ApiMatchFunctionRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).CreateMatchFunction(op);
         }
-
         public static void Execute(
             this DeleteMatchFunction.DeleteMatchFunctionBuilder builder,
             string name,
@@ -51,6 +49,5 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).DeleteMatchFunction(op);
         }
-
     }
 }

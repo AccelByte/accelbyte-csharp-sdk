@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminGetThirdPartyConfig(op);
         }
-
         public static Lobby.Model.ModelsUpdateConfigResponse? Execute(
             this AdminUpdateThirdPartyConfig.AdminUpdateThirdPartyConfigBuilder builder,
             ModelsUpdateConfigRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminUpdateThirdPartyConfig(op);
         }
-
         public static Lobby.Model.ModelsCreateConfigResponse? Execute(
             this AdminCreateThirdPartyConfig.AdminCreateThirdPartyConfigBuilder builder,
             ModelsCreateConfigRequest body,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminCreateThirdPartyConfig(op);
         }
-
         public static string? Execute(
             this AdminDeleteThirdPartyConfig.AdminDeleteThirdPartyConfigBuilder builder,
             string namespace_
@@ -63,6 +60,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminDeleteThirdPartyConfig(op);
         }
-
     }
 }

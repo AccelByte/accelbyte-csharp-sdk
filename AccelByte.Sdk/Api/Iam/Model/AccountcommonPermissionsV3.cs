@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonPermissionV3>? Permissions { get; set; }
 
     }
+
+
 }

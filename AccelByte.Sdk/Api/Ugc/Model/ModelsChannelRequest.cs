@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Name { get; set; }
 
     }
+
+
 }

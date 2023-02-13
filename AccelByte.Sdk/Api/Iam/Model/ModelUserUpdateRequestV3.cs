@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? UserName { get; set; }
 
     }
+
+
 }

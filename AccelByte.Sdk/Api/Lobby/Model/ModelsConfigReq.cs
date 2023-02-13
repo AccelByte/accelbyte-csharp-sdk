@@ -86,4 +86,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public long? ReadyConsentTimeout { get; set; }
 
     }
+
+
 }

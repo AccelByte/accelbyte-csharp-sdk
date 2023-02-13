@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? Code { get; set; }
 
     }
+
+
 }

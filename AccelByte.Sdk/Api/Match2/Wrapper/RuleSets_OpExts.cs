@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetList(op);
         }
-
         public static void Execute(
             this CreateRuleSet.CreateRuleSetBuilder builder,
             ApiMatchRuleSet body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.RuleSets)builder.WrapperObject!).CreateRuleSet(op);
         }
-
         public static Match2.Model.ApiMatchRuleSet? Execute(
             this RuleSetDetails.RuleSetDetailsBuilder builder,
             string namespace_,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetails(op);
         }
-
         public static Match2.Model.ApiMatchRuleSet? Execute(
             this UpdateRuleSet.UpdateRuleSetBuilder builder,
             ApiMatchRuleSetData body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSet(op);
         }
-
         public static void Execute(
             this DeleteRuleSet.DeleteRuleSetBuilder builder,
             string namespace_,
@@ -81,6 +77,5 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.RuleSets)builder.WrapperObject!).DeleteRuleSet(op);
         }
-
     }
 }

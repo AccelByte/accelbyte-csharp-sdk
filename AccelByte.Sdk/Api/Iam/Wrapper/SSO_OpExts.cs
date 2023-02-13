@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.SSO)builder.WrapperObject!).LoginSSOClient(op);
         }
-
         public static void Execute(
             this LogoutSSOClient.LogoutSSOClientBuilder builder,
             string platformId
@@ -35,6 +34,5 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.SSO)builder.WrapperObject!).LogoutSSOClient(op);
         }
-
     }
 }

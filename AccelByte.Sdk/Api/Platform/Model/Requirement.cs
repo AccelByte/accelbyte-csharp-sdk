@@ -45,4 +45,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? SoundCard { get; set; }
 
     }
+
+
 }

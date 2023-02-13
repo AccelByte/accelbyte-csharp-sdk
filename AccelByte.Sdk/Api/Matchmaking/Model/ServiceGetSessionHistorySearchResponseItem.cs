@@ -56,4 +56,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<string>? SubGameMode { get; set; }
 
     }
+
+
 }

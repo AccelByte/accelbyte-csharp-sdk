@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveLocalizedPolicyVersions(op);
         }
-
         public static Legal.Model.CreateLocalizedPolicyVersionResponse? Execute(
             this CreateLocalizedPolicyVersion.CreateLocalizedPolicyVersionBuilder builder,
             string policyVersionId
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersion(op);
         }
-
         public static Legal.Model.RetrieveLocalizedPolicyVersionResponse? Execute(
             this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion(op);
         }
-
         public static Legal.Model.UpdateLocalizedPolicyVersionResponse? Execute(
             this UpdateLocalizedPolicyVersion.UpdateLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).UpdateLocalizedPolicyVersion(op);
         }
-
         public static Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse? Execute(
             this RequestPresignedURL.RequestPresignedURLBuilder builder,
             string localizedPolicyVersionId
@@ -71,7 +67,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RequestPresignedURL(op);
         }
-
         public static void Execute(
             this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
             string localizedPolicyVersionId
@@ -83,7 +78,6 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicy(op);
         }
-
         public static Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse? Execute(
             this RetrieveSingleLocalizedPolicyVersion1.RetrieveSingleLocalizedPolicyVersion1Builder builder,
             string localizedPolicyVersionId
@@ -95,6 +89,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion1(op);
         }
-
     }
 }

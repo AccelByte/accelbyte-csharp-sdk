@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public DateTime? UpdatedAt { get; set; }
 
     }
+
+
 }

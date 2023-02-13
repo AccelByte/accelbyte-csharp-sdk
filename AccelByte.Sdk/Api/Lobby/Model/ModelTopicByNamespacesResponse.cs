@@ -25,4 +25,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public List<ModelNotificationTopicResponse>? Topics { get; set; }
 
     }
+
+
 }

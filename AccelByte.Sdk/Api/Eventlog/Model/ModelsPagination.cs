@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedContentDownloadResponse? GetLikedContent(GetLikedContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? GetLikedContent(GetLikedContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -37,7 +38,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentLikeResponse? UpdateContentLikeStatus(UpdateContentLikeStatus input) {
+        public Model.ModelsContentLikeResponse? UpdateContentLikeStatus(UpdateContentLikeStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

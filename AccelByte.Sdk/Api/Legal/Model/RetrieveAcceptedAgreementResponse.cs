@@ -65,4 +65,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).GetGameRecordsBulk(op);
         }
-
         public static Cloudsave.Model.ModelsGameRecordResponse? Execute(
             this GetGameRecordHandlerV1.GetGameRecordHandlerV1Builder builder,
             string key,
@@ -40,6 +39,19 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).GetGameRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsGameRecordResponse<T1>? Execute<T1>(
+            this GetGameRecordHandlerV1.GetGameRecordHandlerV1Builder builder,
+            string key,
+            string namespace_
+        )
+        {
+            GetGameRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).GetGameRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsGameRecordResponse? Execute(
             this PutGameRecordHandlerV1.PutGameRecordHandlerV1Builder builder,
             ModelsGameRecordRequest body,
@@ -56,6 +68,21 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).PutGameRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsGameRecordResponse<T1>? Execute<T1>(
+            this PutGameRecordHandlerV1.PutGameRecordHandlerV1Builder builder,
+            ModelsGameRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            PutGameRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).PutGameRecordHandlerV1<T1>(op);
+        }
         public static Cloudsave.Model.ModelsGameRecordResponse? Execute(
             this PostGameRecordHandlerV1.PostGameRecordHandlerV1Builder builder,
             ModelsGameRecordRequest body,
@@ -72,6 +99,21 @@ namespace AccelByte.Sdk.Api
             return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).PostGameRecordHandlerV1(op);
         }
 
+        public static Cloudsave.Model.ModelsGameRecordResponse<T1>? Execute<T1>(
+            this PostGameRecordHandlerV1.PostGameRecordHandlerV1Builder builder,
+            ModelsGameRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            PostGameRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).PostGameRecordHandlerV1<T1>(op);
+        }
         public static void Execute(
             this DeleteGameRecordHandlerV1.DeleteGameRecordHandlerV1Builder builder,
             string key,
@@ -85,6 +127,5 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.PublicGameRecord)builder.WrapperObject!).DeleteGameRecordHandlerV1(op);
         }
-
     }
 }

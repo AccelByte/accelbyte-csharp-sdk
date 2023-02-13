@@ -17,4 +17,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public Paging? Paging { get; set; }
 
     }
+
+
 }

@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibility)builder.WrapperObject!).GetHiddenUsersV2(op);
         }
-
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this GetUserVisibilityStatusV2.GetUserVisibilityStatusV2Builder builder,
             string leaderboardCode,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibility)builder.WrapperObject!).GetUserVisibilityStatusV2(op);
         }
-
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this SetUserLeaderboardVisibilityStatusV2.SetUserLeaderboardVisibilityStatusV2Builder builder,
             ModelsSetUserVisibilityRequest body,
@@ -59,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibility)builder.WrapperObject!).SetUserLeaderboardVisibilityStatusV2(op);
         }
-
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this SetUserVisibilityStatusV2.SetUserVisibilityStatusV2Builder builder,
             ModelsSetUserVisibilityRequest body,
@@ -75,6 +72,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibility)builder.WrapperObject!).SetUserVisibilityStatusV2(op);
         }
-
     }
 }

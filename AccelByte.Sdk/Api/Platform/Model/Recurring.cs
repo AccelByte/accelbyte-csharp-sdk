@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class RecurringCycle : StringEnum<RecurringCycle>
     {
         public static readonly RecurringCycle MONTHLY

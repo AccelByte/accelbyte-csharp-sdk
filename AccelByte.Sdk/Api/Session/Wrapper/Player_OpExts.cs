@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributes(op);
         }
 
+        public static List<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>>? Execute<T1>(
+            this AdminQueryPlayerAttributes.AdminQueryPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributes<T1>(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this AdminGetPlayerAttributes.AdminGetPlayerAttributesBuilder builder,
             string namespace_,
@@ -38,6 +49,19 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributes(op);
         }
 
+        public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
+            this AdminGetPlayerAttributes.AdminGetPlayerAttributesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerAttributes op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributes<T1>(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
             string namespace_
@@ -50,6 +74,17 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributes(op);
         }
 
+        public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
+            this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributes<T1>(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this PublicStorePlayerAttributes.PublicStorePlayerAttributesBuilder builder,
             ApimodelsPlayerAttributesRequestBody body,
@@ -64,6 +99,19 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributes(op);
         }
 
+        public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
+            this PublicStorePlayerAttributes.PublicStorePlayerAttributesBuilder builder,
+            ApimodelsPlayerAttributesRequestBody body,
+            string namespace_
+        )
+        {
+            PublicStorePlayerAttributes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributes<T1>(op);
+        }
         public static void Execute(
             this PublicDeletePlayerAttributes.PublicDeletePlayerAttributesBuilder builder,
             string namespace_
@@ -75,6 +123,5 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.Player)builder.WrapperObject!).PublicDeletePlayerAttributes(op);
         }
-
     }
 }

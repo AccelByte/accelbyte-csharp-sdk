@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? Text { get; set; }
 
     }
+
+
 }

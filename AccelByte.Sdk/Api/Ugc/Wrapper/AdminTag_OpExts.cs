@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminTag)builder.WrapperObject!).AdminGetTag(op);
         }
-
         public static Ugc.Model.ModelsCreateTagResponse? Execute(
             this AdminCreateTag.AdminCreateTagBuilder builder,
             ModelsCreateTagRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminTag)builder.WrapperObject!).AdminCreateTag(op);
         }
-
         public static Ugc.Model.ModelsCreateTagResponse? Execute(
             this AdminUpdateTag.AdminUpdateTagBuilder builder,
             ModelsCreateTagRequest body,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminTag)builder.WrapperObject!).AdminUpdateTag(op);
         }
-
         public static void Execute(
             this AdminDeleteTag.AdminDeleteTagBuilder builder,
             string namespace_,
@@ -67,6 +64,5 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminTag)builder.WrapperObject!).AdminDeleteTag(op);
         }
-
     }
 }

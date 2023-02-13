@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? OrganizationId { get; set; }
 
     }
+
+
 }

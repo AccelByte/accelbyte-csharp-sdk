@@ -37,7 +37,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         }
         #endregion
         
-        public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input) {
+        public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -45,7 +46,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input) {
+        public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +55,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input) {
+        public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +64,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input) {
+        public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

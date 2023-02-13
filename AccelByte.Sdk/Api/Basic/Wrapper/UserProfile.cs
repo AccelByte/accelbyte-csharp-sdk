@@ -125,7 +125,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         #endregion
         
-        public Model.UserProfileInfo? GetUserProfileInfoByPublicId(GetUserProfileInfoByPublicId input) {
+        public Model.UserProfileInfo? GetUserProfileInfoByPublicId(GetUserProfileInfoByPublicId input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +134,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.UserProfilePublicInfo>? AdminGetUserProfilePublicInfoByIds(AdminGetUserProfilePublicInfoByIds input) {
+        
+        public Model.UserProfileInfo<T1>? GetUserProfileInfoByPublicId<T1>(GetUserProfileInfoByPublicId input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.UserProfilePublicInfo>? AdminGetUserProfilePublicInfoByIds(AdminGetUserProfilePublicInfoByIds input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -141,7 +153,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? GetUserProfileInfo(GetUserProfileInfo input) {
+        
+        public List<Model.UserProfilePublicInfo<T1>>? AdminGetUserProfilePublicInfoByIds<T1>(AdminGetUserProfilePublicInfoByIds input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? GetUserProfileInfo(GetUserProfileInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -149,7 +172,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? UpdateUserProfile(UpdateUserProfile input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? GetUserProfileInfo<T1, T2>(GetUserProfileInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? UpdateUserProfile(UpdateUserProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -157,7 +191,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? DeleteUserProfile(DeleteUserProfile input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? UpdateUserProfile<T1, T2>(UpdateUserProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? DeleteUserProfile(DeleteUserProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -165,7 +210,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetCustomAttributesInfo(GetCustomAttributesInfo input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? DeleteUserProfile<T1, T2>(DeleteUserProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? GetCustomAttributesInfo(GetCustomAttributesInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -173,7 +229,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? UpdateCustomAttributesPartially(UpdateCustomAttributesPartially input) {
+        public Dictionary<string, object>? UpdateCustomAttributesPartially(UpdateCustomAttributesPartially input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -181,7 +238,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetPrivateCustomAttributesInfo(GetPrivateCustomAttributesInfo input) {
+        public Dictionary<string, object>? GetPrivateCustomAttributesInfo(GetPrivateCustomAttributesInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -189,7 +247,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? UpdatePrivateCustomAttributesPartially(UpdatePrivateCustomAttributesPartially input) {
+        public Dictionary<string, object>? UpdatePrivateCustomAttributesPartially(UpdatePrivateCustomAttributesPartially input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -197,7 +256,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? UpdateUserProfileStatus(UpdateUserProfileStatus input) {
+        public Model.UserProfilePrivateInfo? UpdateUserProfileStatus(UpdateUserProfileStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -205,7 +265,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.UserProfilePublicInfo>? PublicGetUserProfilePublicInfoByIds(PublicGetUserProfilePublicInfoByIds input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? UpdateUserProfileStatus<T1, T2>(UpdateUserProfileStatus input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.UserProfilePublicInfo>? PublicGetUserProfilePublicInfoByIds(PublicGetUserProfilePublicInfoByIds input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -213,7 +284,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePublicInfo? PublicGetUserProfileInfoByPublicId(PublicGetUserProfileInfoByPublicId input) {
+        
+        public List<Model.UserProfilePublicInfo<T1>>? PublicGetUserProfilePublicInfoByIds<T1>(PublicGetUserProfilePublicInfoByIds input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePublicInfo? PublicGetUserProfileInfoByPublicId(PublicGetUserProfileInfoByPublicId input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -221,7 +303,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? GetMyProfileInfo(GetMyProfileInfo input) {
+        
+        public Model.UserProfilePublicInfo<T1>? PublicGetUserProfileInfoByPublicId<T1>(PublicGetUserProfileInfoByPublicId input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? GetMyProfileInfo(GetMyProfileInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -229,7 +322,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? UpdateMyProfile(UpdateMyProfile input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? GetMyProfileInfo<T1, T2>(GetMyProfileInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? UpdateMyProfile(UpdateMyProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -237,7 +341,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePrivateInfo? CreateMyProfile(CreateMyProfile input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? UpdateMyProfile<T1, T2>(UpdateMyProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfilePrivateInfo? CreateMyProfile(CreateMyProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -245,7 +360,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetMyPrivateCustomAttributesInfo(GetMyPrivateCustomAttributesInfo input) {
+        
+        public Model.UserProfilePrivateInfo<T1, T2>? CreateMyProfile<T1, T2>(CreateMyProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? GetMyPrivateCustomAttributesInfo(GetMyPrivateCustomAttributesInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -253,7 +379,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? UpdateMyPrivateCustomAttributesPartially(UpdateMyPrivateCustomAttributesPartially input) {
+        public Dictionary<string, object>? UpdateMyPrivateCustomAttributesPartially(UpdateMyPrivateCustomAttributesPartially input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -261,7 +388,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserZipCode? GetMyZipCode(GetMyZipCode input) {
+        public Model.UserZipCode? GetMyZipCode(GetMyZipCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -269,7 +397,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserZipCode? UpdateMyZipCode(UpdateMyZipCode input) {
+        public Model.UserZipCode? UpdateMyZipCode(UpdateMyZipCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -277,7 +406,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfileInfo? PublicGetUserProfileInfo(PublicGetUserProfileInfo input) {
+        public Model.UserProfileInfo? PublicGetUserProfileInfo(PublicGetUserProfileInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -285,7 +415,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfileInfo? PublicUpdateUserProfile(PublicUpdateUserProfile input) {
+        
+        public Model.UserProfileInfo<T1>? PublicGetUserProfileInfo<T1>(PublicGetUserProfileInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfileInfo? PublicUpdateUserProfile(PublicUpdateUserProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -293,7 +434,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfileInfo? PublicCreateUserProfile(PublicCreateUserProfile input) {
+        
+        public Model.UserProfileInfo<T1>? PublicUpdateUserProfile<T1>(PublicUpdateUserProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfileInfo? PublicCreateUserProfile(PublicCreateUserProfile input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -301,7 +453,18 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? PublicGetCustomAttributesInfo(PublicGetCustomAttributesInfo input) {
+        
+        public Model.UserProfileInfo<T1>? PublicCreateUserProfile<T1>(PublicCreateUserProfile input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicGetCustomAttributesInfo(PublicGetCustomAttributesInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -309,7 +472,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? PublicUpdateCustomAttributesPartially(PublicUpdateCustomAttributesPartially input) {
+        public Dictionary<string, object>? PublicUpdateCustomAttributesPartially(PublicUpdateCustomAttributesPartially input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -317,7 +481,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfilePublicInfo? PublicGetUserProfilePublicInfo(PublicGetUserProfilePublicInfo input) {
+        public Model.UserProfilePublicInfo? PublicGetUserProfilePublicInfo(PublicGetUserProfilePublicInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -325,10 +490,31 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserProfileInfo? PublicUpdateUserProfileStatus(PublicUpdateUserProfileStatus input) {
+        
+        public Model.UserProfilePublicInfo<T1>? PublicGetUserProfilePublicInfo<T1>(PublicGetUserProfilePublicInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserProfileInfo? PublicUpdateUserProfileStatus(PublicUpdateUserProfileStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.UserProfileInfo<T1>? PublicUpdateUserProfileStatus<T1>(PublicUpdateUserProfileStatus input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

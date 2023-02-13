@@ -91,4 +91,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? TerminationReason { get; set; }
 
     }
+
+
 }

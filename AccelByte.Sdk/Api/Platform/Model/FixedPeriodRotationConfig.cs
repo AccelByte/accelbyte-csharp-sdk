@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class FixedPeriodRotationConfigBackfillType : StringEnum<FixedPeriodRotationConfigBackfillType>
     {
         public static readonly FixedPeriodRotationConfigBackfillType CUSTOM

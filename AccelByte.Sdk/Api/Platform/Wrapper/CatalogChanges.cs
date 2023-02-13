@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public List<Model.CatalogChangePagingSlicedResult>? QueryChanges(QueryChanges input) {
+        public List<Model.CatalogChangePagingSlicedResult>? QueryChanges(QueryChanges input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +62,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? PublishAll(PublishAll input) {
+        public Model.StoreInfo? PublishAll(PublishAll input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +71,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.StoreInfo? PublishSelected(PublishSelected input) {
+        public Model.StoreInfo? PublishSelected(PublishSelected input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CatalogChangeStatistics? GetStatistic(GetStatistic input) {
+        public Model.CatalogChangeStatistics? GetStatistic(GetStatistic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

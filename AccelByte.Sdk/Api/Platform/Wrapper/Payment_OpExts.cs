@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).QueryPaymentNotifications(op);
         }
-
         public static Platform.Model.PaymentOrderPagingSlicedResult? Execute(
             this QueryPaymentOrders.QueryPaymentOrdersBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).QueryPaymentOrders(op);
         }
-
         public static List<string>? Execute(
             this ListExtOrderNoByExtTxId.ListExtOrderNoByExtTxIdBuilder builder,
             string namespace_,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).ListExtOrderNoByExtTxId(op);
         }
-
         public static Platform.Model.PaymentOrderInfo? Execute(
             this GetPaymentOrder.GetPaymentOrderBuilder builder,
             string namespace_,
@@ -64,6 +61,19 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).GetPaymentOrder(op);
         }
 
+        public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
+            this GetPaymentOrder.GetPaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            GetPaymentOrder op = builder.Build(
+                namespace_,
+                paymentOrderNo
+            );
+
+            return ((Platform.Wrapper.Payment)builder.WrapperObject!).GetPaymentOrder<T1>(op);
+        }
         public static Platform.Model.PaymentOrderInfo? Execute(
             this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
             string namespace_,
@@ -78,6 +88,19 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).ChargePaymentOrder(op);
         }
 
+        public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
+            this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            ChargePaymentOrder op = builder.Build(
+                namespace_,
+                paymentOrderNo
+            );
+
+            return ((Platform.Wrapper.Payment)builder.WrapperObject!).ChargePaymentOrder<T1>(op);
+        }
         public static Platform.Model.NotificationProcessResult? Execute(
             this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
             string namespace_,
@@ -92,6 +115,19 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).SimulatePaymentOrderNotification(op);
         }
 
+        public static Platform.Model.NotificationProcessResult<T1>? Execute<T1>(
+            this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            SimulatePaymentOrderNotification op = builder.Build(
+                namespace_,
+                paymentOrderNo
+            );
+
+            return ((Platform.Wrapper.Payment)builder.WrapperObject!).SimulatePaymentOrderNotification<T1>(op);
+        }
         public static Platform.Model.PaymentOrderChargeStatus? Execute(
             this GetPaymentOrderChargeStatus.GetPaymentOrderChargeStatusBuilder builder,
             string namespace_,
@@ -105,7 +141,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).GetPaymentOrderChargeStatus(op);
         }
-
         public static Platform.Model.PaymentOrderInfo? Execute(
             this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
             string namespace_,
@@ -120,6 +155,19 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).CreateUserPaymentOrder(op);
         }
 
+        public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
+            this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateUserPaymentOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Payment)builder.WrapperObject!).CreateUserPaymentOrder<T1>(op);
+        }
         public static Platform.Model.PaymentOrderInfo? Execute(
             this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
             string namespace_,
@@ -136,5 +184,20 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Payment)builder.WrapperObject!).RefundUserPaymentOrder(op);
         }
 
+        public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
+            this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
+            string namespace_,
+            string paymentOrderNo,
+            string userId
+        )
+        {
+            RefundUserPaymentOrder op = builder.Build(
+                namespace_,
+                paymentOrderNo,
+                userId
+            );
+
+            return ((Platform.Wrapper.Payment)builder.WrapperObject!).RefundUserPaymentOrder<T1>(op);
+        }
     }
 }

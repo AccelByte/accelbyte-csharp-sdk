@@ -61,7 +61,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedAchievementResponse? AdminListAchievements(AdminListAchievements input) {
+        public Model.ModelsPaginatedAchievementResponse? AdminListAchievements(AdminListAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +70,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminCreateNewAchievement(AdminCreateNewAchievement input) {
+        public Model.ModelsAchievementResponse? AdminCreateNewAchievement(AdminCreateNewAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +79,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? ExportAchievements(ExportAchievements input) {
+        public Stream? ExportAchievements(ExportAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +88,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ServiceImportConfigResponse? ImportAchievements(ImportAchievements input) {
+        public Model.ServiceImportConfigResponse? ImportAchievements(ImportAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -93,7 +97,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminGetAchievement(AdminGetAchievement input) {
+        public Model.ModelsAchievementResponse? AdminGetAchievement(AdminGetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +106,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsAchievementResponse? AdminUpdateAchievement(AdminUpdateAchievement input) {
+        public Model.ModelsAchievementResponse? AdminUpdateAchievement(AdminUpdateAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,7 +131,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPublicAchievementsResponse? PublicListAchievements(PublicListAchievements input) {
+        public Model.ModelsPublicAchievementsResponse? PublicListAchievements(PublicListAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +140,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPublicAchievementResponse? PublicGetAchievement(PublicGetAchievement input) {
+        public Model.ModelsPublicAchievementResponse? PublicGetAchievement(PublicGetAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

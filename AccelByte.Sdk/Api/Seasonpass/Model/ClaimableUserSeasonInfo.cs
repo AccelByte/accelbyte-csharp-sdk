@@ -71,4 +71,70 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? UserId { get; set; }
 
     }
+
+    public class ClaimableUserSeasonInfo<T1, T2> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("claimingRewards")]
+        public T1? ClaimingRewards { get; set; }
+
+        [JsonPropertyName("cleared")]
+        public bool? Cleared { get; set; }
+
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("currentExp")]
+        public int? CurrentExp { get; set; }
+
+        [JsonPropertyName("currentTierIndex")]
+        public int? CurrentTierIndex { get; set; }
+
+        [JsonPropertyName("enrolledAt")]
+        public DateTime? EnrolledAt { get; set; }
+
+        [JsonPropertyName("enrolledPasses")]
+        public List<string>? EnrolledPasses { get; set; }
+
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        [JsonPropertyName("lastTierIndex")]
+        public int? LastTierIndex { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("requiredExp")]
+        public int? RequiredExp { get; set; }
+
+        [JsonPropertyName("season")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public SeasonSummary? Season { get; set; }
+
+        [JsonPropertyName("seasonId")]
+        public string? SeasonId { get; set; }
+
+        [JsonPropertyName("toClaimRewards")]
+        public T2? ToClaimRewards { get; set; }
+
+        [JsonPropertyName("totalExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? TotalExp { get; set; }
+
+        [JsonPropertyName("totalPaidForExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? TotalPaidForExp { get; set; }
+
+        [JsonPropertyName("totalSweatExp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? TotalSweatExp { get; set; }
+
+        [JsonPropertyName("updatedAt")]
+        public DateTime? UpdatedAt { get; set; }
+
+        [JsonPropertyName("userId")]
+        public string? UserId { get; set; }
+
+    }
+
 }

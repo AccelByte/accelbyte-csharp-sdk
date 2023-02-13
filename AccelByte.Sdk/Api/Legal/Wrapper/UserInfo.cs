@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
         
-        public List<Model.RetrieveUserInfoCacheStatusResponse>? GetUserInfoStatus(GetUserInfoStatus input) {
+        public List<Model.RetrieveUserInfoCacheStatusResponse>? GetUserInfoStatus(GetUserInfoStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

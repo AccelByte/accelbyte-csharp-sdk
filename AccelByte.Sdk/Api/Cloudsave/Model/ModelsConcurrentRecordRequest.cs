@@ -16,4 +16,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         public Dictionary<string, object>? Value { get; set; }
 
     }
+
+    public class ModelsConcurrentRecordRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("updatedAt")]
+        public string? UpdatedAt { get; set; }
+
+        [JsonPropertyName("value")]
+        public T1? Value { get; set; }
+
+    }
+
 }

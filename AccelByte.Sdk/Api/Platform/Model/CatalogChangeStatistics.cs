@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public long? SelectedCount { get; set; }
 
     }
+
+
 }

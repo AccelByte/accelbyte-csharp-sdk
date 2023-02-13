@@ -17,4 +17,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public List<string>? UserIds { get; set; }
 
     }
+
+
 }

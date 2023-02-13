@@ -34,6 +34,32 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class RequestHistory<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("requestTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? RequestTime { get; set; }
+
+        [JsonPropertyName("responseBody")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? ResponseBody { get; set; }
+
+        [JsonPropertyName("responseTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? ResponseTime { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RequestHistoryStatus? Status { get; set; }
+
+        [JsonPropertyName("statusCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? StatusCode { get; set; }
+
+    }
+
+
     public class RequestHistoryStatus : StringEnum<RequestHistoryStatus>
     {
         public static readonly RequestHistoryStatus FAIL

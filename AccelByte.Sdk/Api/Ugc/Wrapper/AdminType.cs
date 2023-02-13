@@ -37,7 +37,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGetTypeResponse? AdminGetType(AdminGetType input) {
+        public Model.ModelsPaginatedGetTypeResponse? AdminGetType(AdminGetType input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -45,7 +46,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateTypeResponse? AdminCreateType(AdminCreateType input) {
+        public Model.ModelsCreateTypeResponse? AdminCreateType(AdminCreateType input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +55,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateTypeResponse? AdminUpdateType(AdminUpdateType input) {
+        public Model.ModelsCreateTypeResponse? AdminUpdateType(AdminUpdateType input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

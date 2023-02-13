@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

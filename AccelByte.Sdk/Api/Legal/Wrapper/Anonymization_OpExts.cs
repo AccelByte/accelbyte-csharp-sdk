@@ -23,6 +23,5 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Anonymization)builder.WrapperObject!).AnonymizeUserAgreement(op);
         }
-
     }
 }

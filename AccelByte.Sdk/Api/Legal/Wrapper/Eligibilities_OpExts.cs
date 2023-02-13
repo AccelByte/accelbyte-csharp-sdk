@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublic(op);
         }
-
         public static Legal.Model.RetrieveUserEligibilitiesIndirectResponse? Execute(
             this RetrieveEligibilitiesPublicIndirect.RetrieveEligibilitiesPublicIndirectBuilder builder,
             string clientId,
@@ -41,6 +40,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublicIndirect(op);
         }
-
     }
 }

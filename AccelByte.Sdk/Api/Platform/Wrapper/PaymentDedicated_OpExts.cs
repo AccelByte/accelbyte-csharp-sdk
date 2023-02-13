@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).CreatePaymentOrderByDedicated(op);
         }
-
         public static Platform.Model.PaymentOrderRefundResult? Execute(
             this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).RefundPaymentOrderByDedicated(op);
         }
-
         public static Platform.Model.PaymentOrderSyncResult? Execute(
             this SyncPaymentOrders.SyncPaymentOrdersBuilder builder,
             string end,
@@ -51,6 +49,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).SyncPaymentOrders(op);
         }
-
     }
 }

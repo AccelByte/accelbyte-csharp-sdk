@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<int>? ServiceLabels { get; set; }
 
     }
+
+
 }

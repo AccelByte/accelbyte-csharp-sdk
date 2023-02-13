@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         public string? URL { get; set; }
 
     }
+
+
 }

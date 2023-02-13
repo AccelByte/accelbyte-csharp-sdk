@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

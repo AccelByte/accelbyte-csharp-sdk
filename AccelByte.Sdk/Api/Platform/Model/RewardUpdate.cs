@@ -40,4 +40,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? UserIdExpression { get; set; }
 
     }
+
+
 }

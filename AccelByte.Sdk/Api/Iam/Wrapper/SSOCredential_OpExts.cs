@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveAllSSOLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this RetrieveSSOLoginPlatformCredential.RetrieveSSOLoginPlatformCredentialBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveSSOLoginPlatformCredential(op);
         }
-
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this AddSSOLoginPlatformCredential.AddSSOLoginPlatformCredentialBuilder builder,
             ModelSSOPlatformCredentialRequest body,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).AddSSOLoginPlatformCredential(op);
         }
-
         public static void Execute(
             this DeleteSSOLoginPlatformCredentialV3.DeleteSSOLoginPlatformCredentialV3Builder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).DeleteSSOLoginPlatformCredentialV3(op);
         }
-
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this UpdateSSOPlatformCredential.UpdateSSOPlatformCredentialBuilder builder,
             ModelSSOPlatformCredentialRequest body,
@@ -83,6 +79,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).UpdateSSOPlatformCredential(op);
         }
-
     }
 }

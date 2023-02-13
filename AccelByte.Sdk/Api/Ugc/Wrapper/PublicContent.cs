@@ -83,7 +83,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedContentDownloadResponse? SearchChannelSpecificContent(SearchChannelSpecificContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? SearchChannelSpecificContent(SearchChannelSpecificContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -91,7 +92,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? PublicSearchContent(PublicSearchContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? PublicSearchContent(PublicSearchContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -99,7 +101,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelsContentDownloadResponse>? PublicGetContentBulk(PublicGetContentBulk input) {
+        public List<Model.ModelsContentDownloadResponse>? PublicGetContentBulk(PublicGetContentBulk input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -107,7 +110,18 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentDownloadResponse? PublicDownloadContentByShareCode(PublicDownloadContentByShareCode input) {
+        
+        public List<Model.ModelsContentDownloadResponse<T1>>? PublicGetContentBulk<T1>(PublicGetContentBulk input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsContentDownloadResponse? PublicDownloadContentByShareCode(PublicDownloadContentByShareCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -115,7 +129,18 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsContentDownloadResponse? PublicDownloadContentByContentID(PublicDownloadContentByContentID input) {
+        
+        public Model.ModelsContentDownloadResponse<T1>? PublicDownloadContentByShareCode<T1>(PublicDownloadContentByShareCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsContentDownloadResponse? PublicDownloadContentByContentID(PublicDownloadContentByContentID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -123,7 +148,18 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGetContentPreviewResponse? PublicDownloadContentPreview(PublicDownloadContentPreview input) {
+        
+        public Model.ModelsContentDownloadResponse<T1>? PublicDownloadContentByContentID<T1>(PublicDownloadContentByContentID input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetContentPreviewResponse? PublicDownloadContentPreview(PublicDownloadContentPreview input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,16 +169,28 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsCreateContentResponse? CreateContentDirect(CreateContentDirect input) {
+        public Model.ModelsCreateContentResponse? CreateContentDirect(CreateContentDirect input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsCreateContentResponse<T1>? CreateContentDirect<T1>(CreateContentDirect input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelsCreateContentResponse? CreateContentS3(CreateContentS3 input) {
+        public Model.ModelsCreateContentResponse? CreateContentS3(CreateContentS3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -150,20 +198,52 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateContentResponse? UpdateContentS3(UpdateContentS3 input) {
+        
+        public Model.ModelsCreateContentResponse<T1>? CreateContentS3<T1>(CreateContentS3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCreateContentResponse? UpdateContentS3(UpdateContentS3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsCreateContentResponse<T1>? UpdateContentS3<T1>(UpdateContentS3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
         }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelsCreateContentResponse? UpdateContentDirect(UpdateContentDirect input) {
+        public Model.ModelsCreateContentResponse? UpdateContentDirect(UpdateContentDirect input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ModelsCreateContentResponse<T1>? UpdateContentDirect<T1>(UpdateContentDirect input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -177,7 +257,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? PublicGetUserContent(PublicGetUserContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? PublicGetUserContent(PublicGetUserContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -185,7 +266,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsUpdateScreenshotResponse? UpdateScreenshots(UpdateScreenshots input) {
+        public Model.ModelsUpdateScreenshotResponse? UpdateScreenshots(UpdateScreenshots input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -193,7 +275,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateScreenshotResponse? UploadContentScreenshot(UploadContentScreenshot input) {
+        public Model.ModelsCreateScreenshotResponse? UploadContentScreenshot(UploadContentScreenshot input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

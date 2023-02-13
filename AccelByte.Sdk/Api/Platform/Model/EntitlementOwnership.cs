@@ -17,4 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Owned { get; set; }
 
     }
+
+
 }

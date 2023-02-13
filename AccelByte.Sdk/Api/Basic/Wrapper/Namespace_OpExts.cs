@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespaces(op);
         }
-
         public static Basic.Model.NamespaceInfo? Execute(
             this CreateNamespace.CreateNamespaceBuilder builder
         )
@@ -31,7 +30,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).CreateNamespace(op);
         }
-
         public static Basic.Model.NamespaceInfo? Execute(
             this GetNamespace.GetNamespaceBuilder builder,
             string namespace_
@@ -43,7 +41,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespace(op);
         }
-
         public static Basic.Model.NamespaceInfo? Execute(
             this DeleteNamespace.DeleteNamespaceBuilder builder,
             string namespace_
@@ -55,7 +52,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).DeleteNamespace(op);
         }
-
         public static Basic.Model.NamespaceInfo? Execute(
             this UpdateNamespace.UpdateNamespaceBuilder builder,
             string namespace_
@@ -67,7 +63,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).UpdateNamespace(op);
         }
-
         public static List<Basic.Model.NamespaceInfo>? Execute(
             this GetGameNamespaces.GetGameNamespacesBuilder builder,
             string namespace_
@@ -79,7 +74,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetGameNamespaces(op);
         }
-
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this GetNamespacePublisher.GetNamespacePublisherBuilder builder,
             string namespace_
@@ -91,7 +85,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespacePublisher(op);
         }
-
         public static Basic.Model.NamespaceInfo? Execute(
             this ChangeNamespaceStatus.ChangeNamespaceStatusBuilder builder,
             string namespace_
@@ -103,7 +96,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).ChangeNamespaceStatus(op);
         }
-
         public static List<Basic.Model.NamespaceInfo>? Execute(
             this PublicGetNamespaces.PublicGetNamespacesBuilder builder
         )
@@ -113,7 +105,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespaces(op);
         }
-
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder builder,
             string namespace_
@@ -125,6 +116,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespacePublisher(op);
         }
-
     }
 }

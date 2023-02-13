@@ -76,4 +76,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? TwoFactorEnabled { get; set; }
 
     }
+
+
 }

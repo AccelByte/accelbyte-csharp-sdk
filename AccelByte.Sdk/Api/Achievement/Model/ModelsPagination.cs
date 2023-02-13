@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

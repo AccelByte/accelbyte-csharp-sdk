@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public List<ModelsPartyMember>? PartyMembers { get; set; }
 
     }
+
+    public class ModelsMatchingParty<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("match_attributes")]
+        public ModelsMatchAttributes? MatchAttributes { get; set; }
+
+        [JsonPropertyName("party_attributes")]
+        public T1? PartyAttributes { get; set; }
+
+        [JsonPropertyName("party_id")]
+        public string? PartyId { get; set; }
+
+        [JsonPropertyName("party_members")]
+        public List<ModelsPartyMember>? PartyMembers { get; set; }
+
+    }
+
 }

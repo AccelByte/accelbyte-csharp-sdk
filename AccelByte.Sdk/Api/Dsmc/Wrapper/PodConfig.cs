@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
         #endregion
         
-        public Model.ModelsInstanceSpec? GetLowestInstanceSpec(GetLowestInstanceSpec input) {
+        public Model.ModelsInstanceSpec? GetLowestInstanceSpec(GetLowestInstanceSpec input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input) {
+        public Model.ModelsListPodConfigResponse? GetAllPodConfig(GetAllPodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? GetPodConfig(GetPodConfig input) {
+        public Model.ModelsPodConfigRecord? GetPodConfig(GetPodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +72,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? CreatePodConfig(CreatePodConfig input) {
+        public Model.ModelsPodConfigRecord? CreatePodConfig(CreatePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +89,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPodConfigRecord? UpdatePodConfig(UpdatePodConfig input) {
+        public Model.ModelsPodConfigRecord? UpdatePodConfig(UpdatePodConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

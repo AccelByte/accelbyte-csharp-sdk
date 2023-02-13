@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         public ApimodelsPagination? Paging { get; set; }
 
     }
+
+
 }

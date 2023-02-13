@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
         
-        public Model.LegalReadinessStatusResponse? CheckReadiness(CheckReadiness input) {
+        public Model.LegalReadinessStatusResponse? CheckReadiness(CheckReadiness input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

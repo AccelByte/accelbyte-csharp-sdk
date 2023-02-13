@@ -35,4 +35,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? UpdatedAt { get; set; }
 
     }
+
+
 }

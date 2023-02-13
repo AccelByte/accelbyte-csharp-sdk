@@ -71,6 +71,69 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class FullSectionInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("active")]
+        public bool? Active { get; set; }
+
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("displayOrder")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? DisplayOrder { get; set; }
+
+        [JsonPropertyName("endDate")]
+        public DateTime? EndDate { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("fixedPeriodRotationConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public FixedPeriodRotationConfig? FixedPeriodRotationConfig { get; set; }
+
+        [JsonPropertyName("itemNamings")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ItemNaming>? ItemNamings { get; set; }
+
+        [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<SectionItem>? Items { get; set; }
+
+        [JsonPropertyName("localizations")]
+        public Dictionary<string, Localization>? Localizations { get; set; }
+
+        [JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("rotationType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FullSectionInfoRotationType? RotationType { get; set; }
+
+        [JsonPropertyName("sectionId")]
+        public string? SectionId { get; set; }
+
+        [JsonPropertyName("startDate")]
+        public DateTime? StartDate { get; set; }
+
+        [JsonPropertyName("updatedAt")]
+        public DateTime? UpdatedAt { get; set; }
+
+        [JsonPropertyName("viewId")]
+        public string? ViewId { get; set; }
+
+        [JsonPropertyName("viewName")]
+        public string? ViewName { get; set; }
+
+    }
+
+
     public class FullSectionInfoRotationType : StringEnum<FullSectionInfoRotationType>
     {
         public static readonly FullSectionInfoRotationType CUSTOM

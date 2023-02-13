@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input) {
+        public Model.ModelsPaginatedUserAchievementResponse? AdminListUserAchievements(AdminListUserAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +66,8 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedUserAchievementResponse? PublicListUserAchievements(PublicListUserAchievements input) {
+        public Model.ModelsPaginatedUserAchievementResponse? PublicListUserAchievements(PublicListUserAchievements input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

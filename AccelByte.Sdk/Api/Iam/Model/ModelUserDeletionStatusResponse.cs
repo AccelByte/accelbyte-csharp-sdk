@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? DeletionStatus { get; set; }
 
     }
+
+
 }

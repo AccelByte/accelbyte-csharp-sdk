@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public int? Status { get; set; }
 
     }
+
+
 }

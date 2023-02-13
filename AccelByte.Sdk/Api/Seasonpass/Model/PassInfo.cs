@@ -44,4 +44,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public DateTime? UpdatedAt { get; set; }
 
     }
+
+
 }

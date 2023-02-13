@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public List<ModelsRequestMatchParty>? MatchingParties { get; set; }
 
     }
+
+
 }

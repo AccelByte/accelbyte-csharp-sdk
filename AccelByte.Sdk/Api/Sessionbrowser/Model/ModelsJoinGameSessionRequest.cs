@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? Password { get; set; }
 
     }
+
+
 }

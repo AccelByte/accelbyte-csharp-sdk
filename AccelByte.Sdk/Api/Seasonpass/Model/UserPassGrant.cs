@@ -18,4 +18,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public string? PassItemId { get; set; }
 
     }
+
+
 }

@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public bool? Stop { get; set; }
 
     }
+
+
 }

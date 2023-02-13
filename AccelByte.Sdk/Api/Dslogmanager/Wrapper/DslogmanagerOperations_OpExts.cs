@@ -21,6 +21,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.DslogmanagerOperations)builder.WrapperObject!).PublicGetMessages(op);
         }
-
     }
 }

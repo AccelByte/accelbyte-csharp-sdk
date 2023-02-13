@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).GetHealthcheckInfo(op);
         }
-
         public static void Execute(
             this HandlerV3Healthz.HandlerV3HealthzBuilder builder
         )
@@ -31,7 +30,6 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).HandlerV3Healthz(op);
         }
-
         public static List<Matchmaking.Model.LogAppMessageDeclaration>? Execute(
             this PublicGetMessages.PublicGetMessagesBuilder builder
         )
@@ -41,7 +39,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).PublicGetMessages(op);
         }
-
         public static void Execute(
             this VersionCheckHandler.VersionCheckHandlerBuilder builder
         )
@@ -51,6 +48,5 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).VersionCheckHandler(op);
         }
-
     }
 }

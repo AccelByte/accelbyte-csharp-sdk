@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class EntitlementUpdateStatus : StringEnum<EntitlementUpdateStatus>
     {
         public static readonly EntitlementUpdateStatus ACTIVE

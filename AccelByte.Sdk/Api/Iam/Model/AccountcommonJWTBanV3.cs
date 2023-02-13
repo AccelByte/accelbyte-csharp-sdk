@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? TargetedNamespace { get; set; }
 
     }
+
+
 }

@@ -101,7 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.PlatformWalletConfigInfo? GetPlatformWalletConfig(GetPlatformWalletConfig input) {
+        public Model.PlatformWalletConfigInfo? GetPlatformWalletConfig(GetPlatformWalletConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -109,7 +110,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformWalletConfigInfo? UpdatePlatformWalletConfig(UpdatePlatformWalletConfig input) {
+        public Model.PlatformWalletConfigInfo? UpdatePlatformWalletConfig(UpdatePlatformWalletConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +119,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformWalletConfigInfo? ResetPlatformWalletConfig(ResetPlatformWalletConfig input) {
+        public Model.PlatformWalletConfigInfo? ResetPlatformWalletConfig(ResetPlatformWalletConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,7 +128,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.CurrencyWallet>? QueryUserCurrencyWallets(QueryUserCurrencyWallets input) {
+        public List<Model.CurrencyWallet>? QueryUserCurrencyWallets(QueryUserCurrencyWallets input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -133,7 +137,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletTransactionPagingSlicedResult? ListUserCurrencyTransactions(ListUserCurrencyTransactions input) {
+        public Model.WalletTransactionPagingSlicedResult? ListUserCurrencyTransactions(ListUserCurrencyTransactions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -152,7 +157,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.WalletInfo? CreditUserWallet(CreditUserWallet input) {
+        public Model.WalletInfo? CreditUserWallet(CreditUserWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -160,7 +166,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformWallet? PayWithUserWallet(PayWithUserWallet input) {
+        public Model.PlatformWallet? PayWithUserWallet(PayWithUserWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -170,7 +177,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.WalletInfo? GetUserWallet(GetUserWallet input) {
+        public Model.WalletInfo? GetUserWallet(GetUserWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -181,7 +189,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.WalletInfo? DebitUserWallet(DebitUserWallet input) {
+        public Model.WalletInfo? DebitUserWallet(DebitUserWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -214,7 +223,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.DetailedWalletTransactionPagingSlicedResult? ListUserWalletTransactions(ListUserWalletTransactions input) {
+        public Model.DetailedWalletTransactionPagingSlicedResult? ListUserWalletTransactions(ListUserWalletTransactions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -225,7 +235,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.WalletPagingSlicedResult? QueryWallets(QueryWallets input) {
+        public Model.WalletPagingSlicedResult? QueryWallets(QueryWallets input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -236,7 +247,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.WalletInfo? GetWallet(GetWallet input) {
+        public Model.WalletInfo? GetWallet(GetWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -245,7 +257,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.PlatformWallet? PublicGetMyWallet(PublicGetMyWallet input) {
+        public Model.PlatformWallet? PublicGetMyWallet(PublicGetMyWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -253,7 +266,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PlatformWallet? PublicGetWallet(PublicGetWallet input) {
+        public Model.PlatformWallet? PublicGetWallet(PublicGetWallet input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -261,7 +275,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.WalletTransactionPagingSlicedResult? PublicListUserWalletTransactions(PublicListUserWalletTransactions input) {
+        public Model.WalletTransactionPagingSlicedResult? PublicListUserWalletTransactions(PublicListUserWalletTransactions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

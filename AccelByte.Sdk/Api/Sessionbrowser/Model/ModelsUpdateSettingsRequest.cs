@@ -10,4 +10,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     public class ModelsUpdateSettingsRequest : AccelByte.Sdk.Core.Model
     {
     }
+
+
 }

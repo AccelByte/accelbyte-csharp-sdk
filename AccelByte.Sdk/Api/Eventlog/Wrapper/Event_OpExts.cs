@@ -30,7 +30,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByNamespaceHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PostEventHandler.PostEventHandlerBuilder builder,
@@ -45,7 +44,6 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.Event)builder.WrapperObject!).PostEventHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventIDHandler.GetEventByEventIDHandlerBuilder builder,
@@ -66,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventTypeHandler.GetEventByEventTypeHandlerBuilder builder,
@@ -87,7 +84,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventTypeHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByEventTypeAndEventIDHandler.GetEventByEventTypeAndEventIDHandlerBuilder builder,
@@ -110,7 +106,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByEventTypeAndEventIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDHandler.GetEventByUserIDHandlerBuilder builder,
@@ -131,7 +126,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDAndEventIDHandler.GetEventByUserIDAndEventIDHandlerBuilder builder,
@@ -154,7 +148,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDAndEventIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserIDAndEventTypeHandler.GetEventByUserIDAndEventTypeHandlerBuilder builder,
@@ -177,7 +170,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserIDAndEventTypeHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventResponse? Execute(
             this GetEventByUserEventIDAndEventTypeHandler.GetEventByUserEventIDAndEventTypeHandlerBuilder builder,
@@ -202,6 +194,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.Event)builder.WrapperObject!).GetEventByUserEventIDAndEventTypeHandler(op);
         }
-
     }
 }

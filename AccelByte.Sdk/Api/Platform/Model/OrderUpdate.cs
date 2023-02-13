@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class OrderUpdateStatus : StringEnum<OrderUpdateStatus>
     {
         public static readonly OrderUpdateStatus CHARGEBACK

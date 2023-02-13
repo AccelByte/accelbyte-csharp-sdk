@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAdyenConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestAliPayConfig.TestAliPayConfigBuilder builder
         )
@@ -31,7 +30,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAliPayConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestCheckoutConfig.TestCheckoutConfigBuilder builder
         )
@@ -41,7 +39,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestCheckoutConfig(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this DebugMatchedPaymentMerchantConfig.DebugMatchedPaymentMerchantConfigBuilder builder
         )
@@ -51,7 +48,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).DebugMatchedPaymentMerchantConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestPayPalConfig.TestPayPalConfigBuilder builder
         )
@@ -61,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestPayPalConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestStripeConfig.TestStripeConfigBuilder builder
         )
@@ -71,7 +66,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestStripeConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestWxPayConfig.TestWxPayConfigBuilder builder
         )
@@ -81,7 +75,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestWxPayConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestXsollaConfig.TestXsollaConfigBuilder builder
         )
@@ -91,7 +84,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestXsollaConfig(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this GetPaymentMerchantConfig.GetPaymentMerchantConfigBuilder builder,
             string id
@@ -103,7 +95,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).GetPaymentMerchantConfig(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateAdyenConfig.UpdateAdyenConfigBuilder builder,
             string id
@@ -115,7 +106,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateAdyenConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestAdyenConfigById.TestAdyenConfigByIdBuilder builder,
             string id
@@ -127,7 +117,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAdyenConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateAliPayConfig.UpdateAliPayConfigBuilder builder,
             string id
@@ -139,7 +128,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateAliPayConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestAliPayConfigById.TestAliPayConfigByIdBuilder builder,
             string id
@@ -151,7 +139,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAliPayConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateCheckoutConfig.UpdateCheckoutConfigBuilder builder,
             string id
@@ -163,7 +150,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateCheckoutConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestCheckoutConfigById.TestCheckoutConfigByIdBuilder builder,
             string id
@@ -175,7 +161,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestCheckoutConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdatePayPalConfig.UpdatePayPalConfigBuilder builder,
             string id
@@ -187,7 +172,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePayPalConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestPayPalConfigById.TestPayPalConfigByIdBuilder builder,
             string id
@@ -199,7 +183,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestPayPalConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateStripeConfig.UpdateStripeConfigBuilder builder,
             string id
@@ -211,7 +194,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateStripeConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestStripeConfigById.TestStripeConfigByIdBuilder builder,
             string id
@@ -223,7 +205,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestStripeConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateWxPayConfig.UpdateWxPayConfigBuilder builder,
             string id
@@ -235,7 +216,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateWxPayConfig(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateWxPayConfigCert.UpdateWxPayConfigCertBuilder builder,
             string id
@@ -247,7 +227,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateWxPayConfigCert(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestWxPayConfigById.TestWxPayConfigByIdBuilder builder,
             string id
@@ -259,7 +238,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestWxPayConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateXsollaConfig.UpdateXsollaConfigBuilder builder,
             string id
@@ -271,7 +249,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateXsollaConfig(op);
         }
-
         public static Platform.Model.TestResult? Execute(
             this TestXsollaConfigById.TestXsollaConfigByIdBuilder builder,
             string id
@@ -283,7 +260,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestXsollaConfigById(op);
         }
-
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateXsollaUIConfig.UpdateXsollaUIConfigBuilder builder,
             string id
@@ -295,7 +271,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdateXsollaUIConfig(op);
         }
-
         public static Platform.Model.PaymentProviderConfigPagingSlicedResult? Execute(
             this QueryPaymentProviderConfig.QueryPaymentProviderConfigBuilder builder
         )
@@ -305,7 +280,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).QueryPaymentProviderConfig(op);
         }
-
         public static Platform.Model.PaymentProviderConfigInfo? Execute(
             this CreatePaymentProviderConfig.CreatePaymentProviderConfigBuilder builder
         )
@@ -315,7 +289,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).CreatePaymentProviderConfig(op);
         }
-
         public static List<string>? Execute(
             this GetAggregatePaymentProviders.GetAggregatePaymentProvidersBuilder builder
         )
@@ -325,7 +298,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).GetAggregatePaymentProviders(op);
         }
-
         public static Platform.Model.PaymentProviderConfigInfo? Execute(
             this DebugMatchedPaymentProviderConfig.DebugMatchedPaymentProviderConfigBuilder builder
         )
@@ -335,7 +307,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).DebugMatchedPaymentProviderConfig(op);
         }
-
         public static List<string>? Execute(
             this GetSpecialPaymentProviders.GetSpecialPaymentProvidersBuilder builder
         )
@@ -345,7 +316,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).GetSpecialPaymentProviders(op);
         }
-
         public static Platform.Model.PaymentProviderConfigInfo? Execute(
             this UpdatePaymentProviderConfig.UpdatePaymentProviderConfigBuilder builder,
             string id
@@ -357,7 +327,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePaymentProviderConfig(op);
         }
-
         public static void Execute(
             this DeletePaymentProviderConfig.DeletePaymentProviderConfigBuilder builder,
             string id
@@ -369,7 +338,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).DeletePaymentProviderConfig(op);
         }
-
         public static Platform.Model.PaymentTaxConfigInfo? Execute(
             this GetPaymentTaxConfig.GetPaymentTaxConfigBuilder builder
         )
@@ -379,7 +347,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).GetPaymentTaxConfig(op);
         }
-
         public static Platform.Model.PaymentTaxConfigInfo? Execute(
             this UpdatePaymentTaxConfig.UpdatePaymentTaxConfigBuilder builder
         )
@@ -389,6 +356,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePaymentTaxConfig(op);
         }
-
     }
 }

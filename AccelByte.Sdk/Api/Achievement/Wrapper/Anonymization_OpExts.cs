@@ -25,6 +25,5 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.Anonymization)builder.WrapperObject!).AdminAnonymizeUserAchievement(op);
         }
-
     }
 }

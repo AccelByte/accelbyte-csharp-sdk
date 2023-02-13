@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public bool? Visibility { get; set; }
 
     }
+
+
 }

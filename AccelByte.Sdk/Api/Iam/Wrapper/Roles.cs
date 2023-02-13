@@ -232,7 +232,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public List<Model.ModelRoleResponseWithManagers>? GetRoles(GetRoles input) {
+        public List<Model.ModelRoleResponseWithManagers>? GetRoles(GetRoles input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -243,7 +244,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.AccountcommonRole? CreateRole(CreateRole input) {
+        public Model.AccountcommonRole? CreateRole(CreateRole input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -254,7 +256,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleResponse? GetRole(GetRole input) {
+        public Model.ModelRoleResponse? GetRole(GetRole input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -265,7 +268,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleResponse? UpdateRole(UpdateRole input) {
+        public Model.ModelRoleResponse? UpdateRole(UpdateRole input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -287,7 +291,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleAdminStatusResponse? GetRoleAdminStatus(GetRoleAdminStatus input) {
+        public Model.ModelRoleAdminStatusResponse? GetRoleAdminStatus(GetRoleAdminStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -320,7 +325,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleManagersResponse? GetRoleManagers(GetRoleManagers input) {
+        public Model.ModelRoleManagersResponse? GetRoleManagers(GetRoleManagers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -353,7 +359,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         #pragma warning restore ab_deprecated_operation
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.ModelRoleMembersResponse? GetRoleMembers(GetRoleMembers input) {
+        public Model.ModelRoleMembersResponse? GetRoleMembers(GetRoleMembers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -417,7 +424,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.ModelRoleResponseWithManagersAndPaginationV3? AdminGetRolesV3(AdminGetRolesV3 input) {
+        public Model.ModelRoleResponseWithManagersAndPaginationV3? AdminGetRolesV3(AdminGetRolesV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -425,7 +433,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.AccountcommonRoleV3? AdminCreateRoleV3(AdminCreateRoleV3 input) {
+        public Model.AccountcommonRoleV3? AdminCreateRoleV3(AdminCreateRoleV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -433,7 +442,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponseV3? AdminGetRoleV3(AdminGetRoleV3 input) {
+        public Model.ModelRoleResponseV3? AdminGetRoleV3(AdminGetRoleV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -449,7 +459,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponseV3? AdminUpdateRoleV3(AdminUpdateRoleV3 input) {
+        public Model.ModelRoleResponseV3? AdminUpdateRoleV3(AdminUpdateRoleV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -457,7 +468,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleAdminStatusResponseV3? AdminGetRoleAdminStatusV3(AdminGetRoleAdminStatusV3 input) {
+        public Model.ModelRoleAdminStatusResponseV3? AdminGetRoleAdminStatusV3(AdminGetRoleAdminStatusV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -481,7 +493,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleManagersResponsesV3? AdminGetRoleManagersV3(AdminGetRoleManagersV3 input) {
+        public Model.ModelRoleManagersResponsesV3? AdminGetRoleManagersV3(AdminGetRoleManagersV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -505,7 +518,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleMembersResponseV3? AdminGetRoleMembersV3(AdminGetRoleMembersV3 input) {
+        public Model.ModelRoleMembersResponseV3? AdminGetRoleMembersV3(AdminGetRoleMembersV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -561,7 +575,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleNamesResponseV3? PublicGetRolesV3(PublicGetRolesV3 input) {
+        public Model.ModelRoleNamesResponseV3? PublicGetRolesV3(PublicGetRolesV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -569,7 +584,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleResponse? PublicGetRoleV3(PublicGetRoleV3 input) {
+        public Model.ModelRoleResponse? PublicGetRoleV3(PublicGetRoleV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -577,7 +593,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListRoleV4Response? AdminGetRolesV4(AdminGetRolesV4 input) {
+        public Model.ModelListRoleV4Response? AdminGetRolesV4(AdminGetRolesV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -585,7 +602,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminCreateRoleV4(AdminCreateRoleV4 input) {
+        public Model.ModelRoleV4Response? AdminCreateRoleV4(AdminCreateRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -593,7 +611,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminGetRoleV4(AdminGetRoleV4 input) {
+        public Model.ModelRoleV4Response? AdminGetRoleV4(AdminGetRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -609,7 +628,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminUpdateRoleV4(AdminUpdateRoleV4 input) {
+        public Model.ModelRoleV4Response? AdminUpdateRoleV4(AdminUpdateRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -617,7 +637,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminUpdateRolePermissionsV4(AdminUpdateRolePermissionsV4 input) {
+        public Model.ModelRoleV4Response? AdminUpdateRolePermissionsV4(AdminUpdateRolePermissionsV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -625,7 +646,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelRoleV4Response? AdminAddRolePermissionsV4(AdminAddRolePermissionsV4 input) {
+        public Model.ModelRoleV4Response? AdminAddRolePermissionsV4(AdminAddRolePermissionsV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -641,7 +663,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListAssignedUsersV4Response? AdminListAssignedUsersV4(AdminListAssignedUsersV4 input) {
+        public Model.ModelListAssignedUsersV4Response? AdminListAssignedUsersV4(AdminListAssignedUsersV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -649,7 +672,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelAssignedUserV4Response? AdminAssignUserToRoleV4(AdminAssignUserToRoleV4 input) {
+        public Model.ModelAssignedUserV4Response? AdminAssignUserToRoleV4(AdminAssignUserToRoleV4 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

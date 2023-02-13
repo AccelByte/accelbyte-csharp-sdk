@@ -45,6 +45,8 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
     }
 
+
+
     public class AccountCreateTestUserRequestV4AuthType : StringEnum<AccountCreateTestUserRequestV4AuthType>
     {
         public static readonly AccountCreateTestUserRequestV4AuthType EMAILPASSWD

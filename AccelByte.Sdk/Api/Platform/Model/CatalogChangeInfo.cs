@@ -81,6 +81,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CatalogChangeInfoAction : StringEnum<CatalogChangeInfoAction>
     {
         public static readonly CatalogChangeInfoAction CREATE

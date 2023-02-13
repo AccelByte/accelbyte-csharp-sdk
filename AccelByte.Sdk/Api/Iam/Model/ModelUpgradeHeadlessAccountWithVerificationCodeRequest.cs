@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? LoginId { get; set; }
 
     }
+
+
 }

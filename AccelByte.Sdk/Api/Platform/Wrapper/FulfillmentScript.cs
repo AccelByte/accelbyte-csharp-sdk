@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public List<Model.FulfillmentScriptInfo>? ListFulfillmentScripts(ListFulfillmentScripts input) {
+        public List<Model.FulfillmentScriptInfo>? ListFulfillmentScripts(ListFulfillmentScripts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptEvalTestResult? TestFulfillmentScriptEval(TestFulfillmentScriptEval input) {
+        public Model.FulfillmentScriptEvalTestResult? TestFulfillmentScriptEval(TestFulfillmentScriptEval input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? GetFulfillmentScript(GetFulfillmentScript input) {
+        
+        public Model.FulfillmentScriptEvalTestResult<T1>? TestFulfillmentScriptEval<T1>(TestFulfillmentScriptEval input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FulfillmentScriptInfo? GetFulfillmentScript(GetFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? CreateFulfillmentScript(CreateFulfillmentScript input) {
+        public Model.FulfillmentScriptInfo? CreateFulfillmentScript(CreateFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +99,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FulfillmentScriptInfo? UpdateFulfillmentScript(UpdateFulfillmentScript input) {
+        public Model.FulfillmentScriptInfo? UpdateFulfillmentScript(UpdateFulfillmentScript input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

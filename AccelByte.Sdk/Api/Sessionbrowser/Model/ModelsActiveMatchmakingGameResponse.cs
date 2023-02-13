@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public List<ModelsGameSession>? Sessions { get; set; }
 
     }
+
+
 }

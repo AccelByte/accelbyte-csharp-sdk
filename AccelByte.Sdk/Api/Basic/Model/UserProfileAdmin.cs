@@ -59,6 +59,57 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
+    public class UserProfileAdmin<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("avatarLargeUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarLargeUrl { get; set; }
+
+        [JsonPropertyName("avatarSmallUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarSmallUrl { get; set; }
+
+        [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarUrl { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonDateTimeConverter("yyyy-MM-dd")]
+        public DateTime? DateOfBirth { get; set; }
+
+        [JsonPropertyName("firstName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? FirstName { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("lastName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LastName { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public UserProfileAdminStatus? Status { get; set; }
+
+        [JsonPropertyName("timeZone")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TimeZone { get; set; }
+
+        [JsonPropertyName("zipCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ZipCode { get; set; }
+
+    }
+
+
     public class UserProfileAdminStatus : StringEnum<UserProfileAdminStatus>
     {
         public static readonly UserProfileAdminStatus ACTIVE

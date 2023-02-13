@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? PreviewFileExtension { get; set; }
 
     }
+
+
 }

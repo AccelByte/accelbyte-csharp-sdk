@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).GetDefaultProvider(op);
         }
-
         public static List<string>? Execute(
             this ListProviders.ListProvidersBuilder builder
         )
@@ -31,7 +30,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProviders(op);
         }
-
         public static Dsmc.Model.ModelsDefaultProvider? Execute(
             this ListProvidersByRegion.ListProvidersByRegionBuilder builder,
             string region
@@ -43,6 +41,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProvidersByRegion(op);
         }
-
     }
 }

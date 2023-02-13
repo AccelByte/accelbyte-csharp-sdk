@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public Dictionary<string, string>? Attributes { get; set; }
 
     }
+
+
 }

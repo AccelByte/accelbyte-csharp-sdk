@@ -51,6 +51,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class PaymentProviderConfigInfoAggregate : StringEnum<PaymentProviderConfigInfoAggregate>
     {
         public static readonly PaymentProviderConfigInfoAggregate ADYEN

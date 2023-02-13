@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ImportStoreErrorType : StringEnum<ImportStoreErrorType>
     {
         public static readonly ImportStoreErrorType ITEM

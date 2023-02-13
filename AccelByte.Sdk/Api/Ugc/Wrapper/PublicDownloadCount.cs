@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsAddDownloadCountResponse? AddDownloadCount(AddDownloadCount input) {
+        public Model.ModelsAddDownloadCountResponse? AddDownloadCount(AddDownloadCount input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

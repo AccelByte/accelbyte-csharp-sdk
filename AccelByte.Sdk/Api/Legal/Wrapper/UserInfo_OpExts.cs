@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.UserInfo)builder.WrapperObject!).GetUserInfoStatus(op);
         }
-
         public static void Execute(
             this SyncUserInfo.SyncUserInfoBuilder builder,
             string namespace_
@@ -33,7 +32,6 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.UserInfo)builder.WrapperObject!).SyncUserInfo(op);
         }
-
         public static void Execute(
             this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
         )
@@ -43,6 +41,5 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.UserInfo)builder.WrapperObject!).InvalidateUserInfoCache(op);
         }
-
     }
 }

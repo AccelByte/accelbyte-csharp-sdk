@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).ListGroupConfigurationAdminV1(op);
         }
-
         public static Group.Model.ModelsCreateGroupConfigurationResponseV1? Execute(
             this CreateGroupConfigurationAdminV1.CreateGroupConfigurationAdminV1Builder builder,
             ModelsCreateGroupConfigurationRequestV1 body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).CreateGroupConfigurationAdminV1(op);
         }
-
         public static Group.Model.ModelsCreateGroupConfigurationResponseV1? Execute(
             this InitiateGroupConfigurationAdminV1.InitiateGroupConfigurationAdminV1Builder builder,
             string namespace_
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).InitiateGroupConfigurationAdminV1(op);
         }
-
         public static Group.Model.ModelsGetGroupConfigurationResponseV1? Execute(
             this GetGroupConfigurationAdminV1.GetGroupConfigurationAdminV1Builder builder,
             string configurationCode,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).GetGroupConfigurationAdminV1(op);
         }
-
         public static void Execute(
             this DeleteGroupConfigurationV1.DeleteGroupConfigurationV1Builder builder,
             string configurationCode,
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationV1(op);
         }
-
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this UpdateGroupConfigurationAdminV1.UpdateGroupConfigurationAdminV1Builder builder,
             ModelsUpdateGroupConfigurationRequestV1 body,
@@ -93,7 +88,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationAdminV1(op);
         }
-
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this UpdateGroupConfigurationGlobalRuleAdminV1.UpdateGroupConfigurationGlobalRuleAdminV1Builder builder,
             ModelsUpdateGroupConfigurationGlobalRulesRequestV1 body,
@@ -111,7 +105,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationGlobalRuleAdminV1(op);
         }
-
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this DeleteGroupConfigurationGlobalRuleAdminV1.DeleteGroupConfigurationGlobalRuleAdminV1Builder builder,
             string allowedAction,
@@ -127,6 +120,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationGlobalRuleAdminV1(op);
         }
-
     }
 }

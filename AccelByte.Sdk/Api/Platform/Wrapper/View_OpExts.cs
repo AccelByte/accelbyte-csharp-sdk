@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).ListViews(op);
         }
-
         public static Platform.Model.FullViewInfo? Execute(
             this CreateView.CreateViewBuilder builder,
             string namespace_,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).CreateView(op);
         }
-
         public static Platform.Model.FullViewInfo? Execute(
             this GetView.GetViewBuilder builder,
             string namespace_,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).GetView(op);
         }
-
         public static Platform.Model.FullViewInfo? Execute(
             this UpdateView.UpdateViewBuilder builder,
             string namespace_,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).UpdateView(op);
         }
-
         public static void Execute(
             this DeleteView.DeleteViewBuilder builder,
             string namespace_,
@@ -83,7 +79,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.View)builder.WrapperObject!).DeleteView(op);
         }
-
         public static List<Platform.Model.ViewInfo>? Execute(
             this PublicListViews.PublicListViewsBuilder builder,
             string namespace_,
@@ -98,5 +93,18 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViews(op);
         }
 
+        public static List<Platform.Model.ViewInfo<T1>>? Execute<T1>(
+            this PublicListViews.PublicListViewsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListViews op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViews<T1>(op);
+        }
     }
 }

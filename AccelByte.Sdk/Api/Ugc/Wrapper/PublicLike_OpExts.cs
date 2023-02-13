@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicLike)builder.WrapperObject!).GetLikedContent(op);
         }
-
         public static Ugc.Model.ModelsContentLikeResponse? Execute(
             this UpdateContentLikeStatus.UpdateContentLikeStatusBuilder builder,
             ModelsContentLikeRequest body,
@@ -39,6 +38,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicLike)builder.WrapperObject!).UpdateContentLikeStatus(op);
         }
-
     }
 }

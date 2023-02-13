@@ -33,7 +33,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         }
         #endregion
         
-        public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input) {
+        public Model.ModelsListTerminatedServersResponse? ListTerminatedServers(ListTerminatedServers input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -41,7 +42,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Stream? DownloadServerLogs(DownloadServerLogs input) {
+        public Stream? DownloadServerLogs(DownloadServerLogs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +51,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsLogFileStatus? CheckServerLogs(CheckServerLogs input) {
+        public Model.ModelsLogFileStatus? CheckServerLogs(CheckServerLogs input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

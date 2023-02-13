@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public bool? Free { get; set; }
 
     }
+
+    public class OrderSummary<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("currency")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public CurrencySummary? Currency { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("free")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Free { get; set; }
+
+    }
+
 }

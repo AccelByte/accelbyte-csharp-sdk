@@ -38,4 +38,37 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public List<ApiTicket>? Tickets { get; set; }
 
     }
+
+    public class ApiMatch<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("backfill")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Backfill { get; set; }
+
+        [JsonPropertyName("clientVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ClientVersion { get; set; }
+
+        [JsonPropertyName("matchAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? MatchAttributes { get; set; }
+
+        [JsonPropertyName("regionPreference")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? RegionPreference { get; set; }
+
+        [JsonPropertyName("serverName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ServerName { get; set; }
+
+        [JsonPropertyName("teams")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ApiTeam>? Teams { get; set; }
+
+        [JsonPropertyName("tickets")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ApiTicket>? Tickets { get; set; }
+
+    }
+
 }

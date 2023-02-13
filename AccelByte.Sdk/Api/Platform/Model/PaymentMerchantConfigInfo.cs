@@ -71,4 +71,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public XsollaPaywallConfig? XsollaPaywallConfig { get; set; }
 
     }
+
+
 }

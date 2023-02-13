@@ -101,6 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class EntitlementInfoAppType : StringEnum<EntitlementInfoAppType>
     {
         public static readonly EntitlementInfoAppType DEMO

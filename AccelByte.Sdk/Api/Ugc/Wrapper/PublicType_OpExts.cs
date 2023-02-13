@@ -23,6 +23,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicType)builder.WrapperObject!).GetType(op);
         }
-
     }
 }

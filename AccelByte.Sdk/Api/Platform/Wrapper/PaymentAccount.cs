@@ -29,7 +29,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public List<Model.PaymentAccount>? PublicGetPaymentAccounts(PublicGetPaymentAccounts input) {
+        public List<Model.PaymentAccount>? PublicGetPaymentAccounts(PublicGetPaymentAccounts input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

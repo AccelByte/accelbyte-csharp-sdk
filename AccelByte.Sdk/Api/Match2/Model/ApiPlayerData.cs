@@ -22,4 +22,21 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? PlayerID { get; set; }
 
     }
+
+    public class ApiPlayerData<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Attributes { get; set; }
+
+        [JsonPropertyName("partyID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PartyID { get; set; }
+
+        [JsonPropertyName("playerID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlayerID { get; set; }
+
+    }
+
 }

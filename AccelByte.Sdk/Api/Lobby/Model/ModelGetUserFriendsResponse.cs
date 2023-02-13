@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public ModelPagination? Paging { get; set; }
 
     }
+
+
 }

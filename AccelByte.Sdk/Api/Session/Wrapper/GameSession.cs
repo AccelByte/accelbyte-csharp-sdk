@@ -77,7 +77,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
         
-        public Model.ApimodelsGameSessionQueryResponse? AdminQueryGameSessions(AdminQueryGameSessions input) {
+        public Model.ApimodelsGameSessionQueryResponse? AdminQueryGameSessions(AdminQueryGameSessions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +86,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsUpdateGameSessionMemberStatusResponse? AdminUpdateGameSessionMember(AdminUpdateGameSessionMember input) {
+        public Model.ApimodelsUpdateGameSessionMemberStatusResponse? AdminUpdateGameSessionMember(AdminUpdateGameSessionMember input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -93,7 +95,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? CreateGameSession(CreateGameSession input) {
+        public Model.ApimodelsGameSessionResponse? CreateGameSession(CreateGameSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -101,7 +104,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionQueryResponse? PublicQueryGameSessions(PublicQueryGameSessions input) {
+        
+        public Model.ApimodelsGameSessionResponse<T1>? CreateGameSession<T1>(CreateGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionQueryResponse? PublicQueryGameSessions(PublicQueryGameSessions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -109,7 +123,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? GetGameSessionByPodName(GetGameSessionByPodName input) {
+        public Model.ApimodelsGameSessionResponse? GetGameSessionByPodName(GetGameSessionByPodName input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -117,7 +132,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? GetGameSession(GetGameSession input) {
+        
+        public Model.ApimodelsGameSessionResponse<T1>? GetGameSessionByPodName<T1>(GetGameSessionByPodName input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? GetGameSession(GetGameSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -125,10 +151,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? UpdateGameSession(UpdateGameSession input) {
+        
+        public Model.ApimodelsGameSessionResponse<T1>? GetGameSession<T1>(GetGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? UpdateGameSession(UpdateGameSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsGameSessionResponse<T1>? UpdateGameSession<T1>(UpdateGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -141,10 +188,21 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? PatchUpdateGameSession(PatchUpdateGameSession input) {
+        public Model.ApimodelsGameSessionResponse? PatchUpdateGameSession(PatchUpdateGameSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsGameSessionResponse<T1>? PatchUpdateGameSession<T1>(PatchUpdateGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -157,10 +215,21 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? JoinGameSession(JoinGameSession input) {
+        public Model.ApimodelsGameSessionResponse? JoinGameSession(JoinGameSession input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsGameSessionResponse<T1>? JoinGameSession<T1>(JoinGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);
@@ -181,10 +250,21 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ApimodelsGameSessionResponse>? PublicQueryMyGameSessions(PublicQueryMyGameSessions input) {
+        public List<Model.ApimodelsGameSessionResponse>? PublicQueryMyGameSessions(PublicQueryMyGameSessions input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public List<Model.ApimodelsGameSessionResponse<T1>>? PublicQueryMyGameSessions<T1>(PublicQueryMyGameSessions input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

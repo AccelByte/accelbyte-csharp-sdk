@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<AccountcommonBanV3>? Bans { get; set; }
 
     }
+
+
 }

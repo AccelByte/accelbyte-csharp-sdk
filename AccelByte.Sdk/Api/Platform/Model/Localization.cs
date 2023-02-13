@@ -25,4 +25,24 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Title { get; set; }
 
     }
+
+    public class Localization<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Description { get; set; }
+
+        [JsonPropertyName("localExt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? LocalExt { get; set; }
+
+        [JsonPropertyName("longDescription")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LongDescription { get; set; }
+
+        [JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+    }
+
 }

@@ -24,4 +24,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, string>? MessageVariables { get; set; }
 
     }
+
+
 }

@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

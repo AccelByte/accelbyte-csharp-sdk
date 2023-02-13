@@ -22,7 +22,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).GetRoles(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonRole? Execute(
             this CreateRole.CreateRoleBuilder builder,
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).CreateRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelRoleResponse? Execute(
             this GetRole.GetRoleBuilder builder,
@@ -48,7 +46,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).GetRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelRoleResponse? Execute(
             this UpdateRole.UpdateRoleBuilder builder,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).UpdateRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteRole.DeleteRoleBuilder builder,
@@ -76,7 +72,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).DeleteRole(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelRoleAdminStatusResponse? Execute(
             this GetRoleAdminStatus.GetRoleAdminStatusBuilder builder,
@@ -89,7 +84,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).GetRoleAdminStatus(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SetRoleAsAdmin.SetRoleAsAdminBuilder builder,
@@ -102,7 +96,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).SetRoleAsAdmin(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RemoveRoleAdmin.RemoveRoleAdminBuilder builder,
@@ -115,7 +108,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).RemoveRoleAdmin(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelRoleManagersResponse? Execute(
             this GetRoleManagers.GetRoleManagersBuilder builder,
@@ -128,7 +120,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).GetRoleManagers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddRoleManagers.AddRoleManagersBuilder builder,
@@ -143,7 +134,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AddRoleManagers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RemoveRoleManagers.RemoveRoleManagersBuilder builder,
@@ -158,7 +148,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).RemoveRoleManagers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelRoleMembersResponse? Execute(
             this GetRoleMembers.GetRoleMembersBuilder builder,
@@ -171,7 +160,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).GetRoleMembers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddRoleMembers.AddRoleMembersBuilder builder,
@@ -186,7 +174,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AddRoleMembers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RemoveRoleMembers.RemoveRoleMembersBuilder builder,
@@ -201,7 +188,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).RemoveRoleMembers(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdateRolePermissions.UpdateRolePermissionsBuilder builder,
@@ -216,7 +202,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).UpdateRolePermissions(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddRolePermission.AddRolePermissionBuilder builder,
@@ -235,7 +220,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AddRolePermission(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteRolePermission.DeleteRolePermissionBuilder builder,
@@ -252,7 +236,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).DeleteRolePermission(op);
         }
-
         public static Iam.Model.ModelRoleResponseWithManagersAndPaginationV3? Execute(
             this AdminGetRolesV3.AdminGetRolesV3Builder builder
         )
@@ -262,7 +245,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRolesV3(op);
         }
-
         public static Iam.Model.AccountcommonRoleV3? Execute(
             this AdminCreateRoleV3.AdminCreateRoleV3Builder builder,
             ModelRoleCreateV3Request body
@@ -274,7 +256,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminCreateRoleV3(op);
         }
-
         public static Iam.Model.ModelRoleResponseV3? Execute(
             this AdminGetRoleV3.AdminGetRoleV3Builder builder,
             string roleId
@@ -286,7 +267,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRoleV3(op);
         }
-
         public static void Execute(
             this AdminDeleteRoleV3.AdminDeleteRoleV3Builder builder,
             string roleId
@@ -298,7 +278,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminDeleteRoleV3(op);
         }
-
         public static Iam.Model.ModelRoleResponseV3? Execute(
             this AdminUpdateRoleV3.AdminUpdateRoleV3Builder builder,
             ModelRoleUpdateRequestV3 body,
@@ -312,7 +291,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminUpdateRoleV3(op);
         }
-
         public static Iam.Model.ModelRoleAdminStatusResponseV3? Execute(
             this AdminGetRoleAdminStatusV3.AdminGetRoleAdminStatusV3Builder builder,
             string roleId
@@ -324,7 +302,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRoleAdminStatusV3(op);
         }
-
         public static void Execute(
             this AdminUpdateAdminRoleStatusV3.AdminUpdateAdminRoleStatusV3Builder builder,
             string roleId
@@ -336,7 +313,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminUpdateAdminRoleStatusV3(op);
         }
-
         public static void Execute(
             this AdminRemoveRoleAdminV3.AdminRemoveRoleAdminV3Builder builder,
             string roleId
@@ -348,7 +324,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminRemoveRoleAdminV3(op);
         }
-
         public static Iam.Model.ModelRoleManagersResponsesV3? Execute(
             this AdminGetRoleManagersV3.AdminGetRoleManagersV3Builder builder,
             string roleId
@@ -360,7 +335,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRoleManagersV3(op);
         }
-
         public static void Execute(
             this AdminAddRoleManagersV3.AdminAddRoleManagersV3Builder builder,
             ModelRoleManagersRequestV3 body,
@@ -374,7 +348,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAddRoleManagersV3(op);
         }
-
         public static void Execute(
             this AdminRemoveRoleManagersV3.AdminRemoveRoleManagersV3Builder builder,
             ModelRoleManagersRequestV3 body,
@@ -388,7 +361,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminRemoveRoleManagersV3(op);
         }
-
         public static Iam.Model.ModelRoleMembersResponseV3? Execute(
             this AdminGetRoleMembersV3.AdminGetRoleMembersV3Builder builder,
             string roleId
@@ -400,7 +372,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRoleMembersV3(op);
         }
-
         public static void Execute(
             this AdminAddRoleMembersV3.AdminAddRoleMembersV3Builder builder,
             ModelRoleMembersRequestV3 body,
@@ -414,7 +385,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAddRoleMembersV3(op);
         }
-
         public static void Execute(
             this AdminRemoveRoleMembersV3.AdminRemoveRoleMembersV3Builder builder,
             ModelRoleMembersRequestV3 body,
@@ -428,7 +398,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminRemoveRoleMembersV3(op);
         }
-
         public static void Execute(
             this AdminUpdateRolePermissionsV3.AdminUpdateRolePermissionsV3Builder builder,
             AccountcommonPermissionsV3 body,
@@ -442,7 +411,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminUpdateRolePermissionsV3(op);
         }
-
         public static void Execute(
             this AdminAddRolePermissionsV3.AdminAddRolePermissionsV3Builder builder,
             AccountcommonPermissionsV3 body,
@@ -456,7 +424,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAddRolePermissionsV3(op);
         }
-
         public static void Execute(
             this AdminDeleteRolePermissionsV3.AdminDeleteRolePermissionsV3Builder builder,
             List<string> body,
@@ -470,7 +437,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminDeleteRolePermissionsV3(op);
         }
-
         public static void Execute(
             this AdminDeleteRolePermissionV3.AdminDeleteRolePermissionV3Builder builder,
             long action,
@@ -486,7 +452,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminDeleteRolePermissionV3(op);
         }
-
         public static Iam.Model.ModelRoleNamesResponseV3? Execute(
             this PublicGetRolesV3.PublicGetRolesV3Builder builder
         )
@@ -496,7 +461,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).PublicGetRolesV3(op);
         }
-
         public static Iam.Model.ModelRoleResponse? Execute(
             this PublicGetRoleV3.PublicGetRoleV3Builder builder,
             string roleId
@@ -508,7 +472,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).PublicGetRoleV3(op);
         }
-
         public static Iam.Model.ModelListRoleV4Response? Execute(
             this AdminGetRolesV4.AdminGetRolesV4Builder builder
         )
@@ -518,7 +481,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRolesV4(op);
         }
-
         public static Iam.Model.ModelRoleV4Response? Execute(
             this AdminCreateRoleV4.AdminCreateRoleV4Builder builder,
             ModelRoleV4Request body
@@ -530,7 +492,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminCreateRoleV4(op);
         }
-
         public static Iam.Model.ModelRoleV4Response? Execute(
             this AdminGetRoleV4.AdminGetRoleV4Builder builder,
             string roleId
@@ -542,7 +503,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminGetRoleV4(op);
         }
-
         public static void Execute(
             this AdminDeleteRoleV4.AdminDeleteRoleV4Builder builder,
             string roleId
@@ -554,7 +514,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminDeleteRoleV4(op);
         }
-
         public static Iam.Model.ModelRoleV4Response? Execute(
             this AdminUpdateRoleV4.AdminUpdateRoleV4Builder builder,
             ModelRoleV4Request body,
@@ -568,7 +527,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminUpdateRoleV4(op);
         }
-
         public static Iam.Model.ModelRoleV4Response? Execute(
             this AdminUpdateRolePermissionsV4.AdminUpdateRolePermissionsV4Builder builder,
             AccountcommonPermissionsV3 body,
@@ -582,7 +540,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminUpdateRolePermissionsV4(op);
         }
-
         public static Iam.Model.ModelRoleV4Response? Execute(
             this AdminAddRolePermissionsV4.AdminAddRolePermissionsV4Builder builder,
             AccountcommonPermissionsV3 body,
@@ -596,7 +553,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAddRolePermissionsV4(op);
         }
-
         public static void Execute(
             this AdminDeleteRolePermissionsV4.AdminDeleteRolePermissionsV4Builder builder,
             List<string> body,
@@ -610,7 +566,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminDeleteRolePermissionsV4(op);
         }
-
         public static Iam.Model.ModelListAssignedUsersV4Response? Execute(
             this AdminListAssignedUsersV4.AdminListAssignedUsersV4Builder builder,
             string roleId
@@ -622,7 +577,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminListAssignedUsersV4(op);
         }
-
         public static Iam.Model.ModelAssignedUserV4Response? Execute(
             this AdminAssignUserToRoleV4.AdminAssignUserToRoleV4Builder builder,
             ModelAssignUserV4Request body,
@@ -636,7 +590,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAssignUserToRoleV4(op);
         }
-
         public static void Execute(
             this AdminRevokeUserFromRoleV4.AdminRevokeUserFromRoleV4Builder builder,
             ModelRevokeUserV4Request body,
@@ -650,6 +603,5 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminRevokeUserFromRoleV4(op);
         }
-
     }
 }

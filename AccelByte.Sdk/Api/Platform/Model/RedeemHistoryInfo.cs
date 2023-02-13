@@ -39,4 +39,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

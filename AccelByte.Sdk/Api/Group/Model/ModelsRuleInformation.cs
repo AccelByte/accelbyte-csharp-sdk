@@ -23,6 +23,8 @@ namespace AccelByte.Sdk.Api.Group.Model
 
     }
 
+
+
     public class ModelsRuleInformationRuleCriteria : StringEnum<ModelsRuleInformationRuleCriteria>
     {
         public static readonly ModelsRuleInformationRuleCriteria EQUAL

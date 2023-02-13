@@ -34,4 +34,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public List<string>? SubGameMode { get; set; }
 
     }
+
+
 }

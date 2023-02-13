@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiBackfillProposalResponse? GetBackfillProposal(GetBackfillProposal input) {
+        public Model.ApiBackfillProposalResponse? GetBackfillProposal(GetBackfillProposal input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +62,8 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiBackfillGetResponse? GetBackfill(GetBackfill input) {
+        public Model.ApiBackfillGetResponse? GetBackfill(GetBackfill input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

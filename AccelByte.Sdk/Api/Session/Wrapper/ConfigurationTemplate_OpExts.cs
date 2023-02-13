@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminCreateConfigurationTemplateV1(op);
         }
-
         public static Session.Model.ApimodelsConfigurationTemplatesResponse? Execute(
             this AdminGetAllConfigurationTemplatesV1.AdminGetAllConfigurationTemplatesV1Builder builder,
             string namespace_
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetAllConfigurationTemplatesV1(op);
         }
-
         public static Session.Model.ApimodelsConfigurationTemplateResponse? Execute(
             this AdminGetConfigurationTemplateV1.AdminGetConfigurationTemplateV1Builder builder,
             string name,
@@ -51,7 +49,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetConfigurationTemplateV1(op);
         }
-
         public static Session.Model.ApimodelsConfigurationTemplateResponse? Execute(
             this AdminUpdateConfigurationTemplateV1.AdminUpdateConfigurationTemplateV1Builder builder,
             ApimodelsUpdateConfigurationTemplateRequest body,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminUpdateConfigurationTemplateV1(op);
         }
-
         public static Session.Model.ResponseError? Execute(
             this AdminDeleteConfigurationTemplateV1.AdminDeleteConfigurationTemplateV1Builder builder,
             string name,
@@ -81,6 +77,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminDeleteConfigurationTemplateV1(op);
         }
-
     }
 }

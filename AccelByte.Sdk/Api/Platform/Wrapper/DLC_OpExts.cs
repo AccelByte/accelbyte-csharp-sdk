@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetDLCItemConfig(op);
         }
-
         public static Platform.Model.DLCItemConfigInfo? Execute(
             this UpdateDLCItemConfig.UpdateDLCItemConfigBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).UpdateDLCItemConfig(op);
         }
-
         public static void Execute(
             this DeleteDLCItemConfig.DeleteDLCItemConfigBuilder builder,
             string namespace_
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).DeleteDLCItemConfig(op);
         }
-
         public static Platform.Model.PlatformDLCConfigInfo? Execute(
             this GetPlatformDLCConfig.GetPlatformDLCConfigBuilder builder,
             string namespace_
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetPlatformDLCConfig(op);
         }
-
         public static Platform.Model.PlatformDLCConfigInfo? Execute(
             this UpdatePlatformDLCConfig.UpdatePlatformDLCConfigBuilder builder,
             string namespace_
@@ -71,7 +67,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).UpdatePlatformDLCConfig(op);
         }
-
         public static void Execute(
             this DeletePlatformDLCConfig.DeletePlatformDLCConfigBuilder builder,
             string namespace_
@@ -83,7 +78,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).DeletePlatformDLCConfig(op);
         }
-
         public static Platform.Model.UserDLC? Execute(
             this GetUserDLC.GetUserDLCBuilder builder,
             string namespace_,
@@ -99,7 +93,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC(op);
         }
-
         public static void Execute(
             this SyncEpicGameDLC.SyncEpicGameDLCBuilder builder,
             string namespace_,
@@ -113,7 +106,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncEpicGameDLC(op);
         }
-
         public static void Execute(
             this PublicSyncPsnDlcInventory.PublicSyncPsnDlcInventoryBuilder builder,
             string namespace_,
@@ -127,7 +119,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).PublicSyncPsnDlcInventory(op);
         }
-
         public static void Execute(
             this PublicSyncPsnDlcInventoryWithMultipleServiceLabels.PublicSyncPsnDlcInventoryWithMultipleServiceLabelsBuilder builder,
             string namespace_,
@@ -141,7 +132,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).PublicSyncPsnDlcInventoryWithMultipleServiceLabels(op);
         }
-
         public static void Execute(
             this SyncSteamDLC.SyncSteamDLCBuilder builder,
             string namespace_,
@@ -155,7 +145,6 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncSteamDLC(op);
         }
-
         public static void Execute(
             this SyncXboxDLC.SyncXboxDLCBuilder builder,
             string namespace_,
@@ -169,6 +158,5 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncXboxDLC(op);
         }
-
     }
 }

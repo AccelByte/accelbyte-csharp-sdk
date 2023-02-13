@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).UpdatePolicyVersion(op);
         }
-
         public static void Execute(
             this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
             string policyVersionId
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).PublishPolicyVersion(op);
         }
-
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
             this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
             string policyId
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).RetrieveSinglePolicyVersion(op);
         }
-
         public static Legal.Model.CreatePolicyVersionResponse? Execute(
             this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
             string policyId
@@ -59,6 +56,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersion(op);
         }
-
     }
 }

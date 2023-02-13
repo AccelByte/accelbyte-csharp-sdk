@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class LootBoxConfigRollFunction : StringEnum<LootBoxConfigRollFunction>
     {
         public static readonly LootBoxConfigRollFunction CUSTOM

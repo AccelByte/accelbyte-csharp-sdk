@@ -20,4 +20,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public List<FieldValidationError>? Errors { get; set; }
 
     }
+
+
 }

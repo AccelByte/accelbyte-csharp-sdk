@@ -67,6 +67,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CampaignCreateRedeemType : StringEnum<CampaignCreateRedeemType>
     {
         public static readonly CampaignCreateRedeemType ITEM

@@ -26,4 +26,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? PolicyVersionId { get; set; }
 
     }
+
+
 }

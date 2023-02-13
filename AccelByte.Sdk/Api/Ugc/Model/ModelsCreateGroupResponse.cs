@@ -31,4 +31,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? UserId { get; set; }
 
     }
+
+
 }

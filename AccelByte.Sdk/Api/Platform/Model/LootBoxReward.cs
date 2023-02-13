@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class LootBoxRewardType : StringEnum<LootBoxRewardType>
     {
         public static readonly LootBoxRewardType PROBABILITYGROUP

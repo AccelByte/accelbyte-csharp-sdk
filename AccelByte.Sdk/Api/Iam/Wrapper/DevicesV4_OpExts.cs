@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetDevicesByUserV4(op);
         }
-
         public static Iam.Model.ModelDeviceBannedResponseV4? Execute(
             this AdminGetBannedDevicesV4.AdminGetBannedDevicesV4Builder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetBannedDevicesV4(op);
         }
-
         public static Iam.Model.ModelDeviceBansResponseV4? Execute(
             this AdminGetUserDeviceBansV4.AdminGetUserDeviceBansV4Builder builder,
             string namespace_,
@@ -49,7 +47,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetUserDeviceBansV4(op);
         }
-
         public static void Execute(
             this AdminBanDeviceV4.AdminBanDeviceV4Builder builder,
             ModelDeviceBanRequestV4 body,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminBanDeviceV4(op);
         }
-
         public static Iam.Model.ModelDeviceBanResponseV4? Execute(
             this AdminGetDeviceBanV4.AdminGetDeviceBanV4Builder builder,
             string banId,
@@ -77,7 +73,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetDeviceBanV4(op);
         }
-
         public static void Execute(
             this AdminUpdateDeviceBanV4.AdminUpdateDeviceBanV4Builder builder,
             ModelDeviceBanUpdateRequestV4 body,
@@ -93,7 +88,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminUpdateDeviceBanV4(op);
         }
-
         public static void Execute(
             this AdminGenerateReportV4.AdminGenerateReportV4Builder builder,
             string namespace_,
@@ -107,7 +101,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGenerateReportV4(op);
         }
-
         public static Iam.Model.ModelDeviceTypesResponseV4? Execute(
             this AdminGetDeviceTypesV4.AdminGetDeviceTypesV4Builder builder,
             string namespace_
@@ -119,7 +112,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetDeviceTypesV4(op);
         }
-
         public static Iam.Model.ModelDeviceBansResponseV4? Execute(
             this AdminGetDeviceBansV4.AdminGetDeviceBansV4Builder builder,
             string deviceId,
@@ -133,7 +125,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetDeviceBansV4(op);
         }
-
         public static Iam.Model.ModelDeviceIDDecryptResponseV4? Execute(
             this AdminDecryptDeviceV4.AdminDecryptDeviceV4Builder builder,
             string deviceId,
@@ -147,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminDecryptDeviceV4(op);
         }
-
         public static void Execute(
             this AdminUnbanDeviceV4.AdminUnbanDeviceV4Builder builder,
             string deviceId,
@@ -161,7 +151,6 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminUnbanDeviceV4(op);
         }
-
         public static Iam.Model.ModelDeviceUsersResponseV4? Execute(
             this AdminGetUsersByDeviceV4.AdminGetUsersByDeviceV4Builder builder,
             string deviceId,
@@ -175,6 +164,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetUsersByDeviceV4(op);
         }
-
     }
 }

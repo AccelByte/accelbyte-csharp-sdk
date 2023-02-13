@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).GetChannels(op);
         }
-
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this CreateChannel.CreateChannelBuilder builder,
             ModelsChannelRequest body,
@@ -41,7 +40,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).CreateChannel(op);
         }
-
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this UpdateChannel.UpdateChannelBuilder builder,
             ModelsChannelRequest body,
@@ -59,7 +57,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).UpdateChannel(op);
         }
-
         public static void Execute(
             this DeleteChannel.DeleteChannelBuilder builder,
             string channelId,
@@ -75,6 +72,5 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).DeleteChannel(op);
         }
-
     }
 }

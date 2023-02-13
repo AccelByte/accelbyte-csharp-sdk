@@ -25,7 +25,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetGroupMembersListAdminV1(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupInvitationPublicV1.AcceptGroupInvitationPublicV1Builder builder,
             string groupId,
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupInvitationPublicV1(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this RejectGroupInvitationPublicV1.RejectGroupInvitationPublicV1Builder builder,
             string groupId,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupInvitationPublicV1(op);
         }
-
         public static Group.Model.ModelsJoinGroupResponseV1? Execute(
             this JoinGroupV1.JoinGroupV1Builder builder,
             string groupId,
@@ -67,7 +64,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).JoinGroupV1(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this CancelGroupJoinRequestV1.CancelGroupJoinRequestV1Builder builder,
             string groupId,
@@ -81,7 +77,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).CancelGroupJoinRequestV1(op);
         }
-
         public static Group.Model.ModelsGetGroupMemberListResponseV1? Execute(
             this GetGroupMembersListPublicV1.GetGroupMembersListPublicV1Builder builder,
             string groupId,
@@ -95,7 +90,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetGroupMembersListPublicV1(op);
         }
-
         public static Group.Model.ModelsLeaveGroupResponseV1? Execute(
             this LeaveGroupPublicV1.LeaveGroupPublicV1Builder builder,
             string namespace_
@@ -107,7 +101,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).LeaveGroupPublicV1(op);
         }
-
         public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
             this GetUserGroupInformationPublicV1.GetUserGroupInformationPublicV1Builder builder,
             string namespace_,
@@ -121,7 +114,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserGroupInformationPublicV1(op);
         }
-
         public static Group.Model.ModelsUserInvitationResponseV1? Execute(
             this InviteGroupPublicV1.InviteGroupPublicV1Builder builder,
             string namespace_,
@@ -135,7 +127,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).InviteGroupPublicV1(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupJoinRequestPublicV1.AcceptGroupJoinRequestPublicV1Builder builder,
             string namespace_,
@@ -149,7 +140,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupJoinRequestPublicV1(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this RejectGroupJoinRequestPublicV1.RejectGroupJoinRequestPublicV1Builder builder,
             string namespace_,
@@ -163,7 +153,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupJoinRequestPublicV1(op);
         }
-
         public static Group.Model.ModelsKickGroupMemberResponseV1? Execute(
             this KickGroupMemberPublicV1.KickGroupMemberPublicV1Builder builder,
             string namespace_,
@@ -177,7 +166,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).KickGroupMemberPublicV1(op);
         }
-
         public static Group.Model.ModelsGetGroupMemberListResponseV1? Execute(
             this GetUserJoinedGroupInformationPublicV2.GetUserJoinedGroupInformationPublicV2Builder builder,
             string namespace_,
@@ -191,7 +179,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserJoinedGroupInformationPublicV2(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupInvitationPublicV2.AcceptGroupInvitationPublicV2Builder builder,
             string groupId,
@@ -205,7 +192,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupInvitationPublicV2(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this RejectGroupInvitationPublicV2.RejectGroupInvitationPublicV2Builder builder,
             string groupId,
@@ -219,7 +205,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupInvitationPublicV2(op);
         }
-
         public static Group.Model.ModelsJoinGroupResponseV1? Execute(
             this JoinGroupV2.JoinGroupV2Builder builder,
             string groupId,
@@ -233,7 +218,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).JoinGroupV2(op);
         }
-
         public static Group.Model.ModelsLeaveGroupResponseV1? Execute(
             this LeaveGroupPublicV2.LeaveGroupPublicV2Builder builder,
             string groupId,
@@ -247,7 +231,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).LeaveGroupPublicV2(op);
         }
-
         public static Group.Model.ModelsGetGroupMemberListResponseV1? Execute(
             this GetUserGroupInformationPublicV2.GetUserGroupInformationPublicV2Builder builder,
             string namespace_
@@ -259,7 +242,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserGroupInformationPublicV2(op);
         }
-
         public static Group.Model.ModelsUserInvitationResponseV1? Execute(
             this InviteGroupPublicV2.InviteGroupPublicV2Builder builder,
             string groupId,
@@ -275,7 +257,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).InviteGroupPublicV2(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupJoinRequestPublicV2.AcceptGroupJoinRequestPublicV2Builder builder,
             string groupId,
@@ -291,7 +272,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AcceptGroupJoinRequestPublicV2(op);
         }
-
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this RejectGroupJoinRequestPublicV2.RejectGroupJoinRequestPublicV2Builder builder,
             string groupId,
@@ -307,7 +287,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).RejectGroupJoinRequestPublicV2(op);
         }
-
         public static Group.Model.ModelsKickGroupMemberResponseV1? Execute(
             this KickGroupMemberPublicV2.KickGroupMemberPublicV2Builder builder,
             string groupId,
@@ -323,7 +302,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).KickGroupMemberPublicV2(op);
         }
-
         public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
             this GetUserGroupStatusInformationV2.GetUserGroupStatusInformationV2Builder builder,
             string groupId,
@@ -339,6 +317,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserGroupStatusInformationV2(op);
         }
-
     }
 }

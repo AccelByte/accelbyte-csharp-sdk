@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
         #endregion
         
-        public Model.NamespaceSlotConfigInfo? GetNamespaceSlotConfig(GetNamespaceSlotConfig input) {
+        public Model.NamespaceSlotConfigInfo? GetNamespaceSlotConfig(GetNamespaceSlotConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.NamespaceSlotConfigInfo? UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfig input) {
+        public Model.NamespaceSlotConfigInfo? UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +71,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSlotConfigInfo? GetUserSlotConfig(GetUserSlotConfig input) {
+        public Model.UserSlotConfigInfo? GetUserSlotConfig(GetUserSlotConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -77,7 +80,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserSlotConfigInfo? UpdateUserSlotConfig(UpdateUserSlotConfig input) {
+        public Model.UserSlotConfigInfo? UpdateUserSlotConfig(UpdateUserSlotConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

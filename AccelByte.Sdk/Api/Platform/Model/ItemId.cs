@@ -25,6 +25,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ItemIdStatus : StringEnum<ItemIdStatus>
     {
         public static readonly ItemIdStatus ACTIVE

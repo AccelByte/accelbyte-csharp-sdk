@@ -92,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class IAPOrderInfoStatus : StringEnum<IAPOrderInfoStatus>
     {
         public static readonly IAPOrderInfoStatus FAILED

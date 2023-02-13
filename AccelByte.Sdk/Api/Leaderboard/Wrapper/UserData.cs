@@ -25,7 +25,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         }
         #endregion
         
-        public Model.ModelsGetAllUserLeaderboardsResp? GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1 input) {
+        public Model.ModelsGetAllUserLeaderboardsResp? GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

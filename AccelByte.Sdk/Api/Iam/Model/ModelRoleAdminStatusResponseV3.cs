@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? AdminRole { get; set; }
 
     }
+
+
 }

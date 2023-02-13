@@ -42,4 +42,6 @@ namespace AccelByte.Sdk.Api.Social.Model
         public List<string>? Tags { get; set; }
 
     }
+
+
 }

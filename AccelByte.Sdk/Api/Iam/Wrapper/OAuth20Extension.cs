@@ -73,7 +73,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelTokenResponseV3? AuthenticationWithPlatformLinkV3(AuthenticationWithPlatformLinkV3 input) {
+        public Model.OauthmodelTokenResponseV3? AuthenticationWithPlatformLinkV3(AuthenticationWithPlatformLinkV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelTokenResponseV3? GenerateTokenByNewHeadlessAccountV3(GenerateTokenByNewHeadlessAccountV3 input) {
+        public Model.OauthmodelTokenResponseV3? GenerateTokenByNewHeadlessAccountV3(GenerateTokenByNewHeadlessAccountV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +91,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelOneTimeLinkingCodeResponse? RequestOneTimeLinkingCodeV3(RequestOneTimeLinkingCodeV3 input) {
+        public Model.OauthmodelOneTimeLinkingCodeResponse? RequestOneTimeLinkingCodeV3(RequestOneTimeLinkingCodeV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +100,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelOneTimeLinkingCodeValidationResponse? ValidateOneTimeLinkingCodeV3(ValidateOneTimeLinkingCodeV3 input) {
+        public Model.OauthmodelOneTimeLinkingCodeValidationResponse? ValidateOneTimeLinkingCodeV3(ValidateOneTimeLinkingCodeV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +109,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelTokenResponseV3? RequestTokenByOneTimeLinkCodeResponseV3(RequestTokenByOneTimeLinkCodeResponseV3 input) {
+        public Model.OauthmodelTokenResponseV3? RequestTokenByOneTimeLinkCodeResponseV3(RequestTokenByOneTimeLinkCodeResponseV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +118,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelCountryLocationResponse? GetCountryLocationV3(GetCountryLocationV3 input) {
+        public Model.OauthmodelCountryLocationResponse? GetCountryLocationV3(GetCountryLocationV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -129,7 +135,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelGameTokenCodeResponse? RequestGameTokenCodeResponseV3(RequestGameTokenCodeResponseV3 input) {
+        public Model.OauthmodelGameTokenCodeResponse? RequestGameTokenCodeResponseV3(RequestGameTokenCodeResponseV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -145,7 +152,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.OauthmodelTokenResponseV3? RequestGameTokenResponseV3(RequestGameTokenResponseV3 input) {
+        public Model.OauthmodelTokenResponseV3? RequestGameTokenResponseV3(RequestGameTokenResponseV3 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

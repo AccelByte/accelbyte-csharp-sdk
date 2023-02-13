@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<ModelDeviceBanResponseV4>? Data { get; set; }
 
     }
+
+
 }

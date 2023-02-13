@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public DateTime? When { get; set; }
 
     }
+
+
 }

@@ -54,6 +54,52 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class SectionCreate<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("active")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Active { get; set; }
+
+        [JsonPropertyName("displayOrder")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? DisplayOrder { get; set; }
+
+        [JsonPropertyName("endDate")]
+        public DateTime? EndDate { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("fixedPeriodRotationConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public FixedPeriodRotationConfig? FixedPeriodRotationConfig { get; set; }
+
+        [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<SectionItem>? Items { get; set; }
+
+        [JsonPropertyName("localizations")]
+        public Dictionary<string, Localization>? Localizations { get; set; }
+
+        [JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        [JsonPropertyName("rotationType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public SectionCreateRotationType? RotationType { get; set; }
+
+        [JsonPropertyName("startDate")]
+        public DateTime? StartDate { get; set; }
+
+        [JsonPropertyName("viewId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ViewId { get; set; }
+
+    }
+
+
     public class SectionCreateRotationType : StringEnum<SectionCreateRotationType>
     {
         public static readonly SectionCreateRotationType CUSTOM

@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
         
-        public List<Model.ApimodelsPlayerAttributesResponseBody>? AdminQueryPlayerAttributes(AdminQueryPlayerAttributes input) {
+        public List<Model.ApimodelsPlayerAttributesResponseBody>? AdminQueryPlayerAttributes(AdminQueryPlayerAttributes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -49,7 +50,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPlayerAttributesResponseBody? AdminGetPlayerAttributes(AdminGetPlayerAttributes input) {
+        
+        public List<Model.ApimodelsPlayerAttributesResponseBody<T1>>? AdminQueryPlayerAttributes<T1>(AdminQueryPlayerAttributes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPlayerAttributesResponseBody? AdminGetPlayerAttributes(AdminGetPlayerAttributes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +69,18 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPlayerAttributesResponseBody? PublicGetPlayerAttributes(PublicGetPlayerAttributes input) {
+        
+        public Model.ApimodelsPlayerAttributesResponseBody<T1>? AdminGetPlayerAttributes<T1>(AdminGetPlayerAttributes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPlayerAttributesResponseBody? PublicGetPlayerAttributes(PublicGetPlayerAttributes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,10 +88,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPlayerAttributesResponseBody? PublicStorePlayerAttributes(PublicStorePlayerAttributes input) {
+        
+        public Model.ApimodelsPlayerAttributesResponseBody<T1>? PublicGetPlayerAttributes<T1>(PublicGetPlayerAttributes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPlayerAttributesResponseBody? PublicStorePlayerAttributes(PublicStorePlayerAttributes input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code, 
+                    response.ContentType,
+                    response.Payload);
+        }
+        
+        public Model.ApimodelsPlayerAttributesResponseBody<T1>? PublicStorePlayerAttributes<T1>(PublicStorePlayerAttributes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code, 
                     response.ContentType,
                     response.Payload);

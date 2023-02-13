@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? LocaleCode { get; set; }
 
     }
+
+
 }

@@ -36,6 +36,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
 
     }
 
+
+
     public class RewardCreateType : StringEnum<RewardCreateType>
     {
         public static readonly RewardCreateType CURRENCY

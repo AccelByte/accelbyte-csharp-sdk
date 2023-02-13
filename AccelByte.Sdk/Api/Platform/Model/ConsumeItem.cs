@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ConsumeItemItemIdentityType : StringEnum<ConsumeItemItemIdentityType>
     {
         public static readonly ConsumeItemItemIdentityType ITEMID

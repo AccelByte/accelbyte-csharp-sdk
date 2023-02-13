@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class ImportStoreItemInfoItemType : StringEnum<ImportStoreItemInfoItemType>
     {
         public static readonly ImportStoreItemInfoItemType APP

@@ -74,6 +74,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class BasicItemAppType : StringEnum<BasicItemAppType>
     {
         public static readonly BasicItemAppType DEMO

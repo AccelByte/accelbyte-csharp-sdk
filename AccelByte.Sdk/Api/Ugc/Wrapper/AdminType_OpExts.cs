@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminGetType(op);
         }
-
         public static Ugc.Model.ModelsCreateTypeResponse? Execute(
             this AdminCreateType.AdminCreateTypeBuilder builder,
             ModelsCreateTypeRequest body,
@@ -37,7 +36,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminCreateType(op);
         }
-
         public static Ugc.Model.ModelsCreateTypeResponse? Execute(
             this AdminUpdateType.AdminUpdateTypeBuilder builder,
             ModelsCreateTypeRequest body,
@@ -53,7 +51,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminUpdateType(op);
         }
-
         public static void Execute(
             this AdminDeleteType.AdminDeleteTypeBuilder builder,
             string namespace_,
@@ -67,6 +64,5 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminDeleteType(op);
         }
-
     }
 }

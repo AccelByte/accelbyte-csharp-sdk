@@ -19,4 +19,6 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         public long? NumberOfVisibleAchievements { get; set; }
 
     }
+
+
 }

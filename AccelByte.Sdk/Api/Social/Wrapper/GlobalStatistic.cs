@@ -37,7 +37,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
         #endregion
         
-        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems(GetGlobalStatItems input) {
+        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems(GetGlobalStatItems input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -45,7 +46,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode(GetGlobalStatItemByStatCode input) {
+        public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode(GetGlobalStatItemByStatCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +55,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems1(GetGlobalStatItems1 input) {
+        public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems1(GetGlobalStatItems1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +64,8 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode1(GetGlobalStatItemByStatCode1 input) {
+        public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode1(GetGlobalStatItemByStatCode1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

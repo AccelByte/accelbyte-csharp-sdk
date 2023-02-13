@@ -16,4 +16,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         public Dictionary<string, object>? ToClaimRewards { get; set; }
 
     }
+
+    public class ClaimableRewards<T1, T2> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("claimingRewards")]
+        public T1? ClaimingRewards { get; set; }
+
+        [JsonPropertyName("toClaimRewards")]
+        public T2? ToClaimRewards { get; set; }
+
+    }
+
 }

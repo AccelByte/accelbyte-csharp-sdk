@@ -42,6 +42,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class DLCRecordStatus : StringEnum<DLCRecordStatus>
     {
         public static readonly DLCRecordStatus FULFILLED

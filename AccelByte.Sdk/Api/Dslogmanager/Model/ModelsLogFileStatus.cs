@@ -13,4 +13,6 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public bool? LogExistence { get; set; }
 
     }
+
+
 }

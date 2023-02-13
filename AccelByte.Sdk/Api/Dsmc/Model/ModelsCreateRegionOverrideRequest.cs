@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public bool? UseBufferPercent { get; set; }
 
     }
+
+
 }

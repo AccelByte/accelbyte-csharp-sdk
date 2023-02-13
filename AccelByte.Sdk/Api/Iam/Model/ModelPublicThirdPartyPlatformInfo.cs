@@ -28,4 +28,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? PlatformName { get; set; }
 
     }
+
+
 }

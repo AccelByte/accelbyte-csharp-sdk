@@ -30,4 +30,6 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public bool? ShouldNotifyOnUpdate { get; set; }
 
     }
+
+
 }

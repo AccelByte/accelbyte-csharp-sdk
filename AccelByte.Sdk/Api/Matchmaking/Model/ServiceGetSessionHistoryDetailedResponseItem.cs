@@ -56,4 +56,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public string? Status { get; set; }
 
     }
+
+
 }

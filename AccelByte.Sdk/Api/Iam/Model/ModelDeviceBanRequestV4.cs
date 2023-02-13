@@ -31,4 +31,30 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Reason { get; set; }
 
     }
+
+    public class ModelDeviceBanRequestV4<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("comment")]
+        public string? Comment { get; set; }
+
+        [JsonPropertyName("deviceId")]
+        public string? DeviceId { get; set; }
+
+        [JsonPropertyName("deviceType")]
+        public string? DeviceType { get; set; }
+
+        [JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
+
+        [JsonPropertyName("endDate")]
+        public string? EndDate { get; set; }
+
+        [JsonPropertyName("ext")]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("reason")]
+        public string? Reason { get; set; }
+
+    }
+
 }

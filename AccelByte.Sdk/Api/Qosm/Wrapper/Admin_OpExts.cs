@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api
 
             ((Qosm.Wrapper.Admin)builder.WrapperObject!).UpdateServerConfig(op);
         }
-
         public static void Execute(
             this DeleteServer.DeleteServerBuilder builder,
             string region
@@ -39,7 +38,6 @@ namespace AccelByte.Sdk.Api
 
             ((Qosm.Wrapper.Admin)builder.WrapperObject!).DeleteServer(op);
         }
-
         public static void Execute(
             this SetServerAlias.SetServerAliasBuilder builder,
             ModelsSetAliasRequest body,
@@ -53,6 +51,5 @@ namespace AccelByte.Sdk.Api
 
             ((Qosm.Wrapper.Admin)builder.WrapperObject!).SetServerAlias(op);
         }
-
     }
 }

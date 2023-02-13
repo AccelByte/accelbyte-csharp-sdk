@@ -64,7 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         
         #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
-        public Model.Customization? GetPaymentCustomization(GetPaymentCustomization input) {
+        public Model.Customization? GetPaymentCustomization(GetPaymentCustomization input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +74,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         #pragma warning restore ab_deprecated_operation
-        public Model.PaymentUrl? PublicGetPaymentUrl(PublicGetPaymentUrl input) {
+        public Model.PaymentUrl? PublicGetPaymentUrl(PublicGetPaymentUrl input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -81,7 +83,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PaymentMethod>? PublicGetPaymentMethods(PublicGetPaymentMethods input) {
+        public List<Model.PaymentMethod>? PublicGetPaymentMethods(PublicGetPaymentMethods input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -89,7 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderDetails? PublicGetUnpaidPaymentOrder(PublicGetUnpaidPaymentOrder input) {
+        public Model.PaymentOrderDetails? PublicGetUnpaidPaymentOrder(PublicGetUnpaidPaymentOrder input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -97,7 +101,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentProcessResult? Pay(Pay input) {
+        public Model.PaymentProcessResult? Pay(Pay input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -105,7 +110,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentOrderPaidResult? PublicCheckPaymentOrderPaidStatus(PublicCheckPaymentOrderPaidStatus input) {
+        public Model.PaymentOrderPaidResult? PublicCheckPaymentOrderPaidStatus(PublicCheckPaymentOrderPaidStatus input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -113,7 +119,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input) {
+        public Dictionary<string, object>? GetPaymentPublicConfig(GetPaymentPublicConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -121,7 +128,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public byte[]? PublicGetQRCode(PublicGetQRCode input) {
+        public byte[]? PublicGetQRCode(PublicGetQRCode input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -137,7 +145,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TaxResult? GetPaymentTaxValue(GetPaymentTaxValue input) {
+        public Model.TaxResult? GetPaymentTaxValue(GetPaymentTaxValue input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

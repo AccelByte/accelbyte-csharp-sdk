@@ -39,6 +39,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class CurrencyInfoCurrencyType : StringEnum<CurrencyInfoCurrencyType>
     {
         public static readonly CurrencyInfoCurrencyType REAL

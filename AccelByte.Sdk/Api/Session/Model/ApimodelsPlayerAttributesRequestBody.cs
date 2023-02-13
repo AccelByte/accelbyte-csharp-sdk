@@ -19,4 +19,18 @@ namespace AccelByte.Sdk.Api.Session.Model
         public List<ModelsUserPlatformInfo>? Platforms { get; set; }
 
     }
+
+    public class ApimodelsPlayerAttributesRequestBody<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("crossplayEnabled")]
+        public bool? CrossplayEnabled { get; set; }
+
+        [JsonPropertyName("data")]
+        public T1? Data { get; set; }
+
+        [JsonPropertyName("platforms")]
+        public List<ModelsUserPlatformInfo>? Platforms { get; set; }
+
+    }
+
 }

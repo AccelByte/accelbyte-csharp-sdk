@@ -14,4 +14,13 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, object>? Payload { get; set; }
 
     }
+
+    public class EventPayload<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Payload { get; set; }
+
+    }
+
 }

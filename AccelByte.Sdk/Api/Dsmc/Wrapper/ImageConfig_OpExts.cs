@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).UpdateImage(op);
         }
-
         public static void Execute(
             this CreateImage.CreateImageBuilder builder,
             ModelsCreateImageRequest body
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).CreateImage(op);
         }
-
         public static Dsmc.Model.ModelsImportResponse? Execute(
             this ImportImages.ImportImagesBuilder builder,
             Stream file
@@ -47,7 +45,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImportImages(op);
         }
-
         public static void Execute(
             this CreateImagePatch.CreateImagePatchBuilder builder,
             ModelsCreateImagePatchRequest body
@@ -59,7 +56,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).CreateImagePatch(op);
         }
-
         public static Dsmc.Model.ModelsListImageResponse? Execute(
             this ListImages.ListImagesBuilder builder,
             string namespace_,
@@ -75,7 +71,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ListImages(op);
         }
-
         public static void Execute(
             this DeleteImage.DeleteImageBuilder builder,
             string namespace_,
@@ -91,7 +86,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).DeleteImage(op);
         }
-
         public static List<Dsmc.Model.ModelsImageRecord>? Execute(
             this ExportImages.ExportImagesBuilder builder,
             string namespace_
@@ -103,7 +97,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ExportImages(op);
         }
-
         public static Dsmc.Model.ModelsGetImageLimitResponse? Execute(
             this GetImageLimit.GetImageLimitBuilder builder,
             string namespace_
@@ -115,7 +108,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImageLimit(op);
         }
-
         public static void Execute(
             this DeleteImagePatch.DeleteImagePatchBuilder builder,
             string namespace_,
@@ -133,7 +125,6 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).DeleteImagePatch(op);
         }
-
         public static Dsmc.Model.ModelsGetImageDetailResponse? Execute(
             this GetImageDetail.GetImageDetailBuilder builder,
             string namespace_,
@@ -147,7 +138,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImageDetail(op);
         }
-
         public static Dsmc.Model.ModelsListImagePatchesResponse? Execute(
             this GetImagePatches.GetImagePatchesBuilder builder,
             string namespace_,
@@ -161,7 +151,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImagePatches(op);
         }
-
         public static Dsmc.Model.ModelsGetImagePatchDetailResponse? Execute(
             this GetImagePatchDetail.GetImagePatchDetailBuilder builder,
             string namespace_,
@@ -177,7 +166,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImagePatchDetail(op);
         }
-
         public static Dsmc.Model.ModelsGetImageLimitResponse? Execute(
             this ImageLimitClient.ImageLimitClientBuilder builder,
             string namespace_
@@ -189,7 +177,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImageLimitClient(op);
         }
-
         public static Dsmc.Model.ModelsGetImageDetailResponse? Execute(
             this ImageDetailClient.ImageDetailClientBuilder builder,
             string namespace_,
@@ -203,6 +190,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImageDetailClient(op);
         }
-
     }
 }

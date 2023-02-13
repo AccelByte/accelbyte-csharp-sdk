@@ -16,4 +16,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? OrderNo { get; set; }
 
     }
+
+
 }

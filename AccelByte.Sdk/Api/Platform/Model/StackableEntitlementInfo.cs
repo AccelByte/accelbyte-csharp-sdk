@@ -105,6 +105,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class StackableEntitlementInfoAppType : StringEnum<StackableEntitlementInfoAppType>
     {
         public static readonly StackableEntitlementInfoAppType DEMO

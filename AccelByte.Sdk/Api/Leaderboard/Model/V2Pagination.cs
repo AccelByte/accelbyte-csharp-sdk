@@ -22,4 +22,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         public string? Previous { get; set; }
 
     }
+
+
 }

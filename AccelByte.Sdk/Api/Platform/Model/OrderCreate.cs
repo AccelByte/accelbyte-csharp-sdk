@@ -41,4 +41,40 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ReturnUrl { get; set; }
 
     }
+
+    public class OrderCreate<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("currencyCode")]
+        public string? CurrencyCode { get; set; }
+
+        [JsonPropertyName("discountedPrice")]
+        public int? DiscountedPrice { get; set; }
+
+        [JsonPropertyName("ext")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Ext { get; set; }
+
+        [JsonPropertyName("itemId")]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("price")]
+        public int? Price { get; set; }
+
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get; set; }
+
+        [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Region { get; set; }
+
+        [JsonPropertyName("returnUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ReturnUrl { get; set; }
+
+    }
+
 }

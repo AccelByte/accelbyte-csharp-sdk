@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).QueryKeyGroups(op);
         }
-
         public static Platform.Model.KeyGroupInfo? Execute(
             this CreateKeyGroup.CreateKeyGroupBuilder builder,
             string namespace_
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).CreateKeyGroup(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.KeyGroupInfo? Execute(
             this GetKeyGroupByBoothName.GetKeyGroupByBoothNameBuilder builder,
@@ -50,7 +48,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupByBoothName(op);
         }
-
         public static Platform.Model.KeyGroupInfo? Execute(
             this GetKeyGroup.GetKeyGroupBuilder builder,
             string keyGroupId,
@@ -64,7 +61,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroup(op);
         }
-
         public static Platform.Model.KeyGroupInfo? Execute(
             this UpdateKeyGroup.UpdateKeyGroupBuilder builder,
             string keyGroupId,
@@ -78,7 +74,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UpdateKeyGroup(op);
         }
-
         public static Platform.Model.KeyGroupDynamicInfo? Execute(
             this GetKeyGroupDynamic.GetKeyGroupDynamicBuilder builder,
             string keyGroupId,
@@ -92,7 +87,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupDynamic(op);
         }
-
         public static Platform.Model.KeyPagingSliceResult? Execute(
             this ListKeys.ListKeysBuilder builder,
             string keyGroupId,
@@ -106,7 +100,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).ListKeys(op);
         }
-
         public static Platform.Model.BulkOperationResult? Execute(
             this UploadKeys.UploadKeysBuilder builder,
             string keyGroupId,
@@ -120,6 +113,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UploadKeys(op);
         }
-
     }
 }

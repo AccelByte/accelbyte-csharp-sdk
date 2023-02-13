@@ -41,7 +41,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
         
-        public Model.TicketDynamicInfo? GetTicketDynamic(GetTicketDynamic input) {
+        public Model.TicketDynamicInfo? GetTicketDynamic(GetTicketDynamic input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -57,7 +58,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketBoothID? GetTicketBoothID(GetTicketBoothID input) {
+        public Model.TicketBoothID? GetTicketBoothID(GetTicketBoothID input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -65,7 +67,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketSaleIncrementResult? IncreaseTicketSale(IncreaseTicketSale input) {
+        public Model.TicketSaleIncrementResult? IncreaseTicketSale(IncreaseTicketSale input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -73,7 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.TicketAcquireResult? AcquireUserTicket(AcquireUserTicket input) {
+        public Model.TicketAcquireResult? AcquireUserTicket(AcquireUserTicket input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

@@ -43,4 +43,42 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? ViewId { get; set; }
 
     }
+
+    public class ViewInfo<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("description")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Description { get; set; }
+
+        [JsonPropertyName("displayOrder")]
+        public int? DisplayOrder { get; set; }
+
+        [JsonPropertyName("localExt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? LocalExt { get; set; }
+
+        [JsonPropertyName("longDescription")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LongDescription { get; set; }
+
+        [JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        [JsonPropertyName("updatedAt")]
+        public DateTime? UpdatedAt { get; set; }
+
+        [JsonPropertyName("viewId")]
+        public string? ViewId { get; set; }
+
+    }
+
 }

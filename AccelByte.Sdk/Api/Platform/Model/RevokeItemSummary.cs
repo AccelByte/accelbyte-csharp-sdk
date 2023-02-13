@@ -30,6 +30,8 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+
     public class RevokeItemSummaryRevokeStatus : StringEnum<RevokeItemSummaryRevokeStatus>
     {
         public static readonly RevokeItemSummaryRevokeStatus COMPLETED

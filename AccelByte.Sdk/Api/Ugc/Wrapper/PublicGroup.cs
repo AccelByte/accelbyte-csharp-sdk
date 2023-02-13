@@ -45,7 +45,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
         #endregion
         
-        public Model.ModelsPaginatedGroupResponse? GetGroups(GetGroups input) {
+        public Model.ModelsPaginatedGroupResponse? GetGroups(GetGroups input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -53,7 +54,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? CreateGroup(CreateGroup input) {
+        public Model.ModelsCreateGroupResponse? CreateGroup(CreateGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -61,7 +63,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? GetGroup(GetGroup input) {
+        public Model.ModelsCreateGroupResponse? GetGroup(GetGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -69,7 +72,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsCreateGroupResponse? UpdateGroup(UpdateGroup input) {
+        public Model.ModelsCreateGroupResponse? UpdateGroup(UpdateGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
@@ -85,7 +89,8 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsPaginatedContentDownloadResponse? GetGroupContent(GetGroupContent input) {
+        public Model.ModelsPaginatedContentDownloadResponse? GetGroupContent(GetGroupContent input)
+        {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(

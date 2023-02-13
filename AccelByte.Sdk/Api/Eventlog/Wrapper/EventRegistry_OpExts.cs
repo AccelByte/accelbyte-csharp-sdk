@@ -22,7 +22,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RegisterEventHandler.RegisterEventHandlerBuilder builder,
@@ -35,7 +34,6 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).RegisterEventHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventRegistry? Execute(
             this GetRegisteredEventIDHandler.GetRegisteredEventIDHandlerBuilder builder,
@@ -48,7 +46,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdateEventRegistryHandler.UpdateEventRegistryHandlerBuilder builder,
@@ -63,7 +60,6 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UpdateEventRegistryHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UnregisterEventIDHandler.UnregisterEventIDHandlerBuilder builder,
@@ -76,7 +72,6 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UnregisterEventIDHandler(op);
         }
-
         [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventRegistry? Execute(
             this GetRegisteredEventsByEventTypeHandler.GetRegisteredEventsByEventTypeHandlerBuilder builder,
@@ -89,6 +84,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsByEventTypeHandler(op);
         }
-
     }
 }
