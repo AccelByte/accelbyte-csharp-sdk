@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Tests
 
             MockTestLogger logger = new MockTestLogger();
 
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .SetHttpClient(ReliableHttpClient.Builder
                     .SetDefaultPolicy(policy)
                     .SetBeforeSendAction((reqm, retryNo) =>
@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Tests
             MockTestLogger logger = new MockTestLogger();
             int latestRetryNo = 0;
 
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .SetHttpClient(ReliableHttpClient.Builder
                     .SetDefaultPolicy(policy)
                     .SetBeforeSendAction((reqm, retryNo) =>

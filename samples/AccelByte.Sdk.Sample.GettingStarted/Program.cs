@@ -11,7 +11,7 @@ namespace AccelByte.Sdk.Sample.GettingStarted
     {
         static int Main(string[] args)
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .UseDefaultConfigRepository()
                 .UseDefaultTokenRepository()

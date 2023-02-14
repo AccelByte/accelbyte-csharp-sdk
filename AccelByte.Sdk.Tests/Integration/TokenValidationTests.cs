@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void TokenValidationTestUsingDefaultValidator()
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void PermissionValidationTestUsingDefaultValidator()
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void TokenValidationTestUsingLocalValidator()
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void PermissionValidationTestUsingLocalValidator()
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()

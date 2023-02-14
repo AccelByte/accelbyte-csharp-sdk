@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestMethod(string method)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method));
 
@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinNoRequestBodyType(string method)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method), "/anything", null!, null!, null, "", null!);
 
@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestPathParam(string method, string pathParam)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(
                     new HttpMethod(method),
@@ -126,7 +126,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestQueryString(string method, string key, string value)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method),
                     queryParams: new Dictionary<string, dynamic>() { { key, value } });
@@ -152,7 +152,7 @@ namespace AccelByte.Sdk.Tests
             var value = new List<string> { "?a=a&\"?a=a&", "?b=b&\"?b=b&" };  // Special characters need to be escaped
 
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method),
                     queryParams: new Dictionary<string, dynamic>() {
@@ -207,7 +207,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestFormParam(string method, string key, string value)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method), consumes: "application/x-www-form-urlencoded");
 
@@ -229,7 +229,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestUploadFile(string method)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var op = new HttpbinOperation(new HttpMethod(method), consumes: "multipart/form-data");
 
@@ -257,7 +257,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestJson(string method)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var request = new TestRequest()
             {
@@ -293,7 +293,7 @@ namespace AccelByte.Sdk.Tests
         public void HttpbinRequestError(string method)
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _httpbinConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             var request = new TestRequest();
 
@@ -318,7 +318,7 @@ namespace AccelByte.Sdk.Tests
         [TestCase("1234;57890")]
         public void HttpBinCookieRequestTest(string cookieValue)
         {
-            AccelByteSDK sdk = AccelByteSDK.Builder
+            using AccelByteSDK sdk = AccelByteSDK.Builder
                 .SetHttpClient(_httpClient)
                 .SetTokenRepository(_tokenRepository)
                 .SetConfigRepository(_httpbinConfigRepository)
@@ -345,7 +345,7 @@ namespace AccelByte.Sdk.Tests
         public void LoginLogoutClient()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _clientConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.BaseUrl));
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));
@@ -365,7 +365,7 @@ namespace AccelByte.Sdk.Tests
         public void LoginLogoutUser()
         {
             var config = new AccelByteConfig(_httpClient, _tokenRepository, _userConfigRepository);
-            var sdk = new AccelByteSDK(config);
+            using var sdk = new AccelByteSDK(config);
 
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.BaseUrl));
             Assert.True(!string.IsNullOrEmpty(sdk.Configuration.ConfigRepository.ClientId));

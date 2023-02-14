@@ -78,7 +78,7 @@ namespace AccelByte.Sdk.Sample.OIDC.Web
 
                 try
                 {
-                    AccelByteSDK sdk = AccelByteSDK.Builder
+                    using AccelByteSDK sdk = AccelByteSDK.Builder
                         .UseDefaultHttpClient()
                         .UseDefaultConfigRepository()
                         .UseDefaultTokenRepository()
