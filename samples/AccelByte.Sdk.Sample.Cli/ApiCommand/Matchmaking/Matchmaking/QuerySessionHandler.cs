@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","querysessionhandler")]
-    public class QuerySessionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "querysessionhandler")]
+    public class QuerySessionHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "QuerySessionHandler"; } }
+        public string OperationName { get { return "QuerySessionHandler"; } }
 
         [SdkCommandArgument("matchID")]
         public string MatchID { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             QuerySessionHandler operation = new QuerySessionHandler(
-                MatchID,                
-                Namespace                
-            );            
-            
+                MatchID,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchmakingResult? response = wrapper.QuerySessionHandler(operation);
             if (response == null)
                 return "No response from server.";

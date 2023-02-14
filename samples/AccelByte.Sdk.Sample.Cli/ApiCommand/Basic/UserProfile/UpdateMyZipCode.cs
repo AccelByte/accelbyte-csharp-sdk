@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","updatemyzipcode")]
-    public class UpdateMyZipCodeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "updatemyzipcode")]
+    public class UpdateMyZipCodeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "UpdateMyZipCode"; } }
+        public string OperationName { get { return "UpdateMyZipCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("userZipCodeUpdate")]
         public UserZipCodeUpdate UserZipCodeUpdate { get; set; } = new UserZipCodeUpdate();
-                
+
         public UpdateMyZipCodeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             UpdateMyZipCode operation = new UpdateMyZipCode(
-                Namespace,                
-                UserZipCodeUpdate                
-            );            
-            
+                Namespace,
+                UserZipCodeUpdate
+            );
+
             AccelByte.Sdk.Api.Basic.Model.UserZipCode? response = wrapper.UpdateMyZipCode(operation);
             if (response == null)
                 return "No response from server.";

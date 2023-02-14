@@ -95,6 +95,10 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.InviteGroupPublicV2.Builder.SetWrapperObject(this); }
         }
+        public CancelInvitationGroupMemberV2.CancelInvitationGroupMemberV2Builder CancelInvitationGroupMemberV2Op
+        {
+            get { return Operation.CancelInvitationGroupMemberV2.Builder.SetWrapperObject(this); }
+        }
         public AcceptGroupJoinRequestPublicV2.AcceptGroupJoinRequestPublicV2Builder AcceptGroupJoinRequestPublicV2Op
         {
             get { return Operation.AcceptGroupJoinRequestPublicV2.Builder.SetWrapperObject(this); }
@@ -112,13 +116,13 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             get { return Operation.GetUserGroupStatusInformationV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsGetGroupMemberListResponseV1? GetGroupMembersListAdminV1(GetGroupMembersListAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -127,7 +131,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -136,7 +140,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -145,7 +149,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -154,7 +158,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -163,7 +167,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -172,7 +176,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -181,7 +185,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -190,7 +194,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -199,7 +203,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -208,7 +212,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -217,7 +221,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -226,7 +230,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -235,7 +239,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -244,7 +248,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -253,7 +257,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -262,7 +266,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -271,7 +275,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -280,7 +284,16 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCancelInvitationGroupResponseV2? CancelInvitationGroupMemberV2(CancelInvitationGroupMemberV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -289,7 +302,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -298,7 +311,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -307,7 +320,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -316,7 +329,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","getuserprofileinfobypublicid")]
-    public class GetUserProfileInfoByPublicIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "getuserprofileinfobypublicid")]
+    public class GetUserProfileInfoByPublicIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "GetUserProfileInfoByPublicId"; } }
+        public string OperationName { get { return "GetUserProfileInfoByPublicId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             GetUserProfileInfoByPublicId operation = new GetUserProfileInfoByPublicId(
-                Namespace,                
-                PublicId                
-            );            
-            
+                Namespace,
+                PublicId
+            );
+
             AccelByte.Sdk.Api.Basic.Model.UserProfileInfo? response = wrapper.GetUserProfileInfoByPublicId(operation);
             if (response == null)
                 return "No response from server.";

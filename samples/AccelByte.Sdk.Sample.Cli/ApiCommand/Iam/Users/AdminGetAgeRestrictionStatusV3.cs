@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetagerestrictionstatusv3")]
-    public class AdminGetAgeRestrictionStatusV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetagerestrictionstatusv3")]
+    public class AdminGetAgeRestrictionStatusV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetAgeRestrictionStatusV3"; } }
+        public string OperationName { get { return "AdminGetAgeRestrictionStatusV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminGetAgeRestrictionStatusV3 operation = new AdminGetAgeRestrictionStatusV3(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelAgeRestrictionResponseV3? response = wrapper.AdminGetAgeRestrictionStatusV3(operation);
             if (response == null)
                 return "No response from server.";

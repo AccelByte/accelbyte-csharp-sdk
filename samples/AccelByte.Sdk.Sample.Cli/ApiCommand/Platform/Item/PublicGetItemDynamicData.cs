@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetitemdynamicdata")]
-    public class PublicGetItemDynamicDataCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetitemdynamicdata")]
+    public class PublicGetItemDynamicDataCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetItemDynamicData"; } }
+        public string OperationName { get { return "PublicGetItemDynamicData"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             PublicGetItemDynamicData operation = new PublicGetItemDynamicData(
-                ItemId,                
-                Namespace                
-            );            
-            
+                ItemId,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.ItemDynamicDataInfo? response = wrapper.PublicGetItemDynamicData(operation);
             if (response == null)
                 return "No response from server.";

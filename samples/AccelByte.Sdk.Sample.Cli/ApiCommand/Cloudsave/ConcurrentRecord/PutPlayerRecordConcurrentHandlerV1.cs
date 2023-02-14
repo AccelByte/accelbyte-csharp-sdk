@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","putplayerrecordconcurrenthandlerv1")]
-    public class PutPlayerRecordConcurrentHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "putplayerrecordconcurrenthandlerv1")]
+    public class PutPlayerRecordConcurrentHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "PutPlayerRecordConcurrentHandlerV1"; } }
+        public string OperationName { get { return "PutPlayerRecordConcurrentHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsConcurrentRecordRequest Body { get; set; } = new ModelsConcurrentRecordRequest();
-                
+
         public PutPlayerRecordConcurrentHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.ConcurrentRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.ConcurrentRecord(_SDK);
 
             PutPlayerRecordConcurrentHandlerV1 operation = new PutPlayerRecordConcurrentHandlerV1(
-                Key,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Key,
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.PutPlayerRecordConcurrentHandlerV1(operation);
             return String.Empty;
         }

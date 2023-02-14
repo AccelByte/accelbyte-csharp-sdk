@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","adminsetprofanityrulefornamespace")]
-    public class AdminSetProfanityRuleForNamespaceCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "adminsetprofanityrulefornamespace")]
+    public class AdminSetProfanityRuleForNamespaceCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminSetProfanityRuleForNamespace"; } }
+        public string OperationName { get { return "AdminSetProfanityRuleForNamespace"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAdminSetProfanityRuleForNamespaceRequest Body { get; set; } = new ModelsAdminSetProfanityRuleForNamespaceRequest();
-                
+
         public AdminSetProfanityRuleForNamespaceCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminSetProfanityRuleForNamespace operation = new AdminSetProfanityRuleForNamespace(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.AdminSetProfanityRuleForNamespace(operation);
             return String.Empty;
         }

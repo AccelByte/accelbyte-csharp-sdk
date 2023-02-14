@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","createuserfrominvitationv3")]
-    public class CreateUserFromInvitationV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "createuserfrominvitationv3")]
+    public class CreateUserFromInvitationV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "CreateUserFromInvitationV3"; } }
+        public string OperationName { get { return "CreateUserFromInvitationV3"; } }
 
         [SdkCommandArgument("invitationId")]
         public string InvitationId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelUserCreateFromInvitationRequestV3 Body { get; set; } = new ModelUserCreateFromInvitationRequestV3();
-                
+
         public CreateUserFromInvitationV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             CreateUserFromInvitationV3 operation = new CreateUserFromInvitationV3(
-                InvitationId,                
-                Namespace,                
-                Body                
-            );            
-            
+                InvitationId,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelUserCreateResponseV3? response = wrapper.CreateUserFromInvitationV3(operation);
             if (response == null)
                 return "No response from server.";

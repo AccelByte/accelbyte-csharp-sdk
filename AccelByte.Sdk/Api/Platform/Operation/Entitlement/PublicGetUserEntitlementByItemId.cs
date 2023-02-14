@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicGetUserEntitlementByItemId op = new PublicGetUserEntitlementByItemId(this,
-                    namespace_,                    
-                    userId,                    
-                    itemId                    
+                    namespace_,
+                    userId,
+                    itemId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -75,36 +75,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
             if (itemId is not null) QueryParams["itemId"] = itemId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetUserEntitlementByItemId(
-            string namespace_,            
-            string userId,            
-            PublicGetUserEntitlementByItemIdEntitlementClazz? entitlementClazz,            
-            string itemId            
+            string namespace_,
+            string userId,
+            PublicGetUserEntitlementByItemIdEntitlementClazz? entitlementClazz,
+            string itemId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
             if (itemId is not null) QueryParams["itemId"] = itemId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -113,15 +113,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.EntitlementInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -134,9 +134,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.EntitlementInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

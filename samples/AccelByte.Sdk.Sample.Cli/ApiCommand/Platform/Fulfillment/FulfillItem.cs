@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","fulfillitem")]
-    public class FulfillItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "fulfillitem")]
+    public class FulfillItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "FulfillItem"; } }
+        public string OperationName { get { return "FulfillItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public FulfillmentRequest Body { get; set; } = new FulfillmentRequest();
-                
+
         public FulfillItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Fulfillment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Fulfillment(_SDK);
 
             FulfillItem operation = new FulfillItem(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FulfillmentResult? response = wrapper.FulfillItem(operation);
             if (response == null)
                 return "No response from server.";

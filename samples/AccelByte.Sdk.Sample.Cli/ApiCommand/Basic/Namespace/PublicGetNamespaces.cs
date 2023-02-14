@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic","publicgetnamespaces")]
-    public class PublicGetNamespacesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "publicgetnamespaces")]
+    public class PublicGetNamespacesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Basic"; } }
+        public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName{ get { return "PublicGetNamespaces"; } }
+        public string OperationName { get { return "PublicGetNamespaces"; } }
 
         [SdkCommandArgument("activeOnly")]
         public bool? ActiveOnly { get; set; }
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Namespace wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Namespace(_SDK);
 
             PublicGetNamespaces operation = new PublicGetNamespaces(
-                ActiveOnly                
-            );            
-            
+                ActiveOnly
+            );
+
             List<AccelByte.Sdk.Api.Basic.Model.NamespaceInfo>? response = wrapper.PublicGetNamespaces(operation);
             if (response == null)
                 return "No response from server.";

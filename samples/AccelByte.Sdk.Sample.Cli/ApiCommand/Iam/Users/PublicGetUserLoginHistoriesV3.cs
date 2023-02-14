@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicgetuserloginhistoriesv3")]
-    public class PublicGetUserLoginHistoriesV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgetuserloginhistoriesv3")]
+    public class PublicGetUserLoginHistoriesV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicGetUserLoginHistoriesV3"; } }
+        public string OperationName { get { return "PublicGetUserLoginHistoriesV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicGetUserLoginHistoriesV3 operation = new PublicGetUserLoginHistoriesV3(
-                Namespace,                
-                UserId,                
-                After,                
-                Before,                
-                Limit                
-            );            
-            
+                Namespace,
+                UserId,
+                After,
+                Before,
+                Limit
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelLoginHistoriesResponse? response = wrapper.PublicGetUserLoginHistoriesV3(operation);
             if (response == null)
                 return "No response from server.";

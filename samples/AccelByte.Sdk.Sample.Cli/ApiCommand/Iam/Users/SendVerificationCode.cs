@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","sendverificationcode")]
-    public class SendVerificationCodeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "sendverificationcode")]
+    public class SendVerificationCodeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "SendVerificationCode"; } }
+        public string OperationName { get { return "SendVerificationCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelSendVerificationCodeRequest Body { get; set; } = new ModelSendVerificationCodeRequest();
-                
+
         public SendVerificationCodeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,18 +45,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             SendVerificationCode operation = new SendVerificationCode(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,
+                UserId,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.SendVerificationCode(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

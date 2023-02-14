@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getpodconfig")]
-    public class GetPodConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getpodconfig")]
+    public class GetPodConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetPodConfig"; } }
+        public string OperationName { get { return "GetPodConfig"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig(_SDK);
 
             GetPodConfig operation = new GetPodConfig(
-                Name,                
-                Namespace                
-            );            
-            
+                Name,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsPodConfigRecord? response = wrapper.GetPodConfig(operation);
             if (response == null)
                 return "No response from server.";

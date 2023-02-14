@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryentitlements")]
-    public class QueryEntitlementsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryentitlements")]
+    public class QueryEntitlementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryEntitlements"; } }
+        public string OperationName { get { return "QueryEntitlements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             QueryEntitlements operation = new QueryEntitlements(
-                Namespace,                
-                ActiveOnly,                
-                (AppType is null ? null : QueryEntitlementsAppType.NewValue(AppType)),                
-                (EntitlementClazz is null ? null : QueryEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),                
-                EntitlementName,                
-                ItemId,                
-                Limit,                
-                Offset,                
-                UserId                
-            );            
-            
+                Namespace,
+                ActiveOnly,
+                (AppType is null ? null : QueryEntitlementsAppType.NewValue(AppType)),
+                (EntitlementClazz is null ? null : QueryEntitlementsEntitlementClazz.NewValue(EntitlementClazz)),
+                EntitlementName,
+                ItemId,
+                Limit,
+                Offset,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.EntitlementPagingSlicedResult? response = wrapper.QueryEntitlements(operation);
             if (response == null)
                 return "No response from server.";

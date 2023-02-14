@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryitems")]
-    public class QueryItemsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryitems")]
+    public class QueryItemsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryItems"; } }
+        public string OperationName { get { return "QueryItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -85,24 +85,24 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             QueryItems operation = new QueryItems(
-                Namespace,                
-                ActiveOnly,                
-                (AppType is null ? null : QueryItemsAppType.NewValue(AppType)),                
-                AvailableDate,                
-                BaseAppId,                
-                CategoryPath,                
-                Features,                
-                IncludeSubCategoryItem,                
-                (ItemType is null ? null : QueryItemsItemType.NewValue(ItemType)),                
-                Limit,                
-                Offset,                
-                Region,                
-                (SortBy is null ? null : QueryItemsSortBy.NewValue(SortBy)),                
-                StoreId,                
-                Tags,                
-                TargetNamespace                
-            );            
-            
+                Namespace,
+                ActiveOnly,
+                (AppType is null ? null : QueryItemsAppType.NewValue(AppType)),
+                AvailableDate,
+                BaseAppId,
+                CategoryPath,
+                Features,
+                IncludeSubCategoryItem,
+                (ItemType is null ? null : QueryItemsItemType.NewValue(ItemType)),
+                Limit,
+                Offset,
+                Region,
+                (SortBy is null ? null : QueryItemsSortBy.NewValue(SortBy)),
+                StoreId,
+                Tags,
+                TargetNamespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.QueryItems(operation);
             if (response == null)
                 return "No response from server.";

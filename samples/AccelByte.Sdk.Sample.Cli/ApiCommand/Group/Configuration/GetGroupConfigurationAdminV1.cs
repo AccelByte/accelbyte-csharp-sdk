@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","getgroupconfigurationadminv1")]
-    public class GetGroupConfigurationAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "getgroupconfigurationadminv1")]
+    public class GetGroupConfigurationAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "GetGroupConfigurationAdminV1"; } }
+        public string OperationName { get { return "GetGroupConfigurationAdminV1"; } }
 
         [SdkCommandArgument("configurationCode")]
         public string ConfigurationCode { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Configuration(_SDK);
 
             GetGroupConfigurationAdminV1 operation = new GetGroupConfigurationAdminV1(
-                ConfigurationCode,                
-                Namespace                
-            );            
-            
+                ConfigurationCode,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsGetGroupConfigurationResponseV1? response = wrapper.GetGroupConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

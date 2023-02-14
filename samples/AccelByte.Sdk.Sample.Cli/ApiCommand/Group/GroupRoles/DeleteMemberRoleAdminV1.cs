@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","deletememberroleadminv1")]
-    public class DeleteMemberRoleAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "deletememberroleadminv1")]
+    public class DeleteMemberRoleAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "DeleteMemberRoleAdminV1"; } }
+        public string OperationName { get { return "DeleteMemberRoleAdminV1"; } }
 
         [SdkCommandArgument("memberRoleId")]
         public string MemberRoleId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             DeleteMemberRoleAdminV1 operation = new DeleteMemberRoleAdminV1(
-                MemberRoleId,                
-                Namespace                
-            );            
-            
+                MemberRoleId,
+                Namespace
+            );
+
             wrapper.DeleteMemberRoleAdminV1(operation);
             return String.Empty;
         }

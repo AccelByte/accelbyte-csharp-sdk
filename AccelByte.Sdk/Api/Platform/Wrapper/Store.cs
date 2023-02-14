@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CreateStore.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public ImportStore.ImportStoreBuilder ImportStoreOp
         {
             get { return Operation.ImportStore.Builder.SetWrapperObject(this); }
@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CloneStore.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public ExportStore.ExportStoreBuilder ExportStoreOp
         {
             get { return Operation.ExportStore.Builder.SetWrapperObject(this); }
@@ -82,13 +82,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.ExportStore1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.StoreInfo>? ListStores(ListStores input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -97,28 +97,28 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.StoreInfo? ImportStore(ImportStore input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
         public Model.StoreInfo? GetPublishedStore(GetPublishedStore input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -127,7 +127,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -136,7 +136,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -145,7 +145,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -154,7 +154,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -163,7 +163,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -172,7 +172,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -181,28 +181,28 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Stream? ExportStore(ExportStore input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
         public List<Model.StoreInfo>? PublicListStores(PublicListStores input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -211,7 +211,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -220,7 +220,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

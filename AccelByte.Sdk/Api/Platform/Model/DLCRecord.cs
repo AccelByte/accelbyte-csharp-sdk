@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ObtainedAt { get; set; }
 
+        [JsonPropertyName("revocationResult")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public RevocationResult? RevocationResult { get; set; }
+
         [JsonPropertyName("revokeResults")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RevokeResult>? RevokeResults { get; set; }
@@ -40,6 +44,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public DLCRecordStatus? Status { get; set; }
 
+        [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TransactionId { get; set; }
+
+        [JsonPropertyName("version")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Version { get; set; }
+
     }
 
 
@@ -52,6 +64,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly DLCRecordStatus REVOKED
             = new DLCRecordStatus("REVOKED");
 
+        public static readonly DLCRecordStatus REVOKEFAILED
+            = new DLCRecordStatus("REVOKE_FAILED");
+
 
         public static implicit operator DLCRecordStatus(string value)
         {
@@ -63,5 +78,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

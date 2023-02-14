@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","querytiers")]
-    public class QueryTiersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "querytiers")]
+    public class QueryTiersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "QueryTiers"; } }
+        public string OperationName { get { return "QueryTiers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             QueryTiers operation = new QueryTiers(
-                Namespace,                
-                SeasonId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                SeasonId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.TierPagingSlicedResult? response = wrapper.QueryTiers(operation);
             if (response == null)
                 return "No response from server.";

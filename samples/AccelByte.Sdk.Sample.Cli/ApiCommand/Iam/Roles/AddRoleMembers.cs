@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","addrolemembers")]
-    public class AddRoleMembersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "addrolemembers")]
+    public class AddRoleMembersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AddRoleMembers"; } }
+        public string OperationName { get { return "AddRoleMembers"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelRoleMembersRequest Body { get; set; } = new ModelRoleMembersRequest();
-                
+
         public AddRoleMembersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,17 +42,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             AddRoleMembers operation = new AddRoleMembers(
-                RoleId,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                RoleId,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.AddRoleMembers(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

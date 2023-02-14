@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getuserwallet")]
-    public class GetUserWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getuserwallet")]
+    public class GetUserWalletCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserWallet"; } }
+        public string OperationName { get { return "GetUserWallet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -45,21 +45,21 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             GetUserWallet operation = new GetUserWallet(
-                Namespace,                
-                UserId,                
-                WalletId                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,
+                UserId,
+                WalletId
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.GetUserWallet(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -56,9 +56,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CreditRequestOrigin Playstation
             = new CreditRequestOrigin("Playstation");
 
-        public static readonly CreditRequestOrigin Stadia
-            = new CreditRequestOrigin("Stadia");
-
         public static readonly CreditRequestOrigin Steam
             = new CreditRequestOrigin("Steam");
 
@@ -82,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CreditRequestSource : StringEnum<CreditRequestSource>
     {
@@ -130,5 +127,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

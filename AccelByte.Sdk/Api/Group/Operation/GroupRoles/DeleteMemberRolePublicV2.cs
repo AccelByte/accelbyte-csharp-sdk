@@ -56,10 +56,10 @@ namespace AccelByte.Sdk.Api.Group.Operation
             )
             {
                 DeleteMemberRolePublicV2 op = new DeleteMemberRolePublicV2(this,
-                    body,                    
-                    groupId,                    
-                    memberRoleId,                    
-                    namespace_                    
+                    body,
+                    groupId,
+                    memberRoleId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -77,35 +77,35 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["groupId"] = groupId;
             PathParams["memberRoleId"] = memberRoleId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteMemberRolePublicV2(
-            string groupId,            
-            string memberRoleId,            
-            string namespace_,            
-            Model.ModelsRemoveRoleFromMemberRequestV1 body            
+            string groupId,
+            string memberRoleId,
+            string namespace_,
+            Model.ModelsRemoveRoleFromMemberRequestV1 body
         )
         {
             PathParams["groupId"] = groupId;
             PathParams["memberRoleId"] = memberRoleId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -120,16 +120,16 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

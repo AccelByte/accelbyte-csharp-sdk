@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Qosm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 {
-    [SdkConsoleCommand("qosm","updateserverconfig")]
-    public class UpdateServerConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("qosm", "updateserverconfig")]
+    public class UpdateServerConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Qosm"; } }
+        public string ServiceName { get { return "Qosm"; } }
 
-        public string OperationName{ get { return "UpdateServerConfig"; } }
+        public string OperationName { get { return "UpdateServerConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
 
         [SdkCommandData("body")]
         public ModelsUpdateServerRequest Body { get; set; } = new ModelsUpdateServerRequest();
-                
+
         public UpdateServerConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Qosm
             AccelByte.Sdk.Api.Qosm.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Qosm.Wrapper.Admin(_SDK);
 
             UpdateServerConfig operation = new UpdateServerConfig(
-                Namespace,                
-                Region,                
-                Body                
-            );            
-            
+                Namespace,
+                Region,
+                Body
+            );
+
             wrapper.UpdateServerConfig(operation);
             return String.Empty;
         }

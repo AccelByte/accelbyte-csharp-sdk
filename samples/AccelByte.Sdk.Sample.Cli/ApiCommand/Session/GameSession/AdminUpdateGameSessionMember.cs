@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","adminupdategamesessionmember")]
-    public class AdminUpdateGameSessionMemberCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "adminupdategamesessionmember")]
+    public class AdminUpdateGameSessionMemberCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "AdminUpdateGameSessionMember"; } }
+        public string OperationName { get { return "AdminUpdateGameSessionMember"; } }
 
         [SdkCommandArgument("memberId")]
         public string MemberId { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             AdminUpdateGameSessionMember operation = new AdminUpdateGameSessionMember(
-                MemberId,                
-                Namespace,                
-                SessionId,                
-                StatusType                
-            );            
-            
+                MemberId,
+                Namespace,
+                SessionId,
+                StatusType
+            );
+
             AccelByte.Sdk.Api.Session.Model.ApimodelsUpdateGameSessionMemberStatusResponse? response = wrapper.AdminUpdateGameSessionMember(operation);
             if (response == null)
                 return "No response from server.";

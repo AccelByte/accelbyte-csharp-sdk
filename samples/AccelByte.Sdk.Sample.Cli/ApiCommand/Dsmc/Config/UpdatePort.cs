@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","updateport")]
-    public class UpdatePortCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "updateport")]
+    public class UpdatePortCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "UpdatePort"; } }
+        public string OperationName { get { return "UpdatePort"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 
         [SdkCommandData("body")]
         public ModelsUpdatePortRequest Body { get; set; } = new ModelsUpdatePortRequest();
-                
+
         public UpdatePortCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             UpdatePort operation = new UpdatePort(
-                Name,                
-                Namespace,                
-                Body                
-            );            
-            
+                Name,
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDSMConfigRecord? response = wrapper.UpdatePort(operation);
             if (response == null)
                 return "No response from server.";

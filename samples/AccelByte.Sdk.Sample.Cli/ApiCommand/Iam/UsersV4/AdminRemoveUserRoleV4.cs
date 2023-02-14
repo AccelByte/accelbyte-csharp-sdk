@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminremoveuserrolev4")]
-    public class AdminRemoveUserRoleV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminremoveuserrolev4")]
+    public class AdminRemoveUserRoleV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminRemoveUserRoleV4"; } }
+        public string OperationName { get { return "AdminRemoveUserRoleV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelRemoveUserRoleV4Request Body { get; set; } = new ModelRemoveUserRoleV4Request();
-                
+
         public AdminRemoveUserRoleV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminRemoveUserRoleV4 operation = new AdminRemoveUserRoleV4(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.AdminRemoveUserRoleV4(operation);
             return String.Empty;
         }

@@ -32,13 +32,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             get { return Operation.ListProvidersByRegion.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsDefaultProvider? GetDefaultProvider(GetDefaultProvider input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -24,6 +24,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// 
     /// A rule set has a name and contains arbitrary data which is meaningful to some particular match function(s)
     /// The name is used for a match pool to select the ruleset data that should be sent to the match function when matchmaking in that pool.
+    /// 
+    /// To use custom rules set please set enable_custom_match_function=true. Default (false).
     /// </summary>
     public class CreateRuleSet : AccelByte.Sdk.Core.Operation
     {
@@ -46,13 +48,13 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
 
             public CreateRuleSet Build(
-                ApiMatchRuleSet body,
+                ApiRuleSetPayload body,
                 string namespace_
             )
             {
                 CreateRuleSet op = new CreateRuleSet(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -61,36 +63,36 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         }
 
         private CreateRuleSet(CreateRuleSetBuilder builder,
-            ApiMatchRuleSet body,
+            ApiRuleSetPayload body,
             string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateRuleSet(
-            string namespace_,            
-            Model.ApiMatchRuleSet body            
+            string namespace_,
+            Model.ApiRuleSetPayload body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,16 +107,16 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)201)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

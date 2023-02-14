@@ -16,18 +16,18 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("channelSlug")]
         [JsonPropertyName("channelSlug")]
         public string? ChannelSlug { get; set; }
-        
+
         [AwesomeProperty("from")]
         [JsonPropertyName("from")]
         public string? From { get; set; }
-        
+
         [AwesomeProperty("payload")]
         [JsonPropertyName("payload")]
         public string? Payload { get; set; }
-        
+
         [AwesomeProperty("sentAt")]
         [JsonPropertyName("sentAt")]
         public string? SentAt { get; set; }
-        
+
     }
 }

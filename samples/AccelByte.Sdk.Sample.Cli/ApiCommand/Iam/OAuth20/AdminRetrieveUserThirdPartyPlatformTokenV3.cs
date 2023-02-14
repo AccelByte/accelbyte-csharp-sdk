@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminretrieveuserthirdpartyplatformtokenv3")]
-    public class AdminRetrieveUserThirdPartyPlatformTokenV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminretrieveuserthirdpartyplatformtokenv3")]
+    public class AdminRetrieveUserThirdPartyPlatformTokenV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminRetrieveUserThirdPartyPlatformTokenV3"; } }
+        public string OperationName { get { return "AdminRetrieveUserThirdPartyPlatformTokenV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             AdminRetrieveUserThirdPartyPlatformTokenV3 operation = new AdminRetrieveUserThirdPartyPlatformTokenV3(
-                Namespace,                
-                PlatformId,                
-                UserId                
-            );            
-            
+                Namespace,
+                PlatformId,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenThirdPartyResponse? response = wrapper.AdminRetrieveUserThirdPartyPlatformTokenV3(operation);
             if (response == null)
                 return "No response from server.";

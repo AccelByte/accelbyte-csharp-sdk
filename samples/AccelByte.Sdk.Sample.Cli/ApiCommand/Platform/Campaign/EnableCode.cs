@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","enablecode")]
-    public class EnableCodeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "enablecode")]
+    public class EnableCodeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "EnableCode"; } }
+        public string OperationName { get { return "EnableCode"; } }
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             EnableCode operation = new EnableCode(
-                Code,                
-                Namespace                
-            );            
-            
+                Code,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.CodeInfo? response = wrapper.EnableCode(operation);
             if (response == null)
                 return "No response from server.";

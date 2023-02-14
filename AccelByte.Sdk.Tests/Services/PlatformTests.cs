@@ -34,14 +34,14 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(_Sdk.Namespace);
             if ((stores != null) && (stores.Count > 0))
             {
-                foreach (var store in stores)                
+                foreach (var store in stores)
                 {
                     if (store.Published! != true)
                     {
                         //draft store exists. delete it first.
                         _Sdk.Platform.Store.DeleteStoreOp
                             .Execute(_Sdk.Namespace, store.StoreId!);
-                    }   
+                    }
                 }
             }
 

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicverifyregistrationcode")]
-    public class PublicVerifyRegistrationCodeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicverifyregistrationcode")]
+    public class PublicVerifyRegistrationCodeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicVerifyRegistrationCode"; } }
+        public string OperationName { get { return "PublicVerifyRegistrationCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelVerifyRegistrationCode Body { get; set; } = new ModelVerifyRegistrationCode();
-                
+
         public PublicVerifyRegistrationCodeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicVerifyRegistrationCode operation = new PublicVerifyRegistrationCode(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             wrapper.PublicVerifyRegistrationCode(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","processusersubscriptionnotification")]
-    public class ProcessUserSubscriptionNotificationCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "processusersubscriptionnotification")]
+    public class ProcessUserSubscriptionNotificationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ProcessUserSubscriptionNotification"; } }
+        public string OperationName { get { return "ProcessUserSubscriptionNotification"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public TradeNotification Body { get; set; } = new TradeNotification();
-                
+
         public ProcessUserSubscriptionNotificationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             ProcessUserSubscriptionNotification operation = new ProcessUserSubscriptionNotification(
-                Namespace,                
-                SubscriptionId,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                SubscriptionId,
+                UserId,
+                Body
+            );
+
             wrapper.ProcessUserSubscriptionNotification(operation);
             return String.Empty;
         }

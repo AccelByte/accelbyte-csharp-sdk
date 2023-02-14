@@ -48,9 +48,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RewardsRequestOrigin Playstation
             = new RewardsRequestOrigin("Playstation");
 
-        public static readonly RewardsRequestOrigin Stadia
-            = new RewardsRequestOrigin("Stadia");
-
         public static readonly RewardsRequestOrigin Steam
             = new RewardsRequestOrigin("Steam");
 
@@ -74,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class RewardsRequestSource : StringEnum<RewardsRequestSource>
     {
@@ -119,5 +116,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

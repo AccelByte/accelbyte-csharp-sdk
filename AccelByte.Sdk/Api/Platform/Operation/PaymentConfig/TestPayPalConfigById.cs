@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 TestPayPalConfigById op = new TestPayPalConfigById(this,
-                    id                    
+                    id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["id"] = id;
-            
-            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
-            
 
-            
-            
-            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public TestPayPalConfigById(
-            string id,            
-            bool? sandbox            
+            string id,
+            bool? sandbox
         )
         {
             PathParams["id"] = id;
-            
-            if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
-            
 
-            
-            
-            
+            if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.TestResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","singleadmingetchannel")]
-    public class SingleAdminGetChannelCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "singleadmingetchannel")]
+    public class SingleAdminGetChannelCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "SingleAdminGetChannel"; } }
+        public string OperationName { get { return "SingleAdminGetChannel"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminChannel wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminChannel(_SDK);
 
             SingleAdminGetChannel operation = new SingleAdminGetChannel(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGetChannelResponse? response = wrapper.SingleAdminGetChannel(operation);
             if (response == null)
                 return "No response from server.";

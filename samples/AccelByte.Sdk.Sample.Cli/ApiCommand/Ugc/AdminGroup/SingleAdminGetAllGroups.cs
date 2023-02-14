@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","singleadmingetallgroups")]
-    public class SingleAdminGetAllGroupsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "singleadmingetallgroups")]
+    public class SingleAdminGetAllGroupsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "SingleAdminGetAllGroups"; } }
+        public string OperationName { get { return "SingleAdminGetAllGroups"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup(_SDK);
 
             SingleAdminGetAllGroups operation = new SingleAdminGetAllGroups(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGroupResponse? response = wrapper.SingleAdminGetAllGroups(operation);
             if (response == null)
                 return "No response from server.";

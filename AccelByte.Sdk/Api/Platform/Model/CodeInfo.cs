@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CodeInfoStatus : StringEnum<CodeInfoStatus>
     {
@@ -120,7 +120,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class CodeInfoType : StringEnum<CodeInfoType>
     {
@@ -138,5 +138,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","rebalance")]
-    public class RebalanceCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "rebalance")]
+    public class RebalanceCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "Rebalance"; } }
+        public string OperationName { get { return "Rebalance"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsRebalanceRequest Body { get; set; } = new ModelsRebalanceRequest();
-                
+
         public RebalanceCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             Rebalance operation = new Rebalance(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Matchmaking.Model.ModelsRebalanceResponse? response = wrapper.Rebalance(operation);
             if (response == null)
                 return "No response from server.";

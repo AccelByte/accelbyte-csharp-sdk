@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getbulkitemidbyskus")]
-    public class GetBulkItemIdBySkusCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getbulkitemidbyskus")]
+    public class GetBulkItemIdBySkusCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetBulkItemIdBySkus"; } }
+        public string OperationName { get { return "GetBulkItemIdBySkus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             GetBulkItemIdBySkus operation = new GetBulkItemIdBySkus(
-                Namespace,                
-                Sku,                
-                StoreId                
-            );            
-            
+                Namespace,
+                Sku,
+                StoreId
+            );
+
             List<AccelByte.Sdk.Api.Platform.Model.ItemId>? response = wrapper.GetBulkItemIdBySkus(operation);
             if (response == null)
                 return "No response from server.";

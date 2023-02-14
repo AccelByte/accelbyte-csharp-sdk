@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","publicgetmessages")]
-    public class PublicGetMessagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "publicgetmessages")]
+    public class PublicGetMessagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "PublicGetMessages"; } }
+        public string OperationName { get { return "PublicGetMessages"; } }
 
         public PublicGetMessagesCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.LobbyOperations wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.LobbyOperations(_SDK);
 
             PublicGetMessages operation = new PublicGetMessages(
-            );            
-            
+            );
+
             List<AccelByte.Sdk.Api.Lobby.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

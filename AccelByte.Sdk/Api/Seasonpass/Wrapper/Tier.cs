@@ -48,13 +48,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             get { return Operation.GrantUserTier.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.TierPagingSlicedResult? QueryTiers(QueryTiers input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -72,15 +72,16 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteTier(DeleteTier input) {
+        public void DeleteTier(DeleteTier input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -89,7 +90,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -98,7 +99,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -107,7 +108,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

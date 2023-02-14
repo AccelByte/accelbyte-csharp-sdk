@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","admingetcontent")]
-    public class AdminGetContentCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "admingetcontent")]
+    public class AdminGetContentCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminGetContent"; } }
+        public string OperationName { get { return "AdminGetContent"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminGetContent operation = new AdminGetContent(
-                Namespace,                
-                UserId,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                UserId,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedContentDownloadResponse? response = wrapper.AdminGetContent(operation);
             if (response == null)
                 return "No response from server.";

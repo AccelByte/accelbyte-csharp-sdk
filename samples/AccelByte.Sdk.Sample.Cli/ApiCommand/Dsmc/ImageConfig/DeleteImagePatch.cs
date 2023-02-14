@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deleteimagepatch")]
-    public class DeleteImagePatchCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deleteimagepatch")]
+    public class DeleteImagePatchCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeleteImagePatch"; } }
+        public string OperationName { get { return "DeleteImagePatch"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
 
             DeleteImagePatch operation = new DeleteImagePatch(
-                Namespace,                
-                ImageURI,                
-                Version,                
-                VersionPatch                
-            );            
-            
+                Namespace,
+                ImageURI,
+                Version,
+                VersionPatch
+            );
+
             wrapper.DeleteImagePatch(operation);
             return String.Empty;
         }

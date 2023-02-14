@@ -81,6 +81,8 @@
 ### Rule-Sets Wrapper:  [RuleSets](../../AccelByte.Sdk/Api/Match2/Wrapper/RuleSets.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/match2/v1/namespaces/{namespace}/rulesets/{ruleset}` | GET | RuleSetDetails | [RuleSetDetails](../../AccelByte.Sdk/Api/Match2/Operation/RuleSets/RuleSetDetails.cs) | [RuleSetDetails](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/RuleSets/RuleSetDetails.cs) |
+| `/match2/v1/namespaces/{namespace}/rulesets/{ruleset}` | PUT | UpdateRuleSet | [UpdateRuleSet](../../AccelByte.Sdk/Api/Match2/Operation/RuleSets/UpdateRuleSet.cs) | [UpdateRuleSet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/RuleSets/UpdateRuleSet.cs) |
 
 
 &nbsp;  
@@ -102,8 +104,6 @@
 | `api.MatchFunctionRequest` | [ApiMatchFunctionRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchFunctionRequest.cs) |
 | `api.MatchPool` | [ApiMatchPool](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchPool.cs) |
 | `api.MatchPoolConfig` | [ApiMatchPoolConfig](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchPoolConfig.cs) |
-| `api.MatchRuleSet` | [ApiMatchRuleSet](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchRuleSet.cs) |
-| `api.MatchRuleSetData` | [ApiMatchRuleSetData](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchRuleSetData.cs) |
 | `api.MatchRuleSetNameData` | [ApiMatchRuleSetNameData](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchRuleSetNameData.cs) |
 | `api.MatchTicketRequest` | [ApiMatchTicketRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketRequest.cs) |
 | `api.MatchTicketResponse` | [ApiMatchTicketResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketResponse.cs) |
@@ -111,6 +111,7 @@
 | `api.Party` | [ApiParty](../../AccelByte.Sdk/Api/Match2/Model/ApiParty.cs) |
 | `api.PlayerData` | [ApiPlayerData](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerData.cs) |
 | `api.ProposedProposal` | [ApiProposedProposal](../../AccelByte.Sdk/Api/Match2/Model/ApiProposedProposal.cs) |
+| `api.RuleSetPayload` | [ApiRuleSetPayload](../../AccelByte.Sdk/Api/Match2/Model/ApiRuleSetPayload.cs) |
 | `api.Team` | [ApiTeam](../../AccelByte.Sdk/Api/Match2/Model/ApiTeam.cs) |
 | `api.Ticket` | [ApiTicket](../../AccelByte.Sdk/Api/Match2/Model/ApiTicket.cs) |
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |

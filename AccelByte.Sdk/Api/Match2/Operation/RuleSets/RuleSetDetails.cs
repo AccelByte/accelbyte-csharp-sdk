@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
             )
             {
                 RuleSetDetails op = new RuleSetDetails(this,
-                    namespace_,                    
-                    ruleset                    
+                    namespace_,
+                    ruleset
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleset"] = ruleset;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RuleSetDetails(
-            string namespace_,            
-            string ruleset            
+            string namespace_,
+            string ruleset
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleset"] = ruleset;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,24 +102,43 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
-        public Model.ApiMatchRuleSet? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+
+        public Model.ApiRuleSetPayload? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApiMatchRuleSet>(payload);
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiMatchRuleSet>(payload);
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
+            throw new HttpResponseException(code, payloadString);
+        }
+
+        public Model.ApiRuleSetPayload<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        {
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload<T1>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ApiRuleSetPayload<T1>>(payload);
+            }
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

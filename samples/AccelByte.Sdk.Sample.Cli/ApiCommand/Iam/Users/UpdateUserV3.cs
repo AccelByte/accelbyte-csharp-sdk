@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","updateuserv3")]
-    public class UpdateUserV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "updateuserv3")]
+    public class UpdateUserV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "UpdateUserV3"; } }
+        public string OperationName { get { return "UpdateUserV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserUpdateRequestV3 Body { get; set; } = new ModelUserUpdateRequestV3();
-                
+
         public UpdateUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             UpdateUserV3 operation = new UpdateUserV3(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelUserResponseV3? response = wrapper.UpdateUserV3(operation);
             if (response == null)
                 return "No response from server.";

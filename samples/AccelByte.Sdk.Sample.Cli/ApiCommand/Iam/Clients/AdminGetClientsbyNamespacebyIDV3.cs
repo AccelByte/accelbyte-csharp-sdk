@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetclientsbynamespacebyidv3")]
-    public class AdminGetClientsbyNamespacebyIDV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetclientsbynamespacebyidv3")]
+    public class AdminGetClientsbyNamespacebyIDV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetClientsbyNamespacebyIDV3"; } }
+        public string OperationName { get { return "AdminGetClientsbyNamespacebyIDV3"; } }
 
         [SdkCommandArgument("clientId")]
         public string ClientId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
             AdminGetClientsbyNamespacebyIDV3 operation = new AdminGetClientsbyNamespacebyIDV3(
-                ClientId,                
-                Namespace                
-            );            
-            
+                ClientId,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientV3Response? response = wrapper.AdminGetClientsbyNamespacebyIDV3(operation);
             if (response == null)
                 return "No response from server.";

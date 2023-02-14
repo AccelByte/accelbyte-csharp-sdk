@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 CreateStat1 op = new CreateStat1(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,31 +70,31 @@ namespace AccelByte.Sdk.Api.Social.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateStat1(
-            string namespace_,            
-            Model.StatCreate body            
+            string namespace_,
+            Model.StatCreate body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,9 +109,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.StatInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.StatInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

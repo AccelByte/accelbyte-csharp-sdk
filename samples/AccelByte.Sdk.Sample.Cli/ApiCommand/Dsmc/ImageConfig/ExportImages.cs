@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","exportimages")]
-    public class ExportImagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "exportimages")]
+    public class ExportImagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ExportImages"; } }
+        public string OperationName { get { return "ExportImages"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
 
             ExportImages operation = new ExportImages(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             List<AccelByte.Sdk.Api.Dsmc.Model.ModelsImageRecord>? response = wrapper.ExportImages(operation);
             if (response == null)
                 return "No response from server.";

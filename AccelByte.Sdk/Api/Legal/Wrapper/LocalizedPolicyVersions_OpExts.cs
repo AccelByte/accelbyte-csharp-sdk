@@ -79,15 +79,15 @@ namespace AccelByte.Sdk.Api
             ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicy(op);
         }
         public static Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse? Execute(
-            this RetrieveSingleLocalizedPolicyVersion1.RetrieveSingleLocalizedPolicyVersion1Builder builder,
+            this RetrieveSingleLocalizedPolicyVersion2.RetrieveSingleLocalizedPolicyVersion2Builder builder,
             string localizedPolicyVersionId
         )
         {
-            RetrieveSingleLocalizedPolicyVersion1 op = builder.Build(
+            RetrieveSingleLocalizedPolicyVersion2 op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion1(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion2(op);
         }
     }
 }

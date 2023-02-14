@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
             get { return Operation.UpdatePlayTimeWeight.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsUpdatePlayerPlaytimeWeightResponse? UpdatePlayTimeWeight(UpdatePlayTimeWeight input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

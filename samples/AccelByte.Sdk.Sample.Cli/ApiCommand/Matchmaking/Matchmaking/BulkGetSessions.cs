@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","bulkgetsessions")]
-    public class BulkGetSessionsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "bulkgetsessions")]
+    public class BulkGetSessionsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "BulkGetSessions"; } }
+        public string OperationName { get { return "BulkGetSessions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             BulkGetSessions operation = new BulkGetSessions(
-                Namespace,                
-                MatchIDs                
-            );            
-            
+                Namespace,
+                MatchIDs
+            );
+
             List<AccelByte.Sdk.Api.Matchmaking.Model.ModelsMatchmakingResult>? response = wrapper.BulkGetSessions(operation);
             if (response == null)
                 return "No response from server.";

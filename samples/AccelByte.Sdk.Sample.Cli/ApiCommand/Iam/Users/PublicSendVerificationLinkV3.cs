@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicsendverificationlinkv3")]
-    public class PublicSendVerificationLinkV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicsendverificationlinkv3")]
+    public class PublicSendVerificationLinkV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicSendVerificationLinkV3"; } }
+        public string OperationName { get { return "PublicSendVerificationLinkV3"; } }
 
         [SdkCommandData("body")]
         public ModelSendVerificationLinkRequest Body { get; set; } = new ModelSendVerificationLinkRequest();
-                
+
         public PublicSendVerificationLinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicSendVerificationLinkV3 operation = new PublicSendVerificationLinkV3(
-                Body                
-            );            
-            
+                Body
+            );
+
             wrapper.PublicSendVerificationLinkV3(operation);
             return String.Empty;
         }

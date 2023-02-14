@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatecategory")]
-    public class UpdateCategoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatecategory")]
+    public class UpdateCategoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateCategory"; } }
+        public string OperationName { get { return "UpdateCategory"; } }
 
         [SdkCommandArgument("categoryPath")]
         public string CategoryPath { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public CategoryUpdate Body { get; set; } = new CategoryUpdate();
-                
+
         public UpdateCategoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
 
             UpdateCategory operation = new UpdateCategory(
-                CategoryPath,                
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                CategoryPath,
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullCategoryInfo? response = wrapper.UpdateCategory(operation);
             if (response == null)
                 return "No response from server.";

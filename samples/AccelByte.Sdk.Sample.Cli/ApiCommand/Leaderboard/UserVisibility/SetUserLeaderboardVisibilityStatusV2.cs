@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard","setuserleaderboardvisibilitystatusv2")]
-    public class SetUserLeaderboardVisibilityStatusV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "setuserleaderboardvisibilitystatusv2")]
+    public class SetUserLeaderboardVisibilityStatusV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Leaderboard"; } }
+        public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName{ get { return "SetUserLeaderboardVisibilityStatusV2"; } }
+        public string OperationName { get { return "SetUserLeaderboardVisibilityStatusV2"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 
         [SdkCommandData("body")]
         public ModelsSetUserVisibilityRequest Body { get; set; } = new ModelsSetUserVisibilityRequest();
-                
+
         public SetUserLeaderboardVisibilityStatusV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.UserVisibility wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.UserVisibility(_SDK);
 
             SetUserLeaderboardVisibilityStatusV2 operation = new SetUserLeaderboardVisibilityStatusV2(
-                LeaderboardCode,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                LeaderboardCode,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetUserVisibilityResponse? response = wrapper.SetUserLeaderboardVisibilityStatusV2(operation);
             if (response == null)
                 return "No response from server.";

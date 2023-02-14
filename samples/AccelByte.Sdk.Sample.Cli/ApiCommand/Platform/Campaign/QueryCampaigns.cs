@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","querycampaigns")]
-    public class QueryCampaignsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "querycampaigns")]
+    public class QueryCampaignsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryCampaigns"; } }
+        public string OperationName { get { return "QueryCampaigns"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             QueryCampaigns operation = new QueryCampaigns(
-                Namespace,                
-                Limit,                
-                Name,                
-                Offset,                
-                Tag                
-            );            
-            
+                Namespace,
+                Limit,
+                Name,
+                Offset,
+                Tag
+            );
+
             AccelByte.Sdk.Api.Platform.Model.CampaignPagingSlicedResult? response = wrapper.QueryCampaigns(operation);
             if (response == null)
                 return "No response from server.";

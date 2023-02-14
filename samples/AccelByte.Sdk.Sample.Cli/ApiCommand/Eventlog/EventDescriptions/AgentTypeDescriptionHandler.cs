@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","agenttypedescriptionhandler")]
-    public class AgentTypeDescriptionHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog", "agenttypedescriptionhandler")]
+    public class AgentTypeDescriptionHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Eventlog"; } }
+        public string ServiceName { get { return "Eventlog"; } }
 
-        public string OperationName{ get { return "AgentTypeDescriptionHandler"; } }
+        public string OperationName { get { return "AgentTypeDescriptionHandler"; } }
 
         public AgentTypeDescriptionHandlerCommand(AccelByteSDK sdk)
         {
@@ -36,18 +36,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventDescriptions wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventDescriptions(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             AgentTypeDescriptionHandler operation = new AgentTypeDescriptionHandler(
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsMultipleAgentType? response = wrapper.AgentTypeDescriptionHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

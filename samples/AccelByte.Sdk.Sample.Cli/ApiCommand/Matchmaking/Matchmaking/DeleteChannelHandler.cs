@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Matchmaking.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
 {
-    [SdkConsoleCommand("matchmaking","deletechannelhandler")]
-    public class DeleteChannelHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("matchmaking", "deletechannelhandler")]
+    public class DeleteChannelHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Matchmaking"; } }
+        public string ServiceName { get { return "Matchmaking"; } }
 
-        public string OperationName{ get { return "DeleteChannelHandler"; } }
+        public string OperationName { get { return "DeleteChannelHandler"; } }
 
         [SdkCommandArgument("channel")]
         public string Channel { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
             DeleteChannelHandler operation = new DeleteChannelHandler(
-                Channel,                
-                Namespace                
-            );            
-            
+                Channel,
+                Namespace
+            );
+
             wrapper.DeleteChannelHandler(operation);
             return String.Empty;
         }

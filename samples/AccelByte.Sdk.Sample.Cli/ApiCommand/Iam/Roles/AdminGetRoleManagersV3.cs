@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admingetrolemanagersv3")]
-    public class AdminGetRoleManagersV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admingetrolemanagersv3")]
+    public class AdminGetRoleManagersV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminGetRoleManagersV3"; } }
+        public string OperationName { get { return "AdminGetRoleManagersV3"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
             AdminGetRoleManagersV3 operation = new AdminGetRoleManagersV3(
-                RoleId,                
-                After,                
-                Before,                
-                Limit                
-            );            
-            
+                RoleId,
+                After,
+                Before,
+                Limit
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelRoleManagersResponsesV3? response = wrapper.AdminGetRoleManagersV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicfulfillgoogleiapitem")]
-    public class PublicFulfillGoogleIAPItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicfulfillgoogleiapitem")]
+    public class PublicFulfillGoogleIAPItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicFulfillGoogleIAPItem"; } }
+        public string OperationName { get { return "PublicFulfillGoogleIAPItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public GoogleIAPReceipt Body { get; set; } = new GoogleIAPReceipt();
-                
+
         public PublicFulfillGoogleIAPItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             PublicFulfillGoogleIAPItem operation = new PublicFulfillGoogleIAPItem(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.GoogleReceiptResolveResult? response = wrapper.PublicFulfillGoogleIAPItem(operation);
             if (response == null)
                 return "No response from server.";

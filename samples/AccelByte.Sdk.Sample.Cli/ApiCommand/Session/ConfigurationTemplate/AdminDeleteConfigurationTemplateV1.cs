@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","admindeleteconfigurationtemplatev1")]
-    public class AdminDeleteConfigurationTemplateV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "admindeleteconfigurationtemplatev1")]
+    public class AdminDeleteConfigurationTemplateV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "AdminDeleteConfigurationTemplateV1"; } }
+        public string OperationName { get { return "AdminDeleteConfigurationTemplateV1"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminDeleteConfigurationTemplateV1 operation = new AdminDeleteConfigurationTemplateV1(
-                Name,                
-                Namespace                
-            );            
-            
+                Name,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Session.Model.ResponseError? response = wrapper.AdminDeleteConfigurationTemplateV1(operation);
             if (response == null)
                 return "No response from server.";

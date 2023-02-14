@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","grantdaystosubscription")]
-    public class GrantDaysToSubscriptionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "grantdaystosubscription")]
+    public class GrantDaysToSubscriptionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GrantDaysToSubscription"; } }
+        public string OperationName { get { return "GrantDaysToSubscription"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public GrantSubscriptionDaysRequest Body { get; set; } = new GrantSubscriptionDaysRequest();
-                
+
         public GrantDaysToSubscriptionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             GrantDaysToSubscription operation = new GrantDaysToSubscription(
-                Namespace,                
-                SubscriptionId,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                SubscriptionId,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.SubscriptionInfo? response = wrapper.GrantDaysToSubscription(operation);
             if (response == null)
                 return "No response from server.";

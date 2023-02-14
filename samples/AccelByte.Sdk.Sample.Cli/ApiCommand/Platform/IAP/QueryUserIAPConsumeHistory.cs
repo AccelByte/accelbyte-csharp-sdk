@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryuseriapconsumehistory")]
-    public class QueryUserIAPConsumeHistoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryuseriapconsumehistory")]
+    public class QueryUserIAPConsumeHistoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryUserIAPConsumeHistory"; } }
+        public string OperationName { get { return "QueryUserIAPConsumeHistory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -61,16 +61,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             QueryUserIAPConsumeHistory operation = new QueryUserIAPConsumeHistory(
-                Namespace,                
-                UserId,                
-                EndTime,                
-                Limit,                
-                Offset,                
-                StartTime,                
-                (Status is null ? null : QueryUserIAPConsumeHistoryStatus.NewValue(Status)),                
-                (Type is null ? null : QueryUserIAPConsumeHistoryType.NewValue(Type))                
-            );            
-            
+                Namespace,
+                UserId,
+                EndTime,
+                Limit,
+                Offset,
+                StartTime,
+                (Status is null ? null : QueryUserIAPConsumeHistoryStatus.NewValue(Status)),
+                (Type is null ? null : QueryUserIAPConsumeHistoryType.NewValue(Type))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.IAPConsumeHistoryPagingSlicedResult? response = wrapper.QueryUserIAPConsumeHistory(operation);
             if (response == null)
                 return "No response from server.";

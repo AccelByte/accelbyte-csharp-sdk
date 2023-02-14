@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deletestore")]
-    public class DeleteStoreCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deletestore")]
+    public class DeleteStoreCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteStore"; } }
+        public string OperationName { get { return "DeleteStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             DeleteStore operation = new DeleteStore(
-                Namespace,                
-                StoreId                
-            );            
-            
+                Namespace,
+                StoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.DeleteStore(operation);
             if (response == null)
                 return "No response from server.";

@@ -67,8 +67,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminGenerateReportV4 op = new AdminGenerateReportV4(this,
-                    namespace_,                    
-                    deviceType                    
+                    namespace_,
+                    deviceType
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -82,37 +82,37 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
             if (deviceType is not null) QueryParams["deviceType"] = deviceType;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGenerateReportV4(
-            string namespace_,            
-            string? endDate,            
-            string? startDate,            
-            string deviceType            
+            string namespace_,
+            string? endDate,
+            string? startDate,
+            string deviceType
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
             if (deviceType is not null) QueryParams["deviceType"] = deviceType;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -127,16 +127,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

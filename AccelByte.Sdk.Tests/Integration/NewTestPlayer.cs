@@ -47,10 +47,10 @@ namespace AccelByte.Sdk.Tests.Integration
         /// </summary>
         /// <param name="sdkClient">AccelByteSDK object with necessary access and permission to create a user.</param>
         /// <param name="deleteOnLogout">Set true to delete the created user on logout.</param>
-        public NewTestPlayer(AccelByteSDK sdkClient,bool deleteOnLogout)
+        public NewTestPlayer(AccelByteSDK sdkClient, bool deleteOnLogout)
         {
             _DeleteOnLogout = deleteOnLogout;
-            _SdkClient = sdkClient;            
+            _SdkClient = sdkClient;
 
             _UserName = ("csharpsdk_" + Helper.GenerateRandomId(8));
             string user_password = Helper.GenerateRandomPassword(10);
@@ -68,7 +68,7 @@ namespace AccelByte.Sdk.Tests.Integration
             };
 
             AccountCreateUserResponseV4? cuResp = sdkClient.Iam.UsersV4.PublicCreateUserV4Op
-                .Execute(newUser, sdkClient.Namespace);            
+                .Execute(newUser, sdkClient.Namespace);
             if (cuResp != null)
                 UserId = cuResp.UserId!;
 

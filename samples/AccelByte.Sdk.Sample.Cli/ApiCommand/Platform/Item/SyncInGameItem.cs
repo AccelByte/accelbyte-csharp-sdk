@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","syncingameitem")]
-    public class SyncInGameItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "syncingameitem")]
+    public class SyncInGameItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SyncInGameItem"; } }
+        public string OperationName { get { return "SyncInGameItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public InGameItemSync Body { get; set; } = new InGameItemSync();
-                
+
         public SyncInGameItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             SyncInGameItem operation = new SyncInGameItem(
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.SyncInGameItem(operation);
             if (response == null)
                 return "No response from server.";

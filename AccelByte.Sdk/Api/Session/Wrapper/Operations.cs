@@ -28,20 +28,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
             get { return Operation.GetHealthcheckInfoV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void GetHealthcheckInfo(GetHealthcheckInfo input) {
+
+        public void GetHealthcheckInfo(GetHealthcheckInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void GetHealthcheckInfoV1(GetHealthcheckInfoV1 input) {
+        public void GetHealthcheckInfoV1(GetHealthcheckInfoV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

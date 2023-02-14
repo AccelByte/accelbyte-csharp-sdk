@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","deletetemplatelocalizationv1admin")]
-    public class DeleteTemplateLocalizationV1AdminCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "deletetemplatelocalizationv1admin")]
+    public class DeleteTemplateLocalizationV1AdminCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "DeleteTemplateLocalizationV1Admin"; } }
+        public string OperationName { get { return "DeleteTemplateLocalizationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             DeleteTemplateLocalizationV1Admin operation = new DeleteTemplateLocalizationV1Admin(
-                Namespace,                
-                TemplateLanguage,                
-                TemplateSlug                
-            );            
-            
+                Namespace,
+                TemplateLanguage,
+                TemplateSlug
+            );
+
             wrapper.DeleteTemplateLocalizationV1Admin(operation);
             return String.Empty;
         }

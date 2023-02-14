@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","admingetallconfigv1")]
-    public class AdminGetAllConfigV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "admingetallconfigv1")]
+    public class AdminGetAllConfigV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "AdminGetAllConfigV1"; } }
+        public string OperationName { get { return "AdminGetAllConfigV1"; } }
 
         public AdminGetAllConfigV1Command(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Config(_SDK);
 
             AdminGetAllConfigV1 operation = new AdminGetAllConfigV1(
-            );            
-            
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelsConfigList? response = wrapper.AdminGetAllConfigV1(operation);
             if (response == null)
                 return "No response from server.";

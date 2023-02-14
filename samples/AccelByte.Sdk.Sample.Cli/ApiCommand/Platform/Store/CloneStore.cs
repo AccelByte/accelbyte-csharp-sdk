@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","clonestore")]
-    public class CloneStoreCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "clonestore")]
+    public class CloneStoreCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "CloneStore"; } }
+        public string OperationName { get { return "CloneStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             CloneStore operation = new CloneStore(
-                Namespace,                
-                StoreId,                
-                TargetStoreId                
-            );            
-            
+                Namespace,
+                StoreId,
+                TargetStoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.CloneStore(operation);
             if (response == null)
                 return "No response from server.";

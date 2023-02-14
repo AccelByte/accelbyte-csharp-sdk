@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.GetTag.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsPaginatedGetTagResponse? GetTag(GetTag input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

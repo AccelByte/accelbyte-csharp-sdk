@@ -56,8 +56,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetCode op = new GetCode(this,
-                    code,                    
-                    namespace_                    
+                    code,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,33 +72,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["code"] = code;
             PathParams["namespace"] = namespace_;
-            
-            if (builder.Redeemable != null) QueryParams["redeemable"] = Convert.ToString(builder.Redeemable)!;
-            
 
-            
-            
-            
+            if (builder.Redeemable != null) QueryParams["redeemable"] = Convert.ToString(builder.Redeemable)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetCode(
-            string code,            
-            string namespace_,            
-            bool? redeemable            
+            string code,
+            string namespace_,
+            bool? redeemable
         )
         {
             PathParams["code"] = code;
             PathParams["namespace"] = namespace_;
-            
-            if (redeemable != null) QueryParams["redeemable"] = Convert.ToString(redeemable)!;
-            
 
-            
-            
-            
+            if (redeemable != null) QueryParams["redeemable"] = Convert.ToString(redeemable)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,15 +107,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.CodeInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -128,9 +128,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.CodeInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 1. My account should be full account
     /// 2. My account not linked to request headless account's third platform.
+    /// 
+    /// After client resolving the conflict, it will call endpoint /iam/v3/public/users/me/headless/linkWithProgression [POST]
     /// </summary>
     public class PublicGetLinkHeadlessAccountToMyAccountConflictV3 : AccelByte.Sdk.Core.Operation
     {
@@ -46,7 +48,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PublicGetLinkHeadlessAccountToMyAccountConflictV3 op = new PublicGetLinkHeadlessAccountToMyAccountConflictV3(this,
-                    oneTimeLinkCode                    
+                    oneTimeLinkCode
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -58,29 +60,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string oneTimeLinkCode
         )
         {
-            
-            if (oneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = oneTimeLinkCode;
-            
 
-            
-            
-            
+            if (oneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = oneTimeLinkCode;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetLinkHeadlessAccountToMyAccountConflictV3(
-            string oneTimeLinkCode            
+            string oneTimeLinkCode
         )
         {
-            
-            if (oneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = oneTimeLinkCode;
-            
 
-            
-            
-            
+            if (oneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = oneTimeLinkCode;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -89,15 +91,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelGetLinkHeadlessAccountConflictResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -110,9 +112,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelGetLinkHeadlessAccountConflictResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

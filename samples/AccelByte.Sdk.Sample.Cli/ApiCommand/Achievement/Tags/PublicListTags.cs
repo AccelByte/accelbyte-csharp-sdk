@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement","publiclisttags")]
-    public class PublicListTagsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("achievement", "publiclisttags")]
+    public class PublicListTagsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Achievement"; } }
+        public string ServiceName { get { return "Achievement"; } }
 
-        public string OperationName{ get { return "PublicListTags"; } }
+        public string OperationName { get { return "PublicListTags"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Tags wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Tags(_SDK);
 
             PublicListTags operation = new PublicListTags(
-                Namespace,                
-                Limit,                
-                Name,                
-                Offset,                
-                SortBy                
-            );            
-            
+                Namespace,
+                Limit,
+                Name,
+                Offset,
+                SortBy
+            );
+
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedTagResponse? response = wrapper.PublicListTags(operation);
             if (response == null)
                 return "No response from server.";

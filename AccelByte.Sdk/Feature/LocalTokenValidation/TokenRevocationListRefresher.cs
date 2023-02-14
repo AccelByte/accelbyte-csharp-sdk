@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
 
         private Timer _Timer;
 
-        private int _RefreshInterval;        
+        private int _RefreshInterval;
 
         private void _TimerCallback(object? state)
         {

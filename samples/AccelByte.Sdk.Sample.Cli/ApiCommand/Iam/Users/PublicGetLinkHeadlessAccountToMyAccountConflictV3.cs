@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publicgetlinkheadlessaccounttomyaccountconflictv3")]
-    public class PublicGetLinkHeadlessAccountToMyAccountConflictV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgetlinkheadlessaccounttomyaccountconflictv3")]
+    public class PublicGetLinkHeadlessAccountToMyAccountConflictV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicGetLinkHeadlessAccountToMyAccountConflictV3"; } }
+        public string OperationName { get { return "PublicGetLinkHeadlessAccountToMyAccountConflictV3"; } }
 
         [SdkCommandArgument("oneTimeLinkCode")]
         public string OneTimeLinkCode { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicGetLinkHeadlessAccountToMyAccountConflictV3 operation = new PublicGetLinkHeadlessAccountToMyAccountConflictV3(
-                OneTimeLinkCode                
-            );            
-            
+                OneTimeLinkCode
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelGetLinkHeadlessAccountConflictResponse? response = wrapper.PublicGetLinkHeadlessAccountToMyAccountConflictV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","rulesetdetails")]
-    public class RuleSetDetailsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "rulesetdetails")]
+    public class RuleSetDetailsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "RuleSetDetails"; } }
+        public string OperationName { get { return "RuleSetDetails"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,11 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.RuleSets wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.RuleSets(_SDK);
 
             RuleSetDetails operation = new RuleSetDetails(
-                Namespace,                
-                Ruleset                
-            );            
-            
-            AccelByte.Sdk.Api.Match2.Model.ApiMatchRuleSet? response = wrapper.RuleSetDetails(operation);
+                Namespace,
+                Ruleset
+            );
+
+            AccelByte.Sdk.Api.Match2.Model.ApiRuleSetPayload? response = wrapper.RuleSetDetails(operation);
             if (response == null)
                 return "No response from server.";
 

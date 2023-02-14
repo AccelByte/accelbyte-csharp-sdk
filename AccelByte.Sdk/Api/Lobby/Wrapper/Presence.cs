@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.UsersPresenceHandlerV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.HandlersGetUsersPresenceResponse? UsersPresenceHandlerV1(UsersPresenceHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

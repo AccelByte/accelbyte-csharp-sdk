@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class IamUsers_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserCreateResponse? Execute(
             this CreateUser.CreateUserBuilder builder,
             ModelUserCreateRequest body,
@@ -26,7 +26,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).CreateUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetAdminUsersResponse? Execute(
             this GetAdminUsersByRoleID.GetAdminUsersByRoleIDBuilder builder,
             string namespace_
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetAdminUsersByRoleID(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUserResponse? Execute(
             this GetUserByLoginID.GetUserByLoginIDBuilder builder,
             string namespace_
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByLoginID(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUserResponse? Execute(
             this GetUserByPlatformUserID.GetUserByPlatformUserIDBuilder builder,
             string namespace_,
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByPlatformUserID(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ForgotPassword.ForgotPasswordBuilder builder,
             ModelSendVerificationCodeRequest body,
@@ -80,7 +80,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ForgotPassword(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelPublicUsersResponse? Execute(
             this GetUsersByLoginIds.GetUsersByLoginIdsBuilder builder,
             string namespace_
@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUsersByLoginIds(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ResetPassword.ResetPasswordBuilder builder,
             ModelResetPasswordRequest body,
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ResetPassword(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelSearchUsersResponse? Execute(
             this SearchUser.SearchUserBuilder builder,
             string namespace_
@@ -118,7 +118,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).SearchUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this GetUserByUserID.GetUserByUserIDBuilder builder,
             string namespace_,
@@ -132,7 +132,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserByUserID(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpdateUser.UpdateUserBuilder builder,
             ModelUserUpdateRequest body,
@@ -148,7 +148,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpdateUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUser.DeleteUserBuilder builder,
             string namespace_,
@@ -162,7 +162,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this BanUser.BanUserBuilder builder,
             ModelBanCreateRequest body,
@@ -178,7 +178,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).BanUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this GetUserBanHistory.GetUserBanHistoryBuilder builder,
             string namespace_,
@@ -192,7 +192,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserBanHistory(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this DisableUserBan.DisableUserBanBuilder builder,
             string banId,
@@ -208,7 +208,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).DisableUserBan(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this EnableUserBan.EnableUserBanBuilder builder,
             string banId,
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).EnableUserBan(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this ListCrossNamespaceAccountLink.ListCrossNamespaceAccountLinkBuilder builder,
             string linkingToken,
@@ -240,7 +240,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ListCrossNamespaceAccountLink(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DisableUser.DisableUserBuilder builder,
             ModelDisableUserRequest body,
@@ -256,7 +256,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DisableUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this EnableUser.EnableUserBuilder builder,
             string namespace_,
@@ -270,7 +270,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).EnableUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserInformation? Execute(
             this GetUserInformation.GetUserInformationBuilder builder,
             string namespace_,
@@ -284,7 +284,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserInformation(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserInformation.DeleteUserInformationBuilder builder,
             string namespace_,
@@ -298,7 +298,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserInformation(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelLoginHistoriesResponse? Execute(
             this GetUserLoginHistories.GetUserLoginHistoriesBuilder builder,
             string namespace_,
@@ -312,7 +312,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserLoginHistories(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdatePassword.UpdatePasswordBuilder builder,
             ModelUserPasswordUpdateRequest body,
@@ -328,7 +328,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).UpdatePassword(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveUserPermission.SaveUserPermissionBuilder builder,
             AccountcommonPermissions body,
@@ -344,7 +344,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SaveUserPermission(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddUserPermission.AddUserPermissionBuilder builder,
             ModelUpdatePermissionScheduleRequest body,
@@ -364,7 +364,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AddUserPermission(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserPermission.DeleteUserPermissionBuilder builder,
             long action,
@@ -382,7 +382,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserPermission(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.AccountcommonUserLinkedPlatform>? Execute(
             this GetUserPlatformAccounts.GetUserPlatformAccountsBuilder builder,
             string namespace_,
@@ -396,7 +396,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserPlatformAccounts(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetUserMapping? Execute(
             this GetUserMapping.GetUserMappingBuilder builder,
             string namespace_,
@@ -412,7 +412,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserMapping(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetUserJusticePlatformAccountResponse? Execute(
             this GetUserJusticePlatformAccount.GetUserJusticePlatformAccountBuilder builder,
             string namespace_,
@@ -428,7 +428,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetUserJusticePlatformAccount(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformLink.PlatformLinkBuilder builder,
             string ticket,
@@ -446,7 +446,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PlatformLink(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PlatformUnlink.PlatformUnlinkBuilder builder,
             string namespace_,
@@ -462,7 +462,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PlatformUnlink(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelGetPublisherUserResponse? Execute(
             this GetPublisherUser.GetPublisherUserBuilder builder,
             string namespace_,
@@ -476,7 +476,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetPublisherUser(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveUserRoles.SaveUserRolesBuilder builder,
             List<string> body,
@@ -492,7 +492,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SaveUserRoles(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddUserRole.AddUserRoleBuilder builder,
             string namespace_,
@@ -508,7 +508,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AddUserRole(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserRole.DeleteUserRoleBuilder builder,
             string namespace_,
@@ -524,7 +524,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).DeleteUserRole(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccount.UpgradeHeadlessAccountBuilder builder,
             ModelUpgradeHeadlessAccountRequest body,
@@ -540,7 +540,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpgradeHeadlessAccount(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this UpgradeHeadlessAccountWithVerificationCode.UpgradeHeadlessAccountWithVerificationCodeBuilder builder,
             ModelUpgradeHeadlessAccountWithVerificationCodeRequest body,
@@ -556,7 +556,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpgradeHeadlessAccountWithVerificationCode(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UserVerification.UserVerificationBuilder builder,
             ModelUserVerificationRequest body,
@@ -572,7 +572,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).UserVerification(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SendVerificationCode.SendVerificationCodeBuilder builder,
             ModelSendVerificationCodeRequest body,
@@ -588,7 +588,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).SendVerificationCode(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelAgeRestrictionResponse? Execute(
             this AdminGetAgeRestrictionStatusV2.AdminGetAgeRestrictionStatusV2Builder builder,
             string namespace_
@@ -600,7 +600,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetAgeRestrictionStatusV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelAgeRestrictionResponse? Execute(
             this AdminUpdateAgeRestrictionConfigV2.AdminUpdateAgeRestrictionConfigV2Builder builder,
             ModelAgeRestrictionRequest body,
@@ -614,7 +614,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateAgeRestrictionConfigV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.AccountcommonCountryAgeRestriction>? Execute(
             this GetListCountryAgeRestriction.GetListCountryAgeRestrictionBuilder builder,
             string namespace_
@@ -626,7 +626,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetListCountryAgeRestriction(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelCountry? Execute(
             this UpdateCountryAgeRestriction.UpdateCountryAgeRestrictionBuilder builder,
             ModelCountryAgeRestrictionRequest body,
@@ -642,7 +642,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).UpdateCountryAgeRestriction(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelSearchUsersByPlatformIDResponse? Execute(
             this AdminSearchUsersV2.AdminSearchUsersV2Builder builder,
             string namespace_,
@@ -656,7 +656,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSearchUsersV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this AdminGetUserByUserIdV2.AdminGetUserByUserIdV2Builder builder,
             string namespace_,
@@ -670,7 +670,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByUserIdV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this AdminUpdateUserV2.AdminUpdateUserV2Builder builder,
             ModelUserUpdateRequest body,
@@ -686,7 +686,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserBanResponse? Execute(
             this AdminBanUserV2.AdminBanUserV2Builder builder,
             ModelBanCreateRequest body,
@@ -702,7 +702,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBanUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this AdminGetUserBanV2.AdminGetUserBanV2Builder builder,
             string namespace_,
@@ -716,7 +716,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserBanV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDisableUserV2.AdminDisableUserV2Builder builder,
             ModelDisableUserRequest body,
@@ -732,7 +732,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDisableUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminEnableUserV2.AdminEnableUserV2Builder builder,
             string namespace_,
@@ -746,7 +746,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminEnableUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminResetPasswordV2.AdminResetPasswordV2Builder builder,
             ModelUserPasswordUpdateRequest body,
@@ -762,7 +762,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminResetPasswordV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeletePlatformLinkV2.AdminDeletePlatformLinkV2Builder builder,
             string namespace_,
@@ -778,7 +778,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeletePlatformLinkV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminPutUserRolesV2.AdminPutUserRolesV2Builder builder,
             List<string> body,
@@ -794,7 +794,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPutUserRolesV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminCreateUserRolesV2.AdminCreateUserRolesV2Builder builder,
             List<string> body,
@@ -810,7 +810,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminCreateUserRolesV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonCountry? Execute(
             this PublicGetCountryAgeRestriction.PublicGetCountryAgeRestrictionBuilder builder,
             string countryCode,
@@ -824,7 +824,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetCountryAgeRestriction(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserCreateResponse? Execute(
             this PublicCreateUserV2.PublicCreateUserV2Builder builder,
             ModelUserCreateRequest body,
@@ -838,7 +838,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicCreateUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicForgotPasswordV2.PublicForgotPasswordV2Builder builder,
             ModelSendVerificationCodeRequest body,
@@ -852,7 +852,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicResetPasswordV2.PublicResetPasswordV2Builder builder,
             ModelResetPasswordRequest body,
@@ -866,7 +866,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicResetPasswordV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponse? Execute(
             this PublicGetUserByUserIDV2.PublicGetUserByUserIDV2Builder builder,
             string namespace_,
@@ -880,7 +880,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByUserIDV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserResponse>? Execute(
             this PublicUpdateUserV2.PublicUpdateUserV2Builder builder,
             ModelUserUpdateRequest body,
@@ -896,7 +896,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpdateUserV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelUserBanResponse>? Execute(
             this PublicGetUserBan.PublicGetUserBanBuilder builder,
             string namespace_,
@@ -910,7 +910,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserBan(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicUpdatePasswordV2.PublicUpdatePasswordV2Builder builder,
             ModelUserPasswordUpdateRequest body,
@@ -926,7 +926,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicUpdatePasswordV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Iam.Model.ModelGetUserMapping>? Execute(
             this GetListJusticePlatformAccounts.GetListJusticePlatformAccountsBuilder builder,
             string namespace_,
@@ -940,7 +940,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).GetListJusticePlatformAccounts(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicPlatformLinkV2.PublicPlatformLinkV2Builder builder,
             string ticket,
@@ -958,7 +958,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformLinkV2(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicDeletePlatformLinkV2.PublicDeletePlatformLinkV2Builder builder,
             string namespace_,

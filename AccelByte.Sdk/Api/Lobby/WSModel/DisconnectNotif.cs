@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("connectionId")]
         [JsonPropertyName("connectionId")]
         public string? ConnectionId { get; set; }
-        
+
         [AwesomeProperty("namespace")]
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-        
+
     }
 }

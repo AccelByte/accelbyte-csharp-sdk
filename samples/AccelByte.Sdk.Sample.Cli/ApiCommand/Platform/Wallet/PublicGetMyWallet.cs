@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetmywallet")]
-    public class PublicGetMyWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetmywallet")]
+    public class PublicGetMyWalletCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetMyWallet"; } }
+        public string OperationName { get { return "PublicGetMyWallet"; } }
 
         [SdkCommandArgument("currencyCode")]
         public string CurrencyCode { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             PublicGetMyWallet operation = new PublicGetMyWallet(
-                CurrencyCode,                
-                Namespace                
-            );            
-            
+                CurrencyCode,
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PlatformWallet? response = wrapper.PublicGetMyWallet(operation);
             if (response == null)
                 return "No response from server.";

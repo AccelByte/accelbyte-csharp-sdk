@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 TokenRevocationV3 op = new TokenRevocationV3(this,
-                    token                    
+                    token
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,29 +63,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string token
         )
         {
-            
-            
+
+
             if (token is not null) FormParams["token"] = token;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
         public TokenRevocationV3(
-            string token            
+            string token
         )
         {
-            
-            
+
+
             if (token is not null) FormParams["token"] = token;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -100,16 +100,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

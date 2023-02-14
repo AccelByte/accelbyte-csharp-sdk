@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","deletexblapconfig")]
-    public class DeleteXblAPConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deletexblapconfig")]
+    public class DeleteXblAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "DeleteXblAPConfig"; } }
+        public string OperationName { get { return "DeleteXblAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             DeleteXblAPConfig operation = new DeleteXblAPConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteXblAPConfig(operation);
             return String.Empty;
         }

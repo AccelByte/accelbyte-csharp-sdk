@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","matchpooldetails")]
-    public class MatchPoolDetailsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "matchpooldetails")]
+    public class MatchPoolDetailsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "MatchPoolDetails"; } }
+        public string OperationName { get { return "MatchPoolDetails"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchPools wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchPools(_SDK);
 
             MatchPoolDetails operation = new MatchPoolDetails(
-                Namespace,                
-                Pool                
-            );            
-            
+                Namespace,
+                Pool
+            );
+
             AccelByte.Sdk.Api.Match2.Model.ApiMatchPool? response = wrapper.MatchPoolDetails(operation);
             if (response == null)
                 return "No response from server.";

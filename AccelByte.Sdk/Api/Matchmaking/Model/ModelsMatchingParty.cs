@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("party_members")]
         public List<ModelsPartyMember>? PartyMembers { get; set; }
 
+        [JsonPropertyName("ticket_created_at")]
+        public long? TicketCreatedAt { get; set; }
+
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }
 
@@ -39,6 +42,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 
         [JsonPropertyName("party_members")]
         public List<ModelsPartyMember>? PartyMembers { get; set; }
+
+        [JsonPropertyName("ticket_created_at")]
+        public long? TicketCreatedAt { get; set; }
 
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }

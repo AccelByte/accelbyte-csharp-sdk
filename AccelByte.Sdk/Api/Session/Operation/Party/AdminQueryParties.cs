@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 AdminQueryParties op = new AdminQueryParties(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -136,7 +136,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
             if (builder.Key is not null) QueryParams["key"] = builder.Key;
             if (builder.LeaderID is not null) QueryParams["leaderID"] = builder.LeaderID;
@@ -147,32 +147,32 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
             if (builder.Value is not null) QueryParams["value"] = builder.Value;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminQueryParties(
-            string namespace_,            
-            string? joinability,            
-            string? key,            
-            string? leaderID,            
-            long? limit,            
-            string? memberID,            
-            string? memberStatus,            
-            long? offset,            
-            string? order,            
-            string? orderBy,            
-            string? value            
+            string namespace_,
+            string? joinability,
+            string? key,
+            string? leaderID,
+            long? limit,
+            string? memberID,
+            string? memberStatus,
+            long? offset,
+            string? order,
+            string? orderBy,
+            string? value
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (joinability is not null) QueryParams["joinability"] = joinability;
             if (key is not null) QueryParams["key"] = key;
             if (leaderID is not null) QueryParams["leaderID"] = leaderID;
@@ -183,11 +183,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (order is not null) QueryParams["order"] = order;
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
             if (value is not null) QueryParams["value"] = value;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -202,9 +202,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApimodelsPartyQueryResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -217,9 +217,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelsPartyQueryResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

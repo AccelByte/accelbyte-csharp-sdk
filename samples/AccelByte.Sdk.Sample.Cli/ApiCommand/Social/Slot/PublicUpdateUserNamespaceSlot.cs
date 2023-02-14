@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","publicupdateusernamespaceslot")]
-    public class PublicUpdateUserNamespaceSlotCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "publicupdateusernamespaceslot")]
+    public class PublicUpdateUserNamespaceSlotCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "PublicUpdateUserNamespaceSlot"; } }
+        public string OperationName { get { return "PublicUpdateUserNamespaceSlot"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -44,13 +44,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandArgument("checksum")]
         public string Checksum { get; set; } = String.Empty;
-                    
+
         [SdkCommandArgument("customAttribute")]
         public string CustomAttribute { get; set; } = String.Empty;
-                    
+
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public PublicUpdateUserNamespaceSlotCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -61,16 +61,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.Slot wrapper = new AccelByte.Sdk.Api.Social.Wrapper.Slot(_SDK);
 
             PublicUpdateUserNamespaceSlot operation = new PublicUpdateUserNamespaceSlot(
-                Namespace,                
-                SlotId,                
-                UserId,                
-                Label,                
-                Tags,                
-                Checksum,                
-                CustomAttribute,                
-                File                
-            );            
-            
+                Namespace,
+                SlotId,
+                UserId,
+                Label,
+                Tags,
+                Checksum,
+                CustomAttribute,
+                File
+            );
+
             AccelByte.Sdk.Api.Social.Model.SlotInfo? response = wrapper.PublicUpdateUserNamespaceSlot(operation);
             if (response == null)
                 return "No response from server.";

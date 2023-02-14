@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","rejectgroupjoinrequestpublicv1")]
-    public class RejectGroupJoinRequestPublicV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "rejectgroupjoinrequestpublicv1")]
+    public class RejectGroupJoinRequestPublicV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "RejectGroupJoinRequestPublicV1"; } }
+        public string OperationName { get { return "RejectGroupJoinRequestPublicV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupMember wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupMember(_SDK);
 
             RejectGroupJoinRequestPublicV1 operation = new RejectGroupJoinRequestPublicV1(
-                Namespace,                
-                UserId                
-            );            
-            
+                Namespace,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsMemberRequestGroupResponseV1? response = wrapper.RejectGroupJoinRequestPublicV1(operation);
             if (response == null)
                 return "No response from server.";

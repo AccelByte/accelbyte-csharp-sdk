@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","queryuserorders")]
-    public class QueryUserOrdersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryuserorders")]
+    public class QueryUserOrdersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "QueryUserOrders"; } }
+        public string OperationName { get { return "QueryUserOrders"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             QueryUserOrders operation = new QueryUserOrders(
-                Namespace,                
-                UserId,                
-                ItemId,                
-                Limit,                
-                Offset,                
-                (Status is null ? null : QueryUserOrdersStatus.NewValue(Status))                
-            );            
-            
+                Namespace,
+                UserId,
+                ItemId,
+                Limit,
+                Offset,
+                (Status is null ? null : QueryUserOrdersStatus.NewValue(Status))
+            );
+
             AccelByte.Sdk.Api.Platform.Model.OrderPagingSlicedResult? response = wrapper.QueryUserOrders(operation);
             if (response == null)
                 return "No response from server.";

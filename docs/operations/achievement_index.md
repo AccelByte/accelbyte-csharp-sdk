@@ -38,6 +38,12 @@
 |---|---|---|---|---|
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/anonymization/achievements` | DELETE | AdminAnonymizeUserAchievement | [AdminAnonymizeUserAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Anonymization/AdminAnonymizeUserAchievement.cs) | [AdminAnonymizeUserAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Anonymization/AdminAnonymizeUserAchievement.cs) |
 
+### Global Achievements Wrapper:  [GlobalAchievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/GlobalAchievements.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/achievement/v1/public/namespaces/{namespace}/global/achievements` | GET | PublicListGlobalAchievements | [PublicListGlobalAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/GlobalAchievements/PublicListGlobalAchievements.cs) | [PublicListGlobalAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/GlobalAchievements/PublicListGlobalAchievements.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/global/achievements/{achievementCode}/claim` | POST | ClaimGlobalAchievementReward | [ClaimGlobalAchievementReward](../../AccelByte.Sdk/Api/Achievement/Operation/GlobalAchievements/ClaimGlobalAchievementReward.cs) | [ClaimGlobalAchievementReward](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/GlobalAchievements/ClaimGlobalAchievementReward.cs) |
+
 
 &nbsp;  
 
@@ -59,6 +65,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Global Achievements Wrapper:  [GlobalAchievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/GlobalAchievements.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -71,8 +81,10 @@
 | `models.AchievementResponse` | [ModelsAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementResponse.cs) |
 | `models.AchievementUpdateRequest` | [ModelsAchievementUpdateRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementUpdateRequest.cs) |
 | `models.AdditionalInfo` | [ModelsAdditionalInfo](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAdditionalInfo.cs) |
+| `models.GlobalAchievementResponse` | [ModelsGlobalAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsGlobalAchievementResponse.cs) |
 | `models.Icon` | [ModelsIcon](../../AccelByte.Sdk/Api/Achievement/Model/ModelsIcon.cs) |
 | `models.PaginatedAchievementResponse` | [ModelsPaginatedAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedAchievementResponse.cs) |
+| `models.PaginatedGlobalAchievementResponse` | [ModelsPaginatedGlobalAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedGlobalAchievementResponse.cs) |
 | `models.PaginatedTagResponse` | [ModelsPaginatedTagResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedTagResponse.cs) |
 | `models.PaginatedUserAchievementResponse` | [ModelsPaginatedUserAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedUserAchievementResponse.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPagination.cs) |

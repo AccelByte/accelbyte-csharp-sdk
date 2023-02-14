@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","retrievepolicycountry")]
-    public class RetrievePolicyCountryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "retrievepolicycountry")]
+    public class RetrievePolicyCountryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "RetrievePolicyCountry"; } }
+        public string OperationName { get { return "RetrievePolicyCountry"; } }
 
         [SdkCommandArgument("basePolicyId")]
         public string BasePolicyId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies(_SDK);
 
             RetrievePolicyCountry operation = new RetrievePolicyCountry(
-                BasePolicyId,                
-                CountryCode                
-            );            
-            
+                BasePolicyId,
+                CountryCode
+            );
+
             AccelByte.Sdk.Api.Legal.Model.RetrievePolicyResponse? response = wrapper.RetrievePolicyCountry(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatepaypalconfig")]
-    public class UpdatePayPalConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatepaypalconfig")]
+    public class UpdatePayPalConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdatePayPalConfig"; } }
+        public string OperationName { get { return "UpdatePayPalConfig"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PayPalConfig Body { get; set; } = new PayPalConfig();
-                
+
         public UpdatePayPalConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             UpdatePayPalConfig operation = new UpdatePayPalConfig(
-                Id,                
-                Sandbox,                
-                Validate,                
-                Body                
-            );            
-            
+                Id,
+                Sandbox,
+                Validate,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.UpdatePayPalConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -1,3 +1,312 @@
+
+# C# Server SDK v0.28.0
+
+## achievement Service
+
+### What's New
+---
+* `GET` /achievement/v1/public/namespaces/{namespace}/global/achievements Query global achievements [include achieved and in-progress]
+* `POST` /achievement/v1/public/namespaces/{namespace}/users/{userId}/global/achievements/{achievementCode}/claim Claim global achievement reward
+
+### What's Changed
+---
+`GET` /achievement/v1/admin/namespaces/{namespace}/achievements Query achievements  
+    Parameters
+
+        Add global //filter by global achievement flag
+    Return Type
+
+        Insert data.global
+`POST` /achievement/v1/admin/namespaces/{namespace}/achievements Create new achievement  
+    Parameters
+
+        Insert body.global
+`GET` /achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode} Get an achievement  
+    Return Type
+
+        Insert global
+`PUT` /achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode} Update an achievement  
+    Return Type
+
+        Insert global
+`GET` /achievement/v1/public/namespaces/{namespace}/achievements Query achievements  
+    Parameters
+
+        Add global //filter by global achievement flag
+    Return Type
+
+        Insert data.global
+`GET` /achievement/v1/public/namespaces/{namespace}/achievements/{achievementCode} Get an achievement  
+    Return Type
+
+        Insert global
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
+## group Service
+
+### What's Changed
+---
+`GET` /group/v1/admin/namespaces/{namespace}/groups get list of groups  
+    Return Type
+
+        Modify data.groupType
+`GET` /group/v1/admin/namespaces/{namespace}/groups/{groupId} get single group  
+    Return Type
+
+        Modify groupType
+`GET` /group/v1/public/namespaces/{namespace}/groups get list of groups  
+    Return Type
+
+        Modify data.groupType
+`PATCH` /group/v1/public/namespaces/{namespace}/groups/{groupId} update existing group  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v1/public/namespaces/{namespace}/groups/{groupId} update existing group  
+    Return Type
+
+        Modify groupType
+`GET` /group/v1/public/namespaces/{namespace}/groups/{groupId} get single group  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v1/public/namespaces/{namespace}/groups/{groupId}/attributes/custom Update group custom attributes  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/custom update group custom rule  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction} update predefined group rule  
+    Return Type
+
+        Modify groupType
+`POST` /group/v2/public/namespaces/{namespace}/groups/bulk get list of groups by group Ids  
+    Return Type
+
+        Modify data.groupType
+`PATCH` /group/v2/public/namespaces/{namespace}/groups/{groupId} update existing group  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId} update existing group  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/attributes/custom Update group custom attributes  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/custom update group custom rule  
+    Return Type
+
+        Modify groupType
+`PUT` /group/v2/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction} update predefined group rule  
+    Return Type
+
+        Modify groupType
+
+## iam Service
+
+### What's Changed
+---
+`GET` /iam/v3/admin/namespaces/{namespace}/users/linkhistories Search linking history of the query platform with platform user id  
+    Parameters
+
+        platformId Notes Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, stadia, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon change into Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+        Modify platformId //Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+`GET` /iam/v3/admin/namespaces/{namespace}/users/search Search User  
+    Parameters
+
+        platformId Notes Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, stadia, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon change into Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+        Modify platformId //Platform Id that want to be searched, supported values: steam, steamopenid, psn, xbox, epicgames, nintendo, oculus, aws cognito, facebook, google, discord, twitch, snapchat or amazon
+`GET` /iam/v3/public/users/me/headless/link/conflict Get conflict result when link headless account to current full account by one time code  
+    Return Type
+
+        Modify currentAccount.linkedGames
+        Modify headlessAccount.linkedGames
+
+## legal Service
+
+### What's New
+---
+* `GET` /agreement/admin/namespaces/{namespace}/agreements/policies/users/{userId} Retrieve Accepted Legal Agreements
+* `GET` /agreement/admin/namespaces/{namespace}/agreements/policy-versions/users Retrieve All Users Accepting Legal Agreements
+* `GET` /agreement/admin/namespaces/{namespace}/base-policies Retrieve All Base Legal Policy in the namespace
+* `POST` /agreement/admin/namespaces/{namespace}/base-policies Create a Base Legal Policy
+* `GET` /agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId} Retrieve a Base Legal Policy
+* `PATCH` /agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId} Update Base Legal Policy
+* `GET` /agreement/admin/namespaces/{namespace}/base-policies/{basePolicyId}/countries/{countryCode} Retrieve a Base Legal Policy based on a Particular Country
+* `GET` /agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId} Retrieve Versions from Country-Specific Policy
+* `POST` /agreement/admin/namespaces/{namespace}/localized-policy-versions/versions/{policyVersionId} Create a Localized Version from Country-Specific Policy
+* `GET` /agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId} Retrieve a Localized Version from Country-Specific Policy
+* `PUT` /agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId} Update a Localized Version from Country-Specific Policy
+* `POST` /agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}/attachments Request Presigned URL for Upload Document
+* `PATCH` /agreement/admin/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId}/default Set Default Localized Policy
+* `PATCH` /agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId} Update a Version of Policy
+* `PATCH` /agreement/admin/namespaces/{namespace}/policies/versions/{policyVersionId}/latest Manually Publish a Version from Country-Specific Policy
+* `PATCH` /agreement/admin/namespaces/{namespace}/policies/{policyId} Update Country-Specific Policy
+* `PATCH` /agreement/admin/namespaces/{namespace}/policies/{policyId}/default Set Default Policy
+* `GET` /agreement/admin/namespaces/{namespace}/policies/{policyId}/versions Retrieve a Version from Country-Specific Policy
+* `POST` /agreement/admin/namespaces/{namespace}/policies/{policyId}/versions Create a Version from Country-Specific Policy
+* `GET` /agreement/admin/namespaces/{namespace}/policy-types Retrieve All Policy Type
+* `GET` /agreement/public/namespaces/{namespace}/localized-policy-versions/{localizedPolicyVersionId} Retrieve a Localized Version
+
+## match2 Service
+
+### What's Changed
+---
+`POST` /match2/v1/namespaces/{namespace}/rulesets Create a match rule set  
+    Parameters
+
+        Insert body.enable_custom_match_function
+        Modify body.data
+`PUT` /match2/v1/namespaces/{namespace}/rulesets/{ruleset} Update a match rule set  
+    Parameters
+
+        Insert body.enable_custom_match_function
+        Insert body.name
+        Modify body.data
+    Return Type
+
+        Insert enable_custom_match_function
+        Modify data
+`GET` /match2/v1/namespaces/{namespace}/rulesets/{ruleset} Get details for a specific rule set  
+    Return Type
+
+        Insert enable_custom_match_function
+        Modify data
+
+## matchmaking Service
+
+### What's Changed
+---
+`POST` /matchmaking/namespaces/{namespace}/rebalance Rebalance Matchmaking based on MMR  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_created_at
+`POST` /matchmaking/namespaces/{namespace}/sessions Queue joinable session  
+    Parameters
+
+        Insert body.matching_allies.matching_parties.ticket_created_at
+`GET` /matchmaking/namespaces/{namespace}/sessions/{matchID}/status Query joinable session status  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_created_at
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/all/sessions/bulk Bulk get sessions  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_created_at
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/parties Get all party in a channel  
+    Return Type
+
+        Insert ticket_created_at
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions Get all channel sessions  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_created_at
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed Get session history detailed  
+    Return Type
+
+        Insert matching_allies.matching_parties.ticket_created_at
+
+## platform Service
+
+### What's New
+---
+* `GET` /platform/admin/namespaces/{namespace}/revocation/config Get revocation configuration
+* `PUT` /platform/admin/namespaces/{namespace}/revocation/config Update revocation configuration
+* `DELETE` /platform/admin/namespaces/{namespace}/revocation/config Delete revocation config
+* `GET` /platform/admin/namespaces/{namespace}/revocation/history Query revocation histories
+* `DELETE` /platform/admin/namespaces/{namespace}/users/{userId}/anonymization/revocation anonymize revocation
+* `PUT` /platform/admin/namespaces/{namespace}/users/{userId}/revocation Do revocation.
+* `PUT` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/debit Debit a user wallet by currency code
+
+### What's Deprecated
+---
+* `GET` /platform/admin/namespaces/{namespace}/iap/config/stadia Get stadia iap config
+* `DELETE` /platform/admin/namespaces/{namespace}/iap/config/stadia Delete stadia iap config
+* `PUT` /platform/admin/namespaces/{namespace}/iap/config/stadia/cert Upload stadia json config file
+* `PUT` /platform/public/namespaces/{namespace}/users/{userId}/iap/stadia/sync Sync stadia inventory.
+
+### What's Changed
+---
+`PUT` /platform/admin/namespaces/{namespace}/platforms/{platform}/wallet/config Update platform wallet config  
+    Parameters
+
+        Modify body.allowedBalanceOrigins
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/dlc Get user dlc by platform  
+    Return Type
+
+        Insert dlcs.revocationResult
+        Insert dlcs.transactionId
+        Insert dlcs.version
+        Modify dlcs.status
+`POST` /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment Fulfill item  
+    Parameters
+
+        Modify body.origin //origin
+`POST` /platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards Fulfill rewards  
+    Parameters
+
+        Modify body.origin //origin, if rewards contains item icon, it will credit into related origin wallet. if not set, it will be credit into System wallet
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check Check wallet by balance origin and currency code  
+    Parameters
+
+        Modify origin
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit Credit a user wallet by currency code and balance origin  
+    Parameters
+
+        Modify body.origin //origin, balance origin decided on the type of wallet, default is System
+`GET` /platform/admin/namespaces/{namespace}/wallets Query wallets  
+    Parameters
+
+        Modify origin //balance origin
+
+## sessionbrowser Service
+
+### What's Changed
+---
+`GET` /sessionbrowser/admin/namespaces/{namespace}/sessions/history/search Search sessions  
+    Return Type
+
+        Insert data.joining
+        Insert data.players
+        Insert data.removed_reason
+        Insert data.session_type
+
+## social Service
+
+### What's Changed
+---
+`GET` /social/v1/admin/namespaces/{namespace}/stats List stats  
+    Parameters
+
+        Add isGlobal //flag to filter global statcode
+`GET` /social/v1/admin/namespaces/{namespace}/stats/search Query stats by keyword  
+    Parameters
+
+        Add isGlobal //flag to filter global statcode
+`GET` /social/v1/admin/namespaces/{namespace}/users/{userId}/statitems List user's statItems  
+    Parameters
+
+        Add sortBy //default is updatedAt:asc, allow values: [statCode, statCode:asc, statCode:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc],and support sort group, eg: sortBy=statCode:asc,createdAt:desc.
+`GET` /social/v1/public/namespaces/{namespace}/users/{userId}/statitems Public list user's statItems  
+    Parameters
+
+        Add sortBy //default is updatedAt:asc, allow values: [statCode, statCode:asc, statCode:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc],and support sort group, eg: sortBy=statCode:asc,createdAt:desc.
+
+
 # C# Server SDK v0.27.0
 
 ## basic Service

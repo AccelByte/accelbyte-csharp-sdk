@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","creatememberroleadminv1")]
-    public class CreateMemberRoleAdminV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "creatememberroleadminv1")]
+    public class CreateMemberRoleAdminV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "CreateMemberRoleAdminV1"; } }
+        public string OperationName { get { return "CreateMemberRoleAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsCreateMemberRoleRequestV1 Body { get; set; } = new ModelsCreateMemberRoleRequestV1();
-                
+
         public CreateMemberRoleAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             CreateMemberRoleAdminV1 operation = new CreateMemberRoleAdminV1(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Group.Model.ModelsMemberRoleResponseV1? response = wrapper.CreateMemberRoleAdminV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
     ///   *  Returns : paginated wallets info
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class QueryWallets : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryWallets op = new QueryWallets(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -101,43 +101,43 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.CurrencyCode is not null) QueryParams["currencyCode"] = builder.CurrencyCode;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Origin is not null) QueryParams["origin"] = builder.Origin.Value;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryWallets(
-            string namespace_,            
-            string? currencyCode,            
-            int? limit,            
-            int? offset,            
-            QueryWalletsOrigin? origin,            
-            string? userId            
+            string namespace_,
+            string? currencyCode,
+            int? limit,
+            int? offset,
+            QueryWalletsOrigin? origin,
+            string? userId
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (currencyCode is not null) QueryParams["currencyCode"] = currencyCode;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (origin is not null) QueryParams["origin"] = origin.Value;
             if (userId is not null) QueryParams["userId"] = userId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -152,9 +152,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.WalletPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -167,9 +167,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.WalletPagingSlicedResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }
@@ -193,9 +193,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public static readonly QueryWalletsOrigin Playstation
             = new QueryWalletsOrigin("Playstation");
-
-        public static readonly QueryWalletsOrigin Stadia
-            = new QueryWalletsOrigin("Stadia");
 
         public static readonly QueryWalletsOrigin Steam
             = new QueryWalletsOrigin("Steam");

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","enableitem")]
-    public class EnableItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "enableitem")]
+    public class EnableItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "EnableItem"; } }
+        public string OperationName { get { return "EnableItem"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             EnableItem operation = new EnableItem(
-                ItemId,                
-                Namespace,                
-                StoreId                
-            );            
-            
+                ItemId,
+                Namespace,
+                StoreId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullItemInfo? response = wrapper.EnableItem(operation);
             if (response == null)
                 return "No response from server.";

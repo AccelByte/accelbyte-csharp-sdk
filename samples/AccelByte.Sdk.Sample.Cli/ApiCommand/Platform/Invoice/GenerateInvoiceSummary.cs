@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","generateinvoicesummary")]
-    public class GenerateInvoiceSummaryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "generateinvoicesummary")]
+    public class GenerateInvoiceSummaryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GenerateInvoiceSummary"; } }
+        public string OperationName { get { return "GenerateInvoiceSummary"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Invoice wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Invoice(_SDK);
 
             GenerateInvoiceSummary operation = new GenerateInvoiceSummary(
-                Namespace,                
-                Feature,                
-                ItemId,                
-                (ItemType is null ? null : GenerateInvoiceSummaryItemType.NewValue(ItemType)),                
-                EndTime,                
-                StartTime                
-            );            
-            
+                Namespace,
+                Feature,
+                ItemId,
+                (ItemType is null ? null : GenerateInvoiceSummaryItemType.NewValue(ItemType)),
+                EndTime,
+                StartTime
+            );
+
             AccelByte.Sdk.Api.Platform.Model.InvoiceSummary? response = wrapper.GenerateInvoiceSummary(operation);
             if (response == null)
                 return "No response from server.";

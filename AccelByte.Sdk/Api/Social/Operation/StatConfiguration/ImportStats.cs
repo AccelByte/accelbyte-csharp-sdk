@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 ImportStats op = new ImportStats(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -76,34 +76,34 @@ namespace AccelByte.Sdk.Api.Social.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.ReplaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(builder.ReplaceExisting)!;
-            
+
             if (builder.File is not null) FormParams["file"] = builder.File;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ImportStats(
-            string namespace_,            
-            bool? replaceExisting,            
-            Stream? file            
+            string namespace_,
+            bool? replaceExisting,
+            Stream? file
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (replaceExisting != null) QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
-            
+
             if (file is not null) FormParams["file"] = file;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.StatImportInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -133,9 +133,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.StatImportInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

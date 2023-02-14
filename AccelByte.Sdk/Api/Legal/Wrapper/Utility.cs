@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.CheckReadiness.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.LegalReadinessStatusResponse? CheckReadiness(CheckReadiness input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

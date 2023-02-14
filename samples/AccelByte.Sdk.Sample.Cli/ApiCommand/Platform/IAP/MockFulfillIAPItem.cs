@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","mockfulfilliapitem")]
-    public class MockFulfillIAPItemCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "mockfulfilliapitem")]
+    public class MockFulfillIAPItemCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "MockFulfillIAPItem"; } }
+        public string OperationName { get { return "MockFulfillIAPItem"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public MockIAPReceipt Body { get; set; } = new MockIAPReceipt();
-                
+
         public MockFulfillIAPItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             MockFulfillIAPItem operation = new MockFulfillIAPItem(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.MockFulfillIAPItem(operation);
             return String.Empty;
         }

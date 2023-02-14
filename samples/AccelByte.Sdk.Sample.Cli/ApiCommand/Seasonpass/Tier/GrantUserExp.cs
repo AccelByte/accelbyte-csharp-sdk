@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass","grantuserexp")]
-    public class GrantUserExpCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass", "grantuserexp")]
+    public class GrantUserExpCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Seasonpass"; } }
+        public string ServiceName { get { return "Seasonpass"; } }
 
-        public string OperationName{ get { return "GrantUserExp"; } }
+        public string OperationName { get { return "GrantUserExp"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 
         [SdkCommandData("body")]
         public UserExpGrant Body { get; set; } = new UserExpGrant();
-                
+
         public GrantUserExpCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             GrantUserExp operation = new GrantUserExp(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Seasonpass.Model.UserSeasonSummary? response = wrapper.GrantUserExp(operation);
             if (response == null)
                 return "No response from server.";

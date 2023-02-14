@@ -18,17 +18,20 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","querystats")]
-    public class QueryStatsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "querystats")]
+    public class QueryStatsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "QueryStats"; } }
+        public string OperationName { get { return "QueryStats"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandArgument("isGlobal")]
+        public bool? IsGlobal { get; set; }
 
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
@@ -49,12 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration(_SDK);
 
             QueryStats operation = new QueryStats(
-                Namespace,                
-                Limit,                
-                Offset,                
-                Keyword                
-            );            
-            
+                Namespace,
+                IsGlobal,
+                Limit,
+                Offset,
+                Keyword
+            );
+
             AccelByte.Sdk.Api.Social.Model.StatPagingSlicedResult? response = wrapper.QueryStats(operation);
             if (response == null)
                 return "No response from server.";

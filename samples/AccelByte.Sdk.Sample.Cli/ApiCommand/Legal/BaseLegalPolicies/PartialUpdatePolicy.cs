@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal","partialupdatepolicy")]
-    public class PartialUpdatePolicyCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("legal", "partialupdatepolicy")]
+    public class PartialUpdatePolicyCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Legal"; } }
+        public string ServiceName { get { return "Legal"; } }
 
-        public string OperationName{ get { return "PartialUpdatePolicy"; } }
+        public string OperationName { get { return "PartialUpdatePolicy"; } }
 
         [SdkCommandArgument("basePolicyId")]
         public string BasePolicyId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public UpdateBasePolicyRequest Body { get; set; } = new UpdateBasePolicyRequest();
-                
+
         public PartialUpdatePolicyCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies(_SDK);
 
             PartialUpdatePolicy operation = new PartialUpdatePolicy(
-                BasePolicyId,                
-                Body                
-            );            
-            
+                BasePolicyId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Legal.Model.UpdateBasePolicyResponse? response = wrapper.PartialUpdatePolicy(operation);
             if (response == null)
                 return "No response from server.";

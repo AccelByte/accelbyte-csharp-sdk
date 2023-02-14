@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("inviteeId")]
         [JsonPropertyName("inviteeId")]
         public string? InviteeId { get; set; }
-        
+
         [AwesomeProperty("inviterId")]
         [JsonPropertyName("inviterId")]
         public string? InviterId { get; set; }
-        
+
     }
 }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getuserentitlementbyitemid")]
-    public class GetUserEntitlementByItemIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getuserentitlementbyitemid")]
+    public class GetUserEntitlementByItemIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserEntitlementByItemId"; } }
+        public string OperationName { get { return "GetUserEntitlementByItemId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             GetUserEntitlementByItemId operation = new GetUserEntitlementByItemId(
-                Namespace,                
-                UserId,                
-                ActiveOnly,                
-                (EntitlementClazz is null ? null : GetUserEntitlementByItemIdEntitlementClazz.NewValue(EntitlementClazz)),                
-                ItemId                
-            );            
-            
+                Namespace,
+                UserId,
+                ActiveOnly,
+                (EntitlementClazz is null ? null : GetUserEntitlementByItemIdEntitlementClazz.NewValue(EntitlementClazz)),
+                ItemId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.EntitlementInfo? response = wrapper.GetUserEntitlementByItemId(operation);
             if (response == null)
                 return "No response from server.";

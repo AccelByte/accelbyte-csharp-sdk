@@ -172,7 +172,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class ItemSnapshotEntitlementType : StringEnum<ItemSnapshotEntitlementType>
     {
@@ -193,7 +193,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class ItemSnapshotItemType : StringEnum<ItemSnapshotItemType>
     {
@@ -241,7 +241,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class ItemSnapshotSeasonType : StringEnum<ItemSnapshotSeasonType>
     {
@@ -262,5 +262,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

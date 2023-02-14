@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","listimages")]
-    public class ListImagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "listimages")]
+    public class ListImagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ListImages"; } }
+        public string OperationName { get { return "ListImages"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
 
             ListImages operation = new ListImages(
-                Namespace,                
-                Q,                
-                (SortBy is null ? null : ListImagesSortBy.NewValue(SortBy)),                
-                (SortDirection is null ? null : ListImagesSortDirection.NewValue(SortDirection)),                
-                Count,                
-                Offset                
-            );            
-            
+                Namespace,
+                Q,
+                (SortBy is null ? null : ListImagesSortBy.NewValue(SortBy)),
+                (SortDirection is null ? null : ListImagesSortDirection.NewValue(SortDirection)),
+                Count,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsListImageResponse? response = wrapper.ListImages(operation);
             if (response == null)
                 return "No response from server.";

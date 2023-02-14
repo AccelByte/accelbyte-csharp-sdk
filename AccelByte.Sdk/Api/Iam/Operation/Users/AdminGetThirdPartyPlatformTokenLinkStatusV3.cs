@@ -87,9 +87,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///   * epicgames : The platform_tokenâs value is an access-token obtained from Epicgames EOS Account Service.
     /// 
     /// 
-    ///   * stadia : The platform_token's value is a JWT Token, which can be obtained after calling the Stadia SDK's function.
-    /// 
-    /// 
     ///   * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
     /// 
     /// 
@@ -141,10 +138,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminGetThirdPartyPlatformTokenLinkStatusV3 op = new AdminGetThirdPartyPlatformTokenLinkStatusV3(this,
-                    platformToken,                    
-                    namespace_,                    
-                    platformId,                    
-                    userId                    
+                    platformToken,
+                    namespace_,
+                    platformId,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -162,35 +159,35 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (platformToken is not null) FormParams["platformToken"] = platformToken;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetThirdPartyPlatformTokenLinkStatusV3(
-            string namespace_,            
-            string platformId,            
-            string userId,            
-            string platformToken            
+            string namespace_,
+            string platformId,
+            string userId,
+            string platformToken
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (platformToken is not null) FormParams["platformToken"] = platformToken;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -205,9 +202,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelTokenThirdPartyLinkStatusResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -220,9 +217,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelTokenThirdPartyLinkStatusResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -28,6 +28,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             : OperationBuilder<AdminListAchievementsBuilder>
         {
 
+            public bool? Global { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
@@ -42,6 +44,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             internal AdminListAchievementsBuilder() { }
 
+
+            public AdminListAchievementsBuilder SetGlobal(bool _global)
+            {
+                Global = _global;
+                return this;
+            }
 
             public AdminListAchievementsBuilder SetLimit(long _limit)
             {
@@ -76,7 +84,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             )
             {
                 AdminListAchievements op = new AdminListAchievements(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -89,42 +97,45 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
+            if (builder.Global != null) QueryParams["global"] = Convert.ToString(builder.Global)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
-            
 
-            
+
+
             CollectionFormatMap["tags"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminListAchievements(
-            string namespace_,            
-            long? limit,            
-            long? offset,            
-            AdminListAchievementsSortBy? sortBy,            
-            List<string>? tags            
+            string namespace_,
+            bool? global,
+            long? limit,
+            long? offset,
+            AdminListAchievementsSortBy? sortBy,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
+            if (global != null) QueryParams["global"] = Convert.ToString(global)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (tags is not null) QueryParams["tags"] = tags;
-            
 
-            
+
+
             CollectionFormatMap["tags"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -139,9 +150,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsPaginatedAchievementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -154,9 +165,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPaginatedAchievementResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

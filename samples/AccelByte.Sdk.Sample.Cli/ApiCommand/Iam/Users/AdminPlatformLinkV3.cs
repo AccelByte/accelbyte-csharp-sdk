@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminplatformlinkv3")]
-    public class AdminPlatformLinkV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminplatformlinkv3")]
+    public class AdminPlatformLinkV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminPlatformLinkV3"; } }
+        public string OperationName { get { return "AdminPlatformLinkV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandArgument("ticket")]
         public string Ticket { get; set; } = String.Empty;
-                    
+
         public AdminPlatformLinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminPlatformLinkV3 operation = new AdminPlatformLinkV3(
-                Namespace,                
-                PlatformId,                
-                UserId,                
-                Ticket                
-            );            
-            
+                Namespace,
+                PlatformId,
+                UserId,
+                Ticket
+            );
+
             wrapper.AdminPlatformLinkV3(operation);
             return String.Empty;
         }

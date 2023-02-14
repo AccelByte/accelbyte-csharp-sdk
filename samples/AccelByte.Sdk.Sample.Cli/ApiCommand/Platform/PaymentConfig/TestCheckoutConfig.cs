@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","testcheckoutconfig")]
-    public class TestCheckoutConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "testcheckoutconfig")]
+    public class TestCheckoutConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "TestCheckoutConfig"; } }
+        public string OperationName { get { return "TestCheckoutConfig"; } }
 
         [SdkCommandArgument("sandbox")]
         public bool? Sandbox { get; set; }
 
         [SdkCommandData("body")]
         public CheckoutConfig Body { get; set; } = new CheckoutConfig();
-                
+
         public TestCheckoutConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentConfig(_SDK);
 
             TestCheckoutConfig operation = new TestCheckoutConfig(
-                Sandbox,                
-                Body                
-            );            
-            
+                Sandbox,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.TestResult? response = wrapper.TestCheckoutConfig(operation);
             if (response == null)
                 return "No response from server.";

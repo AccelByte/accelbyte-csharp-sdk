@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getservicepluginconfig")]
-    public class GetServicePluginConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getservicepluginconfig")]
+    public class GetServicePluginConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetServicePluginConfig"; } }
+        public string OperationName { get { return "GetServicePluginConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
             GetServicePluginConfig operation = new GetServicePluginConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             AccelByte.Sdk.Api.Platform.Model.ServicePluginConfigInfo? response = wrapper.GetServicePluginConfig(operation);
             if (response == null)
                 return "No response from server.";

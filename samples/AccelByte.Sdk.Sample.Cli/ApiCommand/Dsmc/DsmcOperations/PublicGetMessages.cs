@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","publicgetmessages")]
-    public class PublicGetMessagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "publicgetmessages")]
+    public class PublicGetMessagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "PublicGetMessages"; } }
+        public string OperationName { get { return "PublicGetMessages"; } }
 
         public PublicGetMessagesCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DsmcOperations wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DsmcOperations(_SDK);
 
             PublicGetMessages operation = new PublicGetMessages(
-            );            
-            
+            );
+
             List<AccelByte.Sdk.Api.Dsmc.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

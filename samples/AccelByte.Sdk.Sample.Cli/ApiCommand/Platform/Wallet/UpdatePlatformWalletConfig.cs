@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateplatformwalletconfig")]
-    public class UpdatePlatformWalletConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateplatformwalletconfig")]
+    public class UpdatePlatformWalletConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdatePlatformWalletConfig"; } }
+        public string OperationName { get { return "UpdatePlatformWalletConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PlatformWalletConfigUpdate Body { get; set; } = new PlatformWalletConfigUpdate();
-                
+
         public UpdatePlatformWalletConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             UpdatePlatformWalletConfig operation = new UpdatePlatformWalletConfig(
-                Namespace,                
-                UpdatePlatformWalletConfigPlatform.NewValue(Platform),                
-                Body                
-            );            
-            
+                Namespace,
+                UpdatePlatformWalletConfigPlatform.NewValue(Platform),
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.PlatformWalletConfigInfo? response = wrapper.UpdatePlatformWalletConfig(operation);
             if (response == null)
                 return "No response from server.";

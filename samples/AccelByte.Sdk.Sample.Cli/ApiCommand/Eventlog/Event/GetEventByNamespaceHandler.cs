@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","geteventbynamespacehandler")]
-    public class GetEventByNamespaceHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog", "geteventbynamespacehandler")]
+    public class GetEventByNamespaceHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Eventlog"; } }
+        public string ServiceName { get { return "Eventlog"; } }
 
-        public string OperationName{ get { return "GetEventByNamespaceHandler"; } }
+        public string OperationName { get { return "GetEventByNamespaceHandler"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -51,23 +51,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.Event wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.Event(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             GetEventByNamespaceHandler operation = new GetEventByNamespaceHandler(
-                Namespace,                
-                Offset,                
-                EndDate,                
-                PageSize,                
-                StartDate                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,
+                Offset,
+                EndDate,
+                PageSize,
+                StartDate
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Eventlog.Model.ModelsEventResponse? response = wrapper.GetEventByNamespaceHandler(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

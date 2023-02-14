@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","addrolepermission")]
-    public class AddRolePermissionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "addrolepermission")]
+    public class AddRolePermissionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AddRolePermission"; } }
+        public string OperationName { get { return "AddRolePermission"; } }
 
         [SdkCommandArgument("action")]
         public long Action { get; set; } = 0;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelUpdatePermissionScheduleRequest Body { get; set; } = new ModelUpdatePermissionScheduleRequest();
-                
+
         public AddRolePermissionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,19 +48,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             AddRolePermission operation = new AddRolePermission(
-                Action,                
-                Resource,                
-                RoleId,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Action,
+                Resource,
+                RoleId,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.AddRolePermission(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

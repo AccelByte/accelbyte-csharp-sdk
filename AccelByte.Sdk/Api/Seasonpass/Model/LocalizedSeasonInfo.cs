@@ -100,5 +100,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         {
 
         }
-    }    
+    }
 }

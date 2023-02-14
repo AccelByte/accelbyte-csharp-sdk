@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","logout")]
-    public class LogoutCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "logout")]
+    public class LogoutCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "Logout"; } }
+        public string OperationName { get { return "Logout"; } }
 
         public LogoutCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             Logout operation = new Logout(
-            );            
-            
+            );
+
             wrapper.Logout(operation);
             return String.Empty;
         }

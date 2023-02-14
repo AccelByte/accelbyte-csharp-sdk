@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updatestore")]
-    public class UpdateStoreCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updatestore")]
+    public class UpdateStoreCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateStore"; } }
+        public string OperationName { get { return "UpdateStore"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public StoreUpdate Body { get; set; } = new StoreUpdate();
-                
+
         public UpdateStoreCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Store wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Store(_SDK);
 
             UpdateStore operation = new UpdateStore(
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.StoreInfo? response = wrapper.UpdateStore(operation);
             if (response == null)
                 return "No response from server.";

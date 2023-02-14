@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:AGERESTRICTION [UPDATE]'
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdateCountryAgeRestriction : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -60,9 +60,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 UpdateCountryAgeRestriction op = new UpdateCountryAgeRestriction(this,
-                    body,                    
-                    countryCode,                    
-                    namespace_                    
+                    body,
+                    countryCode,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -78,33 +78,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["countryCode"] = countryCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateCountryAgeRestriction(
-            string countryCode,            
-            string namespace_,            
-            Model.ModelCountryAgeRestrictionRequest body            
+            string countryCode,
+            string namespace_,
+            Model.ModelCountryAgeRestrictionRequest body
         )
         {
             PathParams["countryCode"] = countryCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelCountry? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -134,9 +134,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelCountry>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

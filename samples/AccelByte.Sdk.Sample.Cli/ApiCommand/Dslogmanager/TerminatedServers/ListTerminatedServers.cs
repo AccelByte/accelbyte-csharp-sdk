@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
-    [SdkConsoleCommand("dslogmanager","listterminatedservers")]
-    public class ListTerminatedServersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dslogmanager", "listterminatedservers")]
+    public class ListTerminatedServersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dslogmanager"; } }
+        public string ServiceName { get { return "Dslogmanager"; } }
 
-        public string OperationName{ get { return "ListTerminatedServers"; } }
+        public string OperationName { get { return "ListTerminatedServers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -82,23 +82,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
             AccelByte.Sdk.Api.Dslogmanager.Wrapper.TerminatedServers wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.TerminatedServers(_SDK);
 
             ListTerminatedServers operation = new ListTerminatedServers(
-                Namespace,                
-                Deployment,                
-                EndDate,                
-                GameMode,                
-                Limit,                
-                Next,                
-                PartyId,                
-                PodName,                
-                Previous,                
-                Provider,                
-                Region,                
-                SessionId,                
-                StartDate,                
-                Status,                
-                UserId                
-            );            
-            
+                Namespace,
+                Deployment,
+                EndDate,
+                GameMode,
+                Limit,
+                Next,
+                PartyId,
+                PodName,
+                Previous,
+                Provider,
+                Region,
+                SessionId,
+                StartDate,
+                Status,
+                UserId
+            );
+
             AccelByte.Sdk.Api.Dslogmanager.Model.ModelsListTerminatedServersResponse? response = wrapper.ListTerminatedServers(operation);
             if (response == null)
                 return "No response from server.";

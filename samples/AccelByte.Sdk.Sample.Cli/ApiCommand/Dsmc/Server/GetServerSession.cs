@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","getserversession")]
-    public class GetServerSessionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getserversession")]
+    public class GetServerSessionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "GetServerSession"; } }
+        public string OperationName { get { return "GetServerSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Server wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Server(_SDK);
 
             GetServerSession operation = new GetServerSession(
-                Namespace,                
-                PodName                
-            );            
-            
+                Namespace,
+                PodName
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsServerSessionResponse? response = wrapper.GetServerSession(operation);
             if (response == null)
                 return "No response from server.";

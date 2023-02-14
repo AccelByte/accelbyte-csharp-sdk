@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2","updatematchpool")]
-    public class UpdateMatchPoolCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("match2", "updatematchpool")]
+    public class UpdateMatchPoolCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Match2"; } }
+        public string ServiceName { get { return "Match2"; } }
 
-        public string OperationName{ get { return "UpdateMatchPool"; } }
+        public string OperationName { get { return "UpdateMatchPool"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 
         [SdkCommandData("body")]
         public ApiMatchPoolConfig Body { get; set; } = new ApiMatchPoolConfig();
-                
+
         public UpdateMatchPoolCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchPools wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchPools(_SDK);
 
             UpdateMatchPool operation = new UpdateMatchPool(
-                Namespace,                
-                Pool,                
-                Body                
-            );            
-            
+                Namespace,
+                Pool,
+                Body
+            );
+
             AccelByte.Sdk.Api.Match2.Model.ApiMatchPool? response = wrapper.UpdateMatchPool(operation);
             if (response == null)
                 return "No response from server.";

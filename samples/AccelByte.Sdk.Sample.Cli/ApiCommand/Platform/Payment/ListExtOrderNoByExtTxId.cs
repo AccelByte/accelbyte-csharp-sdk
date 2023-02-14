@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","listextordernobyexttxid")]
-    public class ListExtOrderNoByExtTxIdCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "listextordernobyexttxid")]
+    public class ListExtOrderNoByExtTxIdCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "ListExtOrderNoByExtTxId"; } }
+        public string OperationName { get { return "ListExtOrderNoByExtTxId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Payment wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Payment(_SDK);
 
             ListExtOrderNoByExtTxId operation = new ListExtOrderNoByExtTxId(
-                Namespace,                
-                ExtTxId                
-            );            
-            
+                Namespace,
+                ExtTxId
+            );
+
             List<string>? response = wrapper.ListExtOrderNoByExtTxId(operation);
             if (response == null)
                 return "No response from server.";

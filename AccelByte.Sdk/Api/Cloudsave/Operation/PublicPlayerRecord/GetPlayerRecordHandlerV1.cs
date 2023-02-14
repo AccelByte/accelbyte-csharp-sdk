@@ -54,9 +54,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             )
             {
                 GetPlayerRecordHandlerV1 op = new GetPlayerRecordHandlerV1(this,
-                    key,                    
-                    namespace_,                    
-                    userId                    
+                    key,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -73,32 +73,32 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetPlayerRecordHandlerV1(
-            string key,            
-            string namespace_,            
-            string userId            
+            string key,
+            string namespace_,
+            string userId
         )
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -113,9 +113,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsPlayerRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -128,18 +128,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.ModelsPlayerRecordResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse<T1>>(payload);
@@ -148,8 +148,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPlayerRecordResponse<T1>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

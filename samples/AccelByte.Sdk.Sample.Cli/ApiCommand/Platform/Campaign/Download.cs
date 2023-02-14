@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","download")]
-    public class DownloadCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "download")]
+    public class DownloadCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "Download"; } }
+        public string OperationName { get { return "Download"; } }
 
         [SdkCommandArgument("campaignId")]
         public string CampaignId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             Download operation = new Download(
-                CampaignId,                
-                Namespace,                
-                BatchNo                
-            );            
-            
+                CampaignId,
+                Namespace,
+                BatchNo
+            );
+
             Stream? response = wrapper.Download(operation);
             if (response == null)
                 return "No response from server.";

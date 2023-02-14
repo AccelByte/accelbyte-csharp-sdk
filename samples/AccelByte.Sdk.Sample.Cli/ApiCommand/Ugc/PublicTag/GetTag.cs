@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","gettag")]
-    public class GetTagCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "gettag")]
+    public class GetTagCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "GetTag"; } }
+        public string OperationName { get { return "GetTag"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicTag wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicTag(_SDK);
 
             GetTag operation = new GetTag(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGetTagResponse? response = wrapper.GetTag(operation);
             if (response == null)
                 return "No response from server.";

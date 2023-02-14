@@ -56,16 +56,16 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op AdminQuerySession \
     --namespace $AB_NAMESPACE \
-    --gameMode 'QE0Zr2WA' \
-    --gameVersion 'JEaCahJM' \
-    --joinable 'VEveOMYz' \
-    --limit '21' \
-    --matchExist 'NLonrHOd' \
-    --matchId '4J9fYVyL' \
-    --offset '91' \
-    --serverStatus '8zAG7F4x' \
-    --userId '7KZKSIOY' \
-    --sessionType 'oXqdDjER' \
+    --gameMode '0sWLQpgo' \
+    --gameVersion 'ChS5RnVS' \
+    --joinable '4vzWMzTJ' \
+    --limit '34' \
+    --matchExist '1w5xMBoI' \
+    --matchId 'ZaC9yrsF' \
+    --offset '29' \
+    --serverStatus 'iL35H31i' \
+    --userId 'FVxUWt1e' \
+    --sessionType 'O4MaEZ6q' \
     > test.out 2>&1
 eval_tap $? 2 'AdminQuerySession' test.out
 
@@ -74,7 +74,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetTotalActiveSession \
     --namespace $AB_NAMESPACE \
-    --sessionType '7nfJieIc' \
+    --sessionType 'RcKPERDR' \
     > test.out 2>&1
 eval_tap $? 3 'GetTotalActiveSession' test.out
 
@@ -83,10 +83,10 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetActiveCustomGameSessions \
     --namespace $AB_NAMESPACE \
-    --limit '89' \
-    --offset '50' \
-    --serverRegion 'YXCYfStM' \
-    --sessionId 'nGV8mtpc' \
+    --limit '24' \
+    --offset '75' \
+    --serverRegion 'FoolRPN1' \
+    --sessionId 'BoidME6C' \
     > test.out 2>&1
 eval_tap $? 4 'GetActiveCustomGameSessions' test.out
 
@@ -95,11 +95,11 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetActiveMatchmakingGameSessions \
     --namespace $AB_NAMESPACE \
-    --limit '19' \
-    --matchId 'itTRqAJ8' \
-    --offset '8' \
-    --serverRegion 't5TnO1Oe' \
-    --sessionId 'omEHGXDB' \
+    --limit '56' \
+    --matchId 'dR7TSUlo' \
+    --offset '33' \
+    --serverRegion 'AFHNPN68' \
+    --sessionId 'KnGzfNbe' \
     > test.out 2>&1
 eval_tap $? 5 'GetActiveMatchmakingGameSessions' test.out
 
@@ -108,7 +108,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op AdminGetSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'crFCVfZ4' \
+    --sessionID '80r29UIc' \
     > test.out 2>&1
 eval_tap $? 6 'AdminGetSession' test.out
 
@@ -117,7 +117,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op AdminDeleteSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'Y6bJcqdZ' \
+    --sessionID 'kOPOfVkU' \
     > test.out 2>&1
 eval_tap $? 7 'AdminDeleteSession' test.out
 
@@ -126,15 +126,15 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op AdminSearchSessionsV2 \
     --namespace $AB_NAMESPACE \
-    --channel 'N1wunytG' \
+    --channel 'MxBbxv82' \
     --deleted 'false' \
-    --matchID 'lKUo8IeN' \
-    --partyID 'wRgfw83g' \
-    --sessionType 'o1pF7hea' \
-    --status 'UsvyGDA4' \
-    --userID 'nkWII4eK' \
-    --limit '80' \
-    --offset '10' \
+    --matchID 'gvS8vaJw' \
+    --partyID 't1jFn9ah' \
+    --sessionType 'px5nO0VU' \
+    --status 'YRvhikor' \
+    --userID '7oORG3Fb' \
+    --limit '14' \
+    --offset '67' \
     > test.out 2>&1
 eval_tap $? 8 'AdminSearchSessionsV2' test.out
 
@@ -142,7 +142,7 @@ eval_tap $? 8 'AdminSearchSessionsV2' test.out
 $CLI_EXE \
     --sn sessionbrowser \
     --op GetSessionHistoryDetailed \
-    --matchID 'hi5HgntL' \
+    --matchID 'W4Sc57JI' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 9 'GetSessionHistoryDetailed' test.out
@@ -152,22 +152,22 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op UserQuerySession \
     --namespace $AB_NAMESPACE \
-    --gameMode 'Pg6Jmc1v' \
-    --gameVersion 'ZL0RQnyd' \
-    --joinable '24iFWX8b' \
-    --limit '84' \
-    --matchExist '8v1RHw9c' \
-    --matchId 'FIn4ImQN' \
-    --offset '93' \
-    --serverStatus '2xYj78o2' \
-    --userId 'Uf9laWSu' \
-    --sessionType 'AjkU2OQx' \
+    --gameMode 'jyzkDKiw' \
+    --gameVersion 'BrxpUfiM' \
+    --joinable 'QSD6Zvnk' \
+    --limit '22' \
+    --matchExist 'pnBTxeWk' \
+    --matchId '7DCh1aFe' \
+    --offset '75' \
+    --serverStatus 'Nog3x8zg' \
+    --userId 'joOUfk5D' \
+    --sessionType '7E0yJSU0' \
     > test.out 2>&1
 eval_tap $? 10 'UserQuerySession' test.out
 
 #- 11 CreateSession
 # body param: body
-echo '{"game_session_setting": {"allow_join_in_progress": true, "current_internal_player": 80, "current_player": 39, "map_name": "VGZMCn0o", "max_internal_player": 49, "max_player": 11, "mode": "A5vGw85U", "num_bot": 7, "password": "E6ZV8jZy", "settings": {"eWkDsQIK": {}, "VkJIdwbC": {}, "1DmRvbbY": {}}}, "game_version": "kSQR7sEa", "namespace": "IvUNdtII", "session_type": "MM9dMt4I", "username": "lU7RKj4E"}' > $TEMP_JSON_INPUT
+echo '{"game_session_setting": {"allow_join_in_progress": true, "current_internal_player": 75, "current_player": 96, "map_name": "UZhAyLrb", "max_internal_player": 61, "max_player": 50, "mode": "9uJ4iBZA", "num_bot": 99, "password": "5jfXtrVb", "settings": {"h5j3PjgW": {}, "AKDJZX3d": {}, "y3VmxAMi": {}}}, "game_version": "pzJxbPBW", "namespace": "CP5NpqTl", "session_type": "0S65Q6VM", "username": "88oRBpwr"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op CreateSession \
@@ -181,7 +181,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetSessionByUserIDs \
     --namespace $AB_NAMESPACE \
-    --userIds 'rAy0thJz' \
+    --userIds 'vSqB3EeB' \
     > test.out 2>&1
 eval_tap $? 12 'GetSessionByUserIDs' test.out
 
@@ -190,18 +190,18 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'LVStUKg6' \
+    --sessionID 'HhbeUGly' \
     > test.out 2>&1
 eval_tap $? 13 'GetSession' test.out
 
 #- 14 UpdateSession
 # body param: body
-echo '{"game_max_player": 12}' > $TEMP_JSON_INPUT
+echo '{"game_max_player": 97}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op UpdateSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'JLySCWMy' \
+    --sessionID 'DcJgqRQ6' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 14 'UpdateSession' test.out
@@ -211,18 +211,18 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op DeleteSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'XXPK14VN' \
+    --sessionID 'CiP8izUO' \
     > test.out 2>&1
 eval_tap $? 15 'DeleteSession' test.out
 
 #- 16 JoinSession
 # body param: body
-echo '{"password": "nceALO4c"}' > $TEMP_JSON_INPUT
+echo '{"password": "5Y0hgLqK"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op JoinSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'UogSWbZp' \
+    --sessionID 'XD5AZvNG' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 16 'JoinSession' test.out
@@ -232,18 +232,18 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op DeleteSessionLocalDS \
     --namespace $AB_NAMESPACE \
-    --sessionID 'aTvsBHQc' \
+    --sessionID 'zCezEsGv' \
     > test.out 2>&1
 eval_tap $? 17 'DeleteSessionLocalDS' test.out
 
 #- 18 AddPlayerToSession
 # body param: body
-echo '{"as_spectator": true, "user_id": "iVfpTiVe"}' > $TEMP_JSON_INPUT
+echo '{"as_spectator": false, "user_id": "iewAlQfl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionbrowser \
     --op AddPlayerToSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'CML0yVu8' \
+    --sessionID 'GWAgu7aA' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 18 'AddPlayerToSession' test.out
@@ -253,8 +253,8 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op RemovePlayerFromSession \
     --namespace $AB_NAMESPACE \
-    --sessionID 'WQM86MND' \
-    --userID 'XJhoFYhE' \
+    --sessionID 'bWV1kQ4t' \
+    --userID 'GlhSqXzj' \
     > test.out 2>&1
 eval_tap $? 19 'RemovePlayerFromSession' test.out
 
@@ -265,7 +265,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op UpdateSettings \
     --namespace $AB_NAMESPACE \
-    --sessionID 'HJman8pm' \
+    --sessionID 'kBkS7EBz' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 20 'UpdateSettings' test.out
@@ -275,7 +275,7 @@ $CLI_EXE \
     --sn sessionbrowser \
     --op GetRecentPlayer \
     --namespace $AB_NAMESPACE \
-    --userID 'DezO3l8E' \
+    --userID 'FI22KqlC' \
     > test.out 2>&1
 eval_tap $? 21 'GetRecentPlayer' test.out
 

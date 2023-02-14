@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminsaveuserrolev3")]
-    public class AdminSaveUserRoleV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminsaveuserrolev3")]
+    public class AdminSaveUserRoleV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminSaveUserRoleV3"; } }
+        public string OperationName { get { return "AdminSaveUserRoleV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public List<ModelNamespaceRoleRequest> Body { get; set; } = new List<ModelNamespaceRoleRequest>();
-                
+
         public AdminSaveUserRoleV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminSaveUserRoleV3 operation = new AdminSaveUserRoleV3(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.AdminSaveUserRoleV3(operation);
             return String.Empty;
         }

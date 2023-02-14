@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session","gethealthcheckinfo")]
-    public class GetHealthcheckInfoCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("session", "gethealthcheckinfo")]
+    public class GetHealthcheckInfoCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Session"; } }
+        public string ServiceName { get { return "Session"; } }
 
-        public string OperationName{ get { return "GetHealthcheckInfo"; } }
+        public string OperationName { get { return "GetHealthcheckInfo"; } }
 
         public GetHealthcheckInfoCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Operations(_SDK);
 
             GetHealthcheckInfo operation = new GetHealthcheckInfo(
-            );            
-            
+            );
+
             wrapper.GetHealthcheckInfo(operation);
             return String.Empty;
         }

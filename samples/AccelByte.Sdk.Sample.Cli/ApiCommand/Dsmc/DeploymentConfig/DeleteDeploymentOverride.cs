@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","deletedeploymentoverride")]
-    public class DeleteDeploymentOverrideCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "deletedeploymentoverride")]
+    public class DeleteDeploymentOverrideCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "DeleteDeploymentOverride"; } }
+        public string OperationName { get { return "DeleteDeploymentOverride"; } }
 
         [SdkCommandArgument("deployment")]
         public string Deployment { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.DeploymentConfig(_SDK);
 
             DeleteDeploymentOverride operation = new DeleteDeploymentOverride(
-                Deployment,                
-                Namespace,                
-                Version                
-            );            
-            
+                Deployment,
+                Namespace,
+                Version
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDeploymentWithOverride? response = wrapper.DeleteDeploymentOverride(operation);
             if (response == null)
                 return "No response from server.";

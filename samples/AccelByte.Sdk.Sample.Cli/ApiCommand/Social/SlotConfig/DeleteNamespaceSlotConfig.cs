@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","deletenamespaceslotconfig")]
-    public class DeleteNamespaceSlotConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "deletenamespaceslotconfig")]
+    public class DeleteNamespaceSlotConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "DeleteNamespaceSlotConfig"; } }
+        public string OperationName { get { return "DeleteNamespaceSlotConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.SlotConfig wrapper = new AccelByte.Sdk.Api.Social.Wrapper.SlotConfig(_SDK);
 
             DeleteNamespaceSlotConfig operation = new DeleteNamespaceSlotConfig(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             wrapper.DeleteNamespaceSlotConfig(operation);
             return String.Empty;
         }

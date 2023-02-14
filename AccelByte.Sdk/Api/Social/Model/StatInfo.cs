@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api.Social.Model
         {
 
         }
-    }    
+    }
 
     public class StatInfoStatus : StringEnum<StatInfoStatus>
     {
@@ -103,5 +103,5 @@ namespace AccelByte.Sdk.Api.Social.Model
         {
 
         }
-    }    
+    }
 }

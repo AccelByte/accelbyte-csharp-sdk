@@ -67,12 +67,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         private GetRevocationListV3(GetRevocationListV3Builder builder
         )
         {
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -81,12 +81,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public GetRevocationListV3(
         )
         {
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -101,9 +101,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-        
+
         public Model.OauthapiRevocationList? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -116,9 +116,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

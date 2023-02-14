@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getuserdlc")]
-    public class GetUserDLCCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getuserdlc")]
+    public class GetUserDLCCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserDLC"; } }
+        public string OperationName { get { return "GetUserDLC"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             GetUserDLC operation = new GetUserDLC(
-                Namespace,                
-                UserId,                
-                GetUserDLCType.NewValue(Type)                
-            );            
-            
+                Namespace,
+                UserId,
+                GetUserDLCType.NewValue(Type)
+            );
+
             AccelByte.Sdk.Api.Platform.Model.UserDLC? response = wrapper.GetUserDLC(operation);
             if (response == null)
                 return "No response from server.";

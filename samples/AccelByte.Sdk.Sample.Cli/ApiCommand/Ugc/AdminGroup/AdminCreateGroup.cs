@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","admincreategroup")]
-    public class AdminCreateGroupCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "admincreategroup")]
+    public class AdminCreateGroupCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "AdminCreateGroup"; } }
+        public string OperationName { get { return "AdminCreateGroup"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsCreateGroupRequest Body { get; set; } = new ModelsCreateGroupRequest();
-                
+
         public AdminCreateGroupCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup(_SDK);
 
             AdminCreateGroup operation = new AdminCreateGroup(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateGroupResponse? response = wrapper.AdminCreateGroup(operation);
             if (response == null)
                 return "No response from server.";

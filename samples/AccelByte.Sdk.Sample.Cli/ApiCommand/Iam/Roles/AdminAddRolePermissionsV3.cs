@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","adminaddrolepermissionsv3")]
-    public class AdminAddRolePermissionsV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "adminaddrolepermissionsv3")]
+    public class AdminAddRolePermissionsV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminAddRolePermissionsV3"; } }
+        public string OperationName { get { return "AdminAddRolePermissionsV3"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public AccountcommonPermissionsV3 Body { get; set; } = new AccountcommonPermissionsV3();
-                
+
         public AdminAddRolePermissionsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
             AdminAddRolePermissionsV3 operation = new AdminAddRolePermissionsV3(
-                RoleId,                
-                Body                
-            );            
-            
+                RoleId,
+                Body
+            );
+
             wrapper.AdminAddRolePermissionsV3(operation);
             return String.Empty;
         }

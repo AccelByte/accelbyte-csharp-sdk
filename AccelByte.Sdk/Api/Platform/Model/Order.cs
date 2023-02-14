@@ -419,7 +419,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class OrderStatus : StringEnum<OrderStatus>
     {
@@ -467,5 +467,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

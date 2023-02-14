@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admininviteuserv4")]
-    public class AdminInviteUserV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admininviteuserv4")]
+    public class AdminInviteUserV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminInviteUserV4"; } }
+        public string OperationName { get { return "AdminInviteUserV4"; } }
 
         [SdkCommandData("body")]
         public ModelInviteUserRequestV4 Body { get; set; } = new ModelInviteUserRequestV4();
-                
+
         public AdminInviteUserV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminInviteUserV4 operation = new AdminInviteUserV4(
-                Body                
-            );            
-            
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.ModelInviteUserResponseV3? response = wrapper.AdminInviteUserV4(operation);
             if (response == null)
                 return "No response from server.";

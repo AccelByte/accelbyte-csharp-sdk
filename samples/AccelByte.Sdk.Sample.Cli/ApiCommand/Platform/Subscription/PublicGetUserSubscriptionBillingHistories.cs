@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","publicgetusersubscriptionbillinghistories")]
-    public class PublicGetUserSubscriptionBillingHistoriesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "publicgetusersubscriptionbillinghistories")]
+    public class PublicGetUserSubscriptionBillingHistoriesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PublicGetUserSubscriptionBillingHistories"; } }
+        public string OperationName { get { return "PublicGetUserSubscriptionBillingHistories"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             PublicGetUserSubscriptionBillingHistories operation = new PublicGetUserSubscriptionBillingHistories(
-                Namespace,                
-                SubscriptionId,                
-                UserId,                
-                ExcludeFree,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                SubscriptionId,
+                UserId,
+                ExcludeFree,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Platform.Model.BillingHistoryPagingSlicedResult? response = wrapper.PublicGetUserSubscriptionBillingHistories(operation);
             if (response == null)
                 return "No response from server.";

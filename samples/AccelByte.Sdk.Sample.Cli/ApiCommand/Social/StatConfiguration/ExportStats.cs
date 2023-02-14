@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social","exportstats")]
-    public class ExportStatsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("social", "exportstats")]
+    public class ExportStatsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Social"; } }
+        public string ServiceName { get { return "Social"; } }
 
-        public string OperationName{ get { return "ExportStats"; } }
+        public string OperationName { get { return "ExportStats"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatConfiguration(_SDK);
 
             ExportStats operation = new ExportStats(
-                Namespace                
-            );            
-            
+                Namespace
+            );
+
             Stream? response = wrapper.ExportStats(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","purgeexpiredsection")]
-    public class PurgeExpiredSectionCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "purgeexpiredsection")]
+    public class PurgeExpiredSectionCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "PurgeExpiredSection"; } }
+        public string OperationName { get { return "PurgeExpiredSection"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Section wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Section(_SDK);
 
             PurgeExpiredSection operation = new PurgeExpiredSection(
-                Namespace,                
-                StoreId                
-            );            
-            
+                Namespace,
+                StoreId
+            );
+
             wrapper.PurgeExpiredSection(operation);
             return String.Empty;
         }

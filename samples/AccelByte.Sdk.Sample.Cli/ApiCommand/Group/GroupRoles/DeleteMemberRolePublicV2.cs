@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group","deletememberrolepublicv2")]
-    public class DeleteMemberRolePublicV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("group", "deletememberrolepublicv2")]
+    public class DeleteMemberRolePublicV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Group"; } }
+        public string ServiceName { get { return "Group"; } }
 
-        public string OperationName{ get { return "DeleteMemberRolePublicV2"; } }
+        public string OperationName { get { return "DeleteMemberRolePublicV2"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 
         [SdkCommandData("body")]
         public ModelsRemoveRoleFromMemberRequestV1 Body { get; set; } = new ModelsRemoveRoleFromMemberRequestV1();
-                
+
         public DeleteMemberRolePublicV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             DeleteMemberRolePublicV2 operation = new DeleteMemberRolePublicV2(
-                GroupId,                
-                MemberRoleId,                
-                Namespace,                
-                Body                
-            );            
-            
+                GroupId,
+                MemberRoleId,
+                Namespace,
+                Body
+            );
+
             wrapper.DeleteMemberRolePublicV2(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","checkwallet")]
-    public class CheckWalletCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "checkwallet")]
+    public class CheckWalletCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "CheckWallet"; } }
+        public string OperationName { get { return "CheckWallet"; } }
 
         [SdkCommandArgument("currencyCode")]
         public string CurrencyCode { get; set; } = String.Empty;
@@ -48,19 +48,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             CheckWallet operation = new CheckWallet(
-                CurrencyCode,                
-                Namespace,                
-                UserId,                
-                CheckWalletOrigin.NewValue(Origin)                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                CurrencyCode,
+                Namespace,
+                UserId,
+                CheckWalletOrigin.NewValue(Origin)
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.CheckWallet(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

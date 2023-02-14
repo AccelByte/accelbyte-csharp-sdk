@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser","getrecentplayer")]
-    public class GetRecentPlayerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser", "getrecentplayer")]
+    public class GetRecentPlayerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Sessionbrowser"; } }
+        public string ServiceName { get { return "Sessionbrowser"; } }
 
-        public string OperationName{ get { return "GetRecentPlayer"; } }
+        public string OperationName { get { return "GetRecentPlayer"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             GetRecentPlayer operation = new GetRecentPlayer(
-                Namespace,                
-                UserID                
-            );            
-            
+                Namespace,
+                UserID
+            );
+
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsRecentPlayerQueryResponse? response = wrapper.GetRecentPlayer(operation);
             if (response == null)
                 return "No response from server.";

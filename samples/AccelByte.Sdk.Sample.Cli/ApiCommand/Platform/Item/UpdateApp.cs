@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","updateapp")]
-    public class UpdateAppCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "updateapp")]
+    public class UpdateAppCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "UpdateApp"; } }
+        public string OperationName { get { return "UpdateApp"; } }
 
         [SdkCommandArgument("itemId")]
         public string ItemId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public AppUpdate Body { get; set; } = new AppUpdate();
-                
+
         public UpdateAppCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             UpdateApp operation = new UpdateApp(
-                ItemId,                
-                Namespace,                
-                StoreId,                
-                Body                
-            );            
-            
+                ItemId,
+                Namespace,
+                StoreId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Platform.Model.FullAppInfo? response = wrapper.UpdateApp(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","updateuserfollowstatus")]
-    public class UpdateUserFollowStatusCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "updateuserfollowstatus")]
+    public class UpdateUserFollowStatusCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "UpdateUserFollowStatus"; } }
+        public string OperationName { get { return "UpdateUserFollowStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsUserFollowRequest Body { get; set; } = new ModelsUserFollowRequest();
-                
+
         public UpdateUserFollowStatusCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicFollow wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicFollow(_SDK);
 
             UpdateUserFollowStatus operation = new UpdateUserFollowStatus(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsUserFollowResponse? response = wrapper.UpdateUserFollowStatus(operation);
             if (response == null)
                 return "No response from server.";

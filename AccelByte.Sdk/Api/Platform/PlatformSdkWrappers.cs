@@ -200,6 +200,17 @@ namespace AccelByte.Sdk.Core
         }
         private Wallet? _Wallet = null;
 
+        public Revocation Revocation
+        {
+            get
+            {
+                if (_Revocation == null)
+                    _Revocation = new Revocation(_SdkObject);
+                return _Revocation;
+            }
+        }
+        private Revocation? _Revocation = null;
+
         public Reward Reward
         {
             get

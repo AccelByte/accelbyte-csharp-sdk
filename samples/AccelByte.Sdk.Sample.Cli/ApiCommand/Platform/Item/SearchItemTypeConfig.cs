@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","searchitemtypeconfig")]
-    public class SearchItemTypeConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "searchitemtypeconfig")]
+    public class SearchItemTypeConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "SearchItemTypeConfig"; } }
+        public string OperationName { get { return "SearchItemTypeConfig"; } }
 
         [SdkCommandArgument("clazz")]
         public string? Clazz { get; set; }
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             SearchItemTypeConfig operation = new SearchItemTypeConfig(
-                Clazz,                
-                SearchItemTypeConfigItemType.NewValue(ItemType)                
-            );            
-            
+                Clazz,
+                SearchItemTypeConfigItemType.NewValue(ItemType)
+            );
+
             AccelByte.Sdk.Api.Platform.Model.ItemTypeConfigInfo? response = wrapper.SearchItemTypeConfig(operation);
             if (response == null)
                 return "No response from server.";

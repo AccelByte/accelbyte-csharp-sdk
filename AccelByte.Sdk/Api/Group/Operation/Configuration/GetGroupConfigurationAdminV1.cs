@@ -54,8 +54,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             )
             {
                 GetGroupConfigurationAdminV1 op = new GetGroupConfigurationAdminV1(this,
-                    configurationCode,                    
-                    namespace_                    
+                    configurationCode,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,30 +70,30 @@ namespace AccelByte.Sdk.Api.Group.Operation
         {
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetGroupConfigurationAdminV1(
-            string configurationCode,            
-            string namespace_            
+            string configurationCode,
+            string namespace_
         )
         {
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,15 +102,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsGetGroupConfigurationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetGroupConfigurationResponseV1>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

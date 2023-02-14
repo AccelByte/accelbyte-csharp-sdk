@@ -6,7 +6,7 @@ using System;
 using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Feature.LocalTokenValidation
-{    
+{
     public static class SdkBuilder_ExtensionMethods
     {
         public static AccelByteSdkBuilder UseLocalTokenValidator(this AccelByteSdkBuilder builder)

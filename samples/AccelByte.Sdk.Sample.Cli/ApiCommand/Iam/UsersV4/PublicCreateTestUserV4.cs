@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","publiccreatetestuserv4")]
-    public class PublicCreateTestUserV4Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publiccreatetestuserv4")]
+    public class PublicCreateTestUserV4Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "PublicCreateTestUserV4"; } }
+        public string OperationName { get { return "PublicCreateTestUserV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public AccountCreateTestUserRequestV4 Body { get; set; } = new AccountCreateTestUserRequestV4();
-                
+
         public PublicCreateTestUserV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicCreateTestUserV4 operation = new PublicCreateTestUserV4(
-                Namespace,                
-                Body                
-            );            
-            
+                Namespace,
+                Body
+            );
+
             AccelByte.Sdk.Api.Iam.Model.AccountCreateUserResponseV4? response = wrapper.PublicCreateTestUserV4(operation);
             if (response == null)
                 return "No response from server.";

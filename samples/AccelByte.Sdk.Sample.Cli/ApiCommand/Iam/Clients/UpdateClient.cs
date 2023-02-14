@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","updateclient")]
-    public class UpdateClientCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "updateclient")]
+    public class UpdateClientCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "UpdateClient"; } }
+        public string OperationName { get { return "UpdateClient"; } }
 
         [SdkCommandArgument("clientId")]
         public string ClientId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ClientmodelClientUpdateRequest Body { get; set; } = new ClientmodelClientUpdateRequest();
-                
+
         public UpdateClientCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,20 +42,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             UpdateClient operation = new UpdateClient(
-                ClientId,                
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                ClientId,
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ClientmodelClientResponse? response = wrapper.UpdateClient(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

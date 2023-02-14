@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam","admindeleteuserrolev3")]
-    public class AdminDeleteUserRoleV3Command: ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admindeleteuserrolev3")]
+    public class AdminDeleteUserRoleV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Iam"; } }
+        public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName{ get { return "AdminDeleteUserRoleV3"; } }
+        public string OperationName { get { return "AdminDeleteUserRoleV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminDeleteUserRoleV3 operation = new AdminDeleteUserRoleV3(
-                Namespace,                
-                RoleId,                
-                UserId                
-            );            
-            
+                Namespace,
+                RoleId,
+                UserId
+            );
+
             wrapper.AdminDeleteUserRoleV3(operation);
             return String.Empty;
         }

@@ -40,9 +40,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Playstation
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Playstation");
 
-        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Stadia
-            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Stadia");
-
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Steam
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Steam");
 
@@ -66,5 +63,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

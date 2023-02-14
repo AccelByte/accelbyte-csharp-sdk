@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStore(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.StoreInfo? Execute(
             this ImportStore.ImportStoreBuilder builder,
             string namespace_
@@ -142,7 +142,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CloneStore(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
             this ExportStore.ExportStoreBuilder builder,
             string namespace_,

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc","importconfigv1")]
-    public class ImportConfigV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "importconfigv1")]
+    public class ImportConfigV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Dsmc"; } }
+        public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName{ get { return "ImportConfigV1"; } }
+        public string OperationName { get { return "ImportConfigV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public ImportConfigV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             ImportConfigV1 operation = new ImportConfigV1(
-                Namespace,                
-                File                
-            );            
-            
+                Namespace,
+                File
+            );
+
             AccelByte.Sdk.Api.Dsmc.Model.ModelsImportResponse? response = wrapper.ImportConfigV1(operation);
             if (response == null)
                 return "No response from server.";

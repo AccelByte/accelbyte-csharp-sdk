@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Eventlog.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
 {
-    [SdkConsoleCommand("eventlog","registereventhandler")]
-    public class RegisterEventHandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("eventlog", "registereventhandler")]
+    public class RegisterEventHandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Eventlog"; } }
+        public string ServiceName { get { return "Eventlog"; } }
 
-        public string OperationName{ get { return "RegisterEventHandler"; } }
+        public string OperationName { get { return "RegisterEventHandler"; } }
 
         [SdkCommandData("body")]
         public ModelsEventRegistry Body { get; set; } = new ModelsEventRegistry();
-                
+
         public RegisterEventHandlerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,16 +39,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Eventlog
         {
             AccelByte.Sdk.Api.Eventlog.Wrapper.EventRegistry wrapper = new AccelByte.Sdk.Api.Eventlog.Wrapper.EventRegistry(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             RegisterEventHandler operation = new RegisterEventHandler(
-                Body                
-            );            
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+                Body
+            );
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.RegisterEventHandler(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

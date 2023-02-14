@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform","getusersubscriptionactivities")]
-    public class GetUserSubscriptionActivitiesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getusersubscriptionactivities")]
+    public class GetUserSubscriptionActivitiesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Platform"; } }
+        public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName{ get { return "GetUserSubscriptionActivities"; } }
+        public string OperationName { get { return "GetUserSubscriptionActivities"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             GetUserSubscriptionActivities operation = new GetUserSubscriptionActivities(
-                Namespace,                
-                UserId,                
-                ExcludeSystem,                
-                Limit,                
-                Offset,                
-                SubscriptionId                
-            );            
-            
+                Namespace,
+                UserId,
+                ExcludeSystem,
+                Limit,
+                Offset,
+                SubscriptionId
+            );
+
             AccelByte.Sdk.Api.Platform.Model.SubscriptionActivityPagingSlicedResult? response = wrapper.GetUserSubscriptionActivities(operation);
             if (response == null)
                 return "No response from server.";

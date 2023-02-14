@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave","postplayerpublicrecordhandlerv1")]
-    public class PostPlayerPublicRecordHandlerV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "postplayerpublicrecordhandlerv1")]
+    public class PostPlayerPublicRecordHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Cloudsave"; } }
+        public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName{ get { return "PostPlayerPublicRecordHandlerV1"; } }
+        public string OperationName { get { return "PostPlayerPublicRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsPlayerRecordRequest Body { get; set; } = new ModelsPlayerRecordRequest();
-                
+
         public PostPlayerPublicRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicPlayerRecord(_SDK);
 
             PostPlayerPublicRecordHandlerV1 operation = new PostPlayerPublicRecordHandlerV1(
-                Key,                
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Key,
+                Namespace,
+                UserId,
+                Body
+            );
+
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.PostPlayerPublicRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

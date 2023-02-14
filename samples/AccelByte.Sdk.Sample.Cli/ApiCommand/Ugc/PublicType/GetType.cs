@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc","gettype")]
-    public class GetTypeCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ugc", "gettype")]
+    public class GetTypeCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ugc"; } }
+        public string ServiceName { get { return "Ugc"; } }
 
-        public string OperationName{ get { return "GetType"; } }
+        public string OperationName { get { return "GetType"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicType wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicType(_SDK);
 
             GetType operation = new GetType(
-                Namespace,                
-                Limit,                
-                Offset                
-            );            
-            
+                Namespace,
+                Limit,
+                Offset
+            );
+
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedGetTypeResponse? response = wrapper.GetType(operation);
             if (response == null)
                 return "No response from server.";

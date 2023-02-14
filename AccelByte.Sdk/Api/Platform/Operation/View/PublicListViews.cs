@@ -67,8 +67,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicListViews op = new PublicListViews(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -83,36 +83,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicListViews(
-            string namespace_,            
-            string userId,            
-            string? language,            
-            string? storeId            
+            string namespace_,
+            string userId,
+            string? language,
+            string? storeId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (language is not null) QueryParams["language"] = language;
             if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -121,15 +121,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ViewInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -142,18 +142,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ViewInfo>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public List<Model.ViewInfo<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<List<Model.ViewInfo<T1>>>(payload);
@@ -162,8 +162,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ViewInfo<T1>>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

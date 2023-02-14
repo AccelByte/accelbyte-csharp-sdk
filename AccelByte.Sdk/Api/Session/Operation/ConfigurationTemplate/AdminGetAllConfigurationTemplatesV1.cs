@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 AdminGetAllConfigurationTemplatesV1 op = new AdminGetAllConfigurationTemplatesV1(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -56,28 +56,28 @@ namespace AccelByte.Sdk.Api.Session.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetAllConfigurationTemplatesV1(
-            string namespace_            
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -92,9 +92,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApimodelsConfigurationTemplatesResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -107,9 +107,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelsConfigurationTemplatesResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

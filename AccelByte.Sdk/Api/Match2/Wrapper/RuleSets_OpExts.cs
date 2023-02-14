@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this CreateRuleSet.CreateRuleSetBuilder builder,
-            ApiMatchRuleSet body,
+            ApiRuleSetPayload body,
             string namespace_
         )
         {
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.RuleSets)builder.WrapperObject!).CreateRuleSet(op);
         }
-        public static Match2.Model.ApiMatchRuleSet? Execute(
+        public static Match2.Model.ApiRuleSetPayload? Execute(
             this RuleSetDetails.RuleSetDetailsBuilder builder,
             string namespace_,
             string ruleset
@@ -49,9 +49,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetails(op);
         }
-        public static Match2.Model.ApiMatchRuleSet? Execute(
+
+        public static Match2.Model.ApiRuleSetPayload<T1>? Execute<T1>(
+            this RuleSetDetails.RuleSetDetailsBuilder builder,
+            string namespace_,
+            string ruleset
+        )
+        {
+            RuleSetDetails op = builder.Build(
+                namespace_,
+                ruleset
+            );
+
+            return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetails<T1>(op);
+        }
+        public static Match2.Model.ApiRuleSetPayload? Execute(
             this UpdateRuleSet.UpdateRuleSetBuilder builder,
-            ApiMatchRuleSetData body,
+            ApiRuleSetPayload body,
             string namespace_,
             string ruleset
         )
@@ -63,6 +77,22 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSet(op);
+        }
+
+        public static Match2.Model.ApiRuleSetPayload<T1>? Execute<T1>(
+            this UpdateRuleSet.UpdateRuleSetBuilder builder,
+            ApiRuleSetPayload body,
+            string namespace_,
+            string ruleset
+        )
+        {
+            UpdateRuleSet op = builder.Build(
+                body,
+                namespace_,
+                ruleset
+            );
+
+            return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSet<T1>(op);
         }
         public static void Execute(
             this DeleteRuleSet.DeleteRuleSetBuilder builder,

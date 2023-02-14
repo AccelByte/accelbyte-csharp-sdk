@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class ItemNamingSeasonType : StringEnum<ItemNamingSeasonType>
     {
@@ -113,7 +113,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class ItemNamingStatus : StringEnum<ItemNamingStatus>
     {
@@ -134,5 +134,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }
