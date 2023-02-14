@@ -84,22 +84,16 @@ namespace AccelByte.Sdk.Core
             var buffer = new ArraySegment<byte>(new byte[2048]);
             do
             {
+                WebSocketReceiveResult? result = null;
                 bool isReceiveError = false;
-                bool isBreakLoop = false;
                 using (MemoryStream ms = new MemoryStream())
                 {
-                    while (true)
+                    do
                     {
                         try
                         {
-                            WebSocketReceiveResult result = await _Socket.ReceiveAsync(buffer, cancelToken);
+                            result = await _Socket.ReceiveAsync(buffer, cancelToken);
                             ms.Write(buffer.Array!, buffer.Offset, result.Count);
-
-                            if ((result.MessageType == WebSocketMessageType.Close) || result.EndOfMessage)
-                            {
-                                isBreakLoop = true;
-                                break;
-                            }   
                         }
                         catch (Exception x)
                         {
@@ -110,13 +104,16 @@ namespace AccelByte.Sdk.Core
                             else
                                 OnReceiveError?.Invoke(x.Message, ERROR_WEB_SOCKET_RECEIVE);
                             isReceiveError = true;
+
                             break;
                         }
                     }
+                    while ((result != null) && (!result.EndOfMessage) && (!isReceiveError));
 
-                    if (isBreakLoop || isReceiveError)
+                    if (result != null)
                     {
-                        break;
+                        if (result.MessageType == WebSocketMessageType.Close)
+                            break;
                     }
                     else
                     {
