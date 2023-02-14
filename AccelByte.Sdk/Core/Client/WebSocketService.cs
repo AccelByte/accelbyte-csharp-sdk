@@ -84,7 +84,8 @@ namespace AccelByte.Sdk.Core
             var buffer = new ArraySegment<byte>(new byte[2048]);
             do
             {
-                WebSocketReceiveResult? result;
+                WebSocketReceiveResult? result = null;
+                bool isReceiveError = false;
                 using (MemoryStream ms = new MemoryStream())
                 {
                     do
@@ -102,12 +103,12 @@ namespace AccelByte.Sdk.Core
                                 OnReceiveError?.Invoke(x.Message, ERROR_COMPRESSED_FRAME_RECEIVED);
                             else
                                 OnReceiveError?.Invoke(x.Message, ERROR_WEB_SOCKET_RECEIVE);
+                            isReceiveError = true;
 
-                            result = null;
                             break;
                         }
                     }
-                    while ((result != null) && (!result.EndOfMessage));
+                    while ((result != null) && (!result.EndOfMessage) && (!isReceiveError));
 
                     if (result != null)
                     {
