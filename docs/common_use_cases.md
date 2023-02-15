@@ -13,7 +13,7 @@ ModelsAchievementRequest newAchievement = new ModelsAchievementRequest()
     DefaultLanguage = "en",
     Name = new Dictionary<string, string>()
     {
-        {"en", "CSharp Server SDK Test" }
+        {"en", achievement_name }
     },
     Description = new Dictionary<string, string>
     {
@@ -51,7 +51,16 @@ ModelsAchievementResponse? cResp = _Sdk.Achievement.Achievements.AdminCreateNewA
 ```csharp
 ModelsAchievementUpdateRequest updateAchievement = new ModelsAchievementUpdateRequest()
 {
-    GoalValue = 2000.0
+    GoalValue = 2000.0,
+    DefaultLanguage = "en",
+    Name = new Dictionary<string, string>()
+    {
+        {"en", achievement_name }
+    },
+    Description = new Dictionary<string, string>
+    {
+        {"en", "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." }
+    }
 };
 
 ModelsAchievementResponse? uResp = _Sdk.Achievement.Achievements.AdminUpdateAchievementOp
@@ -443,6 +452,23 @@ _Sdk.Group.Configuration.DeleteGroupConfigurationV1Op
 
 Source: [IAMTests.cs](../AccelByte.Sdk.Tests/Services/IAMTests.cs)
 
+### Create a user (V3)
+
+```csharp
+ModelUserCreateRequestV3 newUser = new ModelUserCreateRequestV3()
+{
+    AuthType = "EMAILPASSWD",
+    EmailAddress = user_email,
+    Password = user_password,
+    DisplayName = "CSharp Server SDK Test",
+    Country = "ID",
+    DateOfBirth = "1995-01-10"
+};
+
+ModelUserCreateResponseV3? cuResp = _Sdk.Iam.Users.PublicCreateUserV3Op
+    .Execute(newUser, _Sdk.Namespace);
+```
+
 ### Create a user
 
 ```csharp
@@ -635,7 +661,7 @@ ModelFreeFormNotificationRequest notifBody = new ModelFreeFormNotificationReques
     Message = "This is integration test for CSharp Server SDK."
 };
 
-_Sdk.Lobby.Notification.FreeFormNotificationOp
+_Sdk.Lobby.Admin.FreeFormNotificationOp
     .Execute(notifBody, _Sdk.Namespace);
 ```
 
@@ -712,6 +738,99 @@ _Sdk.Matchmaking.Matchmaking.UpdateMatchmakingChannelOp
 ```csharp
 _Sdk.Matchmaking.Matchmaking.DeleteChannelHandlerOp
     .Execute(channel_name, _Sdk.Namespace);
+```
+
+## MatchmakingV2
+
+Source: [MatchV2Tests.cs](../AccelByte.Sdk.Tests/Services/MatchV2Tests.cs)
+
+### Match2 healthcheck
+
+```csharp
+_Sdk.Match2.Operations.GetHealthcheckInfoV1Op
+    .Execute();
+```
+
+### Create a match rule set
+
+```csharp
+ApiRuleSetPayload cRuleSetBody = new ApiRuleSetPayload()
+{
+    Name = rulesetName,
+    Data = new Dictionary<string, object>()
+    {
+        {"param_1", 40},
+        {"param_2", "A"}
+    }
+};
+
+_Sdk.Match2.RuleSets.CreateRuleSetOp
+    .Execute(cRuleSetBody, _Sdk.Namespace);
+```
+
+### Create a match pool
+
+```csharp
+ApiMatchPool createPoolBody = new ApiMatchPool()
+{
+    Name = poolName,
+    MatchFunction = "basic",
+    SessionTemplate = cfgTemplateName,
+    BackfillTicketExpirationSeconds = 600,
+    RuleSet = rulesetName,
+    TicketExpirationSeconds = 600
+};
+
+_Sdk.Match2.MatchPools.CreateMatchPoolOp
+    .Execute(createPoolBody, _Sdk.Namespace);
+```
+
+### List match pools
+
+```csharp
+ApiListMatchPoolsResponse? poolList = _Sdk.Match2.MatchPools.MatchPoolListOp
+    .Execute(_Sdk.Namespace);
+```
+
+### User create a match ticket
+
+```csharp
+ApiMatchTicketRequest ticketRequest = new ApiMatchTicketRequest()
+{
+    MatchPool = poolName,
+    SessionID = partyId
+};
+
+ApiMatchTicketResponse? nTicketResponse = sdk.Match2.MatchTickets.CreateMatchTicketOp
+    .Execute(ticketRequest, sdk.Namespace);
+```
+
+### User delete a match ticket
+
+```csharp
+sdk.Match2.MatchTickets.DeleteMatchTicketOp
+    .Execute(sdk.Namespace, ticketId);
+```
+
+### Delete a match pool
+
+```csharp
+_Sdk.Match2.MatchPools.DeleteMatchPoolOp
+    .Execute(_Sdk.Namespace, poolName);
+```
+
+### Delete a match rule set
+
+```csharp
+_Sdk.Match2.RuleSets.DeleteRuleSetOp
+    .Execute(_Sdk.Namespace, rulesetName);
+```
+
+### List match functions
+
+```csharp
+ApiListMatchFunctionsResponse? response = _Sdk.Match2.MatchFunctions.MatchFunctionListOp
+    .Execute(_Sdk.Namespace);
 ```
 
 ## Platform
@@ -859,6 +978,150 @@ SeasonUpdate uSeasonBody = new SeasonUpdate()
 SeasonInfo? uSeason = _Sdk.Seasonpass.Season.UpdateSeasonOp
     .SetBody(uSeasonBody)
     .Execute(_Sdk.Namespace, cSeasonId);
+```
+
+## Session
+
+Source: [SessionTests.cs](../AccelByte.Sdk.Tests/Services/SessionTests.cs)
+
+### Session Health Check
+
+```csharp
+_Sdk.Session.Operations.GetHealthcheckInfoV1Op
+    .Execute();
+```
+
+### Create session configuration template
+
+```csharp
+ApimodelsCreateConfigurationTemplateRequest cTemplateBody = new ApimodelsCreateConfigurationTemplateRequest()
+{
+    Name = cfgTemplateName,
+    Type = "P2P",
+    MinPlayers = 2,
+    MaxPlayers = 2,
+    InviteTimeout = 60,
+    InactiveTimeout = 60,
+    Joinability = "OPEN",
+    ClientVersion = "1.0.0",
+    RequestedRegions = new List<string>()
+    {
+        "us-west-2"
+    }
+};
+
+_Sdk.Session.ConfigurationTemplate.AdminCreateConfigurationTemplateV1Op
+    .Execute(cTemplateBody, _Sdk.Namespace);
+
+ApimodelsConfigurationTemplateResponse? cfgTemplate = _Sdk.Session.ConfigurationTemplate.AdminGetConfigurationTemplateV1Op
+    .Execute(cfgTemplateName, _Sdk.Namespace);
+```
+
+### Update session configuration template
+
+```csharp
+ApimodelsUpdateConfigurationTemplateRequest uTemplateBody = new ApimodelsUpdateConfigurationTemplateRequest()
+{
+    Name = cfgTemplateName,
+    Type = "P2P",
+    Joinability = "OPEN",
+    MaxPlayers = 4
+};
+
+ApimodelsConfigurationTemplateResponse? uptTemplate = _Sdk.Session.ConfigurationTemplate.AdminUpdateConfigurationTemplateV1Op
+    .Execute(uTemplateBody, cfgTemplateName, _Sdk.Namespace);
+```
+
+### Delete session configuration template
+
+```csharp
+ResponseError? response = _Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
+    .Execute(cfgTemplateName, _Sdk.Namespace);
+```
+
+### Create a game session
+
+```csharp
+ApimodelsCreateGameSessionRequest newGSRequest = new ApimodelsCreateGameSessionRequest()
+{
+    ConfigurationName = cfgTemplateName,
+};
+
+ApimodelsGameSessionResponse? newGSResponse = sdk.Session.GameSession.CreateGameSessionOp
+    .Execute(newGSRequest, sdk.Namespace);
+```
+
+### Join a game session
+
+```csharp
+ApimodelsGameSessionResponse? p2GsJoin = sdk.Session.GameSession.JoinGameSessionOp
+    .Execute(sdk.Namespace, gameSessionId);
+```
+
+### Leave a game session
+
+```csharp
+sdk.Session.GameSession.LeaveGameSessionOp
+    .Execute(sdk.Namespace, gameSessionId);
+```
+
+### Delete a game session
+
+```csharp
+sdk.Session.GameSession.DeleteGameSessionOp
+    .Execute(sdk.Namespace, gameSessionId);
+```
+
+### Query game sessions
+
+```csharp
+var response = _Sdk.Session.GameSession.PublicQueryGameSessionsOp
+    .Execute(new Dictionary<string, object>() { }, _Sdk.Namespace);
+```
+
+### User create a party
+
+```csharp
+ApimodelsCreatePartyRequest partyRequest = new ApimodelsCreatePartyRequest()
+{
+    ConfigurationName = cfgTemplateName,
+    Members = new List<ApimodelsRequestMember>()
+    {
+        new ApimodelsRequestMember()
+        {
+            ID = player.UserId
+        }
+    }
+};
+
+ApimodelsPartySessionResponse? partyResponse = sdk.Session.Party.PublicCreatePartyOp
+    .Execute(partyRequest, sdk.Namespace);
+```
+
+### User join a party with code
+
+```csharp
+ApimodelsJoinByCodeRequest joinRequest = new ApimodelsJoinByCodeRequest()
+{
+    Code = joinCode
+};
+
+ApimodelsPartySessionResponse? joinResponse = sdk.Session.Party.PublicPartyJoinCodeOp
+    .Execute(joinRequest, sdk.Namespace);
+```
+
+### Get party detail
+
+```csharp
+ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp
+    .Execute(_Sdk.Namespace, partyId);
+```
+
+### User leave a party
+
+```csharp
+sdk.Session.Party.PublicPartyLeaveOp
+    .Execute(sdk.Namespace, partyId);
 ```
 
 ## SessionBrowser
