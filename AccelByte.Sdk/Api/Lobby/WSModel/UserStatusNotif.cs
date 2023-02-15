@@ -16,18 +16,18 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("activity")]
         [JsonPropertyName("activity")]
         public string? Activity { get; set; }
-
+        
         [AwesomeProperty("availability")]
         [JsonPropertyName("availability")]
         public long? Availability { get; set; }
-
+        
         [AwesomeProperty("lastSeenAt")]
         [JsonPropertyName("lastSeenAt")]
         public string? LastSeenAt { get; set; }
-
+        
         [AwesomeProperty("userId")]
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-
+        
     }
 }

@@ -18,36 +18,36 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "freeformnotification")]
-    public class FreeFormNotificationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","notificationwithtemplate")]
+    public class NotificationWithTemplateCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "FreeFormNotification"; } }
+        public string OperationName{ get { return "NotificationWithTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelFreeFormNotificationRequest Body { get; set; } = new ModelFreeFormNotificationRequest();
-
-        public FreeFormNotificationCommand(AccelByteSDK sdk)
+        public ModelNotificationWithTemplateRequest Body { get; set; } = new ModelNotificationWithTemplateRequest();
+                
+        public NotificationWithTemplateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
-            FreeFormNotification operation = new FreeFormNotification(
-                Namespace,
-                Body
-            );
-
-            wrapper.FreeFormNotification(operation);
+            NotificationWithTemplate operation = new NotificationWithTemplate(
+                Namespace,                
+                Body                
+            );            
+            
+            wrapper.NotificationWithTemplate(operation);
             return String.Empty;
         }
     }

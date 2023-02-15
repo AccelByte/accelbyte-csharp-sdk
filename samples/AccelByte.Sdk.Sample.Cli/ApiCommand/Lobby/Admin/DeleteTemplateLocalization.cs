@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "getlocalizationtemplate")]
-    public class GetLocalizationTemplateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","deletetemplatelocalization")]
+    public class DeleteTemplateLocalizationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "GetLocalizationTemplate"; } }
+        public string OperationName{ get { return "DeleteTemplateLocalization"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,26 +36,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         [SdkCommandArgument("templateSlug")]
         public string TemplateSlug { get; set; } = String.Empty;
 
-        public GetLocalizationTemplateCommand(AccelByteSDK sdk)
+        public DeleteTemplateLocalizationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
-            GetLocalizationTemplate operation = new GetLocalizationTemplate(
-                Namespace,
-                TemplateLanguage,
-                TemplateSlug
-            );
-
-            AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalization? response = wrapper.GetLocalizationTemplate(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            DeleteTemplateLocalization operation = new DeleteTemplateLocalization(
+                Namespace,                
+                TemplateLanguage,                
+                TemplateSlug                
+            );            
+            
+            wrapper.DeleteTemplateLocalization(operation);
+            return String.Empty;
         }
     }
 }

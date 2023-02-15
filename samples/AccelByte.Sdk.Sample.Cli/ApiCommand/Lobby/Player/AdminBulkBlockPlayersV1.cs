@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "adminbulkblockplayersv1")]
-    public class AdminBulkBlockPlayersV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","adminbulkblockplayersv1")]
+    public class AdminBulkBlockPlayersV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminBulkBlockPlayersV1"; } }
+        public string OperationName{ get { return "AdminBulkBlockPlayersV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsListBlockedPlayerRequest Body { get; set; } = new ModelsListBlockedPlayerRequest();
-
+                
         public AdminBulkBlockPlayersV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Player(_SDK);
 
             AdminBulkBlockPlayersV1 operation = new AdminBulkBlockPlayersV1(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.AdminBulkBlockPlayersV1(operation);
             return String.Empty;
         }

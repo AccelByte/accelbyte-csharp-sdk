@@ -14,42 +14,40 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// publishTemplate
+    /// freeFormNotification
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
     /// 
-    /// Publish notification template draft. Empty draft can not be published.
+    /// Sends notification to all connected users in a namespace.
     /// </summary>
-    public class PublishTemplate : AccelByte.Sdk.Core.Operation
+    public class FreeFormNotification : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublishTemplateBuilder Builder { get => new PublishTemplateBuilder(); }
+        public static FreeFormNotificationBuilder Builder { get => new FreeFormNotificationBuilder(); }
 
-        public class PublishTemplateBuilder
-            : OperationBuilder<PublishTemplateBuilder>
+        public class FreeFormNotificationBuilder
+            : OperationBuilder<FreeFormNotificationBuilder>
         {
 
 
 
 
 
-            internal PublishTemplateBuilder() { }
+            internal FreeFormNotificationBuilder() { }
 
 
 
 
 
 
-            public PublishTemplate Build(
-                string namespace_,
-                string templateLanguage,
-                string templateSlug
+            public FreeFormNotification Build(
+                ModelFreeFormNotificationRequest body,
+                string namespace_
             )
             {
-                PublishTemplate op = new PublishTemplate(this,
-                    namespace_,
-                    templateLanguage,
-                    templateSlug
+                FreeFormNotification op = new FreeFormNotification(this,
+                    body,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -57,46 +55,42 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private PublishTemplate(PublishTemplateBuilder builder,
-            string namespace_,
-            string templateLanguage,
-            string templateSlug
+        private FreeFormNotification(FreeFormNotificationBuilder builder,
+            ModelFreeFormNotificationRequest body,
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["templateLanguage"] = templateLanguage;
-            PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            BodyParams = body;
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public PublishTemplate(
-            string namespace_,
-            string templateLanguage,
-            string templateSlug
+        public FreeFormNotification(
+            string namespace_,            
+            Model.ModelFreeFormNotificationRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["templateLanguage"] = templateLanguage;
-            PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            BodyParams = body;
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}/publish";
+        public override string Path => "/notification/namespaces/{namespace}/freeform";
 
         public override HttpMethod Method => HttpMethod.Post;
 
@@ -106,16 +100,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)204)
+            if (code == (HttpStatusCode)202)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

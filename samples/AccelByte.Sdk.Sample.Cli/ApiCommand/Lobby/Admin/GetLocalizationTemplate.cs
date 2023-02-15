@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "updatelocalizationtemplate")]
-    public class UpdateLocalizationTemplateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","getlocalizationtemplate")]
+    public class GetLocalizationTemplateCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "UpdateLocalizationTemplate"; } }
+        public string OperationName{ get { return "GetLocalizationTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,27 +36,26 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         [SdkCommandArgument("templateSlug")]
         public string TemplateSlug { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelUpdateTemplateRequest Body { get; set; } = new ModelUpdateTemplateRequest();
-
-        public UpdateLocalizationTemplateCommand(AccelByteSDK sdk)
+        public GetLocalizationTemplateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
-            UpdateLocalizationTemplate operation = new UpdateLocalizationTemplate(
-                Namespace,
-                TemplateLanguage,
-                TemplateSlug,
-                Body
-            );
+            GetLocalizationTemplate operation = new GetLocalizationTemplate(
+                Namespace,                
+                TemplateLanguage,                
+                TemplateSlug                
+            );            
+            
+            AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalization? response = wrapper.GetLocalizationTemplate(operation);
+            if (response == null)
+                return "No response from server.";
 
-            wrapper.UpdateLocalizationTemplate(operation);
-            return String.Empty;
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

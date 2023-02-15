@@ -14,42 +14,42 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// deleteTemplateLocalization
+    /// getLocalizationTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [DELETE]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope `social`
     /// 
-    /// Delete all template in a slug
+    /// Get a template localization
     /// </summary>
-    public class DeleteTemplateLocalization : AccelByte.Sdk.Core.Operation
+    public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTemplateLocalizationBuilder Builder { get => new DeleteTemplateLocalizationBuilder(); }
+        public static GetLocalizationTemplateBuilder Builder { get => new GetLocalizationTemplateBuilder(); }
 
-        public class DeleteTemplateLocalizationBuilder
-            : OperationBuilder<DeleteTemplateLocalizationBuilder>
+        public class GetLocalizationTemplateBuilder
+            : OperationBuilder<GetLocalizationTemplateBuilder>
         {
 
 
 
 
 
-            internal DeleteTemplateLocalizationBuilder() { }
+            internal GetLocalizationTemplateBuilder() { }
 
 
 
 
 
 
-            public DeleteTemplateLocalization Build(
+            public GetLocalizationTemplate Build(
                 string namespace_,
                 string templateLanguage,
                 string templateSlug
             )
             {
-                DeleteTemplateLocalization op = new DeleteTemplateLocalization(this,
-                    namespace_,
-                    templateLanguage,
-                    templateSlug
+                GetLocalizationTemplate op = new GetLocalizationTemplate(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private DeleteTemplateLocalization(DeleteTemplateLocalizationBuilder builder,
+        private GetLocalizationTemplate(GetLocalizationTemplateBuilder builder,
             string namespace_,
             string templateLanguage,
             string templateSlug
@@ -66,39 +66,39 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public DeleteTemplateLocalization(
-            string namespace_,
-            string templateLanguage,
-            string templateSlug
+        public GetLocalizationTemplate(
+            string namespace_,            
+            string templateLanguage,            
+            string templateSlug            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}";
 
-        public override HttpMethod Method => HttpMethod.Delete;
+        public override HttpMethod Method => HttpMethod.Get;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -106,16 +106,24 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        
+        public Model.ModelTemplateLocalization? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        {            
             if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
             }
-
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ModelTemplateLocalization>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ModelTemplateLocalization>(payload);
+            }
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

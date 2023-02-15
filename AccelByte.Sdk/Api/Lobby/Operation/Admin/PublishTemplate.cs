@@ -14,40 +14,42 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// deleteTemplateSlug
+    /// publishTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [DELETE]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope `social`
     /// 
-    /// Delete localization template
+    /// Publish notification template draft. Empty draft can not be published.
     /// </summary>
-    public class DeleteTemplateSlug : AccelByte.Sdk.Core.Operation
+    public class PublishTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteTemplateSlugBuilder Builder { get => new DeleteTemplateSlugBuilder(); }
+        public static PublishTemplateBuilder Builder { get => new PublishTemplateBuilder(); }
 
-        public class DeleteTemplateSlugBuilder
-            : OperationBuilder<DeleteTemplateSlugBuilder>
+        public class PublishTemplateBuilder
+            : OperationBuilder<PublishTemplateBuilder>
         {
 
 
 
 
 
-            internal DeleteTemplateSlugBuilder() { }
+            internal PublishTemplateBuilder() { }
 
 
 
 
 
 
-            public DeleteTemplateSlug Build(
+            public PublishTemplate Build(
                 string namespace_,
+                string templateLanguage,
                 string templateSlug
             )
             {
-                DeleteTemplateSlug op = new DeleteTemplateSlug(this,
-                    namespace_,
-                    templateSlug
+                PublishTemplate op = new PublishTemplate(this,
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -55,44 +57,48 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private DeleteTemplateSlug(DeleteTemplateSlugBuilder builder,
+        private PublishTemplate(PublishTemplateBuilder builder,
             string namespace_,
+            string templateLanguage,
             string templateSlug
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public DeleteTemplateSlug(
-            string namespace_,
-            string templateSlug
+        public PublishTemplate(
+            string namespace_,            
+            string templateLanguage,            
+            string templateSlug            
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}";
+        public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}/publish";
 
-        public override HttpMethod Method => HttpMethod.Delete;
+        public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -100,16 +106,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

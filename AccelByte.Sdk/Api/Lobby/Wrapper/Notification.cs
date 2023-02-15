@@ -99,46 +99,6 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.SendSpecificUserTemplatedNotificationV1Admin.Builder.SetWrapperObject(this); }
         }
-        public FreeFormNotification.FreeFormNotificationBuilder FreeFormNotificationOp
-        {
-            get { return Operation.FreeFormNotification.Builder.SetWrapperObject(this); }
-        }
-        public NotificationWithTemplate.NotificationWithTemplateBuilder NotificationWithTemplateOp
-        {
-            get { return Operation.NotificationWithTemplate.Builder.SetWrapperObject(this); }
-        }
-        public GetGameTemplate.GetGameTemplateBuilder GetGameTemplateOp
-        {
-            get { return Operation.GetGameTemplate.Builder.SetWrapperObject(this); }
-        }
-        public CreateTemplate.CreateTemplateBuilder CreateTemplateOp
-        {
-            get { return Operation.CreateTemplate.Builder.SetWrapperObject(this); }
-        }
-        public GetSlugTemplate.GetSlugTemplateBuilder GetSlugTemplateOp
-        {
-            get { return Operation.GetSlugTemplate.Builder.SetWrapperObject(this); }
-        }
-        public DeleteTemplateSlug.DeleteTemplateSlugBuilder DeleteTemplateSlugOp
-        {
-            get { return Operation.DeleteTemplateSlug.Builder.SetWrapperObject(this); }
-        }
-        public GetLocalizationTemplate.GetLocalizationTemplateBuilder GetLocalizationTemplateOp
-        {
-            get { return Operation.GetLocalizationTemplate.Builder.SetWrapperObject(this); }
-        }
-        public UpdateLocalizationTemplate.UpdateLocalizationTemplateBuilder UpdateLocalizationTemplateOp
-        {
-            get { return Operation.UpdateLocalizationTemplate.Builder.SetWrapperObject(this); }
-        }
-        public DeleteTemplateLocalization.DeleteTemplateLocalizationBuilder DeleteTemplateLocalizationOp
-        {
-            get { return Operation.DeleteTemplateLocalization.Builder.SetWrapperObject(this); }
-        }
-        public PublishTemplate.PublishTemplateBuilder PublishTemplateOp
-        {
-            get { return Operation.PublishTemplate.Builder.SetWrapperObject(this); }
-        }
         public GetTopicByNamespace.GetTopicByNamespaceBuilder GetTopicByNamespaceOp
         {
             get { return Operation.GetTopicByNamespace.Builder.SetWrapperObject(this); }
@@ -168,40 +128,36 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.NotificationWithTemplateByUserID.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void SendMultipleUsersFreeformNotificationV1Admin(SendMultipleUsersFreeformNotificationV1Admin input)
-        {
+        
+        public void SendMultipleUsersFreeformNotificationV1Admin(SendMultipleUsersFreeformNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendUsersFreeformNotificationV1Admin(SendUsersFreeformNotificationV1Admin input)
-        {
+        public void SendUsersFreeformNotificationV1Admin(SendUsersFreeformNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendPartyFreeformNotificationV1Admin(SendPartyFreeformNotificationV1Admin input)
-        {
+        public void SendPartyFreeformNotificationV1Admin(SendPartyFreeformNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendPartyTemplatedNotificationV1Admin(SendPartyTemplatedNotificationV1Admin input)
-        {
+        public void SendPartyTemplatedNotificationV1Admin(SendPartyTemplatedNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -210,25 +166,23 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateNotificationTemplateV1Admin(CreateNotificationTemplateV1Admin input)
-        {
+        public void CreateNotificationTemplateV1Admin(CreateNotificationTemplateV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendUsersTemplatedNotificationV1Admin(SendUsersTemplatedNotificationV1Admin input)
-        {
+        public void SendUsersTemplatedNotificationV1Admin(SendUsersTemplatedNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -237,16 +191,15 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteNotificationTemplateSlugV1Admin(DeleteNotificationTemplateSlugV1Admin input)
-        {
+        public void DeleteNotificationTemplateSlugV1Admin(DeleteNotificationTemplateSlugV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -255,34 +208,31 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdateTemplateLocalizationV1Admin(UpdateTemplateLocalizationV1Admin input)
-        {
+        public void UpdateTemplateLocalizationV1Admin(UpdateTemplateLocalizationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteTemplateLocalizationV1Admin(DeleteTemplateLocalizationV1Admin input)
-        {
+        public void DeleteTemplateLocalizationV1Admin(DeleteTemplateLocalizationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PublishTemplateLocalizationV1Admin(PublishTemplateLocalizationV1Admin input)
-        {
+        public void PublishTemplateLocalizationV1Admin(PublishTemplateLocalizationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -291,16 +241,15 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateNotificationTopicV1Admin(CreateNotificationTopicV1Admin input)
-        {
+        public void CreateNotificationTopicV1Admin(CreateNotificationTopicV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -309,133 +258,39 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdateNotificationTopicV1Admin(UpdateNotificationTopicV1Admin input)
-        {
+        public void UpdateNotificationTopicV1Admin(UpdateNotificationTopicV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteNotificationTopicV1Admin(DeleteNotificationTopicV1Admin input)
-        {
+        public void DeleteNotificationTopicV1Admin(DeleteNotificationTopicV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendSpecificUserFreeformNotificationV1Admin(SendSpecificUserFreeformNotificationV1Admin input)
-        {
+        public void SendSpecificUserFreeformNotificationV1Admin(SendSpecificUserFreeformNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void SendSpecificUserTemplatedNotificationV1Admin(SendSpecificUserTemplatedNotificationV1Admin input)
-        {
+        public void SendSpecificUserTemplatedNotificationV1Admin(SendSpecificUserTemplatedNotificationV1Admin input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void FreeFormNotification(FreeFormNotification input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void NotificationWithTemplate(NotificationWithTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public List<Model.ModelTemplateResponse>? GetGameTemplate(GetGameTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void CreateTemplate(CreateTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelTemplateLocalizationResponse? GetSlugTemplate(GetSlugTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void DeleteTemplateSlug(DeleteTemplateSlug input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelTemplateLocalization? GetLocalizationTemplate(GetLocalizationTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void UpdateLocalizationTemplate(UpdateLocalizationTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void DeleteTemplateLocalization(DeleteTemplateLocalization input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void PublishTemplate(PublishTemplate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -444,16 +299,15 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateTopic(CreateTopic input)
-        {
+        public void CreateTopic(CreateTopic input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -462,43 +316,39 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdateTopicByTopicName(UpdateTopicByTopicName input)
-        {
+        public void UpdateTopicByTopicName(UpdateTopicByTopicName input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteTopicByTopicName(DeleteTopicByTopicName input)
-        {
+        public void DeleteTopicByTopicName(DeleteTopicByTopicName input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void FreeFormNotificationByUserID(FreeFormNotificationByUserID input)
-        {
+        public void FreeFormNotificationByUserID(FreeFormNotificationByUserID input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void NotificationWithTemplateByUserID(NotificationWithTemplateByUserID input)
-        {
+        public void NotificationWithTemplateByUserID(NotificationWithTemplateByUserID input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

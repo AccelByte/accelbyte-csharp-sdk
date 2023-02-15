@@ -18,36 +18,36 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "notificationwithtemplate")]
-    public class NotificationWithTemplateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","deletetemplateslug")]
+    public class DeleteTemplateSlugCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "NotificationWithTemplate"; } }
+        public string OperationName{ get { return "DeleteTemplateSlug"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelNotificationWithTemplateRequest Body { get; set; } = new ModelNotificationWithTemplateRequest();
+        [SdkCommandArgument("templateSlug")]
+        public string TemplateSlug { get; set; } = String.Empty;
 
-        public NotificationWithTemplateCommand(AccelByteSDK sdk)
+        public DeleteTemplateSlugCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
-            NotificationWithTemplate operation = new NotificationWithTemplate(
-                Namespace,
-                Body
-            );
-
-            wrapper.NotificationWithTemplate(operation);
+            DeleteTemplateSlug operation = new DeleteTemplateSlug(
+                Namespace,                
+                TemplateSlug                
+            );            
+            
+            wrapper.DeleteTemplateSlug(operation);
             return String.Empty;
         }
     }

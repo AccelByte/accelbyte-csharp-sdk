@@ -18,37 +18,36 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "createtemplate")]
-    public class CreateTemplateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","getgametemplate")]
+    public class GetGameTemplateCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "CreateTemplate"; } }
+        public string OperationName{ get { return "GetGameTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelCreateTemplateRequest Body { get; set; } = new ModelCreateTemplateRequest();
-
-        public CreateTemplateCommand(AccelByteSDK sdk)
+        public GetGameTemplateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
-            CreateTemplate operation = new CreateTemplate(
-                Namespace,
-                Body
-            );
+            GetGameTemplate operation = new GetGameTemplate(
+                Namespace                
+            );            
+            
+            List<AccelByte.Sdk.Api.Lobby.Model.ModelTemplateResponse>? response = wrapper.GetGameTemplate(operation);
+            if (response == null)
+                return "No response from server.";
 
-            wrapper.CreateTemplate(operation);
-            return String.Empty;
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

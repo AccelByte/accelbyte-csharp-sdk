@@ -14,42 +14,44 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// getLocalizationTemplate
+    /// updateLocalizationTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [UPDATE]` with scope `social`
     /// 
-    /// Get a template localization
+    /// Modify draft template
     /// </summary>
-    public class GetLocalizationTemplate : AccelByte.Sdk.Core.Operation
+    public class UpdateLocalizationTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLocalizationTemplateBuilder Builder { get => new GetLocalizationTemplateBuilder(); }
+        public static UpdateLocalizationTemplateBuilder Builder { get => new UpdateLocalizationTemplateBuilder(); }
 
-        public class GetLocalizationTemplateBuilder
-            : OperationBuilder<GetLocalizationTemplateBuilder>
+        public class UpdateLocalizationTemplateBuilder
+            : OperationBuilder<UpdateLocalizationTemplateBuilder>
         {
 
 
 
 
 
-            internal GetLocalizationTemplateBuilder() { }
+            internal UpdateLocalizationTemplateBuilder() { }
 
 
 
 
 
 
-            public GetLocalizationTemplate Build(
+            public UpdateLocalizationTemplate Build(
+                ModelUpdateTemplateRequest body,
                 string namespace_,
                 string templateLanguage,
                 string templateSlug
             )
             {
-                GetLocalizationTemplate op = new GetLocalizationTemplate(this,
-                    namespace_,
-                    templateLanguage,
-                    templateSlug
+                UpdateLocalizationTemplate op = new UpdateLocalizationTemplate(this,
+                    body,                    
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -57,7 +59,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private GetLocalizationTemplate(GetLocalizationTemplateBuilder builder,
+        private UpdateLocalizationTemplate(UpdateLocalizationTemplateBuilder builder,
+            ModelUpdateTemplateRequest body,
             string namespace_,
             string templateLanguage,
             string templateSlug
@@ -66,39 +69,42 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            BodyParams = body;
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public GetLocalizationTemplate(
-            string namespace_,
-            string templateLanguage,
-            string templateSlug
+        public UpdateLocalizationTemplate(
+            string namespace_,            
+            string templateLanguage,            
+            string templateSlug,            
+            Model.ModelUpdateTemplateRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            BodyParams = body;
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Put;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -106,24 +112,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
-        public Model.ModelTemplateLocalization? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return null;
+                return;
             }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<Model.ModelTemplateLocalization>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.ModelTemplateLocalization>(payload);
-            }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

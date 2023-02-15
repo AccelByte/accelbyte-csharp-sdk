@@ -14,45 +14,44 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// notificationWithTemplate
+    /// createTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [CREATE]` with scope `social`
     /// 
-    /// Sends notification to all connected users in a namespace with predefined template.
+    /// Create new notification template. Include handlebars {{key}} for replaceable contexts. The the key inside
+    /// handlebars will be the key to be replaced when sending notification. Already existing template with the same
+    /// slug and language can not be created.
     /// 
-    /// In the request body, specify which template slug (template identifier) to use and the template language.
-    /// 
-    /// NotificationTemplate context is the key-value pair defining the value of each handlebar specified in the template content.
-    /// Template need to be published before it can be use to send notifications
+    /// Check model description for detailed input restrictions.
     /// </summary>
-    public class NotificationWithTemplate : AccelByte.Sdk.Core.Operation
+    public class CreateTemplate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static NotificationWithTemplateBuilder Builder { get => new NotificationWithTemplateBuilder(); }
+        public static CreateTemplateBuilder Builder { get => new CreateTemplateBuilder(); }
 
-        public class NotificationWithTemplateBuilder
-            : OperationBuilder<NotificationWithTemplateBuilder>
+        public class CreateTemplateBuilder
+            : OperationBuilder<CreateTemplateBuilder>
         {
 
 
 
 
 
-            internal NotificationWithTemplateBuilder() { }
+            internal CreateTemplateBuilder() { }
 
 
 
 
 
 
-            public NotificationWithTemplate Build(
-                ModelNotificationWithTemplateRequest body,
+            public CreateTemplate Build(
+                ModelCreateTemplateRequest body,
                 string namespace_
             )
             {
-                NotificationWithTemplate op = new NotificationWithTemplate(this,
-                    body,
-                    namespace_
+                CreateTemplate op = new CreateTemplate(this,
+                    body,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,42 +59,42 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private NotificationWithTemplate(NotificationWithTemplateBuilder builder,
-            ModelNotificationWithTemplateRequest body,
+        private CreateTemplate(CreateTemplateBuilder builder,
+            ModelCreateTemplateRequest body,
             string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public NotificationWithTemplate(
-            string namespace_,
-            Model.ModelNotificationWithTemplateRequest body
+        public CreateTemplate(
+            string namespace_,            
+            Model.ModelCreateTemplateRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/notification/namespaces/{namespace}/templated";
+        public override string Path => "/notification/namespaces/{namespace}/templates";
 
         public override HttpMethod Method => HttpMethod.Post;
 
@@ -105,16 +104,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)202)
+            if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

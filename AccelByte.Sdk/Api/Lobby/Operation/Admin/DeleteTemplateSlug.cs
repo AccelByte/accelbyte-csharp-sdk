@@ -14,40 +14,40 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
-    /// freeFormNotification
+    /// deleteTemplateSlug
     ///
-    /// Required permission : `NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
+    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [DELETE]` with scope `social`
     /// 
-    /// Sends notification to all connected users in a namespace.
+    /// Delete localization template
     /// </summary>
-    public class FreeFormNotification : AccelByte.Sdk.Core.Operation
+    public class DeleteTemplateSlug : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FreeFormNotificationBuilder Builder { get => new FreeFormNotificationBuilder(); }
+        public static DeleteTemplateSlugBuilder Builder { get => new DeleteTemplateSlugBuilder(); }
 
-        public class FreeFormNotificationBuilder
-            : OperationBuilder<FreeFormNotificationBuilder>
+        public class DeleteTemplateSlugBuilder
+            : OperationBuilder<DeleteTemplateSlugBuilder>
         {
 
 
 
 
 
-            internal FreeFormNotificationBuilder() { }
+            internal DeleteTemplateSlugBuilder() { }
 
 
 
 
 
 
-            public FreeFormNotification Build(
-                ModelFreeFormNotificationRequest body,
-                string namespace_
+            public DeleteTemplateSlug Build(
+                string namespace_,
+                string templateSlug
             )
             {
-                FreeFormNotification op = new FreeFormNotification(this,
-                    body,
-                    namespace_
+                DeleteTemplateSlug op = new DeleteTemplateSlug(this,
+                    namespace_,                    
+                    templateSlug                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -55,44 +55,44 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private FreeFormNotification(FreeFormNotificationBuilder builder,
-            ModelFreeFormNotificationRequest body,
-            string namespace_
+        private DeleteTemplateSlug(DeleteTemplateSlugBuilder builder,
+            string namespace_,
+            string templateSlug
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-            BodyParams = body;
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public FreeFormNotification(
-            string namespace_,
-            Model.ModelFreeFormNotificationRequest body
+        public DeleteTemplateSlug(
+            string namespace_,            
+            string templateSlug            
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-            BodyParams = body;
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/notification/namespaces/{namespace}/freeform";
+        public override string Path => "/notification/namespaces/{namespace}/templates/{templateSlug}";
 
-        public override HttpMethod Method => HttpMethod.Post;
+        public override HttpMethod Method => HttpMethod.Delete;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -100,16 +100,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)202)
+            if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

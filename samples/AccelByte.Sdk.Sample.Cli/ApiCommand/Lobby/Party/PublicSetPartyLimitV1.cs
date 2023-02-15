@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "publicsetpartylimitv1")]
-    public class PublicSetPartyLimitV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","publicsetpartylimitv1")]
+    public class PublicSetPartyLimitV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "PublicSetPartyLimitV1"; } }
+        public string OperationName{ get { return "PublicSetPartyLimitV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelsPartyPUTLimitSizeRequest Body { get; set; } = new ModelsPartyPUTLimitSizeRequest();
-
+                
         public PublicSetPartyLimitV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Party(_SDK);
 
             PublicSetPartyLimitV1 operation = new PublicSetPartyLimitV1(
-                Namespace,
-                PartyId,
-                Body
-            );
-
+                Namespace,                
+                PartyId,                
+                Body                
+            );            
+            
             wrapper.PublicSetPartyLimitV1(operation);
             return String.Empty;
         }

@@ -123,6 +123,17 @@ namespace AccelByte.Sdk.Core
         }
         private Presence? _Presence = null;
 
+        public Admin Admin
+        {
+            get
+            {
+                if (_Admin == null)
+                    _Admin = new Admin(_SdkObject);
+                return _Admin;
+            }
+        }
+        private Admin? _Admin = null;
+
         internal LobbySdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

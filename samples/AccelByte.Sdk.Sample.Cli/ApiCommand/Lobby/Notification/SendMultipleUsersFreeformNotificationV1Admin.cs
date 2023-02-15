@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "sendmultipleusersfreeformnotificationv1admin")]
-    public class SendMultipleUsersFreeformNotificationV1AdminCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","sendmultipleusersfreeformnotificationv1admin")]
+    public class SendMultipleUsersFreeformNotificationV1AdminCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "SendMultipleUsersFreeformNotificationV1Admin"; } }
+        public string OperationName{ get { return "SendMultipleUsersFreeformNotificationV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelBulkUsersFreeFormNotificationRequestV1 Body { get; set; } = new ModelBulkUsersFreeFormNotificationRequestV1();
-
+                
         public SendMultipleUsersFreeformNotificationV1AdminCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             SendMultipleUsersFreeformNotificationV1Admin operation = new SendMultipleUsersFreeformNotificationV1Admin(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.SendMultipleUsersFreeformNotificationV1Admin(operation);
             return String.Empty;
         }
