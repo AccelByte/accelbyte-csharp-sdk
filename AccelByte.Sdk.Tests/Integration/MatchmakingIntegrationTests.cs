@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
-            Admin wDsmcAdmin = new Admin(_Sdk);
+            AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wDsmcAdmin = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_Sdk);
             ModelsListServerResponse? serverResp = wDsmcAdmin.ListLocalServer(ListLocalServer.Builder
                 .Build(_Sdk.Namespace));
             Assert.IsNotNull(serverResp);
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Tests.Integration
             string session_id = String.Empty;
 
             Session wSession = new Session(_Sdk);
-            Admin wDsmcAdmin = new Admin(_Sdk);
+            AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wDsmcAdmin = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_Sdk);
 
             Api.Sessionbrowser.Wrapper.Session wSBSession = new Api.Sessionbrowser.Wrapper.Session(_Sdk);
 
@@ -288,7 +288,7 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
-            Notification wLobbyNotification = new Notification(_Sdk);
+            AccelByte.Sdk.Api.Lobby.Wrapper.Admin wLobbyAdmin = new Api.Lobby.Wrapper.Admin(_Sdk);
 
             //Sending a free from notification to all user(s).
             ModelFreeFormNotificationRequest notifBody = new ModelFreeFormNotificationRequest()
@@ -297,7 +297,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 Message = "This is integration test for CSharp Server SDK."
             };
 
-            wLobbyNotification.FreeFormNotification(FreeFormNotification.Builder
+            wLobbyAdmin.FreeFormNotification(
+                FreeFormNotification.Builder
                 .Build(notifBody, _Sdk.Namespace));
         }
 

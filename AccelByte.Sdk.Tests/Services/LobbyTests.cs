@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Tests.Services
                 Message = "This is integration test for CSharp Server SDK."
             };
 
-            _Sdk.Lobby.Notification.FreeFormNotificationOp
+            _Sdk.Lobby.Admin.FreeFormNotificationOp
                 .Execute(notifBody, _Sdk.Namespace);
             #endregion
         }
