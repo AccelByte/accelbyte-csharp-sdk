@@ -29,45 +29,45 @@ SAM requires published version of all assemblies. Run dotnet publish.
 $ dotnet publish -c Release
 ```
 
-## Deployment setup
+## Setup
 
-Navigate to AWS lambda sample src directory
-```bash
-$ cd samples/AccelByte.Sdk.Sample.Aws.Lambda/src/AccelByte.Sdk.Sample.Aws.Lambda
+Set the environment variables required by the lambda function in `template.yml`.
+
+```yml
+Globals:
+  Function:
+    Environment:
+      Variables:
+        AB_BASE_URL: 'https://demo.accelbyte.io'
+        AB_CLIENT_ID: 'xxxxxxxxxxxx'
+        AB_CLIENT_SECRET: 'xxxxxxxxxxxx'
+        AB_APP_NAME: 'xxxxxxxxxxxx'
+        AB_NAMESPACE: 'xxxxxxxxxxxx'
+        AB_USER_STAT_CODE: 'xxxxxxxxxxxx'
+        AB_TRACEID_VERSION: 1
+        AB_ENABLE_TRACEID: 1
+        AB_ENABLE_USERAGENT: 1
+
 ```
 
-Copy `serverless.template.sample` to `serverless.template`
-```base
-cp serverless.template.sample serverless.template
-```
+## Build and Test Locally
 
-Then, fill the required environment variables related to your AccelByte credentials inside `serverless.template` file.
-Following env vars are required:
-- AB_BASE_URL
-- AB_CLIENT_ID
-- AB_CLIENT_SECRET
-- AB_APP_NAME -> fill with your test app name
-- AB_NAMESPACE
-- AB_USER_STAT_CODE -> fill with your stat code from admin panel. If you don't have one, please create it first in admin panel, or via `StatConfiguration` endpoints in `Social` API.
+Start the lambda, in this case, locally for testing purpose.
 
-## Local Deployment
+1. Input credentials in `POST_AND_PUT.json`, `GET.json`, `DELETE.json` files.
+    
+    ```json
+    "queryStringParameters": {
+        "userid": "xxxxxxxxxxxxxxxxxx"
+    }
+    ```
+2. Follow Build the solution section.
 
-Create test request json file (or just use one already provided inside this directory)
-```bash
-$ sam local generate-event apigateway aws-proxy > testApiRequest.json
-```
+3. Run the following command and replace `httpMethod` with POST/GET/DELETE. Inside the directory that contains `template.yaml`
 
-Invoking a function
-```bash
-$ sam local invoke "<function_name>" --event testApiRequest.json --template serverless.template
-```
-
-OR
-
-Run local api server
-```bash
-$ sam local start-api --template serverless.template
-```
+    ```bash
+    sam local invoke UserStatsFunction --event ./{httpMethod}.json --template template.yaml
+    ```
 
 ## Deployment
 
@@ -86,7 +86,21 @@ The first command will build the source of your application. The second command 
 * **Allow SAM CLI IAM role creation**: Many AWS SAM templates, including this example, create AWS IAM roles required for the AWS Lambda function(s) included to access AWS services. By default, these are scoped down to minimum required permissions. To deploy an AWS CloudFormation stack which creates or modifies IAM roles, the `CAPABILITY_IAM` value for `capabilities` must be provided. If permission isn't provided through this prompt, to deploy this example you must explicitly pass `--capabilities CAPABILITY_IAM` to the `sam deploy` command.
 * **Save arguments to samconfig.toml**: If set to yes, your choices will be saved to a configuration file inside the project, so that in the future you can just re-run `sam deploy` without parameters to deploy changes to your application.
 
-You can find your API Gateway Endpoint URL in the output values displayed after deployment.
+You can find your FunctionURL in the output values displayed after deployment.
+     ```bash
+    
+    # Add a statistic to a user
+    curl -X POST '{FunctionURL}?userid={user_id}}' \
+    --header 'Content-Type: application/json'
+    
+    # Get a list of statistics of a user
+    curl '{FunctionURL}?userid={user_id}}' \
+    --header 'Content-Type: application/json'
+    
+    # Delete a statistic from a user
+    curl -X DELETE '{FunctionURL}?userid={user_id}}' \
+    --header 'Content-Type: application/json'
+    ```
 
 ## Resources
 

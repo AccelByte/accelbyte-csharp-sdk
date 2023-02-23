@@ -1,0 +1,28 @@
+{
+    "comment1": "For GET local test, use command: sam local invoke UserStatsFunction --event ./GET.json --template template.yaml",
+    
+    "version": "2.0",
+    "routeKey": "$default",
+    "rawPath": "/",
+    "rawQueryString": "",
+    "cookies": [],
+    "headers": {
+        "Content-Type": "application/json"
+    },
+    "queryStringParameters": {
+        "userid": "xxxxxxxxxxxx"
+    },
+    "requestContext": {
+        "timeEpoch": 1234567890,
+        "http": {
+        "method": "GET",
+        "path": "/",
+        "protocol": "HTTP/1.1",
+        "sourceIp": "127.0.0.1",
+        "userAgent": "curl/7.64.1"
+        }
+    },
+    "body": "{\"statCode\": \"xxxxxxxxxx\"}",
+    "isBase64Encoded": false
+    }
+      

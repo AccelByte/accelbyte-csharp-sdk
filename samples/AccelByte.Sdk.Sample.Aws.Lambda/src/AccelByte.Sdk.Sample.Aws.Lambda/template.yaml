@@ -1,0 +1,51 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  aws-lambda-example
+
+  AccelByte C# SDK Lambda Example
+
+Globals:
+  Function:
+    Environment:
+      Variables:
+        AB_BASE_URL: 'https://demo.accelbyte.io'
+        AB_CLIENT_ID: 'xxxxxxxxxxxx'
+        AB_CLIENT_SECRET: 'xxxxxxxxxxxx'
+        AB_APP_NAME: 'xxxxxxxxxxxx'
+        AB_NAMESPACE: 'xxxxxxxxxxxx'
+        AB_USER_STAT_CODE: 'xxxxxxxxxxxx'
+        AB_TRACEID_VERSION: 1
+        AB_ENABLE_TRACEID: 1
+        AB_ENABLE_USERAGENT: 1
+
+Resources:
+  UserStatsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: bin/Release/net6.0/publish
+      Handler: AccelByte.Sdk.Sample.Aws.Lambda::AccelByte.Sdk.Sample.Aws.Lambda.Functions::Handler
+      Runtime: dotnet6
+      MemorySize: 512
+      Timeout: 30
+      FunctionUrlConfig: # https://docs.aws.amazon.com/lambda/latest/dg/urls-tutorial.html
+        AuthType: NONE # Change to "AWS_IAM" based on your needs https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html
+        Cors:
+          AllowOrigins:
+            - "*"
+          AllowHeaders:
+            - "*"
+          AllowMethods:
+            - "*"
+
+Outputs:
+  UserStatsFunction:
+    Description: "Lambda Function ARN"
+    Value: !GetAtt UserStatsFunction.Arn
+  UserStatsFunctionIamRole:
+    Description: "Implicit IAM Role created for Hello World function"
+    Value: !GetAtt UserStatsFunctionRole.Arn
+  UserStatsFunctionUrlEndpoint:
+    Description: "Golang Simple App Lambda Function URL Endpoint"
+    Value:
+      Fn::GetAtt: UserStatsFunctionUrl.FunctionUrl # {Function Name}Url.FunctionUrl

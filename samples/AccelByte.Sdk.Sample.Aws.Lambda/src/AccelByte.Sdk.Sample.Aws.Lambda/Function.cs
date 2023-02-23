@@ -37,13 +37,36 @@ public class Functions
             _ActiveStatCode = "default-stat-code";
     }
 
-    protected APIGatewayProxyResponse CreateResponseAndLogout(object? responseObj)
+    public APIGatewayHttpApiV2ProxyResponse Handler(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
-        APIGatewayProxyResponse response;
+        string httpRequest = request.RequestContext.Http.Method;
+        switch (httpRequest)
+        {
+            case "POST":
+                return CreateUserStat(request, context);
+            case "GET":
+                return GetUserStat(request, context);
+            case "PUT":
+                return IncrementUserStat(request, context);
+            case "DELETE":
+                return DeleteUserStat(request, context);
+            default:
+                return new APIGatewayHttpApiV2ProxyResponse
+                        {
+                            StatusCode = 400,
+                            Body = "HTTP Request not supported",
+                            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+                        };
+        }
+    }
+
+    protected APIGatewayHttpApiV2ProxyResponse CreateResponseAndLogout(object? responseObj)
+    {
+        APIGatewayHttpApiV2ProxyResponse response;
 
         if (responseObj == null)
         {
-            response = new APIGatewayProxyResponse
+            response = new APIGatewayHttpApiV2ProxyResponse
             {
                 StatusCode = (int)HttpStatusCode.NoContent,
                 Body = "",
@@ -52,7 +75,7 @@ public class Functions
         }
         else
         {
-            response = new APIGatewayProxyResponse
+            response = new APIGatewayHttpApiV2ProxyResponse
             {
                 StatusCode = (int)HttpStatusCode.OK,
                 Body = JsonSerializer.Serialize(responseObj, responseObj.GetType()),
@@ -64,13 +87,13 @@ public class Functions
         return response;
     }
 
-    protected APIGatewayProxyResponse ExecuteAction(APIGatewayProxyRequest request, ILambdaContext context, Func<string, string, object?> action)
+    protected APIGatewayHttpApiV2ProxyResponse ExecuteAction(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context, Func<string, string, object?> action)
     {
         try
         {
             string user_id = String.Empty;
-            if (request.PathParameters.ContainsKey("userid"))
-                user_id = request.PathParameters["userid"].Trim();
+            if (request.QueryStringParameters.ContainsKey("userid"))
+                user_id = request.QueryStringParameters["userid"].Trim();
             if (user_id == String.Empty)
                 throw new Exception("user id is not specified.");
 
@@ -84,7 +107,7 @@ public class Functions
         }
         catch (Exception x)
         {
-            var response = new APIGatewayProxyResponse
+            var response = new APIGatewayHttpApiV2ProxyResponse
             {
                 StatusCode = (int)HttpStatusCode.InternalServerError,
                 Body = ("{\"error\":\"" + x.Message + "\"}"),
@@ -93,8 +116,8 @@ public class Functions
             return response;
         }
     }
-
-    public APIGatewayProxyResponse GetStatConfigurations(APIGatewayProxyRequest request, ILambdaContext context)
+    
+    public APIGatewayHttpApiV2ProxyResponse GetStatConfigurations(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("GetUserStat Request\n");
 
@@ -112,38 +135,7 @@ public class Functions
         return CreateResponseAndLogout(result);
     }
 
-    public APIGatewayProxyResponse GetUserStat(APIGatewayProxyRequest request, ILambdaContext context)
-    {
-        context.Logger.LogInformation("GetUserStat Request\n");
-        return ExecuteAction(request, context, (user_id, body) =>
-        {
-            UserStatistic wUserStatistic = new UserStatistic(_Sdk);
-
-            UserStatItemPagingSlicedResult? result = wUserStatistic.GetUserStatItems(GetUserStatItems.Builder
-                .SetLimit(10)
-                .SetOffset(0)
-                .SetStatCodes(_ActiveStatCode)
-                .Build(_Sdk.Namespace, user_id));
-
-            return result;
-        });
-    }
-
-    public APIGatewayProxyResponse CreateUserStat(APIGatewayProxyRequest request, ILambdaContext context)
-    {
-        context.Logger.LogInformation("CreateUserStat Request\n");
-        return ExecuteAction(request, context, (user_id, body) =>
-        {
-            UserStatistic wUserStatistic = new UserStatistic(_Sdk);
-
-            wUserStatistic.CreateUserStatItem(CreateUserStatItem.Builder
-                .Build(_Sdk.Namespace, _ActiveStatCode, user_id));
-
-            return null;
-        });
-    }
-
-    public APIGatewayProxyResponse IncrementUserStat(APIGatewayProxyRequest request, ILambdaContext context)
+    protected APIGatewayHttpApiV2ProxyResponse IncrementUserStat(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("IncrementUserStat Request\n");
         return ExecuteAction(request, context, (user_id, body) =>
@@ -162,7 +154,38 @@ public class Functions
         });
     }
 
-    public APIGatewayProxyResponse DeleteUserStat(APIGatewayProxyRequest request, ILambdaContext context)
+    protected APIGatewayHttpApiV2ProxyResponse GetUserStat(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        context.Logger.LogInformation("GetUserStat Request\n");
+        return ExecuteAction(request, context, (user_id, body) =>
+        {
+            UserStatistic wUserStatistic = new UserStatistic(_Sdk);
+
+            UserStatItemPagingSlicedResult? result = wUserStatistic.GetUserStatItems(GetUserStatItems.Builder
+                .SetLimit(10)
+                .SetOffset(0)
+                .SetStatCodes(_ActiveStatCode)
+                .Build(_Sdk.Namespace, user_id));
+
+            return result;
+        });
+    }
+
+    protected APIGatewayHttpApiV2ProxyResponse CreateUserStat(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
+    {
+        context.Logger.LogInformation("CreateUserStat Request\n");
+        return ExecuteAction(request, context, (user_id, body) =>
+        {
+            UserStatistic wUserStatistic = new UserStatistic(_Sdk);
+
+            wUserStatistic.CreateUserStatItem(CreateUserStatItem.Builder
+                .Build(_Sdk.Namespace, _ActiveStatCode, user_id));
+
+            return null;
+        });
+    }
+    
+    protected APIGatewayHttpApiV2ProxyResponse DeleteUserStat(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("DeleteUserStat Request\n");
         return ExecuteAction(request, context, (user_id, body) =>
