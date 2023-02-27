@@ -19,9 +19,33 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         }
 
         #region Operation Builders
+        public AdminListGlobalAchievements.AdminListGlobalAchievementsBuilder AdminListGlobalAchievementsOp
+        {
+            get { return Operation.AdminListGlobalAchievements.Builder.SetWrapperObject(this); }
+        }
+        public AdminListGlobalAchievementContributors.AdminListGlobalAchievementContributorsBuilder AdminListGlobalAchievementContributorsOp
+        {
+            get { return Operation.AdminListGlobalAchievementContributors.Builder.SetWrapperObject(this); }
+        }
+        public ResetGlobalAchievement.ResetGlobalAchievementBuilder ResetGlobalAchievementOp
+        {
+            get { return Operation.ResetGlobalAchievement.Builder.SetWrapperObject(this); }
+        }
+        public AdminListUserContributions.AdminListUserContributionsBuilder AdminListUserContributionsOp
+        {
+            get { return Operation.AdminListUserContributions.Builder.SetWrapperObject(this); }
+        }
         public PublicListGlobalAchievements.PublicListGlobalAchievementsBuilder PublicListGlobalAchievementsOp
         {
             get { return Operation.PublicListGlobalAchievements.Builder.SetWrapperObject(this); }
+        }
+        public ListGlobalAchievementContributors.ListGlobalAchievementContributorsBuilder ListGlobalAchievementContributorsOp
+        {
+            get { return Operation.ListGlobalAchievementContributors.Builder.SetWrapperObject(this); }
+        }
+        public ListUserContributions.ListUserContributionsBuilder ListUserContributionsOp
+        {
+            get { return Operation.ListUserContributions.Builder.SetWrapperObject(this); }
         }
         public ClaimGlobalAchievementReward.ClaimGlobalAchievementRewardBuilder ClaimGlobalAchievementRewardOp
         {
@@ -29,7 +53,61 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         }
         #endregion
 
+        public Model.ModelsPaginatedGlobalAchievementResponse? AdminListGlobalAchievements(AdminListGlobalAchievements input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedContributorResponse? AdminListGlobalAchievementContributors(AdminListGlobalAchievementContributors input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ResetGlobalAchievement(ResetGlobalAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedUserContributionResponse? AdminListUserContributions(AdminListUserContributions input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsPaginatedGlobalAchievementResponse? PublicListGlobalAchievements(PublicListGlobalAchievements input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedContributorResponse? ListGlobalAchievementContributors(ListGlobalAchievementContributors input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedUserContributionResponse? ListUserContributions(ListUserContributions input)
         {
             var response = _sdk.RunRequest(input);
 

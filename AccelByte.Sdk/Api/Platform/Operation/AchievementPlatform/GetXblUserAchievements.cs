@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ADTOObjectForQueryingXboxUserAchievements? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.XblUserAchievements? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -117,11 +117,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ADTOObjectForQueryingXboxUserAchievements>(payload);
+                return JsonSerializer.Deserialize<Model.XblUserAchievements>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ADTOObjectForQueryingXboxUserAchievements>(payload);
+                return JsonSerializer.Deserialize<Model.XblUserAchievements>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

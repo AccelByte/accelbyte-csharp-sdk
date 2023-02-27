@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UnlockSteamUserAchievement(op);
         }
-        public static Platform.Model.ADTOObjectForQueryingXboxUserAchievements? Execute(
+        public static Platform.Model.XblUserAchievements? Execute(
             this GetXblUserAchievements.GetXblUserAchievementsBuilder builder,
             string namespace_,
             string userId,

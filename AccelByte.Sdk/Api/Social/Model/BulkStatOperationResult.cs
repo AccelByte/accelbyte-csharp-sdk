@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Social.Model
 {
-    public class BulkStatItemOperationResult : AccelByte.Sdk.Core.Model
+    public class BulkStatOperationResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("details")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Social.Model
 
     }
 
-    public class BulkStatItemOperationResult<T1> : AccelByte.Sdk.Core.Model
+    public class BulkStatOperationResult<T1> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("details")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

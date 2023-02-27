@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ADTOObjectForUnlockSteamAchievementAPI Body { get; set; } = new ADTOObjectForUnlockSteamAchievementAPI();
+        public SteamAchievementUpdateRequest Body { get; set; } = new SteamAchievementUpdateRequest();
 
         public UnlockSteamUserAchievementCommand(AccelByteSDK sdk)
         {

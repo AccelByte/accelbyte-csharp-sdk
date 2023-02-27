@@ -81,6 +81,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("TokenEndpoint")]
         public string? TokenEndpoint { get; set; }
 
+        [JsonPropertyName("UserInfoEndpoint")]
+        public string? UserInfoEndpoint { get; set; }
+
+        [JsonPropertyName("UserInfoHTTPMethod")]
+        public string? UserInfoHTTPMethod { get; set; }
+
         [JsonPropertyName("scopes")]
         public List<string>? Scopes { get; set; }
 

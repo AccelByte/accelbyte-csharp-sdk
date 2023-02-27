@@ -401,7 +401,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.AvailablePredicateObject>? GetAvailablePredicateTypes(GetAvailablePredicateTypes input)
+        public List<Model.AvailablePredicate>? GetAvailablePredicateTypes(GetAvailablePredicateTypes input)
         {
             var response = _sdk.RunRequest(input);
 

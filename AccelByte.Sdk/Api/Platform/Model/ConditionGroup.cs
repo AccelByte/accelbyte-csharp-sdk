@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("predicates")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<PredicateObject>? Predicates { get; set; }
+        public List<Predicate>? Predicates { get; set; }
 
     }
 

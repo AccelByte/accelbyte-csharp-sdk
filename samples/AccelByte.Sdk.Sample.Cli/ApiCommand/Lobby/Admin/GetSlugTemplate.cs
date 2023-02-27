@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","getslugtemplate")]
-    public class GetSlugTemplateCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "getslugtemplate")]
+    public class GetSlugTemplateCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "GetSlugTemplate"; } }
+        public string OperationName { get { return "GetSlugTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
             GetSlugTemplate operation = new GetSlugTemplate(
-                Namespace,                
-                TemplateSlug,                
-                After,                
-                Before,                
-                Limit                
-            );            
-            
+                Namespace,
+                TemplateSlug,
+                After,
+                Before,
+                Limit
+            );
+
             AccelByte.Sdk.Api.Lobby.Model.ModelTemplateLocalizationResponse? response = wrapper.GetSlugTemplate(operation);
             if (response == null)
                 return "No response from server.";

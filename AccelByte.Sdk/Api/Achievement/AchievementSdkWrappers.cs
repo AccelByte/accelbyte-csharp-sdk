@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private Achievements? _Achievements = null;
 
+        public GlobalAchievements GlobalAchievements
+        {
+            get
+            {
+                if (_GlobalAchievements == null)
+                    _GlobalAchievements = new GlobalAchievements(_SdkObject);
+                return _GlobalAchievements;
+            }
+        }
+        private GlobalAchievements? _GlobalAchievements = null;
+
         public Tags Tags
         {
             get
@@ -56,17 +67,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Anonymization? _Anonymization = null;
-
-        public GlobalAchievements GlobalAchievements
-        {
-            get
-            {
-                if (_GlobalAchievements == null)
-                    _GlobalAchievements = new GlobalAchievements(_SdkObject);
-                return _GlobalAchievements;
-            }
-        }
-        private GlobalAchievements? _GlobalAchievements = null;
 
         internal AchievementSdkWrappers(AccelByteSDK sdk)
         {

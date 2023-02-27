@@ -10,12 +10,15 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     public class ModelsCreateContentRequestS3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FileExtension { get; set; }
 
         [JsonPropertyName("name")]
@@ -25,6 +28,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
 
         [JsonPropertyName("subType")]
@@ -41,12 +45,15 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     public class ModelsCreateContentRequestS3<T1> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FileExtension { get; set; }
 
         [JsonPropertyName("name")]
@@ -56,6 +63,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
 
         [JsonPropertyName("subType")]

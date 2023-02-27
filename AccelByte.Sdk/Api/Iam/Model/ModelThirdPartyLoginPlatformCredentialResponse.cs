@@ -87,6 +87,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TokenEndpoint { get; set; }
 
+        [JsonPropertyName("UserInfoEndpoint")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserInfoEndpoint { get; set; }
+
+        [JsonPropertyName("UserInfoHTTPMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserInfoHTTPMethod { get; set; }
+
         [JsonPropertyName("registeredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }
 

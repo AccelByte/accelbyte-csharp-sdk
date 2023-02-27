@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         [JsonPropertyName("sub_game_mode")]
         public List<string>? SubGameMode { get; set; }
 
+        [JsonPropertyName("user_id")]
+        public string? UserId { get; set; }
+
     }
 
 

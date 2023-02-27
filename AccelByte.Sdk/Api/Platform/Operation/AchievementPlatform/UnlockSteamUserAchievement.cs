@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ADTOObjectForUnlockSteamAchievementAPI? Body { get; set; }
+            public Model.SteamAchievementUpdateRequest? Body { get; set; }
 
 
 
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UnlockSteamUserAchievementBuilder SetBody(Model.ADTOObjectForUnlockSteamAchievementAPI _body)
+            public UnlockSteamUserAchievementBuilder SetBody(Model.SteamAchievementUpdateRequest _body)
             {
                 Body = _body;
                 return this;
@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public UnlockSteamUserAchievement(
             string namespace_,
             string userId,
-            Model.ADTOObjectForUnlockSteamAchievementAPI body
+            Model.SteamAchievementUpdateRequest body
         )
         {
             PathParams["namespace"] = namespace_;

@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.AvailablePredicateObject>? response = wrapper.GetAvailablePredicateTypes(operation);
+            List<AccelByte.Sdk.Api.Platform.Model.AvailablePredicate>? response = wrapper.GetAvailablePredicateTypes(operation);
             if (response == null)
                 return "No response from server.";
 

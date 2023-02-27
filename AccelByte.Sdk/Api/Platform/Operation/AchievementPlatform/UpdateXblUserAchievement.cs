@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ADTOObjectForUpdateXboxAchievementCompletePercentageAPI? Body { get; set; }
+            public Model.XblAchievementUpdateRequest? Body { get; set; }
 
 
 
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateXblUserAchievementBuilder SetBody(Model.ADTOObjectForUpdateXboxAchievementCompletePercentageAPI _body)
+            public UpdateXblUserAchievementBuilder SetBody(Model.XblAchievementUpdateRequest _body)
             {
                 Body = _body;
                 return this;
@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public UpdateXblUserAchievement(
             string namespace_,
             string userId,
-            Model.ADTOObjectForUpdateXboxAchievementCompletePercentageAPI body
+            Model.XblAchievementUpdateRequest body
         )
         {
             PathParams["namespace"] = namespace_;

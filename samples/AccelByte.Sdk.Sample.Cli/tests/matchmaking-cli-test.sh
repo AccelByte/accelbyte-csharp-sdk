@@ -70,14 +70,14 @@ $CLI_EXE \
     --sn matchmaking \
     --op GetAllChannelsHandler \
     --namespace $AB_NAMESPACE \
-    --limit '91' \
-    --offset '8' \
+    --limit '85' \
+    --offset '47' \
     > test.out 2>&1
 eval_tap $? 4 'GetAllChannelsHandler' test.out
 
 #- 5 CreateChannelHandler
 # body param: body
-echo '{"deployment": "gSAYLjWy", "description": "JKnrZeJN", "find_match_timeout_seconds": 20, "game_mode": "vy6cANAt", "joinable": true, "max_delay_ms": 91, "rule_set": {"alliance": {"combination": {"alliances": [{"max": 35, "min": 89, "name": "4B08OwF0"}, {"max": 72, "min": 57, "name": "WQSdBEzv"}, {"max": 26, "min": 88, "name": "87SqCJBW"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 16, "role_flexing_second": 94}, "max_number": 19, "min_number": 74, "player_max_number": 53, "player_min_number": 39}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 57, "min": 51, "name": "iSUFwbge"}, {"max": 87, "min": 3, "name": "RgGMmJHl"}, {"max": 99, "min": 49, "name": "ihsQt322"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 83, "role_flexing_second": 98}, "duration": 63, "max_number": 27, "min_number": 91, "player_max_number": 89, "player_min_number": 15}, {"combination": {"alliances": [{"max": 66, "min": 45, "name": "mw3KlI8J"}, {"max": 30, "min": 58, "name": "CCpyrBy4"}, {"max": 93, "min": 27, "name": "uAthbRUf"}], "has_combination": false, "role_flexing_enable": false, "role_flexing_player": 34, "role_flexing_second": 46}, "duration": 39, "max_number": 40, "min_number": 78, "player_max_number": 32, "player_min_number": 45}, {"combination": {"alliances": [{"max": 10, "min": 67, "name": "YtiAW8a6"}, {"max": 72, "min": 52, "name": "vSrAHwba"}, {"max": 21, "min": 7, "name": "9xvxqT5q"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 87, "role_flexing_second": 32}, "duration": 10, "max_number": 97, "min_number": 77, "player_max_number": 39, "player_min_number": 77}], "flexing_rule": [{"attribute": "jNIq42lL", "criteria": "JoZKKua6", "duration": 83, "reference": 0.827289045096317}, {"attribute": "0tscWkZH", "criteria": "yQOvPX3X", "duration": 74, "reference": 0.12530983511677063}, {"attribute": "Yt4NCxF6", "criteria": "ZDnNCQUo", "duration": 46, "reference": 0.0036508100773352536}], "match_options": {"options": [{"name": "KfUdFfDV", "type": "gef6cdDt"}, {"name": "94R5ldfX", "type": "vnG3HWIR"}, {"name": "BxdGZxF7", "type": "5T2zZ0lE"}]}, "matching_rule": [{"attribute": "F7A6XdMU", "criteria": "y3PqfDhY", "reference": 0.4443640189451218}, {"attribute": "5HLmH8Hu", "criteria": "1o5ulf0T", "reference": 0.2684575012510029}, {"attribute": "WzBWTJm7", "criteria": "amRu05Lk", "reference": 0.5365717189100704}], "rebalance_enable": true, "sub_game_modes": {"VhGrSjQr": {"alliance": {"combination": {"alliances": [{"max": 73, "min": 14, "name": "btQfsi6p"}, {"max": 22, "min": 94, "name": "uqObr5hI"}, {"max": 50, "min": 46, "name": "ohqE8klT"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 86, "role_flexing_second": 47}, "max_number": 14, "min_number": 31, "player_max_number": 80, "player_min_number": 3}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 19, "min": 22, "name": "UCwCGFAk"}, {"max": 47, "min": 64, "name": "la8k4j8D"}, {"max": 42, "min": 23, "name": "68VBe9X1"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 74, "role_flexing_second": 1}, "duration": 23, "max_number": 13, "min_number": 19, "player_max_number": 59, "player_min_number": 82}, {"combination": {"alliances": [{"max": 21, "min": 10, "name": "2uh1ELGL"}, {"max": 30, "min": 59, "name": "mzKFO5hc"}, {"max": 52, "min": 73, "name": "atD741wK"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 9, "role_flexing_second": 76}, "duration": 21, "max_number": 24, "min_number": 3, "player_max_number": 73, "player_min_number": 57}, {"combination": {"alliances": [{"max": 15, "min": 94, "name": "K3l1VOYO"}, {"max": 93, "min": 92, "name": "Eo1nUIbO"}, {"max": 48, "min": 82, "name": "8qQkCYTC"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 55, "role_flexing_second": 12}, "duration": 92, "max_number": 56, "min_number": 69, "player_max_number": 45, "player_min_number": 79}], "name": "oOILYKnP"}, "SD6Dwct5": {"alliance": {"combination": {"alliances": [{"max": 99, "min": 84, "name": "FaiyZgtr"}, {"max": 86, "min": 91, "name": "CLuO5h2c"}, {"max": 90, "min": 71, "name": "SaD835Ym"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 17, "role_flexing_second": 59}, "max_number": 61, "min_number": 82, "player_max_number": 48, "player_min_number": 38}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 83, "min": 89, "name": "O0hJFn6O"}, {"max": 96, "min": 49, "name": "9Ul8G9Bg"}, {"max": 65, "min": 28, "name": "mNCOLdoT"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 84, "role_flexing_second": 6}, "duration": 95, "max_number": 35, "min_number": 100, "player_max_number": 98, "player_min_number": 92}, {"combination": {"alliances": [{"max": 3, "min": 71, "name": "bSRg8QEp"}, {"max": 100, "min": 75, "name": "kBgR2QHX"}, {"max": 71, "min": 57, "name": "XWU3TF0y"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 48, "role_flexing_second": 42}, "duration": 88, "max_number": 94, "min_number": 50, "player_max_number": 86, "player_min_number": 12}, {"combination": {"alliances": [{"max": 2, "min": 74, "name": "2NNjoHpV"}, {"max": 72, "min": 58, "name": "8SnHlMgH"}, {"max": 46, "min": 62, "name": "9stoSP6E"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 97, "role_flexing_second": 30}, "duration": 77, "max_number": 60, "min_number": 3, "player_max_number": 27, "player_min_number": 79}], "name": "5LExNqJX"}, "zC2o7uwN": {"alliance": {"combination": {"alliances": [{"max": 32, "min": 84, "name": "WTYYfrJ2"}, {"max": 54, "min": 51, "name": "GWLGuwAy"}, {"max": 38, "min": 26, "name": "Z9ZhphgP"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 5, "role_flexing_second": 9}, "max_number": 50, "min_number": 56, "player_max_number": 37, "player_min_number": 50}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 39, "min": 31, "name": "gMgFoiXX"}, {"max": 22, "min": 25, "name": "h9OyWLbg"}, {"max": 9, "min": 14, "name": "FfvFryp4"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 60, "role_flexing_second": 89}, "duration": 66, "max_number": 38, "min_number": 35, "player_max_number": 77, "player_min_number": 30}, {"combination": {"alliances": [{"max": 58, "min": 98, "name": "0ZRztFit"}, {"max": 100, "min": 76, "name": "VQjuJ5XY"}, {"max": 68, "min": 69, "name": "iraOtsmB"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 93, "role_flexing_second": 52}, "duration": 82, "max_number": 4, "min_number": 7, "player_max_number": 63, "player_min_number": 96}, {"combination": {"alliances": [{"max": 90, "min": 29, "name": "1qKFpnMX"}, {"max": 67, "min": 23, "name": "PgCGANPV"}, {"max": 52, "min": 0, "name": "Ai8cx3qz"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 32, "role_flexing_second": 45}, "duration": 63, "max_number": 86, "min_number": 87, "player_max_number": 51, "player_min_number": 74}], "name": "eDADb6OD"}}}, "session_queue_timeout_seconds": 1, "social_matchmaking": true, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
+echo '{"deployment": "lUmIGJO7", "description": "zd6hQF9z", "find_match_timeout_seconds": 57, "game_mode": "rsi8hCYE", "joinable": true, "max_delay_ms": 54, "rule_set": {"alliance": {"combination": {"alliances": [{"max": 80, "min": 16, "name": "Bt8qgg8a"}, {"max": 74, "min": 51, "name": "XOXaylNu"}, {"max": 40, "min": 83, "name": "ms3bXN2v"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 2, "role_flexing_second": 78}, "max_number": 25, "min_number": 3, "player_max_number": 6, "player_min_number": 10}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 33, "min": 35, "name": "kuxrdqJE"}, {"max": 81, "min": 23, "name": "zlOlxn3X"}, {"max": 24, "min": 12, "name": "DHRF9p4h"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 37, "role_flexing_second": 58}, "duration": 43, "max_number": 55, "min_number": 17, "player_max_number": 27, "player_min_number": 59}, {"combination": {"alliances": [{"max": 71, "min": 71, "name": "ciqnEoFB"}, {"max": 13, "min": 53, "name": "WAmVI21d"}, {"max": 25, "min": 81, "name": "4zkQzOLC"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 63, "role_flexing_second": 0}, "duration": 33, "max_number": 83, "min_number": 45, "player_max_number": 3, "player_min_number": 9}, {"combination": {"alliances": [{"max": 41, "min": 47, "name": "4ZinM2uK"}, {"max": 85, "min": 44, "name": "jZWFKNBI"}, {"max": 22, "min": 5, "name": "tVVIWEB7"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 61, "role_flexing_second": 5}, "duration": 21, "max_number": 88, "min_number": 80, "player_max_number": 36, "player_min_number": 46}], "flexing_rule": [{"attribute": "TG3evE4w", "criteria": "GZXyhaY9", "duration": 59, "reference": 0.984732801323904}, {"attribute": "FQTRcsxz", "criteria": "UEQ6Ar5r", "duration": 19, "reference": 0.49668461840906697}, {"attribute": "nmmX14MM", "criteria": "NZt0hZVW", "duration": 26, "reference": 0.15426972912389958}], "match_options": {"options": [{"name": "c8tf6qrl", "type": "cOKOSh87"}, {"name": "bHLVtZVG", "type": "pT2XBh6v"}, {"name": "TJM3Ee5J", "type": "W1GbMhhv"}]}, "matching_rule": [{"attribute": "OQzQmjhf", "criteria": "KQz0jKir", "reference": 0.9988229037193639}, {"attribute": "PgJmqMer", "criteria": "9N1CzUEr", "reference": 0.055791112055137315}, {"attribute": "xYyyQob8", "criteria": "AjMBEwlg", "reference": 0.4676759261623087}], "rebalance_enable": false, "sub_game_modes": {"iXtPdVoK": {"alliance": {"combination": {"alliances": [{"max": 1, "min": 56, "name": "SWlRhFrS"}, {"max": 30, "min": 84, "name": "drhCEU9m"}, {"max": 87, "min": 33, "name": "Eqs2Cf9i"}], "has_combination": false, "role_flexing_enable": false, "role_flexing_player": 42, "role_flexing_second": 60}, "max_number": 84, "min_number": 55, "player_max_number": 56, "player_min_number": 87}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 10, "min": 94, "name": "wK1AyFw2"}, {"max": 76, "min": 49, "name": "0HQua7Gf"}, {"max": 83, "min": 47, "name": "yaKYfO5c"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 45, "role_flexing_second": 1}, "duration": 100, "max_number": 71, "min_number": 32, "player_max_number": 6, "player_min_number": 30}, {"combination": {"alliances": [{"max": 18, "min": 63, "name": "TsNDsHLn"}, {"max": 10, "min": 23, "name": "VHwdqicC"}, {"max": 82, "min": 90, "name": "1s8ycGGn"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 52, "role_flexing_second": 2}, "duration": 77, "max_number": 6, "min_number": 5, "player_max_number": 77, "player_min_number": 16}, {"combination": {"alliances": [{"max": 86, "min": 82, "name": "cNxWSTRo"}, {"max": 60, "min": 25, "name": "L1mPwdMY"}, {"max": 32, "min": 3, "name": "jB9RjCq1"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 11, "role_flexing_second": 70}, "duration": 21, "max_number": 87, "min_number": 58, "player_max_number": 87, "player_min_number": 12}], "name": "0I1W7S7g"}, "xnB7EdK8": {"alliance": {"combination": {"alliances": [{"max": 7, "min": 87, "name": "SOmkaIbU"}, {"max": 74, "min": 75, "name": "7NH4tAbu"}, {"max": 79, "min": 11, "name": "rKiJxPcu"}], "has_combination": false, "role_flexing_enable": false, "role_flexing_player": 31, "role_flexing_second": 61}, "max_number": 0, "min_number": 48, "player_max_number": 79, "player_min_number": 66}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 81, "min": 55, "name": "rjYANbxr"}, {"max": 34, "min": 77, "name": "2ubQMbyZ"}, {"max": 89, "min": 36, "name": "AEYRfyNx"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 92, "role_flexing_second": 77}, "duration": 16, "max_number": 41, "min_number": 22, "player_max_number": 81, "player_min_number": 77}, {"combination": {"alliances": [{"max": 73, "min": 2, "name": "asKMXjEr"}, {"max": 61, "min": 88, "name": "HIv8VgKs"}, {"max": 49, "min": 57, "name": "C8yBT4Ei"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 41, "role_flexing_second": 26}, "duration": 9, "max_number": 49, "min_number": 79, "player_max_number": 2, "player_min_number": 90}, {"combination": {"alliances": [{"max": 6, "min": 23, "name": "P869TFMx"}, {"max": 63, "min": 47, "name": "1mpbjvkU"}, {"max": 37, "min": 19, "name": "jRxHlrW4"}], "has_combination": false, "role_flexing_enable": false, "role_flexing_player": 86, "role_flexing_second": 65}, "duration": 76, "max_number": 96, "min_number": 81, "player_max_number": 44, "player_min_number": 85}], "name": "otiuh0sn"}, "4G5CXcss": {"alliance": {"combination": {"alliances": [{"max": 99, "min": 13, "name": "k9bALBwu"}, {"max": 84, "min": 83, "name": "Eza6mQly"}, {"max": 23, "min": 87, "name": "cagrvBeh"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 3, "role_flexing_second": 73}, "max_number": 38, "min_number": 95, "player_max_number": 32, "player_min_number": 90}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 50, "min": 13, "name": "WERUzozh"}, {"max": 45, "min": 55, "name": "awgHtn3w"}, {"max": 25, "min": 82, "name": "q7SrstEv"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 1, "role_flexing_second": 71}, "duration": 4, "max_number": 85, "min_number": 8, "player_max_number": 65, "player_min_number": 94}, {"combination": {"alliances": [{"max": 67, "min": 52, "name": "aDWo4XD5"}, {"max": 6, "min": 66, "name": "QxxnTgT6"}, {"max": 27, "min": 51, "name": "5yWFRFct"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 73, "role_flexing_second": 39}, "duration": 13, "max_number": 56, "min_number": 30, "player_max_number": 64, "player_min_number": 49}, {"combination": {"alliances": [{"max": 20, "min": 19, "name": "u5mqRuDY"}, {"max": 41, "min": 78, "name": "4KoYkAgL"}, {"max": 18, "min": 51, "name": "6vwyNINZ"}], "has_combination": false, "role_flexing_enable": false, "role_flexing_player": 4, "role_flexing_second": 23}, "duration": 90, "max_number": 22, "min_number": 94, "player_max_number": 22, "player_min_number": 47}], "name": "61gxGQVT"}}}, "session_queue_timeout_seconds": 85, "social_matchmaking": false, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op CreateChannelHandler \
@@ -90,14 +90,14 @@ eval_tap $? 5 'CreateChannelHandler' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteChannelHandler \
-    --channel 'TNcD3Tpv' \
+    --channel 'r9hcJzqN' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 6 'DeleteChannelHandler' test.out
 
 #- 7 StoreMatchResults
 # body param: body
-echo '{"match_id": "69ccQcXB", "players": [{"results": [{"attribute": "j0q8ccju", "value": 0.696869530175448}, {"attribute": "PIC94uZ7", "value": 0.3326653078904491}, {"attribute": "a893oH8H", "value": 0.5653039927944465}], "user_id": "yarlXit2"}, {"results": [{"attribute": "hk46UT5W", "value": 0.8664229858843667}, {"attribute": "d9FwUV1s", "value": 0.926066654415878}, {"attribute": "02mIr6pU", "value": 0.8819996303909337}], "user_id": "gMkAwjoS"}, {"results": [{"attribute": "KoDdTCC7", "value": 0.9487063607999818}, {"attribute": "QDFEe2LQ", "value": 0.18845506430962966}, {"attribute": "x1whwK3Z", "value": 0.08837613900438179}], "user_id": "sQS9Ehs6"}]}' > $TEMP_JSON_INPUT
+echo '{"match_id": "wdIptYzm", "players": [{"results": [{"attribute": "nT3gYhXe", "value": 0.8552136809334685}, {"attribute": "Nbb2LYGb", "value": 0.35566677409160274}, {"attribute": "9wYpYIhQ", "value": 0.750039813829295}], "user_id": "9xMJKOEU"}, {"results": [{"attribute": "OrmW3Dor", "value": 0.21754000657060402}, {"attribute": "SfAN38CQ", "value": 0.3557822256736649}, {"attribute": "WhWya3YR", "value": 0.5849538262866879}], "user_id": "cAGH4hlT"}, {"results": [{"attribute": "L6WO6ojD", "value": 0.03877133654178111}, {"attribute": "cya5HsNZ", "value": 0.17522219035251252}, {"attribute": "IeX2EbJf", "value": 0.760088457128045}], "user_id": "GPk4X7dg"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op StoreMatchResults \
@@ -108,7 +108,7 @@ eval_tap $? 7 'StoreMatchResults' test.out
 
 #- 8 Rebalance
 # body param: body
-echo '{"match_id": "Z4amlRYi"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "2pqAycXD"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op Rebalance \
@@ -119,7 +119,7 @@ eval_tap $? 8 'Rebalance' test.out
 
 #- 9 QueueSessionHandler
 # body param: body
-echo '{"channel": "yqvJTLzT", "client_version": "3cuSzqEk", "deployment": "kFBIKXZh", "error_code": 92, "error_message": "YvXe9Qzk", "game_mode": "YLsJdmbh", "joinable": true, "match_id": "Bi7I03ue", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 36, "party_attributes": {"7TWIorDl": {}, "nPaotkdn": {}, "RnFRTu8m": {}}, "party_id": "IujawXFw", "party_members": [{"extra_attributes": {"RYF3aVC1": {}, "M8ti12az": {}, "iJA6hRf8": {}}, "user_id": "ZEA1RtVR"}, {"extra_attributes": {"ee2gyOPH": {}, "QdSGgFQG": {}, "b3gndIRX": {}}, "user_id": "lQhFAjhT"}, {"extra_attributes": {"hstCOi3g": {}, "qjHqOwAt": {}, "loIHLpq1": {}}, "user_id": "lGXUCbGW"}], "ticket_created_at": 23, "ticket_id": "uE5m0EuC"}, {"first_ticket_created_at": 72, "party_attributes": {"9Z9FfKEs": {}, "DupMo1AN": {}, "9kr1e2wS": {}}, "party_id": "VNrw003Y", "party_members": [{"extra_attributes": {"xZp1y0Wb": {}, "oPtBQnIk": {}, "JfLwddzW": {}}, "user_id": "5zvxeoM8"}, {"extra_attributes": {"C1UbcVad": {}, "iqQffTM3": {}, "NPHqRi2s": {}}, "user_id": "gUwz2Mlt"}, {"extra_attributes": {"z8avTjZ3": {}, "pWqdn6zk": {}, "UWJOZggU": {}}, "user_id": "K7X8ZFoC"}], "ticket_created_at": 5, "ticket_id": "0YyYWDzh"}, {"first_ticket_created_at": 96, "party_attributes": {"oiAixqp0": {}, "I1JGS5f7": {}, "d0s4GVmH": {}}, "party_id": "T76Jqlly", "party_members": [{"extra_attributes": {"6obR1Wbn": {}, "5MwUhtmw": {}, "jRI5a6Hs": {}}, "user_id": "PMCAWuhc"}, {"extra_attributes": {"aitgH5eu": {}, "OZqx3ZsU": {}, "F99yNkk9": {}}, "user_id": "H8MnIK2R"}, {"extra_attributes": {"Scoz7Uwb": {}, "KLr8lpvr": {}, "clXkAzVW": {}}, "user_id": "5IJWK73k"}], "ticket_created_at": 100, "ticket_id": "ZeO3d4tG"}]}, {"matching_parties": [{"first_ticket_created_at": 56, "party_attributes": {"mDjXYfIa": {}, "NpIjzeAO": {}, "kerFPjax": {}}, "party_id": "jvvMewyT", "party_members": [{"extra_attributes": {"FtK9fu3g": {}, "0eyCNUsu": {}, "S4j1ZadF": {}}, "user_id": "j8W4XXyb"}, {"extra_attributes": {"oLKiGpmx": {}, "gVA6NnrV": {}, "RjdiofLK": {}}, "user_id": "QQse8YnR"}, {"extra_attributes": {"4wxW6xZj": {}, "DTYHj0St": {}, "RDDrcGwp": {}}, "user_id": "Q2pRROHQ"}], "ticket_created_at": 72, "ticket_id": "FVl4lciX"}, {"first_ticket_created_at": 78, "party_attributes": {"jzFkGgeP": {}, "AZVWFicG": {}, "aFpHqGg1": {}}, "party_id": "MsytFpIO", "party_members": [{"extra_attributes": {"BroJFgmI": {}, "BVSYlrWG": {}, "jkJHC8FN": {}}, "user_id": "1B5JmzFb"}, {"extra_attributes": {"btHuYq4d": {}, "73M2am2C": {}, "ZBGMXOuV": {}}, "user_id": "SJN0pPve"}, {"extra_attributes": {"XQ2zuYS3": {}, "gkOvKPox": {}, "qIod2ggw": {}}, "user_id": "64VSWj5j"}], "ticket_created_at": 11, "ticket_id": "JBDPavt1"}, {"first_ticket_created_at": 49, "party_attributes": {"uyM1cj9C": {}, "uXClYPTh": {}, "8xdavDAR": {}}, "party_id": "BlFqONBA", "party_members": [{"extra_attributes": {"JE7LHmi5": {}, "Pi4CprB2": {}, "klGlLLB2": {}}, "user_id": "PXtaoTAl"}, {"extra_attributes": {"USFCGgTR": {}, "vP3LYuzO": {}, "fPFSJGhu": {}}, "user_id": "6sDUyGfN"}, {"extra_attributes": {"GVKdhHoV": {}, "xI0QZTlE": {}, "iPZLroKF": {}}, "user_id": "0WQUhSrC"}], "ticket_created_at": 10, "ticket_id": "vqLOg5Ao"}]}, {"matching_parties": [{"first_ticket_created_at": 75, "party_attributes": {"8QuUnTIT": {}, "9QpVSICA": {}, "Fb411drt": {}}, "party_id": "MqfQ1CHO", "party_members": [{"extra_attributes": {"4WcAgpAs": {}, "o2vPtEdS": {}, "Qtx5IT6W": {}}, "user_id": "xARCFIIu"}, {"extra_attributes": {"J5PukPlM": {}, "z1W6Alay": {}, "d8kODCZM": {}}, "user_id": "0Z5t53kU"}, {"extra_attributes": {"66F38FCx": {}, "mwko3RMt": {}, "6D0BVHBR": {}}, "user_id": "1O455wZt"}], "ticket_created_at": 65, "ticket_id": "GVxrv3WY"}, {"first_ticket_created_at": 60, "party_attributes": {"7QNpKJym": {}, "bpdPsMC3": {}, "NPW9fetA": {}}, "party_id": "tDsKZXmt", "party_members": [{"extra_attributes": {"5VSWohns": {}, "uHjI0ObM": {}, "f0uJbd6g": {}}, "user_id": "HQwImNlU"}, {"extra_attributes": {"9FOqeOan": {}, "xfOdYXwK": {}, "lsaG0hYn": {}}, "user_id": "un1NPwdg"}, {"extra_attributes": {"i3TArZRA": {}, "QLpJRrfI": {}, "t8xiXTfb": {}}, "user_id": "pnTEPLhp"}], "ticket_created_at": 1, "ticket_id": "IjqrLtiw"}, {"first_ticket_created_at": 80, "party_attributes": {"0kbE6JKK": {}, "DlGLyi8X": {}, "cjcBOw9Y": {}}, "party_id": "Yzov21Jw", "party_members": [{"extra_attributes": {"egMgeINQ": {}, "5kkTxBxM": {}, "f4LkqZJ0": {}}, "user_id": "9AC65UwH"}, {"extra_attributes": {"DyezoiOr": {}, "vzo2scXl": {}, "3Hbhw9ll": {}}, "user_id": "R5s2JSA6"}, {"extra_attributes": {"ngW3sugw": {}, "cVypZAgj": {}, "RWMUojxp": {}}, "user_id": "bfC4Ta0b"}], "ticket_created_at": 88, "ticket_id": "XI8XLdn1"}]}], "namespace": "aruzB7aS", "party_attributes": {"wdOCyXNQ": {}, "XZOoRD4n": {}, "QEb8qvmM": {}}, "party_id": "3nt53gsH", "queued_at": 16, "region": "jebQ7Uze", "server_name": "0BYF3kNK", "status": "VGiKO9mx", "ticket_id": "0tsGiT6R", "updated_at": "1991-09-18T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"channel": "BIn8Oz8t", "client_version": "4ZYAUSBL", "deployment": "FrKIHDMe", "error_code": 94, "error_message": "QL9KVm5d", "game_mode": "Nh4pNU5l", "joinable": false, "match_id": "diSCV52P", "matching_allies": [{"matching_parties": [{"first_ticket_created_at": 80, "party_attributes": {"Zhdw9BYR": {}, "5GthWwFC": {}, "LDAlJrnv": {}}, "party_id": "zCY7LVPw", "party_members": [{"extra_attributes": {"qa42kLQn": {}, "HJ7B3Nbf": {}, "cpuRo0RB": {}}, "user_id": "xlHXrkpT"}, {"extra_attributes": {"Nmumu21b": {}, "YvJKP9tE": {}, "i9ep0UVv": {}}, "user_id": "FH1KWOGU"}, {"extra_attributes": {"3bBsAUXr": {}, "AoTJkzBi": {}, "YqQLiUjg": {}}, "user_id": "fACmlJYl"}], "ticket_created_at": 74, "ticket_id": "lg8SxAbt"}, {"first_ticket_created_at": 70, "party_attributes": {"cwEHliWV": {}, "HV0zLrm9": {}, "BR4EbsPd": {}}, "party_id": "SSjjXPsR", "party_members": [{"extra_attributes": {"8LQRQMoG": {}, "XYv9CIjw": {}, "XNyuoM0J": {}}, "user_id": "cwpO3CYB"}, {"extra_attributes": {"c3rhwlxT": {}, "KslN8kOI": {}, "5diFPjZr": {}}, "user_id": "XNi52bAj"}, {"extra_attributes": {"bB8rk5o3": {}, "HezsSVno": {}, "fKEbyRIG": {}}, "user_id": "CXDwZ1Y6"}], "ticket_created_at": 10, "ticket_id": "ReQVk3Ee"}, {"first_ticket_created_at": 19, "party_attributes": {"jx3SHUGJ": {}, "33NCn2vA": {}, "KfuQHmyK": {}}, "party_id": "FxoWMnFg", "party_members": [{"extra_attributes": {"XpE9rH5h": {}, "PCqcZyYe": {}, "dypkFN1k": {}}, "user_id": "It3kkvRS"}, {"extra_attributes": {"8FuM9hvq": {}, "MZvnxj1R": {}, "90ofe3CQ": {}}, "user_id": "ipWw5EfT"}, {"extra_attributes": {"GKzbDScp": {}, "E4qqwfLg": {}, "eLCPCTjB": {}}, "user_id": "sqcJwOnZ"}], "ticket_created_at": 0, "ticket_id": "O1BbG3FY"}]}, {"matching_parties": [{"first_ticket_created_at": 77, "party_attributes": {"XgbTurtc": {}, "UlNHbJaj": {}, "LB8k12Hg": {}}, "party_id": "hjtiPPLW", "party_members": [{"extra_attributes": {"lRmdl7HG": {}, "VOhuFiUl": {}, "zJemfchz": {}}, "user_id": "EtGfmI66"}, {"extra_attributes": {"TIeIZGH7": {}, "Tpai3X9n": {}, "R4yK18hK": {}}, "user_id": "GZlsQgb5"}, {"extra_attributes": {"AZTElkmB": {}, "oLwOgx45": {}, "hBxLwM7s": {}}, "user_id": "FnyaviSP"}], "ticket_created_at": 52, "ticket_id": "5Qutiy9W"}, {"first_ticket_created_at": 72, "party_attributes": {"xs8v5uWT": {}, "Egir9TxM": {}, "WahPZNZV": {}}, "party_id": "cAADshYF", "party_members": [{"extra_attributes": {"FDGKDunu": {}, "wiJ0OmNH": {}, "GkhM66lk": {}}, "user_id": "sr5aKIQR"}, {"extra_attributes": {"AlFPUU1y": {}, "W6ZwBdP0": {}, "FezKcNEw": {}}, "user_id": "4w06zvNo"}, {"extra_attributes": {"GBuiIGQM": {}, "wBvpYHxa": {}, "xGCHjjw0": {}}, "user_id": "Fo5GNLk9"}], "ticket_created_at": 8, "ticket_id": "i3ijSaos"}, {"first_ticket_created_at": 62, "party_attributes": {"FMEjXyCY": {}, "UsEX1MOE": {}, "NJwjjTJj": {}}, "party_id": "uMyjIeyN", "party_members": [{"extra_attributes": {"ot1jGXh3": {}, "NB1pknYr": {}, "E2Fqr8SO": {}}, "user_id": "oRktScX9"}, {"extra_attributes": {"KmT6KcCy": {}, "LhocSQFO": {}, "D5YD6XS7": {}}, "user_id": "wP1ekmxX"}, {"extra_attributes": {"jFIdPisW": {}, "L5SnOoYg": {}, "id0e3ZOj": {}}, "user_id": "YyuTBem2"}], "ticket_created_at": 89, "ticket_id": "t5b2ljHq"}]}, {"matching_parties": [{"first_ticket_created_at": 1, "party_attributes": {"LZFz1t9i": {}, "2Ld3WfTC": {}, "QtWGYrjX": {}}, "party_id": "9jjKapJx", "party_members": [{"extra_attributes": {"l0Oluxv9": {}, "ScqyFjJf": {}, "UPxnEH0t": {}}, "user_id": "G9l8H6GJ"}, {"extra_attributes": {"HDbrktyI": {}, "wCihHunI": {}, "PX19gSLh": {}}, "user_id": "8GPzS1lR"}, {"extra_attributes": {"aKOPudp1": {}, "4kfJhv5i": {}, "xcQS7YrW": {}}, "user_id": "OKH9Oe2B"}], "ticket_created_at": 7, "ticket_id": "EtkusASo"}, {"first_ticket_created_at": 57, "party_attributes": {"8HcNOTLJ": {}, "bGlxOkWB": {}, "NN4sp0XI": {}}, "party_id": "4FRiQNKp", "party_members": [{"extra_attributes": {"S4b8GkoK": {}, "NcJZGkZP": {}, "wuZiDPxi": {}}, "user_id": "PABc6iMn"}, {"extra_attributes": {"7ovTYxQi": {}, "QWRB0Tqo": {}, "ERTVroPL": {}}, "user_id": "bfltJcYm"}, {"extra_attributes": {"6VRQ6xqf": {}, "2Yy7aqcL": {}, "DTCyiczf": {}}, "user_id": "AkT7zPu0"}], "ticket_created_at": 4, "ticket_id": "3hHZlK2k"}, {"first_ticket_created_at": 60, "party_attributes": {"MDd2q8JA": {}, "xm5ANkpZ": {}, "2nWmQS5a": {}}, "party_id": "lsKT0a6k", "party_members": [{"extra_attributes": {"lqWUPRvY": {}, "LAst6UiS": {}, "dLMMacas": {}}, "user_id": "8PNxM1zv"}, {"extra_attributes": {"WLPjaPEn": {}, "tkJkGpgG": {}, "qq9pDIWb": {}}, "user_id": "EbTQk1Io"}, {"extra_attributes": {"H5tOUveO": {}, "FqVYP2jV": {}, "b3nxkPqt": {}}, "user_id": "HfXRMqGl"}], "ticket_created_at": 23, "ticket_id": "YghLDSv7"}]}], "namespace": "ZQ7wanp0", "party_attributes": {"uU52lE5l": {}, "WGap1dwc": {}, "rHeMefQ3": {}}, "party_id": "qEg05AOc", "queued_at": 74, "region": "mIAdH9vt", "server_name": "AQWHSrZf", "status": "jLmPLYrl", "ticket_id": "RYY4x7FQ", "updated_at": "1982-07-21T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op QueueSessionHandler \
@@ -130,7 +130,7 @@ eval_tap $? 9 'QueueSessionHandler' test.out
 
 #- 10 DequeueSessionHandler
 # body param: body
-echo '{"match_id": "PXQN6ahm"}' > $TEMP_JSON_INPUT
+echo '{"match_id": "9oNwZm41"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op DequeueSessionHandler \
@@ -143,14 +143,14 @@ eval_tap $? 10 'DequeueSessionHandler' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op QuerySessionHandler \
-    --matchID 'oIMjEtJI' \
+    --matchID 'xxgI94PV' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 11 'QuerySessionHandler' test.out
 
 #- 12 UpdatePlayTimeWeight
 # body param: body
-echo '{"playtime": 64, "userID": "tGuewMuR", "weight": 0.7211991353259952}' > $TEMP_JSON_INPUT
+echo '{"playtime": 22, "userID": "LfZuaqoV", "weight": 0.7490077775731963}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdatePlayTimeWeight \
@@ -172,7 +172,7 @@ $CLI_EXE \
     --sn matchmaking \
     --op BulkGetSessions \
     --namespace $AB_NAMESPACE \
-    --matchIDs 'x3SEVSgQ' \
+    --matchIDs 'xFjVmD49' \
     > test.out 2>&1
 eval_tap $? 14 'BulkGetSessions' test.out
 
@@ -192,7 +192,7 @@ $CLI_EXE \
     --op ImportChannels \
     --namespace $AB_NAMESPACE \
     --upload $TEMP_FILE_UPLOAD \
-    --strategy '3hm011yj' \
+    --strategy 'qfyLgM0T' \
     > test.out 2>&1
 eval_tap $? 16 'ImportChannels' test.out
 
@@ -200,18 +200,18 @@ eval_tap $? 16 'ImportChannels' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetSingleMatchmakingChannel \
-    --channelName 'hHHKMCK8' \
+    --channelName '6Vr1Ig8i' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 17 'GetSingleMatchmakingChannel' test.out
 
 #- 18 UpdateMatchmakingChannel
 # body param: body
-echo '{"deployment": "HADbgfJp", "description": "qcuMS4Q9", "findMatchTimeoutSeconds": 80, "joinable": true, "max_delay_ms": 72, "ruleSet": {"alliance": {"combination": {"alliances": [{"max": 70, "min": 67, "name": "k6FbwWpZ"}, {"max": 63, "min": 47, "name": "tSKTQmoa"}, {"max": 24, "min": 84, "name": "V1cTUB0n"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 94, "role_flexing_second": 46}, "maxNumber": 93, "minNumber": 83, "playerMaxNumber": 38, "playerMinNumber": 21}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 87, "min": 16, "name": "l36YhBte"}, {"max": 85, "min": 3, "name": "wq8iTwud"}, {"max": 76, "min": 33, "name": "M0xlPdIg"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 94, "role_flexing_second": 100}, "duration": 2, "max_number": 78, "min_number": 68, "player_max_number": 35, "player_min_number": 46}, {"combination": {"alliances": [{"max": 94, "min": 51, "name": "uITdF9kz"}, {"max": 4, "min": 77, "name": "FdrsKMUf"}, {"max": 27, "min": 67, "name": "XonHibzs"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 2, "role_flexing_second": 97}, "duration": 68, "max_number": 8, "min_number": 92, "player_max_number": 74, "player_min_number": 54}, {"combination": {"alliances": [{"max": 28, "min": 48, "name": "vnXFGyGN"}, {"max": 55, "min": 61, "name": "Nkpvsokd"}, {"max": 30, "min": 39, "name": "siep19kS"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 2, "role_flexing_second": 100}, "duration": 95, "max_number": 46, "min_number": 23, "player_max_number": 54, "player_min_number": 19}], "flexingRules": [{"attribute": "NIuivF1G", "criteria": "EfMuQMNB", "duration": 85, "reference": 0.09760063526460516}, {"attribute": "JXH9ALTT", "criteria": "s5LrNABD", "duration": 1, "reference": 0.0024917698380205744}, {"attribute": "HI9wd4Fx", "criteria": "8fgGZFwi", "duration": 30, "reference": 0.053546795487169674}], "match_options": {"options": [{"name": "ddhmWgWN", "type": "uMmS7ijI"}, {"name": "dBzjcIdh", "type": "inly4CyB"}, {"name": "ECJTWKvm", "type": "oahWam7G"}]}, "matchingRules": [{"attribute": "pbvxC5Pk", "criteria": "Vq6p7zfQ", "reference": 0.6216850960166113}, {"attribute": "XX2TYnJN", "criteria": "LS8AKmR6", "reference": 0.9150422112600313}, {"attribute": "CMONKgoO", "criteria": "swKLtARL", "reference": 0.6414115680960257}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 38, "socialMatchmaking": true, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
+echo '{"deployment": "28oh8F0p", "description": "Gq0K6B9l", "findMatchTimeoutSeconds": 60, "joinable": true, "max_delay_ms": 95, "ruleSet": {"alliance": {"combination": {"alliances": [{"max": 17, "min": 60, "name": "8w09rzmL"}, {"max": 73, "min": 94, "name": "31REs2Wm"}, {"max": 31, "min": 100, "name": "wyy1xOnj"}], "has_combination": false, "role_flexing_enable": true, "role_flexing_player": 88, "role_flexing_second": 31}, "maxNumber": 7, "minNumber": 45, "playerMaxNumber": 37, "playerMinNumber": 70}, "alliance_flexing_rule": [{"combination": {"alliances": [{"max": 88, "min": 73, "name": "05As8G5G"}, {"max": 48, "min": 10, "name": "e6AZVzm0"}, {"max": 84, "min": 88, "name": "BFOZ1NvU"}], "has_combination": true, "role_flexing_enable": false, "role_flexing_player": 55, "role_flexing_second": 29}, "duration": 74, "max_number": 17, "min_number": 46, "player_max_number": 91, "player_min_number": 34}, {"combination": {"alliances": [{"max": 76, "min": 28, "name": "3DlTClhm"}, {"max": 28, "min": 80, "name": "mV92UoAO"}, {"max": 33, "min": 81, "name": "2INLKtnW"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 94, "role_flexing_second": 26}, "duration": 73, "max_number": 74, "min_number": 96, "player_max_number": 28, "player_min_number": 27}, {"combination": {"alliances": [{"max": 15, "min": 37, "name": "cBXEf9Ir"}, {"max": 99, "min": 15, "name": "KBvVfgyU"}, {"max": 87, "min": 23, "name": "xxzm6Rii"}], "has_combination": true, "role_flexing_enable": true, "role_flexing_player": 49, "role_flexing_second": 20}, "duration": 95, "max_number": 63, "min_number": 3, "player_max_number": 84, "player_min_number": 91}], "flexingRules": [{"attribute": "OBjXHXRZ", "criteria": "MQS6T90s", "duration": 62, "reference": 0.1386309307999698}, {"attribute": "x1XxkZ0G", "criteria": "Vz3C91OY", "duration": 35, "reference": 0.283274205441709}, {"attribute": "XHOMiiyd", "criteria": "9X9Jfiol", "duration": 25, "reference": 0.5460481147416189}], "match_options": {"options": [{"name": "FDIkjdFg", "type": "NfcD1Czd"}, {"name": "RbOuLTd5", "type": "xmgOXVQy"}, {"name": "wqPrprJQ", "type": "ITXqrzzb"}]}, "matchingRules": [{"attribute": "JcaAMpZT", "criteria": "TSdbfD6Z", "reference": 0.19713210369877243}, {"attribute": "gxlwZu47", "criteria": "heGtisS8", "reference": 0.2936770812474816}, {"attribute": "PLknSYJe", "criteria": "Hpdz4zxE", "reference": 0.7168890382244252}], "sub_game_modes": {}}, "sessionQueueTimeoutSeconds": 95, "socialMatchmaking": true, "use_sub_gamemode": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op UpdateMatchmakingChannel \
-    --channelName 'VqF8aYDU' \
+    --channelName 'XFZ6YmDf' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -221,7 +221,7 @@ eval_tap $? 18 'UpdateMatchmakingChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllPartyInChannel \
-    --channelName 'nTH1lBPl' \
+    --channelName '7Xd14dog' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 19 'GetAllPartyInChannel' test.out
@@ -230,19 +230,19 @@ eval_tap $? 19 'GetAllPartyInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op GetAllSessionsInChannel \
-    --channelName 'K9QIXizu' \
+    --channelName '7oxu2xtT' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 20 'GetAllSessionsInChannel' test.out
 
 #- 21 AddUserIntoSessionInChannel
 # body param: body
-echo '{"blocked_players": ["LVEU5r8m", "Ie5EKBo5", "Xe9RBjhS"], "party_id": "wnMSXVBn", "user_id": "u6LmPMGJ"}' > $TEMP_JSON_INPUT
+echo '{"blocked_players": ["ZIDiWI73", "iEvDQKGO", "xoGJ9ep6"], "party_id": "WuvhBubB", "user_id": "ylI7o5lG"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn matchmaking \
     --op AddUserIntoSessionInChannel \
-    --channelName 'ibdTOQde' \
-    --matchID '4PSV0WCQ' \
+    --channelName 'a8rtN2wV' \
+    --matchID 'gWgPCk7y' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -252,8 +252,8 @@ eval_tap $? 21 'AddUserIntoSessionInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteSessionInChannel \
-    --channelName 'c6T29kqg' \
-    --matchID 'nP3lp4WX' \
+    --channelName 'xEUuE6Tb' \
+    --matchID 'Ymba36sX' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 22 'DeleteSessionInChannel' test.out
@@ -262,10 +262,10 @@ eval_tap $? 22 'DeleteSessionInChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op DeleteUserFromSessionInChannel \
-    --channelName 'xPUcx1d7' \
-    --matchID 'pAsOkFbm' \
+    --channelName 'bQ6LptOg' \
+    --matchID '625xTcwU' \
     --namespace $AB_NAMESPACE \
-    --userID 'VRvpKUVe' \
+    --userID 'ChY0wTTe' \
     > test.out 2>&1
 eval_tap $? 23 'DeleteUserFromSessionInChannel' test.out
 
@@ -294,7 +294,7 @@ eval_tap $? 27 'PublicGetAllMatchmakingChannel' test.out
 $CLI_EXE \
     --sn matchmaking \
     --op PublicGetSingleMatchmakingChannel \
-    --channelName 'wZSkpZFw' \
+    --channelName 'F4hR6e9e' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 28 'PublicGetSingleMatchmakingChannel' test.out

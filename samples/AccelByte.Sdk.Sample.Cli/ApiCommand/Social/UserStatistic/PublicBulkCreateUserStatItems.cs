@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 Body
             );
 
-            List<AccelByte.Sdk.Api.Social.Model.BulkStatItemOperationResult>? response = wrapper.PublicBulkCreateUserStatItems(operation);
+            List<AccelByte.Sdk.Api.Social.Model.BulkStatOperationResult>? response = wrapper.PublicBulkCreateUserStatItems(operation);
             if (response == null)
                 return "No response from server.";
 

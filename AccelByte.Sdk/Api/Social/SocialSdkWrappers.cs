@@ -57,6 +57,17 @@ namespace AccelByte.Sdk.Core
         }
         private GlobalStatistic? _GlobalStatistic = null;
 
+        public StatCycleConfiguration StatCycleConfiguration
+        {
+            get
+            {
+                if (_StatCycleConfiguration == null)
+                    _StatCycleConfiguration = new StatCycleConfiguration(_SdkObject);
+                return _StatCycleConfiguration;
+            }
+        }
+        private StatCycleConfiguration? _StatCycleConfiguration = null;
+
         public UserStatistic UserStatistic
         {
             get

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class Match2Backfill_OpExts
     {
-        public static void Execute(
+        public static Match2.Model.ApiBackfillCreateResponse? Execute(
             this CreateBackfill.CreateBackfillBuilder builder,
             ApiBackFillCreateRequest body,
             string namespace_
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Match2.Wrapper.Backfill)builder.WrapperObject!).CreateBackfill(op);
+            return ((Match2.Wrapper.Backfill)builder.WrapperObject!).CreateBackfill(op);
         }
         public static Match2.Model.ApiBackfillProposalResponse? Execute(
             this GetBackfillProposal.GetBackfillProposalBuilder builder,

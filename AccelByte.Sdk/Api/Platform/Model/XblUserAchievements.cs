@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class ADTOObjectForQueryingXboxUserAchievements : AccelByte.Sdk.Core.Model
+    public class XblUserAchievements : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("achievements")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

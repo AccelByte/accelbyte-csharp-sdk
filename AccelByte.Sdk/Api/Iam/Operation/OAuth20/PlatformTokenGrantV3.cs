@@ -107,6 +107,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///   * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
+    /// 
+    /// 
+    /// 
     /// 
     /// 
     /// ## Account Group

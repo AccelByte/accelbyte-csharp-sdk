@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","updatelocalizationtemplate")]
-    public class UpdateLocalizationTemplateCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "updatelocalizationtemplate")]
+    public class UpdateLocalizationTemplateCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "UpdateLocalizationTemplate"; } }
+        public string OperationName { get { return "UpdateLocalizationTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelUpdateTemplateRequest Body { get; set; } = new ModelUpdateTemplateRequest();
-                
+
         public UpdateLocalizationTemplateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
             UpdateLocalizationTemplate operation = new UpdateLocalizationTemplate(
-                Namespace,                
-                TemplateLanguage,                
-                TemplateSlug,                
-                Body                
-            );            
-            
+                Namespace,
+                TemplateLanguage,
+                TemplateSlug,
+                Body
+            );
+
             wrapper.UpdateLocalizationTemplate(operation);
             return String.Empty;
         }

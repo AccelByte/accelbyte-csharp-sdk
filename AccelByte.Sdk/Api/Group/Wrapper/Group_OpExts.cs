@@ -315,6 +315,19 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV1(op);
         }
+        public static Group.Model.ModelsGetGroupsResponseV1? Execute(
+            this GetListGroupByIDsAdminV2.GetListGroupByIDsAdminV2Builder builder,
+            ModelsGetGroupListRequestV2 body,
+            string namespace_
+        )
+        {
+            GetListGroupByIDsAdminV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsAdminV2(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder builder,
             ModelsPublicCreateNewGroupRequestV1 body,
@@ -344,7 +357,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Group.Model.ModelsGetGroupsResponseV1? Execute(
             this GetListGroupByIDsV2.GetListGroupByIDsV2Builder builder,
-            ModelsPublicGetGroupListRequestV2 body,
+            ModelsGetGroupListRequestV2 body,
             string namespace_
         )
         {

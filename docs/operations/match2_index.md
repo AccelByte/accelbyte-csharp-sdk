@@ -36,6 +36,7 @@
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}` | GET | MatchPoolDetails | [MatchPoolDetails](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/MatchPoolDetails.cs) | [MatchPoolDetails](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/MatchPoolDetails.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}` | PUT | UpdateMatchPool | [UpdateMatchPool](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/UpdateMatchPool.cs) | [UpdateMatchPool](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/UpdateMatchPool.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}` | DELETE | DeleteMatchPool | [DeleteMatchPool](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/DeleteMatchPool.cs) | [DeleteMatchPool](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/DeleteMatchPool.cs) |
+| `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics` | GET | MatchPoolMetric | [MatchPoolMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/MatchPoolMetric.cs) | [MatchPoolMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/MatchPoolMetric.cs) |
 
 ### Match-Tickets Wrapper:  [MatchTickets](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchTickets.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -93,6 +94,7 @@
 |---|---|
 | `api.BackFillAcceptRequest` | [ApiBackFillAcceptRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillAcceptRequest.cs) |
 | `api.BackFillCreateRequest` | [ApiBackFillCreateRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillCreateRequest.cs) |
+| `api.BackfillCreateResponse` | [ApiBackfillCreateResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillCreateResponse.cs) |
 | `api.BackfillGetResponse` | [ApiBackfillGetResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillGetResponse.cs) |
 | `api.BackfillProposalResponse` | [ApiBackfillProposalResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillProposalResponse.cs) |
 | `api.ListMatchFunctionsResponse` | [ApiListMatchFunctionsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchFunctionsResponse.cs) |
@@ -114,6 +116,7 @@
 | `api.RuleSetPayload` | [ApiRuleSetPayload](../../AccelByte.Sdk/Api/Match2/Model/ApiRuleSetPayload.cs) |
 | `api.Team` | [ApiTeam](../../AccelByte.Sdk/Api/Match2/Model/ApiTeam.cs) |
 | `api.Ticket` | [ApiTicket](../../AccelByte.Sdk/Api/Match2/Model/ApiTicket.cs) |
+| `api.TicketMetricResultRecord` | [ApiTicketMetricResultRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiTicketMetricResultRecord.cs) |
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Match2/Model/ModelsPagination.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Match2/Model/ResponseError.cs) |

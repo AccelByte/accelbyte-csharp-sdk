@@ -77,5 +77,18 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchPools)builder.WrapperObject!).DeleteMatchPool(op);
         }
+        public static Match2.Model.ApiTicketMetricResultRecord? Execute(
+            this MatchPoolMetric.MatchPoolMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            MatchPoolMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolMetric(op);
+        }
     }
 }

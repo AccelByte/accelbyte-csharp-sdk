@@ -30,8 +30,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("achievementCode")]
-        public string? AchievementCode { get; set; }
+        [SdkCommandArgument("achievementCodes")]
+        public string? AchievementCodes { get; set; }
 
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
         [SdkCommandArgument("status")]
         public string? Status { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public PublicListGlobalAchievementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -56,11 +59,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 
             PublicListGlobalAchievements operation = new PublicListGlobalAchievements(
                 Namespace,
-                AchievementCode,
+                AchievementCodes,
                 Limit,
                 Offset,
                 SortBy,
-                Status
+                Status,
+                Tags
             );
 
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedGlobalAchievementResponse? response = wrapper.PublicListGlobalAchievements(operation);

@@ -7,11 +7,11 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class ADTOObjectForUnlockSteamAchievementAPI : AccelByte.Sdk.Core.Model
+    public class SteamAchievementUpdateRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("achievements")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<SteamAchievementRequest>? Achievements { get; set; }
+        public List<Achievement>? Achievements { get; set; }
 
         [JsonPropertyName("steamUserId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

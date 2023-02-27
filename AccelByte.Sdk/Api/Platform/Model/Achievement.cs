@@ -7,15 +7,15 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class XboxAchievementRequest : AccelByte.Sdk.Core.Model
+    public class Achievement : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
-        [JsonPropertyName("percentComplete")]
+        [JsonPropertyName("value")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public long? PercentComplete { get; set; }
+        public long? Value { get; set; }
 
     }
 

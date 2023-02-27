@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
 
             public GetListGroupByIDsV2 Build(
-                ModelsPublicGetGroupListRequestV2 body,
+                ModelsGetGroupListRequestV2 body,
                 string namespace_
             )
             {
@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
         }
 
         private GetListGroupByIDsV2(GetListGroupByIDsV2Builder builder,
-            ModelsPublicGetGroupListRequestV2 body,
+            ModelsGetGroupListRequestV2 body,
             string namespace_
         )
         {
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public GetListGroupByIDsV2(
             string namespace_,
-            Model.ModelsPublicGetGroupListRequestV2 body
+            Model.ModelsGetGroupListRequestV2 body
         )
         {
             PathParams["namespace"] = namespace_;

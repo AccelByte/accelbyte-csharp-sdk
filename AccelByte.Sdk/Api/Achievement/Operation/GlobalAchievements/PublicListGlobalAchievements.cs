@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             : OperationBuilder<PublicListGlobalAchievementsBuilder>
         {
 
-            public string? AchievementCode { get; set; }
+            public string? AchievementCodes { get; set; }
 
             public long? Limit { get; set; }
 
@@ -48,6 +48,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public string? Status { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -55,9 +57,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             internal PublicListGlobalAchievementsBuilder() { }
 
 
-            public PublicListGlobalAchievementsBuilder SetAchievementCode(string _achievementCode)
+            public PublicListGlobalAchievementsBuilder SetAchievementCodes(string _achievementCodes)
             {
-                AchievementCode = _achievementCode;
+                AchievementCodes = _achievementCodes;
                 return this;
             }
 
@@ -85,6 +87,12 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 return this;
             }
 
+            public PublicListGlobalAchievementsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
+                return this;
+            }
+
 
 
 
@@ -108,14 +116,16 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         {
             PathParams["namespace"] = namespace_;
 
-            if (builder.AchievementCode is not null) QueryParams["achievementCode"] = builder.AchievementCode;
+            if (builder.AchievementCodes is not null) QueryParams["achievementCodes"] = builder.AchievementCodes;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 
@@ -125,23 +135,26 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         public PublicListGlobalAchievements(
             string namespace_,
-            string? achievementCode,
+            string? achievementCodes,
             long? limit,
             long? offset,
             string? sortBy,
-            string? status
+            string? status,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
 
-            if (achievementCode is not null) QueryParams["achievementCode"] = achievementCode;
+            if (achievementCodes is not null) QueryParams["achievementCodes"] = achievementCodes;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (status is not null) QueryParams["status"] = status;
+            if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 

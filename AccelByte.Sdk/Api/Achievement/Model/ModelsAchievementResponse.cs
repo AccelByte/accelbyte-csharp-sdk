@@ -50,6 +50,10 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatCode { get; set; }
 
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Status { get; set; }
+
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }
 

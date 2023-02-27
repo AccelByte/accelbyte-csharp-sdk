@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 XboxUserId
             );
 
-            AccelByte.Sdk.Api.Platform.Model.ADTOObjectForQueryingXboxUserAchievements? response = wrapper.GetXblUserAchievements(operation);
+            AccelByte.Sdk.Api.Platform.Model.XblUserAchievements? response = wrapper.GetXblUserAchievements(operation);
             if (response == null)
                 return "No response from server.";
 

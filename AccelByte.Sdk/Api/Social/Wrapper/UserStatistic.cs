@@ -186,7 +186,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem(BulkIncUserStatItem input)
+        public List<Model.BulkStatOperationResult>? BulkIncUserStatItem(BulkIncUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -196,7 +196,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkIncUserStatItem<T1>(BulkIncUserStatItem input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkIncUserStatItem<T1>(BulkIncUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -205,7 +205,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue(BulkIncUserStatItemValue input)
+        public List<Model.BulkStatOperationResult>? BulkIncUserStatItemValue(BulkIncUserStatItemValue input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -215,7 +215,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkIncUserStatItemValue<T1>(BulkIncUserStatItemValue input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkIncUserStatItemValue<T1>(BulkIncUserStatItemValue input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -233,7 +233,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem(BulkResetUserStatItem input)
+        public List<Model.BulkStatOperationResult>? BulkResetUserStatItem(BulkResetUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -243,7 +243,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkResetUserStatItem<T1>(BulkResetUserStatItem input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkResetUserStatItem<T1>(BulkResetUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -261,7 +261,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkCreateUserStatItems(BulkCreateUserStatItems input)
+        public List<Model.BulkStatOperationResult>? BulkCreateUserStatItems(BulkCreateUserStatItems input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -271,7 +271,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkCreateUserStatItems<T1>(BulkCreateUserStatItems input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkCreateUserStatItems<T1>(BulkCreateUserStatItems input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -280,7 +280,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItem1(BulkIncUserStatItem1 input)
+        public List<Model.BulkStatOperationResult>? BulkIncUserStatItem1(BulkIncUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -290,7 +290,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkIncUserStatItem1<T1>(BulkIncUserStatItem1 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkIncUserStatItem1<T1>(BulkIncUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -299,7 +299,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue1(BulkIncUserStatItemValue1 input)
+        public List<Model.BulkStatOperationResult>? BulkIncUserStatItemValue1(BulkIncUserStatItemValue1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -309,7 +309,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkIncUserStatItemValue1<T1>(BulkIncUserStatItemValue1 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkIncUserStatItemValue1<T1>(BulkIncUserStatItemValue1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -318,7 +318,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem1(BulkResetUserStatItem1 input)
+        public List<Model.BulkStatOperationResult>? BulkResetUserStatItem1(BulkResetUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -328,7 +328,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkResetUserStatItem1<T1>(BulkResetUserStatItem1 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkResetUserStatItem1<T1>(BulkResetUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -382,7 +382,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem(PublicBulkIncUserStatItem input)
+        public List<Model.BulkStatOperationResult>? PublicBulkIncUserStatItem(PublicBulkIncUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -392,7 +392,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? PublicBulkIncUserStatItem<T1>(PublicBulkIncUserStatItem input)
+        public List<Model.BulkStatOperationResult<T1>>? PublicBulkIncUserStatItem<T1>(PublicBulkIncUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -401,7 +401,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItemValue(PublicBulkIncUserStatItemValue input)
+        public List<Model.BulkStatOperationResult>? PublicBulkIncUserStatItemValue(PublicBulkIncUserStatItemValue input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -411,7 +411,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? PublicBulkIncUserStatItemValue<T1>(PublicBulkIncUserStatItemValue input)
+        public List<Model.BulkStatOperationResult<T1>>? PublicBulkIncUserStatItemValue<T1>(PublicBulkIncUserStatItemValue input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -420,7 +420,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem2(BulkResetUserStatItem2 input)
+        public List<Model.BulkStatOperationResult>? BulkResetUserStatItem2(BulkResetUserStatItem2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -430,7 +430,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkResetUserStatItem2<T1>(BulkResetUserStatItem2 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkResetUserStatItem2<T1>(BulkResetUserStatItem2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -448,7 +448,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkCreateUserStatItems(PublicBulkCreateUserStatItems input)
+        public List<Model.BulkStatOperationResult>? PublicBulkCreateUserStatItems(PublicBulkCreateUserStatItems input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -458,7 +458,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? PublicBulkCreateUserStatItems<T1>(PublicBulkCreateUserStatItems input)
+        public List<Model.BulkStatOperationResult<T1>>? PublicBulkCreateUserStatItems<T1>(PublicBulkCreateUserStatItems input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -476,7 +476,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? PublicBulkIncUserStatItem1(PublicBulkIncUserStatItem1 input)
+        public List<Model.BulkStatOperationResult>? PublicBulkIncUserStatItem1(PublicBulkIncUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -486,7 +486,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? PublicBulkIncUserStatItem1<T1>(PublicBulkIncUserStatItem1 input)
+        public List<Model.BulkStatOperationResult<T1>>? PublicBulkIncUserStatItem1<T1>(PublicBulkIncUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -495,7 +495,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkIncUserStatItemValue2(BulkIncUserStatItemValue2 input)
+        public List<Model.BulkStatOperationResult>? BulkIncUserStatItemValue2(BulkIncUserStatItemValue2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -505,7 +505,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkIncUserStatItemValue2<T1>(BulkIncUserStatItemValue2 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkIncUserStatItemValue2<T1>(BulkIncUserStatItemValue2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -514,7 +514,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItem3(BulkResetUserStatItem3 input)
+        public List<Model.BulkStatOperationResult>? BulkResetUserStatItem3(BulkResetUserStatItem3 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -524,7 +524,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkResetUserStatItem3<T1>(BulkResetUserStatItem3 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkResetUserStatItem3<T1>(BulkResetUserStatItem3 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -578,7 +578,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItemV2(BulkUpdateUserStatItemV2 input)
+        public List<Model.BulkStatOperationResult>? BulkUpdateUserStatItemV2(BulkUpdateUserStatItemV2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -588,7 +588,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkUpdateUserStatItemV2<T1>(BulkUpdateUserStatItemV2 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkUpdateUserStatItemV2<T1>(BulkUpdateUserStatItemV2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -606,7 +606,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem(BulkUpdateUserStatItem input)
+        public List<Model.BulkStatOperationResult>? BulkUpdateUserStatItem(BulkUpdateUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -616,7 +616,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkUpdateUserStatItem<T1>(BulkUpdateUserStatItem input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkUpdateUserStatItem<T1>(BulkUpdateUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -625,7 +625,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkResetUserStatItemValues(BulkResetUserStatItemValues input)
+        public List<Model.BulkStatOperationResult>? BulkResetUserStatItemValues(BulkResetUserStatItemValues input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -635,7 +635,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkResetUserStatItemValues<T1>(BulkResetUserStatItemValues input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkResetUserStatItemValues<T1>(BulkResetUserStatItemValues input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -662,7 +662,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem1(BulkUpdateUserStatItem1 input)
+        public List<Model.BulkStatOperationResult>? BulkUpdateUserStatItem1(BulkUpdateUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -672,7 +672,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkUpdateUserStatItem1<T1>(BulkUpdateUserStatItem1 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkUpdateUserStatItem1<T1>(BulkUpdateUserStatItem1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -690,7 +690,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatItemOperationResult>? BulkUpdateUserStatItem2(BulkUpdateUserStatItem2 input)
+        public List<Model.BulkStatOperationResult>? BulkUpdateUserStatItem2(BulkUpdateUserStatItem2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -700,7 +700,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? BulkUpdateUserStatItem2<T1>(BulkUpdateUserStatItem2 input)
+        public List<Model.BulkStatOperationResult<T1>>? BulkUpdateUserStatItem2<T1>(BulkUpdateUserStatItem2 input)
         {
             var response = _sdk.RunRequest(input);
 

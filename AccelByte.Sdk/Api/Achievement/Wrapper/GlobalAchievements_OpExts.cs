@@ -13,6 +13,56 @@ namespace AccelByte.Sdk.Api
     public static class AchievementGlobalAchievements_OpExts
     {
         public static Achievement.Model.ModelsPaginatedGlobalAchievementResponse? Execute(
+            this AdminListGlobalAchievements.AdminListGlobalAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListGlobalAchievements op = builder.Build(
+                namespace_
+            );
+
+            return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievements(op);
+        }
+        public static Achievement.Model.ModelsPaginatedContributorResponse? Execute(
+            this AdminListGlobalAchievementContributors.AdminListGlobalAchievementContributorsBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminListGlobalAchievementContributors op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievementContributors(op);
+        }
+        public static void Execute(
+            this ResetGlobalAchievement.ResetGlobalAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            ResetGlobalAchievement op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ResetGlobalAchievement(op);
+        }
+        public static Achievement.Model.ModelsPaginatedUserContributionResponse? Execute(
+            this AdminListUserContributions.AdminListUserContributionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUserContributions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListUserContributions(op);
+        }
+        public static Achievement.Model.ModelsPaginatedGlobalAchievementResponse? Execute(
             this PublicListGlobalAchievements.PublicListGlobalAchievementsBuilder builder,
             string namespace_
         )
@@ -22,6 +72,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).PublicListGlobalAchievements(op);
+        }
+        public static Achievement.Model.ModelsPaginatedContributorResponse? Execute(
+            this ListGlobalAchievementContributors.ListGlobalAchievementContributorsBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            ListGlobalAchievementContributors op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListGlobalAchievementContributors(op);
+        }
+        public static Achievement.Model.ModelsPaginatedUserContributionResponse? Execute(
+            this ListUserContributions.ListUserContributionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ListUserContributions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListUserContributions(op);
         }
         public static void Execute(
             this ClaimGlobalAchievementReward.ClaimGlobalAchievementRewardBuilder builder,

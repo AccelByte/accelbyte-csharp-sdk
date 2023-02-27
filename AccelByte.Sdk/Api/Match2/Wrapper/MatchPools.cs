@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.DeleteMatchPool.Builder.SetWrapperObject(this); }
         }
+        public MatchPoolMetric.MatchPoolMetricBuilder MatchPoolMetricOp
+        {
+            get { return Operation.MatchPoolMetric.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ApiListMatchPoolsResponse? MatchPoolList(MatchPoolList input)
@@ -82,6 +86,15 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiTicketMetricResultRecord? MatchPoolMetric(MatchPoolMetric input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

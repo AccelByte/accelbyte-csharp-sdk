@@ -14,6 +14,10 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("cycleIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? CycleIds { get; set; }
+
         [JsonPropertyName("defaultValue")]
         public double? DefaultValue { get; set; }
 

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsPublicGetGroupListRequestV2 Body { get; set; } = new ModelsPublicGetGroupListRequestV2();
+        public ModelsGetGroupListRequestV2 Body { get; set; } = new ModelsGetGroupListRequestV2();
 
         public GetListGroupByIDsV2Command(AccelByteSDK sdk)
         {

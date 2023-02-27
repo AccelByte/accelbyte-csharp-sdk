@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Group.Model
         [JsonPropertyName("groupId")]
         public string? GroupId { get; set; }
 
+        [JsonPropertyName("joinedAt")]
+        public DateTime? JoinedAt { get; set; }
+
         [JsonPropertyName("memberRoleId")]
         public List<string>? MemberRoleId { get; set; }
 

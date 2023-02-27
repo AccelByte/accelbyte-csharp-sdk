@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("options")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public ADTOObjectForOrderCreationOptions? Options { get; set; }
+        public OrderCreationOptions? Options { get; set; }
 
         [JsonPropertyName("platform")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("options")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public ADTOObjectForOrderCreationOptions? Options { get; set; }
+        public OrderCreationOptions? Options { get; set; }
 
         [JsonPropertyName("platform")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

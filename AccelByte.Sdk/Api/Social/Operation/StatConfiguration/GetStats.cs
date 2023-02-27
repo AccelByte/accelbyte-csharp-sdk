@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             : OperationBuilder<GetStatsBuilder>
         {
 
+            public string? CycleIds { get; set; }
+
             public bool? IsGlobal { get; set; }
 
             public int? Limit { get; set; }
@@ -43,6 +45,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             internal GetStatsBuilder() { }
 
+
+            public GetStatsBuilder SetCycleIds(string _cycleIds)
+            {
+                CycleIds = _cycleIds;
+                return this;
+            }
 
             public GetStatsBuilder SetIsGlobal(bool _isGlobal)
             {
@@ -85,6 +93,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.CycleIds is not null) QueryParams["cycleIds"] = builder.CycleIds;
             if (builder.IsGlobal != null) QueryParams["isGlobal"] = Convert.ToString(builder.IsGlobal)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -100,6 +109,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public GetStats(
             string namespace_,
+            string? cycleIds,
             bool? isGlobal,
             int? limit,
             int? offset
@@ -107,6 +117,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (cycleIds is not null) QueryParams["cycleIds"] = cycleIds;
             if (isGlobal != null) QueryParams["isGlobal"] = Convert.ToString(isGlobal)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;

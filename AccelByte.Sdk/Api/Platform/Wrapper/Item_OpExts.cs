@@ -282,7 +282,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).BulkGetLocaleItems<T1, T2>(op);
         }
-        public static List<Platform.Model.AvailablePredicateObject>? Execute(
+        public static List<Platform.Model.AvailablePredicate>? Execute(
             this GetAvailablePredicateTypes.GetAvailablePredicateTypesBuilder builder,
             string namespace_
         )

@@ -7,11 +7,11 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class ADTOObjectForUpdateXboxAchievementCompletePercentageAPI : AccelByte.Sdk.Core.Model
+    public class XblAchievementUpdateRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("achievements")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<XboxAchievementRequest>? Achievements { get; set; }
+        public List<Achievement>? Achievements { get; set; }
 
         [JsonPropertyName("serviceConfigId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Social.Model
 {
     public class StatUpdate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("cycleIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? CycleIds { get; set; }
+
         [JsonPropertyName("defaultValue")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public double? DefaultValue { get; set; }

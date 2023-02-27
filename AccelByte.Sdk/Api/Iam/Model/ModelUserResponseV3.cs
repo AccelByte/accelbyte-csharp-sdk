@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DateOfBirth { get; set; }
 
         [JsonPropertyName("deletionStatus")]

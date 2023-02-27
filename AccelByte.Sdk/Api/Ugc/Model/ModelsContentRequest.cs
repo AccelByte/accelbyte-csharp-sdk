@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
@@ -28,6 +29,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
 
         [JsonPropertyName("subType")]
@@ -50,6 +52,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
@@ -65,6 +68,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public string? Preview { get; set; }
 
         [JsonPropertyName("previewMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
 
         [JsonPropertyName("subType")]

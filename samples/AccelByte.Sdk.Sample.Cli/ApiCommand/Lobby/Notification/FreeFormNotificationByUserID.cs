@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","freeformnotificationbyuserid")]
-    public class FreeFormNotificationByUserIDCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "freeformnotificationbyuserid")]
+    public class FreeFormNotificationByUserIDCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "FreeFormNotificationByUserID"; } }
+        public string OperationName { get { return "FreeFormNotificationByUserID"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelFreeFormNotificationRequest Body { get; set; } = new ModelFreeFormNotificationRequest();
-                
+
         public FreeFormNotificationByUserIDCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             FreeFormNotificationByUserID operation = new FreeFormNotificationByUserID(
-                Namespace,                
-                UserId,                
-                Body                
-            );            
-            
+                Namespace,
+                UserId,
+                Body
+            );
+
             wrapper.FreeFormNotificationByUserID(operation);
             return String.Empty;
         }

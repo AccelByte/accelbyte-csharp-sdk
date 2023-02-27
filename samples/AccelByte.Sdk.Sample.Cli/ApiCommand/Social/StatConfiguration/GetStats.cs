@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("cycleIds")]
+        public string? CycleIds { get; set; }
+
         [SdkCommandArgument("isGlobal")]
         public bool? IsGlobal { get; set; }
 
@@ -50,6 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
             GetStats operation = new GetStats(
                 Namespace,
+                CycleIds,
                 IsGlobal,
                 Limit,
                 Offset

@@ -52,11 +52,11 @@ public class Functions
                 return DeleteUserStat(request, context);
             default:
                 return new APIGatewayHttpApiV2ProxyResponse
-                        {
-                            StatusCode = 400,
-                            Body = "HTTP Request not supported",
-                            Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
-                        };
+                {
+                    StatusCode = 400,
+                    Body = "HTTP Request not supported",
+                    Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
+                };
         }
     }
 
@@ -116,7 +116,7 @@ public class Functions
             return response;
         }
     }
-    
+
     public APIGatewayHttpApiV2ProxyResponse GetStatConfigurations(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("GetUserStat Request\n");
@@ -184,7 +184,7 @@ public class Functions
             return null;
         });
     }
-    
+
     protected APIGatewayHttpApiV2ProxyResponse DeleteUserStat(APIGatewayHttpApiV2ProxyRequest request, ILambdaContext context)
     {
         context.Logger.LogInformation("DeleteUserStat Request\n");

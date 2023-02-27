@@ -47,8 +47,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
                 Body
             );
 
-            wrapper.CreateBackfill(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Match2.Model.ApiBackfillCreateResponse? response = wrapper.CreateBackfill(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

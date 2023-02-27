@@ -56,23 +56,23 @@ $CLI_EXE \
     --sn gametelemetry \
     --op GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet \
     --namespace $AB_NAMESPACE \
-    --endTime 'qFJqNUJm' \
-    --eventId 'xl1ax3sx' \
-    --eventName 'mS3Ek0HO' \
-    --eventPayload 'KEqe0Y15' \
-    --limit '42' \
-    --offset '72' \
-    --startTime 'EnP1Qlwa' \
+    --endTime 'pf2UNvAB' \
+    --eventId 'K9hGIGkU' \
+    --eventName 'hDnvp96P' \
+    --eventPayload 'PtOnvVJZ' \
+    --limit '83' \
+    --offset '25' \
+    --startTime 'CNUOPMHd' \
     > test.out 2>&1
 eval_tap $? 2 'GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet' test.out
 
 #- 3 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 # body param: body
-echo '[{"EventId": "nP7AZKl8", "EventName": "xWvcARvR", "EventNamespace": "NshaCuaL", "EventTimestamp": "1977-05-11T00:00:00Z", "Payload": {"2GjFf9hd": {}, "uThnUUND": {}, "0sRhTfiB": {}}}, {"EventId": "MWEttHGp", "EventName": "pgCoOAeT", "EventNamespace": "MGwY1hTD", "EventTimestamp": "1999-10-12T00:00:00Z", "Payload": {"8c3XkA9L": {}, "Ubfrkf2m": {}, "CqphCyvp": {}}}, {"EventId": "4mSR04Lg", "EventName": "5YZQuEo0", "EventNamespace": "8w2IMLwd", "EventTimestamp": "1984-12-31T00:00:00Z", "Payload": {"8o4fcyT5": {}, "RPWldgFX": {}, "e4o83SdY": {}}}]' > $TEMP_JSON_INPUT
+echo '[{"EventId": "FdIjFMmL", "EventName": "TN43NTUT", "EventNamespace": "Y6447W25", "EventTimestamp": "1975-12-27T00:00:00Z", "Payload": {"alvCo9YU": {}, "X2sJmduc": {}, "mqwSBzXn": {}}}, {"EventId": "GuRFxpLd", "EventName": "1UmJxQmB", "EventNamespace": "YwakBTts", "EventTimestamp": "1987-04-04T00:00:00Z", "Payload": {"vnnISueK": {}, "qBoLHUFT": {}, "gzdGG43t": {}}}, {"EventId": "t1FosyN8", "EventName": "VBqUQpnI", "EventNamespace": "ShuSF6Hc", "EventTimestamp": "1986-10-13T00:00:00Z", "Payload": {"A7swCPwc": {}, "Bg0lydA7": {}, "vMTlPFht": {}}}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost \
-    --access_token 's3h4cmLS' \
+    --access_token 'E4szbgJ8' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 3 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
@@ -81,8 +81,8 @@ eval_tap $? 3 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet \
-    --steamId 'IXLiUb39' \
-    --access_token 'LdHFp5dh' \
+    --steamId 'cOwAU6qm' \
+    --access_token 'DKLWPGox' \
     > test.out 2>&1
 eval_tap $? 4 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet' test.out
 
@@ -90,9 +90,9 @@ eval_tap $? 4 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlayti
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut \
-    --playtime 'gdGRvZyO' \
-    --steamId 'tPOLtVhR' \
-    --access_token 'eiX9eJj8' \
+    --playtime 'CESSFhWk' \
+    --steamId 'h8plhf2y' \
+    --access_token 'XxfDCbCf' \
     > test.out 2>&1
 eval_tap $? 5 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
 

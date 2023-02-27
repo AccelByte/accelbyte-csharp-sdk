@@ -14,6 +14,9 @@ namespace AccelByte.Sdk.Api.Group.Model
         [JsonPropertyName("configurationCode")]
         public string? ConfigurationCode { get; set; }
 
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
         [JsonPropertyName("customAttributes")]
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
@@ -51,6 +54,9 @@ namespace AccelByte.Sdk.Api.Group.Model
     {
         [JsonPropertyName("configurationCode")]
         public string? ConfigurationCode { get; set; }
+
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("customAttributes")]
         public T1? CustomAttributes { get; set; }

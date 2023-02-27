@@ -71,6 +71,10 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.DeleteGroupPredefinedRulePublicV1.Builder.SetWrapperObject(this); }
         }
+        public GetListGroupByIDsAdminV2.GetListGroupByIDsAdminV2Builder GetListGroupByIDsAdminV2Op
+        {
+            get { return Operation.GetListGroupByIDsAdminV2.Builder.SetWrapperObject(this); }
+        }
         public CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder CreateNewGroupPublicV2Op
         {
             get { return Operation.CreateNewGroupPublicV2.Builder.SetWrapperObject(this); }
@@ -302,6 +306,15 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetGroupsResponseV1? GetListGroupByIDsAdminV2(GetListGroupByIDsAdminV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

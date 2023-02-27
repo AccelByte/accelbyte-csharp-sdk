@@ -32,6 +32,7 @@
 | `/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/custom` | PUT | UpdateGroupCustomRulePublicV1 | [UpdateGroupCustomRulePublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupCustomRulePublicV1.cs) | [UpdateGroupCustomRulePublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupCustomRulePublicV1.cs) |
 | `/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}` | PUT | UpdateGroupPredefinedRulePublicV1 | [UpdateGroupPredefinedRulePublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdateGroupPredefinedRulePublicV1.cs) | [UpdateGroupPredefinedRulePublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdateGroupPredefinedRulePublicV1.cs) |
 | `/group/v1/public/namespaces/{namespace}/groups/{groupId}/rules/defined/{allowedAction}` | DELETE | DeleteGroupPredefinedRulePublicV1 | [DeleteGroupPredefinedRulePublicV1](../../AccelByte.Sdk/Api/Group/Operation/Group/DeleteGroupPredefinedRulePublicV1.cs) | [DeleteGroupPredefinedRulePublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/DeleteGroupPredefinedRulePublicV1.cs) |
+| `/group/v2/admin/namespaces/{namespace}/groups/bulk` | POST | GetListGroupByIDsAdminV2 | [GetListGroupByIDsAdminV2](../../AccelByte.Sdk/Api/Group/Operation/Group/GetListGroupByIDsAdminV2.cs) | [GetListGroupByIDsAdminV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/GetListGroupByIDsAdminV2.cs) |
 | `/group/v2/public/namespaces/{namespace}/groups` | POST | CreateNewGroupPublicV2 | [CreateNewGroupPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/CreateNewGroupPublicV2.cs) | [CreateNewGroupPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/CreateNewGroupPublicV2.cs) |
 | `/group/v2/public/namespaces/{namespace}/groups/bulk` | POST | GetListGroupByIDsV2 | [GetListGroupByIDsV2](../../AccelByte.Sdk/Api/Group/Operation/Group/GetListGroupByIDsV2.cs) | [GetListGroupByIDsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/GetListGroupByIDsV2.cs) |
 | `/group/v2/public/namespaces/{namespace}/groups/{groupId}` | PUT | UpdatePutSingleGroupPublicV2 | [UpdatePutSingleGroupPublicV2](../../AccelByte.Sdk/Api/Group/Operation/Group/UpdatePutSingleGroupPublicV2.cs) | [UpdatePutSingleGroupPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Group/Group/UpdatePutSingleGroupPublicV2.cs) |
@@ -147,6 +148,7 @@
 | `models.CreateGroupConfigurationResponseV1` | [ModelsCreateGroupConfigurationResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsCreateGroupConfigurationResponseV1.cs) |
 | `models.CreateMemberRoleRequestV1` | [ModelsCreateMemberRoleRequestV1](../../AccelByte.Sdk/Api/Group/Model/ModelsCreateMemberRoleRequestV1.cs) |
 | `models.GetGroupConfigurationResponseV1` | [ModelsGetGroupConfigurationResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsGetGroupConfigurationResponseV1.cs) |
+| `models.GetGroupListRequestV2` | [ModelsGetGroupListRequestV2](../../AccelByte.Sdk/Api/Group/Model/ModelsGetGroupListRequestV2.cs) |
 | `models.GetGroupMemberListResponseV1` | [ModelsGetGroupMemberListResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsGetGroupMemberListResponseV1.cs) |
 | `models.GetGroupsListResponseV1` | [ModelsGetGroupsListResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsGetGroupsListResponseV1.cs) |
 | `models.GetGroupsResponseV1` | [ModelsGetGroupsResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsGetGroupsResponseV1.cs) |
@@ -168,7 +170,6 @@
 | `models.MemberRoleResponseV1` | [ModelsMemberRoleResponseV1](../../AccelByte.Sdk/Api/Group/Model/ModelsMemberRoleResponseV1.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Group/Model/ModelsPagination.cs) |
 | `models.PublicCreateNewGroupRequestV1` | [ModelsPublicCreateNewGroupRequestV1](../../AccelByte.Sdk/Api/Group/Model/ModelsPublicCreateNewGroupRequestV1.cs) |
-| `models.PublicGetGroupListRequestV2` | [ModelsPublicGetGroupListRequestV2](../../AccelByte.Sdk/Api/Group/Model/ModelsPublicGetGroupListRequestV2.cs) |
 | `models.RemoveRoleFromMemberRequestV1` | [ModelsRemoveRoleFromMemberRequestV1](../../AccelByte.Sdk/Api/Group/Model/ModelsRemoveRoleFromMemberRequestV1.cs) |
 | `models.RolePermission` | [ModelsRolePermission](../../AccelByte.Sdk/Api/Group/Model/ModelsRolePermission.cs) |
 | `models.Rule` | [ModelsRule](../../AccelByte.Sdk/Api/Group/Model/ModelsRule.cs) |

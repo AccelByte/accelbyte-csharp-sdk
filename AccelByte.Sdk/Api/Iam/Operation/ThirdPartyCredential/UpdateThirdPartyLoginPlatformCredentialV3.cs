@@ -108,12 +108,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   * Current supported value for TokenAuthenticationType is idToken
+    ///   * Current supported value for TokenAuthenticationType is code, idToken and bearerToken
     /// 
     /// 
-    ///   * `TokenClaimsMapping` is used to extract user info from idToken claims.
+    ///   * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     /// Its a JSON format with key should be `name`, `email` and `avatarUrl`
-    /// since IAM will look up for these key when extracting user info.
+    /// since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
     /// </summary>
     public class UpdateThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {

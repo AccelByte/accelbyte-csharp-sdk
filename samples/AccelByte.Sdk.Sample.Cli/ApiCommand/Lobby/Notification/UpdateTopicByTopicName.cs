@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby","updatetopicbytopicname")]
-    public class UpdateTopicByTopicNameCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("lobby", "updatetopicbytopicname")]
+    public class UpdateTopicByTopicNameCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Lobby"; } }
+        public string ServiceName { get { return "Lobby"; } }
 
-        public string OperationName{ get { return "UpdateTopicByTopicName"; } }
+        public string OperationName { get { return "UpdateTopicByTopicName"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
         [SdkCommandData("body")]
         public ModelUpdateTopicRequest Body { get; set; } = new ModelUpdateTopicRequest();
-                
+
         public UpdateTopicByTopicNameCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             UpdateTopicByTopicName operation = new UpdateTopicByTopicName(
-                Namespace,                
-                Topic,                
-                Body                
-            );            
-            
+                Namespace,
+                Topic,
+                Body
+            );
+
             wrapper.UpdateTopicByTopicName(operation);
             return String.Empty;
         }

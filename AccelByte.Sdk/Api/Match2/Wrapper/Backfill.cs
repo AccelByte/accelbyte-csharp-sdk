@@ -45,11 +45,11 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
 
-        public void CreateBackfill(CreateBackfill input)
+        public Model.ApiBackfillCreateResponse? CreateBackfill(CreateBackfill input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

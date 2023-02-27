@@ -103,11 +103,19 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiBackfillCreateResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)201)
+            if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ApiBackfillCreateResponse>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ApiBackfillCreateResponse>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -648,10 +648,7 @@
 
 | Model | Class |
 |---|---|
-| `A DTO object for order creation options` | [ADTOObjectForOrderCreationOptions](../../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForOrderCreationOptions.cs) |
-| `A DTO object for querying xbox user achievements` | [ADTOObjectForQueryingXboxUserAchievements](../../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForQueryingXboxUserAchievements.cs) |
-| `A DTO object for unlock steam achievement API` | [ADTOObjectForUnlockSteamAchievementAPI](../../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUnlockSteamAchievementAPI.cs) |
-| `A DTO object for update xbox achievement complete percentage API` | [ADTOObjectForUpdateXboxAchievementCompletePercentageAPI](../../AccelByte.Sdk/Api/Platform/Model/ADTOObjectForUpdateXboxAchievementCompletePercentageAPI.cs) |
+| `Achievement` | [Achievement](../../AccelByte.Sdk/Api/Platform/Model/Achievement.cs) |
 | `AchievementInfo` | [AchievementInfo](../../AccelByte.Sdk/Api/Platform/Model/AchievementInfo.cs) |
 | `AdditionalData` | [AdditionalData](../../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
 | `AdminOrderCreate` | [AdminOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
@@ -665,6 +662,8 @@
 | `AppleIAPConfigInfo` | [AppleIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPConfigInfo.cs) |
 | `AppleIAPConfigRequest` | [AppleIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPConfigRequest.cs) |
 | `AppleIAPReceipt` | [AppleIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPReceipt.cs) |
+| `AvailableComparison` | [AvailableComparison](../../AccelByte.Sdk/Api/Platform/Model/AvailableComparison.cs) |
+| `AvailablePredicate` | [AvailablePredicate](../../AccelByte.Sdk/Api/Platform/Model/AvailablePredicate.cs) |
 | `BasicCategoryInfo` | [BasicCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/BasicCategoryInfo.cs) |
 | `BasicItem` | [BasicItem](../../AccelByte.Sdk/Api/Platform/Model/BasicItem.cs) |
 | `BillingAccount` | [BillingAccount](../../AccelByte.Sdk/Api/Platform/Model/BillingAccount.cs) |
@@ -812,6 +811,7 @@
 | `OptionBoxConfig` | [OptionBoxConfig](../../AccelByte.Sdk/Api/Platform/Model/OptionBoxConfig.cs) |
 | `Order` | [Order](../../AccelByte.Sdk/Api/Platform/Model/Order.cs) |
 | `OrderCreate` | [OrderCreate](../../AccelByte.Sdk/Api/Platform/Model/OrderCreate.cs) |
+| `OrderCreationOptions` | [OrderCreationOptions](../../AccelByte.Sdk/Api/Platform/Model/OrderCreationOptions.cs) |
 | `OrderGrantInfo` | [OrderGrantInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderGrantInfo.cs) |
 | `OrderHistoryInfo` | [OrderHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderHistoryInfo.cs) |
 | `OrderInfo` | [OrderInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderInfo.cs) |
@@ -874,6 +874,7 @@
 | `PlayStationReconcileResult` | [PlayStationReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileResult.cs) |
 | `PlaystationIAPConfigRequest` | [PlaystationIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/PlaystationIAPConfigRequest.cs) |
 | `PopulatedItemInfo` | [PopulatedItemInfo](../../AccelByte.Sdk/Api/Platform/Model/PopulatedItemInfo.cs) |
+| `Predicate` | [Predicate](../../AccelByte.Sdk/Api/Platform/Model/Predicate.cs) |
 | `PredicateValidateResult` | [PredicateValidateResult](../../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
 | `PurchaseCondition` | [PurchaseCondition](../../AccelByte.Sdk/Api/Platform/Model/PurchaseCondition.cs) |
 | `PurchaseConditionUpdate` | [PurchaseConditionUpdate](../../AccelByte.Sdk/Api/Platform/Model/PurchaseConditionUpdate.cs) |
@@ -916,6 +917,7 @@
 | `ServicePluginConfigUpdate` | [ServicePluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigUpdate.cs) |
 | `Slide` | [Slide](../../AccelByte.Sdk/Api/Platform/Model/Slide.cs) |
 | `StackableEntitlementInfo` | [StackableEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/StackableEntitlementInfo.cs) |
+| `SteamAchievementUpdateRequest` | [SteamAchievementUpdateRequest](../../AccelByte.Sdk/Api/Platform/Model/SteamAchievementUpdateRequest.cs) |
 | `SteamDLCSyncRequest` | [SteamDLCSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/SteamDLCSyncRequest.cs) |
 | `SteamIAPConfig` | [SteamIAPConfig](../../AccelByte.Sdk/Api/Platform/Model/SteamIAPConfig.cs) |
 | `SteamIAPConfigInfo` | [SteamIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/SteamIAPConfigInfo.cs) |
@@ -962,16 +964,13 @@
 | `WalletTransactionPagingSlicedResult` | [WalletTransactionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/WalletTransactionPagingSlicedResult.cs) |
 | `WxPayConfigInfo` | [WxPayConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/WxPayConfigInfo.cs) |
 | `WxPayConfigRequest` | [WxPayConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/WxPayConfigRequest.cs) |
+| `XblAchievementUpdateRequest` | [XblAchievementUpdateRequest](../../AccelByte.Sdk/Api/Platform/Model/XblAchievementUpdateRequest.cs) |
 | `XblDLCSyncRequest` | [XblDLCSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/XblDLCSyncRequest.cs) |
 | `XblIAPConfigInfo` | [XblIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/XblIAPConfigInfo.cs) |
 | `XblIAPConfigRequest` | [XblIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/XblIAPConfigRequest.cs) |
 | `XblReconcileRequest` | [XblReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileRequest.cs) |
 | `XblReconcileResult` | [XblReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileResult.cs) |
+| `XblUserAchievements` | [XblUserAchievements](../../AccelByte.Sdk/Api/Platform/Model/XblUserAchievements.cs) |
 | `XsollaConfig` | [XsollaConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaConfig.cs) |
 | `XsollaPaywallConfig` | [XsollaPaywallConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfig.cs) |
 | `XsollaPaywallConfigRequest` | [XsollaPaywallConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfigRequest.cs) |
-| `available comparison object` | [AvailableComparisonObject](../../AccelByte.Sdk/Api/Platform/Model/AvailableComparisonObject.cs) |
-| `available predicate object` | [AvailablePredicateObject](../../AccelByte.Sdk/Api/Platform/Model/AvailablePredicateObject.cs) |
-| `predicate object` | [PredicateObject](../../AccelByte.Sdk/Api/Platform/Model/PredicateObject.cs) |
-| `steam achievement request` | [SteamAchievementRequest](../../AccelByte.Sdk/Api/Platform/Model/SteamAchievementRequest.cs) |
-| `xbox achievement request` | [XboxAchievementRequest](../../AccelByte.Sdk/Api/Platform/Model/XboxAchievementRequest.cs) |

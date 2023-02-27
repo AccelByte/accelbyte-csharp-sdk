@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.BulkStatItemOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.BulkStatOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -132,11 +132,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatItemOperationResult>>(payload);
+                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatItemOperationResult>>(payload);
+                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult>>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -144,7 +144,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public List<Model.BulkStatItemOperationResult<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.BulkStatOperationResult<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -152,11 +152,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatItemOperationResult<T1>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult<T1>>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatItemOperationResult<T1>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult<T1>>>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
