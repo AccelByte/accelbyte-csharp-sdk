@@ -1,3 +1,12 @@
+<a name="v0.29.0"></a>
+## [v0.29.0]
+- API models and endpoints changed. See affected items [here](docs/migration-guides/migration-guide-v0.28-to-v0.29.md)
+- Updated AWS Lambda sample app to allow both local tests and FunctionURL invocation.
+- Update Lobby integration tests.
+- Fixed some minor defects detected by Coverity Scan.
+- Added reporting service integration test.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.28.0"></a>
 ## [v0.28.0]
 - Changed operation's static var for builder object to static property.
