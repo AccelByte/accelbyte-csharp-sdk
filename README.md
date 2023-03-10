@@ -1,6 +1,6 @@
 # AccelByte .NET (C#) SDK
 
-A software development kit (SDK) for interacting with AccelByte services written in C#.
+A software development kit (SDK) for interacting with AccelByte Gaming Services written in C#.
 
 This SDK was generated from OpenAPI spec included in the [spec](spec) directory.
 
@@ -265,7 +265,7 @@ bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
 ```
 
 ## Operation with Generic Response
-Since 0.28, C# Server SDK enable overloaded `ParseOperation` method with generic data type that applies to almost all operations with response model which has one or more object data type in it.
+Since 0.28, C# Extend SDK enable overloaded `ParseOperation` method with generic data type that applies to almost all operations with response model which has one or more object data type in it.
 For example:
 ```csharp
 using AccelByte.Sdk.Api.Cloudsave.Model;
@@ -300,8 +300,8 @@ Sample apps are available in the [samples](samples) directory.
 - [0.23.x to 0.24.0](docs/migration-guides/migration-guide-v0.23-to-v0.24.md)
 
 ## Documentation
-Reference about AccelByte service endpoints and their corresponding SDK API is available in [docs/operations](docs/operations) directory.
+Reference about AccelByte Gaming Services endpoints and their corresponding SDK API is available in [docs/operations](docs/operations) directory.
 
 Sample app documentations are available in the [docs/samples](docs/samples/) directory.
 
-For documentation about AccelByte services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)
+For documentation about AccelByte Gaming Services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)

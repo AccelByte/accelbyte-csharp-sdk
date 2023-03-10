@@ -1,7 +1,7 @@
-# Tic Tac Toe using AccelByte .NET (C#) Server SDK
+# Tic Tac Toe using AccelByte .NET (C#) Extend SDK
 
 ## Overview
-This tutorial will explain on how to use AccelByte .NET (C#) Server SDK to create simple Tic Tac Toe backend service and game client. This tutorial also will explain on how to configure and run the provided local server sample as well as AWS Lambda sample.
+This tutorial will explain on how to use AccelByte .NET (C#) Extend SDK to create simple Tic Tac Toe backend service and game client. This tutorial also will explain on how to configure and run the provided local server sample as well as AWS Lambda sample.
 
 ## Prerequisites
 - [Create a Game Namespace](https://docs.accelbyte.io/esg/uam/namespaces.html#tutorials) if you don't have one yet. Be sure to keep the namespace's **ID** as you will need it later.
@@ -11,7 +11,7 @@ This tutorial will explain on how to use AccelByte .NET (C#) Server SDK to creat
 - Download the latest [AccelByte .NET (C#) SDK](https://github.com/AccelByte/accelbyte-csharp-sdk)
 - Read [.NET (C#) SDK Getting Started Guide](https://docs.accelbyte.io/guides/customization/csharp-sdk-guide.html#tutorials) on how to integrate SDK into your project.
 - AWS account with enough permission to deploy Lambda function (optional).
-- At least two username registered in AccelByte Cloud for testing purpose.
+- At least two username registered in AccelByte Gaming Services for testing purpose.
 
 ## How it Works (Server-Side)
 ### Architecture for Local Server
@@ -19,7 +19,7 @@ This tutorial will explain on how to use AccelByte .NET (C#) Server SDK to creat
 graph TB
 	C[Client]
 	M[Tic Tac Toe Local Server]
-	subgraph ABC[AccelByte Cloud]
+	subgraph ABC[AccelByte Gaming Services]
 		direction RL
 		S1[IAM]
 		S2[Lobby]
@@ -47,7 +47,7 @@ graph TB
 			R[Redis]
 		end
 	end
-	subgraph ABC[AccelByte Cloud]
+	subgraph ABC[AccelByte Gaming Services]
 		direction RL
 		S1[IAM]
 		S2[Lobby]		
@@ -129,13 +129,13 @@ sequenceDiagram
 ### Local Server
 - For local server sample application, go to `samples/AccelByte.Sdk.Sample.TicTacToe.Server` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Server/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Server/README.md).
 - Run the application using `dotnet run`. Or if using JSON config file, run using `dotnet run -- --sdk-config <json file>`.
 
 ### Game Client (Local Server)
 - For matchmaking client sample application, go to `samples/AccelByte.Sdk.Sample.TicTacToe.Game` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Game/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Game/README.md).
 - You can choose to configure user's credentials directly using JSON file or command line options. Refer to the README on how to use it.
 - Make sure you run local server sample application first.
 - Run the application using `dotnet run`.
@@ -157,7 +157,7 @@ sequenceDiagram
 ### Game Client (AWS Lambda)
 - For matchmaking client sample application, go to `samples/AccelByte.Sdk.Sample.TicTacToe.Game` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Game/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TicTacToe.Game/README.md).
 - You can choose to configure user's credentials directly using JSON file or command line options. Refer to the README on how to use it.
 - Make sure you deploy Title Matchmaking Lambda function first either on AWS or local.
 - Run the application using `dotnet run`.
@@ -166,7 +166,7 @@ sequenceDiagram
 1. Follow above Game Client steps.
 2. For example:
 ```bash
-# with assumption that AccelByte Cloud config is available in environment variables
+# with assumption that AccelByte Gaming Services config is available in environment variables
 $ dotnet run -- --user player1 --pass player1_pass --server http://127.0.0.1:9090
 ```
 3. You will be presented with a simple menu similar to this:
@@ -178,7 +178,7 @@ MAIN MENU
 x) Exit
 Choose an option : [x]
 ```
-4. Type `1` and hit `enter` to login to AccelByte Cloud.
+4. Type `1` and hit `enter` to login to AccelByte Gaming Services.
 5. After succesfully logged in, you will be back to main menu.
 ```bash
 MAIN MENU
@@ -306,7 +306,7 @@ YOU ARE LOSE!
 ## Code Behind
 
 ### Game Client
-- Initializing Accelbyte Cloud SDK
+- Initializing AccelByte Gaming Services SDK
 ```csharp
 //Command line argument(s) parser
 CommandArguments cArgs = new CommandArguments(args);

@@ -1,4 +1,4 @@
-# AccelByte C# SDK TicTacToe Sample Library
+# AccelByte C# Extend SDK TicTacToe Sample Library
 
 ## Requirements
 

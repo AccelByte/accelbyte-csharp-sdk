@@ -1,12 +1,12 @@
-# AccelByte Cloud and 3rd Party OpenID Connect Login Integration Using AccelByte C# (.NET) Server SDK
+# AccelByte Gaming Services and 3rd Party OpenID Connect Login Integration Using AccelByte C# (.NET) Extend SDK
 
 ## Overview
 
-AccelByte Cloud provides [integration with OpenID Connect providers](https://docs.accelbyte.io/guides/access/3rd-party-platform-integration.html#openid-connect) as one of the 3rd party login integration options. Any OpenID Connect providers should work. The following sample app will show you how to do this with AccelByte C# Server SDK and [PhantAuth](https://www.phantauth.net/) (an OpenID Connect provider to simplify testing).
+AccelByte Gaming Services provides [integration with OpenID Connect providers](https://docs.accelbyte.io/guides/access/3rd-party-platform-integration.html#openid-connect) as one of the 3rd party login integration options. Any OpenID Connect providers should work. The following sample app will show you how to do this with AccelByte C# Extend SDK and [PhantAuth](https://www.phantauth.net/) (an OpenID Connect provider to simplify testing).
 
 ## Sample App
 
-1. Clone [AccelByte C# Server SDK](https://github.com/AccelByte/accelbyte-csharp-sdk) 
+1. Clone [AccelByte C# Extend SDK](https://github.com/AccelByte/accelbyte-csharp-sdk) 
 2. Go to [samples/AccelByte.Sdk.Sample.OIDC.Web](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.OIDC.Web) folder
 3. Follow the [README.md](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.OIDC.Web#readme) to setup and use the sample application
 
@@ -156,7 +156,7 @@ protected OAuthTokens GetAuthorizedToken(ProviderSpecification spec, string auth
         
 It sends the auth code to the provider’s token endpoint with grant_type authorization_code. It will return a collection of authorized tokens. One of them is `id_token` which we will use later.
 
-### 3. How to use the authorized tokens for AccelByte c# Server SDK LoginProvider method
+### 3. How to use the authorized tokens for AccelByte c# Extend SDK LoginProvider method
 
 These codes show how to use the id token to login to the AccelByte backend.
 

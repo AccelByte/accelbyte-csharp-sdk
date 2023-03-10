@@ -1,4 +1,4 @@
-# AccelByte C# SDK Title Matchmaking Client Sample
+# AccelByte C# Extend SDK Title Matchmaking Client Sample
 
 ## Requirements
 
@@ -35,11 +35,11 @@ Just hit Build in the main menu, or right click in "AccelByte.Sdk.Sample.Cli", t
 
 ### Run the CLI application
 
-- Run with default configurations (AccelByte Cloud configuration will retrieved from environment variables):
+- Run with default configurations (AccelByte Gaming Services configuration will retrieved from environment variables):
 
     `AccelByte.Sdk.Sample.TitleMatchmaking.Client.exe`
 
-- Run with AccelByte Cloud configuration provided via JSON file and use default for other configurations. JSON sample file available [here](ab_config_sample.json).
+- Run with AccelByte Gaming Services configuration provided via JSON file and use default for other configurations. JSON sample file available [here](ab_config_sample.json).
 
     `AccelByte.Sdk.Sample.TitleMatchmaking.Client.exe --sdk-config <json_file>`
 

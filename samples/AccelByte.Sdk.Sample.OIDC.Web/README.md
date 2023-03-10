@@ -1,4 +1,4 @@
-# AccelByte C# SDK OIDC Web Sample
+# AccelByte C# Extend SDK OIDC Web Sample
 
 ## Requirements
 

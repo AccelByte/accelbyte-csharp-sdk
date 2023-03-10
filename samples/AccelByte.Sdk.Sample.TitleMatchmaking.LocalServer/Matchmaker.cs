@@ -301,7 +301,7 @@ namespace AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer
                 _Sdk.Sessionbrowser.Session.CreateSessionOp
                     .Execute(createSessionBody, _Sdk.Namespace);
             if (crSession == null)
-                throw new Exception("Could not create session in AB Cloud.");
+                throw new Exception("Could not create session in AGS.");
 
             // # 3. Register session on DSMC
             List<Api.Dsmc.Model.ModelsRequestMatchMember> srPartyMembers = new List<Api.Dsmc.Model.ModelsRequestMatchMember>();

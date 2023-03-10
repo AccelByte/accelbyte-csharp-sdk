@@ -1,8 +1,8 @@
 # Add Custom Operation into AccelByte SDK
 
 ## Background
-Majority of C# Server SDK codes are generated from [spec json files](../spec) using codegen tools. Any attemp to customize C# Server SDK must avoid editing files that are marked as `DO NOT EDIT`.
-Also it is best practice to extend the functionality of C# Server SDk by inherit the base classes or add new implementation for partial classes to ensure less complications when upgrading C# Server SDK.
+Majority of C# Extend SDK codes are generated from [spec json files](../spec) using codegen tools. Any attemp to customize C# Extend SDK must avoid editing files that are marked as `DO NOT EDIT`.
+Also it is best practice to extend the functionality of C# Extend SDK by inherit the base classes or add new implementation for partial classes to ensure less complications when upgrading C# Extend SDK.
 
 ## How to Create a Custom Operation
 In this guide, we will explain on how to create a custom operation for custom endpoint and integrate it into SDK core.
@@ -320,7 +320,7 @@ var response = customWrapper.CallMyCustomOp(newOp);
 Create a .NET 6 `NUnit Test Project` and include [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/) dependency.
 Add reference to your custom operation project inside this test project.
 
-You can use the code template below to start your server sdk test class.
+You can use the code template below to start your sdk test class.
 ```csharp
 using System;
 using NUnit.Framework;

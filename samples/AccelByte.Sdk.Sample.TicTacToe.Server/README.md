@@ -1,4 +1,4 @@
-# AccelByte C# SDK TicTacToe Local Server Sample
+# AccelByte C# Extend SDK TicTacToe Local Server Sample
 
 ## Requirements
 

@@ -1,7 +1,7 @@
-# Title Matchmaking using AccelByte .NET (C#) Server SDK
+# Title Matchmaking using AccelByte .NET (C#) Extend SDK
 
 ## Overview
-This tutorial will explain on how to use AccelByte .NET (C#) Server SDK to create simple matchmaking backend service and client. This tutorial also will explain on how to configure and run the provided local server sample as well as AWS Lambda sample.
+This tutorial will explain on how to use AccelByte .NET (C#) Extend SDK to create simple matchmaking backend service and client. This tutorial also will explain on how to configure and run the provided local server sample as well as AWS Lambda sample.
 
 ## Prerequisites
 - [Create a Game Namespace](https://docs.accelbyte.io/esg/uam/namespaces.html#tutorials) if you don't have one yet. Be sure to keep the namespace's **ID** as you will need it later.
@@ -13,20 +13,20 @@ This tutorial will explain on how to use AccelByte .NET (C#) Server SDK to creat
 - Download the latest [AccelByte .NET (C#) SDK](https://github.com/AccelByte/accelbyte-csharp-sdk)
 - Read [.NET (C#) SDK Getting Started Guide](https://docs.accelbyte.io/guides/customization/csharp-sdk-guide.html#tutorials) on how to integrate SDK into your project.
 - AWS account with enough permission to deploy Lambda function (optional).
-- At least two username registered in AccelByte Cloud for testing purpose.
+- At least two username registered in AccelByte Gaming Services for testing purpose.
 
 
 ## Using Sample Applications
 ### Local Server
 - For local server sample application, go to `samples/AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.LocalServer/README.md).
 - Run the application using `dotnet run`. Or if using JSON config file, run using `dotnet run --sdk-config <json file>`.
 
 ### Matchmaking Client
 - For matchmaking client sample application, go to `samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client/README.md).
 - You can choose to configure user's credentials directly using JSON file or command line options. Refer to the README on how to use it.
 - Make sure you run local server sample application first.
 - Run the application using `dotnet run`.
@@ -83,7 +83,7 @@ Note that following assumption is applied:
 graph TB
 	C[Client]
 	M[Title Matchmaking Local Server]
-	subgraph ABC[AccelByte Cloud]
+	subgraph ABC[AccelByte Gaming Services]
 		direction RL
 		S1[IAM]
 		S2[Lobby]
@@ -117,7 +117,7 @@ The diagram above explains the flow of how this Title Matchmaking request is rec
 ### Matchmaking Client
 - For matchmaking client sample application, go to `samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client` directory.
 - Build the application using `dotnet build`.
-- Configure environment variables for AccelByte Cloud connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client/README.md).
+- Configure environment variables for AccelByte Gaming Services connection or use JSON config file as mentioned in project's [README](https://github.com/AccelByte/accelbyte-csharp-sdk/tree/main/samples/AccelByte.Sdk.Sample.TitleMatchmaking.Client/README.md).
 - You can choose to configure user's credentials directly using JSON file or command line options. Refer to the README on how to use it.
 - Make sure you deploy Title Matchmaking Lambda function first either on AWS or local.
 - Run the application using `dotnet run`.
@@ -184,7 +184,7 @@ graph TB
 			R[Redis]
 		end
 	end
-	subgraph ABC[AccelByte Cloud]
+	subgraph ABC[AccelByte Gaming Services]
 		direction RL
 		S1[IAM]
 		S2[Lobby]
@@ -207,7 +207,7 @@ The diagram above explains the flow of how this Title Matchmaking is invoked by 
 1. Follow above Matchmaking Client steps.
 2. For example:
 ```bash
-# with assumption that AccelByte Cloud config is available in environment variables
+# with assumption that AccelByte Gaming Services config is available in environment variables
 $ dotnet run --user player1 --pass player1_pass --server http://127.0.0.1:9090
 ```
 3. You will be presented with a simple menu similar to this:
@@ -218,7 +218,7 @@ MAIN MENU
 x) Exit
 Choose an option : [x]
 ```
-4. Type `1` and hit `enter` to login to AccelByte Cloud.
+4. Type `1` and hit `enter` to login to AccelByte Gaming Services.
 5. After succesfully logged in, you will be shown an access token and status of Lobby WS connection.
 ```bash
 Access Token: <access_token_string>
@@ -261,13 +261,13 @@ payload: found <server>:<port>
 sentAt: 2022-08-25T00:48:20Z
 ```
 You will notice that for player 2, the value of `is_first_member` is false and this is expected. And there are additional information such as party id and members of the party.
-If you use Local Server, the response should come first, and after a while, the notification arrived. This is expected as Local Server use `Task` to delegate the communication to AccelByte Cloud.
+If you use Local Server, the response should come first, and after a while, the notification arrived. This is expected as Local Server use `Task` to delegate the communication to AccelByte Gaming Services.
 But, If you use AWS Lambda deployment, then the notification usually comes first, then after that is the response. Because in AWS Lambda function code, there is no background task involved.
 
 ## Code Behind
 
 ### Matchmaking Client
-- Initializing Accelbyte Cloud SDK
+- Initializing AccelByte Gaming Services SDK
 ```csharp
 //Command line argument(s) parser
 CommandArguments cArgs = new CommandArguments(args);
@@ -313,11 +313,11 @@ if (sdk.Configuration.Credential == null)
 		aPassword = Console.ReadLine()!.Trim();
 	}
 
-	//Try to login to AccelByte Cloud
+	//Try to login to AccelByte Gaming Services
 	b = sdk.LoginUser(aUsername, aPassword);
 }
 else
-	//Try to login to AccelByte Cloud using credential stored in credential repository
+	//Try to login to AccelByte Gaming Services using credential stored in credential repository
 	b = sdk.LoginUser();
 
 //Store access token to be used later when sending matchmaking request
@@ -457,7 +457,7 @@ return new MatchmakingResult()
 };
 ```
 
-- Create Session on AccelByte Cloud
+- Create Session on AccelByte Gaming Services
 ```csharp
 //Get MatchmakingResult object from previous step (if have enough party members)
 

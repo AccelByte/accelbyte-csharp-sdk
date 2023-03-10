@@ -1,4 +1,4 @@
-# AccelByte C# SDK Title Matchmaking Local Server Sample
+# AccelByte C# Extend SDK Title Matchmaking Local Server Sample
 
 ## Requirements
 

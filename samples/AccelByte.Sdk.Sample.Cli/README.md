@@ -1,4 +1,4 @@
-﻿# AccelByte C# SDK CLI
+﻿# AccelByte C# Extend SDK CLI
 
 ## Requirements
 

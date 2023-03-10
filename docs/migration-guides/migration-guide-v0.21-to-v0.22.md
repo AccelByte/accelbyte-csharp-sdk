@@ -3,7 +3,7 @@
 
 ### BREAKING CHANGE
 ```
-Following changes in AB Cloud Platform Service:
+Following changes in AGS Platform Service:
 
 Model `OptionBoxItem` changed to `EntitlementLootBoxReward`.
 Model `TrackedEntitlementInfo` changed to `EntitlementDecrementResult`.

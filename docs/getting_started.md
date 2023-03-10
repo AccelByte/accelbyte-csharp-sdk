@@ -1,10 +1,10 @@
-# Getting Started Guide for AccelByte C# (.NET) Server SDK
+# Getting Started Guide for AccelByte C# (.NET) Extend SDK
 
-This guide will show you how to create a project which uses C# (.NET) Server SDK from scratch.
+This guide will show you how to create a project which uses C# (.NET) Extend SDK from scratch.
 
 
 ## Prerequisites
-* AccelByte Cloud (demo environment):
+* AccelByte Gaming Services (demo environment):
 	* Use https://demo.accelbyte.io for `AB_BASE_URL` environment variable.
 	* [Create an OAuth Client](https://docs.accelbyte.io/guides/access/iam-client.html#create-a-client) with client type `Confidential`.
 		* Use `Client ID` value for `AB_CLIENT_ID` environment variable.
@@ -30,15 +30,15 @@ $ dotnet sln add myproject/myproject.csproj     # Add myproject to mysolution
 
 ### 2. Add to Project Dependency
 
-Get a release version of [AccelByte C# Server SDK](https://github.com/AccelByte/accelbyte-csharp-sdk) and add it as C# project dependency. 
+Get a release version of [AccelByte C# Extend SDK](https://github.com/AccelByte/accelbyte-csharp-sdk) and add it as C# project dependency. 
 
 Replace `{VERSION}` with a specific release version tag from [releases](https://github.com/AccelByte/accelbyte-csharp-sdk/releases).
 
-It is recommended to use the matching C# (.NET) Server SDK version for the given AccelByte Cloud version.
+It is recommended to use the matching C# (.NET) Extend SDK version for the given AccelByte Gaming Services version.
 
 ```bash
 $ cd /path/to/mysolution/myproject
-$ dotnet add package AccelByte.Sdk -v {VERSION}      # Add AccelByte C# Server SDK Package from Nuget
+$ dotnet add package AccelByte.Sdk -v {VERSION}      # Add AccelByte C# Extend SDK Package from Nuget
 ```
 
 ### 3. Use in Code
@@ -107,18 +107,18 @@ namespace AccelByteExample
 Set the required environment variables and run the code using `dotnet run`.
 
 ```bash
-$ export AB_BASE_URL="https://demo.accelbyte.io"              # AccelByte Cloud Base URL e.g. demo environment
-$ export AB_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"      # AccelByte Cloud OAuth Client ID
-$ export AB_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # AccelByte Cloud OAuth Client Secret
+$ export AB_BASE_URL="https://demo.accelbyte.io"              # AccelByte Gaming Services Base URL e.g. demo environment
+$ export AB_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"      # AccelByte Gaming Services OAuth Client ID
+$ export AB_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # AccelByte Gaming Services OAuth Client Secret
 $ cd /path/to/mysolution/myproject
 $ dotnet run
 ```
 
 ## Follow Up Resources
 
-* C# (.NET) Server SDK [README.md](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/README.md)
-* Reference documentation on AccelByte Cloud endpoints, their corresponding C# (.NET) Server SDK API, and short examples on how to use them is available in [docs](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/docs)
-* Sample apps which show some practical usage of C# (.NET) Server SDK are available in [samples](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/samples)
+* C# (.NET) Extend SDK [README.md](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/README.md)
+* Reference documentation on AccelByte Gaming Services endpoints, their corresponding C# (.NET) Extend SDK API, and short examples on how to use them is available in [docs](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/docs)
+* Sample apps which show some practical usage of C# (.NET) Extend SDK are available in [samples](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/samples)
 
 ## FAQ
 
@@ -126,6 +126,6 @@ $ dotnet run
 
 Yes. You just need to implement the interface accordingly.
 
-### 2. How can I use more advanced features of C# (.NET) Server SDK e.g. HTTP retry and automatic token refresh? 
+### 2. How can I use more advanced features of C# (.NET) Extend SDK e.g. HTTP retry and automatic token refresh? 
 
 See [README.md](https://github.com/AccelByte/accelbyte-csharp-sdk/blob/main/README.md)
