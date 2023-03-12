@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetMyUserV3
     ///
+    /// 
+    /// 
     /// Require valid user authorization
     /// Get my user data
     /// action code : 10147

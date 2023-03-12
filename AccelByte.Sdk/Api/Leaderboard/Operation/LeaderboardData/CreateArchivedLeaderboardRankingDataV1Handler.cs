@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// CreateArchivedLeaderboardRankingDataV1Handler
     ///
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [CREATE]'
     /// 
     /// 

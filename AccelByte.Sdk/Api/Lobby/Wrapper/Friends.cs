@@ -27,9 +27,17 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.GetUserIncomingFriends.Builder.SetWrapperObject(this); }
         }
+        public GetUserIncomingFriendsWithTime.GetUserIncomingFriendsWithTimeBuilder GetUserIncomingFriendsWithTimeOp
+        {
+            get { return Operation.GetUserIncomingFriendsWithTime.Builder.SetWrapperObject(this); }
+        }
         public GetUserOutgoingFriends.GetUserOutgoingFriendsBuilder GetUserOutgoingFriendsOp
         {
             get { return Operation.GetUserOutgoingFriends.Builder.SetWrapperObject(this); }
+        }
+        public GetUserOutgoingFriendsWithTime.GetUserOutgoingFriendsWithTimeBuilder GetUserOutgoingFriendsWithTimeOp
+        {
+            get { return Operation.GetUserOutgoingFriendsWithTime.Builder.SetWrapperObject(this); }
         }
         public UserRequestFriend.UserRequestFriendBuilder UserRequestFriendOp
         {
@@ -83,7 +91,25 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ModelLoadIncomingFriendsWithTimeResponse>? GetUserIncomingFriendsWithTime(GetUserIncomingFriendsWithTime input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.ModelGetUserOutgoingFriendsResponse>? GetUserOutgoingFriends(GetUserOutgoingFriends input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelLoadOutgoingFriendsWithTimeResponse>? GetUserOutgoingFriendsWithTime(GetUserOutgoingFriendsWithTime input)
         {
             var response = _sdk.RunRequest(input);
 

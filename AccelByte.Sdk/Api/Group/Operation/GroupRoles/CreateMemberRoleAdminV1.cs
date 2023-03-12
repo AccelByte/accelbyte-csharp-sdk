@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// createMemberRoleAdminV1
     ///
+    /// 
+    /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [CREATE]
     /// 
     /// 

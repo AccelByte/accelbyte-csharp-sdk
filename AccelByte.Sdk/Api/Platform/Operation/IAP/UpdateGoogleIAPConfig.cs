@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateGoogleIAPConfig
     ///
     /// Update google iap config. Other detail info:
-    /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
     ///   *  Returns : updated google iap config
     /// </summary>

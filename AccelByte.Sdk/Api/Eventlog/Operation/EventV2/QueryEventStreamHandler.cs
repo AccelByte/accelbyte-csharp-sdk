@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// QueryEventStreamHandler
     ///
+    /// 
+    /// 
     /// This endpoint is using POST which is somewhat unfamiliar,
     /// but it's logical that we have to send/post a filter (search term) in order to get the data.
     /// 

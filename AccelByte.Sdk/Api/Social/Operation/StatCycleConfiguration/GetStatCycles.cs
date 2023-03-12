@@ -18,9 +18,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// List stat cycles by pagination.
     /// Other detail info:
-    /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
-    ///   *  Returns : stat cycles
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+    ///         *  Returns : stat cycles
     /// </summary>
     public class GetStatCycles : AccelByte.Sdk.Core.Operation
     {
@@ -38,6 +37,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public string? Name { get; set; }
 
             public int? Offset { get; set; }
+
+            public string? SortBy { get; set; }
 
             public GetStatCyclesStatus? Status { get; set; }
 
@@ -69,6 +70,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public GetStatCyclesBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public GetStatCyclesBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -105,6 +112,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
 
 
@@ -122,6 +130,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             int? limit,
             string? name,
             int? offset,
+            string? sortBy,
             GetStatCyclesStatus? status
         )
         {
@@ -131,6 +140,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (status is not null) QueryParams["status"] = status.Value;
 
 

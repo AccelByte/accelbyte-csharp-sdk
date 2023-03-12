@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestGameTokenCodeResponseV3
     ///
+    /// 
+    /// 
     /// This endpoint is being used to request the code to generate publisher user's game token.
     /// 
     /// It require a valid user token with publisher namespace.

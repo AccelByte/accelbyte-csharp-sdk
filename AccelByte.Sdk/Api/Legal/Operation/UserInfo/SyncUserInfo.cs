@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// syncUserInfo
     ///
-    /// Important: GOING TO DEPRECATE
+    ///  Important: GOING TO DEPRECATE
     /// 
     /// Sync user info cache in agreement service with iam service.
     /// Other detail info:

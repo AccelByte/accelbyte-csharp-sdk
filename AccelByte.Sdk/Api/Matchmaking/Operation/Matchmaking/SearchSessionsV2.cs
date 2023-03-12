@@ -19,6 +19,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// 
     /// 
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 

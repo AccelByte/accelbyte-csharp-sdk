@@ -117,6 +117,12 @@
 | `/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied` | DELETE | DeleteTiedStat | [DeleteTiedStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteTiedStat.cs) | [DeleteTiedStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteTiedStat.cs) |
 | `/social/v1/public/namespaces/{namespace}/stats` | POST | CreateStat1 | [CreateStat1](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat1.cs) | [CreateStat1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat1.cs) |
 
+### UserStatisticCycle Wrapper:  [UserStatisticCycle](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatisticCycle.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems` | GET | GetUserStatCycleItems | [GetUserStatCycleItems](../../AccelByte.Sdk/Api/Social/Operation/UserStatisticCycle/GetUserStatCycleItems.cs) | [GetUserStatCycleItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatisticCycle/GetUserStatCycleItems.cs) |
+| `/social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems` | GET | GetUserStatCycleItems1 | [GetUserStatCycleItems1](../../AccelByte.Sdk/Api/Social/Operation/UserStatisticCycle/GetUserStatCycleItems1.cs) | [GetUserStatCycleItems1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatisticCycle/GetUserStatCycleItems1.cs) |
+
 
 &nbsp;  
 
@@ -170,6 +176,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### UserStatisticCycle Wrapper:  [UserStatisticCycle](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatisticCycle.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -217,6 +227,8 @@
 | `StatUpdate` | [StatUpdate](../../AccelByte.Sdk/Api/Social/Model/StatUpdate.cs) |
 | `UserGameProfiles` | [UserGameProfiles](../../AccelByte.Sdk/Api/Social/Model/UserGameProfiles.cs) |
 | `UserSlotConfigInfo` | [UserSlotConfigInfo](../../AccelByte.Sdk/Api/Social/Model/UserSlotConfigInfo.cs) |
+| `UserStatCycleItemInfo` | [UserStatCycleItemInfo](../../AccelByte.Sdk/Api/Social/Model/UserStatCycleItemInfo.cs) |
+| `UserStatCycleItemPagingSlicedResult` | [UserStatCycleItemPagingSlicedResult](../../AccelByte.Sdk/Api/Social/Model/UserStatCycleItemPagingSlicedResult.cs) |
 | `UserStatItemInfo` | [UserStatItemInfo](../../AccelByte.Sdk/Api/Social/Model/UserStatItemInfo.cs) |
 | `UserStatItemPagingSlicedResult` | [UserStatItemPagingSlicedResult](../../AccelByte.Sdk/Api/Social/Model/UserStatItemPagingSlicedResult.cs) |
 | `ValidationErrorEntity` | [ValidationErrorEntity](../../AccelByte.Sdk/Api/Social/Model/ValidationErrorEntity.cs) |

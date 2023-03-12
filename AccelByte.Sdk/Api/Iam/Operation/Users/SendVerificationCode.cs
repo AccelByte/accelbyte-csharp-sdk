@@ -16,16 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SendVerificationCode
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/code/request [POST]
-    /// 
+    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/code/request [POST]
     /// 
     /// 
     /// 
@@ -43,21 +42,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   1. UserAccountRegistration
+    ///           1. UserAccountRegistration
     /// 
     /// a context type used for verifying email address in user account registration. It returns 409 if the email address already verified. It is the default context if the Context field is empty
     /// 
     /// 
     /// 
-    ///   2. UpdateEmailAddress
+    ///           2. UpdateEmailAddress
     /// 
     /// a context type used for verify user before updating email address.(Without email address verified checking)
     /// 
     /// 
     /// 
-    ///   3. upgradeHeadlessAccount
+    ///           3. upgradeHeadlessAccount
     /// 
     /// The context is intended to be used whenever the email address wanted to be automatically verified on upgrading a headless account. If this context used, IAM rejects the request if the loginId field's value is already used by others by returning HTTP Status Code 409.
     /// </summary>

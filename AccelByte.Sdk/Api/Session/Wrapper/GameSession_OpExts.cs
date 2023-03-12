@@ -209,6 +209,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).PatchUpdateGameSession<T1>(op);
         }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this UpdateGameSessionBackfillTicketID.UpdateGameSessionBackfillTicketIDBuilder builder,
+            ApimodelsUpdateGameSessionBackfillRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            UpdateGameSessionBackfillTicketID op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).UpdateGameSessionBackfillTicketID(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this UpdateGameSessionBackfillTicketID.UpdateGameSessionBackfillTicketIDBuilder builder,
+            ApimodelsUpdateGameSessionBackfillRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            UpdateGameSessionBackfillTicketID op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).UpdateGameSessionBackfillTicketID<T1>(op);
+        }
         public static void Execute(
             this PublicGameSessionInvite.PublicGameSessionInviteBuilder builder,
             ApimodelsSessionInviteRequest body,

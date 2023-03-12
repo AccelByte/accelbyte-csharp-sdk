@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestOneTimeLinkingCodeV3
     ///
+    /// 
+    /// 
     /// This endpoint is being used to request the one time code [8 length] for headless account to link or upgrade to a full account.
     /// 
     /// It require a valid user token.
@@ -31,69 +33,67 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///                 * steam
     /// 
     /// 
-    ///   * steam
+    ///                 * steamopenid
     /// 
     /// 
-    ///   * steamopenid
+    ///                 * facebook
     /// 
     /// 
-    ///   * facebook
+    ///                 * google
     /// 
     /// 
-    ///   * google
+    ///                 * oculus
     /// 
     /// 
-    ///   * oculus
+    ///                 * twitch
     /// 
     /// 
-    ///   * twitch
+    ///                 * discord
     /// 
     /// 
-    ///   * discord
+    ///                 * android
     /// 
     /// 
-    ///   * android
+    ///                 * ios
     /// 
     /// 
-    ///   * ios
+    ///                 * apple
     /// 
     /// 
-    ///   * apple
+    ///                 * device
     /// 
     /// 
-    ///   * device
+    ///                 * justice
     /// 
     /// 
-    ///   * justice
+    ///                 * epicgames
     /// 
     /// 
-    ///   * epicgames
+    ///                 * ps4
     /// 
     /// 
-    ///   * ps4
+    ///                 * ps5
     /// 
     /// 
-    ///   * ps5
+    ///                 * nintendo
     /// 
     /// 
-    ///   * nintendo
+    ///                 * awscognito
     /// 
     /// 
-    ///   * awscognito
+    ///                 * live
     /// 
     /// 
-    ///   * live
+    ///                 * xblweb
     /// 
     /// 
-    ///   * xblweb
+    ///                 * netflix
     /// 
     /// 
-    ///   * netflix
-    /// 
-    /// 
-    ///   * snapchat
+    ///                 * snapchat
     /// </summary>
     public class RequestOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation
     {

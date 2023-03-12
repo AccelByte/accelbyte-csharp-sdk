@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private UserAction? _UserAction = null;
 
+        public Config Config
+        {
+            get
+            {
+                if (_Config == null)
+                    _Config = new Config(_SdkObject);
+                return _Config;
+            }
+        }
+        private Config? _Config = null;
+
         public EQU8Config EQU8Config
         {
             get

@@ -30,9 +30,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
-
         [SdkCommandData("body")]
         public TwitchSyncRequest Body { get; set; } = new TwitchSyncRequest();
 
@@ -47,12 +44,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             SyncTwitchDropsEntitlement operation = new SyncTwitchDropsEntitlement(
                 Namespace,
-                UserId,
                 Body
             );
 
-            wrapper.SyncTwitchDropsEntitlement(operation);
-            return String.Empty;
+            List<AccelByte.Sdk.Api.Platform.Model.TwitchSyncResult>? response = wrapper.SyncTwitchDropsEntitlement(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

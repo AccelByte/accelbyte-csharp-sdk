@@ -42,6 +42,12 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
+        [JsonPropertyName("persistentTTL")]
+        public int? PersistentTTL { get; set; }
+
         [JsonPropertyName("requestedRegions")]
         public List<string>? RequestedRegions { get; set; }
 
@@ -96,6 +102,12 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
+
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
+        [JsonPropertyName("persistentTTL")]
+        public int? PersistentTTL { get; set; }
 
         [JsonPropertyName("requestedRegions")]
         public List<string>? RequestedRegions { get; set; }

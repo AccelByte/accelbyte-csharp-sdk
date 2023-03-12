@@ -139,6 +139,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.MockFulfillIAPItem.Builder.SetWrapperObject(this); }
         }
+        public GetIAPItemMapping.GetIAPItemMappingBuilder GetIAPItemMappingOp
+        {
+            get { return Operation.GetIAPItemMapping.Builder.SetWrapperObject(this); }
+        }
+        public SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder SyncTwitchDropsEntitlementOp
+        {
+            get { return Operation.SyncTwitchDropsEntitlement.Builder.SetWrapperObject(this); }
+        }
         public PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder PublicFulfillAppleIAPItemOp
         {
             get { return Operation.PublicFulfillAppleIAPItem.Builder.SetWrapperObject(this); }
@@ -163,9 +171,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.SyncSteamInventory.Builder.SetWrapperObject(this); }
         }
-        public SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder SyncTwitchDropsEntitlementOp
+        public SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder SyncTwitchDropsEntitlement1Op
         {
-            get { return Operation.SyncTwitchDropsEntitlement.Builder.SetWrapperObject(this); }
+            get { return Operation.SyncTwitchDropsEntitlement1.Builder.SetWrapperObject(this); }
         }
         public SyncXboxInventory.SyncXboxInventoryBuilder SyncXboxInventoryOp
         {
@@ -443,6 +451,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.IAPItemMappingInfo? GetIAPItemMapping(GetIAPItemMapping input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.TwitchSyncResult>? SyncTwitchDropsEntitlement(SyncTwitchDropsEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void PublicFulfillAppleIAPItem(PublicFulfillAppleIAPItem input)
         {
             var response = _sdk.RunRequest(input);
@@ -497,7 +523,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void SyncTwitchDropsEntitlement(SyncTwitchDropsEntitlement input)
+        public void SyncTwitchDropsEntitlement1(SyncTwitchDropsEntitlement1 input)
         {
             var response = _sdk.RunRequest(input);
 

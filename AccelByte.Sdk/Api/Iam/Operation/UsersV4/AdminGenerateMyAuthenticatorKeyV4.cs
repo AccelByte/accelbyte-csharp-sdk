@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGenerateMyAuthenticatorKeyV4
     ///
+    /// 
+    /// 
     /// This endpoint is used to generate a secret key for 3rd-party authenticator app.
     /// A QR code URI is also returned so that frontend can generate QR code image.
     /// 

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getMemberRolesListPublicV1
     ///
+    /// 
+    /// 
     /// Required Member Role Permission: "GROUP:ROLE [READ]"
     /// 
     /// 

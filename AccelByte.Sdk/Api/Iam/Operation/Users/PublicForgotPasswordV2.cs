@@ -16,16 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicForgotPasswordV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/forgot [POST]
-    /// 
+    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/forgot [POST]
     /// 
     /// 
     /// 

@@ -18,8 +18,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Deletes the slot.
     /// Other detail info:
-    /// 
-    ///   *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=8 (DELETE)
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=8 (DELETE)
     /// </summary>
     public class PublicDeleteUserNamespaceSlot : AccelByte.Sdk.Core.Operation
     {

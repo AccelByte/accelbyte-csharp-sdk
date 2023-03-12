@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RemoveRoleAdmin
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -23,9 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
+    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [DELETE]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RemoveRoleAdmin : AccelByte.Sdk.Core.Operation

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SetRoleAsAdmin
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -33,9 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SetRoleAsAdmin : AccelByte.Sdk.Core.Operation

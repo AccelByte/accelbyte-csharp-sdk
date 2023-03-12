@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<string>? InvalidCodes { get; set; }
 
         [JsonPropertyName("validCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? ValidCodes { get; set; }
 
     }

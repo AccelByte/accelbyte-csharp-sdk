@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getGroupListAdminV1
     ///
+    /// 
+    /// 
     /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP [READ]"
     /// 
     /// 

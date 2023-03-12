@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getMemberRolesListPublicV2
     ///
+    /// 
+    /// 
     /// This endpoint is used to get list of member roles
     /// 
     /// 

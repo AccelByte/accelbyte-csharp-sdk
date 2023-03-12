@@ -405,6 +405,7 @@
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/email/enable` | POST | PublicEnableMyEmailV4 | [PublicEnableMyEmailV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicEnableMyEmailV4.cs) | [PublicEnableMyEmailV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicEnableMyEmailV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | GET | PublicGetMyEnabledFactorsV4 | [PublicGetMyEnabledFactorsV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetMyEnabledFactorsV4.cs) | [PublicGetMyEnabledFactorsV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetMyEnabledFactorsV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | POST | PublicMakeFactorMyDefaultV4 | [PublicMakeFactorMyDefaultV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicMakeFactorMyDefaultV4.cs) | [PublicMakeFactorMyDefaultV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicMakeFactorMyDefaultV4.cs) |
+| `/iam/v4/public/users/invite` | POST | PublicInviteUserV4 | [PublicInviteUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicInviteUserV4.cs) | [PublicInviteUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicInviteUserV4.cs) |
 
 
 &nbsp;  
@@ -627,6 +628,7 @@
 | `model.PlatformDomainUpdateRequest` | [ModelPlatformDomainUpdateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformDomainUpdateRequest.cs) |
 | `model.PlatformUserIDRequest` | [ModelPlatformUserIDRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformUserIDRequest.cs) |
 | `model.PlatformUserInformation` | [ModelPlatformUserInformation](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformUserInformation.cs) |
+| `model.PublicInviteUserRequestV4` | [ModelPublicInviteUserRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicInviteUserRequestV4.cs) |
 | `model.PublicThirdPartyPlatformInfo` | [ModelPublicThirdPartyPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicThirdPartyPlatformInfo.cs) |
 | `model.PublicUserInformationResponseV3` | [ModelPublicUserInformationResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserInformationResponseV3.cs) |
 | `model.PublicUserInformationV3` | [ModelPublicUserInformationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserInformationV3.cs) |

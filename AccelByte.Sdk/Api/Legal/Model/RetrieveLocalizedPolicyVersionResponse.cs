@@ -44,6 +44,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public string? LocaleCode { get; set; }
 
         [JsonPropertyName("policy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PolicyObject? Policy { get; set; }
 
         [JsonPropertyName("policyVersion")]

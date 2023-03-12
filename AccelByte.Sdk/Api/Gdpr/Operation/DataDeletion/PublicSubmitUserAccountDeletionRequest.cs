@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicSubmitUserAccountDeletionRequest
     ///
+    /// 
+    /// 
     /// Requires valid user access token and password
     /// </summary>
     public class PublicSubmitUserAccountDeletionRequest : AccelByte.Sdk.Core.Operation

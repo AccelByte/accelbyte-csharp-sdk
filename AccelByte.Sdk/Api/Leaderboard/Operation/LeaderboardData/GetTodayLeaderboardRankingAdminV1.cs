@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// GetTodayLeaderboardRankingAdminV1
     ///
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
     /// 
     /// 

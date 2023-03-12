@@ -16,15 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicResetPasswordV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/reset [POST]
+    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/reset [POST]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicResetPasswordV2 : AccelByte.Sdk.Core.Operation

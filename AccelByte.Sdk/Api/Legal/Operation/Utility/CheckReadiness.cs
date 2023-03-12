@@ -18,8 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Readiness status defined as at least one legal basePolicy is present and having active basePolicy.
     /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
+    ///     * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class CheckReadiness : AccelByte.Sdk.Core.Operation
     {

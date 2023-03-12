@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateServicePluginConfig
     ///
     /// Update catalog config. Other detail info:
-    /// 
     ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=4 (UPDATE)
     ///   *  Returns : updated service plugin config
     /// </summary>

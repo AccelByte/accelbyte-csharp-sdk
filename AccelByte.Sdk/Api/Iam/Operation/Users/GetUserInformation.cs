@@ -16,16 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserInformation
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/information [GET]
-    /// 
+    ///     * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/information [GET]
     /// 
     /// 
     /// 

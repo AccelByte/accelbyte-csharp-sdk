@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// deleteMemberRoleAdminV1
     ///
+    /// 
+    /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [DELETE]
     /// 
     /// 

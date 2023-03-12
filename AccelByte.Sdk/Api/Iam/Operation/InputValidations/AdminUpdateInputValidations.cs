@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateInputValidations
     ///
+    /// 
+    /// 
     /// Required permission 'ADMIN:CONFIGURATION' [UPDATE]
     /// 
     /// 
@@ -28,19 +30,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///             * displayName
     /// 
     /// 
-    ///   * displayName
+    ///             * password
     /// 
     /// 
-    ///   * password
+    ///             * username
     /// 
     /// 
-    ///   * username
-    /// 
-    /// 
-    ///   * email
-    /// 
+    ///             * email
     /// 
     /// 
     /// 
@@ -57,19 +56,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///             * lowercase
     /// 
     /// 
-    ///   * lowercase
+    ///             * uppercase
     /// 
     /// 
-    ///   * uppercase
+    ///             * mixed: uppercase and lowercase
     /// 
     /// 
-    ///   * mixed: uppercase and lowercase
-    /// 
-    /// 
-    ///   * mixed: uppercase and/or lowercase
-    /// 
+    ///             * mixed: uppercase and/or lowercase
     /// 
     /// 
     /// flexible special character non words with `allowAllSpecialCharacters`
@@ -83,13 +79,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///             * anywhere
     /// 
     /// 
-    ///   * anywhere
-    /// 
-    /// 
-    ///   * middle
-    /// 
+    ///             * middle
     /// 
     /// 
     /// 

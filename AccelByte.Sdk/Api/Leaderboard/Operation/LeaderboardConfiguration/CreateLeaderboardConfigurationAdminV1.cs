@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// createLeaderboardConfigurationAdminV1
     ///
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [CREATE]'
     /// 
     /// 

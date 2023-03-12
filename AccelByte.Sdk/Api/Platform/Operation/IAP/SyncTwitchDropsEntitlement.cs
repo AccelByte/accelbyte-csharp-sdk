@@ -16,11 +16,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncTwitchDropsEntitlement
     ///
-    /// Sync twitch drops entitlements.
+    /// Sync my game twitch drops entitlements.
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
+    ///   * Required permission : resource=NAMESPACE:{namespace}:IAP, action=4 (UPDATE)
     ///   *  Returns :
     /// </summary>
     public class SyncTwitchDropsEntitlement : AccelByte.Sdk.Core.Operation
@@ -52,13 +52,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
             public SyncTwitchDropsEntitlement Build(
-                string namespace_,
-                string userId
+                string namespace_
             )
             {
                 SyncTwitchDropsEntitlement op = new SyncTwitchDropsEntitlement(this,
-                    namespace_,
-                    userId
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,12 +65,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SyncTwitchDropsEntitlement(SyncTwitchDropsEntitlementBuilder builder,
-            string namespace_,
-            string userId
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
 
 
@@ -87,12 +83,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public SyncTwitchDropsEntitlement(
             string namespace_,
-            string userId,
             Model.TwitchSyncRequest body
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
 
 
@@ -104,7 +98,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync";
+        public override string Path => "/platform/public/namespaces/{namespace}/users/me/iap/twitch/sync";
 
         public override HttpMethod Method => HttpMethod.Put;
 
@@ -115,11 +109,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.TwitchSyncResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<List<Model.TwitchSyncResult>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<List<Model.TwitchSyncResult>>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

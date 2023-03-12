@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminSearchUserV3
     ///
+    /// 
+    /// 
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER [READ]
     /// 
     /// 
@@ -23,33 +25,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Endpoint behavior :
     /// 
-    /// 
-    ///   * by default this endpoint searches all users on the specified namespace
-    /// 
-    /// 
-    ///   * if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
+    ///           * by default this endpoint searches all users on the specified namespace
     /// 
     /// 
-    ///   * if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
+    ///           * if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
     /// 
     /// 
-    ///   * if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
+    ///           * if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
     /// 
     /// 
-    ///   * if startDate parameter is defined, endpoint will search users that created start from the defined date
+    ///           * if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
     /// 
     /// 
-    ///   * if endDate parameter is defined, endpoint will search users that created until the defined date
+    ///           * if startDate parameter is defined, endpoint will search users that created start from the defined date
     /// 
     /// 
-    ///   * if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
+    ///           * if endDate parameter is defined, endpoint will search users that created until the defined date
     /// 
     /// 
-    ///   * if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
+    ///           * if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
     /// 
     /// 
-    ///   * if limit is not defined, The default limit is 100
+    ///           * if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
     /// 
+    /// 
+    ///           * if limit is not defined, The default limit is 100
     /// 
     /// 
     /// 
@@ -59,22 +59,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// In multi tenant mode :
     /// 
     /// 
+    ///           * if super admin search in super admin namespace, the result will be all game admin user
     /// 
     /// 
-    ///   * if super admin search in super admin namespace, the result will be all game admin user
+    ///           * if super admin search in game studio namespace, the result will be all game admin user and players under the game studio namespace
     /// 
     /// 
-    ///   * if super admin search in game studio namespace, the result will be all game admin user and players under the game studio namespace
+    ///           * if super admin search in game namespace, the result will be all game admin users and players under the game namespace
     /// 
     /// 
-    ///   * if super admin search in game namespace, the result will be all game admin users and players under the game namespace
+    ///           * if game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
     /// 
     /// 
-    ///   * if game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
-    /// 
-    /// 
-    ///   * if game admin search in their game namespace, the result will be all player in the game namespace
-    /// 
+    ///           * if game admin search in their game namespace, the result will be all player in the game namespace
     /// 
     /// 
     /// 

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// updateModerationRule
     ///
+    /// 
+    /// 
     /// This endpoint update moderation rule.
     /// 
     /// 

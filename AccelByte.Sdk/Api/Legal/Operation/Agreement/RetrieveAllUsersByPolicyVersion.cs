@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrieveAllUsersByPolicyVersion
     ///
     /// This API will return all users who has accepted a specific policy version.Other detail info:
-    /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrieveAllUsersByPolicyVersion : AccelByte.Sdk.Core.Operation

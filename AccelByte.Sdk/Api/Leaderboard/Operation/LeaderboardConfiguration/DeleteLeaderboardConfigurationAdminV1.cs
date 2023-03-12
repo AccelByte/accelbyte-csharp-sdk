@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// deleteLeaderboardConfigurationAdminV1
     ///
+    /// 
+    /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [DELETE]'
     /// 
     /// 

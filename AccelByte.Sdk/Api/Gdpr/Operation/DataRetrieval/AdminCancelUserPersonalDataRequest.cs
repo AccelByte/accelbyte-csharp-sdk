@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminCancelUserPersonalDataRequest
     ///
+    /// 
+    /// 
     /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [DELETE]` and scope `account`
     /// </summary>
     public class AdminCancelUserPersonalDataRequest : AccelByte.Sdk.Core.Operation

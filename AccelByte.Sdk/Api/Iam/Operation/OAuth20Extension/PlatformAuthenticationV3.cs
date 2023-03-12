@@ -35,44 +35,43 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   * steamopenid
+    ///                   * steamopenid
     /// Steam login page will redirects to this endpoint after login success
     /// as previously defined on openID request parameter `openid.return_to` when request login to steam
     /// https://openid.net/specs/openid-authentication-2_0.html#anchor27
     /// 
-    ///   * ps4web
+    ///                   * ps4web
     /// PS4 login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// https://ps4.siedev.net/resources/documents/WebAPI/1/Auth_WebAPI-Reference/0002.html#0GetAccessTokenUsingAuthorizationCode
     /// 
-    ///   * xblweb
+    ///                   * xblweb
     /// XBL login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
-    ///   * epicgames
+    ///                   * epicgames
     /// Epicgames login page will redirects to this endpoint after login success
     /// or an error occurred. If error, it redirects to the login page.
     /// 
-    ///   * twitch
+    ///                   * twitch
     /// Twitch login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
-    ///   * facebook
+    ///                   * facebook
     /// Facebook login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
-    ///   * google
+    ///                   * google
     /// Google login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
-    ///   * snapchat
+    ///                   * snapchat
     /// Snapchat login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
     /// 
-    ///   * discord
+    ///                   * discord
     /// Discord login page will redirects to this endpoint after login success
     /// as previously defined on authorize request parameter `redirect_uri`
-    /// 
     /// action code : 10709
     /// </summary>
     public class PlatformAuthenticationV3 : AccelByte.Sdk.Core.Operation

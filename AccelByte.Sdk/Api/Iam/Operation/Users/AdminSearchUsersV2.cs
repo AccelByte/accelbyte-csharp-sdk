@@ -16,16 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminSearchUsersV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/search [GET]
-    /// 
+    ///           * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/search [GET]
     /// 
     /// 
     /// 

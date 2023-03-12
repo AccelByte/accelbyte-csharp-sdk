@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// getModerationRuleDetails
     ///
+    /// 
+    /// 
     /// This endpoint get moderation rule.
     /// 
     /// 

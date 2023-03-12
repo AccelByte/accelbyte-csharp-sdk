@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// CancelGroupJoinRequestV1
     ///
+    /// 
+    /// 
     /// Requires valid user authentication
     /// 
     /// 

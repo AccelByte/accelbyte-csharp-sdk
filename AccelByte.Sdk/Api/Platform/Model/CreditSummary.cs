@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("amount")]
         public long? Amount { get; set; }
 
+        [JsonPropertyName("currencyCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CurrencyCode { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

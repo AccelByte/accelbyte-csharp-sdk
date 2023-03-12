@@ -33,6 +33,12 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
+        [JsonPropertyName("persistentTTL")]
+        public int? PersistentTTL { get; set; }
+
         [JsonPropertyName("requestedRegions")]
         public List<string>? RequestedRegions { get; set; }
 

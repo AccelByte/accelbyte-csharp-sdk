@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserInformationV3
     ///
+    /// 
+    /// 
     /// This endpoint retrieves user info and linked platform accounts.
     /// Required permissions 'NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]'
     /// </summary>

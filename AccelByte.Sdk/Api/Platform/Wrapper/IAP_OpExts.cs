@@ -350,6 +350,28 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItem(op);
         }
+        public static Platform.Model.IAPItemMappingInfo? Execute(
+            this GetIAPItemMapping.GetIAPItemMappingBuilder builder,
+            string namespace_
+        )
+        {
+            GetIAPItemMapping op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemMapping(op);
+        }
+        public static List<Platform.Model.TwitchSyncResult>? Execute(
+            this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
+            string namespace_
+        )
+        {
+            SyncTwitchDropsEntitlement op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement(op);
+        }
         public static void Execute(
             this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
             string namespace_,
@@ -429,17 +451,17 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamInventory(op);
         }
         public static void Execute(
-            this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
+            this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,
             string namespace_,
             string userId
         )
         {
-            SyncTwitchDropsEntitlement op = builder.Build(
+            SyncTwitchDropsEntitlement1 op = builder.Build(
                 namespace_,
                 userId
             );
 
-            ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement(op);
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement1(op);
         }
         public static List<Platform.Model.XblReconcileResult>? Execute(
             this SyncXboxInventory.SyncXboxInventoryBuilder builder,

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RevokeToken
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -32,9 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /v3/oauth/revoke [POST]
+    ///           * Substitute endpoint: /v3/oauth/revoke [POST]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RevokeToken : AccelByte.Sdk.Core.Operation

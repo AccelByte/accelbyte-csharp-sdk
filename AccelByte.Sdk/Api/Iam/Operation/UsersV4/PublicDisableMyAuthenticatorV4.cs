@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDisableMyAuthenticatorV4
     ///
+    /// 
+    /// 
     /// This endpoint is used to disable 2FA authenticator.
     /// 
     /// 

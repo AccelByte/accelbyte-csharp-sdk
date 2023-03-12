@@ -34,10 +34,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]
-    /// 
+    ///                 * Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]
     /// 
     /// 
     /// 
@@ -47,21 +44,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///                 * (psn) ps4web
     /// 
     /// 
-    ///   * (psn) ps4web
+    ///                 * (psn) ps4
     /// 
     /// 
-    ///   * (psn) ps4
+    ///                 * (psn) ps5
     /// 
     /// 
-    ///   * (psn) ps5
+    ///                 * xbox live
     /// 
     /// 
-    ///   * xbox live
-    /// 
-    /// 
-    ///   * steam
+    ///                 * steam
     /// </summary>
     public class AdminRetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {

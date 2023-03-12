@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateGroupCustomRulePublicV2
     ///
+    /// 
+    /// 
     /// Required valid user authentication
     /// 
     /// 

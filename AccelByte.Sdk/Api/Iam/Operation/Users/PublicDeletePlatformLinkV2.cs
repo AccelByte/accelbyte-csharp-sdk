@@ -16,18 +16,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDeletePlatformLinkV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
     /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
-    /// 
+    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
     /// 
     /// 
     /// 
@@ -39,37 +38,34 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///             * steam
     /// 
     /// 
-    ///   * steam
+    ///             * steamopenid
     /// 
     /// 
-    ///   * steamopenid
+    ///             * facebook
     /// 
     /// 
-    ///   * facebook
+    ///             * google
     /// 
     /// 
-    ///   * google
+    ///             * oculus
     /// 
     /// 
-    ///   * oculus
+    ///             * twitch
     /// 
     /// 
-    ///   * twitch
+    ///             * android
     /// 
     /// 
-    ///   * android
+    ///             * ios
     /// 
     /// 
-    ///   * ios
+    ///             * device
     /// 
     /// 
-    ///   * device
-    /// 
-    /// 
-    ///   * discord
-    /// 
+    ///             * discord
     /// 
     /// 
     /// 

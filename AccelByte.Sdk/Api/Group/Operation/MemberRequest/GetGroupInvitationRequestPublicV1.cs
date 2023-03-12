@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getGroupInvitationRequestPublicV1
     ///
+    /// 
+    /// 
     /// Required valid user authentication
     /// 
     /// 

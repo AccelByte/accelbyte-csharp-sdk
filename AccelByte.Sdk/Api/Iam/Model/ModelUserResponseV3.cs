@@ -61,6 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? NewEmailAddress { get; set; }
 
         [JsonPropertyName("oldEmailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OldEmailAddress { get; set; }
 
         [JsonPropertyName("permissions")]

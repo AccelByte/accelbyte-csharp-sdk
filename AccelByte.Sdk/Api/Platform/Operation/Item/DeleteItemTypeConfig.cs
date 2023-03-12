@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteItemTypeConfig
     ///
     /// This API is used to delete an item type config permanently.Other detail info:
-    /// 
     ///   * Required permission : resource="ADMIN:ITEM:CONFIG", action=8 (DELETE)
     /// </summary>
     public class DeleteItemTypeConfig : AccelByte.Sdk.Core.Operation

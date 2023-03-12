@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestTokenByOneTimeLinkCodeResponseV3
     ///
+    /// 
+    /// 
     /// This endpoint is being used to generate user's token by one time link code.
     /// 
     /// It require publisher ClientID

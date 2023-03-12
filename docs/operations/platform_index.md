@@ -218,13 +218,15 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/all` | GET | QueryAllUserIAPOrders | [QueryAllUserIAPOrders](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryAllUserIAPOrders.cs) | [QueryAllUserIAPOrders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryAllUserIAPOrders.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/consume/history` | GET | QueryUserIAPConsumeHistory | [QueryUserIAPConsumeHistory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryUserIAPConsumeHistory.cs) | [QueryUserIAPConsumeHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryUserIAPConsumeHistory.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt` | PUT | MockFulfillIAPItem | [MockFulfillIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/MockFulfillIAPItem.cs) | [MockFulfillIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/MockFulfillIAPItem.cs) |
+| `/platform/public/namespaces/{namespace}/iap/item/mapping` | GET | GetIAPItemMapping | [GetIAPItemMapping](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetIAPItemMapping.cs) | [GetIAPItemMapping](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetIAPItemMapping.cs) |
+| `/platform/public/namespaces/{namespace}/users/me/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement | [SyncTwitchDropsEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement.cs) | [SyncTwitchDropsEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt` | PUT | PublicFulfillAppleIAPItem | [PublicFulfillAppleIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillAppleIAPItem.cs) | [PublicFulfillAppleIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicFulfillAppleIAPItem.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/epicgames/sync` | PUT | SyncEpicGamesInventory | [SyncEpicGamesInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncEpicGamesInventory.cs) | [SyncEpicGamesInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncEpicGamesInventory.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/google/receipt` | PUT | PublicFulfillGoogleIAPItem | [PublicFulfillGoogleIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillGoogleIAPItem.cs) | [PublicFulfillGoogleIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicFulfillGoogleIAPItem.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync` | PUT | PublicReconcilePlayStationStore | [PublicReconcilePlayStationStore](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicReconcilePlayStationStore.cs) | [PublicReconcilePlayStationStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicReconcilePlayStationStore.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/psn/sync/multiServiceLabels` | PUT | PublicReconcilePlayStationStoreWithMultipleServiceLabels | [PublicReconcilePlayStationStoreWithMultipleServiceLabels](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicReconcilePlayStationStoreWithMultipleServiceLabels.cs) | [PublicReconcilePlayStationStoreWithMultipleServiceLabels](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicReconcilePlayStationStoreWithMultipleServiceLabels.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/steam/sync` | PUT | SyncSteamInventory | [SyncSteamInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncSteamInventory.cs) | [SyncSteamInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncSteamInventory.cs) |
-| `/platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement | [SyncTwitchDropsEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement.cs) | [SyncTwitchDropsEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement1 | [SyncTwitchDropsEntitlement1](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement1.cs) | [SyncTwitchDropsEntitlement1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement1.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/xbl/sync` | PUT | SyncXboxInventory | [SyncXboxInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncXboxInventory.cs) | [SyncXboxInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncXboxInventory.cs) |
 
 ### Invoice Wrapper:  [Invoice](../../AccelByte.Sdk/Api/Platform/Wrapper/Invoice.cs)
@@ -768,6 +770,8 @@
 | `IAPItemConfigInfo` | [IAPItemConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPItemConfigInfo.cs) |
 | `IAPItemConfigUpdate` | [IAPItemConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/IAPItemConfigUpdate.cs) |
 | `IAPItemEntry` | [IAPItemEntry](../../AccelByte.Sdk/Api/Platform/Model/IAPItemEntry.cs) |
+| `IAPItemFlatEntry` | [IAPItemFlatEntry](../../AccelByte.Sdk/Api/Platform/Model/IAPItemFlatEntry.cs) |
+| `IAPItemMappingInfo` | [IAPItemMappingInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPItemMappingInfo.cs) |
 | `IAPOrderInfo` | [IAPOrderInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPOrderInfo.cs) |
 | `IAPOrderPagingSlicedResult` | [IAPOrderPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPOrderPagingSlicedResult.cs) |
 | `Image` | [Image](../../AccelByte.Sdk/Api/Platform/Model/Image.cs) |
@@ -952,6 +956,7 @@
 | `TwitchIAPConfigInfo` | [TwitchIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigInfo.cs) |
 | `TwitchIAPConfigRequest` | [TwitchIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/TwitchIAPConfigRequest.cs) |
 | `TwitchSyncRequest` | [TwitchSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/TwitchSyncRequest.cs) |
+| `TwitchSyncResult` | [TwitchSyncResult](../../AccelByte.Sdk/Api/Platform/Model/TwitchSyncResult.cs) |
 | `UserDLC` | [UserDLC](../../AccelByte.Sdk/Api/Platform/Model/UserDLC.cs) |
 | `ValidationErrorEntity` | [ValidationErrorEntity](../../AccelByte.Sdk/Api/Platform/Model/ValidationErrorEntity.cs) |
 | `ViewCreate` | [ViewCreate](../../AccelByte.Sdk/Api/Platform/Model/ViewCreate.cs) |

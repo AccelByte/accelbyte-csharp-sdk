@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// GetAllTimeLeaderboardRankingPublicV1
     ///
+    /// 
+    /// 
     /// Get rankings in an all time leaderboard.
     /// </summary>
     public class GetAllTimeLeaderboardRankingPublicV1 : AccelByte.Sdk.Core.Operation

@@ -20,7 +20,12 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("namespaceDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? NamespaceDisplayName { get; set; }
 
         [JsonPropertyName("roles")]
         public List<AccountcommonNamespaceRole>? Roles { get; set; }

@@ -16,27 +16,26 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdateUserV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///             * Substitute endpoint([PUT]): /iam/v3/public/namespaces/{namespace}/users/me [PUT]
     /// 
+    ///             * Substitute endpoint([PATCH]): /iam/v3/public/namespaces/{namespace}/users/me [PATCH]
     /// 
-    ///   * Substitute endpoint([PUT]): /iam/v3/public/namespaces/{namespace}/users/me [PUT]
-    /// 
-    ///   * Substitute endpoint([PATCH]): /iam/v3/public/namespaces/{namespace}/users/me [PATCH]
-    /// 
-    ///   * Substitute endpoint([PATCH]): /iam/v4/public/namespaces/{namespace}/users/me [PATCH]
+    ///             * Substitute endpoint([PATCH]): /iam/v4/public/namespaces/{namespace}/users/me [PATCH]
     /// 
     /// 
     /// 
-    ///   * Note:
+    ///             * Note:
     ///     1. Prefer [PATCH] if client support PATCH method
     /// 
     ///     2. Difference in V3/v4 request body, format difference: Pascal case => Camel case
-    /// 
     /// 
     /// 
     /// 

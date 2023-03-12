@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AddRoleMembers
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -33,9 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AddRoleMembers : AccelByte.Sdk.Core.Operation

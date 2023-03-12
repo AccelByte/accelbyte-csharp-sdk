@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetJWKS
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -45,9 +47,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/oauth/jwks [GET]
+    ///           * Substitute endpoint: /iam/v3/oauth/jwks [GET]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetJWKS : AccelByte.Sdk.Core.Operation

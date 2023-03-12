@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api.Legal.Model
         public List<LocalizedPolicyVersionObject>? LocalizedPolicyVersions { get; set; }
 
         [JsonPropertyName("policyId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PolicyId { get; set; }
 
         [JsonPropertyName("publishedDate")]

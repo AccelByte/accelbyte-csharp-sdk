@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestGameTokenResponseV3
     ///
+    /// 
+    /// 
     /// This endpoint is being used to generate publisher user's game token.
     /// 
     /// It require basic header with ClientID and Secret, it should match the ClientID when call /iam/v3/namespace/{namespace}/token/request

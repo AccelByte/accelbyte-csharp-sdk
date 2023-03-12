@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// checkWallet
     ///
-    /// [SERVICE COMMUNICATION ONLY] Check wallet by balance origin and currency code whether it's inactive.
+    ///  [SERVICE COMMUNICATION ONLY] Check wallet by balance origin and currency code whether it's inactive.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)

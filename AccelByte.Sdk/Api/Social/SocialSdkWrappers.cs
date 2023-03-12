@@ -90,6 +90,17 @@ namespace AccelByte.Sdk.Core
         }
         private StatConfiguration? _StatConfiguration = null;
 
+        public UserStatisticCycle UserStatisticCycle
+        {
+            get
+            {
+                if (_UserStatisticCycle == null)
+                    _UserStatisticCycle = new UserStatisticCycle(_SdkObject);
+                return _UserStatisticCycle;
+            }
+        }
+        private UserStatisticCycle? _UserStatisticCycle = null;
+
         internal SocialSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

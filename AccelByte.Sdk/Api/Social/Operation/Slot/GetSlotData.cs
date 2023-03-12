@@ -18,9 +18,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Get slot data.
     /// Other detail info:
-    /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
-    ///   *  Returns : slot data
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
+    ///         *  Returns : slot data
     /// </summary>
     public class GetSlotData : AccelByte.Sdk.Core.Operation
     {

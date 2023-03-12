@@ -55,6 +55,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PatchUpdateGameSession.Builder.SetWrapperObject(this); }
         }
+        public UpdateGameSessionBackfillTicketID.UpdateGameSessionBackfillTicketIDBuilder UpdateGameSessionBackfillTicketIDOp
+        {
+            get { return Operation.UpdateGameSessionBackfillTicketID.Builder.SetWrapperObject(this); }
+        }
         public PublicGameSessionInvite.PublicGameSessionInviteBuilder PublicGameSessionInviteOp
         {
             get { return Operation.PublicGameSessionInvite.Builder.SetWrapperObject(this); }
@@ -200,6 +204,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         public Model.ApimodelsGameSessionResponse<T1>? PatchUpdateGameSession<T1>(PatchUpdateGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? UpdateGameSessionBackfillTicketID(UpdateGameSessionBackfillTicketID input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsGameSessionResponse<T1>? UpdateGameSessionBackfillTicketID<T1>(UpdateGameSessionBackfillTicketID input)
         {
             var response = _sdk.RunRequest(input);
 

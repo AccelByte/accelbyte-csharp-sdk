@@ -41,6 +41,7 @@
 ### Agreement With Namespace Wrapper:  [AgreementWithNamespace](../../AccelByte.Sdk/Api/Legal/Wrapper/AgreementWithNamespace.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/agreement/admin/namespaces/{namespace}/agreements` | POST | RetrieveAcceptedAgreementsForMultiUsers | [RetrieveAcceptedAgreementsForMultiUsers](../../AccelByte.Sdk/Api/Legal/Operation/AgreementWithNamespace/RetrieveAcceptedAgreementsForMultiUsers.cs) | [RetrieveAcceptedAgreementsForMultiUsers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AgreementWithNamespace/RetrieveAcceptedAgreementsForMultiUsers.cs) |
 | `/agreement/admin/namespaces/{namespace}/agreements/policies/users/{userId}` | GET | RetrieveAcceptedAgreements1 | [RetrieveAcceptedAgreements1](../../AccelByte.Sdk/Api/Legal/Operation/AgreementWithNamespace/RetrieveAcceptedAgreements1.cs) | [RetrieveAcceptedAgreements1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AgreementWithNamespace/RetrieveAcceptedAgreements1.cs) |
 | `/agreement/admin/namespaces/{namespace}/agreements/policy-versions/users` | GET | RetrieveAllUsersByPolicyVersion1 | [RetrieveAllUsersByPolicyVersion1](../../AccelByte.Sdk/Api/Legal/Operation/AgreementWithNamespace/RetrieveAllUsersByPolicyVersion1.cs) | [RetrieveAllUsersByPolicyVersion1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AgreementWithNamespace/RetrieveAllUsersByPolicyVersion1.cs) |
 
@@ -250,4 +251,6 @@
 | `UpdatePolicyVersionResponse` | [UpdatePolicyVersionResponse](../../AccelByte.Sdk/Api/Legal/Model/UpdatePolicyVersionResponse.cs) |
 | `UploadLocalizedPolicyVersionAttachmentResponse` | [UploadLocalizedPolicyVersionAttachmentResponse](../../AccelByte.Sdk/Api/Legal/Model/UploadLocalizedPolicyVersionAttachmentResponse.cs) |
 | `UploadPolicyVersionAttachmentRequest` | [UploadPolicyVersionAttachmentRequest](../../AccelByte.Sdk/Api/Legal/Model/UploadPolicyVersionAttachmentRequest.cs) |
+| `UserAgreementsResponse` | [UserAgreementsResponse](../../AccelByte.Sdk/Api/Legal/Model/UserAgreementsResponse.cs) |
+| `UsersAgreementsRequest` | [UsersAgreementsRequest](../../AccelByte.Sdk/Api/Legal/Model/UsersAgreementsRequest.cs) |
 | `ValidationErrorEntity` | [ValidationErrorEntity](../../AccelByte.Sdk/Api/Legal/Model/ValidationErrorEntity.cs) |

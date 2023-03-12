@@ -34,6 +34,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriends(op);
         }
+        public static List<Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse>? Execute(
+            this GetUserIncomingFriendsWithTime.GetUserIncomingFriendsWithTimeBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserIncomingFriendsWithTime op = builder.Build(
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriendsWithTime(op);
+        }
         public static List<Lobby.Model.ModelGetUserOutgoingFriendsResponse>? Execute(
             this GetUserOutgoingFriends.GetUserOutgoingFriendsBuilder builder,
             string namespace_
@@ -44,6 +55,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriends(op);
+        }
+        public static List<Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse>? Execute(
+            this GetUserOutgoingFriendsWithTime.GetUserOutgoingFriendsWithTimeBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserOutgoingFriendsWithTime op = builder.Build(
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriendsWithTime(op);
         }
         public static void Execute(
             this UserRequestFriend.UserRequestFriendBuilder builder,

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetRevocationListV3
     ///
+    /// 
+    /// 
     /// This endpoint will return a list of revoked users and revoked tokens. List of revoked tokens in bloom filter format.
     /// 
     /// 

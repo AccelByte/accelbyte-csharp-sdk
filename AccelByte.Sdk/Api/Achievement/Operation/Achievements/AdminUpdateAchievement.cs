@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// <summary>
     /// AdminUpdateAchievement
     ///
+    /// 
+    /// 
     /// Required permission
     /// `ADMIN:NAMESPACE:{namespace}:ACHIEVEMENT [UPDATE]` and scope `social`
     /// </summary>

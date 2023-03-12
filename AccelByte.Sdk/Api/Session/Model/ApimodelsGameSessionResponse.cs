@@ -52,6 +52,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
         [JsonPropertyName("teams")]
         public List<ModelsTeam>? Teams { get; set; }
 
@@ -110,6 +113,9 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
 
         [JsonPropertyName("teams")]
         public List<ModelsTeam>? Teams { get; set; }

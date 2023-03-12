@@ -16,18 +16,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformUnlink
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
     /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
-    /// 
+    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
     /// 
     /// 
     /// 
@@ -45,37 +44,34 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///           * steam
     /// 
     /// 
-    ///   * steam
+    ///           * steamopenid
     /// 
     /// 
-    ///   * steamopenid
+    ///           * facebook
     /// 
     /// 
-    ///   * facebook
+    ///           * google
     /// 
     /// 
-    ///   * google
+    ///           * oculus
     /// 
     /// 
-    ///   * oculus
+    ///           * twitch
     /// 
     /// 
-    ///   * twitch
+    ///           * android
     /// 
     /// 
-    ///   * android
+    ///           * ios
     /// 
     /// 
-    ///   * ios
+    ///           * device
     /// 
     /// 
-    ///   * device
-    /// 
-    /// 
-    ///   * justice : A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
-    /// 
+    ///           * justice : A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
     /// 
     /// 
     /// 

@@ -18,11 +18,10 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Create stat.
     /// Other detail info:
-    /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
-    ///   *  Returns : created stat template
-    ///   * default minimum value is 0
-    ///   * default maximum value is 1.7976931348623157e+308
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
+    ///         *  Returns : created stat template
+    ///         * default minimum value is 0
+    ///         * default maximum value is 1.7976931348623157e+308
     /// </summary>
     public class CreateStat : AccelByte.Sdk.Core.Operation
     {

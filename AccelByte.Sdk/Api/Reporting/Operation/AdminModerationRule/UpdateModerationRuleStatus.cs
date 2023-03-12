@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// updateModerationRuleStatus
     ///
+    /// 
+    /// 
     /// This endpoint enable/disable moderation rule status.
     /// 
     /// 

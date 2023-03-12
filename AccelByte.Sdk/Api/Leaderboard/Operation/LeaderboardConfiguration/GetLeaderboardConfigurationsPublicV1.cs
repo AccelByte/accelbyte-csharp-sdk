@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// getLeaderboardConfigurationsPublicV1
     ///
+    /// 
+    /// 
     /// This endpoint return all leaderboard configurations
     /// </summary>
     public class GetLeaderboardConfigurationsPublicV1 : AccelByte.Sdk.Core.Operation

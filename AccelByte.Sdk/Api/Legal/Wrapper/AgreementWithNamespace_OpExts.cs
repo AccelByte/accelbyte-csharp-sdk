@@ -12,6 +12,17 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalAgreementWithNamespace_OpExts
     {
+        public static List<Legal.Model.UserAgreementsResponse>? Execute(
+            this RetrieveAcceptedAgreementsForMultiUsers.RetrieveAcceptedAgreementsForMultiUsersBuilder builder,
+            string namespace_
+        )
+        {
+            RetrieveAcceptedAgreementsForMultiUsers op = builder.Build(
+                namespace_
+            );
+
+            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreementsForMultiUsers(op);
+        }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
             this RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder builder,
             string namespace_,

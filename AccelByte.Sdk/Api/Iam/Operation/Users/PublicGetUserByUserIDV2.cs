@@ -16,21 +16,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserByUserIDV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///             * Substitute endpoint(Public): /iam/v3/public/namespaces/{namespace}/users/{userId} [GET]
     /// 
-    /// 
-    ///   * Substitute endpoint(Public): /iam/v3/public/namespaces/{namespace}/users/{userId} [GET]
-    /// 
-    ///   * Substitute endpoint(Admin): /iam/v3/admin/namespaces/{namespace}/users/{userId} [GET]
+    ///             * Substitute endpoint(Admin): /iam/v3/admin/namespaces/{namespace}/users/{userId} [GET]
     /// 
     /// 
     /// 
-    ///   * Note:
+    ///             * Note:
     ///     format difference in response: Pascal case => Camel case
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

@@ -16,25 +16,24 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicCreateUserV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///             *  Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users [POST]
     /// 
-    /// 
-    ///   *  Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users [POST]
-    /// 
-    ///   *  Substitute endpoint: /iam/v4/public/namespaces/{namespace}/users [POST]
+    ///             *  Substitute endpoint: /iam/v4/public/namespaces/{namespace}/users [POST]
     /// 
     /// 
     /// 
-    ///   *  Note:
+    ///             *  Note:
     ///      1. v3 & v4 introduce optional verification code
     /// 
     ///      2. format differenceï¼Pascal case => Camel case)
-    /// 
     /// 
     /// 
     /// 
@@ -46,10 +45,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   1.  EMAILPASSWD : an authentication type used for new user registration through email.
-    /// 
+    ///             1.  EMAILPASSWD : an authentication type used for new user registration through email.
     /// 
     /// 
     /// 

@@ -16,16 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserV2
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId} [PATCH]
-    /// 
+    ///           * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId} [PATCH]
     /// 
     /// 
     /// 
@@ -54,14 +53,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// "
     ///  Several case of updating email address "+
     /// "
-    /// 
-    ///   * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
+    ///           * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
     /// "+
     /// "
-    ///   * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
+    ///           * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
     /// "+
     /// "
-    ///   * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
+    ///           * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUpdateUserV2 : AccelByte.Sdk.Core.Operation

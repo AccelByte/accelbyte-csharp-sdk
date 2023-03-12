@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// VerifyToken
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -23,12 +25,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Endpoint migration guide
     /// 
     /// 
+    ///           * Substitute endpoint: /iam/v3/oauth/verify [POST]
     /// 
     /// 
-    ///   * Substitute endpoint: /iam/v3/oauth/verify [POST]
-    /// 
-    /// 
-    ///   * Note: difference in V3 response:
+    ///           * Note: difference in V3 response:
     ///     1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

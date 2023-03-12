@@ -47,6 +47,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 
@@ -94,6 +97,9 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("persistent")]
+        public bool? Persistent { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }

@@ -17,6 +17,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminUpdateConfigurationTemplateV1
     ///
     /// Update template configuration
+    /// Session configuration mandatory :
+    /// - name
+    /// - joinability (example value : OPEN, CLOSED, INVITE_ONLY)
+    /// - Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE
+    /// - MinPlayers (must greather or equal 0)
+    /// - MaxPlayers (must greather than 0)
+    /// - InviteTimeout (must greather or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
+    /// - InactiveTimeout (must greather or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
     /// </summary>
     public class AdminUpdateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

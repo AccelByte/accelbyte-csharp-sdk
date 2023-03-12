@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Authorization
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
@@ -33,9 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   *
+    ///           *
     /// 
     /// 
     /// The basic header
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   *
+    ///           *
     /// 
     /// 
     /// The bearer header
@@ -65,20 +65,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
     /// Following are the responses returned by the endpoint:
     /// 
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
+    ///           *  Authorize success : redirects to the given URL with the following information: ?code={authorization code}&state;={state}
     /// 
     /// 
     /// 
-    ///   *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
-    /// 
+    ///           *  Authorize failure : redirects to the given URL with the following information:?error=access_denied&error;_description=...
     /// 
     /// 
     /// 
@@ -94,18 +90,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///           *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
     /// 
     /// 
-    ///   *  Substitute endpoint (for: basic header style): /iam/v3/oauth/authorize [GET]
-    /// 
-    /// 
-    ///   *  Substitute endpoint (for: bearer header style):
+    ///           *  Substitute endpoint (for: bearer header style):
     ///     step1: /iam/v3/namespace/{namespace}/token/request [POST] => get code
     ///     step2: /iam/v3/token/exchange [POST] => get token by step1's code
     /// 
     /// 
     /// 
-    ///   *  Note:
+    ///           *  Note:
     ///     1. V3 is standard OAuth2 flow and support PKCE
     ///     2. Will not support implicit flow in v3.
     /// </summary>

@@ -16,18 +16,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserLoginHistories
     ///
+    /// 
+    /// 
     /// ## The endpoint is going to be deprecated
     /// 
     /// 
     /// Endpoint migration guide
     /// 
     /// 
+    ///     * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/logins/histories [GET]
     /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/logins/histories [GET]
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/logins/histories [GET]
-    /// 
+    ///     * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/logins/histories [GET]
     /// 
     /// 
     /// 
@@ -39,17 +38,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// "+
     /// "
-    /// 
-    ///   * This endpoint retrieve the first page of the data if 'after' and 'before' parameters is empty.
+    ///     * This endpoint retrieve the first page of the data if 'after' and 'before' parameters is empty.
     /// "+
     /// "
-    ///   * The maximum value of the limit is 100 and the minimum value of the limit is 1.
+    ///     * The maximum value of the limit is 100 and the minimum value of the limit is 1.
     /// "+
     /// "
-    ///   * This endpoint retrieve the next page of the data if we provide 'after' parameters with valid Unix timestamp.
+    ///     * This endpoint retrieve the next page of the data if we provide 'after' parameters with valid Unix timestamp.
     /// "+
     /// "
-    ///   * This endpoint retrieve the previous page of the data if we provide 'before' parameter with valid data Unix timestamp.
+    ///     * This endpoint retrieve the previous page of the data if we provide 'before' parameter with valid data Unix timestamp.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserLoginHistories : AccelByte.Sdk.Core.Operation

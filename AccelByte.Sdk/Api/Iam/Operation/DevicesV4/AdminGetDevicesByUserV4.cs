@@ -16,14 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetDevicesByUserV4
     ///
+    /// 
+    /// 
     /// This is the endpoint for an admin to get devices a user ever used to login.
     /// 
     /// 
     /// 
     /// Required permission
     /// 
-    /// 
-    ///     'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+    ///                                                                                                 'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
     /// </summary>
     public class AdminGetDevicesByUserV4 : AccelByte.Sdk.Core.Operation
     {

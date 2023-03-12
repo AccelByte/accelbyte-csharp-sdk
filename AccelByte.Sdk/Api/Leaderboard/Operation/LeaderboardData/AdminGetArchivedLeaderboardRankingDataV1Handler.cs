@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// <summary>
     /// AdminGetArchivedLeaderboardRankingDataV1Handler
     ///
+    /// 
+    /// 
     /// Admin Get signed url in an all time leaderboard that archived. Notes: This will be a bulk endpoint to get sign url
     /// </summary>
     public class AdminGetArchivedLeaderboardRankingDataV1Handler : AccelByte.Sdk.Core.Operation

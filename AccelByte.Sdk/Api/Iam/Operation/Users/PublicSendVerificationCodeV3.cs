@@ -29,9 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    ///   1.
+    ///                       1.
     /// UserAccountRegistration
     /// 
     /// 
@@ -42,7 +40,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   2.
+    ///                       2.
     /// UpdateEmailAddress
     /// 
     /// 
@@ -52,12 +50,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///   3. upgradeHeadlessAccount
+    ///                       3. upgradeHeadlessAccount
     /// 
     /// 
     /// The context is intended to be used whenever the email address wanted to be automatically verified on upgrading a headless account.
     /// If this context used, IAM rejects the request if the email address is already used by others by returning HTTP Status Code 409.
-    /// 
     /// 
     /// 
     /// 

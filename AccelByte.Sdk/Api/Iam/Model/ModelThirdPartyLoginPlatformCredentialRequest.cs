@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? AWSCognitoUserPool { get; set; }
 
         [JsonPropertyName("AllowedClients")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AllowedClients { get; set; }
 
         [JsonPropertyName("AppId")]
@@ -76,6 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? TokenAuthenticationType { get; set; }
 
         [JsonPropertyName("TokenClaimsMapping")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? TokenClaimsMapping { get; set; }
 
         [JsonPropertyName("TokenEndpoint")]

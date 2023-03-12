@@ -29,6 +29,14 @@
 | `/basic/v1/admin/namespaces/{namespace}/actions/unban` | POST | UnBanUsers | [UnBanUsers](../../AccelByte.Sdk/Api/Basic/Operation/UserAction/UnBanUsers.cs) | [UnBanUsers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/UserAction/UnBanUsers.cs) |
 | `/basic/v1/public/namespaces/{namespace}/users/{userId}/actions/report` | POST | PublicReportUser | [PublicReportUser](../../AccelByte.Sdk/Api/Basic/Operation/UserAction/PublicReportUser.cs) | [PublicReportUser](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/UserAction/PublicReportUser.cs) |
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Basic/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/basic/v1/admin/namespaces/{namespace}/configs` | POST | CreateConfig | [CreateConfig](../../AccelByte.Sdk/Api/Basic/Operation/Config/CreateConfig.cs) | [CreateConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/CreateConfig.cs) |
+| `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | GET | GetConfig1 | [GetConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/GetConfig1.cs) | [GetConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/GetConfig1.cs) |
+| `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | DELETE | DeleteConfig1 | [DeleteConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/DeleteConfig1.cs) | [DeleteConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/DeleteConfig1.cs) |
+| `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | PATCH | UpdateConfig1 | [UpdateConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/UpdateConfig1.cs) | [UpdateConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/UpdateConfig1.cs) |
+
 ### EQU8Config Wrapper:  [EQU8Config](../../AccelByte.Sdk/Api/Basic/Wrapper/EQU8Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -107,6 +115,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Basic/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### EQU8Config Wrapper:  [EQU8Config](../../AccelByte.Sdk/Api/Basic/Wrapper/EQU8Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -143,6 +155,9 @@
 | `Action` | [Action](../../AccelByte.Sdk/Api/Basic/Model/Action.cs) |
 | `AddCountryGroupRequest` | [AddCountryGroupRequest](../../AccelByte.Sdk/Api/Basic/Model/AddCountryGroupRequest.cs) |
 | `AddCountryGroupResponse` | [AddCountryGroupResponse](../../AccelByte.Sdk/Api/Basic/Model/AddCountryGroupResponse.cs) |
+| `ConfigCreate` | [ConfigCreate](../../AccelByte.Sdk/Api/Basic/Model/ConfigCreate.cs) |
+| `ConfigInfo` | [ConfigInfo](../../AccelByte.Sdk/Api/Basic/Model/ConfigInfo.cs) |
+| `ConfigUpdate` | [ConfigUpdate](../../AccelByte.Sdk/Api/Basic/Model/ConfigUpdate.cs) |
 | `CountryGroupObject` | [CountryGroupObject](../../AccelByte.Sdk/Api/Basic/Model/CountryGroupObject.cs) |
 | `CountryObject` | [CountryObject](../../AccelByte.Sdk/Api/Basic/Model/CountryObject.cs) |
 | `Equ8Config` | [Equ8Config](../../AccelByte.Sdk/Api/Basic/Model/Equ8Config.cs) |

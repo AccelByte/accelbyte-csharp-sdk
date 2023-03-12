@@ -26,69 +26,67 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Fields Description:
     /// 
     /// 
+    ///             * clientName : The client name. It should not be empty if the field exists in the body. e.g E-commerce
     /// 
     /// 
-    ///   * clientName : The client name. It should not be empty if the field exists in the body. e.g E-commerce
+    ///             * namespace : The namespace where the client lives. e.g sample-game
     /// 
     /// 
-    ///   * namespace : The namespace where the client lives. e.g sample-game
+    ///             * redirectUri : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
     /// 
     /// 
-    ///   * redirectUri : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
+    ///             * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
     /// 
     /// 
-    ///   * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+    ///             * baseUri : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
     /// 
     /// 
-    ///   * baseUri : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
+    ///             * clientPermissions : Contains the client's permissions
     /// 
     /// 
-    ///   * clientPermissions : Contains the client's permissions
+    ///             * deletable : The flag to identify whether client is deletable (optional). e.g. true
     /// 
     /// 
-    ///   * deletable : The flag to identify whether client is deletable (optional). e.g. true
+    ///             * clientPlatform : available client platform (optional). default value: "".
     /// 
     /// 
-    ///   * clientPlatform : available client platform (optional). default value: "".
+    ///               * Playstation
     /// 
     /// 
-    ///     * Playstation
+    ///               * Xbox
     /// 
     /// 
-    ///     * Xbox
+    ///               * Steam
     /// 
     /// 
-    ///     * Steam
+    ///               * Epic
     /// 
     /// 
-    ///     * Epic
+    ///               * IOS
     /// 
     /// 
-    ///     * IOS
+    ///               * GooglePlay
     /// 
     /// 
-    ///     * GooglePlay
-    /// 
-    /// 
-    ///     * Nintendo
+    ///               * Nintendo
     /// 
     /// 
     /// 
     /// 
     /// 
-    ///   * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
+    ///             * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
     /// 
     /// 
-    ///   * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
+    ///             * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
     /// 
     /// 
-    ///   * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
+    ///             * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
     /// 
     /// 
-    ///   * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , will use previous value if not specified
+    ///             * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , will use previous value if not specified
     /// 
     /// 
-    ///   * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , will use previous value if not specified
+    ///             * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , will use previous value if not specified
     /// </summary>
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {

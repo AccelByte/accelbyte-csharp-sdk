@@ -18,9 +18,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Update stat.
     /// Other detail info:
-    /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
-    ///   *  Returns : updated stat
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
+    ///         *  Returns : updated stat
     /// </summary>
     public class UpdateStat : AccelByte.Sdk.Core.Operation
     {

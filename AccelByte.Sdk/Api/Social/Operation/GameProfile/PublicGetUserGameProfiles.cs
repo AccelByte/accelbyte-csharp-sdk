@@ -18,10 +18,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Returns all profiles for specified users.
     /// Other detail info:
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
     /// 
-    ///   *  Required permission : resource="NAMESPACE:{namespace}:GAMEPROFILE", action=2 (READ)
-    /// 
-    ///   *  Returns : list of profiles
+    ///         *  Returns : list of profiles
     /// </summary>
     public class PublicGetUserGameProfiles : AccelByte.Sdk.Core.Operation
     {

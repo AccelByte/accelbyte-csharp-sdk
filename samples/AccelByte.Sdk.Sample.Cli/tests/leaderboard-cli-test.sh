@@ -56,16 +56,16 @@ $CLI_EXE \
     --sn leaderboard \
     --op GetLeaderboardConfigurationsAdminV1 \
     --namespace $AB_NAMESPACE \
-    --isArchived 'true' \
+    --isArchived 'false' \
     --isDeleted 'true' \
-    --limit '11' \
-    --offset '2' \
+    --limit '18' \
+    --offset '42' \
     > test.out 2>&1
 eval_tap $? 2 'GetLeaderboardConfigurationsAdminV1' test.out
 
 #- 3 CreateLeaderboardConfigurationAdminV1
 # body param: body
-echo '{"daily": {"resetTime": "gPHytXol"}, "descending": false, "iconURL": "o72xJqbd", "leaderboardCode": "Vx0td2yk", "monthly": {"resetDate": 51, "resetTime": "f3LRdjBX"}, "name": "deg1NXUO", "seasonPeriod": 69, "startTime": "XTT9mfiN", "statCode": "LZxD7cdH", "weekly": {"resetDay": 57, "resetTime": "xwkfKlX0"}}' > $TEMP_JSON_INPUT
+echo '{"daily": {"resetTime": "3wMWnoZg"}, "descending": true, "iconURL": "hwb8YYML", "leaderboardCode": "qpQwkRRH", "monthly": {"resetDate": 22, "resetTime": "Z0VBUGA7"}, "name": "nkDeev2O", "seasonPeriod": 20, "startTime": "xhPfWV6d", "statCode": "IabcFbSm", "weekly": {"resetDay": 10, "resetTime": "s4233oQW"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op CreateLeaderboardConfigurationAdminV1 \
@@ -79,14 +79,14 @@ $CLI_EXE \
     --sn leaderboard \
     --op AdminGetArchivedLeaderboardRankingDataV1Handler \
     --namespace $AB_NAMESPACE \
-    --slug '2pf0zhxQ' \
-    --leaderboardCodes 'ne6ZvFcK' \
+    --slug 'oXFeqeuI' \
+    --leaderboardCodes '2oMJ0cgA' \
     > test.out 2>&1
 eval_tap $? 4 'AdminGetArchivedLeaderboardRankingDataV1Handler' test.out
 
 #- 5 CreateArchivedLeaderboardRankingDataV1Handler
 # body param: body
-echo '{"leaderboardCodes": ["YAzAl4ap", "8J10wZhg", "osN6YD0g"], "limit": 85, "slug": "xGn3hUMd"}' > $TEMP_JSON_INPUT
+echo '{"leaderboardCodes": ["oGfXepE3", "r5AQUBqS", "8KtTYZLJ"], "limit": 39, "slug": "QqcV3Icu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op CreateArchivedLeaderboardRankingDataV1Handler \
@@ -97,7 +97,7 @@ eval_tap $? 5 'CreateArchivedLeaderboardRankingDataV1Handler' test.out
 
 #- 6 DeleteBulkLeaderboardConfigurationAdminV1
 # body param: body
-echo '{"leaderboardCodes": ["BEWsvxnf", "dscBav6T", "1G06gKAn"]}' > $TEMP_JSON_INPUT
+echo '{"leaderboardCodes": ["Ns9MF5BT", "2KD18yrW", "orpC65VJ"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op DeleteBulkLeaderboardConfigurationAdminV1 \
@@ -110,18 +110,18 @@ eval_tap $? 6 'DeleteBulkLeaderboardConfigurationAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetLeaderboardConfigurationAdminV1 \
-    --leaderboardCode 'icN4fhxD' \
+    --leaderboardCode 'h4q1z1KJ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 7 'GetLeaderboardConfigurationAdminV1' test.out
 
 #- 8 UpdateLeaderboardConfigurationAdminV1
 # body param: body
-echo '{"daily": {"resetTime": "IE5tCiPV"}, "descending": false, "iconURL": "UHaL9UM6", "monthly": {"resetDate": 39, "resetTime": "dVMHf6mu"}, "name": "qyYMe6kn", "seasonPeriod": 66, "startTime": "Zdj17518", "statCode": "kqcQsMZ5", "weekly": {"resetDay": 15, "resetTime": "vXXT4i3B"}}' > $TEMP_JSON_INPUT
+echo '{"daily": {"resetTime": "mKedBfbW"}, "descending": true, "iconURL": "jmifJDYa", "monthly": {"resetDate": 93, "resetTime": "TJPUszmF"}, "name": "GEkJVvqD", "seasonPeriod": 91, "startTime": "XkiA5IZP", "statCode": "qCqp9vcy", "weekly": {"resetDay": 40, "resetTime": "WvUvDPnK"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op UpdateLeaderboardConfigurationAdminV1 \
-    --leaderboardCode 'OCuEmhDi' \
+    --leaderboardCode 'oECjGUg8' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -131,7 +131,7 @@ eval_tap $? 8 'UpdateLeaderboardConfigurationAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op DeleteLeaderboardConfigurationAdminV1 \
-    --leaderboardCode 'f25SAPCI' \
+    --leaderboardCode '67xodwuG' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 9 'DeleteLeaderboardConfigurationAdminV1' test.out
@@ -140,10 +140,10 @@ eval_tap $? 9 'DeleteLeaderboardConfigurationAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetAllTimeLeaderboardRankingAdminV1 \
-    --leaderboardCode 'd6Sgh2mb' \
+    --leaderboardCode '14ID5l5w' \
     --namespace $AB_NAMESPACE \
-    --limit '20' \
-    --offset '87' \
+    --limit '19' \
+    --offset '38' \
     > test.out 2>&1
 eval_tap $? 10 'GetAllTimeLeaderboardRankingAdminV1' test.out
 
@@ -151,10 +151,10 @@ eval_tap $? 10 'GetAllTimeLeaderboardRankingAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentMonthLeaderboardRankingAdminV1 \
-    --leaderboardCode 'fNLOGcVC' \
+    --leaderboardCode '6K2wEMnc' \
     --namespace $AB_NAMESPACE \
-    --limit '73' \
-    --offset '34' \
+    --limit '22' \
+    --offset '71' \
     > test.out 2>&1
 eval_tap $? 11 'GetCurrentMonthLeaderboardRankingAdminV1' test.out
 
@@ -162,10 +162,10 @@ eval_tap $? 11 'GetCurrentMonthLeaderboardRankingAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentSeasonLeaderboardRankingAdminV1 \
-    --leaderboardCode 'yldt1uPg' \
+    --leaderboardCode 'jlW6Byws' \
     --namespace $AB_NAMESPACE \
-    --limit '31' \
-    --offset '94' \
+    --limit '91' \
+    --offset '50' \
     > test.out 2>&1
 eval_tap $? 12 'GetCurrentSeasonLeaderboardRankingAdminV1' test.out
 
@@ -173,10 +173,10 @@ eval_tap $? 12 'GetCurrentSeasonLeaderboardRankingAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetTodayLeaderboardRankingAdminV1 \
-    --leaderboardCode 'slYBLMkh' \
+    --leaderboardCode 'SZTGlubs' \
     --namespace $AB_NAMESPACE \
-    --limit '81' \
-    --offset '43' \
+    --limit '25' \
+    --offset '56' \
     > test.out 2>&1
 eval_tap $? 13 'GetTodayLeaderboardRankingAdminV1' test.out
 
@@ -184,21 +184,21 @@ eval_tap $? 13 'GetTodayLeaderboardRankingAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetUserRankingAdminV1 \
-    --leaderboardCode 'dmgRzLXO' \
+    --leaderboardCode 'hjXcScOU' \
     --namespace $AB_NAMESPACE \
-    --userId 'gks3lUff' \
+    --userId 'vrjJBO7t' \
     > test.out 2>&1
 eval_tap $? 14 'GetUserRankingAdminV1' test.out
 
 #- 15 UpdateUserPointAdminV1
 # body param: body
-echo '{"inc": 0.4568019216019814, "latestValue": 0.7799381672294505}' > $TEMP_JSON_INPUT
+echo '{"inc": 0.022990193966184402, "latestValue": 0.16983766294544766}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op UpdateUserPointAdminV1 \
-    --leaderboardCode 'JelLA0kM' \
+    --leaderboardCode 'TGYKqRMS' \
     --namespace $AB_NAMESPACE \
-    --userId 'BcDTbHSQ' \
+    --userId 'TisP0MrS' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 15 'UpdateUserPointAdminV1' test.out
@@ -207,9 +207,9 @@ eval_tap $? 15 'UpdateUserPointAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op DeleteUserRankingAdminV1 \
-    --leaderboardCode 'dm43d9bW' \
+    --leaderboardCode 'daFy0pJY' \
     --namespace $AB_NAMESPACE \
-    --userId 'zD2RMZfW' \
+    --userId 'Cdfkfyt0' \
     > test.out 2>&1
 eval_tap $? 16 'DeleteUserRankingAdminV1' test.out
 
@@ -217,10 +217,10 @@ eval_tap $? 16 'DeleteUserRankingAdminV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentWeekLeaderboardRankingAdminV1 \
-    --leaderboardCode 'rY3S9Tib' \
+    --leaderboardCode '9ro5fHdW' \
     --namespace $AB_NAMESPACE \
-    --limit '19' \
-    --offset '48' \
+    --limit '34' \
+    --offset '56' \
     > test.out 2>&1
 eval_tap $? 17 'GetCurrentWeekLeaderboardRankingAdminV1' test.out
 
@@ -229,8 +229,8 @@ $CLI_EXE \
     --sn leaderboard \
     --op DeleteUserRankingsAdminV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'SUDpnLGC' \
-    --leaderboardCode '["uEypat7g", "hdom74gF", "Qyhgqdvl"]' \
+    --userId 'JTNjrmpn' \
+    --leaderboardCode '["nEckHH8k", "T9oXVand", "ercf1nq4"]' \
     > test.out 2>&1
 eval_tap $? 18 'DeleteUserRankingsAdminV1' test.out
 
@@ -239,9 +239,9 @@ $CLI_EXE \
     --sn leaderboard \
     --op GetUserLeaderboardRankingsAdminV1 \
     --namespace $AB_NAMESPACE \
-    --userId 'ljYmzD6A' \
-    --limit '62' \
-    --offset '7' \
+    --userId 'Hf32SL5P' \
+    --limit '19' \
+    --offset '56' \
     > test.out 2>&1
 eval_tap $? 19 'GetUserLeaderboardRankingsAdminV1' test.out
 
@@ -250,16 +250,16 @@ $CLI_EXE \
     --sn leaderboard \
     --op GetLeaderboardConfigurationsPublicV1 \
     --namespace $AB_NAMESPACE \
-    --isArchived 'true' \
-    --isDeleted 'true' \
-    --limit '9' \
-    --offset '0' \
+    --isArchived 'false' \
+    --isDeleted 'false' \
+    --limit '12' \
+    --offset '62' \
     > test.out 2>&1
 eval_tap $? 20 'GetLeaderboardConfigurationsPublicV1' test.out
 
 #- 21 CreateLeaderboardConfigurationPublicV1
 # body param: body
-echo '{"daily": {"resetTime": "OlvPVbBQ"}, "descending": true, "iconURL": "dsKAcmPF", "leaderboardCode": "36SccmWc", "monthly": {"resetDate": 85, "resetTime": "9EbywWbE"}, "name": "OKXbgMnc", "seasonPeriod": 61, "startTime": "D7wXE008", "statCode": "cVy141fn", "weekly": {"resetDay": 21, "resetTime": "1AlkVKsk"}}' > $TEMP_JSON_INPUT
+echo '{"daily": {"resetTime": "UOqv7WmC"}, "descending": true, "iconURL": "KUW0py8K", "leaderboardCode": "rcQfucSq", "monthly": {"resetDate": 96, "resetTime": "X8gFuJOR"}, "name": "k4j04Yfn", "seasonPeriod": 40, "startTime": "TsQUrA0W", "statCode": "WyKl2K5m", "weekly": {"resetDay": 59, "resetTime": "fefdopcE"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op CreateLeaderboardConfigurationPublicV1 \
@@ -272,10 +272,10 @@ eval_tap $? 21 'CreateLeaderboardConfigurationPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetAllTimeLeaderboardRankingPublicV1 \
-    --leaderboardCode 'VRy4FzmR' \
+    --leaderboardCode 'M0JHfof2' \
     --namespace $AB_NAMESPACE \
-    --limit '16' \
-    --offset '0' \
+    --limit '69' \
+    --offset '47' \
     > test.out 2>&1
 eval_tap $? 22 'GetAllTimeLeaderboardRankingPublicV1' test.out
 
@@ -283,10 +283,10 @@ eval_tap $? 22 'GetAllTimeLeaderboardRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetArchivedLeaderboardRankingDataV1Handler \
-    --leaderboardCode 'TXbOCLxr' \
+    --leaderboardCode 'wi7vg3os' \
     --namespace $AB_NAMESPACE \
-    --slug '4yHziHWn' \
-    --leaderboardCodes 'NZ1rY4fq' \
+    --slug 'bh0fL2h7' \
+    --leaderboardCodes 'eJvAS2W4' \
     > test.out 2>&1
 eval_tap $? 23 'GetArchivedLeaderboardRankingDataV1Handler' test.out
 
@@ -294,10 +294,10 @@ eval_tap $? 23 'GetArchivedLeaderboardRankingDataV1Handler' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentMonthLeaderboardRankingPublicV1 \
-    --leaderboardCode 'cUmDL0D6' \
+    --leaderboardCode 'uqkhwSC7' \
     --namespace $AB_NAMESPACE \
-    --limit '9' \
-    --offset '34' \
+    --limit '63' \
+    --offset '33' \
     > test.out 2>&1
 eval_tap $? 24 'GetCurrentMonthLeaderboardRankingPublicV1' test.out
 
@@ -305,10 +305,10 @@ eval_tap $? 24 'GetCurrentMonthLeaderboardRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentSeasonLeaderboardRankingPublicV1 \
-    --leaderboardCode 'rLILvUHt' \
+    --leaderboardCode 'ajwHO3Lf' \
     --namespace $AB_NAMESPACE \
-    --limit '62' \
-    --offset '72' \
+    --limit '45' \
+    --offset '35' \
     > test.out 2>&1
 eval_tap $? 25 'GetCurrentSeasonLeaderboardRankingPublicV1' test.out
 
@@ -316,10 +316,10 @@ eval_tap $? 25 'GetCurrentSeasonLeaderboardRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetTodayLeaderboardRankingPublicV1 \
-    --leaderboardCode 'sf6qiKSp' \
+    --leaderboardCode 'wPewrf19' \
     --namespace $AB_NAMESPACE \
-    --limit '25' \
-    --offset '97' \
+    --limit '81' \
+    --offset '99' \
     > test.out 2>&1
 eval_tap $? 26 'GetTodayLeaderboardRankingPublicV1' test.out
 
@@ -327,9 +327,9 @@ eval_tap $? 26 'GetTodayLeaderboardRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetUserRankingPublicV1 \
-    --leaderboardCode 'w6XYnF9u' \
+    --leaderboardCode 'jm50xCDl' \
     --namespace $AB_NAMESPACE \
-    --userId 'Ho8AAVSl' \
+    --userId 'PeNq0CvM' \
     > test.out 2>&1
 eval_tap $? 27 'GetUserRankingPublicV1' test.out
 
@@ -337,9 +337,9 @@ eval_tap $? 27 'GetUserRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op DeleteUserRankingPublicV1 \
-    --leaderboardCode '9w3sdtud' \
+    --leaderboardCode 'XtyUWXrd' \
     --namespace $AB_NAMESPACE \
-    --userId 'nDC2MuME' \
+    --userId 'ZaFeacGT' \
     > test.out 2>&1
 eval_tap $? 28 'DeleteUserRankingPublicV1' test.out
 
@@ -347,10 +347,10 @@ eval_tap $? 28 'DeleteUserRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetCurrentWeekLeaderboardRankingPublicV1 \
-    --leaderboardCode 'Y7BOBuDo' \
+    --leaderboardCode '2x6o28Nj' \
     --namespace $AB_NAMESPACE \
-    --limit '44' \
-    --offset '29' \
+    --limit '47' \
+    --offset '17' \
     > test.out 2>&1
 eval_tap $? 29 'GetCurrentWeekLeaderboardRankingPublicV1' test.out
 
@@ -358,10 +358,10 @@ eval_tap $? 29 'GetCurrentWeekLeaderboardRankingPublicV1' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetHiddenUsersV2 \
-    --leaderboardCode '2j3hxt2W' \
+    --leaderboardCode 'yw7RHldq' \
     --namespace $AB_NAMESPACE \
-    --limit '40' \
-    --offset '43' \
+    --limit '36' \
+    --offset '24' \
     > test.out 2>&1
 eval_tap $? 30 'GetHiddenUsersV2' test.out
 
@@ -369,21 +369,21 @@ eval_tap $? 30 'GetHiddenUsersV2' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetUserVisibilityStatusV2 \
-    --leaderboardCode 'VCkLIUPK' \
+    --leaderboardCode 'CQpMJj5i' \
     --namespace $AB_NAMESPACE \
-    --userId 'Auktgn5P' \
+    --userId 'gqat8xnP' \
     > test.out 2>&1
 eval_tap $? 31 'GetUserVisibilityStatusV2' test.out
 
 #- 32 SetUserLeaderboardVisibilityStatusV2
 # body param: body
-echo '{"visibility": true}' > $TEMP_JSON_INPUT
+echo '{"visibility": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn leaderboard \
     --op SetUserLeaderboardVisibilityStatusV2 \
-    --leaderboardCode 'teJ5PRDr' \
+    --leaderboardCode 'GVPtkjt0' \
     --namespace $AB_NAMESPACE \
-    --userId 'ditzm9Rl' \
+    --userId 'OyBlJi4R' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 32 'SetUserLeaderboardVisibilityStatusV2' test.out
@@ -395,7 +395,7 @@ $CLI_EXE \
     --sn leaderboard \
     --op SetUserVisibilityStatusV2 \
     --namespace $AB_NAMESPACE \
-    --userId 'QnSJyE72' \
+    --userId 'cXGGl0Xw' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 33 'SetUserVisibilityStatusV2' test.out
@@ -405,8 +405,8 @@ $CLI_EXE \
     --sn leaderboard \
     --op GetLeaderboardConfigurationsPublicV2 \
     --namespace $AB_NAMESPACE \
-    --limit '83' \
-    --offset '29' \
+    --limit '82' \
+    --offset '43' \
     > test.out 2>&1
 eval_tap $? 34 'GetLeaderboardConfigurationsPublicV2' test.out
 
@@ -414,10 +414,10 @@ eval_tap $? 34 'GetLeaderboardConfigurationsPublicV2' test.out
 $CLI_EXE \
     --sn leaderboard \
     --op GetAllTimeLeaderboardRankingPublicV2 \
-    --leaderboardCode 'pytHYCa4' \
+    --leaderboardCode 'FjCzZVcG' \
     --namespace $AB_NAMESPACE \
-    --limit '82' \
-    --offset '9' \
+    --limit '29' \
+    --offset '2' \
     > test.out 2>&1
 eval_tap $? 35 'GetAllTimeLeaderboardRankingPublicV2' test.out
 

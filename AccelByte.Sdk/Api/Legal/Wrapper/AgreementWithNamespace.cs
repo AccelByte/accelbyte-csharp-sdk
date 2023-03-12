@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        public RetrieveAcceptedAgreementsForMultiUsers.RetrieveAcceptedAgreementsForMultiUsersBuilder RetrieveAcceptedAgreementsForMultiUsersOp
+        {
+            get { return Operation.RetrieveAcceptedAgreementsForMultiUsers.Builder.SetWrapperObject(this); }
+        }
         public RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder RetrieveAcceptedAgreements1Op
         {
             get { return Operation.RetrieveAcceptedAgreements1.Builder.SetWrapperObject(this); }
@@ -29,6 +33,15 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
 
+        public List<Model.UserAgreementsResponse>? RetrieveAcceptedAgreementsForMultiUsers(RetrieveAcceptedAgreementsForMultiUsers input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements1(RetrieveAcceptedAgreements1 input)
         {
             var response = _sdk.RunRequest(input);

@@ -9,7 +9,9 @@
 |---|---|---|---|---|
 | `/friends/namespaces/{namespace}/me` | GET | GetUserFriendsUpdated | [GetUserFriendsUpdated](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserFriendsUpdated.cs) | [GetUserFriendsUpdated](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserFriendsUpdated.cs) |
 | `/friends/namespaces/{namespace}/me/incoming` | GET | GetUserIncomingFriends | [GetUserIncomingFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserIncomingFriends.cs) | [GetUserIncomingFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserIncomingFriends.cs) |
+| `/friends/namespaces/{namespace}/me/incoming-time` | GET | GetUserIncomingFriendsWithTime | [GetUserIncomingFriendsWithTime](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserIncomingFriendsWithTime.cs) | [GetUserIncomingFriendsWithTime](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserIncomingFriendsWithTime.cs) |
 | `/friends/namespaces/{namespace}/me/outgoing` | GET | GetUserOutgoingFriends | [GetUserOutgoingFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserOutgoingFriends.cs) | [GetUserOutgoingFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserOutgoingFriends.cs) |
+| `/friends/namespaces/{namespace}/me/outgoing-time` | GET | GetUserOutgoingFriendsWithTime | [GetUserOutgoingFriendsWithTime](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserOutgoingFriendsWithTime.cs) | [GetUserOutgoingFriendsWithTime](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserOutgoingFriendsWithTime.cs) |
 | `/friends/namespaces/{namespace}/me/request` | POST | UserRequestFriend | [UserRequestFriend](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserRequestFriend.cs) | [UserRequestFriend](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserRequestFriend.cs) |
 | `/friends/namespaces/{namespace}/me/request/accept` | POST | UserAcceptFriendRequest | [UserAcceptFriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserAcceptFriendRequest.cs) | [UserAcceptFriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserAcceptFriendRequest.cs) |
 | `/friends/namespaces/{namespace}/me/request/cancel` | POST | UserCancelFriendRequest | [UserCancelFriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserCancelFriendRequest.cs) | [UserCancelFriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserCancelFriendRequest.cs) |
@@ -217,12 +219,16 @@
 | `model.GetUserFriendsResponse` | [ModelGetUserFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserFriendsResponse.cs) |
 | `model.GetUserIncomingFriendsResponse` | [ModelGetUserIncomingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserIncomingFriendsResponse.cs) |
 | `model.GetUserOutgoingFriendsResponse` | [ModelGetUserOutgoingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserOutgoingFriendsResponse.cs) |
+| `model.IncomingFriendsWithTimeData` | [ModelIncomingFriendsWithTimeData](../../AccelByte.Sdk/Api/Lobby/Model/ModelIncomingFriendsWithTimeData.cs) |
+| `model.LoadIncomingFriendsWithTimeResponse` | [ModelLoadIncomingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadIncomingFriendsWithTimeResponse.cs) |
+| `model.LoadOutgoingFriendsWithTimeResponse` | [ModelLoadOutgoingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadOutgoingFriendsWithTimeResponse.cs) |
 | `model.Localization` | [ModelLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelLocalization.cs) |
 | `model.NotificationTemplateResponse` | [ModelNotificationTemplateResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTemplateResponse.cs) |
 | `model.NotificationTopicResponse` | [ModelNotificationTopicResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponse.cs) |
 | `model.NotificationTopicResponseV1` | [ModelNotificationTopicResponseV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponseV1.cs) |
 | `model.NotificationWithTemplateRequest` | [ModelNotificationWithTemplateRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationWithTemplateRequest.cs) |
 | `model.NotificationWithTemplateRequestV1` | [ModelNotificationWithTemplateRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationWithTemplateRequestV1.cs) |
+| `model.OutgoingFriendsWithTimeData` | [ModelOutgoingFriendsWithTimeData](../../AccelByte.Sdk/Api/Lobby/Model/ModelOutgoingFriendsWithTimeData.cs) |
 | `model.Pagination` | [ModelPagination](../../AccelByte.Sdk/Api/Lobby/Model/ModelPagination.cs) |
 | `model.TemplateContent` | [ModelTemplateContent](../../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateContent.cs) |
 | `model.TemplateLocalization` | [ModelTemplateLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateLocalization.cs) |
