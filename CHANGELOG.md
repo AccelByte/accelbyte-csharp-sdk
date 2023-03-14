@@ -1,3 +1,8 @@
+<a name="v0.30.0"></a>
+## [v0.29.0]
+- Updated documentations due to name change.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.29.0"></a>
 ## [v0.29.0]
 - API models and endpoints changed. See affected items [here](docs/migration-guides/migration-guide-v0.28-to-v0.29.md)
