@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             string title = Helper.GenerateRandomId(32);
+            string reasonId = String.Empty;
 
             Api.Reporting.Wrapper.AdminReasons wAdminReasons = new Api.Reporting.Wrapper.AdminReasons(_Sdk);
 
@@ -48,26 +49,34 @@ namespace AccelByte.Sdk.Tests.Services
                     _Sdk.Namespace
                 ));
             Assert.IsNotNull(cReason);
-            Assert.IsNotNull(cReason.Id);
             if (cReason != null)
+            {
+                Assert.IsNotNull(cReason.Id);                
+                if (cReason.Id != null)
+                    reasonId = cReason.Id;
+
                 Assert.AreEqual(title, cReason.Title);
+            }
             #endregion
+
+            Assert.True(reasonId != String.Empty);
 
             #region Get single Reason
             Api.Reporting.Model.RestapiAdminReasonResponse? cReason2 = wAdminReasons.AdminGetReason(
                 Api.Reporting.Operation.AdminGetReason.Builder
-                .Build(_Sdk.Namespace, cReason.Id));
-
+                .Build(_Sdk.Namespace, reasonId));
             Assert.IsNotNull(cReason2);
-            Assert.IsNotNull(cReason2.Id);
             if (cReason2 != null)
+            {
+                Assert.IsNotNull(cReason2.Id);
                 Assert.AreEqual(title, cReason2.Title);
+            }
             #endregion
 
             #region Delete a Reporting
             wAdminReasons.DeleteReason(
                 Api.Reporting.Operation.DeleteReason.Builder
-                .Build(_Sdk.Namespace, cReason.Id));
+                .Build(_Sdk.Namespace, reasonId));
             #endregion
 
             //Finally, recheck if the data is truly deleted.
@@ -76,7 +85,7 @@ namespace AccelByte.Sdk.Tests.Services
                 DisableRetry();
                 Api.Reporting.Model.RestapiAdminReasonResponse? cReason3 = wAdminReasons.AdminGetReason(
                     Api.Reporting.Operation.AdminGetReason.Builder
-                    .Build(_Sdk.Namespace, cReason.Id));
+                    .Build(_Sdk.Namespace, reasonId));
             });
         }
     }
