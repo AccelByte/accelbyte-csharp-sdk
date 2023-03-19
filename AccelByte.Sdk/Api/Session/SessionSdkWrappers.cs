@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private Operations? _Operations = null;
 
+        public DSMCDefaultConfiguration DSMCDefaultConfiguration
+        {
+            get
+            {
+                if (_DSMCDefaultConfiguration == null)
+                    _DSMCDefaultConfiguration = new DSMCDefaultConfiguration(_SdkObject);
+                return _DSMCDefaultConfiguration;
+            }
+        }
+        private DSMCDefaultConfiguration? _DSMCDefaultConfiguration = null;
+
         public ConfigurationTemplate ConfigurationTemplate
         {
             get

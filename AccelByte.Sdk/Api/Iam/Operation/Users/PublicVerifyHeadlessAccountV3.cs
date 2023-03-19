@@ -20,6 +20,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Require valid user authorization
     /// action code : 10124
+    /// 
+    /// 
+    /// 
+    /// 
+    /// if set NeedVerificationCode = true, IAM will send verification code into email
+    /// 
+    /// 
+    /// 
+    /// 
+    /// user can use that verification code to verify user through /iam/v3/public/namespaces/{namespace}/users/me/code/verify
     /// </summary>
     public class PublicVerifyHeadlessAccountV3 : AccelByte.Sdk.Core.Operation
     {
@@ -30,12 +40,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicVerifyHeadlessAccountV3Builder>
         {
 
+            public bool? NeedVerificationCode { get; set; }
+
 
 
 
 
             internal PublicVerifyHeadlessAccountV3Builder() { }
 
+
+            public PublicVerifyHeadlessAccountV3Builder SetNeedVerificationCode(bool _needVerificationCode)
+            {
+                NeedVerificationCode = _needVerificationCode;
+                return this;
+            }
 
 
 
@@ -63,6 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.NeedVerificationCode != null) QueryParams["needVerificationCode"] = Convert.ToString(builder.NeedVerificationCode)!;
 
 
 
@@ -76,11 +95,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public PublicVerifyHeadlessAccountV3(
             string namespace_,
+            bool? needVerificationCode,
             Model.ModelUpgradeHeadlessAccountV3Request body
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (needVerificationCode != null) QueryParams["needVerificationCode"] = Convert.ToString(needVerificationCode)!;
 
 
 

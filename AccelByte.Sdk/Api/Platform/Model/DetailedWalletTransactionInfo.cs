@@ -41,6 +41,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? UserId { get; set; }
 
         [JsonPropertyName("walletAction")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public DetailedWalletTransactionInfoWalletAction? WalletAction { get; set; }
 

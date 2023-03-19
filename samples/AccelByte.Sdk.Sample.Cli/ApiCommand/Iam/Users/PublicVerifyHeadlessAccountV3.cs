@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("needVerificationCode")]
+        public bool? NeedVerificationCode { get; set; }
+
         [SdkCommandData("body")]
         public ModelUpgradeHeadlessAccountV3Request Body { get; set; } = new ModelUpgradeHeadlessAccountV3Request();
 
@@ -44,6 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             PublicVerifyHeadlessAccountV3 operation = new PublicVerifyHeadlessAccountV3(
                 Namespace,
+                NeedVerificationCode,
                 Body
             );
 

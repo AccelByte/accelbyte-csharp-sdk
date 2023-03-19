@@ -34,6 +34,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             public int? Offset { get; set; }
 
+            public string? SortBy { get; set; }
+
             public string? StatCodes { get; set; }
 
 
@@ -52,6 +54,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public GetUserStatCycleItems1Builder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public GetUserStatCycleItems1Builder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -94,6 +102,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
 
 
@@ -111,6 +120,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             string userId,
             int? limit,
             int? offset,
+            string? sortBy,
             string? statCodes
         )
         {
@@ -120,6 +130,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (statCodes is not null) QueryParams["statCodes"] = statCodes;
 
 

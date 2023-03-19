@@ -306,6 +306,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).ValidateItemPurchaseCondition(op);
         }
+        public static void Execute(
+            this BulkUpdateRegionData.BulkUpdateRegionDataBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            BulkUpdateRegionData op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.Item)builder.WrapperObject!).BulkUpdateRegionData(op);
+        }
         public static Platform.Model.FullItemPagingSlicedResult? Execute(
             this SearchItems.SearchItemsBuilder builder,
             string namespace_,

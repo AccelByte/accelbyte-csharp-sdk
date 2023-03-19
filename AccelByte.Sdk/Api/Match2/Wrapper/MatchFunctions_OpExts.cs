@@ -36,6 +36,21 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).CreateMatchFunction(op);
         }
+        public static Match2.Model.ApiMatchFunctionConfig? Execute(
+            this UpdateMatchFunction.UpdateMatchFunctionBuilder builder,
+            ApiMatchFunctionRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            UpdateMatchFunction op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).UpdateMatchFunction(op);
+        }
         public static void Execute(
             this DeleteMatchFunction.DeleteMatchFunctionBuilder builder,
             string name,

@@ -116,6 +116,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CreditRequestSource REWARD
             = new CreditRequestSource("REWARD");
 
+        public static readonly CreditRequestSource SELLBACK
+            = new CreditRequestSource("SELL_BACK");
+
 
         public static implicit operator CreditRequestSource(string value)
         {

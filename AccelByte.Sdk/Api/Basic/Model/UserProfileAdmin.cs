@@ -44,6 +44,10 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LastName { get; set; }
 
+        [JsonPropertyName("privateCustomAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? PrivateCustomAttributes { get; set; }
+
         [JsonPropertyName("status")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
@@ -59,7 +63,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
-    public class UserProfileAdmin<T1> : AccelByte.Sdk.Core.Model
+    public class UserProfileAdmin<T1, T2> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("avatarLargeUrl")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -93,6 +97,10 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonPropertyName("lastName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LastName { get; set; }
+
+        [JsonPropertyName("privateCustomAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T2? PrivateCustomAttributes { get; set; }
 
         [JsonPropertyName("status")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

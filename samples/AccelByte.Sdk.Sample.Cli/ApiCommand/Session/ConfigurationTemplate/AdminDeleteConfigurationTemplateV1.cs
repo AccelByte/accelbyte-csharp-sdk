@@ -47,11 +47,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
                 Namespace
             );
 
-            AccelByte.Sdk.Api.Session.Model.ResponseError? response = wrapper.AdminDeleteConfigurationTemplateV1(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.AdminDeleteConfigurationTemplateV1(operation);
+            return String.Empty;
         }
     }
 }

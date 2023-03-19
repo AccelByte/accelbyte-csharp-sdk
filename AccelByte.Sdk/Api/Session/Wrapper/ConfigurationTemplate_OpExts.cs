@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminUpdateConfigurationTemplateV1(op);
         }
-        public static Session.Model.ResponseError? Execute(
+        public static void Execute(
             this AdminDeleteConfigurationTemplateV1.AdminDeleteConfigurationTemplateV1Builder builder,
             string name,
             string namespace_
@@ -75,7 +75,29 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminDeleteConfigurationTemplateV1(op);
+            ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminDeleteConfigurationTemplateV1(op);
+        }
+        public static Session.Model.ModelsDSMConfigRecord? Execute(
+            this AdminGetDSMCConfiguration.AdminGetDSMCConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetDSMCConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetDSMCConfiguration(op);
+        }
+        public static Session.Model.ModelsDSMConfigRecord? Execute(
+            this AdminSyncDSMCConfiguration.AdminSyncDSMCConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminSyncDSMCConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminSyncDSMCConfiguration(op);
         }
     }
 }

@@ -10,6 +10,11 @@
 | `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../../AccelByte.Sdk/Api/Session/Operation/Operations/GetHealthcheckInfo.cs) | [GetHealthcheckInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Operations/GetHealthcheckInfo.cs) |
 | `/session/healthz` | GET | GetHealthcheckInfoV1 | [GetHealthcheckInfoV1](../../AccelByte.Sdk/Api/Session/Operation/Operations/GetHealthcheckInfoV1.cs) | [GetHealthcheckInfoV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Operations/GetHealthcheckInfoV1.cs) |
 
+### DSMC Default Configuration Wrapper:  [DSMCDefaultConfiguration](../../AccelByte.Sdk/Api/Session/Wrapper/DSMCDefaultConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/dsconfigs/default` | GET | AdminGetDSMCConfigurationDefault | [AdminGetDSMCConfigurationDefault](../../AccelByte.Sdk/Api/Session/Operation/DSMCDefaultConfiguration/AdminGetDSMCConfigurationDefault.cs) | [AdminGetDSMCConfigurationDefault](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/DSMCDefaultConfiguration/AdminGetDSMCConfigurationDefault.cs) |
+
 ### Configuration Template Wrapper:  [ConfigurationTemplate](../../AccelByte.Sdk/Api/Session/Wrapper/ConfigurationTemplate.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -18,6 +23,8 @@
 | `/session/v1/admin/namespaces/{namespace}/configurations/{name}` | GET | AdminGetConfigurationTemplateV1 | [AdminGetConfigurationTemplateV1](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminGetConfigurationTemplateV1.cs) | [AdminGetConfigurationTemplateV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminGetConfigurationTemplateV1.cs) |
 | `/session/v1/admin/namespaces/{namespace}/configurations/{name}` | PUT | AdminUpdateConfigurationTemplateV1 | [AdminUpdateConfigurationTemplateV1](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminUpdateConfigurationTemplateV1.cs) | [AdminUpdateConfigurationTemplateV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminUpdateConfigurationTemplateV1.cs) |
 | `/session/v1/admin/namespaces/{namespace}/configurations/{name}` | DELETE | AdminDeleteConfigurationTemplateV1 | [AdminDeleteConfigurationTemplateV1](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminDeleteConfigurationTemplateV1.cs) | [AdminDeleteConfigurationTemplateV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminDeleteConfigurationTemplateV1.cs) |
+| `/session/v1/admin/namespaces/{namespace}/dsconfigs` | GET | AdminGetDSMCConfiguration | [AdminGetDSMCConfiguration](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminGetDSMCConfiguration.cs) | [AdminGetDSMCConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminGetDSMCConfiguration.cs) |
+| `/session/v1/admin/namespaces/{namespace}/dsconfigs/sync` | GET | AdminSyncDSMCConfiguration | [AdminSyncDSMCConfiguration](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminSyncDSMCConfiguration.cs) | [AdminSyncDSMCConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminSyncDSMCConfiguration.cs) |
 
 ### Game Session Wrapper:  [GameSession](../../AccelByte.Sdk/Api/Session/Wrapper/GameSession.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -36,6 +43,7 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leave` | DELETE | LeaveGameSession | [LeaveGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/LeaveGameSession.cs) | [LeaveGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/LeaveGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/reject` | DELETE | PublicGameSessionReject | [PublicGameSessionReject](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicGameSessionReject.cs) | [PublicGameSessionReject](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicGameSessionReject.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryMyGameSessions | [PublicQueryMyGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryMyGameSessions.cs) | [PublicQueryMyGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryMyGameSessions.cs) |
 
 ### Party Wrapper:  [Party](../../AccelByte.Sdk/Api/Session/Wrapper/Party.cs)
@@ -75,6 +83,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### DSMC Default Configuration Wrapper:  [DSMCDefaultConfiguration](../../AccelByte.Sdk/Api/Session/Wrapper/DSMCDefaultConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Configuration Template Wrapper:  [ConfigurationTemplate](../../AccelByte.Sdk/Api/Session/Wrapper/ConfigurationTemplate.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -89,6 +101,7 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}` | PATCH | PatchUpdateGameSession | [PatchUpdateGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PatchUpdateGameSession.cs) | [PatchUpdateGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PatchUpdateGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/backfill` | PUT | UpdateGameSessionBackfillTicketID | [UpdateGameSessionBackfillTicketID](../../AccelByte.Sdk/Api/Session/Operation/GameSession/UpdateGameSessionBackfillTicketID.cs) | [UpdateGameSessionBackfillTicketID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/UpdateGameSessionBackfillTicketID.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryMyGameSessions | [PublicQueryMyGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryMyGameSessions.cs) | [PublicQueryMyGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryMyGameSessions.cs) |
 
 ### Party Wrapper:  [Party](../../AccelByte.Sdk/Api/Session/Wrapper/Party.cs)
@@ -120,6 +133,7 @@
 
 | Model | Class |
 |---|---|
+| `apimodels.AppendTeamGameSessionRequest` | [ApimodelsAppendTeamGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsAppendTeamGameSessionRequest.cs) |
 | `apimodels.ConfigurationTemplateResponse` | [ApimodelsConfigurationTemplateResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsConfigurationTemplateResponse.cs) |
 | `apimodels.ConfigurationTemplatesResponse` | [ApimodelsConfigurationTemplatesResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsConfigurationTemplatesResponse.cs) |
 | `apimodels.CreateConfigurationTemplateRequest` | [ApimodelsCreateConfigurationTemplateRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsCreateConfigurationTemplateRequest.cs) |
@@ -145,6 +159,8 @@
 | `apimodels.UpdateGameSessionRequest` | [ApimodelsUpdateGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionRequest.cs) |
 | `apimodels.UpdatePartyRequest` | [ApimodelsUpdatePartyRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdatePartyRequest.cs) |
 | `apimodels.UserResponse` | [ApimodelsUserResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUserResponse.cs) |
+| `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Session/Model/ModelsDSMConfigRecord.cs) |
+| `models.DefaultDSMCConfig` | [ModelsDefaultDSMCConfig](../../AccelByte.Sdk/Api/Session/Model/ModelsDefaultDSMCConfig.cs) |
 | `models.GameServer` | [ModelsGameServer](../../AccelByte.Sdk/Api/Session/Model/ModelsGameServer.cs) |
 | `models.PartyMembers` | [ModelsPartyMembers](../../AccelByte.Sdk/Api/Session/Model/ModelsPartyMembers.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |

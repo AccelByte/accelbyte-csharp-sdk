@@ -50,6 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementUpdateStatus REVOKED
             = new EntitlementUpdateStatus("REVOKED");
 
+        public static readonly EntitlementUpdateStatus SOLD
+            = new EntitlementUpdateStatus("SOLD");
+
 
         public static implicit operator EntitlementUpdateStatus(string value)
         {

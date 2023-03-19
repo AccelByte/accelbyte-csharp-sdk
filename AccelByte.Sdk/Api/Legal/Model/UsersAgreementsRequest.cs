@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Legal.Model
 {
     public class UsersAgreementsRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("currentPublishedOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CurrentPublishedOnly { get; set; }
+
         [JsonPropertyName("userIds")]
         public List<string>? UserIds { get; set; }
 

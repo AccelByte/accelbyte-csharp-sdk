@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ApimodelsPartySessionResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Attributes { get; set; }
 
         [JsonPropertyName("code")]
@@ -47,9 +48,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
-        [JsonPropertyName("persistent")]
-        public bool? Persistent { get; set; }
-
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 
@@ -61,6 +59,7 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ApimodelsPartySessionResponse<T1> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Attributes { get; set; }
 
         [JsonPropertyName("code")]
@@ -97,9 +96,6 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-
-        [JsonPropertyName("persistent")]
-        public bool? Persistent { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }

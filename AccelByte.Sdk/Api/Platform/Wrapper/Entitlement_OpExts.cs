@@ -341,6 +341,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlement(op);
         }
+        public static Platform.Model.EntitlementSoldResult? Execute(
+            this SellUserEntitlement.SellUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            SellUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).SellUserEntitlement(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this PublicExistsAnyMyActiveEntitlement.PublicExistsAnyMyActiveEntitlementBuilder builder,
             string namespace_
@@ -575,6 +590,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicConsumeUserEntitlement(op);
+        }
+        public static Platform.Model.EntitlementSoldResult? Execute(
+            this PublicSellUserEntitlement.PublicSellUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSellUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSellUserEntitlement(op);
         }
     }
 }

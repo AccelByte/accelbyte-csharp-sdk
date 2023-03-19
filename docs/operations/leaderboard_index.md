@@ -41,6 +41,11 @@
 | `/leaderboard/v1/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/week` | GET | GetCurrentWeekLeaderboardRankingPublicV1 | [GetCurrentWeekLeaderboardRankingPublicV1](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardData/GetCurrentWeekLeaderboardRankingPublicV1.cs) | [GetCurrentWeekLeaderboardRankingPublicV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardData/GetCurrentWeekLeaderboardRankingPublicV1.cs) |
 | `/leaderboard/v2/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/alltime` | GET | GetAllTimeLeaderboardRankingPublicV2 | [GetAllTimeLeaderboardRankingPublicV2](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardData/GetAllTimeLeaderboardRankingPublicV2.cs) | [GetAllTimeLeaderboardRankingPublicV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardData/GetAllTimeLeaderboardRankingPublicV2.cs) |
 
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/leaderboard/v1/admin/namespaces/{namespace}/users/{userId}/anonymization/leaderboards` | DELETE | AdminAnonymizeUserLeaderboardAdminV1 | [AdminAnonymizeUserLeaderboardAdminV1](../../AccelByte.Sdk/Api/Leaderboard/Operation/Anonymization/AdminAnonymizeUserLeaderboardAdminV1.cs) | [AdminAnonymizeUserLeaderboardAdminV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/Anonymization/AdminAnonymizeUserLeaderboardAdminV1.cs) |
+
 ### UserData Wrapper:  [UserData](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserData.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -64,6 +69,10 @@
 |---|---|---|---|---|
 
 ### LeaderboardData Wrapper:  [LeaderboardData](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardData.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/Anonymization.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

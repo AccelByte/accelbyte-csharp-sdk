@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LastName { get; set; }
 
+        [JsonPropertyName("privateCustomAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? PrivateCustomAttributes { get; set; }
+
         [JsonPropertyName("timeZone")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TimeZone { get; set; }
@@ -53,7 +57,7 @@ namespace AccelByte.Sdk.Api.Basic.Model
 
     }
 
-    public class UserProfileUpdate<T1> : AccelByte.Sdk.Core.Model
+    public class UserProfileUpdate<T1, T2> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("avatarLargeUrl")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -87,6 +91,10 @@ namespace AccelByte.Sdk.Api.Basic.Model
         [JsonPropertyName("lastName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LastName { get; set; }
+
+        [JsonPropertyName("privateCustomAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T2? PrivateCustomAttributes { get; set; }
 
         [JsonPropertyName("timeZone")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

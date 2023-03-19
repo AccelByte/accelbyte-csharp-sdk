@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("matchTicketID")]
         public string? MatchTicketID { get; set; }
 
+        [JsonPropertyName("queueTime")]
+        public int? QueueTime { get; set; }
+
     }
 
 

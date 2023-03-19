@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? ExpireAt { get; set; }
 
         [JsonPropertyName("price")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Price { get; set; }
 
         [JsonPropertyName("purchaseAt")]

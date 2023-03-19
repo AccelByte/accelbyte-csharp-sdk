@@ -58,6 +58,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementHistoryInfoAction REVOKE
             = new EntitlementHistoryInfoAction("REVOKE");
 
+        public static readonly EntitlementHistoryInfoAction SELLBACK
+            = new EntitlementHistoryInfoAction("SELL_BACK");
+
         public static readonly EntitlementHistoryInfoAction UPDATE
             = new EntitlementHistoryInfoAction("UPDATE");
 

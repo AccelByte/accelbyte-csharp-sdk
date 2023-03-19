@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Session.Model
         public ApimodelsDSInformationResponse? DSInformation { get; set; }
 
         [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Attributes { get; set; }
 
         [JsonPropertyName("backfillTicketID")]
@@ -52,13 +53,12 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
-        [JsonPropertyName("persistent")]
-        public bool? Persistent { get; set; }
-
         [JsonPropertyName("teams")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsTeam>? Teams { get; set; }
 
         [JsonPropertyName("ticketIDs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? TicketIDs { get; set; }
 
         [JsonPropertyName("updatedAt")]
@@ -75,6 +75,7 @@ namespace AccelByte.Sdk.Api.Session.Model
         public ApimodelsDSInformationResponse? DSInformation { get; set; }
 
         [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Attributes { get; set; }
 
         [JsonPropertyName("backfillTicketID")]
@@ -114,13 +115,12 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
-        [JsonPropertyName("persistent")]
-        public bool? Persistent { get; set; }
-
         [JsonPropertyName("teams")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsTeam>? Teams { get; set; }
 
         [JsonPropertyName("ticketIDs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? TicketIDs { get; set; }
 
         [JsonPropertyName("updatedAt")]

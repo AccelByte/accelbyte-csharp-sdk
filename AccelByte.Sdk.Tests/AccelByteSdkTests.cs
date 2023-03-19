@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Tests
             {
                 throw new NotSupportedException($"Unsupported test collection format (format: {collectionFormat})");
             }
-        }        
+        }
 
         [Test]
         [TestCase("POST")] // Special characters need to be escaped
@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Tests
             var headers = result.Headers ?? throw new AssertionException("Headers is null");
 
             Assert.AreEqual(method, result.Method, $"Method assert failed: {result.Method}");
-            
+
             //Removed this assertion since content-type for file upload has 'boundary' property which has dynamic value.
             //Assert.AreEqual(headers["Content-Type"], "multipart/form-data", $"Form value assert failed: {headers["Content-Type"]}");    // XXX Assertion need to be improved
         }

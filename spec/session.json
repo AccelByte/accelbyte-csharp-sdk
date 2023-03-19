@@ -3,7 +3,7 @@
   "info": {
     "description": "Justice Session Service",
     "title": "justice-session-service",
-    "version": "2.6.9"
+    "version": "2.7.1"
   },
   "schemes": [
     "https"
@@ -60,6 +60,65 @@
           {
             "authorization": []
           }
+        ]
+      }
+    },
+    "/session/v1/admin/dsconfigs/default": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Get dsmc default configuration.",
+        "operationId": "adminGetDSMCConfigurationDefault",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.DefaultDSMCConfig"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Get dsmc default configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]",
+        "tags": [
+          "DSMC Default Configuration"
         ]
       }
     },
@@ -154,6 +213,20 @@
             "name": "namespace",
             "required": true,
             "type": "string"
+          },
+          {
+            "default": 20,
+            "description": "Pagination limit",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "Pagination offset",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
           }
         ],
         "produces": [
@@ -230,10 +303,7 @@
         ],
         "responses": {
           "204": {
-            "description": "No Content",
-            "schema": {
-              "$ref": "#/definitions/response.Error"
-            }
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -421,6 +491,142 @@
           }
         ],
         "summary": "Update configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [UPDATE]",
+        "tags": [
+          "Configuration Template"
+        ]
+      }
+    },
+    "/session/v1/admin/namespaces/{namespace}/dsconfigs": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Get a dsmc configuration.",
+        "operationId": "adminGetDSMCConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.DSMConfigRecord"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Get dsmc configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]",
+        "tags": [
+          "Configuration Template"
+        ]
+      }
+    },
+    "/session/v1/admin/namespaces/{namespace}/dsconfigs/sync": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "sync dsmc configuration.",
+        "operationId": "adminSyncDSMCConfiguration",
+        "parameters": [
+          {
+            "description": "namespace of the game",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Created",
+            "schema": {
+              "$ref": "#/definitions/models.DSMConfigRecord"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "sync dsmc configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]",
         "tags": [
           "Configuration Template"
         ]
@@ -1819,6 +2025,84 @@
         ]
       }
     },
+    "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Append new member or team to session",
+        "operationId": "appendTeamGameSession",
+        "parameters": [
+          {
+            "description": "Append new member or team to session",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apimodels.AppendTeamGameSessionRequest"
+            }
+          },
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "session ID",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GameSessionResponse"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Append new member or team to session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]",
+        "tags": [
+          "Game Session"
+        ]
+      }
+    },
     "/session/v1/public/namespaces/{namespace}/parties/users/me/join/code": {
       "post": {
         "consumes": [
@@ -3110,6 +3394,31 @@
     }
   },
   "definitions": {
+    "apimodels.AppendTeamGameSessionRequest": {
+      "properties": {
+        "additionalMembers": {
+          "items": {
+            "$ref": "#/definitions/models.PartyMembers"
+          },
+          "type": "array"
+        },
+        "proposedTeams": {
+          "items": {
+            "$ref": "#/definitions/models.Team"
+          },
+          "type": "array"
+        },
+        "version": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "additionalMembers",
+        "proposedTeams",
+        "version"
+      ]
+    },
     "apimodels.ConfigurationTemplateResponse": {
       "properties": {
         "clientVersion": {
@@ -3183,7 +3492,6 @@
         "name",
         "namespace",
         "persistent",
-        "requestedRegions",
         "textChat",
         "type",
         "updatedAt"
@@ -3240,10 +3548,6 @@
           "type": "boolean",
           "x-omitempty": false
         },
-        "persistentTTL": {
-          "format": "int32",
-          "type": "integer"
-        },
         "requestedRegions": {
           "items": {
             "type": "string"
@@ -3268,7 +3572,6 @@
         "minPlayers",
         "name",
         "persistent",
-        "persistentTTL",
         "requestedRegions",
         "textChat",
         "type"
@@ -3317,10 +3620,6 @@
           "type": "boolean",
           "x-omitempty": false
         },
-        "persistentTTL": {
-          "format": "int32",
-          "type": "integer"
-        },
         "requestedRegions": {
           "items": {
             "type": "string"
@@ -3363,7 +3662,6 @@
         "maxPlayers",
         "minPlayers",
         "persistent",
-        "persistentTTL",
         "requestedRegions",
         "serverName",
         "teams",
@@ -3443,7 +3741,6 @@
       },
       "required": [
         "RequestedAt",
-        "Server",
         "Status",
         "StatusV2"
       ]
@@ -3514,10 +3811,6 @@
         "namespace": {
           "type": "string"
         },
-        "persistent": {
-          "type": "boolean",
-          "x-omitempty": false
-        },
         "teams": {
           "items": {
             "$ref": "#/definitions/models.Team"
@@ -3540,7 +3833,6 @@
       },
       "required": [
         "DSInformation",
-        "attributes",
         "backfillTicketID",
         "configuration",
         "createdAt",
@@ -3552,9 +3844,6 @@
         "matchPool",
         "members",
         "namespace",
-        "persistent",
-        "teams",
-        "ticketIDs",
         "updatedAt",
         "version"
       ]
@@ -3672,10 +3961,6 @@
         "namespace": {
           "type": "string"
         },
-        "persistent": {
-          "type": "boolean",
-          "x-omitempty": false
-        },
         "updatedAt": {
           "type": "string"
         },
@@ -3685,7 +3970,6 @@
         }
       },
       "required": [
-        "attributes",
         "configuration",
         "createdAt",
         "createdBy",
@@ -3695,7 +3979,6 @@
         "leaderID",
         "members",
         "namespace",
-        "persistent",
         "updatedAt",
         "version"
       ]
@@ -3816,7 +4099,6 @@
         "minPlayers",
         "name",
         "persistent",
-        "requestedRegions",
         "textChat",
         "type"
       ]
@@ -4084,6 +4366,59 @@
         "updatedAt"
       ]
     },
+    "models.DSMConfigRecord": {
+      "properties": {
+        "claim_timeout": {
+          "format": "int32",
+          "type": "integer",
+          "x-nullable": false
+        },
+        "createdAt": {
+          "format": "date-time",
+          "type": "string",
+          "x-nullable": false
+        },
+        "creation_timeout": {
+          "format": "int32",
+          "type": "integer",
+          "x-nullable": false
+        },
+        "namespace": {
+          "type": "string",
+          "x-nullable": false
+        },
+        "updatedAt": {
+          "format": "date-time",
+          "type": "string",
+          "x-nullable": false
+        }
+      },
+      "required": [
+        "claim_timeout",
+        "createdAt",
+        "creation_timeout",
+        "namespace",
+        "updatedAt"
+      ]
+    },
+    "models.DefaultDSMCConfig": {
+      "properties": {
+        "claim_timeout": {
+          "format": "int32",
+          "type": "integer",
+          "x-nullable": false
+        },
+        "creation_timeout": {
+          "format": "int32",
+          "type": "integer",
+          "x-nullable": false
+        }
+      },
+      "required": [
+        "claim_timeout",
+        "creation_timeout"
+      ]
+    },
     "models.GameServer": {
       "properties": {
         "alternate_ips": {
@@ -4149,7 +4484,6 @@
         }
       },
       "required": [
-        "alternate_ips",
         "custom_attribute",
         "deployment",
         "game_version",
@@ -4201,8 +4535,7 @@
         }
       },
       "required": [
-        "UserIDs",
-        "parties"
+        "UserIDs"
       ]
     },
     "models.UserPlatformInfo": {

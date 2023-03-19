@@ -62,5 +62,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig1(op);
         }
+        public static Basic.Model.ConfigInfo? Execute(
+            this GetPublisherConfig.GetPublisherConfigBuilder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            GetPublisherConfig op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return ((Basic.Wrapper.Config)builder.WrapperObject!).GetPublisherConfig(op);
+        }
     }
 }

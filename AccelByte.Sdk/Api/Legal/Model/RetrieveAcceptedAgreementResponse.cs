@@ -56,6 +56,10 @@ namespace AccelByte.Sdk.Api.Legal.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? SigningDate { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("updatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? UpdatedAt { get; set; }

@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
 
 
-            public Model.UserProfilePrivateUpdate? Body { get; set; }
+            public Model.UserProfileUpdate? Body { get; set; }
 
 
 
@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
 
 
-            public UpdateMyProfileBuilder SetBody(Model.UserProfilePrivateUpdate _body)
+            public UpdateMyProfileBuilder SetBody(Model.UserProfileUpdate _body)
             {
                 Body = _body;
                 return this;
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public UpdateMyProfile(
             string namespace_,
-            Model.UserProfilePrivateUpdate body
+            Model.UserProfileUpdate body
         )
         {
             PathParams["namespace"] = namespace_;

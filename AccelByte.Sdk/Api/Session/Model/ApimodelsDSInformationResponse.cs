@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? RequestedAt { get; set; }
 
         [JsonPropertyName("Server")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsGameServer? Server { get; set; }
 
         [JsonPropertyName("Status")]

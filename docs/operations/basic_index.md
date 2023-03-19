@@ -36,6 +36,7 @@
 | `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | GET | GetConfig1 | [GetConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/GetConfig1.cs) | [GetConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/GetConfig1.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | DELETE | DeleteConfig1 | [DeleteConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/DeleteConfig1.cs) | [DeleteConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/DeleteConfig1.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/configs/{configKey}` | PATCH | UpdateConfig1 | [UpdateConfig1](../../AccelByte.Sdk/Api/Basic/Operation/Config/UpdateConfig1.cs) | [UpdateConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/UpdateConfig1.cs) |
+| `/basic/v1/admin/namespaces/{namespace}/publisher/configs/{configKey}` | GET | GetPublisherConfig | [GetPublisherConfig](../../AccelByte.Sdk/Api/Basic/Operation/Config/GetPublisherConfig.cs) | [GetPublisherConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Config/GetPublisherConfig.cs) |
 
 ### EQU8Config Wrapper:  [EQU8Config](../../AccelByte.Sdk/Api/Basic/Wrapper/EQU8Config.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -179,7 +180,6 @@
 | `UserProfileInfo` | [UserProfileInfo](../../AccelByte.Sdk/Api/Basic/Model/UserProfileInfo.cs) |
 | `UserProfilePrivateCreate` | [UserProfilePrivateCreate](../../AccelByte.Sdk/Api/Basic/Model/UserProfilePrivateCreate.cs) |
 | `UserProfilePrivateInfo` | [UserProfilePrivateInfo](../../AccelByte.Sdk/Api/Basic/Model/UserProfilePrivateInfo.cs) |
-| `UserProfilePrivateUpdate` | [UserProfilePrivateUpdate](../../AccelByte.Sdk/Api/Basic/Model/UserProfilePrivateUpdate.cs) |
 | `UserProfilePublicInfo` | [UserProfilePublicInfo](../../AccelByte.Sdk/Api/Basic/Model/UserProfilePublicInfo.cs) |
 | `UserProfileStatusUpdate` | [UserProfileStatusUpdate](../../AccelByte.Sdk/Api/Basic/Model/UserProfileStatusUpdate.cs) |
 | `UserProfileUpdate` | [UserProfileUpdate](../../AccelByte.Sdk/Api/Basic/Model/UserProfileUpdate.cs) |

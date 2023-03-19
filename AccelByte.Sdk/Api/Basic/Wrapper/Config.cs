@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         {
             get { return Operation.UpdateConfig1.Builder.SetWrapperObject(this); }
         }
+        public GetPublisherConfig.GetPublisherConfigBuilder GetPublisherConfigOp
+        {
+            get { return Operation.GetPublisherConfig.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ConfigInfo? CreateConfig(CreateConfig input)
@@ -65,6 +69,15 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public Model.ConfigInfo? UpdateConfig1(UpdateConfig1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ConfigInfo? GetPublisherConfig(GetPublisherConfig input)
         {
             var response = _sdk.RunRequest(input);
 

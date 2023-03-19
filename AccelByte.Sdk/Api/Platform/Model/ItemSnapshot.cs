@@ -103,10 +103,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public RegionDataItem? RegionDataItem { get; set; }
 
+        [JsonPropertyName("saleConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public SaleConfig? SaleConfig { get; set; }
+
         [JsonPropertyName("seasonType")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ItemSnapshotSeasonType? SeasonType { get; set; }
+
+        [JsonPropertyName("sellable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Sellable { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

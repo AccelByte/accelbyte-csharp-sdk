@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get a config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:CONFIG" , action=2 (READ)
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:BASIC:CONFIG" , action=2 (READ)
     ///   *  Returns : config
     /// </summary>
     public class GetConfig1 : AccelByte.Sdk.Core.Operation

@@ -308,6 +308,37 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGameSessionReject(op);
         }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this AppendTeamGameSession.AppendTeamGameSessionBuilder builder,
+            ApimodelsAppendTeamGameSessionRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AppendTeamGameSession op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).AppendTeamGameSession(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this AppendTeamGameSession.AppendTeamGameSessionBuilder builder,
+            ApimodelsAppendTeamGameSessionRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AppendTeamGameSession op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).AppendTeamGameSession<T1>(op);
+        }
         public static List<Session.Model.ApimodelsGameSessionResponse>? Execute(
             this PublicQueryMyGameSessions.PublicQueryMyGameSessionsBuilder builder,
             string namespace_

@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Api.Session.Model
         public bool? Persistent { get; set; }
 
         [JsonPropertyName("requestedRegions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? RequestedRegions { get; set; }
 
         [JsonPropertyName("textChat")]

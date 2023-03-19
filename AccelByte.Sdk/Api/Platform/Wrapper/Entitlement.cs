@@ -111,6 +111,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.RevokeUserEntitlement.Builder.SetWrapperObject(this); }
         }
+        public SellUserEntitlement.SellUserEntitlementBuilder SellUserEntitlementOp
+        {
+            get { return Operation.SellUserEntitlement.Builder.SetWrapperObject(this); }
+        }
         public PublicExistsAnyMyActiveEntitlement.PublicExistsAnyMyActiveEntitlementBuilder PublicExistsAnyMyActiveEntitlementOp
         {
             get { return Operation.PublicExistsAnyMyActiveEntitlement.Builder.SetWrapperObject(this); }
@@ -178,6 +182,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder PublicConsumeUserEntitlementOp
         {
             get { return Operation.PublicConsumeUserEntitlement.Builder.SetWrapperObject(this); }
+        }
+        public PublicSellUserEntitlement.PublicSellUserEntitlementBuilder PublicSellUserEntitlementOp
+        {
+            get { return Operation.PublicSellUserEntitlement.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -388,6 +396,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.EntitlementSoldResult? SellUserEntitlement(SellUserEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.Ownership? PublicExistsAnyMyActiveEntitlement(PublicExistsAnyMyActiveEntitlement input)
         {
             var response = _sdk.RunRequest(input);
@@ -533,6 +550,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.EntitlementDecrementResult? PublicConsumeUserEntitlement(PublicConsumeUserEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementSoldResult? PublicSellUserEntitlement(PublicSellUserEntitlement input)
         {
             var response = _sdk.RunRequest(input);
 

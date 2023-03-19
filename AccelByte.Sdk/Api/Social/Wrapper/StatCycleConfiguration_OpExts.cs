@@ -100,6 +100,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStats<T1>(op);
         }
+        public static Social.Model.StatCycleInfo? Execute(
+            this StopStatCycle.StopStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            StopStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).StopStatCycle(op);
+        }
         public static Social.Model.StatCyclePagingSlicedResult? Execute(
             this GetStatCycles1.GetStatCycles1Builder builder,
             string namespace_

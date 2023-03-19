@@ -226,6 +226,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly StackableEntitlementInfoStatus REVOKED
             = new StackableEntitlementInfoStatus("REVOKED");
 
+        public static readonly StackableEntitlementInfoStatus SOLD
+            = new StackableEntitlementInfoStatus("SOLD");
+
 
         public static implicit operator StackableEntitlementInfoStatus(string value)
         {

@@ -13,9 +13,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BackfillMatches { get; set; }
 
-        [JsonPropertyName("hydration")]
+        [JsonPropertyName("enrichment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<string>? Hydration { get; set; }
+        public List<string>? Enrichment { get; set; }
 
         [JsonPropertyName("make_matches")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

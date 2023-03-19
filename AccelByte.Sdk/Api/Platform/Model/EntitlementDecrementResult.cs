@@ -234,6 +234,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly EntitlementDecrementResultStatus REVOKED
             = new EntitlementDecrementResultStatus("REVOKED");
 
+        public static readonly EntitlementDecrementResultStatus SOLD
+            = new EntitlementDecrementResultStatus("SOLD");
+
 
         public static implicit operator EntitlementDecrementResultStatus(string value)
         {

@@ -30,6 +30,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("limit")]
+        public long? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
         public AdminGetAllConfigurationTemplatesV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,7 +46,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminGetAllConfigurationTemplatesV1 operation = new AdminGetAllConfigurationTemplatesV1(
-                Namespace
+                Namespace,
+                Limit,
+                Offset
             );
 
             AccelByte.Sdk.Api.Session.Model.ApimodelsConfigurationTemplatesResponse? response = wrapper.AdminGetAllConfigurationTemplatesV1(operation);

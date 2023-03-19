@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
 
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
         [SdkCommandArgument("statCodes")]
         public string? StatCodes { get; set; }
 
@@ -60,6 +63,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId,
                 Limit,
                 Offset,
+                SortBy,
                 StatCodes
             );
 

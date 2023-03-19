@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Update a config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:CONFIG" , action=4 (UPDATE)
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:BASIC:CONFIG" , action=4 (UPDATE)
     ///   *  Returns : created config
     /// </summary>
     public class UpdateConfig1 : AccelByte.Sdk.Core.Operation

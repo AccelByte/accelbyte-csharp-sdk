@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.CreateMatchFunction.Builder.SetWrapperObject(this); }
         }
+        public UpdateMatchFunction.UpdateMatchFunctionBuilder UpdateMatchFunctionOp
+        {
+            get { return Operation.UpdateMatchFunction.Builder.SetWrapperObject(this); }
+        }
         public DeleteMatchFunction.DeleteMatchFunctionBuilder DeleteMatchFunctionOp
         {
             get { return Operation.DeleteMatchFunction.Builder.SetWrapperObject(this); }
@@ -47,6 +51,15 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiMatchFunctionConfig? UpdateMatchFunction(UpdateMatchFunction input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

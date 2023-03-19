@@ -39,6 +39,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminDeleteConfigurationTemplateV1.Builder.SetWrapperObject(this); }
         }
+        public AdminGetDSMCConfiguration.AdminGetDSMCConfigurationBuilder AdminGetDSMCConfigurationOp
+        {
+            get { return Operation.AdminGetDSMCConfiguration.Builder.SetWrapperObject(this); }
+        }
+        public AdminSyncDSMCConfiguration.AdminSyncDSMCConfigurationBuilder AdminSyncDSMCConfigurationOp
+        {
+            get { return Operation.AdminSyncDSMCConfiguration.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ApimodelsConfigurationTemplateResponse? AdminCreateConfigurationTemplateV1(AdminCreateConfigurationTemplateV1 input)
@@ -77,7 +85,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ResponseError? AdminDeleteConfigurationTemplateV1(AdminDeleteConfigurationTemplateV1 input)
+        public void AdminDeleteConfigurationTemplateV1(AdminDeleteConfigurationTemplateV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsDSMConfigRecord? AdminGetDSMCConfiguration(AdminGetDSMCConfiguration input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsDSMConfigRecord? AdminSyncDSMCConfiguration(AdminSyncDSMCConfiguration input)
         {
             var response = _sdk.RunRequest(input);
 

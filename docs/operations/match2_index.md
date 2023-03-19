@@ -26,6 +26,7 @@
 |---|---|---|---|---|
 | `/match2/v1/namespaces/{namespace}/match-functions` | GET | MatchFunctionList | [MatchFunctionList](../../AccelByte.Sdk/Api/Match2/Operation/MatchFunctions/MatchFunctionList.cs) | [MatchFunctionList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchFunctions/MatchFunctionList.cs) |
 | `/match2/v1/namespaces/{namespace}/match-functions` | POST | CreateMatchFunction | [CreateMatchFunction](../../AccelByte.Sdk/Api/Match2/Operation/MatchFunctions/CreateMatchFunction.cs) | [CreateMatchFunction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchFunctions/CreateMatchFunction.cs) |
+| `/match2/v1/namespaces/{namespace}/match-functions/{name}` | PUT | UpdateMatchFunction | [UpdateMatchFunction](../../AccelByte.Sdk/Api/Match2/Operation/MatchFunctions/UpdateMatchFunction.cs) | [UpdateMatchFunction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchFunctions/UpdateMatchFunction.cs) |
 | `/match2/v1/namespaces/{namespace}/match-functions/{name}` | DELETE | DeleteMatchFunction | [DeleteMatchFunction](../../AccelByte.Sdk/Api/Match2/Operation/MatchFunctions/DeleteMatchFunction.cs) | [DeleteMatchFunction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchFunctions/DeleteMatchFunction.cs) |
 
 ### Match-Pools Wrapper:  [MatchPools](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchPools.cs)

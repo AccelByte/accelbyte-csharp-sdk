@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkAddStats.Builder.SetWrapperObject(this); }
         }
+        public StopStatCycle.StopStatCycleBuilder StopStatCycleOp
+        {
+            get { return Operation.StopStatCycle.Builder.SetWrapperObject(this); }
+        }
         public GetStatCycles1.GetStatCycles1Builder GetStatCycles1Op
         {
             get { return Operation.GetStatCycles1.Builder.SetWrapperObject(this); }
@@ -113,6 +117,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.StatCycleInfo? StopStatCycle(StopStatCycle input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

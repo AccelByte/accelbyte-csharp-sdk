@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ModelsGameServer : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("alternate_ips")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AlternateIps { get; set; }
 
         [JsonPropertyName("custom_attribute")]

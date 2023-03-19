@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private LeaderboardData? _LeaderboardData = null;
 
+        public Anonymization Anonymization
+        {
+            get
+            {
+                if (_Anonymization == null)
+                    _Anonymization = new Anonymization(_SdkObject);
+                return _Anonymization;
+            }
+        }
+        private Anonymization? _Anonymization = null;
+
         public UserData UserData
         {
             get

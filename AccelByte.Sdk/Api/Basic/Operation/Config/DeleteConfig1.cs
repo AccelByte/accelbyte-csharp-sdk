@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Delete a config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:CONFIG" , action=8 (DELETE)
+    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:BASIC:CONFIG" , action=8 (DELETE)
     ///   *  Returns : created config
     /// </summary>
     public class DeleteConfig1 : AccelByte.Sdk.Core.Operation

@@ -108,10 +108,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, List<RegionDataItem>>? RegionData { get; set; }
 
+        [JsonPropertyName("saleConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public SaleConfig? SaleConfig { get; set; }
+
         [JsonPropertyName("seasonType")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ItemUpdateSeasonType? SeasonType { get; set; }
+
+        [JsonPropertyName("sellable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Sellable { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -247,10 +255,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, List<RegionDataItem>>? RegionData { get; set; }
 
+        [JsonPropertyName("saleConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public SaleConfig? SaleConfig { get; set; }
+
         [JsonPropertyName("seasonType")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ItemUpdateSeasonType? SeasonType { get; set; }
+
+        [JsonPropertyName("sellable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Sellable { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

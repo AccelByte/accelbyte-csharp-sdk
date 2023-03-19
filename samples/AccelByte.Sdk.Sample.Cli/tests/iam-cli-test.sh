@@ -1861,13 +1861,14 @@ $CLI_EXE \
     --sn iam \
     --op PublicVerifyHeadlessAccountV3 \
     --namespace $AB_NAMESPACE \
+    --needVerificationCode 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 248 'PublicVerifyHeadlessAccountV3' test.out
 
 #- 249 PublicUpdatePasswordV3
 # body param: body
-echo '{"languageTag": "gDhy2xaM", "newPassword": "bK98KZuP", "oldPassword": "AGpzW8YE"}' > $TEMP_JSON_INPUT
+echo '{"languageTag": "6ND0evlW", "newPassword": "05Ize0EK", "oldPassword": "I1ogofwr"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdatePasswordV3 \
@@ -1881,7 +1882,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicCreateJusticeUser \
     --namespace $AB_NAMESPACE \
-    --targetNamespace 'ovlYXMD7' \
+    --targetNamespace 'tjPjSrjv' \
     > test.out 2>&1
 eval_tap $? 250 'PublicCreateJusticeUser' test.out
 
@@ -1890,20 +1891,20 @@ $CLI_EXE \
     --sn iam \
     --op PublicPlatformLinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId '6ZVrjTwB' \
-    --redirectUri 'hG6PxRbX' \
-    --ticket 'yacvJKvH' \
+    --platformId 'rgKMZ79d' \
+    --redirectUri '1xh7UR0U' \
+    --ticket 'xrnZ5OMX' \
     > test.out 2>&1
 eval_tap $? 251 'PublicPlatformLinkV3' test.out
 
 #- 252 PublicPlatformUnlinkV3
 # body param: body
-echo '{"platformNamespace": "2fI227sF"}' > $TEMP_JSON_INPUT
+echo '{"platformNamespace": "gRDRM3gg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformUnlinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'hXEPpERr' \
+    --platformId '9nVFQuxa' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 252 'PublicPlatformUnlinkV3' test.out
@@ -1913,7 +1914,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicPlatformUnlinkAllV3 \
     --namespace $AB_NAMESPACE \
-    --platformId '10WrTTWC' \
+    --platformId 'ksqHEV6l' \
     > test.out 2>&1
 eval_tap $? 253 'PublicPlatformUnlinkAllV3' test.out
 
@@ -1922,8 +1923,8 @@ $CLI_EXE \
     --sn iam \
     --op PublicForcePlatformLinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId '1vHxSVm1' \
-    --ticket 'rRLDUorN' \
+    --platformId '9c1J0YV5' \
+    --ticket 'SAUWFWpU' \
     > test.out 2>&1
 eval_tap $? 254 'PublicForcePlatformLinkV3' test.out
 
@@ -1932,9 +1933,9 @@ $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatform \
     --namespace $AB_NAMESPACE \
-    --platformId '8n8OKt3e' \
-    --clientId 'bTMfmV8R' \
-    --redirectUri 'pXci3oXt' \
+    --platformId '4iAd1zlF' \
+    --clientId 'BNJu2Wke' \
+    --redirectUri 'GDSzlCaF' \
     > test.out 2>&1
 eval_tap $? 255 'PublicWebLinkPlatform' test.out
 
@@ -1943,14 +1944,14 @@ $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatformEstablish \
     --namespace $AB_NAMESPACE \
-    --platformId 'KeXlMfYc' \
-    --state 'KvIDQryh' \
+    --platformId 't7Cu0JKj' \
+    --state 'LegxbCcI' \
     > test.out 2>&1
 eval_tap $? 256 'PublicWebLinkPlatformEstablish' test.out
 
 #- 257 ResetPasswordV3
 # body param: body
-echo '{"code": "qRPwaSbA", "emailAddress": "akeTI3Gt", "newPassword": "Lp33o0hY"}' > $TEMP_JSON_INPUT
+echo '{"code": "qhcBHRl1", "emailAddress": "tn7RtEGU", "newPassword": "E0zrKNm1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op ResetPasswordV3 \
@@ -1964,7 +1965,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserByUserIdV3 \
     --namespace $AB_NAMESPACE \
-    --userId '1hJyjnnZ' \
+    --userId 'qW2n5ceo' \
     > test.out 2>&1
 eval_tap $? 258 'PublicGetUserByUserIdV3' test.out
 
@@ -1973,11 +1974,11 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserBanHistoryV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'KdSiFaVE' \
+    --userId 'mro5tLlK' \
     --activeOnly 'false' \
-    --after 'iW8dBlSc' \
-    --before '2bkfxl91' \
-    --limit '55' \
+    --after 'xNwD82Ty' \
+    --before 'gHqJCY44' \
+    --limit '41' \
     > test.out 2>&1
 eval_tap $? 259 'PublicGetUserBanHistoryV3' test.out
 
@@ -1986,7 +1987,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicListUserAllPlatformAccountsDistinctV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'tteOU73M' \
+    --userId '6ODfId1v' \
     > test.out 2>&1
 eval_tap $? 260 'PublicListUserAllPlatformAccountsDistinctV3' test.out
 
@@ -1995,7 +1996,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserInformationV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'Uia86OHe' \
+    --userId 'J63xKDRb' \
     > test.out 2>&1
 eval_tap $? 261 'PublicGetUserInformationV3' test.out
 
@@ -2004,10 +2005,10 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserLoginHistoriesV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'EezPfPVo' \
-    --after '0.6100202059954096' \
-    --before '0.41889418140714973' \
-    --limit '41' \
+    --userId 'cNco2qPo' \
+    --after '0.0827958689547641' \
+    --before '0.30088749024643846' \
+    --limit '15' \
     > test.out 2>&1
 eval_tap $? 262 'PublicGetUserLoginHistoriesV3' test.out
 
@@ -2016,9 +2017,9 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserPlatformAccountsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'hHt88ZrO' \
-    --after 'opYOMqbJ' \
-    --before 'Vfyl0ssL' \
+    --userId 'ailZgh0V' \
+    --after 'ftM4duhP' \
+    --before 'OP3T7IIL' \
     --limit '14' \
     > test.out 2>&1
 eval_tap $? 263 'PublicGetUserPlatformAccountsV3' test.out

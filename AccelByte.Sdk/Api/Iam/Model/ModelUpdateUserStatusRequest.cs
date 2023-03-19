@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? Enabled { get; set; }
 
         [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
     }
