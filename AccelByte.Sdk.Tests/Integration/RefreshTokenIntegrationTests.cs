@@ -15,6 +15,7 @@ using AccelByte.Sdk.Feature.AutoTokenRefresh;
 using AccelByte.Sdk.Api.Legal.Model;
 using AccelByte.Sdk.Api.Legal.Operation;
 using AccelByte.Sdk.Api.Legal.Wrapper;
+using AccelByte.Sdk.Api.Achievement.Model;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
@@ -23,7 +24,7 @@ namespace AccelByte.Sdk.Tests.Integration
     public class RefreshTokenIntegrationTests : BaseIntegrationTest
     {
         [Test]
-        public void GetLegalAgreementTestWithAutoRefreshToken()
+        public void UserLoginWithAutoRefreshToken()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
@@ -63,7 +64,7 @@ namespace AccelByte.Sdk.Tests.Integration
         }
 
         [Test]
-        public void GetUserLoginIdWithAutoRefreshToken()
+        public void ClientLoginWithAutoRefreshToken()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
@@ -75,16 +76,10 @@ namespace AccelByte.Sdk.Tests.Integration
 
             sdk.LoginClient(true);
 
-            string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
-            if (user_login_id == null)
-                throw new Exception("This test requires the value of AB_USERNAME env var. Please specify one.");
-            user_login_id = UnQuote(user_login_id);
-
             //First request, valid token
-            Api.Iam.Model.ModelPublicUserResponse? uResp1 = sdk.Iam.Users.GetUserByLoginIDOp
-                .SetLoginId(user_login_id)
-                .Execute(sdk.Namespace);
-            Assert.IsNotNull(uResp1);
+            ModelsPublicAchievementsResponse? achResp1 = sdk.Achievement.Achievements.PublicListAchievementsOp
+                .Execute(sdk.Namespace, "en");
+            Assert.IsNotNull(achResp1);
 
             //Force token expire
             if (sdk.Configuration.TokenRepository is RefreshableTokenRepository)
@@ -97,10 +92,9 @@ namespace AccelByte.Sdk.Tests.Integration
             }
 
             //Second request, expired token, try to do refresh
-            Api.Iam.Model.ModelPublicUserResponse? uResp2 = sdk.Iam.Users.GetUserByLoginIDOp
-                .SetLoginId(user_login_id)
-                .Execute(sdk.Namespace);
-            Assert.IsNotNull(uResp2);
+            ModelsPublicAchievementsResponse? achResp2 = sdk.Achievement.Achievements.PublicListAchievementsOp
+                .Execute(sdk.Namespace, "en");
+            Assert.IsNotNull(achResp2);
 
             sdk.Logout();
         }
