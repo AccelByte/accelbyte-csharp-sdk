@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Tests.Services
             string userId = ownResp?.UserId!;
 
             #region Update user's own profile info
-            UserProfilePrivateUpdate updateProfile = new UserProfilePrivateUpdate()
+            UserProfileUpdate updateProfile = new UserProfileUpdate()
             {
                 TimeZone = "Asia/Jakarta"
             };

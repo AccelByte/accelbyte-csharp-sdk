@@ -122,10 +122,9 @@ namespace AccelByte.Sdk.Tests.Services
             }
 
             #region Delete session configuration template
-            ResponseError? response = _Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
+            _Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
                 .Execute(cfgTemplateName, _Sdk.Namespace);
             #endregion
-            Assert.IsNull(response);
 
             ResetPolicy();
         }
