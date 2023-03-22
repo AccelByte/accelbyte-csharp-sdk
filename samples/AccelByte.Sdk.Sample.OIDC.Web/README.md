@@ -23,7 +23,7 @@ You have to declare these environment variables below:
 In Visual Studio 2022 you can setup those variables in Debug Properties window.
 
 To configure OpenID providers, you need to copy `providers.json.sample` into `providers.json` and then add or modify the content.
-As a starter, [Phantauth](https://www.phantauth.net/) is provided to test the functionality. But you can add other provider as needed.
+As a starter, Phantauth configuration is provided to test the functionality. But you can add other provider as needed.
 
 ### Build Projects
 

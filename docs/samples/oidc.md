@@ -2,7 +2,7 @@
 
 ## Overview
 
-AccelByte Gaming Services provides [integration with OpenID Connect providers](https://docs.accelbyte.io/guides/access/3rd-party-platform-integration.html#openid-connect) as one of the 3rd party login integration options. Any OpenID Connect providers should work. The following sample app will show you how to do this with AccelByte C# Extend SDK and [PhantAuth](https://www.phantauth.net/) (an OpenID Connect provider to simplify testing).
+AccelByte Gaming Services provides [integration with OpenID Connect providers](https://docs.accelbyte.io/guides/access/3rd-party-platform-integration.html#openid-connect) as one of the 3rd party login integration options. Any OpenID Connect providers should work. The following sample app will show you how to do this with AccelByte C# Extend SDK and PhantAuth installation (an OpenID Connect provider to simplify testing). Use [this](https://hub.docker.com/r/phantauth/phantauth) image to deploy local phantauth installation in local environment using docker.
 
 ## Sample App
 
