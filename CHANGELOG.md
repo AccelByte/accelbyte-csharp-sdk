@@ -1,5 +1,12 @@
+<a name="v0.31.0"></a>
+## [v0.31.0]
+- Removed title matchmaking sample app.
+- Updated Basic and Session service integration tests.
+- Fixed refresh token integration test.
+- Update APIs. See what's changes [here](spec/APICHANGES.md)
+
 <a name="v0.30.0"></a>
-## [v0.29.0]
+## [v0.30.0]
 - Updated documentations due to name change.
 - Update APIs. See what's changes [here](spec/APICHANGES.md)
 

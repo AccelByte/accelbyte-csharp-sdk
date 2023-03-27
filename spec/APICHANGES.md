@@ -1,3 +1,835 @@
+# C# Server SDK v0.31.0
+
+## basic Service
+
+### What's New
+---
+* `GET` /basic/v1/admin/namespaces/{namespace}/publisher/configs/{configKey} Get a publisher config
+
+### What's Changed
+---
+`PUT` /basic/v1/admin/namespaces/{namespace}/users/{userId}/profiles Update user profile  
+    Parameters
+
+        Insert body.privateCustomAttributes
+`PUT` /basic/v1/public/namespaces/{namespace}/users/{userId}/profiles Update user profile  
+    Parameters
+
+        Insert body.privateCustomAttributes
+
+## gametelemetry Service
+
+### What's Changed
+---
+`GET` /game-telemetry/v1/admin/namespaces/{namespace}/events Get Events  
+    Parameters
+
+        Modify startTime //Start time of data to be queried. Default: Current time in UTC minus 1 day.
+        Modify endTime //End time of data to be queried. Default: Current time in UTC.
+
+## iam Service
+
+### What's Changed
+---
+`PATCH` /iam/v3/admin/namespaces/{namespace}/users/{userId}/status Update user status  
+    Parameters
+
+        Modify body.reason
+`POST` /iam/v3/public/namespaces/{namespace}/users/me/headless/verify Upgrade user account to full account (with email)  
+    Parameters
+
+        Add needVerificationCode //default false, will send verification code to email if true
+
+## leaderboard Service
+
+### What's New
+---
+* `DELETE` /leaderboard/v1/admin/namespaces/{namespace}/users/{userId}/anonymization/leaderboards Anonymize user's leaderboard
+
+## legal Service
+
+### What's Changed
+---
+`GET` /agreement/admin/agreements/policies/users/{userId} Retrieve Accepted Legal Agreements  
+    Return Type
+
+        Insert tags
+`POST` /agreement/admin/namespaces/{namespace}/agreements Retrieve Accepted Legal Agreements For Multi Users  
+    Parameters
+
+        Insert body.currentPublishedOnly //if true, the result will only include the status of current published policies, default: false
+    Return Type
+
+        Insert agreements.tags
+`GET` /agreement/admin/namespaces/{namespace}/agreements/policies/users/{userId} Retrieve Accepted Legal Agreements  
+    Return Type
+
+        Insert tags
+`GET` /agreement/public/agreements/policies Retrieve the accepted Legal Agreements  
+    Return Type
+
+        Insert tags
+
+## lobby Service
+
+### What's Changed
+---
+`GET` /lobby/v1/admin/config admin get all namespaces config  
+    Return Type
+
+        Insert configs.unregisterDelay
+`PUT` /lobby/v1/admin/config/namespaces/{namespace} admin update namespace config  
+    Parameters
+
+        Insert body.unregisterDelay
+    Return Type
+
+        Insert unregisterDelay
+`GET` /lobby/v1/admin/config/namespaces/{namespace} admin get namespace config  
+    Return Type
+
+        Insert unregisterDelay
+
+## match2 Service
+
+### What's New
+---
+* `PUT` /match2/v1/namespaces/{namespace}/match-functions/{name} Update a match function
+
+### What's Changed
+---
+`GET` /match2/v1/namespaces/{namespace}/match-pools List match pools  
+    Return Type
+
+        Insert data.match_function_override.enrichment
+        Delete data.match_function_override.hydration
+`POST` /match2/v1/namespaces/{namespace}/match-pools Create a match pool  
+    Parameters
+
+        Insert body.match_function_override.enrichment
+        Delete body.match_function_override.hydration
+`PUT` /match2/v1/namespaces/{namespace}/match-pools/{pool} Update a match pool  
+    Parameters
+
+        Insert body.match_function_override.enrichment
+        Delete body.match_function_override.hydration
+    Return Type
+
+        Insert match_function_override.enrichment
+        Delete match_function_override.hydration
+`GET` /match2/v1/namespaces/{namespace}/match-pools/{pool} Get details for a specific match pool  
+    Return Type
+
+        Insert match_function_override.enrichment
+        Delete match_function_override.hydration
+
+## matchmaking Service
+
+### What's Changed
+---
+`POST` /matchmaking/namespaces/{namespace}/channels Create a channel  
+    Parameters
+
+        Insert body.region_expansion_rate_ms
+`GET` /matchmaking/namespaces/{namespace}/channels Get all channels  
+    Return Type
+
+        Insert data.region_expansion_rate_ms
+`PATCH` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName} Update a channel  
+    Parameters
+
+        Insert body.region_expansion_rate_ms
+`GET` /matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName} Get single channel  
+    Return Type
+
+        Insert region_expansion_rate_ms
+`GET` /matchmaking/v1/public/namespaces/{namespace}/channels Get all channels  
+    Return Type
+
+        Insert region_expansion_rate_ms
+`GET` /matchmaking/v1/public/namespaces/{namespace}/channels/{channelName} Get single channel  
+    Return Type
+
+        Insert region_expansion_rate_ms
+
+## platform Service
+
+### What's New
+---
+* `PUT` /platform/admin/namespaces/{namespace}/items/regiondata Update item's region data in bulk
+* `PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell Sell user entitlement
+* `PUT` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell Sell user entitlement
+
+### What's Changed
+---
+`POST` /platform/admin/fulfillment/scripts/tests/eval Test eval fulfillment script  
+    Parameters
+
+        Insert body.context.item.saleConfig //sale config
+        Insert body.context.item.sellable //whether allow to sell back to store
+        Modify body.context.item.regionData.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/entitlements Query entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify data.status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/entitlements/{entitlementId} Get entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`POST` /platform/admin/namespaces/{namespace}/items Create an Item  
+    Parameters
+
+        Insert body.saleConfig //sale config, required if sellable is true
+        Insert body.sellable //sellable, whether allow to sell back to store
+`PUT` /platform/admin/namespaces/{namespace}/items Sync an in game item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/byAppId Get item by appId  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.saleConfig //saleConfig
+        Insert data.sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/bySku Get item by sku  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/bySku/locale Get an item by sku in locale  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Insert items.saleConfig //sale config
+        Insert items.sellable //whether allow to sell back to store
+        Modify items.regionData.price //price value, set to 0 if it's free
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/items/locale/byIds Bulk get locale items  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/items/search Search items by keyword  
+    Return Type
+
+        Insert data.saleConfig //saleConfig
+        Insert data.sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/uncategorized Query uncategorized items  
+    Return Type
+
+        Insert data.saleConfig //saleConfig
+        Insert data.sellable //sellable
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId} Update an item  
+    Parameters
+
+        Insert body.saleConfig //sale config, required if sellable is true
+        Insert body.sellable //sellable, whether allow to sell back to store
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/{itemId} Get an item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/disable Disable an item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/enable Enable an item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`DELETE` /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature} Defeature an item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/features/{feature} Feature an item  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/items/{itemId}/locale Get an item in locale  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Insert items.saleConfig //sale config
+        Insert items.sellable //whether allow to sell back to store
+        Modify items.regionData.price //price value, set to 0 if it's free
+        Modify regionData.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/items/{itemId}/purchase/condition Update item purchase condition  
+    Return Type
+
+        Insert saleConfig //saleConfig
+        Insert sellable //sellable
+`GET` /platform/admin/namespaces/{namespace}/orders Query orders  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/orders/{orderNo} Get order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/orders/{orderNo}/refund Refund order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/rewards/byCriteria Query rewards by criteria  
+    Parameters
+
+        sortBy Notes default is namespace:asc,rewardCode:asc, allow values: [namespace, namespace:asc, namespace:desc, rewardCode, rewardCode:asc, rewardCode:desc],and support sort group, eg: sortBy=namespace:asc,rewardCode:asc change into default is namespace:asc,rewardCode:asc, allow values: [namespace, namespace:asc, namespace:desc, rewardCode, rewardCode:asc, rewardCode:desc, createdAt:asc, createdAt:desc],and support sort group, eg: sortBy=namespace:asc,rewardCode:asc
+        Modify sortBy //default is namespace:asc,rewardCode:asc, allow values: [namespace, namespace:asc, namespace:desc, rewardCode, rewardCode:asc, rewardCode:desc, createdAt:asc, createdAt:desc],and support sort group, eg: sortBy=namespace:asc,rewardCode:asc
+`GET` /platform/admin/namespaces/{namespace}/subscriptions Query subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements Query user entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify data.status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppId Get user app entitlement by appId  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byAppType Query app entitlements by appType  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify data.status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemId Get user entitlement by itemId  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/byItemIds Get user entitlements by itemIds  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/bySku Get user entitlement by sku  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Update user entitlement  
+    Parameters
+
+        Modify body.status //status
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Get user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/disable Disable user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable Enable user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/history Get user entitlement history  
+    Return Type
+
+        Modify action //The action of entitlement, like GRANT, REVOKE
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke Revoke user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/orders Query user orders  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo} Update order status  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo} Get an order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/fulfill Fulfill an order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions Query user subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`POST` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/platformSubscribe Free subscribe by platform  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId} Get user subscription  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/cancel Cancel a subscription  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/grant Grant days to a subscription  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions List user currency transactions  
+    Return Type
+
+        Modify data.walletAction //Action type
+`PUT` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit Credit a user wallet by currency code and balance origin  
+    Parameters
+
+        Modify body.source //source, purchase for default
+`GET` /platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions List user wallet transactions  
+    Return Type
+
+        Modify data.walletAction //Action type
+`GET` /platform/admin/orders Sync orders  
+    Return Type
+
+        Insert orders.itemSnapshot.saleConfig //sale config
+        Insert orders.itemSnapshot.sellable //whether allow to sell back to store
+        Modify orders.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/byAppId Get item by appId  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.saleConfig //sale config
+        Insert data.sellable //whether allow to sell back to store
+        Modify data.regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/bySku Get item by sku  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/locale/byIds Bulk get locale items  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/search Search items by keyword  
+    Return Type
+
+        Insert data.saleConfig //sale config
+        Insert data.sellable //whether allow to sell back to store
+        Modify data.regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/items/{itemId}/locale Get an item in locale  
+    Return Type
+
+        Insert saleConfig //sale config
+        Insert sellable //whether allow to sell back to store
+        Insert items.saleConfig //sale config
+        Insert items.sellable //whether allow to sell back to store
+        Modify items.regionData.price //price value, set to 0 if it's free
+        Modify regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements Query user entitlements  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify data.status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppId Get user app entitlement by appId  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byAppType Query app entitlements by appType  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify data.status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/byItemId Get user entitlement by itemId  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/bySku Get user entitlement by sku  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId} Get user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/decrement Consume user entitlement  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+        Modify status //entitlement status
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/orders Query user orders  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo} Get user order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/cancel Cancel user order  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/sections List active section contents  
+    Return Type
+
+        Insert currentRotationItems.saleConfig //sale config
+        Insert currentRotationItems.sellable //whether allow to sell back to store
+        Modify currentRotationItems.regionData.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions Query user subscriptions  
+    Return Type
+
+        Insert data.itemSnapshot.saleConfig //sale config
+        Insert data.itemSnapshot.sellable //whether allow to sell back to store
+        Modify data.itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId} Get user subscription  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/billingAccount Request to change a subscription billing account  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`PUT` /platform/public/namespaces/{namespace}/users/{userId}/subscriptions/{subscriptionId}/cancel Cancel a subscription  
+    Return Type
+
+        Insert itemSnapshot.saleConfig //sale config
+        Insert itemSnapshot.sellable //whether allow to sell back to store
+        Modify itemSnapshot.regionDataItem.price //price value, set to 0 if it's free
+`GET` /platform/public/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/transactions List wallet transactions by currency code  
+    Return Type
+
+        Modify data.walletAction //Action type
+`GET` /platform/v2/admin/namespaces/{namespace}/items/byCriteria Query items by criteria  
+    Return Type
+
+        Insert data.saleConfig //saleConfig
+        Insert data.sellable //sellable
+
+## session Service
+
+### What's New
+---
+* `GET` /session/v1/admin/dsconfigs/default Get dsmc default configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]
+* `GET` /session/v1/admin/namespaces/{namespace}/dsconfigs Get dsmc configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]
+* `GET` /session/v1/admin/namespaces/{namespace}/dsconfigs/sync sync dsmc configuration . Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]
+* `POST` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams Append new member or team to session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]
+
+### What's Changed
+---
+`POST` /session/v1/admin/namespaces/{namespace}/configuration Create configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [CREATE]  
+    Parameters
+
+        Delete body.persistentTTL
+`GET` /session/v1/admin/namespaces/{namespace}/configurations Get configuration templates. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]  
+    Parameters
+
+        Add limit //Pagination limit
+        Add offset //Pagination offset
+    Return Type
+
+        Modify data.requestedRegions
+`PUT` /session/v1/admin/namespaces/{namespace}/configurations/{name} Update configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [UPDATE]  
+    Parameters
+
+        Insert body.persistent
+    Return Type
+
+        Modify requestedRegions
+`GET` /session/v1/admin/namespaces/{namespace}/configurations/{name} Get configuration template. Requires ADMIN:NAMESPACE:{namespace}:SESSION:CONFIGURATION [READ]  
+    Return Type
+
+        Modify requestedRegions
+`GET` /session/v1/admin/namespaces/{namespace}/gamesessions Get all game sessions.  
+    Parameters
+
+        Add isPersistent //game session is Persistent. supported: TRUE, FALSE
+    Return Type
+
+        Delete data.persistent
+        Modify data.DSInformation.Server.alternate_ips
+        Modify data.attributes
+        Modify data.configuration.requestedRegions
+        Modify data.ticketIDs
+`GET` /session/v1/admin/namespaces/{namespace}/parties Query parties. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Delete data.persistent
+        Modify data.attributes
+        Modify data.configuration.requestedRegions
+`POST` /session/v1/public/namespaces/{namespace}/gamesession Create a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [CREATE]  
+    Parameters
+
+        Delete body.persistent
+        Delete body.persistentTTL
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions Query game sessions  
+    Return Type
+
+        Delete data.persistent
+        Modify data.DSInformation.Server.alternate_ips
+        Modify data.attributes
+        Modify data.configuration.requestedRegions
+        Modify data.ticketIDs
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/servers/{podName} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`PUT` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`GET` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Get game session detail. Requires NAMESPACE:{namespace}:SESSION:GAME [READ]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`PATCH` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId} Patch update a game session. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`PUT` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/backfill Update game session backfill ticket id . Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`POST` /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join Join a game session. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE]  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`POST` /session/v1/public/namespaces/{namespace}/parties/users/me/join/code Join a party by code. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`PUT` /session/v1/public/namespaces/{namespace}/parties/{partyId} Update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`GET` /session/v1/public/namespaces/{namespace}/parties/{partyId} Get party details. Requires NAMESPACE:{namespace}:SESSION:PARTY [READ]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`PATCH` /session/v1/public/namespaces/{namespace}/parties/{partyId} Patch update a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Generate party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`DELETE` /session/v1/public/namespaces/{namespace}/parties/{partyId}/code Revoke party code. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/leader Promote new party leader. Requires NAMESPACE:{namespace}:SESSION:PARTY [UPDATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`POST` /session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/join Join a party. Requires NAMESPACE:{namespace}:SESSION:PARTY:PLAYER [CREATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`POST` /session/v1/public/namespaces/{namespace}/party Create a party. Requires NAMESPACE:{namespace}:SESSION:PARTY [CREATE]  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+`GET` /session/v1/public/namespaces/{namespace}/users/me/gamesessions Query user's game sessions  
+    Return Type
+
+        Delete persistent
+        Modify DSInformation.Server.alternate_ips
+        Modify attributes
+        Modify configuration.requestedRegions
+        Modify ticketIDs
+`GET` /session/v1/public/namespaces/{namespace}/users/me/parties Query my parties. Require valid JWT.  
+    Return Type
+
+        Delete persistent
+        Modify attributes
+        Modify configuration.requestedRegions
+
+## sessionbrowser Service
+
+### What's Changed
+---
+`GET` /sessionbrowser/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed Get session history detailed  
+    Return Type
+
+        Insert joining
+        Insert players
+        Insert removed_reason
+        Insert session_type
+        Insert user_id
+
+## social Service
+
+### What's New
+---
+* `PUT` /social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stop Stop stat cycle
+
+### What's Changed
+---
+`GET` /social/v1/admin/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems List user's statCycleItems by statCycle  
+    Parameters
+
+        Add sortBy //default is unsorted, allow values: [statCode, statCode:asc, statCode:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc],and support sort group, eg: sortBy=statCode:asc,createdAt:desc.
+`GET` /social/v1/public/namespaces/{namespace}/users/{userId}/statCycles/{cycleId}/statCycleitems List user's statCycleItems by statCycle  
+    Parameters
+
+        Add sortBy //default is unsorted, allow values: [statCode, statCode:asc, statCode:desc, createdAt, createdAt:asc, createdAt:desc, updatedAt, updatedAt:asc, updatedAt:desc],and support sort group, eg: sortBy=statCode:asc,createdAt:desc.
+
+
 # C# Server SDK v0.30.0
 
 ## basic Service
