@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publiccreateuserorder")]
-    public class PublicCreateUserOrderCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publiccreateuserorder")]
+    public class PublicCreateUserOrderCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicCreateUserOrder"; } }
+        public string OperationName{ get { return "PublicCreateUserOrder"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public OrderCreate Body { get; set; } = new OrderCreate();
-
+                
         public PublicCreateUserOrderCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             PublicCreateUserOrder operation = new PublicCreateUserOrder(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.OrderInfo? response = wrapper.PublicCreateUserOrder(operation);
             if (response == null)
                 return "No response from server.";

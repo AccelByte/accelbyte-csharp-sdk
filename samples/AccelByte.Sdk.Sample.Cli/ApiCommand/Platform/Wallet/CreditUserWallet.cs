@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "credituserwallet")]
-    public class CreditUserWalletCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","credituserwallet")]
+    public class CreditUserWalletCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "CreditUserWallet"; } }
+        public string OperationName{ get { return "CreditUserWallet"; } }
 
         [SdkCommandArgument("currencyCode")]
         public string CurrencyCode { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public CreditRequest Body { get; set; } = new CreditRequest();
-
+                
         public CreditUserWalletCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             CreditUserWallet operation = new CreditUserWallet(
-                CurrencyCode,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                CurrencyCode,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.WalletInfo? response = wrapper.CreditUserWallet(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicgetuserentitlementbysku")]
-    public class PublicGetUserEntitlementBySkuCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicgetuserentitlementbysku")]
+    public class PublicGetUserEntitlementBySkuCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicGetUserEntitlementBySku"; } }
+        public string OperationName{ get { return "PublicGetUserEntitlementBySku"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             PublicGetUserEntitlementBySku operation = new PublicGetUserEntitlementBySku(
-                Namespace,
-                UserId,
-                (EntitlementClazz is null ? null : PublicGetUserEntitlementBySkuEntitlementClazz.NewValue(EntitlementClazz)),
-                Sku
-            );
-
+                Namespace,                
+                UserId,                
+                (EntitlementClazz is null ? null : PublicGetUserEntitlementBySkuEntitlementClazz.NewValue(EntitlementClazz)),                
+                Sku                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.EntitlementInfo? response = wrapper.PublicGetUserEntitlementBySku(operation);
             if (response == null)
                 return "No response from server.";

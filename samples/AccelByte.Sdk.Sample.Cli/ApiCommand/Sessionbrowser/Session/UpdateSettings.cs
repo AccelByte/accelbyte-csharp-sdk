@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "updatesettings")]
-    public class UpdateSettingsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","updatesettings")]
+    public class UpdateSettingsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "UpdateSettings"; } }
+        public string OperationName{ get { return "UpdateSettings"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 
         [SdkCommandData("body")]
         public ModelsUpdateSettingsRequest Body { get; set; } = new ModelsUpdateSettingsRequest();
-
+                
         public UpdateSettingsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             UpdateSettings operation = new UpdateSettings(
-                Namespace,
-                SessionID,
-                Body
-            );
-
+                Namespace,                
+                SessionID,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionResponse? response = wrapper.UpdateSettings(operation);
             if (response == null)
                 return "No response from server.";

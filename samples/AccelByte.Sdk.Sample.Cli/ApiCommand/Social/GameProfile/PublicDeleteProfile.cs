@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicdeleteprofile")]
-    public class PublicDeleteProfileCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicdeleteprofile")]
+    public class PublicDeleteProfileCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicDeleteProfile"; } }
+        public string OperationName{ get { return "PublicDeleteProfile"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
             PublicDeleteProfile operation = new PublicDeleteProfile(
-                Namespace,
-                ProfileId,
-                UserId
-            );
-
+                Namespace,                
+                ProfileId,                
+                UserId                
+            );            
+            
             wrapper.PublicDeleteProfile(operation);
             return String.Empty;
         }

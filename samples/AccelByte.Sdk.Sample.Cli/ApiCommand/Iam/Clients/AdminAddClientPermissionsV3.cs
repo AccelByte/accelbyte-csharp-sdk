@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminaddclientpermissionsv3")]
-    public class AdminAddClientPermissionsV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminaddclientpermissionsv3")]
+    public class AdminAddClientPermissionsV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminAddClientPermissionsV3"; } }
+        public string OperationName{ get { return "AdminAddClientPermissionsV3"; } }
 
         [SdkCommandArgument("clientId")]
         public string ClientId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public AccountcommonClientPermissionsV3 Body { get; set; } = new AccountcommonClientPermissionsV3();
-
+                
         public AdminAddClientPermissionsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Clients wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Clients(_SDK);
 
             AdminAddClientPermissionsV3 operation = new AdminAddClientPermissionsV3(
-                ClientId,
-                Namespace,
-                Body
-            );
-
+                ClientId,                
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.AdminAddClientPermissionsV3(operation);
             return String.Empty;
         }

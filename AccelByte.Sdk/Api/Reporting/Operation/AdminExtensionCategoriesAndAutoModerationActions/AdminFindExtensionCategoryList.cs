@@ -69,32 +69,32 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
         private AdminFindExtensionCategoryList(AdminFindExtensionCategoryListBuilder builder
         )
         {
-
+            
             if (builder.Order is not null) QueryParams["order"] = builder.Order.Value;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminFindExtensionCategoryList(
-            AdminFindExtensionCategoryListOrder? order,
-            AdminFindExtensionCategoryListSortBy? sortBy
+            AdminFindExtensionCategoryListOrder? order,            
+            AdminFindExtensionCategoryListSortBy? sortBy            
         )
         {
-
+            
             if (order is not null) QueryParams["order"] = order.Value;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,9 +109,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.RestapiExtensionCategoryListApiResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiExtensionCategoryListApiResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -52,76 +52,68 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.DeleteAllUserStates.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void AdminDeleteAllUserChannels(AdminDeleteAllUserChannels input)
-        {
+        
+        public void AdminDeleteAllUserChannels(AdminDeleteAllUserChannels input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteAllUserContents(AdminDeleteAllUserContents input)
-        {
+        public void AdminDeleteAllUserContents(AdminDeleteAllUserContents input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteAllUserGroup(AdminDeleteAllUserGroup input)
-        {
+        public void AdminDeleteAllUserGroup(AdminDeleteAllUserGroup input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteAllUserStates(AdminDeleteAllUserStates input)
-        {
+        public void AdminDeleteAllUserStates(AdminDeleteAllUserStates input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteAllUserChannel(DeleteAllUserChannel input)
-        {
+        public void DeleteAllUserChannel(DeleteAllUserChannel input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteAllUserContents(DeleteAllUserContents input)
-        {
+        public void DeleteAllUserContents(DeleteAllUserContents input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteAllUserGroup(DeleteAllUserGroup input)
-        {
+        public void DeleteAllUserGroup(DeleteAllUserGroup input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteAllUserStates(DeleteAllUserStates input)
-        {
+        public void DeleteAllUserStates(DeleteAllUserStates input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

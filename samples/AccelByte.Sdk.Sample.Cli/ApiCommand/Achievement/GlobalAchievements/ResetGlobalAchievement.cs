@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "resetglobalachievement")]
-    public class ResetGlobalAchievementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","resetglobalachievement")]
+    public class ResetGlobalAchievementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "ResetGlobalAchievement"; } }
+        public string OperationName{ get { return "ResetGlobalAchievement"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements(_SDK);
 
             ResetGlobalAchievement operation = new ResetGlobalAchievement(
-                AchievementCode,
-                Namespace
-            );
-
+                AchievementCode,                
+                Namespace                
+            );            
+            
             wrapper.ResetGlobalAchievement(operation);
             return String.Empty;
         }

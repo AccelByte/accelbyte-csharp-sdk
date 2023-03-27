@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryalluseriaporders")]
-    public class QueryAllUserIAPOrdersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryalluseriaporders")]
+    public class QueryAllUserIAPOrdersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryAllUserIAPOrders"; } }
+        public string OperationName{ get { return "QueryAllUserIAPOrders"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             QueryAllUserIAPOrders operation = new QueryAllUserIAPOrders(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.IAPOrderPagingSlicedResult? response = wrapper.QueryAllUserIAPOrders(operation);
             if (response == null)
                 return "No response from server.";

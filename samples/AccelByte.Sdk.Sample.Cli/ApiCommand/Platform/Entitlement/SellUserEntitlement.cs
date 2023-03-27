@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "selluserentitlement")]
-    public class SellUserEntitlementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","selluserentitlement")]
+    public class SellUserEntitlementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "SellUserEntitlement"; } }
+        public string OperationName{ get { return "SellUserEntitlement"; } }
 
         [SdkCommandArgument("entitlementId")]
         public string EntitlementId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EntitlementSoldRequest Body { get; set; } = new EntitlementSoldRequest();
-
+                
         public SellUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             SellUserEntitlement operation = new SellUserEntitlement(
-                EntitlementId,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                EntitlementId,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.EntitlementSoldResult? response = wrapper.SellUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";

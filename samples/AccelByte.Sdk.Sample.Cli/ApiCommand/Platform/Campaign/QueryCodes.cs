@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "querycodes")]
-    public class QueryCodesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","querycodes")]
+    public class QueryCodesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryCodes"; } }
+        public string OperationName{ get { return "QueryCodes"; } }
 
         [SdkCommandArgument("campaignId")]
         public string CampaignId { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             QueryCodes operation = new QueryCodes(
-                CampaignId,
-                Namespace,
-                ActiveOnly,
-                BatchNo,
-                Code,
-                Limit,
-                Offset
-            );
-
+                CampaignId,                
+                Namespace,                
+                ActiveOnly,                
+                BatchNo,                
+                Code,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.CodeInfoPagingSlicedResult? response = wrapper.QueryCodes(operation);
             if (response == null)
                 return "No response from server.";

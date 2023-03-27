@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "updateconfig1")]
-    public class UpdateConfig1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","updateconfig1")]
+    public class UpdateConfig1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "UpdateConfig1"; } }
+        public string OperationName{ get { return "UpdateConfig1"; } }
 
         [SdkCommandArgument("configKey")]
         public string ConfigKey { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
         [SdkCommandData("body")]
         public ConfigUpdate Body { get; set; } = new ConfigUpdate();
-
+                
         public UpdateConfig1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Config(_SDK);
 
             UpdateConfig1 operation = new UpdateConfig1(
-                ConfigKey,
-                Namespace,
-                Body
-            );
-
+                ConfigKey,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.ConfigInfo? response = wrapper.UpdateConfig1(operation);
             if (response == null)
                 return "No response from server.";

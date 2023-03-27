@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "adminchathistory")]
-    public class AdminChatHistoryCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","adminchathistory")]
+    public class AdminChatHistoryCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminChatHistory"; } }
+        public string OperationName{ get { return "AdminChatHistory"; } }
 
         [SdkCommandArgument("friendId")]
         public string FriendId { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Chat wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Chat(_SDK);
 
             AdminChatHistory operation = new AdminChatHistory(
-                FriendId,
-                Namespace,
-                UserId
-            );
-
+                FriendId,                
+                Namespace,                
+                UserId                
+            );            
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelChatMessageResponse>? response = wrapper.AdminChatHistory(operation);
             if (response == null)
                 return "No response from server.";

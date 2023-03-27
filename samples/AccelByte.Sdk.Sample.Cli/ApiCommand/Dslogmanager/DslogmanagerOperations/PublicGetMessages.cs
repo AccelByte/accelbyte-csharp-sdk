@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
-    [SdkConsoleCommand("dslogmanager", "publicgetmessages")]
-    public class PublicGetMessagesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dslogmanager","publicgetmessages")]
+    public class PublicGetMessagesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dslogmanager"; } }
+        public string ServiceName{ get { return "Dslogmanager"; } }
 
-        public string OperationName { get { return "PublicGetMessages"; } }
+        public string OperationName{ get { return "PublicGetMessages"; } }
 
         public PublicGetMessagesCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
             AccelByte.Sdk.Api.Dslogmanager.Wrapper.DslogmanagerOperations wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.DslogmanagerOperations(_SDK);
 
             PublicGetMessages operation = new PublicGetMessages(
-            );
-
+            );            
+            
             List<AccelByte.Sdk.Api.Dslogmanager.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

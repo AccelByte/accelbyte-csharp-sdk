@@ -152,8 +152,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 SearchChannelSpecificContent op = new SearchChannelSpecificContent(this,
-                    channelId,
-                    namespace_
+                    channelId,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -168,7 +168,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Creator is not null) QueryParams["creator"] = builder.Creator;
             if (builder.Isofficial is not null) QueryParams["isofficial"] = builder.Isofficial;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
@@ -180,36 +180,36 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             if (builder.Type is not null) QueryParams["type"] = builder.Type;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
+            
 
-
-
+            
             CollectionFormatMap["tags"] = "csv";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public SearchChannelSpecificContent(
-            string channelId,
-            string namespace_,
-            string? creator,
-            string? isofficial,
-            long? limit,
-            string? name,
-            long? offset,
-            string? orderby,
-            string? sortby,
-            string? subtype,
-            List<string>? tags,
-            string? type,
-            string? userId
+            string channelId,            
+            string namespace_,            
+            string? creator,            
+            string? isofficial,            
+            long? limit,            
+            string? name,            
+            long? offset,            
+            string? orderby,            
+            string? sortby,            
+            string? subtype,            
+            List<string>? tags,            
+            string? type,            
+            string? userId            
         )
         {
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
-
+            
             if (creator is not null) QueryParams["creator"] = creator;
             if (isofficial is not null) QueryParams["isofficial"] = isofficial;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
@@ -221,12 +221,12 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (tags is not null) QueryParams["tags"] = tags;
             if (type is not null) QueryParams["type"] = type;
             if (userId is not null) QueryParams["userId"] = userId;
+            
 
-
-
+            
             CollectionFormatMap["tags"] = "csv";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -235,15 +235,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json", "application/octet-stream" };
+        public override string[] Consumes => new string[] { "application/json","application/octet-stream" };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsPaginatedContentDownloadResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -256,9 +256,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPaginatedContentDownloadResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

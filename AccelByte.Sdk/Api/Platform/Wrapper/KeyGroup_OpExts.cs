@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).CreateKeyGroup(op);
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static Platform.Model.KeyGroupInfo? Execute(
             this GetKeyGroupByBoothName.GetKeyGroupByBoothNameBuilder builder,
             string namespace_,

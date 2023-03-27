@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "getticketdetail")]
-    public class GetTicketDetailCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","getticketdetail")]
+    public class GetTicketDetailCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "GetTicketDetail"; } }
+        public string OperationName{ get { return "GetTicketDetail"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets(_SDK);
 
             GetTicketDetail operation = new GetTicketDetail(
-                Namespace,
-                TicketId
-            );
-
+                Namespace,                
+                TicketId                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiTicketResponse? response = wrapper.GetTicketDetail(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "adminfindextensioncategorylist")]
-    public class AdminFindExtensionCategoryListCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","adminfindextensioncategorylist")]
+    public class AdminFindExtensionCategoryListCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "AdminFindExtensionCategoryList"; } }
+        public string OperationName{ get { return "AdminFindExtensionCategoryList"; } }
 
         [SdkCommandArgument("order")]
         public string? Order { get; set; }
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions(_SDK);
 
             AdminFindExtensionCategoryList operation = new AdminFindExtensionCategoryList(
-                (Order is null ? null : AdminFindExtensionCategoryListOrder.NewValue(Order)),
-                (SortBy is null ? null : AdminFindExtensionCategoryListSortBy.NewValue(SortBy))
-            );
-
+                (Order is null ? null : AdminFindExtensionCategoryListOrder.NewValue(Order)),                
+                (SortBy is null ? null : AdminFindExtensionCategoryListSortBy.NewValue(SortBy))                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiExtensionCategoryListApiResponse? response = wrapper.AdminFindExtensionCategoryList(operation);
             if (response == null)
                 return "No response from server.";

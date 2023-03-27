@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminsendverificationcodev3")]
-    public class AdminSendVerificationCodeV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminsendverificationcodev3")]
+    public class AdminSendVerificationCodeV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminSendVerificationCodeV3"; } }
+        public string OperationName{ get { return "AdminSendVerificationCodeV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelSendVerificationCodeRequestV3 Body { get; set; } = new ModelSendVerificationCodeRequestV3();
-
+                
         public AdminSendVerificationCodeV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminSendVerificationCodeV3 operation = new AdminSendVerificationCodeV3(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.AdminSendVerificationCodeV3(operation);
             return String.Empty;
         }

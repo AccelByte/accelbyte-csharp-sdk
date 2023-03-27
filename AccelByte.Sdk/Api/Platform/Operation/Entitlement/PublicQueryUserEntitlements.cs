@@ -105,8 +105,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicQueryUserEntitlements op = new PublicQueryUserEntitlements(this,
-                    namespace_,
-                    userId
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -121,7 +121,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
             if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
             if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
@@ -129,33 +129,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            
 
-
-
+            
             CollectionFormatMap["features"] = "multi";
             CollectionFormatMap["itemId"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicQueryUserEntitlements(
-            string namespace_,
-            string userId,
-            PublicQueryUserEntitlementsAppType? appType,
-            PublicQueryUserEntitlementsEntitlementClazz? entitlementClazz,
-            string? entitlementName,
-            List<string>? features,
-            List<string>? itemId,
-            int? limit,
-            int? offset
+            string namespace_,            
+            string userId,            
+            PublicQueryUserEntitlementsAppType? appType,            
+            PublicQueryUserEntitlementsEntitlementClazz? entitlementClazz,            
+            string? entitlementName,            
+            List<string>? features,            
+            List<string>? itemId,            
+            int? limit,            
+            int? offset            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-
+            
             if (appType is not null) QueryParams["appType"] = appType.Value;
             if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
             if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
@@ -163,13 +163,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            
 
-
-
+            
             CollectionFormatMap["features"] = "multi";
             CollectionFormatMap["itemId"] = "multi";
-
-
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -178,15 +178,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.EntitlementPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -199,9 +199,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.EntitlementPagingSlicedResult>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

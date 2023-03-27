@@ -159,7 +159,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             )
             {
                 ListTerminatedServers op = new ListTerminatedServers(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -172,7 +172,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Deployment is not null) QueryParams["deployment"] = builder.Deployment;
             if (builder.EndDate is not null) QueryParams["end_date"] = builder.EndDate;
             if (builder.GameMode is not null) QueryParams["game_mode"] = builder.GameMode;
@@ -187,36 +187,36 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (builder.StartDate is not null) QueryParams["start_date"] = builder.StartDate;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListTerminatedServers(
-            string namespace_,
-            string? deployment,
-            string? endDate,
-            string? gameMode,
-            long? limit,
-            string? next,
-            string? partyId,
-            string? podName,
-            string? previous,
-            string? provider,
-            string? region,
-            string? sessionId,
-            string? startDate,
-            string? status,
-            string? userId
+            string namespace_,            
+            string? deployment,            
+            string? endDate,            
+            string? gameMode,            
+            long? limit,            
+            string? next,            
+            string? partyId,            
+            string? podName,            
+            string? previous,            
+            string? provider,            
+            string? region,            
+            string? sessionId,            
+            string? startDate,            
+            string? status,            
+            string? userId            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (deployment is not null) QueryParams["deployment"] = deployment;
             if (endDate is not null) QueryParams["end_date"] = endDate;
             if (gameMode is not null) QueryParams["game_mode"] = gameMode;
@@ -231,11 +231,11 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (startDate is not null) QueryParams["start_date"] = startDate;
             if (status is not null) QueryParams["status"] = status;
             if (userId is not null) QueryParams["user_id"] = userId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -246,13 +246,13 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
         public override string[] Consumes => new string[] { "application/json" };
 
-        public override string[] Produces => new string[] { "application/json", "text/x-log" };
+        public override string[] Produces => new string[] { "application/json","text/x-log" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsListTerminatedServersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -265,9 +265,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsListTerminatedServersResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

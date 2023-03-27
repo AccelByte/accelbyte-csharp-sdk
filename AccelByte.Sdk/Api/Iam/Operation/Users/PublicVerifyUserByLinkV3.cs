@@ -58,29 +58,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         private PublicVerifyUserByLinkV3(PublicVerifyUserByLinkV3Builder builder
         )
         {
-
+            
             if (builder.Code is not null) QueryParams["code"] = builder.Code;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicVerifyUserByLinkV3(
-            string? code
+            string? code            
         )
         {
-
+            
             if (code is not null) QueryParams["code"] = code;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -89,22 +89,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             if (code == (HttpStatusCode)302)
             {
-                return payloadString;
+              return payloadString;
             }
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class SubscriptionSummarySubscribedBy : StringEnum<SubscriptionSummarySubscribedBy>
     {
@@ -94,5 +94,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

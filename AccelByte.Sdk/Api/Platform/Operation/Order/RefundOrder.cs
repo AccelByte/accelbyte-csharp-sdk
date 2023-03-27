@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 RefundOrder op = new RefundOrder(this,
-                    namespace_,
-                    orderNo
+                    namespace_,                    
+                    orderNo                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +71,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["orderNo"] = orderNo;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RefundOrder(
-            string namespace_,
-            string orderNo,
-            Model.OrderRefundCreate body
+            string namespace_,            
+            string orderNo,            
+            Model.OrderRefundCreate body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["orderNo"] = orderNo;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,9 +112,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.OrderInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,18 +127,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.OrderInfo>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.OrderInfo<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }
+            }            
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.OrderInfo<T1>>(payload);
@@ -147,8 +147,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.OrderInfo<T1>>(payload);
             }
-
-            var payloadString = Helper.ConvertInputStreamToString(payload);
+            
+            var payloadString = Helper.ConvertInputStreamToString(payload);            
             throw new HttpResponseException(code, payloadString);
         }
     }

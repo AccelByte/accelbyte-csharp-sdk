@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "deleteplatformdlcconfig")]
-    public class DeletePlatformDLCConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deleteplatformdlcconfig")]
+    public class DeletePlatformDLCConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DeletePlatformDLCConfig"; } }
+        public string OperationName{ get { return "DeletePlatformDLCConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             DeletePlatformDLCConfig operation = new DeletePlatformDLCConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.DeletePlatformDLCConfig(operation);
             return String.Empty;
         }

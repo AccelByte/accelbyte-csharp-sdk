@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dslogmanager.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
 {
-    [SdkConsoleCommand("dslogmanager", "getserverlogs")]
-    public class GetServerLogsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dslogmanager","getserverlogs")]
+    public class GetServerLogsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dslogmanager"; } }
+        public string ServiceName{ get { return "Dslogmanager"; } }
 
-        public string OperationName { get { return "GetServerLogs"; } }
+        public string OperationName{ get { return "GetServerLogs"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dslogmanager
             AccelByte.Sdk.Api.Dslogmanager.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dslogmanager.Wrapper.Admin(_SDK);
 
             GetServerLogs operation = new GetServerLogs(
-                Namespace,
-                PodName,
-                LogType,
-                Offset,
-                Origin
-            );
-
+                Namespace,                
+                PodName,                
+                LogType,                
+                Offset,                
+                Origin                
+            );            
+            
             AccelByte.Sdk.Api.Dslogmanager.Model.ModelsServerLogs? response = wrapper.GetServerLogs(operation);
             if (response == null)
                 return "No response from server.";

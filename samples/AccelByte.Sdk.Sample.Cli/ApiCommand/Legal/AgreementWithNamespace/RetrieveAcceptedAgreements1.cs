@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "retrieveacceptedagreements1")]
-    public class RetrieveAcceptedAgreements1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","retrieveacceptedagreements1")]
+    public class RetrieveAcceptedAgreements1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "RetrieveAcceptedAgreements1"; } }
+        public string OperationName{ get { return "RetrieveAcceptedAgreements1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace(_SDK);
 
             RetrieveAcceptedAgreements1 operation = new RetrieveAcceptedAgreements1(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveAcceptedAgreementResponse>? response = wrapper.RetrieveAcceptedAgreements1(operation);
             if (response == null)
                 return "No response from server.";

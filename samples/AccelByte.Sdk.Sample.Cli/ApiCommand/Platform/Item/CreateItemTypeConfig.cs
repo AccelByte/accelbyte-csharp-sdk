@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "createitemtypeconfig")]
-    public class CreateItemTypeConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","createitemtypeconfig")]
+    public class CreateItemTypeConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "CreateItemTypeConfig"; } }
+        public string OperationName{ get { return "CreateItemTypeConfig"; } }
 
         [SdkCommandData("body")]
         public ItemTypeConfigCreate Body { get; set; } = new ItemTypeConfigCreate();
-
+                
         public CreateItemTypeConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             CreateItemTypeConfig operation = new CreateItemTypeConfig(
-                Body
-            );
-
+                Body                
+            );            
+            
             wrapper.CreateItemTypeConfig(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "retrieveallpolicytypes1")]
-    public class RetrieveAllPolicyTypes1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","retrieveallpolicytypes1")]
+    public class RetrieveAllPolicyTypes1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "RetrieveAllPolicyTypes1"; } }
+        public string OperationName{ get { return "RetrieveAllPolicyTypes1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPoliciesWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPoliciesWithNamespace(_SDK);
 
             RetrieveAllPolicyTypes1 operation = new RetrieveAllPolicyTypes1(
-                Namespace,
-                Offset,
-                Limit
-            );
-
+                Namespace,                
+                Offset,                
+                Limit                
+            );            
+            
             List<AccelByte.Sdk.Api.Legal.Model.RetrievePolicyTypeResponse>? response = wrapper.RetrieveAllPolicyTypes1(operation);
             if (response == null)
                 return "No response from server.";

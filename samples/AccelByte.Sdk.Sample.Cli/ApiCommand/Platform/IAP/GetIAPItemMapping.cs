@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getiapitemmapping")]
-    public class GetIAPItemMappingCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getiapitemmapping")]
+    public class GetIAPItemMappingCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetIAPItemMapping"; } }
+        public string OperationName{ get { return "GetIAPItemMapping"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             GetIAPItemMapping operation = new GetIAPItemMapping(
-                Namespace,
-                (Platform is null ? null : GetIAPItemMappingPlatform.NewValue(Platform))
-            );
-
+                Namespace,                
+                (Platform is null ? null : GetIAPItemMappingPlatform.NewValue(Platform))                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.IAPItemMappingInfo? response = wrapper.GetIAPItemMapping(operation);
             if (response == null)
                 return "No response from server.";

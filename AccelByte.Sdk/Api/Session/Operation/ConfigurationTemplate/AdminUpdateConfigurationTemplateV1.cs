@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - MaxPlayers (must greather than 0)
     /// - InviteTimeout (must greather or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
     /// - InactiveTimeout (must greather or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
+    /// - Persistent Flag only can use with type DS (example value true or false)
+    /// - If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.
+    /// - To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
+    /// - If Persistent False the session will be inactive if all member left and DS terminate or removing
     /// </summary>
     public class AdminUpdateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {
@@ -53,9 +57,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 AdminUpdateConfigurationTemplateV1 op = new AdminUpdateConfigurationTemplateV1(this,
-                    body,
-                    name,
-                    namespace_
+                    body,                    
+                    name,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +75,33 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["name"] = name;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdateConfigurationTemplateV1(
-            string name,
-            string namespace_,
-            Model.ApimodelsUpdateConfigurationTemplateRequest body
+            string name,            
+            string namespace_,            
+            Model.ApimodelsUpdateConfigurationTemplateRequest body            
         )
         {
             PathParams["name"] = name;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,9 +116,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ApimodelsConfigurationTemplateResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +131,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelsConfigurationTemplateResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

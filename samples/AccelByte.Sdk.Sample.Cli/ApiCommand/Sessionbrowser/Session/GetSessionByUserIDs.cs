@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "getsessionbyuserids")]
-    public class GetSessionByUserIDsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","getsessionbyuserids")]
+    public class GetSessionByUserIDsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "GetSessionByUserIDs"; } }
+        public string OperationName{ get { return "GetSessionByUserIDs"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             GetSessionByUserIDs operation = new GetSessionByUserIDs(
-                Namespace,
-                UserIds
-            );
-
+                Namespace,                
+                UserIds                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionByUserIDsResponse? response = wrapper.GetSessionByUserIDs(operation);
             if (response == null)
                 return "No response from server.";

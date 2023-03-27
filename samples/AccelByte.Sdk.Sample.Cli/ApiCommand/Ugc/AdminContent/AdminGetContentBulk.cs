@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "admingetcontentbulk")]
-    public class AdminGetContentBulkCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","admingetcontentbulk")]
+    public class AdminGetContentBulkCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AdminGetContentBulk"; } }
+        public string OperationName{ get { return "AdminGetContentBulk"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAdminGetContentBulkRequest Body { get; set; } = new ModelsAdminGetContentBulkRequest();
-
+                
         public AdminGetContentBulkCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminGetContentBulk operation = new AdminGetContentBulk(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Ugc.Model.ModelsContentDownloadResponse>? response = wrapper.AdminGetContentBulk(operation);
             if (response == null)
                 return "No response from server.";

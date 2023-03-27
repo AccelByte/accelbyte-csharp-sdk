@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             )
             {
                 DeleteConfig1 op = new DeleteConfig1(this,
-                    configKey,
-                    namespace_
+                    configKey,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["configKey"] = configKey;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteConfig1(
-            string configKey,
-            string namespace_
+            string configKey,            
+            string namespace_            
         )
         {
             PathParams["configKey"] = configKey;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,16 +102,16 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

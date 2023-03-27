@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "createruleset")]
-    public class CreateRuleSetCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","createruleset")]
+    public class CreateRuleSetCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "CreateRuleSet"; } }
+        public string OperationName{ get { return "CreateRuleSet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiRuleSetPayload Body { get; set; } = new ApiRuleSetPayload();
-
+                
         public CreateRuleSetCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.RuleSets wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.RuleSets(_SDK);
 
             CreateRuleSet operation = new CreateRuleSet(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.CreateRuleSet(operation);
             return String.Empty;
         }

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "admindeleterolepermissionsv3")]
-    public class AdminDeleteRolePermissionsV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","admindeleterolepermissionsv3")]
+    public class AdminDeleteRolePermissionsV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminDeleteRolePermissionsV3"; } }
+        public string OperationName{ get { return "AdminDeleteRolePermissionsV3"; } }
 
         [SdkCommandArgument("roleId")]
         public string RoleId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public List<string> Body { get; set; } = new List<string>();
-
+                
         public AdminDeleteRolePermissionsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Roles wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Roles(_SDK);
 
             AdminDeleteRolePermissionsV3 operation = new AdminDeleteRolePermissionsV3(
-                RoleId,
-                Body
-            );
-
+                RoleId,                
+                Body                
+            );            
+            
             wrapper.AdminDeleteRolePermissionsV3(operation);
             return String.Empty;
         }

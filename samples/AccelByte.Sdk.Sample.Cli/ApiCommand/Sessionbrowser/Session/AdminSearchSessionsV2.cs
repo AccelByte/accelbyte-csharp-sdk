@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "adminsearchsessionsv2")]
-    public class AdminSearchSessionsV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","adminsearchsessionsv2")]
+    public class AdminSearchSessionsV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "AdminSearchSessionsV2"; } }
+        public string OperationName{ get { return "AdminSearchSessionsV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -67,18 +67,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             AdminSearchSessionsV2 operation = new AdminSearchSessionsV2(
-                Namespace,
-                Channel,
-                Deleted,
-                MatchID,
-                PartyID,
-                SessionType,
-                Status,
-                UserID,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                Channel,                
+                Deleted,                
+                MatchID,                
+                PartyID,                
+                SessionType,                
+                Status,                
+                UserID,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsGetSessionHistorySearchResponseV2? response = wrapper.AdminSearchSessionsV2(operation);
             if (response == null)
                 return "No response from server.";

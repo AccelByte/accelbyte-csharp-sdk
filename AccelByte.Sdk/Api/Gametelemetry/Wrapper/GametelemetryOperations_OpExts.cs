@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api
         {
             ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost op = builder.Build(
                 body
-
+                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost(op);
@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api
         {
             ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet op = builder.Build(
                 steamId
-
+                
             );
 
             return ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet(op);
@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Api
             ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut op = builder.Build(
                 playtime,
                 steamId
-
+                
             );
 
             ((Gametelemetry.Wrapper.GametelemetryOperations)builder.WrapperObject!).ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(op);

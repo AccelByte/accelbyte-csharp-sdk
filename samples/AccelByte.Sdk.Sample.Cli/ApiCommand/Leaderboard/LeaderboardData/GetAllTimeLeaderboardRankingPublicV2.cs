@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "getalltimeleaderboardrankingpublicv2")]
-    public class GetAllTimeLeaderboardRankingPublicV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","getalltimeleaderboardrankingpublicv2")]
+    public class GetAllTimeLeaderboardRankingPublicV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "GetAllTimeLeaderboardRankingPublicV2"; } }
+        public string OperationName{ get { return "GetAllTimeLeaderboardRankingPublicV2"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
 
             GetAllTimeLeaderboardRankingPublicV2 operation = new GetAllTimeLeaderboardRankingPublicV2(
-                LeaderboardCode,
-                Namespace,
-                Limit,
-                Offset
-            );
-
+                LeaderboardCode,                
+                Namespace,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Leaderboard.Model.V2GetPublicLeaderboardRankingResponse? response = wrapper.GetAllTimeLeaderboardRankingPublicV2(operation);
             if (response == null)
                 return "No response from server.";

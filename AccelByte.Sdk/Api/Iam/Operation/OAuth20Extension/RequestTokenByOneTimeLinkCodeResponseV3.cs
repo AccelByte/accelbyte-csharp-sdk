@@ -50,8 +50,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 RequestTokenByOneTimeLinkCodeResponseV3 op = new RequestTokenByOneTimeLinkCodeResponseV3(this,
-                    clientId,
-                    oneTimeLinkCode
+                    clientId,                    
+                    oneTimeLinkCode                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,31 +64,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string oneTimeLinkCode
         )
         {
-
-
+            
+            
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
-
-
-
+            
+            
+            
 
         }
         #endregion
 
         public RequestTokenByOneTimeLinkCodeResponseV3(
-            string clientId,
-            string oneTimeLinkCode
+            string clientId,            
+            string oneTimeLinkCode            
         )
         {
-
-
+            
+            
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
-
-
-
+            
+            
+            
 
         }
 
@@ -102,9 +102,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "getstatcycle")]
-    public class GetStatCycleCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","getstatcycle")]
+    public class GetStatCycleCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "GetStatCycle"; } }
+        public string OperationName{ get { return "GetStatCycle"; } }
 
         [SdkCommandArgument("cycleId")]
         public string CycleId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration(_SDK);
 
             GetStatCycle operation = new GetStatCycle(
-                CycleId,
-                Namespace
-            );
-
+                CycleId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.StatCycleInfo? response = wrapper.GetStatCycle(operation);
             if (response == null)
                 return "No response from server.";

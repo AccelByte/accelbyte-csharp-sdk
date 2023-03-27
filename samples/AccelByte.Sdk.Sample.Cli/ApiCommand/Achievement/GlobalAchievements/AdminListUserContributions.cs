@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "adminlistusercontributions")]
-    public class AdminListUserContributionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","adminlistusercontributions")]
+    public class AdminListUserContributionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "AdminListUserContributions"; } }
+        public string OperationName{ get { return "AdminListUserContributions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements(_SDK);
 
             AdminListUserContributions operation = new AdminListUserContributions(
-                Namespace,
-                UserId,
-                AchievementCodes,
-                Limit,
-                Offset,
-                SortBy,
-                Tags
-            );
-
+                Namespace,                
+                UserId,                
+                AchievementCodes,                
+                Limit,                
+                Offset,                
+                SortBy,                
+                Tags                
+            );            
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedUserContributionResponse? response = wrapper.AdminListUserContributions(operation);
             if (response == null)
                 return "No response from server.";

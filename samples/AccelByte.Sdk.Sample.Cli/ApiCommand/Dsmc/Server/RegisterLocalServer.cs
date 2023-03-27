@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "registerlocalserver")]
-    public class RegisterLocalServerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","registerlocalserver")]
+    public class RegisterLocalServerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "RegisterLocalServer"; } }
+        public string OperationName{ get { return "RegisterLocalServer"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsRegisterLocalServerRequest Body { get; set; } = new ModelsRegisterLocalServerRequest();
-
+                
         public RegisterLocalServerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Server wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Server(_SDK);
 
             RegisterLocalServer operation = new RegisterLocalServer(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsServer? response = wrapper.RegisterLocalServer(operation);
             if (response == null)
                 return "No response from server.";

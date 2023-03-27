@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "deletereasongroup")]
-    public class DeleteReasonGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","deletereasongroup")]
+    public class DeleteReasonGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "DeleteReasonGroup"; } }
+        public string OperationName{ get { return "DeleteReasonGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons(_SDK);
 
             DeleteReasonGroup operation = new DeleteReasonGroup(
-                GroupId,
-                Namespace
-            );
-
+                GroupId,                
+                Namespace                
+            );            
+            
             wrapper.DeleteReasonGroup(operation);
             return String.Empty;
         }

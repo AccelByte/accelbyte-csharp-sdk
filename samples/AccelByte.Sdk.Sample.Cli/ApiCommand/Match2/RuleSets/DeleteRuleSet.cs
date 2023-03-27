@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "deleteruleset")]
-    public class DeleteRuleSetCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","deleteruleset")]
+    public class DeleteRuleSetCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "DeleteRuleSet"; } }
+        public string OperationName{ get { return "DeleteRuleSet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.RuleSets wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.RuleSets(_SDK);
 
             DeleteRuleSet operation = new DeleteRuleSet(
-                Namespace,
-                Ruleset
-            );
-
+                Namespace,                
+                Ruleset                
+            );            
+            
             wrapper.DeleteRuleSet(operation);
             return String.Empty;
         }

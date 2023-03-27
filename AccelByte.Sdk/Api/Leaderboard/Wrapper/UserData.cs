@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             get { return Operation.GetUserLeaderboardRankingsAdminV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.ModelsGetAllUserLeaderboardsResp? GetUserLeaderboardRankingsAdminV1(GetUserLeaderboardRankingsAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

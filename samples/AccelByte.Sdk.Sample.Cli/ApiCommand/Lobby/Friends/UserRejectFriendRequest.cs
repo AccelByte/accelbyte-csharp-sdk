@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "userrejectfriendrequest")]
-    public class UserRejectFriendRequestCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","userrejectfriendrequest")]
+    public class UserRejectFriendRequestCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "UserRejectFriendRequest"; } }
+        public string OperationName{ get { return "UserRejectFriendRequest"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserRejectFriendRequest Body { get; set; } = new ModelUserRejectFriendRequest();
-
+                
         public UserRejectFriendRequestCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Friends wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Friends(_SDK);
 
             UserRejectFriendRequest operation = new UserRejectFriendRequest(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.UserRejectFriendRequest(operation);
             return String.Empty;
         }

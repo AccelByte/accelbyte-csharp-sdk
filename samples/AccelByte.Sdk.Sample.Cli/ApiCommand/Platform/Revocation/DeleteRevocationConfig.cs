@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "deleterevocationconfig")]
-    public class DeleteRevocationConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deleterevocationconfig")]
+    public class DeleteRevocationConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DeleteRevocationConfig"; } }
+        public string OperationName{ get { return "DeleteRevocationConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Revocation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Revocation(_SDK);
 
             DeleteRevocationConfig operation = new DeleteRevocationConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.DeleteRevocationConfig(operation);
             return String.Empty;
         }

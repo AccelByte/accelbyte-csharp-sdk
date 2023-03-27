@@ -56,8 +56,8 @@ namespace AccelByte.Sdk.Api.Group.Operation
             )
             {
                 DeleteGroupConfigurationV1 op = new DeleteGroupConfigurationV1(this,
-                    configurationCode,
-                    namespace_
+                    configurationCode,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,30 +72,30 @@ namespace AccelByte.Sdk.Api.Group.Operation
         {
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteGroupConfigurationV1(
-            string configurationCode,
-            string namespace_
+            string configurationCode,            
+            string namespace_            
         )
         {
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,22 +104,22 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

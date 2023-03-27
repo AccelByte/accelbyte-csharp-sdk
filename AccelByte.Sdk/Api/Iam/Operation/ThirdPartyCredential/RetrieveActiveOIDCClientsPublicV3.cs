@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 RetrieveActiveOIDCClientsPublicV3 op = new RetrieveActiveOIDCClientsPublicV3(this,
-                    namespace_,
-                    clientId
+                    namespace_,                    
+                    clientId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -59,31 +59,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (clientId is not null) QueryParams["clientId"] = clientId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RetrieveActiveOIDCClientsPublicV3(
-            string namespace_,
-            string clientId
+            string namespace_,            
+            string clientId            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (clientId is not null) QueryParams["clientId"] = clientId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -92,15 +92,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.ModelPublicThirdPartyPlatformInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -113,9 +113,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelPublicThirdPartyPlatformInfo>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

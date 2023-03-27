@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "admingetunusedreasons")]
-    public class AdminGetUnusedReasonsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","admingetunusedreasons")]
+    public class AdminGetUnusedReasonsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "AdminGetUnusedReasons"; } }
+        public string OperationName{ get { return "AdminGetUnusedReasons"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons(_SDK);
 
             AdminGetUnusedReasons operation = new AdminGetUnusedReasons(
-                Namespace,
-                ExtensionCategory,
-                Category
-            );
-
+                Namespace,                
+                ExtensionCategory,                
+                Category                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiUnusedReasonListResponse? response = wrapper.AdminGetUnusedReasons(operation);
             if (response == null)
                 return "No response from server.";

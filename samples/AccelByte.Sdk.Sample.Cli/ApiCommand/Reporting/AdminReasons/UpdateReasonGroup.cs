@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "updatereasongroup")]
-    public class UpdateReasonGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","updatereasongroup")]
+    public class UpdateReasonGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "UpdateReasonGroup"; } }
+        public string OperationName{ get { return "UpdateReasonGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 
         [SdkCommandData("body")]
         public RestapiUpdateReasonGroupRequest Body { get; set; } = new RestapiUpdateReasonGroupRequest();
-
+                
         public UpdateReasonGroupCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons(_SDK);
 
             UpdateReasonGroup operation = new UpdateReasonGroup(
-                GroupId,
-                Namespace,
-                Body
-            );
-
+                GroupId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiReasonGroupResponse? response = wrapper.UpdateReasonGroup(operation);
             if (response == null)
                 return "No response from server.";

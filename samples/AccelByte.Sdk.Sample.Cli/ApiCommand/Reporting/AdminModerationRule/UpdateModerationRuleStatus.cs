@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "updatemoderationrulestatus")]
-    public class UpdateModerationRuleStatusCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","updatemoderationrulestatus")]
+    public class UpdateModerationRuleStatusCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "UpdateModerationRuleStatus"; } }
+        public string OperationName{ get { return "UpdateModerationRuleStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 
         [SdkCommandData("body")]
         public RestapiModerationRuleActiveRequest Body { get; set; } = new RestapiModerationRuleActiveRequest();
-
+                
         public UpdateModerationRuleStatusCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule(_SDK);
 
             UpdateModerationRuleStatus operation = new UpdateModerationRuleStatus(
-                Namespace,
-                RuleId,
-                Body
-            );
-
+                Namespace,                
+                RuleId,                
+                Body                
+            );            
+            
             wrapper.UpdateModerationRuleStatus(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicqueryuserentitlementsbyapptype")]
-    public class PublicQueryUserEntitlementsByAppTypeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicqueryuserentitlementsbyapptype")]
+    public class PublicQueryUserEntitlementsByAppTypeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicQueryUserEntitlementsByAppType"; } }
+        public string OperationName{ get { return "PublicQueryUserEntitlementsByAppType"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             PublicQueryUserEntitlementsByAppType operation = new PublicQueryUserEntitlementsByAppType(
-                Namespace,
-                UserId,
-                Limit,
-                Offset,
-                PublicQueryUserEntitlementsByAppTypeAppType.NewValue(AppType)
-            );
-
+                Namespace,                
+                UserId,                
+                Limit,                
+                Offset,                
+                PublicQueryUserEntitlementsByAppTypeAppType.NewValue(AppType)                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.AppEntitlementPagingSlicedResult? response = wrapper.PublicQueryUserEntitlementsByAppType(operation);
             if (response == null)
                 return "No response from server.";

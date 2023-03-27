@@ -40,22 +40,21 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             get { return Operation.DeleteRuleSet.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.ApiListRuleSetsResponse? RuleSetList(RuleSetList input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateRuleSet(CreateRuleSet input)
-        {
+        public void CreateRuleSet(CreateRuleSet input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -64,17 +63,17 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-
+        
         public Model.ApiRuleSetPayload<T1>? RuleSetDetails<T1>(RuleSetDetails input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -83,26 +82,25 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-
+        
         public Model.ApiRuleSetPayload<T1>? UpdateRuleSet<T1>(UpdateRuleSet input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteRuleSet(DeleteRuleSet input)
-        {
+        public void DeleteRuleSet(DeleteRuleSet input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getplatformwalletconfig")]
-    public class GetPlatformWalletConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getplatformwalletconfig")]
+    public class GetPlatformWalletConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetPlatformWalletConfig"; } }
+        public string OperationName{ get { return "GetPlatformWalletConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
             GetPlatformWalletConfig operation = new GetPlatformWalletConfig(
-                Namespace,
-                GetPlatformWalletConfigPlatform.NewValue(Platform)
-            );
-
+                Namespace,                
+                GetPlatformWalletConfigPlatform.NewValue(Platform)                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.PlatformWalletConfigInfo? response = wrapper.GetPlatformWalletConfig(operation);
             if (response == null)
                 return "No response from server.";

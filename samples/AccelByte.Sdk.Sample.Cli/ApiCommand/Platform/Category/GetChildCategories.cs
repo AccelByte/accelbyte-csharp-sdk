@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getchildcategories")]
-    public class GetChildCategoriesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getchildcategories")]
+    public class GetChildCategoriesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetChildCategories"; } }
+        public string OperationName{ get { return "GetChildCategories"; } }
 
         [SdkCommandArgument("categoryPath")]
         public string CategoryPath { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
 
             GetChildCategories operation = new GetChildCategories(
-                CategoryPath,
-                Namespace,
-                StoreId
-            );
-
+                CategoryPath,                
+                Namespace,                
+                StoreId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.FullCategoryInfo>? response = wrapper.GetChildCategories(operation);
             if (response == null)
                 return "No response from server.";

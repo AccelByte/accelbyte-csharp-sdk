@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "leavegrouppublicv2")]
-    public class LeaveGroupPublicV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","leavegrouppublicv2")]
+    public class LeaveGroupPublicV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "LeaveGroupPublicV2"; } }
+        public string OperationName{ get { return "LeaveGroupPublicV2"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupMember wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupMember(_SDK);
 
             LeaveGroupPublicV2 operation = new LeaveGroupPublicV2(
-                GroupId,
-                Namespace
-            );
-
+                GroupId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsLeaveGroupResponseV1? response = wrapper.LeaveGroupPublicV2(operation);
             if (response == null)
                 return "No response from server.";

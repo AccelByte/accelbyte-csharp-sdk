@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "createbackfill")]
-    public class CreateBackfillCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","createbackfill")]
+    public class CreateBackfillCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "CreateBackfill"; } }
+        public string OperationName{ get { return "CreateBackfill"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiBackFillCreateRequest Body { get; set; } = new ApiBackFillCreateRequest();
-
+                
         public CreateBackfillCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.Backfill wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.Backfill(_SDK);
 
             CreateBackfill operation = new CreateBackfill(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Match2.Model.ApiBackfillCreateResponse? response = wrapper.CreateBackfill(operation);
             if (response == null)
                 return "No response from server.";

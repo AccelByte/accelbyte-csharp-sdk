@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "createpolicyversion1")]
-    public class CreatePolicyVersion1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","createpolicyversion1")]
+    public class CreatePolicyVersion1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "CreatePolicyVersion1"; } }
+        public string OperationName{ get { return "CreatePolicyVersion1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public CreatePolicyVersionRequest Body { get; set; } = new CreatePolicyVersionRequest();
-
+                
         public CreatePolicyVersion1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersionsWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersionsWithNamespace(_SDK);
 
             CreatePolicyVersion1 operation = new CreatePolicyVersion1(
-                Namespace,
-                PolicyId,
-                Body
-            );
-
+                Namespace,                
+                PolicyId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.CreatePolicyVersionResponse? response = wrapper.CreatePolicyVersion1(operation);
             if (response == null)
                 return "No response from server.";

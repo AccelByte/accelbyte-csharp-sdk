@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "joinsession")]
-    public class JoinSessionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","joinsession")]
+    public class JoinSessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "JoinSession"; } }
+        public string OperationName{ get { return "JoinSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 
         [SdkCommandData("body")]
         public ModelsJoinGameSessionRequest Body { get; set; } = new ModelsJoinGameSessionRequest();
-
+                
         public JoinSessionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             JoinSession operation = new JoinSession(
-                Namespace,
-                SessionID,
-                Body
-            );
-
+                Namespace,                
+                SessionID,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionResponse? response = wrapper.JoinSession(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "admingetspecificcontent")]
-    public class AdminGetSpecificContentCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","admingetspecificcontent")]
+    public class AdminGetSpecificContentCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AdminGetSpecificContent"; } }
+        public string OperationName{ get { return "AdminGetSpecificContent"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminContent(_SDK);
 
             AdminGetSpecificContent operation = new AdminGetSpecificContent(
-                ContentId,
-                Namespace
-            );
-
+                ContentId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentDownloadResponse? response = wrapper.AdminGetSpecificContent(operation);
             if (response == null)
                 return "No response from server.";

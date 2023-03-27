@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "admindownloadmybackupcodesv4")]
-    public class AdminDownloadMyBackupCodesV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","admindownloadmybackupcodesv4")]
+    public class AdminDownloadMyBackupCodesV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminDownloadMyBackupCodesV4"; } }
+        public string OperationName{ get { return "AdminDownloadMyBackupCodesV4"; } }
 
         public AdminDownloadMyBackupCodesV4Command(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminDownloadMyBackupCodesV4 operation = new AdminDownloadMyBackupCodesV4(
-            );
-
+            );            
+            
             Stream? response = wrapper.AdminDownloadMyBackupCodesV4(operation);
             if (response == null)
                 return "No response from server.";

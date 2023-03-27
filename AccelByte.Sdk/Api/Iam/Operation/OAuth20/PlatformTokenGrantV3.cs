@@ -343,7 +343,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PlatformTokenGrantV3 op = new PlatformTokenGrantV3(this,
-                    platformId
+                    platformId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -356,43 +356,43 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["platformId"] = platformId;
-
-
+            
+            
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.CreateHeadless != null) FormParams["createHeadless"] = Convert.ToString(builder.CreateHeadless)!;
             if (builder.DeviceId is not null) FormParams["device_id"] = builder.DeviceId;
             if (builder.MacAddress is not null) FormParams["macAddress"] = builder.MacAddress;
             if (builder.PlatformToken is not null) FormParams["platform_token"] = builder.PlatformToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
         public PlatformTokenGrantV3(
-            string platformId,
-            string? clientId,
-            bool? createHeadless,
-            string? deviceId,
-            string? macAddress,
-            string? platformToken
+            string platformId,            
+            string? clientId,            
+            bool? createHeadless,            
+            string? deviceId,            
+            string? macAddress,            
+            string? platformToken            
         )
         {
             PathParams["platformId"] = platformId;
-
-
+            
+            
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (createHeadless != null) FormParams["createHeadless"] = Convert.ToString(createHeadless)!;
             if (deviceId is not null) FormParams["device_id"] = deviceId;
             if (macAddress is not null) FormParams["macAddress"] = macAddress;
             if (platformToken is not null) FormParams["platform_token"] = platformToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
@@ -407,9 +407,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-
+        
         public Model.OauthmodelTokenResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -422,9 +422,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

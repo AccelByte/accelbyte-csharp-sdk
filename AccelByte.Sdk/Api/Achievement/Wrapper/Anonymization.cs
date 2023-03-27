@@ -24,13 +24,12 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             get { return Operation.AdminAnonymizeUserAchievement.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void AdminAnonymizeUserAchievement(AdminAnonymizeUserAchievement input)
-        {
+        
+        public void AdminAnonymizeUserAchievement(AdminAnonymizeUserAchievement input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

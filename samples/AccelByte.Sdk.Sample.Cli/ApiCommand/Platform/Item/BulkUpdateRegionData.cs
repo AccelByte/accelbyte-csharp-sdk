@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "bulkupdateregiondata")]
-    public class BulkUpdateRegionDataCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","bulkupdateregiondata")]
+    public class BulkUpdateRegionDataCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "BulkUpdateRegionData"; } }
+        public string OperationName{ get { return "BulkUpdateRegionData"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public BulkRegionDataChangeRequest Body { get; set; } = new BulkRegionDataChangeRequest();
-
+                
         public BulkUpdateRegionDataCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             BulkUpdateRegionData operation = new BulkUpdateRegionData(
-                Namespace,
-                StoreId,
-                Body
-            );
-
+                Namespace,                
+                StoreId,                
+                Body                
+            );            
+            
             wrapper.BulkUpdateRegionData(operation);
             return String.Empty;
         }

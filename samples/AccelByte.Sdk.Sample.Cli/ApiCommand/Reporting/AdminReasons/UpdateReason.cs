@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "updatereason")]
-    public class UpdateReasonCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","updatereason")]
+    public class UpdateReasonCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "UpdateReason"; } }
+        public string OperationName{ get { return "UpdateReason"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 
         [SdkCommandData("body")]
         public RestapiCreateReasonRequest Body { get; set; } = new RestapiCreateReasonRequest();
-
+                
         public UpdateReasonCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons(_SDK);
 
             UpdateReason operation = new UpdateReason(
-                Namespace,
-                ReasonId,
-                Body
-            );
-
+                Namespace,                
+                ReasonId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiAdminReasonResponse? response = wrapper.UpdateReason(operation);
             if (response == null)
                 return "No response from server.";

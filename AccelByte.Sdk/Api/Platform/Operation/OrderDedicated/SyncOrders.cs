@@ -56,8 +56,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 SyncOrders op = new SyncOrders(this,
-                    end,
-                    start
+                    end,                    
+                    start                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,35 +70,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string start
         )
         {
-
+            
             if (builder.NextEvaluatedKey is not null) QueryParams["nextEvaluatedKey"] = builder.NextEvaluatedKey;
             if (end is not null) QueryParams["end"] = end;
             if (start is not null) QueryParams["start"] = start;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public SyncOrders(
-            string? nextEvaluatedKey,
-            string end,
-            string start
+            string? nextEvaluatedKey,            
+            string end,            
+            string start            
         )
         {
-
+            
             if (nextEvaluatedKey is not null) QueryParams["nextEvaluatedKey"] = nextEvaluatedKey;
             if (end is not null) QueryParams["end"] = end;
             if (start is not null) QueryParams["start"] = start;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,15 +107,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.OrderSyncResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -128,9 +128,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.OrderSyncResult>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

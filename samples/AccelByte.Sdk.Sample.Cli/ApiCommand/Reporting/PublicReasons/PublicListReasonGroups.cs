@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "publiclistreasongroups")]
-    public class PublicListReasonGroupsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","publiclistreasongroups")]
+    public class PublicListReasonGroupsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "PublicListReasonGroups"; } }
+        public string OperationName{ get { return "PublicListReasonGroups"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.PublicReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.PublicReasons(_SDK);
 
             PublicListReasonGroups operation = new PublicListReasonGroups(
-                Namespace,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiReasonGroupListResponse? response = wrapper.PublicListReasonGroups(operation);
             if (response == null)
                 return "No response from server.";

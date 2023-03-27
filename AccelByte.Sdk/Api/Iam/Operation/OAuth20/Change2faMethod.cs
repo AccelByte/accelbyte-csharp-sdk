@@ -64,8 +64,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 Change2faMethod op = new Change2faMethod(this,
-                    factor,
-                    mfaToken
+                    factor,                    
+                    mfaToken                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -78,32 +78,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string mfaToken
         )
         {
-
-
+            
+            
             if (factor is not null) FormParams["factor"] = factor;
             if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public Change2faMethod(
-            string factor,
-            string mfaToken
+            string factor,            
+            string mfaToken            
         )
         {
-
-
+            
+            
             if (factor is not null) FormParams["factor"] = factor;
             if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -118,16 +118,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

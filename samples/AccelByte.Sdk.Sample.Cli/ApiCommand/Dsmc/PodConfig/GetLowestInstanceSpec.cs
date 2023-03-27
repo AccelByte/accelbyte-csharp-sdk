@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "getlowestinstancespec")]
-    public class GetLowestInstanceSpecCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","getlowestinstancespec")]
+    public class GetLowestInstanceSpecCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "GetLowestInstanceSpec"; } }
+        public string OperationName{ get { return "GetLowestInstanceSpec"; } }
 
         public GetLowestInstanceSpecCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.PodConfig(_SDK);
 
             GetLowestInstanceSpec operation = new GetLowestInstanceSpec(
-            );
-
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsInstanceSpec? response = wrapper.GetLowestInstanceSpec(operation);
             if (response == null)
                 return "No response from server.";

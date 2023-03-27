@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getuserstatus")]
-    public class GetUserStatusCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","getuserstatus")]
+    public class GetUserStatusCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GetUserStatus"; } }
+        public string OperationName{ get { return "GetUserStatus"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserAction wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserAction(_SDK);
 
             GetUserStatus operation = new GetUserStatus(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.ADTOObjectForEqu8UserStatus? response = wrapper.GetUserStatus(operation);
             if (response == null)
                 return "No response from server.";

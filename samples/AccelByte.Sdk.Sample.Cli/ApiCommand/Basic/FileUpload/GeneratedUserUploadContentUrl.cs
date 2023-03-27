@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "generateduseruploadcontenturl")]
-    public class GeneratedUserUploadContentUrlCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","generateduseruploadcontenturl")]
+    public class GeneratedUserUploadContentUrlCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GeneratedUserUploadContentUrl"; } }
+        public string OperationName{ get { return "GeneratedUserUploadContentUrl"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.FileUpload wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.FileUpload(_SDK);
 
             GeneratedUserUploadContentUrl operation = new GeneratedUserUploadContentUrl(
-                Namespace,
-                UserId,
-                Category,
-                FileType
-            );
-
+                Namespace,                
+                UserId,                
+                Category,                
+                FileType                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.FileUploadUrlInfo? response = wrapper.GeneratedUserUploadContentUrl(operation);
             if (response == null)
                 return "No response from server.";

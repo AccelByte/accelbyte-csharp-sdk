@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "getleaderboardconfigurationsadminv1")]
-    public class GetLeaderboardConfigurationsAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","getleaderboardconfigurationsadminv1")]
+    public class GetLeaderboardConfigurationsAdminV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "GetLeaderboardConfigurationsAdminV1"; } }
+        public string OperationName{ get { return "GetLeaderboardConfigurationsAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration(_SDK);
 
             GetLeaderboardConfigurationsAdminV1 operation = new GetLeaderboardConfigurationsAdminV1(
-                Namespace,
-                IsArchived,
-                IsDeleted,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                IsArchived,                
+                IsDeleted,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetAllLeaderboardConfigsResp? response = wrapper.GetLeaderboardConfigurationsAdminV1(operation);
             if (response == null)
                 return "No response from server.";

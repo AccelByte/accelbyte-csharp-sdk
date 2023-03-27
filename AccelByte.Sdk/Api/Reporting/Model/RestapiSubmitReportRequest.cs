@@ -103,5 +103,5 @@ namespace AccelByte.Sdk.Api.Reporting.Model
         {
 
         }
-    }
+    }    
 }

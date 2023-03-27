@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class PaymentUrlPaymentType : StringEnum<PaymentUrlPaymentType>
     {
@@ -97,5 +97,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

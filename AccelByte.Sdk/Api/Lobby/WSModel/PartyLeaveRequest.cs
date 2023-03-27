@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-
+        
         [AwesomeProperty("ignoreUserRegistry")]
         [JsonPropertyName("ignoreUserRegistry")]
         public bool? IgnoreUserRegistry { get; set; }
-
+        
     }
 }

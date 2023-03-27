@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "deletebackfill")]
-    public class DeleteBackfillCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","deletebackfill")]
+    public class DeleteBackfillCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "DeleteBackfill"; } }
+        public string OperationName{ get { return "DeleteBackfill"; } }
 
         [SdkCommandArgument("backfillID")]
         public string BackfillID { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.Backfill wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.Backfill(_SDK);
 
             DeleteBackfill operation = new DeleteBackfill(
-                BackfillID,
-                Namespace
-            );
-
+                BackfillID,                
+                Namespace                
+            );            
+            
             wrapper.DeleteBackfill(operation);
             return String.Empty;
         }

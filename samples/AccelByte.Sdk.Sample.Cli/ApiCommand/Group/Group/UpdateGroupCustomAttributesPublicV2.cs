@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "updategroupcustomattributespublicv2")]
-    public class UpdateGroupCustomAttributesPublicV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","updategroupcustomattributespublicv2")]
+    public class UpdateGroupCustomAttributesPublicV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "UpdateGroupCustomAttributesPublicV2"; } }
+        public string OperationName{ get { return "UpdateGroupCustomAttributesPublicV2"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 
         [SdkCommandData("body")]
         public ModelsUpdateGroupCustomAttributesRequestV1 Body { get; set; } = new ModelsUpdateGroupCustomAttributesRequestV1();
-
+                
         public UpdateGroupCustomAttributesPublicV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Group wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Group(_SDK);
 
             UpdateGroupCustomAttributesPublicV2 operation = new UpdateGroupCustomAttributesPublicV2(
-                GroupId,
-                Namespace,
-                Body
-            );
-
+                GroupId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGroupResponseV1? response = wrapper.UpdateGroupCustomAttributesPublicV2(operation);
             if (response == null)
                 return "No response from server.";

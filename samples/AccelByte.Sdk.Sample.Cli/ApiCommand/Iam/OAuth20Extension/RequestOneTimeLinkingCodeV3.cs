@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "requestonetimelinkingcodev3")]
-    public class RequestOneTimeLinkingCodeV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","requestonetimelinkingcodev3")]
+    public class RequestOneTimeLinkingCodeV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "RequestOneTimeLinkingCodeV3"; } }
+        public string OperationName{ get { return "RequestOneTimeLinkingCodeV3"; } }
 
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
-
+                    
         public RequestOneTimeLinkingCodeV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             RequestOneTimeLinkingCodeV3 operation = new RequestOneTimeLinkingCodeV3(
-                PlatformId
-            );
-
+                PlatformId                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelOneTimeLinkingCodeResponse? response = wrapper.RequestOneTimeLinkingCodeV3(operation);
             if (response == null)
                 return "No response from server.";

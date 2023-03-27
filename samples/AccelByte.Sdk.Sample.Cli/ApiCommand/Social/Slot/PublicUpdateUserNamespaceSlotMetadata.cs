@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicupdateusernamespaceslotmetadata")]
-    public class PublicUpdateUserNamespaceSlotMetadataCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicupdateusernamespaceslotmetadata")]
+    public class PublicUpdateUserNamespaceSlotMetadataCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicUpdateUserNamespaceSlotMetadata"; } }
+        public string OperationName{ get { return "PublicUpdateUserNamespaceSlotMetadata"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public SlotMetadataUpdate Body { get; set; } = new SlotMetadataUpdate();
-
+                
         public PublicUpdateUserNamespaceSlotMetadataCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.Slot wrapper = new AccelByte.Sdk.Api.Social.Wrapper.Slot(_SDK);
 
             PublicUpdateUserNamespaceSlotMetadata operation = new PublicUpdateUserNamespaceSlotMetadata(
-                Namespace,
-                SlotId,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                SlotId,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.SlotInfo? response = wrapper.PublicUpdateUserNamespaceSlotMetadata(operation);
             if (response == null)
                 return "No response from server.";

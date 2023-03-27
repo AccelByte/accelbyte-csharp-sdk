@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "adminpostplayerrecordhandlerv1")]
-    public class AdminPostPlayerRecordHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","adminpostplayerrecordhandlerv1")]
+    public class AdminPostPlayerRecordHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Cloudsave"; } }
+        public string ServiceName{ get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "AdminPostPlayerRecordHandlerV1"; } }
+        public string OperationName{ get { return "AdminPostPlayerRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsPlayerRecordRequest Body { get; set; } = new ModelsPlayerRecordRequest();
-
+                
         public AdminPostPlayerRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
             AdminPostPlayerRecordHandlerV1 operation = new AdminPostPlayerRecordHandlerV1(
-                Key,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Key,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.AdminPostPlayerRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "getactivecustomgamesessions")]
-    public class GetActiveCustomGameSessionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","getactivecustomgamesessions")]
+    public class GetActiveCustomGameSessionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "GetActiveCustomGameSessions"; } }
+        public string OperationName{ get { return "GetActiveCustomGameSessions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             GetActiveCustomGameSessions operation = new GetActiveCustomGameSessions(
-                Namespace,
-                Limit,
-                Offset,
-                ServerRegion,
-                SessionId
-            );
-
+                Namespace,                
+                Limit,                
+                Offset,                
+                ServerRegion,                
+                SessionId                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsActiveCustomGameResponse? response = wrapper.GetActiveCustomGameSessions(operation);
             if (response == null)
                 return "No response from server.";

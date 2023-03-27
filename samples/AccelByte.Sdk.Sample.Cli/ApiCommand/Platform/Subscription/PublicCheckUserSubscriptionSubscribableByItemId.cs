@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publiccheckusersubscriptionsubscribablebyitemid")]
-    public class PublicCheckUserSubscriptionSubscribableByItemIdCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publiccheckusersubscriptionsubscribablebyitemid")]
+    public class PublicCheckUserSubscriptionSubscribableByItemIdCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicCheckUserSubscriptionSubscribableByItemId"; } }
+        public string OperationName{ get { return "PublicCheckUserSubscriptionSubscribableByItemId"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             PublicCheckUserSubscriptionSubscribableByItemId operation = new PublicCheckUserSubscriptionSubscribableByItemId(
-                Namespace,
-                UserId,
-                ItemId
-            );
-
+                Namespace,                
+                UserId,                
+                ItemId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.Subscribable? response = wrapper.PublicCheckUserSubscriptionSubscribableByItemId(operation);
             if (response == null)
                 return "No response from server.";

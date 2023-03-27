@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicgeneratepartycode")]
-    public class PublicGeneratePartyCodeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicgeneratepartycode")]
+    public class PublicGeneratePartyCodeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicGeneratePartyCode"; } }
+        public string OperationName{ get { return "PublicGeneratePartyCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicGeneratePartyCode operation = new PublicGeneratePartyCode(
-                Namespace,
-                PartyId
-            );
-
+                Namespace,                
+                PartyId                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicGeneratePartyCode(operation);
             if (response == null)
                 return "No response from server.";

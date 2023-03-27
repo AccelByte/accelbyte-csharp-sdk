@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicbulkgetusers")]
-    public class PublicBulkGetUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicbulkgetusers")]
+    public class PublicBulkGetUsersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicBulkGetUsers"; } }
+        public string OperationName{ get { return "PublicBulkGetUsers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserIDsRequest Body { get; set; } = new ModelUserIDsRequest();
-
+                
         public PublicBulkGetUsersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicBulkGetUsers operation = new PublicBulkGetUsers(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelListBulkUserResponse? response = wrapper.PublicBulkGetUsers(operation);
             if (response == null)
                 return "No response from server.";

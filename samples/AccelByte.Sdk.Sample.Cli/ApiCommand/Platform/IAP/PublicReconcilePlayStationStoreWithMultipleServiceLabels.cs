@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicreconcileplaystationstorewithmultipleservicelabels")]
-    public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicreconcileplaystationstorewithmultipleservicelabels")]
+    public class PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicReconcilePlayStationStoreWithMultipleServiceLabels"; } }
+        public string OperationName{ get { return "PublicReconcilePlayStationStoreWithMultipleServiceLabels"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PlayStationMultiServiceLabelsReconcileRequest Body { get; set; } = new PlayStationMultiServiceLabelsReconcileRequest();
-
+                
         public PublicReconcilePlayStationStoreWithMultipleServiceLabelsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             PublicReconcilePlayStationStoreWithMultipleServiceLabels operation = new PublicReconcilePlayStationStoreWithMultipleServiceLabels(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.PlayStationReconcileResult>? response = wrapper.PublicReconcilePlayStationStoreWithMultipleServiceLabels(operation);
             if (response == null)
                 return "No response from server.";

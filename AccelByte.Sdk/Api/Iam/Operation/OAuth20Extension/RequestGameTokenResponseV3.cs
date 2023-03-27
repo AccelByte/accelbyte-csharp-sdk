@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 RequestGameTokenResponseV3 op = new RequestGameTokenResponseV3(this,
-                    code
+                    code                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -61,29 +61,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string code
         )
         {
-
-
+            
+            
             if (code is not null) FormParams["code"] = code;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RequestGameTokenResponseV3(
-            string code
+            string code            
         )
         {
-
-
+            
+            
             if (code is not null) FormParams["code"] = code;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,9 +98,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -113,9 +113,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

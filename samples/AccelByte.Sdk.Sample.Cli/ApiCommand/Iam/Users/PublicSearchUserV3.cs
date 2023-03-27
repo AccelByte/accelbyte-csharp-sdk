@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicsearchuserv3")]
-    public class PublicSearchUserV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicsearchuserv3")]
+    public class PublicSearchUserV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicSearchUserV3"; } }
+        public string OperationName{ get { return "PublicSearchUserV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicSearchUserV3 operation = new PublicSearchUserV3(
-                Namespace,
-                By,
-                Limit,
-                Offset,
-                Query
-            );
-
+                Namespace,                
+                By,                
+                Limit,                
+                Offset,                
+                Query                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelPublicUserInformationResponseV3? response = wrapper.PublicSearchUserV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getappleiapconfig")]
-    public class GetAppleIAPConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getappleiapconfig")]
+    public class GetAppleIAPConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetAppleIAPConfig"; } }
+        public string OperationName{ get { return "GetAppleIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             GetAppleIAPConfig operation = new GetAppleIAPConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.AppleIAPConfigInfo? response = wrapper.GetAppleIAPConfig(operation);
             if (response == null)
                 return "No response from server.";

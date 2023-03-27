@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicqueryitems")]
-    public class PublicQueryItemsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicqueryitems")]
+    public class PublicQueryItemsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicQueryItems"; } }
+        public string OperationName{ get { return "PublicQueryItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -79,22 +79,22 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             PublicQueryItems operation = new PublicQueryItems(
-                Namespace,
-                (AppType is null ? null : PublicQueryItemsAppType.NewValue(AppType)),
-                BaseAppId,
-                CategoryPath,
-                Features,
-                IncludeSubCategoryItem,
-                (ItemType is null ? null : PublicQueryItemsItemType.NewValue(ItemType)),
-                Language,
-                Limit,
-                Offset,
-                Region,
-                (SortBy is null ? null : PublicQueryItemsSortBy.NewValue(SortBy)),
-                StoreId,
-                Tags
-            );
-
+                Namespace,                
+                (AppType is null ? null : PublicQueryItemsAppType.NewValue(AppType)),                
+                BaseAppId,                
+                CategoryPath,                
+                Features,                
+                IncludeSubCategoryItem,                
+                (ItemType is null ? null : PublicQueryItemsItemType.NewValue(ItemType)),                
+                Language,                
+                Limit,                
+                Offset,                
+                Region,                
+                (SortBy is null ? null : PublicQueryItemsSortBy.NewValue(SortBy)),                
+                StoreId,                
+                Tags                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.ItemPagingSlicedResult? response = wrapper.PublicQueryItems(operation);
             if (response == null)
                 return "No response from server.";

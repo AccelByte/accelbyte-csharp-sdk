@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicrevokepartycode")]
-    public class PublicRevokePartyCodeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicrevokepartycode")]
+    public class PublicRevokePartyCodeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicRevokePartyCode"; } }
+        public string OperationName{ get { return "PublicRevokePartyCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicRevokePartyCode operation = new PublicRevokePartyCode(
-                Namespace,
-                PartyId
-            );
-
+                Namespace,                
+                PartyId                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicRevokePartyCode(operation);
             if (response == null)
                 return "No response from server.";

@@ -28,22 +28,20 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             get { return Operation.LogoutSSOClient.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void LoginSSOClient(LoginSSOClient input)
-        {
+        
+        public void LoginSSOClient(LoginSSOClient input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void LogoutSSOClient(LogoutSSOClient input)
-        {
+        public void LogoutSSOClient(LogoutSSOClient input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Config)builder.WrapperObject!).ListConfig(op);
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SaveConfig.SaveConfigBuilder builder,
             ModelsDSMConfigRecord body

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuserorderhistories")]
-    public class GetUserOrderHistoriesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getuserorderhistories")]
+    public class GetUserOrderHistoriesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserOrderHistories"; } }
+        public string OperationName{ get { return "GetUserOrderHistories"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             GetUserOrderHistories operation = new GetUserOrderHistories(
-                Namespace,
-                OrderNo,
-                UserId
-            );
-
+                Namespace,                
+                OrderNo,                
+                UserId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.OrderHistoryInfo>? response = wrapper.GetUserOrderHistories(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "deleteview")]
-    public class DeleteViewCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deleteview")]
+    public class DeleteViewCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DeleteView"; } }
+        public string OperationName{ get { return "DeleteView"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.View wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.View(_SDK);
 
             DeleteView operation = new DeleteView(
-                Namespace,
-                ViewId,
-                StoreId
-            );
-
+                Namespace,                
+                ViewId,                
+                StoreId                
+            );            
+            
             wrapper.DeleteView(operation);
             return String.Empty;
         }

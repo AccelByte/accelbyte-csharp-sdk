@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "createlocalizedpolicyversion1")]
-    public class CreateLocalizedPolicyVersion1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","createlocalizedpolicyversion1")]
+    public class CreateLocalizedPolicyVersion1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "CreateLocalizedPolicyVersion1"; } }
+        public string OperationName{ get { return "CreateLocalizedPolicyVersion1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public CreateLocalizedPolicyVersionRequest Body { get; set; } = new CreateLocalizedPolicyVersionRequest();
-
+                
         public CreateLocalizedPolicyVersion1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace(_SDK);
 
             CreateLocalizedPolicyVersion1 operation = new CreateLocalizedPolicyVersion1(
-                Namespace,
-                PolicyVersionId,
-                Body
-            );
-
+                Namespace,                
+                PolicyVersionId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.CreateLocalizedPolicyVersionResponse? response = wrapper.CreateLocalizedPolicyVersion1(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "creategamesession")]
-    public class CreateGameSessionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","creategamesession")]
+    public class CreateGameSessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "CreateGameSession"; } }
+        public string OperationName{ get { return "CreateGameSession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApimodelsCreateGameSessionRequest Body { get; set; } = new ApimodelsCreateGameSessionRequest();
-
+                
         public CreateGameSessionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             CreateGameSession operation = new CreateGameSession(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse? response = wrapper.CreateGameSession(operation);
             if (response == null)
                 return "No response from server.";

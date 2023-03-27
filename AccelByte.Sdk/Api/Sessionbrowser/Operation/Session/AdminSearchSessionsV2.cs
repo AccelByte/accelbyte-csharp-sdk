@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             )
             {
                 AdminSearchSessionsV2 op = new AdminSearchSessionsV2(this,
-                    namespace_,
-                    limit,
-                    offset
+                    namespace_,                    
+                    limit,                    
+                    offset                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.Channel is not null) QueryParams["channel"] = builder.Channel;
             if (builder.Deleted != null) QueryParams["deleted"] = Convert.ToString(builder.Deleted)!;
             if (builder.MatchID is not null) QueryParams["matchID"] = builder.MatchID;
@@ -133,31 +133,31 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (builder.UserID is not null) QueryParams["userID"] = builder.UserID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminSearchSessionsV2(
-            string namespace_,
-            string? channel,
-            bool? deleted,
-            string? matchID,
-            string? partyID,
-            string? sessionType,
-            string? status,
-            string? userID,
-            long limit,
-            long offset
+            string namespace_,            
+            string? channel,            
+            bool? deleted,            
+            string? matchID,            
+            string? partyID,            
+            string? sessionType,            
+            string? status,            
+            string? userID,            
+            long limit,            
+            long offset            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (channel is not null) QueryParams["channel"] = channel;
             if (deleted != null) QueryParams["deleted"] = Convert.ToString(deleted)!;
             if (matchID is not null) QueryParams["matchID"] = matchID;
@@ -167,11 +167,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             if (userID is not null) QueryParams["userID"] = userID;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -186,9 +186,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsGetSessionHistorySearchResponseV2? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -201,9 +201,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetSessionHistorySearchResponseV2>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

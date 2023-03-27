@@ -32,22 +32,21 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             get { return Operation.UpdateConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.Equ8Config? GetConfig(GetConfig input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteConfig(DeleteConfig input)
-        {
+        public void DeleteConfig(DeleteConfig input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -56,7 +55,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

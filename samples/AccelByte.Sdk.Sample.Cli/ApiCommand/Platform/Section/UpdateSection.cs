@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "updatesection")]
-    public class UpdateSectionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","updatesection")]
+    public class UpdateSectionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "UpdateSection"; } }
+        public string OperationName{ get { return "UpdateSection"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public SectionUpdate Body { get; set; } = new SectionUpdate();
-
+                
         public UpdateSectionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Section wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Section(_SDK);
 
             UpdateSection operation = new UpdateSection(
-                Namespace,
-                SectionId,
-                StoreId,
-                Body
-            );
-
+                Namespace,                
+                SectionId,                
+                StoreId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.FullSectionInfo? response = wrapper.UpdateSection(operation);
             if (response == null)
                 return "No response from server.";

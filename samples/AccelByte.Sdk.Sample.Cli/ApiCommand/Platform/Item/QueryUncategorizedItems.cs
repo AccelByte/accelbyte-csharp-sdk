@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryuncategorizeditems")]
-    public class QueryUncategorizedItemsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryuncategorizeditems")]
+    public class QueryUncategorizedItemsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryUncategorizedItems"; } }
+        public string OperationName{ get { return "QueryUncategorizedItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             QueryUncategorizedItems operation = new QueryUncategorizedItems(
-                Namespace,
-                ActiveOnly,
-                Limit,
-                Offset,
-                (SortBy is null ? null : QueryUncategorizedItemsSortBy.NewValue(SortBy)),
-                StoreId
-            );
-
+                Namespace,                
+                ActiveOnly,                
+                Limit,                
+                Offset,                
+                (SortBy is null ? null : QueryUncategorizedItemsSortBy.NewValue(SortBy)),                
+                StoreId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.QueryUncategorizedItems(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryrevocationhistories")]
-    public class QueryRevocationHistoriesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryrevocationhistories")]
+    public class QueryRevocationHistoriesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryRevocationHistories"; } }
+        public string OperationName{ get { return "QueryRevocationHistories"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Revocation wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Revocation(_SDK);
 
             QueryRevocationHistories operation = new QueryRevocationHistories(
-                Namespace,
-                EndTime,
-                Limit,
-                Offset,
-                (Source is null ? null : QueryRevocationHistoriesSource.NewValue(Source)),
-                StartTime,
-                (Status is null ? null : QueryRevocationHistoriesStatus.NewValue(Status)),
-                TransactionId,
-                UserId
-            );
-
+                Namespace,                
+                EndTime,                
+                Limit,                
+                Offset,                
+                (Source is null ? null : QueryRevocationHistoriesSource.NewValue(Source)),                
+                StartTime,                
+                (Status is null ? null : QueryRevocationHistoriesStatus.NewValue(Status)),                
+                TransactionId,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.RevocationHistoryPagingSlicedResult? response = wrapper.QueryRevocationHistories(operation);
             if (response == null)
                 return "No response from server.";

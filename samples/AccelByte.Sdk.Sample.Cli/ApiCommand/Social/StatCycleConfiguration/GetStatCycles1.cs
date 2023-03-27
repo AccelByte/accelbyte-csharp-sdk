@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "getstatcycles1")]
-    public class GetStatCycles1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("social","getstatcycles1")]
+    public class GetStatCycles1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "GetStatCycles1"; } }
+        public string OperationName{ get { return "GetStatCycles1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration(_SDK);
 
             GetStatCycles1 operation = new GetStatCycles1(
-                Namespace,
-                (CycleType is null ? null : GetStatCycles1CycleType.NewValue(CycleType)),
-                Limit,
-                Name,
-                Offset,
-                SortBy,
-                (Status is null ? null : GetStatCycles1Status.NewValue(Status))
-            );
-
+                Namespace,                
+                (CycleType is null ? null : GetStatCycles1CycleType.NewValue(CycleType)),                
+                Limit,                
+                Name,                
+                Offset,                
+                SortBy,                
+                (Status is null ? null : GetStatCycles1Status.NewValue(Status))                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.StatCyclePagingSlicedResult? response = wrapper.GetStatCycles1(operation);
             if (response == null)
                 return "No response from server.";

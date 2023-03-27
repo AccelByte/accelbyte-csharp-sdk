@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "updatecontentlikestatus")]
-    public class UpdateContentLikeStatusCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","updatecontentlikestatus")]
+    public class UpdateContentLikeStatusCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "UpdateContentLikeStatus"; } }
+        public string OperationName{ get { return "UpdateContentLikeStatus"; } }
 
         [SdkCommandArgument("contentId")]
         public string ContentId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsContentLikeRequest Body { get; set; } = new ModelsContentLikeRequest();
-
+                
         public UpdateContentLikeStatusCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicLike wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicLike(_SDK);
 
             UpdateContentLikeStatus operation = new UpdateContentLikeStatus(
-                ContentId,
-                Namespace,
-                Body
-            );
-
+                ContentId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentLikeResponse? response = wrapper.UpdateContentLikeStatus(operation);
             if (response == null)
                 return "No response from server.";

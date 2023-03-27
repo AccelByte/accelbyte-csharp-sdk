@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "adminqueryplayerattributes")]
-    public class AdminQueryPlayerAttributesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","adminqueryplayerattributes")]
+    public class AdminQueryPlayerAttributesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminQueryPlayerAttributes"; } }
+        public string OperationName{ get { return "AdminQueryPlayerAttributes"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Player wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Player(_SDK);
 
             AdminQueryPlayerAttributes operation = new AdminQueryPlayerAttributes(
-                Namespace,
-                Users
-            );
-
+                Namespace,                
+                Users                
+            );            
+            
             List<AccelByte.Sdk.Api.Session.Model.ApimodelsPlayerAttributesResponseBody>? response = wrapper.AdminQueryPlayerAttributes(operation);
             if (response == null)
                 return "No response from server.";

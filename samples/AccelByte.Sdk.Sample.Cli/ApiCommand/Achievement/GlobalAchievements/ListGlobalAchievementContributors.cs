@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "listglobalachievementcontributors")]
-    public class ListGlobalAchievementContributorsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","listglobalachievementcontributors")]
+    public class ListGlobalAchievementContributorsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "ListGlobalAchievementContributors"; } }
+        public string OperationName{ get { return "ListGlobalAchievementContributors"; } }
 
         [SdkCommandArgument("achievementCode")]
         public string AchievementCode { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements(_SDK);
 
             ListGlobalAchievementContributors operation = new ListGlobalAchievementContributors(
-                AchievementCode,
-                Namespace,
-                Limit,
-                Offset,
-                SortBy
-            );
-
+                AchievementCode,                
+                Namespace,                
+                Limit,                
+                Offset,                
+                SortBy                
+            );            
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedContributorResponse? response = wrapper.ListGlobalAchievementContributors(operation);
             if (response == null)
                 return "No response from server.";

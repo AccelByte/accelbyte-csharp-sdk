@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// 
     /// All request body are required except preview, tags and customAttributes.
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class AdminUpdateContentDirect : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -50,11 +50,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 AdminUpdateContentDirect op = new AdminUpdateContentDirect(this,
-                    body,
-                    channelId,
-                    contentId,
-                    namespace_,
-                    userId
+                    body,                    
+                    channelId,                    
+                    contentId,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,37 +74,37 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdateContentDirect(
-            string channelId,
-            string contentId,
-            string namespace_,
-            string userId,
-            Model.ModelsCreateContentRequest body
+            string channelId,            
+            string contentId,            
+            string namespace_,            
+            string userId,            
+            Model.ModelsCreateContentRequest body            
         )
         {
             PathParams["channelId"] = channelId;
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsCreateContentResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -134,18 +134,18 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsCreateContentResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.ModelsCreateContentResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }
+            }            
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.ModelsCreateContentResponse<T1>>(payload);
@@ -154,8 +154,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsCreateContentResponse<T1>>(payload);
             }
-
-            var payloadString = Helper.ConvertInputStreamToString(payload);
+            
+            var payloadString = Helper.ConvertInputStreamToString(payload);            
             throw new HttpResponseException(code, payloadString);
         }
     }

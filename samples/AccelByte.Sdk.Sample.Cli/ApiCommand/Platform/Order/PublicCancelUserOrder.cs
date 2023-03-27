@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publiccanceluserorder")]
-    public class PublicCancelUserOrderCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publiccanceluserorder")]
+    public class PublicCancelUserOrderCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicCancelUserOrder"; } }
+        public string OperationName{ get { return "PublicCancelUserOrder"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             PublicCancelUserOrder operation = new PublicCancelUserOrder(
-                Namespace,
-                OrderNo,
-                UserId
-            );
-
+                Namespace,                
+                OrderNo,                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.OrderInfo? response = wrapper.PublicCancelUserOrder(operation);
             if (response == null)
                 return "No response from server.";

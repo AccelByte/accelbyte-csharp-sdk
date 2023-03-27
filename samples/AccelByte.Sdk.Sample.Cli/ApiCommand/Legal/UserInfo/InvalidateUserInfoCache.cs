@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "invalidateuserinfocache")]
-    public class InvalidateUserInfoCacheCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","invalidateuserinfocache")]
+    public class InvalidateUserInfoCacheCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "InvalidateUserInfoCache"; } }
+        public string OperationName{ get { return "InvalidateUserInfoCache"; } }
 
         [SdkCommandArgument("namespace_")]
         public string? Namespace { get; set; }
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.UserInfo wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.UserInfo(_SDK);
 
             InvalidateUserInfoCache operation = new InvalidateUserInfoCache(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.InvalidateUserInfoCache(operation);
             return String.Empty;
         }

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "requesttokenbyonetimelinkcoderesponsev3")]
-    public class RequestTokenByOneTimeLinkCodeResponseV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","requesttokenbyonetimelinkcoderesponsev3")]
+    public class RequestTokenByOneTimeLinkCodeResponseV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "RequestTokenByOneTimeLinkCodeResponseV3"; } }
+        public string OperationName{ get { return "RequestTokenByOneTimeLinkCodeResponseV3"; } }
 
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("oneTimeLinkCode")]
         public string OneTimeLinkCode { get; set; } = String.Empty;
-
+                    
         public RequestTokenByOneTimeLinkCodeResponseV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Extension(_SDK);
 
             RequestTokenByOneTimeLinkCodeResponseV3 operation = new RequestTokenByOneTimeLinkCodeResponseV3(
-                ClientId,
-                OneTimeLinkCode
-            );
-
+                ClientId,                
+                OneTimeLinkCode                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.RequestTokenByOneTimeLinkCodeResponseV3(operation);
             if (response == null)
                 return "No response from server.";

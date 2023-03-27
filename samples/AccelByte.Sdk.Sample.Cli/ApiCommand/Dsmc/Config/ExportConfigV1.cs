@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "exportconfigv1")]
-    public class ExportConfigV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","exportconfigv1")]
+    public class ExportConfigV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "ExportConfigV1"; } }
+        public string OperationName{ get { return "ExportConfigV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Config(_SDK);
 
             ExportConfigV1 operation = new ExportConfigV1(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             Stream? response = wrapper.ExportConfigV1(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminsearchusersv2")]
-    public class AdminSearchUsersV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminsearchusersv2")]
+    public class AdminSearchUsersV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminSearchUsersV2"; } }
+        public string OperationName{ get { return "AdminSearchUsersV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -66,28 +66,28 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             AdminSearchUsersV2 operation = new AdminSearchUsersV2(
-                Namespace,
-                After,
-                Before,
-                DisplayName,
-                Limit,
-                LoginId,
-                PlatformUserId,
-                RoleId,
-                UserId,
-                PlatformId
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                After,                
+                Before,                
+                DisplayName,                
+                Limit,                
+                LoginId,                
+                PlatformUserId,                
+                RoleId,                
+                UserId,                
+                PlatformId                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Iam.Model.ModelSearchUsersByPlatformIDResponse? response = wrapper.AdminSearchUsersV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

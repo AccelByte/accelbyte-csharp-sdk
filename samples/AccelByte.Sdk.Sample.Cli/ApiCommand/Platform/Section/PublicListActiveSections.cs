@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publiclistactivesections")]
-    public class PublicListActiveSectionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publiclistactivesections")]
+    public class PublicListActiveSectionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicListActiveSections"; } }
+        public string OperationName{ get { return "PublicListActiveSections"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Section wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Section(_SDK);
 
             PublicListActiveSections operation = new PublicListActiveSections(
-                Namespace,
-                UserId,
-                Language,
-                Region,
-                StoreId,
-                ViewId
-            );
-
+                Namespace,                
+                UserId,                
+                Language,                
+                Region,                
+                StoreId,                
+                ViewId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.SectionInfo>? response = wrapper.PublicListActiveSections(operation);
             if (response == null)
                 return "No response from server.";

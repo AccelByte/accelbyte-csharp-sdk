@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "getpublicfollowing")]
-    public class GetPublicFollowingCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","getpublicfollowing")]
+    public class GetPublicFollowingCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "GetPublicFollowing"; } }
+        public string OperationName{ get { return "GetPublicFollowing"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicFollow wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicFollow(_SDK);
 
             GetPublicFollowing operation = new GetPublicFollowing(
-                Namespace,
-                UserId,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                UserId,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsPaginatedCreatorOverviewResponse? response = wrapper.GetPublicFollowing(operation);
             if (response == null)
                 return "No response from server.";

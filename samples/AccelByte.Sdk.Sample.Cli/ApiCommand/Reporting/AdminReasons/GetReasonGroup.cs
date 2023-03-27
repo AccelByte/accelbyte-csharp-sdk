@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "getreasongroup")]
-    public class GetReasonGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","getreasongroup")]
+    public class GetReasonGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "GetReasonGroup"; } }
+        public string OperationName{ get { return "GetReasonGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReasons(_SDK);
 
             GetReasonGroup operation = new GetReasonGroup(
-                GroupId,
-                Namespace
-            );
-
+                GroupId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiReasonGroupResponse? response = wrapper.GetReasonGroup(operation);
             if (response == null)
                 return "No response from server.";

@@ -16,6 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("message")]
         [JsonPropertyName("message")]
         public string? Message { get; set; }
-
+        
     }
 }

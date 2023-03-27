@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "listviews")]
-    public class ListViewsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listviews")]
+    public class ListViewsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ListViews"; } }
+        public string OperationName{ get { return "ListViews"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.View wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.View(_SDK);
 
             ListViews operation = new ListViews(
-                Namespace,
-                StoreId
-            );
-
+                Namespace,                
+                StoreId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.ListViewInfo>? response = wrapper.ListViews(operation);
             if (response == null)
                 return "No response from server.";

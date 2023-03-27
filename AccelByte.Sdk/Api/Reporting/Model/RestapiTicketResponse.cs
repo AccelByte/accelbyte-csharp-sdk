@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Api.Reporting.Model
         {
 
         }
-    }
+    }    
 
     public class RestapiTicketResponseStatus : StringEnum<RestapiTicketResponseStatus>
     {
@@ -106,5 +106,5 @@ namespace AccelByte.Sdk.Api.Reporting.Model
         {
 
         }
-    }
+    }    
 }

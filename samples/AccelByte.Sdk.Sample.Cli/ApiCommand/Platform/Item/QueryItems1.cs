@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryitems1")]
-    public class QueryItems1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryitems1")]
+    public class QueryItems1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryItems1"; } }
+        public string OperationName{ get { return "QueryItems1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -88,25 +88,25 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             QueryItems1 operation = new QueryItems1(
-                Namespace,
-                (AppType is null ? null : QueryItems1AppType.NewValue(AppType)),
-                AvailableDate,
-                BaseAppId,
-                CategoryPath,
-                Features,
-                IncludeSubCategoryItem,
-                ItemName,
-                (ItemStatus is null ? null : QueryItems1ItemStatus.NewValue(ItemStatus)),
-                (ItemType is null ? null : QueryItems1ItemType.NewValue(ItemType)),
-                Limit,
-                Offset,
-                Region,
-                (SortBy is null ? null : QueryItems1SortBy.NewValue(SortBy)),
-                StoreId,
-                Tags,
-                TargetNamespace
-            );
-
+                Namespace,                
+                (AppType is null ? null : QueryItems1AppType.NewValue(AppType)),                
+                AvailableDate,                
+                BaseAppId,                
+                CategoryPath,                
+                Features,                
+                IncludeSubCategoryItem,                
+                ItemName,                
+                (ItemStatus is null ? null : QueryItems1ItemStatus.NewValue(ItemStatus)),                
+                (ItemType is null ? null : QueryItems1ItemType.NewValue(ItemType)),                
+                Limit,                
+                Offset,                
+                Region,                
+                (SortBy is null ? null : QueryItems1SortBy.NewValue(SortBy)),                
+                StoreId,                
+                Tags,                
+                TargetNamespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.FullItemPagingSlicedResult? response = wrapper.QueryItems1(operation);
             if (response == null)
                 return "No response from server.";

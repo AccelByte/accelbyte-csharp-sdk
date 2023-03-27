@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "verifytokenv3")]
-    public class VerifyTokenV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","verifytokenv3")]
+    public class VerifyTokenV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "VerifyTokenV3"; } }
+        public string OperationName{ get { return "VerifyTokenV3"; } }
 
         [SdkCommandArgument("token")]
         public string Token { get; set; } = String.Empty;
-
+                    
         public VerifyTokenV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             VerifyTokenV3 operation = new VerifyTokenV3(
-                Token
-            );
-
+                Token                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.OauthmodelTokenResponseV3? response = wrapper.VerifyTokenV3(operation);
             if (response == null)
                 return "No response from server.";

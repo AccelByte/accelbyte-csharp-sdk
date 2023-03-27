@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "querykeygroups")]
-    public class QueryKeyGroupsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","querykeygroups")]
+    public class QueryKeyGroupsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryKeyGroups"; } }
+        public string OperationName{ get { return "QueryKeyGroups"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.KeyGroup(_SDK);
 
             QueryKeyGroups operation = new QueryKeyGroups(
-                Namespace,
-                Limit,
-                Name,
-                Offset,
-                Tag
-            );
-
+                Namespace,                
+                Limit,                
+                Name,                
+                Offset,                
+                Tag                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.KeyGroupPagingSlicedResult? response = wrapper.QueryKeyGroups(operation);
             if (response == null)
                 return "No response from server.";

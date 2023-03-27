@@ -24,13 +24,12 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.AnonymizeUserAgreement.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void AnonymizeUserAgreement(AnonymizeUserAgreement input)
-        {
+        
+        public void AnonymizeUserAgreement(AnonymizeUserAgreement input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

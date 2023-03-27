@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "getallnotificationtemplatesv1admin")]
-    public class GetAllNotificationTemplatesV1AdminCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","getallnotificationtemplatesv1admin")]
+    public class GetAllNotificationTemplatesV1AdminCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "GetAllNotificationTemplatesV1Admin"; } }
+        public string OperationName{ get { return "GetAllNotificationTemplatesV1Admin"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Notification wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Notification(_SDK);
 
             GetAllNotificationTemplatesV1Admin operation = new GetAllNotificationTemplatesV1Admin(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             List<AccelByte.Sdk.Api.Lobby.Model.ModelNotificationTemplateResponse>? response = wrapper.GetAllNotificationTemplatesV1Admin(operation);
             if (response == null)
                 return "No response from server.";

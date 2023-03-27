@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "queryuseriaporders")]
-    public class QueryUserIAPOrdersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","queryuseriaporders")]
+    public class QueryUserIAPOrdersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QueryUserIAPOrders"; } }
+        public string OperationName{ get { return "QueryUserIAPOrders"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
             QueryUserIAPOrders operation = new QueryUserIAPOrders(
-                Namespace,
-                UserId,
-                EndTime,
-                Limit,
-                Offset,
-                ProductId,
-                StartTime,
-                (Status is null ? null : QueryUserIAPOrdersStatus.NewValue(Status)),
-                (Type is null ? null : QueryUserIAPOrdersType.NewValue(Type))
-            );
-
+                Namespace,                
+                UserId,                
+                EndTime,                
+                Limit,                
+                Offset,                
+                ProductId,                
+                StartTime,                
+                (Status is null ? null : QueryUserIAPOrdersStatus.NewValue(Status)),                
+                (Type is null ? null : QueryUserIAPOrdersType.NewValue(Type))                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.IAPOrderPagingSlicedResult? response = wrapper.QueryUserIAPOrders(operation);
             if (response == null)
                 return "No response from server.";

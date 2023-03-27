@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "publicdownloadcontentbysharecode")]
-    public class PublicDownloadContentByShareCodeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","publicdownloadcontentbysharecode")]
+    public class PublicDownloadContentByShareCodeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "PublicDownloadContentByShareCode"; } }
+        public string OperationName{ get { return "PublicDownloadContentByShareCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.PublicContent(_SDK);
 
             PublicDownloadContentByShareCode operation = new PublicDownloadContentByShareCode(
-                Namespace,
-                ShareCode
-            );
-
+                Namespace,                
+                ShareCode                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsContentDownloadResponse? response = wrapper.PublicDownloadContentByShareCode(operation);
             if (response == null)
                 return "No response from server.";

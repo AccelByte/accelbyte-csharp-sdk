@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "singleadminupdategroup")]
-    public class SingleAdminUpdateGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","singleadminupdategroup")]
+    public class SingleAdminUpdateGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "SingleAdminUpdateGroup"; } }
+        public string OperationName{ get { return "SingleAdminUpdateGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsCreateGroupRequest Body { get; set; } = new ModelsCreateGroupRequest();
-
+                
         public SingleAdminUpdateGroupCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup(_SDK);
 
             SingleAdminUpdateGroup operation = new SingleAdminUpdateGroup(
-                GroupId,
-                Namespace,
-                Body
-            );
-
+                GroupId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsCreateGroupResponse? response = wrapper.SingleAdminUpdateGroup(operation);
             if (response == null)
                 return "No response from server.";

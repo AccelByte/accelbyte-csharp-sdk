@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Seasonpass.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
 {
-    [SdkConsoleCommand("seasonpass", "deletetier")]
-    public class DeleteTierCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("seasonpass","deletetier")]
+    public class DeleteTierCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Seasonpass"; } }
+        public string ServiceName{ get { return "Seasonpass"; } }
 
-        public string OperationName { get { return "DeleteTier"; } }
+        public string OperationName{ get { return "DeleteTier"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Seasonpass
             AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier wrapper = new AccelByte.Sdk.Api.Seasonpass.Wrapper.Tier(_SDK);
 
             DeleteTier operation = new DeleteTier(
-                Id,
-                Namespace,
-                SeasonId
-            );
-
+                Id,                
+                Namespace,                
+                SeasonId                
+            );            
+            
             wrapper.DeleteTier(operation);
             return String.Empty;
         }

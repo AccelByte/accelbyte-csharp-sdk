@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "createmoderationrule")]
-    public class CreateModerationRuleCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","createmoderationrule")]
+    public class CreateModerationRuleCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "CreateModerationRule"; } }
+        public string OperationName{ get { return "CreateModerationRule"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public RestapiModerationRuleRequest Body { get; set; } = new RestapiModerationRuleRequest();
-
+                
         public CreateModerationRuleCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule(_SDK);
 
             CreateModerationRule operation = new CreateModerationRule(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.CreateModerationRule(operation);
             return String.Empty;
         }

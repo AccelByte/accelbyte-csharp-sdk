@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicplatformlinkv2")]
-    public class PublicPlatformLinkV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicplatformlinkv2")]
+    public class PublicPlatformLinkV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicPlatformLinkV2"; } }
+        public string OperationName{ get { return "PublicPlatformLinkV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandArgument("ticket")]
         public string Ticket { get; set; } = String.Empty;
-
+                    
         public PublicPlatformLinkV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,19 +48,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             PublicPlatformLinkV2 operation = new PublicPlatformLinkV2(
-                Namespace,
-                PlatformId,
-                UserId,
-                Ticket
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Namespace,                
+                PlatformId,                
+                UserId,                
+                Ticket                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PublicPlatformLinkV2(operation);
             return String.Empty;
-#pragma warning restore ab_deprecated_operation_wrapper
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

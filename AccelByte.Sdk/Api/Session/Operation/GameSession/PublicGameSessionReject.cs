@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 PublicGameSessionReject op = new PublicGameSessionReject(this,
-                    namespace_,
-                    sessionId
+                    namespace_,                    
+                    sessionId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,30 +60,30 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["sessionId"] = sessionId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGameSessionReject(
-            string namespace_,
-            string sessionId
+            string namespace_,            
+            string sessionId            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["sessionId"] = sessionId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,16 +98,16 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

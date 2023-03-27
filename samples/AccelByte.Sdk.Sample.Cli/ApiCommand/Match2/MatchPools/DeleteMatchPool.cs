@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "deletematchpool")]
-    public class DeleteMatchPoolCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","deletematchpool")]
+    public class DeleteMatchPoolCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "DeleteMatchPool"; } }
+        public string OperationName{ get { return "DeleteMatchPool"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchPools wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchPools(_SDK);
 
             DeleteMatchPool operation = new DeleteMatchPool(
-                Namespace,
-                Pool
-            );
-
+                Namespace,                
+                Pool                
+            );            
+            
             wrapper.DeleteMatchPool(operation);
             return String.Empty;
         }

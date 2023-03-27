@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 QueryRevocationHistories op = new QueryRevocationHistories(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.EndTime is not null) QueryParams["endTime"] = builder.EndTime;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -133,30 +133,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             if (builder.TransactionId is not null) QueryParams["transactionId"] = builder.TransactionId;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryRevocationHistories(
-            string namespace_,
-            string? endTime,
-            int? limit,
-            int? offset,
-            QueryRevocationHistoriesSource? source,
-            string? startTime,
-            QueryRevocationHistoriesStatus? status,
-            string? transactionId,
-            string? userId
+            string namespace_,            
+            string? endTime,            
+            int? limit,            
+            int? offset,            
+            QueryRevocationHistoriesSource? source,            
+            string? startTime,            
+            QueryRevocationHistoriesStatus? status,            
+            string? transactionId,            
+            string? userId            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (endTime is not null) QueryParams["endTime"] = endTime;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
@@ -165,11 +165,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (status is not null) QueryParams["status"] = status.Value;
             if (transactionId is not null) QueryParams["transactionId"] = transactionId;
             if (userId is not null) QueryParams["userId"] = userId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -178,15 +178,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.RevocationHistoryPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -199,9 +199,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.RevocationHistoryPagingSlicedResult>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

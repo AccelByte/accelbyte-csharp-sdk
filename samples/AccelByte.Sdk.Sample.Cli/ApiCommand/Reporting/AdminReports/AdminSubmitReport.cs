@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "adminsubmitreport")]
-    public class AdminSubmitReportCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","adminsubmitreport")]
+    public class AdminSubmitReportCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "AdminSubmitReport"; } }
+        public string OperationName{ get { return "AdminSubmitReport"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public RestapiSubmitReportRequest Body { get; set; } = new RestapiSubmitReportRequest();
-
+                
         public AdminSubmitReportCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminReports wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminReports(_SDK);
 
             AdminSubmitReport operation = new AdminSubmitReport(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiSubmitReportResponse? response = wrapper.AdminSubmitReport(operation);
             if (response == null)
                 return "No response from server.";

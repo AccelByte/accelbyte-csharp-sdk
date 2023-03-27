@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "deletegrouppublicv1")]
-    public class DeleteGroupPublicV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","deletegrouppublicv1")]
+    public class DeleteGroupPublicV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "DeleteGroupPublicV1"; } }
+        public string OperationName{ get { return "DeleteGroupPublicV1"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Group wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Group(_SDK);
 
             DeleteGroupPublicV1 operation = new DeleteGroupPublicV1(
-                GroupId,
-                Namespace
-            );
-
+                GroupId,                
+                Namespace                
+            );            
+            
             wrapper.DeleteGroupPublicV1(operation);
             return String.Empty;
         }

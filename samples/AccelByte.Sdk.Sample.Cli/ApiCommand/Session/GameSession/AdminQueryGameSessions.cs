@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "adminquerygamesessions")]
-    public class AdminQueryGameSessionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","adminquerygamesessions")]
+    public class AdminQueryGameSessionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminQueryGameSessions"; } }
+        public string OperationName{ get { return "AdminQueryGameSessions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -41,6 +41,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandArgument("gameMode")]
         public string? GameMode { get; set; }
+
+        [SdkCommandArgument("isPersistent")]
+        public string? IsPersistent { get; set; }
 
         [SdkCommandArgument("isSoftDeleted")]
         public string? IsSoftDeleted { get; set; }
@@ -88,25 +91,26 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             AdminQueryGameSessions operation = new AdminQueryGameSessions(
-                Namespace,
-                ConfigurationName,
-                DsPodName,
-                FromTime,
-                GameMode,
-                IsSoftDeleted,
-                Joinability,
-                Limit,
-                MatchPool,
-                MemberID,
-                Offset,
-                Order,
-                OrderBy,
-                SessionID,
-                Status,
-                StatusV2,
-                ToTime
-            );
-
+                Namespace,                
+                ConfigurationName,                
+                DsPodName,                
+                FromTime,                
+                GameMode,                
+                IsPersistent,                
+                IsSoftDeleted,                
+                Joinability,                
+                Limit,                
+                MatchPool,                
+                MemberID,                
+                Offset,                
+                Order,                
+                OrderBy,                
+                SessionID,                
+                Status,                
+                StatusV2,                
+                ToTime                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionQueryResponse? response = wrapper.AdminQueryGameSessions(operation);
             if (response == null)
                 return "No response from server.";

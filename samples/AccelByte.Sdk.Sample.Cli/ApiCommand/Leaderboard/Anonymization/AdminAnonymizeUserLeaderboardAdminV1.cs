@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "adminanonymizeuserleaderboardadminv1")]
-    public class AdminAnonymizeUserLeaderboardAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","adminanonymizeuserleaderboardadminv1")]
+    public class AdminAnonymizeUserLeaderboardAdminV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "AdminAnonymizeUserLeaderboardAdminV1"; } }
+        public string OperationName{ get { return "AdminAnonymizeUserLeaderboardAdminV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.Anonymization wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.Anonymization(_SDK);
 
             AdminAnonymizeUserLeaderboardAdminV1 operation = new AdminAnonymizeUserLeaderboardAdminV1(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             wrapper.AdminAnonymizeUserLeaderboardAdminV1(operation);
             return String.Empty;
         }

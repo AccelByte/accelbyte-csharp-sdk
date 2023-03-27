@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "admindecryptdevicev4")]
-    public class AdminDecryptDeviceV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","admindecryptdevicev4")]
+    public class AdminDecryptDeviceV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminDecryptDeviceV4"; } }
+        public string OperationName{ get { return "AdminDecryptDeviceV4"; } }
 
         [SdkCommandArgument("deviceId")]
         public string DeviceId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.DevicesV4(_SDK);
 
             AdminDecryptDeviceV4 operation = new AdminDecryptDeviceV4(
-                DeviceId,
-                Namespace
-            );
-
+                DeviceId,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelDeviceIDDecryptResponseV4? response = wrapper.AdminDecryptDeviceV4(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "updategrouppredefinedrulepublicv1")]
-    public class UpdateGroupPredefinedRulePublicV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","updategrouppredefinedrulepublicv1")]
+    public class UpdateGroupPredefinedRulePublicV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "UpdateGroupPredefinedRulePublicV1"; } }
+        public string OperationName{ get { return "UpdateGroupPredefinedRulePublicV1"; } }
 
         [SdkCommandArgument("allowedAction")]
         public string AllowedAction { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 
         [SdkCommandData("body")]
         public ModelsUpdateGroupPredefinedRuleRequestV1 Body { get; set; } = new ModelsUpdateGroupPredefinedRuleRequestV1();
-
+                
         public UpdateGroupPredefinedRulePublicV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Group wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Group(_SDK);
 
             UpdateGroupPredefinedRulePublicV1 operation = new UpdateGroupPredefinedRulePublicV1(
-                AllowedAction,
-                GroupId,
-                Namespace,
-                Body
-            );
-
+                AllowedAction,                
+                GroupId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGroupResponseV1? response = wrapper.UpdateGroupPredefinedRulePublicV1(operation);
             if (response == null)
                 return "No response from server.";

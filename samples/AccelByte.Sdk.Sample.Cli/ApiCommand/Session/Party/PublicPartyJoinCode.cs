@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicpartyjoincode")]
-    public class PublicPartyJoinCodeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicpartyjoincode")]
+    public class PublicPartyJoinCodeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicPartyJoinCode"; } }
+        public string OperationName{ get { return "PublicPartyJoinCode"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApimodelsJoinByCodeRequest Body { get; set; } = new ApimodelsJoinByCodeRequest();
-
+                
         public PublicPartyJoinCodeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicPartyJoinCode operation = new PublicPartyJoinCode(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicPartyJoinCode(operation);
             if (response == null)
                 return "No response from server.";

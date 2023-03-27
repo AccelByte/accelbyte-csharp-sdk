@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicplatformlinkv3")]
-    public class PublicPlatformLinkV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicplatformlinkv3")]
+    public class PublicPlatformLinkV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicPlatformLinkV3"; } }
+        public string OperationName{ get { return "PublicPlatformLinkV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,10 +35,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandArgument("redirectUri")]
         public string RedirectUri { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("ticket")]
         public string Ticket { get; set; } = String.Empty;
-
+                    
         public PublicPlatformLinkV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicPlatformLinkV3 operation = new PublicPlatformLinkV3(
-                Namespace,
-                PlatformId,
-                RedirectUri,
-                Ticket
-            );
-
+                Namespace,                
+                PlatformId,                
+                RedirectUri,                
+                Ticket                
+            );            
+            
             wrapper.PublicPlatformLinkV3(operation);
             return String.Empty;
         }

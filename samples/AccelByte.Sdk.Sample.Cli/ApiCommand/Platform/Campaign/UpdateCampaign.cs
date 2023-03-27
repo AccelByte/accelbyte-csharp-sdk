@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "updatecampaign")]
-    public class UpdateCampaignCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","updatecampaign")]
+    public class UpdateCampaignCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "UpdateCampaign"; } }
+        public string OperationName{ get { return "UpdateCampaign"; } }
 
         [SdkCommandArgument("campaignId")]
         public string CampaignId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public CampaignUpdate Body { get; set; } = new CampaignUpdate();
-
+                
         public UpdateCampaignCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Campaign wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Campaign(_SDK);
 
             UpdateCampaign operation = new UpdateCampaign(
-                CampaignId,
-                Namespace,
-                Body
-            );
-
+                CampaignId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.CampaignInfo? response = wrapper.UpdateCampaign(operation);
             if (response == null)
                 return "No response from server.";

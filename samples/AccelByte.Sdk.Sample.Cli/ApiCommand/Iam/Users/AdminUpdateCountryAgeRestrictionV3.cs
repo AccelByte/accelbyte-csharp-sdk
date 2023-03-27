@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminupdatecountryagerestrictionv3")]
-    public class AdminUpdateCountryAgeRestrictionV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminupdatecountryagerestrictionv3")]
+    public class AdminUpdateCountryAgeRestrictionV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminUpdateCountryAgeRestrictionV3"; } }
+        public string OperationName{ get { return "AdminUpdateCountryAgeRestrictionV3"; } }
 
         [SdkCommandArgument("countryCode")]
         public string CountryCode { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelCountryAgeRestrictionV3Request Body { get; set; } = new ModelCountryAgeRestrictionV3Request();
-
+                
         public AdminUpdateCountryAgeRestrictionV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminUpdateCountryAgeRestrictionV3 operation = new AdminUpdateCountryAgeRestrictionV3(
-                CountryCode,
-                Namespace,
-                Body
-            );
-
+                CountryCode,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelCountryV3Response? response = wrapper.AdminUpdateCountryAgeRestrictionV3(operation);
             if (response == null)
                 return "No response from server.";

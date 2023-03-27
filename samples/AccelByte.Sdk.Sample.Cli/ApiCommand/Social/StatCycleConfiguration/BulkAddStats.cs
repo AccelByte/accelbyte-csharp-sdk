@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "bulkaddstats")]
-    public class BulkAddStatsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","bulkaddstats")]
+    public class BulkAddStatsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "BulkAddStats"; } }
+        public string OperationName{ get { return "BulkAddStats"; } }
 
         [SdkCommandArgument("cycleId")]
         public string CycleId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public BulkCycleStatsAdd Body { get; set; } = new BulkCycleStatsAdd();
-
+                
         public BulkAddStatsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration wrapper = new AccelByte.Sdk.Api.Social.Wrapper.StatCycleConfiguration(_SDK);
 
             BulkAddStats operation = new BulkAddStats(
-                CycleId,
-                Namespace,
-                Body
-            );
-
+                CycleId,                
+                Namespace,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Social.Model.BulkStatOperationResult>? response = wrapper.BulkAddStats(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "retrieveallusersbypolicyversion1")]
-    public class RetrieveAllUsersByPolicyVersion1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","retrieveallusersbypolicyversion1")]
+    public class RetrieveAllUsersByPolicyVersion1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "RetrieveAllUsersByPolicyVersion1"; } }
+        public string OperationName{ get { return "RetrieveAllUsersByPolicyVersion1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace(_SDK);
 
             RetrieveAllUsersByPolicyVersion1 operation = new RetrieveAllUsersByPolicyVersion1(
-                Namespace,
-                Keyword,
-                Limit,
-                Offset,
-                PolicyVersionId
-            );
-
+                Namespace,                
+                Keyword,                
+                Limit,                
+                Offset,                
+                PolicyVersionId                
+            );            
+            
             List<AccelByte.Sdk.Api.Legal.Model.PagedRetrieveUserAcceptedAgreementResponse>? response = wrapper.RetrieveAllUsersByPolicyVersion1(operation);
             if (response == null)
                 return "No response from server.";

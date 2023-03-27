@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "updatelocalizedpolicyversion1")]
-    public class UpdateLocalizedPolicyVersion1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","updatelocalizedpolicyversion1")]
+    public class UpdateLocalizedPolicyVersion1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "UpdateLocalizedPolicyVersion1"; } }
+        public string OperationName{ get { return "UpdateLocalizedPolicyVersion1"; } }
 
         [SdkCommandArgument("localizedPolicyVersionId")]
         public string LocalizedPolicyVersionId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public UpdateLocalizedPolicyVersionRequest Body { get; set; } = new UpdateLocalizedPolicyVersionRequest();
-
+                
         public UpdateLocalizedPolicyVersion1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace(_SDK);
 
             UpdateLocalizedPolicyVersion1 operation = new UpdateLocalizedPolicyVersion1(
-                LocalizedPolicyVersionId,
-                Namespace,
-                Body
-            );
-
+                LocalizedPolicyVersionId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.UpdateLocalizedPolicyVersionResponse? response = wrapper.UpdateLocalizedPolicyVersion1(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "adminupdateconfigurationtemplatev1")]
-    public class AdminUpdateConfigurationTemplateV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("session","adminupdateconfigurationtemplatev1")]
+    public class AdminUpdateConfigurationTemplateV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminUpdateConfigurationTemplateV1"; } }
+        public string OperationName{ get { return "AdminUpdateConfigurationTemplateV1"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsUpdateConfigurationTemplateRequest Body { get; set; } = new ApimodelsUpdateConfigurationTemplateRequest();
-
+                
         public AdminUpdateConfigurationTemplateV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminUpdateConfigurationTemplateV1 operation = new AdminUpdateConfigurationTemplateV1(
-                Name,
-                Namespace,
-                Body
-            );
-
+                Name,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsConfigurationTemplateResponse? response = wrapper.AdminUpdateConfigurationTemplateV1(operation);
             if (response == null)
                 return "No response from server.";

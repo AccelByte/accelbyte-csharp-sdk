@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "publishpolicyversion1")]
-    public class PublishPolicyVersion1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","publishpolicyversion1")]
+    public class PublishPolicyVersion1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "PublishPolicyVersion1"; } }
+        public string OperationName{ get { return "PublishPolicyVersion1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersionsWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersionsWithNamespace(_SDK);
 
             PublishPolicyVersion1 operation = new PublishPolicyVersion1(
-                Namespace,
-                PolicyVersionId,
-                ShouldNotify
-            );
-
+                Namespace,                
+                PolicyVersionId,                
+                ShouldNotify                
+            );            
+            
             wrapper.PublishPolicyVersion1(operation);
             return String.Empty;
         }

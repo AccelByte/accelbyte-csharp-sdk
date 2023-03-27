@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 DeleteDeployment op = new DeleteDeployment(this,
-                    deployment,
-                    namespace_
+                    deployment,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         {
             PathParams["deployment"] = deployment;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteDeployment(
-            string deployment,
-            string namespace_
+            string deployment,            
+            string namespace_            
         )
         {
             PathParams["deployment"] = deployment;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,16 +102,16 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

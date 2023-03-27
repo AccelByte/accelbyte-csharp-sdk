@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminbulkcheckvaliduseridv4")]
-    public class AdminBulkCheckValidUserIDV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminbulkcheckvaliduseridv4")]
+    public class AdminBulkCheckValidUserIDV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminBulkCheckValidUserIDV4"; } }
+        public string OperationName{ get { return "AdminBulkCheckValidUserIDV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelCheckValidUserIDRequestV4 Body { get; set; } = new ModelCheckValidUserIDRequestV4();
-
+                
         public AdminBulkCheckValidUserIDV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             AdminBulkCheckValidUserIDV4 operation = new AdminBulkCheckValidUserIDV4(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelListValidUserIDResponseV4? response = wrapper.AdminBulkCheckValidUserIDV4(operation);
             if (response == null)
                 return "No response from server.";

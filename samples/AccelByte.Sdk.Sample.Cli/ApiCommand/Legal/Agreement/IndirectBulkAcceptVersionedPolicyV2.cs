@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "indirectbulkacceptversionedpolicyv2")]
-    public class IndirectBulkAcceptVersionedPolicyV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","indirectbulkacceptversionedpolicyv2")]
+    public class IndirectBulkAcceptVersionedPolicyV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "IndirectBulkAcceptVersionedPolicyV2"; } }
+        public string OperationName{ get { return "IndirectBulkAcceptVersionedPolicyV2"; } }
 
         [SdkCommandArgument("clientId")]
         public string ClientId { get; set; } = String.Empty;
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public List<AcceptAgreementRequest> Body { get; set; } = new List<AcceptAgreementRequest>();
-
+                
         public IndirectBulkAcceptVersionedPolicyV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.Agreement wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.Agreement(_SDK);
 
             IndirectBulkAcceptVersionedPolicyV2 operation = new IndirectBulkAcceptVersionedPolicyV2(
-                ClientId,
-                CountryCode,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                ClientId,                
+                CountryCode,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.AcceptAgreementResponse? response = wrapper.IndirectBulkAcceptVersionedPolicyV2(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "listproviders")]
-    public class ListProvidersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","listproviders")]
+    public class ListProvidersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "ListProviders"; } }
+        public string OperationName{ get { return "ListProviders"; } }
 
         public ListProvidersCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Public wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Public(_SDK);
 
             ListProviders operation = new ListProviders(
-            );
-
+            );            
+            
             List<string>? response = wrapper.ListProviders(operation);
             if (response == null)
                 return "No response from server.";

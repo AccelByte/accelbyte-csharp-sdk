@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "updateleaderboardconfigurationadminv1")]
-    public class UpdateLeaderboardConfigurationAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","updateleaderboardconfigurationadminv1")]
+    public class UpdateLeaderboardConfigurationAdminV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "UpdateLeaderboardConfigurationAdminV1"; } }
+        public string OperationName{ get { return "UpdateLeaderboardConfigurationAdminV1"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 
         [SdkCommandData("body")]
         public ModelsUpdateLeaderboardConfigReq Body { get; set; } = new ModelsUpdateLeaderboardConfigReq();
-
+                
         public UpdateLeaderboardConfigurationAdminV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardConfiguration(_SDK);
 
             UpdateLeaderboardConfigurationAdminV1 operation = new UpdateLeaderboardConfigurationAdminV1(
-                LeaderboardCode,
-                Namespace,
-                Body
-            );
-
+                LeaderboardCode,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Leaderboard.Model.ModelsGetLeaderboardConfigResp? response = wrapper.UpdateLeaderboardConfigurationAdminV1(operation);
             if (response == null)
                 return "No response from server.";

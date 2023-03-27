@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "decreaseticketsale")]
-    public class DecreaseTicketSaleCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","decreaseticketsale")]
+    public class DecreaseTicketSaleCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DecreaseTicketSale"; } }
+        public string OperationName{ get { return "DecreaseTicketSale"; } }
 
         [SdkCommandArgument("boothName")]
         public string BoothName { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public TicketSaleDecrementRequest Body { get; set; } = new TicketSaleDecrementRequest();
-
+                
         public DecreaseTicketSaleCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Ticket wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Ticket(_SDK);
 
             DecreaseTicketSale operation = new DecreaseTicketSale(
-                BoothName,
-                Namespace,
-                Body
-            );
-
+                BoothName,                
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.DecreaseTicketSale(operation);
             return String.Empty;
         }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "checkuseravailability")]
-    public class CheckUserAvailabilityCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","checkuseravailability")]
+    public class CheckUserAvailabilityCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "CheckUserAvailability"; } }
+        public string OperationName{ get { return "CheckUserAvailability"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             CheckUserAvailability operation = new CheckUserAvailability(
-                Namespace,
-                Field,
-                Query
-            );
-
+                Namespace,                
+                Field,                
+                Query                
+            );            
+            
             wrapper.CheckUserAvailability(operation);
             return String.Empty;
         }

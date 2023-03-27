@@ -24,13 +24,12 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             get { return Operation.AnonymizeUserProfile.Builder.SetWrapperObject(this); }
         }
         #endregion
-
-        public void AnonymizeUserProfile(AnonymizeUserProfile input)
-        {
+        
+        public void AnonymizeUserProfile(AnonymizeUserProfile input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

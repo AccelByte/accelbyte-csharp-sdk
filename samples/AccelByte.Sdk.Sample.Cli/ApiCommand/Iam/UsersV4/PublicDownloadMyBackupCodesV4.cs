@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicdownloadmybackupcodesv4")]
-    public class PublicDownloadMyBackupCodesV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicdownloadmybackupcodesv4")]
+    public class PublicDownloadMyBackupCodesV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicDownloadMyBackupCodesV4"; } }
+        public string OperationName{ get { return "PublicDownloadMyBackupCodesV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicDownloadMyBackupCodesV4 operation = new PublicDownloadMyBackupCodesV4(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             Stream? response = wrapper.PublicDownloadMyBackupCodesV4(operation);
             if (response == null)
                 return "No response from server.";

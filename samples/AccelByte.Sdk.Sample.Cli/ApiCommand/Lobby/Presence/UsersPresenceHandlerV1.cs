@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "userspresencehandlerv1")]
-    public class UsersPresenceHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","userspresencehandlerv1")]
+    public class UsersPresenceHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "UsersPresenceHandlerV1"; } }
+        public string OperationName{ get { return "UsersPresenceHandlerV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Presence wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Presence(_SDK);
 
             UsersPresenceHandlerV1 operation = new UsersPresenceHandlerV1(
-                Namespace,
-                CountOnly,
-                UserIds
-            );
-
+                Namespace,                
+                CountOnly,                
+                UserIds                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.HandlersGetUsersPresenceResponse? response = wrapper.UsersPresenceHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

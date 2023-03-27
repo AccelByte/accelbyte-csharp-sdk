@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "creatematchticket")]
-    public class CreateMatchTicketCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","creatematchticket")]
+    public class CreateMatchTicketCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "CreateMatchTicket"; } }
+        public string OperationName{ get { return "CreateMatchTicket"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiMatchTicketRequest Body { get; set; } = new ApiMatchTicketRequest();
-
+                
         public CreateMatchTicketCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchTickets wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchTickets(_SDK);
 
             CreateMatchTicket operation = new CreateMatchTicket(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Match2.Model.ApiMatchTicketResponse? response = wrapper.CreateMatchTicket(operation);
             if (response == null)
                 return "No response from server.";

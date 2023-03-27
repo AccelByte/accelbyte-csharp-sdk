@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminverifyuserwithoutverificationcodev3")]
-    public class AdminVerifyUserWithoutVerificationCodeV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminverifyuserwithoutverificationcodev3")]
+    public class AdminVerifyUserWithoutVerificationCodeV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminVerifyUserWithoutVerificationCodeV3"; } }
+        public string OperationName{ get { return "AdminVerifyUserWithoutVerificationCodeV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminVerifyUserWithoutVerificationCodeV3 operation = new AdminVerifyUserWithoutVerificationCodeV3(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             wrapper.AdminVerifyUserWithoutVerificationCodeV3(operation);
             return String.Empty;
         }

@@ -35,6 +35,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? GameMode { get; set; }
 
+            public string? IsPersistent { get; set; }
+
             public string? IsSoftDeleted { get; set; }
 
             public string? Joinability { get; set; }
@@ -87,6 +89,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
             public AdminQueryGameSessionsBuilder SetGameMode(string _gameMode)
             {
                 GameMode = _gameMode;
+                return this;
+            }
+
+            public AdminQueryGameSessionsBuilder SetIsPersistent(string _isPersistent)
+            {
+                IsPersistent = _isPersistent;
                 return this;
             }
 
@@ -171,7 +179,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             )
             {
                 AdminQueryGameSessions op = new AdminQueryGameSessions(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -184,11 +192,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.ConfigurationName is not null) QueryParams["configurationName"] = builder.ConfigurationName;
             if (builder.DsPodName is not null) QueryParams["dsPodName"] = builder.DsPodName;
             if (builder.FromTime is not null) QueryParams["fromTime"] = builder.FromTime;
             if (builder.GameMode is not null) QueryParams["gameMode"] = builder.GameMode;
+            if (builder.IsPersistent is not null) QueryParams["isPersistent"] = builder.IsPersistent;
             if (builder.IsSoftDeleted is not null) QueryParams["isSoftDeleted"] = builder.IsSoftDeleted;
             if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
@@ -201,42 +210,44 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.StatusV2 is not null) QueryParams["statusV2"] = builder.StatusV2;
             if (builder.ToTime is not null) QueryParams["toTime"] = builder.ToTime;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminQueryGameSessions(
-            string namespace_,
-            string? configurationName,
-            string? dsPodName,
-            string? fromTime,
-            string? gameMode,
-            string? isSoftDeleted,
-            string? joinability,
-            long? limit,
-            string? matchPool,
-            string? memberID,
-            long? offset,
-            string? order,
-            string? orderBy,
-            string? sessionID,
-            string? status,
-            string? statusV2,
-            string? toTime
+            string namespace_,            
+            string? configurationName,            
+            string? dsPodName,            
+            string? fromTime,            
+            string? gameMode,            
+            string? isPersistent,            
+            string? isSoftDeleted,            
+            string? joinability,            
+            long? limit,            
+            string? matchPool,            
+            string? memberID,            
+            long? offset,            
+            string? order,            
+            string? orderBy,            
+            string? sessionID,            
+            string? status,            
+            string? statusV2,            
+            string? toTime            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (configurationName is not null) QueryParams["configurationName"] = configurationName;
             if (dsPodName is not null) QueryParams["dsPodName"] = dsPodName;
             if (fromTime is not null) QueryParams["fromTime"] = fromTime;
             if (gameMode is not null) QueryParams["gameMode"] = gameMode;
+            if (isPersistent is not null) QueryParams["isPersistent"] = isPersistent;
             if (isSoftDeleted is not null) QueryParams["isSoftDeleted"] = isSoftDeleted;
             if (joinability is not null) QueryParams["joinability"] = joinability;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
@@ -249,11 +260,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (status is not null) QueryParams["status"] = status;
             if (statusV2 is not null) QueryParams["statusV2"] = statusV2;
             if (toTime is not null) QueryParams["toTime"] = toTime;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -268,9 +279,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ApimodelsGameSessionQueryResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -283,9 +294,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelsGameSessionQueryResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

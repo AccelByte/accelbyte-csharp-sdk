@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getpublisherconfig")]
-    public class GetPublisherConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","getpublisherconfig")]
+    public class GetPublisherConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GetPublisherConfig"; } }
+        public string OperationName{ get { return "GetPublisherConfig"; } }
 
         [SdkCommandArgument("configKey")]
         public string ConfigKey { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.Config wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Config(_SDK);
 
             GetPublisherConfig operation = new GetPublisherConfig(
-                ConfigKey,
-                Namespace
-            );
-
+                ConfigKey,                
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.ConfigInfo? response = wrapper.GetPublisherConfig(operation);
             if (response == null)
                 return "No response from server.";

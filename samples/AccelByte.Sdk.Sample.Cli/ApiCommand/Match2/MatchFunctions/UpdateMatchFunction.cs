@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Match2.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 {
-    [SdkConsoleCommand("match2", "updatematchfunction")]
-    public class UpdateMatchFunctionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("match2","updatematchfunction")]
+    public class UpdateMatchFunctionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Match2"; } }
+        public string ServiceName{ get { return "Match2"; } }
 
-        public string OperationName { get { return "UpdateMatchFunction"; } }
+        public string OperationName{ get { return "UpdateMatchFunction"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
 
         [SdkCommandData("body")]
         public ApiMatchFunctionRequest Body { get; set; } = new ApiMatchFunctionRequest();
-
+                
         public UpdateMatchFunctionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions wrapper = new AccelByte.Sdk.Api.Match2.Wrapper.MatchFunctions(_SDK);
 
             UpdateMatchFunction operation = new UpdateMatchFunction(
-                Name,
-                Namespace,
-                Body
-            );
-
+                Name,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Match2.Model.ApiMatchFunctionConfig? response = wrapper.UpdateMatchFunction(operation);
             if (response == null)
                 return "No response from server.";

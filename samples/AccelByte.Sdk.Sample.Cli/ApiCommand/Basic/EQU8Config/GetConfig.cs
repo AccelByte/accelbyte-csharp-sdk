@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getconfig")]
-    public class GetConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","getconfig")]
+    public class GetConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GetConfig"; } }
+        public string OperationName{ get { return "GetConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.EQU8Config(_SDK);
 
             GetConfig operation = new GetConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Basic.Model.Equ8Config? response = wrapper.GetConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "bulkgetlocaleitems")]
-    public class BulkGetLocaleItemsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","bulkgetlocaleitems")]
+    public class BulkGetLocaleItemsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "BulkGetLocaleItems"; } }
+        public string OperationName{ get { return "BulkGetLocaleItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,14 +55,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             BulkGetLocaleItems operation = new BulkGetLocaleItems(
-                Namespace,
-                ActiveOnly,
-                Language,
-                Region,
-                StoreId,
-                ItemIds
-            );
-
+                Namespace,                
+                ActiveOnly,                
+                Language,                
+                Region,                
+                StoreId,                
+                ItemIds                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.ItemInfo>? response = wrapper.BulkGetLocaleItems(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "getgamesessionbypodname")]
-    public class GetGameSessionByPodNameCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","getgamesessionbypodname")]
+    public class GetGameSessionByPodNameCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "GetGameSessionByPodName"; } }
+        public string OperationName{ get { return "GetGameSessionByPodName"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             GetGameSessionByPodName operation = new GetGameSessionByPodName(
-                Namespace,
-                PodName
-            );
-
+                Namespace,                
+                PodName                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse? response = wrapper.GetGameSessionByPodName(operation);
             if (response == null)
                 return "No response from server.";

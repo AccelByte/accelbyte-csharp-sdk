@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicpartyreject")]
-    public class PublicPartyRejectCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicpartyreject")]
+    public class PublicPartyRejectCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicPartyReject"; } }
+        public string OperationName{ get { return "PublicPartyReject"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicPartyReject operation = new PublicPartyReject(
-                Namespace,
-                PartyId
-            );
-
+                Namespace,                
+                PartyId                
+            );            
+            
             wrapper.PublicPartyReject(operation);
             return String.Empty;
         }

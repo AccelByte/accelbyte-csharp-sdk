@@ -18,36 +18,36 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "authorization")]
-    public class AuthorizationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","authorization")]
+    public class AuthorizationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "Authorization"; } }
+        public string OperationName{ get { return "Authorization"; } }
 
         [SdkCommandArgument("login")]
         public string Login { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("password")]
         public string Password { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("scope")]
         public string Scope { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("state")]
         public string State { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("redirect_uri")]
         public string RedirectUri { get; set; } = String.Empty;
-
+                    
         [SdkCommandArgument("response_type")]
         public string ResponseType { get; set; } = String.Empty;
-
+                    
         public AuthorizationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -57,24 +57,24 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         {
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth(_SDK);
 
-#pragma warning disable ab_deprecated_operation
+            #pragma warning disable ab_deprecated_operation
             Authorization operation = new Authorization(
-                Login,
-                Password,
-                Scope,
-                State,
-                ClientId,
-                RedirectUri,
-                AuthorizationResponseType.NewValue(ResponseType)
-            );
-#pragma warning restore ab_deprecated_operation
-
-#pragma warning disable ab_deprecated_operation_wrapper
+                Login,                
+                Password,                
+                Scope,                
+                State,                
+                ClientId,                
+                RedirectUri,                
+                AuthorizationResponseType.NewValue(ResponseType)                
+            );            
+            #pragma warning restore ab_deprecated_operation
+            
+            #pragma warning disable ab_deprecated_operation_wrapper
             string? response = wrapper.Authorization(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;
-#pragma warning restore ab_deprecated_operation_wrapper
+            return response!;            
+            #pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

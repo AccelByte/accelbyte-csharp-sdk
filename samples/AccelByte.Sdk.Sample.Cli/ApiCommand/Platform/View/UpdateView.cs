@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "updateview")]
-    public class UpdateViewCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","updateview")]
+    public class UpdateViewCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "UpdateView"; } }
+        public string OperationName{ get { return "UpdateView"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public ViewUpdate Body { get; set; } = new ViewUpdate();
-
+                
         public UpdateViewCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.View wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.View(_SDK);
 
             UpdateView operation = new UpdateView(
-                Namespace,
-                ViewId,
-                StoreId,
-                Body
-            );
-
+                Namespace,                
+                ViewId,                
+                StoreId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.FullViewInfo? response = wrapper.UpdateView(operation);
             if (response == null)
                 return "No response from server.";

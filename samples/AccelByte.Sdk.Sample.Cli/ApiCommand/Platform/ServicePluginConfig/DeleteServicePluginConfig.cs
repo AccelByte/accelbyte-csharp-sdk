@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "deleteservicepluginconfig")]
-    public class DeleteServicePluginConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","deleteservicepluginconfig")]
+    public class DeleteServicePluginConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "DeleteServicePluginConfig"; } }
+        public string OperationName{ get { return "DeleteServicePluginConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
             DeleteServicePluginConfig operation = new DeleteServicePluginConfig(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.DeleteServicePluginConfig(operation);
             return String.Empty;
         }

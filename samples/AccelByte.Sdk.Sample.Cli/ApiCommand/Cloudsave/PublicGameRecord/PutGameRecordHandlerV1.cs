@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "putgamerecordhandlerv1")]
-    public class PutGameRecordHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","putgamerecordhandlerv1")]
+    public class PutGameRecordHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Cloudsave"; } }
+        public string ServiceName{ get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "PutGameRecordHandlerV1"; } }
+        public string OperationName{ get { return "PutGameRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsGameRecordRequest Body { get; set; } = new ModelsGameRecordRequest();
-
+                
         public PutGameRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicGameRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicGameRecord(_SDK);
 
             PutGameRecordHandlerV1 operation = new PutGameRecordHandlerV1(
-                Key,
-                Namespace,
-                Body
-            );
-
+                Key,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsGameRecordResponse? response = wrapper.PutGameRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

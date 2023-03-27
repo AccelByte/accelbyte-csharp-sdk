@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "updateticketresolutions")]
-    public class UpdateTicketResolutionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","updateticketresolutions")]
+    public class UpdateTicketResolutionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "UpdateTicketResolutions"; } }
+        public string OperationName{ get { return "UpdateTicketResolutions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 
         [SdkCommandData("body")]
         public RestapiUpdateTicketResolutionsRequest Body { get; set; } = new RestapiUpdateTicketResolutionsRequest();
-
+                
         public UpdateTicketResolutionsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets(_SDK);
 
             UpdateTicketResolutions operation = new UpdateTicketResolutions(
-                Namespace,
-                TicketId,
-                Body
-            );
-
+                Namespace,                
+                TicketId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiTicketResponse? response = wrapper.UpdateTicketResolutions(operation);
             if (response == null)
                 return "No response from server.";

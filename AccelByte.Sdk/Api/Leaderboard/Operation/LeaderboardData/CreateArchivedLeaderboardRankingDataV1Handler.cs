@@ -52,8 +52,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             )
             {
                 CreateArchivedLeaderboardRankingDataV1Handler op = new CreateArchivedLeaderboardRankingDataV1Handler(this,
-                    body,
-                    namespace_
+                    body,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateArchivedLeaderboardRankingDataV1Handler(
-            string namespace_,
-            Model.ModelsArchiveLeaderboardReq body
+            string namespace_,            
+            Model.ModelsArchiveLeaderboardReq body            
         )
         {
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,16 +106,16 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)201)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

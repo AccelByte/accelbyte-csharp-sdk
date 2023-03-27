@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class FixedPeriodRotationConfigRule : StringEnum<FixedPeriodRotationConfigRule>
     {
@@ -70,5 +70,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

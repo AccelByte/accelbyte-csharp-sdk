@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "get")]
-    public class GetCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","get")]
+    public class GetCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "Get"; } }
+        public string OperationName{ get { return "Get"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminConfigurations wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminConfigurations(_SDK);
 
             Get operation = new Get(
-                Namespace,
-                (Category is null ? null : GetCategory.NewValue(Category))
-            );
-
+                Namespace,                
+                (Category is null ? null : GetCategory.NewValue(Category))                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiConfigResponse? response = wrapper.Get(operation);
             if (response == null)
                 return "No response from server.";

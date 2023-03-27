@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "adminfindactionlist")]
-    public class AdminFindActionListCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","adminfindactionlist")]
+    public class AdminFindActionListCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "AdminFindActionList"; } }
+        public string OperationName{ get { return "AdminFindActionList"; } }
 
         public AdminFindActionListCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions(_SDK);
 
             AdminFindActionList operation = new AdminFindActionList(
-            );
-
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiActionListApiResponse? response = wrapper.AdminFindActionList(operation);
             if (response == null)
                 return "No response from server.";

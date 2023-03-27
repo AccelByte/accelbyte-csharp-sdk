@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "deleteticket")]
-    public class DeleteTicketCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","deleteticket")]
+    public class DeleteTicketCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "DeleteTicket"; } }
+        public string OperationName{ get { return "DeleteTicket"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminTickets(_SDK);
 
             DeleteTicket operation = new DeleteTicket(
-                Namespace,
-                TicketId
-            );
-
+                Namespace,                
+                TicketId                
+            );            
+            
             wrapper.DeleteTicket(operation);
             return String.Empty;
         }

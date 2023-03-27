@@ -54,9 +54,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 CheckUserAvailability op = new CheckUserAvailability(this,
-                    namespace_,
-                    field,
-                    query
+                    namespace_,                    
+                    field,                    
+                    query                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,34 +71,34 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (field is not null) QueryParams["field"] = field;
             if (query is not null) QueryParams["query"] = query;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CheckUserAvailability(
-            string namespace_,
-            string field,
-            string query
+            string namespace_,            
+            string field,            
+            string query            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (field is not null) QueryParams["field"] = field;
             if (query is not null) QueryParams["query"] = query;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,22 +107,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

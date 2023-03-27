@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "querysubscriptions")]
-    public class QuerySubscriptionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","querysubscriptions")]
+    public class QuerySubscriptionsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "QuerySubscriptions"; } }
+        public string OperationName{ get { return "QuerySubscriptions"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -64,17 +64,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Subscription wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Subscription(_SDK);
 
             QuerySubscriptions operation = new QuerySubscriptions(
-                Namespace,
-                (ChargeStatus is null ? null : QuerySubscriptionsChargeStatus.NewValue(ChargeStatus)),
-                ItemId,
-                Limit,
-                Offset,
-                Sku,
-                (Status is null ? null : QuerySubscriptionsStatus.NewValue(Status)),
-                (SubscribedBy is null ? null : QuerySubscriptionsSubscribedBy.NewValue(SubscribedBy)),
-                UserId
-            );
-
+                Namespace,                
+                (ChargeStatus is null ? null : QuerySubscriptionsChargeStatus.NewValue(ChargeStatus)),                
+                ItemId,                
+                Limit,                
+                Offset,                
+                Sku,                
+                (Status is null ? null : QuerySubscriptionsStatus.NewValue(Status)),                
+                (SubscribedBy is null ? null : QuerySubscriptionsSubscribedBy.NewValue(SubscribedBy)),                
+                UserId                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.SubscriptionPagingSlicedResult? response = wrapper.QuerySubscriptions(operation);
             if (response == null)
                 return "No response from server.";

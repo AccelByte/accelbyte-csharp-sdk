@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "admingetdsmcconfigurationdefault")]
-    public class AdminGetDSMCConfigurationDefaultCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","admingetdsmcconfigurationdefault")]
+    public class AdminGetDSMCConfigurationDefaultCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminGetDSMCConfigurationDefault"; } }
+        public string OperationName{ get { return "AdminGetDSMCConfigurationDefault"; } }
 
         public AdminGetDSMCConfigurationDefaultCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.DSMCDefaultConfiguration wrapper = new AccelByte.Sdk.Api.Session.Wrapper.DSMCDefaultConfiguration(_SDK);
 
             AdminGetDSMCConfigurationDefault operation = new AdminGetDSMCConfigurationDefault(
-            );
-
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ModelsDefaultDSMCConfig? response = wrapper.AdminGetDSMCConfigurationDefault(operation);
             if (response == null)
                 return "No response from server.";

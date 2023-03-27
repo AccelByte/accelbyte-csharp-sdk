@@ -48,9 +48,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             )
             {
                 PublicGetAchievement op = new PublicGetAchievement(this,
-                    achievementCode,
-                    namespace_,
-                    language
+                    achievementCode,                    
+                    namespace_,                    
+                    language                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,33 +66,33 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
         {
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
-
+            
             if (language is not null) QueryParams["language"] = language;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetAchievement(
-            string achievementCode,
-            string namespace_,
-            string language
+            string achievementCode,            
+            string namespace_,            
+            string language            
         )
         {
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
-
+            
             if (language is not null) QueryParams["language"] = language;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,9 +107,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsPublicAchievementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPublicAchievementResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

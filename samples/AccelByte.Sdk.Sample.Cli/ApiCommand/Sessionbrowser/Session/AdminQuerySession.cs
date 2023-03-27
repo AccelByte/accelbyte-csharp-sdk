@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Sessionbrowser.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
 {
-    [SdkConsoleCommand("sessionbrowser", "adminquerysession")]
-    public class AdminQuerySessionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("sessionbrowser","adminquerysession")]
+    public class AdminQuerySessionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Sessionbrowser"; } }
+        public string ServiceName{ get { return "Sessionbrowser"; } }
 
-        public string OperationName { get { return "AdminQuerySession"; } }
+        public string OperationName{ get { return "AdminQuerySession"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -70,19 +70,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
             AdminQuerySession operation = new AdminQuerySession(
-                Namespace,
-                GameMode,
-                GameVersion,
-                Joinable,
-                Limit,
-                MatchExist,
-                MatchId,
-                Offset,
-                ServerStatus,
-                UserId,
-                SessionType
-            );
-
+                Namespace,                
+                GameMode,                
+                GameVersion,                
+                Joinable,                
+                Limit,                
+                MatchExist,                
+                MatchId,                
+                Offset,                
+                ServerStatus,                
+                UserId,                
+                SessionType                
+            );            
+            
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionQueryResponse? response = wrapper.AdminQuerySession(operation);
             if (response == null)
                 return "No response from server.";

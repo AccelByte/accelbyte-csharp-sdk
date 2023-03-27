@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "admindeletetype")]
-    public class AdminDeleteTypeCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","admindeletetype")]
+    public class AdminDeleteTypeCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AdminDeleteType"; } }
+        public string OperationName{ get { return "AdminDeleteType"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminType wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminType(_SDK);
 
             AdminDeleteType operation = new AdminDeleteType(
-                Namespace,
-                TypeId
-            );
-
+                Namespace,                
+                TypeId                
+            );            
+            
             wrapper.AdminDeleteType(operation);
             return String.Empty;
         }

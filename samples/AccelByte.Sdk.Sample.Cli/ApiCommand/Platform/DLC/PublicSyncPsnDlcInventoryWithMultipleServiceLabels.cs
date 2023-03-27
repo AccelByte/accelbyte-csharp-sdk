@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicsyncpsndlcinventorywithmultipleservicelabels")]
-    public class PublicSyncPsnDlcInventoryWithMultipleServiceLabelsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicsyncpsndlcinventorywithmultipleservicelabels")]
+    public class PublicSyncPsnDlcInventoryWithMultipleServiceLabelsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicSyncPsnDlcInventoryWithMultipleServiceLabels"; } }
+        public string OperationName{ get { return "PublicSyncPsnDlcInventoryWithMultipleServiceLabels"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public PlayStationDLCSyncMultiServiceLabelsRequest Body { get; set; } = new PlayStationDLCSyncMultiServiceLabelsRequest();
-
+                
         public PublicSyncPsnDlcInventoryWithMultipleServiceLabelsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
             PublicSyncPsnDlcInventoryWithMultipleServiceLabels operation = new PublicSyncPsnDlcInventoryWithMultipleServiceLabels(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             wrapper.PublicSyncPsnDlcInventoryWithMultipleServiceLabels(operation);
             return String.Empty;
         }

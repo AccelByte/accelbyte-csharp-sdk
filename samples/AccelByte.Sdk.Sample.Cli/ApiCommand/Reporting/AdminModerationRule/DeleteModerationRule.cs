@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "deletemoderationrule")]
-    public class DeleteModerationRuleCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","deletemoderationrule")]
+    public class DeleteModerationRuleCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "DeleteModerationRule"; } }
+        public string OperationName{ get { return "DeleteModerationRule"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule(_SDK);
 
             DeleteModerationRule operation = new DeleteModerationRule(
-                Namespace,
-                RuleId
-            );
-
+                Namespace,                
+                RuleId                
+            );            
+            
             wrapper.DeleteModerationRule(operation);
             return String.Empty;
         }

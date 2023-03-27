@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 
     public class ItemRevocationStatus : StringEnum<ItemRevocationStatus>
     {
@@ -120,5 +120,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }
+    }    
 }

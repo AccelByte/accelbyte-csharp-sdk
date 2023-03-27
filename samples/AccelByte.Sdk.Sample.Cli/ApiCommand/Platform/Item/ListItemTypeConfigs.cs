@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "listitemtypeconfigs")]
-    public class ListItemTypeConfigsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listitemtypeconfigs")]
+    public class ListItemTypeConfigsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ListItemTypeConfigs"; } }
+        public string OperationName{ get { return "ListItemTypeConfigs"; } }
 
         public ListItemTypeConfigsCommand(AccelByteSDK sdk)
         {
@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Item wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Item(_SDK);
 
             ListItemTypeConfigs operation = new ListItemTypeConfigs(
-            );
-
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.ItemTypeConfigInfo>? response = wrapper.ListItemTypeConfigs(operation);
             if (response == null)
                 return "No response from server.";

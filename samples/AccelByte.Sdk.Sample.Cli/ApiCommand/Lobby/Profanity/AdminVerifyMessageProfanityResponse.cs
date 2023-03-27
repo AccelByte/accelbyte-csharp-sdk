@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "adminverifymessageprofanityresponse")]
-    public class AdminVerifyMessageProfanityResponseCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","adminverifymessageprofanityresponse")]
+    public class AdminVerifyMessageProfanityResponseCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminVerifyMessageProfanityResponse"; } }
+        public string OperationName{ get { return "AdminVerifyMessageProfanityResponse"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAdminVerifyMessageProfanityRequest Body { get; set; } = new ModelsAdminVerifyMessageProfanityRequest();
-
+                
         public AdminVerifyMessageProfanityResponseCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Profanity wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Profanity(_SDK);
 
             AdminVerifyMessageProfanityResponse operation = new AdminVerifyMessageProfanityResponse(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsAdminVerifyMessageProfanityResponse? response = wrapper.AdminVerifyMessageProfanityResponse(operation);
             if (response == null)
                 return "No response from server.";

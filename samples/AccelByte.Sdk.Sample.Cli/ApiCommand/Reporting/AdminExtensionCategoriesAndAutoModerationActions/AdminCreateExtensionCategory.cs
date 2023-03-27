@@ -18,18 +18,18 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "admincreateextensioncategory")]
-    public class AdminCreateExtensionCategoryCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","admincreateextensioncategory")]
+    public class AdminCreateExtensionCategoryCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "AdminCreateExtensionCategory"; } }
+        public string OperationName{ get { return "AdminCreateExtensionCategory"; } }
 
         [SdkCommandData("body")]
         public RestapiExtensionCategoryApiRequest Body { get; set; } = new RestapiExtensionCategoryApiRequest();
-
+                
         public AdminCreateExtensionCategoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions(_SDK);
 
             AdminCreateExtensionCategory operation = new AdminCreateExtensionCategory(
-                Body
-            );
-
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiExtensionCategoryApiResponse? response = wrapper.AdminCreateExtensionCategory(operation);
             if (response == null)
                 return "No response from server.";

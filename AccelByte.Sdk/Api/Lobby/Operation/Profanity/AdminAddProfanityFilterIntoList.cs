@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 AdminAddProfanityFilterIntoList op = new AdminAddProfanityFilterIntoList(this,
-                    body,
-                    list,
-                    namespace_
+                    body,                    
+                    list,                    
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["list"] = list;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminAddProfanityFilterIntoList(
-            string list,
-            string namespace_,
-            Model.ModelsAdminAddProfanityFilterIntoListRequest body
+            string list,            
+            string namespace_,            
+            Model.ModelsAdminAddProfanityFilterIntoListRequest body            
         )
         {
             PathParams["list"] = list;
             PathParams["namespace"] = namespace_;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,16 +106,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

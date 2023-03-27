@@ -111,8 +111,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AuthCodeRequestV3 op = new AuthCodeRequestV3(this,
-                    platformId,
-                    requestId
+                    platformId,                    
+                    requestId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -126,15 +126,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (builder.ClientId is not null) QueryParams["client_id"] = builder.ClientId;
             if (builder.RedirectUri is not null) QueryParams["redirect_uri"] = builder.RedirectUri;
             if (requestId is not null) QueryParams["request_id"] = requestId;
+            
 
-
-
-
-
+            
+            
+            
             LocationQuery = "code";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -142,22 +142,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AuthCodeRequestV3(
-            string platformId,
-            string? clientId,
-            string? redirectUri,
-            string requestId
+            string platformId,            
+            string? clientId,            
+            string? redirectUri,            
+            string requestId            
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (clientId is not null) QueryParams["client_id"] = clientId;
             if (redirectUri is not null) QueryParams["redirect_uri"] = redirectUri;
             if (requestId is not null) QueryParams["request_id"] = requestId;
+            
 
-
-
-
-
+            
+            
+            
             LocationQuery = "code";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -173,16 +173,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             if (code == (HttpStatusCode)302)
             {
-                return payloadString;
+              return payloadString;
             }
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

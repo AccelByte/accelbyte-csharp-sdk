@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "updategamesessionbackfillticketid")]
-    public class UpdateGameSessionBackfillTicketIDCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","updategamesessionbackfillticketid")]
+    public class UpdateGameSessionBackfillTicketIDCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "UpdateGameSessionBackfillTicketID"; } }
+        public string OperationName{ get { return "UpdateGameSessionBackfillTicketID"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsUpdateGameSessionBackfillRequest Body { get; set; } = new ApimodelsUpdateGameSessionBackfillRequest();
-
+                
         public UpdateGameSessionBackfillTicketIDCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             UpdateGameSessionBackfillTicketID operation = new UpdateGameSessionBackfillTicketID(
-                Namespace,
-                SessionId,
-                Body
-            );
-
+                Namespace,                
+                SessionId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse? response = wrapper.UpdateGameSessionBackfillTicketID(operation);
             if (response == null)
                 return "No response from server.";

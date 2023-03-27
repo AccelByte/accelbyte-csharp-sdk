@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "deleteuserrankingadminv1")]
-    public class DeleteUserRankingAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard","deleteuserrankingadminv1")]
+    public class DeleteUserRankingAdminV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Leaderboard"; } }
+        public string ServiceName{ get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "DeleteUserRankingAdminV1"; } }
+        public string OperationName{ get { return "DeleteUserRankingAdminV1"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
             AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
 
             DeleteUserRankingAdminV1 operation = new DeleteUserRankingAdminV1(
-                LeaderboardCode,
-                Namespace,
-                UserId
-            );
-
+                LeaderboardCode,                
+                Namespace,                
+                UserId                
+            );            
+            
             wrapper.DeleteUserRankingAdminV1(operation);
             return String.Empty;
         }

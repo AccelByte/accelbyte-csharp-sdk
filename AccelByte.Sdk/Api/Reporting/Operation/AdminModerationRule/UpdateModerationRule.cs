@@ -93,9 +93,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             )
             {
                 UpdateModerationRule op = new UpdateModerationRule(this,
-                    body,
-                    namespace_,
-                    ruleId
+                    body,                    
+                    namespace_,                    
+                    ruleId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -111,33 +111,33 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleId"] = ruleId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateModerationRule(
-            string namespace_,
-            string ruleId,
-            Model.RestapiModerationRuleRequest body
+            string namespace_,            
+            string ruleId,            
+            Model.RestapiModerationRuleRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleId"] = ruleId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -152,9 +152,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.RestapiModerationRuleResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -167,9 +167,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiModerationRuleResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "adminupdatechannel")]
-    public class AdminUpdateChannelCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","adminupdatechannel")]
+    public class AdminUpdateChannelCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "AdminUpdateChannel"; } }
+        public string OperationName{ get { return "AdminUpdateChannel"; } }
 
         [SdkCommandArgument("channelId")]
         public string ChannelId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
         [SdkCommandData("body")]
         public ModelsChannelRequest Body { get; set; } = new ModelsChannelRequest();
-
+                
         public AdminUpdateChannelCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminChannel wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminChannel(_SDK);
 
             AdminUpdateChannel operation = new AdminUpdateChannel(
-                ChannelId,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                ChannelId,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Ugc.Model.ModelsChannelResponse? response = wrapper.AdminUpdateChannel(operation);
             if (response == null)
                 return "No response from server.";

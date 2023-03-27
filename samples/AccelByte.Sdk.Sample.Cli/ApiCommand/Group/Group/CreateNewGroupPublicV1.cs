@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "createnewgrouppublicv1")]
-    public class CreateNewGroupPublicV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","createnewgrouppublicv1")]
+    public class CreateNewGroupPublicV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "CreateNewGroupPublicV1"; } }
+        public string OperationName{ get { return "CreateNewGroupPublicV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsPublicCreateNewGroupRequestV1 Body { get; set; } = new ModelsPublicCreateNewGroupRequestV1();
-
+                
         public CreateNewGroupPublicV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Group wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Group(_SDK);
 
             CreateNewGroupPublicV1 operation = new CreateNewGroupPublicV1(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGroupResponseV1? response = wrapper.CreateNewGroupPublicV1(operation);
             if (response == null)
                 return "No response from server.";

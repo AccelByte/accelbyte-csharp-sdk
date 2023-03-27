@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicsendmymfaemailcodev4")]
-    public class PublicSendMyMFAEmailCodeV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicsendmymfaemailcodev4")]
+    public class PublicSendMyMFAEmailCodeV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicSendMyMFAEmailCodeV4"; } }
+        public string OperationName{ get { return "PublicSendMyMFAEmailCodeV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicSendMyMFAEmailCodeV4 operation = new PublicSendMyMFAEmailCodeV4(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.PublicSendMyMFAEmailCodeV4(operation);
             return String.Empty;
         }

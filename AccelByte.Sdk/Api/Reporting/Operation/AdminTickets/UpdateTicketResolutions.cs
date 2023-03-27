@@ -46,9 +46,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             )
             {
                 UpdateTicketResolutions op = new UpdateTicketResolutions(this,
-                    body,
-                    namespace_,
-                    ticketId
+                    body,                    
+                    namespace_,                    
+                    ticketId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,33 +64,33 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["ticketId"] = ticketId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateTicketResolutions(
-            string namespace_,
-            string ticketId,
-            Model.RestapiUpdateTicketResolutionsRequest body
+            string namespace_,            
+            string ticketId,            
+            Model.RestapiUpdateTicketResolutionsRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ticketId"] = ticketId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,9 +105,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.RestapiTicketResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiTicketResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

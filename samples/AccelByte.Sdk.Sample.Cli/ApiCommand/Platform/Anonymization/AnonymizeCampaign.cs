@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "anonymizecampaign")]
-    public class AnonymizeCampaignCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","anonymizecampaign")]
+    public class AnonymizeCampaignCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "AnonymizeCampaign"; } }
+        public string OperationName{ get { return "AnonymizeCampaign"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Anonymization wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Anonymization(_SDK);
 
             AnonymizeCampaign operation = new AnonymizeCampaign(
-                Namespace,
-                UserId
-            );
-
+                Namespace,                
+                UserId                
+            );            
+            
             wrapper.AnonymizeCampaign(operation);
             return String.Empty;
         }

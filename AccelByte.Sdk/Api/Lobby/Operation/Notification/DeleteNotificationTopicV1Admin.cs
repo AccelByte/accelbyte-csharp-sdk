@@ -51,8 +51,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 DeleteNotificationTopicV1Admin op = new DeleteNotificationTopicV1Admin(this,
-                    namespace_,
-                    topicName
+                    namespace_,                    
+                    topicName                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,30 +67,30 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["topicName"] = topicName;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteNotificationTopicV1Admin(
-            string namespace_,
-            string topicName
+            string namespace_,            
+            string topicName            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["topicName"] = topicName;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,16 +105,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

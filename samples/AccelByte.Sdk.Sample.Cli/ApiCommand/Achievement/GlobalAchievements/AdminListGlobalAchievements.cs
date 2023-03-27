@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "adminlistglobalachievements")]
-    public class AdminListGlobalAchievementsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","adminlistglobalachievements")]
+    public class AdminListGlobalAchievementsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "AdminListGlobalAchievements"; } }
+        public string OperationName{ get { return "AdminListGlobalAchievements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.GlobalAchievements(_SDK);
 
             AdminListGlobalAchievements operation = new AdminListGlobalAchievements(
-                Namespace,
-                AchievementCodes,
-                Limit,
-                Offset,
-                SortBy,
-                Status,
-                Tags
-            );
-
+                Namespace,                
+                AchievementCodes,                
+                Limit,                
+                Offset,                
+                SortBy,                
+                Status,                
+                Tags                
+            );            
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsPaginatedGlobalAchievementResponse? response = wrapper.AdminListGlobalAchievements(operation);
             if (response == null)
                 return "No response from server.";

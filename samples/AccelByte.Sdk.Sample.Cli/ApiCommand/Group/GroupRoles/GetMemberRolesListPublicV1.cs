@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "getmemberroleslistpublicv1")]
-    public class GetMemberRolesListPublicV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","getmemberroleslistpublicv1")]
+    public class GetMemberRolesListPublicV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "GetMemberRolesListPublicV1"; } }
+        public string OperationName{ get { return "GetMemberRolesListPublicV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.GroupRoles wrapper = new AccelByte.Sdk.Api.Group.Wrapper.GroupRoles(_SDK);
 
             GetMemberRolesListPublicV1 operation = new GetMemberRolesListPublicV1(
-                Namespace,
-                Limit,
-                Offset
-            );
-
+                Namespace,                
+                Limit,                
+                Offset                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetMemberRolesListResponseV1? response = wrapper.GetMemberRolesListPublicV1(operation);
             if (response == null)
                 return "No response from server.";

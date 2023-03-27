@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicupdateparty")]
-    public class PublicUpdatePartyCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicupdateparty")]
+    public class PublicUpdatePartyCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicUpdateParty"; } }
+        public string OperationName{ get { return "PublicUpdateParty"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsUpdatePartyRequest Body { get; set; } = new ApimodelsUpdatePartyRequest();
-
+                
         public PublicUpdatePartyCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             PublicUpdateParty operation = new PublicUpdateParty(
-                Namespace,
-                PartyId,
-                Body
-            );
-
+                Namespace,                
+                PartyId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicUpdateParty(operation);
             if (response == null)
                 return "No response from server.";

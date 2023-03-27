@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "updatepolicyversion")]
-    public class UpdatePolicyVersionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","updatepolicyversion")]
+    public class UpdatePolicyVersionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "UpdatePolicyVersion"; } }
+        public string OperationName{ get { return "UpdatePolicyVersion"; } }
 
         [SdkCommandArgument("policyVersionId")]
         public string PolicyVersionId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public UpdatePolicyVersionRequest Body { get; set; } = new UpdatePolicyVersionRequest();
-
+                
         public UpdatePolicyVersionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersions wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.PolicyVersions(_SDK);
 
             UpdatePolicyVersion operation = new UpdatePolicyVersion(
-                PolicyVersionId,
-                Body
-            );
-
+                PolicyVersionId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.UpdatePolicyVersionResponse? response = wrapper.UpdatePolicyVersion(operation);
             if (response == null)
                 return "No response from server.";

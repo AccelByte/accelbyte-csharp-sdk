@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Reporting.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
 {
-    [SdkConsoleCommand("reporting", "getmoderationruledetails")]
-    public class GetModerationRuleDetailsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("reporting","getmoderationruledetails")]
+    public class GetModerationRuleDetailsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Reporting"; } }
+        public string ServiceName{ get { return "Reporting"; } }
 
-        public string OperationName { get { return "GetModerationRuleDetails"; } }
+        public string OperationName{ get { return "GetModerationRuleDetails"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Reporting
             AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule wrapper = new AccelByte.Sdk.Api.Reporting.Wrapper.AdminModerationRule(_SDK);
 
             GetModerationRuleDetails operation = new GetModerationRuleDetails(
-                Namespace,
-                RuleId
-            );
-
+                Namespace,                
+                RuleId                
+            );            
+            
             AccelByte.Sdk.Api.Reporting.Model.RestapiModerationRuleResponse? response = wrapper.GetModerationRuleDetails(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "adminqueryparties")]
-    public class AdminQueryPartiesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","adminqueryparties")]
+    public class AdminQueryPartiesCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminQueryParties"; } }
+        public string OperationName{ get { return "AdminQueryParties"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -70,19 +70,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Session.Wrapper.Party(_SDK);
 
             AdminQueryParties operation = new AdminQueryParties(
-                Namespace,
-                Joinability,
-                Key,
-                LeaderID,
-                Limit,
-                MemberID,
-                MemberStatus,
-                Offset,
-                Order,
-                OrderBy,
-                Value
-            );
-
+                Namespace,                
+                Joinability,                
+                Key,                
+                LeaderID,                
+                Limit,                
+                MemberID,                
+                MemberStatus,                
+                Offset,                
+                Order,                
+                OrderBy,                
+                Value                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ApimodelsPartyQueryResponse? response = wrapper.AdminQueryParties(operation);
             if (response == null)
                 return "No response from server.";

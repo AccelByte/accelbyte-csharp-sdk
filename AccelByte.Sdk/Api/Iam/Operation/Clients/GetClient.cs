@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/clients/{clientId} [GET]
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetClient : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 GetClient op = new GetClient(this,
-                    clientId
+                    clientId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,28 +70,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["clientId"] = clientId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetClient(
-            string clientId
+            string clientId            
         )
         {
             PathParams["clientId"] = clientId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ClientmodelClientResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ClientmodelClientResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

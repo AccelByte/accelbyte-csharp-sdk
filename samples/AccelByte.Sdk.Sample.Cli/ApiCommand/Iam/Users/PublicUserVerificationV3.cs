@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicuserverificationv3")]
-    public class PublicUserVerificationV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicuserverificationv3")]
+    public class PublicUserVerificationV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicUserVerificationV3"; } }
+        public string OperationName{ get { return "PublicUserVerificationV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelUserVerificationRequestV3 Body { get; set; } = new ModelUserVerificationRequestV3();
-
+                
         public PublicUserVerificationV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             PublicUserVerificationV3 operation = new PublicUserVerificationV3(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.PublicUserVerificationV3(operation);
             return String.Empty;
         }

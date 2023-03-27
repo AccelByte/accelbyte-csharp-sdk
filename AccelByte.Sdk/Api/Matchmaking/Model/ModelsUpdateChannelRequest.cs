@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("max_delay_ms")]
         public int? MaxDelayMs { get; set; }
 
+        [JsonPropertyName("region_expansion_rate_ms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RegionExpansionRateMs { get; set; }
+
         [JsonPropertyName("ruleSet")]
         public ModelsUpdateRuleset? RuleSet { get; set; }
 

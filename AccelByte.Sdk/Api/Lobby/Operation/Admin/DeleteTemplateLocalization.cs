@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 DeleteTemplateLocalization op = new DeleteTemplateLocalization(this,
-                    namespace_,
-                    templateLanguage,
-                    templateSlug
+                    namespace_,                    
+                    templateLanguage,                    
+                    templateSlug                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,32 +66,32 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteTemplateLocalization(
-            string namespace_,
-            string templateLanguage,
-            string templateSlug
+            string namespace_,            
+            string templateLanguage,            
+            string templateSlug            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["templateLanguage"] = templateLanguage;
             PathParams["templateSlug"] = templateSlug;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,16 +106,16 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

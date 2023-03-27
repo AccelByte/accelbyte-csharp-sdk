@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "publishtemplate")]
-    public class PublishTemplateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","publishtemplate")]
+    public class PublishTemplateCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "PublishTemplate"; } }
+        public string OperationName{ get { return "PublishTemplate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Admin(_SDK);
 
             PublishTemplate operation = new PublishTemplate(
-                Namespace,
-                TemplateLanguage,
-                TemplateSlug
-            );
-
+                Namespace,                
+                TemplateLanguage,                
+                TemplateSlug                
+            );            
+            
             wrapper.PublishTemplate(operation);
             return String.Empty;
         }

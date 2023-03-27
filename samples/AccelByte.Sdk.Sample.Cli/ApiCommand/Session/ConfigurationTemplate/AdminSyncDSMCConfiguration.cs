@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "adminsyncdsmcconfiguration")]
-    public class AdminSyncDSMCConfigurationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","adminsyncdsmcconfiguration")]
+    public class AdminSyncDSMCConfigurationCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "AdminSyncDSMCConfiguration"; } }
+        public string OperationName{ get { return "AdminSyncDSMCConfiguration"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate wrapper = new AccelByte.Sdk.Api.Session.Wrapper.ConfigurationTemplate(_SDK);
 
             AdminSyncDSMCConfiguration operation = new AdminSyncDSMCConfiguration(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Session.Model.ModelsDSMConfigRecord? response = wrapper.AdminSyncDSMCConfiguration(operation);
             if (response == null)
                 return "No response from server.";

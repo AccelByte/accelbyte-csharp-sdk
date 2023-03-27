@@ -16,14 +16,14 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("gameMode")]
         [JsonPropertyName("gameMode")]
         public string? GameMode { get; set; }
-
+        
         [AwesomeProperty("id")]
         [JsonPropertyName("id")]
         public string? Id { get; set; }
-
+        
         [AwesomeProperty("isTempParty")]
         [JsonPropertyName("isTempParty")]
         public bool? IsTempParty { get; set; }
-
+        
     }
 }

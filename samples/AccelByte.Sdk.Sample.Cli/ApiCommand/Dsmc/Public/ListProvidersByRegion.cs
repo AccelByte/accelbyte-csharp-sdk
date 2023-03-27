@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "listprovidersbyregion")]
-    public class ListProvidersByRegionCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","listprovidersbyregion")]
+    public class ListProvidersByRegionCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "ListProvidersByRegion"; } }
+        public string OperationName{ get { return "ListProvidersByRegion"; } }
 
         [SdkCommandArgument("region")]
         public string Region { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Public wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Public(_SDK);
 
             ListProvidersByRegion operation = new ListProvidersByRegion(
-                Region
-            );
-
+                Region                
+            );            
+            
             AccelByte.Sdk.Api.Dsmc.Model.ModelsDefaultProvider? response = wrapper.ListProvidersByRegion(operation);
             if (response == null)
                 return "No response from server.";

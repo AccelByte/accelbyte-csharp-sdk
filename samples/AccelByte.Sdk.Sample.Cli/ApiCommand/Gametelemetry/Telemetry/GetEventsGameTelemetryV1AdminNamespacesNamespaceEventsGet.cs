@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Gametelemetry.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 {
-    [SdkConsoleCommand("gametelemetry", "geteventsgametelemetryv1adminnamespacesnamespaceeventsget")]
-    public class GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("gametelemetry","geteventsgametelemetryv1adminnamespacesnamespaceeventsget")]
+    public class GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Gametelemetry"; } }
+        public string ServiceName{ get { return "Gametelemetry"; } }
 
-        public string OperationName { get { return "GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet"; } }
+        public string OperationName{ get { return "GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -61,16 +61,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             AccelByte.Sdk.Api.Gametelemetry.Wrapper.Telemetry wrapper = new AccelByte.Sdk.Api.Gametelemetry.Wrapper.Telemetry(_SDK);
 
             GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet operation = new GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(
-                Namespace,
-                EndTime,
-                EventId,
-                EventName,
-                EventPayload,
-                Limit,
-                Offset,
-                StartTime
-            );
-
+                Namespace,                
+                EndTime,                
+                EventId,                
+                EventName,                
+                EventPayload,                
+                Limit,                
+                Offset,                
+                StartTime                
+            );            
+            
             wrapper.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(operation);
             return String.Empty;
         }

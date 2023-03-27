@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicgamesessioninvite")]
-    public class PublicGameSessionInviteCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session","publicgamesessioninvite")]
+    public class PublicGameSessionInviteCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Session"; } }
+        public string ServiceName{ get { return "Session"; } }
 
-        public string OperationName { get { return "PublicGameSessionInvite"; } }
+        public string OperationName{ get { return "PublicGameSessionInvite"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         [SdkCommandData("body")]
         public ApimodelsSessionInviteRequest Body { get; set; } = new ApimodelsSessionInviteRequest();
-
+                
         public PublicGameSessionInviteCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
 
             PublicGameSessionInvite operation = new PublicGameSessionInvite(
-                Namespace,
-                SessionId,
-                Body
-            );
-
+                Namespace,                
+                SessionId,                
+                Body                
+            );            
+            
             wrapper.PublicGameSessionInvite(operation);
             return String.Empty;
         }

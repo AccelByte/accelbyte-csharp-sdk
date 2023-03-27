@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             )
             {
                 AddPlayerToSession op = new AddPlayerToSession(this,
-                    body,
-                    namespace_,
-                    sessionID
+                    body,                    
+                    namespace_,                    
+                    sessionID                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,33 +67,33 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["sessionID"] = sessionID;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AddPlayerToSession(
-            string namespace_,
-            string sessionID,
-            Model.ModelsAddPlayerRequest body
+            string namespace_,            
+            string sessionID,            
+            Model.ModelsAddPlayerRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["sessionID"] = sessionID;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -108,9 +108,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelsAddPlayerResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsAddPlayerResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

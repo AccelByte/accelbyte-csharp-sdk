@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "authorizev3")]
-    public class AuthorizeV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","authorizev3")]
+    public class AuthorizeV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AuthorizeV3"; } }
+        public string OperationName{ get { return "AuthorizeV3"; } }
 
         [SdkCommandArgument("codeChallenge")]
         public string? CodeChallenge { get; set; }
@@ -70,23 +70,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.OAuth20 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20(_SDK);
 
             AuthorizeV3 operation = new AuthorizeV3(
-                CodeChallenge,
-                (CodeChallengeMethod is null ? null : AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod)),
-                CreateHeadless,
-                OneTimeLinkCode,
-                RedirectUri,
-                Scope,
-                State,
-                TargetAuthPage,
-                UseRedirectUriAsLoginUrlWhenLocked,
-                ClientId,
-                AuthorizeV3ResponseType.NewValue(ResponseType)
-            );
-
+                CodeChallenge,                
+                (CodeChallengeMethod is null ? null : AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod)),                
+                CreateHeadless,                
+                OneTimeLinkCode,                
+                RedirectUri,                
+                Scope,                
+                State,                
+                TargetAuthPage,                
+                UseRedirectUriAsLoginUrlWhenLocked,                
+                ClientId,                
+                AuthorizeV3ResponseType.NewValue(ResponseType)                
+            );            
+            
             string? response = wrapper.AuthorizeV3(operation);
             if (response == null)
                 return "No response from server.";
-            return response!;
+            return response!;            
         }
     }
 }

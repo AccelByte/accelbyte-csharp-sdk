@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicenablemyemailv4")]
-    public class PublicEnableMyEmailV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicenablemyemailv4")]
+    public class PublicEnableMyEmailV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicEnableMyEmailV4"; } }
+        public string OperationName{ get { return "PublicEnableMyEmailV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
-
+                    
         public PublicEnableMyEmailV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicEnableMyEmailV4 operation = new PublicEnableMyEmailV4(
-                Namespace,
-                Code
-            );
-
+                Namespace,                
+                Code                
+            );            
+            
             wrapper.PublicEnableMyEmailV4(operation);
             return String.Empty;
         }

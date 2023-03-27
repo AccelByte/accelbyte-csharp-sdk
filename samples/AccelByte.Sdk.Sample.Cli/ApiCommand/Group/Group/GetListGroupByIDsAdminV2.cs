@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Group.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
 {
-    [SdkConsoleCommand("group", "getlistgroupbyidsadminv2")]
-    public class GetListGroupByIDsAdminV2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("group","getlistgroupbyidsadminv2")]
+    public class GetListGroupByIDsAdminV2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Group"; } }
+        public string ServiceName{ get { return "Group"; } }
 
-        public string OperationName { get { return "GetListGroupByIDsAdminV2"; } }
+        public string OperationName{ get { return "GetListGroupByIDsAdminV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsGetGroupListRequestV2 Body { get; set; } = new ModelsGetGroupListRequestV2();
-
+                
         public GetListGroupByIDsAdminV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Group
             AccelByte.Sdk.Api.Group.Wrapper.Group wrapper = new AccelByte.Sdk.Api.Group.Wrapper.Group(_SDK);
 
             GetListGroupByIDsAdminV2 operation = new GetListGroupByIDsAdminV2(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Group.Model.ModelsGetGroupsResponseV1? response = wrapper.GetListGroupByIDsAdminV2(operation);
             if (response == null)
                 return "No response from server.";

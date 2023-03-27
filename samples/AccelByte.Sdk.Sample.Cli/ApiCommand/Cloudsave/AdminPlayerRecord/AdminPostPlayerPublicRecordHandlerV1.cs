@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "adminpostplayerpublicrecordhandlerv1")]
-    public class AdminPostPlayerPublicRecordHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave","adminpostplayerpublicrecordhandlerv1")]
+    public class AdminPostPlayerPublicRecordHandlerV1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Cloudsave"; } }
+        public string ServiceName{ get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "AdminPostPlayerPublicRecordHandlerV1"; } }
+        public string OperationName{ get { return "AdminPostPlayerPublicRecordHandlerV1"; } }
 
         [SdkCommandArgument("key")]
         public string Key { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
         [SdkCommandData("body")]
         public ModelsPlayerRecordRequest Body { get; set; } = new ModelsPlayerRecordRequest();
-
+                
         public AdminPostPlayerPublicRecordHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminPlayerRecord(_SDK);
 
             AdminPostPlayerPublicRecordHandlerV1 operation = new AdminPostPlayerPublicRecordHandlerV1(
-                Key,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Key,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Cloudsave.Model.ModelsPlayerRecordResponse? response = wrapper.AdminPostPlayerPublicRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";

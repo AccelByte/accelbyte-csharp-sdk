@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getorderstatistics")]
-    public class GetOrderStatisticsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getorderstatistics")]
+    public class GetOrderStatisticsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetOrderStatistics"; } }
+        public string OperationName{ get { return "GetOrderStatistics"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Order wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Order(_SDK);
 
             GetOrderStatistics operation = new GetOrderStatistics(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.OrderStatistics? response = wrapper.GetOrderStatistics(operation);
             if (response == null)
                 return "No response from server.";

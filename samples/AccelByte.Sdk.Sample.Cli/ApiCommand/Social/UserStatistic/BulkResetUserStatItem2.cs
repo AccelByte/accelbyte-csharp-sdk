@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "bulkresetuserstatitem2")]
-    public class BulkResetUserStatItem2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("social","bulkresetuserstatitem2")]
+    public class BulkResetUserStatItem2Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "BulkResetUserStatItem2"; } }
+        public string OperationName{ get { return "BulkResetUserStatItem2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public List<BulkUserStatItemReset> Body { get; set; } = new List<BulkUserStatItemReset>();
-
+                
         public BulkResetUserStatItem2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             BulkResetUserStatItem2 operation = new BulkResetUserStatItem2(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Social.Model.BulkStatOperationResult>? response = wrapper.BulkResetUserStatItem2(operation);
             if (response == null)
                 return "No response from server.";

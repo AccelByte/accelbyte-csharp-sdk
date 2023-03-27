@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Notes : this endpoint only accept admin role. Admin Role is role which have admin status and members.
     /// Use endpoint [GET] /roles/{roleId}/admin to check the role status
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
     public class GetAdminUsersByRoleID : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -110,7 +110,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 GetAdminUsersByRoleID op = new GetAdminUsersByRoleID(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -123,40 +123,40 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.After != null) QueryParams["after"] = Convert.ToString(builder.After)!;
             if (builder.Before != null) QueryParams["before"] = Convert.ToString(builder.Before)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.RoleId is not null) QueryParams["roleId"] = builder.RoleId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetAdminUsersByRoleID(
-            string namespace_,
-            long? after,
-            long? before,
-            long? limit,
-            string? roleId
+            string namespace_,            
+            long? after,            
+            long? before,            
+            long? limit,            
+            string? roleId            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (after != null) QueryParams["after"] = Convert.ToString(after)!;
             if (before != null) QueryParams["before"] = Convert.ToString(before)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (roleId is not null) QueryParams["roleId"] = roleId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -171,9 +171,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelGetAdminUsersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -186,9 +186,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelGetAdminUsersResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "getuserstatcycleitems")]
-    public class GetUserStatCycleItemsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","getuserstatcycleitems")]
+    public class GetUserStatCycleItemsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "GetUserStatCycleItems"; } }
+        public string OperationName{ get { return "GetUserStatCycleItems"; } }
 
         [SdkCommandArgument("cycleId")]
         public string CycleId { get; set; } = String.Empty;
@@ -58,15 +58,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatisticCycle wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatisticCycle(_SDK);
 
             GetUserStatCycleItems operation = new GetUserStatCycleItems(
-                CycleId,
-                Namespace,
-                UserId,
-                Limit,
-                Offset,
-                SortBy,
-                StatCodes
-            );
-
+                CycleId,                
+                Namespace,                
+                UserId,                
+                Limit,                
+                Offset,                
+                SortBy,                
+                StatCodes                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.UserStatCycleItemPagingSlicedResult? response = wrapper.GetUserStatCycleItems(operation);
             if (response == null)
                 return "No response from server.";

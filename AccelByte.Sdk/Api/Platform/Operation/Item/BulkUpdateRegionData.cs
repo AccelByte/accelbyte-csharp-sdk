@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 BulkUpdateRegionData op = new BulkUpdateRegionData(this,
-                    namespace_,
-                    storeId
+                    namespace_,                    
+                    storeId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,34 +70,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (storeId is not null) QueryParams["storeId"] = storeId;
+            
 
-
-
-
+            
+            
             BodyParams = builder.Body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public BulkUpdateRegionData(
-            string namespace_,
-            string storeId,
-            Model.BulkRegionDataChangeRequest body
+            string namespace_,            
+            string storeId,            
+            Model.BulkRegionDataChangeRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (storeId is not null) QueryParams["storeId"] = storeId;
+            
 
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,16 +112,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

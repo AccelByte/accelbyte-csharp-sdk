@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Lobby.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 {
-    [SdkConsoleCommand("lobby", "admincreatethirdpartyconfig")]
-    public class AdminCreateThirdPartyConfigCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("lobby","admincreatethirdpartyconfig")]
+    public class AdminCreateThirdPartyConfigCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Lobby"; } }
+        public string ServiceName{ get { return "Lobby"; } }
 
-        public string OperationName { get { return "AdminCreateThirdPartyConfig"; } }
+        public string OperationName{ get { return "AdminCreateThirdPartyConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsCreateConfigRequest Body { get; set; } = new ModelsCreateConfigRequest();
-
+                
         public AdminCreateThirdPartyConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
             AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.ThirdParty(_SDK);
 
             AdminCreateThirdPartyConfig operation = new AdminCreateThirdPartyConfig(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Lobby.Model.ModelsCreateConfigResponse? response = wrapper.AdminCreateThirdPartyConfig(operation);
             if (response == null)
                 return "No response from server.";

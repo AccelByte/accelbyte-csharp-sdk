@@ -48,22 +48,21 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             get { return Operation.PublicReportUser.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public List<Model.Action>? GetActions(GetActions input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void BanUsers(BanUsers input)
-        {
+        public void BanUsers(BanUsers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -72,16 +71,15 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void ReportUser(ReportUser input)
-        {
+        public void ReportUser(ReportUser input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -90,25 +88,23 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void UnBanUsers(UnBanUsers input)
-        {
+        public void UnBanUsers(UnBanUsers input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicReportUser(PublicReportUser input)
-        {
+        public void PublicReportUser(PublicReportUser input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

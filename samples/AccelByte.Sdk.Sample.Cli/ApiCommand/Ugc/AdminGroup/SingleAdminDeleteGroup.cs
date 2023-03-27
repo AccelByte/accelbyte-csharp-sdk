@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Ugc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 {
-    [SdkConsoleCommand("ugc", "singleadmindeletegroup")]
-    public class SingleAdminDeleteGroupCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ugc","singleadmindeletegroup")]
+    public class SingleAdminDeleteGroupCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ugc"; } }
+        public string ServiceName{ get { return "Ugc"; } }
 
-        public string OperationName { get { return "SingleAdminDeleteGroup"; } }
+        public string OperationName{ get { return "SingleAdminDeleteGroup"; } }
 
         [SdkCommandArgument("groupId")]
         public string GroupId { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
             AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup wrapper = new AccelByte.Sdk.Api.Ugc.Wrapper.AdminGroup(_SDK);
 
             SingleAdminDeleteGroup operation = new SingleAdminDeleteGroup(
-                GroupId,
-                Namespace
-            );
-
+                GroupId,                
+                Namespace                
+            );            
+            
             wrapper.SingleAdminDeleteGroup(operation);
             return String.Empty;
         }

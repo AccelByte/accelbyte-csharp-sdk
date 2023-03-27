@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "listcategoriesbasic")]
-    public class ListCategoriesBasicCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","listcategoriesbasic")]
+    public class ListCategoriesBasicCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ListCategoriesBasic"; } }
+        public string OperationName{ get { return "ListCategoriesBasic"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Category wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Category(_SDK);
 
             ListCategoriesBasic operation = new ListCategoriesBasic(
-                Namespace,
-                StoreId
-            );
-
+                Namespace,                
+                StoreId                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.BasicCategoryInfo>? response = wrapper.ListCategoriesBasic(operation);
             if (response == null)
                 return "No response from server.";

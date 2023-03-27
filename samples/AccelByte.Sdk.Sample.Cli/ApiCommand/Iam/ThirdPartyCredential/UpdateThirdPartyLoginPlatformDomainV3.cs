@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "updatethirdpartyloginplatformdomainv3")]
-    public class UpdateThirdPartyLoginPlatformDomainV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","updatethirdpartyloginplatformdomainv3")]
+    public class UpdateThirdPartyLoginPlatformDomainV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "UpdateThirdPartyLoginPlatformDomainV3"; } }
+        public string OperationName{ get { return "UpdateThirdPartyLoginPlatformDomainV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandData("body")]
         public ModelPlatformDomainUpdateRequest Body { get; set; } = new ModelPlatformDomainUpdateRequest();
-
+                
         public UpdateThirdPartyLoginPlatformDomainV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.ThirdPartyCredential(_SDK);
 
             UpdateThirdPartyLoginPlatformDomainV3 operation = new UpdateThirdPartyLoginPlatformDomainV3(
-                Namespace,
-                PlatformId,
-                Body
-            );
-
+                Namespace,                
+                PlatformId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelPlatformDomainResponse? response = wrapper.UpdateThirdPartyLoginPlatformDomainV3(operation);
             if (response == null)
                 return "No response from server.";

@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "unbanusers")]
-    public class UnBanUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","unbanusers")]
+    public class UnBanUsersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "UnBanUsers"; } }
+        public string OperationName{ get { return "UnBanUsers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ADTOForUnbanUserAPICall Body { get; set; } = new ADTOForUnbanUserAPICall();
-
+                
         public UnBanUsersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserAction wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserAction(_SDK);
 
             UnBanUsers operation = new UnBanUsers(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             wrapper.UnBanUsers(operation);
             return String.Empty;
         }

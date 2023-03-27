@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "requestpresignedurl1")]
-    public class RequestPresignedURL1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","requestpresignedurl1")]
+    public class RequestPresignedURL1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "RequestPresignedURL1"; } }
+        public string OperationName{ get { return "RequestPresignedURL1"; } }
 
         [SdkCommandArgument("localizedPolicyVersionId")]
         public string LocalizedPolicyVersionId { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
         [SdkCommandData("body")]
         public UploadPolicyVersionAttachmentRequest Body { get; set; } = new UploadPolicyVersionAttachmentRequest();
-
+                
         public RequestPresignedURL1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.LocalizedPolicyVersionsWithNamespace(_SDK);
 
             RequestPresignedURL1 operation = new RequestPresignedURL1(
-                LocalizedPolicyVersionId,
-                Namespace,
-                Body
-            );
-
+                LocalizedPolicyVersionId,                
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse? response = wrapper.RequestPresignedURL1(operation);
             if (response == null)
                 return "No response from server.";

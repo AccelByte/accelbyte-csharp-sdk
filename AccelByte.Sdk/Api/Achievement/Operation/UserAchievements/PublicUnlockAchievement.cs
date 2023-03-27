@@ -48,9 +48,9 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             )
             {
                 PublicUnlockAchievement op = new PublicUnlockAchievement(this,
-                    achievementCode,
-                    namespace_,
-                    userId
+                    achievementCode,                    
+                    namespace_,                    
+                    userId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,32 +67,32 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicUnlockAchievement(
-            string achievementCode,
-            string namespace_,
-            string userId
+            string achievementCode,            
+            string namespace_,            
+            string userId            
         )
         {
             PathParams["achievementCode"] = achievementCode;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,16 +107,16 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

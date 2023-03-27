@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "deletelocalserver")]
-    public class DeleteLocalServerCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc","deletelocalserver")]
+    public class DeleteLocalServerCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName{ get { return "Dsmc"; } }
 
-        public string OperationName { get { return "DeleteLocalServer"; } }
+        public string OperationName{ get { return "DeleteLocalServer"; } }
 
         [SdkCommandArgument("name")]
         public string Name { get; set; } = String.Empty;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
             DeleteLocalServer operation = new DeleteLocalServer(
-                Name,
-                Namespace
-            );
-
+                Name,                
+                Namespace                
+            );            
+            
             wrapper.DeleteLocalServer(operation);
             return String.Empty;
         }

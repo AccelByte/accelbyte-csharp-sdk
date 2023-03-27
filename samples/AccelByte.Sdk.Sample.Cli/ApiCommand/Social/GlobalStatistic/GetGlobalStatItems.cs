@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "getglobalstatitems")]
-    public class GetGlobalStatItemsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("social","getglobalstatitems")]
+    public class GetGlobalStatItemsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "GetGlobalStatItems"; } }
+        public string OperationName{ get { return "GetGlobalStatItems"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.GlobalStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GlobalStatistic(_SDK);
 
             GetGlobalStatItems operation = new GetGlobalStatItems(
-                Namespace,
-                Limit,
-                Offset,
-                StatCodes
-            );
-
+                Namespace,                
+                Limit,                
+                Offset,                
+                StatCodes                
+            );            
+            
             AccelByte.Sdk.Api.Social.Model.GlobalStatItemPagingSlicedResult? response = wrapper.GetGlobalStatItems(operation);
             if (response == null)
                 return "No response from server.";

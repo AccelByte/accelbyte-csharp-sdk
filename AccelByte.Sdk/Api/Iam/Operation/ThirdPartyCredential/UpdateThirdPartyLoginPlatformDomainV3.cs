@@ -52,9 +52,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 UpdateThirdPartyLoginPlatformDomainV3 op = new UpdateThirdPartyLoginPlatformDomainV3(this,
-                    body,
-                    namespace_,
-                    platformId
+                    body,                    
+                    namespace_,                    
+                    platformId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -70,33 +70,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateThirdPartyLoginPlatformDomainV3(
-            string namespace_,
-            string platformId,
-            Model.ModelPlatformDomainUpdateRequest body
+            string namespace_,            
+            string platformId,            
+            Model.ModelPlatformDomainUpdateRequest body            
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
+            
+            
 
-
-
-
-
+            
+            
             BodyParams = body;
-
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.ModelPlatformDomainResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -126,9 +126,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelPlatformDomainResponse>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

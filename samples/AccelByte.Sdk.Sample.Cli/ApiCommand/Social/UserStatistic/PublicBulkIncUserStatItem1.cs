@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Social.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 {
-    [SdkConsoleCommand("social", "publicbulkincuserstatitem1")]
-    public class PublicBulkIncUserStatItem1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("social","publicbulkincuserstatitem1")]
+    public class PublicBulkIncUserStatItem1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Social"; } }
+        public string ServiceName{ get { return "Social"; } }
 
-        public string OperationName { get { return "PublicBulkIncUserStatItem1"; } }
+        public string OperationName{ get { return "PublicBulkIncUserStatItem1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
         [SdkCommandData("body")]
         public List<BulkStatItemInc> Body { get; set; } = new List<BulkStatItemInc>();
-
+                
         public PublicBulkIncUserStatItem1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             AccelByte.Sdk.Api.Social.Wrapper.UserStatistic wrapper = new AccelByte.Sdk.Api.Social.Wrapper.UserStatistic(_SDK);
 
             PublicBulkIncUserStatItem1 operation = new PublicBulkIncUserStatItem1(
-                Namespace,
-                UserId,
-                Body
-            );
-
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Social.Model.BulkStatOperationResult>? response = wrapper.PublicBulkIncUserStatItem1(operation);
             if (response == null)
                 return "No response from server.";

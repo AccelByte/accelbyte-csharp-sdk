@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminquerythirdplatformlinkhistoryv3")]
-    public class AdminQueryThirdPlatformLinkHistoryV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","adminquerythirdplatformlinkhistoryv3")]
+    public class AdminQueryThirdPlatformLinkHistoryV3Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminQueryThirdPlatformLinkHistoryV3"; } }
+        public string OperationName{ get { return "AdminQueryThirdPlatformLinkHistoryV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
             AdminQueryThirdPlatformLinkHistoryV3 operation = new AdminQueryThirdPlatformLinkHistoryV3(
-                Namespace,
-                Limit,
-                Offset,
-                PlatformUserId,
-                PlatformId
-            );
-
+                Namespace,                
+                Limit,                
+                Offset,                
+                PlatformUserId,                
+                PlatformId                
+            );            
+            
             AccelByte.Sdk.Api.Iam.Model.ModelLinkingHistoryResponseWithPaginationV3? response = wrapper.AdminQueryThirdPlatformLinkHistoryV3(operation);
             if (response == null)
                 return "No response from server.";

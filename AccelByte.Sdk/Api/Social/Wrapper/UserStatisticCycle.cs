@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             get { return Operation.GetUserStatCycleItems1.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.UserStatCycleItemPagingSlicedResult? GetUserStatCycleItems(GetUserStatCycleItems input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

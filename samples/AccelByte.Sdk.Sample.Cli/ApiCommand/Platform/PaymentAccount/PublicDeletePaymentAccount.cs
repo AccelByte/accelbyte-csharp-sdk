@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "publicdeletepaymentaccount")]
-    public class PublicDeletePaymentAccountCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","publicdeletepaymentaccount")]
+    public class PublicDeletePaymentAccountCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "PublicDeletePaymentAccount"; } }
+        public string OperationName{ get { return "PublicDeletePaymentAccount"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentAccount wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentAccount(_SDK);
 
             PublicDeletePaymentAccount operation = new PublicDeletePaymentAccount(
-                Id,
-                Namespace,
-                PublicDeletePaymentAccountType.NewValue(Type),
-                UserId
-            );
-
+                Id,                
+                Namespace,                
+                PublicDeletePaymentAccountType.NewValue(Type),                
+                UserId                
+            );            
+            
             wrapper.PublicDeletePaymentAccount(operation);
             return String.Empty;
         }

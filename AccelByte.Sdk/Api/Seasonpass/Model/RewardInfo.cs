@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         {
 
         }
-    }
+    }    
 
     public class RewardInfoType : StringEnum<RewardInfoType>
     {
@@ -124,5 +124,5 @@ namespace AccelByte.Sdk.Api.Seasonpass.Model
         {
 
         }
-    }
+    }    
 }

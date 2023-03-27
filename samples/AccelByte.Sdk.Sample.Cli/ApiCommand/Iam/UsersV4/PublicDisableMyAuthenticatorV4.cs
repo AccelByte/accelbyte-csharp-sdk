@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicdisablemyauthenticatorv4")]
-    public class PublicDisableMyAuthenticatorV4Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam","publicdisablemyauthenticatorv4")]
+    public class PublicDisableMyAuthenticatorV4Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Iam"; } }
+        public string ServiceName{ get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicDisableMyAuthenticatorV4"; } }
+        public string OperationName{ get { return "PublicDisableMyAuthenticatorV4"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             AccelByte.Sdk.Api.Iam.Wrapper.UsersV4 wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersV4(_SDK);
 
             PublicDisableMyAuthenticatorV4 operation = new PublicDisableMyAuthenticatorV4(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             wrapper.PublicDisableMyAuthenticatorV4(operation);
             return String.Empty;
         }

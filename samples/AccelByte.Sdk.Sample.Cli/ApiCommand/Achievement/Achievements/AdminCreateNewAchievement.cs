@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Achievement.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
 {
-    [SdkConsoleCommand("achievement", "admincreatenewachievement")]
-    public class AdminCreateNewAchievementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("achievement","admincreatenewachievement")]
+    public class AdminCreateNewAchievementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Achievement"; } }
+        public string ServiceName{ get { return "Achievement"; } }
 
-        public string OperationName { get { return "AdminCreateNewAchievement"; } }
+        public string OperationName{ get { return "AdminCreateNewAchievement"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAchievementRequest Body { get; set; } = new ModelsAchievementRequest();
-
+                
         public AdminCreateNewAchievementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             AccelByte.Sdk.Api.Achievement.Wrapper.Achievements wrapper = new AccelByte.Sdk.Api.Achievement.Wrapper.Achievements(_SDK);
 
             AdminCreateNewAchievement operation = new AdminCreateNewAchievement(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Achievement.Model.ModelsAchievementResponse? response = wrapper.AdminCreateNewAchievement(operation);
             if (response == null)
                 return "No response from server.";

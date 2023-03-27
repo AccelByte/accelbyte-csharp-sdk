@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 RetrieveSinglePolicyVersion op = new RetrieveSinglePolicyVersion(this,
-                    policyId
+                    policyId                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,31 +67,31 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         )
         {
             PathParams["policyId"] = policyId;
-
+            
             if (builder.VersionId is not null) QueryParams["versionId"] = builder.VersionId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RetrieveSinglePolicyVersion(
-            string policyId,
-            string? versionId
+            string policyId,            
+            string? versionId            
         )
         {
             PathParams["policyId"] = policyId;
-
+            
             if (versionId is not null) QueryParams["versionId"] = versionId;
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,15 +100,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public List<Model.RetrievePolicyVersionResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.RetrievePolicyVersionResponse>>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

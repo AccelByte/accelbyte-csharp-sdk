@@ -60,10 +60,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 Verify2faCode op = new Verify2faCode(this,
-                    code,
-                    factor,
-                    mfaToken,
-                    rememberDevice
+                    code,                    
+                    factor,                    
+                    mfaToken,                    
+                    rememberDevice                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -78,38 +78,38 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             bool rememberDevice
         )
         {
-
-
+            
+            
             if (code is not null) FormParams["code"] = code;
             if (factor is not null) FormParams["factor"] = factor;
             if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public Verify2faCode(
-            string code,
-            string factor,
-            string mfaToken,
-            bool rememberDevice
+            string code,            
+            string factor,            
+            string mfaToken,            
+            bool rememberDevice            
         )
         {
-
-
+            
+            
             if (code is not null) FormParams["code"] = code;
             if (factor is not null) FormParams["factor"] = factor;
             if (mfaToken is not null) FormParams["mfaToken"] = mfaToken;
             FormParams["rememberDevice"] = Convert.ToString(rememberDevice)!;
 
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public Model.OauthmodelTokenResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {
+        {            
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -139,9 +139,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenResponseV3>(payload);
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

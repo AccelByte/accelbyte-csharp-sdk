@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getmyprivatecustomattributesinfo")]
-    public class GetMyPrivateCustomAttributesInfoCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic","getmyprivatecustomattributesinfo")]
+    public class GetMyPrivateCustomAttributesInfoCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Basic"; } }
+        public string ServiceName{ get { return "Basic"; } }
 
-        public string OperationName { get { return "GetMyPrivateCustomAttributesInfo"; } }
+        public string OperationName{ get { return "GetMyPrivateCustomAttributesInfo"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -40,9 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
             AccelByte.Sdk.Api.Basic.Wrapper.UserProfile wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.UserProfile(_SDK);
 
             GetMyPrivateCustomAttributesInfo operation = new GetMyPrivateCustomAttributesInfo(
-                Namespace
-            );
-
+                Namespace                
+            );            
+            
             Dictionary<string, object>? response = wrapper.GetMyPrivateCustomAttributesInfo(operation);
             if (response == null)
                 return "No response from server.";

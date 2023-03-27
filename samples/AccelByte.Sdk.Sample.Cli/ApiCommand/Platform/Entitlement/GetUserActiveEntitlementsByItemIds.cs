@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuseractiveentitlementsbyitemids")]
-    public class GetUserActiveEntitlementsByItemIdsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","getuseractiveentitlementsbyitemids")]
+    public class GetUserActiveEntitlementsByItemIdsCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserActiveEntitlementsByItemIds"; } }
+        public string OperationName{ get { return "GetUserActiveEntitlementsByItemIds"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -46,11 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             GetUserActiveEntitlementsByItemIds operation = new GetUserActiveEntitlementsByItemIds(
-                Namespace,
-                UserId,
-                Ids
-            );
-
+                Namespace,                
+                UserId,                
+                Ids                
+            );            
+            
             List<AccelByte.Sdk.Api.Platform.Model.EntitlementInfo>? response = wrapper.GetUserActiveEntitlementsByItemIds(operation);
             if (response == null)
                 return "No response from server.";

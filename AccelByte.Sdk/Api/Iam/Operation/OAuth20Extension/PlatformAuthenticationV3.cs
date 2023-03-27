@@ -196,8 +196,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PlatformAuthenticationV3 op = new PlatformAuthenticationV3(this,
-                    platformId,
-                    state
+                    platformId,                    
+                    state                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -211,7 +211,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (builder.Code is not null) QueryParams["code"] = builder.Code;
             if (builder.Error is not null) QueryParams["error"] = builder.Error;
             if (builder.OpenidAssocHandle is not null) QueryParams["openid.assoc_handle"] = builder.OpenidAssocHandle;
@@ -225,11 +225,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.OpenidSig is not null) QueryParams["openid.sig"] = builder.OpenidSig;
             if (builder.OpenidSigned is not null) QueryParams["openid.signed"] = builder.OpenidSigned;
             if (state is not null) QueryParams["state"] = state;
+            
 
-
-
-
-
+            
+            
+            
             LocationQuery = "PLACEHOLDER";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -237,24 +237,24 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PlatformAuthenticationV3(
-            string platformId,
-            string? code,
-            string? error,
-            string? openidAssocHandle,
-            string? openidClaimedId,
-            string? openidIdentity,
-            string? openidMode,
-            string? openidNs,
-            string? openidOpEndpoint,
-            string? openidResponseNonce,
-            string? openidReturnTo,
-            string? openidSig,
-            string? openidSigned,
-            string state
+            string platformId,            
+            string? code,            
+            string? error,            
+            string? openidAssocHandle,            
+            string? openidClaimedId,            
+            string? openidIdentity,            
+            string? openidMode,            
+            string? openidNs,            
+            string? openidOpEndpoint,            
+            string? openidResponseNonce,            
+            string? openidReturnTo,            
+            string? openidSig,            
+            string? openidSigned,            
+            string state            
         )
         {
             PathParams["platformId"] = platformId;
-
+            
             if (code is not null) QueryParams["code"] = code;
             if (error is not null) QueryParams["error"] = error;
             if (openidAssocHandle is not null) QueryParams["openid.assoc_handle"] = openidAssocHandle;
@@ -268,11 +268,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (openidSig is not null) QueryParams["openid.sig"] = openidSig;
             if (openidSigned is not null) QueryParams["openid.signed"] = openidSigned;
             if (state is not null) QueryParams["state"] = state;
+            
 
-
-
-
-
+            
+            
+            
             LocationQuery = "PLACEHOLDER";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -288,16 +288,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             if (code == (HttpStatusCode)302)
             {
-                return payloadString;
+              return payloadString;
             }
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

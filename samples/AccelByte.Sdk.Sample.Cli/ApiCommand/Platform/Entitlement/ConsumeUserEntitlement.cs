@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "consumeuserentitlement")]
-    public class ConsumeUserEntitlementCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform","consumeuserentitlement")]
+    public class ConsumeUserEntitlementCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Platform"; } }
+        public string ServiceName{ get { return "Platform"; } }
 
-        public string OperationName { get { return "ConsumeUserEntitlement"; } }
+        public string OperationName{ get { return "ConsumeUserEntitlement"; } }
 
         [SdkCommandArgument("entitlementId")]
         public string EntitlementId { get; set; } = String.Empty;
@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandData("body")]
         public EntitlementDecrement Body { get; set; } = new EntitlementDecrement();
-
+                
         public ConsumeUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,12 +49,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
             ConsumeUserEntitlement operation = new ConsumeUserEntitlement(
-                EntitlementId,
-                Namespace,
-                UserId,
-                Body
-            );
-
+                EntitlementId,                
+                Namespace,                
+                UserId,                
+                Body                
+            );            
+            
             AccelByte.Sdk.Api.Platform.Model.EntitlementDecrementResult? response = wrapper.ConsumeUserEntitlement(operation);
             if (response == null)
                 return "No response from server.";

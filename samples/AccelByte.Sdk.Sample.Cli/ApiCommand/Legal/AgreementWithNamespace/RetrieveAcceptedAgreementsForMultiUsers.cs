@@ -18,21 +18,21 @@ using AccelByte.Sdk.Api.Legal.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 {
-    [SdkConsoleCommand("legal", "retrieveacceptedagreementsformultiusers")]
-    public class RetrieveAcceptedAgreementsForMultiUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("legal","retrieveacceptedagreementsformultiusers")]
+    public class RetrieveAcceptedAgreementsForMultiUsersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Legal"; } }
+        public string ServiceName{ get { return "Legal"; } }
 
-        public string OperationName { get { return "RetrieveAcceptedAgreementsForMultiUsers"; } }
+        public string OperationName{ get { return "RetrieveAcceptedAgreementsForMultiUsers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public UsersAgreementsRequest Body { get; set; } = new UsersAgreementsRequest();
-
+                
         public RetrieveAcceptedAgreementsForMultiUsersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -43,10 +43,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.AgreementWithNamespace(_SDK);
 
             RetrieveAcceptedAgreementsForMultiUsers operation = new RetrieveAcceptedAgreementsForMultiUsers(
-                Namespace,
-                Body
-            );
-
+                Namespace,                
+                Body                
+            );            
+            
             List<AccelByte.Sdk.Api.Legal.Model.UserAgreementsResponse>? response = wrapper.RetrieveAcceptedAgreementsForMultiUsers(operation);
             if (response == null)
                 return "No response from server.";
