@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Image { get; set; }
 
         [JsonPropertyName("imageSize")]
-        public int? ImageSize { get; set; }
+        public long? ImageSize { get; set; }
 
         [JsonPropertyName("modifiedBy")]
         public string? ModifiedBy { get; set; }
