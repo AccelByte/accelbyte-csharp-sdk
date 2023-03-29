@@ -1,3 +1,7 @@
+<a name="v0.31.1"><a>
+## [v0.31.1]
+- Hotfix: fixed image size model's property for DSMC service.
+
 <a name="v0.31.0"></a>
 ## [v0.31.0]
 - Removed title matchmaking sample app.
