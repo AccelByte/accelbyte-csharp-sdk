@@ -154,6 +154,19 @@ if (!logout)
 }
 ```
 
+## Enable HTTP Logging
+To enable http logging feature, build the sdk with `EnableLog()`.
+```csharp
+using AccelByte.Sdk.Core;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    .UseDefaultConfigRepository()
+    .UseDefaultTokenRepository()
+    .EnableLog()
+    .Build();
+```
+
 ## HTTP Retry Example
 If retry feature is required, instantiate the sdk with `ReliableHttpClient` object.
 ```csharp
