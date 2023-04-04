@@ -309,8 +309,7 @@ See common use cases [here](docs/common_use_cases.md).
 Sample apps are available in the [samples](samples) directory.
 
 ## Migration Guides
-- [0.21.x to 0.22.0](docs/migration-guides/migration-guide-v0.21-to-v0.22.md)
-- [0.23.x to 0.24.0](docs/migration-guides/migration-guide-v0.23-to-v0.24.md)
+See [here](docs/migration-guides) for migration guides.
 
 ## Documentation
 Reference about AccelByte Gaming Services endpoints and their corresponding SDK API is available in [docs/operations](docs/operations) directory.
