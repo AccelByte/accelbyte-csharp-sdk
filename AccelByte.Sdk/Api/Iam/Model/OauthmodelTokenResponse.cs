@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("bans")]
         public List<AccountcommonJWTBanV3>? Bans { get; set; }
 
+        [JsonPropertyName("device_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DeviceId { get; set; }
+
         [JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 

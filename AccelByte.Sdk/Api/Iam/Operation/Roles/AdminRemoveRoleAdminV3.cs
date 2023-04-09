@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminRemoveRoleAdminV3 op = new AdminRemoveRoleAdminV3(this,
-                    roleId                    
+                    roleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,28 +60,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminRemoveRoleAdminV3(
-            string roleId            
+            string roleId
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -90,22 +90,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

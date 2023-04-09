@@ -51,8 +51,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             )
             {
                 GetModerationRuleDetails op = new GetModerationRuleDetails(this,
-                    namespace_,                    
-                    ruleId                    
+                    namespace_,
+                    ruleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,30 +67,30 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleId"] = ruleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetModerationRuleDetails(
-            string namespace_,            
-            string ruleId            
+            string namespace_,
+            string ruleId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["ruleId"] = ruleId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,11 +103,11 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.RestapiModerationRuleResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiModerationRuleResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -13,15 +13,15 @@ namespace AccelByte.Sdk.Api
     public static class PlatformRevocation_OpExts
     {
         public static Platform.Model.RevocationConfigInfo? Execute(
-            this GetPaymentCallbackConfig1.GetPaymentCallbackConfig1Builder builder,
+            this GetRevocationConfig.GetRevocationConfigBuilder builder,
             string namespace_
         )
         {
-            GetPaymentCallbackConfig1 op = builder.Build(
+            GetRevocationConfig op = builder.Build(
                 namespace_
             );
 
-            return ((Platform.Wrapper.Revocation)builder.WrapperObject!).GetPaymentCallbackConfig1(op);
+            return ((Platform.Wrapper.Revocation)builder.WrapperObject!).GetRevocationConfig(op);
         }
         public static Platform.Model.RevocationConfigInfo? Execute(
             this UpdateRevocationConfig.UpdateRevocationConfigBuilder builder,

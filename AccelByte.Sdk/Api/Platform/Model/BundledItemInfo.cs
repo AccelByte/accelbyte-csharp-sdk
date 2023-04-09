@@ -421,7 +421,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class BundledItemInfoEntitlementType : StringEnum<BundledItemInfoEntitlementType>
     {
@@ -442,7 +442,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class BundledItemInfoItemType : StringEnum<BundledItemInfoItemType>
     {
@@ -490,7 +490,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class BundledItemInfoSeasonType : StringEnum<BundledItemInfoSeasonType>
     {
@@ -511,7 +511,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class BundledItemInfoStatus : StringEnum<BundledItemInfoStatus>
     {
@@ -532,5 +532,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

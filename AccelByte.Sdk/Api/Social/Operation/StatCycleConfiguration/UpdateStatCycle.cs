@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 UpdateStatCycle op = new UpdateStatCycle(this,
-                    cycleId,                    
-                    namespace_                    
+                    cycleId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +71,33 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["cycleId"] = cycleId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateStatCycle(
-            string cycleId,            
-            string namespace_,            
-            Model.StatCycleUpdate body            
+            string cycleId,
+            string namespace_,
+            Model.StatCycleUpdate body
         )
         {
             PathParams["cycleId"] = cycleId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,11 +110,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.StatCycleInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.StatCycleInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class EntitlementRevocationConfig : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("consumable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ConsumableEntitlementRevocationConfig? Consumable { get; set; }
+
         [JsonPropertyName("durable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DurableEntitlementRevocationConfig? Durable { get; set; }

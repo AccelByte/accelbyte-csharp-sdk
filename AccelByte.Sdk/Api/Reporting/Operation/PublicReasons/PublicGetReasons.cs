@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             )
             {
                 PublicGetReasons op = new PublicGetReasons(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -86,40 +86,40 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Group is not null) QueryParams["group"] = builder.Group;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Title is not null) QueryParams["title"] = builder.Title;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetReasons(
-            string namespace_,            
-            string? group,            
-            long? limit,            
-            long? offset,            
-            string? title            
+            string namespace_,
+            string? group,
+            long? limit,
+            long? offset,
+            string? title
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (group is not null) QueryParams["group"] = group;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (title is not null) QueryParams["title"] = title;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -132,11 +132,11 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.RestapiPublicReasonListResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -149,9 +149,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiPublicReasonListResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

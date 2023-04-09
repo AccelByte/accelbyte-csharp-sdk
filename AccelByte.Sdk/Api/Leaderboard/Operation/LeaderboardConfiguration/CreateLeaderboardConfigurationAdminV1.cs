@@ -80,8 +80,8 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             )
             {
                 CreateLeaderboardConfigurationAdminV1 op = new CreateLeaderboardConfigurationAdminV1(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -95,31 +95,31 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateLeaderboardConfigurationAdminV1(
-            string namespace_,            
-            Model.ModelsLeaderboardConfigReq body            
+            string namespace_,
+            Model.ModelsLeaderboardConfigReq body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -132,11 +132,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsLeaderboardConfigReq? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -149,9 +149,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsLeaderboardConfigReq>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

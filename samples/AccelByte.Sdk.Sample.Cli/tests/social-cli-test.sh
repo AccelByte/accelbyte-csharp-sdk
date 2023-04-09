@@ -533,7 +533,7 @@ eval_tap $? 46 'DeleteStat' test.out
 
 #- 47 UpdateStat
 # body param: body
-echo '{"cycleIds": ["poTVCNrc", "9bpIHEWQ", "MmCkIqwq"], "defaultValue": 0.0032914859645957195, "description": "VozsjIXO", "name": "2EUsAfBv", "tags": ["s2R3VMti", "o6Llcalk", "pTVxXAF8"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["9bpIHEWQ", "poTVCNrc", "MmCkIqwq"], "defaultValue": 0.0032914859645957195, "description": "VozsjIXO", "name": "2EUsAfBv", "tags": ["o6Llcalk", "s2R3VMti", "pTVxXAF8"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -763,7 +763,7 @@ eval_tap $? 66 'BulkResetUserStatItem2' test.out
 
 #- 67 CreateStat1
 # body param: body
-echo '{"cycleIds": ["pAGIapYf", "hdiS41VB", "tYZkBXiE"], "defaultValue": 0.4303432922187934, "description": "EUvoBlbH", "incrementOnly": true, "maximum": 0.879647195099073, "minimum": 0.028796480984580097, "name": "obxtljIf", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "gjP9onbx", "tags": ["fXO3HkJT", "OPscPA2n", "FcxS2OZZ"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["hdiS41VB", "pAGIapYf", "tYZkBXiE"], "defaultValue": 0.4303432922187934, "description": "EUvoBlbH", "incrementOnly": true, "maximum": 0.879647195099073, "minimum": 0.028796480984580097, "name": "obxtljIf", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "gjP9onbx", "tags": ["fXO3HkJT", "FcxS2OZZ", "OPscPA2n"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat1 \

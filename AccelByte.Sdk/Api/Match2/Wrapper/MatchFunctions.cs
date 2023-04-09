@@ -36,21 +36,22 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             get { return Operation.DeleteMatchFunction.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ApiListMatchFunctionsResponse? MatchFunctionList(MatchFunctionList input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateMatchFunction(CreateMatchFunction input) {
+        public void CreateMatchFunction(CreateMatchFunction input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -59,15 +60,16 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteMatchFunction(DeleteMatchFunction input) {
+        public void DeleteMatchFunction(DeleteMatchFunction input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

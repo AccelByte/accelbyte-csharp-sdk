@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ListCurrencies op = new ListCurrencies(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,31 +68,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
-            
 
-            
-            
-            
+            if (builder.CurrencyType is not null) QueryParams["currencyType"] = builder.CurrencyType.Value;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListCurrencies(
-            string namespace_,            
-            ListCurrenciesCurrencyType? currencyType            
+            string namespace_,
+            ListCurrenciesCurrencyType? currencyType
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
-            
 
-            
-            
-            
+            if (currencyType is not null) QueryParams["currencyType"] = currencyType.Value;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,11 +105,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.CurrencyInfo>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.CurrencyInfo>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

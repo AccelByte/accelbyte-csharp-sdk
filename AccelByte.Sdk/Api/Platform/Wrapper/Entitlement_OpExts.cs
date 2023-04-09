@@ -222,6 +222,19 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipBySku(op);
         }
         public static Platform.Model.BulkOperationResult? Execute(
+            this RevokeAllEntitlements.RevokeAllEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeAllEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeAllEntitlements(op);
+        }
+        public static Platform.Model.BulkOperationResult? Execute(
             this RevokeUserEntitlements.RevokeUserEntitlementsBuilder builder,
             string namespace_,
             string userId,
@@ -340,6 +353,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlement(op);
+        }
+        public static Platform.Model.EntitlementInfo? Execute(
+            this RevokeUseCount.RevokeUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUseCount(op);
         }
         public static Platform.Model.EntitlementSoldResult? Execute(
             this SellUserEntitlement.SellUserEntitlementBuilder builder,

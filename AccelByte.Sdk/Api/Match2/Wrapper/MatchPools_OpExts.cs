@@ -90,5 +90,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolMetric(op);
         }
+        public static Match2.Model.ApiPlayerMetricRecord? Execute(
+            this GetPlayerMetric.GetPlayerMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            GetPlayerMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).GetPlayerMetric(op);
+        }
     }
 }

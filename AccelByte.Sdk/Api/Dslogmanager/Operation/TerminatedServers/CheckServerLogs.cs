@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             )
             {
                 CheckServerLogs op = new CheckServerLogs(this,
-                    namespace_,                    
-                    podName                    
+                    namespace_,
+                    podName
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["podName"] = podName;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CheckServerLogs(
-            string namespace_,            
-            string podName            
+            string namespace_,
+            string podName
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["podName"] = podName;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,13 +98,13 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
         public override string[] Consumes => new string[] { "application/json" };
 
-        public override string[] Produces => new string[] { "application/json","text/x-log" };
+        public override string[] Produces => new string[] { "application/json", "text/x-log" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsLogFileStatus? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsLogFileStatus>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

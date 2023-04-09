@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             )
             {
                 AdminDeleteProfanityFilter op = new AdminDeleteProfanityFilter(this,
-                    body,                    
-                    list,                    
-                    namespace_                    
+                    body,
+                    list,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["list"] = list;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminDeleteProfanityFilter(
-            string list,            
-            string namespace_,            
-            Model.ModelsAdminDeleteProfanityFilterRequest body            
+            string list,
+            string namespace_,
+            Model.ModelsAdminDeleteProfanityFilterRequest body
         )
         {
             PathParams["list"] = list;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,11 +104,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ModelsProfanityFilter>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelsProfanityFilter>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

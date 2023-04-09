@@ -55,12 +55,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         private AdminGetAllConfigV1(AdminGetAllConfigV1Builder builder
         )
         {
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -69,12 +69,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public AdminGetAllConfigV1(
         )
         {
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -87,11 +87,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsConfigList? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -104,9 +104,9 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

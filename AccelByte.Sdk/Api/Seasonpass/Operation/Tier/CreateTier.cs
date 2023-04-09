@@ -56,8 +56,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 CreateTier op = new CreateTier(this,
-                    namespace_,                    
-                    seasonId                    
+                    namespace_,
+                    seasonId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -72,33 +72,33 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateTier(
-            string namespace_,            
-            string seasonId,            
-            Model.TierCreate body            
+            string namespace_,
+            string seasonId,
+            Model.TierCreate body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,11 +111,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.Tier>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -128,9 +128,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.Tier>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

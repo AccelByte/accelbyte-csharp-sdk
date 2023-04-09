@@ -58,8 +58,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 QueryUserExpGrantHistoryTag op = new QueryUserExpGrantHistoryTag(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,33 +74,33 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (builder.SeasonId is not null) QueryParams["seasonId"] = builder.SeasonId;
-            
 
-            
-            
-            
+            if (builder.SeasonId is not null) QueryParams["seasonId"] = builder.SeasonId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public QueryUserExpGrantHistoryTag(
-            string namespace_,            
-            string userId,            
-            string? seasonId            
+            string namespace_,
+            string userId,
+            string? seasonId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (seasonId is not null) QueryParams["seasonId"] = seasonId;
-            
 
-            
-            
-            
+            if (seasonId is not null) QueryParams["seasonId"] = seasonId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,15 +109,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ReasonTagsResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -130,9 +130,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<Model.ReasonTagsResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

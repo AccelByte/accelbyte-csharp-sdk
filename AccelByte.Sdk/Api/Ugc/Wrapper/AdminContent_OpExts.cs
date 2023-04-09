@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class UgcAdminContent_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUploadContentDirect.AdminUploadContentDirectBuilder builder,
             ModelsCreateContentRequest body,
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this SingleAdminUpdateContentS3.SingleAdminUpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_
@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this SingleAdminUpdateContentS3.SingleAdminUpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_
@@ -123,7 +123,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminSearchChannelSpecificContent(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this SingleAdminUpdateContentDirect.SingleAdminUpdateContentDirectBuilder builder,
             ModelsCreateContentRequest body,
@@ -337,7 +337,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -357,7 +357,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -374,7 +374,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminUpdateContentS3<T1>(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentDirect.AdminUpdateContentDirectBuilder builder,
             ModelsCreateContentRequest body,

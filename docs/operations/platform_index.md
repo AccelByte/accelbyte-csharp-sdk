@@ -151,6 +151,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemId` | GET | GetUserEntitlementOwnershipByItemId | [GetUserEntitlementOwnershipByItemId](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipByItemId.cs) | [GetUserEntitlementOwnershipByItemId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipByItemId.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/byItemIds` | GET | GetUserEntitlementOwnershipByItemIds | [GetUserEntitlementOwnershipByItemIds](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipByItemIds.cs) | [GetUserEntitlementOwnershipByItemIds](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipByItemIds.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/ownership/bySku` | GET | GetUserEntitlementOwnershipBySku | [GetUserEntitlementOwnershipBySku](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementOwnershipBySku.cs) | [GetUserEntitlementOwnershipBySku](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementOwnershipBySku.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke` | PUT | RevokeAllEntitlements | [RevokeAllEntitlements](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeAllEntitlements.cs) | [RevokeAllEntitlements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeAllEntitlements.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/revoke/byIds` | PUT | RevokeUserEntitlements | [RevokeUserEntitlements](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlements.cs) | [RevokeUserEntitlements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUserEntitlements.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}` | GET | GetUserEntitlement | [GetUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlement.cs) | [GetUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlement.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}` | PUT | UpdateUserEntitlement | [UpdateUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/UpdateUserEntitlement.cs) | [UpdateUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/UpdateUserEntitlement.cs) |
@@ -159,6 +160,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable` | PUT | EnableUserEntitlement | [EnableUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/EnableUserEntitlement.cs) | [EnableUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/EnableUserEntitlement.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/history` | GET | GetUserEntitlementHistories | [GetUserEntitlementHistories](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementHistories.cs) | [GetUserEntitlementHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementHistories.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke` | PUT | RevokeUserEntitlement | [RevokeUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlement.cs) | [RevokeUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUserEntitlement.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revokeByUseCount` | PUT | RevokeUseCount | [RevokeUseCount](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUseCount.cs) | [RevokeUseCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUseCount.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell` | PUT | SellUserEntitlement | [SellUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/SellUserEntitlement.cs) | [SellUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/SellUserEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/any` | GET | PublicExistsAnyMyActiveEntitlement | [PublicExistsAnyMyActiveEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicExistsAnyMyActiveEntitlement.cs) | [PublicExistsAnyMyActiveEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicExistsAnyMyActiveEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byAppId` | GET | PublicGetMyAppEntitlementOwnershipByAppId | [PublicGetMyAppEntitlementOwnershipByAppId](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetMyAppEntitlementOwnershipByAppId.cs) | [PublicGetMyAppEntitlementOwnershipByAppId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetMyAppEntitlementOwnershipByAppId.cs) |
@@ -326,7 +328,7 @@
 ### Revocation Wrapper:  [Revocation](../../AccelByte.Sdk/Api/Platform/Wrapper/Revocation.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/revocation/config` | GET | GetPaymentCallbackConfig1 | [GetPaymentCallbackConfig1](../../AccelByte.Sdk/Api/Platform/Operation/Revocation/GetPaymentCallbackConfig1.cs) | [GetPaymentCallbackConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Revocation/GetPaymentCallbackConfig1.cs) |
+| `/platform/admin/namespaces/{namespace}/revocation/config` | GET | GetRevocationConfig | [GetRevocationConfig](../../AccelByte.Sdk/Api/Platform/Operation/Revocation/GetRevocationConfig.cs) | [GetRevocationConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Revocation/GetRevocationConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/revocation/config` | PUT | UpdateRevocationConfig | [UpdateRevocationConfig](../../AccelByte.Sdk/Api/Platform/Operation/Revocation/UpdateRevocationConfig.cs) | [UpdateRevocationConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Revocation/UpdateRevocationConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/revocation/config` | DELETE | DeleteRevocationConfig | [DeleteRevocationConfig](../../AccelByte.Sdk/Api/Platform/Operation/Revocation/DeleteRevocationConfig.cs) | [DeleteRevocationConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Revocation/DeleteRevocationConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/revocation/history` | GET | QueryRevocationHistories | [QueryRevocationHistories](../../AccelByte.Sdk/Api/Platform/Operation/Revocation/QueryRevocationHistories.cs) | [QueryRevocationHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Revocation/QueryRevocationHistories.cs) |
@@ -699,6 +701,7 @@
 | `ConditionGroup` | [ConditionGroup](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroup.cs) |
 | `ConditionGroupValidateResult` | [ConditionGroupValidateResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionGroupValidateResult.cs) |
 | `ConditionMatchResult` | [ConditionMatchResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionMatchResult.cs) |
+| `ConsumableEntitlementRevocationConfig` | [ConsumableEntitlementRevocationConfig](../../AccelByte.Sdk/Api/Platform/Model/ConsumableEntitlementRevocationConfig.cs) |
 | `ConsumeItem` | [ConsumeItem](../../AccelByte.Sdk/Api/Platform/Model/ConsumeItem.cs) |
 | `CreditRequest` | [CreditRequest](../../AccelByte.Sdk/Api/Platform/Model/CreditRequest.cs) |
 | `CreditRevocation` | [CreditRevocation](../../AccelByte.Sdk/Api/Platform/Model/CreditRevocation.cs) |
@@ -902,6 +905,7 @@
 | `Requirement` | [Requirement](../../AccelByte.Sdk/Api/Platform/Model/Requirement.cs) |
 | `RevocationConfigInfo` | [RevocationConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/RevocationConfigInfo.cs) |
 | `RevocationConfigUpdate` | [RevocationConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/RevocationConfigUpdate.cs) |
+| `RevocationError` | [RevocationError](../../AccelByte.Sdk/Api/Platform/Model/RevocationError.cs) |
 | `RevocationHistoryInfo` | [RevocationHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/RevocationHistoryInfo.cs) |
 | `RevocationHistoryPagingSlicedResult` | [RevocationHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/RevocationHistoryPagingSlicedResult.cs) |
 | `RevocationRequest` | [RevocationRequest](../../AccelByte.Sdk/Api/Platform/Model/RevocationRequest.cs) |
@@ -912,6 +916,7 @@
 | `RevokeItem` | [RevokeItem](../../AccelByte.Sdk/Api/Platform/Model/RevokeItem.cs) |
 | `RevokeItemSummary` | [RevokeItemSummary](../../AccelByte.Sdk/Api/Platform/Model/RevokeItemSummary.cs) |
 | `RevokeResult` | [RevokeResult](../../AccelByte.Sdk/Api/Platform/Model/RevokeResult.cs) |
+| `RevokeUseCountRequest` | [RevokeUseCountRequest](../../AccelByte.Sdk/Api/Platform/Model/RevokeUseCountRequest.cs) |
 | `RewardCondition` | [RewardCondition](../../AccelByte.Sdk/Api/Platform/Model/RewardCondition.cs) |
 | `RewardCreate` | [RewardCreate](../../AccelByte.Sdk/Api/Platform/Model/RewardCreate.cs) |
 | `RewardInfo` | [RewardInfo](../../AccelByte.Sdk/Api/Platform/Model/RewardInfo.cs) |

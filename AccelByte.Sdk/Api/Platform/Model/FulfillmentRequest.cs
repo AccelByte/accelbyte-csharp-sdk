@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class FulfillmentRequestSource : StringEnum<FulfillmentRequestSource>
     {
@@ -156,5 +156,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

@@ -72,32 +72,32 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private DebugMatchedPaymentProviderConfig(DebugMatchedPaymentProviderConfigBuilder builder
         )
         {
-            
+
             if (builder.Namespace is not null) QueryParams["namespace"] = builder.Namespace;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DebugMatchedPaymentProviderConfig(
-            string? namespace_,            
-            string? region            
+            string? namespace_,
+            string? region
         )
         {
-            
+
             if (namespace_ is not null) QueryParams["namespace"] = namespace_;
             if (region is not null) QueryParams["region"] = region;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,15 +106,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.PaymentProviderConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.PaymentProviderConfigInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

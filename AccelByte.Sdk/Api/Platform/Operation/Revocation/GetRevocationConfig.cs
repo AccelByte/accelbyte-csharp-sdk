@@ -14,7 +14,7 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// getPaymentCallbackConfig_1
+    /// getRevocationConfig
     ///
     /// Get revocation configuration.
     /// Other detail info:
@@ -22,32 +22,32 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:REVOCATION, action=2 (READ)
     ///   *  Returns : Revocation config
     /// </summary>
-    public class GetPaymentCallbackConfig1 : AccelByte.Sdk.Core.Operation
+    public class GetRevocationConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPaymentCallbackConfig1Builder Builder { get => new GetPaymentCallbackConfig1Builder(); }
+        public static GetRevocationConfigBuilder Builder { get => new GetRevocationConfigBuilder(); }
 
-        public class GetPaymentCallbackConfig1Builder
-            : OperationBuilder<GetPaymentCallbackConfig1Builder>
+        public class GetRevocationConfigBuilder
+            : OperationBuilder<GetRevocationConfigBuilder>
         {
 
 
 
 
 
-            internal GetPaymentCallbackConfig1Builder() { }
+            internal GetRevocationConfigBuilder() { }
 
 
 
 
 
 
-            public GetPaymentCallbackConfig1 Build(
+            public GetRevocationConfig Build(
                 string namespace_
             )
             {
-                GetPaymentCallbackConfig1 op = new GetPaymentCallbackConfig1(this,
-                    namespace_                    
+                GetRevocationConfig op = new GetRevocationConfig(this,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -55,33 +55,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private GetPaymentCallbackConfig1(GetPaymentCallbackConfig1Builder builder,
+        private GetRevocationConfig(GetRevocationConfigBuilder builder,
             string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public GetPaymentCallbackConfig1(
-            string namespace_            
+        public GetRevocationConfig(
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -90,15 +90,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.RevocationConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -111,9 +111,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.RevocationConfigInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

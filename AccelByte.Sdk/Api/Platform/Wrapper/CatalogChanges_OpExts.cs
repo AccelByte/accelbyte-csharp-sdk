@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformCatalogChanges_OpExts
     {
-        public static List<Platform.Model.CatalogChangePagingSlicedResult>? Execute(
+        public static Platform.Model.CatalogChangePagingSlicedResult? Execute(
             this QueryChanges.QueryChangesBuilder builder,
             string namespace_,
             string storeId

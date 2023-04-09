@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             )
             {
                 ListGameRecordsHandlerV1 op = new ListGameRecordsHandlerV1(this,
-                    namespace_,                    
-                    limit,                    
-                    offset                    
+                    namespace_,
+                    limit,
+                    offset
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,37 +74,37 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListGameRecordsHandlerV1(
-            string namespace_,            
-            string? query,            
-            long limit,            
-            long offset            
+            string namespace_,
+            string? query,
+            long limit,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (query is not null) QueryParams["query"] = query;
             QueryParams["limit"] = Convert.ToString(limit)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -117,11 +117,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsListGameRecordKeysResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -134,9 +134,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsListGameRecordKeysResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

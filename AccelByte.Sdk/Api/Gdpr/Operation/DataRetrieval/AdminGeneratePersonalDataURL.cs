@@ -48,10 +48,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             )
             {
                 AdminGeneratePersonalDataURL op = new AdminGeneratePersonalDataURL(this,
-                    password,                    
-                    namespace_,                    
-                    requestDate,                    
-                    userId                    
+                    password,
+                    namespace_,
+                    requestDate,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,35 +69,35 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["namespace"] = namespace_;
             PathParams["requestDate"] = requestDate;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (password is not null) FormParams["password"] = password;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGeneratePersonalDataURL(
-            string namespace_,            
-            string requestDate,            
-            string userId,            
-            string password            
+            string namespace_,
+            string requestDate,
+            string userId,
+            string password
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["requestDate"] = requestDate;
             PathParams["userId"] = userId;
-            
-            
+
+
             if (password is not null) FormParams["password"] = password;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,11 +110,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsUserDataURL? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsUserDataURL>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

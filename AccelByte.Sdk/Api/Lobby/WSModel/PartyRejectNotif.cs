@@ -16,14 +16,14 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
         [AwesomeProperty("leaderId")]
         [JsonPropertyName("leaderId")]
         public string? LeaderId { get; set; }
-        
+
         [AwesomeProperty("partyId")]
         [JsonPropertyName("partyId")]
         public string? PartyId { get; set; }
-        
+
         [AwesomeProperty("userId")]
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
-        
+
     }
 }

@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             get { return Operation.ClaimGlobalAchievementReward.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsPaginatedGlobalAchievementResponse? AdminListGlobalAchievements(AdminListGlobalAchievements input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -67,15 +67,16 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void ResetGlobalAchievement(ResetGlobalAchievement input) {
+        public void ResetGlobalAchievement(ResetGlobalAchievement input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -84,7 +85,7 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -93,7 +94,7 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -102,7 +103,7 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -111,15 +112,16 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void ClaimGlobalAchievementReward(ClaimGlobalAchievementReward input) {
+        public void ClaimGlobalAchievementReward(ClaimGlobalAchievementReward input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

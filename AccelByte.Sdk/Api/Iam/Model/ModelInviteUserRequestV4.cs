@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("roleId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RoleId { get; set; }
 
     }

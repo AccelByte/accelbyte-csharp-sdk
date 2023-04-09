@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 AdminUpdateScreenshots op = new AdminUpdateScreenshots(this,
-                    body,                    
-                    contentId,                    
-                    namespace_                    
+                    body,
+                    contentId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdateScreenshots(
-            string contentId,            
-            string namespace_,            
-            Model.ModelsUpdateScreenshotRequest body            
+            string contentId,
+            string namespace_,
+            Model.ModelsUpdateScreenshotRequest body
         )
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,11 +104,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsUpdateScreenshotResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsUpdateScreenshotResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

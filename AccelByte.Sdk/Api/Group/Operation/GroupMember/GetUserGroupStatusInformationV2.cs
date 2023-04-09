@@ -67,9 +67,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
             )
             {
                 GetUserGroupStatusInformationV2 op = new GetUserGroupStatusInformationV2(this,
-                    groupId,                    
-                    namespace_,                    
-                    userId                    
+                    groupId,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -86,32 +86,32 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["groupId"] = groupId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetUserGroupStatusInformationV2(
-            string groupId,            
-            string namespace_,            
-            string userId            
+            string groupId,
+            string namespace_,
+            string userId
         )
         {
             PathParams["groupId"] = groupId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -120,15 +120,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsGetUserGroupInformationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -141,9 +141,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetUserGroupInformationResponseV1>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

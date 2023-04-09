@@ -89,32 +89,32 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private TestAdyenConfig(TestAdyenConfigBuilder builder
         )
         {
-            
-            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
-            
 
-            
-            
+            if (builder.Sandbox != null) QueryParams["sandbox"] = Convert.ToString(builder.Sandbox)!;
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public TestAdyenConfig(
-            bool? sandbox,            
-            Model.AdyenConfig body            
+            bool? sandbox,
+            Model.AdyenConfig body
         )
         {
-            
-            if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
-            
 
-            
-            
+            if (sandbox != null) QueryParams["sandbox"] = Convert.ToString(sandbox)!;
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -127,11 +127,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.TestResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -144,9 +144,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.TestResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

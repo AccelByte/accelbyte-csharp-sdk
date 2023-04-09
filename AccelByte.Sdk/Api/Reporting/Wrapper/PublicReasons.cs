@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             get { return Operation.PublicGetReasons.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.RestapiReasonGroupListResponse? PublicListReasonGroups(PublicListReasonGroups input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

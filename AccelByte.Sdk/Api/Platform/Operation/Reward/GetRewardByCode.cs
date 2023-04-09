@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetRewardByCode op = new GetRewardByCode(this,
-                    namespace_,                    
-                    rewardCode                    
+                    namespace_,
+                    rewardCode
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,31 +63,31 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
-            
 
-            
-            
-            
+            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetRewardByCode(
-            string namespace_,            
-            string rewardCode            
+            string namespace_,
+            string rewardCode
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
-            
 
-            
-            
-            
+            if (rewardCode is not null) QueryParams["rewardCode"] = rewardCode;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -96,15 +96,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.RewardInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.RewardInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -45,9 +45,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 UpdateContentLikeStatus op = new UpdateContentLikeStatus(this,
-                    body,                    
-                    contentId,                    
-                    namespace_                    
+                    body,
+                    contentId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -63,33 +63,33 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateContentLikeStatus(
-            string contentId,            
-            string namespace_,            
-            Model.ModelsContentLikeRequest body            
+            string contentId,
+            string namespace_,
+            Model.ModelsContentLikeRequest body
         )
         {
             PathParams["contentId"] = contentId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,15 +98,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override HttpMethod Method => HttpMethod.Put;
 
-        public override string[] Consumes => new string[] { "application/json","application/octet-stream" };
+        public override string[] Consumes => new string[] { "application/json", "application/octet-stream" };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsContentLikeResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsContentLikeResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -40,13 +40,13 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             get { return Operation.GetPublisherConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ConfigInfo? CreateConfig(CreateConfig input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -55,15 +55,16 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteConfig1(DeleteConfig1 input) {
+        public void DeleteConfig1(DeleteConfig1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -72,7 +73,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -81,7 +82,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 GetImagePatchDetail op = new GetImagePatchDetail(this,
-                    namespace_,                    
-                    version,                    
-                    versionPatch                    
+                    namespace_,
+                    version,
+                    versionPatch
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,32 +68,32 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
             PathParams["version"] = version;
             PathParams["versionPatch"] = versionPatch;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetImagePatchDetail(
-            string namespace_,            
-            string version,            
-            string versionPatch            
+            string namespace_,
+            string version,
+            string versionPatch
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["version"] = version;
             PathParams["versionPatch"] = versionPatch;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,11 +106,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsGetImagePatchDetailResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetImagePatchDetailResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

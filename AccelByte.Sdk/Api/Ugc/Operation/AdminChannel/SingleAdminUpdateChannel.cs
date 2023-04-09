@@ -39,15 +39,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
             public SingleAdminUpdateChannel Build(
-                ModelsChannelRequest body,
+                ModelsUpdateChannelRequest body,
                 string channelId,
                 string namespace_
             )
             {
                 SingleAdminUpdateChannel op = new SingleAdminUpdateChannel(this,
-                    body,                    
-                    channelId,                    
-                    namespace_                    
+                    body,
+                    channelId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -56,40 +56,40 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         }
 
         private SingleAdminUpdateChannel(SingleAdminUpdateChannelBuilder builder,
-            ModelsChannelRequest body,
+            ModelsUpdateChannelRequest body,
             string channelId,
             string namespace_
         )
         {
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public SingleAdminUpdateChannel(
-            string channelId,            
-            string namespace_,            
-            Model.ModelsChannelRequest body            
+            string channelId,
+            string namespace_,
+            Model.ModelsUpdateChannelRequest body
         )
         {
             PathParams["channelId"] = channelId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,11 +102,11 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsChannelResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsChannelResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

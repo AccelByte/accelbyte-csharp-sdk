@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("revocationErrors")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<RevocationError>? RevocationErrors { get; set; }
+
         [JsonPropertyName("revokeEntries")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RevokeEntry>? RevokeEntries { get; set; }
@@ -51,6 +55,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public RevocationHistoryInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TransactionId { get; set; }
 
         [JsonPropertyName("updatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -92,6 +100,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("revocationErrors")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<RevocationError>? RevocationErrors { get; set; }
+
         [JsonPropertyName("revokeEntries")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RevokeEntry>? RevokeEntries { get; set; }
@@ -104,6 +116,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public RevocationHistoryInfoStatus? Status { get; set; }
+
+        [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TransactionId { get; set; }
 
         [JsonPropertyName("updatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -135,5 +151,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

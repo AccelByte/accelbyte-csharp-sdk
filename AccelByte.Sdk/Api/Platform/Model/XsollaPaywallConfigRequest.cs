@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class XsollaPaywallConfigRequestSize : StringEnum<XsollaPaywallConfigRequestSize>
     {
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class XsollaPaywallConfigRequestTheme : StringEnum<XsollaPaywallConfigRequestTheme>
     {
@@ -101,5 +101,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

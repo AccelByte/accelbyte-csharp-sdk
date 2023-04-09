@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'NAMESPACE:{namespace}:USER [READ]'
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUsersByLoginIds : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 GetUsersByLoginIds op = new GetUsersByLoginIds(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -82,31 +82,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.LoginIds is not null) QueryParams["loginIds"] = builder.LoginIds;
-            
 
-            
-            
-            
+            if (builder.LoginIds is not null) QueryParams["loginIds"] = builder.LoginIds;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetUsersByLoginIds(
-            string namespace_,            
-            string? loginIds            
+            string namespace_,
+            string? loginIds
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (loginIds is not null) QueryParams["loginIds"] = loginIds;
-            
 
-            
-            
-            
+            if (loginIds is not null) QueryParams["loginIds"] = loginIds;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -119,11 +119,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelPublicUsersResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -136,9 +136,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelPublicUsersResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

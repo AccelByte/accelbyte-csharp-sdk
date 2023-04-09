@@ -60,20 +60,22 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.PublishTemplate.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void FreeFormNotification(FreeFormNotification input) {
+
+        public void FreeFormNotification(FreeFormNotification input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void NotificationWithTemplate(NotificationWithTemplate input) {
+        public void NotificationWithTemplate(NotificationWithTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -82,15 +84,16 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateTemplate(CreateTemplate input) {
+        public void CreateTemplate(CreateTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -99,15 +102,16 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteTemplateSlug(DeleteTemplateSlug input) {
+        public void DeleteTemplateSlug(DeleteTemplateSlug input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -116,31 +120,34 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdateLocalizationTemplate(UpdateLocalizationTemplate input) {
+        public void UpdateLocalizationTemplate(UpdateLocalizationTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteTemplateLocalization(DeleteTemplateLocalization input) {
+        public void DeleteTemplateLocalization(DeleteTemplateLocalization input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublishTemplate(PublishTemplate input) {
+        public void PublishTemplate(PublishTemplate input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

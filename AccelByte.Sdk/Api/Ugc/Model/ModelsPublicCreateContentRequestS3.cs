@@ -7,9 +7,10 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Ugc.Model
 {
-    public class ModelsContentRequest : AccelByte.Sdk.Core.Model
+    public class ModelsPublicCreateContentRequestS3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
@@ -17,13 +18,11 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FileExtension { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-
-        [JsonPropertyName("payload")]
-        public string? Payload { get; set; }
 
         [JsonPropertyName("preview")]
         public string? Preview { get; set; }
@@ -41,14 +40,12 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("type")]
         public string? Type { get; set; }
 
-        [JsonPropertyName("updateContentFile")]
-        public bool? UpdateContentFile { get; set; }
-
     }
 
-    public class ModelsContentRequest<T1> : AccelByte.Sdk.Core.Model
+    public class ModelsPublicCreateContentRequestS3<T1> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("customAttributes")]
@@ -56,13 +53,11 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         public T1? CustomAttributes { get; set; }
 
         [JsonPropertyName("fileExtension")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FileExtension { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
-
-        [JsonPropertyName("payload")]
-        public string? Payload { get; set; }
 
         [JsonPropertyName("preview")]
         public string? Preview { get; set; }
@@ -79,9 +74,6 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }
-
-        [JsonPropertyName("updateContentFile")]
-        public bool? UpdateContentFile { get; set; }
 
     }
 

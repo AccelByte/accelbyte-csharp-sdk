@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             get { return Operation.AdminSubmitReport.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.RestapiReportListResponse? ListReports(ListReports input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

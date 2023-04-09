@@ -74,8 +74,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 PublicQueryUserStatItems2 op = new PublicQueryUserStatItems2(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -90,43 +90,43 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
             if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
-            
 
-            
+
+
             CollectionFormatMap["statCodes"] = "multi";
             CollectionFormatMap["tags"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicQueryUserStatItems2(
-            string namespace_,            
-            string userId,            
-            string? additionalKey,            
-            List<string>? statCodes,            
-            List<string>? tags            
+            string namespace_,
+            string userId,
+            string? additionalKey,
+            List<string>? statCodes,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
+
             if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
             if (statCodes is not null) QueryParams["statCodes"] = statCodes;
             if (tags is not null) QueryParams["tags"] = tags;
-            
 
-            
+
+
             CollectionFormatMap["statCodes"] = "multi";
             CollectionFormatMap["tags"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -135,15 +135,15 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ADTOObjectForUserStatItemValue>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -156,9 +156,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ADTOObjectForUserStatItemValue>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

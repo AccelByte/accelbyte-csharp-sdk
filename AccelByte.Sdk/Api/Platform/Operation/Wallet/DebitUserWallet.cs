@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DebitUserWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 DebitUserWallet op = new DebitUserWallet(this,
-                    namespace_,                    
-                    userId,                    
-                    walletId                    
+                    namespace_,
+                    userId,
+                    walletId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -76,35 +76,35 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DebitUserWallet(
-            string namespace_,            
-            string userId,            
-            string walletId,            
-            Model.DebitRequest body            
+            string namespace_,
+            string userId,
+            string walletId,
+            Model.DebitRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
             PathParams["walletId"] = walletId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -117,11 +117,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.WalletInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -134,9 +134,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

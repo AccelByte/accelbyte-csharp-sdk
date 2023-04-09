@@ -32,29 +32,31 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.InvalidateUserInfoCache.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.RetrieveUserInfoCacheStatusResponse>? GetUserInfoStatus(GetUserInfoStatus input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void SyncUserInfo(SyncUserInfo input) {
+        public void SyncUserInfo(SyncUserInfo input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void InvalidateUserInfoCache(InvalidateUserInfoCache input) {
+        public void InvalidateUserInfoCache(InvalidateUserInfoCache input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

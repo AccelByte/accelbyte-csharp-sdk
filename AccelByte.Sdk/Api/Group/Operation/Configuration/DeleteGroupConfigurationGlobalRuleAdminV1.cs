@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
             )
             {
                 DeleteGroupConfigurationGlobalRuleAdminV1 op = new DeleteGroupConfigurationGlobalRuleAdminV1(this,
-                    allowedAction,                    
-                    configurationCode,                    
-                    namespace_                    
+                    allowedAction,
+                    configurationCode,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -76,32 +76,32 @@ namespace AccelByte.Sdk.Api.Group.Operation
             PathParams["allowedAction"] = allowedAction;
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteGroupConfigurationGlobalRuleAdminV1(
-            string allowedAction,            
-            string configurationCode,            
-            string namespace_            
+            string allowedAction,
+            string configurationCode,
+            string namespace_
         )
         {
             PathParams["allowedAction"] = allowedAction;
             PathParams["configurationCode"] = configurationCode;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,15 +110,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsUpdateGroupConfigurationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -131,9 +131,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsUpdateGroupConfigurationResponseV1>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

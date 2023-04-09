@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId} [PATCH]
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdateRole : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -54,8 +54,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 UpdateRole op = new UpdateRole(this,
-                    body,                    
-                    roleId                    
+                    body,
+                    roleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,31 +69,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateRole(
-            string roleId,            
-            Model.ModelRoleUpdateRequest body            
+            string roleId,
+            Model.ModelRoleUpdateRequest body
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,11 +106,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelRoleResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -123,9 +123,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelRoleResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

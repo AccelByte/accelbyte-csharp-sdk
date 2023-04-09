@@ -89,8 +89,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetLocaleItemBySku op = new GetLocaleItemBySku(this,
-                    namespace_,                    
-                    sku                    
+                    namespace_,
+                    sku
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -104,46 +104,46 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
             if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             if (sku is not null) QueryParams["sku"] = sku;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetLocaleItemBySku(
-            string namespace_,            
-            bool? activeOnly,            
-            string? language,            
-            bool? populateBundle,            
-            string? region,            
-            string? storeId,            
-            string sku            
+            string namespace_,
+            bool? activeOnly,
+            string? language,
+            bool? populateBundle,
+            string? region,
+            string? storeId,
+            string sku
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
             if (language is not null) QueryParams["language"] = language;
             if (populateBundle != null) QueryParams["populateBundle"] = Convert.ToString(populateBundle)!;
             if (region is not null) QueryParams["region"] = region;
             if (storeId is not null) QueryParams["storeId"] = storeId;
             if (sku is not null) QueryParams["sku"] = sku;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -152,15 +152,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.PopulatedItemInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -173,18 +173,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.PopulatedItemInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.PopulatedItemInfo<T1, T2>? ParseResponse<T1, T2>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.PopulatedItemInfo<T1, T2>>(payload);
@@ -193,8 +193,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.PopulatedItemInfo<T1, T2>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

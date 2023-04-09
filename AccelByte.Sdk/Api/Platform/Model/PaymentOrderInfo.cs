@@ -96,6 +96,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("paymentProvider")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentOrderInfoPaymentProvider? PaymentProvider { get; set; }
 
@@ -279,6 +280,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("paymentProvider")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public PaymentOrderInfoPaymentProvider? PaymentProvider { get; set; }
 
@@ -395,7 +397,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoItemType : StringEnum<PaymentOrderInfoItemType>
     {
@@ -443,7 +445,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoPaymentProvider : StringEnum<PaymentOrderInfoPaymentProvider>
     {
@@ -482,7 +484,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class PaymentOrderInfoStatus : StringEnum<PaymentOrderInfoStatus>
     {
@@ -536,5 +538,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 TokenIntrospectionV3 op = new TokenIntrospectionV3(this,
-                    token                    
+                    token
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,13 +67,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string token
         )
         {
-            
-            
+
+
             if (token is not null) FormParams["token"] = token;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
@@ -81,16 +81,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public TokenIntrospectionV3(
-            string token            
+            string token
         )
         {
-            
-            
+
+
             if (token is not null) FormParams["token"] = token;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
@@ -104,11 +104,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Basic";
-        
+
         public Model.OauthmodelTokenIntrospectResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +121,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.OauthmodelTokenIntrospectResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -72,13 +72,13 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             get { return Operation.AdminVerifyMessageProfanityResponse.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.ModelsProfanityFilter>? AdminDebugProfanityFilters(AdminDebugProfanityFilters input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -87,31 +87,34 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminAddProfanityFilterIntoList(AdminAddProfanityFilterIntoList input) {
+        public void AdminAddProfanityFilterIntoList(AdminAddProfanityFilterIntoList input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminAddProfanityFilters(AdminAddProfanityFilters input) {
+        public void AdminAddProfanityFilters(AdminAddProfanityFilters input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminImportProfanityFiltersFromFile(AdminImportProfanityFiltersFromFile input) {
+        public void AdminImportProfanityFiltersFromFile(AdminImportProfanityFiltersFromFile input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -120,7 +123,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -129,31 +132,34 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminCreateProfanityList(AdminCreateProfanityList input) {
+        public void AdminCreateProfanityList(AdminCreateProfanityList input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateProfanityList(AdminUpdateProfanityList input) {
+        public void AdminUpdateProfanityList(AdminUpdateProfanityList input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteProfanityList(AdminDeleteProfanityList input) {
+        public void AdminDeleteProfanityList(AdminDeleteProfanityList input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -162,15 +168,16 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminSetProfanityRuleForNamespace(AdminSetProfanityRuleForNamespace input) {
+        public void AdminSetProfanityRuleForNamespace(AdminSetProfanityRuleForNamespace input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -179,7 +186,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

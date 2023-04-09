@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class IAPItemFlatEntryPlatform : StringEnum<IAPItemFlatEntryPlatform>
     {
@@ -91,5 +91,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

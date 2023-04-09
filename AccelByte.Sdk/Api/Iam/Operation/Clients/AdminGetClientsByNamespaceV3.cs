@@ -90,7 +90,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminGetClientsByNamespaceV3 op = new AdminGetClientsByNamespaceV3(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -103,43 +103,43 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.ClientId is not null) QueryParams["clientId"] = builder.ClientId;
             if (builder.ClientName is not null) QueryParams["clientName"] = builder.ClientName;
             if (builder.ClientType is not null) QueryParams["clientType"] = builder.ClientType;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetClientsByNamespaceV3(
-            string namespace_,            
-            string? clientId,            
-            string? clientName,            
-            string? clientType,            
-            long? limit,            
-            long? offset            
+            string namespace_,
+            string? clientId,
+            string? clientName,
+            string? clientType,
+            long? limit,
+            long? offset
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (clientId is not null) QueryParams["clientId"] = clientId;
             if (clientName is not null) QueryParams["clientName"] = clientName;
             if (clientType is not null) QueryParams["clientType"] = clientType;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -148,15 +148,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ClientmodelClientsV3Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -169,9 +169,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ClientmodelClientsV3Response>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -135,8 +135,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminUpdateRolePermissionsV3 op = new AdminUpdateRolePermissionsV3(this,
-                    body,                    
-                    roleId                    
+                    body,
+                    roleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -150,31 +150,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminUpdateRolePermissionsV3(
-            string roleId,            
-            Model.AccountcommonPermissionsV3 body            
+            string roleId,
+            Model.AccountcommonPermissionsV3 body
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -187,18 +187,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(cReason);
             if (cReason != null)
             {
-                Assert.IsNotNull(cReason.Id);                
+                Assert.IsNotNull(cReason.Id);
                 if (cReason.Id != null)
                     reasonId = cReason.Id;
 

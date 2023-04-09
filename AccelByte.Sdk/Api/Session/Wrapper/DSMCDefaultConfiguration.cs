@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
             get { return Operation.AdminGetDSMCConfigurationDefault.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsDefaultDSMCConfig? AdminGetDSMCConfigurationDefault(AdminGetDSMCConfigurationDefault input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

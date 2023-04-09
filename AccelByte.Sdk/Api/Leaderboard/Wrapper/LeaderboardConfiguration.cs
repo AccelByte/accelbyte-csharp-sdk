@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         {
             get { return Operation.DeleteLeaderboardConfigurationAdminV1.Builder.SetWrapperObject(this); }
         }
+        public HardDeleteLeaderboardAdminV1.HardDeleteLeaderboardAdminV1Builder HardDeleteLeaderboardAdminV1Op
+        {
+            get { return Operation.HardDeleteLeaderboardAdminV1.Builder.SetWrapperObject(this); }
+        }
         public GetLeaderboardConfigurationsPublicV1.GetLeaderboardConfigurationsPublicV1Builder GetLeaderboardConfigurationsPublicV1Op
         {
             get { return Operation.GetLeaderboardConfigurationsPublicV1.Builder.SetWrapperObject(this); }
@@ -56,13 +60,13 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             get { return Operation.GetLeaderboardConfigurationsPublicV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsGetAllLeaderboardConfigsResp? GetLeaderboardConfigurationsAdminV1(GetLeaderboardConfigurationsAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -71,7 +75,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -80,7 +84,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -89,7 +93,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -98,15 +102,25 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteLeaderboardConfigurationAdminV1(DeleteLeaderboardConfigurationAdminV1 input) {
+        public void DeleteLeaderboardConfigurationAdminV1(DeleteLeaderboardConfigurationAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void HardDeleteLeaderboardAdminV1(HardDeleteLeaderboardAdminV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -115,7 +129,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -124,7 +138,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -133,7 +147,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

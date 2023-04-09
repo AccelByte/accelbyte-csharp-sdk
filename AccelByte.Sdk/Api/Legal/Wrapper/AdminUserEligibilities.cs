@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.AdminRetrieveEligibilities.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.RetrieveUserEligibilitiesIndirectResponse? AdminRetrieveEligibilities(AdminRetrieveEligibilities input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

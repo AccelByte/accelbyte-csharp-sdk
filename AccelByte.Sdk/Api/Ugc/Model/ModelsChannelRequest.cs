@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Ugc.Model
 {
     public class ModelsChannelRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Id { get; set; }
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 

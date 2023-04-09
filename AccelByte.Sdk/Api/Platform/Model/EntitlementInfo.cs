@@ -128,7 +128,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementInfoClazz : StringEnum<EntitlementInfoClazz>
     {
@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementInfoSource : StringEnum<EntitlementInfoSource>
     {
@@ -206,7 +206,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementInfoStatus : StringEnum<EntitlementInfoStatus>
     {
@@ -236,7 +236,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementInfoType : StringEnum<EntitlementInfoType>
     {
@@ -257,5 +257,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

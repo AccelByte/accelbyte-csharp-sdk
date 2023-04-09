@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContent)builder.WrapperObject!).PublicDownloadContentPreview(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this CreateContentDirect.CreateContentDirectBuilder builder,
             ModelsCreateContentRequest body,
@@ -168,7 +168,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this CreateContentS3.CreateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsPublicCreateContentRequestS3 body,
             string channelId,
             string namespace_,
             string userId
@@ -186,7 +186,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this CreateContentS3.CreateContentS3Builder builder,
-            ModelsCreateContentRequestS3 body,
+            ModelsPublicCreateContentRequestS3 body,
             string channelId,
             string namespace_,
             string userId
@@ -203,7 +203,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentS3.UpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -223,7 +223,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this UpdateContentS3.UpdateContentS3Builder builder,
-            ModelsContentRequest body,
+            ModelsUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -240,7 +240,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContent)builder.WrapperObject!).UpdateContentS3<T1>(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentDirect.UpdateContentDirectBuilder builder,
             ModelsCreateContentRequest body,

@@ -20,11 +20,9 @@ namespace AccelByte.Sdk.Api.Basic.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("displayName")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DisplayName { get; set; }
 
         [JsonPropertyName("namespace")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("parentNamespace")]
@@ -66,5 +64,5 @@ namespace AccelByte.Sdk.Api.Basic.Model
         {
 
         }
-    }    
+    }
 }

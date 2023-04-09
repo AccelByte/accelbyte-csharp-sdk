@@ -73,9 +73,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             )
             {
                 UpdateUserStatItemValue op = new UpdateUserStatItemValue(this,
-                    namespace_,                    
-                    statCode,                    
-                    userId                    
+                    namespace_,
+                    statCode,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -92,38 +92,38 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
-            
-            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
-            
 
-            
-            
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateUserStatItemValue(
-            string namespace_,            
-            string statCode,            
-            string userId,            
-            string? additionalKey,            
-            Model.StatItemUpdate body            
+            string namespace_,
+            string statCode,
+            string userId,
+            string? additionalKey,
+            Model.StatItemUpdate body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["statCode"] = statCode;
             PathParams["userId"] = userId;
-            
-            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
-            
 
-            
-            
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -136,11 +136,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.StatItemIncResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -153,9 +153,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             {
                 return JsonSerializer.Deserialize<Model.StatItemIncResult>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

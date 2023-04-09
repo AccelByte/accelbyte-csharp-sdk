@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     ///
     /// Required permission `NAMESPACE:{namespace}:EVENT [CREATE]`and scope `analytics`
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PostEventHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -45,8 +45,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 PostEventHandler op = new PostEventHandler(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -60,31 +60,31 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PostEventHandler(
-            string namespace_,            
-            Model.ModelsEvent body            
+            string namespace_,
+            Model.ModelsEvent body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -97,18 +97,18 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

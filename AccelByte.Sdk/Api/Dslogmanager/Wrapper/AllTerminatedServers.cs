@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             get { return Operation.ListAllTerminatedServers.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Stream? BatchDownloadServerLogs(BatchDownloadServerLogs input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

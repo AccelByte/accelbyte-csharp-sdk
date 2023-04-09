@@ -14,40 +14,40 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ugc.Operation
 {
     /// <summary>
-    /// CreateChannel
+    /// PublicCreateChannel
     ///
     /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]
     /// </summary>
-    public class CreateChannel : AccelByte.Sdk.Core.Operation
+    public class PublicCreateChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateChannelBuilder Builder { get => new CreateChannelBuilder(); }
+        public static PublicCreateChannelBuilder Builder { get => new PublicCreateChannelBuilder(); }
 
-        public class CreateChannelBuilder
-            : OperationBuilder<CreateChannelBuilder>
+        public class PublicCreateChannelBuilder
+            : OperationBuilder<PublicCreateChannelBuilder>
         {
 
 
 
 
 
-            internal CreateChannelBuilder() { }
+            internal PublicCreateChannelBuilder() { }
 
 
 
 
 
 
-            public CreateChannel Build(
-                ModelsChannelRequest body,
+            public PublicCreateChannel Build(
+                ModelsPublicChannelRequest body,
                 string namespace_,
                 string userId
             )
             {
-                CreateChannel op = new CreateChannel(this,
-                    body,                    
-                    namespace_,                    
-                    userId                    
+                PublicCreateChannel op = new PublicCreateChannel(this,
+                    body,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -55,41 +55,41 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             }
         }
 
-        private CreateChannel(CreateChannelBuilder builder,
-            ModelsChannelRequest body,
+        private PublicCreateChannel(PublicCreateChannelBuilder builder,
+            ModelsPublicChannelRequest body,
             string namespace_,
             string userId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public CreateChannel(
-            string namespace_,            
-            string userId,            
-            Model.ModelsChannelRequest body            
+        public PublicCreateChannel(
+            string namespace_,
+            string userId,
+            Model.ModelsPublicChannelRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -98,15 +98,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] { "application/json","application/octet-stream" };
+        public override string[] Consumes => new string[] { "application/json", "application/octet-stream" };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsChannelResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsChannelResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

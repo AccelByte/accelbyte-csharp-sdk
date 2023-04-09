@@ -64,6 +64,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardData)builder.WrapperObject!).GetCurrentMonthLeaderboardRankingAdminV1(op);
         }
+        public static void Execute(
+            this DeleteUserRankingByLeaderboardCodeAdminV1.DeleteUserRankingByLeaderboardCodeAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            DeleteUserRankingByLeaderboardCodeAdminV1 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            ((Leaderboard.Wrapper.LeaderboardData)builder.WrapperObject!).DeleteUserRankingByLeaderboardCodeAdminV1(op);
+        }
         public static Leaderboard.Model.ModelsGetLeaderboardRankingResp? Execute(
             this GetCurrentSeasonLeaderboardRankingAdminV1.GetCurrentSeasonLeaderboardRankingAdminV1Builder builder,
             string leaderboardCode,

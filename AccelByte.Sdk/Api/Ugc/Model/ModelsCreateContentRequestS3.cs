@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
 
+        [JsonPropertyName("shareCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ShareCode { get; set; }
+
         [JsonPropertyName("subType")]
         public string? SubType { get; set; }
 
@@ -65,6 +69,10 @@ namespace AccelByte.Sdk.Api.Ugc.Model
         [JsonPropertyName("previewMetadata")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPreviewMetadata? PreviewMetadata { get; set; }
+
+        [JsonPropertyName("shareCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ShareCode { get; set; }
 
         [JsonPropertyName("subType")]
         public string? SubType { get; set; }

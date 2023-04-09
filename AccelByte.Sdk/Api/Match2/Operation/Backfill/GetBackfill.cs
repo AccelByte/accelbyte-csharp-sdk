@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
             )
             {
                 GetBackfill op = new GetBackfill(this,
-                    backfillID,                    
-                    namespace_                    
+                    backfillID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Match2.Operation
         {
             PathParams["backfillID"] = backfillID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetBackfill(
-            string backfillID,            
-            string namespace_            
+            string backfillID,
+            string namespace_
         )
         {
             PathParams["backfillID"] = backfillID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,11 +100,11 @@ namespace AccelByte.Sdk.Api.Match2.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApiBackfillGetResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Match2.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApiBackfillGetResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

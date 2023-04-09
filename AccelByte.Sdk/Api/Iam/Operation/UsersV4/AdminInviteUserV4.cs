@@ -22,16 +22,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// assign role with namespaces that the admin user has required permission which is same as the required permission of endpoint: [AdminAddUserRoleV4].
     /// 
     /// Detail request body :
-    /// - Assigned Namespaces is required, List of namespaces that will be assigned to the user.
     /// - Email Address is required, List of email addresses that will be invited
     /// - isAdmin is required, true if user is admin, false if user is not admin
     /// - Namespace is optional. Only works on multi tenant mode,
     /// if not specified then it will be assigned Publisher namespace,
     /// if specified, it will become that studio/publisher where user is invited to.
     /// - Role is optional, if not specified then it will only assign User role.
+    /// - Assigned Namespaces is optional, List of namespaces which the Role will be assigned to the user, only works when Role is not empty.
     /// 
     /// The invited admin will also assigned with "User" role by default.
+    /// 
+    /// Substitute endpoint: /iam/v4/admin/users/invite
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminInviteUserV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -57,7 +60,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminInviteUserV4 op = new AdminInviteUserV4(this,
-                    body                    
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,29 +72,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             ModelInviteUserRequestV4 body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminInviteUserV4(
-            Model.ModelInviteUserRequestV4 body            
+            Model.ModelInviteUserRequestV4 body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,11 +107,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelInviteUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -121,9 +124,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelInviteUserResponseV3>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

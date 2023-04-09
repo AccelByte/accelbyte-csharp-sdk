@@ -68,13 +68,13 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             get { return Operation.UpdateReason.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.RestapiReasonGroupListResponse? AdminListReasonGroups(AdminListReasonGroups input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -92,15 +92,16 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteReasonGroup(DeleteReasonGroup input) {
+        public void DeleteReasonGroup(DeleteReasonGroup input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -109,7 +110,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -118,7 +119,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -127,7 +128,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -136,7 +137,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -145,7 +146,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -154,15 +155,16 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteReason(DeleteReason input) {
+        public void DeleteReason(DeleteReason input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -171,7 +173,7 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -61,8 +61,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             )
             {
                 PublicDeletePlayerPublicRecordHandlerV1 op = new PublicDeletePlayerPublicRecordHandlerV1(this,
-                    key,                    
-                    namespace_                    
+                    key,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -77,30 +77,30 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicDeletePlayerPublicRecordHandlerV1(
-            string key,            
-            string namespace_            
+            string key,
+            string namespace_
         )
         {
             PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -113,18 +113,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

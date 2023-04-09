@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this SingleAdminUpdateChannel.SingleAdminUpdateChannelBuilder builder,
-            ModelsChannelRequest body,
+            ModelsUpdateChannelRequest body,
             string channelId,
             string namespace_
         )
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this AdminUpdateChannel.AdminUpdateChannelBuilder builder,
-            ModelsChannelRequest body,
+            ModelsUpdateChannelRequest body,
             string channelId,
             string namespace_,
             string userId

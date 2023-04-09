@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ResetPlatformWalletConfig op = new ResetPlatformWalletConfig(this,
-                    namespace_,                    
-                    platform                    
+                    namespace_,
+                    platform
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,30 +64,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["platform"] = platform.Value;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ResetPlatformWalletConfig(
-            string namespace_,            
-            ResetPlatformWalletConfigPlatform platform            
+            string namespace_,
+            ResetPlatformWalletConfigPlatform platform
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platform"] = platform.Value;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,11 +100,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.PlatformWalletConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -117,9 +117,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.PlatformWalletConfigInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

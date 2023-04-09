@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.GenerateInvoiceSummary.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Stream? DownloadInvoiceDetails(DownloadInvoiceDetails input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..28"
+echo "1..29"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -229,92 +229,101 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 19 'MatchPoolMetric' test.out
 
-#- 20 CreateMatchTicket
+#- 20 GetPlayerMetric
+$CLI_EXE \
+    --sn match2 \
+    --op GetPlayerMetric \
+    --namespace $AB_NAMESPACE \
+    --pool 'JORk4j04' \
+    > test.out 2>&1
+eval_tap $? 20 'GetPlayerMetric' test.out
+
+#- 21 CreateMatchTicket
 # body param: body
-echo '{"attributes": {"JORk4j04": {}, "YfnXTsQU": {}, "rA0WWyKl": {}}, "latencies": {"2K5mCSoG": 10, "opcEM0JH": 10, "3cyDxAAY": 6}, "matchPool": "g3osbh0f", "sessionID": "L2h7eJvA"}' > $TEMP_JSON_INPUT
+echo '{"attributes": {"YfnXTsQU": {}, "rA0WWyKl": {}, "2K5mCSoG": {}}, "latencies": {"eQCahcox": 10, "3cyDxAAY": 6, "g3osbh0f": 76}, "matchPool": "NCK9AIjN", "sessionID": "mbfoW8bD"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateMatchTicket \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 20 'CreateMatchTicket' test.out
+eval_tap $? 21 'CreateMatchTicket' test.out
 
-#- 21 MatchTicketDetails
+#- 22 MatchTicketDetails
 $CLI_EXE \
     --sn match2 \
     --op MatchTicketDetails \
     --namespace $AB_NAMESPACE \
-    --ticketid 'S2W4uqkh' \
+    --ticketid 'q5jPqzhN' \
     > test.out 2>&1
-eval_tap $? 21 'MatchTicketDetails' test.out
+eval_tap $? 22 'MatchTicketDetails' test.out
 
-#- 22 DeleteMatchTicket
+#- 23 DeleteMatchTicket
 $CLI_EXE \
     --sn match2 \
     --op DeleteMatchTicket \
     --namespace $AB_NAMESPACE \
-    --ticketid 'wSC7Eajw' \
+    --ticketid '0YdGSrA9' \
     > test.out 2>&1
-eval_tap $? 22 'DeleteMatchTicket' test.out
+eval_tap $? 23 'DeleteMatchTicket' test.out
 
-#- 23 RuleSetList
+#- 24 RuleSetList
 $CLI_EXE \
     --sn match2 \
     --op RuleSetList \
     --namespace $AB_NAMESPACE \
-    --limit '68' \
-    --offset '83' \
+    --limit '77' \
+    --offset '46' \
     > test.out 2>&1
-eval_tap $? 23 'RuleSetList' test.out
+eval_tap $? 24 'RuleSetList' test.out
 
-#- 24 CreateRuleSet
+#- 25 CreateRuleSet
 # body param: body
-echo '{"data": {"YdGSrA9L": {}, "XRwU6WLg": {}, "pQE9nXzh": {}}, "enable_custom_match_function": true, "name": "q0CvMXty"}' > $TEMP_JSON_INPUT
+echo '{"data": {"XRwU6WLg": {}, "pQE9nXzh": {}, "BC0uyMR4": {}}, "enable_custom_match_function": false, "name": "WXrdZaFe"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateRuleSet \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 24 'CreateRuleSet' test.out
+eval_tap $? 25 'CreateRuleSet' test.out
 
-#- 25 RuleSetDetails
+#- 26 RuleSetDetails
 $CLI_EXE \
     --sn match2 \
     --op RuleSetDetails \
     --namespace $AB_NAMESPACE \
-    --ruleset 'UWXrdZaF' \
+    --ruleset 'acGT2x6o' \
     > test.out 2>&1
-eval_tap $? 25 'RuleSetDetails' test.out
+eval_tap $? 26 'RuleSetDetails' test.out
 
-#- 26 UpdateRuleSet
+#- 27 UpdateRuleSet
 # body param: body
-echo '{"data": {"eacGT2x6": {}, "o28Njxyw": {}, "7RHldq0m": {}}, "enable_custom_match_function": false, "name": "jUZ95Z5X"}' > $TEMP_JSON_INPUT
+echo '{"data": {"28Njxyw7": {}, "RHldq0m7": {}, "NjUZ95Z5": {}}, "enable_custom_match_function": false, "name": "DLBN9YGV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op UpdateRuleSet \
     --namespace $AB_NAMESPACE \
-    --ruleset 'DLBN9YGV' \
+    --ruleset 'Ptkjt0Oy' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 26 'UpdateRuleSet' test.out
+eval_tap $? 27 'UpdateRuleSet' test.out
 
-#- 27 DeleteRuleSet
+#- 28 DeleteRuleSet
 $CLI_EXE \
     --sn match2 \
     --op DeleteRuleSet \
     --namespace $AB_NAMESPACE \
-    --ruleset 'Ptkjt0Oy' \
+    --ruleset 'BlJi4RbZ' \
     > test.out 2>&1
-eval_tap $? 27 'DeleteRuleSet' test.out
+eval_tap $? 28 'DeleteRuleSet' test.out
 
-#- 28 VersionCheckHandler
+#- 29 VersionCheckHandler
 $CLI_EXE \
     --sn match2 \
     --op VersionCheckHandler \
     > test.out 2>&1
-eval_tap $? 28 'VersionCheckHandler' test.out
+eval_tap $? 29 'VersionCheckHandler' test.out
 
 
 # remove artifacts

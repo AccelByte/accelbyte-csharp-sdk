@@ -56,8 +56,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 ImportRewards op = new ImportRewards(this,
-                    namespace_,                    
-                    replaceExisting                    
+                    namespace_,
+                    replaceExisting
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,34 +71,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
-            
+
             if (builder.File is not null) FormParams["file"] = builder.File;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ImportRewards(
-            string namespace_,            
-            bool replaceExisting,            
-            Stream? file            
+            string namespace_,
+            bool replaceExisting,
+            Stream? file
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             QueryParams["replaceExisting"] = Convert.ToString(replaceExisting)!;
-            
+
             if (file is not null) FormParams["file"] = file;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,18 +111,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

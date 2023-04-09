@@ -141,7 +141,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels` | GET | GetChannels | [GetChannels](../../AccelByte.Sdk/Api/Ugc/Operation/PublicChannel/GetChannels.cs) | [GetChannels](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicChannel/GetChannels.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels` | POST | CreateChannel | [CreateChannel](../../AccelByte.Sdk/Api/Ugc/Operation/PublicChannel/CreateChannel.cs) | [CreateChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicChannel/CreateChannel.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels` | POST | PublicCreateChannel | [PublicCreateChannel](../../AccelByte.Sdk/Api/Ugc/Operation/PublicChannel/PublicCreateChannel.cs) | [PublicCreateChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicChannel/PublicCreateChannel.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}` | PUT | UpdateChannel | [UpdateChannel](../../AccelByte.Sdk/Api/Ugc/Operation/PublicChannel/UpdateChannel.cs) | [UpdateChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicChannel/UpdateChannel.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}` | DELETE | DeleteChannel | [DeleteChannel](../../AccelByte.Sdk/Api/Ugc/Operation/PublicChannel/DeleteChannel.cs) | [DeleteChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicChannel/DeleteChannel.cs) |
 
@@ -251,7 +251,6 @@
 | `models.ContentDownloadResponse` | [ModelsContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponse.cs) |
 | `models.ContentLikeRequest` | [ModelsContentLikeRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeRequest.cs) |
 | `models.ContentLikeResponse` | [ModelsContentLikeResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeResponse.cs) |
-| `models.ContentRequest` | [ModelsContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentRequest.cs) |
 | `models.CreateContentRequest` | [ModelsCreateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequest.cs) |
 | `models.CreateContentRequestS3` | [ModelsCreateContentRequestS3](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequestS3.cs) |
 | `models.CreateContentResponse` | [ModelsCreateContentResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentResponse.cs) |
@@ -278,8 +277,12 @@
 | `models.PagingCursor` | [ModelsPagingCursor](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPagingCursor.cs) |
 | `models.PayloadURL` | [ModelsPayloadURL](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPayloadURL.cs) |
 | `models.PreviewURL` | [ModelsPreviewURL](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPreviewURL.cs) |
+| `models.PublicChannelRequest` | [ModelsPublicChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicChannelRequest.cs) |
+| `models.PublicCreateContentRequestS3` | [ModelsPublicCreateContentRequestS3](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicCreateContentRequestS3.cs) |
 | `models.PublicGetContentBulkRequest` | [ModelsPublicGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicGetContentBulkRequest.cs) |
 | `models.ScreenshotResponse` | [ModelsScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsScreenshotResponse.cs) |
+| `models.UpdateChannelRequest` | [ModelsUpdateChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateChannelRequest.cs) |
+| `models.UpdateContentRequest` | [ModelsUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateContentRequest.cs) |
 | `models.UpdateScreenshotRequest` | [ModelsUpdateScreenshotRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotRequest.cs) |
 | `models.UpdateScreenshotResponse` | [ModelsUpdateScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotResponse.cs) |
 | `models.UserFollowRequest` | [ModelsUserFollowRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowRequest.cs) |

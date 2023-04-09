@@ -38,5 +38,5 @@ namespace AccelByte.Sdk.Api.Basic.Model
         {
 
         }
-    }    
+    }
 }

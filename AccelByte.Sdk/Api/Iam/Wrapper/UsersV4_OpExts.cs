@@ -139,6 +139,17 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminRemoveUserRoleV4(op);
         }
+        public static Iam.Model.ModelInviteUserResponseV3? Execute(
+            this AdminInviteUserNewV4.AdminInviteUserNewV4Builder builder,
+            ModelInviteUserRequestV4 body
+        )
+        {
+            AdminInviteUserNewV4 op = builder.Build(
+                body
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminInviteUserNewV4(op);
+        }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminUpdateMyUserV4.AdminUpdateMyUserV4Builder builder,
             ModelUserUpdateRequestV3 body
@@ -271,6 +282,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminMakeFactorMyDefaultV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this AdminInviteUserV4.AdminInviteUserV4Builder builder,
             ModelInviteUserRequestV4 body
@@ -471,7 +483,7 @@ namespace AccelByte.Sdk.Api
         {
             PublicRemoveTrustedDeviceV4 op = builder.Build(
                 namespace_,
-                deviceToken                
+                deviceToken
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicRemoveTrustedDeviceV4(op);

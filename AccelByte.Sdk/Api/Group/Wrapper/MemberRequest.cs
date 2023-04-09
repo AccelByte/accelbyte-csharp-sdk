@@ -40,13 +40,13 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             get { return Operation.GetMyGroupJoinRequestV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsGetMemberRequestsListResponseV1? GetGroupJoinRequestPublicV1(GetGroupJoinRequestPublicV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

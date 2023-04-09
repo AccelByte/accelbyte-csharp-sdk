@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class AppleIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("bundleId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BundleId { get; set; }
 
         [JsonPropertyName("namespace")]

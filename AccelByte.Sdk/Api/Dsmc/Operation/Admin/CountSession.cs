@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 CountSession op = new CountSession(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -68,31 +68,31 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.Region is not null) QueryParams["region"] = builder.Region;
-            
 
-            
-            
-            
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CountSession(
-            string namespace_,            
-            string? region            
+            string namespace_,
+            string? region
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (region is not null) QueryParams["region"] = region;
-            
 
-            
-            
-            
+            if (region is not null) QueryParams["region"] = region;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -105,11 +105,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsCountSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsCountSessionResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

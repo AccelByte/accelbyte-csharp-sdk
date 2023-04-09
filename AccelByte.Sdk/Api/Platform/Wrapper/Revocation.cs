@@ -19,9 +19,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
-        public GetPaymentCallbackConfig1.GetPaymentCallbackConfig1Builder GetPaymentCallbackConfig1Op
+        public GetRevocationConfig.GetRevocationConfigBuilder GetRevocationConfigOp
         {
-            get { return Operation.GetPaymentCallbackConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.GetRevocationConfig.Builder.SetWrapperObject(this); }
         }
         public UpdateRevocationConfig.UpdateRevocationConfigBuilder UpdateRevocationConfigOp
         {
@@ -40,13 +40,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             get { return Operation.DoRevocation.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public Model.RevocationConfigInfo? GetPaymentCallbackConfig1(GetPaymentCallbackConfig1 input)
+
+        public Model.RevocationConfigInfo? GetRevocationConfig(GetRevocationConfig input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -55,15 +55,16 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteRevocationConfig(DeleteRevocationConfig input) {
+        public void DeleteRevocationConfig(DeleteRevocationConfig input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -72,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -81,7 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

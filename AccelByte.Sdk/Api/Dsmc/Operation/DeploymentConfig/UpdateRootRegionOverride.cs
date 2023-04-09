@@ -50,10 +50,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 UpdateRootRegionOverride op = new UpdateRootRegionOverride(this,
-                    body,                    
-                    deployment,                    
-                    namespace_,                    
-                    region                    
+                    body,
+                    deployment,
+                    namespace_,
+                    region
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,35 +71,35 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["deployment"] = deployment;
             PathParams["namespace"] = namespace_;
             PathParams["region"] = region;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateRootRegionOverride(
-            string deployment,            
-            string namespace_,            
-            string region,            
-            Model.ModelsUpdateRegionOverrideRequest body            
+            string deployment,
+            string namespace_,
+            string region,
+            Model.ModelsUpdateRegionOverrideRequest body
         )
         {
             PathParams["deployment"] = deployment;
             PathParams["namespace"] = namespace_;
             PathParams["region"] = region;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,11 +112,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsDeploymentWithOverride? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -129,9 +129,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsDeploymentWithOverride>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

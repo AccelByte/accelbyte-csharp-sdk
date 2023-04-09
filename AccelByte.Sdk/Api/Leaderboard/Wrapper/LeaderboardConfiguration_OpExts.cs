@@ -90,6 +90,19 @@ namespace AccelByte.Sdk.Api
 
             ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).DeleteLeaderboardConfigurationAdminV1(op);
         }
+        public static void Execute(
+            this HardDeleteLeaderboardAdminV1.HardDeleteLeaderboardAdminV1Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            HardDeleteLeaderboardAdminV1 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            ((Leaderboard.Wrapper.LeaderboardConfiguration)builder.WrapperObject!).HardDeleteLeaderboardAdminV1(op);
+        }
         public static Leaderboard.Model.ModelsGetAllLeaderboardConfigsPublicResp? Execute(
             this GetLeaderboardConfigurationsPublicV1.GetLeaderboardConfigurationsPublicV1Builder builder,
             string namespace_

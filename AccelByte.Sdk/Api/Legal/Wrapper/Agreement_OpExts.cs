@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAcceptedAgreements(op);
         }
-        public static List<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse>? Execute(
+        public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
             this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
             string policyVersionId
         )

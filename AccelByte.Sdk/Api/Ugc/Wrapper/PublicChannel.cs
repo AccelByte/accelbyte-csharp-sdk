@@ -23,9 +23,9 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.GetChannels.Builder.SetWrapperObject(this); }
         }
-        public CreateChannel.CreateChannelBuilder CreateChannelOp
+        public PublicCreateChannel.PublicCreateChannelBuilder PublicCreateChannelOp
         {
-            get { return Operation.CreateChannel.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicCreateChannel.Builder.SetWrapperObject(this); }
         }
         public UpdateChannel.UpdateChannelBuilder UpdateChannelOp
         {
@@ -36,22 +36,22 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             get { return Operation.DeleteChannel.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsPaginatedGetChannelResponse? GetChannels(GetChannels input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsChannelResponse? CreateChannel(CreateChannel input)
+        public Model.ModelsChannelResponse? PublicCreateChannel(PublicCreateChannel input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -60,15 +60,16 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteChannel(DeleteChannel input) {
+        public void DeleteChannel(DeleteChannel input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 PublishPolicyVersion1 op = new PublishPolicyVersion1(this,
-                    namespace_,                    
-                    policyVersionId                    
+                    namespace_,
+                    policyVersionId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +71,33 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["policyVersionId"] = policyVersionId;
-            
-            if (builder.ShouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(builder.ShouldNotify)!;
-            
 
-            
-            
-            
+            if (builder.ShouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(builder.ShouldNotify)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublishPolicyVersion1(
-            string namespace_,            
-            string policyVersionId,            
-            bool? shouldNotify            
+            string namespace_,
+            string policyVersionId,
+            bool? shouldNotify
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["policyVersionId"] = policyVersionId;
-            
-            if (shouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(shouldNotify)!;
-            
 
-            
-            
-            
+            if (shouldNotify != null) QueryParams["shouldNotify"] = Convert.ToString(shouldNotify)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,22 +106,22 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override HttpMethod Method => HttpMethod.Patch;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

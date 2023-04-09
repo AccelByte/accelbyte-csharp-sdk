@@ -74,8 +74,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminQueryThirdPlatformLinkHistoryV3 op = new AdminQueryThirdPlatformLinkHistoryV3(this,
-                    namespace_,                    
-                    platformId                    
+                    namespace_,
+                    platformId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -89,40 +89,40 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.PlatformUserId is not null) QueryParams["platformUserId"] = builder.PlatformUserId;
             if (platformId is not null) QueryParams["platformId"] = platformId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminQueryThirdPlatformLinkHistoryV3(
-            string namespace_,            
-            long? limit,            
-            long? offset,            
-            string? platformUserId,            
-            string platformId            
+            string namespace_,
+            long? limit,
+            long? offset,
+            string? platformUserId,
+            string platformId
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (platformUserId is not null) QueryParams["platformUserId"] = platformUserId;
             if (platformId is not null) QueryParams["platformId"] = platformId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -135,11 +135,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelLinkingHistoryResponseWithPaginationV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -152,9 +152,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelLinkingHistoryResponseWithPaginationV3>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

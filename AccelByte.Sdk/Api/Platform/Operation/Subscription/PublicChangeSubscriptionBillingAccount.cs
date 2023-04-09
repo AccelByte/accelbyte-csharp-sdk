@@ -50,9 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 PublicChangeSubscriptionBillingAccount op = new PublicChangeSubscriptionBillingAccount(this,
-                    namespace_,                    
-                    subscriptionId,                    
-                    userId                    
+                    namespace_,
+                    subscriptionId,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -69,32 +69,32 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["subscriptionId"] = subscriptionId;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicChangeSubscriptionBillingAccount(
-            string namespace_,            
-            string subscriptionId,            
-            string userId            
+            string namespace_,
+            string subscriptionId,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["subscriptionId"] = subscriptionId;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,11 +107,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.SubscriptionInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.SubscriptionInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

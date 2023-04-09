@@ -24,12 +24,13 @@ namespace AccelByte.Sdk.Api.Qosm.Wrapper
             get { return Operation.Heartbeat.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        public void Heartbeat(Heartbeat input) {
+
+        public void Heartbeat(Heartbeat input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

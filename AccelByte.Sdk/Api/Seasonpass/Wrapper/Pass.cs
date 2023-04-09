@@ -44,13 +44,13 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             get { return Operation.GrantUserPass.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.PassInfo>? QueryPasses(QueryPasses input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -68,15 +68,16 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeletePass(DeletePass input) {
+        public void DeletePass(DeletePass input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -85,7 +86,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -94,7 +95,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -140,7 +140,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementDecrementResultClazz : StringEnum<EntitlementDecrementResultClazz>
     {
@@ -176,7 +176,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementDecrementResultSource : StringEnum<EntitlementDecrementResultSource>
     {
@@ -218,7 +218,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementDecrementResultStatus : StringEnum<EntitlementDecrementResultStatus>
     {
@@ -248,7 +248,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 
     public class EntitlementDecrementResultType : StringEnum<EntitlementDecrementResultType>
     {
@@ -269,5 +269,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

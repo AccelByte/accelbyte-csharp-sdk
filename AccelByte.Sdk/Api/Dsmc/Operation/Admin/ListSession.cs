@@ -67,9 +67,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             )
             {
                 ListSession op = new ListSession(this,
-                    namespace_,                    
-                    count,                    
-                    offset                    
+                    namespace_,
+                    count,
+                    offset
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -84,40 +84,40 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.WithServer != null) QueryParams["withServer"] = Convert.ToString(builder.WithServer)!;
             QueryParams["count"] = Convert.ToString(count)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ListSession(
-            string namespace_,            
-            string? region,            
-            bool? withServer,            
-            long count,            
-            long offset            
+            string namespace_,
+            string? region,
+            bool? withServer,
+            long count,
+            long offset
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (region is not null) QueryParams["region"] = region;
             if (withServer != null) QueryParams["withServer"] = Convert.ToString(withServer)!;
             QueryParams["count"] = Convert.ToString(count)!;
             QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -130,11 +130,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsListSessionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -147,9 +147,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsListSessionResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

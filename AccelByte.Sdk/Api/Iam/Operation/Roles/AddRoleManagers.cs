@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [POST]
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AddRoleManagers : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -59,8 +59,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AddRoleManagers op = new AddRoleManagers(this,
-                    body,                    
-                    roleId                    
+                    body,
+                    roleId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -74,31 +74,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AddRoleManagers(
-            string roleId,            
-            Model.ModelRoleManagersRequest body            
+            string roleId,
+            Model.ModelRoleManagersRequest body
         )
         {
             PathParams["roleId"] = roleId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,18 +111,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

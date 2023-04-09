@@ -48,8 +48,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             )
             {
                 PublicGetUserProfilePublicInfo op = new PublicGetUserProfilePublicInfo(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -64,29 +64,29 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
         }
         #endregion
 
         public PublicGetUserProfilePublicInfo(
-            string namespace_,            
-            string userId            
+            string namespace_,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
         }
 
@@ -94,15 +94,15 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.UserProfilePublicInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -115,18 +115,18 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             {
                 return JsonSerializer.Deserialize<Model.UserProfilePublicInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.UserProfilePublicInfo<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.UserProfilePublicInfo<T1>>(payload);
@@ -135,8 +135,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             {
                 return JsonSerializer.Deserialize<Model.UserProfilePublicInfo<T1>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

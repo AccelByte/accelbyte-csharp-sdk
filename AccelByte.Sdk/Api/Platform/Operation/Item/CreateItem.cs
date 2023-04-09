@@ -270,8 +270,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 CreateItem op = new CreateItem(this,
-                    namespace_,                    
-                    storeId                    
+                    namespace_,
+                    storeId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -285,34 +285,34 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
-            
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateItem(
-            string namespace_,            
-            string storeId,            
-            Model.ItemCreate body            
+            string namespace_,
+            string storeId,
+            Model.ItemCreate body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
-            
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -325,11 +325,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.FullItemInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -342,18 +342,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.FullItemInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.FullItemInfo<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.FullItemInfo<T1>>(payload);
@@ -362,8 +362,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.FullItemInfo<T1>>(payload);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

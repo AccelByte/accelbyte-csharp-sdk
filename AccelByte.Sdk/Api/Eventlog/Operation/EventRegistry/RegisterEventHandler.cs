@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     ///
     /// Required permission `ADMIN:NAMESPACE:{namespace}:EVENT [CREATE]`and scope `analytics`
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RegisterEventHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             )
             {
                 RegisterEventHandler op = new RegisterEventHandler(this,
-                    body                    
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -56,29 +56,29 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             ModelsEventRegistry body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public RegisterEventHandler(
-            Model.ModelsEventRegistry body            
+            Model.ModelsEventRegistry body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -91,18 +91,18 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)201)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

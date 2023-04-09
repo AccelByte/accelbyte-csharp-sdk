@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
     ///   *  Returns : wallet info
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetWallet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -49,8 +49,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetWallet op = new GetWallet(this,
-                    namespace_,                    
-                    walletId                    
+                    namespace_,
+                    walletId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,30 +65,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["walletId"] = walletId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetWallet(
-            string namespace_,            
-            string walletId            
+            string namespace_,
+            string walletId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["walletId"] = walletId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -101,11 +101,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.WalletInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -118,9 +118,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<Model.WalletInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

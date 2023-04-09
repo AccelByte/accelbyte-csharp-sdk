@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("operator")]
         public string? Operator { get; set; }
 
+        [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Reason { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("useCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }
+
+        [JsonPropertyName("useCountChange")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? UseCountChange { get; set; }
 
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
@@ -75,5 +83,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

@@ -43,22 +43,27 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.MatchPoolMetric.Builder.SetWrapperObject(this); }
         }
+        public GetPlayerMetric.GetPlayerMetricBuilder GetPlayerMetricOp
+        {
+            get { return Operation.GetPlayerMetric.Builder.SetWrapperObject(this); }
+        }
         #endregion
-        
+
         public Model.ApiListMatchPoolsResponse? MatchPoolList(MatchPoolList input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateMatchPool(CreateMatchPool input) {
+        public void CreateMatchPool(CreateMatchPool input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -67,7 +72,7 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -76,15 +81,16 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteMatchPool(DeleteMatchPool input) {
+        public void DeleteMatchPool(DeleteMatchPool input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -93,7 +99,16 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiPlayerMetricRecord? GetPlayerMetric(GetPlayerMetric input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

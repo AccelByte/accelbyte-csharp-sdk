@@ -57,8 +57,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 UnpublishSeason op = new UnpublishSeason(this,
-                    namespace_,                    
-                    seasonId                    
+                    namespace_,
+                    seasonId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -73,33 +73,33 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
-            
-            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
-            
 
-            
-            
-            
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UnpublishSeason(
-            string namespace_,            
-            string seasonId,            
-            bool? force            
+            string namespace_,
+            string seasonId,
+            bool? force
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["seasonId"] = seasonId;
-            
-            if (force != null) QueryParams["force"] = Convert.ToString(force)!;
-            
 
-            
-            
-            
+            if (force != null) QueryParams["force"] = Convert.ToString(force)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,11 +112,11 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.SeasonInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -129,9 +129,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<Model.SeasonInfo>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

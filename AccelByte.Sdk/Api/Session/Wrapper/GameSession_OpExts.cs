@@ -23,6 +23,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminQueryGameSessions(op);
         }
+        public static Session.Model.ApimodelsDeleteBulkGameSessionsAPIResponse? Execute(
+            this AdminDeleteBulkGameSessions.AdminDeleteBulkGameSessionsBuilder builder,
+            ApimodelsDeleteBulkGameSessionRequest body,
+            string namespace_
+        )
+        {
+            AdminDeleteBulkGameSessions op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminDeleteBulkGameSessions(op);
+        }
         public static Session.Model.ApimodelsUpdateGameSessionMemberStatusResponse? Execute(
             this AdminUpdateGameSessionMember.AdminUpdateGameSessionMemberBuilder builder,
             string memberId,

@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 DeleteSection op = new DeleteSection(this,
-                    namespace_,                    
-                    sectionId,                    
-                    storeId                    
+                    namespace_,
+                    sectionId,
+                    storeId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -67,33 +67,33 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["sectionId"] = sectionId;
-            
-            if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
-            
-            
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteSection(
-            string namespace_,            
-            string sectionId,            
-            string storeId            
+            string namespace_,
+            string sectionId,
+            string storeId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["sectionId"] = sectionId;
-            
-            if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
-            
-            
+            if (storeId is not null) QueryParams["storeId"] = storeId;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -102,22 +102,22 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         {
             get { return Operation.GetCurrentMonthLeaderboardRankingAdminV1.Builder.SetWrapperObject(this); }
         }
+        public DeleteUserRankingByLeaderboardCodeAdminV1.DeleteUserRankingByLeaderboardCodeAdminV1Builder DeleteUserRankingByLeaderboardCodeAdminV1Op
+        {
+            get { return Operation.DeleteUserRankingByLeaderboardCodeAdminV1.Builder.SetWrapperObject(this); }
+        }
         public GetCurrentSeasonLeaderboardRankingAdminV1.GetCurrentSeasonLeaderboardRankingAdminV1Builder GetCurrentSeasonLeaderboardRankingAdminV1Op
         {
             get { return Operation.GetCurrentSeasonLeaderboardRankingAdminV1.Builder.SetWrapperObject(this); }
@@ -100,21 +104,22 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             get { return Operation.GetAllTimeLeaderboardRankingPublicV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.ModelsArchiveLeaderboardSignedURLResponse>? AdminGetArchivedLeaderboardRankingDataV1Handler(AdminGetArchivedLeaderboardRankingDataV1Handler input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void CreateArchivedLeaderboardRankingDataV1Handler(CreateArchivedLeaderboardRankingDataV1Handler input) {
+        public void CreateArchivedLeaderboardRankingDataV1Handler(CreateArchivedLeaderboardRankingDataV1Handler input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -123,7 +128,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -132,7 +137,16 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteUserRankingByLeaderboardCodeAdminV1(DeleteUserRankingByLeaderboardCodeAdminV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -141,7 +155,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -150,7 +164,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -159,7 +173,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -168,15 +182,16 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserRankingAdminV1(DeleteUserRankingAdminV1 input) {
+        public void DeleteUserRankingAdminV1(DeleteUserRankingAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -185,15 +200,16 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserRankingsAdminV1(DeleteUserRankingsAdminV1 input) {
+        public void DeleteUserRankingsAdminV1(DeleteUserRankingsAdminV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -202,7 +218,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -211,7 +227,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -220,7 +236,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -229,7 +245,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -238,7 +254,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -247,15 +263,16 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteUserRankingPublicV1(DeleteUserRankingPublicV1 input) {
+        public void DeleteUserRankingPublicV1(DeleteUserRankingPublicV1 input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -264,7 +281,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -273,7 +290,7 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             )
             {
                 CreateLocalizedPolicyVersion1 op = new CreateLocalizedPolicyVersion1(this,
-                    namespace_,                    
-                    policyVersionId                    
+                    namespace_,
+                    policyVersionId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -71,33 +71,33 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["policyVersionId"] = policyVersionId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = builder.Body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public CreateLocalizedPolicyVersion1(
-            string namespace_,            
-            string policyVersionId,            
-            Model.CreateLocalizedPolicyVersionRequest body            
+            string namespace_,
+            string policyVersionId,
+            Model.CreateLocalizedPolicyVersionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["policyVersionId"] = policyVersionId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,11 +110,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.CreateLocalizedPolicyVersionResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             {
                 return JsonSerializer.Deserialize<Model.CreateLocalizedPolicyVersionResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

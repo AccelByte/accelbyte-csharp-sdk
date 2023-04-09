@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             )
             {
                 AdminCancelUserPersonalDataRequest op = new AdminCancelUserPersonalDataRequest(this,
-                    namespace_,                    
-                    requestDate,                    
-                    userId                    
+                    namespace_,
+                    requestDate,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,32 +66,32 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["namespace"] = namespace_;
             PathParams["requestDate"] = requestDate;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminCancelUserPersonalDataRequest(
-            string namespace_,            
-            string requestDate,            
-            string userId            
+            string namespace_,
+            string requestDate,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["requestDate"] = requestDate;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,18 +104,18 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

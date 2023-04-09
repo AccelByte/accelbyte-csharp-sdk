@@ -64,9 +64,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("viewId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ViewId { get; set; }
 
         [JsonPropertyName("viewName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ViewName { get; set; }
 
     }
@@ -126,9 +128,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public DateTime? UpdatedAt { get; set; }
 
         [JsonPropertyName("viewId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ViewId { get; set; }
 
         [JsonPropertyName("viewName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ViewName { get; set; }
 
     }
@@ -156,5 +160,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

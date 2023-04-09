@@ -26,23 +26,23 @@ namespace AccelByte.Sdk.Api
             return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).GetChannels(op);
         }
         public static Ugc.Model.ModelsChannelResponse? Execute(
-            this CreateChannel.CreateChannelBuilder builder,
-            ModelsChannelRequest body,
+            this PublicCreateChannel.PublicCreateChannelBuilder builder,
+            ModelsPublicChannelRequest body,
             string namespace_,
             string userId
         )
         {
-            CreateChannel op = builder.Build(
+            PublicCreateChannel op = builder.Build(
                 body,
                 namespace_,
                 userId
             );
 
-            return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).CreateChannel(op);
+            return ((Ugc.Wrapper.PublicChannel)builder.WrapperObject!).PublicCreateChannel(op);
         }
         public static Ugc.Model.ModelsChannelResponse? Execute(
             this UpdateChannel.UpdateChannelBuilder builder,
-            ModelsChannelRequest body,
+            ModelsUpdateChannelRequest body,
             string channelId,
             string namespace_,
             string userId

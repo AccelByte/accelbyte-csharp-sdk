@@ -57,8 +57,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             )
             {
                 ExistsAnyPassByPassCodes op = new ExistsAnyPassByPassCodes(this,
-                    namespace_,                    
-                    userId                    
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -73,35 +73,35 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (builder.PassCodes is not null) QueryParams["passCodes"] = builder.PassCodes;
-            
 
-            
+            if (builder.PassCodes is not null) QueryParams["passCodes"] = builder.PassCodes;
+
+
+
             CollectionFormatMap["passCodes"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ExistsAnyPassByPassCodes(
-            string namespace_,            
-            string userId,            
-            List<string>? passCodes            
+            string namespace_,
+            string userId,
+            List<string>? passCodes
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            if (passCodes is not null) QueryParams["passCodes"] = passCodes;
-            
 
-            
+            if (passCodes is not null) QueryParams["passCodes"] = passCodes;
+
+
+
             CollectionFormatMap["passCodes"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,15 +110,15 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.Ownership? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -131,9 +131,9 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
             {
                 return JsonSerializer.Deserialize<Model.Ownership>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -135,7 +135,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             )
             {
                 GetLikedContent op = new GetLikedContent(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -148,7 +148,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Isofficial != null) QueryParams["isofficial"] = Convert.ToString(builder.Isofficial)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
@@ -158,32 +158,32 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (builder.Subtype is not null) QueryParams["subtype"] = builder.Subtype;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             if (builder.Type is not null) QueryParams["type"] = builder.Type;
-            
 
-            
+
+
             CollectionFormatMap["tags"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetLikedContent(
-            string namespace_,            
-            bool? isofficial,            
-            long? limit,            
-            string? name,            
-            long? offset,            
-            string? orderby,            
-            string? sortby,            
-            string? subtype,            
-            List<string>? tags,            
-            string? type            
+            string namespace_,
+            bool? isofficial,
+            long? limit,
+            string? name,
+            long? offset,
+            string? orderby,
+            string? sortby,
+            string? subtype,
+            List<string>? tags,
+            string? type
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (isofficial != null) QueryParams["isofficial"] = Convert.ToString(isofficial)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (name is not null) QueryParams["name"] = name;
@@ -193,12 +193,12 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             if (subtype is not null) QueryParams["subtype"] = subtype;
             if (tags is not null) QueryParams["tags"] = tags;
             if (type is not null) QueryParams["type"] = type;
-            
 
-            
+
+
             CollectionFormatMap["tags"] = "csv";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -207,15 +207,15 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json","application/octet-stream" };
+        public override string[] Consumes => new string[] { "application/json", "application/octet-stream" };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsPaginatedContentDownloadResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -228,9 +228,9 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsPaginatedContentDownloadResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

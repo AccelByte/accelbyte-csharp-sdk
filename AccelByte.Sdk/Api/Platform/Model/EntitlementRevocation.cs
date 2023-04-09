@@ -11,6 +11,51 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class EntitlementRevocation : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("customRevocation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? CustomRevocation { get; set; }
+
+        [JsonPropertyName("entitlementId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntitlementId { get; set; }
+
+        [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("itemSku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemSku { get; set; }
+
+        [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? Quantity { get; set; }
+
+        [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Reason { get; set; }
+
+        [JsonPropertyName("revocationStrategy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RevocationStrategy { get; set; }
+
+        [JsonPropertyName("skipped")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Skipped { get; set; }
+
+        [JsonPropertyName("status")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementRevocationStatus? Status { get; set; }
+
+    }
+
+    public class EntitlementRevocation<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("customRevocation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomRevocation { get; set; }
+
         [JsonPropertyName("entitlementId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EntitlementId { get; set; }
@@ -47,7 +92,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
-
     public class EntitlementRevocationStatus : StringEnum<EntitlementRevocationStatus>
     {
         public static readonly EntitlementRevocationStatus FAIL
@@ -67,5 +111,5 @@ namespace AccelByte.Sdk.Api.Platform.Model
         {
 
         }
-    }    
+    }
 }

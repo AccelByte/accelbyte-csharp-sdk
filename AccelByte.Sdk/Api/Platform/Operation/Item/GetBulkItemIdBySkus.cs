@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             )
             {
                 GetBulkItemIdBySkus op = new GetBulkItemIdBySkus(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -77,36 +77,36 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Sku is not null) QueryParams["sku"] = builder.Sku;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
-            
 
-            
+
+
             CollectionFormatMap["sku"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetBulkItemIdBySkus(
-            string namespace_,            
-            List<string>? sku,            
-            string? storeId            
+            string namespace_,
+            List<string>? sku,
+            string? storeId
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (sku is not null) QueryParams["sku"] = sku;
             if (storeId is not null) QueryParams["storeId"] = storeId;
-            
 
-            
+
+
             CollectionFormatMap["sku"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -115,15 +115,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ItemId>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -136,9 +136,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ItemId>>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

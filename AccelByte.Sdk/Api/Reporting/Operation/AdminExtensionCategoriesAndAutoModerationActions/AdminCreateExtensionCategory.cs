@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             )
             {
                 AdminCreateExtensionCategory op = new AdminCreateExtensionCategory(this,
-                    body                    
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -56,29 +56,29 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             RestapiExtensionCategoryApiRequest body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminCreateExtensionCategory(
-            Model.RestapiExtensionCategoryApiRequest body            
+            Model.RestapiExtensionCategoryApiRequest body
         )
         {
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -91,11 +91,11 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.RestapiExtensionCategoryApiResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -108,9 +108,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
             {
                 return JsonSerializer.Deserialize<Model.RestapiExtensionCategoryApiResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -31,7 +31,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'.
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminSearchUsersV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -122,8 +122,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 AdminSearchUsersV2 op = new AdminSearchUsersV2(this,
-                    namespace_,                    
-                    platformId                    
+                    namespace_,
+                    platformId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.After is not null) QueryParams["after"] = builder.After;
             if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.DisplayName is not null) QueryParams["displayName"] = builder.DisplayName;
@@ -147,31 +147,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.RoleId is not null) QueryParams["roleId"] = builder.RoleId;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
             if (platformId is not null) QueryParams["platformId"] = platformId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminSearchUsersV2(
-            string namespace_,            
-            string? after,            
-            string? before,            
-            string? displayName,            
-            long? limit,            
-            string? loginId,            
-            string? platformUserId,            
-            string? roleId,            
-            string? userId,            
-            string platformId            
+            string namespace_,
+            string? after,
+            string? before,
+            string? displayName,
+            long? limit,
+            string? loginId,
+            string? platformUserId,
+            string? roleId,
+            string? userId,
+            string platformId
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (after is not null) QueryParams["after"] = after;
             if (before is not null) QueryParams["before"] = before;
             if (displayName is not null) QueryParams["displayName"] = displayName;
@@ -181,11 +181,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (roleId is not null) QueryParams["roleId"] = roleId;
             if (userId is not null) QueryParams["userId"] = userId;
             if (platformId is not null) QueryParams["platformId"] = platformId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -194,15 +194,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelSearchUsersByPlatformIDResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -215,9 +215,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelSearchUsersByPlatformIDResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

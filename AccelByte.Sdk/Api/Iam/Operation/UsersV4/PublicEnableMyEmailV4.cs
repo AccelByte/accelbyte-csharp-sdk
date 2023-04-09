@@ -51,8 +51,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 PublicEnableMyEmailV4 op = new PublicEnableMyEmailV4(this,
-                    code,                    
-                    namespace_                    
+                    code,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -66,31 +66,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
+
+
             if (code is not null) FormParams["code"] = code;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicEnableMyEmailV4(
-            string namespace_,            
-            string code            
+            string namespace_,
+            string code
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
+
+
             if (code is not null) FormParams["code"] = code;
 
-            
-            
-            
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -103,18 +103,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

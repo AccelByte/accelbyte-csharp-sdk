@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// In order to read the Justice platform account UserID, it is required to have the permission: NAMESPACE:{namespace}:JUSTICE:USER:{userId} [READ] , otherwise the UserID is going to be censored and replaced with âRedactedâ text.
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserJusticePlatformAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -75,9 +75,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             )
             {
                 GetUserJusticePlatformAccount op = new GetUserJusticePlatformAccount(this,
-                    namespace_,                    
-                    targetNamespace,                    
-                    userId                    
+                    namespace_,
+                    targetNamespace,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -94,32 +94,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["targetNamespace"] = targetNamespace;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetUserJusticePlatformAccount(
-            string namespace_,            
-            string targetNamespace,            
-            string userId            
+            string namespace_,
+            string targetNamespace,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["targetNamespace"] = targetNamespace;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -132,11 +132,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override string[] Produces => new string[] { "application/json" };
 
-        [Obsolete("Use 'Securities' property instead.")]
+        [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelGetUserJusticePlatformAccountResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -149,9 +149,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelGetUserJusticePlatformAccountResponse>(payload);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }
