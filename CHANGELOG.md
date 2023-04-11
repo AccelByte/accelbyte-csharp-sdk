@@ -1,3 +1,9 @@
+<a name="v0.32.0"><a>
+## [v0.32.0]
+- Sample: update CLI sample app to use op builder pattern
+- Docs: add enable http logging in README
+- Docs: updated migration guide link in README
+
 <a name="v0.31.1"><a>
 ## [v0.31.1]
 - Hotfix: fixed image size model's property for DSMC service.
@@ -7,12 +13,10 @@
 - Removed title matchmaking sample app.
 - Updated Basic and Session service integration tests.
 - Fixed refresh token integration test.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.30.0"></a>
 ## [v0.30.0]
 - Updated documentations due to name change.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.29.0"></a>
 ## [v0.29.0]
@@ -21,36 +25,30 @@
 - Update Lobby integration tests.
 - Fixed some minor defects detected by Coverity Scan.
 - Added reporting service integration test.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.28.0"></a>
 ## [v0.28.0]
 - Changed operation's static var for builder object to static property.
 - Added new generic method for operation that has response with object data type in it.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.27.0"></a>
 ## [v0.27.0]
 - Updated local OAuth Client token validation.
 - Fixed Platform integration tests.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.26.0"></a>
 ## [v0.26.0]
 - Fixed MatchV2 integration test for MatchPool.
 - Added local OAuth Client token validation (PREVIEW FEATURE).
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.25.0"></a>
 ## [v0.25.0]
 - Fixed deprecated messages.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.24.0"></a>
 ## [v0.24.0]
 - Added Create User V3 integration test.
 - Namespace changed for some endpoints. See affected endpoint's [here](docs/migration-guides/migration-guide-v0.23-to-v0.24.md)
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.23.0"></a>
 ## [v0.23.0]
@@ -58,7 +56,6 @@
 - Added OpenAPI 2.0 vendor extension [information](spec/openapi-2.0-vendor-extensions.md).
 - Make `AB_APP_NAME` optional in `DefaultConfigRepository`.
 - Updated OIDC integration test.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.22.0"></a>
 ## [v0.22.0]
@@ -97,20 +94,17 @@
 ## [v0.21.0]
 - Updated getting started document.
 - Fixed HTTP Clients that always send empty body on GET request.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.20.0"></a>
 ## [v0.20.0]
 - Fixed HTTP Clients to handle upload stream handling.
 - **BREAKING CHANGE** Fixed operation's response to output `Stream` object for most of export endpoints.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.19.0"></a>
 ## [v0.19.0]
 - Changed doc folder structure.
 - **BREAKING CHANGE** IAM TokenGrantV3 operation's response has changed from `OauthmodelTokenResponseV3` to `OauthmodelTokenWithDeviceCookieResponseV3`.
 - **BREAKING CHANGE** `ITokenRepository` interface introduce new methods to accomodate `OauthmodelTokenWithDeviceCookieResponseV3`.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.18.0"></a>
 ## [v0.18.0]
@@ -118,7 +112,6 @@
 - Fixed service integration tests due to retry policy used by all request that expect exception.
 - Replaced deprecated operations in IAM service integration tests.
 - Fixed WS CLI issues when running on specific AMI image used by jenkins worker.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.17.0"></a>
 ## [v0.17.0]
@@ -126,7 +119,6 @@
 - Fixed awesome message parsing
 - Moved integration tests into different classes respective to AB Cloud service name
 - Added common use cases documents [here](docs/common_use_cases.md)
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.16.0"></a>
 ## [v0.16.0]
@@ -134,7 +126,6 @@
 - Added web socket interactive mode in CLI sample app
 - Added Title Matchmaking sample apps (AWS Lambda, Local Server, and Client)
 - Added Json file configuration and credential repository
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.15.0"></a>
 ## [v0.15.0]
@@ -142,7 +133,6 @@
 - Added integration test for QoSM
 - Switch public HttpBin with locally deployed HttpBin image for core tests
 - **POSSIBLE BREAKING CHANGE** Moved all deprecated operations back from its own namespace respective to each service.
-- Update APIs. See what's changes [here](spec/APICHANGES.md)
 
 <a name="v0.14.0"></a>
 ## [v0.14.0]
