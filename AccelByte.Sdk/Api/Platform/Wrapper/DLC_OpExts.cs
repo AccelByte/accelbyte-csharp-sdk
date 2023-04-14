@@ -79,16 +79,29 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.DLC)builder.WrapperObject!).DeletePlatformDLCConfig(op);
         }
         public static Platform.Model.UserDLC? Execute(
-            this GetUserDLC.GetUserDLCBuilder builder,
+            this GetUserDLCByPlatform.GetUserDLCByPlatformBuilder builder,
             string namespace_,
             string userId,
             string type
         )
         {
-            GetUserDLC op = builder.Build(
+            GetUserDLCByPlatform op = builder.Build(
                 namespace_,
                 userId,
                 type
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLCByPlatform(op);
+        }
+        public static List<Platform.Model.UserDLCRecord>? Execute(
+            this GetUserDLC.GetUserDLCBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserDLC op = builder.Build(
+                namespace_,
+                userId
             );
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC(op);

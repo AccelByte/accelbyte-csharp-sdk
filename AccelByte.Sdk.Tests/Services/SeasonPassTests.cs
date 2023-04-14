@@ -88,14 +88,14 @@ namespace AccelByte.Sdk.Tests.Services
             // Create an item tier in platform
             Int32 price = 1000;
             String itemName = "Item_SEASON_Tier1";
-            Dictionary<string, List<RegionDataItem>> regionData = new Dictionary<string, List<RegionDataItem>>();
-            regionData.Add("US", new List<RegionDataItem>()
+            Dictionary<string, List<RegionDataItemDTO>> regionData = new Dictionary<string, List<RegionDataItemDTO>>();
+            regionData.Add("US", new List<RegionDataItemDTO>()
             {
-                new RegionDataItem()
+                new RegionDataItemDTO()
                 {
                     CurrencyCode = "USD",
                     CurrencyNamespace = "accelbyte",
-                    CurrencyType = RegionDataItemCurrencyType.REAL,
+                    CurrencyType = RegionDataItemDTOCurrencyType.REAL,
                     Price = price
                 }
             });

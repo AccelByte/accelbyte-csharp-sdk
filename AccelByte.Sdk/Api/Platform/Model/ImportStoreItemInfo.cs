@@ -12,9 +12,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
     public class ImportStoreItemInfo : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("categoryPath")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CategoryPath { get; set; }
 
         [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemId { get; set; }
 
         [JsonPropertyName("itemType")]
@@ -25,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public Dictionary<string, Localization>? Localizations { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("sku")]

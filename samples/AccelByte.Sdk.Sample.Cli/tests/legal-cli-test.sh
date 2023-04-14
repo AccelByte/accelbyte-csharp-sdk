@@ -91,7 +91,7 @@ eval_tap $? 5 'RetrieveAllLegalPolicies' test.out
 
 #- 6 CreatePolicy
 # body param: body
-echo '{"affectedClientIds": ["3fMI04rm", "3tTqlE9o", "2jUc9iav"], "affectedCountries": ["LDPD0Lfl", "e8ESU1MO", "8XnVaEyj"], "basePolicyName": "mifJDYa1", "description": "TJPUszmF", "namespace": "GEkJVvqD", "tags": ["GfGq1FNm", "SU3PDyIA", "RWvUvDPn"], "typeId": "KoECjGUg"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["2jUc9iav", "3fMI04rm", "3tTqlE9o"], "affectedCountries": ["LDPD0Lfl", "e8ESU1MO", "8XnVaEyj"], "basePolicyName": "mifJDYa1", "description": "TJPUszmF", "namespace": "GEkJVvqD", "tags": ["SU3PDyIA", "RWvUvDPn", "GfGq1FNm"], "typeId": "KoECjGUg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreatePolicy \
@@ -109,7 +109,7 @@ eval_tap $? 7 'RetrieveSinglePolicy' test.out
 
 #- 8 PartialUpdatePolicy
 # body param: body
-echo '{"affectedClientIds": ["G14ID5l5", "nckjlW6B", "wj6K2wEM"], "affectedCountries": ["ywsSSZTG", "lubsmhjX", "cScOUvrj"], "basePolicyName": "JBO7tbkT", "description": "GYKqRMST", "namespace": "isP0MrSd", "tags": ["dfkfyt09", "ro5fHdWq", "aFy0pJYC"]}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["G14ID5l5", "wj6K2wEM", "nckjlW6B"], "affectedCountries": ["ywsSSZTG", "lubsmhjX", "cScOUvrj"], "basePolicyName": "JBO7tbkT", "description": "GYKqRMST", "namespace": "isP0MrSd", "tags": ["dfkfyt09", "aFy0pJYC", "ro5fHdWq"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op PartialUpdatePolicy \
@@ -186,7 +186,7 @@ eval_tap $? 15 'SetDefaultPolicy' test.out
 
 #- 16 RetrieveAcceptedAgreementsForMultiUsers
 # body param: body
-echo '{"currentPublishedOnly": true, "userIds": ["vwPewrf1", "ajwHO3Lf", "9Njm50xC"]}' > $TEMP_JSON_INPUT
+echo '{"currentPublishedOnly": true, "userIds": ["vwPewrf1", "9Njm50xC", "ajwHO3Lf"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op RetrieveAcceptedAgreementsForMultiUsers \
@@ -226,7 +226,7 @@ eval_tap $? 19 'RetrieveAllLegalPoliciesByNamespace' test.out
 
 #- 20 CreatePolicy1
 # body param: body
-echo '{"affectedClientIds": ["dq0m7NjU", "jxyw7RHl", "T2x6o28N"], "affectedCountries": ["BN9YGVPt", "Z95Z5XDL", "kjt0OyBl"], "basePolicyName": "Ji4RbZ0I", "description": "y11mfOFj", "tags": ["FDtXnXLv", "CzZVcGom", "WF1oAqUN"], "typeId": "OAsW8wYh"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["dq0m7NjU", "jxyw7RHl", "T2x6o28N"], "affectedCountries": ["Z95Z5XDL", "kjt0OyBl", "BN9YGVPt"], "basePolicyName": "Ji4RbZ0I", "description": "y11mfOFj", "tags": ["FDtXnXLv", "CzZVcGom", "WF1oAqUN"], "typeId": "OAsW8wYh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreatePolicy1 \
@@ -246,7 +246,7 @@ eval_tap $? 21 'RetrieveSinglePolicy1' test.out
 
 #- 22 PartialUpdatePolicy1
 # body param: body
-echo '{"affectedClientIds": ["u9b9Qjhz", "VLJiDx3a", "DlnJmi4X"], "affectedCountries": ["aBTgoXjf", "spSqwdbT", "dUQHa3Rx"], "basePolicyName": "R2sgzfaQ", "description": "rUCW9fgo", "tags": ["x8DmbC9U", "69uv1bkF", "qYdYrdxN"]}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["u9b9Qjhz", "DlnJmi4X", "VLJiDx3a"], "affectedCountries": ["dUQHa3Rx", "spSqwdbT", "aBTgoXjf"], "basePolicyName": "R2sgzfaQ", "description": "rUCW9fgo", "tags": ["x8DmbC9U", "qYdYrdxN", "69uv1bkF"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op PartialUpdatePolicy1 \

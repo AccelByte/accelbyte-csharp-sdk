@@ -472,7 +472,7 @@ eval_tap $? 40 'GetStats' test.out
 
 #- 41 CreateStat
 # body param: body
-echo '{"cycleIds": ["jrinAVVo", "pbmX3lLF", "vpAAXNzc"], "defaultValue": 0.07778216215575195, "description": "XCiaXP8j", "incrementOnly": true, "maximum": 0.46758681653803336, "minimum": 0.01193050738646595, "name": "yYAkF18Y", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "wRxcREyU", "tags": ["5CwqGJF6", "r2QcwlRr", "nDi33Izt"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["vpAAXNzc", "jrinAVVo", "pbmX3lLF"], "defaultValue": 0.07778216215575195, "description": "XCiaXP8j", "incrementOnly": true, "maximum": 0.46758681653803336, "minimum": 0.01193050738646595, "name": "yYAkF18Y", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "wRxcREyU", "tags": ["r2QcwlRr", "nDi33Izt", "5CwqGJF6"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat \
@@ -533,7 +533,7 @@ eval_tap $? 46 'DeleteStat' test.out
 
 #- 47 UpdateStat
 # body param: body
-echo '{"cycleIds": ["9bpIHEWQ", "poTVCNrc", "MmCkIqwq"], "defaultValue": 0.0032914859645957195, "description": "VozsjIXO", "name": "2EUsAfBv", "tags": ["o6Llcalk", "s2R3VMti", "pTVxXAF8"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["9bpIHEWQ", "poTVCNrc", "MmCkIqwq"], "defaultValue": 0.0032914859645957195, "description": "VozsjIXO", "name": "2EUsAfBv", "tags": ["o6Llcalk", "pTVxXAF8", "s2R3VMti"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -763,7 +763,7 @@ eval_tap $? 66 'BulkResetUserStatItem2' test.out
 
 #- 67 CreateStat1
 # body param: body
-echo '{"cycleIds": ["hdiS41VB", "pAGIapYf", "tYZkBXiE"], "defaultValue": 0.4303432922187934, "description": "EUvoBlbH", "incrementOnly": true, "maximum": 0.879647195099073, "minimum": 0.028796480984580097, "name": "obxtljIf", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "gjP9onbx", "tags": ["fXO3HkJT", "FcxS2OZZ", "OPscPA2n"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["hdiS41VB", "tYZkBXiE", "pAGIapYf"], "defaultValue": 0.4303432922187934, "description": "EUvoBlbH", "incrementOnly": true, "maximum": 0.879647195099073, "minimum": 0.028796480984580097, "name": "obxtljIf", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "gjP9onbx", "tags": ["OPscPA2n", "FcxS2OZZ", "fXO3HkJT"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat1 \

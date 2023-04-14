@@ -23,6 +23,39 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements(op);
         }
+        public static Platform.Model.EntitlementPagingSlicedResult? Execute(
+            this QueryEntitlements1.QueryEntitlements1Builder builder,
+            string namespace_
+        )
+        {
+            QueryEntitlements1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1(op);
+        }
+        public static Platform.Model.BulkEntitlementGrantResult? Execute(
+            this GrantEntitlements.GrantEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            GrantEntitlements op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GrantEntitlements(op);
+        }
+        public static Platform.Model.BulkEntitlementRevokeResult? Execute(
+            this RevokeEntitlements.RevokeEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            RevokeEntitlements op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeEntitlements(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetEntitlement.GetEntitlementBuilder builder,
             string entitlementId,

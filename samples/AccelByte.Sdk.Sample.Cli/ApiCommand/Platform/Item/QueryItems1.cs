@@ -66,6 +66,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
 
+        [SdkCommandArgument("sectionExclusive")]
+        public bool? SectionExclusive { get; set; }
+
         [SdkCommandArgument("sortBy")]
         public List<string>? SortBy { get; set; }
 
@@ -101,6 +104,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Limit,
                 Offset,
                 Region,
+                SectionExclusive,
                 (SortBy is null ? null : QueryItems1SortBy.NewValue(SortBy)),
                 StoreId,
                 Tags,

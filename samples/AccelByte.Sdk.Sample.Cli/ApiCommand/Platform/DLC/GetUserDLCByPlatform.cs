@@ -18,14 +18,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuserdlc")]
-    public class GetUserDLCCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getuserdlcbyplatform")]
+    public class GetUserDLCByPlatformCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserDLC"; } }
+        public string OperationName { get { return "GetUserDLCByPlatform"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,9 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandArgument("type")]
-        public string? Type { get; set; }
+        public string Type { get; set; } = String.Empty;
 
-        public GetUserDLCCommand(AccelByteSDK sdk)
+        public GetUserDLCByPlatformCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -45,13 +45,13 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
 
-            GetUserDLC operation = new GetUserDLC(
+            GetUserDLCByPlatform operation = new GetUserDLCByPlatform(
                 Namespace,
                 UserId,
-                (Type is null ? null : GetUserDLCType.NewValue(Type))
+                GetUserDLCByPlatformType.NewValue(Type)
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.UserDLCRecord>? response = wrapper.GetUserDLC(operation);
+            AccelByte.Sdk.Api.Platform.Model.UserDLC? response = wrapper.GetUserDLCByPlatform(operation);
             if (response == null)
                 return "No response from server.";
 

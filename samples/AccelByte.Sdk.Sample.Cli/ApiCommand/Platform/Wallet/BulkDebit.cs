@@ -18,40 +18,36 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuserdlc")]
-    public class GetUserDLCCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "bulkdebit")]
+    public class BulkDebitCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserDLC"; } }
+        public string OperationName { get { return "BulkDebit"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
+        [SdkCommandData("body")]
+        public List<BulkDebitRequest> Body { get; set; } = new List<BulkDebitRequest>();
 
-        [SdkCommandArgument("type")]
-        public string? Type { get; set; }
-
-        public GetUserDLCCommand(AccelByteSDK sdk)
+        public BulkDebitCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Wallet wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Wallet(_SDK);
 
-            GetUserDLC operation = new GetUserDLC(
+            BulkDebit operation = new BulkDebit(
                 Namespace,
-                UserId,
-                (Type is null ? null : GetUserDLCType.NewValue(Type))
+                Body
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.UserDLCRecord>? response = wrapper.GetUserDLC(operation);
+            AccelByte.Sdk.Api.Platform.Model.BulkDebitResult? response = wrapper.BulkDebit(operation);
             if (response == null)
                 return "No response from server.";
 

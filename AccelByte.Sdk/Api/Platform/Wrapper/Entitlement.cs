@@ -23,6 +23,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.QueryEntitlements.Builder.SetWrapperObject(this); }
         }
+        public QueryEntitlements1.QueryEntitlements1Builder QueryEntitlements1Op
+        {
+            get { return Operation.QueryEntitlements1.Builder.SetWrapperObject(this); }
+        }
+        public GrantEntitlements.GrantEntitlementsBuilder GrantEntitlementsOp
+        {
+            get { return Operation.GrantEntitlements.Builder.SetWrapperObject(this); }
+        }
+        public RevokeEntitlements.RevokeEntitlementsBuilder RevokeEntitlementsOp
+        {
+            get { return Operation.RevokeEntitlements.Builder.SetWrapperObject(this); }
+        }
         public GetEntitlement.GetEntitlementBuilder GetEntitlementOp
         {
             get { return Operation.GetEntitlement.Builder.SetWrapperObject(this); }
@@ -198,6 +210,33 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         #endregion
 
         public Model.EntitlementPagingSlicedResult? QueryEntitlements(QueryEntitlements input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementPagingSlicedResult? QueryEntitlements1(QueryEntitlements1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.BulkEntitlementGrantResult? GrantEntitlements(GrantEntitlements input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.BulkEntitlementRevokeResult? RevokeEntitlements(RevokeEntitlements input)
         {
             var response = _sdk.RunRequest(input);
 

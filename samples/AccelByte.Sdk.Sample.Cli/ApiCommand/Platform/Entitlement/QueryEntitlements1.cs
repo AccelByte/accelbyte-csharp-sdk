@@ -18,40 +18,48 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuserdlc")]
-    public class GetUserDLCCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "queryentitlements1")]
+    public class QueryEntitlements1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserDLC"; } }
+        public string OperationName { get { return "QueryEntitlements1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
+        [SdkCommandArgument("activeOnly")]
+        public bool? ActiveOnly { get; set; }
 
-        [SdkCommandArgument("type")]
-        public string? Type { get; set; }
+        [SdkCommandArgument("itemIds")]
+        public List<string>? ItemIds { get; set; }
 
-        public GetUserDLCCommand(AccelByteSDK sdk)
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
+        public QueryEntitlements1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
-            GetUserDLC operation = new GetUserDLC(
+            QueryEntitlements1 operation = new QueryEntitlements1(
                 Namespace,
-                UserId,
-                (Type is null ? null : GetUserDLCType.NewValue(Type))
+                ActiveOnly,
+                ItemIds,
+                Limit,
+                Offset
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.UserDLCRecord>? response = wrapper.GetUserDLC(operation);
+            AccelByte.Sdk.Api.Platform.Model.EntitlementPagingSlicedResult? response = wrapper.QueryEntitlements1(operation);
             if (response == null)
                 return "No response from server.";
 

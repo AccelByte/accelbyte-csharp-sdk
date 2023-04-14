@@ -60,6 +60,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? Region { get; set; }
 
+            public bool? SectionExclusive { get; set; }
+
             public List<QueryItems1SortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
@@ -147,6 +149,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public QueryItems1Builder SetSectionExclusive(bool _sectionExclusive)
+            {
+                SectionExclusive = _sectionExclusive;
+                return this;
+            }
+
             public QueryItems1Builder SetSortBy(List<QueryItems1SortBy> _sortBy)
             {
                 SortBy = _sortBy;
@@ -206,6 +214,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.SectionExclusive != null) QueryParams["sectionExclusive"] = Convert.ToString(builder.SectionExclusive)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
@@ -235,6 +244,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             int? limit,
             int? offset,
             string? region,
+            bool? sectionExclusive,
             List<QueryItems1SortBy>? sortBy,
             string? storeId,
             string? tags,
@@ -255,6 +265,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
+            if (sectionExclusive != null) QueryParams["sectionExclusive"] = Convert.ToString(sectionExclusive)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy;
             if (storeId is not null) QueryParams["storeId"] = storeId;
             if (tags is not null) QueryParams["tags"] = tags;

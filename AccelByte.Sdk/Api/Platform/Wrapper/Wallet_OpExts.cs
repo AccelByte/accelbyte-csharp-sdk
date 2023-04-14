@@ -234,6 +234,28 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryWallets(op);
         }
+        public static Platform.Model.BulkCreditResult? Execute(
+            this BulkCredit.BulkCreditBuilder builder,
+            string namespace_
+        )
+        {
+            BulkCredit op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkCredit(op);
+        }
+        public static Platform.Model.BulkDebitResult? Execute(
+            this BulkDebit.BulkDebitBuilder builder,
+            string namespace_
+        )
+        {
+            BulkDebit op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkDebit(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this GetWallet.GetWalletBuilder builder,

@@ -18,40 +18,36 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getuserdlc")]
-    public class GetUserDLCCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "revokeentitlements")]
+    public class RevokeEntitlementsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "GetUserDLC"; } }
+        public string OperationName { get { return "RevokeEntitlements"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
+        [SdkCommandData("body")]
+        public List<string> Body { get; set; } = new List<string>();
 
-        [SdkCommandArgument("type")]
-        public string? Type { get; set; }
-
-        public GetUserDLCCommand(AccelByteSDK sdk)
+        public RevokeEntitlementsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.DLC wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.DLC(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
-            GetUserDLC operation = new GetUserDLC(
+            RevokeEntitlements operation = new RevokeEntitlements(
                 Namespace,
-                UserId,
-                (Type is null ? null : GetUserDLCType.NewValue(Type))
+                Body
             );
 
-            List<AccelByte.Sdk.Api.Platform.Model.UserDLCRecord>? response = wrapper.GetUserDLC(operation);
+            AccelByte.Sdk.Api.Platform.Model.BulkEntitlementRevokeResult? response = wrapper.RevokeEntitlements(operation);
             if (response == null)
                 return "No response from server.";
 

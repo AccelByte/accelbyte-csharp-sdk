@@ -260,7 +260,7 @@ eval_tap $? 21 'DeleteReward' test.out
 
 #- 22 UpdateReward
 # body param: body
-echo '{"currency": {"currencyCode": "4wWs6IpY", "namespace": "Bxafo9b4"}, "image": {"as": "xJyNnvHK", "caption": "rm8UuNlT", "height": 35, "imageUrl": "6N9yO0vy", "smallImageUrl": "D6J5brVo", "width": 39}, "itemId": "0e6POTjr", "nullFields": ["inAVVovp", "AAXNzcpb", "mX3lLFeX"], "quantity": 58, "type": "ITEM"}' > $TEMP_JSON_INPUT
+echo '{"currency": {"currencyCode": "4wWs6IpY", "namespace": "Bxafo9b4"}, "image": {"as": "xJyNnvHK", "caption": "rm8UuNlT", "height": 35, "imageUrl": "6N9yO0vy", "smallImageUrl": "D6J5brVo", "width": 39}, "itemId": "0e6POTjr", "nullFields": ["inAVVovp", "mX3lLFeX", "AAXNzcpb"], "quantity": 58, "type": "ITEM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op UpdateReward \

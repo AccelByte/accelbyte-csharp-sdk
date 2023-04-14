@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeletePlatformDLCConfig.Builder.SetWrapperObject(this); }
         }
+        public GetUserDLCByPlatform.GetUserDLCByPlatformBuilder GetUserDLCByPlatformOp
+        {
+            get { return Operation.GetUserDLCByPlatform.Builder.SetWrapperObject(this); }
+        }
         public GetUserDLC.GetUserDLCBuilder GetUserDLCOp
         {
             get { return Operation.GetUserDLC.Builder.SetWrapperObject(this); }
@@ -123,7 +127,16 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserDLC? GetUserDLC(GetUserDLC input)
+        public Model.UserDLC? GetUserDLCByPlatform(GetUserDLCByPlatform input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.UserDLCRecord>? GetUserDLC(GetUserDLC input)
         {
             var response = _sdk.RunRequest(input);
 

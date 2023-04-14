@@ -40,6 +40,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
 
+        [JsonPropertyName("sectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SectionId { get; set; }
+
     }
 
     public class OrderCreate<T1> : AccelByte.Sdk.Core.Model
@@ -74,6 +78,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("returnUrl")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ReturnUrl { get; set; }
+
+        [JsonPropertyName("sectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SectionId { get; set; }
 
     }
 

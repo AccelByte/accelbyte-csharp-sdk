@@ -14,50 +14,44 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// getUserDLC
+    /// getUserDLCByPlatform
     ///
-    /// Get user dlc records.
+    /// Get user dlc by platform.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
     ///   *  Returns : user dlc
     /// </summary>
-    public class GetUserDLC : AccelByte.Sdk.Core.Operation
+    public class GetUserDLCByPlatform : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetUserDLCBuilder Builder { get => new GetUserDLCBuilder(); }
+        public static GetUserDLCByPlatformBuilder Builder { get => new GetUserDLCByPlatformBuilder(); }
 
-        public class GetUserDLCBuilder
-            : OperationBuilder<GetUserDLCBuilder>
+        public class GetUserDLCByPlatformBuilder
+            : OperationBuilder<GetUserDLCByPlatformBuilder>
         {
 
-            public GetUserDLCType? Type { get; set; }
+
+
+
+
+            internal GetUserDLCByPlatformBuilder() { }
 
 
 
 
 
-            internal GetUserDLCBuilder() { }
 
-
-            public GetUserDLCBuilder SetType(GetUserDLCType _type)
-            {
-                Type = _type;
-                return this;
-            }
-
-
-
-
-
-            public GetUserDLC Build(
+            public GetUserDLCByPlatform Build(
                 string namespace_,
-                string userId
+                string userId,
+                GetUserDLCByPlatformType type
             )
             {
-                GetUserDLC op = new GetUserDLC(this,
+                GetUserDLCByPlatform op = new GetUserDLCByPlatform(this,
                     namespace_,
-                    userId
+                    userId,
+                    type
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -65,15 +59,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private GetUserDLC(GetUserDLCBuilder builder,
+        private GetUserDLCByPlatform(GetUserDLCByPlatformBuilder builder,
             string namespace_,
-            string userId
+            string userId,
+            GetUserDLCByPlatformType type
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
-            if (builder.Type is not null) QueryParams["type"] = builder.Type.Value;
+            if (type is not null) QueryParams["type"] = type.Value;
 
 
 
@@ -84,10 +79,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public GetUserDLC(
+        public GetUserDLCByPlatform(
             string namespace_,
             string userId,
-            GetUserDLCType? type
+            GetUserDLCByPlatformType type
         )
         {
             PathParams["namespace"] = namespace_;
@@ -103,7 +98,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/dlc/records";
+        public override string Path => "/platform/admin/namespaces/{namespace}/users/{userId}/dlc";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -114,7 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.UserDLCRecord>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.UserDLC? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -122,11 +117,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.UserDLCRecord>>(payload);
+                return JsonSerializer.Deserialize<Model.UserDLC>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.UserDLCRecord>>(payload);
+                return JsonSerializer.Deserialize<Model.UserDLC>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -135,27 +130,27 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
     }
 
-    public class GetUserDLCType : StringEnum<GetUserDLCType>
+    public class GetUserDLCByPlatformType : StringEnum<GetUserDLCByPlatformType>
     {
-        public static readonly GetUserDLCType EPICGAMES
-            = new GetUserDLCType("EPICGAMES");
+        public static readonly GetUserDLCByPlatformType EPICGAMES
+            = new GetUserDLCByPlatformType("EPICGAMES");
 
-        public static readonly GetUserDLCType PSN
-            = new GetUserDLCType("PSN");
+        public static readonly GetUserDLCByPlatformType PSN
+            = new GetUserDLCByPlatformType("PSN");
 
-        public static readonly GetUserDLCType STEAM
-            = new GetUserDLCType("STEAM");
+        public static readonly GetUserDLCByPlatformType STEAM
+            = new GetUserDLCByPlatformType("STEAM");
 
-        public static readonly GetUserDLCType XBOX
-            = new GetUserDLCType("XBOX");
+        public static readonly GetUserDLCByPlatformType XBOX
+            = new GetUserDLCByPlatformType("XBOX");
 
 
-        public static implicit operator GetUserDLCType(string value)
+        public static implicit operator GetUserDLCByPlatformType(string value)
         {
             return NewValue(value);
         }
 
-        public GetUserDLCType(string enumValue)
+        public GetUserDLCByPlatformType(string enumValue)
             : base(enumValue)
         {
 

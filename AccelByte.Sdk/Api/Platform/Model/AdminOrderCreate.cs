@@ -58,6 +58,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Sandbox { get; set; }
 
+        [JsonPropertyName("sectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SectionId { get; set; }
+
     }
 
     public class AdminOrderCreate<T1> : AccelByte.Sdk.Core.Model
@@ -108,6 +112,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("sandbox")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Sandbox { get; set; }
+
+        [JsonPropertyName("sectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SectionId { get; set; }
 
     }
 
