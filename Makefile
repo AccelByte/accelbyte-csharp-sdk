@@ -74,3 +74,28 @@ version:
 			sed -i "s@<Version>[0-9]\+\.[0-9]\+\.[0-9]\+</Version>@<Version>$$VERSION_NEW</Version>@" AccelByte.Sdk/AccelByte.Sdk.csproj &&		# Bump SDK \
 			sed -i "s@<AssemblyVersion>[0-9]\+\.[0-9]\+\.[0-9]\+</AssemblyVersion>@<AssemblyVersion>$$VERSION_NEW</AssemblyVersion>@" AccelByte.Sdk/AccelByte.Sdk.csproj &&		# Bump SDK \
 			sed -i "s@Include="AccelByte.Sdk" Version="[0-9]\+\.[0-9]\+\.[0-9]\+"@Include="AccelByte.Sdk" Version="$$VERSION_OLD"@" AccelByte.Sdk/AccelByte.Sdk.csproj			# Bump getting-started sample app
+
+outstanding_deprecation:
+	find * -type f -iname '*.cs' \
+		| xargs awk ' \
+			BEGIN { \
+				count_ok = 0; \
+				count_not_ok = 0; \
+				"date +%s -d \"6 months ago\"" | getline limit_epoch; \
+			} \
+			match($$0,/\[Obsolete\("([0-9]{4}-[0-9]{1,2}-[0-9]{1,2})/,since_date) { \
+				"date +%s -d " since_date[1] | getline since_epoch; \
+				if (limit_epoch < since_epoch) { \
+					count_ok += 1; \
+					print "ok - " FILENAME ":" $$0; \
+				} \
+				else { \
+					count_not_ok += 1; \
+					print "not ok - " FILENAME ":" $$0; \
+				} \
+			}	\
+			END {	\
+				exit (count_not_ok ? 1 : 0); \
+			}' \
+		| tee outstanding_deprecation.out
+	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out) 
