@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateContentRequest Body { get; set; } = new ModelsUpdateContentRequest();
+        public ModelsAdminUpdateContentRequest Body { get; set; } = new ModelsAdminUpdateContentRequest();
 
         public SingleAdminUpdateContentS3Command(AccelByteSDK sdk)
         {

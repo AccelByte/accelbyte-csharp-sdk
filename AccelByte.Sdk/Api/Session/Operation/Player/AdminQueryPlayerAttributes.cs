@@ -22,9 +22,10 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - userID : user who owns the attributes.
     /// - crossplayEnabled : set to true if the player wants to enable crossplay to their session (default: false).
     /// - platforms : list of the player's 3rd party platform account information.
-    /// - name : platform name. supported platforms: STEAM
+    /// - name : platform name. supported platforms: STEAM, XBOX, PSN
     /// - userID : platform userID
     /// - data : other data that the player wants to store.
+    /// - currentPlatform : latest user game platform.
     /// </summary>
     public class AdminQueryPlayerAttributes : AccelByte.Sdk.Core.Operation
     {

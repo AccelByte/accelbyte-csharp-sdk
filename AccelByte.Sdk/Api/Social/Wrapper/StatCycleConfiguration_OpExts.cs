@@ -34,6 +34,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).CreateStatCycle(op);
         }
+        public static Social.Model.BulkStatCycleResult? Execute(
+            this BulkGetStatCycle.BulkGetStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            BulkGetStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycle(op);
+        }
         public static Social.Model.StatCycleInfo? Execute(
             this GetStatCycle.GetStatCycleBuilder builder,
             string cycleId,
@@ -123,6 +134,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycles1(op);
+        }
+        public static Social.Model.BulkStatCycleResult? Execute(
+            this BulkGetStatCycle1.BulkGetStatCycle1Builder builder,
+            string namespace_
+        )
+        {
+            BulkGetStatCycle1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycle1(op);
         }
         public static Social.Model.StatCycleInfo? Execute(
             this GetStatCycle1.GetStatCycle1Builder builder,

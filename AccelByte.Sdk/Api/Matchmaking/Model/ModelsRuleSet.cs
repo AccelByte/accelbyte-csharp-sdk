@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public ModelsAllianceRule? Alliance { get; set; }
 
         [JsonPropertyName("alliance_flexing_rule")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsAllianceFlexingRule>? AllianceFlexingRule { get; set; }
 
         [JsonPropertyName("flexing_rule")]
@@ -28,6 +29,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public bool? RebalanceEnable { get; set; }
 
         [JsonPropertyName("sub_game_modes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, ModelsSubGameMode>? SubGameModes { get; set; }
 
     }

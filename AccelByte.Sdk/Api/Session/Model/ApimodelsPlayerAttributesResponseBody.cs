@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("crossplayEnabled")]
         public bool? CrossplayEnabled { get; set; }
 
+        [JsonPropertyName("currentPlatform")]
+        public string? CurrentPlatform { get; set; }
+
         [JsonPropertyName("data")]
         public Dictionary<string, object>? Data { get; set; }
 
@@ -27,6 +30,9 @@ namespace AccelByte.Sdk.Api.Session.Model
     {
         [JsonPropertyName("crossplayEnabled")]
         public bool? CrossplayEnabled { get; set; }
+
+        [JsonPropertyName("currentPlatform")]
+        public string? CurrentPlatform { get; set; }
 
         [JsonPropertyName("data")]
         public T1? Data { get; set; }

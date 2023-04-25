@@ -7,47 +7,51 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Lobby.Model;
+using AccelByte.Sdk.Api.Cloudsave.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Lobby.Operation
+namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
     /// <summary>
-    /// personalChatHistory
+    /// getOtherPlayerPublicRecordHandlerV1
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:CHAT [READ]` with scope `social`
+    /// Required valid user token with permission: `NAMESPACE:{namespace}:USER:*:PUBLIC:CLOUDSAVE:RECORD [READ]`
     /// 
-    /// load personal chat history in a namespace.
+    /// Required scope: `social`
+    /// 
+    /// Retrieve other player public record key and payload in bulk under given namespace.
+    /// 
+    /// Maximum bulk key limit per request 20
     /// </summary>
-    public class PersonalChatHistory : AccelByte.Sdk.Core.Operation
+    public class GetOtherPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PersonalChatHistoryBuilder Builder { get => new PersonalChatHistoryBuilder(); }
+        public static GetOtherPlayerPublicRecordHandlerV1Builder Builder { get => new GetOtherPlayerPublicRecordHandlerV1Builder(); }
 
-        public class PersonalChatHistoryBuilder
-            : OperationBuilder<PersonalChatHistoryBuilder>
+        public class GetOtherPlayerPublicRecordHandlerV1Builder
+            : OperationBuilder<GetOtherPlayerPublicRecordHandlerV1Builder>
         {
 
 
 
 
 
-            internal PersonalChatHistoryBuilder() { }
+            internal GetOtherPlayerPublicRecordHandlerV1Builder() { }
 
 
 
 
 
 
-            public PersonalChatHistory Build(
-                string friendId,
+            public GetOtherPlayerPublicRecordHandlerV1 Build(
+                ModelsBulkGetPlayerRecordsRequest body,
                 string namespace_,
                 string userId
             )
             {
-                PersonalChatHistory op = new PersonalChatHistory(this,
-                    friendId,
+                GetOtherPlayerPublicRecordHandlerV1 op = new GetOtherPlayerPublicRecordHandlerV1(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -57,13 +61,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private PersonalChatHistory(PersonalChatHistoryBuilder builder,
-            string friendId,
+        private GetOtherPlayerPublicRecordHandlerV1(GetOtherPlayerPublicRecordHandlerV1Builder builder,
+            ModelsBulkGetPlayerRecordsRequest body,
             string namespace_,
             string userId
         )
         {
-            PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -71,19 +74,19 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public PersonalChatHistory(
-            string friendId,
+        public GetOtherPlayerPublicRecordHandlerV1(
             string namespace_,
-            string userId
+            string userId,
+            Model.ModelsBulkGetPlayerRecordsRequest body
         )
         {
-            PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -91,14 +94,15 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/lobby/chat/namespaces/{namespace}/users/{userId}/friend/{friendId}";
+        public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/{userId}/records/public/bulk";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -107,7 +111,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ModelChatMessageResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsBulkGetPlayerRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -115,11 +119,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsBulkGetPlayerRecordResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsBulkGetPlayerRecordResponse>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

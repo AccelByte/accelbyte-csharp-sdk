@@ -60,7 +60,7 @@ eval_tap $? 2 'AdminFindActionList' test.out
 
 #- 3 AdminCreateModAction
 # body param: body
-echo '{"actionId": "bBuz5zko", "actionName": "aUEzGS3q", "eventName": "Zf0PbemS"}' > $TEMP_JSON_INPUT
+echo '{"actionId": "bBuz5zkoaUEzGS3q", "actionName": "Zf0PbemSBELbZ0VB", "eventName": "UGA7nkDeev2Oj060"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op AdminCreateModAction \
@@ -72,14 +72,14 @@ eval_tap $? 3 'AdminCreateModAction' test.out
 $CLI_EXE \
     --sn reporting \
     --op AdminFindExtensionCategoryList \
-    --order 'descending' \
-    --sortBy 'extensionCategoryName' \
+    --order 'ascending' \
+    --sortBy 'extensionCategory' \
     > test.out 2>&1
 eval_tap $? 4 'AdminFindExtensionCategoryList' test.out
 
 #- 5 AdminCreateExtensionCategory
 # body param: body
-echo '{"extensionCategory": "RHkaiKsm", "extensionCategoryName": "IiRLR3Il", "serviceSource": "NJKxhPfW"}' > $TEMP_JSON_INPUT
+echo '{"extensionCategory": "dIabcFbSmeuIBroF", "extensionCategoryName": "7bwRgwKvzESbhpxl", "serviceSource": "DdEs4igdKeLmy8tZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op AdminCreateExtensionCategory \
@@ -98,7 +98,7 @@ eval_tap $? 6 'Get' test.out
 
 #- 7 Upsert
 # body param: body
-echo '{"categoryLimits": [{"extensionCategory": "dIabcFbS", "maxReportPerTicket": 24, "name": "Zs4233oQ"}, {"extensionCategory": "WoXFeqeu", "maxReportPerTicket": 71, "name": "ESbhpxlD"}, {"extensionCategory": "dEs4igdK", "maxReportPerTicket": 10, "name": "r5AQUBqS"}], "timeInterval": 75, "userMaxReportPerTimeInterval": 16}' > $TEMP_JSON_INPUT
+echo '{"categoryLimits": [{"extensionCategory": "tTYZLJ58QqcV3Icu", "maxReportPerTicket": 80, "name": "m2jUc9iav3tTqlE9"}, {"extensionCategory": "oLDPD0Lfle8ESU1M", "maxReportPerTicket": 83, "name": "KedBfbWvKa5Ou124"}, {"extensionCategory": "TsbQsxYFxGGHrfQk", "maxReportPerTicket": 12, "name": "SU3PDyIAGfGq1FNm"}], "timeInterval": 89, "userMaxReportPerTimeInterval": 40}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op Upsert \
@@ -112,14 +112,14 @@ $CLI_EXE \
     --sn reporting \
     --op AdminListReasonGroups \
     --namespace $AB_NAMESPACE \
-    --limit '41' \
-    --offset '93' \
+    --limit '100' \
+    --offset '44' \
     > test.out 2>&1
 eval_tap $? 8 'AdminListReasonGroups' test.out
 
 #- 9 CreateReasonGroup
 # body param: body
-echo '{"reasonIds": ["P12c61ts", "3fMI04rm", "2jUc9iav"], "title": "3tTqlE9o"}' > $TEMP_JSON_INPUT
+echo '{"reasonIds": ["7WAfWXfUfwGB03tz", "8qIH4uRdNO08HN6s", "9p8Y5c9eItJtiNmY"], "title": "3y3n2Rim4NBqhuNt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op CreateReasonGroup \
@@ -132,7 +132,7 @@ eval_tap $? 9 'CreateReasonGroup' test.out
 $CLI_EXE \
     --sn reporting \
     --op GetReasonGroup \
-    --groupId 'LDPD0Lfl' \
+    --groupId 'j8FOvKZjs1tLpERf' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 10 'GetReasonGroup' test.out
@@ -141,18 +141,18 @@ eval_tap $? 10 'GetReasonGroup' test.out
 $CLI_EXE \
     --sn reporting \
     --op DeleteReasonGroup \
-    --groupId 'e8ESU1MO' \
+    --groupId '77LzPoORBkRmZ0A2' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 11 'DeleteReasonGroup' test.out
 
 #- 12 UpdateReasonGroup
 # body param: body
-echo '{"reasonIds": ["8XnVaEyj", "mifJDYa1", "TJPUszmF"], "title": "GEkJVvqD"}' > $TEMP_JSON_INPUT
+echo '{"reasonIds": ["zyZsb4FvWFIHPIbO", "jpls9BZTYc5BsdSS", "VaAzzn4GbgkKeCaS"], "title": "6qyUCscHXs8PlOBl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op UpdateReasonGroup \
-    --groupId 'SU3PDyIA' \
+    --groupId 'fUOqv7WmCuqcsNM7' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -163,16 +163,16 @@ $CLI_EXE \
     --sn reporting \
     --op AdminGetReasons \
     --namespace $AB_NAMESPACE \
-    --group 'GfGq1FNm' \
-    --limit '89' \
-    --offset '40' \
-    --title 'WvUvDPnK' \
+    --group 'YAnbq4DjmYUMhD9q' \
+    --limit '96' \
+    --offset '84' \
+    --title '89D356pVsUtNandd' \
     > test.out 2>&1
 eval_tap $? 13 'AdminGetReasons' test.out
 
 #- 14 CreateReason
 # body param: body
-echo '{"description": "oECjGUg8", "groupIds": ["67xodwuG", "14ID5l5w", "j6K2wEMn"], "title": "ckjlW6By"}' > $TEMP_JSON_INPUT
+echo '{"description": "zgwxYdQc5hEfefdo", "groupIds": ["pcEM0JHfof2Hwi7v", "g3osbh0fL2h7eJvA", "S2W4uqkhwSC7Eajw"], "title": "HO3LfvwPewrf19Nj"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op CreateReason \
@@ -194,8 +194,8 @@ $CLI_EXE \
     --sn reporting \
     --op AdminGetUnusedReasons \
     --namespace $AB_NAMESPACE \
-    --extensionCategory 'wsSSZTGl' \
-    --category 'ubsmhjXc' \
+    --extensionCategory 'm50xCDlPeNq0CvMX' \
+    --category 'tyUWXrdZaFeacGT2' \
     > test.out 2>&1
 eval_tap $? 16 'AdminGetUnusedReasons' test.out
 
@@ -204,7 +204,7 @@ $CLI_EXE \
     --sn reporting \
     --op AdminGetReason \
     --namespace $AB_NAMESPACE \
-    --reasonId 'ScOUvrjJ' \
+    --reasonId 'x6o28Njxyw7RHldq' \
     > test.out 2>&1
 eval_tap $? 17 'AdminGetReason' test.out
 
@@ -213,18 +213,18 @@ $CLI_EXE \
     --sn reporting \
     --op DeleteReason \
     --namespace $AB_NAMESPACE \
-    --reasonId 'BO7tbkTG' \
+    --reasonId '0m7NjUZ95Z5XDLBN' \
     > test.out 2>&1
 eval_tap $? 18 'DeleteReason' test.out
 
 #- 19 UpdateReason
 # body param: body
-echo '{"description": "YKqRMSTi", "groupIds": ["sP0MrSda", "Fy0pJYCd", "fkfyt09r"], "title": "o5fHdWqJ"}' > $TEMP_JSON_INPUT
+echo '{"description": "9YGVPtkjt0OyBlJi", "groupIds": ["4RbZ0Iy11mfOFjCz", "ZVcGomWF1oAqUNFD", "tXnXLvOAsW8wYh4g"], "title": "q7pRVZVLJiDx3au9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op UpdateReason \
     --namespace $AB_NAMESPACE \
-    --reasonId 'TNjrmpnn' \
+    --reasonId 'b9QjhzDlnJmi4XaB' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 19 'UpdateReason' test.out
@@ -234,17 +234,17 @@ $CLI_EXE \
     --sn reporting \
     --op ListReports \
     --namespace $AB_NAMESPACE \
-    --category 'EckHH8kT' \
-    --limit '67' \
-    --offset '29' \
-    --reportedUserId 'bgkKeCaS' \
-    --sortBy '6qyUCscH' \
+    --category 'TgoXjfdUQHa3Rxsp' \
+    --limit '92' \
+    --offset '82' \
+    --reportedUserId 'qwdbTR2sgzfaQrUC' \
+    --sortBy 'W9fgo69uv1bkFx8D' \
     > test.out 2>&1
 eval_tap $? 20 'ListReports' test.out
 
 #- 21 AdminSubmitReport
 # body param: body
-echo '{"additionalInfo": {"Xs8PlOBl": {}, "fUOqv7Wm": {}, "CuqcsNM7": {}}, "category": "USER", "comment": "rcQfucSq", "extensionCategory": "2X8gFuJO", "objectId": "Rk4j04Yf", "objectType": "nXTsQUrA", "reason": "0WWyKl2K", "userId": "5mCSoGeQ"}' > $TEMP_JSON_INPUT
+echo '{"additionalInfo": {"mbC9UqYdYrdxNnuM": {}, "cAwrSzYnrcetxObe": {}, "isZelKuD0iJ6fs3z": {}}, "category": "UGC", "comment": "H4WxGWRH7fz4BdPh", "extensionCategory": "LtHRJOImSq37aeAa", "objectId": "Gq0NIj53gXkmrayv", "objectType": "cIYiWxIAxfvLzSpD", "reason": "FY3lxe16KsSRzkf2", "userId": "HzBcEio5UyvuFv5z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op AdminSubmitReport \
@@ -255,7 +255,7 @@ eval_tap $? 21 'AdminSubmitReport' test.out
 
 #- 22 CreateModerationRule
 # body param: body
-echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "cEM0JHfo", "duration": 11, "reason": "yDxAAYcR", "skipNotif": false, "type": "JdoSTxNC"}, "deleteChat": false, "extensionActionIds": ["AIjNmbfo", "W8bDq5jP", "qzhN0YdG"], "hideContent": true}, "active": true, "category": "UGC", "extensionCategory": "A9LXRwU6", "reason": "WLgpQE9n", "threshold": 85}' > $TEMP_JSON_INPUT
+echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "wosJGnUyCMEbHh1u", "duration": 63, "reason": "0yJJ0uCjjaNCRV3h", "skipNotif": true, "type": "IiTEoTCSxjAqg9oG"}, "deleteChat": true, "extensionActionIds": ["24DKGwgZ85vyFJR8", "euQBLVu27iwplLJd", "zYS9K0VvwE6MAqPc"], "hideContent": false}, "active": true, "category": "UGC", "extensionCategory": "wxyqQQIXVmrtRlq1", "reason": "jv60HTnmFrl3gYx6", "threshold": 25}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op CreateModerationRule \
@@ -266,12 +266,12 @@ eval_tap $? 22 'CreateModerationRule' test.out
 
 #- 23 UpdateModerationRule
 # body param: body
-echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "eNq0CvMX", "duration": 41, "reason": "4Xf2nfYv", "skipNotif": true, "type": "eacGT2x6"}, "deleteChat": false, "extensionActionIds": ["sxaALiBw", "pNJornrC", "QpMJj5ig"], "hideContent": true}, "active": false, "category": "USER", "extensionCategory": "t8xnPoWT", "reason": "dHAkcyAy", "threshold": 23}' > $TEMP_JSON_INPUT
+echo '{"action": "HideContent", "actions": {"banAccount": {"comment": "Nu3ERxV0UTaiSzfi", "duration": 25, "reason": "FnBERe8qNYRTYSaZ", "skipNotif": true, "type": "u7rNRVdygfKmUkzj"}, "deleteChat": false, "extensionActionIds": ["SD1pZGMfPdGIOAZ8", "6un0L98WUoXvfU4q", "MIpfgxw2ff5twRYb"], "hideContent": true}, "active": false, "category": "UGC", "extensionCategory": "2r4wWs6IpYBxafo9", "reason": "b4xJyNnvHKrm8UuN", "threshold": 23}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op UpdateModerationRule \
     --namespace $AB_NAMESPACE \
-    --ruleId 'drHlPcXG' \
+    --ruleId 'QJrpEBbVvBn8Lsf2' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 23 'UpdateModerationRule' test.out
@@ -281,7 +281,7 @@ $CLI_EXE \
     --sn reporting \
     --op DeleteModerationRule \
     --namespace $AB_NAMESPACE \
-    --ruleId 'Gl0Xw3ve' \
+    --ruleId 'qSAtizV9hzsVbpJL' \
     > test.out 2>&1
 eval_tap $? 24 'DeleteModerationRule' test.out
 
@@ -292,7 +292,7 @@ $CLI_EXE \
     --sn reporting \
     --op UpdateModerationRuleStatus \
     --namespace $AB_NAMESPACE \
-    --ruleId 'CzZVcGom' \
+    --ruleId 'ovpAAXNzcpbmX3lL' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 25 'UpdateModerationRuleStatus' test.out
@@ -302,10 +302,10 @@ $CLI_EXE \
     --sn reporting \
     --op GetModerationRules \
     --namespace $AB_NAMESPACE \
-    --category 'WF1oAqUN' \
-    --extensionCategory 'FDtXnXLv' \
-    --limit '82' \
-    --offset '0' \
+    --category 'FeXCiaXP8jBjK81t' \
+    --extensionCategory '2V9TVauFcGkPgQ0h' \
+    --limit '2' \
+    --offset '34' \
     > test.out 2>&1
 eval_tap $? 26 'GetModerationRules' test.out
 
@@ -314,7 +314,7 @@ $CLI_EXE \
     --sn reporting \
     --op GetModerationRuleDetails \
     --namespace $AB_NAMESPACE \
-    --ruleId 'AsW8wYh4' \
+    --ruleId '2tLrsMeoZiRYkbhE' \
     > test.out 2>&1
 eval_tap $? 27 'GetModerationRuleDetails' test.out
 
@@ -323,14 +323,14 @@ $CLI_EXE \
     --sn reporting \
     --op ListTickets \
     --namespace $AB_NAMESPACE \
-    --category 'gq7pRVZV' \
-    --extensionCategory 'LJiDx3au' \
-    --limit '22' \
-    --offset '2' \
-    --order 'MFzeiMRk' \
-    --reportedUserId 'cOr1L0TM' \
-    --sortBy 'IczbYilO' \
-    --status 'ziwG8CPL' \
+    --category 'M1zTNY3lpincuf5d' \
+    --extensionCategory '5saQvKfFRqBam8jP' \
+    --limit '40' \
+    --offset '75' \
+    --order 'bpIHEWQMmCkIqwqp' \
+    --reportedUserId 'oTVCNrcaVozsjIXO' \
+    --sortBy '2EUsAfBvo6Llcalk' \
+    --status 's2R3VMtipTVxXAF8' \
     > test.out 2>&1
 eval_tap $? 28 'ListTickets' test.out
 
@@ -339,8 +339,8 @@ $CLI_EXE \
     --sn reporting \
     --op TicketStatistic \
     --namespace $AB_NAMESPACE \
-    --extensionCategory 'OzSZm9K3' \
-    --category 'cMY617HS' \
+    --extensionCategory 'KhOKqbrECijFxOpO' \
+    --category 'zxeTLJQsZcTEzXaX' \
     > test.out 2>&1
 eval_tap $? 29 'TicketStatistic' test.out
 
@@ -349,7 +349,7 @@ $CLI_EXE \
     --sn reporting \
     --op GetTicketDetail \
     --namespace $AB_NAMESPACE \
-    --ticketId 'CYZaL46I' \
+    --ticketId 'UzpsAV6ct6XITL0Q' \
     > test.out 2>&1
 eval_tap $? 30 'GetTicketDetail' test.out
 
@@ -358,7 +358,7 @@ $CLI_EXE \
     --sn reporting \
     --op DeleteTicket \
     --namespace $AB_NAMESPACE \
-    --ticketId '3PgCcQ0a' \
+    --ticketId 'EkadMSQluAoED9oY' \
     > test.out 2>&1
 eval_tap $? 31 'DeleteTicket' test.out
 
@@ -367,20 +367,20 @@ $CLI_EXE \
     --sn reporting \
     --op GetReportsByTicket \
     --namespace $AB_NAMESPACE \
-    --ticketId 'xTWnmyEY' \
-    --limit '77' \
-    --offset '36' \
+    --ticketId 'wS8oLyErKvRtHFGJ' \
+    --limit '89' \
+    --offset '5' \
     > test.out 2>&1
 eval_tap $? 32 'GetReportsByTicket' test.out
 
 #- 33 UpdateTicketResolutions
 # body param: body
-echo '{"notes": "QTpvLH6Q", "status": "OPEN"}' > $TEMP_JSON_INPUT
+echo '{"notes": "oGW7VBG1VB2sp2x9", "status": "CLOSED"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op UpdateTicketResolutions \
     --namespace $AB_NAMESPACE \
-    --ticketId 'EBP8kSSF' \
+    --ticketId 'el3TiwTycqpVdINX' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 33 'UpdateTicketResolutions' test.out
@@ -390,8 +390,8 @@ $CLI_EXE \
     --sn reporting \
     --op PublicListReasonGroups \
     --namespace $AB_NAMESPACE \
-    --limit '19' \
-    --offset '39' \
+    --limit '51' \
+    --offset '93' \
     > test.out 2>&1
 eval_tap $? 34 'PublicListReasonGroups' test.out
 
@@ -400,16 +400,16 @@ $CLI_EXE \
     --sn reporting \
     --op PublicGetReasons \
     --namespace $AB_NAMESPACE \
-    --group 'euL3wQQP' \
-    --limit '24' \
-    --offset '46' \
-    --title 'KuD0iJ6f' \
+    --group 'vkSp0WbvxQWI0QGC' \
+    --limit '83' \
+    --offset '47' \
+    --title 'VUWBhGolwafIfbF1' \
     > test.out 2>&1
 eval_tap $? 35 'PublicGetReasons' test.out
 
 #- 36 SubmitReport
 # body param: body
-echo '{"additionalInfo": {"s3zL9H4W": {}, "xGWRH7fz": {}, "4BdPhLtH": {}}, "category": "UGC", "comment": "JOImSq37", "extensionCategory": "aeAaGq0N", "objectId": "Ij53gXkm", "objectType": "rayvcIYi", "reason": "WxIAxfvL", "userId": "zSpDFY3l"}' > $TEMP_JSON_INPUT
+echo '{"additionalInfo": {"GLFnrQ4T5cmw7U1T": {}, "xiS06UEoaDZpXOWz": {}, "pXOi2cpajtqcXjPk": {}}, "category": "EXTENSION", "comment": "Dg5v71kGCEt7h1mV", "extensionCategory": "wIQCJmQkvWbQrn2W", "objectId": "0VkOF0pQOY0UCcVi", "objectType": "iFKNjkT5hcONCaOy", "reason": "ATBFgqLeAzvdcUEh", "userId": "WRo6ROvbuPQwl9dV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn reporting \
     --op SubmitReport \

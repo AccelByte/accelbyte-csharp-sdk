@@ -127,6 +127,25 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             throw new HttpResponseException(code, payloadString);
         }
+
+        public Model.ModelsPublicAchievementResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        {
+            if (code == (HttpStatusCode)204)
+            {
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                return JsonSerializer.Deserialize<Model.ModelsPublicAchievementResponse<T1>>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ModelsPublicAchievementResponse<T1>>(payload);
+            }
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
+            throw new HttpResponseException(code, payloadString);
+        }
     }
 
 }

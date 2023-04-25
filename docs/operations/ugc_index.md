@@ -246,6 +246,7 @@
 |---|---|
 | `models.AddDownloadCountResponse` | [ModelsAddDownloadCountResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAddDownloadCountResponse.cs) |
 | `models.AdminGetContentBulkRequest` | [ModelsAdminGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminGetContentBulkRequest.cs) |
+| `models.AdminUpdateContentRequest` | [ModelsAdminUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminUpdateContentRequest.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelRequest.cs) |
 | `models.ChannelResponse` | [ModelsChannelResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelResponse.cs) |
 | `models.ContentDownloadResponse` | [ModelsContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponse.cs) |

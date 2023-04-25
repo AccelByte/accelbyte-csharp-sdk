@@ -34,6 +34,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// 
     /// Supported platforms:
     /// 1. STEAM
+    /// 2. PSN
+    /// 3. XBOX
+    /// 
+    /// Reserved attributes key:
+    /// 1. preference: used to store preference of the leader and it is non-replaceable to keep the initial behavior of
+    /// the session regardless the leader changes.
+    /// 2. NATIVESESSIONTITLE: used for session sync, to define name of session displayed on PlayStation system UI.
     /// </summary>
     public class PublicCreateParty : AccelByte.Sdk.Core.Operation
     {

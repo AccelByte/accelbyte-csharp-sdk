@@ -24,17 +24,6 @@ namespace AccelByte.Sdk.Core
         }
         private Friends? _Friends = null;
 
-        public Chat Chat
-        {
-            get
-            {
-                if (_Chat == null)
-                    _Chat = new Chat(_SdkObject);
-                return _Chat;
-            }
-        }
-        private Chat? _Chat = null;
-
         public Config Config
         {
             get

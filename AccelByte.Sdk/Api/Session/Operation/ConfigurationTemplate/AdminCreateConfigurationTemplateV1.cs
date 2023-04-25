@@ -29,6 +29,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.
     /// - To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
     /// - If Persistent False the session will be inactive if all member left and DS terminate or removing
+    /// - nativeSessionSetting:
+    /// - XboxSessionTemplateName: the XBox session template name that correspondent to the AB session template, and is needed to define XBox session's joinRestriction and maxMembersCount when doing the session sync.
+    /// - XboxServiceConfigID: the XBox service configuration ID.
+    /// - PSNServiceLabel: the PSN service label.
+    /// - SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.
     /// </summary>
     public class AdminCreateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

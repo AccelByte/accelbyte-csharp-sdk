@@ -35,6 +35,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         {
             get { return Operation.PublicDeletePlayerPublicRecordHandlerV1.Builder.SetWrapperObject(this); }
         }
+        public GetOtherPlayerPublicRecordKeyHandlerV1.GetOtherPlayerPublicRecordKeyHandlerV1Builder GetOtherPlayerPublicRecordKeyHandlerV1Op
+        {
+            get { return Operation.GetOtherPlayerPublicRecordKeyHandlerV1.Builder.SetWrapperObject(this); }
+        }
+        public GetOtherPlayerPublicRecordHandlerV1.GetOtherPlayerPublicRecordHandlerV1Builder GetOtherPlayerPublicRecordHandlerV1Op
+        {
+            get { return Operation.GetOtherPlayerPublicRecordHandlerV1.Builder.SetWrapperObject(this); }
+        }
         public GetPlayerRecordHandlerV1.GetPlayerRecordHandlerV1Builder GetPlayerRecordHandlerV1Op
         {
             get { return Operation.GetPlayerRecordHandlerV1.Builder.SetWrapperObject(this); }
@@ -97,6 +105,24 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListPlayerRecordKeysResponse? GetOtherPlayerPublicRecordKeyHandlerV1(GetOtherPlayerPublicRecordKeyHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsBulkGetPlayerRecordResponse? GetOtherPlayerPublicRecordHandlerV1(GetOtherPlayerPublicRecordHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

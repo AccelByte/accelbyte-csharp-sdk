@@ -17,14 +17,24 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// AdminUpdateContentS3
     ///
     /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    /// All request body are required except payload, preview, tags, contentType, updateContentFile and customAttributes.
-    /// contentType values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
-    /// If not specified, it will use fileExtension value.
-    /// To update content's file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+    /// 
+    /// All request body are required except `payload`, `preview`, `tags`,`contentType`, `updateContentFile`, `customAttributes` and `shareCode`.
+    /// 
+    /// `contentType` values is used to enforce the Content-Type header needed by the client to upload the content using the S3 presigned URL.
+    /// 
+    /// If not specified, it will use `fileExtension` value.
+    /// 
+    /// To update content file, set `updateContentFile` to `true` and upload the file using URL in `payloadURL.url` in response body.
+    /// 
+    /// `shareCode` format should follows:
+    /// 
+    /// Max length: 7
+    /// Available characters: abcdefhkpqrstuxyz
     /// 
     /// 
     /// 
-    /// NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
+    /// 
+    ///  NOTE: Preview is Legacy Code, please use Screenshot for better solution to display preview of a content
     /// </summary>
     public class AdminUpdateContentS3 : AccelByte.Sdk.Core.Operation
     {
@@ -47,7 +57,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 
 
             public AdminUpdateContentS3 Build(
-                ModelsUpdateContentRequest body,
+                ModelsAdminUpdateContentRequest body,
                 string channelId,
                 string contentId,
                 string namespace_,
@@ -68,7 +78,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
         }
 
         private AdminUpdateContentS3(AdminUpdateContentS3Builder builder,
-            ModelsUpdateContentRequest body,
+            ModelsAdminUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -96,7 +106,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
             string contentId,
             string namespace_,
             string userId,
-            Model.ModelsUpdateContentRequest body
+            Model.ModelsAdminUpdateContentRequest body
         )
         {
             PathParams["channelId"] = channelId;

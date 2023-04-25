@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsCreateConfigurationTemplateRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("NativeSessionSetting")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsNativeSessionSetting? NativeSessionSetting { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 

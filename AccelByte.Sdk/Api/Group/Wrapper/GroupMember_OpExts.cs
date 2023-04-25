@@ -179,6 +179,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.GroupMember)builder.WrapperObject!).GetUserJoinedGroupInformationPublicV2(op);
         }
+        public static Group.Model.ModelsGetUserGroupInformationResponseV1? Execute(
+            this AdminGetUserGroupStatusInformationV2.AdminGetUserGroupStatusInformationV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserGroupStatusInformationV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Group.Wrapper.GroupMember)builder.WrapperObject!).AdminGetUserGroupStatusInformationV2(op);
+        }
         public static Group.Model.ModelsMemberRequestGroupResponseV1? Execute(
             this AcceptGroupInvitationPublicV2.AcceptGroupInvitationPublicV2Builder builder,
             string groupId,

@@ -82,7 +82,6 @@
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelRequest.cs) |
 | `models.ChannelV1` | [ModelsChannelV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelV1.cs) |
 | `models.Combination` | [ModelsCombination](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCombination.cs) |
-| `models.Combination.alliances` | [ModelsCombinationAlliances](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCombinationAlliances.cs) |
 | `models.CreateChannelResponse` | [ModelsCreateChannelResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCreateChannelResponse.cs) |
 | `models.DequeueRequest` | [ModelsDequeueRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsDequeueRequest.cs) |
 | `models.FlexingRule` | [ModelsFlexingRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsFlexingRule.cs) |
@@ -105,6 +104,7 @@
 | `models.RebalanceResponse` | [ModelsRebalanceResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRebalanceResponse.cs) |
 | `models.ResultAttributeRequest` | [ModelsResultAttributeRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeRequest.cs) |
 | `models.ResultAttributeResponse` | [ModelsResultAttributeResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeResponse.cs) |
+| `models.Role` | [ModelsRole](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRole.cs) |
 | `models.RuleSet` | [ModelsRuleSet](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSet.cs) |
 | `models.RuleSetV1` | [ModelsRuleSetV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSetV1.cs) |
 | `models.SubGameMode` | [ModelsSubGameMode](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSubGameMode.cs) |

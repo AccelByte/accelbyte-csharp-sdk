@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this SingleAdminUpdateContentS3.SingleAdminUpdateContentS3Builder builder,
-            ModelsUpdateContentRequest body,
+            ModelsAdminUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_
@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this SingleAdminUpdateContentS3.SingleAdminUpdateContentS3Builder builder,
-            ModelsUpdateContentRequest body,
+            ModelsAdminUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_
@@ -337,7 +337,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
-            ModelsUpdateContentRequest body,
+            ModelsAdminUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,
@@ -357,7 +357,7 @@ namespace AccelByte.Sdk.Api
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
-            ModelsUpdateContentRequest body,
+            ModelsAdminUpdateContentRequest body,
             string channelId,
             string contentId,
             string namespace_,

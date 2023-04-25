@@ -79,6 +79,16 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public Model.ModelsAchievementResponse<T1>? AdminCreateNewAchievement<T1>(AdminCreateNewAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Stream? ExportAchievements(ExportAchievements input)
         {
             var response = _sdk.RunRequest(input);
@@ -106,11 +116,31 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public Model.ModelsAchievementResponse<T1>? AdminGetAchievement<T1>(AdminGetAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsAchievementResponse? AdminUpdateAchievement(AdminUpdateAchievement input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsAchievementResponse<T1>? AdminUpdateAchievement<T1>(AdminUpdateAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -147,6 +177,16 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsPublicAchievementResponse<T1>? PublicGetAchievement<T1>(PublicGetAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -42,6 +42,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("nativeSessionSetting")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsNativeSessionSetting? NativeSessionSetting { get; set; }
+
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
 

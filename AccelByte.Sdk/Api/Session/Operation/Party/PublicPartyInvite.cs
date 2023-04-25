@@ -17,6 +17,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicPartyInvite
     ///
     /// Invite a user to a party.
+    /// platformID represents the native platform of the invitee. API will return the corresponding native platform's userID.
+    /// supported platforms:
+    /// - STEAM
+    /// - XBOX
+    /// - PSN
     /// </summary>
     public class PublicPartyInvite : AccelByte.Sdk.Core.Operation
     {

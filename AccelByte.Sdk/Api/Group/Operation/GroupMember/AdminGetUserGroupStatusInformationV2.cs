@@ -7,47 +7,52 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Lobby.Model;
+using AccelByte.Sdk.Api.Group.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Lobby.Operation
+namespace AccelByte.Sdk.Api.Group.Operation
 {
     /// <summary>
-    /// adminChatHistory
+    /// AdminGetUserGroupStatusInformationV2
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:CHAT [READ]` with scope `social`
     /// 
-    /// get chat history in a namespace.
+    /// 
+    /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP:MEMBER [READ]"
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint is used to get user group status information.
     /// </summary>
-    public class AdminChatHistory : AccelByte.Sdk.Core.Operation
+    public class AdminGetUserGroupStatusInformationV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminChatHistoryBuilder Builder { get => new AdminChatHistoryBuilder(); }
+        public static AdminGetUserGroupStatusInformationV2Builder Builder { get => new AdminGetUserGroupStatusInformationV2Builder(); }
 
-        public class AdminChatHistoryBuilder
-            : OperationBuilder<AdminChatHistoryBuilder>
+        public class AdminGetUserGroupStatusInformationV2Builder
+            : OperationBuilder<AdminGetUserGroupStatusInformationV2Builder>
         {
 
 
 
 
 
-            internal AdminChatHistoryBuilder() { }
+            internal AdminGetUserGroupStatusInformationV2Builder() { }
 
 
 
 
 
 
-            public AdminChatHistory Build(
-                string friendId,
+            public AdminGetUserGroupStatusInformationV2 Build(
+                string groupId,
                 string namespace_,
                 string userId
             )
             {
-                AdminChatHistory op = new AdminChatHistory(this,
-                    friendId,
+                AdminGetUserGroupStatusInformationV2 op = new AdminGetUserGroupStatusInformationV2(this,
+                    groupId,
                     namespace_,
                     userId
                 );
@@ -57,13 +62,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private AdminChatHistory(AdminChatHistoryBuilder builder,
-            string friendId,
+        private AdminGetUserGroupStatusInformationV2(AdminGetUserGroupStatusInformationV2Builder builder,
+            string groupId,
             string namespace_,
             string userId
         )
         {
-            PathParams["friendId"] = friendId;
+            PathParams["groupId"] = groupId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -77,13 +82,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         }
         #endregion
 
-        public AdminChatHistory(
-            string friendId,
+        public AdminGetUserGroupStatusInformationV2(
+            string groupId,
             string namespace_,
             string userId
         )
         {
-            PathParams["friendId"] = friendId;
+            PathParams["groupId"] = groupId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -96,18 +101,18 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/lobby/v1/admin/chat/namespaces/{namespace}/users/{userId}/friends/{friendId}";
+        public override string Path => "/group/v2/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}/status";
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ModelChatMessageResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsGetUserGroupInformationResponseV1? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -115,11 +120,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGetUserGroupInformationResponseV1>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsGetUserGroupInformationResponseV1>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

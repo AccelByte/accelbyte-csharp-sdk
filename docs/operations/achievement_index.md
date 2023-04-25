@@ -58,6 +58,10 @@
 ### Achievements Wrapper:  [Achievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/Achievements.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/achievement/v1/admin/namespaces/{namespace}/achievements` | POST | AdminCreateNewAchievement | [AdminCreateNewAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminCreateNewAchievement.cs) | [AdminCreateNewAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminCreateNewAchievement.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode}` | GET | AdminGetAchievement | [AdminGetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminGetAchievement.cs) | [AdminGetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminGetAchievement.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/achievements/{achievementCode}` | PUT | AdminUpdateAchievement | [AdminUpdateAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/AdminUpdateAchievement.cs) | [AdminUpdateAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/AdminUpdateAchievement.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/achievements/{achievementCode}` | GET | PublicGetAchievement | [PublicGetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/Achievements/PublicGetAchievement.cs) | [PublicGetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/Achievements/PublicGetAchievement.cs) |
 
 ### Global Achievements Wrapper:  [GlobalAchievements](../../AccelByte.Sdk/Api/Achievement/Wrapper/GlobalAchievements.cs)
 | Endpoint | Method | ID | Class | Example |

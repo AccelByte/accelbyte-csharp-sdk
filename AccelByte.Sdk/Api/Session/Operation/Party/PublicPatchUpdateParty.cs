@@ -17,6 +17,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicPatchUpdateParty
     ///
     /// Update specified fields from party data. Note: Join type can only be updated by the party's leader.
+    /// 
+    /// Reserved attributes key:
+    /// 1. preference: used to store preference of the leader and it is non-replaceable to keep the initial behavior of
+    /// the session regardless the leader changes.
+    /// 2. NATIVESESSIONTITLE: used for session sync, to define name of session displayed on PlayStation system UI.
     /// </summary>
     public class PublicPatchUpdateParty : AccelByte.Sdk.Core.Operation
     {

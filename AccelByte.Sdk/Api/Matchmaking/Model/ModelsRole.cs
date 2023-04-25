@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Matchmaking.Model
 {
-    public class ModelsCombinationAlliances : AccelByte.Sdk.Core.Model
+    public class ModelsRole : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("max")]
         public int? Max { get; set; }

@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         [JsonPropertyName("achievementCode")]
         public string? AchievementCode { get; set; }
 
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? CustomAttributes { get; set; }
+
         [JsonPropertyName("defaultLanguage")]
         public string? DefaultLanguage { get; set; }
 
@@ -48,5 +52,49 @@ namespace AccelByte.Sdk.Api.Achievement.Model
 
     }
 
+    public class ModelsAchievementRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("achievementCode")]
+        public string? AchievementCode { get; set; }
+
+        [JsonPropertyName("customAttributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? CustomAttributes { get; set; }
+
+        [JsonPropertyName("defaultLanguage")]
+        public string? DefaultLanguage { get; set; }
+
+        [JsonPropertyName("description")]
+        public Dictionary<string, string>? Description { get; set; }
+
+        [JsonPropertyName("global")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Global { get; set; }
+
+        [JsonPropertyName("goalValue")]
+        public double? GoalValue { get; set; }
+
+        [JsonPropertyName("hidden")]
+        public bool? Hidden { get; set; }
+
+        [JsonPropertyName("incremental")]
+        public bool? Incremental { get; set; }
+
+        [JsonPropertyName("lockedIcons")]
+        public List<ModelsIcon>? LockedIcons { get; set; }
+
+        [JsonPropertyName("name")]
+        public Dictionary<string, string>? Name { get; set; }
+
+        [JsonPropertyName("statCode")]
+        public string? StatCode { get; set; }
+
+        [JsonPropertyName("tags")]
+        public List<string>? Tags { get; set; }
+
+        [JsonPropertyName("unlockedIcons")]
+        public List<ModelsIcon>? UnlockedIcons { get; set; }
+
+    }
 
 }

@@ -7,49 +7,53 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Lobby.Model;
+using AccelByte.Sdk.Api.Social.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Lobby.Operation
+namespace AccelByte.Sdk.Api.Social.Operation
 {
     /// <summary>
-    /// getPersonalChatHistoryV1Public
+    /// bulkGetStatCycle
     ///
-    /// Required valid user authorization
-    /// 
-    /// 
-    /// load personal chat history in a namespace based on Friend User ID
-    /// 
-    /// Action Code: 50101
+    /// Bulk get stat cycle.
+    /// Other detail info:
+    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
+    ///         *  Returns : list of stat cycles
     /// </summary>
-    public class GetPersonalChatHistoryV1Public : AccelByte.Sdk.Core.Operation
+    public class BulkGetStatCycle : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetPersonalChatHistoryV1PublicBuilder Builder { get => new GetPersonalChatHistoryV1PublicBuilder(); }
+        public static BulkGetStatCycleBuilder Builder { get => new BulkGetStatCycleBuilder(); }
 
-        public class GetPersonalChatHistoryV1PublicBuilder
-            : OperationBuilder<GetPersonalChatHistoryV1PublicBuilder>
+        public class BulkGetStatCycleBuilder
+            : OperationBuilder<BulkGetStatCycleBuilder>
         {
 
 
-
-
-
-            internal GetPersonalChatHistoryV1PublicBuilder() { }
-
+            public Model.BulkStatCycleRequest? Body { get; set; }
 
 
 
 
+            internal BulkGetStatCycleBuilder() { }
 
-            public GetPersonalChatHistoryV1Public Build(
-                string friendId,
+
+
+            public BulkGetStatCycleBuilder SetBody(Model.BulkStatCycleRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+
+            public BulkGetStatCycle Build(
                 string namespace_
             )
             {
-                GetPersonalChatHistoryV1Public op = new GetPersonalChatHistoryV1Public(this,
-                    friendId,
+                BulkGetStatCycle op = new BulkGetStatCycle(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -58,44 +62,43 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
         }
 
-        private GetPersonalChatHistoryV1Public(GetPersonalChatHistoryV1PublicBuilder builder,
-            string friendId,
+        private BulkGetStatCycle(BulkGetStatCycleBuilder builder,
             string namespace_
         )
         {
-            PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
 
 
 
 
 
+            BodyParams = builder.Body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public GetPersonalChatHistoryV1Public(
-            string friendId,
-            string namespace_
+        public BulkGetStatCycle(
+            string namespace_,
+            Model.BulkStatCycleRequest body
         )
         {
-            PathParams["friendId"] = friendId;
             PathParams["namespace"] = namespace_;
 
 
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/lobby/v1/public/chat/namespaces/{namespace}/users/me/friends/{friendId}";
+        public override string Path => "/social/v1/admin/namespaces/{namespace}/statCycles/bulk";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -104,7 +107,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ModelChatMessageResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.BulkStatCycleResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -112,11 +115,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.BulkStatCycleResult>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelChatMessageResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.BulkStatCycleResult>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

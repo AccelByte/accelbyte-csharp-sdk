@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateContentRequest Body { get; set; } = new ModelsUpdateContentRequest();
+        public ModelsAdminUpdateContentRequest Body { get; set; } = new ModelsAdminUpdateContentRequest();
 
         public AdminUpdateContentS3Command(AccelByteSDK sdk)
         {

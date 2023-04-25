@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.CreateStatCycle.Builder.SetWrapperObject(this); }
         }
+        public BulkGetStatCycle.BulkGetStatCycleBuilder BulkGetStatCycleOp
+        {
+            get { return Operation.BulkGetStatCycle.Builder.SetWrapperObject(this); }
+        }
         public GetStatCycle.GetStatCycleBuilder GetStatCycleOp
         {
             get { return Operation.GetStatCycle.Builder.SetWrapperObject(this); }
@@ -51,6 +55,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.GetStatCycles1.Builder.SetWrapperObject(this); }
         }
+        public BulkGetStatCycle1.BulkGetStatCycle1Builder BulkGetStatCycle1Op
+        {
+            get { return Operation.BulkGetStatCycle1.Builder.SetWrapperObject(this); }
+        }
         public GetStatCycle1.GetStatCycle1Builder GetStatCycle1Op
         {
             get { return Operation.GetStatCycle1.Builder.SetWrapperObject(this); }
@@ -67,6 +75,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public Model.StatCycleInfo? CreateStatCycle(CreateStatCycle input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.BulkStatCycleResult? BulkGetStatCycle(BulkGetStatCycle input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -131,6 +148,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public Model.StatCyclePagingSlicedResult? GetStatCycles1(GetStatCycles1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.BulkStatCycleResult? BulkGetStatCycle1(BulkGetStatCycle1 input)
         {
             var response = _sdk.RunRequest(input);
 

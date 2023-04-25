@@ -21,13 +21,6 @@
 | `/friends/namespaces/{namespace}/users/{userId}/add/bulk` | POST | AddFriendsWithoutConfirmation | [AddFriendsWithoutConfirmation](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/AddFriendsWithoutConfirmation.cs) | [AddFriendsWithoutConfirmation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/AddFriendsWithoutConfirmation.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}` | GET | GetListOfFriends | [GetListOfFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetListOfFriends.cs) | [GetListOfFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetListOfFriends.cs) |
 
-### chat Wrapper:  [Chat](../../AccelByte.Sdk/Api/Lobby/Wrapper/Chat.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/lobby/chat/namespaces/{namespace}/users/{userId}/friend/{friendId}` | GET | PersonalChatHistory | [PersonalChatHistory](../../AccelByte.Sdk/Api/Lobby/Operation/Chat/PersonalChatHistory.cs) | [PersonalChatHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Chat/PersonalChatHistory.cs) |
-| `/lobby/v1/admin/chat/namespaces/{namespace}/users/{userId}/friends/{friendId}` | GET | AdminChatHistory | [AdminChatHistory](../../AccelByte.Sdk/Api/Lobby/Operation/Chat/AdminChatHistory.cs) | [AdminChatHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Chat/AdminChatHistory.cs) |
-| `/lobby/v1/public/chat/namespaces/{namespace}/users/me/friends/{friendId}` | GET | GetPersonalChatHistoryV1Public | [GetPersonalChatHistoryV1Public](../../AccelByte.Sdk/Api/Lobby/Operation/Chat/GetPersonalChatHistoryV1Public.cs) | [GetPersonalChatHistoryV1Public](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Chat/GetPersonalChatHistoryV1Public.cs) |
-
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -150,10 +143,6 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### chat Wrapper:  [Chat](../../AccelByte.Sdk/Api/Lobby/Wrapper/Chat.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -207,7 +196,6 @@
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Lobby/Model/LogAppMessageDeclaration.cs) |
 | `model.BulkAddFriendsRequest` | [ModelBulkAddFriendsRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkAddFriendsRequest.cs) |
 | `model.BulkUsersFreeFormNotificationRequestV1` | [ModelBulkUsersFreeFormNotificationRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkUsersFreeFormNotificationRequestV1.cs) |
-| `model.ChatMessageResponse` | [ModelChatMessageResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelChatMessageResponse.cs) |
 | `model.CreateTemplateRequest` | [ModelCreateTemplateRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTemplateRequest.cs) |
 | `model.CreateTopicRequest` | [ModelCreateTopicRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTopicRequest.cs) |
 | `model.CreateTopicRequestV1` | [ModelCreateTopicRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTopicRequestV1.cs) |

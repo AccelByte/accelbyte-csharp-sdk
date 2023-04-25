@@ -22,6 +22,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// To update only specified fields, please use following endpoint:
     /// method : PATCH
     /// API : /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
+    /// 
+    /// Reserved attributes key:
+    /// 1. preference: used to store preference of the leader and it is non-replaceable to keep the initial behavior of
+    /// the session regardless the leader changes.
+    /// 2. NATIVESESSIONTITLE: used for session sync, to define name of session displayed on PlayStation system UI.
     /// </summary>
     public class PublicUpdateParty : AccelByte.Sdk.Core.Operation
     {

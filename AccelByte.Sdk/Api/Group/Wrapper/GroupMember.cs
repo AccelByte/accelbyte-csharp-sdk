@@ -71,6 +71,10 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         {
             get { return Operation.GetUserJoinedGroupInformationPublicV2.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserGroupStatusInformationV2.AdminGetUserGroupStatusInformationV2Builder AdminGetUserGroupStatusInformationV2Op
+        {
+            get { return Operation.AdminGetUserGroupStatusInformationV2.Builder.SetWrapperObject(this); }
+        }
         public AcceptGroupInvitationPublicV2.AcceptGroupInvitationPublicV2Builder AcceptGroupInvitationPublicV2Op
         {
             get { return Operation.AcceptGroupInvitationPublicV2.Builder.SetWrapperObject(this); }
@@ -226,6 +230,15 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetGroupMemberListResponseV1? GetUserJoinedGroupInformationPublicV2(GetUserJoinedGroupInformationPublicV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetUserGroupInformationResponseV1? AdminGetUserGroupStatusInformationV2(AdminGetUserGroupStatusInformationV2 input)
         {
             var response = _sdk.RunRequest(input);
 
