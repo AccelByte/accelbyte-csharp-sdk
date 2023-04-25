@@ -75,6 +75,20 @@ pipeline {
         }
       }
     }
+    stage('PublishToNuget') {
+      when {
+        expression {
+          return ((params.ACTION == 'PUSH+RELEASE') || (params.ACTION == 'NUGET'))
+        }
+      }
+      steps {
+        script {          
+          withCredentials([usernamePassword(credentialsId: 'nuget-accelbyte-csharp-sdk', passwordVariable: 'NUGET_TOKEN', usernameVariable: 'NUGET_EMAIL')]) {
+            sh "make pack_push NUGET_API_KEY=\$NUGET_TOKEN"
+          }
+        }
+      }
+    }
     stage('Pull') {
       when {
         expression { 
