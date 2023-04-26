@@ -1,3 +1,24 @@
+<a name="v0.33.0"></a>
+## [v0.33.0]
+
+## integration
+- test: due to code level breaking change caused by openapi spec changes in platform service
+
+## makefile
+- ci: add outstanding_deprecation target
+
+## jenkinsfile.generate
+- ci: add outstanding deprecation check
+- ci: fix error when no outstanding deprecation
+
+## github
+- ci: add publish to nuget step for github jenkin job
+
+## sdk
+- chore: - generated from source sdk spec commit: 833206f541b49d45e4d1a5d1f5ea5acb1b9c1688
+
+
+
 <a name="v0.32.0"><a>
 ## [v0.32.0]
 - Sample: update CLI sample app to use op builder pattern
