@@ -17,10 +17,12 @@ pack:
 pack_push:
 	@test -n "$(NUGET_API_KEY)" || (echo "NUGET_API_KEY is not set" ; exit 1)
 	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ \
+		-e HOME="/data" \
 		-e DOTNET_CLI_HOME="/data" \
 		mcr.microsoft.com/dotnet/sdk:6.0 \
 		dotnet pack AccelByte.Sdk/AccelByte.Sdk.csproj -c Release
 	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ \
+		-e HOME="/data" \
 		-e DOTNET_CLI_HOME="/data" \
 		mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) \
 		dotnet nuget push "AccelByte.Sdk/bin/Release/*.nupkg" --skip-duplicate --api-key "$(NUGET_API_KEY)" --source "https://api.nuget.org/v3/index.json"
