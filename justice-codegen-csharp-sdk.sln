@@ -21,25 +21,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7ED4C109-0
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Aws.Lambda.Tests", "samples\AccelByte.Sdk.Sample.Aws.Lambda\test\AccelByte.Sdk.Sample.Aws.Lambda.Tests\AccelByte.Sdk.Sample.Aws.Lambda.Tests.csproj", "{598175BD-9C0A-4638-AFB2-188D642BE2D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.OIDC.Web", "samples\AccelByte.Sdk.Sample.OIDC.Web\AccelByte.Sdk.Sample.OIDC.Web.csproj", "{4C659080-FBF4-498A-B1B4-E38A5C850CEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.OIDC.Web", "samples\AccelByte.Sdk.Sample.OIDC.Web\AccelByte.Sdk.Sample.OIDC.Web.csproj", "{4C659080-FBF4-498A-B1B4-E38A5C850CEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe.Server", "samples\AccelByte.Sdk.Sample.TicTacToe.Server\AccelByte.Sdk.Sample.TicTacToe.Server.csproj", "{400A8962-6EFA-4A7D-929D-C7938235D956}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.TicTacToe.Server", "samples\AccelByte.Sdk.Sample.TicTacToe.Server\AccelByte.Sdk.Sample.TicTacToe.Server.csproj", "{400A8962-6EFA-4A7D-929D-C7938235D956}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe.Game", "samples\AccelByte.Sdk.Sample.TicTacToe.Game\AccelByte.Sdk.Sample.TicTacToe.Game.csproj", "{F79D024A-6794-4972-860D-28DB9A9B38B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.TicTacToe.Game", "samples\AccelByte.Sdk.Sample.TicTacToe.Game\AccelByte.Sdk.Sample.TicTacToe.Game.csproj", "{F79D024A-6794-4972-860D-28DB9A9B38B4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AccelByte.Sdk.Sample.TicTacToe.Lambda", "AccelByte.Sdk.Sample.TicTacToe.Lambda", "{A93E44E1-B9F3-409F-AAFA-766995DFADDA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D9A7D1AC-17F3-4B84-82F4-4BF29F0884F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe.Lambda", "samples\AccelByte.Sdk.Sample.TicTacToe.Lambda\src\AccelByte.Sdk.Sample.TicTacToe.Lambda\AccelByte.Sdk.Sample.TicTacToe.Lambda.csproj", "{DB1760EE-41EA-4171-9752-7357B98F3855}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.TicTacToe.Lambda", "samples\AccelByte.Sdk.Sample.TicTacToe.Lambda\src\AccelByte.Sdk.Sample.TicTacToe.Lambda\AccelByte.Sdk.Sample.TicTacToe.Lambda.csproj", "{DB1760EE-41EA-4171-9752-7357B98F3855}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{64957C7E-6F56-42E5-9647-2D71A7685486}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests", "samples\AccelByte.Sdk.Sample.TicTacToe.Lambda\test\AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests\AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests.csproj", "{CC66006A-F119-45C3-A75A-B20082C755D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests", "samples\AccelByte.Sdk.Sample.TicTacToe.Lambda\test\AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests\AccelByte.Sdk.Sample.TicTacToe.Lambda.Tests.csproj", "{CC66006A-F119-45C3-A75A-B20082C755D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.TicTacToe", "samples\AccelByte.Sdk.Sample.TicTacToe\AccelByte.Sdk.Sample.TicTacToe.csproj", "{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.TicTacToe", "samples\AccelByte.Sdk.Sample.TicTacToe\AccelByte.Sdk.Sample.TicTacToe.csproj", "{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.GettingStarted", "samples\AccelByte.Sdk.Sample.GettingStarted\AccelByte.Sdk.Sample.GettingStarted.csproj", "{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.GettingStarted", "samples\AccelByte.Sdk.Sample.GettingStarted\AccelByte.Sdk.Sample.GettingStarted.csproj", "{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.CustomOperation", "samples\AccelByte.Sdk.Sample.CustomOperation\AccelByte.Sdk.Sample.CustomOperation.csproj", "{A8099710-9F0A-49CB-93B5-C26478218E2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.CustomOperation.Tests", "samples\AccelByte.Sdk.Sample.CustomOperation.Tests\AccelByte.Sdk.Sample.CustomOperation.Tests.csproj", "{00CD93EE-4783-4954-BB09-E20115193DD4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,18 +99,26 @@ Global
 		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8099710-9F0A-49CB-93B5-C26478218E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8099710-9F0A-49CB-93B5-C26478218E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8099710-9F0A-49CB-93B5-C26478218E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8099710-9F0A-49CB-93B5-C26478218E2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00CD93EE-4783-4954-BB09-E20115193DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00CD93EE-4783-4954-BB09-E20115193DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00CD93EE-4783-4954-BB09-E20115193DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00CD93EE-4783-4954-BB09-E20115193DD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9781AC78-EBD8-4C58-9535-18B85F843441} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
-		{4C659080-FBF4-498A-B1B4-E38A5C850CEB} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{95271080-B06D-4712-94D4-09900C546391} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{DF42FE42-6912-4108-B768-8A9E6A14E341} = {95271080-B06D-4712-94D4-09900C546391}
 		{3611E2C3-C428-40ED-AFE2-8308957E45C7} = {DF42FE42-6912-4108-B768-8A9E6A14E341}
 		{7ED4C109-0FAF-44B7-9ABE-948429D9EDD2} = {95271080-B06D-4712-94D4-09900C546391}
 		{598175BD-9C0A-4638-AFB2-188D642BE2D9} = {7ED4C109-0FAF-44B7-9ABE-948429D9EDD2}
+		{4C659080-FBF4-498A-B1B4-E38A5C850CEB} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{400A8962-6EFA-4A7D-929D-C7938235D956} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{F79D024A-6794-4972-860D-28DB9A9B38B4} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{A93E44E1-B9F3-409F-AAFA-766995DFADDA} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
@@ -116,6 +128,8 @@ Global
 		{CC66006A-F119-45C3-A75A-B20082C755D9} = {64957C7E-6F56-42E5-9647-2D71A7685486}
 		{15EB4B0F-1CF0-4D88-B1EE-454DE87E9861} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
+		{A8099710-9F0A-49CB-93B5-C26478218E2F} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
+		{00CD93EE-4783-4954-BB09-E20115193DD4} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0683A376-6097-43C6-B3B5-3820D97D171F}
