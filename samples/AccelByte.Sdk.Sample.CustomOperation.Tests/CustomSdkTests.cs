@@ -10,6 +10,8 @@ using AccelByte.Sdk.Sample.CustomOperation;
 
 namespace AccelByte.Sdk.Sample.CustomOperation.Tests
 {
+    [TestFixture(Category = "FluentIntegration")]
+    [Explicit]
     public class CustomSdkTests
     {
         protected MyCustomAccelByteSDK? _Sdk = null;
