@@ -56,15 +56,15 @@ namespace AccelByte.Sdk.Core.Repository
 
 namespace AccelByte.Sdk.Core
 {
-    public partial class AccelByteSdkBuilder
+    public partial class AccelByteSdkBuilder<T>
     {
-        public AccelByteSdkBuilder UseJsonCredentialRepository()
+        public AccelByteSdkBuilder<T> UseJsonCredentialRepository()
         {
             _Credential = JsonCredentialRepository.LoadFromDefaultFile();
             return this;
         }
 
-        public AccelByteSdkBuilder UseJsonCredentialRepository(string fileName)
+        public AccelByteSdkBuilder<T> UseJsonCredentialRepository(string fileName)
         {
             _Credential = JsonCredentialRepository.LoadFromFile(fileName);
             return this;

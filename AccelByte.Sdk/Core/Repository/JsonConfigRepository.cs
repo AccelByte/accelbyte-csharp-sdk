@@ -73,15 +73,15 @@ namespace AccelByte.Sdk.Core.Repository
 
 namespace AccelByte.Sdk.Core
 {
-    public partial class AccelByteSdkBuilder
+    public partial class AccelByteSdkBuilder<T>
     {
-        public AccelByteSdkBuilder UseJsonConfigRepository()
+        public AccelByteSdkBuilder<T> UseJsonConfigRepository()
         {
             _ConfigRepository = JsonConfigRepository.LoadFromDefaultFile();
             return this;
         }
 
-        public AccelByteSdkBuilder UseJsonConfigRepository(string fileName)
+        public AccelByteSdkBuilder<T> UseJsonConfigRepository(string fileName)
         {
             _ConfigRepository = JsonConfigRepository.LoadFromFile(fileName);
             return this;

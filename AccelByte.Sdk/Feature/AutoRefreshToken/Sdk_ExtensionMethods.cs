@@ -90,20 +90,20 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
     public static class SdkBuilder_ExtensionMethods
     {
-        public static AccelByteSdkBuilder UseAutoTokenRefresh(this AccelByteSdkBuilder builder)
+        public static AccelByteSdkBuilder<T> UseAutoTokenRefresh<T>(this AccelByteSdkBuilder<T> builder) where T : AccelByteSDK
         {
             builder.SetTokenRepository(new RefreshableTokenRepository());
             builder.AddOperationProcess(new AutoTokenRefreshOperationProcess());
             return builder;
         }
 
-        public static AccelByteSdkBuilder UseScheduledTokenRefresh(this AccelByteSdkBuilder builder)
+        public static AccelByteSdkBuilder<T> UseScheduledTokenRefresh<T>(this AccelByteSdkBuilder<T> builder) where T : AccelByteSDK
         {
             builder.SetTokenRepository(new ScheduledRefreshTokenRepository());
             return builder;
         }
 
-        public static AccelByteSdkBuilder UseScheduledTokenRefresh(this AccelByteSdkBuilder builder, Action onTokenRefreshed)
+        public static AccelByteSdkBuilder<T> UseScheduledTokenRefresh<T>(this AccelByteSdkBuilder<T> builder, Action onTokenRefreshed) where T : AccelByteSDK
         {
             builder.SetTokenRepository(new ScheduledRefreshTokenRepository(onTokenRefreshed));
             return builder;

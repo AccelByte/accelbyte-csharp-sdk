@@ -16,10 +16,17 @@ namespace AccelByte.Sdk.Core
             return (T)this;
         }
 
-        internal T SetWrapperObject(object wrapperObject)
+        public T SetWrapperObject(object wrapperObject)
         {
             WrapperObject = wrapperObject;
             return (T)this;
+        }
+
+        public TWrapper GetWrapperObject<TWrapper>()
+        {
+            if (WrapperObject == null)
+                throw new Exception($"No wrapper object assigned.");
+            return (TWrapper)WrapperObject;
         }
     }
 }

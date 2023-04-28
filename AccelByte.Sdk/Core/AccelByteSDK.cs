@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Core
 {
     public partial class AccelByteSDK : IDisposable
     {
-        public static AccelByteSdkBuilder Builder { get => new AccelByteSdkBuilder(); }
+        public static AccelByteSdkBuilder<AccelByteSDK> Builder { get => new AccelByteSdkBuilder<AccelByteSDK>(); }
 
         private List<ISdkService> _Services = new List<ISdkService>();
 
@@ -247,7 +247,7 @@ namespace AccelByte.Sdk.Core
         }
     }
 
-    public partial class AccelByteSdkBuilder
+    public partial class AccelByteSdkBuilder<T> where T : AccelByteSDK
     {
         private IHttpClient? _Client = null;
 
@@ -267,31 +267,31 @@ namespace AccelByte.Sdk.Core
 
         private List<ISdkService> _Services = new List<ISdkService>();
 
-        public AccelByteSdkBuilder SetHttpClient(IHttpClient client)
+        public AccelByteSdkBuilder<T> SetHttpClient(IHttpClient client)
         {
             _Client = client;
             return this;
         }
 
-        public AccelByteSdkBuilder UseDefaultHttpClient()
+        public AccelByteSdkBuilder<T> UseDefaultHttpClient()
         {
             _Client = AccelByte.Sdk.Core.Client.HttpClient.Default;
             return this;
         }
 
-        public AccelByteSdkBuilder SetTokenRepository(ITokenRepository repository)
+        public AccelByteSdkBuilder<T> SetTokenRepository(ITokenRepository repository)
         {
             _TokenRepository = repository;
             return this;
         }
 
-        public AccelByteSdkBuilder UseDefaultTokenRepository()
+        public AccelByteSdkBuilder<T> UseDefaultTokenRepository()
         {
             _TokenRepository = new DefaultTokenRepository();
             return this;
         }
 
-        public AccelByteSdkBuilder UseSharedTokenRepository()
+        public AccelByteSdkBuilder<T> UseSharedTokenRepository()
         {
             _TokenRepository = SharedTokenRepository.Instance;
             return this;
@@ -299,55 +299,55 @@ namespace AccelByte.Sdk.Core
 
         // Deprecated(2023-02-13): Please use default token repository instead.
         [Obsolete("# Deprecated(2023-02-13): Please use default token repository instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
-        public AccelByteSdkBuilder UseInMemoryTokenRepository()
+        public AccelByteSdkBuilder<T> UseInMemoryTokenRepository()
         {
             _TokenRepository = new InMemoryTokenRepository();
             return this;
         }
 
-        public AccelByteSdkBuilder SetConfigRepository(IConfigRepository repository)
+        public AccelByteSdkBuilder<T> SetConfigRepository(IConfigRepository repository)
         {
             _ConfigRepository = repository;
             return this;
         }
 
-        public AccelByteSdkBuilder UseDefaultConfigRepository()
+        public AccelByteSdkBuilder<T> UseDefaultConfigRepository()
         {
             _ConfigRepository = new DefaultConfigRepository();
             return this;
         }
 
-        public AccelByteSdkBuilder SetCredentialRepository(ICredentialRepository credential)
+        public AccelByteSdkBuilder<T> SetCredentialRepository(ICredentialRepository credential)
         {
             _Credential = credential;
             return this;
         }
 
-        public AccelByteSdkBuilder UseDefaultCredentialRepository()
+        public AccelByteSdkBuilder<T> UseDefaultCredentialRepository()
         {
             _Credential = new DefaultCredentialRepository();
             return this;
         }
 
-        public AccelByteSdkBuilder EnableLog()
+        public AccelByteSdkBuilder<T> EnableLog()
         {
             _EnableLogging = true;
             return this;
         }
 
-        public AccelByteSdkBuilder SetLogger(IHttpLogger logger)
+        public AccelByteSdkBuilder<T> SetLogger(IHttpLogger logger)
         {
             _Logger = logger;
             return this;
         }
 
-        public AccelByteSdkBuilder SetTokenValidator(ITokenValidator tokenValidator)
+        public AccelByteSdkBuilder<T> SetTokenValidator(ITokenValidator tokenValidator)
         {
             _TokenValidator = tokenValidator;
             return this;
         }
 
-        public AccelByteSdkBuilder AddOperationProcess(IOperationProcessPipeline opProcess)
+        public AccelByteSdkBuilder<T> AddOperationProcess(IOperationProcessPipeline opProcess)
         {
             _OpProcesses.Add(opProcess);
             return this;
@@ -358,7 +358,7 @@ namespace AccelByte.Sdk.Core
             _Services.Add(service);
         }
 
-        public AccelByteSDK Build()
+        public virtual T Build()
         {
             if (_Client == null)
                 throw IncompleteComponentException.NoHttpClient;
@@ -386,11 +386,18 @@ namespace AccelByte.Sdk.Core
             else
                 config.TokenValidator = new DefaultTokenValidator();
 
-            AccelByteSDK sdk;
+            /*AccelByteSDK sdk;
             if (_Services.Count > 0)
                 sdk = new AccelByteSDK(config, _Services);
             else
-                sdk = new AccelByteSDK(config);
+                sdk = new AccelByteSDK(config);*/
+            T? sdk;
+            if (_Services.Count > 0)
+                sdk = (T?)Activator.CreateInstance(typeof(T), config, _Services);
+            else
+                sdk = (T?)Activator.CreateInstance(typeof(T), config);
+            if (sdk == null)
+                throw new Exception($"Could not create instance of {typeof(T).FullName} due to missing matching constructor.");
 
             if (_TokenRepository is ISdkConsumerRepository)
                 ((ISdkConsumerRepository)_TokenRepository).SetSdkObject(sdk);

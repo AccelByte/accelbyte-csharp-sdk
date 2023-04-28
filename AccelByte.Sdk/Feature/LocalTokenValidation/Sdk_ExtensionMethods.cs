@@ -9,20 +9,20 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
 {
     public static class SdkBuilder_ExtensionMethods
     {
-        public static AccelByteSdkBuilder UseLocalTokenValidator(this AccelByteSdkBuilder builder)
+        public static AccelByteSdkBuilder<T> UseLocalTokenValidator<T>(this AccelByteSdkBuilder<T> builder) where T : AccelByteSDK
         {
             builder.SetTokenValidator(new LocalTokenValidator());
             return builder;
         }
 
-        public static AccelByteSdkBuilder UseAutoRefreshForTokenRevocationList(this AccelByteSdkBuilder builder)
+        public static AccelByteSdkBuilder<T> UseAutoRefreshForTokenRevocationList<T>(this AccelByteSdkBuilder<T> builder) where T : AccelByteSDK
         {
             TokenRevocationListRefresher refresher = new TokenRevocationListRefresher(60000);
             builder.RegisterService(refresher);
             return builder;
         }
 
-        public static AccelByteSdkBuilder UseAutoRefreshForTokenRevocationList(this AccelByteSdkBuilder builder, int refreshInterval)
+        public static AccelByteSdkBuilder<T> UseAutoRefreshForTokenRevocationList<T>(this AccelByteSdkBuilder<T> builder, int refreshInterval) where T : AccelByteSDK
         {
             TokenRevocationListRefresher refresher = new TokenRevocationListRefresher(refreshInterval);
             builder.RegisterService(refresher);
