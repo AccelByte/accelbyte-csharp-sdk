@@ -316,6 +316,82 @@ MyCustomOp newOp = MyCustomOp.Builder
 var response = customWrapper.CallMyCustomOp(newOp);
 ```
 
+## Implement Fluent Interface for Custom Operation using Custom SDK
+This section can be implemented using C# Extend SDK version v0.34.0 or above.
+
+To further enchance intuitiveness while using the sdk, you can implement fluent interface for your custom operation.
+See the modified code below as an example of fluent interface implementation.
+
+- Modify custom operation class
+```csharp
+...
+#region Builder Part
+...
+//Add this method inside the builder class
+public MyCustomResponseModel? Execute(string namespace_)
+{
+    MyCustomOp op = Build(
+        namespace_
+    );
+
+    return GetWrapperObject<MyCustomWrapper>().CallMyCustomOp(op);
+}
+#endregion
+...
+```
+
+- Modify custom wrapper class
+```csharp
+public class MyCustomWrapper
+{
+    ...
+    //add this method
+    public MyCustomOp.MyCustomOpBuilder MyCustomOpOp
+    {
+        get { return MyCustomOp.Builder.SetWrapperObject(this); }
+    }
+}
+```
+
+- Create new custom sdk class inherited from `AccelByteSDK`
+```csharp
+using System;
+using System.Collections.Generic;
+using AccelByte.Sdk.Core;
+
+namespace SdkCustomization.CustomOp
+{
+    public class MyCustomAccelByteSDK : AccelByteSDK
+    {
+        //Add your custom sdk builder
+        public static new AccelByteSdkBuilder<MyCustomAccelByteSDK> Builder { get => new AccelByteSdkBuilder<MyCustomAccelByteSDK>(); }
+
+        //Add custom wrapper property
+        public MyCustomWrapper CustomWrapper
+        {
+            get
+            {
+                if (_CustomWrapper == null)
+                    _CustomWrapper = new MyCustomWrapper(this);
+                return _CustomWrapper;
+            }
+        }
+        private MyCustomWrapper? _CustomWrapper = null;
+
+
+        //Inherit default constructors
+        public MyCustomAccelByteSDK(AccelByteConfig config)
+            : base(config) { }
+
+        public MyCustomAccelByteSDK(AccelByteConfig config, List<ISdkService> services)
+            : base(config, services) { }
+    }
+}
+```
+
+Example code for testing can be found [here](../samples/AccelByte.Sdk.Sample.CustomOperation.Tests/CustomSdkTests.cs).
+
+
 ## Testing
 Create a .NET 6 `NUnit Test Project` and include [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/) dependency.
 Add reference to your custom operation project inside this test project.
@@ -404,3 +480,5 @@ Then go to `Test` -> `Configure Run Settings` -> `Select Solutions Wide runsetti
 
 ## References
 Please see [api](../AccelByte.Sdk/Api) for more examples on how to create custom operation from generated code.
+
+Full code example [here](../samples/AccelByte.Sdk.Sample.CustomOperation) and its [test](../samples/AccelByte.Sdk.Sample.CustomOperation.Tests) project.
