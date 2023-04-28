@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Provider
             //retry logic for claim server if server is not ready
             policy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
 
-            AccelByteSdkBuilder builder = AccelByteSDK.Builder
+            var builder = AccelByteSDK.Builder
                 .SetHttpClient(ReliableHttpClient.Builder
                     .SetDefaultPolicy(policy)
                     .Build())

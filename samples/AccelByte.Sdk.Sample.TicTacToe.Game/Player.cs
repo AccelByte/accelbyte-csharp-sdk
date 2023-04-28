@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe.Game
         public Player(CommandArguments cArgs)
         {
             _ServerUrl = cArgs.ServerURL;
-            AccelByteSdkBuilder builder = AccelByteSDK.Builder
+            var builder = AccelByteSDK.Builder
                     .UseDefaultHttpClient()
                     .UseDefaultTokenRepository();
             if (cArgs.SdkConfigFile != String.Empty)
