@@ -17,6 +17,7 @@
 |---|---|---|---|---|
 | `/matchmaking/namespaces/{namespace}/channels` | GET | GetAllChannelsHandler | [GetAllChannelsHandler](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetAllChannelsHandler.cs) | [GetAllChannelsHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetAllChannelsHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/channels` | POST | CreateChannelHandler | [CreateChannelHandler](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/CreateChannelHandler.cs) | [CreateChannelHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/CreateChannelHandler.cs) |
+| `/matchmaking/namespaces/{namespace}/channels/{channelName}/metrics` | GET | GetMatchPoolMetric | [GetMatchPoolMetric](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetMatchPoolMetric.cs) | [GetMatchPoolMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetMatchPoolMetric.cs) |
 | `/matchmaking/namespaces/{namespace}/channels/{channel}` | DELETE | DeleteChannelHandler | [DeleteChannelHandler](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteChannelHandler.cs) | [DeleteChannelHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteChannelHandler.cs) |
 | `/matchmaking/namespaces/{namespace}/matchresult` | POST | StoreMatchResults | [StoreMatchResults](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/StoreMatchResults.cs) | [StoreMatchResults](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/StoreMatchResults.cs) |
 | `/matchmaking/namespaces/{namespace}/rebalance` | POST | Rebalance | [Rebalance](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/Rebalance.cs) | [Rebalance](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/Rebalance.cs) |
@@ -108,6 +109,7 @@
 | `models.RuleSet` | [ModelsRuleSet](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSet.cs) |
 | `models.RuleSetV1` | [ModelsRuleSetV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSetV1.cs) |
 | `models.SubGameMode` | [ModelsSubGameMode](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSubGameMode.cs) |
+| `models.TicketMetricResultRecord` | [ModelsTicketMetricResultRecord](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsTicketMetricResultRecord.cs) |
 | `models.UpdateAllianceRule` | [ModelsUpdateAllianceRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsUpdateAllianceRule.cs) |
 | `models.UpdateChannelRequest` | [ModelsUpdateChannelRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsUpdateChannelRequest.cs) |
 | `models.UpdatePlayTimeWeightRequest` | [ModelsUpdatePlayTimeWeightRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsUpdatePlayTimeWeightRequest.cs) |

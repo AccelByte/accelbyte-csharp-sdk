@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUpdateUserDeletionStatusRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("deletionDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? DeletionDate { get; set; }
+
         [JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 

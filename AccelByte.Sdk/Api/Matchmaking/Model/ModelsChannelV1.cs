@@ -30,8 +30,17 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("region_expansion_range_ms")]
+        public int? RegionExpansionRangeMs { get; set; }
+
         [JsonPropertyName("region_expansion_rate_ms")]
         public int? RegionExpansionRateMs { get; set; }
+
+        [JsonPropertyName("region_latency_initial_range_ms")]
+        public int? RegionLatencyInitialRangeMs { get; set; }
+
+        [JsonPropertyName("region_latency_max_ms")]
+        public int? RegionLatencyMaxMs { get; set; }
 
         [JsonPropertyName("ruleSet")]
         public ModelsRuleSetV1? RuleSet { get; set; }

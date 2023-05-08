@@ -1,3 +1,22 @@
+<a name="v0.34.0"></a>
+## [v0.34.0]
+### fix
+- **:** change agent for github jenkins job
+- **ci:** add HOME env to pack push action
+- **sample:** updated tic tac toe sample due to custom op implementation
+- **sample:** adjust deps version for custom op test project
+- **:** make custom op test explicit
+### ci
+- **generate:** refactor jenkinsfile.generate
+- **generate:** generate changelog also
+### feat
+- **sample:** added custom op sample projects
+- **:** added support for custom sdk and its builder
+### docs
+- **guide:** updated custom operation guide
+- **:** added migration guide draft for 0.34.0
+
+
 <a name="v0.33.0"></a>
 ## [v0.33.0]
 

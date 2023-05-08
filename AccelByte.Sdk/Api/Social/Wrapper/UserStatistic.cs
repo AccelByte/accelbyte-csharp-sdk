@@ -186,6 +186,16 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public List<Model.UserStatItemInfo<T1>>? BulkFetchStatItems<T1>(BulkFetchStatItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.BulkStatOperationResult>? BulkIncUserStatItem(BulkIncUserStatItem input)
         {
             var response = _sdk.RunRequest(input);
@@ -378,6 +388,16 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.UserStatItemInfo<T1>>? BulkFetchStatItems1<T1>(BulkFetchStatItems1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

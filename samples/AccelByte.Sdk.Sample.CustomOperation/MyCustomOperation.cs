@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Sample.CustomOperation
             //Use SECURITY_BEARER for endpoint that need authorization token,
             //or use SECURITY_BASIC for endpoint that only need basic auth using client id and secret._
             Securities.Add(SECURITY_BEARER);
-        }        
+        }
 
         public MyCustomResponseModel? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

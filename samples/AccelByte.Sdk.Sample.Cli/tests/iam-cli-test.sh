@@ -922,19 +922,19 @@ eval_tap $? 158 'AdminGetUserDeletionStatusV3' test.out
 
 #- 159 AdminUpdateUserDeletionStatusV3
 # body param: body
-echo '{"enabled": true}' > $TEMP_JSON_INPUT
+echo '{"deletionDate": 53, "enabled": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserDeletionStatusV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'kTlieINXiZneSGu4' \
+    --userId 'tcjA062eWYCE2BZK' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 159 'AdminUpdateUserDeletionStatusV3' test.out
 
 #- 160 AdminUpgradeHeadlessAccountV3
 # body param: body
-echo '{"code": "x8wWgDhy2xaMbK98", "country": "KZuPAGpzW8YEovlY", "dateOfBirth": "XMD76ZVrjTwBhG6P", "displayName": "xRbXyacvJKvH2fI2", "emailAddress": "27sFhXEPpERr10Wr", "password": "TTWC1vHxSVm1rRLD", "validateOnly": false}' > $TEMP_JSON_INPUT
+echo '{"code": "l6Ks6ND0evlW05Iz", "country": "e0EKI1ogofwrtjPj", "dateOfBirth": "SrjvrgKMZ79d1xh7", "displayName": "UR0UxrnZ5OMXgRDR", "emailAddress": "M3gg9nVFQuxaksqH", "password": "EV6l9c1J0YV5SAUW", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpgradeHeadlessAccountV3 \
@@ -1431,8 +1431,9 @@ eval_tap $? 206 'ValidateOneTimeLinkingCodeV3' test.out
 $CLI_EXE \
     --sn iam \
     --op RequestTokenByOneTimeLinkCodeResponseV3 \
-    --client_id '5vyVkSOD9ySZCRMG' \
-    --oneTimeLinkCode 'jEAIE7KjPFdtAe7S' \
+    --isTransient 'true' \
+    --client_id 'Vo9xxZzFrpyGOdTh' \
+    --oneTimeLinkCode 'rN2lXYb7iiBcWcLu' \
     > test.out 2>&1
 eval_tap $? 207 'RequestTokenByOneTimeLinkCodeResponseV3' test.out
 
@@ -1455,7 +1456,7 @@ $CLI_EXE \
     --sn iam \
     --op RequestGameTokenCodeResponseV3 \
     --namespace $AB_NAMESPACE \
-    --client_id 'g874fcdPiYjNR6J9' \
+    --client_id 'k71f96tGD7MUwPTm' \
     > test.out 2>&1
 eval_tap $? 210 'RequestGameTokenCodeResponseV3' test.out
 
@@ -1464,8 +1465,8 @@ $CLI_EXE \
     --sn iam \
     --op AdminRetrieveUserThirdPartyPlatformTokenV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'wrIzjOqBn7EEL6dO' \
-    --userId 'GAG9xMyKB6xSsgaw' \
+    --platformId 'gmk4Spx3x705SZyI' \
+    --userId '1AJfaR8ILlmh0sl7' \
     > test.out 2>&1
 eval_tap $? 211 'AdminRetrieveUserThirdPartyPlatformTokenV3' test.out
 
@@ -1474,7 +1475,7 @@ $CLI_EXE \
     --sn iam \
     --op RevokeUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'ZBDbvc4evCKxs06y' \
+    --userId '4SRTmBQB5VrOj1jP' \
     > test.out 2>&1
 eval_tap $? 212 'RevokeUserV3' test.out
 
@@ -1482,16 +1483,16 @@ eval_tap $? 212 'RevokeUserV3' test.out
 $CLI_EXE \
     --sn iam \
     --op AuthorizeV3 \
-    --codeChallenge 'FXaZF2UDSPNCIuAq' \
-    --codeChallengeMethod 'plain' \
-    --createHeadless 'false' \
-    --oneTimeLinkCode 'bxTOyZ4mBzc3glev' \
-    --redirectUri 'H68u3emrFEDUOZXa' \
-    --scope 'aWzfo42JGnZc01Kc' \
-    --state 'qFIzTPRY43KoNVnB' \
-    --targetAuthPage 'do06HqJPkDnUmhR9' \
-    --useRedirectUriAsLoginUrlWhenLocked 'false' \
-    --clientId 'WC797ieouD04KNoB' \
+    --codeChallenge 'hbaXjD3OADLTmD2B' \
+    --codeChallengeMethod 'S256' \
+    --createHeadless 'true' \
+    --oneTimeLinkCode 'uiZ2tu9RjEkJ3tFj' \
+    --redirectUri 'bqKS5hHrXcWwEDvE' \
+    --scope 'N0xN5TQgJs046g4x' \
+    --state 'Iv2XLzgxR2NsX4L6' \
+    --targetAuthPage 'vLNUrcVkKuYm7Zuf' \
+    --useRedirectUriAsLoginUrlWhenLocked 'true' \
+    --clientId 'C797ieouD04KNoB6' \
     --responseType 'code' \
     > test.out 2>&1
 eval_tap $? 213 'AuthorizeV3' test.out

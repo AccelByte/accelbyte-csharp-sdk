@@ -36,6 +36,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).CreateChannelHandler(op);
         }
+        public static Matchmaking.Model.ModelsTicketMetricResultRecord? Execute(
+            this GetMatchPoolMetric.GetMatchPoolMetricBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            GetMatchPoolMetric op = builder.Build(
+                channelName,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetMatchPoolMetric(op);
+        }
         public static void Execute(
             this DeleteChannelHandler.DeleteChannelHandlerBuilder builder,
             string channel,

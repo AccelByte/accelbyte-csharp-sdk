@@ -450,6 +450,11 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/subscriptions` | DELETE | AnonymizeSubscription | [AnonymizeSubscription](../../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeSubscription.cs) | [AnonymizeSubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeSubscription.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/anonymization/wallets` | DELETE | AnonymizeWallet | [AnonymizeWallet](../../AccelByte.Sdk/Api/Platform/Operation/Anonymization/AnonymizeWallet.cs) | [AnonymizeWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Anonymization/AnonymizeWallet.cs) |
 
+### Session(Platform) Wrapper:  [SessionPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/SessionPlatform.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/users/{userId}/session/xbl` | PUT | RegisterXblSessions | [RegisterXblSessions](../../AccelByte.Sdk/Api/Platform/Operation/SessionPlatform/RegisterXblSessions.cs) | [RegisterXblSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/SessionPlatform/RegisterXblSessions.cs) |
+
 ### View Wrapper:  [View](../../AccelByte.Sdk/Api/Platform/Wrapper/View.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -630,6 +635,10 @@
 |---|---|---|---|---|
 
 ### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Platform/Wrapper/Anonymization.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Session(Platform) Wrapper:  [SessionPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/SessionPlatform.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -1008,6 +1017,7 @@
 | `XblReconcileRequest` | [XblReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileRequest.cs) |
 | `XblReconcileResult` | [XblReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileResult.cs) |
 | `XblUserAchievements` | [XblUserAchievements](../../AccelByte.Sdk/Api/Platform/Model/XblUserAchievements.cs) |
+| `XblUserSessionRequest` | [XblUserSessionRequest](../../AccelByte.Sdk/Api/Platform/Model/XblUserSessionRequest.cs) |
 | `XsollaConfig` | [XsollaConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaConfig.cs) |
 | `XsollaPaywallConfig` | [XsollaPaywallConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfig.cs) |
 | `XsollaPaywallConfigRequest` | [XsollaPaywallConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfigRequest.cs) |

@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("SessionTitle")]
         public string? SessionTitle { get; set; }
 
+        [JsonPropertyName("ShouldSync")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ShouldSync { get; set; }
+
         [JsonPropertyName("XboxServiceConfigID")]
         public string? XboxServiceConfigID { get; set; }
 

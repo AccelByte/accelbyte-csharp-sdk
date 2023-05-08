@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..38"
+echo "1..56"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -447,6 +447,193 @@ $CLI_EXE \
     --offset '27' \
     > test.out 2>&1
 eval_tap $? 38 'GetAllTimeLeaderboardRankingPublicV2' test.out
+
+#- 39 GetLeaderboardConfigurationsAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetLeaderboardConfigurationsAdminV3 \
+    --namespace $AB_NAMESPACE \
+    --isDeleted 'true' \
+    --limit '8' \
+    --offset '17' \
+    > test.out 2>&1
+eval_tap $? 39 'GetLeaderboardConfigurationsAdminV3' test.out
+
+#- 40 CreateLeaderboardConfigurationAdminV3
+# body param: body
+echo '{"allTime": false, "cycleIds": ["33Iztr2QcwlRrReR", "ajlpk8lfuiJVcktl", "x9zJZVVCc9bpIHEW"], "descending": false, "description": "mCkIqwqpoTVCNrca", "iconURL": "VozsjIXO2EUsAfBv", "leaderboardCode": "o6Llcalks2R3VMti", "name": "pTVxXAF8KhOKqbrE", "statCode": "CijFxOpOzxeTLJQs"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn leaderboard \
+    --op CreateLeaderboardConfigurationAdminV3 \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 40 'CreateLeaderboardConfigurationAdminV3' test.out
+
+#- 41 DeleteBulkLeaderboardConfigurationAdminV3
+# body param: body
+echo '{"leaderboardCodes": ["ZcTEzXaXUzpsAV6c", "t6XITL0QEkadMSQl", "uAoED9oYwS8oLyEr"]}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn leaderboard \
+    --op DeleteBulkLeaderboardConfigurationAdminV3 \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 41 'DeleteBulkLeaderboardConfigurationAdminV3' test.out
+
+#- 42 GetLeaderboardConfigurationAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetLeaderboardConfigurationAdminV3 \
+    --leaderboardCode 'KvRtHFGJRoGW7VBG' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 42 'GetLeaderboardConfigurationAdminV3' test.out
+
+#- 43 UpdateLeaderboardConfigurationAdminV3
+# body param: body
+echo '{"allTime": false, "cycleIds": ["VB2sp2x9mszGGoyh", "GZAzt2OVBTLwSH8h", "WRU9pbItGQ7VUWBh"], "descending": false, "description": "olwafIfbF1GLFnrQ", "iconURL": "4T5cmw7U1TxiS06U", "name": "EoaDZpXOWzpXOi2c"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn leaderboard \
+    --op UpdateLeaderboardConfigurationAdminV3 \
+    --leaderboardCode 'pajtqcXjPkj2IzU3' \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 43 'UpdateLeaderboardConfigurationAdminV3' test.out
+
+#- 44 DeleteLeaderboardConfigurationAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op DeleteLeaderboardConfigurationAdminV3 \
+    --leaderboardCode 'MEpCt1IjlfHJM92t' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 44 'DeleteLeaderboardConfigurationAdminV3' test.out
+
+#- 45 GetAllTimeLeaderboardRankingAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetAllTimeLeaderboardRankingAdminV3 \
+    --leaderboardCode '9j1XT2ErwIxkaTnY' \
+    --namespace $AB_NAMESPACE \
+    --limit '40' \
+    --offset '31' \
+    > test.out 2>&1
+eval_tap $? 45 'GetAllTimeLeaderboardRankingAdminV3' test.out
+
+#- 46 GetCurrentCycleLeaderboardRankingAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetCurrentCycleLeaderboardRankingAdminV3 \
+    --cycleId 'r1YDnaXB0JOS4XKV' \
+    --leaderboardCode 'T66sHYPgVsfhoEid' \
+    --namespace $AB_NAMESPACE \
+    --limit '74' \
+    --offset '9' \
+    > test.out 2>&1
+eval_tap $? 46 'GetCurrentCycleLeaderboardRankingAdminV3' test.out
+
+#- 47 HardDeleteLeaderboardAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op HardDeleteLeaderboardAdminV3 \
+    --leaderboardCode 'w4IP0NVnaangorhV' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 47 'HardDeleteLeaderboardAdminV3' test.out
+
+#- 48 DeleteUserRankingByLeaderboardCodeAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op DeleteUserRankingByLeaderboardCodeAdminV3 \
+    --leaderboardCode 'FpTRuQyMroT2hNfK' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 48 'DeleteUserRankingByLeaderboardCodeAdminV3' test.out
+
+#- 49 GetUserRankingAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetUserRankingAdminV3 \
+    --leaderboardCode 'J7q8sifSPmYSsBxt' \
+    --namespace $AB_NAMESPACE \
+    --userId 'yKWssEn5VEvIMEB4' \
+    > test.out 2>&1
+eval_tap $? 49 'GetUserRankingAdminV3' test.out
+
+#- 50 DeleteUserRankingAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op DeleteUserRankingAdminV3 \
+    --leaderboardCode 'pl506fLCG6EAl7d3' \
+    --namespace $AB_NAMESPACE \
+    --userId 'Ks65thtnjcMSw1J4' \
+    > test.out 2>&1
+eval_tap $? 50 'DeleteUserRankingAdminV3' test.out
+
+#- 51 DeleteUserRankingsAdminV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op DeleteUserRankingsAdminV3 \
+    --namespace $AB_NAMESPACE \
+    --userId '2fthKUobas2CAlSx' \
+    --leaderboardCode '["xVhDR9hlaznetBUG", "cQz2WvdiclkYGDL2", "ckC9cdzaLnajQ8Gn"]' \
+    > test.out 2>&1
+eval_tap $? 51 'DeleteUserRankingsAdminV3' test.out
+
+#- 52 GetLeaderboardConfigurationsPublicV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetLeaderboardConfigurationsPublicV3 \
+    --namespace $AB_NAMESPACE \
+    --isDeleted 'false' \
+    --limit '31' \
+    --offset '13' \
+    > test.out 2>&1
+eval_tap $? 52 'GetLeaderboardConfigurationsPublicV3' test.out
+
+#- 53 GetLeaderboardConfigurationPublicV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetLeaderboardConfigurationPublicV3 \
+    --leaderboardCode 'ALiddv9UUtG1tEEC' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 53 'GetLeaderboardConfigurationPublicV3' test.out
+
+#- 54 GetAllTimeLeaderboardRankingPublicV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetAllTimeLeaderboardRankingPublicV3 \
+    --leaderboardCode 'sm8xaDOz0tMlpFuJ' \
+    --namespace $AB_NAMESPACE \
+    --limit '98' \
+    --offset '8' \
+    > test.out 2>&1
+eval_tap $? 54 'GetAllTimeLeaderboardRankingPublicV3' test.out
+
+#- 55 GetCurrentCycleLeaderboardRankingPublicV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetCurrentCycleLeaderboardRankingPublicV3 \
+    --cycleId 'Xo9s0JPG8cgjHQo9' \
+    --leaderboardCode 'HoLLyUnPTiCD0038' \
+    --namespace $AB_NAMESPACE \
+    --limit '30' \
+    --offset '23' \
+    > test.out 2>&1
+eval_tap $? 55 'GetCurrentCycleLeaderboardRankingPublicV3' test.out
+
+#- 56 GetUserRankingPublicV3
+$CLI_EXE \
+    --sn leaderboard \
+    --op GetUserRankingPublicV3 \
+    --leaderboardCode 'r8wR0tuwIJnrSI2I' \
+    --namespace $AB_NAMESPACE \
+    --userId 'FcRwSoMTuJziuDNb' \
+    > test.out 2>&1
+eval_tap $? 56 'GetUserRankingPublicV3' test.out
 
 
 # remove artifacts

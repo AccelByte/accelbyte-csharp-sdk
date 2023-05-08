@@ -27,6 +27,22 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchStatItems(op);
         }
+
+        public static List<Social.Model.UserStatItemInfo<T1>>? Execute<T1>(
+            this BulkFetchStatItems.BulkFetchStatItemsBuilder builder,
+            string namespace_,
+            string statCode,
+            string userIds
+        )
+        {
+            BulkFetchStatItems op = builder.Build(
+                namespace_,
+                statCode,
+                userIds
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchStatItems<T1>(op);
+        }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItem.BulkIncUserStatItemBuilder builder,
             string namespace_
@@ -306,6 +322,22 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchStatItems1(op);
+        }
+
+        public static List<Social.Model.UserStatItemInfo<T1>>? Execute<T1>(
+            this BulkFetchStatItems1.BulkFetchStatItems1Builder builder,
+            string namespace_,
+            string statCode,
+            string userIds
+        )
+        {
+            BulkFetchStatItems1 op = builder.Build(
+                namespace_,
+                statCode,
+                userIds
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchStatItems1<T1>(op);
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkIncUserStatItem.PublicBulkIncUserStatItemBuilder builder,

@@ -61,6 +61,32 @@
 | `/leaderboard/v2/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility` | PUT | SetUserLeaderboardVisibilityStatusV2 | [SetUserLeaderboardVisibilityStatusV2](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibility/SetUserLeaderboardVisibilityStatusV2.cs) | [SetUserLeaderboardVisibilityStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibility/SetUserLeaderboardVisibilityStatusV2.cs) |
 | `/leaderboard/v2/admin/namespaces/{namespace}/users/{userId}/visibility` | PUT | SetUserVisibilityStatusV2 | [SetUserVisibilityStatusV2](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibility/SetUserVisibilityStatusV2.cs) | [SetUserVisibilityStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibility/SetUserVisibilityStatusV2.cs) |
 
+### LeaderboardConfigurationV3 Wrapper:  [LeaderboardConfigurationV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardConfigurationV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards` | GET | GetLeaderboardConfigurationsAdminV3 | [GetLeaderboardConfigurationsAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/GetLeaderboardConfigurationsAdminV3.cs) | [GetLeaderboardConfigurationsAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/GetLeaderboardConfigurationsAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards` | POST | CreateLeaderboardConfigurationAdminV3 | [CreateLeaderboardConfigurationAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/CreateLeaderboardConfigurationAdminV3.cs) | [CreateLeaderboardConfigurationAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/CreateLeaderboardConfigurationAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/delete` | POST | DeleteBulkLeaderboardConfigurationAdminV3 | [DeleteBulkLeaderboardConfigurationAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/DeleteBulkLeaderboardConfigurationAdminV3.cs) | [DeleteBulkLeaderboardConfigurationAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/DeleteBulkLeaderboardConfigurationAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}` | GET | GetLeaderboardConfigurationAdminV3 | [GetLeaderboardConfigurationAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/GetLeaderboardConfigurationAdminV3.cs) | [GetLeaderboardConfigurationAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/GetLeaderboardConfigurationAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}` | PUT | UpdateLeaderboardConfigurationAdminV3 | [UpdateLeaderboardConfigurationAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/UpdateLeaderboardConfigurationAdminV3.cs) | [UpdateLeaderboardConfigurationAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/UpdateLeaderboardConfigurationAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}` | DELETE | DeleteLeaderboardConfigurationAdminV3 | [DeleteLeaderboardConfigurationAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/DeleteLeaderboardConfigurationAdminV3.cs) | [DeleteLeaderboardConfigurationAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/DeleteLeaderboardConfigurationAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/hard` | DELETE | HardDeleteLeaderboardAdminV3 | [HardDeleteLeaderboardAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/HardDeleteLeaderboardAdminV3.cs) | [HardDeleteLeaderboardAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/HardDeleteLeaderboardAdminV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards` | GET | GetLeaderboardConfigurationsPublicV3 | [GetLeaderboardConfigurationsPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/GetLeaderboardConfigurationsPublicV3.cs) | [GetLeaderboardConfigurationsPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/GetLeaderboardConfigurationsPublicV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}` | GET | GetLeaderboardConfigurationPublicV3 | [GetLeaderboardConfigurationPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardConfigurationV3/GetLeaderboardConfigurationPublicV3.cs) | [GetLeaderboardConfigurationPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardConfigurationV3/GetLeaderboardConfigurationPublicV3.cs) |
+
+### LeaderboardDataV3 Wrapper:  [LeaderboardDataV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardDataV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/alltime` | GET | GetAllTimeLeaderboardRankingAdminV3 | [GetAllTimeLeaderboardRankingAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetAllTimeLeaderboardRankingAdminV3.cs) | [GetAllTimeLeaderboardRankingAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetAllTimeLeaderboardRankingAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}` | GET | GetCurrentCycleLeaderboardRankingAdminV3 | [GetCurrentCycleLeaderboardRankingAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingAdminV3.cs) | [GetCurrentCycleLeaderboardRankingAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/reset` | DELETE | DeleteUserRankingByLeaderboardCodeAdminV3 | [DeleteUserRankingByLeaderboardCodeAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/DeleteUserRankingByLeaderboardCodeAdminV3.cs) | [DeleteUserRankingByLeaderboardCodeAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/DeleteUserRankingByLeaderboardCodeAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}` | GET | GetUserRankingAdminV3 | [GetUserRankingAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetUserRankingAdminV3.cs) | [GetUserRankingAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetUserRankingAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}` | DELETE | DeleteUserRankingAdminV3 | [DeleteUserRankingAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/DeleteUserRankingAdminV3.cs) | [DeleteUserRankingAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/DeleteUserRankingAdminV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/users/{userId}` | DELETE | DeleteUserRankingsAdminV3 | [DeleteUserRankingsAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/DeleteUserRankingsAdminV3.cs) | [DeleteUserRankingsAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/DeleteUserRankingsAdminV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/alltime` | GET | GetAllTimeLeaderboardRankingPublicV3 | [GetAllTimeLeaderboardRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetAllTimeLeaderboardRankingPublicV3.cs) | [GetAllTimeLeaderboardRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetAllTimeLeaderboardRankingPublicV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}` | GET | GetCurrentCycleLeaderboardRankingPublicV3 | [GetCurrentCycleLeaderboardRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) | [GetCurrentCycleLeaderboardRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}` | GET | GetUserRankingPublicV3 | [GetUserRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetUserRankingPublicV3.cs) | [GetUserRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetUserRankingPublicV3.cs) |
+
 
 &nbsp;  
 
@@ -86,6 +112,14 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### LeaderboardConfigurationV3 Wrapper:  [LeaderboardConfigurationV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardConfigurationV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### LeaderboardDataV3 Wrapper:  [LeaderboardDataV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardDataV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -100,24 +134,34 @@
 | `models.DeleteBulkLeaderboardsReq` | [ModelsDeleteBulkLeaderboardsReq](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardsReq.cs) |
 | `models.DeleteBulkLeaderboardsResp` | [ModelsDeleteBulkLeaderboardsResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardsResp.cs) |
 | `models.GetAllLeaderboardConfigsPublicResp` | [ModelsGetAllLeaderboardConfigsPublicResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsPublicResp.cs) |
+| `models.GetAllLeaderboardConfigsPublicRespV3` | [ModelsGetAllLeaderboardConfigsPublicRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsPublicRespV3.cs) |
 | `models.GetAllLeaderboardConfigsResp` | [ModelsGetAllLeaderboardConfigsResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsResp.cs) |
+| `models.GetAllLeaderboardConfigsRespV3` | [ModelsGetAllLeaderboardConfigsRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsRespV3.cs) |
 | `models.GetAllUserLeaderboardsResp` | [ModelsGetAllUserLeaderboardsResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllUserLeaderboardsResp.cs) |
 | `models.GetHiddenUserResponse` | [ModelsGetHiddenUserResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetHiddenUserResponse.cs) |
 | `models.GetLeaderboardConfigPublicResp` | [ModelsGetLeaderboardConfigPublicResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigPublicResp.cs) |
+| `models.GetLeaderboardConfigPublicRespV3` | [ModelsGetLeaderboardConfigPublicRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigPublicRespV3.cs) |
 | `models.GetLeaderboardConfigResp` | [ModelsGetLeaderboardConfigResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigResp.cs) |
+| `models.GetLeaderboardConfigRespV3` | [ModelsGetLeaderboardConfigRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigRespV3.cs) |
 | `models.GetLeaderboardRankingResp` | [ModelsGetLeaderboardRankingResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardRankingResp.cs) |
 | `models.GetUserVisibilityResponse` | [ModelsGetUserVisibilityResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetUserVisibilityResponse.cs) |
 | `models.LeaderboardConfigReq` | [ModelsLeaderboardConfigReq](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsLeaderboardConfigReq.cs) |
+| `models.LeaderboardConfigReqV3` | [ModelsLeaderboardConfigReqV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsLeaderboardConfigReqV3.cs) |
 | `models.MonthlyConfig` | [ModelsMonthlyConfig](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsMonthlyConfig.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsPagination.cs) |
+| `models.PaginationV3` | [ModelsPaginationV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsPaginationV3.cs) |
 | `models.SetUserVisibilityRequest` | [ModelsSetUserVisibilityRequest](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsSetUserVisibilityRequest.cs) |
 | `models.UpdateLeaderboardConfigReq` | [ModelsUpdateLeaderboardConfigReq](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUpdateLeaderboardConfigReq.cs) |
+| `models.UpdateLeaderboardConfigReqV3` | [ModelsUpdateLeaderboardConfigReqV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUpdateLeaderboardConfigReqV3.cs) |
 | `models.UpdateUserPointAdminV1Request` | [ModelsUpdateUserPointAdminV1Request](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUpdateUserPointAdminV1Request.cs) |
 | `models.UpdateUserPointAdminV1Response` | [ModelsUpdateUserPointAdminV1Response](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUpdateUserPointAdminV1Response.cs) |
+| `models.UserCycleRankingResponseDetail` | [ModelsUserCycleRankingResponseDetail](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserCycleRankingResponseDetail.cs) |
 | `models.UserLeaderboardRanking` | [ModelsUserLeaderboardRanking](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserLeaderboardRanking.cs) |
 | `models.UserPoint` | [ModelsUserPoint](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserPoint.cs) |
 | `models.UserRankingResponse` | [ModelsUserRankingResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponse.cs) |
 | `models.UserRankingResponseDetail` | [ModelsUserRankingResponseDetail](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponseDetail.cs) |
+| `models.UserRankingResponseDetailV3` | [ModelsUserRankingResponseDetailV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponseDetailV3.cs) |
+| `models.UserRankingResponseV3` | [ModelsUserRankingResponseV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponseV3.cs) |
 | `models.WeeklyConfig` | [ModelsWeeklyConfig](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsWeeklyConfig.cs) |
 | `response.ErrorResponse` | [ResponseErrorResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ResponseErrorResponse.cs) |
 | `v2.Entry` | [V2Entry](../../AccelByte.Sdk/Api/Leaderboard/Model/V2Entry.cs) |

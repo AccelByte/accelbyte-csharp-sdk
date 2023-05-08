@@ -112,6 +112,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public ItemSnapshotSeasonType? SeasonType { get; set; }
 
+        [JsonPropertyName("sectionExclusive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SectionExclusive { get; set; }
+
         [JsonPropertyName("sellable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Sellable { get; set; }

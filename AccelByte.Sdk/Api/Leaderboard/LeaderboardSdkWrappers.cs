@@ -68,6 +68,28 @@ namespace AccelByte.Sdk.Core
         }
         private UserVisibility? _UserVisibility = null;
 
+        public LeaderboardConfigurationV3 LeaderboardConfigurationV3
+        {
+            get
+            {
+                if (_LeaderboardConfigurationV3 == null)
+                    _LeaderboardConfigurationV3 = new LeaderboardConfigurationV3(_SdkObject);
+                return _LeaderboardConfigurationV3;
+            }
+        }
+        private LeaderboardConfigurationV3? _LeaderboardConfigurationV3 = null;
+
+        public LeaderboardDataV3 LeaderboardDataV3
+        {
+            get
+            {
+                if (_LeaderboardDataV3 == null)
+                    _LeaderboardDataV3 = new LeaderboardDataV3(_SdkObject);
+                return _LeaderboardDataV3;
+            }
+        }
+        private LeaderboardDataV3? _LeaderboardDataV3 = null;
+
         internal LeaderboardSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

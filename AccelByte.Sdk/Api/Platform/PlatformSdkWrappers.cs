@@ -299,6 +299,17 @@ namespace AccelByte.Sdk.Core
         }
         private Anonymization? _Anonymization = null;
 
+        public SessionPlatform SessionPlatform
+        {
+            get
+            {
+                if (_SessionPlatform == null)
+                    _SessionPlatform = new SessionPlatform(_SdkObject);
+                return _SessionPlatform;
+            }
+        }
+        private SessionPlatform? _SessionPlatform = null;
+
         public View View
         {
             get

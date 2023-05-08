@@ -24,9 +24,21 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("max_delay_ms")]
         public int? MaxDelayMs { get; set; }
 
+        [JsonPropertyName("region_expansion_range_ms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RegionExpansionRangeMs { get; set; }
+
         [JsonPropertyName("region_expansion_rate_ms")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? RegionExpansionRateMs { get; set; }
+
+        [JsonPropertyName("region_latency_initial_range_ms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RegionLatencyInitialRangeMs { get; set; }
+
+        [JsonPropertyName("region_latency_max_ms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RegionLatencyMaxMs { get; set; }
 
         [JsonPropertyName("ruleSet")]
         public ModelsUpdateRuleset? RuleSet { get; set; }

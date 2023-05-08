@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.CreateChannelHandler.Builder.SetWrapperObject(this); }
         }
+        public GetMatchPoolMetric.GetMatchPoolMetricBuilder GetMatchPoolMetricOp
+        {
+            get { return Operation.GetMatchPoolMetric.Builder.SetWrapperObject(this); }
+        }
         public DeleteChannelHandler.DeleteChannelHandlerBuilder DeleteChannelHandlerOp
         {
             get { return Operation.DeleteChannelHandler.Builder.SetWrapperObject(this); }
@@ -130,6 +134,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.Payload);
         }
         public Model.ModelsCreateChannelResponse? CreateChannelHandler(CreateChannelHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsTicketMetricResultRecord? GetMatchPoolMetric(GetMatchPoolMetric input)
         {
             var response = _sdk.RunRequest(input);
 

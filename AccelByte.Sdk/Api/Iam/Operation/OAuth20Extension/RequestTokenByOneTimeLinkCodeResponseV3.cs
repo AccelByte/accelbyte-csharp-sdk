@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// It require publisher ClientID
     /// 
     /// It required a code which can be generated from /iam/v3/link/code/request.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint support creating transient token by utilizing isTransient param:
+    /// 
+    /// isTransient=true will generate a transient token with a short Time Expiration and without a refresh token
+    /// 
+    /// isTransient=false will consume the one-time code and generate the access token with a refresh token.
     /// </summary>
     public class RequestTokenByOneTimeLinkCodeResponseV3 : AccelByte.Sdk.Core.Operation
     {
@@ -35,12 +46,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            public bool? IsTransient { get; set; }
+
 
 
             internal RequestTokenByOneTimeLinkCodeResponseV3Builder() { }
 
 
 
+
+            public RequestTokenByOneTimeLinkCodeResponseV3Builder SetIsTransient(bool _isTransient)
+            {
+                IsTransient = _isTransient;
+                return this;
+            }
 
 
 
@@ -66,6 +85,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (builder.IsTransient != null) FormParams["isTransient"] = Convert.ToString(builder.IsTransient)!;
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
@@ -77,12 +97,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public RequestTokenByOneTimeLinkCodeResponseV3(
+            bool? isTransient,
             string clientId,
             string oneTimeLinkCode
         )
         {
 
 
+            if (isTransient != null) FormParams["isTransient"] = Convert.ToString(isTransient)!;
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
 
