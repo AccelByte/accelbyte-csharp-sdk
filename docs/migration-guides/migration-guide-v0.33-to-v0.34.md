@@ -1,5 +1,5 @@
 <a name="v0.34.0"></a>
-## [v0.34.0] - DRAFT
+## [v0.34.0] - 2023-05-09
 
 ### BREAKING CHANGE
 
