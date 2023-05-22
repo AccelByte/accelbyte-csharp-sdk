@@ -166,6 +166,28 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetImagePatchDetail(op);
         }
+        public static Dsmc.Model.ModelsRepositoryRecord? Execute(
+            this GetRepository.GetRepositoryBuilder builder,
+            string namespace_
+        )
+        {
+            GetRepository op = builder.Build(
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).GetRepository(op);
+        }
+        public static void Execute(
+            this CreateRepository.CreateRepositoryBuilder builder,
+            ModelsCreateRepositoryRequest body
+        )
+        {
+            CreateRepository op = builder.Build(
+                body
+            );
+
+            ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).CreateRepository(op);
+        }
         public static Dsmc.Model.ModelsGetImageLimitResponse? Execute(
             this ImageLimitClient.ImageLimitClientBuilder builder,
             string namespace_

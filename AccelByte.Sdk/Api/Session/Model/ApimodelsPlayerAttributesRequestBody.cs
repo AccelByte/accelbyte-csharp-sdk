@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("platforms")]
         public List<ModelsUserPlatformInfo>? Platforms { get; set; }
 
+        [JsonPropertyName("roles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Roles { get; set; }
+
     }
 
     public class ApimodelsPlayerAttributesRequestBody<T1> : AccelByte.Sdk.Core.Model
@@ -36,6 +40,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("platforms")]
         public List<ModelsUserPlatformInfo>? Platforms { get; set; }
+
+        [JsonPropertyName("roles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Roles { get; set; }
 
     }
 

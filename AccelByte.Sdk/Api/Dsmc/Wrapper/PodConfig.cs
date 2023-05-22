@@ -43,6 +43,18 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.UpdatePodConfig.Builder.SetWrapperObject(this); }
         }
+        public GetAllPodConfigClient.GetAllPodConfigClientBuilder GetAllPodConfigClientOp
+        {
+            get { return Operation.GetAllPodConfigClient.Builder.SetWrapperObject(this); }
+        }
+        public CreatePodConfigClient.CreatePodConfigClientBuilder CreatePodConfigClientOp
+        {
+            get { return Operation.CreatePodConfigClient.Builder.SetWrapperObject(this); }
+        }
+        public DeletePodConfigClient.DeletePodConfigClientBuilder DeletePodConfigClientOp
+        {
+            get { return Operation.DeletePodConfigClient.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsInstanceSpec? GetLowestInstanceSpec(GetLowestInstanceSpec input)
@@ -95,6 +107,33 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListPodConfigResponse? GetAllPodConfigClient(GetAllPodConfigClient input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPodConfigRecord? CreatePodConfigClient(CreatePodConfigClient input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeletePodConfigClient(DeletePodConfigClient input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

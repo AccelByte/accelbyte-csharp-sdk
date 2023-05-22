@@ -51,5 +51,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Session)builder.WrapperObject!).GetSession(op);
         }
+        public static void Execute(
+            this CancelSession.CancelSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            CancelSession op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            ((Dsmc.Wrapper.Session)builder.WrapperObject!).CancelSession(op);
+        }
     }
 }

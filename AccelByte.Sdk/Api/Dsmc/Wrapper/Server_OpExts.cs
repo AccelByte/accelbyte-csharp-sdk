@@ -12,6 +12,34 @@ namespace AccelByte.Sdk.Api
 {
     public static class DsmcServer_OpExts
     {
+        public static Dsmc.Model.ModelsListServerResponse? Execute(
+            this ListServerClient.ListServerClientBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            ListServerClient op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return ((Dsmc.Wrapper.Server)builder.WrapperObject!).ListServerClient(op);
+        }
+        public static void Execute(
+            this ServerHeartbeat.ServerHeartbeatBuilder builder,
+            ModelsDSHeartbeatRequest body,
+            string namespace_
+        )
+        {
+            ServerHeartbeat op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.Server)builder.WrapperObject!).ServerHeartbeat(op);
+        }
         public static void Execute(
             this DeregisterLocalServer.DeregisterLocalServerBuilder builder,
             ModelsDeregisterLocalServerRequest body,
@@ -63,6 +91,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).ShutdownServer(op);
+        }
+        public static Dsmc.Model.ModelsServerDeploymentConfigSessionTimeoutResponse? Execute(
+            this GetServerSessionTimeout.GetServerSessionTimeoutBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            GetServerSessionTimeout op = builder.Build(
+                namespace_,
+                podName
+            );
+
+            return ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSessionTimeout(op);
         }
         public static Dsmc.Model.ModelsServerSessionResponse? Execute(
             this GetServerSession.GetServerSessionBuilder builder,

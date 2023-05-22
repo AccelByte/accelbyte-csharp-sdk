@@ -19,6 +19,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetConfigurationAlertV1.AdminGetConfigurationAlertV1Builder AdminGetConfigurationAlertV1Op
+        {
+            get { return Operation.AdminGetConfigurationAlertV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdateConfigurationAlertV1.AdminUpdateConfigurationAlertV1Builder AdminUpdateConfigurationAlertV1Op
+        {
+            get { return Operation.AdminUpdateConfigurationAlertV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminCreateConfigurationAlertV1.AdminCreateConfigurationAlertV1Builder AdminCreateConfigurationAlertV1Op
+        {
+            get { return Operation.AdminCreateConfigurationAlertV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminDeleteConfigurationAlertV1.AdminDeleteConfigurationAlertV1Builder AdminDeleteConfigurationAlertV1Op
+        {
+            get { return Operation.AdminDeleteConfigurationAlertV1.Builder.SetWrapperObject(this); }
+        }
         public AdminCreateConfigurationTemplateV1.AdminCreateConfigurationTemplateV1Builder AdminCreateConfigurationTemplateV1Op
         {
             get { return Operation.AdminCreateConfigurationTemplateV1.Builder.SetWrapperObject(this); }
@@ -49,6 +65,42 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
 
+        public Model.ApimodelsConfigAlertResponse? AdminGetConfigurationAlertV1(AdminGetConfigurationAlertV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsConfigAlertResponse? AdminUpdateConfigurationAlertV1(AdminUpdateConfigurationAlertV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsConfigAlertResponse? AdminCreateConfigurationAlertV1(AdminCreateConfigurationAlertV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminDeleteConfigurationAlertV1(AdminDeleteConfigurationAlertV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsConfigurationTemplateResponse? AdminCreateConfigurationTemplateV1(AdminCreateConfigurationTemplateV1 input)
         {
             var response = _sdk.RunRequest(input);

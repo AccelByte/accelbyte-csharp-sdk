@@ -1,3 +1,9 @@
+<a name="v0.35.0"></a>
+## [v0.35.0]
+### chore
+- **jenkinsfile:** update generate spec target
+
+
 <a name="v0.34.0"></a>
 ## [v0.34.0]
 ### fix

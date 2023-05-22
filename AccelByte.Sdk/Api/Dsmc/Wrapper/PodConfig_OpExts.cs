@@ -92,5 +92,48 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).UpdatePodConfig(op);
         }
+        public static Dsmc.Model.ModelsListPodConfigResponse? Execute(
+            this GetAllPodConfigClient.GetAllPodConfigClientBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            GetAllPodConfigClient op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).GetAllPodConfigClient(op);
+        }
+        public static Dsmc.Model.ModelsPodConfigRecord? Execute(
+            this CreatePodConfigClient.CreatePodConfigClientBuilder builder,
+            ModelsCreatePodConfigRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            CreatePodConfigClient op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).CreatePodConfigClient(op);
+        }
+        public static void Execute(
+            this DeletePodConfigClient.DeletePodConfigClientBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            DeletePodConfigClient op = builder.Build(
+                name,
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.PodConfig)builder.WrapperObject!).DeletePodConfigClient(op);
+        }
     }
 }

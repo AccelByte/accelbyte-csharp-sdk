@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("platforms")]
         public List<ModelsUserPlatformInfo>? Platforms { get; set; }
 
+        [JsonPropertyName("roles")]
+        public List<string>? Roles { get; set; }
+
         [JsonPropertyName("userID")]
         public string? UserID { get; set; }
 
@@ -39,6 +42,9 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("platforms")]
         public List<ModelsUserPlatformInfo>? Platforms { get; set; }
+
+        [JsonPropertyName("roles")]
+        public List<string>? Roles { get; set; }
 
         [JsonPropertyName("userID")]
         public string? UserID { get; set; }

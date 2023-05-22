@@ -12,6 +12,54 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionConfigurationTemplate_OpExts
     {
+        public static Session.Model.ApimodelsConfigAlertResponse? Execute(
+            this AdminGetConfigurationAlertV1.AdminGetConfigurationAlertV1Builder builder,
+            string namespace_
+        )
+        {
+            AdminGetConfigurationAlertV1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetConfigurationAlertV1(op);
+        }
+        public static Session.Model.ApimodelsConfigAlertResponse? Execute(
+            this AdminUpdateConfigurationAlertV1.AdminUpdateConfigurationAlertV1Builder builder,
+            ApimodelsConfigAlertRequestCreate body,
+            string namespace_
+        )
+        {
+            AdminUpdateConfigurationAlertV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminUpdateConfigurationAlertV1(op);
+        }
+        public static Session.Model.ApimodelsConfigAlertResponse? Execute(
+            this AdminCreateConfigurationAlertV1.AdminCreateConfigurationAlertV1Builder builder,
+            ApimodelsConfigAlertRequestCreate body,
+            string namespace_
+        )
+        {
+            AdminCreateConfigurationAlertV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminCreateConfigurationAlertV1(op);
+        }
+        public static void Execute(
+            this AdminDeleteConfigurationAlertV1.AdminDeleteConfigurationAlertV1Builder builder,
+            string namespace_
+        )
+        {
+            AdminDeleteConfigurationAlertV1 op = builder.Build(
+                namespace_
+            );
+
+            ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminDeleteConfigurationAlertV1(op);
+        }
         public static Session.Model.ApimodelsConfigurationTemplateResponse? Execute(
             this AdminCreateConfigurationTemplateV1.AdminCreateConfigurationTemplateV1Builder builder,
             ApimodelsCreateConfigurationTemplateRequest body,

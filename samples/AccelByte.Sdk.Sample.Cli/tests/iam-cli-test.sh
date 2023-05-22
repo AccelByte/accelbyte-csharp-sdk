@@ -1680,6 +1680,7 @@ $CLI_EXE \
     --op PublicListUserIDByPlatformUserIDsV3 \
     --namespace $AB_NAMESPACE \
     --platformId 'VxA985stoGyAUE0u' \
+    --rawPUID 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 231 'PublicListUserIDByPlatformUserIDsV3' test.out
@@ -1689,8 +1690,8 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetUserByPlatformUserIDV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'W9A4wHdBcfvronc7' \
-    --platformUserId 'zjUWL9rixNbrypQA' \
+    --platformId '9A4wHdBcfvronc7z' \
+    --platformUserId 'jUWL9rixNbrypQAF' \
     > test.out 2>&1
 eval_tap $? 232 'PublicGetUserByPlatformUserIDV3' test.out
 
@@ -1699,7 +1700,7 @@ $CLI_EXE \
     --sn iam \
     --op PublicGetAsyncStatus \
     --namespace $AB_NAMESPACE \
-    --requestId 'FosMiz7UleCh2Ui7' \
+    --requestId 'osMiz7UleCh2Ui7u' \
     > test.out 2>&1
 eval_tap $? 233 'PublicGetAsyncStatus' test.out
 
@@ -1708,16 +1709,16 @@ $CLI_EXE \
     --sn iam \
     --op PublicSearchUserV3 \
     --namespace $AB_NAMESPACE \
-    --by 'uy360VpYzz2I0bc5' \
-    --limit '25' \
-    --offset '75' \
-    --query 'oxt0xWgID7tFiBZB' \
+    --by 'y360VpYzz2I0bc5m' \
+    --limit '75' \
+    --offset '29' \
+    --query 'sGJuLLjLEdlNUgqi' \
     > test.out 2>&1
 eval_tap $? 234 'PublicSearchUserV3' test.out
 
 #- 235 PublicCreateUserV3
 # body param: body
-echo '{"PasswordMD5Sum": "DwBAghEaZhjH43fB", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "k0WIWQtnuoenJ7sR", "policyId": "GrdfKlLP7mi79HF3", "policyVersionId": "qTCLFW0BJBXGssAh"}, {"isAccepted": false, "localizedPolicyVersionId": "eNIhjOuLsrxtL5zd", "policyId": "rXbdajrxUmydxSyW", "policyVersionId": "nwKJXPc9kW7pSiNi"}, {"isAccepted": false, "localizedPolicyVersionId": "Z62ERD0ri6VhDmnV", "policyId": "WrhChp6lORKXTzAO", "policyVersionId": "eIUdtRXZqrFlLa2z"}], "authType": "l67NP20g0VSCjQKC", "code": "uEBFGibb38gXunwD", "country": "m7aSSFIrtrNJmgMj", "dateOfBirth": "byzTKBmBw9niyOD8", "displayName": "3I1upbHQCiDNsHHU", "emailAddress": "V1017nN6CmSz87af", "password": "lJD3aWpfNFMPW8eb", "reachMinimumAge": true}' > $TEMP_JSON_INPUT
+echo '{"PasswordMD5Sum": "3FAFsiHboJdQAhWG", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "D6QpeW9xZolYpyAu", "policyId": "d59a9TFS26P3VAfA", "policyVersionId": "KxtUC4aQx0WualCi"}, {"isAccepted": false, "localizedPolicyVersionId": "WiVOWAO0abwE3Rt5", "policyId": "kZ5QLZZFrjnKEBQh", "policyVersionId": "OYyuUyFQakgtQEh1"}, {"isAccepted": false, "localizedPolicyVersionId": "Z62ERD0ri6VhDmnV", "policyId": "WrhChp6lORKXTzAO", "policyVersionId": "eIUdtRXZqrFlLa2z"}], "authType": "l67NP20g0VSCjQKC", "code": "uEBFGibb38gXunwD", "country": "m7aSSFIrtrNJmgMj", "dateOfBirth": "byzTKBmBw9niyOD8", "displayName": "3I1upbHQCiDNsHHU", "emailAddress": "V1017nN6CmSz87af", "password": "lJD3aWpfNFMPW8eb", "reachMinimumAge": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV3 \

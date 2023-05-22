@@ -31,12 +31,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicListUserIDByPlatformUserIDsV3Builder>
         {
 
+            public bool? RawPUID { get; set; }
+
 
 
 
 
             internal PublicListUserIDByPlatformUserIDsV3Builder() { }
 
+
+            public PublicListUserIDByPlatformUserIDsV3Builder SetRawPUID(bool _rawPUID)
+            {
+                RawPUID = _rawPUID;
+                return this;
+            }
 
 
 
@@ -68,6 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
 
+            if (builder.RawPUID != null) QueryParams["rawPUID"] = Convert.ToString(builder.RawPUID)!;
 
 
 
@@ -82,12 +91,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public PublicListUserIDByPlatformUserIDsV3(
             string namespace_,
             string platformId,
+            bool? rawPUID,
             Model.ModelPlatformUserIDRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
 
+            if (rawPUID != null) QueryParams["rawPUID"] = Convert.ToString(rawPUID)!;
 
 
 

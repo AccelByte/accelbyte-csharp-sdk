@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
     /// <summary>
     /// DeleteDeployment
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [DELETE]
     /// 
     /// Required scope: social
     /// 

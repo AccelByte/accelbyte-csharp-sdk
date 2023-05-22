@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("enable_region_overrides")]
         public bool? EnableRegionOverrides { get; set; }
 
+        [JsonPropertyName("extendable_session")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ExtendableSession { get; set; }
+
         [JsonPropertyName("game_version")]
         public string? GameVersion { get; set; }
 

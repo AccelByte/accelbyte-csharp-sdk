@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.GetSession.Builder.SetWrapperObject(this); }
         }
+        public CancelSession.CancelSessionBuilder CancelSessionOp
+        {
+            get { return Operation.CancelSession.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsSessionResponse? CreateSession(CreateSession input)
@@ -56,6 +60,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void CancelSession(CancelSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -87,6 +87,14 @@
 | `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}` | GET | GetCurrentCycleLeaderboardRankingPublicV3 | [GetCurrentCycleLeaderboardRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) | [GetCurrentCycleLeaderboardRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) |
 | `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}` | GET | GetUserRankingPublicV3 | [GetUserRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetUserRankingPublicV3.cs) | [GetUserRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetUserRankingPublicV3.cs) |
 
+### UserVisibilityV3 Wrapper:  [UserVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserVisibilityV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/hidden` | GET | GetHiddenUsersV3 | [GetHiddenUsersV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/GetHiddenUsersV3.cs) | [GetHiddenUsersV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/GetHiddenUsersV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility` | GET | GetUserVisibilityStatusV3 | [GetUserVisibilityStatusV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/GetUserVisibilityStatusV3.cs) | [GetUserVisibilityStatusV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/GetUserVisibilityStatusV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility` | PUT | SetUserLeaderboardVisibilityV3 | [SetUserLeaderboardVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/SetUserLeaderboardVisibilityV3.cs) | [SetUserLeaderboardVisibilityV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/SetUserLeaderboardVisibilityV3.cs) |
+| `/leaderboard/v3/admin/namespaces/{namespace}/users/{userId}/visibility` | PUT | SetUserVisibilityV3 | [SetUserVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/SetUserVisibilityV3.cs) | [SetUserVisibilityV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/SetUserVisibilityV3.cs) |
+
 
 &nbsp;  
 
@@ -117,6 +125,10 @@
 |---|---|---|---|---|
 
 ### LeaderboardDataV3 Wrapper:  [LeaderboardDataV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/LeaderboardDataV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### UserVisibilityV3 Wrapper:  [UserVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserVisibilityV3.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

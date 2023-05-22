@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         }
 
         #region Operation Builders
+        public ListServerClient.ListServerClientBuilder ListServerClientOp
+        {
+            get { return Operation.ListServerClient.Builder.SetWrapperObject(this); }
+        }
+        public ServerHeartbeat.ServerHeartbeatBuilder ServerHeartbeatOp
+        {
+            get { return Operation.ServerHeartbeat.Builder.SetWrapperObject(this); }
+        }
         public DeregisterLocalServer.DeregisterLocalServerBuilder DeregisterLocalServerOp
         {
             get { return Operation.DeregisterLocalServer.Builder.SetWrapperObject(this); }
@@ -35,12 +43,34 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.ShutdownServer.Builder.SetWrapperObject(this); }
         }
+        public GetServerSessionTimeout.GetServerSessionTimeoutBuilder GetServerSessionTimeoutOp
+        {
+            get { return Operation.GetServerSessionTimeout.Builder.SetWrapperObject(this); }
+        }
         public GetServerSession.GetServerSessionBuilder GetServerSessionOp
         {
             get { return Operation.GetServerSession.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+        public Model.ModelsListServerResponse? ListServerClient(ListServerClient input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ServerHeartbeat(ServerHeartbeat input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void DeregisterLocalServer(DeregisterLocalServer input)
         {
             var response = _sdk.RunRequest(input);
@@ -73,6 +103,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsServerDeploymentConfigSessionTimeoutResponse? GetServerSessionTimeout(GetServerSessionTimeout input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

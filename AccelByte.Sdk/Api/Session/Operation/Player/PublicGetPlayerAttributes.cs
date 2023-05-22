@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - userID : platform userID
     /// - data : other data that the player wants to store.
     /// - currentPlatform : latest user game platform.
+    /// - roles : user role for matchmaking role base support.
     /// </summary>
     public class PublicGetPlayerAttributes : AccelByte.Sdk.Core.Operation
     {

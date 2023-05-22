@@ -35,6 +35,8 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}` | GET | GetImageDetail | [GetImageDetail](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetImageDetail.cs) | [GetImageDetail](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetImageDetail.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches` | GET | GetImagePatches | [GetImagePatches](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetImagePatches.cs) | [GetImagePatches](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetImagePatches.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches/{versionPatch}` | GET | GetImagePatchDetail | [GetImagePatchDetail](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetImagePatchDetail.cs) | [GetImagePatchDetail](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetImagePatchDetail.cs) |
+| `/dsmcontroller/admin/namespaces/{namespace}/repository` | GET | GetRepository | [GetRepository](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetRepository.cs) | [GetRepository](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetRepository.cs) |
+| `/dsmcontroller/admin/repository` | POST | CreateRepository | [CreateRepository](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/CreateRepository.cs) | [CreateRepository](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/CreateRepository.cs) |
 | `/dsmcontroller/namespaces/{namespace}/images/limit` | GET | ImageLimitClient | [ImageLimitClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageLimitClient.cs) | [ImageLimitClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageLimitClient.cs) |
 | `/dsmcontroller/namespaces/{namespace}/images/versions/{version}` | GET | ImageDetailClient | [ImageDetailClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageDetailClient.cs) | [ImageDetailClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageDetailClient.cs) |
 
@@ -47,6 +49,9 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | POST | CreatePodConfig | [CreatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/CreatePodConfig.cs) | [CreatePodConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/CreatePodConfig.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | DELETE | DeletePodConfig | [DeletePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/DeletePodConfig.cs) | [DeletePodConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/DeletePodConfig.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/pods/{name}` | PATCH | UpdatePodConfig | [UpdatePodConfig](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/UpdatePodConfig.cs) | [UpdatePodConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/UpdatePodConfig.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/pods` | GET | GetAllPodConfigClient | [GetAllPodConfigClient](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/GetAllPodConfigClient.cs) | [GetAllPodConfigClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/GetAllPodConfigClient.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/pods/{name}` | POST | CreatePodConfigClient | [CreatePodConfigClient](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/CreatePodConfigClient.cs) | [CreatePodConfigClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/CreatePodConfigClient.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/pods/{name}` | DELETE | DeletePodConfigClient | [DeletePodConfigClient](../../AccelByte.Sdk/Api/Dsmc/Operation/PodConfig/DeletePodConfigClient.cs) | [DeletePodConfigClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/PodConfig/DeletePodConfigClient.cs) |
 
 ### Deployment Config Wrapper:  [DeploymentConfig](../../AccelByte.Sdk/Api/Dsmc/Wrapper/DeploymentConfig.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -65,6 +70,9 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | POST | CreateOverrideRegionOverride | [CreateOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/CreateOverrideRegionOverride.cs) | [CreateOverrideRegionOverride](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/CreateOverrideRegionOverride.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | DELETE | DeleteOverrideRegionOverride | [DeleteOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/DeleteOverrideRegionOverride.cs) | [DeleteOverrideRegionOverride](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/DeleteOverrideRegionOverride.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/configs/deployments/{deployment}/overrides/versions/{version}/regions/{region}` | PATCH | UpdateOverrideRegionOverride | [UpdateOverrideRegionOverride](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/UpdateOverrideRegionOverride.cs) | [UpdateOverrideRegionOverride](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/UpdateOverrideRegionOverride.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/deployments` | GET | GetAllDeploymentClient | [GetAllDeploymentClient](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/GetAllDeploymentClient.cs) | [GetAllDeploymentClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/GetAllDeploymentClient.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/deployments/{deployment}` | POST | CreateDeploymentClient | [CreateDeploymentClient](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/CreateDeploymentClient.cs) | [CreateDeploymentClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/CreateDeploymentClient.cs) |
+| `/dsmcontroller/namespaces/{namespace}/configs/deployments/{deployment}` | DELETE | DeleteDeploymentClient | [DeleteDeploymentClient](../../AccelByte.Sdk/Api/Dsmc/Operation/DeploymentConfig/DeleteDeploymentClient.cs) | [DeleteDeploymentClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/DeploymentConfig/DeleteDeploymentClient.cs) |
 
 ### Admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Admin.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -83,10 +91,13 @@
 ### Server Wrapper:  [Server](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Server.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/dsmcontroller/namespaces/{namespace}/servers` | GET | ListServerClient | [ListServerClient](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/ListServerClient.cs) | [ListServerClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/ListServerClient.cs) |
+| `/dsmcontroller/namespaces/{namespace}/servers/heartbeat` | PUT | ServerHeartbeat | [ServerHeartbeat](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/ServerHeartbeat.cs) | [ServerHeartbeat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/ServerHeartbeat.cs) |
 | `/dsmcontroller/namespaces/{namespace}/servers/local/deregister` | POST | DeregisterLocalServer | [DeregisterLocalServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/DeregisterLocalServer.cs) | [DeregisterLocalServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/DeregisterLocalServer.cs) |
 | `/dsmcontroller/namespaces/{namespace}/servers/local/register` | POST | RegisterLocalServer | [RegisterLocalServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/RegisterLocalServer.cs) | [RegisterLocalServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/RegisterLocalServer.cs) |
 | `/dsmcontroller/namespaces/{namespace}/servers/register` | POST | RegisterServer | [RegisterServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/RegisterServer.cs) | [RegisterServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/RegisterServer.cs) |
 | `/dsmcontroller/namespaces/{namespace}/servers/shutdown` | POST | ShutdownServer | [ShutdownServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/ShutdownServer.cs) | [ShutdownServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/ShutdownServer.cs) |
+| `/dsmcontroller/namespaces/{namespace}/servers/{podName}/config/sessiontimeout` | GET | GetServerSessionTimeout | [GetServerSessionTimeout](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/GetServerSessionTimeout.cs) | [GetServerSessionTimeout](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/GetServerSessionTimeout.cs) |
 | `/dsmcontroller/namespaces/{namespace}/servers/{podName}/session` | GET | GetServerSession | [GetServerSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Server/GetServerSession.cs) | [GetServerSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Server/GetServerSession.cs) |
 
 ### Session Wrapper:  [Session](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Session.cs)
@@ -95,6 +106,7 @@
 | `/dsmcontroller/namespaces/{namespace}/sessions` | POST | CreateSession | [CreateSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Session/CreateSession.cs) | [CreateSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Session/CreateSession.cs) |
 | `/dsmcontroller/namespaces/{namespace}/sessions/claim` | POST | ClaimServer | [ClaimServer](../../AccelByte.Sdk/Api/Dsmc/Operation/Session/ClaimServer.cs) | [ClaimServer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Session/ClaimServer.cs) |
 | `/dsmcontroller/namespaces/{namespace}/sessions/{sessionID}` | GET | GetSession | [GetSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Session/GetSession.cs) | [GetSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Session/GetSession.cs) |
+| `/dsmcontroller/namespaces/{namespace}/sessions/{sessionID}/cancel` | DELETE | CancelSession | [CancelSession](../../AccelByte.Sdk/Api/Dsmc/Operation/Session/CancelSession.cs) | [CancelSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/Session/CancelSession.cs) |
 
 ### Public Wrapper:  [Public](../../AccelByte.Sdk/Api/Dsmc/Wrapper/Public.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -169,7 +181,9 @@
 | `models.CreatePodConfigRequest` | [ModelsCreatePodConfigRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreatePodConfigRequest.cs) |
 | `models.CreatePortRequest` | [ModelsCreatePortRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreatePortRequest.cs) |
 | `models.CreateRegionOverrideRequest` | [ModelsCreateRegionOverrideRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreateRegionOverrideRequest.cs) |
+| `models.CreateRepositoryRequest` | [ModelsCreateRepositoryRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreateRepositoryRequest.cs) |
 | `models.CreateSessionRequest` | [ModelsCreateSessionRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsCreateSessionRequest.cs) |
+| `models.DSHeartbeatRequest` | [ModelsDSHeartbeatRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDSHeartbeatRequest.cs) |
 | `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDSMConfigRecord.cs) |
 | `models.DefaultProvider` | [ModelsDefaultProvider](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDefaultProvider.cs) |
 | `models.DeploymentConfigOverride` | [ModelsDeploymentConfigOverride](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsDeploymentConfigOverride.cs) |
@@ -198,10 +212,12 @@
 | `models.PodCountConfigOverride` | [ModelsPodCountConfigOverride](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsPodCountConfigOverride.cs) |
 | `models.RegisterLocalServerRequest` | [ModelsRegisterLocalServerRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRegisterLocalServerRequest.cs) |
 | `models.RegisterServerRequest` | [ModelsRegisterServerRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRegisterServerRequest.cs) |
+| `models.RepositoryRecord` | [ModelsRepositoryRecord](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRepositoryRecord.cs) |
 | `models.RequestMatchMember` | [ModelsRequestMatchMember](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRequestMatchMember.cs) |
 | `models.RequestMatchParty` | [ModelsRequestMatchParty](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRequestMatchParty.cs) |
 | `models.RequestMatchingAlly` | [ModelsRequestMatchingAlly](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsRequestMatchingAlly.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServer.cs) |
+| `models.ServerDeploymentConfigSessionTimeoutResponse` | [ModelsServerDeploymentConfigSessionTimeoutResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServerDeploymentConfigSessionTimeoutResponse.cs) |
 | `models.ServerSessionResponse` | [ModelsServerSessionResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsServerSessionResponse.cs) |
 | `models.Session` | [ModelsSession](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsSession.cs) |
 | `models.SessionResponse` | [ModelsSessionResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsSessionResponse.cs) |
@@ -213,4 +229,5 @@
 | `models.UpdatePodConfigRequest` | [ModelsUpdatePodConfigRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdatePodConfigRequest.cs) |
 | `models.UpdatePortRequest` | [ModelsUpdatePortRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdatePortRequest.cs) |
 | `models.UpdateRegionOverrideRequest` | [ModelsUpdateRegionOverrideRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdateRegionOverrideRequest.cs) |
+| `models.UploaderFlag` | [ModelsUploaderFlag](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUploaderFlag.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Dsmc/Model/ResponseError.cs) |

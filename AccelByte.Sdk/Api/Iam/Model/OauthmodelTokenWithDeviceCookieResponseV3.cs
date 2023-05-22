@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? AuthTrustId { get; set; }
 
         [JsonPropertyName("bans")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AccountcommonJWTBanV3>? Bans { get; set; }
 
         [JsonPropertyName("display_name")]
@@ -38,6 +39,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("namespace_roles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AccountcommonNamespaceRole>? NamespaceRoles { get; set; }
 
         [JsonPropertyName("permissions")]
@@ -60,6 +62,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? RefreshToken { get; set; }
 
         [JsonPropertyName("roles")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Roles { get; set; }
 
         [JsonPropertyName("scope")]

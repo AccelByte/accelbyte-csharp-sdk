@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
+        [JsonPropertyName("uploaderFlags")]
+        public List<ModelsUploaderFlag>? UploaderFlags { get; set; }
+
         [JsonPropertyName("version")]
         public string? Version { get; set; }
 

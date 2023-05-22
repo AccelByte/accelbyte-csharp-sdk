@@ -236,5 +236,48 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateOverrideRegionOverride(op);
         }
+        public static Dsmc.Model.ModelsListDeploymentResponse? Execute(
+            this GetAllDeploymentClient.GetAllDeploymentClientBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            GetAllDeploymentClient op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeploymentClient(op);
+        }
+        public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
+            this CreateDeploymentClient.CreateDeploymentClientBuilder builder,
+            ModelsCreateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            CreateDeploymentClient op = builder.Build(
+                body,
+                deployment,
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentClient(op);
+        }
+        public static void Execute(
+            this DeleteDeploymentClient.DeleteDeploymentClientBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            DeleteDeploymentClient op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentClient(op);
+        }
     }
 }

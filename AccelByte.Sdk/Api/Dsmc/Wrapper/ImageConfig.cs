@@ -67,6 +67,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.GetImagePatchDetail.Builder.SetWrapperObject(this); }
         }
+        public GetRepository.GetRepositoryBuilder GetRepositoryOp
+        {
+            get { return Operation.GetRepository.Builder.SetWrapperObject(this); }
+        }
+        public CreateRepository.CreateRepositoryBuilder CreateRepositoryOp
+        {
+            get { return Operation.CreateRepository.Builder.SetWrapperObject(this); }
+        }
         public ImageLimitClient.ImageLimitClientBuilder ImageLimitClientOp
         {
             get { return Operation.ImageLimitClient.Builder.SetWrapperObject(this); }
@@ -181,6 +189,24 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsRepositoryRecord? GetRepository(GetRepository input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void CreateRepository(CreateRepository input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
