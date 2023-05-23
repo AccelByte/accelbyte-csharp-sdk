@@ -2,7 +2,8 @@
 ## [v0.35.0]
 ### chore
 - **jenkinsfile:** update generate spec target
-
+### fix
+- **tests:** fixed leaderboard integration test
 
 <a name="v0.34.0"></a>
 ## [v0.34.0]
