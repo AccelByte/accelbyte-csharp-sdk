@@ -23,21 +23,7 @@ namespace AccelByte.Sdk.Tests
 
         private static readonly ITokenRepository _tokenRepository = new DefaultTokenRepository();
 
-        private static readonly TestConfigRepository _httpbinConfigRepository = new TestConfigRepository(
-            "https://httpbin.org",      // Requires internet connection
-            "DUMMY_CLIENT_ID",
-            "DUMMY_CLIENT_SECRET",
-            "CSharpTests");
-        private static readonly TestConfigRepository _clientConfigRepository = new TestConfigRepository(
-            "http://localhost:8080",    // Requires justice-codegen-sdk-mock-server with iam.json loaded
-            "admin",
-            "admin",
-            "CSharpTests");
-        private static readonly TestConfigRepository _userConfigRepository = new TestConfigRepository(
-            "http://localhost:8080",    // Requires justice-codegen-sdk-mock-server with iam.json loaded
-            "admin",
-            "admin",
-            "CSharpTests");
+        private static readonly HttpbinConfigRepository _httpbinConfigRepository = new HttpbinConfigRepository("client");
 
         [Test]
         [TestCase("GET", "csv")]
