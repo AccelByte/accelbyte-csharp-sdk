@@ -95,6 +95,11 @@
 | `/leaderboard/v3/admin/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}/visibility` | PUT | SetUserLeaderboardVisibilityV3 | [SetUserLeaderboardVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/SetUserLeaderboardVisibilityV3.cs) | [SetUserLeaderboardVisibilityV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/SetUserLeaderboardVisibilityV3.cs) |
 | `/leaderboard/v3/admin/namespaces/{namespace}/users/{userId}/visibility` | PUT | SetUserVisibilityV3 | [SetUserVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserVisibilityV3/SetUserVisibilityV3.cs) | [SetUserVisibilityV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserVisibilityV3/SetUserVisibilityV3.cs) |
 
+### UserDataV3 Wrapper:  [UserDataV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserDataV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/leaderboard/v3/admin/namespaces/{namespace}/users/{userId}/leaderboards` | GET | GetUserLeaderboardRankingsAdminV3 | [GetUserLeaderboardRankingsAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/UserDataV3/GetUserLeaderboardRankingsAdminV3.cs) | [GetUserLeaderboardRankingsAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/UserDataV3/GetUserLeaderboardRankingsAdminV3.cs) |
+
 
 &nbsp;  
 
@@ -132,6 +137,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### UserDataV3 Wrapper:  [UserDataV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserDataV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -150,6 +159,7 @@
 | `models.GetAllLeaderboardConfigsResp` | [ModelsGetAllLeaderboardConfigsResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsResp.cs) |
 | `models.GetAllLeaderboardConfigsRespV3` | [ModelsGetAllLeaderboardConfigsRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllLeaderboardConfigsRespV3.cs) |
 | `models.GetAllUserLeaderboardsResp` | [ModelsGetAllUserLeaderboardsResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllUserLeaderboardsResp.cs) |
+| `models.GetAllUserLeaderboardsRespV3` | [ModelsGetAllUserLeaderboardsRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetAllUserLeaderboardsRespV3.cs) |
 | `models.GetHiddenUserResponse` | [ModelsGetHiddenUserResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetHiddenUserResponse.cs) |
 | `models.GetLeaderboardConfigPublicResp` | [ModelsGetLeaderboardConfigPublicResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigPublicResp.cs) |
 | `models.GetLeaderboardConfigPublicRespV3` | [ModelsGetLeaderboardConfigPublicRespV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsGetLeaderboardConfigPublicRespV3.cs) |
@@ -169,6 +179,7 @@
 | `models.UpdateUserPointAdminV1Response` | [ModelsUpdateUserPointAdminV1Response](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUpdateUserPointAdminV1Response.cs) |
 | `models.UserCycleRankingResponseDetail` | [ModelsUserCycleRankingResponseDetail](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserCycleRankingResponseDetail.cs) |
 | `models.UserLeaderboardRanking` | [ModelsUserLeaderboardRanking](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserLeaderboardRanking.cs) |
+| `models.UserLeaderboardRankingV3` | [ModelsUserLeaderboardRankingV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserLeaderboardRankingV3.cs) |
 | `models.UserPoint` | [ModelsUserPoint](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserPoint.cs) |
 | `models.UserRankingResponse` | [ModelsUserRankingResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponse.cs) |
 | `models.UserRankingResponseDetail` | [ModelsUserRankingResponseDetail](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsUserRankingResponseDetail.cs) |

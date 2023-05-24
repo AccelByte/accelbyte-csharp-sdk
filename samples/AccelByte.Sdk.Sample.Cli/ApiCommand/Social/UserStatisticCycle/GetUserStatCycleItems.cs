@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("isPublic")]
+        public bool? IsPublic { get; set; }
+
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
 
@@ -60,6 +63,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.GetUserStatCycleItems.Builder;
 
+            if (IsPublic != null)
+                opBuilder.SetIsPublic((bool)IsPublic);
             if (Limit != null)
                 opBuilder.SetLimit((int)Limit);
             if (Offset != null)

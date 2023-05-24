@@ -39,7 +39,7 @@ TEMP_FILE_UPLOAD="file_upload.bin"
 SERVICE_NAME="lobby"
 
 echo "TAP version 13"
-echo "1..104"
+echo "1..103"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -1064,84 +1064,73 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 93 'StartMatchmakingResponse' test.out
 
-#- 94 SystemComponentsStatus
-# echo "Testing 'SystemComponentsStatus'"
-printf 'type: systemComponentsStatus\ncomponents: {"iKKuc8Urg4atANoO":false,"iOvxo4sO2v2SBoI1":false,"w4mFyLcIq00Vl8sx":true}' > $TEMP_FILE_UPLOAD
-$CLI_EXE \
-    --ws \
-    --sn $SERVICE_NAME \
-    --retry-on-ws-message-error \
-    --ws-payload-file $TEMP_FILE_UPLOAD \
-    > test.out 2>&1
-eval_tap $? 94 'SystemComponentsStatus' test.out
-
-#- 95 UnblockPlayerNotif
+#- 94 UnblockPlayerNotif
 # echo "Testing 'UnblockPlayerNotif'"
-printf 'type: unblockPlayerNotif\nunblockedUserId: hYagCDowXpzPB56b\nuserId: 3OlkJK0TMs61QJU3' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerNotif\nunblockedUserId: iKKuc8Urg4atANoO\nuserId: fyCbfBoH6zLgTsYm' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 95 'UnblockPlayerNotif' test.out
+eval_tap $? 94 'UnblockPlayerNotif' test.out
 
-#- 96 UnblockPlayerRequest
+#- 95 UnblockPlayerRequest
 # echo "Testing 'UnblockPlayerRequest'"
-printf 'type: unblockPlayerRequest\nid: NQDgVJljnvyeys0K\nnamespace: d9lSy4dXRirNN1XT\nunblockedUserId: VbZINAYTfmDdnbfK' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerRequest\nid: Aw4mFyLcIq00Vl8s\nnamespace: xzC1fJxroZeNIlbx\nunblockedUserId: AUeRUjUbaPklfVic' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 96 'UnblockPlayerRequest' test.out
+eval_tap $? 95 'UnblockPlayerRequest' test.out
 
-#- 97 UnblockPlayerResponse
+#- 96 UnblockPlayerResponse
 # echo "Testing 'UnblockPlayerResponse'"
-printf 'type: unblockPlayerResponse\nid: DPqu8PVXnN0xl48R\ncode: 76\nnamespace: oZbNL7cXCVaF9U1H\nunblockedUserId: 9bQv7EybPwbHEHxS' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerResponse\nid: NQDgVJljnvyeys0K\ncode: 52\nnamespace: d9lSy4dXRirNN1XT\nunblockedUserId: VbZINAYTfmDdnbfK' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 97 'UnblockPlayerResponse' test.out
+eval_tap $? 96 'UnblockPlayerResponse' test.out
 
-#- 98 UnfriendNotif
+#- 97 UnfriendNotif
 # echo "Testing 'UnfriendNotif'"
-printf 'type: unfriendNotif\nfriendId: PaGCQl5y1gekeqHn' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendNotif\nfriendId: LdllLcrgG7MUCvBQ' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 98 'UnfriendNotif' test.out
+eval_tap $? 97 'UnfriendNotif' test.out
 
-#- 99 UnfriendRequest
+#- 98 UnfriendRequest
 # echo "Testing 'UnfriendRequest'"
-printf 'type: unfriendRequest\nid: yLbOzAYD5IH4deTF\nfriendId: zZfY22Z1SmIc5NTR' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendRequest\nid: UYE0mbvUdfY0BqpF\nfriendId: xDMKfZnQUHzroRIL' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 99 'UnfriendRequest' test.out
+eval_tap $? 98 'UnfriendRequest' test.out
 
-#- 100 UnfriendResponse
+#- 99 UnfriendResponse
 # echo "Testing 'UnfriendResponse'"
-printf 'type: unfriendResponse\nid: PsgbHDuaBMlhmWv2\ncode: 59' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendResponse\nid: PaGCQl5y1gekeqHn\ncode: 47' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 100 'UnfriendResponse' test.out
+eval_tap $? 99 'UnfriendResponse' test.out
 
-#- 101 UserBannedNotification
+#- 100 UserBannedNotification
 # echo "Testing 'UserBannedNotification'"
 printf 'type: userBannedNotification' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -1150,40 +1139,40 @@ $CLI_EXE \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 101 'UserBannedNotification' test.out
+eval_tap $? 100 'UserBannedNotification' test.out
 
-#- 102 UserMetricRequest
+#- 101 UserMetricRequest
 # echo "Testing 'UserMetricRequest'"
-printf 'type: userMetricRequest\nid: CjjBQfnFyRj8oJlS' > $TEMP_FILE_UPLOAD
+printf 'type: userMetricRequest\nid: zZfY22Z1SmIc5NTR' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 102 'UserMetricRequest' test.out
+eval_tap $? 101 'UserMetricRequest' test.out
 
-#- 103 UserMetricResponse
+#- 102 UserMetricResponse
 # echo "Testing 'UserMetricResponse'"
-printf 'type: userMetricResponse\nid: xc2NKFB2qxCiWMNd\ncode: 92\nplayerCount: 44' > $TEMP_FILE_UPLOAD
+printf 'type: userMetricResponse\nid: vR4rhLLvUwAWnj9y\ncode: 50\nplayerCount: 85' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 103 'UserMetricResponse' test.out
+eval_tap $? 102 'UserMetricResponse' test.out
 
-#- 104 UserStatusNotif
+#- 103 UserStatusNotif
 # echo "Testing 'UserStatusNotif'"
-printf 'type: userStatusNotif\nactivity: SAH6QCBczexoUjGK\navailability: 72\nlastSeenAt: 5qayS4UAMJrRrnNf\nuserId: XdTnJz7e3tD8KVlM' > $TEMP_FILE_UPLOAD
+printf 'type: userStatusNotif\nactivity: DORAsuT0lseQtOoo\navailability: 16\nlastSeenAt: jjBQfnFyRj8oJlSS\nuserId: Fh8ZLYsKNsz83B3u' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 104 'UserStatusNotif' test.out
+eval_tap $? 103 'UserStatusNotif' test.out
 
 
 exit $EXIT_CODE

@@ -45,6 +45,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? OrderBy { get; set; }
 
+            public string? PartyID { get; set; }
+
             public string? Value { get; set; }
 
 
@@ -108,6 +110,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
+            public AdminQueryPartiesBuilder SetPartyID(string _partyID)
+            {
+                PartyID = _partyID;
+                return this;
+            }
+
             public AdminQueryPartiesBuilder SetValue(string _value)
             {
                 Value = _value;
@@ -146,6 +154,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
+            if (builder.PartyID is not null) QueryParams["partyID"] = builder.PartyID;
             if (builder.Value is not null) QueryParams["value"] = builder.Value;
 
 
@@ -168,6 +177,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             long? offset,
             string? order,
             string? orderBy,
+            string? partyID,
             string? value
         )
         {
@@ -182,6 +192,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (order is not null) QueryParams["order"] = order;
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
+            if (partyID is not null) QueryParams["partyID"] = partyID;
             if (value is not null) QueryParams["value"] = value;
 
 

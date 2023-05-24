@@ -522,6 +522,7 @@
 | `accountcommon.Permissions` | [AccountcommonPermissions](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissions.cs) |
 | `accountcommon.PermissionsV3` | [AccountcommonPermissionsV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissionsV3.cs) |
 | `accountcommon.PlatformAccount` | [AccountcommonPlatformAccount](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPlatformAccount.cs) |
+| `accountcommon.PlatformLinkingHistory` | [AccountcommonPlatformLinkingHistory](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPlatformLinkingHistory.cs) |
 | `accountcommon.PlatformUserInformationV3` | [AccountcommonPlatformUserInformationV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPlatformUserInformationV3.cs) |
 | `accountcommon.RegisteredDomain` | [AccountcommonRegisteredDomain](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonRegisteredDomain.cs) |
 | `accountcommon.Role` | [AccountcommonRole](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonRole.cs) |

@@ -62,6 +62,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributes<T1>(op);
         }
+        public static Session.Model.ApimodelsPlayersCurrentPlatformResponse? Execute(
+            this PublicGetBulkPlayerCurrentPlatform.PublicGetBulkPlayerCurrentPlatformBuilder builder,
+            ApimodelsPlayersCurrentPlatformRequest body,
+            string namespace_
+        )
+        {
+            PublicGetBulkPlayerCurrentPlatform op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetBulkPlayerCurrentPlatform(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
             string namespace_

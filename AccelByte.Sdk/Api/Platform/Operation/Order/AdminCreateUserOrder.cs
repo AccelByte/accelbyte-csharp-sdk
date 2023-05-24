@@ -24,6 +24,24 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * sandbox default value is false
     ///   * platform default value is Other
     ///   *  Returns : created order
+    /// 
+    /// 
+    /// 
+    /// ## Restrictions for ext field
+    /// 
+    /// 
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
     /// </summary>
     public class AdminCreateUserOrder : AccelByte.Sdk.Core.Operation
     {

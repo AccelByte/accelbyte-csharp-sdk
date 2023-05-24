@@ -19,6 +19,24 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update Platform DLC config. Other detail info:
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:DLC:CONFIG", action=4 (UPDATE)
     ///   *  Returns : updated Platform DLC config
+    /// 
+    /// 
+    /// 
+    /// ## Restrictions for platform dlc map
+    /// 
+    /// 
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
     /// </summary>
     public class UpdatePlatformDLCConfig : AccelByte.Sdk.Core.Operation
     {

@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("excludeOtherNamespacesPolicies")]
+        public bool? ExcludeOtherNamespacesPolicies { get; set; }
+
         public RetrieveAcceptedAgreements1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,6 +48,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.RetrieveAcceptedAgreements1.Builder;
 
+            if (ExcludeOtherNamespacesPolicies != null)
+                opBuilder.SetExcludeOtherNamespacesPolicies((bool)ExcludeOtherNamespacesPolicies);
 
 
 

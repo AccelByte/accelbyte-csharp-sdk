@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("convertGameUserId")]
+        public bool? ConvertGameUserId { get; set; }
+
         [SdkCommandArgument("keyword")]
         public string? Keyword { get; set; }
 
@@ -54,6 +57,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.RetrieveAllUsersByPolicyVersion1.Builder;
 
+            if (ConvertGameUserId != null)
+                opBuilder.SetConvertGameUserId((bool)ConvertGameUserId);
             if (Keyword != null)
                 opBuilder.SetKeyword((string)Keyword);
             if (Limit != null)
@@ -70,7 +75,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             );
 
 
-            List<AccelByte.Sdk.Api.Legal.Model.PagedRetrieveUserAcceptedAgreementResponse>? response = wrapper.RetrieveAllUsersByPolicyVersion1(operation);
+            AccelByte.Sdk.Api.Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? response = wrapper.RetrieveAllUsersByPolicyVersion1(operation);
             if (response == null)
                 return "No response from server.";
 

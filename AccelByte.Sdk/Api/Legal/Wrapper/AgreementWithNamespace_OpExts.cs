@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements1(op);
         }
-        public static List<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse>? Execute(
+        public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
             this RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder builder,
             string namespace_,
             string policyVersionId

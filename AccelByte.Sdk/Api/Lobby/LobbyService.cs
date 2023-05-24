@@ -363,7 +363,6 @@ namespace AccelByte.Sdk.Api.Lobby
         [WebSocketEvent("startMatchmakingResponse")]
         public Action<StartMatchmakingResponse>? OnStartMatchmakingResponse { get; set; } = null;
 
-
         [WebSocketEvent("unblockPlayerNotif")]
         public Action<UnblockPlayerNotif>? OnUnblockPlayerNotif { get; set; } = null;
 

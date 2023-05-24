@@ -30,6 +30,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
             : OperationBuilder<GetUserStatItemsBuilder>
         {
 
+            public bool? IsPublic { get; set; }
+
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
@@ -46,6 +48,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             internal GetUserStatItemsBuilder() { }
 
+
+            public GetUserStatItemsBuilder SetIsPublic(bool _isPublic)
+            {
+                IsPublic = _isPublic;
+                return this;
+            }
 
             public GetUserStatItemsBuilder SetLimit(int _limit)
             {
@@ -104,6 +112,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.IsPublic != null) QueryParams["isPublic"] = Convert.ToString(builder.IsPublic)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
@@ -122,6 +131,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public GetUserStatItems(
             string namespace_,
             string userId,
+            bool? isPublic,
             int? limit,
             int? offset,
             string? sortBy,
@@ -132,6 +142,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (isPublic != null) QueryParams["isPublic"] = Convert.ToString(isPublic)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy;

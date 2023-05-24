@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminGetPlayerAttributes.Builder.SetWrapperObject(this); }
         }
+        public PublicGetBulkPlayerCurrentPlatform.PublicGetBulkPlayerCurrentPlatformBuilder PublicGetBulkPlayerCurrentPlatformOp
+        {
+            get { return Operation.PublicGetBulkPlayerCurrentPlatform.Builder.SetWrapperObject(this); }
+        }
         public PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder PublicGetPlayerAttributesOp
         {
             get { return Operation.PublicGetPlayerAttributes.Builder.SetWrapperObject(this); }
@@ -75,6 +79,15 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsPlayersCurrentPlatformResponse? PublicGetBulkPlayerCurrentPlatform(PublicGetBulkPlayerCurrentPlatform input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

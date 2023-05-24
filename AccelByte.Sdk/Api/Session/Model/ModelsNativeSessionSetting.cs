@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("PSNServiceLabel")]
         public int? PSNServiceLabel { get; set; }
 
+        [JsonPropertyName("PSNSupportedPlatforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? PSNSupportedPlatforms { get; set; }
+
         [JsonPropertyName("SessionTitle")]
         public string? SessionTitle { get; set; }
 

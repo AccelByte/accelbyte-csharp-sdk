@@ -28,6 +28,19 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).GetUserStatCycleItems(op);
         }
         public static Social.Model.UserStatCycleItemPagingSlicedResult? Execute(
+            this PublicListMyStatCycleItems.PublicListMyStatCycleItemsBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            PublicListMyStatCycleItems op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).PublicListMyStatCycleItems(op);
+        }
+        public static Social.Model.UserStatCycleItemPagingSlicedResult? Execute(
             this GetUserStatCycleItems1.GetUserStatCycleItems1Builder builder,
             string cycleId,
             string namespace_,

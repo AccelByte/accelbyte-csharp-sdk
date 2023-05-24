@@ -18,11 +18,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Public list all statItems of user.
     /// NOTE:
-    ///               * If stat code does not exist, will ignore this stat code.
-    ///               * If stat item does not exist, will return default value
+    ///             * If stat code does not exist, will ignore this stat code.
+    ///             * If stat item does not exist, will return default value
     /// Other detail info:
-    ///               *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-    ///               *  Returns : stat items
+    ///             *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    ///             *  Returns : stat items
     /// </summary>
     public class PublicQueryUserStatItems2 : AccelByte.Sdk.Core.Operation
     {

@@ -22,6 +22,24 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:PAYMENT", action=1 (CREATE)
     ///   * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
     ///   *  Returns : created order
+    /// 
+    /// 
+    /// 
+    /// ## Restrictions for custom parameters and meta data
+    /// 
+    /// 
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
     /// </summary>
     public class CreateUserPaymentOrder : AccelByte.Sdk.Core.Operation
     {

@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public AccountcommonConflictedUserPlatformAccounts? MessageVariables { get; set; }
 
+        [JsonPropertyName("previousLinkedPlatformAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public AccountcommonPlatformLinkingHistory? PreviousLinkedPlatformAccount { get; set; }
+
     }
 
 

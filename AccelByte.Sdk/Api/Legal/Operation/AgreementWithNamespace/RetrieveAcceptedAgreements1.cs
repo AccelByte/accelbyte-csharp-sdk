@@ -28,12 +28,20 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             : OperationBuilder<RetrieveAcceptedAgreements1Builder>
         {
 
+            public bool? ExcludeOtherNamespacesPolicies { get; set; }
+
 
 
 
 
             internal RetrieveAcceptedAgreements1Builder() { }
 
+
+            public RetrieveAcceptedAgreements1Builder SetExcludeOtherNamespacesPolicies(bool _excludeOtherNamespacesPolicies)
+            {
+                ExcludeOtherNamespacesPolicies = _excludeOtherNamespacesPolicies;
+                return this;
+            }
 
 
 
@@ -62,6 +70,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.ExcludeOtherNamespacesPolicies != null) QueryParams["excludeOtherNamespacesPolicies"] = Convert.ToString(builder.ExcludeOtherNamespacesPolicies)!;
 
 
 
@@ -74,12 +83,14 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public RetrieveAcceptedAgreements1(
             string namespace_,
-            string userId
+            string userId,
+            bool? excludeOtherNamespacesPolicies
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (excludeOtherNamespacesPolicies != null) QueryParams["excludeOtherNamespacesPolicies"] = Convert.ToString(excludeOtherNamespacesPolicies)!;
 
 
 

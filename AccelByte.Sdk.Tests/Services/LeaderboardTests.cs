@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             DisableRetry();
-                
+
             string stat_code = "csharpserversdkteststat" + Guid.NewGuid().ToString().Substring(0, 6);
             string leaderboard_code = "csharpsdklbtest" + Guid.NewGuid().ToString().Substring(0, 6);
             string start_time = DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd'T'HH:mm:ss.ffK");

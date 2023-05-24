@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("additionalKey")]
+        public string? AdditionalKey { get; set; }
+
         [SdkCommandArgument("statCodes")]
         public List<string>? StatCodes { get; set; }
 
@@ -51,6 +54,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.PublicQueryUserStatItems1.Builder;
 
+            if (AdditionalKey != null)
+                opBuilder.SetAdditionalKey((string)AdditionalKey);
             if (StatCodes != null)
                 opBuilder.SetStatCodes((List<string>)StatCodes);
             if (Tags != null)

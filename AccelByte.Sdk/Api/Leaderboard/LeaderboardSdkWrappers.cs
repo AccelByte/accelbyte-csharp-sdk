@@ -101,6 +101,17 @@ namespace AccelByte.Sdk.Core
         }
         private UserVisibilityV3? _UserVisibilityV3 = null;
 
+        public UserDataV3 UserDataV3
+        {
+            get
+            {
+                if (_UserDataV3 == null)
+                    _UserDataV3 = new UserDataV3(_SdkObject);
+                return _UserDataV3;
+            }
+        }
+        private UserDataV3? _UserDataV3 = null;
+
         internal LeaderboardSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

@@ -12,6 +12,7 @@
 | `/friends/namespaces/{namespace}/me/incoming-time` | GET | GetUserIncomingFriendsWithTime | [GetUserIncomingFriendsWithTime](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserIncomingFriendsWithTime.cs) | [GetUserIncomingFriendsWithTime](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserIncomingFriendsWithTime.cs) |
 | `/friends/namespaces/{namespace}/me/outgoing` | GET | GetUserOutgoingFriends | [GetUserOutgoingFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserOutgoingFriends.cs) | [GetUserOutgoingFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserOutgoingFriends.cs) |
 | `/friends/namespaces/{namespace}/me/outgoing-time` | GET | GetUserOutgoingFriendsWithTime | [GetUserOutgoingFriendsWithTime](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserOutgoingFriendsWithTime.cs) | [GetUserOutgoingFriendsWithTime](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserOutgoingFriendsWithTime.cs) |
+| `/friends/namespaces/{namespace}/me/platforms` | GET | GetUserFriendsWithPlatform | [GetUserFriendsWithPlatform](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetUserFriendsWithPlatform.cs) | [GetUserFriendsWithPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetUserFriendsWithPlatform.cs) |
 | `/friends/namespaces/{namespace}/me/request` | POST | UserRequestFriend | [UserRequestFriend](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserRequestFriend.cs) | [UserRequestFriend](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserRequestFriend.cs) |
 | `/friends/namespaces/{namespace}/me/request/accept` | POST | UserAcceptFriendRequest | [UserAcceptFriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserAcceptFriendRequest.cs) | [UserAcceptFriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserAcceptFriendRequest.cs) |
 | `/friends/namespaces/{namespace}/me/request/cancel` | POST | UserCancelFriendRequest | [UserCancelFriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserCancelFriendRequest.cs) | [UserCancelFriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserCancelFriendRequest.cs) |
@@ -20,6 +21,8 @@
 | `/friends/namespaces/{namespace}/me/unfriend` | POST | UserUnfriendRequest | [UserUnfriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserUnfriendRequest.cs) | [UserUnfriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserUnfriendRequest.cs) |
 | `/friends/namespaces/{namespace}/users/{userId}/add/bulk` | POST | AddFriendsWithoutConfirmation | [AddFriendsWithoutConfirmation](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/AddFriendsWithoutConfirmation.cs) | [AddFriendsWithoutConfirmation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/AddFriendsWithoutConfirmation.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}` | GET | GetListOfFriends | [GetListOfFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetListOfFriends.cs) | [GetListOfFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetListOfFriends.cs) |
+| `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming` | GET | GetIncomingFriendRequests | [GetIncomingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetIncomingFriendRequests.cs) | [GetIncomingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetIncomingFriendRequests.cs) |
+| `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing` | GET | GetOutgoingFriendRequests | [GetOutgoingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetOutgoingFriendRequests.cs) | [GetOutgoingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetOutgoingFriendRequests.cs) |
 
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -208,6 +211,7 @@
 | `model.GetUserIncomingFriendsResponse` | [ModelGetUserIncomingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserIncomingFriendsResponse.cs) |
 | `model.GetUserOutgoingFriendsResponse` | [ModelGetUserOutgoingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserOutgoingFriendsResponse.cs) |
 | `model.IncomingFriendsWithTimeData` | [ModelIncomingFriendsWithTimeData](../../AccelByte.Sdk/Api/Lobby/Model/ModelIncomingFriendsWithTimeData.cs) |
+| `model.ListBulkUserPlatformsResponse` | [ModelListBulkUserPlatformsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelListBulkUserPlatformsResponse.cs) |
 | `model.LoadIncomingFriendsWithTimeResponse` | [ModelLoadIncomingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadIncomingFriendsWithTimeResponse.cs) |
 | `model.LoadOutgoingFriendsWithTimeResponse` | [ModelLoadOutgoingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadOutgoingFriendsWithTimeResponse.cs) |
 | `model.Localization` | [ModelLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelLocalization.cs) |
@@ -228,9 +232,11 @@
 | `model.UserAcceptFriendRequest` | [ModelUserAcceptFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserAcceptFriendRequest.cs) |
 | `model.UserCancelFriendRequest` | [ModelUserCancelFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserCancelFriendRequest.cs) |
 | `model.UserGetFriendshipStatusResponse` | [ModelUserGetFriendshipStatusResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserGetFriendshipStatusResponse.cs) |
+| `model.UserPlatformInfo` | [ModelUserPlatformInfo](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserPlatformInfo.cs) |
 | `model.UserRejectFriendRequest` | [ModelUserRejectFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserRejectFriendRequest.cs) |
 | `model.UserRequestFriendRequest` | [ModelUserRequestFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserRequestFriendRequest.cs) |
 | `model.UserUnfriendRequest` | [ModelUserUnfriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserUnfriendRequest.cs) |
+| `model.UserWithPlatformInfo` | [ModelUserWithPlatformInfo](../../AccelByte.Sdk/Api/Lobby/Model/ModelUserWithPlatformInfo.cs) |
 | `models.AdminAddProfanityFilterIntoListRequest` | [ModelsAdminAddProfanityFilterIntoListRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelsAdminAddProfanityFilterIntoListRequest.cs) |
 | `models.AdminAddProfanityFiltersFilterRequest` | [ModelsAdminAddProfanityFiltersFilterRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelsAdminAddProfanityFiltersFilterRequest.cs) |
 | `models.AdminAddProfanityFiltersRequest` | [ModelsAdminAddProfanityFiltersRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelsAdminAddProfanityFiltersRequest.cs) |

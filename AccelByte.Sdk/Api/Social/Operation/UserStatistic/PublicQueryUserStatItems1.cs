@@ -18,11 +18,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Public list all statItems of user.
     /// NOTE:
-    ///           * If stat code does not exist, will ignore this stat code.
-    ///           * If stat item does not exist, will return default value
+    ///         * If stat code does not exist, will ignore this stat code.
+    ///         * If stat item does not exist, will return default value
     /// Other detail info:
-    ///           *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
-    ///           *  Returns : stat items
+    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    ///         *  Returns : stat items
     /// </summary>
     public class PublicQueryUserStatItems1 : AccelByte.Sdk.Core.Operation
     {
@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public class PublicQueryUserStatItems1Builder
             : OperationBuilder<PublicQueryUserStatItems1Builder>
         {
+
+            public string? AdditionalKey { get; set; }
 
             public List<string>? StatCodes { get; set; }
 
@@ -43,6 +45,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             internal PublicQueryUserStatItems1Builder() { }
 
+
+            public PublicQueryUserStatItems1Builder SetAdditionalKey(string _additionalKey)
+            {
+                AdditionalKey = _additionalKey;
+                return this;
+            }
 
             public PublicQueryUserStatItems1Builder SetStatCodes(List<string> _statCodes)
             {
@@ -83,6 +91,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
             if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
@@ -100,6 +109,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public PublicQueryUserStatItems1(
             string namespace_,
             string userId,
+            string? additionalKey,
             List<string>? statCodes,
             List<string>? tags
         )
@@ -107,6 +117,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
             if (statCodes is not null) QueryParams["statCodes"] = statCodes;
             if (tags is not null) QueryParams["tags"] = tags;
 

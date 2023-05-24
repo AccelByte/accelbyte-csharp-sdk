@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.PagedRetrieveUserAcceptedAgreementResponse>? RetrieveAllUsersByPolicyVersion1(RetrieveAllUsersByPolicyVersion1 input)
+        public Model.PagedRetrieveUserAcceptedAgreementResponse? RetrieveAllUsersByPolicyVersion1(RetrieveAllUsersByPolicyVersion1 input)
         {
             var response = _sdk.RunRequest(input);
 

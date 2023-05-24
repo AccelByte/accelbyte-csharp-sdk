@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.GetUserOutgoingFriendsWithTime.Builder.SetWrapperObject(this); }
         }
+        public GetUserFriendsWithPlatform.GetUserFriendsWithPlatformBuilder GetUserFriendsWithPlatformOp
+        {
+            get { return Operation.GetUserFriendsWithPlatform.Builder.SetWrapperObject(this); }
+        }
         public UserRequestFriend.UserRequestFriendBuilder UserRequestFriendOp
         {
             get { return Operation.UserRequestFriend.Builder.SetWrapperObject(this); }
@@ -70,6 +74,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public GetListOfFriends.GetListOfFriendsBuilder GetListOfFriendsOp
         {
             get { return Operation.GetListOfFriends.Builder.SetWrapperObject(this); }
+        }
+        public GetIncomingFriendRequests.GetIncomingFriendRequestsBuilder GetIncomingFriendRequestsOp
+        {
+            get { return Operation.GetIncomingFriendRequests.Builder.SetWrapperObject(this); }
+        }
+        public GetOutgoingFriendRequests.GetOutgoingFriendRequestsBuilder GetOutgoingFriendRequestsOp
+        {
+            get { return Operation.GetOutgoingFriendRequests.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -110,6 +122,15 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public List<Model.ModelLoadOutgoingFriendsWithTimeResponse>? GetUserOutgoingFriendsWithTime(GetUserOutgoingFriendsWithTime input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelListBulkUserPlatformsResponse? GetUserFriendsWithPlatform(GetUserFriendsWithPlatform input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -182,6 +203,24 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public Model.ModelGetFriendsResponse? GetListOfFriends(GetListOfFriends input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelLoadIncomingFriendsWithTimeResponse? GetIncomingFriendRequests(GetIncomingFriendRequests input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelLoadOutgoingFriendsWithTimeResponse? GetOutgoingFriendRequests(GetOutgoingFriendRequests input)
         {
             var response = _sdk.RunRequest(input);
 

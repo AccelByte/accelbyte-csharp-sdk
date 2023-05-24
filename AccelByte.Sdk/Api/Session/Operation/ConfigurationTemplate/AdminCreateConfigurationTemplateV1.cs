@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - PSNServiceLabel: the PSN service label.
     /// - SessionTitle: the session title. In PSN, this will be used to define name of the session thats displayed on PlayStation system UI.
     /// - ShouldSync: to define whether the service needs to do session sync with native platform(s). Default: false (disabled).
+    /// - PSNSupportedPlatforms: the PSN supported platforms. In PSN, if ShouldSync true and PSNSupportedPlatforms is empty, then PS5 will be set as default value.
     /// </summary>
     public class AdminCreateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

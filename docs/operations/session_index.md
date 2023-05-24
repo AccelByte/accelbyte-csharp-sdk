@@ -75,6 +75,7 @@
 |---|---|---|---|---|
 | `/session/v1/admin/namespaces/{namespace}/users/attributes` | GET | AdminQueryPlayerAttributes | [AdminQueryPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminQueryPlayerAttributes.cs) | [AdminQueryPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminQueryPlayerAttributes.cs) |
 | `/session/v1/admin/namespaces/{namespace}/users/{userId}/attributes` | GET | AdminGetPlayerAttributes | [AdminGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/AdminGetPlayerAttributes.cs) | [AdminGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/AdminGetPlayerAttributes.cs) |
+| `/session/v1/public/namespaces/{namespace}/users/bulk/platform` | POST | PublicGetBulkPlayerCurrentPlatform | [PublicGetBulkPlayerCurrentPlatform](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicGetBulkPlayerCurrentPlatform.cs) | [PublicGetBulkPlayerCurrentPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicGetBulkPlayerCurrentPlatform.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/attributes` | GET | PublicGetPlayerAttributes | [PublicGetPlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicGetPlayerAttributes.cs) | [PublicGetPlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicGetPlayerAttributes.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/attributes` | POST | PublicStorePlayerAttributes | [PublicStorePlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicStorePlayerAttributes.cs) | [PublicStorePlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicStorePlayerAttributes.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/attributes` | DELETE | PublicDeletePlayerAttributes | [PublicDeletePlayerAttributes](../../AccelByte.Sdk/Api/Session/Operation/Player/PublicDeletePlayerAttributes.cs) | [PublicDeletePlayerAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Player/PublicDeletePlayerAttributes.cs) |
@@ -158,6 +159,9 @@
 | `apimodels.PartySessionResponse` | [ApimodelsPartySessionResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartySessionResponse.cs) |
 | `apimodels.PlayerAttributesRequestBody` | [ApimodelsPlayerAttributesRequestBody](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayerAttributesRequestBody.cs) |
 | `apimodels.PlayerAttributesResponseBody` | [ApimodelsPlayerAttributesResponseBody](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayerAttributesResponseBody.cs) |
+| `apimodels.PlayerPlatform` | [ApimodelsPlayerPlatform](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayerPlatform.cs) |
+| `apimodels.PlayersCurrentPlatformRequest` | [ApimodelsPlayersCurrentPlatformRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayersCurrentPlatformRequest.cs) |
+| `apimodels.PlayersCurrentPlatformResponse` | [ApimodelsPlayersCurrentPlatformResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayersCurrentPlatformResponse.cs) |
 | `apimodels.PromoteLeaderRequest` | [ApimodelsPromoteLeaderRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPromoteLeaderRequest.cs) |
 | `apimodels.PublicConfiguration` | [ApimodelsPublicConfiguration](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPublicConfiguration.cs) |
 | `apimodels.RequestMember` | [ApimodelsRequestMember](../../AccelByte.Sdk/Api/Session/Model/ApimodelsRequestMember.cs) |

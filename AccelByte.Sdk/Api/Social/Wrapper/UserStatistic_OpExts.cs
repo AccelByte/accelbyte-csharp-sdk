@@ -409,6 +409,28 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkResetUserStatItem2<T1>(op);
         }
         public static Social.Model.UserStatItemPagingSlicedResult? Execute(
+            this PublicListMyStatItems.PublicListMyStatItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListMyStatItems op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicListMyStatItems(op);
+        }
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this PublicListAllMyStatItems.PublicListAllMyStatItemsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListAllMyStatItems op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicListAllMyStatItems(op);
+        }
+        public static Social.Model.UserStatItemPagingSlicedResult? Execute(
             this PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder builder,
             string namespace_,
             string userId

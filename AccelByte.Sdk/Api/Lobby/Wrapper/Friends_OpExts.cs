@@ -67,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriendsWithTime(op);
         }
+        public static Lobby.Model.ModelListBulkUserPlatformsResponse? Execute(
+            this GetUserFriendsWithPlatform.GetUserFriendsWithPlatformBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserFriendsWithPlatform op = builder.Build(
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsWithPlatform(op);
+        }
         public static void Execute(
             this UserRequestFriend.UserRequestFriendBuilder builder,
             ModelUserRequestFriendRequest body,
@@ -172,6 +183,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetListOfFriends(op);
+        }
+        public static Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse? Execute(
+            this GetIncomingFriendRequests.GetIncomingFriendRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetIncomingFriendRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetIncomingFriendRequests(op);
+        }
+        public static Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse? Execute(
+            this GetOutgoingFriendRequests.GetOutgoingFriendRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetOutgoingFriendRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetOutgoingFriendRequests(op);
         }
     }
 }

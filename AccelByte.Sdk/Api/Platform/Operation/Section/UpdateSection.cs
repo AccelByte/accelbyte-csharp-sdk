@@ -22,6 +22,24 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     ///   *  Returns : updated section data
+    /// 
+    /// 
+    /// 
+    /// ## Restrictions for section extension and localization extension
+    /// 
+    /// 
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
     /// </summary>
     public class UpdateSection : AccelByte.Sdk.Core.Operation
     {

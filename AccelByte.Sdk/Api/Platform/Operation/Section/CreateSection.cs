@@ -22,6 +22,24 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
     ///   *  Returns : created a section
+    /// 
+    /// 
+    /// 
+    /// ## Restrictions for section extension and localization extension
+    /// 
+    /// 
+    /// 1. Cannot use "." as the key name
+    /// -
+    /// 
+    /// 
+    ///     { "data.2": "value" }
+    /// 
+    /// 
+    /// 2. Cannot use "$" as the prefix in key names
+    /// -
+    /// 
+    /// 
+    ///     { "$data": "value" }
     /// </summary>
     public class CreateSection : AccelByte.Sdk.Core.Operation
     {

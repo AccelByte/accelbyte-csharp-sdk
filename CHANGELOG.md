@@ -1,3 +1,9 @@
+<a name="v0.36.0"></a>
+## [v0.36.0]
+### fix
+- **tests:** fixed remaining hardcoded httpbin config
+
+
 <a name="v0.35.0"></a>
 ## [v0.35.0]
 ### chore

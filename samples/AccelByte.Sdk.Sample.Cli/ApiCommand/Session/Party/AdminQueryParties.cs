@@ -58,6 +58,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("orderBy")]
         public string? OrderBy { get; set; }
 
+        [SdkCommandArgument("partyID")]
+        public string? PartyID { get; set; }
+
         [SdkCommandArgument("value")]
         public string? Value { get; set; }
 
@@ -90,6 +93,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
                 opBuilder.SetOrder((string)Order);
             if (OrderBy != null)
                 opBuilder.SetOrderBy((string)OrderBy);
+            if (PartyID != null)
+                opBuilder.SetPartyID((string)PartyID);
             if (Value != null)
                 opBuilder.SetValue((string)Value);
 

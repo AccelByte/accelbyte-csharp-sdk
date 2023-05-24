@@ -18,8 +18,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Bulk create statItems.
     /// Other detail info:
-    ///             *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
-    ///             *  Returns : bulk created result
+    ///           *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=1 (CREATE)
+    ///           *  Returns : bulk created result
     /// </summary>
     public class PublicBulkCreateUserStatItems : AccelByte.Sdk.Core.Operation
     {

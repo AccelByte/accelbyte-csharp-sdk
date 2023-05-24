@@ -424,6 +424,71 @@
         ]
       }
     },
+    "/friends/namespaces/{namespace}/me/platforms": {
+      "get": {
+        "operationId": "getUserFriendsWithPlatform",
+        "parameters": [
+          {
+            "description": "namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/model.ListBulkUserPlatformsResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "get list of friends with platform data",
+        "tags": [
+          "friends",
+          "public"
+        ]
+      }
+    },
     "/friends/namespaces/{namespace}/me/request": {
       "post": {
         "consumes": [
@@ -1384,6 +1449,180 @@
           }
         ],
         "summary": "get list of friends",
+        "tags": [
+          "friends"
+        ]
+      }
+    },
+    "/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Required permission : \u0026lt;code\u0026gt;NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]\u0026lt;/code\u0026gt; with scope \u0026lt;code\u0026gt;social\u0026lt;/code\u0026gt;\n\u0026lt;br\u0026gt;get list of incoming friend requests.",
+        "operationId": "get incoming friend requests",
+        "parameters": [
+          {
+            "description": "namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "maximum number of data",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "numbers of row to skip within the result",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/model.LoadIncomingFriendsWithTimeResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]"
+            ],
+            "HasScope": [
+              "social"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "get incoming friend requests",
+        "tags": [
+          "friends"
+        ]
+      }
+    },
+    "/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Required permission : \u0026lt;code\u0026gt;NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]\u0026lt;/code\u0026gt; with scope \u0026lt;code\u0026gt;social\u0026lt;/code\u0026gt;\n\u0026lt;br\u0026gt;get list of outgoing friend requests in a namespace.",
+        "operationId": "get outgoing friend requests",
+        "parameters": [
+          {
+            "description": "namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "user ID",
+            "in": "path",
+            "name": "userId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "maximum number of data",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "description": "numbers of row to skip within the result",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/model.LoadOutgoingFriendsWithTimeResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseBody"
+            }
+          }
+        },
+        "security": [
+          {
+            "HasPermission": [
+              "NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]"
+            ],
+            "HasScope": [
+              "social"
+            ],
+            "authorization": []
+          }
+        ],
+        "summary": "get list of outgoing friend requests",
         "tags": [
           "friends"
         ]
@@ -7316,12 +7555,19 @@
           },
           "type": "array"
         },
+        "friendsSinceTimes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
         "paging": {
           "$ref": "#/definitions/model.Pagination"
         }
       },
       "required": [
         "friendIDs",
+        "friendsSinceTimes",
         "paging"
       ]
     },
@@ -7390,6 +7636,19 @@
       "required": [
         "friendId",
         "requestedAt"
+      ]
+    },
+    "model.ListBulkUserPlatformsResponse": {
+      "properties": {
+        "data": {
+          "items": {
+            "$ref": "#/definitions/model.UserWithPlatformInfo"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "data"
       ]
     },
     "model.LoadIncomingFriendsWithTimeResponse": {
@@ -7780,6 +8039,24 @@
         "name"
       ]
     },
+    "model.UserPlatformInfo": {
+      "properties": {
+        "platformDisplayName": {
+          "type": "string"
+        },
+        "platformName": {
+          "type": "string"
+        },
+        "platformUserId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "platformDisplayName",
+        "platformName",
+        "platformUserId"
+      ]
+    },
     "model.UserRejectFriendRequest": {
       "properties": {
         "friendId": {
@@ -7812,6 +8089,34 @@
       },
       "required": [
         "friendId"
+      ]
+    },
+    "model.UserWithPlatformInfo": {
+      "properties": {
+        "avatarUrl": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "platformInfos": {
+          "items": {
+            "$ref": "#/definitions/model.UserPlatformInfo"
+          },
+          "type": "array"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatarUrl",
+        "displayName",
+        "platformInfos",
+        "userId"
       ]
     },
     "models.AdminAddProfanityFilterIntoListRequest": {
@@ -8549,12 +8854,12 @@
     "path": "/lobby/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-05-09T13:54:57+00:00",
-    "gitHash": "136677829d15f573de47582252214116d245cd00",
+    "buildDate": "2023-05-23T14:55:20+00:00",
+    "gitHash": "e2fefcd21a1b25ab90c0ffcc738c42e6e4d7c442",
     "name": "justice-lobby-server",
-    "revisionID": "3.19.0",
-    "version": "3.19.0",
+    "revisionID": "3.20.0",
+    "version": "3.20.0",
     "version-justice": "3.45.0",
-    "version-roles-seeding": "0.0.3"
+    "version-roles-seeding": "0.0.29"
   }
 }

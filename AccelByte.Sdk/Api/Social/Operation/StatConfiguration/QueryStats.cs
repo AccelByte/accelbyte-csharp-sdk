@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
             public bool? IsGlobal { get; set; }
 
+            public bool? IsPublic { get; set; }
+
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
@@ -46,6 +48,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public QueryStatsBuilder SetIsGlobal(bool _isGlobal)
             {
                 IsGlobal = _isGlobal;
+                return this;
+            }
+
+            public QueryStatsBuilder SetIsPublic(bool _isPublic)
+            {
+                IsPublic = _isPublic;
                 return this;
             }
 
@@ -88,6 +96,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.IsGlobal != null) QueryParams["isGlobal"] = Convert.ToString(builder.IsGlobal)!;
+            if (builder.IsPublic != null) QueryParams["isPublic"] = Convert.ToString(builder.IsPublic)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (keyword is not null) QueryParams["keyword"] = keyword;
@@ -104,6 +113,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public QueryStats(
             string namespace_,
             bool? isGlobal,
+            bool? isPublic,
             int? limit,
             int? offset,
             string keyword
@@ -112,6 +122,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
 
             if (isGlobal != null) QueryParams["isGlobal"] = Convert.ToString(isGlobal)!;
+            if (isPublic != null) QueryParams["isPublic"] = Convert.ToString(isPublic)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (keyword is not null) QueryParams["keyword"] = keyword;

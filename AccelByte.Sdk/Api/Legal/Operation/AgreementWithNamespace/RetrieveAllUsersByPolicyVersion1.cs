@@ -28,6 +28,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             : OperationBuilder<RetrieveAllUsersByPolicyVersion1Builder>
         {
 
+            public bool? ConvertGameUserId { get; set; }
+
             public string? Keyword { get; set; }
 
             public int? Limit { get; set; }
@@ -40,6 +42,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             internal RetrieveAllUsersByPolicyVersion1Builder() { }
 
+
+            public RetrieveAllUsersByPolicyVersion1Builder SetConvertGameUserId(bool _convertGameUserId)
+            {
+                ConvertGameUserId = _convertGameUserId;
+                return this;
+            }
 
             public RetrieveAllUsersByPolicyVersion1Builder SetKeyword(string _keyword)
             {
@@ -85,6 +93,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.ConvertGameUserId != null) QueryParams["convertGameUserId"] = Convert.ToString(builder.ConvertGameUserId)!;
             if (builder.Keyword is not null) QueryParams["keyword"] = builder.Keyword;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -101,6 +110,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public RetrieveAllUsersByPolicyVersion1(
             string namespace_,
+            bool? convertGameUserId,
             string? keyword,
             int? limit,
             int? offset,
@@ -109,6 +119,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (convertGameUserId != null) QueryParams["convertGameUserId"] = Convert.ToString(convertGameUserId)!;
             if (keyword is not null) QueryParams["keyword"] = keyword;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
@@ -133,7 +144,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.PagedRetrieveUserAcceptedAgreementResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.PagedRetrieveUserAcceptedAgreementResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -141,11 +152,11 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.PagedRetrieveUserAcceptedAgreementResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.PagedRetrieveUserAcceptedAgreementResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.PagedRetrieveUserAcceptedAgreementResponse>>(payload);
+                return JsonSerializer.Deserialize<Model.PagedRetrieveUserAcceptedAgreementResponse>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

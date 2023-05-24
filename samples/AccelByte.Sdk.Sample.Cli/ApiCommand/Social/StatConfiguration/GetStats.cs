@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("isGlobal")]
         public bool? IsGlobal { get; set; }
 
+        [SdkCommandArgument("isPublic")]
+        public bool? IsPublic { get; set; }
+
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
 
@@ -58,6 +61,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 opBuilder.SetCycleIds((string)CycleIds);
             if (IsGlobal != null)
                 opBuilder.SetIsGlobal((bool)IsGlobal);
+            if (IsPublic != null)
+                opBuilder.SetIsPublic((bool)IsPublic);
             if (Limit != null)
                 opBuilder.SetLimit((int)Limit);
             if (Offset != null)

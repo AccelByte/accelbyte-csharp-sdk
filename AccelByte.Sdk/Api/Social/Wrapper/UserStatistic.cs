@@ -91,6 +91,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkResetUserStatItem2.Builder.SetWrapperObject(this); }
         }
+        public PublicListMyStatItems.PublicListMyStatItemsBuilder PublicListMyStatItemsOp
+        {
+            get { return Operation.PublicListMyStatItems.Builder.SetWrapperObject(this); }
+        }
+        public PublicListAllMyStatItems.PublicListAllMyStatItemsBuilder PublicListAllMyStatItemsOp
+        {
+            get { return Operation.PublicListAllMyStatItems.Builder.SetWrapperObject(this); }
+        }
         public PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder PublicQueryUserStatItemsOp
         {
             get { return Operation.PublicQueryUserStatItems.Builder.SetWrapperObject(this); }
@@ -455,6 +463,24 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserStatItemPagingSlicedResult? PublicListMyStatItems(PublicListMyStatItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicListAllMyStatItems(PublicListAllMyStatItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

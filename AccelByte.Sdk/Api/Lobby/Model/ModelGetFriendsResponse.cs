@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("friendIDs")]
         public List<string>? FriendIDs { get; set; }
 
+        [JsonPropertyName("friendsSinceTimes")]
+        public List<string>? FriendsSinceTimes { get; set; }
+
         [JsonPropertyName("paging")]
         public ModelPagination? Paging { get; set; }
 

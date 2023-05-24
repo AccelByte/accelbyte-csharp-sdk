@@ -66,6 +66,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("status")]
         public string? Status { get; set; }
 
+        [JsonPropertyName("userID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserID { get; set; }
+
     }
 
     public class ModelLinkRequest<T1> : AccelByte.Sdk.Core.Model
@@ -126,6 +130,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("status")]
         public string? Status { get; set; }
+
+        [JsonPropertyName("userID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UserID { get; set; }
 
     }
 

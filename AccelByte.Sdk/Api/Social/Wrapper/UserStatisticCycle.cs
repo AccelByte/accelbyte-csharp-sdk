@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.GetUserStatCycleItems.Builder.SetWrapperObject(this); }
         }
+        public PublicListMyStatCycleItems.PublicListMyStatCycleItemsBuilder PublicListMyStatCycleItemsOp
+        {
+            get { return Operation.PublicListMyStatCycleItems.Builder.SetWrapperObject(this); }
+        }
         public GetUserStatCycleItems1.GetUserStatCycleItems1Builder GetUserStatCycleItems1Op
         {
             get { return Operation.GetUserStatCycleItems1.Builder.SetWrapperObject(this); }
@@ -30,6 +34,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         #endregion
 
         public Model.UserStatCycleItemPagingSlicedResult? GetUserStatCycleItems(GetUserStatCycleItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.UserStatCycleItemPagingSlicedResult? PublicListMyStatCycleItems(PublicListMyStatCycleItems input)
         {
             var response = _sdk.RunRequest(input);
 
