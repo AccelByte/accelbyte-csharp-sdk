@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("alliance_flexing_rule")]
         public List<ModelsAllianceFlexingRule>? AllianceFlexingRule { get; set; }
 
+        [JsonPropertyName("bucket_mmr_rule")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsBucketMMRRule? BucketMmrRule { get; set; }
+
         [JsonPropertyName("flexingRules")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsFlexingRule>? FlexingRules { get; set; }
@@ -30,6 +34,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("sub_game_modes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsUpdateRulesetSubGameModes? SubGameModes { get; set; }
+
+        [JsonPropertyName("use_newest_ticket_for_flexing")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? UseNewestTicketForFlexing { get; set; }
 
     }
 

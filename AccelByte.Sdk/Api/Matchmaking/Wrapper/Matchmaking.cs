@@ -99,6 +99,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.DeleteUserFromSessionInChannel.Builder.SetWrapperObject(this); }
         }
+        public GetStatData.GetStatDataBuilder GetStatDataOp
+        {
+            get { return Operation.GetStatData.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public SearchSessions.SearchSessionsBuilder SearchSessionsOp
         {
@@ -350,6 +354,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsStatResumeResponse? GetStatData(GetStatData input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

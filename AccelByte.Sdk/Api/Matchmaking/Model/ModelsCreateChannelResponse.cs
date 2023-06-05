@@ -54,6 +54,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("social_matchmaking")]
         public bool? SocialMatchmaking { get; set; }
 
+        [JsonPropertyName("ticket_observability_enable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TicketObservabilityEnable { get; set; }
+
         [JsonPropertyName("updated_at")]
         public string? UpdatedAt { get; set; }
 

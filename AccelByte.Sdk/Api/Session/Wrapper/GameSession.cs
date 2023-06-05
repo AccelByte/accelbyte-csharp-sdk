@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicQueryGameSessions.Builder.SetWrapperObject(this); }
         }
+        public PublicSessionJoinCode.PublicSessionJoinCodeBuilder PublicSessionJoinCodeOp
+        {
+            get { return Operation.PublicSessionJoinCode.Builder.SetWrapperObject(this); }
+        }
         public GetGameSessionByPodName.GetGameSessionByPodNameBuilder GetGameSessionByPodNameOp
         {
             get { return Operation.GetGameSessionByPodName.Builder.SetWrapperObject(this); }
@@ -62,6 +66,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         public UpdateGameSessionBackfillTicketID.UpdateGameSessionBackfillTicketIDBuilder UpdateGameSessionBackfillTicketIDOp
         {
             get { return Operation.UpdateGameSessionBackfillTicketID.Builder.SetWrapperObject(this); }
+        }
+        public GameSessionGenerateCode.GameSessionGenerateCodeBuilder GameSessionGenerateCodeOp
+        {
+            get { return Operation.GameSessionGenerateCode.Builder.SetWrapperObject(this); }
+        }
+        public PublicRevokeGameSessionCode.PublicRevokeGameSessionCodeBuilder PublicRevokeGameSessionCodeOp
+        {
+            get { return Operation.PublicRevokeGameSessionCode.Builder.SetWrapperObject(this); }
         }
         public PublicGameSessionInvite.PublicGameSessionInviteBuilder PublicGameSessionInviteOp
         {
@@ -140,6 +152,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? PublicSessionJoinCode(PublicSessionJoinCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsGameSessionResponse<T1>? PublicSessionJoinCode<T1>(PublicSessionJoinCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -240,6 +271,44 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         public Model.ApimodelsGameSessionResponse<T1>? UpdateGameSessionBackfillTicketID<T1>(UpdateGameSessionBackfillTicketID input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? GameSessionGenerateCode(GameSessionGenerateCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsGameSessionResponse<T1>? GameSessionGenerateCode<T1>(GameSessionGenerateCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? PublicRevokeGameSessionCode(PublicRevokeGameSessionCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsGameSessionResponse<T1>? PublicRevokeGameSessionCode<T1>(PublicRevokeGameSessionCode input)
         {
             var response = _sdk.RunRequest(input);
 

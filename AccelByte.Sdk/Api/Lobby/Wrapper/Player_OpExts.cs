@@ -23,6 +23,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetLobbyCCU(op);
         }
+        public static Lobby.Model.ModelsGetBulkAllPlayerBlockedUsersResponse? Execute(
+            this AdminGetBulkPlayerBlockedPlayersV1.AdminGetBulkPlayerBlockedPlayersV1Builder builder,
+            ModelsGetBulkAllPlayerBlockedUsersRequest body,
+            string namespace_
+        )
+        {
+            AdminGetBulkPlayerBlockedPlayersV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetBulkPlayerBlockedPlayersV1(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerSessionAttributeResponse? Execute(
             this AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder builder,
             string namespace_,

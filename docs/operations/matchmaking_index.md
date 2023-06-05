@@ -35,6 +35,7 @@
 | `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | POST | AddUserIntoSessionInChannel | [AddUserIntoSessionInChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/AddUserIntoSessionInChannel.cs) | [AddUserIntoSessionInChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/AddUserIntoSessionInChannel.cs) |
 | `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}` | DELETE | DeleteSessionInChannel | [DeleteSessionInChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteSessionInChannel.cs) | [DeleteSessionInChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteSessionInChannel.cs) |
 | `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/sessions/{matchID}/users/{userID}` | DELETE | DeleteUserFromSessionInChannel | [DeleteUserFromSessionInChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/DeleteUserFromSessionInChannel.cs) | [DeleteUserFromSessionInChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/DeleteUserFromSessionInChannel.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/stats` | GET | GetStatData | [GetStatData](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetStatData.cs) | [GetStatData](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetStatData.cs) |
 | [DEPRECATED] `/matchmaking/v1/admin/namespaces/{namespace}/sessions/history/search` | GET | SearchSessions | [SearchSessions](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/SearchSessions.cs) | [SearchSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/SearchSessions.cs) |
 | [DEPRECATED] `/matchmaking/v1/admin/namespaces/{namespace}/sessions/{matchID}/history/detailed` | GET | GetSessionHistoryDetailed | [GetSessionHistoryDetailed](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/GetSessionHistoryDetailed.cs) | [GetSessionHistoryDetailed](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/GetSessionHistoryDetailed.cs) |
 | `/matchmaking/v1/public/namespaces/{namespace}/channels` | GET | PublicGetAllMatchmakingChannel | [PublicGetAllMatchmakingChannel](../../AccelByte.Sdk/Api/Matchmaking/Operation/Matchmaking/PublicGetAllMatchmakingChannel.cs) | [PublicGetAllMatchmakingChannel](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/Matchmaking/PublicGetAllMatchmakingChannel.cs) |
@@ -45,6 +46,17 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/matchmaking/social/playtime/namespaces/{namespace}/weight` | PATCH | UpdatePlayTimeWeight | [UpdatePlayTimeWeight](../../AccelByte.Sdk/Api/Matchmaking/Operation/SocialMatchmaking/UpdatePlayTimeWeight.cs) | [UpdatePlayTimeWeight](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/SocialMatchmaking/UpdatePlayTimeWeight.cs) |
+
+### Mock Matchmaking Wrapper:  [MockMatchmaking](../../AccelByte.Sdk/Api/Matchmaking/Wrapper/MockMatchmaking.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks` | DELETE | CleanAllMocks | [CleanAllMocks](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/CleanAllMocks.cs) | [CleanAllMocks](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/CleanAllMocks.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/matches` | GET | GetAllMockMatches | [GetAllMockMatches](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/GetAllMockMatches.cs) | [GetAllMockMatches](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/GetAllMockMatches.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/matches` | POST | GetMockMatchesByTimestamp | [GetMockMatchesByTimestamp](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/GetMockMatchesByTimestamp.cs) | [GetMockMatchesByTimestamp](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/GetMockMatchesByTimestamp.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/tickets` | GET | GetAllMockTickets | [GetAllMockTickets](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/GetAllMockTickets.cs) | [GetAllMockTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/GetAllMockTickets.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/tickets` | POST | CreateMockTickets | [CreateMockTickets](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/CreateMockTickets.cs) | [CreateMockTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/CreateMockTickets.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/tickets/bulk` | POST | BulkCreateMockTickets | [BulkCreateMockTickets](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/BulkCreateMockTickets.cs) | [BulkCreateMockTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/BulkCreateMockTickets.cs) |
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/tickets/query` | POST | GetMockTicketsByTimestamp | [GetMockTicketsByTimestamp](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/GetMockTicketsByTimestamp.cs) | [GetMockTicketsByTimestamp](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/GetMockTicketsByTimestamp.cs) |
 
 
 &nbsp;  
@@ -68,6 +80,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Mock Matchmaking Wrapper:  [MockMatchmaking](../../AccelByte.Sdk/Api/Matchmaking/Wrapper/MockMatchmaking.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/matchmaking/v1/admin/namespaces/{namespace}/channels/{channelName}/mocks/tickets` | POST | CreateMockTickets | [CreateMockTickets](../../AccelByte.Sdk/Api/Matchmaking/Operation/MockMatchmaking/CreateMockTickets.cs) | [CreateMockTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Matchmaking/MockMatchmaking/CreateMockTickets.cs) |
+
 
 &nbsp;  
 
@@ -79,14 +96,18 @@
 | `models.AllianceFlexingRule` | [ModelsAllianceFlexingRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsAllianceFlexingRule.cs) |
 | `models.AllianceRule` | [ModelsAllianceRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsAllianceRule.cs) |
 | `models.AllianceRuleV1` | [ModelsAllianceRuleV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsAllianceRuleV1.cs) |
+| `models.BucketMMRRule` | [ModelsBucketMMRRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsBucketMMRRule.cs) |
 | `models.Channel` | [ModelsChannel](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannel.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelRequest.cs) |
 | `models.ChannelV1` | [ModelsChannelV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsChannelV1.cs) |
 | `models.Combination` | [ModelsCombination](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCombination.cs) |
 | `models.CreateChannelResponse` | [ModelsCreateChannelResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCreateChannelResponse.cs) |
+| `models.CreateMockTicket` | [ModelsCreateMockTicket](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsCreateMockTicket.cs) |
 | `models.DequeueRequest` | [ModelsDequeueRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsDequeueRequest.cs) |
 | `models.FlexingRule` | [ModelsFlexingRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsFlexingRule.cs) |
 | `models.GetChannelsResponse` | [ModelsGetChannelsResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsGetChannelsResponse.cs) |
+| `models.GetMockMatchesResponse` | [ModelsGetMockMatchesResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsGetMockMatchesResponse.cs) |
+| `models.GetMockTicketsResponse` | [ModelsGetMockTicketsResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsGetMockTicketsResponse.cs) |
 | `models.ImportConfigResponse` | [ModelsImportConfigResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsImportConfigResponse.cs) |
 | `models.MatchAddUserIntoSessionRequest` | [ModelsMatchAddUserIntoSessionRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMatchAddUserIntoSessionRequest.cs) |
 | `models.MatchOption` | [ModelsMatchOption](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMatchOption.cs) |
@@ -97,17 +118,22 @@
 | `models.MatchingParty` | [ModelsMatchingParty](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMatchingParty.cs) |
 | `models.MatchingRule` | [ModelsMatchingRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMatchingRule.cs) |
 | `models.MatchmakingResult` | [ModelsMatchmakingResult](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMatchmakingResult.cs) |
+| `models.MockMatch` | [ModelsMockMatch](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMockMatch.cs) |
+| `models.MockTicket` | [ModelsMockTicket](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsMockTicket.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPagination.cs) |
 | `models.PartyMember` | [ModelsPartyMember](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPartyMember.cs) |
 | `models.PlayerResultRequest` | [ModelsPlayerResultRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPlayerResultRequest.cs) |
 | `models.PlayerResultResponse` | [ModelsPlayerResultResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsPlayerResultResponse.cs) |
+| `models.QueryMockBy` | [ModelsQueryMockBy](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsQueryMockBy.cs) |
 | `models.RebalanceRequest` | [ModelsRebalanceRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRebalanceRequest.cs) |
 | `models.RebalanceResponse` | [ModelsRebalanceResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRebalanceResponse.cs) |
+| `models.Region` | [ModelsRegion](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRegion.cs) |
 | `models.ResultAttributeRequest` | [ModelsResultAttributeRequest](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeRequest.cs) |
 | `models.ResultAttributeResponse` | [ModelsResultAttributeResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsResultAttributeResponse.cs) |
 | `models.Role` | [ModelsRole](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRole.cs) |
 | `models.RuleSet` | [ModelsRuleSet](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSet.cs) |
 | `models.RuleSetV1` | [ModelsRuleSetV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSetV1.cs) |
+| `models.StatResumeResponse` | [ModelsStatResumeResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsStatResumeResponse.cs) |
 | `models.SubGameMode` | [ModelsSubGameMode](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSubGameMode.cs) |
 | `models.TicketMetricResultRecord` | [ModelsTicketMetricResultRecord](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsTicketMetricResultRecord.cs) |
 | `models.UpdateAllianceRule` | [ModelsUpdateAllianceRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsUpdateAllianceRule.cs) |

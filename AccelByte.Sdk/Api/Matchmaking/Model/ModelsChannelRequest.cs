@@ -54,6 +54,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SocialMatchmaking { get; set; }
 
+        [JsonPropertyName("ticket_observability_enable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TicketObservabilityEnable { get; set; }
+
         [JsonPropertyName("use_sub_gamemode")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? UseSubGamemode { get; set; }

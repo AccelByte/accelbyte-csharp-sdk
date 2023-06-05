@@ -38,6 +38,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("last")]
         public string? Last { get; set; }
 
+        [JsonPropertyName("maxActiveSessions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? MaxActiveSessions { get; set; }
+
         [JsonPropertyName("maxPlayers")]
         public int? MaxPlayers { get; set; }
 

@@ -3,7 +3,7 @@
   "info": {
     "description": "Justice Session Service",
     "title": "justice-session-service",
-    "version": "2.13.1"
+    "version": "2.15.1"
   },
   "schemes": [
     "https"
@@ -1652,6 +1652,83 @@
         ]
       }
     },
+    "/session/v1/public/namespaces/{namespace}/gamesessions/join/code": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Join a session by code. The user can join a session as long as the code is valid",
+        "operationId": "publicSessionJoinCode",
+        "parameters": [
+          {
+            "description": "Session join by code request",
+            "in": "body",
+            "name": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/apimodels.JoinByCodeRequest"
+            }
+          },
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GameSessionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Join a session by code. Requires NAMESPACE:{namespace}:SESSION:GAME:PLAYER [CREATE]",
+        "tags": [
+          "Game Session"
+        ]
+      }
+    },
     "/session/v1/public/namespaces/{namespace}/gamesessions/servers/{podName}": {
       "get": {
         "consumes": [
@@ -2097,6 +2174,151 @@
           }
         ],
         "summary": "Update game session backfill ticket id . Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]",
+        "tags": [
+          "Game Session"
+        ]
+      }
+    },
+    "/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Revoke code of the game session. Only leader can revoke a code.",
+        "operationId": "publicRevokeGameSessionCode",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "session ID",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GameSessionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Revoke game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]",
+        "tags": [
+          "Game Session"
+        ]
+      },
+      "post": {
+        "description": "Generate a new code for the game session. Only leader can generate a code.",
+        "operationId": "gameSessionGenerateCode",
+        "parameters": [
+          {
+            "description": "Namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "session ID",
+            "in": "path",
+            "name": "sessionId",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/apimodels.GameSessionResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/response.Error"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Generate a game session code. Requires NAMESPACE:{namespace}:SESSION:GAME [UPDATE]",
         "tags": [
           "Game Session"
         ]
@@ -3930,6 +4152,10 @@
         "last": {
           "type": "string"
         },
+        "maxActiveSessions": {
+          "format": "int32",
+          "type": "integer"
+        },
         "maxPlayers": {
           "format": "int32",
           "type": "integer"
@@ -4039,6 +4265,10 @@
         },
         "joinability": {
           "type": "string"
+        },
+        "maxActiveSessions": {
+          "format": "int32",
+          "type": "integer"
         },
         "maxPlayers": {
           "format": "int32",
@@ -4327,6 +4557,9 @@
           "type": "object"
         },
         "backfillTicketID": {
+          "type": "string"
+        },
+        "code": {
           "type": "string"
         },
         "configuration": {
@@ -4811,6 +5044,10 @@
         },
         "joinability": {
           "type": "string"
+        },
+        "maxActiveSessions": {
+          "format": "int32",
+          "type": "integer"
         },
         "maxPlayers": {
           "format": "int32",
@@ -5311,9 +5548,9 @@
     "path": "/session/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2023-05-24T04:32:28+00:00",
-    "gitHash": "61bc0ead2925597e07f42a90b864a1408d1a4efc",
-    "rolesSeedingVersion": "0.0.16",
-    "version": "2.13.1"
+    "buildDate": "2023-06-05T13:15:31+00:00",
+    "gitHash": "5d223f69448702ba291091cb069e885a7be863c0",
+    "version": "2.15.1",
+    "version-roles-seeding": "0.0.16"
   }
 }

@@ -356,7 +356,7 @@ eval_tap $? 29 'CreateStatCycle' test.out
 
 #- 30 BulkGetStatCycle
 # body param: body
-echo '{"cycleIds": ["AlSxxVhDR9hlazne", "tBUGcQz2WvdiclkY", "w1J42fthKUobas2C"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["AlSxxVhDR9hlazne", "w1J42fthKUobas2C", "tBUGcQz2WvdiclkY"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle \
@@ -484,7 +484,7 @@ eval_tap $? 41 'GetStats' test.out
 
 #- 42 CreateStat
 # body param: body
-echo '{"cycleIds": ["tuzxir12r0VUWI0k", "lgGnTHAsTCZa7xE4", "JAczj5ApcsiEQ65l"], "defaultValue": 0.22465795090033192, "description": "wGKlbPRxfucxoRKF", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.03621747003353992, "minimum": 0.6127622490785266, "name": "9SyuHbvRxR6LaKWg", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "VjZKDxiezEbuMCz9", "tags": ["J4dPRGzoQLYIWPPZ", "vyPupimCENHEenqj", "RSxO9oZ0fCxLR0Gf"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["JAczj5ApcsiEQ65l", "lgGnTHAsTCZa7xE4", "tuzxir12r0VUWI0k"], "defaultValue": 0.22465795090033192, "description": "wGKlbPRxfucxoRKF", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.03621747003353992, "minimum": 0.6127622490785266, "name": "9SyuHbvRxR6LaKWg", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "VjZKDxiezEbuMCz9", "tags": ["RSxO9oZ0fCxLR0Gf", "vyPupimCENHEenqj", "J4dPRGzoQLYIWPPZ"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat \
@@ -546,7 +546,7 @@ eval_tap $? 47 'DeleteStat' test.out
 
 #- 48 UpdateStat
 # body param: body
-echo '{"cycleIds": ["zRvUdK1uOV1ZJTYu", "vTMICtWyUtVDnhgT", "GXO8Utpwxug8Mpqc"], "defaultValue": 0.5381247324752749, "description": "pnpVX5u4gw4XBXDD", "ignoreAdditionalDataOnValueRejected": false, "isPublic": true, "name": "1o9zV6rhVfcQmLfE", "tags": ["8cNfDK45zWtwYhRo", "6skHMfl4Hjw9KEnx", "n5ZUGeYlOwODWBAz"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["vTMICtWyUtVDnhgT", "zRvUdK1uOV1ZJTYu", "GXO8Utpwxug8Mpqc"], "defaultValue": 0.5381247324752749, "description": "pnpVX5u4gw4XBXDD", "ignoreAdditionalDataOnValueRejected": false, "isPublic": true, "name": "1o9zV6rhVfcQmLfE", "tags": ["n5ZUGeYlOwODWBAz", "6skHMfl4Hjw9KEnx", "8cNfDK45zWtwYhRo"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -726,7 +726,7 @@ eval_tap $? 62 'GetStatCycles1' test.out
 
 #- 63 BulkGetStatCycle1
 # body param: body
-echo '{"cycleIds": ["DCk0koCGDPfbiGdB", "sfOZbgnCmULqltV5", "xjjrXKhZOekpygvR"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["sfOZbgnCmULqltV5", "xjjrXKhZOekpygvR", "DCk0koCGDPfbiGdB"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle1 \

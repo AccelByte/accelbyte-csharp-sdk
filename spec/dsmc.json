@@ -3,7 +3,7 @@
   "info": {
     "description": "Justice DSM Controller Service",
     "title": "justice-dsm-controller-service",
-    "version": "6.3.1"
+    "version": "6.3.2"
   },
   "schemes": [
     "https"
@@ -7735,10 +7735,10 @@
   },
   "x-version": {
     "buildDate": "unknown",
-    "gitHash": "f31af0fb3a0a97570008b554baf2a5c93cec6ba6",
+    "gitHash": "d1111e301d26191e31b401f0194fce0f3f8e48cc",
     "name": "justice-dedicated-server-manager-controller-service",
-    "revisionID": "6.3.1",
-    "version": "6.3.1",
+    "revisionID": "6.3.2",
+    "version": "6.3.2",
     "version-roles-seeding": "0.0.3"
   }
 }

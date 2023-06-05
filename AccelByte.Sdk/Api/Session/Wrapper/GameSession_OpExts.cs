@@ -94,6 +94,33 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicQueryGameSessions(op);
         }
         public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this PublicSessionJoinCode.PublicSessionJoinCodeBuilder builder,
+            ApimodelsJoinByCodeRequest body,
+            string namespace_
+        )
+        {
+            PublicSessionJoinCode op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicSessionJoinCode(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this PublicSessionJoinCode.PublicSessionJoinCodeBuilder builder,
+            ApimodelsJoinByCodeRequest body,
+            string namespace_
+        )
+        {
+            PublicSessionJoinCode op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicSessionJoinCode<T1>(op);
+        }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
             this GetGameSessionByPodName.GetGameSessionByPodNameBuilder builder,
             string namespace_,
             string podName
@@ -252,6 +279,60 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).UpdateGameSessionBackfillTicketID<T1>(op);
+        }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this GameSessionGenerateCode.GameSessionGenerateCodeBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            GameSessionGenerateCode op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).GameSessionGenerateCode(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this GameSessionGenerateCode.GameSessionGenerateCodeBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            GameSessionGenerateCode op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).GameSessionGenerateCode<T1>(op);
+        }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this PublicRevokeGameSessionCode.PublicRevokeGameSessionCodeBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicRevokeGameSessionCode op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicRevokeGameSessionCode(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this PublicRevokeGameSessionCode.PublicRevokeGameSessionCodeBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicRevokeGameSessionCode op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicRevokeGameSessionCode<T1>(op);
         }
         public static void Execute(
             this PublicGameSessionInvite.PublicGameSessionInviteBuilder builder,

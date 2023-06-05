@@ -8,7 +8,7 @@
     },
     "description": "Justice Social Service",
     "title": "justice-social-service",
-    "version": "2.7.0"
+    "version": "2.8.0"
   },
   "schemes": [
     "https"
@@ -8315,16 +8315,16 @@
   },
   "x-version": {
     "buildBy": "Gradle 6.9.1",
-    "buildDate": "2023-05-23T02:03:20+00:00",
-    "buildID": "2.7.0",
+    "buildDate": "2023-06-05T01:15:53+00:00",
+    "buildID": "2.8.0",
     "buildJDK": "1.8.0_232 (Eclipse OpenJ9 openj9-0.17.0)",
     "buildOS": "Linux amd64 5.13.0-1021-aws",
     "gitBranchName": "release-candidate",
-    "gitHash": "644de20491",
-    "gitTag": "1.31.2",
+    "gitHash": "f308eee63d",
+    "gitTag": "2.8.0",
     "name": "justice-social-service",
     "realm": "staging",
-    "version": "2.7.0",
+    "version": "2.8.0",
     "version-roles-seeding": "0.0.12"
   }
 }

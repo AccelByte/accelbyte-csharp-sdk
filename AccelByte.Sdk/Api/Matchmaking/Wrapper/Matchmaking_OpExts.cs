@@ -340,6 +340,19 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteUserFromSessionInChannel(op);
         }
+        public static Matchmaking.Model.ModelsStatResumeResponse? Execute(
+            this GetStatData.GetStatDataBuilder builder,
+            string channelName,
+            string namespace_
+        )
+        {
+            GetStatData op = builder.Build(
+                channelName,
+                namespace_
+            );
+
+            return ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetStatData(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ServiceGetSessionHistorySearchResponse? Execute(
             this SearchSessions.SearchSessionsBuilder builder,

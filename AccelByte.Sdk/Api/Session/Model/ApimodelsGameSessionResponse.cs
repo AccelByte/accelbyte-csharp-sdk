@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("backfillTicketID")]
         public string? BackfillTicketID { get; set; }
 
+        [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Code { get; set; }
+
         [JsonPropertyName("configuration")]
         public ApimodelsPublicConfiguration? Configuration { get; set; }
 
@@ -80,6 +84,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("backfillTicketID")]
         public string? BackfillTicketID { get; set; }
+
+        [JsonPropertyName("code")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Code { get; set; }
 
         [JsonPropertyName("configuration")]
         public ApimodelsPublicConfiguration? Configuration { get; set; }

@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("game_mode")]
         public string? GameMode { get; set; }
 
+        [JsonPropertyName("is_mock")]
+        public string? IsMock { get; set; }
+
         [JsonPropertyName("joinable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Joinable { get; set; }
@@ -86,6 +89,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 
         [JsonPropertyName("game_mode")]
         public string? GameMode { get; set; }
+
+        [JsonPropertyName("is_mock")]
+        public string? IsMock { get; set; }
 
         [JsonPropertyName("joinable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

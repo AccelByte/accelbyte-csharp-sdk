@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.AdminGetLobbyCCU.Builder.SetWrapperObject(this); }
         }
+        public AdminGetBulkPlayerBlockedPlayersV1.AdminGetBulkPlayerBlockedPlayersV1Builder AdminGetBulkPlayerBlockedPlayersV1Op
+        {
+            get { return Operation.AdminGetBulkPlayerBlockedPlayersV1.Builder.SetWrapperObject(this); }
+        }
         public AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder AdminGetAllPlayerSessionAttributeOp
         {
             get { return Operation.AdminGetAllPlayerSessionAttribute.Builder.SetWrapperObject(this); }
@@ -58,6 +62,15 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         #endregion
 
         public Model.ModelsGetLobbyCcuResponse? AdminGetLobbyCCU(AdminGetLobbyCCU input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetBulkAllPlayerBlockedUsersResponse? AdminGetBulkPlayerBlockedPlayersV1(AdminGetBulkPlayerBlockedPlayersV1 input)
         {
             var response = _sdk.RunRequest(input);
 

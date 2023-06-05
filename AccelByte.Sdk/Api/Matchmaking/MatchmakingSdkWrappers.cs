@@ -46,6 +46,17 @@ namespace AccelByte.Sdk.Core
         }
         private SocialMatchmaking? _SocialMatchmaking = null;
 
+        public MockMatchmaking MockMatchmaking
+        {
+            get
+            {
+                if (_MockMatchmaking == null)
+                    _MockMatchmaking = new MockMatchmaking(_SdkObject);
+                return _MockMatchmaking;
+            }
+        }
+        private MockMatchmaking? _MockMatchmaking = null;
+
         internal MatchmakingSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

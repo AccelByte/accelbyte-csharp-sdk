@@ -84,6 +84,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/lobby/v1/admin/player/namespaces/{namespace}/ccu` | GET | AdminGetLobbyCCU | [AdminGetLobbyCCU](../../AccelByte.Sdk/Api/Lobby/Operation/Player/AdminGetLobbyCCU.cs) | [AdminGetLobbyCCU](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Player/AdminGetLobbyCCU.cs) |
+| `/lobby/v1/admin/player/namespaces/{namespace}/users/bulk/blocked` | POST | AdminGetBulkPlayerBlockedPlayersV1 | [AdminGetBulkPlayerBlockedPlayersV1](../../AccelByte.Sdk/Api/Lobby/Operation/Player/AdminGetBulkPlayerBlockedPlayersV1.cs) | [AdminGetBulkPlayerBlockedPlayersV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Player/AdminGetBulkPlayerBlockedPlayersV1.cs) |
 | `/lobby/v1/admin/player/namespaces/{namespace}/users/{userId}/attributes` | GET | AdminGetAllPlayerSessionAttribute | [AdminGetAllPlayerSessionAttribute](../../AccelByte.Sdk/Api/Lobby/Operation/Player/AdminGetAllPlayerSessionAttribute.cs) | [AdminGetAllPlayerSessionAttribute](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Player/AdminGetAllPlayerSessionAttribute.cs) |
 | `/lobby/v1/admin/player/namespaces/{namespace}/users/{userId}/attributes` | PUT | AdminSetPlayerSessionAttribute | [AdminSetPlayerSessionAttribute](../../AccelByte.Sdk/Api/Lobby/Operation/Player/AdminSetPlayerSessionAttribute.cs) | [AdminSetPlayerSessionAttribute](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Player/AdminSetPlayerSessionAttribute.cs) |
 | `/lobby/v1/admin/player/namespaces/{namespace}/users/{userId}/attributes/{attribute}` | GET | AdminGetPlayerSessionAttribute | [AdminGetPlayerSessionAttribute](../../AccelByte.Sdk/Api/Lobby/Operation/Player/AdminGetPlayerSessionAttribute.cs) | [AdminGetPlayerSessionAttribute](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Player/AdminGetPlayerSessionAttribute.cs) |
@@ -259,6 +260,8 @@
 | `models.GetAllPlayerBlockedByUsersResponse` | [ModelsGetAllPlayerBlockedByUsersResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetAllPlayerBlockedByUsersResponse.cs) |
 | `models.GetAllPlayerBlockedUsersResponse` | [ModelsGetAllPlayerBlockedUsersResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetAllPlayerBlockedUsersResponse.cs) |
 | `models.GetAllPlayerSessionAttributeResponse` | [ModelsGetAllPlayerSessionAttributeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetAllPlayerSessionAttributeResponse.cs) |
+| `models.GetBulkAllPlayerBlockedUsersRequest` | [ModelsGetBulkAllPlayerBlockedUsersRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetBulkAllPlayerBlockedUsersRequest.cs) |
+| `models.GetBulkAllPlayerBlockedUsersResponse` | [ModelsGetBulkAllPlayerBlockedUsersResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetBulkAllPlayerBlockedUsersResponse.cs) |
 | `models.GetConfigResponse` | [ModelsGetConfigResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetConfigResponse.cs) |
 | `models.GetLobbyCcuResponse` | [ModelsGetLobbyCcuResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetLobbyCcuResponse.cs) |
 | `models.GetPlayerSessionAttributeResponse` | [ModelsGetPlayerSessionAttributeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelsGetPlayerSessionAttributeResponse.cs) |
