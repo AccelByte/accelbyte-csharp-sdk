@@ -4,9 +4,10 @@
 - **tests:** fixed remaining hardcoded httpbin config
 ### chore
 - **sdk:** generated from openapi spec commit: c30f5d94054e605e482f1877ff7238f721d561de
-- **:** bump down version to 0.35
+- bump down version to 0.35
 ### feat
-- **test:** added initial ams integration test
+- **test:** added initial AMS integration test
+- added AMS service
 
 
 <a name="v0.35.0"></a>
