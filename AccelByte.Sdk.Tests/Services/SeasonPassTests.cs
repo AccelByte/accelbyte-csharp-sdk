@@ -33,43 +33,40 @@ namespace AccelByte.Sdk.Tests.Services
             string defaultDraftStoreId = String.Empty;
             string defaultTierItemId = String.Empty;
 
-            // Arrange store
-            List<StoreInfo>? listStores = _Sdk.Platform.Store.ListStoresOp.Execute(_Sdk.Namespace);
-            if (listStores == null)
+            //Check whether draft store is already exists or not
+            List<StoreInfo>? stores = _Sdk.Platform.Store.ListStoresOp
+                .Execute(_Sdk.Namespace);
+            if ((stores != null) && (stores.Count > 0))
             {
-                Assert.Fail("List stores is null");
-                return;
-            }
-
-            // Check list of stores
-            if (listStores.Count > 0)
-            {
-                // Draft store is exist. Grab the storeId from the first store on list
-                defaultDraftStoreId = listStores[0].StoreId!;
-            }
-            else
-            {
-                // Draft store is none. Create a new one
-                StoreCreate createStore = new StoreCreate()
+                foreach (var store in stores)
                 {
-                    Title = "CSharp SDK Store Test",
-                    Description = "Description for CSharp Server SDK store service integration test.",
-                    DefaultLanguage = "en",
-                    DefaultRegion = "US",
-                    SupportedLanguages = new List<string>() { "en", "id" },
-                    SupportedRegions = new List<string>() { "US", "ID" }
-                };
-
-                StoreInfo? cStoreForSeason = _Sdk.Platform.Store.CreateStoreOp
-                    .SetBody(createStore)
-                    .Execute(_Sdk.Namespace);
-
-                if (cStoreForSeason != null)
-                {
-                    // Use the new created storeId
-                    defaultDraftStoreId = cStoreForSeason!.StoreId!;
+                    if (store.Published! != true)
+                    {
+                        //draft store exists. delete it first.
+                        _Sdk.Platform.Store.DeleteStoreOp
+                            .Execute(_Sdk.Namespace, store.StoreId!);
+                    }
                 }
             }
+
+            #region Create a store
+            StoreCreate createStore = new StoreCreate()
+            {
+                Title = "CSharp SDK Store Test",
+                Description = "Description for CSharp Server SDK store service integration test.",
+                DefaultLanguage = "en",
+                DefaultRegion = "US",
+                SupportedLanguages = new List<string>() { "en", "id" },
+                SupportedRegions = new List<string>() { "US", "ID" }
+            };
+
+            StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
+                .SetBody(createStore)
+                .Execute(_Sdk.Namespace);
+            #endregion
+            Assert.IsNotNull(cStore);
+            if (cStore != null)
+                defaultDraftStoreId = cStore.StoreId!;
 
             // Create a store category in platform
             string categoryPath = "/" + Guid.NewGuid().ToString().Replace("-", "");
