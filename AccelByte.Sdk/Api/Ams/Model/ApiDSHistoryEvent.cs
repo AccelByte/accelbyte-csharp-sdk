@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public int? ExitCode { get; set; }
 
         [JsonPropertyName("gameSession")]
-        public TidID? GameSession { get; set; }
+        public string? GameSession { get; set; }
 
         [JsonPropertyName("ipAddress")]
         public string? IpAddress { get; set; }
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public string? Region { get; set; }
 
         [JsonPropertyName("serverId")]
-        public TidID? ServerId { get; set; }
+        public string? ServerId { get; set; }
 
         [JsonPropertyName("status")]
         public string? Status { get; set; }

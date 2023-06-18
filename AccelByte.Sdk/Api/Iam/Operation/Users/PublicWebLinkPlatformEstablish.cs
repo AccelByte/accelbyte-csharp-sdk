@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicWebLinkPlatformEstablishBuilder>
         {
 
+            public string? Code { get; set; }
+
 
 
 
 
             internal PublicWebLinkPlatformEstablishBuilder() { }
 
+
+            public PublicWebLinkPlatformEstablishBuilder SetCode(string _code)
+            {
+                Code = _code;
+                return this;
+            }
 
 
 
@@ -64,6 +72,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
 
+            if (builder.Code is not null) QueryParams["code"] = builder.Code;
             if (state is not null) QueryParams["state"] = state;
 
 
@@ -79,12 +88,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public PublicWebLinkPlatformEstablish(
             string namespace_,
             string platformId,
+            string? code,
             string state
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
 
+            if (code is not null) QueryParams["code"] = code;
             if (state is not null) QueryParams["state"] = state;
 
 

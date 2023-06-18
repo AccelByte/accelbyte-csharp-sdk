@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Iam.Model
 {
-    public class Validation : AccelByte.Sdk.Core.Model
+    public class ModelInputValidationConfigVersion : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allowAllSpecialCharacters")]
         public bool? AllowAllSpecialCharacters { get; set; }
@@ -30,9 +30,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("blockedWord")]
         public List<string>? BlockedWord { get; set; }
-
-        [JsonPropertyName("description")]
-        public List<ValidationDescription>? Description { get; set; }
 
         [JsonPropertyName("isCustomRegex")]
         public bool? IsCustomRegex { get; set; }
@@ -63,6 +60,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("specialCharacters")]
         public List<string>? SpecialCharacters { get; set; }
+
+        [JsonPropertyName("version")]
+        public int? Version { get; set; }
 
     }
 

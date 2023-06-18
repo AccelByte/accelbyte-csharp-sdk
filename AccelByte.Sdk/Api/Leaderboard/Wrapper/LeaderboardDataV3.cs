@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         {
             get { return Operation.GetCurrentCycleLeaderboardRankingPublicV3.Builder.SetWrapperObject(this); }
         }
+        public BulkGetUsersRankingPublicV3.BulkGetUsersRankingPublicV3Builder BulkGetUsersRankingPublicV3Op
+        {
+            get { return Operation.BulkGetUsersRankingPublicV3.Builder.SetWrapperObject(this); }
+        }
         public GetUserRankingPublicV3.GetUserRankingPublicV3Builder GetUserRankingPublicV3Op
         {
             get { return Operation.GetUserRankingPublicV3.Builder.SetWrapperObject(this); }
@@ -121,6 +125,15 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
                     response.Payload);
         }
         public Model.ModelsGetLeaderboardRankingResp? GetCurrentCycleLeaderboardRankingPublicV3(GetCurrentCycleLeaderboardRankingPublicV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsBulkUserRankingResponseV3? BulkGetUsersRankingPublicV3(BulkGetUsersRankingPublicV3 input)
         {
             var response = _sdk.RunRequest(input);
 

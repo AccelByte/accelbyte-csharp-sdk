@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Leaderboard.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 {
-    [SdkConsoleCommand("leaderboard", "getuserrankingadminv1")]
-    public class GetUserRankingAdminV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("leaderboard", "bulkgetusersrankingpublicv3")]
+    public class BulkGetUsersRankingPublicV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Leaderboard"; } }
 
-        public string OperationName { get { return "GetUserRankingAdminV1"; } }
+        public string OperationName { get { return "BulkGetUsersRankingPublicV3"; } }
 
         [SdkCommandArgument("leaderboardCode")]
         public string LeaderboardCode { get; set; } = String.Empty;
@@ -34,37 +34,32 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("userId")]
-        public string UserId { get; set; } = String.Empty;
+        [SdkCommandData("body")]
+        public ModelsBulkUserIDsRequest Body { get; set; } = new ModelsBulkUserIDsRequest();
 
-        [SdkCommandArgument("previousVersion")]
-        public long? PreviousVersion { get; set; }
-
-        public GetUserRankingAdminV1Command(AccelByteSDK sdk)
+        public BulkGetUsersRankingPublicV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardData(_SDK);
+            AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardDataV3 wrapper = new AccelByte.Sdk.Api.Leaderboard.Wrapper.LeaderboardDataV3(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Leaderboard.Operation.GetUserRankingAdminV1.Builder;
-
-            if (PreviousVersion != null)
-                opBuilder.SetPreviousVersion((long)PreviousVersion);
+            var opBuilder = AccelByte.Sdk.Api.Leaderboard.Operation.BulkGetUsersRankingPublicV3.Builder;
 
 
 
 
-            GetUserRankingAdminV1 operation = opBuilder.Build(
+
+            BulkGetUsersRankingPublicV3 operation = opBuilder.Build(
+                Body,
                 LeaderboardCode,
-                Namespace,
-                UserId
+                Namespace
             );
 
 
-            AccelByte.Sdk.Api.Leaderboard.Model.ModelsUserRankingResponse? response = wrapper.GetUserRankingAdminV1(operation);
+            AccelByte.Sdk.Api.Leaderboard.Model.ModelsBulkUserRankingResponseV3? response = wrapper.BulkGetUsersRankingPublicV3(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -151,6 +151,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkFetchOrDefaultStatItems1.Builder.SetWrapperObject(this); }
         }
+        public AdminListUsersStatItems.AdminListUsersStatItemsBuilder AdminListUsersStatItemsOp
+        {
+            get { return Operation.AdminListUsersStatItems.Builder.SetWrapperObject(this); }
+        }
         public BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder BulkUpdateUserStatItemOp
         {
             get { return Operation.BulkUpdateUserStatItem.Builder.SetWrapperObject(this); }
@@ -644,6 +648,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public List<Model.ADTOObjectForUserStatItemValue>? BulkFetchOrDefaultStatItems1(BulkFetchOrDefaultStatItems1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ADTOObjectForUserStatItemValue>? AdminListUsersStatItems(AdminListUsersStatItems input)
         {
             var response = _sdk.RunRequest(input);
 

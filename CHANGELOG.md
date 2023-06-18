@@ -1,3 +1,9 @@
+<a name="v0.37.0"></a>
+## [v0.37.0]
+### fix
+- **test:** try fix seasonpass init store fail in integration test
+
+
 <a name="v0.36.0"></a>
 ## [v0.36.0]
 ### fix

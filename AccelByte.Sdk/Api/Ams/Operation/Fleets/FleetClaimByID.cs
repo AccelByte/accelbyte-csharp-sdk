@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// FleetClaimByID
     ///
-    /// Required Permission: NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]
+    /// Required Permission: NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
     /// </summary>
     public class FleetClaimByID : AccelByte.Sdk.Core.Operation
     {

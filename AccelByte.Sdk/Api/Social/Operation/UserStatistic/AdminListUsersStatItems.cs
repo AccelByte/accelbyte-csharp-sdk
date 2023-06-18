@@ -14,23 +14,23 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Social.Operation
 {
     /// <summary>
-    /// publicQueryUserStatItems_2
+    /// AdminListUsersStatItems
     ///
-    /// Public list all statItems of user.
+    /// Admin list all statItems of user
     /// NOTE:
     ///           * If stat code does not exist, will ignore this stat code.
     ///           * If stat item does not exist, will return default value
-    /// Other detail info:
-    ///           *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
+    /// Other detail info:+ *Required permission*: resource=ADMIN:NAMESPACE:{namespace}:STATITEM, action=2 (READ)
+    /// 
     ///           *  Returns : stat items
     /// </summary>
-    public class PublicQueryUserStatItems2 : AccelByte.Sdk.Core.Operation
+    public class AdminListUsersStatItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicQueryUserStatItems2Builder Builder { get => new PublicQueryUserStatItems2Builder(); }
+        public static AdminListUsersStatItemsBuilder Builder { get => new AdminListUsersStatItemsBuilder(); }
 
-        public class PublicQueryUserStatItems2Builder
-            : OperationBuilder<PublicQueryUserStatItems2Builder>
+        public class AdminListUsersStatItemsBuilder
+            : OperationBuilder<AdminListUsersStatItemsBuilder>
         {
 
             public string? AdditionalKey { get; set; }
@@ -43,22 +43,22 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            internal PublicQueryUserStatItems2Builder() { }
+            internal AdminListUsersStatItemsBuilder() { }
 
 
-            public PublicQueryUserStatItems2Builder SetAdditionalKey(string _additionalKey)
+            public AdminListUsersStatItemsBuilder SetAdditionalKey(string _additionalKey)
             {
                 AdditionalKey = _additionalKey;
                 return this;
             }
 
-            public PublicQueryUserStatItems2Builder SetStatCodes(List<string> _statCodes)
+            public AdminListUsersStatItemsBuilder SetStatCodes(List<string> _statCodes)
             {
                 StatCodes = _statCodes;
                 return this;
             }
 
-            public PublicQueryUserStatItems2Builder SetTags(List<string> _tags)
+            public AdminListUsersStatItemsBuilder SetTags(List<string> _tags)
             {
                 Tags = _tags;
                 return this;
@@ -68,12 +68,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public PublicQueryUserStatItems2 Build(
+            public AdminListUsersStatItems Build(
                 string namespace_,
                 string userId
             )
             {
-                PublicQueryUserStatItems2 op = new PublicQueryUserStatItems2(this,
+                AdminListUsersStatItems op = new AdminListUsersStatItems(this,
                     namespace_,
                     userId
                 );
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
         }
 
-        private PublicQueryUserStatItems2(PublicQueryUserStatItems2Builder builder,
+        private AdminListUsersStatItems(AdminListUsersStatItemsBuilder builder,
             string namespace_,
             string userId
         )
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
         #endregion
 
-        public PublicQueryUserStatItems2(
+        public AdminListUsersStatItems(
             string namespace_,
             string userId,
             string? additionalKey,
@@ -131,7 +131,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk";
+        public override string Path => "/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/bulk";
 
         public override HttpMethod Method => HttpMethod.Get;
 

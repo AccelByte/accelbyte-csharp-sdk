@@ -105,6 +105,7 @@
 | `api.DSHistoryEvent` | [ApiDSHistoryEvent](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryEvent.cs) |
 | `api.DSHistoryList` | [ApiDSHistoryList](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryList.cs) |
 | `api.DSHostConfiguration` | [ApiDSHostConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHostConfiguration.cs) |
+| `api.FleetClaimByKeysReq` | [ApiFleetClaimByKeysReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimByKeysReq.cs) |
 | `api.FleetClaimReq` | [ApiFleetClaimReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimReq.cs) |
 | `api.FleetClaimResponse` | [ApiFleetClaimResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimResponse.cs) |
 | `api.FleetCreateResponse` | [ApiFleetCreateResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetCreateResponse.cs) |
@@ -129,4 +130,3 @@
 | `api.RegionsResponse` | [ApiRegionsResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiRegionsResponse.cs) |
 | `api.Timeout` | [ApiTimeout](../../AccelByte.Sdk/Api/Ams/Model/ApiTimeout.cs) |
 | `response.ErrorResponse` | [ResponseErrorResponse](../../AccelByte.Sdk/Api/Ams/Model/ResponseErrorResponse.cs) |
-| `tid.ID` | [TidID](../../AccelByte.Sdk/Api/Ams/Model/TidID.cs) |

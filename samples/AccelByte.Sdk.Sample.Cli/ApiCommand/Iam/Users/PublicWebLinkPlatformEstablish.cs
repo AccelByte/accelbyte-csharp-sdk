@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("code")]
+        public string? Code { get; set; }
+
         [SdkCommandArgument("state")]
         public string State { get; set; } = String.Empty;
 
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicWebLinkPlatformEstablish.Builder;
 
+            if (Code != null)
+                opBuilder.SetCode((string)Code);
 
 
 

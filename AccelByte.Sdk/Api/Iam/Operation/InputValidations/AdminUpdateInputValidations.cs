@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///             * email
     /// 
     /// 
+    ///             * avatar
+    /// 
+    /// 
     /// 
     /// 
     /// If `isCustomRegex` is set to true, `regex` parameter will be used as input validation and the other parameters will be ignored. Otherwise, `regex` parameter will be ignored and regex for input validation will be generated based on the combination of the other parameters.
@@ -98,6 +101,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// If `blockedWord` is set by admin, any input from user which contain kind of blocked word(s) will be blocked for create/upgrade/update account
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If `avatarConfig` is set, will use this config and skip all the other validation conditions
     /// </summary>
     public class AdminUpdateInputValidations : AccelByte.Sdk.Core.Operation
     {

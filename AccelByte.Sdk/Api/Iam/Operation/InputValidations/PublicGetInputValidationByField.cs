@@ -7,45 +7,45 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Ams.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Ams.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// FleetClaimByKeys
+    /// PublicGetInputValidationByField
     ///
-    /// Required Permission: NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
+    /// 
+    /// 
+    /// This endpoint is to get input validation configuration by field.
     /// </summary>
-    public class FleetClaimByKeys : AccelByte.Sdk.Core.Operation
+    public class PublicGetInputValidationByField : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FleetClaimByKeysBuilder Builder { get => new FleetClaimByKeysBuilder(); }
+        public static PublicGetInputValidationByFieldBuilder Builder { get => new PublicGetInputValidationByFieldBuilder(); }
 
-        public class FleetClaimByKeysBuilder
-            : OperationBuilder<FleetClaimByKeysBuilder>
+        public class PublicGetInputValidationByFieldBuilder
+            : OperationBuilder<PublicGetInputValidationByFieldBuilder>
         {
 
 
 
 
 
-            internal FleetClaimByKeysBuilder() { }
+            internal PublicGetInputValidationByFieldBuilder() { }
 
 
 
 
 
 
-            public FleetClaimByKeys Build(
-                ApiFleetClaimByKeysReq body,
-                string namespace_
+            public PublicGetInputValidationByField Build(
+                string field
             )
             {
-                FleetClaimByKeys op = new FleetClaimByKeys(this,
-                    body,
-                    namespace_
+                PublicGetInputValidationByField op = new PublicGetInputValidationByField(this,
+                    field
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
 
@@ -53,44 +53,40 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private FleetClaimByKeys(FleetClaimByKeysBuilder builder,
-            ApiFleetClaimByKeysReq body,
-            string namespace_
+        private PublicGetInputValidationByField(PublicGetInputValidationByFieldBuilder builder,
+            string field
         )
         {
-            PathParams["namespace"] = namespace_;
+            PathParams["field"] = field;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public FleetClaimByKeys(
-            string namespace_,
-            Model.ApiFleetClaimByKeysReq body
+        public PublicGetInputValidationByField(
+            string field
         )
         {
-            PathParams["namespace"] = namespace_;
+            PathParams["field"] = field;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/namespaces/{namespace}/servers/claim";
+        public override string Path => "/iam/v3/public/inputValidations/{field}";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Get;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -99,7 +95,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiFleetClaimResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelInputValidationConfigVersion? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -107,11 +103,11 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApiFleetClaimResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelInputValidationConfigVersion>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiFleetClaimResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelInputValidationConfigVersion>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

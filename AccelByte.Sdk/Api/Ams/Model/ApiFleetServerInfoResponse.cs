@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("serverId")]
         public string? ServerId { get; set; }
 
+        [JsonPropertyName("status")]
+        public string? Status { get; set; }
+
     }
 
 

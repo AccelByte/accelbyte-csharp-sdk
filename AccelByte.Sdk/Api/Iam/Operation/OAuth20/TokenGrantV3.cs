@@ -244,6 +244,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    /// ## Response note
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
+    /// 
+    /// 
+    /// 
+    /// 
     /// action code: 10703
     /// </summary>
     public class TokenGrantV3 : AccelByte.Sdk.Core.Operation

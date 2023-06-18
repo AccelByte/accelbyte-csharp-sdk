@@ -272,6 +272,7 @@
 | `/iam/v3/admin/inputValidations` | PUT | AdminUpdateInputValidations | [AdminUpdateInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/AdminUpdateInputValidations.cs) | [AdminUpdateInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/AdminUpdateInputValidations.cs) |
 | `/iam/v3/admin/inputValidations/{field}` | DELETE | AdminResetInputValidations | [AdminResetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/AdminResetInputValidations.cs) | [AdminResetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/AdminResetInputValidations.cs) |
 | `/iam/v3/public/inputValidations` | GET | PublicGetInputValidations | [PublicGetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidations.cs) | [PublicGetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidations.cs) |
+| `/iam/v3/public/inputValidations/{field}` | GET | PublicGetInputValidationByField | [PublicGetInputValidationByField](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidationByField.cs) | [PublicGetInputValidationByField](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidationByField.cs) |
 
 ### Third Party Credential Wrapper:  [ThirdPartyCredential](../../AccelByte.Sdk/Api/Iam/Wrapper/ThirdPartyCredential.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -491,6 +492,7 @@
 | `account.createUserResponseV4` | [AccountCreateUserResponseV4](../../AccelByte.Sdk/Api/Iam/Model/AccountCreateUserResponseV4.cs) |
 | `account.upgradeHeadlessAccountRequestV4` | [AccountUpgradeHeadlessAccountRequestV4](../../AccelByte.Sdk/Api/Iam/Model/AccountUpgradeHeadlessAccountRequestV4.cs) |
 | `account.upgradeHeadlessAccountWithVerificationCodeRequestV4` | [AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4](../../AccelByte.Sdk/Api/Iam/Model/AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4.cs) |
+| `accountcommon.AvatarConfig` | [AccountcommonAvatarConfig](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonAvatarConfig.cs) |
 | `accountcommon.Ban` | [AccountcommonBan](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBan.cs) |
 | `accountcommon.BanReason` | [AccountcommonBanReason](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBanReason.cs) |
 | `accountcommon.BanReasonV3` | [AccountcommonBanReasonV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBanReasonV3.cs) |
@@ -600,6 +602,7 @@
 | `model.GetUserMapping` | [ModelGetUserMapping](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserMapping.cs) |
 | `model.GetUserMappingV3` | [ModelGetUserMappingV3](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserMappingV3.cs) |
 | `model.GetUsersResponseWithPaginationV3` | [ModelGetUsersResponseWithPaginationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUsersResponseWithPaginationV3.cs) |
+| `model.InputValidationConfigVersion` | [ModelInputValidationConfigVersion](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationConfigVersion.cs) |
 | `model.InputValidationData` | [ModelInputValidationData](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationData.cs) |
 | `model.InputValidationDataPublic` | [ModelInputValidationDataPublic](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationDataPublic.cs) |
 | `model.InputValidationUpdatePayload` | [ModelInputValidationUpdatePayload](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationUpdatePayload.cs) |

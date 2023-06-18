@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ApiFleetClaimReq Body { get; set; } = new ApiFleetClaimReq();
+        public ApiFleetClaimByKeysReq Body { get; set; } = new ApiFleetClaimByKeysReq();
 
         public FleetClaimByKeysCommand(AccelByteSDK sdk)
         {

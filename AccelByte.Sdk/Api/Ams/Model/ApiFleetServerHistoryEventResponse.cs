@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public int? ExitCode { get; set; }
 
         [JsonPropertyName("fleetId")]
-        public TidID? FleetId { get; set; }
+        public string? FleetId { get; set; }
 
         [JsonPropertyName("newState")]
         public string? NewState { get; set; }
@@ -28,7 +28,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public string? Reason { get; set; }
 
         [JsonPropertyName("serverId")]
-        public TidID? ServerId { get; set; }
+        public string? ServerId { get; set; }
 
     }
 

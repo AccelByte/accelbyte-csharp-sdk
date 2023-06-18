@@ -52,5 +52,16 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidations(op);
         }
+        public static Iam.Model.ModelInputValidationConfigVersion? Execute(
+            this PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder builder,
+            string field
+        )
+        {
+            PublicGetInputValidationByField op = builder.Build(
+                field
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationByField(op);
+        }
     }
 }

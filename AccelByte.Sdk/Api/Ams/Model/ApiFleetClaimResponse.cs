@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("ports")]
         public Dictionary<string, long>? Ports { get; set; }
 
+        [JsonPropertyName("region")]
+        public string? Region { get; set; }
+
         [JsonPropertyName("serverId")]
         public string? ServerId { get; set; }
 

@@ -677,6 +677,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkFetchOrDefaultStatItems1(op);
         }
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this AdminListUsersStatItems.AdminListUsersStatItemsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUsersStatItems op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).AdminListUsersStatItems(op);
+        }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
             string namespace_,

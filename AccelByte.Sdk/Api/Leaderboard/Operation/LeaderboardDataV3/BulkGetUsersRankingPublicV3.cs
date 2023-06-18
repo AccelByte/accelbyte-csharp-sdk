@@ -7,44 +7,48 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Ams.Model;
+using AccelByte.Sdk.Api.Leaderboard.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Ams.Operation
+namespace AccelByte.Sdk.Api.Leaderboard.Operation
 {
     /// <summary>
-    /// FleetClaimByKeys
+    /// bulkGetUsersRankingPublicV3
     ///
-    /// Required Permission: NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
+    /// 
+    /// 
+    /// Bulk get users ranking in leaderboard, max allowed 20 userIDs at a time.
     /// </summary>
-    public class FleetClaimByKeys : AccelByte.Sdk.Core.Operation
+    public class BulkGetUsersRankingPublicV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FleetClaimByKeysBuilder Builder { get => new FleetClaimByKeysBuilder(); }
+        public static BulkGetUsersRankingPublicV3Builder Builder { get => new BulkGetUsersRankingPublicV3Builder(); }
 
-        public class FleetClaimByKeysBuilder
-            : OperationBuilder<FleetClaimByKeysBuilder>
+        public class BulkGetUsersRankingPublicV3Builder
+            : OperationBuilder<BulkGetUsersRankingPublicV3Builder>
         {
 
 
 
 
 
-            internal FleetClaimByKeysBuilder() { }
+            internal BulkGetUsersRankingPublicV3Builder() { }
 
 
 
 
 
 
-            public FleetClaimByKeys Build(
-                ApiFleetClaimByKeysReq body,
+            public BulkGetUsersRankingPublicV3 Build(
+                ModelsBulkUserIDsRequest body,
+                string leaderboardCode,
                 string namespace_
             )
             {
-                FleetClaimByKeys op = new FleetClaimByKeys(this,
+                BulkGetUsersRankingPublicV3 op = new BulkGetUsersRankingPublicV3(this,
                     body,
+                    leaderboardCode,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -53,11 +57,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private FleetClaimByKeys(FleetClaimByKeysBuilder builder,
-            ApiFleetClaimByKeysReq body,
+        private BulkGetUsersRankingPublicV3(BulkGetUsersRankingPublicV3Builder builder,
+            ModelsBulkUserIDsRequest body,
+            string leaderboardCode,
             string namespace_
         )
         {
+            PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
 
 
@@ -71,11 +77,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         }
         #endregion
 
-        public FleetClaimByKeys(
+        public BulkGetUsersRankingPublicV3(
+            string leaderboardCode,
             string namespace_,
-            Model.ApiFleetClaimByKeysReq body
+            Model.ModelsBulkUserIDsRequest body
         )
         {
+            PathParams["leaderboardCode"] = leaderboardCode;
             PathParams["namespace"] = namespace_;
 
 
@@ -88,9 +96,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/namespaces/{namespace}/servers/claim";
+        public override string Path => "/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/bulk";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -99,7 +107,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiFleetClaimResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsBulkUserRankingResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -107,11 +115,11 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApiFleetClaimResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsBulkUserRankingResponseV3>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiFleetClaimResponse>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsBulkUserRankingResponseV3>(payload);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

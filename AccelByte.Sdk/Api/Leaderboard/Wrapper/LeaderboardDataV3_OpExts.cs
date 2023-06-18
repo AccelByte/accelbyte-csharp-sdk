@@ -126,6 +126,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).GetCurrentCycleLeaderboardRankingPublicV3(op);
         }
+        public static Leaderboard.Model.ModelsBulkUserRankingResponseV3? Execute(
+            this BulkGetUsersRankingPublicV3.BulkGetUsersRankingPublicV3Builder builder,
+            ModelsBulkUserIDsRequest body,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            BulkGetUsersRankingPublicV3 op = builder.Build(
+                body,
+                leaderboardCode,
+                namespace_
+            );
+
+            return ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).BulkGetUsersRankingPublicV3(op);
+        }
         public static Leaderboard.Model.ModelsUserRankingResponseV3? Execute(
             this GetUserRankingPublicV3.GetUserRankingPublicV3Builder builder,
             string leaderboardCode,

@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("allowUnicode")]
         public bool? AllowUnicode { get; set; }
 
+        [JsonPropertyName("avatarConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public AccountcommonAvatarConfig? AvatarConfig { get; set; }
+
         [JsonPropertyName("blockedWord")]
         public List<string>? BlockedWord { get; set; }
 

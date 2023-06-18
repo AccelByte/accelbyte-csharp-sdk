@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Ams.Model.ApiFleetClaimResponse? Execute(
             this FleetClaimByKeys.FleetClaimByKeysBuilder builder,
-            ApiFleetClaimReq body,
+            ApiFleetClaimByKeysReq body,
             string namespace_
         )
         {

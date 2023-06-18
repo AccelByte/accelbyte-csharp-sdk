@@ -85,6 +85,7 @@
 | `/leaderboard/v3/admin/namespaces/{namespace}/users/{userId}` | DELETE | DeleteUserRankingsAdminV3 | [DeleteUserRankingsAdminV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/DeleteUserRankingsAdminV3.cs) | [DeleteUserRankingsAdminV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/DeleteUserRankingsAdminV3.cs) |
 | `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/alltime` | GET | GetAllTimeLeaderboardRankingPublicV3 | [GetAllTimeLeaderboardRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetAllTimeLeaderboardRankingPublicV3.cs) | [GetAllTimeLeaderboardRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetAllTimeLeaderboardRankingPublicV3.cs) |
 | `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/cycles/{cycleId}` | GET | GetCurrentCycleLeaderboardRankingPublicV3 | [GetCurrentCycleLeaderboardRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) | [GetCurrentCycleLeaderboardRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetCurrentCycleLeaderboardRankingPublicV3.cs) |
+| `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/bulk` | POST | BulkGetUsersRankingPublicV3 | [BulkGetUsersRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/BulkGetUsersRankingPublicV3.cs) | [BulkGetUsersRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/BulkGetUsersRankingPublicV3.cs) |
 | `/leaderboard/v3/public/namespaces/{namespace}/leaderboards/{leaderboardCode}/users/{userId}` | GET | GetUserRankingPublicV3 | [GetUserRankingPublicV3](../../AccelByte.Sdk/Api/Leaderboard/Operation/LeaderboardDataV3/GetUserRankingPublicV3.cs) | [GetUserRankingPublicV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Leaderboard/LeaderboardDataV3/GetUserRankingPublicV3.cs) |
 
 ### UserVisibilityV3 Wrapper:  [UserVisibilityV3](../../AccelByte.Sdk/Api/Leaderboard/Wrapper/UserVisibilityV3.cs)
@@ -150,6 +151,8 @@
 |---|---|
 | `models.ArchiveLeaderboardReq` | [ModelsArchiveLeaderboardReq](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsArchiveLeaderboardReq.cs) |
 | `models.ArchiveLeaderboardSignedURLResponse` | [ModelsArchiveLeaderboardSignedURLResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsArchiveLeaderboardSignedURLResponse.cs) |
+| `models.BulkUserIDsRequest` | [ModelsBulkUserIDsRequest](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsBulkUserIDsRequest.cs) |
+| `models.BulkUserRankingResponseV3` | [ModelsBulkUserRankingResponseV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsBulkUserRankingResponseV3.cs) |
 | `models.DailyConfig` | [ModelsDailyConfig](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDailyConfig.cs) |
 | `models.DeleteBulkLeaderboardFailedResp` | [ModelsDeleteBulkLeaderboardFailedResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardFailedResp.cs) |
 | `models.DeleteBulkLeaderboardsReq` | [ModelsDeleteBulkLeaderboardsReq](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardsReq.cs) |
