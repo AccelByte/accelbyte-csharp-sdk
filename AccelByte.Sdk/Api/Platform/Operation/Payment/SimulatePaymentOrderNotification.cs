@@ -60,6 +60,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                     paymentOrderNo
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -122,11 +124,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.NotificationProcessResult>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.NotificationProcessResult>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.NotificationProcessResult>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.NotificationProcessResult>(payload);
+                return JsonSerializer.Deserialize<Model.NotificationProcessResult>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -142,11 +147,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.NotificationProcessResult<T1>>(payload);
+                return JsonSerializer.Deserialize<Model.NotificationProcessResult<T1>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.NotificationProcessResult<T1>>(payload);
+                return JsonSerializer.Deserialize<Model.NotificationProcessResult<T1>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

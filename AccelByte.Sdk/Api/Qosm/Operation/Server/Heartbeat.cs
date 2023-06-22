@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Api.Qosm.Operation
                     body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

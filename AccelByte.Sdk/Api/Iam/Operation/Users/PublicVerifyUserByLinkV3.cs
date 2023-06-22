@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 PublicVerifyUserByLinkV3 op = new PublicVerifyUserByLinkV3(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

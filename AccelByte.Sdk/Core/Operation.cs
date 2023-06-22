@@ -5,6 +5,7 @@
 using System.Collections;
 using System.Text;
 using System.Web;
+using System.Text.Json;
 
 using AccelByte.Sdk.Core.Client;
 
@@ -59,6 +60,10 @@ namespace AccelByte.Sdk.Core
         public string? LocationQuery { get; init; }
 
         public HttpClientPolicy? HttpClientPolicy { get; set; } = null;
+
+        public JsonSerializerOptions? RequestJsonOptions { get; set; } = null;
+
+        public JsonSerializerOptions? ResponseJsonOptions { get; set; } = null;
 
         protected string EncodeQueryString(string value)
         {

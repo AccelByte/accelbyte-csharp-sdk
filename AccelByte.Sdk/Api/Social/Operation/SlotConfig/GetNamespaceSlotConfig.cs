@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -105,11 +107,14 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.NamespaceSlotConfigInfo>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.NamespaceSlotConfigInfo>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.NamespaceSlotConfigInfo>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.NamespaceSlotConfigInfo>(payload);
+                return JsonSerializer.Deserialize<Model.NamespaceSlotConfigInfo>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

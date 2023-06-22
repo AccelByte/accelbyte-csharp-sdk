@@ -55,6 +55,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 CreateItemTypeConfig op = new CreateItemTypeConfig(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

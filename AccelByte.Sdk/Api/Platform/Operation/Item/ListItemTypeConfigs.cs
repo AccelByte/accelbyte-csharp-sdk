@@ -49,6 +49,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 ListItemTypeConfigs op = new ListItemTypeConfigs(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -100,11 +102,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ItemTypeConfigInfo>>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<List<Model.ItemTypeConfigInfo>>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<List<Model.ItemTypeConfigInfo>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ItemTypeConfigInfo>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ItemTypeConfigInfo>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

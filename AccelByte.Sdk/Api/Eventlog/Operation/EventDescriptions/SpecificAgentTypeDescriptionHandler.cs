@@ -51,6 +51,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 SpecificAgentTypeDescriptionHandler op = new SpecificAgentTypeDescriptionHandler(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -105,11 +107,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsMultipleAgentType>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.ModelsMultipleAgentType>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.ModelsMultipleAgentType>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsMultipleAgentType>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsMultipleAgentType>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

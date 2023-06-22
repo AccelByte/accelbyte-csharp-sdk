@@ -51,6 +51,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                     countryCode
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -110,11 +112,14 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.RetrievePolicyResponse>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.RetrievePolicyResponse>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.RetrievePolicyResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.RetrievePolicyResponse>(payload);
+                return JsonSerializer.Deserialize<Model.RetrievePolicyResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

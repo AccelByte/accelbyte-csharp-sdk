@@ -163,6 +163,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                     returnUrl
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

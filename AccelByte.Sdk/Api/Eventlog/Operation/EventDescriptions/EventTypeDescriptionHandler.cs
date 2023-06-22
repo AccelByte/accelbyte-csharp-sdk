@@ -43,6 +43,8 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
                 EventTypeDescriptionHandler op = new EventTypeDescriptionHandler(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -94,11 +96,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsMultipleEventType>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.ModelsMultipleEventType>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.ModelsMultipleEventType>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsMultipleEventType>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsMultipleEventType>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

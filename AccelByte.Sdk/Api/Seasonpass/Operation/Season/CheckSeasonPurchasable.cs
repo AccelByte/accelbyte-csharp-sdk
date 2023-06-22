@@ -60,6 +60,8 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                     userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

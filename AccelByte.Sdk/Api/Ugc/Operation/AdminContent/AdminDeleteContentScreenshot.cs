@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
                     screenshotId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

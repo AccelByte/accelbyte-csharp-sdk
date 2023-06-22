@@ -59,6 +59,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                     policyId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

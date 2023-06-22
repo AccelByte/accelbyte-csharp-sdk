@@ -47,6 +47,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 ListFulfillmentScripts op = new ListFulfillmentScripts(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -98,11 +100,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.FulfillmentScriptInfo>>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<List<Model.FulfillmentScriptInfo>>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<List<Model.FulfillmentScriptInfo>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.FulfillmentScriptInfo>>(payload);
+                return JsonSerializer.Deserialize<List<Model.FulfillmentScriptInfo>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

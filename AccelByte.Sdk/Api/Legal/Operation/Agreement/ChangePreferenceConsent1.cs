@@ -55,6 +55,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
                 ChangePreferenceConsent1 op = new ChangePreferenceConsent1(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

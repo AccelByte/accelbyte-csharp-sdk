@@ -62,6 +62,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 GetRoles op = new GetRoles(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -116,11 +118,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelRoleResponseWithManagers>>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<List<Model.ModelRoleResponseWithManagers>>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<List<Model.ModelRoleResponseWithManagers>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelRoleResponseWithManagers>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelRoleResponseWithManagers>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

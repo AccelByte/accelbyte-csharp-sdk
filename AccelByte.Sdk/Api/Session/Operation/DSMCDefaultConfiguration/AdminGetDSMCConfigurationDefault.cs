@@ -44,6 +44,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 AdminGetDSMCConfigurationDefault op = new AdminGetDSMCConfigurationDefault(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -95,11 +97,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsDefaultDSMCConfig>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.ModelsDefaultDSMCConfig>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.ModelsDefaultDSMCConfig>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsDefaultDSMCConfig>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsDefaultDSMCConfig>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

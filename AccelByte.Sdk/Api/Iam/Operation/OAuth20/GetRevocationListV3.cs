@@ -61,6 +61,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 GetRevocationListV3 op = new GetRevocationListV3(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -112,11 +114,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload);
+                return JsonSerializer.Deserialize<Model.OauthapiRevocationList>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

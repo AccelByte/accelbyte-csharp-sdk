@@ -70,6 +70,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -134,11 +136,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse>>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse>>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -154,11 +159,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse<T1>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse<T1>>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse<T1>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ApimodelsPartySessionResponse<T1>>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

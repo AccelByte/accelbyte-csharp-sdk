@@ -61,6 +61,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                     rewardId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

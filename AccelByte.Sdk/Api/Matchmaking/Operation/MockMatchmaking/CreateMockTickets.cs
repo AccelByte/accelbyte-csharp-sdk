@@ -57,6 +57,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -120,11 +122,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket>>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<List<Model.ModelsMockTicket>>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<List<Model.ModelsMockTicket>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -140,11 +145,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket<T1, T2>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket<T1, T2>>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket<T1, T2>>>(payload);
+                return JsonSerializer.Deserialize<List<Model.ModelsMockTicket<T1, T2>>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
                     ticketid
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

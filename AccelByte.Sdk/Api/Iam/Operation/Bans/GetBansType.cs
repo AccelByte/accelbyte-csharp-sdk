@@ -58,6 +58,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 GetBansType op = new GetBansType(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -109,11 +111,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.AccountcommonBans>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.AccountcommonBans>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.AccountcommonBans>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.AccountcommonBans>(payload);
+                return JsonSerializer.Deserialize<Model.AccountcommonBans>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

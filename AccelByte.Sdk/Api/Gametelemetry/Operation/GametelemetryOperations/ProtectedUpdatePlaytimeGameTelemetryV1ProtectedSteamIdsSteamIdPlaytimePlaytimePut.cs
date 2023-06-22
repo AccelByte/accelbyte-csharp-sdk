@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

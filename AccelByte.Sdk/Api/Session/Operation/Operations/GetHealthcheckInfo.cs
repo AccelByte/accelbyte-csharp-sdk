@@ -42,6 +42,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 GetHealthcheckInfo op = new GetHealthcheckInfo(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }

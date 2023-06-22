@@ -68,6 +68,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 GetJWKSV3 op = new GetJWKSV3(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -119,11 +121,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.OauthcommonJWKSet>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.OauthcommonJWKSet>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.OauthcommonJWKSet>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.OauthcommonJWKSet>(payload);
+                return JsonSerializer.Deserialize<Model.OauthcommonJWKSet>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

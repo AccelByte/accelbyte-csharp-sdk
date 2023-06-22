@@ -47,6 +47,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
                 AdminGetAllConfigV1 op = new AdminGetAllConfigV1(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
@@ -98,11 +100,14 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload);
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload);
+                return JsonSerializer.Deserialize<Model.ModelsConfigList>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -50,6 +50,8 @@ namespace AccelByte.Sdk.Api.Social.Operation
                     statCode
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
+                op.RequestJsonOptions = RequestJsonOptions;
+                op.ResponseJsonOptions = ResponseJsonOptions;
 
                 return op;
             }
