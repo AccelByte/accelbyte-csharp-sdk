@@ -46,6 +46,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            public string? AdditionalData { get; set; }
+
             public bool? IsTransient { get; set; }
 
 
@@ -54,6 +56,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
+            public RequestTokenByOneTimeLinkCodeResponseV3Builder SetAdditionalData(string _additionalData)
+            {
+                AdditionalData = _additionalData;
+                return this;
+            }
 
             public RequestTokenByOneTimeLinkCodeResponseV3Builder SetIsTransient(bool _isTransient)
             {
@@ -87,6 +95,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (builder.AdditionalData is not null) FormParams["additionalData"] = builder.AdditionalData;
             if (builder.IsTransient != null) FormParams["isTransient"] = Convert.ToString(builder.IsTransient)!;
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;
@@ -99,6 +108,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public RequestTokenByOneTimeLinkCodeResponseV3(
+            string? additionalData,
             bool? isTransient,
             string clientId,
             string oneTimeLinkCode
@@ -106,6 +116,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (additionalData is not null) FormParams["additionalData"] = additionalData;
             if (isTransient != null) FormParams["isTransient"] = Convert.ToString(isTransient)!;
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (oneTimeLinkCode is not null) FormParams["oneTimeLinkCode"] = oneTimeLinkCode;

@@ -35,12 +35,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            public string? AdditionalData { get; set; }
+
 
 
             internal RequestGameTokenResponseV3Builder() { }
 
 
 
+
+            public RequestGameTokenResponseV3Builder SetAdditionalData(string _additionalData)
+            {
+                AdditionalData = _additionalData;
+                return this;
+            }
 
 
 
@@ -65,6 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (builder.AdditionalData is not null) FormParams["additionalData"] = builder.AdditionalData;
             if (code is not null) FormParams["code"] = code;
 
 
@@ -76,11 +85,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public RequestGameTokenResponseV3(
+            string? additionalData,
             string code
         )
         {
 
 
+            if (additionalData is not null) FormParams["additionalData"] = additionalData;
             if (code is not null) FormParams["code"] = code;
 
 

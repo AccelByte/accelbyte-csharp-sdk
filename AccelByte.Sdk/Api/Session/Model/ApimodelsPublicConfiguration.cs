@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsPublicConfiguration : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("PSNBaseUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PSNBaseUrl { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 
@@ -40,6 +44,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        [JsonPropertyName("native_session_setting")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsNativeSessionSetting? NativeSessionSetting { get; set; }
 
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }

@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsNativeSessionSetting? NativeSessionSetting { get; set; }
 
+        [JsonPropertyName("PSNBaseUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PSNBaseUrl { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 

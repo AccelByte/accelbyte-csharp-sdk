@@ -29,7 +29,38 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("XboxSessionTemplateName")]
         public string? XboxSessionTemplateName { get; set; }
 
+        [JsonPropertyName("localizedSessionName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? LocalizedSessionName { get; set; }
+
     }
 
+    public class ModelsNativeSessionSetting<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("PSNServiceLabel")]
+        public int? PSNServiceLabel { get; set; }
+
+        [JsonPropertyName("PSNSupportedPlatforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? PSNSupportedPlatforms { get; set; }
+
+        [JsonPropertyName("SessionTitle")]
+        public string? SessionTitle { get; set; }
+
+        [JsonPropertyName("ShouldSync")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ShouldSync { get; set; }
+
+        [JsonPropertyName("XboxServiceConfigID")]
+        public string? XboxServiceConfigID { get; set; }
+
+        [JsonPropertyName("XboxSessionTemplateName")]
+        public string? XboxSessionTemplateName { get; set; }
+
+        [JsonPropertyName("localizedSessionName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? LocalizedSessionName { get; set; }
+
+    }
 
 }

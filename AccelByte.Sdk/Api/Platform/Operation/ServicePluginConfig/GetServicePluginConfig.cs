@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource= ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN , action=2 (READ)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetServicePluginConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

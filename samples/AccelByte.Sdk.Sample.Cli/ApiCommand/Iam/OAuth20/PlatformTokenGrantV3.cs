@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("additionalData")]
+        public string AdditionalData { get; set; } = String.Empty;
+
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
 
@@ -62,6 +65,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (AdditionalData != null)
+                opBuilder.SetAdditionalData((string)AdditionalData);
             if (ClientId != null)
                 opBuilder.SetClientId((string)ClientId);
             if (CreateHeadless != null)

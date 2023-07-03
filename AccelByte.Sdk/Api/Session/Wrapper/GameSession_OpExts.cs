@@ -376,6 +376,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).JoinGameSession<T1>(op);
         }
+        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+            this PublicPromoteGameSessionLeader.PublicPromoteGameSessionLeaderBuilder builder,
+            ApimodelsPromoteLeaderRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicPromoteGameSessionLeader op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicPromoteGameSessionLeader(op);
+        }
+
+        public static Session.Model.ApimodelsGameSessionResponse<T1>? Execute<T1>(
+            this PublicPromoteGameSessionLeader.PublicPromoteGameSessionLeaderBuilder builder,
+            ApimodelsPromoteLeaderRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicPromoteGameSessionLeader op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicPromoteGameSessionLeader<T1>(op);
+        }
         public static void Execute(
             this LeaveGameSession.LeaveGameSessionBuilder builder,
             string namespace_,

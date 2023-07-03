@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<FleetServerHistoryBuilder>
         {
 
-            public long? Limit { get; set; }
+            public long? Count { get; set; }
 
             public long? Offset { get; set; }
 
@@ -38,9 +38,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             internal FleetServerHistoryBuilder() { }
 
 
-            public FleetServerHistoryBuilder SetLimit(long _limit)
+            public FleetServerHistoryBuilder SetCount(long _count)
             {
-                Limit = _limit;
+                Count = _count;
                 return this;
             }
 
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
-            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
@@ -94,14 +94,14 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         public FleetServerHistory(
             string fleetID,
             string namespace_,
-            long? limit,
+            long? count,
             long? offset
         )
         {
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
-            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 

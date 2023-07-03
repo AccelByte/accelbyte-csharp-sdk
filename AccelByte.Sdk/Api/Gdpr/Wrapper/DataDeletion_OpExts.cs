@@ -103,5 +103,36 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetUserAccountDeletionStatus(op);
         }
+        public static Gdpr.Model.ModelsRequestDeleteResponse? Execute(
+            this PublicSubmitMyAccountDeletionRequest.PublicSubmitMyAccountDeletionRequestBuilder builder,
+            string platformId,
+            string platformToken
+        )
+        {
+            PublicSubmitMyAccountDeletionRequest op = builder.Build(
+                platformId,
+                platformToken
+            );
+
+            return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicSubmitMyAccountDeletionRequest(op);
+        }
+        public static void Execute(
+            this PublicCancelMyAccountDeletionRequest.PublicCancelMyAccountDeletionRequestBuilder builder
+        )
+        {
+            PublicCancelMyAccountDeletionRequest op = builder.Build(
+            );
+
+            ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicCancelMyAccountDeletionRequest(op);
+        }
+        public static Gdpr.Model.ModelsDeletionStatus? Execute(
+            this PublicGetMyAccountDeletionStatus.PublicGetMyAccountDeletionStatusBuilder builder
+        )
+        {
+            PublicGetMyAccountDeletionStatus op = builder.Build(
+            );
+
+            return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetMyAccountDeletionStatus(op);
+        }
     }
 }

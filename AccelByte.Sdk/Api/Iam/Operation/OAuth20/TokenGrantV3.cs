@@ -267,6 +267,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            public string? AdditionalData { get; set; }
+
             public string? ClientId { get; set; }
 
             public string? Code { get; set; }
@@ -289,6 +291,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+
+            public TokenGrantV3Builder SetAdditionalData(string _additionalData)
+            {
+                AdditionalData = _additionalData;
+                return this;
+            }
 
             public TokenGrantV3Builder SetClientId(string _clientId)
             {
@@ -361,6 +369,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (builder.AdditionalData is not null) FormParams["additionalData"] = builder.AdditionalData;
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
@@ -380,6 +389,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public TokenGrantV3(
+            string? additionalData,
             string? clientId,
             string? code,
             string? codeVerifier,
@@ -393,6 +403,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
 
 
+            if (additionalData is not null) FormParams["additionalData"] = additionalData;
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (code is not null) FormParams["code"] = code;
             if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;

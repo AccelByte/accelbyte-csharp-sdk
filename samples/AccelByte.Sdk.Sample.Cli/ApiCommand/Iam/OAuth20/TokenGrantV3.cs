@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "TokenGrantV3"; } }
 
+        [SdkCommandArgument("additionalData")]
+        public string AdditionalData { get; set; } = String.Empty;
+
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
 
@@ -68,6 +71,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (AdditionalData != null)
+                opBuilder.SetAdditionalData((string)AdditionalData);
             if (ClientId != null)
                 opBuilder.SetClientId((string)ClientId);
             if (Code != null)

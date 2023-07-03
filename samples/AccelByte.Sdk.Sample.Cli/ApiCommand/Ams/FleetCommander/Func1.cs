@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Operations(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander(_SDK);
 
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.Func1.Builder;
 

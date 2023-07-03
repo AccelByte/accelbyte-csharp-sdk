@@ -1,3 +1,9 @@
+<a name="v0.38.0"></a>
+## [v0.38.0]
+### feat
+- **core:** added json serialization options and its tests
+
+
 <a name="v0.37.0"></a>
 ## [v0.37.0]
 ### fix

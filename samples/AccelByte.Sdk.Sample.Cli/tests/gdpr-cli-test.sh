@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..21"
+echo "1..24"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -252,6 +252,29 @@ $CLI_EXE \
     --password 't0OyBlJi4RbZ0Iy1' \
     > test.out 2>&1
 eval_tap $? 21 'PublicGeneratePersonalDataURL' test.out
+
+#- 22 PublicSubmitMyAccountDeletionRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicSubmitMyAccountDeletionRequest \
+    --platformId '1mfOFjCzZVcGomWF' \
+    --platformToken '1oAqUNFDtXnXLvOA' \
+    > test.out 2>&1
+eval_tap $? 22 'PublicSubmitMyAccountDeletionRequest' test.out
+
+#- 23 PublicCancelMyAccountDeletionRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicCancelMyAccountDeletionRequest \
+    > test.out 2>&1
+eval_tap $? 23 'PublicCancelMyAccountDeletionRequest' test.out
+
+#- 24 PublicGetMyAccountDeletionStatus
+$CLI_EXE \
+    --sn gdpr \
+    --op PublicGetMyAccountDeletionStatus \
+    > test.out 2>&1
+eval_tap $? 24 'PublicGetMyAccountDeletionStatus' test.out
 
 
 # remove artifacts

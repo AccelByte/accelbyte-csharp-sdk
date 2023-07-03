@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "RequestTokenByOneTimeLinkCodeResponseV3"; } }
 
+        [SdkCommandArgument("additionalData")]
+        public string AdditionalData { get; set; } = String.Empty;
+
         [SdkCommandArgument("isTransient")]
         public bool IsTransient { get; set; } = false;
 
@@ -50,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (AdditionalData != null)
+                opBuilder.SetAdditionalData((string)AdditionalData);
             if (IsTransient != null)
                 opBuilder.SetIsTransient((bool)IsTransient);
 

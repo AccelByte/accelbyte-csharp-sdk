@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "GenerateTokenByNewHeadlessAccountV3"; } }
 
+        [SdkCommandArgument("additionalData")]
+        public string AdditionalData { get; set; } = String.Empty;
+
         [SdkCommandArgument("extend_exp")]
         public bool ExtendExp { get; set; } = false;
 
@@ -47,6 +50,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (AdditionalData != null)
+                opBuilder.SetAdditionalData((string)AdditionalData);
             if (ExtendExp != null)
                 opBuilder.SetExtendExp((bool)ExtendExp);
 

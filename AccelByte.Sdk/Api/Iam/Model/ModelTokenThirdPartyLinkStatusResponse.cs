@@ -12,6 +12,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("linked")]
         public bool? Linked { get; set; }
 
+        [JsonPropertyName("platformToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformToken { get; set; }
+
+        [JsonPropertyName("sandboxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SandboxId { get; set; }
+
     }
 
 

@@ -91,7 +91,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -109,7 +108,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/public/inputValidations";

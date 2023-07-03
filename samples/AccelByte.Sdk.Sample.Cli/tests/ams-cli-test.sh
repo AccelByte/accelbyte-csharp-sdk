@@ -153,7 +153,7 @@ $CLI_EXE \
     --op FleetServerHistory \
     --fleetID 'OziwG8CPLOzSZm9K' \
     --namespace $AB_NAMESPACE \
-    --limit '37' \
+    --count '37' \
     --offset '5' \
     > test.out 2>&1
 eval_tap $? 12 'FleetServerHistory' test.out

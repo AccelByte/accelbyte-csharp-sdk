@@ -79,6 +79,17 @@ namespace AccelByte.Sdk.Core
         }
         private Watchdogs? _Watchdogs = null;
 
+        public FleetCommander FleetCommander
+        {
+            get
+            {
+                if (_FleetCommander == null)
+                    _FleetCommander = new FleetCommander(_SdkObject);
+                return _FleetCommander;
+            }
+        }
+        private FleetCommander? _FleetCommander = null;
+
         public Operations Operations
         {
             get

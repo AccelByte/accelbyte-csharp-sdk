@@ -13,15 +13,6 @@ namespace AccelByte.Sdk.Api
     public static class AmsOperations_OpExts
     {
         public static void Execute(
-            this Func1.Func1Builder builder
-        )
-        {
-            Func1 op = builder.Build(
-            );
-
-            ((Ams.Wrapper.Operations)builder.WrapperObject!).Func1(op);
-        }
-        public static void Execute(
             this BasicHealthCheck.BasicHealthCheckBuilder builder
         )
         {

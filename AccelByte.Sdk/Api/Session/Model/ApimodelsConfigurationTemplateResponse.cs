@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsConfigurationTemplateResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("PSNBaseUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PSNBaseUrl { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 

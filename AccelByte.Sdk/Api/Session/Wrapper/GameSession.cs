@@ -83,6 +83,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.JoinGameSession.Builder.SetWrapperObject(this); }
         }
+        public PublicPromoteGameSessionLeader.PublicPromoteGameSessionLeaderBuilder PublicPromoteGameSessionLeaderOp
+        {
+            get { return Operation.PublicPromoteGameSessionLeader.Builder.SetWrapperObject(this); }
+        }
         public LeaveGameSession.LeaveGameSessionBuilder LeaveGameSessionOp
         {
             get { return Operation.LeaveGameSession.Builder.SetWrapperObject(this); }
@@ -337,6 +341,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         public Model.ApimodelsGameSessionResponse<T1>? JoinGameSession<T1>(JoinGameSession input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionResponse? PublicPromoteGameSessionLeader(PublicPromoteGameSessionLeader input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsGameSessionResponse<T1>? PublicPromoteGameSessionLeader<T1>(PublicPromoteGameSessionLeader input)
         {
             var response = _sdk.RunRequest(input);
 

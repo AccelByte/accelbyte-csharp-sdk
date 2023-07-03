@@ -68,6 +68,17 @@ namespace AccelByte.Sdk.Core
         }
         private Party? _Party = null;
 
+        public PlatformCredential PlatformCredential
+        {
+            get
+            {
+                if (_PlatformCredential == null)
+                    _PlatformCredential = new PlatformCredential(_SdkObject);
+                return _PlatformCredential;
+            }
+        }
+        private PlatformCredential? _PlatformCredential = null;
+
         public Player Player
         {
             get

@@ -49,6 +49,7 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code` | DELETE | PublicRevokeGameSessionCode | [PublicRevokeGameSessionCode](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicRevokeGameSessionCode.cs) | [PublicRevokeGameSessionCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicRevokeGameSessionCode.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/invite` | POST | PublicGameSessionInvite | [PublicGameSessionInvite](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicGameSessionInvite.cs) | [PublicGameSessionInvite](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicGameSessionInvite.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader` | POST | PublicPromoteGameSessionLeader | [PublicPromoteGameSessionLeader](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicPromoteGameSessionLeader.cs) | [PublicPromoteGameSessionLeader](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicPromoteGameSessionLeader.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leave` | DELETE | LeaveGameSession | [LeaveGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/LeaveGameSession.cs) | [LeaveGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/LeaveGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/reject` | DELETE | PublicGameSessionReject | [PublicGameSessionReject](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicGameSessionReject.cs) | [PublicGameSessionReject](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicGameSessionReject.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
@@ -72,6 +73,11 @@
 | `/session/v1/public/namespaces/{namespace}/parties/{partyId}/users/{userId}/kick` | DELETE | PublicPartyKick | [PublicPartyKick](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPartyKick.cs) | [PublicPartyKick](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPartyKick.cs) |
 | `/session/v1/public/namespaces/{namespace}/party` | POST | PublicCreateParty | [PublicCreateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicCreateParty.cs) | [PublicCreateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicCreateParty.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/parties` | GET | PublicQueryMyParties | [PublicQueryMyParties](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicQueryMyParties.cs) | [PublicQueryMyParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicQueryMyParties.cs) |
+
+### Platform Credential Wrapper:  [PlatformCredential](../../AccelByte.Sdk/Api/Session/Wrapper/PlatformCredential.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/platform-credentials` | PUT | AdminUpdatePlatformCredentials | [AdminUpdatePlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminUpdatePlatformCredentials.cs) | [AdminUpdatePlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminUpdatePlatformCredentials.cs) |
 
 ### Player Wrapper:  [Player](../../AccelByte.Sdk/Api/Session/Wrapper/Player.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -113,6 +119,7 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code` | POST | GameSessionGenerateCode | [GameSessionGenerateCode](../../AccelByte.Sdk/Api/Session/Operation/GameSession/GameSessionGenerateCode.cs) | [GameSessionGenerateCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/GameSessionGenerateCode.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/code` | DELETE | PublicRevokeGameSessionCode | [PublicRevokeGameSessionCode](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicRevokeGameSessionCode.cs) | [PublicRevokeGameSessionCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicRevokeGameSessionCode.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
+| `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader` | POST | PublicPromoteGameSessionLeader | [PublicPromoteGameSessionLeader](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicPromoteGameSessionLeader.cs) | [PublicPromoteGameSessionLeader](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicPromoteGameSessionLeader.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryMyGameSessions | [PublicQueryMyGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryMyGameSessions.cs) | [PublicQueryMyGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryMyGameSessions.cs) |
 
@@ -129,6 +136,10 @@
 | `/session/v1/public/namespaces/{namespace}/parties/{partyId}/users/me/join` | POST | PublicPartyJoin | [PublicPartyJoin](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPartyJoin.cs) | [PublicPartyJoin](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPartyJoin.cs) |
 | `/session/v1/public/namespaces/{namespace}/party` | POST | PublicCreateParty | [PublicCreateParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicCreateParty.cs) | [PublicCreateParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicCreateParty.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/parties` | GET | PublicQueryMyParties | [PublicQueryMyParties](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicQueryMyParties.cs) | [PublicQueryMyParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicQueryMyParties.cs) |
+
+### Platform Credential Wrapper:  [PlatformCredential](../../AccelByte.Sdk/Api/Session/Wrapper/PlatformCredential.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### Player Wrapper:  [Player](../../AccelByte.Sdk/Api/Session/Wrapper/Player.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -170,6 +181,7 @@
 | `apimodels.PlayersCurrentPlatformResponse` | [ApimodelsPlayersCurrentPlatformResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPlayersCurrentPlatformResponse.cs) |
 | `apimodels.PromoteLeaderRequest` | [ApimodelsPromoteLeaderRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPromoteLeaderRequest.cs) |
 | `apimodels.PublicConfiguration` | [ApimodelsPublicConfiguration](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPublicConfiguration.cs) |
+| `apimodels.PutPlatformCredentialsRequest` | [ApimodelsPutPlatformCredentialsRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPutPlatformCredentialsRequest.cs) |
 | `apimodels.RequestMember` | [ApimodelsRequestMember](../../AccelByte.Sdk/Api/Session/Model/ApimodelsRequestMember.cs) |
 | `apimodels.ResponseDeleteBulkGameSessions` | [ApimodelsResponseDeleteBulkGameSessions](../../AccelByte.Sdk/Api/Session/Model/ApimodelsResponseDeleteBulkGameSessions.cs) |
 | `apimodels.SessionInviteRequest` | [ApimodelsSessionInviteRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsSessionInviteRequest.cs) |
@@ -183,6 +195,7 @@
 | `models.DefaultDSMCConfig` | [ModelsDefaultDSMCConfig](../../AccelByte.Sdk/Api/Session/Model/ModelsDefaultDSMCConfig.cs) |
 | `models.GameServer` | [ModelsGameServer](../../AccelByte.Sdk/Api/Session/Model/ModelsGameServer.cs) |
 | `models.NativeSessionSetting` | [ModelsNativeSessionSetting](../../AccelByte.Sdk/Api/Session/Model/ModelsNativeSessionSetting.cs) |
+| `models.PSNAppServerCredentials` | [ModelsPSNAppServerCredentials](../../AccelByte.Sdk/Api/Session/Model/ModelsPSNAppServerCredentials.cs) |
 | `models.PartyMembers` | [ModelsPartyMembers](../../AccelByte.Sdk/Api/Session/Model/ModelsPartyMembers.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
 | `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |

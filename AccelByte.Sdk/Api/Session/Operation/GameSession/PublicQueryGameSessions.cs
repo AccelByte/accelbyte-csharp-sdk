@@ -24,6 +24,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - REQUESTED: DS is being requested to DSMC.
     /// - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     /// - FAILED_TO_REQUEST: DSMC fails to create the DS.
+    /// 
+    /// query parameter "availability" to filter sessions' availabillity:
+    /// all: return all sessions regardless it's full
+    /// full: only return active sessions
+    /// default behavior (unset or else): return only available sessions (not full)
     /// </summary>
     public class PublicQueryGameSessions : AccelByte.Sdk.Core.Operation
     {

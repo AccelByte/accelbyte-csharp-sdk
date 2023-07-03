@@ -82,6 +82,26 @@
 | `/platform/admin/namespaces/{namespace}/codes/{code}/enable` | PUT | EnableCode | [EnableCode](../../AccelByte.Sdk/Api/Platform/Operation/Campaign/EnableCode.cs) | [EnableCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Campaign/EnableCode.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/redemption` | POST | ApplyUserRedemption | [ApplyUserRedemption](../../AccelByte.Sdk/Api/Platform/Operation/Campaign/ApplyUserRedemption.cs) | [ApplyUserRedemption](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Campaign/ApplyUserRedemption.cs) |
 
+### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox` | GET | GetLootBoxPluginConfig | [GetLootBoxPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetLootBoxPluginConfig.cs) | [GetLootBoxPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetLootBoxPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox` | PUT | UpdateLootBoxPluginConfig | [UpdateLootBoxPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateLootBoxPluginConfig.cs) | [UpdateLootBoxPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateLootBoxPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox` | DELETE | DeleteLootBoxPluginConfig | [DeleteLootBoxPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteLootBoxPluginConfig.cs) | [DeleteLootBoxPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteLootBoxPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/customConfig/cert` | PUT | UplodLootBoxPluginConfigCert | [UplodLootBoxPluginConfigCert](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UplodLootBoxPluginConfigCert.cs) | [UplodLootBoxPluginConfigCert](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UplodLootBoxPluginConfigCert.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/lootbox/grpcInfo` | GET | GetLootBoxGrpcInfo | [GetLootBoxGrpcInfo](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetLootBoxGrpcInfo.cs) | [GetLootBoxGrpcInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetLootBoxGrpcInfo.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/section` | GET | GetSectionPluginConfig | [GetSectionPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetSectionPluginConfig.cs) | [GetSectionPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetSectionPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/section` | PUT | UpdateSectionPluginConfig | [UpdateSectionPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateSectionPluginConfig.cs) | [UpdateSectionPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateSectionPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/section` | DELETE | DeleteSectionPluginConfig | [DeleteSectionPluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteSectionPluginConfig.cs) | [DeleteSectionPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteSectionPluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/plugins/section/customConfig/cert` | PUT | UploadSectionPluginConfigCert | [UploadSectionPluginConfigCert](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UploadSectionPluginConfigCert.cs) | [UploadSectionPluginConfigCert](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UploadSectionPluginConfigCert.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | GET | GetServicePluginConfig | [GetServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetServicePluginConfig.cs) | [GetServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetServicePluginConfig.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | PUT | UpdateServicePluginConfig | [UpdateServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateServicePluginConfig.cs) | [UpdateServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateServicePluginConfig.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | DELETE | DeleteServicePluginConfig | [DeleteServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteServicePluginConfig.cs) | [DeleteServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteServicePluginConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/revocation/plugins/revocation` | GET | GetLootBoxPluginConfig1 | [GetLootBoxPluginConfig1](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetLootBoxPluginConfig1.cs) | [GetLootBoxPluginConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetLootBoxPluginConfig1.cs) |
+| `/platform/admin/namespaces/{namespace}/revocation/plugins/revocation` | PUT | UpdateLootBoxPluginConfig1 | [UpdateLootBoxPluginConfig1](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateLootBoxPluginConfig1.cs) | [UpdateLootBoxPluginConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateLootBoxPluginConfig1.cs) |
+| `/platform/admin/namespaces/{namespace}/revocation/plugins/revocation` | DELETE | DeleteLootBoxPluginConfig1 | [DeleteLootBoxPluginConfig1](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteLootBoxPluginConfig1.cs) | [DeleteLootBoxPluginConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteLootBoxPluginConfig1.cs) |
+| `/platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert` | PUT | UploadRevocationPluginConfigCert | [UploadRevocationPluginConfigCert](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UploadRevocationPluginConfigCert.cs) | [UploadRevocationPluginConfigCert](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UploadRevocationPluginConfigCert.cs) |
+
 ### Category Wrapper:  [Category](../../AccelByte.Sdk/Api/Platform/Wrapper/Category.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -98,13 +118,6 @@
 | `/platform/public/namespaces/{namespace}/categories/{categoryPath}` | GET | PublicGetCategory | [PublicGetCategory](../../AccelByte.Sdk/Api/Platform/Operation/Category/PublicGetCategory.cs) | [PublicGetCategory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Category/PublicGetCategory.cs) |
 | `/platform/public/namespaces/{namespace}/categories/{categoryPath}/children` | GET | PublicGetChildCategories | [PublicGetChildCategories](../../AccelByte.Sdk/Api/Platform/Operation/Category/PublicGetChildCategories.cs) | [PublicGetChildCategories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Category/PublicGetChildCategories.cs) |
 | `/platform/public/namespaces/{namespace}/categories/{categoryPath}/descendants` | GET | PublicGetDescendantCategories | [PublicGetDescendantCategories](../../AccelByte.Sdk/Api/Platform/Operation/Category/PublicGetDescendantCategories.cs) | [PublicGetDescendantCategories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Category/PublicGetDescendantCategories.cs) |
-
-### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | GET | GetServicePluginConfig | [GetServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/GetServicePluginConfig.cs) | [GetServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/GetServicePluginConfig.cs) |
-| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | PUT | UpdateServicePluginConfig | [UpdateServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateServicePluginConfig.cs) | [UpdateServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/UpdateServicePluginConfig.cs) |
-| `/platform/admin/namespaces/{namespace}/configs/servicePlugin` | DELETE | DeleteServicePluginConfig | [DeleteServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/DeleteServicePluginConfig.cs) | [DeleteServicePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/ServicePluginConfig/DeleteServicePluginConfig.cs) |
 
 ### Currency Wrapper:  [Currency](../../AccelByte.Sdk/Api/Platform/Wrapper/Currency.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -546,11 +559,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Category Wrapper:  [Category](../../AccelByte.Sdk/Api/Platform/Wrapper/Category.cs)
+### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
+### Category Wrapper:  [Category](../../AccelByte.Sdk/Api/Platform/Wrapper/Category.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -676,6 +689,7 @@
 | `AdminOrderCreate` | [AdminOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
 | `AdyenConfig` | [AdyenConfig](../../AccelByte.Sdk/Api/Platform/Model/AdyenConfig.cs) |
 | `AliPayConfig` | [AliPayConfig](../../AccelByte.Sdk/Api/Platform/Model/AliPayConfig.cs) |
+| `AppConfig` | [AppConfig](../../AccelByte.Sdk/Api/Platform/Model/AppConfig.cs) |
 | `AppEntitlementInfo` | [AppEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/AppEntitlementInfo.cs) |
 | `AppEntitlementPagingSlicedResult` | [AppEntitlementPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/AppEntitlementPagingSlicedResult.cs) |
 | `AppInfo` | [AppInfo](../../AccelByte.Sdk/Api/Platform/Model/AppInfo.cs) |
@@ -686,6 +700,8 @@
 | `AppleIAPReceipt` | [AppleIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPReceipt.cs) |
 | `AvailableComparison` | [AvailableComparison](../../AccelByte.Sdk/Api/Platform/Model/AvailableComparison.cs) |
 | `AvailablePredicate` | [AvailablePredicate](../../AccelByte.Sdk/Api/Platform/Model/AvailablePredicate.cs) |
+| `BaseCustomConfig` | [BaseCustomConfig](../../AccelByte.Sdk/Api/Platform/Model/BaseCustomConfig.cs) |
+| `BaseTLSConfig` | [BaseTLSConfig](../../AccelByte.Sdk/Api/Platform/Model/BaseTLSConfig.cs) |
 | `BasicCategoryInfo` | [BasicCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/BasicCategoryInfo.cs) |
 | `BasicItem` | [BasicItem](../../AccelByte.Sdk/Api/Platform/Model/BasicItem.cs) |
 | `BillingAccount` | [BillingAccount](../../AccelByte.Sdk/Api/Platform/Model/BillingAccount.cs) |
@@ -799,6 +815,7 @@
 | `GoogleIAPReceipt` | [GoogleIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/GoogleIAPReceipt.cs) |
 | `GoogleReceiptResolveResult` | [GoogleReceiptResolveResult](../../AccelByte.Sdk/Api/Platform/Model/GoogleReceiptResolveResult.cs) |
 | `GrantSubscriptionDaysRequest` | [GrantSubscriptionDaysRequest](../../AccelByte.Sdk/Api/Platform/Model/GrantSubscriptionDaysRequest.cs) |
+| `GrpcServerInfo` | [GrpcServerInfo](../../AccelByte.Sdk/Api/Platform/Model/GrpcServerInfo.cs) |
 | `HierarchicalCategoryInfo` | [HierarchicalCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/HierarchicalCategoryInfo.cs) |
 | `IAPConsumeHistoryInfo` | [IAPConsumeHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryInfo.cs) |
 | `IAPConsumeHistoryPagingSlicedResult` | [IAPConsumeHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryPagingSlicedResult.cs) |
@@ -844,6 +861,8 @@
 | `ListViewInfo` | [ListViewInfo](../../AccelByte.Sdk/Api/Platform/Model/ListViewInfo.cs) |
 | `Localization` | [Localization](../../AccelByte.Sdk/Api/Platform/Model/Localization.cs) |
 | `LootBoxConfig` | [LootBoxConfig](../../AccelByte.Sdk/Api/Platform/Model/LootBoxConfig.cs) |
+| `LootBoxPluginConfigInfo` | [LootBoxPluginConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/LootBoxPluginConfigInfo.cs) |
+| `LootBoxPluginConfigUpdate` | [LootBoxPluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/LootBoxPluginConfigUpdate.cs) |
 | `LootBoxReward` | [LootBoxReward](../../AccelByte.Sdk/Api/Platform/Model/LootBoxReward.cs) |
 | `MockIAPReceipt` | [MockIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/MockIAPReceipt.cs) |
 | `NotificationProcessResult` | [NotificationProcessResult](../../AccelByte.Sdk/Api/Platform/Model/NotificationProcessResult.cs) |
@@ -915,6 +934,7 @@
 | `PopulatedItemInfo` | [PopulatedItemInfo](../../AccelByte.Sdk/Api/Platform/Model/PopulatedItemInfo.cs) |
 | `Predicate` | [Predicate](../../AccelByte.Sdk/Api/Platform/Model/Predicate.cs) |
 | `PredicateValidateResult` | [PredicateValidateResult](../../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
+| `PublicCustomConfigInfo` | [PublicCustomConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PublicCustomConfigInfo.cs) |
 | `PurchaseCondition` | [PurchaseCondition](../../AccelByte.Sdk/Api/Platform/Model/PurchaseCondition.cs) |
 | `PurchaseConditionUpdate` | [PurchaseConditionUpdate](../../AccelByte.Sdk/Api/Platform/Model/PurchaseConditionUpdate.cs) |
 | `PurchasedItemCount` | [PurchasedItemCount](../../AccelByte.Sdk/Api/Platform/Model/PurchasedItemCount.cs) |
@@ -935,6 +955,8 @@
 | `RevocationError` | [RevocationError](../../AccelByte.Sdk/Api/Platform/Model/RevocationError.cs) |
 | `RevocationHistoryInfo` | [RevocationHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/RevocationHistoryInfo.cs) |
 | `RevocationHistoryPagingSlicedResult` | [RevocationHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/RevocationHistoryPagingSlicedResult.cs) |
+| `RevocationPluginConfigInfo` | [RevocationPluginConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/RevocationPluginConfigInfo.cs) |
+| `RevocationPluginConfigUpdate` | [RevocationPluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/RevocationPluginConfigUpdate.cs) |
 | `RevocationRequest` | [RevocationRequest](../../AccelByte.Sdk/Api/Platform/Model/RevocationRequest.cs) |
 | `RevocationResult` | [RevocationResult](../../AccelByte.Sdk/Api/Platform/Model/RevocationResult.cs) |
 | `RevokeCurrency` | [RevokeCurrency](../../AccelByte.Sdk/Api/Platform/Model/RevokeCurrency.cs) |
@@ -956,6 +978,8 @@
 | `SectionInfo` | [SectionInfo](../../AccelByte.Sdk/Api/Platform/Model/SectionInfo.cs) |
 | `SectionItem` | [SectionItem](../../AccelByte.Sdk/Api/Platform/Model/SectionItem.cs) |
 | `SectionPagingSlicedResult` | [SectionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/SectionPagingSlicedResult.cs) |
+| `SectionPluginConfigInfo` | [SectionPluginConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/SectionPluginConfigInfo.cs) |
+| `SectionPluginConfigUpdate` | [SectionPluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/SectionPluginConfigUpdate.cs) |
 | `SectionUpdate` | [SectionUpdate](../../AccelByte.Sdk/Api/Platform/Model/SectionUpdate.cs) |
 | `ServicePluginConfigInfo` | [ServicePluginConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigInfo.cs) |
 | `ServicePluginConfigUpdate` | [ServicePluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigUpdate.cs) |
@@ -979,6 +1003,7 @@
 | `SubscriptionInfo` | [SubscriptionInfo](../../AccelByte.Sdk/Api/Platform/Model/SubscriptionInfo.cs) |
 | `SubscriptionPagingSlicedResult` | [SubscriptionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/SubscriptionPagingSlicedResult.cs) |
 | `SubscriptionSummary` | [SubscriptionSummary](../../AccelByte.Sdk/Api/Platform/Model/SubscriptionSummary.cs) |
+| `TLSConfig` | [TLSConfig](../../AccelByte.Sdk/Api/Platform/Model/TLSConfig.cs) |
 | `TaxResult` | [TaxResult](../../AccelByte.Sdk/Api/Platform/Model/TaxResult.cs) |
 | `TestResult` | [TestResult](../../AccelByte.Sdk/Api/Platform/Model/TestResult.cs) |
 | `TicketAcquireRequest` | [TicketAcquireRequest](../../AccelByte.Sdk/Api/Platform/Model/TicketAcquireRequest.cs) |

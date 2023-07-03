@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? StoreId { get; set; }
 
+            public bool? StrictMode { get; set; }
+
 
 
             public Stream? File { get; set; }
@@ -45,6 +47,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public ImportStore1Builder SetStoreId(string _storeId)
             {
                 StoreId = _storeId;
+                return this;
+            }
+
+            public ImportStore1Builder SetStrictMode(bool _strictMode)
+            {
+                StrictMode = _strictMode;
                 return this;
             }
 
@@ -80,6 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
+            if (builder.StrictMode != null) QueryParams["strictMode"] = Convert.ToString(builder.StrictMode)!;
 
             if (builder.File is not null) FormParams["file"] = builder.File;
 
@@ -94,12 +103,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public ImportStore1(
             string namespace_,
             string? storeId,
+            bool? strictMode,
             Stream? file
         )
         {
             PathParams["namespace"] = namespace_;
 
             if (storeId is not null) QueryParams["storeId"] = storeId;
+            if (strictMode != null) QueryParams["strictMode"] = Convert.ToString(strictMode)!;
 
             if (file is not null) FormParams["file"] = file;
 

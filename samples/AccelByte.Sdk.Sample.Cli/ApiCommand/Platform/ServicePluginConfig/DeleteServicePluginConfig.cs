@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DeleteServicePluginConfig.Builder;
 
 
@@ -50,9 +51,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.DeleteServicePluginConfig(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "RequestGameTokenResponseV3"; } }
 
+        [SdkCommandArgument("additionalData")]
+        public string AdditionalData { get; set; } = String.Empty;
+
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
 
@@ -44,6 +47,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (AdditionalData != null)
+                opBuilder.SetAdditionalData((string)AdditionalData);
 
 
             RequestGameTokenResponseV3 operation = opBuilder.Build(

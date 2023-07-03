@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("storeId")]
         public string? StoreId { get; set; }
 
+        [SdkCommandArgument("strictMode")]
+        public bool? StrictMode { get; set; }
+
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
 
@@ -50,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             if (StoreId != null)
                 opBuilder.SetStoreId((string)StoreId);
+            if (StrictMode != null)
+                opBuilder.SetStrictMode((bool)StrictMode);
 
 
             if (File != null)

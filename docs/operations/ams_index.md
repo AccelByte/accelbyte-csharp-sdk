@@ -49,10 +49,14 @@
 |---|---|---|---|---|
 | `/ams/v1/namespaces/{namespace}/watchdogs/{watchdogID}/connect` | GET | WatchdogConnect | [WatchdogConnect](../../AccelByte.Sdk/Api/Ams/Operation/Watchdogs/WatchdogConnect.cs) | [WatchdogConnect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Watchdogs/WatchdogConnect.cs) |
 
+### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/version` | GET | Func1 | [Func1](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func1.cs) | [Func1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func1.cs) |
+
 ### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ams/version` | GET | Func1 | [Func1](../../AccelByte.Sdk/Api/Ams/Operation/Operations/Func1.cs) | [Func1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/Func1.cs) |
 | `/healthz` | GET | BasicHealthCheck | [BasicHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/Operations/BasicHealthCheck.cs) | [BasicHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/BasicHealthCheck.cs) |
 
 
@@ -81,6 +85,10 @@
 |---|---|---|---|---|
 
 ### Watchdogs Wrapper:  [Watchdogs](../../AccelByte.Sdk/Api/Ams/Wrapper/Watchdogs.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -124,6 +132,7 @@
 | `api.ImageListItem` | [ApiImageListItem](../../AccelByte.Sdk/Api/Ams/Model/ApiImageListItem.cs) |
 | `api.ImageUpdate` | [ApiImageUpdate](../../AccelByte.Sdk/Api/Ams/Model/ApiImageUpdate.cs) |
 | `api.InstanceTypeDescriptionResponse` | [ApiInstanceTypeDescriptionResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypeDescriptionResponse.cs) |
+| `api.PagingInfo` | [ApiPagingInfo](../../AccelByte.Sdk/Api/Ams/Model/ApiPagingInfo.cs) |
 | `api.PortConfiguration` | [ApiPortConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiPortConfiguration.cs) |
 | `api.ReferencingFleet` | [ApiReferencingFleet](../../AccelByte.Sdk/Api/Ams/Model/ApiReferencingFleet.cs) |
 | `api.RegionConfig` | [ApiRegionConfig](../../AccelByte.Sdk/Api/Ams/Model/ApiRegionConfig.cs) |

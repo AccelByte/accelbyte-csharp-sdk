@@ -19,25 +19,12 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
 
         #region Operation Builders
-        public Func1.Func1Builder Func1Op
-        {
-            get { return Operation.Func1.Builder.SetWrapperObject(this); }
-        }
         public BasicHealthCheck.BasicHealthCheckBuilder BasicHealthCheckOp
         {
             get { return Operation.BasicHealthCheck.Builder.SetWrapperObject(this); }
         }
         #endregion
 
-        public void Func1(Func1 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public void BasicHealthCheck(BasicHealthCheck input)
         {
             var response = _sdk.RunRequest(input);

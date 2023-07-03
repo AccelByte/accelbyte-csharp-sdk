@@ -46,17 +46,6 @@ namespace AccelByte.Sdk.Core
         }
         private Campaign? _Campaign = null;
 
-        public Category Category
-        {
-            get
-            {
-                if (_Category == null)
-                    _Category = new Category(_SdkObject);
-                return _Category;
-            }
-        }
-        private Category? _Category = null;
-
         public ServicePluginConfig ServicePluginConfig
         {
             get
@@ -67,6 +56,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private ServicePluginConfig? _ServicePluginConfig = null;
+
+        public Category Category
+        {
+            get
+            {
+                if (_Category == null)
+                    _Category = new Category(_SdkObject);
+                return _Category;
+            }
+        }
+        private Category? _Category = null;
 
         public Currency Currency
         {

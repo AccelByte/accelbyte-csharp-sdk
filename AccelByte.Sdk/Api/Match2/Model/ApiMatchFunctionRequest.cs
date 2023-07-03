@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("match_function")]
         public string? MatchFunction { get; set; }
 
+        [JsonPropertyName("serviceAppName")]
+        public string? ServiceAppName { get; set; }
+
         [JsonPropertyName("url")]
         public string? Url { get; set; }
 

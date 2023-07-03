@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncInGameItem
     ///
-    /// This API is used to sync an in game item in game namespace to publisher namespace, at current BUNDLE can't be synced.
+    /// This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
     /// 
     /// The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
     /// 

@@ -34,8 +34,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("limit")]
-        public long? Limit { get; set; }
+        [SdkCommandArgument("count")]
+        public long? Count { get; set; }
 
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
@@ -51,8 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.FleetServerHistory.Builder;
 
-            if (Limit != null)
-                opBuilder.SetLimit((long)Limit);
+            if (Count != null)
+                opBuilder.SetCount((long)Count);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
 
