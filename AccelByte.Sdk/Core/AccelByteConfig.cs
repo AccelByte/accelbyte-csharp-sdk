@@ -4,6 +4,7 @@
 
 using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Client;
+using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Core
 {
@@ -27,5 +28,9 @@ namespace AccelByte.Sdk.Core
         public ITokenRepository TokenRepository { get; }
 
         public IConfigRepository ConfigRepository { get; }
+
+        public bool UseRefreshIfPossible { get; set; } = false;
+
+        public Action<LoginType, AuthActionType, TokenData?, AccelByteSDK>? OnAfterLogin { get; set; } = null;
     }
 }

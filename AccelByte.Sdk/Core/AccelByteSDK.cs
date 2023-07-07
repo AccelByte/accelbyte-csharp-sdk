@@ -114,7 +114,19 @@ namespace AccelByte.Sdk.Core
 
         public bool LoginUser(string username, string password, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
-            Configuration.TokenRepository.RemoveToken();
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (Configuration.TokenRepository.IsTokenExpired)
+                {
+                    bool b = RefreshAccessToken(Configuration.TokenRepository.TokenData.RefreshToken!, onTokenReceived);
+                    Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                    return b;
+                }
+                else
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
 
             var codeVerifier = Helper.GenerateCodeVerifier();
             var codeChallenge = Helper.GenerateCodeChallenge(codeVerifier);
@@ -157,6 +169,7 @@ namespace AccelByte.Sdk.Core
                 Configuration.Credential.UserId = token.UserId;
 
             onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
             return true;
         }
 
@@ -167,7 +180,13 @@ namespace AccelByte.Sdk.Core
 
         public bool LoginClient(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
-            Configuration.TokenRepository.RemoveToken();
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (!Configuration.TokenRepository.IsTokenExpired)
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
 
             var tokenGrantV3 = TokenGrantV3.Builder.Build("client_credentials");
             var oAuth20 = new OAuth20(this);
@@ -178,6 +197,7 @@ namespace AccelByte.Sdk.Core
             Configuration.TokenRepository.StoreToken(LoginType.Client, token);
 
             onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.Client, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
             return true;
         }
 
@@ -188,7 +208,29 @@ namespace AccelByte.Sdk.Core
 
         public bool LoginPlatform(string platformId, string platformToken, Action<OauthmodelTokenResponse>? onTokenReceived)
         {
-            Configuration.TokenRepository.RemoveToken();
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (Configuration.TokenRepository.IsTokenExpired)
+                {
+                    if (onTokenReceived != null)
+                    {
+                        bool b = RefreshAccessToken(Configuration.TokenRepository.TokenData.RefreshToken!,
+                            (oToken) => onTokenReceived.Invoke(TokenData.ConvertToOAuthModelTokenResponse(oToken)));
+                        Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                        return b;
+                    }
+                    else
+                    {
+                        bool b = RefreshAccessToken(Configuration.TokenRepository.TokenData.RefreshToken!, null);
+                        Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                        return b;
+                    }    
+                }                    
+                else
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
 
             var tokenGrantV3 = PlatformTokenGrantV3.Builder
                 .SetPlatformToken(platformToken)
@@ -201,6 +243,7 @@ namespace AccelByte.Sdk.Core
             Configuration.TokenRepository.StoreToken(LoginType.Platform, token);
 
             onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
             return true;
         }
 
@@ -266,6 +309,10 @@ namespace AccelByte.Sdk.Core
         private List<IOperationProcessPipeline> _OpProcesses = new List<IOperationProcessPipeline>();
 
         private List<ISdkService> _Services = new List<ISdkService>();
+
+        private bool _UseRefreshIfPossible = false;
+
+        private Action<LoginType, AuthActionType, TokenData?, AccelByteSDK>? _OnAfterLogin = null;
 
         public AccelByteSdkBuilder<T> SetHttpClient(IHttpClient client)
         {
@@ -353,9 +400,22 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
-        public void RegisterService(ISdkService service)
+        public AccelByteSdkBuilder<T> UseRefreshIfPossible()
+        {
+            _UseRefreshIfPossible = true;
+            return this;
+        }
+
+        public AccelByteSdkBuilder<T> SetOnAfterLoginAction(Action<LoginType, AuthActionType, TokenData?, AccelByteSDK> action)
+        {
+            _OnAfterLogin = action;
+            return this;
+        }
+
+        public AccelByteSdkBuilder<T> RegisterService(ISdkService service)
         {
             _Services.Add(service);
+            return this;
         }
 
         public virtual T Build()
@@ -379,6 +439,9 @@ namespace AccelByte.Sdk.Core
             }
 
             AccelByteConfig config = new AccelByteConfig(_Client, _TokenRepository, _ConfigRepository);
+            config.UseRefreshIfPossible = _UseRefreshIfPossible;
+            config.OnAfterLogin = _OnAfterLogin;
+
             if (_Credential != null)
                 config.Credential = _Credential;
             if (_TokenValidator != null)
