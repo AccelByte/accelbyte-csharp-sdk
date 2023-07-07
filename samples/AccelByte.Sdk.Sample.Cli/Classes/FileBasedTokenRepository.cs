@@ -15,6 +15,7 @@ using System.IO;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Api.Iam.Model;
+using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Sample.Cli
 {
@@ -140,6 +141,8 @@ namespace AccelByte.Sdk.Sample.Cli
             get => (_Store != null ? _Store.Type : LoginType.User);
         }
 
+        public TokenData? TokenData { get; set; } = null;
+
         public FileBasedTokenRepository(string fileName)
         {
             _FileName = fileName;
@@ -175,6 +178,7 @@ namespace AccelByte.Sdk.Sample.Cli
 
             lock (_TokenLock)
             {
+                TokenData = new TokenData(tokenResponse);
                 _Store = new _TokenStore()
                 {
                     Token = tokenResponse.AccessToken,
@@ -196,6 +200,7 @@ namespace AccelByte.Sdk.Sample.Cli
 
             lock (_TokenLock)
             {
+                TokenData = new TokenData(tokenResponse);
                 _Store = new _TokenStore()
                 {
                     Token = tokenResponse.AccessToken,
@@ -217,6 +222,7 @@ namespace AccelByte.Sdk.Sample.Cli
 
             lock (_TokenLock)
             {
+                TokenData = new TokenData(tokenResponse);
                 _Store = new _TokenStore()
                 {
                     Token = tokenResponse.AccessToken,
@@ -241,6 +247,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 if (_Store == null)
                     _Store = new _TokenStore();
 
+                TokenData = new TokenData(tokenResponse);
                 _Store.Token = tokenResponse.AccessToken;
                 _Store.IssuedTimestamp = CurrentTimestamp;
                 if (tokenResponse.ExpiresIn != null)
@@ -260,6 +267,7 @@ namespace AccelByte.Sdk.Sample.Cli
                 if (_Store == null)
                     _Store = new _TokenStore();
 
+                TokenData = new TokenData(tokenResponse);
                 _Store.Token = tokenResponse.AccessToken;
                 _Store.IssuedTimestamp = CurrentTimestamp;
                 if (tokenResponse.ExpiresIn != null)
