@@ -245,6 +245,25 @@ AccelByteSDK sdk = AccelByteSDK.Builder
 ```
 NOTE: Do not use `.UseAutoTokenRefresh()` together with `.UseScheduledTokenRefresh()`. It will introduce unnecessary overhead and possibility of unexpected behaviour.
 
+## On-Demand Refresh Token
+The on-demand refresh token is intended to be used in environment where automatic refresh token cannot work property (e.g. AWS Lambda). To enable it, instantiate the sdk with `UseRefreshIfPossible`.
+```csharp
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    .UseDefaultConfigRepository()
+    .UseDefaultTokenRepository()    
+    .UseDefaultCredentialRepository()
+    //use this method while building the sdk to enable on-demand refresh token
+    .UseRefreshIfPossible()
+    .Build();
+```
+Then you can use `LoginUser`, `LoginClient`, and/or `LoginPlatform` as usual. With on-demand refresh token, any call to these methods will first check whether the token is expired or not. If it is expired, then it will call refresh token method. If not, then these methods will just return true without executing the actual login process.
+
+NOTE: `LoginClient` does not have refresh token, instead it will execute actual login process if the token is expired.
+
+Working example code for on-demand refresh token is available in this [sample app](samples/AccelByte.Sdk.Sample.OnDemandTokenRefresh).
+
+
 ## Local Token Validation
 Local token validation is available since version 0.27. Currently only support for oauth client token.
 To enable it, include `AccelByte.Sdk.Feature.LocalTokenValidation` and instantiate the sdk with following code.
