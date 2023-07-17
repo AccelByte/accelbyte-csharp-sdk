@@ -56,6 +56,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("ticketIDs")]
         public List<string>? TicketIDs { get; set; }
 
+        [JsonPropertyName("tieTeamsSessionLifetime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TieTeamsSessionLifetime { get; set; }
+
         [JsonPropertyName("type")]
         public string? Type { get; set; }
 
@@ -112,6 +116,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("ticketIDs")]
         public List<string>? TicketIDs { get; set; }
+
+        [JsonPropertyName("tieTeamsSessionLifetime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }

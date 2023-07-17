@@ -12,7 +12,18 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionPlatformCredential_OpExts
     {
-        public static string? Execute(
+        public static Session.Model.ModelsPlatformCredentials? Execute(
+            this AdminGetPlatformCredentials.AdminGetPlatformCredentialsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetPlatformCredentials op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminGetPlatformCredentials(op);
+        }
+        public static Session.Model.ModelsPlatformCredentials? Execute(
             this AdminUpdatePlatformCredentials.AdminUpdatePlatformCredentialsBuilder builder,
             ApimodelsPutPlatformCredentialsRequest body,
             string namespace_
@@ -24,6 +35,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminUpdatePlatformCredentials(op);
+        }
+        public static void Execute(
+            this AdminDeletePlatformCredentials.AdminDeletePlatformCredentialsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminDeletePlatformCredentials op = builder.Build(
+                namespace_
+            );
+
+            ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminDeletePlatformCredentials(op);
         }
     }
 }

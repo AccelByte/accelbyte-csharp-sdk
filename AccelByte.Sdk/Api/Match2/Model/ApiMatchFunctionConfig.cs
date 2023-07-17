@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? MatchFunction { get; set; }
 
         [JsonPropertyName("serviceAppName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ServiceAppName { get; set; }
 
         [JsonPropertyName("url")]

@@ -19,17 +19,43 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetPlatformCredentials.AdminGetPlatformCredentialsBuilder AdminGetPlatformCredentialsOp
+        {
+            get { return Operation.AdminGetPlatformCredentials.Builder.SetWrapperObject(this); }
+        }
         public AdminUpdatePlatformCredentials.AdminUpdatePlatformCredentialsBuilder AdminUpdatePlatformCredentialsOp
         {
             get { return Operation.AdminUpdatePlatformCredentials.Builder.SetWrapperObject(this); }
         }
+        public AdminDeletePlatformCredentials.AdminDeletePlatformCredentialsBuilder AdminDeletePlatformCredentialsOp
+        {
+            get { return Operation.AdminDeletePlatformCredentials.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
-        public string? AdminUpdatePlatformCredentials(AdminUpdatePlatformCredentials input)
+        public Model.ModelsPlatformCredentials? AdminGetPlatformCredentials(AdminGetPlatformCredentials input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPlatformCredentials? AdminUpdatePlatformCredentials(AdminUpdatePlatformCredentials input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminDeletePlatformCredentials(AdminDeletePlatformCredentials input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

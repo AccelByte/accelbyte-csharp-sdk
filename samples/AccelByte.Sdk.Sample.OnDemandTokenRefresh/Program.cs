@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.OnDemandTokenRefresh
                         throw new Exception("Response is null");
 
                     foreach (var aggreement in response)
-                        Console.WriteLine(aggreement.PolicyName);                   
+                        Console.WriteLine(aggreement.PolicyName);
                 }
                 catch (HttpResponseException e)
                 {

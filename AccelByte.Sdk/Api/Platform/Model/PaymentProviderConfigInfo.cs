@@ -59,6 +59,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentProviderConfigInfoAggregate ADYEN
             = new PaymentProviderConfigInfoAggregate("ADYEN");
 
+        public static readonly PaymentProviderConfigInfoAggregate CHECKOUT
+            = new PaymentProviderConfigInfoAggregate("CHECKOUT");
+
+        public static readonly PaymentProviderConfigInfoAggregate STRIPE
+            = new PaymentProviderConfigInfoAggregate("STRIPE");
+
         public static readonly PaymentProviderConfigInfoAggregate XSOLLA
             = new PaymentProviderConfigInfoAggregate("XSOLLA");
 

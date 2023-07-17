@@ -16,7 +16,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminUpdatePlatformCredentials
     ///
-    /// Update platform credentials.
+    /// Update platform credentials for Native Session sync. Currently supports PSN platform.
+    /// Send an empty body to clear data.
+    /// PSN:
+    /// - clientID: Auth Server (Client Credential) ClientID
+    /// - clientSecret: Auth Server (Client Credential) Secret
+    /// - scope: psn:s2s.service (For Sync non PSN member to PSN Session)
     /// </summary>
     public class AdminUpdatePlatformCredentials : AccelByte.Sdk.Core.Operation
     {
@@ -101,7 +106,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public string? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsPlatformCredentials? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -110,13 +115,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<string>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsPlatformCredentials>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<string>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsPlatformCredentials>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<string>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsPlatformCredentials>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

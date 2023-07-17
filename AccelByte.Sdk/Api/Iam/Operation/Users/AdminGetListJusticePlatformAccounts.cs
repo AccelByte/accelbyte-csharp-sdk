@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminGetListJusticePlatformAccounts
     ///
     /// This endpoint gets list justice platform account by providing publisher namespace and publisher userID.
+    /// 
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]
     /// </summary>
     public class AdminGetListJusticePlatformAccounts : AccelByte.Sdk.Core.Operation
     {

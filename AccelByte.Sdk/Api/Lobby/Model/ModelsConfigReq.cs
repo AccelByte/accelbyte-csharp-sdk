@@ -73,6 +73,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? MaxDSWaitTime { get; set; }
 
+        [JsonPropertyName("maxFriendsLimit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? MaxFriendsLimit { get; set; }
+
         [JsonPropertyName("maxPartyMember")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxPartyMember { get; set; }
@@ -86,6 +90,7 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         public long? ReadyConsentTimeout { get; set; }
 
         [JsonPropertyName("unregisterDelay")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? UnregisterDelay { get; set; }
 
     }

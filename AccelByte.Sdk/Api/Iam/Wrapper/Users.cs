@@ -499,6 +499,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetThirdPartyPlatformTokenLinkStatusV3.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserSinglePlatformAccount.AdminGetUserSinglePlatformAccountBuilder AdminGetUserSinglePlatformAccountOp
+        {
+            get { return Operation.AdminGetUserSinglePlatformAccount.Builder.SetWrapperObject(this); }
+        }
         public AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder AdminDeleteUserRolesV3Op
         {
             get { return Operation.AdminDeleteUserRolesV3.Builder.SetWrapperObject(this); }
@@ -1830,6 +1834,25 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserPlatformMetadata? AdminGetUserSinglePlatformAccount(AdminGetUserSinglePlatformAccount input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelUserPlatformMetadata<T1>? AdminGetUserSinglePlatformAccount<T1>(AdminGetUserSinglePlatformAccount input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

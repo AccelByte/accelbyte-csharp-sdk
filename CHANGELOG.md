@@ -1,3 +1,16 @@
+<a name="v0.39.0"></a>
+## [v0.39.0]
+### feat
+- **core:** added on demand refresh token option
+- **test:** added integration test for on demand refresh token
+- **sample:** added sample app for on deman refresh token
+- **mock-server:** change jenkinfile for new mock-server path
+### docs
+- **:** updated readme with on demand refresh token info
+### fix
+- **integration:** fix get match pool detail integration test
+
+
 <a name="v0.38.0"></a>
 ## [v0.38.0]
 ### feat

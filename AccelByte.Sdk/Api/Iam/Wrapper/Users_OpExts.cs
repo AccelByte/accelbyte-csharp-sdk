@@ -1532,6 +1532,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetThirdPartyPlatformTokenLinkStatusV3(op);
         }
+        public static Iam.Model.ModelUserPlatformMetadata? Execute(
+            this AdminGetUserSinglePlatformAccount.AdminGetUserSinglePlatformAccountBuilder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminGetUserSinglePlatformAccount op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserSinglePlatformAccount(op);
+        }
+
+        public static Iam.Model.ModelUserPlatformMetadata<T1>? Execute<T1>(
+            this AdminGetUserSinglePlatformAccount.AdminGetUserSinglePlatformAccountBuilder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminGetUserSinglePlatformAccount op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserSinglePlatformAccount<T1>(op);
+        }
         public static void Execute(
             this AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder builder,
             List<string> body,

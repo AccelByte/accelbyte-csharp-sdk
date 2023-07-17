@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("attributes")]
         public Dictionary<string, object>? Attributes { get; set; }
 
+        [JsonPropertyName("autoJoin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoJoin { get; set; }
+
         [JsonPropertyName("backfillTicketID")]
         public string? BackfillTicketID { get; set; }
 
@@ -68,6 +72,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("ticketIDs")]
         public List<string>? TicketIDs { get; set; }
+
+        [JsonPropertyName("tieTeamsSessionLifetime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }
@@ -79,6 +87,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("attributes")]
         public T1? Attributes { get; set; }
 
+        [JsonPropertyName("autoJoin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoJoin { get; set; }
+
         [JsonPropertyName("backfillTicketID")]
         public string? BackfillTicketID { get; set; }
 
@@ -135,6 +147,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("ticketIDs")]
         public List<string>? TicketIDs { get; set; }
+
+        [JsonPropertyName("tieTeamsSessionLifetime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }

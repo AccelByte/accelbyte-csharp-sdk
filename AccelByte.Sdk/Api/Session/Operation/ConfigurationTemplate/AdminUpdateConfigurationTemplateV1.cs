@@ -16,15 +16,16 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminUpdateConfigurationTemplateV1
     ///
-    /// Update template configuration
+    /// Modify template configuration
     /// Session configuration mandatory :
     /// - name
     /// - joinability (example value : OPEN, CLOSED, INVITE_ONLY)
+    /// - autoJoin: when enabled, players will automatically join the initial game session creation. Game session will not send any invite and players dont need to act upon it. default: false (disabled)
     /// - Type (example value : P2P, DS, NONE) if type empty, type will be assign to NONE
-    /// - MinPlayers (must greather or equal 0)
-    /// - MaxPlayers (must greather than 0)
-    /// - InviteTimeout (must greather or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
-    /// - InactiveTimeout (must greather or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
+    /// - MinPlayers (must greater or equal 0)
+    /// - MaxPlayers (must greater than 0)
+    /// - InviteTimeout (must greater or equal 0) if InviteTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
+    /// - InactiveTimeout (must greater or equal 0) if InactiveTimeout equal 0 will be use default DefaultTimeoutSecond (60s)
     /// - Persistent Flag only can use with type DS (example value true or false)
     /// - If Persistent True the session always active even DS removing or terminate and Session will be request DS again until DS Ready or Busy.
     /// - To Stop Session Not request again to DS or want Delete Session can Delete Session using endpoint DELETE /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
@@ -48,6 +49,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// "en-US" : "title"
     /// }
     /// }
+    /// - TieTeamsSessionLifetime: If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.
     /// </summary>
     public class AdminUpdateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

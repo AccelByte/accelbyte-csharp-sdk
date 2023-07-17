@@ -224,8 +224,8 @@ namespace AccelByte.Sdk.Core
                         bool b = RefreshAccessToken(Configuration.TokenRepository.TokenData.RefreshToken!, null);
                         Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
                         return b;
-                    }    
-                }                    
+                    }
+                }
                 else
                     return true;
             }

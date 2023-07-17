@@ -72,6 +72,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("maxDSWaitTime")]
         public long? MaxDSWaitTime { get; set; }
 
+        [JsonPropertyName("maxFriendsLimit")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? MaxFriendsLimit { get; set; }
+
         [JsonPropertyName("maxPartyMember")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxPartyMember { get; set; }

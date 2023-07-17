@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
     /// - FAILED_TO_REQUEST: DSMC fails to create the DS.
     /// 
-    /// query parameter "availability" to filter sessions' availabillity:
+    /// query parameter "availability" to filter sessions' availability:
     /// all: return all sessions regardless it's full
     /// full: only return active sessions
     /// default behavior (unset or else): return only available sessions (not full)

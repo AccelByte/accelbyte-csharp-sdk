@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public long? Limit { get; set; }
 
+            public string? Name { get; set; }
+
             public long? Offset { get; set; }
 
 
@@ -41,6 +43,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
             public AdminGetAllConfigurationTemplatesV1Builder SetLimit(long _limit)
             {
                 Limit = _limit;
+                return this;
+            }
+
+            public AdminGetAllConfigurationTemplatesV1Builder SetName(string _name)
+            {
+                Name = _name;
                 return this;
             }
 
@@ -76,6 +84,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
@@ -90,12 +99,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
         public AdminGetAllConfigurationTemplatesV1(
             string namespace_,
             long? limit,
+            string? name,
             long? offset
         )
         {
             PathParams["namespace"] = namespace_;
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 

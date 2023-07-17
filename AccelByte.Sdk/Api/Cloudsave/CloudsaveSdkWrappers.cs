@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public AdminRecord AdminRecord
+        {
+            get
+            {
+                if (_AdminRecord == null)
+                    _AdminRecord = new AdminRecord(_SdkObject);
+                return _AdminRecord;
+            }
+        }
+        private AdminRecord? _AdminRecord = null;
+
         public AdminConcurrentRecord AdminConcurrentRecord
         {
             get

@@ -19,9 +19,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
 
         #region Operation Builders
+        public AdminPutAdminGameRecordConcurrentHandlerV1.AdminPutAdminGameRecordConcurrentHandlerV1Builder AdminPutAdminGameRecordConcurrentHandlerV1Op
+        {
+            get { return Operation.AdminPutAdminGameRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
+        }
         public AdminPutGameRecordConcurrentHandlerV1.AdminPutGameRecordConcurrentHandlerV1Builder AdminPutGameRecordConcurrentHandlerV1Op
         {
             get { return Operation.AdminPutGameRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
+        }
+        public AdminPutAdminPlayerRecordConcurrentHandlerV1.AdminPutAdminPlayerRecordConcurrentHandlerV1Builder AdminPutAdminPlayerRecordConcurrentHandlerV1Op
+        {
+            get { return Operation.AdminPutAdminPlayerRecordConcurrentHandlerV1.Builder.SetWrapperObject(this); }
         }
         public AdminPutPlayerRecordConcurrentHandlerV1.AdminPutPlayerRecordConcurrentHandlerV1Builder AdminPutPlayerRecordConcurrentHandlerV1Op
         {
@@ -33,7 +41,25 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
 
+        public void AdminPutAdminGameRecordConcurrentHandlerV1(AdminPutAdminGameRecordConcurrentHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void AdminPutGameRecordConcurrentHandlerV1(AdminPutGameRecordConcurrentHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminPutAdminPlayerRecordConcurrentHandlerV1(AdminPutAdminPlayerRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 

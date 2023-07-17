@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PSNBaseUrl { get; set; }
 
+        [JsonPropertyName("autoJoin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoJoin { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 
@@ -75,6 +79,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("textChat")]
         public bool? TextChat { get; set; }
+
+        [JsonPropertyName("tieTeamsSessionLifetime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
         public string? Type { get; set; }

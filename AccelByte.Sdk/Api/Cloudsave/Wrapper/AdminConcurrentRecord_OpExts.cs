@@ -13,6 +13,21 @@ namespace AccelByte.Sdk.Api
     public static class CloudsaveAdminConcurrentRecord_OpExts
     {
         public static void Execute(
+            this AdminPutAdminGameRecordConcurrentHandlerV1.AdminPutAdminGameRecordConcurrentHandlerV1Builder builder,
+            ModelsAdminGameConcurrentRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminPutAdminGameRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutAdminGameRecordConcurrentHandlerV1(op);
+        }
+        public static void Execute(
             this AdminPutGameRecordConcurrentHandlerV1.AdminPutGameRecordConcurrentHandlerV1Builder builder,
             ModelsAdminConcurrentRecordRequest body,
             string key,
@@ -26,6 +41,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutGameRecordConcurrentHandlerV1(op);
+        }
+        public static void Execute(
+            this AdminPutAdminPlayerRecordConcurrentHandlerV1.AdminPutAdminPlayerRecordConcurrentHandlerV1Builder builder,
+            ModelsAdminPlayerConcurrentRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutAdminPlayerRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutAdminPlayerRecordConcurrentHandlerV1(op);
         }
         public static void Execute(
             this AdminPutPlayerRecordConcurrentHandlerV1.AdminPutPlayerRecordConcurrentHandlerV1Builder builder,

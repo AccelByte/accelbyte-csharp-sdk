@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("paymentOrderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentOrderNo { get; set; }
 
         [JsonPropertyName("recurringOrderNo")]

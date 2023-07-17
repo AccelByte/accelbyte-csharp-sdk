@@ -77,7 +77,9 @@
 ### Platform Credential Wrapper:  [PlatformCredential](../../AccelByte.Sdk/Api/Session/Wrapper/PlatformCredential.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/platform-credentials` | GET | AdminGetPlatformCredentials | [AdminGetPlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminGetPlatformCredentials.cs) | [AdminGetPlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminGetPlatformCredentials.cs) |
 | `/session/v1/admin/namespaces/{namespace}/platform-credentials` | PUT | AdminUpdatePlatformCredentials | [AdminUpdatePlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminUpdatePlatformCredentials.cs) | [AdminUpdatePlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminUpdatePlatformCredentials.cs) |
+| `/session/v1/admin/namespaces/{namespace}/platform-credentials` | DELETE | AdminDeletePlatformCredentials | [AdminDeletePlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminDeletePlatformCredentials.cs) | [AdminDeletePlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminDeletePlatformCredentials.cs) |
 
 ### Player Wrapper:  [Player](../../AccelByte.Sdk/Api/Session/Wrapper/Player.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -197,6 +199,7 @@
 | `models.NativeSessionSetting` | [ModelsNativeSessionSetting](../../AccelByte.Sdk/Api/Session/Model/ModelsNativeSessionSetting.cs) |
 | `models.PSNAppServerCredentials` | [ModelsPSNAppServerCredentials](../../AccelByte.Sdk/Api/Session/Model/ModelsPSNAppServerCredentials.cs) |
 | `models.PartyMembers` | [ModelsPartyMembers](../../AccelByte.Sdk/Api/Session/Model/ModelsPartyMembers.cs) |
+| `models.PlatformCredentials` | [ModelsPlatformCredentials](../../AccelByte.Sdk/Api/Session/Model/ModelsPlatformCredentials.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
 | `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Session/Model/ResponseError.cs) |

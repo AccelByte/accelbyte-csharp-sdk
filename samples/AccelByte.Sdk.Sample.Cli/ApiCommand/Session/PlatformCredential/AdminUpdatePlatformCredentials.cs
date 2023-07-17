@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            string? response = wrapper.AdminUpdatePlatformCredentials(operation);
+            AccelByte.Sdk.Api.Session.Model.ModelsPlatformCredentials? response = wrapper.AdminUpdatePlatformCredentials(operation);
             if (response == null)
                 return "No response from server.";
 
