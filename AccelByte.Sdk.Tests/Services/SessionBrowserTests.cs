@@ -4,12 +4,15 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
 
 using AccelByte.Sdk.Api.Sessionbrowser.Model;
+using AccelByte.Sdk.Api.Lobby;
+
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -17,7 +20,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SessionBrowserTests : BaseServiceTests
     {
-        public SessionBrowserTests() : base(true) { }
+        public SessionBrowserTests() : base(true) { }        
 
         [Test]
         public void SessionBrowserServiceTests()
@@ -26,10 +29,23 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            DisableRetry();
+
             string usernameToTest = "dummy@example.com";
             if (_Sdk.Configuration.Credential != null)
                 usernameToTest = _Sdk.Configuration.Credential.Username;
             string session_id = String.Empty;
+
+            //Connect to lobby first
+            LobbyService lobby = new LobbyService(_Sdk.Configuration);
+            lobby.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
+            lobby.OnMessageReceived = (aMsg) =>
+            {
+                //dump
+            };
+
+            Task connectTak = lobby.Connect(false);
+            connectTak.Wait();
 
             #region Create a session
             ModelsCreateSessionRequest createSession = new ModelsCreateSessionRequest()
@@ -82,6 +98,12 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(_Sdk.Namespace, session_id);
             #endregion
             Assert.IsNotNull(uResp);
+
+            //disconnect from lobby
+            Task disconnectTask = lobby.Disconnect();
+            disconnectTask.Wait();
+
+            ResetPolicy();
         }
     }
 }
