@@ -4,15 +4,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
 
 using AccelByte.Sdk.Api.Sessionbrowser.Model;
-using AccelByte.Sdk.Api.Lobby;
-
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -36,21 +33,10 @@ namespace AccelByte.Sdk.Tests.Services
                 usernameToTest = _Sdk.Configuration.Credential.Username;
             string session_id = String.Empty;
 
-            //Connect to lobby first
-            LobbyService lobby = new LobbyService(_Sdk.Configuration);
-            lobby.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
-            lobby.OnMessageReceived = (aMsg) =>
-            {
-                //dump
-            };
-
-            Task connectTak = lobby.Connect(false);
-            connectTak.Wait();
-
             #region Create a session
             ModelsCreateSessionRequest createSession = new ModelsCreateSessionRequest()
             {
-                SessionType = "p2p",
+                SessionType = "dedicated",
                 GameVersion = "0.3.0",
                 Namespace = _Sdk.Namespace,
                 Username = usernameToTest,
@@ -94,14 +80,10 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.AreEqual(150, uResp.GameSessionSetting!.MaxPlayer!);
 
             #region Delete a session
-            ModelsSessionResponse? dResp = _Sdk.Sessionbrowser.Session.DeleteSessionOp
+            ModelsAdminSessionResponse? dResp = _Sdk.Sessionbrowser.Session.AdminDeleteSessionOp
                 .Execute(_Sdk.Namespace, session_id);
+            Assert.IsNotNull(dResp);
             #endregion
-            Assert.IsNotNull(uResp);
-
-            //disconnect from lobby
-            Task disconnectTask = lobby.Disconnect();
-            disconnectTask.Wait();
 
             ResetPolicy();
         }
