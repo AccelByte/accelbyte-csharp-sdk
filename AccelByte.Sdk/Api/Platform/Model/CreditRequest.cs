@@ -50,6 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CreditRequestOrigin Nintendo
             = new CreditRequestOrigin("Nintendo");
 
+        public static readonly CreditRequestOrigin Oculus
+            = new CreditRequestOrigin("Oculus");
+
         public static readonly CreditRequestOrigin Other
             = new CreditRequestOrigin("Other");
 

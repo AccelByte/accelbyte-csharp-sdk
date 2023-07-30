@@ -53,6 +53,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly UserDLCPlatform EPICGAMES
             = new UserDLCPlatform("EPICGAMES");
 
+        public static readonly UserDLCPlatform OCULUS
+            = new UserDLCPlatform("OCULUS");
+
         public static readonly UserDLCPlatform PSN
             = new UserDLCPlatform("PSN");
 

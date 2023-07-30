@@ -144,6 +144,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly CheckWalletOrigin Nintendo
             = new CheckWalletOrigin("Nintendo");
 
+        public static readonly CheckWalletOrigin Oculus
+            = new CheckWalletOrigin("Oculus");
+
         public static readonly CheckWalletOrigin Other
             = new CheckWalletOrigin("Other");
 

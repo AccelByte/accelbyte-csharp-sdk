@@ -241,6 +241,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryUserIAPOrdersType GOOGLE
             = new QueryUserIAPOrdersType("GOOGLE");
 
+        public static readonly QueryUserIAPOrdersType OCULUS
+            = new QueryUserIAPOrdersType("OCULUS");
+
         public static readonly QueryUserIAPOrdersType PLAYSTATION
             = new QueryUserIAPOrdersType("PLAYSTATION");
 

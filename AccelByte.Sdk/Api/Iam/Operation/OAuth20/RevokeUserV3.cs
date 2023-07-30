@@ -49,12 +49,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<RevokeUserV3Builder>
         {
 
+            public bool? IncludeGameNamespace { get; set; }
+
 
 
 
 
             internal RevokeUserV3Builder() { }
 
+
+            public RevokeUserV3Builder SetIncludeGameNamespace(bool _includeGameNamespace)
+            {
+                IncludeGameNamespace = _includeGameNamespace;
+                return this;
+            }
 
 
 
@@ -85,6 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.IncludeGameNamespace != null) QueryParams["includeGameNamespace"] = Convert.ToString(builder.IncludeGameNamespace)!;
 
 
 
@@ -97,12 +106,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public RevokeUserV3(
             string namespace_,
-            string userId
+            string userId,
+            bool? includeGameNamespace
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (includeGameNamespace != null) QueryParams["includeGameNamespace"] = Convert.ToString(includeGameNamespace)!;
 
 
 
@@ -125,7 +136,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)200)
+            if (code == (HttpStatusCode)204)
             {
                 return;
             }

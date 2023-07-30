@@ -71,6 +71,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeleteIAPItemConfig.Builder.SetWrapperObject(this); }
         }
+        public GetOculusIAPConfig.GetOculusIAPConfigBuilder GetOculusIAPConfigOp
+        {
+            get { return Operation.GetOculusIAPConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder UpdateOculusIAPConfigOp
+        {
+            get { return Operation.UpdateOculusIAPConfig.Builder.SetWrapperObject(this); }
+        }
+        public DeleteOculusIAPConfig.DeleteOculusIAPConfigBuilder DeleteOculusIAPConfigOp
+        {
+            get { return Operation.DeleteOculusIAPConfig.Builder.SetWrapperObject(this); }
+        }
         public GetPlayStationIAPConfig.GetPlayStationIAPConfigBuilder GetPlayStationIAPConfigOp
         {
             get { return Operation.GetPlayStationIAPConfig.Builder.SetWrapperObject(this); }
@@ -158,6 +170,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder PublicFulfillGoogleIAPItemOp
         {
             get { return Operation.PublicFulfillGoogleIAPItem.Builder.SetWrapperObject(this); }
+        }
+        public SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder SyncOculusConsumableEntitlementsOp
+        {
+            get { return Operation.SyncOculusConsumableEntitlements.Builder.SetWrapperObject(this); }
         }
         public PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder PublicReconcilePlayStationStoreOp
         {
@@ -290,6 +306,33 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void DeleteIAPItemConfig(DeleteIAPItemConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OculusIAPConfigInfo? GetOculusIAPConfig(GetOculusIAPConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OculusIAPConfigInfo? UpdateOculusIAPConfig(UpdateOculusIAPConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteOculusIAPConfig(DeleteOculusIAPConfig input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -488,6 +531,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.GoogleReceiptResolveResult? PublicFulfillGoogleIAPItem(PublicFulfillGoogleIAPItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.OculusReconcileResult>? SyncOculusConsumableEntitlements(SyncOculusConsumableEntitlements input)
         {
             var response = _sdk.RunRequest(input);
 

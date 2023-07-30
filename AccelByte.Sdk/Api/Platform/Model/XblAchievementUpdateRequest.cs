@@ -11,7 +11,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("achievements")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<Achievement>? Achievements { get; set; }
+        public List<XboxAchievement>? Achievements { get; set; }
 
         [JsonPropertyName("serviceConfigId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

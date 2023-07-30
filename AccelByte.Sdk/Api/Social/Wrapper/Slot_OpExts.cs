@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class SocialSlot_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Social.Model.SlotInfo>? Execute(
             this GetUserNamespaceSlots.GetUserNamespaceSlotsBuilder builder,
             string namespace_,
@@ -25,6 +26,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.Slot)builder.WrapperObject!).GetUserNamespaceSlots(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static byte[]? Execute(
             this GetSlotData.GetSlotDataBuilder builder,
             string namespace_,
@@ -40,6 +42,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.Slot)builder.WrapperObject!).GetSlotData(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Social.Model.SlotInfo>? Execute(
             this PublicGetUserNamespaceSlots.PublicGetUserNamespaceSlotsBuilder builder,
             string namespace_,
@@ -53,6 +56,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.Slot)builder.WrapperObject!).PublicGetUserNamespaceSlots(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicCreateUserNamespaceSlot.PublicCreateUserNamespaceSlotBuilder builder,
             string namespace_,
@@ -66,6 +70,7 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.Slot)builder.WrapperObject!).PublicCreateUserNamespaceSlot(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static byte[]? Execute(
             this PublicGetSlotData.PublicGetSlotDataBuilder builder,
             string namespace_,
@@ -81,6 +86,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.Slot)builder.WrapperObject!).PublicGetSlotData(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.SlotInfo? Execute(
             this PublicUpdateUserNamespaceSlot.PublicUpdateUserNamespaceSlotBuilder builder,
             string namespace_,
@@ -96,6 +102,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.Slot)builder.WrapperObject!).PublicUpdateUserNamespaceSlot(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicDeleteUserNamespaceSlot.PublicDeleteUserNamespaceSlotBuilder builder,
             string namespace_,
@@ -111,6 +118,7 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.Slot)builder.WrapperObject!).PublicDeleteUserNamespaceSlot(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.SlotInfo? Execute(
             this PublicUpdateUserNamespaceSlotMetadata.PublicUpdateUserNamespaceSlotMetadataBuilder builder,
             string namespace_,

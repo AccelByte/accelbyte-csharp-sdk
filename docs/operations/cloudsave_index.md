@@ -30,6 +30,14 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/concurrent/records/{key}` | PUT | AdminPutPlayerRecordConcurrentHandlerV1 | [AdminPutPlayerRecordConcurrentHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutPlayerRecordConcurrentHandlerV1.cs) | [AdminPutPlayerRecordConcurrentHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminConcurrentRecord/AdminPutPlayerRecordConcurrentHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/concurrent/records/{key}/public` | PUT | AdminPutPlayerPublicRecordConcurrentHandlerV1 | [AdminPutPlayerPublicRecordConcurrentHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminConcurrentRecord/AdminPutPlayerPublicRecordConcurrentHandlerV1.cs) | [AdminPutPlayerPublicRecordConcurrentHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminConcurrentRecord/AdminPutPlayerPublicRecordConcurrentHandlerV1.cs) |
 
+### PluginConfig Wrapper:  [PluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PluginConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/admin/namespaces/{namespace}/plugins` | GET | GetPluginConfig | [GetPluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/PluginConfig/GetPluginConfig.cs) | [GetPluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PluginConfig/GetPluginConfig.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/plugins` | POST | CreatePluginConfig | [CreatePluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/PluginConfig/CreatePluginConfig.cs) | [CreatePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PluginConfig/CreatePluginConfig.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/plugins` | DELETE | DeletePluginConfig | [DeletePluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/PluginConfig/DeletePluginConfig.cs) | [DeletePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PluginConfig/DeletePluginConfig.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/plugins` | PATCH | UpdatePluginConfig | [UpdatePluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/PluginConfig/UpdatePluginConfig.cs) | [UpdatePluginConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PluginConfig/UpdatePluginConfig.cs) |
+
 ### AdminGameRecord Wrapper:  [AdminGameRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -107,6 +115,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### PluginConfig Wrapper:  [PluginConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PluginConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### AdminGameRecord Wrapper:  [AdminGameRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -160,6 +172,7 @@
 | `models.AdminPlayerRecordKeyInfo` | [ModelsAdminPlayerRecordKeyInfo](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminPlayerRecordKeyInfo.cs) |
 | `models.AdminPlayerRecordRequest` | [ModelsAdminPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminPlayerRecordRequest.cs) |
 | `models.AdminPlayerRecordResponse` | [ModelsAdminPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminPlayerRecordResponse.cs) |
+| `models.AppConfig` | [ModelsAppConfig](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAppConfig.cs) |
 | `models.BulkGetAdminGameRecordRequest` | [ModelsBulkGetAdminGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminGameRecordRequest.cs) |
 | `models.BulkGetAdminGameRecordResponse` | [ModelsBulkGetAdminGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminGameRecordResponse.cs) |
 | `models.BulkGetAdminPlayerRecordRequest` | [ModelsBulkGetAdminPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminPlayerRecordRequest.cs) |
@@ -172,6 +185,8 @@
 | `models.BulkUserIDsRequest` | [ModelsBulkUserIDsRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkUserIDsRequest.cs) |
 | `models.BulkUserKeyRequest` | [ModelsBulkUserKeyRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkUserKeyRequest.cs) |
 | `models.ConcurrentRecordRequest` | [ModelsConcurrentRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsConcurrentRecordRequest.cs) |
+| `models.CustomConfig` | [ModelsCustomConfig](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsCustomConfig.cs) |
+| `models.CustomFunction` | [ModelsCustomFunction](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsCustomFunction.cs) |
 | `models.GameRecordRequest` | [ModelsGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameRecordRequest.cs) |
 | `models.GameRecordResponse` | [ModelsGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameRecordResponse.cs) |
 | `models.ListAdminGameRecordKeysResponse` | [ModelsListAdminGameRecordKeysResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListAdminGameRecordKeysResponse.cs) |
@@ -183,5 +198,7 @@
 | `models.PlayerRecordRequest` | [ModelsPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordRequest.cs) |
 | `models.PlayerRecordResponse` | [ModelsPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordResponse.cs) |
 | `models.PlayerRecordSizeResponse` | [ModelsPlayerRecordSizeResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordSizeResponse.cs) |
+| `models.PluginRequest` | [ModelsPluginRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPluginRequest.cs) |
+| `models.PluginResponse` | [ModelsPluginResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPluginResponse.cs) |
 | `models.ResponseError` | [ModelsResponseError](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsResponseError.cs) |
 | `models.UserKeyRequest` | [ModelsUserKeyRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsUserKeyRequest.cs) |

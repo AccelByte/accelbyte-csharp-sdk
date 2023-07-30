@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class SocialSlotConfig_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.NamespaceSlotConfigInfo? Execute(
             this GetNamespaceSlotConfig.GetNamespaceSlotConfigBuilder builder,
             string namespace_
@@ -23,6 +24,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetNamespaceSlotConfig(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.NamespaceSlotConfigInfo? Execute(
             this UpdateNamespaceSlotConfig.UpdateNamespaceSlotConfigBuilder builder,
             string namespace_
@@ -34,6 +36,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateNamespaceSlotConfig(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteNamespaceSlotConfig.DeleteNamespaceSlotConfigBuilder builder,
             string namespace_
@@ -45,6 +48,7 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteNamespaceSlotConfig(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.UserSlotConfigInfo? Execute(
             this GetUserSlotConfig.GetUserSlotConfigBuilder builder,
             string namespace_,
@@ -58,6 +62,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetUserSlotConfig(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.UserSlotConfigInfo? Execute(
             this UpdateUserSlotConfig.UpdateUserSlotConfigBuilder builder,
             string namespace_,
@@ -71,6 +76,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateUserSlotConfig(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserSlotConfig.DeleteUserSlotConfigBuilder builder,
             string namespace_,

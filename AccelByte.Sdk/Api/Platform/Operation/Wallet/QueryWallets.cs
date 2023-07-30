@@ -193,6 +193,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryWalletsOrigin Nintendo
             = new QueryWalletsOrigin("Nintendo");
 
+        public static readonly QueryWalletsOrigin Oculus
+            = new QueryWalletsOrigin("Oculus");
+
         public static readonly QueryWalletsOrigin Other
             = new QueryWalletsOrigin("Other");
 

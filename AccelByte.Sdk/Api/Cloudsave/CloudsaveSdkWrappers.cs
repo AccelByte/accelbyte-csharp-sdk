@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminConcurrentRecord? _AdminConcurrentRecord = null;
 
+        public PluginConfig PluginConfig
+        {
+            get
+            {
+                if (_PluginConfig == null)
+                    _PluginConfig = new PluginConfig(_SdkObject);
+                return _PluginConfig;
+            }
+        }
+        private PluginConfig? _PluginConfig = null;
+
         public AdminGameRecord AdminGameRecord
         {
             get

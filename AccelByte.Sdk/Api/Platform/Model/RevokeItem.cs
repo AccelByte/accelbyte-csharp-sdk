@@ -64,6 +64,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RevokeItemOrigin Nintendo
             = new RevokeItemOrigin("Nintendo");
 
+        public static readonly RevokeItemOrigin Oculus
+            = new RevokeItemOrigin("Oculus");
+
         public static readonly RevokeItemOrigin Other
             = new RevokeItemOrigin("Other");
 

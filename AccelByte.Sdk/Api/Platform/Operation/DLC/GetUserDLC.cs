@@ -145,6 +145,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetUserDLCType EPICGAMES
             = new GetUserDLCType("EPICGAMES");
 
+        public static readonly GetUserDLCType OCULUS
+            = new GetUserDLCType("OCULUS");
+
         public static readonly GetUserDLCType PSN
             = new GetUserDLCType("PSN");
 

@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentRequestWalletPlatform Nintendo
             = new PaymentRequestWalletPlatform("Nintendo");
 
+        public static readonly PaymentRequestWalletPlatform Oculus
+            = new PaymentRequestWalletPlatform("Oculus");
+
         public static readonly PaymentRequestWalletPlatform Other
             = new PaymentRequestWalletPlatform("Other");
 

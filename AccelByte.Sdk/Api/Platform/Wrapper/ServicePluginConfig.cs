@@ -74,9 +74,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.GetLootBoxPluginConfig1.Builder.SetWrapperObject(this); }
         }
-        public UpdateLootBoxPluginConfig1.UpdateLootBoxPluginConfig1Builder UpdateLootBoxPluginConfig1Op
+        public UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder UpdateRevocationPluginConfigOp
         {
-            get { return Operation.UpdateLootBoxPluginConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.UpdateRevocationPluginConfig.Builder.SetWrapperObject(this); }
         }
         public DeleteLootBoxPluginConfig1.DeleteLootBoxPluginConfig1Builder DeleteLootBoxPluginConfig1Op
         {
@@ -214,7 +214,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.RevocationPluginConfigInfo? UpdateLootBoxPluginConfig1(UpdateLootBoxPluginConfig1 input)
+        public Model.RevocationPluginConfigInfo? UpdateRevocationPluginConfig(UpdateRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
 

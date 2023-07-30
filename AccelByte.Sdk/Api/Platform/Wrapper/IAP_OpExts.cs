@@ -155,6 +155,39 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteIAPItemConfig(op);
         }
+        public static Platform.Model.OculusIAPConfigInfo? Execute(
+            this GetOculusIAPConfig.GetOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetOculusIAPConfig(op);
+        }
+        public static Platform.Model.OculusIAPConfigInfo? Execute(
+            this UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateOculusIAPConfig(op);
+        }
+        public static void Execute(
+            this DeleteOculusIAPConfig.DeleteOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteOculusIAPConfig(op);
+        }
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this GetPlayStationIAPConfig.GetPlayStationIAPConfigBuilder builder,
             string namespace_
@@ -410,6 +443,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItem(op);
+        }
+        public static List<Platform.Model.OculusReconcileResult>? Execute(
+            this SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncOculusConsumableEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncOculusConsumableEntitlements(op);
         }
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder builder,

@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("includeGameNamespace")]
+        public bool? IncludeGameNamespace { get; set; }
+
         public RevokeUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,6 +48,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.RevokeUserV3.Builder;
 
+            if (IncludeGameNamespace != null)
+                opBuilder.SetIncludeGameNamespace((bool)IncludeGameNamespace);
 
 
 

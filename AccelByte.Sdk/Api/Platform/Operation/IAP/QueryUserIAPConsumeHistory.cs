@@ -230,6 +230,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryUserIAPConsumeHistoryType GOOGLE
             = new QueryUserIAPConsumeHistoryType("GOOGLE");
 
+        public static readonly QueryUserIAPConsumeHistoryType OCULUS
+            = new QueryUserIAPConsumeHistoryType("OCULUS");
+
         public static readonly QueryUserIAPConsumeHistoryType PLAYSTATION
             = new QueryUserIAPConsumeHistoryType("PLAYSTATION");
 

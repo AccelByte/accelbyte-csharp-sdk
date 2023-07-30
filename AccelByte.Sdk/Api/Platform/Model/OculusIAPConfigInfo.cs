@@ -7,15 +7,18 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class Achievement : AccelByte.Sdk.Core.Model
+    public class OculusIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("id")]
+        [JsonPropertyName("appId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Id { get; set; }
+        public string? AppId { get; set; }
 
-        [JsonPropertyName("value")]
+        [JsonPropertyName("appSecret")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public long? Value { get; set; }
+        public string? AppSecret { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
 
     }
 

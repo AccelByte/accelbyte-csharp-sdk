@@ -143,6 +143,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly ResetPlatformWalletConfigPlatform Nintendo
             = new ResetPlatformWalletConfigPlatform("Nintendo");
 
+        public static readonly ResetPlatformWalletConfigPlatform Oculus
+            = new ResetPlatformWalletConfigPlatform("Oculus");
+
         public static readonly ResetPlatformWalletConfigPlatform Other
             = new ResetPlatformWalletConfigPlatform("Other");
 

@@ -140,6 +140,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetUserDLCByPlatformType EPICGAMES
             = new GetUserDLCByPlatformType("EPICGAMES");
 
+        public static readonly GetUserDLCByPlatformType OCULUS
+            = new GetUserDLCByPlatformType("OCULUS");
+
         public static readonly GetUserDLCByPlatformType PSN
             = new GetUserDLCByPlatformType("PSN");
 

@@ -134,6 +134,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly AdminOrderCreatePlatform Nintendo
             = new AdminOrderCreatePlatform("Nintendo");
 
+        public static readonly AdminOrderCreatePlatform Oculus
+            = new AdminOrderCreatePlatform("Oculus");
+
         public static readonly AdminOrderCreatePlatform Other
             = new AdminOrderCreatePlatform("Other");
 

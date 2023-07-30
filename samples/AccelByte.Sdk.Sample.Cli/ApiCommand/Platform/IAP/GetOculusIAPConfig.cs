@@ -19,44 +19,39 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "updatelootboxpluginconfig1")]
-    public class UpdateLootBoxPluginConfig1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getoculusiapconfig")]
+    public class GetOculusIAPConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "UpdateLootBoxPluginConfig1"; } }
+        public string OperationName { get { return "GetOculusIAPConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public RevocationPluginConfigUpdate Body { get; set; } = new RevocationPluginConfigUpdate();
-
-        public UpdateLootBoxPluginConfig1Command(AccelByteSDK sdk)
+        public GetOculusIAPConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
+            AccelByte.Sdk.Api.Platform.Wrapper.IAP wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.IAP(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateLootBoxPluginConfig1.Builder;
-
-
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigUpdate)Body);
+            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GetOculusIAPConfig.Builder;
 
 
 
-            UpdateLootBoxPluginConfig1 operation = opBuilder.Build(
+
+
+            GetOculusIAPConfig operation = opBuilder.Build(
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigInfo? response = wrapper.UpdateLootBoxPluginConfig1(operation);
+            AccelByte.Sdk.Api.Platform.Model.OculusIAPConfigInfo? response = wrapper.GetOculusIAPConfig(operation);
             if (response == null)
                 return "No response from server.";
 

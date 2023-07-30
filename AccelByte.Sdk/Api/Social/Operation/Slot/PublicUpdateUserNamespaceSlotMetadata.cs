@@ -16,11 +16,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// publicUpdateUserNamespaceSlotMetadata
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Updates the slot metadata.
     /// Other detail info:
     ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=4 (UPDATE)
     ///         *  Returns : updated slot
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicUpdateUserNamespaceSlotMetadata : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

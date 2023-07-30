@@ -67,6 +67,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly MockIAPReceiptType GOOGLE
             = new MockIAPReceiptType("GOOGLE");
 
+        public static readonly MockIAPReceiptType OCULUS
+            = new MockIAPReceiptType("OCULUS");
+
         public static readonly MockIAPReceiptType PLAYSTATION
             = new MockIAPReceiptType("PLAYSTATION");
 

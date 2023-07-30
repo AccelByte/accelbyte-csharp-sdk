@@ -154,6 +154,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly UpdatePlatformWalletConfigPlatform Nintendo
             = new UpdatePlatformWalletConfigPlatform("Nintendo");
 
+        public static readonly UpdatePlatformWalletConfigPlatform Oculus
+            = new UpdatePlatformWalletConfigPlatform("Oculus");
+
         public static readonly UpdatePlatformWalletConfigPlatform Other
             = new UpdatePlatformWalletConfigPlatform("Other");
 

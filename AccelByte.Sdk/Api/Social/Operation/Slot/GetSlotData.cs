@@ -16,11 +16,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// getSlotData
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Get slot data.
     /// Other detail info:
     ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
     ///         *  Returns : slot data
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetSlotData : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -16,11 +16,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// deleteNamespaceSlotConfig
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Deletes a namespace slot configuration, the configuration will be default after delete.
     /// Other detail info:
     /// 
     ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=8 (DELETE)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteNamespaceSlotConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

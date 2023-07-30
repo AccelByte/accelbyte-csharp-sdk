@@ -7,52 +7,53 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Cloudsave.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
     /// <summary>
-    /// updateLootBoxPluginConfig_1
+    /// updatePluginConfig
     ///
-    /// Update revocation plugin config. Other detail info:
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-    ///   *  Returns : updated service plugin config
+    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:PLUGINS [UPDATE]`
+    /// Required scope: `social`
+    /// 
+    /// 
+    /// 
+    /// ## Description
+    /// 
+    /// 
+    /// 
+    /// This endpoints will update grpc plugins configuration
     /// </summary>
-    public class UpdateLootBoxPluginConfig1 : AccelByte.Sdk.Core.Operation
+    public class UpdatePluginConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateLootBoxPluginConfig1Builder Builder { get => new UpdateLootBoxPluginConfig1Builder(); }
+        public static UpdatePluginConfigBuilder Builder { get => new UpdatePluginConfigBuilder(); }
 
-        public class UpdateLootBoxPluginConfig1Builder
-            : OperationBuilder<UpdateLootBoxPluginConfig1Builder>
+        public class UpdatePluginConfigBuilder
+            : OperationBuilder<UpdatePluginConfigBuilder>
         {
 
 
-            public Model.RevocationPluginConfigUpdate? Body { get; set; }
+
+
+
+            internal UpdatePluginConfigBuilder() { }
 
 
 
 
-            internal UpdateLootBoxPluginConfig1Builder() { }
 
 
-
-            public UpdateLootBoxPluginConfig1Builder SetBody(Model.RevocationPluginConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
-
-
-
-            public UpdateLootBoxPluginConfig1 Build(
+            public UpdatePluginConfig Build(
+                ModelsPluginRequest body,
                 string namespace_
             )
             {
-                UpdateLootBoxPluginConfig1 op = new UpdateLootBoxPluginConfig1(this,
+                UpdatePluginConfig op = new UpdatePluginConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -63,7 +64,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private UpdateLootBoxPluginConfig1(UpdateLootBoxPluginConfig1Builder builder,
+        private UpdatePluginConfig(UpdatePluginConfigBuilder builder,
+            ModelsPluginRequest body,
             string namespace_
         )
         {
@@ -73,16 +75,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public UpdateLootBoxPluginConfig1(
+        public UpdatePluginConfig(
             string namespace_,
-            Model.RevocationPluginConfigUpdate body
+            Model.ModelsPluginRequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -97,9 +99,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation";
+        public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/plugins";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Patch;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -108,7 +110,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.RevocationPluginConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsPluginResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -117,13 +119,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsPluginResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsPluginResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsPluginResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

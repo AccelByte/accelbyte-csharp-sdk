@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RewardsRequestOrigin Nintendo
             = new RewardsRequestOrigin("Nintendo");
 
+        public static readonly RewardsRequestOrigin Oculus
+            = new RewardsRequestOrigin("Oculus");
+
         public static readonly RewardsRequestOrigin Other
             = new RewardsRequestOrigin("Other");
 

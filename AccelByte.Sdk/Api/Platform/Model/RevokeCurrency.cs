@@ -42,6 +42,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RevokeCurrencyBalanceOrigin Nintendo
             = new RevokeCurrencyBalanceOrigin("Nintendo");
 
+        public static readonly RevokeCurrencyBalanceOrigin Oculus
+            = new RevokeCurrencyBalanceOrigin("Oculus");
+
         public static readonly RevokeCurrencyBalanceOrigin Other
             = new RevokeCurrencyBalanceOrigin("Other");
 

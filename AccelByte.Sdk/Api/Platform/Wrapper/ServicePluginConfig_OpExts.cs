@@ -159,15 +159,15 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).GetLootBoxPluginConfig1(op);
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
-            this UpdateLootBoxPluginConfig1.UpdateLootBoxPluginConfig1Builder builder,
+            this UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder builder,
             string namespace_
         )
         {
-            UpdateLootBoxPluginConfig1 op = builder.Build(
+            UpdateRevocationPluginConfig op = builder.Build(
                 namespace_
             );
 
-            return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UpdateLootBoxPluginConfig1(op);
+            return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UpdateRevocationPluginConfig(op);
         }
         public static void Execute(
             this DeleteLootBoxPluginConfig1.DeleteLootBoxPluginConfig1Builder builder,

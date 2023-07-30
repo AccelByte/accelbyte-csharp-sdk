@@ -120,6 +120,19 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncEpicGameDLC(op);
         }
         public static void Execute(
+            this SyncOculusDLC.SyncOculusDLCBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncOculusDLC op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncOculusDLC(op);
+        }
+        public static void Execute(
             this PublicSyncPsnDlcInventory.PublicSyncPsnDlcInventoryBuilder builder,
             string namespace_,
             string userId

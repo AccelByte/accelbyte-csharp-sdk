@@ -371,6 +371,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetUserByEmailAddressV3.Builder.SetWrapperObject(this); }
         }
+        public AdminGetBulkUserBanV3.AdminGetBulkUserBanV3Builder AdminGetBulkUserBanV3Op
+        {
+            get { return Operation.AdminGetBulkUserBanV3.Builder.SetWrapperObject(this); }
+        }
         public AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder AdminListUserIDByUserIDsV3Op
         {
             get { return Operation.AdminListUserIDByUserIDsV3.Builder.SetWrapperObject(this); }
@@ -1542,6 +1546,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.ModelUserResponseV3? AdminGetUserByEmailAddressV3(AdminGetUserByEmailAddressV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelGetUserBanV3Response? AdminGetBulkUserBanV3(AdminGetBulkUserBanV3 input)
         {
             var response = _sdk.RunRequest(input);
 

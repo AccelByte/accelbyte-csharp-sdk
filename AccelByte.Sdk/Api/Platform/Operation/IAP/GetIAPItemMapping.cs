@@ -142,6 +142,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetIAPItemMappingPlatform GOOGLE
             = new GetIAPItemMappingPlatform("GOOGLE");
 
+        public static readonly GetIAPItemMappingPlatform OCULUS
+            = new GetIAPItemMappingPlatform("OCULUS");
+
         public static readonly GetIAPItemMappingPlatform PLAYSTATION
             = new GetIAPItemMappingPlatform("PLAYSTATION");
 

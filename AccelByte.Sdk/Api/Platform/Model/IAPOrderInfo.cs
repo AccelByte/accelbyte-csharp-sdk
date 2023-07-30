@@ -129,6 +129,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly IAPOrderInfoType GOOGLE
             = new IAPOrderInfoType("GOOGLE");
 
+        public static readonly IAPOrderInfoType OCULUS
+            = new IAPOrderInfoType("OCULUS");
+
         public static readonly IAPOrderInfoType PLAYSTATION
             = new IAPOrderInfoType("PLAYSTATION");
 

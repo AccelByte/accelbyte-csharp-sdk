@@ -1074,6 +1074,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByEmailAddressV3(op);
         }
+        public static Iam.Model.ModelGetUserBanV3Response? Execute(
+            this AdminGetBulkUserBanV3.AdminGetBulkUserBanV3Builder builder,
+            ModelGetBulkUserBansRequest body,
+            string namespace_
+        )
+        {
+            AdminGetBulkUserBanV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetBulkUserBanV3(op);
+        }
         public static Iam.Model.ModelListUserInformationResult? Execute(
             this AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder builder,
             ModelUserIDsRequest body,

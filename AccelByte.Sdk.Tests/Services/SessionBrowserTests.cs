@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SessionBrowserTests : BaseServiceTests
     {
-        public SessionBrowserTests() : base(true) { }        
+        public SessionBrowserTests() : base(true) { }
 
         [Test]
         public void SessionBrowserServiceTests()

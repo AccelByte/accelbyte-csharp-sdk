@@ -113,6 +113,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly IAPConsumeHistoryInfoIapType GOOGLE
             = new IAPConsumeHistoryInfoIapType("GOOGLE");
 
+        public static readonly IAPConsumeHistoryInfoIapType OCULUS
+            = new IAPConsumeHistoryInfoIapType("OCULUS");
+
         public static readonly IAPConsumeHistoryInfoIapType PLAYSTATION
             = new IAPConsumeHistoryInfoIapType("PLAYSTATION");
 

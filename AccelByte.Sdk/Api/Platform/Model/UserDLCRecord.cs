@@ -74,6 +74,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly UserDLCRecordPlatform EPICGAMES
             = new UserDLCRecordPlatform("EPICGAMES");
 
+        public static readonly UserDLCRecordPlatform OCULUS
+            = new UserDLCRecordPlatform("OCULUS");
+
         public static readonly UserDLCRecordPlatform PSN
             = new UserDLCRecordPlatform("PSN");
 

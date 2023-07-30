@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Nintendo
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Nintendo");
 
+        public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Oculus
+            = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Oculus");
+
         public static readonly PlatformWalletConfigUpdateAllowedBalanceOrigins Other
             = new PlatformWalletConfigUpdateAllowedBalanceOrigins("Other");
 

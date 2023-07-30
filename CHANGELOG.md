@@ -1,3 +1,12 @@
+<a name="v0.40.0"></a>
+## [v0.40.0]
+### feat
+- **integration:** add lobby presence test
+### fix
+- **integration:** add lobby connect before start session browser test
+- **integration:** use admin delete session endpoint for session browser test
+
+
 <a name="v0.39.0"></a>
 ## [v0.39.0]
 ### feat

@@ -45,6 +45,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly DebitByCurrencyCodeRequestBalanceOrigin Nintendo
             = new DebitByCurrencyCodeRequestBalanceOrigin("Nintendo");
 
+        public static readonly DebitByCurrencyCodeRequestBalanceOrigin Oculus
+            = new DebitByCurrencyCodeRequestBalanceOrigin("Oculus");
+
         public static readonly DebitByCurrencyCodeRequestBalanceOrigin Other
             = new DebitByCurrencyCodeRequestBalanceOrigin("Other");
 

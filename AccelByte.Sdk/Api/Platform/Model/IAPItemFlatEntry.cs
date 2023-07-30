@@ -65,6 +65,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly IAPItemFlatEntryPlatform GOOGLE
             = new IAPItemFlatEntryPlatform("GOOGLE");
 
+        public static readonly IAPItemFlatEntryPlatform OCULUS
+            = new IAPItemFlatEntryPlatform("OCULUS");
+
         public static readonly IAPItemFlatEntryPlatform PLAYSTATION
             = new IAPItemFlatEntryPlatform("PLAYSTATION");
 

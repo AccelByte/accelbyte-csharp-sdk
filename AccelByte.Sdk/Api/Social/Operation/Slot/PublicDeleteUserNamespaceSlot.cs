@@ -16,10 +16,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// publicDeleteUserNamespaceSlot
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Deletes the slot.
     /// Other detail info:
     ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=8 (DELETE)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicDeleteUserNamespaceSlot : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
