@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
     {
         protected static void FetchJWKS(AccelByteSDK sdk)
         {
-            OauthcommonJWKSet? tempResp = sdk.Iam.OAuth20.GetJWKSV3Op
+            OauthcommonJWKSet? tempResp = sdk.Iam.OAuth20Public.GetJWKSV3Op
                 .SetPreferredSecurityMethod(Operation.SECURITY_BASIC)
                 .Execute();
             if (tempResp == null)
