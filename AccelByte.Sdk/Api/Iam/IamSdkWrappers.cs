@@ -123,6 +123,39 @@ namespace AccelByte.Sdk.Core
         }
         private OAuth20? _OAuth20 = null;
 
+        public OAuth20Public OAuth20Public
+        {
+            get
+            {
+                if (_OAuth20Public == null)
+                    _OAuth20Public = new OAuth20Public(_SdkObject);
+                return _OAuth20Public;
+            }
+        }
+        private OAuth20Public? _OAuth20Public = null;
+
+        public InputValidationsPublic InputValidationsPublic
+        {
+            get
+            {
+                if (_InputValidationsPublic == null)
+                    _InputValidationsPublic = new InputValidationsPublic(_SdkObject);
+                return _InputValidationsPublic;
+            }
+        }
+        private InputValidationsPublic? _InputValidationsPublic = null;
+
+        public UsersPublic UsersPublic
+        {
+            get
+            {
+                if (_UsersPublic == null)
+                    _UsersPublic = new UsersPublic(_SdkObject);
+                return _UsersPublic;
+            }
+        }
+        private UsersPublic? _UsersPublic = null;
+
         public SSOSAML20 SSOSAML20
         {
             get

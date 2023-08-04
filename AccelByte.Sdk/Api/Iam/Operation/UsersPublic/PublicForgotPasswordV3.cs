@@ -83,7 +83,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             BodyParams = body;
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -101,7 +100,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             BodyParams = body;
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/iam/v3/public/namespaces/{namespace}/users/forgot";

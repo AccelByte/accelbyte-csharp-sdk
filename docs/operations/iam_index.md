@@ -162,14 +162,8 @@
 | `/iam/v3/public/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId}` | GET | PublicGetUserByPlatformUserIDV3 | [PublicGetUserByPlatformUserIDV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserByPlatformUserIDV3.cs) | [PublicGetUserByPlatformUserIDV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserByPlatformUserIDV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status` | GET | PublicGetAsyncStatus | [PublicGetAsyncStatus](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetAsyncStatus.cs) | [PublicGetAsyncStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetAsyncStatus.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users` | GET | PublicSearchUserV3 | [PublicSearchUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicSearchUserV3.cs) | [PublicSearchUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicSearchUserV3.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users` | POST | PublicCreateUserV3 | [PublicCreateUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicCreateUserV3.cs) | [PublicCreateUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicCreateUserV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/availability` | GET | CheckUserAvailability | [CheckUserAvailability](../../AccelByte.Sdk/Api/Iam/Operation/Users/CheckUserAvailability.cs) | [CheckUserAvailability](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/CheckUserAvailability.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users/bulk/basic` | POST | PublicBulkGetUsers | [PublicBulkGetUsers](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicBulkGetUsers.cs) | [PublicBulkGetUsers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicBulkGetUsers.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/code/request` | POST | PublicSendRegistrationCode | [PublicSendRegistrationCode](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicSendRegistrationCode.cs) | [PublicSendRegistrationCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicSendRegistrationCode.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users/code/verify` | POST | PublicVerifyRegistrationCode | [PublicVerifyRegistrationCode](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicVerifyRegistrationCode.cs) | [PublicVerifyRegistrationCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicVerifyRegistrationCode.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users/forgot` | POST | PublicForgotPasswordV3 | [PublicForgotPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicForgotPasswordV3.cs) | [PublicForgotPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicForgotPasswordV3.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users/invite/{invitationId}` | GET | GetAdminInvitationV3 | [GetAdminInvitationV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/GetAdminInvitationV3.cs) | [GetAdminInvitationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/GetAdminInvitationV3.cs) |
-| `/iam/v3/public/namespaces/{namespace}/users/invite/{invitationId}` | POST | CreateUserFromInvitationV3 | [CreateUserFromInvitationV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/CreateUserFromInvitationV3.cs) | [CreateUserFromInvitationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/CreateUserFromInvitationV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me` | PUT | UpdateUserV3 | [UpdateUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/UpdateUserV3.cs) | [UpdateUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/UpdateUserV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me` | PATCH | PublicPartialUpdateUserV3 | [PublicPartialUpdateUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicPartialUpdateUserV3.cs) | [PublicPartialUpdateUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicPartialUpdateUserV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/code/request` | POST | PublicSendVerificationCodeV3 | [PublicSendVerificationCodeV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicSendVerificationCodeV3.cs) | [PublicSendVerificationCodeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicSendVerificationCodeV3.cs) |
@@ -185,7 +179,6 @@
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link` | GET | PublicWebLinkPlatform | [PublicWebLinkPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatform.cs) | [PublicWebLinkPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatform.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish` | GET | PublicWebLinkPlatformEstablish | [PublicWebLinkPlatformEstablish](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatformEstablish.cs) | [PublicWebLinkPlatformEstablish](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatformEstablish.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/reset` | POST | ResetPasswordV3 | [ResetPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/ResetPasswordV3.cs) | [ResetPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/ResetPasswordV3.cs) |
-| [DEPRECATED] `/iam/v3/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserByUserIdV3 | [PublicGetUserByUserIdV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserByUserIdV3.cs) | [PublicGetUserByUserIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserByUserIdV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/bans` | GET | PublicGetUserBanHistoryV3 | [PublicGetUserBanHistoryV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserBanHistoryV3.cs) | [PublicGetUserBanHistoryV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserBanHistoryV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/distinctPlatforms` | GET | PublicListUserAllPlatformAccountsDistinctV3 | [PublicListUserAllPlatformAccountsDistinctV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicListUserAllPlatformAccountsDistinctV3.cs) | [PublicListUserAllPlatformAccountsDistinctV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicListUserAllPlatformAccountsDistinctV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/information` | GET | PublicGetUserInformationV3 | [PublicGetUserInformationV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserInformationV3.cs) | [PublicGetUserInformationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserInformationV3.cs) |
@@ -273,8 +266,6 @@
 | `/iam/v3/admin/inputValidations` | GET | AdminGetInputValidations | [AdminGetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/AdminGetInputValidations.cs) | [AdminGetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/AdminGetInputValidations.cs) |
 | `/iam/v3/admin/inputValidations` | PUT | AdminUpdateInputValidations | [AdminUpdateInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/AdminUpdateInputValidations.cs) | [AdminUpdateInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/AdminUpdateInputValidations.cs) |
 | `/iam/v3/admin/inputValidations/{field}` | DELETE | AdminResetInputValidations | [AdminResetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/AdminResetInputValidations.cs) | [AdminResetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/AdminResetInputValidations.cs) |
-| `/iam/v3/public/inputValidations` | GET | PublicGetInputValidations | [PublicGetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidations.cs) | [PublicGetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidations.cs) |
-| `/iam/v3/public/inputValidations/{field}` | GET | PublicGetInputValidationByField | [PublicGetInputValidationByField](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidationByField.cs) | [PublicGetInputValidationByField](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidationByField.cs) |
 
 ### Third Party Credential Wrapper:  [ThirdPartyCredential](../../AccelByte.Sdk/Api/Iam/Wrapper/ThirdPartyCredential.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -313,6 +304,7 @@
 | `/iam/v3/namespace/{namespace}/token/request` | POST | RequestGameTokenCodeResponseV3 | [RequestGameTokenCodeResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) | [RequestGameTokenCodeResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) |
 | `/iam/v3/platforms/{platformId}/authenticate` | GET | PlatformAuthenticationV3 | [PlatformAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformAuthenticationV3.cs) | [PlatformAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformAuthenticationV3.cs) |
 | `/iam/v3/token/exchange` | POST | RequestGameTokenResponseV3 | [RequestGameTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenResponseV3.cs) | [RequestGameTokenResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenResponseV3.cs) |
+| `/iam/v3/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -321,7 +313,6 @@
 | `/iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke` | POST | RevokeUserV3 | [RevokeUserV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/RevokeUserV3.cs) | [RevokeUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/RevokeUserV3.cs) |
 | `/iam/v3/oauth/authorize` | GET | AuthorizeV3 | [AuthorizeV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/AuthorizeV3.cs) | [AuthorizeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/AuthorizeV3.cs) |
 | `/iam/v3/oauth/introspect` | POST | TokenIntrospectionV3 | [TokenIntrospectionV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenIntrospectionV3.cs) | [TokenIntrospectionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenIntrospectionV3.cs) |
-| `/iam/v3/oauth/jwks` | GET | GetJWKSV3 | [GetJWKSV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/GetJWKSV3.cs) | [GetJWKSV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/GetJWKSV3.cs) |
 | `/iam/v3/oauth/mfa/code` | POST | SendMFAAuthenticationCode | [SendMFAAuthenticationCode](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/SendMFAAuthenticationCode.cs) | [SendMFAAuthenticationCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/SendMFAAuthenticationCode.cs) |
 | `/iam/v3/oauth/mfa/factor/change` | POST | Change2faMethod | [Change2faMethod](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/Change2faMethod.cs) | [Change2faMethod](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/Change2faMethod.cs) |
 | `/iam/v3/oauth/mfa/verify` | POST | Verify2faCode | [Verify2faCode](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/Verify2faCode.cs) | [Verify2faCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/Verify2faCode.cs) |
@@ -332,6 +323,28 @@
 | `/iam/v3/oauth/revoke` | POST | TokenRevocationV3 | [TokenRevocationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenRevocationV3.cs) | [TokenRevocationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenRevocationV3.cs) |
 | `/iam/v3/oauth/token` | POST | TokenGrantV3 | [TokenGrantV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenGrantV3.cs) | [TokenGrantV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenGrantV3.cs) |
 | `/iam/v3/oauth/verify` | POST | VerifyTokenV3 | [VerifyTokenV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/VerifyTokenV3.cs) | [VerifyTokenV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/VerifyTokenV3.cs) |
+
+### OAuth2.0(Public) Wrapper:  [OAuth20Public](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Public.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/oauth/jwks` | GET | GetJWKSV3 | [GetJWKSV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Public/GetJWKSV3.cs) | [GetJWKSV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Public/GetJWKSV3.cs) |
+
+### InputValidations(Public) Wrapper:  [InputValidationsPublic](../../AccelByte.Sdk/Api/Iam/Wrapper/InputValidationsPublic.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/public/inputValidations` | GET | PublicGetInputValidations | [PublicGetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidationsPublic/PublicGetInputValidations.cs) | [PublicGetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidationsPublic/PublicGetInputValidations.cs) |
+| `/iam/v3/public/inputValidations/{field}` | GET | PublicGetInputValidationByField | [PublicGetInputValidationByField](../../AccelByte.Sdk/Api/Iam/Operation/InputValidationsPublic/PublicGetInputValidationByField.cs) | [PublicGetInputValidationByField](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidationsPublic/PublicGetInputValidationByField.cs) |
+
+### Users(Public) Wrapper:  [UsersPublic](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersPublic.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/public/namespaces/{namespace}/users` | POST | PublicCreateUserV3 | [PublicCreateUserV3](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/PublicCreateUserV3.cs) | [PublicCreateUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/PublicCreateUserV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/bulk/basic` | POST | PublicBulkGetUsers | [PublicBulkGetUsers](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/PublicBulkGetUsers.cs) | [PublicBulkGetUsers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/PublicBulkGetUsers.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/code/verify` | POST | PublicVerifyRegistrationCode | [PublicVerifyRegistrationCode](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/PublicVerifyRegistrationCode.cs) | [PublicVerifyRegistrationCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/PublicVerifyRegistrationCode.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/forgot` | POST | PublicForgotPasswordV3 | [PublicForgotPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/PublicForgotPasswordV3.cs) | [PublicForgotPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/PublicForgotPasswordV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/invite/{invitationId}` | GET | GetAdminInvitationV3 | [GetAdminInvitationV3](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/GetAdminInvitationV3.cs) | [GetAdminInvitationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/GetAdminInvitationV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/invite/{invitationId}` | POST | CreateUserFromInvitationV3 | [CreateUserFromInvitationV3](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/CreateUserFromInvitationV3.cs) | [CreateUserFromInvitationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/CreateUserFromInvitationV3.cs) |
+| [DEPRECATED] `/iam/v3/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserByUserIdV3 | [PublicGetUserByUserIdV3](../../AccelByte.Sdk/Api/Iam/Operation/UsersPublic/PublicGetUserByUserIdV3.cs) | [PublicGetUserByUserIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersPublic/PublicGetUserByUserIdV3.cs) |
 
 ### SSO SAML 2.0 Wrapper:  [SSOSAML20](../../AccelByte.Sdk/Api/Iam/Wrapper/SSOSAML20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -455,6 +468,18 @@
 |---|---|---|---|---|
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### OAuth2.0(Public) Wrapper:  [OAuth20Public](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Public.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### InputValidations(Public) Wrapper:  [InputValidationsPublic](../../AccelByte.Sdk/Api/Iam/Wrapper/InputValidationsPublic.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Users(Public) Wrapper:  [UsersPublic](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersPublic.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -734,6 +759,7 @@
 | `oauthmodel.GameTokenCodeResponse` | [OauthmodelGameTokenCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelGameTokenCodeResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeResponse` | [OauthmodelOneTimeLinkingCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeValidationResponse` | [OauthmodelOneTimeLinkingCodeValidationResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeValidationResponse.cs) |
+| `oauthmodel.PlatformTokenRefreshResponseV3` | [OauthmodelPlatformTokenRefreshResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelPlatformTokenRefreshResponseV3.cs) |
 | `oauthmodel.TokenIntrospectResponse` | [OauthmodelTokenIntrospectResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenIntrospectResponse.cs) |
 | `oauthmodel.TokenResponse` | [OauthmodelTokenResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponse.cs) |
 | `oauthmodel.TokenResponseV3` | [OauthmodelTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponseV3.cs) |

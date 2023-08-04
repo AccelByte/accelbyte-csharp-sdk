@@ -35,10 +35,6 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.TokenIntrospectionV3.Builder.SetWrapperObject(this); }
         }
-        public GetJWKSV3.GetJWKSV3Builder GetJWKSV3Op
-        {
-            get { return Operation.GetJWKSV3.Builder.SetWrapperObject(this); }
-        }
         public SendMFAAuthenticationCode.SendMFAAuthenticationCodeBuilder SendMFAAuthenticationCodeOp
         {
             get { return Operation.SendMFAAuthenticationCode.Builder.SetWrapperObject(this); }
@@ -109,15 +105,6 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.OauthmodelTokenIntrospectResponse? TokenIntrospectionV3(TokenIntrospectionV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.OauthcommonJWKSet? GetJWKSV3(GetJWKSV3 input)
         {
             var response = _sdk.RunRequest(input);
 

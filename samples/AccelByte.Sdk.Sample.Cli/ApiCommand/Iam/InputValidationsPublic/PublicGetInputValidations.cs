@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.InputValidations wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.InputValidations(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.InputValidationsPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.InputValidationsPublic(_SDK);
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicGetInputValidations.Builder;
 

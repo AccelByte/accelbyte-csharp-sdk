@@ -14,38 +14,41 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// GetAdminInvitationV3
+    /// PublicGetUserByUserIdV3
     ///
-    /// Endpoint to validate user invitation. When not found, it could also means the invitation has expired.
+    /// 
+    /// 
+    /// This endpoint retrieve user attributes. action code: 10129
     /// </summary>
-    public class GetAdminInvitationV3 : AccelByte.Sdk.Core.Operation
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
+    public class PublicGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetAdminInvitationV3Builder Builder { get => new GetAdminInvitationV3Builder(); }
+        public static PublicGetUserByUserIdV3Builder Builder { get => new PublicGetUserByUserIdV3Builder(); }
 
-        public class GetAdminInvitationV3Builder
-            : OperationBuilder<GetAdminInvitationV3Builder>
+        public class PublicGetUserByUserIdV3Builder
+            : OperationBuilder<PublicGetUserByUserIdV3Builder>
         {
 
 
 
 
 
-            internal GetAdminInvitationV3Builder() { }
+            internal PublicGetUserByUserIdV3Builder() { }
 
 
 
 
 
 
-            public GetAdminInvitationV3 Build(
-                string invitationId,
-                string namespace_
+            public PublicGetUserByUserIdV3 Build(
+                string namespace_,
+                string userId
             )
             {
-                GetAdminInvitationV3 op = new GetAdminInvitationV3(this,
-                    invitationId,
-                    namespace_
+                PublicGetUserByUserIdV3 op = new PublicGetUserByUserIdV3(this,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -55,13 +58,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
         }
 
-        private GetAdminInvitationV3(GetAdminInvitationV3Builder builder,
-            string invitationId,
-            string namespace_
+        private PublicGetUserByUserIdV3(PublicGetUserByUserIdV3Builder builder,
+            string namespace_,
+            string userId
         )
         {
-            PathParams["invitationId"] = invitationId;
             PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
 
 
 
@@ -69,17 +72,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public GetAdminInvitationV3(
-            string invitationId,
-            string namespace_
+        public PublicGetUserByUserIdV3(
+            string namespace_,
+            string userId
         )
         {
-            PathParams["invitationId"] = invitationId;
             PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
 
 
 
@@ -87,10 +89,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/iam/v3/public/namespaces/{namespace}/users/invite/{invitationId}";
+        public override string Path => "/iam/v3/public/namespaces/{namespace}/users/{userId}";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -101,7 +102,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelUserInvitationV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelPublicUserResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -110,13 +111,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelUserInvitationV3>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelPublicUserResponseV3>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelUserInvitationV3>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelPublicUserResponseV3>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelUserInvitationV3>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelPublicUserResponseV3>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

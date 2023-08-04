@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic(_SDK);
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicVerifyRegistrationCode.Builder;
 

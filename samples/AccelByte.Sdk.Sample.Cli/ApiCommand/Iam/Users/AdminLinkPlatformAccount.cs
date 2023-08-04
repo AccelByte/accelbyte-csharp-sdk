@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("skipConflict")]
+        public bool? SkipConflict { get; set; }
+
         [SdkCommandData("body")]
         public ModelLinkPlatformAccountRequest Body { get; set; } = new ModelLinkPlatformAccountRequest();
 
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminLinkPlatformAccount.Builder;
 
+            if (SkipConflict != null)
+                opBuilder.SetSkipConflict((bool)SkipConflict);
 
 
 

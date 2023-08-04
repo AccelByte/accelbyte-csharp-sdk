@@ -19,47 +19,51 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicbulkgetusers")]
-    public class PublicBulkGetUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgetuserbyuseridv3")]
+    public class PublicGetUserByUserIdV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicBulkGetUsers"; } }
+        public string OperationName { get { return "PublicGetUserByUserIdV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelUserIDsRequest Body { get; set; } = new ModelUserIDsRequest();
+        [SdkCommandArgument("userId")]
+        public string UserId { get; set; } = String.Empty;
 
-        public PublicBulkGetUsersCommand(AccelByteSDK sdk)
+        public PublicGetUserByUserIdV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicBulkGetUsers.Builder;
-
-
-
+#pragma warning disable ab_deprecated_operation
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicGetUserByUserIdV3.Builder;
 
 
-            PublicBulkGetUsers operation = opBuilder.Build(
-                Body,
-                Namespace
+
+
+
+            PublicGetUserByUserIdV3 operation = opBuilder.Build(
+                Namespace,
+                UserId
             );
 
+#pragma warning restore ab_deprecated_operation
 
-            AccelByte.Sdk.Api.Iam.Model.ModelListBulkUserResponse? response = wrapper.PublicBulkGetUsers(operation);
+#pragma warning disable ab_deprecated_operation_wrapper
+            AccelByte.Sdk.Api.Iam.Model.ModelPublicUserResponseV3? response = wrapper.PublicGetUserByUserIdV3(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

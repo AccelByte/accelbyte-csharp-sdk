@@ -140,6 +140,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             LocationQuery = "code";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
@@ -163,6 +164,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             LocationQuery = "code";
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
 
         public override string Path => "/iam/v3/oauth/platforms/{platformId}/authorize";
@@ -174,7 +176,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
-        public override string? Security { get; set; } = "Bearer";
+        public override string? Security { get; set; } = "Basic";
 
         public string ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

@@ -555,37 +555,13 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicSearchUserV3.Builder.SetWrapperObject(this); }
         }
-        public PublicCreateUserV3.PublicCreateUserV3Builder PublicCreateUserV3Op
-        {
-            get { return Operation.PublicCreateUserV3.Builder.SetWrapperObject(this); }
-        }
         public CheckUserAvailability.CheckUserAvailabilityBuilder CheckUserAvailabilityOp
         {
             get { return Operation.CheckUserAvailability.Builder.SetWrapperObject(this); }
         }
-        public PublicBulkGetUsers.PublicBulkGetUsersBuilder PublicBulkGetUsersOp
-        {
-            get { return Operation.PublicBulkGetUsers.Builder.SetWrapperObject(this); }
-        }
         public PublicSendRegistrationCode.PublicSendRegistrationCodeBuilder PublicSendRegistrationCodeOp
         {
             get { return Operation.PublicSendRegistrationCode.Builder.SetWrapperObject(this); }
-        }
-        public PublicVerifyRegistrationCode.PublicVerifyRegistrationCodeBuilder PublicVerifyRegistrationCodeOp
-        {
-            get { return Operation.PublicVerifyRegistrationCode.Builder.SetWrapperObject(this); }
-        }
-        public PublicForgotPasswordV3.PublicForgotPasswordV3Builder PublicForgotPasswordV3Op
-        {
-            get { return Operation.PublicForgotPasswordV3.Builder.SetWrapperObject(this); }
-        }
-        public GetAdminInvitationV3.GetAdminInvitationV3Builder GetAdminInvitationV3Op
-        {
-            get { return Operation.GetAdminInvitationV3.Builder.SetWrapperObject(this); }
-        }
-        public CreateUserFromInvitationV3.CreateUserFromInvitationV3Builder CreateUserFromInvitationV3Op
-        {
-            get { return Operation.CreateUserFromInvitationV3.Builder.SetWrapperObject(this); }
         }
         public UpdateUserV3.UpdateUserV3Builder UpdateUserV3Op
         {
@@ -646,11 +622,6 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public ResetPasswordV3.ResetPasswordV3Builder ResetPasswordV3Op
         {
             get { return Operation.ResetPasswordV3.Builder.SetWrapperObject(this); }
-        }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public PublicGetUserByUserIdV3.PublicGetUserByUserIdV3Builder PublicGetUserByUserIdV3Op
-        {
-            get { return Operation.PublicGetUserByUserIdV3.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserBanHistoryV3.PublicGetUserBanHistoryV3Builder PublicGetUserBanHistoryV3Op
         {
@@ -1988,15 +1959,6 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelUserCreateResponseV3? PublicCreateUserV3(PublicCreateUserV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public void CheckUserAvailability(CheckUserAvailability input)
         {
             var response = _sdk.RunRequest(input);
@@ -2006,56 +1968,11 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelListBulkUserResponse? PublicBulkGetUsers(PublicBulkGetUsers input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public void PublicSendRegistrationCode(PublicSendRegistrationCode input)
         {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void PublicVerifyRegistrationCode(PublicVerifyRegistrationCode input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void PublicForgotPasswordV3(PublicForgotPasswordV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelUserInvitationV3? GetAdminInvitationV3(GetAdminInvitationV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelUserCreateResponseV3? CreateUserFromInvitationV3(CreateUserFromInvitationV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -2195,18 +2112,6 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-#pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.ModelPublicUserResponseV3? PublicGetUserByUserIdV3(PublicGetUserByUserIdV3 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-#pragma warning restore ab_deprecated_operation
         public Model.ModelGetUserBanV3Response? PublicGetUserBanHistoryV3(PublicGetUserBanHistoryV3 input)
         {
             var response = _sdk.RunRequest(input);
