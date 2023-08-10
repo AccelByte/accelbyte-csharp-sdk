@@ -40,6 +40,21 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("reason")]
+        public string? Reason { get; set; }
+
+        [SdkCommandArgument("region")]
+        public string? Region { get; set; }
+
+        [SdkCommandArgument("serverId")]
+        public string? ServerId { get; set; }
+
+        [SdkCommandArgument("sortDirection")]
+        public string? SortDirection { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
         public FleetServerHistoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -55,6 +70,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 opBuilder.SetCount((long)Count);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (Reason != null)
+                opBuilder.SetReason((string)Reason);
+            if (Region != null)
+                opBuilder.SetRegion((string)Region);
+            if (ServerId != null)
+                opBuilder.SetServerId((string)ServerId);
+            if (SortDirection != null)
+                opBuilder.SetSortDirection((string)SortDirection);
+            if (Status != null)
+                opBuilder.SetStatus((string)Status);
 
 
 

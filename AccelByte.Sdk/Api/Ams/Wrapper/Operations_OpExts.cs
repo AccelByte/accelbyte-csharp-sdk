@@ -13,13 +13,22 @@ namespace AccelByte.Sdk.Api
     public static class AmsOperations_OpExts
     {
         public static void Execute(
-            this BasicHealthCheck.BasicHealthCheckBuilder builder
+            this Func2.Func2Builder builder
         )
         {
-            BasicHealthCheck op = builder.Build(
+            Func2 op = builder.Build(
             );
 
-            ((Ams.Wrapper.Operations)builder.WrapperObject!).BasicHealthCheck(op);
+            ((Ams.Wrapper.Operations)builder.WrapperObject!).Func2(op);
+        }
+        public static void Execute(
+            this PortalHealthCheck.PortalHealthCheckBuilder builder
+        )
+        {
+            PortalHealthCheck op = builder.Build(
+            );
+
+            ((Ams.Wrapper.Operations)builder.WrapperObject!).PortalHealthCheck(op);
         }
     }
 }

@@ -13,13 +13,13 @@ namespace AccelByte.Sdk.Api
     public static class AmsFleetCommander_OpExts
     {
         public static void Execute(
-            this Func1.Func1Builder builder
+            this Func3.Func3Builder builder
         )
         {
-            Func1 op = builder.Build(
+            Func3 op = builder.Build(
             );
 
-            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1(op);
+            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func3(op);
         }
     }
 }

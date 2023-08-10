@@ -19,13 +19,13 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
 
         #region Operation Builders
-        public Func1.Func1Builder Func1Op
+        public Func3.Func3Builder Func3Op
         {
-            get { return Operation.Func1.Builder.SetWrapperObject(this); }
+            get { return Operation.Func3.Builder.SetWrapperObject(this); }
         }
         #endregion
 
-        public void Func1(Func1 input)
+        public void Func3(Func3 input)
         {
             var response = _sdk.RunRequest(input);
 

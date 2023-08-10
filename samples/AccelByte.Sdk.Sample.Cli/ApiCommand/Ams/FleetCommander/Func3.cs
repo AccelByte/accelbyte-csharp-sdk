@@ -19,35 +19,35 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "basichealthcheck")]
-    public class BasicHealthCheckCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "func3")]
+    public class Func3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName { get { return "BasicHealthCheck"; } }
+        public string OperationName { get { return "Func3"; } }
 
-        public BasicHealthCheckCommand(AccelByteSDK sdk)
+        public Func3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Operations(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.BasicHealthCheck.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.Func3.Builder;
 
 
 
-            BasicHealthCheck operation = opBuilder.Build(
+
+
+            Func3 operation = opBuilder.Build(
             );
 
 
-            wrapper.BasicHealthCheck(operation);
+            wrapper.Func3(operation);
             return String.Empty;
         }
     }

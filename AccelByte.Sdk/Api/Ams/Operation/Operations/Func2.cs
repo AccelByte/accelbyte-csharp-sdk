@@ -14,32 +14,32 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// BasicHealthCheck
+    /// func2
     /// </summary>
-    public class BasicHealthCheck : AccelByte.Sdk.Core.Operation
+    public class Func2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static BasicHealthCheckBuilder Builder { get => new BasicHealthCheckBuilder(); }
+        public static Func2Builder Builder { get => new Func2Builder(); }
 
-        public class BasicHealthCheckBuilder
-            : OperationBuilder<BasicHealthCheckBuilder>
+        public class Func2Builder
+            : OperationBuilder<Func2Builder>
         {
 
 
 
 
 
-            internal BasicHealthCheckBuilder() { }
+            internal Func2Builder() { }
 
 
 
 
 
 
-            public BasicHealthCheck Build(
+            public Func2 Build(
             )
             {
-                BasicHealthCheck op = new BasicHealthCheck(this
+                Func2 op = new Func2(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private BasicHealthCheck(BasicHealthCheckBuilder builder
+        private Func2(Func2Builder builder
         )
         {
 
@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         }
         #endregion
 
-        public BasicHealthCheck(
+        public Func2(
         )
         {
 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/healthz";
+        public override string Path => "/ams/healthz";
 
         public override HttpMethod Method => HttpMethod.Get;
 

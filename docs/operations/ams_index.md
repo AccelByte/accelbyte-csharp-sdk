@@ -4,6 +4,12 @@
 
 ## Operations
 
+### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/healthz` | GET | Func2 | [Func2](../../AccelByte.Sdk/Api/Ams/Operation/Operations/Func2.cs) | [Func2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/Func2.cs) |
+| `/healthz` | GET | PortalHealthCheck | [PortalHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/Operations/PortalHealthCheck.cs) | [PortalHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/PortalHealthCheck.cs) |
+
 ### Account Wrapper:  [Account](../../AccelByte.Sdk/Api/Ams/Wrapper/Account.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -52,17 +58,16 @@
 ### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ams/version` | GET | Func1 | [Func1](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func1.cs) | [Func1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func1.cs) |
-
-### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/healthz` | GET | BasicHealthCheck | [BasicHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/Operations/BasicHealthCheck.cs) | [BasicHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/BasicHealthCheck.cs) |
+| `/ams/version` | GET | Func3 | [Func3](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func3.cs) | [Func3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func3.cs) |
 
 
 &nbsp;  
 
 ## Operations with Generic Response
+
+### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### Account Wrapper:  [Account](../../AccelByte.Sdk/Api/Ams/Wrapper/Account.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -89,10 +94,6 @@
 |---|---|---|---|---|
 
 ### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
-### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

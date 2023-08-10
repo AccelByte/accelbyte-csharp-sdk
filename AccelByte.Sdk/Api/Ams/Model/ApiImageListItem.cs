@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiImageListItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 

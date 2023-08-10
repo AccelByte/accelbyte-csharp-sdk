@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public Operations Operations
+        {
+            get
+            {
+                if (_Operations == null)
+                    _Operations = new Operations(_SdkObject);
+                return _Operations;
+            }
+        }
+        private Operations? _Operations = null;
+
         public Account Account
         {
             get
@@ -89,17 +100,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private FleetCommander? _FleetCommander = null;
-
-        public Operations Operations
-        {
-            get
-            {
-                if (_Operations == null)
-                    _Operations = new Operations(_SdkObject);
-                return _Operations;
-            }
-        }
-        private Operations? _Operations = null;
 
         internal AmsSdkWrappers(AccelByteSDK sdk)
         {
