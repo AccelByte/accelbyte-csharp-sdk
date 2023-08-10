@@ -64,6 +64,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).TokenIntrospectionV3(op);
         }
+        public static Iam.Model.OauthcommonJWKSet? Execute(
+            this GetJWKSV3.GetJWKSV3Builder builder
+        )
+        {
+            GetJWKSV3 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).GetJWKSV3(op);
+        }
         public static void Execute(
             this SendMFAAuthenticationCode.SendMFAAuthenticationCodeBuilder builder,
             string clientId,

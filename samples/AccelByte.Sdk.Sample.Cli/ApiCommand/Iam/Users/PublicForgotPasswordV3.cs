@@ -19,47 +19,44 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publicbulkgetusers")]
-    public class PublicBulkGetUsersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicforgotpasswordv3")]
+    public class PublicForgotPasswordV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicBulkGetUsers"; } }
+        public string OperationName { get { return "PublicForgotPasswordV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserIDsRequest Body { get; set; } = new ModelUserIDsRequest();
+        public ModelForgotPasswordRequestV3 Body { get; set; } = new ModelForgotPasswordRequestV3();
 
-        public PublicBulkGetUsersCommand(AccelByteSDK sdk)
+        public PublicForgotPasswordV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicBulkGetUsers.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicForgotPasswordV3.Builder;
 
 
 
-            PublicBulkGetUsers operation = opBuilder.Build(
+
+
+            PublicForgotPasswordV3 operation = opBuilder.Build(
                 Body,
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelListBulkUserResponse? response = wrapper.PublicBulkGetUsers(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.PublicForgotPasswordV3(operation);
+            return String.Empty;
         }
     }
 }

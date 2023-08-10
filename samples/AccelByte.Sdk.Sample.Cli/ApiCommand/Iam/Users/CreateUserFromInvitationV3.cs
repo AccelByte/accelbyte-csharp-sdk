@@ -19,43 +19,47 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "publiccreateuserv3")]
-    public class PublicCreateUserV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "createuserfrominvitationv3")]
+    public class CreateUserFromInvitationV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "PublicCreateUserV3"; } }
+        public string OperationName { get { return "CreateUserFromInvitationV3"; } }
+
+        [SdkCommandArgument("invitationId")]
+        public string InvitationId { get; set; } = String.Empty;
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserCreateRequestV3 Body { get; set; } = new ModelUserCreateRequestV3();
+        public ModelUserCreateFromInvitationRequestV3 Body { get; set; } = new ModelUserCreateFromInvitationRequestV3();
 
-        public PublicCreateUserV3Command(AccelByteSDK sdk)
+        public CreateUserFromInvitationV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicCreateUserV3.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.CreateUserFromInvitationV3.Builder;
 
 
 
-            PublicCreateUserV3 operation = opBuilder.Build(
+
+
+            CreateUserFromInvitationV3 operation = opBuilder.Build(
                 Body,
+                InvitationId,
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelUserCreateResponseV3? response = wrapper.PublicCreateUserV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelUserCreateResponseV3? response = wrapper.CreateUserFromInvitationV3(operation);
             if (response == null)
                 return "No response from server.";
 

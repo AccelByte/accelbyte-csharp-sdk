@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Sample.TicTacToe
         public string GetUsername(string userId)
         {
             ModelPublicUserResponseV3? userInfo =
-                _Sdk.Iam.UsersPublic.PublicGetUserByUserIdV3Op
+                _Sdk.Iam.Users.PublicGetUserByUserIdV3Op
                 .Execute(_Sdk.Namespace, userId);
             if (userInfo == null)
                 throw new Exception("NULL userInfo");

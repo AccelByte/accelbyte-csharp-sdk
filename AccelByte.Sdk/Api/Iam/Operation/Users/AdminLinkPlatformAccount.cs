@@ -22,13 +22,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// Force linking platform account to user User Account. This endpoint intended for admin to forcefully link account to user.
-    /// By default, these cases are not allowed
-    /// 
-    /// 
-    ///                 * The platform account current is linked by another account
-    /// 
-    /// 
-    ///                 * The target account ever linked this platform's another account
     /// </summary>
     public class AdminLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {
@@ -39,20 +32,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<AdminLinkPlatformAccountBuilder>
         {
 
-            public bool? SkipConflict { get; set; }
-
 
 
 
 
             internal AdminLinkPlatformAccountBuilder() { }
 
-
-            public AdminLinkPlatformAccountBuilder SetSkipConflict(bool _skipConflict)
-            {
-                SkipConflict = _skipConflict;
-                return this;
-            }
 
 
 
@@ -86,7 +71,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
-            if (builder.SkipConflict != null) QueryParams["skipConflict"] = Convert.ToString(builder.SkipConflict)!;
 
 
 
@@ -95,21 +79,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
         public AdminLinkPlatformAccount(
             string namespace_,
             string userId,
-            bool? skipConflict,
             Model.ModelLinkPlatformAccountRequest body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
-            if (skipConflict != null) QueryParams["skipConflict"] = Convert.ToString(skipConflict)!;
 
 
 
@@ -118,7 +99,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
 
         public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/link";
@@ -130,7 +110,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
-        public override string? Security { get; set; } = "Basic";
+        public override string? Security { get; set; } = "Bearer";
 
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

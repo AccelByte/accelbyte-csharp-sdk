@@ -14,49 +14,59 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// PublicBulkGetUsers
+    /// PublicCreateUserV3
     ///
     /// 
     /// 
-    /// Notes:
+    /// 
+    /// Available Authentication Types:
     /// 
     /// 
     /// 
     /// 
-    ///                   * This endpoint bulk get users' basic info by userId, max allowed 100 at a time
+    ///                   1. EMAILPASSWD : an authentication type used for new user registration through email.
     /// 
     /// 
-    ///                   * If namespace is game, will search by game user Id, other wise will search by publisher namespace
     /// 
     /// 
-    ///                   * Result will include displayName(if it exists)
+    /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// This endpoint support accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
     /// </summary>
-    public class PublicBulkGetUsers : AccelByte.Sdk.Core.Operation
+    public class PublicCreateUserV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicBulkGetUsersBuilder Builder { get => new PublicBulkGetUsersBuilder(); }
+        public static PublicCreateUserV3Builder Builder { get => new PublicCreateUserV3Builder(); }
 
-        public class PublicBulkGetUsersBuilder
-            : OperationBuilder<PublicBulkGetUsersBuilder>
+        public class PublicCreateUserV3Builder
+            : OperationBuilder<PublicCreateUserV3Builder>
         {
 
 
 
 
 
-            internal PublicBulkGetUsersBuilder() { }
+            internal PublicCreateUserV3Builder() { }
 
 
 
 
 
 
-            public PublicBulkGetUsers Build(
-                ModelUserIDsRequest body,
+            public PublicCreateUserV3 Build(
+                ModelUserCreateRequestV3 body,
                 string namespace_
             )
             {
-                PublicBulkGetUsers op = new PublicBulkGetUsers(this,
+                PublicCreateUserV3 op = new PublicCreateUserV3(this,
                     body,
                     namespace_
                 );
@@ -68,8 +78,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
         }
 
-        private PublicBulkGetUsers(PublicBulkGetUsersBuilder builder,
-            ModelUserIDsRequest body,
+        private PublicCreateUserV3(PublicCreateUserV3Builder builder,
+            ModelUserCreateRequestV3 body,
             string namespace_
         )
         {
@@ -82,12 +92,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             BodyParams = body;
 
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public PublicBulkGetUsers(
+        public PublicCreateUserV3(
             string namespace_,
-            Model.ModelUserIDsRequest body
+            Model.ModelUserCreateRequestV3 body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -99,9 +110,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             BodyParams = body;
 
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/iam/v3/public/namespaces/{namespace}/users/bulk/basic";
+        public override string Path => "/iam/v3/public/namespaces/{namespace}/users";
 
         public override HttpMethod Method => HttpMethod.Post;
 
@@ -112,7 +124,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelListBulkUserResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelUserCreateResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -121,13 +133,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelListBulkUserResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelUserCreateResponseV3>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelListBulkUserResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelUserCreateResponseV3>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelListBulkUserResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelUserCreateResponseV3>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

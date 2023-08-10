@@ -19,47 +19,51 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "getadmininvitationv3")]
-    public class GetAdminInvitationV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publicgetuserbyuseridv3")]
+    public class PublicGetUserByUserIdV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "GetAdminInvitationV3"; } }
-
-        [SdkCommandArgument("invitationId")]
-        public string InvitationId { get; set; } = String.Empty;
+        public string OperationName { get { return "PublicGetUserByUserIdV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public GetAdminInvitationV3Command(AccelByteSDK sdk)
+        [SdkCommandArgument("userId")]
+        public string UserId { get; set; } = String.Empty;
+
+        public PublicGetUserByUserIdV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.UsersPublic(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.GetAdminInvitationV3.Builder;
-
-
-
+#pragma warning disable ab_deprecated_operation
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicGetUserByUserIdV3.Builder;
 
 
-            GetAdminInvitationV3 operation = opBuilder.Build(
-                InvitationId,
-                Namespace
+
+
+
+            PublicGetUserByUserIdV3 operation = opBuilder.Build(
+                Namespace,
+                UserId
             );
 
+#pragma warning restore ab_deprecated_operation
 
-            AccelByte.Sdk.Api.Iam.Model.ModelUserInvitationV3? response = wrapper.GetAdminInvitationV3(operation);
+#pragma warning disable ab_deprecated_operation_wrapper
+            AccelByte.Sdk.Api.Iam.Model.ModelPublicUserResponseV3? response = wrapper.PublicGetUserByUserIdV3(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -1754,6 +1754,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSearchUserV3(op);
         }
+        public static Iam.Model.ModelUserCreateResponseV3? Execute(
+            this PublicCreateUserV3.PublicCreateUserV3Builder builder,
+            ModelUserCreateRequestV3 body,
+            string namespace_
+        )
+        {
+            PublicCreateUserV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicCreateUserV3(op);
+        }
         public static void Execute(
             this CheckUserAvailability.CheckUserAvailabilityBuilder builder,
             string namespace_,
@@ -1769,6 +1782,19 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).CheckUserAvailability(op);
         }
+        public static Iam.Model.ModelListBulkUserResponse? Execute(
+            this PublicBulkGetUsers.PublicBulkGetUsersBuilder builder,
+            ModelUserIDsRequest body,
+            string namespace_
+        )
+        {
+            PublicBulkGetUsers op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicBulkGetUsers(op);
+        }
         public static void Execute(
             this PublicSendRegistrationCode.PublicSendRegistrationCodeBuilder builder,
             ModelSendRegisterVerificationCodeRequest body,
@@ -1781,6 +1807,60 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendRegistrationCode(op);
+        }
+        public static void Execute(
+            this PublicVerifyRegistrationCode.PublicVerifyRegistrationCodeBuilder builder,
+            ModelVerifyRegistrationCode body,
+            string namespace_
+        )
+        {
+            PublicVerifyRegistrationCode op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicVerifyRegistrationCode(op);
+        }
+        public static void Execute(
+            this PublicForgotPasswordV3.PublicForgotPasswordV3Builder builder,
+            ModelForgotPasswordRequestV3 body,
+            string namespace_
+        )
+        {
+            PublicForgotPasswordV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordV3(op);
+        }
+        public static Iam.Model.ModelUserInvitationV3? Execute(
+            this GetAdminInvitationV3.GetAdminInvitationV3Builder builder,
+            string invitationId,
+            string namespace_
+        )
+        {
+            GetAdminInvitationV3 op = builder.Build(
+                invitationId,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).GetAdminInvitationV3(op);
+        }
+        public static Iam.Model.ModelUserCreateResponseV3? Execute(
+            this CreateUserFromInvitationV3.CreateUserFromInvitationV3Builder builder,
+            ModelUserCreateFromInvitationRequestV3 body,
+            string invitationId,
+            string namespace_
+        )
+        {
+            CreateUserFromInvitationV3 op = builder.Build(
+                body,
+                invitationId,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).CreateUserFromInvitationV3(op);
         }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this UpdateUserV3.UpdateUserV3Builder builder,
@@ -1984,6 +2064,20 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).ResetPasswordV3(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public static Iam.Model.ModelPublicUserResponseV3? Execute(
+            this PublicGetUserByUserIdV3.PublicGetUserByUserIdV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserByUserIdV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUserByUserIdV3(op);
         }
         public static Iam.Model.ModelGetUserBanV3Response? Execute(
             this PublicGetUserBanHistoryV3.PublicGetUserBanHistoryV3Builder builder,

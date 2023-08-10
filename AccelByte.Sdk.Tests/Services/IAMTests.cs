@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Tests.Services
                 DateOfBirth = "1995-01-10"
             };
 
-            ModelUserCreateResponseV3? cuResp = _Sdk.Iam.UsersPublic.PublicCreateUserV3Op
+            ModelUserCreateResponseV3? cuResp = _Sdk.Iam.Users.PublicCreateUserV3Op
                 .Execute(newUser, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(cuResp);

@@ -19,35 +19,43 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "getjwksv3")]
-    public class GetJWKSV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "publiccreateuserv3")]
+    public class PublicCreateUserV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "GetJWKSV3"; } }
+        public string OperationName { get { return "PublicCreateUserV3"; } }
 
-        public GetJWKSV3Command(AccelByteSDK sdk)
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
+
+        [SdkCommandData("body")]
+        public ModelUserCreateRequestV3 Body { get; set; } = new ModelUserCreateRequestV3();
+
+        public PublicCreateUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Public wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.OAuth20Public(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.Users wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.Users(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.GetJWKSV3.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicCreateUserV3.Builder;
 
 
 
-            GetJWKSV3 operation = opBuilder.Build(
+
+
+            PublicCreateUserV3 operation = opBuilder.Build(
+                Body,
+                Namespace
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.OauthcommonJWKSet? response = wrapper.GetJWKSV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelUserCreateResponseV3? response = wrapper.PublicCreateUserV3(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -43,5 +43,25 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetInputValidations(op);
         }
+        public static Iam.Model.ModelInputValidationsPublicResponse? Execute(
+            this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
+        )
+        {
+            PublicGetInputValidations op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidations(op);
+        }
+        public static Iam.Model.ModelInputValidationConfigVersion? Execute(
+            this PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder builder,
+            string field
+        )
+        {
+            PublicGetInputValidationByField op = builder.Build(
+                field
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationByField(op);
+        }
     }
 }

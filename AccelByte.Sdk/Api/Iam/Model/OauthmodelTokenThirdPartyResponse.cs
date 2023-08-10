@@ -12,10 +12,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("platform_token")]
         public string? PlatformToken { get; set; }
 
-        [JsonPropertyName("platform_token_expires_at")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public long? PlatformTokenExpiresAt { get; set; }
-
         [JsonPropertyName("sand_box_id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SandBoxId { get; set; }
