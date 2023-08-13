@@ -464,7 +464,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).AppendTeamGameSession<T1>(op);
         }
-        public static List<Session.Model.ApimodelsGameSessionResponse>? Execute(
+        public static Session.Model.ApimodelsGameSessionQueryResponse? Execute(
             this PublicQueryMyGameSessions.PublicQueryMyGameSessionsBuilder builder,
             string namespace_
         )
@@ -474,18 +474,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicQueryMyGameSessions(op);
-        }
-
-        public static List<Session.Model.ApimodelsGameSessionResponse<T1>>? Execute<T1>(
-            this PublicQueryMyGameSessions.PublicQueryMyGameSessionsBuilder builder,
-            string namespace_
-        )
-        {
-            PublicQueryMyGameSessions op = builder.Build(
-                namespace_
-            );
-
-            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicQueryMyGameSessions<T1>(op);
         }
     }
 }

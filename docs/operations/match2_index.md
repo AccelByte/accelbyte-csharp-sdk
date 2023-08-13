@@ -11,6 +11,11 @@
 | `/match2/healthz` | GET | GetHealthcheckInfoV1 | [GetHealthcheckInfoV1](../../AccelByte.Sdk/Api/Match2/Operation/Operations/GetHealthcheckInfoV1.cs) | [GetHealthcheckInfoV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Operations/GetHealthcheckInfoV1.cs) |
 | `/match2/version` | GET | VersionCheckHandler | [VersionCheckHandler](../../AccelByte.Sdk/Api/Match2/Operation/Operations/VersionCheckHandler.cs) | [VersionCheckHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Operations/VersionCheckHandler.cs) |
 
+### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/match2/v1/environment-variables` | GET | EnvironmentVariableList | [EnvironmentVariableList](../../AccelByte.Sdk/Api/Match2/Operation/EnvironmentVariables/EnvironmentVariableList.cs) | [EnvironmentVariableList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/EnvironmentVariables/EnvironmentVariableList.cs) |
+
 ### Backfill Wrapper:  [Backfill](../../AccelByte.Sdk/Api/Match2/Wrapper/Backfill.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -44,6 +49,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/match2/v1/namespaces/{namespace}/match-tickets` | POST | CreateMatchTicket | [CreateMatchTicket](../../AccelByte.Sdk/Api/Match2/Operation/MatchTickets/CreateMatchTicket.cs) | [CreateMatchTicket](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchTickets/CreateMatchTicket.cs) |
+| `/match2/v1/namespaces/{namespace}/match-tickets/me` | GET | GetMyMatchTickets | [GetMyMatchTickets](../../AccelByte.Sdk/Api/Match2/Operation/MatchTickets/GetMyMatchTickets.cs) | [GetMyMatchTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchTickets/GetMyMatchTickets.cs) |
 | `/match2/v1/namespaces/{namespace}/match-tickets/{ticketid}` | GET | MatchTicketDetails | [MatchTicketDetails](../../AccelByte.Sdk/Api/Match2/Operation/MatchTickets/MatchTicketDetails.cs) | [MatchTicketDetails](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchTickets/MatchTicketDetails.cs) |
 | `/match2/v1/namespaces/{namespace}/match-tickets/{ticketid}` | DELETE | DeleteMatchTicket | [DeleteMatchTicket](../../AccelByte.Sdk/Api/Match2/Operation/MatchTickets/DeleteMatchTicket.cs) | [DeleteMatchTicket](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchTickets/DeleteMatchTicket.cs) |
 
@@ -65,9 +71,14 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Backfill Wrapper:  [Backfill](../../AccelByte.Sdk/Api/Match2/Wrapper/Backfill.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/match2/v1/namespaces/{namespace}/backfill/{backfillID}/proposal/accept` | PUT | AcceptBackfill | [AcceptBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/AcceptBackfill.cs) | [AcceptBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/AcceptBackfill.cs) |
 
 ### Match-Functions Wrapper:  [MatchFunctions](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchFunctions.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -99,6 +110,7 @@
 | `api.BackfillCreateResponse` | [ApiBackfillCreateResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillCreateResponse.cs) |
 | `api.BackfillGetResponse` | [ApiBackfillGetResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillGetResponse.cs) |
 | `api.BackfillProposalResponse` | [ApiBackfillProposalResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillProposalResponse.cs) |
+| `api.ListEnvironmentVariablesResponse` | [ApiListEnvironmentVariablesResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListEnvironmentVariablesResponse.cs) |
 | `api.ListMatchFunctionsResponse` | [ApiListMatchFunctionsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchFunctionsResponse.cs) |
 | `api.ListMatchPoolsResponse` | [ApiListMatchPoolsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchPoolsResponse.cs) |
 | `api.ListRuleSetsResponse` | [ApiListRuleSetsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListRuleSetsResponse.cs) |
@@ -112,6 +124,7 @@
 | `api.MatchTicketRequest` | [ApiMatchTicketRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketRequest.cs) |
 | `api.MatchTicketResponse` | [ApiMatchTicketResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketResponse.cs) |
 | `api.MatchTicketStatus` | [ApiMatchTicketStatus](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketStatus.cs) |
+| `api.MatchTicketStatuses` | [ApiMatchTicketStatuses](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketStatuses.cs) |
 | `api.Party` | [ApiParty](../../AccelByte.Sdk/Api/Match2/Model/ApiParty.cs) |
 | `api.PlayerData` | [ApiPlayerData](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerData.cs) |
 | `api.PlayerMetricRecord` | [ApiPlayerMetricRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerMetricRecord.cs) |
@@ -121,5 +134,13 @@
 | `api.Ticket` | [ApiTicket](../../AccelByte.Sdk/Api/Match2/Model/ApiTicket.cs) |
 | `api.TicketMetricResultRecord` | [ApiTicketMetricResultRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiTicketMetricResultRecord.cs) |
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |
+| `config.EnvironmentVariable` | [ConfigEnvironmentVariable](../../AccelByte.Sdk/Api/Match2/Model/ConfigEnvironmentVariable.cs) |
+| `matchmaker.Party` | [MatchmakerParty](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerParty.cs) |
+| `matchmaker.Team` | [MatchmakerTeam](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerTeam.cs) |
+| `models.Configuration` | [ModelsConfiguration](../../AccelByte.Sdk/Api/Match2/Model/ModelsConfiguration.cs) |
+| `models.DSInformation` | [ModelsDSInformation](../../AccelByte.Sdk/Api/Match2/Model/ModelsDSInformation.cs) |
+| `models.GameSession` | [ModelsGameSession](../../AccelByte.Sdk/Api/Match2/Model/ModelsGameSession.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Match2/Model/ModelsPagination.cs) |
+| `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Match2/Model/ModelsServer.cs) |
+| `models.User` | [ModelsUser](../../AccelByte.Sdk/Api/Match2/Model/ModelsUser.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Match2/Model/ResponseError.cs) |

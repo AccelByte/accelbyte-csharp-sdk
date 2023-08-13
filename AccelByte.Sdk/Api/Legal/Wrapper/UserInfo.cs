@@ -23,10 +23,12 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.GetUserInfoStatus.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public SyncUserInfo.SyncUserInfoBuilder SyncUserInfoOp
         {
             get { return Operation.SyncUserInfo.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder InvalidateUserInfoCacheOp
         {
             get { return Operation.InvalidateUserInfoCache.Builder.SetWrapperObject(this); }
@@ -42,6 +44,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void SyncUserInfo(SyncUserInfo input)
         {
             var response = _sdk.RunRequest(input);
@@ -51,6 +55,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void InvalidateUserInfoCache(InvalidateUserInfoCache input)
         {
             var response = _sdk.RunRequest(input);
@@ -60,5 +67,6 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

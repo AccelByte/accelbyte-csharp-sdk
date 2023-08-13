@@ -16,13 +16,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// indirectBulkAcceptVersionedPolicyV2
     ///
-    ///  IMPORTANT: GOING TO DEPRECATE
-    /// 
     /// Accepts many legal policy versions all at once. Supply with localized version policy id, version policy id, policy id, userId, namespace, country code and client id to accept an agreement. This endpoint used by APIGateway during new user registration.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class IndirectBulkAcceptVersionedPolicyV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -149,25 +148,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
-            throw new HttpResponseException(code, payloadString);
-        }
-
-        public Model.AcceptAgreementResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)204)
-            {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<Model.AcceptAgreementResponse<T1>>(payload, ResponseJsonOptions);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.AcceptAgreementResponse<T1>>(payload, ResponseJsonOptions);
-            }
-
-            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

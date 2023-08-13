@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         {
             AccelByte.Sdk.Api.Legal.Wrapper.UserInfo wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.UserInfo(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.InvalidateUserInfoCache.Builder;
 
             if (Namespace != null)
@@ -51,9 +52,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             InvalidateUserInfoCache operation = opBuilder.Build(
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.InvalidateUserInfoCache(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

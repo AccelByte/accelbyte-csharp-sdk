@@ -149,6 +149,16 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public List<Model.UserDLCRecord<T1>>? GetUserDLC<T1>(GetUserDLC input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void SyncEpicGameDLC(SyncEpicGameDLC input)
         {
             var response = _sdk.RunRequest(input);

@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            List<AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse>? response = wrapper.PublicQueryMyParties(operation);
+            AccelByte.Sdk.Api.Session.Model.ApimodelsPartyQueryResponse? response = wrapper.PublicQueryMyParties(operation);
             if (response == null)
                 return "No response from server.";
 

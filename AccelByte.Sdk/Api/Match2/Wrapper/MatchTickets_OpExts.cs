@@ -25,6 +25,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchTickets)builder.WrapperObject!).CreateMatchTicket(op);
         }
+        public static Match2.Model.ApiMatchTicketStatuses? Execute(
+            this GetMyMatchTickets.GetMyMatchTicketsBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyMatchTickets op = builder.Build(
+                namespace_
+            );
+
+            return ((Match2.Wrapper.MatchTickets)builder.WrapperObject!).GetMyMatchTickets(op);
+        }
         public static Match2.Model.ApiMatchTicketStatus? Execute(
             this MatchTicketDetails.MatchTicketDetailsBuilder builder,
             string namespace_,

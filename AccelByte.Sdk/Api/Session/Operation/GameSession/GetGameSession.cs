@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// getGameSession
     ///
     /// Get game session detail.
+    /// Session will only be accessible from active players in the session, and client with the permission, except the joinability is set to OPEN.
     /// Session service has several DSInformation status to track DS request to DSMC:
     /// - NEED_TO_REQUEST: number of active players hasn't reached session's minPlayers therefore DS has not yet requested.
     /// - REQUESTED: DS is being requested to DSMC.

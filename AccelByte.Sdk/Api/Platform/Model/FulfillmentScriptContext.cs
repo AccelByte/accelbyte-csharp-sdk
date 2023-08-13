@@ -34,8 +34,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentScriptContextSource ACHIEVEMENT
             = new FulfillmentScriptContextSource("ACHIEVEMENT");
 
+        public static readonly FulfillmentScriptContextSource CONSUMEENTITLEMENT
+            = new FulfillmentScriptContextSource("CONSUME_ENTITLEMENT");
+
         public static readonly FulfillmentScriptContextSource DLC
             = new FulfillmentScriptContextSource("DLC");
+
+        public static readonly FulfillmentScriptContextSource DLCREVOCATION
+            = new FulfillmentScriptContextSource("DLC_REVOCATION");
+
+        public static readonly FulfillmentScriptContextSource EXPIRATION
+            = new FulfillmentScriptContextSource("EXPIRATION");
 
         public static readonly FulfillmentScriptContextSource GIFT
             = new FulfillmentScriptContextSource("GIFT");
@@ -43,8 +52,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentScriptContextSource IAP
             = new FulfillmentScriptContextSource("IAP");
 
+        public static readonly FulfillmentScriptContextSource ORDERREVOCATION
+            = new FulfillmentScriptContextSource("ORDER_REVOCATION");
+
         public static readonly FulfillmentScriptContextSource OTHER
             = new FulfillmentScriptContextSource("OTHER");
+
+        public static readonly FulfillmentScriptContextSource PAYMENT
+            = new FulfillmentScriptContextSource("PAYMENT");
 
         public static readonly FulfillmentScriptContextSource PROMOTION
             = new FulfillmentScriptContextSource("PROMOTION");
@@ -60,6 +75,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly FulfillmentScriptContextSource REWARD
             = new FulfillmentScriptContextSource("REWARD");
+
+        public static readonly FulfillmentScriptContextSource SELLBACK
+            = new FulfillmentScriptContextSource("SELL_BACK");
 
 
         public static implicit operator FulfillmentScriptContextSource(string value)

@@ -59,8 +59,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Match2
             );
 
 
-            wrapper.AcceptBackfill(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Match2.Model.ModelsGameSession? response = wrapper.AcceptBackfill(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

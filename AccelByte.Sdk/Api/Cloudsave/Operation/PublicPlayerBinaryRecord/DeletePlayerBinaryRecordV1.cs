@@ -7,46 +7,50 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Cloudsave.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
     /// <summary>
-    /// deleteLootBoxPluginConfig_1
+    /// deletePlayerBinaryRecordV1
     ///
-    /// Delete service plugin config.
-    /// Other detail info:
+    /// Required permission: `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [DELETE]`
+    /// Required scope: `social`
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
+    /// Delete a player binary record. Only player who own the record can delete it
     /// </summary>
-    public class DeleteLootBoxPluginConfig1 : AccelByte.Sdk.Core.Operation
+    public class DeletePlayerBinaryRecordV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static DeleteLootBoxPluginConfig1Builder Builder { get => new DeleteLootBoxPluginConfig1Builder(); }
+        public static DeletePlayerBinaryRecordV1Builder Builder { get => new DeletePlayerBinaryRecordV1Builder(); }
 
-        public class DeleteLootBoxPluginConfig1Builder
-            : OperationBuilder<DeleteLootBoxPluginConfig1Builder>
+        public class DeletePlayerBinaryRecordV1Builder
+            : OperationBuilder<DeletePlayerBinaryRecordV1Builder>
         {
 
 
 
 
 
-            internal DeleteLootBoxPluginConfig1Builder() { }
+            internal DeletePlayerBinaryRecordV1Builder() { }
 
 
 
 
 
 
-            public DeleteLootBoxPluginConfig1 Build(
-                string namespace_
+            public DeletePlayerBinaryRecordV1 Build(
+                string key,
+                string namespace_,
+                string userId
             )
             {
-                DeleteLootBoxPluginConfig1 op = new DeleteLootBoxPluginConfig1(this,
-                    namespace_
+                DeletePlayerBinaryRecordV1 op = new DeletePlayerBinaryRecordV1(this,
+                    key,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -56,11 +60,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private DeleteLootBoxPluginConfig1(DeleteLootBoxPluginConfig1Builder builder,
-            string namespace_
+        private DeletePlayerBinaryRecordV1(DeletePlayerBinaryRecordV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
         )
         {
+            PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
 
 
 
@@ -72,11 +80,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public DeleteLootBoxPluginConfig1(
-            string namespace_
+        public DeletePlayerBinaryRecordV1(
+            string key,
+            string namespace_,
+            string userId
         )
         {
+            PathParams["key"] = key;
             PathParams["namespace"] = namespace_;
+            PathParams["userId"] = userId;
 
 
 
@@ -87,11 +99,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation";
+        public override string Path => "/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}";
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

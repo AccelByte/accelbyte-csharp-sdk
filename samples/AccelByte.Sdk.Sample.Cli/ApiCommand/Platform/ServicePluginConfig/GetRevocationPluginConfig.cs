@@ -19,19 +19,19 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "getlootboxpluginconfig1")]
-    public class GetLootBoxPluginConfig1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "getrevocationpluginconfig")]
+    public class GetRevocationPluginConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "GetLootBoxPluginConfig1"; } }
+        public string OperationName { get { return "GetRevocationPluginConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public GetLootBoxPluginConfig1Command(AccelByteSDK sdk)
+        public GetRevocationPluginConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -40,18 +40,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GetLootBoxPluginConfig1.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GetRevocationPluginConfig.Builder;
 
 
 
 
 
-            GetLootBoxPluginConfig1 operation = opBuilder.Build(
+            GetRevocationPluginConfig operation = opBuilder.Build(
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigInfo? response = wrapper.GetLootBoxPluginConfig1(operation);
+            AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigInfo? response = wrapper.GetRevocationPluginConfig(operation);
             if (response == null)
                 return "No response from server.";
 

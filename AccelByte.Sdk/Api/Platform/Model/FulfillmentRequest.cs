@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Metadata { get; set; }
+
         [JsonPropertyName("order")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public OrderSummary? Order { get; set; }
@@ -66,6 +70,66 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class FulfillmentRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("duration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Duration { get; set; }
+
+        [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? EndDate { get; set; }
+
+        [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("itemSku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemSku { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+        [JsonPropertyName("order")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public OrderSummary? Order { get; set; }
+
+        [JsonPropertyName("orderNo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? OrderNo { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FulfillmentRequestOrigin? Origin { get; set; }
+
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get; set; }
+
+        [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Region { get; set; }
+
+        [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FulfillmentRequestSource? Source { get; set; }
+
+        [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? StartDate { get; set; }
+
+        [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StoreId { get; set; }
+
+    }
 
 
     public class FulfillmentRequestOrigin : StringEnum<FulfillmentRequestOrigin>
@@ -121,8 +185,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentRequestSource ACHIEVEMENT
             = new FulfillmentRequestSource("ACHIEVEMENT");
 
+        public static readonly FulfillmentRequestSource CONSUMEENTITLEMENT
+            = new FulfillmentRequestSource("CONSUME_ENTITLEMENT");
+
         public static readonly FulfillmentRequestSource DLC
             = new FulfillmentRequestSource("DLC");
+
+        public static readonly FulfillmentRequestSource DLCREVOCATION
+            = new FulfillmentRequestSource("DLC_REVOCATION");
+
+        public static readonly FulfillmentRequestSource EXPIRATION
+            = new FulfillmentRequestSource("EXPIRATION");
 
         public static readonly FulfillmentRequestSource GIFT
             = new FulfillmentRequestSource("GIFT");
@@ -130,8 +203,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentRequestSource IAP
             = new FulfillmentRequestSource("IAP");
 
+        public static readonly FulfillmentRequestSource ORDERREVOCATION
+            = new FulfillmentRequestSource("ORDER_REVOCATION");
+
         public static readonly FulfillmentRequestSource OTHER
             = new FulfillmentRequestSource("OTHER");
+
+        public static readonly FulfillmentRequestSource PAYMENT
+            = new FulfillmentRequestSource("PAYMENT");
 
         public static readonly FulfillmentRequestSource PROMOTION
             = new FulfillmentRequestSource("PROMOTION");
@@ -147,6 +226,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly FulfillmentRequestSource REWARD
             = new FulfillmentRequestSource("REWARD");
+
+        public static readonly FulfillmentRequestSource SELLBACK
+            = new FulfillmentRequestSource("SELL_BACK");
 
 
         public static implicit operator FulfillmentRequestSource(string value)

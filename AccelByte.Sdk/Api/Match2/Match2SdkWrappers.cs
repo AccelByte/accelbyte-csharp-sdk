@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private Operations? _Operations = null;
 
+        public EnvironmentVariables EnvironmentVariables
+        {
+            get
+            {
+                if (_EnvironmentVariables == null)
+                    _EnvironmentVariables = new EnvironmentVariables(_SdkObject);
+                return _EnvironmentVariables;
+            }
+        }
+        private EnvironmentVariables? _EnvironmentVariables = null;
+
         public Backfill Backfill
         {
             get

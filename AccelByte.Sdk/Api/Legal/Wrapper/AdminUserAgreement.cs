@@ -34,15 +34,5 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-
-        public Model.AcceptAgreementResponse<T1>? IndirectBulkAcceptVersionedPolicy<T1>(IndirectBulkAcceptVersionedPolicy input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1>(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
     }
 }

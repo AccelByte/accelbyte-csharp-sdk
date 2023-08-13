@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private DSMCDefaultConfiguration? _DSMCDefaultConfiguration = null;
 
+        public EnvironmentVariable EnvironmentVariable
+        {
+            get
+            {
+                if (_EnvironmentVariable == null)
+                    _EnvironmentVariable = new EnvironmentVariable(_SdkObject);
+                return _EnvironmentVariable;
+            }
+        }
+        private EnvironmentVariable? _EnvironmentVariable = null;
+
         public ConfigurationTemplate ConfigurationTemplate
         {
             get

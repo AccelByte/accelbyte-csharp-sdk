@@ -17,13 +17,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// indirectBulkAcceptVersionedPolicy_1
     ///
     /// Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. This endpoint used by Authentication Service during new user registration.
-    /// 
-    /// Available Extra Information to return:
-    /// 
-    /// 
-    ///   * userIds : List of userId mapping ( IMPORTANT: GOING TO DEPRECATE )
-    /// 
     /// Other detail info:
+    /// 
     ///   * Required permission : login user
     /// </summary>
     public class IndirectBulkAcceptVersionedPolicy1 : AccelByte.Sdk.Core.Operation
@@ -134,25 +129,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
-            throw new HttpResponseException(code, payloadString);
-        }
-
-        public Model.AcceptAgreementResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)204)
-            {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<Model.AcceptAgreementResponse<T1>>(payload, ResponseJsonOptions);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.AcceptAgreementResponse<T1>>(payload, ResponseJsonOptions);
-            }
-
-            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

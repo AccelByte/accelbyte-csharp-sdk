@@ -70,17 +70,17 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeleteServicePluginConfig.Builder.SetWrapperObject(this); }
         }
-        public GetLootBoxPluginConfig1.GetLootBoxPluginConfig1Builder GetLootBoxPluginConfig1Op
+        public GetRevocationPluginConfig.GetRevocationPluginConfigBuilder GetRevocationPluginConfigOp
         {
-            get { return Operation.GetLootBoxPluginConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.GetRevocationPluginConfig.Builder.SetWrapperObject(this); }
         }
         public UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder UpdateRevocationPluginConfigOp
         {
             get { return Operation.UpdateRevocationPluginConfig.Builder.SetWrapperObject(this); }
         }
-        public DeleteLootBoxPluginConfig1.DeleteLootBoxPluginConfig1Builder DeleteLootBoxPluginConfig1Op
+        public DeleteRevocationPluginConfig.DeleteRevocationPluginConfigBuilder DeleteRevocationPluginConfigOp
         {
-            get { return Operation.DeleteLootBoxPluginConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.DeleteRevocationPluginConfig.Builder.SetWrapperObject(this); }
         }
         public UploadRevocationPluginConfigCert.UploadRevocationPluginConfigCertBuilder UploadRevocationPluginConfigCertOp
         {
@@ -205,7 +205,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
-        public Model.RevocationPluginConfigInfo? GetLootBoxPluginConfig1(GetLootBoxPluginConfig1 input)
+        public Model.RevocationPluginConfigInfo? GetRevocationPluginConfig(GetRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -223,7 +223,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteLootBoxPluginConfig1(DeleteLootBoxPluginConfig1 input)
+        public void DeleteRevocationPluginConfig(DeleteRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
 

@@ -145,5 +145,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenResponseV3(op);
         }
+        public static Iam.Model.OauthmodelPlatformTokenRefreshResponseV3? Execute(
+            this PlatformTokenRefreshV3.PlatformTokenRefreshV3Builder builder,
+            string platformToken,
+            string platformId
+        )
+        {
+            PlatformTokenRefreshV3 op = builder.Build(
+                platformToken,
+                platformId
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformTokenRefreshV3(op);
+        }
     }
 }

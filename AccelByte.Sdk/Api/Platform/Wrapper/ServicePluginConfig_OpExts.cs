@@ -148,15 +148,15 @@ namespace AccelByte.Sdk.Api
             ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).DeleteServicePluginConfig(op);
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
-            this GetLootBoxPluginConfig1.GetLootBoxPluginConfig1Builder builder,
+            this GetRevocationPluginConfig.GetRevocationPluginConfigBuilder builder,
             string namespace_
         )
         {
-            GetLootBoxPluginConfig1 op = builder.Build(
+            GetRevocationPluginConfig op = builder.Build(
                 namespace_
             );
 
-            return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).GetLootBoxPluginConfig1(op);
+            return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).GetRevocationPluginConfig(op);
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
             this UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder builder,
@@ -170,15 +170,15 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UpdateRevocationPluginConfig(op);
         }
         public static void Execute(
-            this DeleteLootBoxPluginConfig1.DeleteLootBoxPluginConfig1Builder builder,
+            this DeleteRevocationPluginConfig.DeleteRevocationPluginConfigBuilder builder,
             string namespace_
         )
         {
-            DeleteLootBoxPluginConfig1 op = builder.Build(
+            DeleteRevocationPluginConfig op = builder.Build(
                 namespace_
             );
 
-            ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).DeleteLootBoxPluginConfig1(op);
+            ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).DeleteRevocationPluginConfig(op);
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
             this UploadRevocationPluginConfigCert.UploadRevocationPluginConfigCertBuilder builder,

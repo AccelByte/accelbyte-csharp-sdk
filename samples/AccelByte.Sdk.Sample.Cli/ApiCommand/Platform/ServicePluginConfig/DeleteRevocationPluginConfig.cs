@@ -19,19 +19,19 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "deletelootboxpluginconfig1")]
-    public class DeleteLootBoxPluginConfig1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "deleterevocationpluginconfig")]
+    public class DeleteRevocationPluginConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "DeleteLootBoxPluginConfig1"; } }
+        public string OperationName { get { return "DeleteRevocationPluginConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public DeleteLootBoxPluginConfig1Command(AccelByteSDK sdk)
+        public DeleteRevocationPluginConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -40,18 +40,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DeleteLootBoxPluginConfig1.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DeleteRevocationPluginConfig.Builder;
 
 
 
 
 
-            DeleteLootBoxPluginConfig1 operation = opBuilder.Build(
+            DeleteRevocationPluginConfig operation = opBuilder.Build(
                 Namespace
             );
 
 
-            wrapper.DeleteLootBoxPluginConfig1(operation);
+            wrapper.DeleteRevocationPluginConfig(operation);
             return String.Empty;
         }
     }

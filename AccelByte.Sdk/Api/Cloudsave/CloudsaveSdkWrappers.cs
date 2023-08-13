@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminRecord? _AdminRecord = null;
 
+        public AdminGameBinaryRecord AdminGameBinaryRecord
+        {
+            get
+            {
+                if (_AdminGameBinaryRecord == null)
+                    _AdminGameBinaryRecord = new AdminGameBinaryRecord(_SdkObject);
+                return _AdminGameBinaryRecord;
+            }
+        }
+        private AdminGameBinaryRecord? _AdminGameBinaryRecord = null;
+
         public AdminConcurrentRecord AdminConcurrentRecord
         {
             get
@@ -68,6 +79,28 @@ namespace AccelByte.Sdk.Core
         }
         private AdminPlayerRecord? _AdminPlayerRecord = null;
 
+        public AdminPlayerBinaryRecord AdminPlayerBinaryRecord
+        {
+            get
+            {
+                if (_AdminPlayerBinaryRecord == null)
+                    _AdminPlayerBinaryRecord = new AdminPlayerBinaryRecord(_SdkObject);
+                return _AdminPlayerBinaryRecord;
+            }
+        }
+        private AdminPlayerBinaryRecord? _AdminPlayerBinaryRecord = null;
+
+        public PublicGameBinaryRecord PublicGameBinaryRecord
+        {
+            get
+            {
+                if (_PublicGameBinaryRecord == null)
+                    _PublicGameBinaryRecord = new PublicGameBinaryRecord(_SdkObject);
+                return _PublicGameBinaryRecord;
+            }
+        }
+        private PublicGameBinaryRecord? _PublicGameBinaryRecord = null;
+
         public ConcurrentRecord ConcurrentRecord
         {
             get
@@ -89,6 +122,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PublicGameRecord? _PublicGameRecord = null;
+
+        public PublicPlayerBinaryRecord PublicPlayerBinaryRecord
+        {
+            get
+            {
+                if (_PublicPlayerBinaryRecord == null)
+                    _PublicPlayerBinaryRecord = new PublicPlayerBinaryRecord(_SdkObject);
+                return _PublicPlayerBinaryRecord;
+            }
+        }
+        private PublicPlayerBinaryRecord? _PublicPlayerBinaryRecord = null;
 
         public PublicPlayerRecord PublicPlayerRecord
         {

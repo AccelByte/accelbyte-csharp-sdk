@@ -135,7 +135,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ApimodelsGameSessionResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApimodelsGameSessionQueryResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -144,36 +144,17 @@ namespace AccelByte.Sdk.Api.Session.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<List<Model.ApimodelsGameSessionResponse>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApimodelsGameSessionQueryResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<List<Model.ApimodelsGameSessionResponse>>(payload);
+                    return JsonSerializer.Deserialize<Model.ApimodelsGameSessionQueryResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsGameSessionResponse>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsGameSessionQueryResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
-            throw new HttpResponseException(code, payloadString);
-        }
-
-        public List<Model.ApimodelsGameSessionResponse<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {
-            if (code == (HttpStatusCode)204)
-            {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsGameSessionResponse<T1>>>(payload, ResponseJsonOptions);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<List<Model.ApimodelsGameSessionResponse<T1>>>(payload, ResponseJsonOptions);
-            }
-
-            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

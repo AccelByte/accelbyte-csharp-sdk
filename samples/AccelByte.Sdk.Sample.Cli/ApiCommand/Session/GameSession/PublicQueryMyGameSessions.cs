@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            List<AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse>? response = wrapper.PublicQueryMyGameSessions(operation);
+            AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionQueryResponse? response = wrapper.PublicQueryMyGameSessions(operation);
             if (response == null)
                 return "No response from server.";
 

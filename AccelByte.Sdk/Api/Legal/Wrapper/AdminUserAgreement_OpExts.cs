@@ -29,23 +29,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.AdminUserAgreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy(op);
         }
-
-        public static Legal.Model.AcceptAgreementResponse<T1>? Execute<T1>(
-            this IndirectBulkAcceptVersionedPolicy.IndirectBulkAcceptVersionedPolicyBuilder builder,
-            string namespace_,
-            string userId,
-            string clientId,
-            string countryCode
-        )
-        {
-            IndirectBulkAcceptVersionedPolicy op = builder.Build(
-                namespace_,
-                userId,
-                clientId,
-                countryCode
-            );
-
-            return ((Legal.Wrapper.AdminUserAgreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy<T1>(op);
-        }
     }
 }

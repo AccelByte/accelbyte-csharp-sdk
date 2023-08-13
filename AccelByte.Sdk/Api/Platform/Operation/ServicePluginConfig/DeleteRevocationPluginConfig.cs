@@ -14,38 +14,38 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// getLootBoxPluginConfig_1
+    /// deleteRevocationPluginConfig
     ///
-    /// Get revocation plugin config.
+    /// Delete service plugin config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION , action=2 (READ)
+    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
     /// </summary>
-    public class GetLootBoxPluginConfig1 : AccelByte.Sdk.Core.Operation
+    public class DeleteRevocationPluginConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetLootBoxPluginConfig1Builder Builder { get => new GetLootBoxPluginConfig1Builder(); }
+        public static DeleteRevocationPluginConfigBuilder Builder { get => new DeleteRevocationPluginConfigBuilder(); }
 
-        public class GetLootBoxPluginConfig1Builder
-            : OperationBuilder<GetLootBoxPluginConfig1Builder>
+        public class DeleteRevocationPluginConfigBuilder
+            : OperationBuilder<DeleteRevocationPluginConfigBuilder>
         {
 
 
 
 
 
-            internal GetLootBoxPluginConfig1Builder() { }
+            internal DeleteRevocationPluginConfigBuilder() { }
 
 
 
 
 
 
-            public GetLootBoxPluginConfig1 Build(
+            public DeleteRevocationPluginConfig Build(
                 string namespace_
             )
             {
-                GetLootBoxPluginConfig1 op = new GetLootBoxPluginConfig1(this,
+                DeleteRevocationPluginConfig op = new DeleteRevocationPluginConfig(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -56,7 +56,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private GetLootBoxPluginConfig1(GetLootBoxPluginConfig1Builder builder,
+        private DeleteRevocationPluginConfig(DeleteRevocationPluginConfigBuilder builder,
             string namespace_
         )
         {
@@ -72,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public GetLootBoxPluginConfig1(
+        public DeleteRevocationPluginConfig(
             string namespace_
         )
         {
@@ -89,31 +89,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override string Path => "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Delete;
 
         public override string[] Consumes => new string[] { };
 
-        public override string[] Produces => new string[] { };
+        public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.RevocationPluginConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload, ResponseJsonOptions);
-                else
-                    return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.RevocationPluginConfigInfo>(payload, ResponseJsonOptions);
+                return;
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

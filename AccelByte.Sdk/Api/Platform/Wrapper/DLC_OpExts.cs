@@ -106,6 +106,20 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC(op);
         }
+
+        public static List<Platform.Model.UserDLCRecord<T1>>? Execute<T1>(
+            this GetUserDLC.GetUserDLCBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserDLC op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC<T1>(op);
+        }
         public static void Execute(
             this SyncEpicGameDLC.SyncEpicGameDLCBuilder builder,
             string namespace_,

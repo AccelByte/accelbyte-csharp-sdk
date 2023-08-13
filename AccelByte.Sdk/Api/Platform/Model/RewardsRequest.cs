@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class RewardsRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Metadata { get; set; }
+
         [JsonPropertyName("origin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
@@ -26,6 +30,26 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class RewardsRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RewardsRequestOrigin? Origin { get; set; }
+
+        [JsonPropertyName("rewards")]
+        public List<PlatformReward>? Rewards { get; set; }
+
+        [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RewardsRequestSource? Source { get; set; }
+
+    }
 
 
     public class RewardsRequestOrigin : StringEnum<RewardsRequestOrigin>
@@ -81,8 +105,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RewardsRequestSource ACHIEVEMENT
             = new RewardsRequestSource("ACHIEVEMENT");
 
+        public static readonly RewardsRequestSource CONSUMEENTITLEMENT
+            = new RewardsRequestSource("CONSUME_ENTITLEMENT");
+
         public static readonly RewardsRequestSource DLC
             = new RewardsRequestSource("DLC");
+
+        public static readonly RewardsRequestSource DLCREVOCATION
+            = new RewardsRequestSource("DLC_REVOCATION");
+
+        public static readonly RewardsRequestSource EXPIRATION
+            = new RewardsRequestSource("EXPIRATION");
 
         public static readonly RewardsRequestSource GIFT
             = new RewardsRequestSource("GIFT");
@@ -90,8 +123,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RewardsRequestSource IAP
             = new RewardsRequestSource("IAP");
 
+        public static readonly RewardsRequestSource ORDERREVOCATION
+            = new RewardsRequestSource("ORDER_REVOCATION");
+
         public static readonly RewardsRequestSource OTHER
             = new RewardsRequestSource("OTHER");
+
+        public static readonly RewardsRequestSource PAYMENT
+            = new RewardsRequestSource("PAYMENT");
 
         public static readonly RewardsRequestSource PROMOTION
             = new RewardsRequestSource("PROMOTION");
@@ -107,6 +146,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly RewardsRequestSource REWARD
             = new RewardsRequestSource("REWARD");
+
+        public static readonly RewardsRequestSource SELLBACK
+            = new RewardsRequestSource("SELL_BACK");
 
 
         public static implicit operator RewardsRequestSource(string value)

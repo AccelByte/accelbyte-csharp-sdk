@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.UserInfo)builder.WrapperObject!).GetUserInfoStatus(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SyncUserInfo.SyncUserInfoBuilder builder,
             string namespace_
@@ -32,6 +33,7 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.UserInfo)builder.WrapperObject!).SyncUserInfo(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
         )

@@ -23,12 +23,49 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public DebitByCurrencyCodeRequestBalanceOrigin? BalanceOrigin { get; set; }
 
+        [JsonPropertyName("balanceSource")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public DebitByCurrencyCodeRequestBalanceSource? BalanceSource { get; set; }
+
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Metadata { get; set; }
+
         [JsonPropertyName("reason")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
     }
 
+    public class DebitByCurrencyCodeRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("allowOverdraft")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AllowOverdraft { get; set; }
+
+        [JsonPropertyName("amount")]
+        public long? Amount { get; set; }
+
+        [JsonPropertyName("balanceOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public DebitByCurrencyCodeRequestBalanceOrigin? BalanceOrigin { get; set; }
+
+        [JsonPropertyName("balanceSource")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public DebitByCurrencyCodeRequestBalanceSource? BalanceSource { get; set; }
+
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+        [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Reason { get; set; }
+
+    }
 
 
     public class DebitByCurrencyCodeRequestBalanceOrigin : StringEnum<DebitByCurrencyCodeRequestBalanceOrigin>
@@ -73,6 +110,36 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public DebitByCurrencyCodeRequestBalanceOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class DebitByCurrencyCodeRequestBalanceSource : StringEnum<DebitByCurrencyCodeRequestBalanceSource>
+    {
+        public static readonly DebitByCurrencyCodeRequestBalanceSource DLCREVOCATION
+            = new DebitByCurrencyCodeRequestBalanceSource("DLC_REVOCATION");
+
+        public static readonly DebitByCurrencyCodeRequestBalanceSource EXPIRATION
+            = new DebitByCurrencyCodeRequestBalanceSource("EXPIRATION");
+
+        public static readonly DebitByCurrencyCodeRequestBalanceSource ORDERREVOCATION
+            = new DebitByCurrencyCodeRequestBalanceSource("ORDER_REVOCATION");
+
+        public static readonly DebitByCurrencyCodeRequestBalanceSource OTHER
+            = new DebitByCurrencyCodeRequestBalanceSource("OTHER");
+
+        public static readonly DebitByCurrencyCodeRequestBalanceSource PAYMENT
+            = new DebitByCurrencyCodeRequestBalanceSource("PAYMENT");
+
+
+        public static implicit operator DebitByCurrencyCodeRequestBalanceSource(string value)
+        {
+            return NewValue(value);
+        }
+
+        public DebitByCurrencyCodeRequestBalanceSource(string enumValue)
             : base(enumValue)
         {
 

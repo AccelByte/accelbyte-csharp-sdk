@@ -9,23 +9,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
 {
     public class ModelsCustomFunction : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("afterBulkReadAdminGameRecord")]
-        public bool? AfterBulkReadAdminGameRecord { get; set; }
-
-        [JsonPropertyName("afterBulkReadAdminPlayerRecord")]
-        public bool? AfterBulkReadAdminPlayerRecord { get; set; }
-
         [JsonPropertyName("afterBulkReadGameRecord")]
         public bool? AfterBulkReadGameRecord { get; set; }
 
         [JsonPropertyName("afterBulkReadPlayerRecord")]
         public bool? AfterBulkReadPlayerRecord { get; set; }
-
-        [JsonPropertyName("afterReadAdminGameRecord")]
-        public bool? AfterReadAdminGameRecord { get; set; }
-
-        [JsonPropertyName("afterReadAdminPlayerRecord")]
-        public bool? AfterReadAdminPlayerRecord { get; set; }
 
         [JsonPropertyName("afterReadGameRecord")]
         public bool? AfterReadGameRecord { get; set; }

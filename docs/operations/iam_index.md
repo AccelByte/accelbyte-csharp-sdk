@@ -313,6 +313,7 @@
 | `/iam/v3/namespace/{namespace}/token/request` | POST | RequestGameTokenCodeResponseV3 | [RequestGameTokenCodeResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) | [RequestGameTokenCodeResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) |
 | `/iam/v3/platforms/{platformId}/authenticate` | GET | PlatformAuthenticationV3 | [PlatformAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformAuthenticationV3.cs) | [PlatformAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformAuthenticationV3.cs) |
 | `/iam/v3/token/exchange` | POST | RequestGameTokenResponseV3 | [RequestGameTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenResponseV3.cs) | [RequestGameTokenResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenResponseV3.cs) |
+| `/iam/v3/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -734,6 +735,7 @@
 | `oauthmodel.GameTokenCodeResponse` | [OauthmodelGameTokenCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelGameTokenCodeResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeResponse` | [OauthmodelOneTimeLinkingCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeValidationResponse` | [OauthmodelOneTimeLinkingCodeValidationResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeValidationResponse.cs) |
+| `oauthmodel.PlatformTokenRefreshResponseV3` | [OauthmodelPlatformTokenRefreshResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelPlatformTokenRefreshResponseV3.cs) |
 | `oauthmodel.TokenIntrospectResponse` | [OauthmodelTokenIntrospectResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenIntrospectResponse.cs) |
 | `oauthmodel.TokenResponse` | [OauthmodelTokenResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponse.cs) |
 | `oauthmodel.TokenResponseV3` | [OauthmodelTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponseV3.cs) |

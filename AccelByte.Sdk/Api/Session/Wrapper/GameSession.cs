@@ -405,21 +405,11 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ApimodelsGameSessionResponse>? PublicQueryMyGameSessions(PublicQueryMyGameSessions input)
+        public Model.ApimodelsGameSessionQueryResponse? PublicQueryMyGameSessions(PublicQueryMyGameSessions input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-
-        public List<Model.ApimodelsGameSessionResponse<T1>>? PublicQueryMyGameSessions<T1>(PublicQueryMyGameSessions input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

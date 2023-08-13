@@ -297,21 +297,11 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ApimodelsPartySessionResponse>? PublicQueryMyParties(PublicQueryMyParties input)
+        public Model.ApimodelsPartyQueryResponse? PublicQueryMyParties(PublicQueryMyParties input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-
-        public List<Model.ApimodelsPartySessionResponse<T1>>? PublicQueryMyParties<T1>(PublicQueryMyParties input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

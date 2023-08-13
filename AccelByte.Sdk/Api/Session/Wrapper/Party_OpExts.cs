@@ -334,7 +334,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty<T1>(op);
         }
-        public static List<Session.Model.ApimodelsPartySessionResponse>? Execute(
+        public static Session.Model.ApimodelsPartyQueryResponse? Execute(
             this PublicQueryMyParties.PublicQueryMyPartiesBuilder builder,
             string namespace_
         )
@@ -344,18 +344,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicQueryMyParties(op);
-        }
-
-        public static List<Session.Model.ApimodelsPartySessionResponse<T1>>? Execute<T1>(
-            this PublicQueryMyParties.PublicQueryMyPartiesBuilder builder,
-            string namespace_
-        )
-        {
-            PublicQueryMyParties op = builder.Build(
-                namespace_
-            );
-
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicQueryMyParties<T1>(op);
         }
     }
 }

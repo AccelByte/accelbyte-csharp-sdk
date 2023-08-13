@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.CreateMatchTicket.Builder.SetWrapperObject(this); }
         }
+        public GetMyMatchTickets.GetMyMatchTicketsBuilder GetMyMatchTicketsOp
+        {
+            get { return Operation.GetMyMatchTickets.Builder.SetWrapperObject(this); }
+        }
         public MatchTicketDetails.MatchTicketDetailsBuilder MatchTicketDetailsOp
         {
             get { return Operation.MatchTicketDetails.Builder.SetWrapperObject(this); }
@@ -34,6 +38,15 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         #endregion
 
         public Model.ApiMatchTicketResponse? CreateMatchTicket(CreateMatchTicket input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiMatchTicketStatuses? GetMyMatchTickets(GetMyMatchTickets input)
         {
             var response = _sdk.RunRequest(input);
 

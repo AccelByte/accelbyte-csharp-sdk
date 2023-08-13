@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class ConsumeItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("extItemDefId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ExtItemDefId { get; set; }
+
         [JsonPropertyName("extItemId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ExtItemId { get; set; }

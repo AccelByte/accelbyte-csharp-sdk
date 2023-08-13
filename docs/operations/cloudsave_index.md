@@ -21,6 +21,17 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | POST | AdminPostPlayerAdminRecordV1 | [AdminPostPlayerAdminRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPostPlayerAdminRecordV1.cs) | [AdminPostPlayerAdminRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPostPlayerAdminRecordV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | DELETE | AdminDeleteAdminPlayerRecordV1 | [AdminDeleteAdminPlayerRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminDeleteAdminPlayerRecordV1.cs) | [AdminDeleteAdminPlayerRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminDeleteAdminPlayerRecordV1.cs) |
 
+### AdminGameBinaryRecord Wrapper:  [AdminGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries` | GET | AdminListGameBinaryRecordsV1 | [AdminListGameBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminListGameBinaryRecordsV1.cs) | [AdminListGameBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminListGameBinaryRecordsV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries` | POST | AdminPostGameBinaryRecordV1 | [AdminPostGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPostGameBinaryRecordV1.cs) | [AdminPostGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPostGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}` | GET | AdminGetGameBinaryRecordV1 | [AdminGetGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminGetGameBinaryRecordV1.cs) | [AdminGetGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminGetGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}` | PUT | AdminPutGameBinaryRecordV1 | [AdminPutGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPutGameBinaryRecordV1.cs) | [AdminPutGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPutGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}` | DELETE | AdminDeleteGameBinaryRecordV1 | [AdminDeleteGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminDeleteGameBinaryRecordV1.cs) | [AdminDeleteGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminDeleteGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/metadata` | PUT | AdminPutGameBinaryRecorMetadataV1 | [AdminPutGameBinaryRecorMetadataV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPutGameBinaryRecorMetadataV1.cs) | [AdminPutGameBinaryRecorMetadataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPutGameBinaryRecorMetadataV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/presigned` | POST | AdminPostGameBinaryPresignedURLV1 | [AdminPostGameBinaryPresignedURLV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPostGameBinaryPresignedURLV1.cs) | [AdminPostGameBinaryPresignedURLV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPostGameBinaryPresignedURLV1.cs) |
+
 ### AdminConcurrentRecord Wrapper:  [AdminConcurrentRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminConcurrentRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -63,6 +74,28 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public` | DELETE | AdminDeletePlayerPublicRecordHandlerV1 | [AdminDeletePlayerPublicRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerRecord/AdminDeletePlayerPublicRecordHandlerV1.cs) | [AdminDeletePlayerPublicRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerRecord/AdminDeletePlayerPublicRecordHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/size` | GET | AdminGetPlayerRecordSizeHandlerV1 | [AdminGetPlayerRecordSizeHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerRecord/AdminGetPlayerRecordSizeHandlerV1.cs) | [AdminGetPlayerRecordSizeHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerRecord/AdminGetPlayerRecordSizeHandlerV1.cs) |
 
+### AdminPlayerBinaryRecord Wrapper:  [AdminPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminPlayerBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries` | GET | AdminListPlayerBinaryRecordsV1 | [AdminListPlayerBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminListPlayerBinaryRecordsV1.cs) | [AdminListPlayerBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminListPlayerBinaryRecordsV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries` | POST | AdminPostPlayerBinaryRecordV1 | [AdminPostPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminPostPlayerBinaryRecordV1.cs) | [AdminPostPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminPostPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries/{key}` | GET | AdminGetPlayerBinaryRecordV1 | [AdminGetPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminGetPlayerBinaryRecordV1.cs) | [AdminGetPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminGetPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries/{key}` | PUT | AdminPutPlayerBinaryRecordV1 | [AdminPutPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminPutPlayerBinaryRecordV1.cs) | [AdminPutPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminPutPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries/{key}` | DELETE | AdminDeletePlayerBinaryRecordV1 | [AdminDeletePlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminDeletePlayerBinaryRecordV1.cs) | [AdminDeletePlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminDeletePlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries/{key}/metadata` | PUT | AdminPutPlayerBinaryRecorMetadataV1 | [AdminPutPlayerBinaryRecorMetadataV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminPutPlayerBinaryRecorMetadataV1.cs) | [AdminPutPlayerBinaryRecorMetadataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminPutPlayerBinaryRecorMetadataV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/binaries/{key}/presigned` | POST | AdminPostPlayerBinaryPresignedURLV1 | [AdminPostPlayerBinaryPresignedURLV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerBinaryRecord/AdminPostPlayerBinaryPresignedURLV1.cs) | [AdminPostPlayerBinaryPresignedURLV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerBinaryRecord/AdminPostPlayerBinaryPresignedURLV1.cs) |
+
+### PublicGameBinaryRecord Wrapper:  [PublicGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicGameBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/namespaces/{namespace}/binaries` | GET | ListGameBinaryRecordsV1 | [ListGameBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/ListGameBinaryRecordsV1.cs) | [ListGameBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/ListGameBinaryRecordsV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries` | POST | PostGameBinaryRecordV1 | [PostGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/PostGameBinaryRecordV1.cs) | [PostGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/PostGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries/bulk` | POST | BulkGetGameBinaryRecordV1 | [BulkGetGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/BulkGetGameBinaryRecordV1.cs) | [BulkGetGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/BulkGetGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries/{key}` | GET | GetGameBinaryRecordV1 | [GetGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/GetGameBinaryRecordV1.cs) | [GetGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/GetGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries/{key}` | PUT | PutGameBinaryRecordV1 | [PutGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/PutGameBinaryRecordV1.cs) | [PutGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/PutGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries/{key}` | DELETE | DeleteGameBinaryRecordV1 | [DeleteGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/DeleteGameBinaryRecordV1.cs) | [DeleteGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/DeleteGameBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/binaries/{key}/presigned` | POST | PostGameBinaryPresignedURLV1 | [PostGameBinaryPresignedURLV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameBinaryRecord/PostGameBinaryPresignedURLV1.cs) | [PostGameBinaryPresignedURLV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameBinaryRecord/PostGameBinaryPresignedURLV1.cs) |
+
 ### ConcurrentRecord Wrapper:  [ConcurrentRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/ConcurrentRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -78,6 +111,22 @@
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | PUT | PutGameRecordHandlerV1 | [PutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PutGameRecordHandlerV1.cs) | [PutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | POST | PostGameRecordHandlerV1 | [PostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PostGameRecordHandlerV1.cs) | [PostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PostGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | DELETE | DeleteGameRecordHandlerV1 | [DeleteGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/DeleteGameRecordHandlerV1.cs) | [DeleteGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/DeleteGameRecordHandlerV1.cs) |
+
+### PublicPlayerBinaryRecord Wrapper:  [PublicPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/namespaces/{namespace}/users/bulk/binaries/{key}/public` | POST | BulkGetPlayerPublicBinaryRecordsV1 | [BulkGetPlayerPublicBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/BulkGetPlayerPublicBinaryRecordsV1.cs) | [BulkGetPlayerPublicBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/BulkGetPlayerPublicBinaryRecordsV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/me/binaries` | GET | ListMyBinaryRecordsV1 | [ListMyBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/ListMyBinaryRecordsV1.cs) | [ListMyBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/ListMyBinaryRecordsV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/me/binaries/bulk` | POST | BulkGetMyBinaryRecordV1 | [BulkGetMyBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/BulkGetMyBinaryRecordV1.cs) | [BulkGetMyBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/BulkGetMyBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries` | POST | PostPlayerBinaryRecordV1 | [PostPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/PostPlayerBinaryRecordV1.cs) | [PostPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/PostPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/public` | GET | ListOtherPlayerPublicBinaryRecordsV1 | [ListOtherPlayerPublicBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/ListOtherPlayerPublicBinaryRecordsV1.cs) | [ListOtherPlayerPublicBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/ListOtherPlayerPublicBinaryRecordsV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/public/bulk` | POST | BulkGetOtherPlayerPublicBinaryRecordsV1 | [BulkGetOtherPlayerPublicBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/BulkGetOtherPlayerPublicBinaryRecordsV1.cs) | [BulkGetOtherPlayerPublicBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/BulkGetOtherPlayerPublicBinaryRecordsV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}` | GET | GetPlayerBinaryRecordV1 | [GetPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/GetPlayerBinaryRecordV1.cs) | [GetPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/GetPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}` | PUT | PutPlayerBinaryRecordV1 | [PutPlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/PutPlayerBinaryRecordV1.cs) | [PutPlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/PutPlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}` | DELETE | DeletePlayerBinaryRecordV1 | [DeletePlayerBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/DeletePlayerBinaryRecordV1.cs) | [DeletePlayerBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/DeletePlayerBinaryRecordV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}/metadata` | PUT | PutPlayerBinaryRecorMetadataV1 | [PutPlayerBinaryRecorMetadataV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/PutPlayerBinaryRecorMetadataV1.cs) | [PutPlayerBinaryRecorMetadataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/PutPlayerBinaryRecorMetadataV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}/presigned` | POST | PostPlayerBinaryPresignedURLV1 | [PostPlayerBinaryPresignedURLV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/PostPlayerBinaryPresignedURLV1.cs) | [PostPlayerBinaryPresignedURLV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/PostPlayerBinaryPresignedURLV1.cs) |
+| `/cloudsave/v1/namespaces/{namespace}/users/{userId}/binaries/{key}/public` | GET | GetPlayerPublicBinaryRecordsV1 | [GetPlayerPublicBinaryRecordsV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicPlayerBinaryRecord/GetPlayerPublicBinaryRecordsV1.cs) | [GetPlayerPublicBinaryRecordsV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicPlayerBinaryRecord/GetPlayerPublicBinaryRecordsV1.cs) |
 
 ### PublicPlayerRecord Wrapper:  [PublicPlayerRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerRecord.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -111,6 +160,10 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | PUT | AdminPutAdminPlayerRecordV1 | [AdminPutAdminPlayerRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPutAdminPlayerRecordV1.cs) | [AdminPutAdminPlayerRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPutAdminPlayerRecordV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | POST | AdminPostPlayerAdminRecordV1 | [AdminPostPlayerAdminRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPostPlayerAdminRecordV1.cs) | [AdminPostPlayerAdminRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPostPlayerAdminRecordV1.cs) |
 
+### AdminGameBinaryRecord Wrapper:  [AdminGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### AdminConcurrentRecord Wrapper:  [AdminConcurrentRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminConcurrentRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -136,6 +189,14 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public` | PUT | AdminPutPlayerPublicRecordHandlerV1 | [AdminPutPlayerPublicRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerRecord/AdminPutPlayerPublicRecordHandlerV1.cs) | [AdminPutPlayerPublicRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerRecord/AdminPutPlayerPublicRecordHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}/public` | POST | AdminPostPlayerPublicRecordHandlerV1 | [AdminPostPlayerPublicRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminPlayerRecord/AdminPostPlayerPublicRecordHandlerV1.cs) | [AdminPostPlayerPublicRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminPlayerRecord/AdminPostPlayerPublicRecordHandlerV1.cs) |
 
+### AdminPlayerBinaryRecord Wrapper:  [AdminPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminPlayerBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PublicGameBinaryRecord Wrapper:  [PublicGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicGameBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### ConcurrentRecord Wrapper:  [ConcurrentRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/ConcurrentRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -146,6 +207,10 @@
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | GET | GetGameRecordHandlerV1 | [GetGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/GetGameRecordHandlerV1.cs) | [GetGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/GetGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | PUT | PutGameRecordHandlerV1 | [PutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PutGameRecordHandlerV1.cs) | [PutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | POST | PostGameRecordHandlerV1 | [PostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PostGameRecordHandlerV1.cs) | [PostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PostGameRecordHandlerV1.cs) |
+
+### PublicPlayerBinaryRecord Wrapper:  [PublicPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerBinaryRecord.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### PublicPlayerRecord Wrapper:  [PublicPlayerRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerRecord.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -173,12 +238,16 @@
 | `models.AdminPlayerRecordRequest` | [ModelsAdminPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminPlayerRecordRequest.cs) |
 | `models.AdminPlayerRecordResponse` | [ModelsAdminPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAdminPlayerRecordResponse.cs) |
 | `models.AppConfig` | [ModelsAppConfig](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsAppConfig.cs) |
+| `models.BinaryInfoResponse` | [ModelsBinaryInfoResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBinaryInfoResponse.cs) |
+| `models.BinaryRecordRequest` | [ModelsBinaryRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBinaryRecordRequest.cs) |
 | `models.BulkGetAdminGameRecordRequest` | [ModelsBulkGetAdminGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminGameRecordRequest.cs) |
 | `models.BulkGetAdminGameRecordResponse` | [ModelsBulkGetAdminGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminGameRecordResponse.cs) |
 | `models.BulkGetAdminPlayerRecordRequest` | [ModelsBulkGetAdminPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminPlayerRecordRequest.cs) |
 | `models.BulkGetAdminPlayerRecordResponse` | [ModelsBulkGetAdminPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetAdminPlayerRecordResponse.cs) |
+| `models.BulkGetGameBinaryRecordResponse` | [ModelsBulkGetGameBinaryRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetGameBinaryRecordResponse.cs) |
 | `models.BulkGetGameRecordRequest` | [ModelsBulkGetGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetGameRecordRequest.cs) |
 | `models.BulkGetGameRecordResponse` | [ModelsBulkGetGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetGameRecordResponse.cs) |
+| `models.BulkGetPlayerBinaryRecordResponse` | [ModelsBulkGetPlayerBinaryRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerBinaryRecordResponse.cs) |
 | `models.BulkGetPlayerRecordResponse` | [ModelsBulkGetPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordResponse.cs) |
 | `models.BulkGetPlayerRecordSizeResponse` | [ModelsBulkGetPlayerRecordSizeResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordSizeResponse.cs) |
 | `models.BulkGetPlayerRecordsRequest` | [ModelsBulkGetPlayerRecordsRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsBulkGetPlayerRecordsRequest.cs) |
@@ -187,18 +256,31 @@
 | `models.ConcurrentRecordRequest` | [ModelsConcurrentRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsConcurrentRecordRequest.cs) |
 | `models.CustomConfig` | [ModelsCustomConfig](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsCustomConfig.cs) |
 | `models.CustomFunction` | [ModelsCustomFunction](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsCustomFunction.cs) |
+| `models.GameBinaryRecordCreate` | [ModelsGameBinaryRecordCreate](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameBinaryRecordCreate.cs) |
+| `models.GameBinaryRecordMetadataRequest` | [ModelsGameBinaryRecordMetadataRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameBinaryRecordMetadataRequest.cs) |
+| `models.GameBinaryRecordResponse` | [ModelsGameBinaryRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameBinaryRecordResponse.cs) |
 | `models.GameRecordRequest` | [ModelsGameRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameRecordRequest.cs) |
 | `models.GameRecordResponse` | [ModelsGameRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsGameRecordResponse.cs) |
 | `models.ListAdminGameRecordKeysResponse` | [ModelsListAdminGameRecordKeysResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListAdminGameRecordKeysResponse.cs) |
 | `models.ListAdminPlayerRecordKeysResponse` | [ModelsListAdminPlayerRecordKeysResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListAdminPlayerRecordKeysResponse.cs) |
+| `models.ListGameBinaryRecordsResponse` | [ModelsListGameBinaryRecordsResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListGameBinaryRecordsResponse.cs) |
 | `models.ListGameRecordKeysResponse` | [ModelsListGameRecordKeysResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListGameRecordKeysResponse.cs) |
+| `models.ListPlayerBinaryRecordsResponse` | [ModelsListPlayerBinaryRecordsResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListPlayerBinaryRecordsResponse.cs) |
 | `models.ListPlayerRecordKeysResponse` | [ModelsListPlayerRecordKeysResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsListPlayerRecordKeysResponse.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPagination.cs) |
+| `models.PlayerBinaryRecordCreate` | [ModelsPlayerBinaryRecordCreate](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerBinaryRecordCreate.cs) |
+| `models.PlayerBinaryRecordMetadataPublicRequest` | [ModelsPlayerBinaryRecordMetadataPublicRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerBinaryRecordMetadataPublicRequest.cs) |
+| `models.PlayerBinaryRecordMetadataRequest` | [ModelsPlayerBinaryRecordMetadataRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerBinaryRecordMetadataRequest.cs) |
+| `models.PlayerBinaryRecordResponse` | [ModelsPlayerBinaryRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerBinaryRecordResponse.cs) |
 | `models.PlayerRecordKeyInfo` | [ModelsPlayerRecordKeyInfo](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordKeyInfo.cs) |
 | `models.PlayerRecordRequest` | [ModelsPlayerRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordRequest.cs) |
 | `models.PlayerRecordResponse` | [ModelsPlayerRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordResponse.cs) |
 | `models.PlayerRecordSizeResponse` | [ModelsPlayerRecordSizeResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPlayerRecordSizeResponse.cs) |
 | `models.PluginRequest` | [ModelsPluginRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPluginRequest.cs) |
 | `models.PluginResponse` | [ModelsPluginResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPluginResponse.cs) |
+| `models.PublicGameBinaryRecordCreate` | [ModelsPublicGameBinaryRecordCreate](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPublicGameBinaryRecordCreate.cs) |
+| `models.PublicPlayerBinaryRecordCreate` | [ModelsPublicPlayerBinaryRecordCreate](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsPublicPlayerBinaryRecordCreate.cs) |
 | `models.ResponseError` | [ModelsResponseError](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsResponseError.cs) |
+| `models.UploadBinaryRecordRequest` | [ModelsUploadBinaryRecordRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsUploadBinaryRecordRequest.cs) |
+| `models.UploadBinaryRecordResponse` | [ModelsUploadBinaryRecordResponse](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsUploadBinaryRecordResponse.cs) |
 | `models.UserKeyRequest` | [ModelsUserKeyRequest](../../AccelByte.Sdk/Api/Cloudsave/Model/ModelsUserKeyRequest.cs) |

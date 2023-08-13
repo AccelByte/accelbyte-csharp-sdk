@@ -40,6 +40,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("order")]
+        public string? Order { get; set; }
+
+        [SdkCommandArgument("orderBy")]
+        public string? OrderBy { get; set; }
+
         public AdminGetAllConfigurationTemplatesV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -57,6 +63,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
                 opBuilder.SetName((string)Name);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (Order != null)
+                opBuilder.SetOrder((string)Order);
+            if (OrderBy != null)
+                opBuilder.SetOrderBy((string)OrderBy);
 
 
 

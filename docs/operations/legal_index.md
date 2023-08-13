@@ -14,7 +14,7 @@
 | `/agreement/public/agreements/localized-policy-versions/{localizedPolicyVersionId}` | POST | AcceptVersionedPolicy | [AcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/AcceptVersionedPolicy.cs) | [AcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/AcceptVersionedPolicy.cs) |
 | `/agreement/public/agreements/policies` | GET | RetrieveAgreementsPublic | [RetrieveAgreementsPublic](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/RetrieveAgreementsPublic.cs) | [RetrieveAgreementsPublic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/RetrieveAgreementsPublic.cs) |
 | `/agreement/public/agreements/policies` | POST | BulkAcceptVersionedPolicy | [BulkAcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/BulkAcceptVersionedPolicy.cs) | [BulkAcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/BulkAcceptVersionedPolicy.cs) |
-| `/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicyV2 | [IndirectBulkAcceptVersionedPolicyV2](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) | [IndirectBulkAcceptVersionedPolicyV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) |
+| [DEPRECATED] `/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicyV2 | [IndirectBulkAcceptVersionedPolicyV2](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) | [IndirectBulkAcceptVersionedPolicyV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) |
 | `/agreement/public/agreements/policies/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicy1 | [IndirectBulkAcceptVersionedPolicy1](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) | [IndirectBulkAcceptVersionedPolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) |
 
 ### Base Legal Policies Wrapper:  [BaseLegalPolicies](../../AccelByte.Sdk/Api/Legal/Wrapper/BaseLegalPolicies.cs)
@@ -112,8 +112,8 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/agreement/admin/userInfo` | GET | GetUserInfoStatus | [GetUserInfoStatus](../../AccelByte.Sdk/Api/Legal/Operation/UserInfo/GetUserInfoStatus.cs) | [GetUserInfoStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/UserInfo/GetUserInfoStatus.cs) |
-| `/agreement/admin/userInfo` | PUT | SyncUserInfo | [SyncUserInfo](../../AccelByte.Sdk/Api/Legal/Operation/UserInfo/SyncUserInfo.cs) | [SyncUserInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/UserInfo/SyncUserInfo.cs) |
-| `/agreement/admin/userInfo` | DELETE | InvalidateUserInfoCache | [InvalidateUserInfoCache](../../AccelByte.Sdk/Api/Legal/Operation/UserInfo/InvalidateUserInfoCache.cs) | [InvalidateUserInfoCache](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/UserInfo/InvalidateUserInfoCache.cs) |
+| [DEPRECATED] `/agreement/admin/userInfo` | PUT | SyncUserInfo | [SyncUserInfo](../../AccelByte.Sdk/Api/Legal/Operation/UserInfo/SyncUserInfo.cs) | [SyncUserInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/UserInfo/SyncUserInfo.cs) |
+| [DEPRECATED] `/agreement/admin/userInfo` | DELETE | InvalidateUserInfoCache | [InvalidateUserInfoCache](../../AccelByte.Sdk/Api/Legal/Operation/UserInfo/InvalidateUserInfoCache.cs) | [InvalidateUserInfoCache](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/UserInfo/InvalidateUserInfoCache.cs) |
 
 ### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Legal/Wrapper/Anonymization.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -139,9 +139,6 @@
 ### Agreement Wrapper:  [Agreement](../../AccelByte.Sdk/Api/Legal/Wrapper/Agreement.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/agreement/public/agreements/policies` | POST | BulkAcceptVersionedPolicy | [BulkAcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/BulkAcceptVersionedPolicy.cs) | [BulkAcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/BulkAcceptVersionedPolicy.cs) |
-| `/agreement/public/agreements/policies/namespaces/{namespace}/countries/{countryCode}/clients/{clientId}/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicyV2 | [IndirectBulkAcceptVersionedPolicyV2](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) | [IndirectBulkAcceptVersionedPolicyV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicyV2.cs) |
-| `/agreement/public/agreements/policies/users/{userId}` | POST | IndirectBulkAcceptVersionedPolicy1 | [IndirectBulkAcceptVersionedPolicy1](../../AccelByte.Sdk/Api/Legal/Operation/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) | [IndirectBulkAcceptVersionedPolicy1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Agreement/IndirectBulkAcceptVersionedPolicy1.cs) |
 
 ### Base Legal Policies Wrapper:  [BaseLegalPolicies](../../AccelByte.Sdk/Api/Legal/Wrapper/BaseLegalPolicies.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -174,7 +171,6 @@
 ### Admin User Agreement Wrapper:  [AdminUserAgreement](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserAgreement.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/agreement/admin/namespaces/{namespace}/users/{userId}/agreements/policies` | POST | IndirectBulkAcceptVersionedPolicy | [IndirectBulkAcceptVersionedPolicy](../../AccelByte.Sdk/Api/Legal/Operation/AdminUserAgreement/IndirectBulkAcceptVersionedPolicy.cs) | [IndirectBulkAcceptVersionedPolicy](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/AdminUserAgreement/IndirectBulkAcceptVersionedPolicy.cs) |
 
 ### Admin User Eligibilities Wrapper:  [AdminUserEligibilities](../../AccelByte.Sdk/Api/Legal/Wrapper/AdminUserEligibilities.cs)
 | Endpoint | Method | ID | Class | Example |
