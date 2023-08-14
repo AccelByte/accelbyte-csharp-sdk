@@ -2,12 +2,7 @@
 ## [v0.41.0]
 ### docs
 - **:** use docs-old for now for some docs
-- **:** added migration guide draft for 0.41
-### chore
-- **:** regenerate iam service only
-- **:** revert changes related to iam public endpoint tag changes
 ### fix
-- **:** fix code related to iam public endpoint tag changes
 - **ams:** fix ams integration test due to op renaming
 - **lobby:** disable lobby presence integration test temporarily
 
