@@ -19,10 +19,10 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
         {
             public class Role
             {
-                [JsonPropertyName("Namespace")]
+                [JsonPropertyName("namespace")]
                 public string Namespace { get; set; } = String.Empty;
 
-                [JsonPropertyName("RoleId")]
+                [JsonPropertyName("roleId")]
                 public string RoleId { get; set; } = String.Empty;
             }
 
@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
         }
 
         [JsonPropertyName("bans")]
-        public List<AccountcommonJWTBanV3>? Bans { get; set; }
+        public List<AccountcommonJWTBanV3>? Bans { get; set; } = null;
 
         [JsonPropertyName("client_id")]
         public string? ClientId { get; set; } = null;
@@ -66,17 +66,29 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; } = null;
 
+        [JsonPropertyName("parent_namespace")]
+        public string? ParentNamespace { get; set; } = null;
+
         [JsonPropertyName("namespace_roles")]
-        public List<Types.Role>? NamespaceRoles { get; set; }
+        public List<Types.Role>? NamespaceRoles { get; set; } = null;
 
         [JsonPropertyName("permissions")]
-        public List<Types.Permission>? Permissions { get; set; }
+        public List<Types.Permission>? Permissions { get; set; } = null;
 
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
 
         [JsonPropertyName("scope")]
         public string? Scope { get; set; } = null;
+
+        [JsonPropertyName("sub")]
+        public string? Sub { get; set; } = null;
+
+        [JsonPropertyName("union_id")]
+        public string? UnionId { get; set; } = null;
+
+        [JsonPropertyName("union_namespace")]
+        public string? UnionNamespace { get; set; } = null;
 
         public static AccessTokenPayload FromToken(JwtSecurityToken token)
         {

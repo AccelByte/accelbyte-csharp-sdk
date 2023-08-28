@@ -296,6 +296,30 @@ Or, if you need to validate permission and action, use following method.
 bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
 ```
 
+Since version 0.42, `ParseAccessToken` function added to get the access token payload. This function requires 2 parameters. First, is the access token itself. Second, is to set whether the function will validate the access token or not. Set `true` if validation is required.
+To use it, just include `AccelByte.Sdk.Feature.LocalTokenValidation`. If validation is required, instantiate the sdk with following code.
+```csharp
+//Add core namespace
+using AccelByte.Sdk.Core;
+
+//Add feature namespace
+using AccelByte.Sdk.Feature.LocalTokenValidation;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    // Using DefaultConfigRepository, make sure the required environment variables are set
+    .UseDefaultConfigRepository()
+    // Credential repository is required for auto refresh token to works
+    .UseDefaultCredentialRepository()
+    // call this to enable the feature
+    .UseLocalTokenValidator()
+    // call this to enable auto refresh for token revocation list
+    .UseAutoRefreshForTokenRevocationList()
+    .Build();
+```
+
+`ParseAccessToken` will return null if the access token is invalid.
+
 ## Operation with Generic Response
 Since 0.28, C# Extend SDK enable overloaded `ParseOperation` method with generic data type that applies to almost all operations with response model which has one or more object data type in it.
 For example:

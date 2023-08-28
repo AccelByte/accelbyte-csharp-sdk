@@ -140,5 +140,31 @@ namespace AccelByte.Sdk.Tests.Integration
             bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
             Assert.IsTrue(b);
         }
+
+        [Test]
+        public void ParseAccessTokenNoValidationTest()
+        {
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginClient((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            AccessTokenPayload? payload = sdk.ParseAccessToken(accessToken, false);
+            Assert.IsNotNull(payload);
+            if (payload != null)
+            {
+                Assert.AreEqual(sdk.Namespace, payload.Namespace);
+                Assert.AreEqual(sdk.Configuration.ConfigRepository.ClientId, payload.ClientId);
+            }
+        }
     }
 }

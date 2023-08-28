@@ -33,6 +33,14 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             sdk.LocalData[JsonWebKeySets.DATA_KEY] = keys;
         }
 
+        protected static void InternalReadToken(string accessToken, out JwtSecurityToken rawJwt)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            if (!tokenHandler.CanReadToken(accessToken))
+                throw new Exception("Invalid access token format.");
+            rawJwt = tokenHandler.ReadJwtToken(accessToken);
+        }
+
         protected static void InternalValidateToken(AccelByteSDK sdk, string accessToken, out JwtSecurityToken rawJwt)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -140,6 +148,24 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             {
                 return false;
             }
+        }
+
+        public AccessTokenPayload? ParseAccessToken(AccelByteSDK sdk, string accessToken, bool validateFirst)
+        {
+            JwtSecurityToken rawJwt;
+            try
+            {                
+                if (validateFirst)
+                    InternalValidateToken(sdk, accessToken, out rawJwt);
+                else
+                    InternalReadToken(accessToken, out rawJwt);
+            }
+            catch
+            {
+                return null;
+            }
+
+            return AccessTokenPayload.FromToken(rawJwt);
         }
     }
 }
