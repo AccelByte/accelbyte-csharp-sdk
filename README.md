@@ -318,6 +318,13 @@ AccelByteSDK sdk = AccelByteSDK.Builder
     .Build();
 ```
 
+And to use it.
+```csharp
+var payload = sdk.ParseAccessToken('<access token>', false);
+
+//or, if validation is required
+var payload = sdk.ParseAccessToken('<access token>', true);
+```
 `ParseAccessToken` will return null if the access token is invalid.
 
 ## Operation with Generic Response
