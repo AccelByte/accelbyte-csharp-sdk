@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "fleetclaimbyid")]
-    public class FleetClaimByIDCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","fleetclaimbyid")]
+    public class FleetClaimByIDCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "FleetClaimByID"; } }
+        public string OperationName{ get { return "FleetClaimByID"; } }
 
         [SdkCommandArgument("fleetID")]
         public string FleetID { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
         [SdkCommandData("body")]
         public ApiFleetClaimReq Body { get; set; } = new ApiFleetClaimReq();
-
+                
         public FleetClaimByIDCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-
+            
             AccelByte.Sdk.Api.Ams.Model.ApiFleetClaimResponse? response = wrapper.FleetClaimByID(operation);
             if (response == null)
                 return "No response from server.";

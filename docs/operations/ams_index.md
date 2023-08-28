@@ -4,11 +4,17 @@
 
 ## Operations
 
-### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
+### Auth Wrapper:  [Auth](../../AccelByte.Sdk/Api/Ams/Wrapper/Auth.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ams/healthz` | GET | Func2 | [Func2](../../AccelByte.Sdk/Api/Ams/Operation/Operations/Func2.cs) | [Func2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/Func2.cs) |
-| `/healthz` | GET | PortalHealthCheck | [PortalHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/Operations/PortalHealthCheck.cs) | [PortalHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Operations/PortalHealthCheck.cs) |
+| `/ams/auth` | GET | AuthCheck | [AuthCheck](../../AccelByte.Sdk/Api/Ams/Operation/Auth/AuthCheck.cs) | [AuthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Auth/AuthCheck.cs) |
+
+### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/healthz` | GET | PortalHealthCheck | [PortalHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/PortalHealthCheck.cs) | [PortalHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/PortalHealthCheck.cs) |
+| `/ams/version` | GET | Func1 | [Func1](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func1.cs) | [Func1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func1.cs) |
+| `/healthz` | GET | BasicHealthCheck | [BasicHealthCheck](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/BasicHealthCheck.cs) | [BasicHealthCheck](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/BasicHealthCheck.cs) |
 
 ### Account Wrapper:  [Account](../../AccelByte.Sdk/Api/Ams/Wrapper/Account.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -55,17 +61,16 @@
 |---|---|---|---|---|
 | `/ams/v1/namespaces/{namespace}/watchdogs/{watchdogID}/connect` | GET | WatchdogConnect | [WatchdogConnect](../../AccelByte.Sdk/Api/Ams/Operation/Watchdogs/WatchdogConnect.cs) | [WatchdogConnect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Watchdogs/WatchdogConnect.cs) |
 
-### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/ams/version` | GET | Func3 | [Func3](../../AccelByte.Sdk/Api/Ams/Operation/FleetCommander/Func3.cs) | [Func3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/FleetCommander/Func3.cs) |
-
 
 &nbsp;  
 
 ## Operations with Generic Response
 
-### Operations Wrapper:  [Operations](../../AccelByte.Sdk/Api/Ams/Wrapper/Operations.cs)
+### Auth Wrapper:  [Auth](../../AccelByte.Sdk/Api/Ams/Wrapper/Auth.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -90,10 +95,6 @@
 |---|---|---|---|---|
 
 ### Watchdogs Wrapper:  [Watchdogs](../../AccelByte.Sdk/Api/Ams/Wrapper/Watchdogs.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
-### Fleet Commander Wrapper:  [FleetCommander](../../AccelByte.Sdk/Api/Ams/Wrapper/FleetCommander.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

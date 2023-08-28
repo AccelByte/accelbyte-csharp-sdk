@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             get { return Operation.FleetClaimByKeys.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.ApiFleetListResponse? FleetList(FleetList input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -76,25 +76,23 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void FleetUpdate(FleetUpdate input)
-        {
+        public void FleetUpdate(FleetUpdate input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
-        public void FleetDelete(FleetDelete input)
-        {
+        public void FleetDelete(FleetDelete input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -103,7 +101,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -112,7 +110,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -121,7 +119,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

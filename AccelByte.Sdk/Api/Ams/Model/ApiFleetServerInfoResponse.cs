@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("portConfiguration")]
         public List<ApiPortConfiguration>? PortConfiguration { get; set; }
 
+        [JsonPropertyName("ports")]
+        public Dictionary<string, long>? Ports { get; set; }
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
 

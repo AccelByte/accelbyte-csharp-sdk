@@ -14,32 +14,32 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// func2
+    /// BasicHealthCheck
     /// </summary>
-    public class Func2 : AccelByte.Sdk.Core.Operation
+    public class BasicHealthCheck : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static Func2Builder Builder { get => new Func2Builder(); }
+        public static BasicHealthCheckBuilder Builder { get => new BasicHealthCheckBuilder(); }
 
-        public class Func2Builder
-            : OperationBuilder<Func2Builder>
+        public class BasicHealthCheckBuilder
+            : OperationBuilder<BasicHealthCheckBuilder>
         {
 
 
 
 
 
-            internal Func2Builder() { }
+            internal BasicHealthCheckBuilder() { }
 
 
 
 
 
 
-            public Func2 Build(
+            public BasicHealthCheck Build(
             )
             {
-                Func2 op = new Func2(this
+                BasicHealthCheck op = new BasicHealthCheck(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -49,53 +49,53 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private Func2(Func2Builder builder
+        private BasicHealthCheck(BasicHealthCheckBuilder builder
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public Func2(
+        public BasicHealthCheck(
         )
         {
+            
+            
 
-
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/healthz";
+        public override string Path => "/healthz";
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }

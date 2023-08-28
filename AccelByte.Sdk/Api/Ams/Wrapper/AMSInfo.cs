@@ -28,13 +28,13 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             get { return Operation.InfoSupportedInstances.Builder.SetWrapperObject(this); }
         }
         #endregion
-
+        
         public Model.ApiRegionsResponse? InfoRegions(InfoRegions input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
+                    response.Code, 
                     response.ContentType,
                     response.Payload);
         }

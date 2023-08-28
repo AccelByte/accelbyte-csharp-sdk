@@ -19,43 +19,35 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","watchdogconnect")]
-    public class WatchdogConnectCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams","basichealthcheck")]
+    public class BasicHealthCheckCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName{ get { return "WatchdogConnect"; } }
+        public string OperationName{ get { return "BasicHealthCheck"; } }
 
-        [SdkCommandArgument("namespace")]
-        public string Namespace { get; set; } = String.Empty;
-
-        [SdkCommandArgument("watchdogID")]
-        public string WatchdogID { get; set; } = String.Empty;
-
-        public WatchdogConnectCommand(AccelByteSDK sdk)
+        public BasicHealthCheckCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Watchdogs wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Watchdogs(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.WatchdogConnect.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.BasicHealthCheck.Builder;
 
 
 
-            WatchdogConnect operation = opBuilder.Build(
-                Namespace,
-                WatchdogID
+
+
+            BasicHealthCheck operation = opBuilder.Build(
             );
 
             
-            wrapper.WatchdogConnect(operation);
+            wrapper.BasicHealthCheck(operation);
             return String.Empty;
         }
     }

@@ -10,25 +10,16 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api
 {
-    public static class AmsOperations_OpExts
+    public static class AmsAuth_OpExts
     {
         public static void Execute(
-            this Func2.Func2Builder builder
+            this AuthCheck.AuthCheckBuilder builder
         )
         {
-            Func2 op = builder.Build(
+            AuthCheck op = builder.Build(
             );
 
-            ((Ams.Wrapper.Operations)builder.WrapperObject!).Func2(op);
-        }
-        public static void Execute(
-            this PortalHealthCheck.PortalHealthCheckBuilder builder
-        )
-        {
-            PortalHealthCheck op = builder.Build(
-            );
-
-            ((Ams.Wrapper.Operations)builder.WrapperObject!).PortalHealthCheck(op);
+            ((Ams.Wrapper.Auth)builder.WrapperObject!).AuthCheck(op);
         }
     }
 }

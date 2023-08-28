@@ -19,21 +19,21 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "fleetcreate")]
-    public class FleetCreateCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","fleetcreate")]
+    public class FleetCreateCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "FleetCreate"; } }
+        public string OperationName{ get { return "FleetCreate"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiFleetParameters Body { get; set; } = new ApiFleetParameters();
-
+                
         public FleetCreateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-
+            
             AccelByte.Sdk.Api.Ams.Model.ApiFleetCreateResponse? response = wrapper.FleetCreate(operation);
             if (response == null)
                 return "No response from server.";

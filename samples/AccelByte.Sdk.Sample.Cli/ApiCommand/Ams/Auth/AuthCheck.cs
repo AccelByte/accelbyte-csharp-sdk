@@ -19,35 +19,35 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "portalhealthcheck")]
-    public class PortalHealthCheckCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","authcheck")]
+    public class AuthCheckCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "PortalHealthCheck"; } }
+        public string OperationName{ get { return "AuthCheck"; } }
 
-        public PortalHealthCheckCommand(AccelByteSDK sdk)
+        public AuthCheckCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Operations(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.Auth wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Auth(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.PortalHealthCheck.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.AuthCheck.Builder;
 
 
 
-            PortalHealthCheck operation = opBuilder.Build(
+
+
+            AuthCheck operation = opBuilder.Build(
             );
 
-
-            wrapper.PortalHealthCheck(operation);
+            
+            wrapper.AuthCheck(operation);
             return String.Empty;
         }
     }

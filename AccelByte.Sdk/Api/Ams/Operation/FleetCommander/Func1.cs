@@ -14,38 +14,32 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// FleetDelete
-    ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [DELETE]
+    /// func1
     /// </summary>
-    public class FleetDelete : AccelByte.Sdk.Core.Operation
+    public class Func1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FleetDeleteBuilder Builder { get => new FleetDeleteBuilder(); }
+        public static Func1Builder Builder { get => new Func1Builder(); }
 
-        public class FleetDeleteBuilder
-            : OperationBuilder<FleetDeleteBuilder>
+        public class Func1Builder
+            : OperationBuilder<Func1Builder>
         {
 
 
 
 
 
-            internal FleetDeleteBuilder() { }
+            internal Func1Builder() { }
 
 
 
 
 
 
-            public FleetDelete Build(
-                string fleetID,
-                string namespace_
+            public Func1 Build(
             )
             {
-                FleetDelete op = new FleetDelete(this,
-                    fleetID,                    
-                    namespace_                    
+                Func1 op = new Func1(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -55,13 +49,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private FleetDelete(FleetDeleteBuilder builder,
-            string fleetID,
-            string namespace_
+        private Func1(Func1Builder builder
         )
         {
-            PathParams["fleetID"] = fleetID;
-            PathParams["namespace"] = namespace_;
             
             
 
@@ -73,13 +63,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         }
         #endregion
 
-        public FleetDelete(
-            string fleetID,            
-            string namespace_            
+        public Func1(
         )
         {
-            PathParams["fleetID"] = fleetID;
-            PathParams["namespace"] = namespace_;
             
             
 
@@ -90,11 +76,11 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}";
+        public override string Path => "/ams/version";
 
-        public override HttpMethod Method => HttpMethod.Delete;
+        public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] {  };
 
         public override string[] Produces => new string[] { "application/json" };
 
@@ -103,7 +89,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)204)
+            if (code == (HttpStatusCode)200)
             {
                 return;
             }

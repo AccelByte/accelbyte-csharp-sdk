@@ -19,35 +19,35 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "func2")]
-    public class Func2Command : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","func1")]
+    public class Func1Command: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "Func2"; } }
+        public string OperationName{ get { return "Func1"; } }
 
-        public Func2Command(AccelByteSDK sdk)
+        public Func1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Operations wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Operations(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.FleetCommander(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.Func2.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.Func1.Builder;
 
 
 
-            Func2 operation = opBuilder.Build(
+
+
+            Func1 operation = opBuilder.Build(
             );
 
-
-            wrapper.Func2(operation);
+            
+            wrapper.Func1(operation);
             return String.Empty;
         }
     }

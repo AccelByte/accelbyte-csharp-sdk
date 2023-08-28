@@ -13,16 +13,27 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
-        public Operations Operations
+        public Auth Auth
         {
             get
             {
-                if (_Operations == null)
-                    _Operations = new Operations(_SdkObject);
-                return _Operations;
+                if (_Auth == null)
+                    _Auth = new Auth(_SdkObject);
+                return _Auth;
             }
         }
-        private Operations? _Operations = null;
+        private Auth? _Auth = null;
+
+        public FleetCommander FleetCommander
+        {
+            get
+            {
+                if (_FleetCommander == null)
+                    _FleetCommander = new FleetCommander(_SdkObject);
+                return _FleetCommander;
+            }
+        }
+        private FleetCommander? _FleetCommander = null;
 
         public Account Account
         {
@@ -89,17 +100,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Watchdogs? _Watchdogs = null;
-
-        public FleetCommander FleetCommander
-        {
-            get
-            {
-                if (_FleetCommander == null)
-                    _FleetCommander = new FleetCommander(_SdkObject);
-                return _FleetCommander;
-            }
-        }
-        private FleetCommander? _FleetCommander = null;
 
         internal AmsSdkWrappers(AccelByteSDK sdk)
         {

@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "imagelist")]
-    public class ImageListCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","imagelist")]
+    public class ImageListCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "ImageList"; } }
+        public string OperationName{ get { return "ImageList"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-
+            
             AccelByte.Sdk.Api.Ams.Model.ApiImageList? response = wrapper.ImageList(operation);
             if (response == null)
                 return "No response from server.";

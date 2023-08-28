@@ -13,13 +13,31 @@ namespace AccelByte.Sdk.Api
     public static class AmsFleetCommander_OpExts
     {
         public static void Execute(
-            this Func3.Func3Builder builder
+            this PortalHealthCheck.PortalHealthCheckBuilder builder
         )
         {
-            Func3 op = builder.Build(
+            PortalHealthCheck op = builder.Build(
             );
 
-            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func3(op);
+            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).PortalHealthCheck(op);
+        }
+        public static void Execute(
+            this Func1.Func1Builder builder
+        )
+        {
+            Func1 op = builder.Build(
+            );
+
+            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1(op);
+        }
+        public static void Execute(
+            this BasicHealthCheck.BasicHealthCheckBuilder builder
+        )
+        {
+            BasicHealthCheck op = builder.Build(
+            );
+
+            ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).BasicHealthCheck(op);
         }
     }
 }

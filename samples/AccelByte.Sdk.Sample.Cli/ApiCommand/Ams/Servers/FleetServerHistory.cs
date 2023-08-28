@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "fleetserverhistory")]
-    public class FleetServerHistoryCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","fleetserverhistory")]
+    public class FleetServerHistoryCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "FleetServerHistory"; } }
+        public string OperationName{ get { return "FleetServerHistory"; } }
 
         [SdkCommandArgument("fleetID")]
         public string FleetID { get; set; } = String.Empty;
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-
+            
             AccelByte.Sdk.Api.Ams.Model.ApiDSHistoryList? response = wrapper.FleetServerHistory(operation);
             if (response == null)
                 return "No response from server.";

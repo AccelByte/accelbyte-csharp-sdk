@@ -9,23 +9,23 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Ams.Wrapper
 {
-    public class Watchdogs
+    public class Auth
     {
         private readonly AccelByteSDK _sdk;
 
-        public Watchdogs(AccelByteSDK sdk)
+        public Auth(AccelByteSDK sdk)
         {
             _sdk = sdk;
         }
 
         #region Operation Builders
-        public WatchdogConnect.WatchdogConnectBuilder WatchdogConnectOp
+        public AuthCheck.AuthCheckBuilder AuthCheckOp
         {
-            get { return Operation.WatchdogConnect.Builder.SetWrapperObject(this); }
+            get { return Operation.AuthCheck.Builder.SetWrapperObject(this); }
         }
         #endregion
         
-        public void WatchdogConnect(WatchdogConnect input) {
+        public void AuthCheck(AuthCheck input) {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(

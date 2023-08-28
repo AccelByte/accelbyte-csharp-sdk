@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "fleetservers")]
-    public class FleetServersCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams","fleetservers")]
+    public class FleetServersCommand: ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Ams"; } }
+        public string ServiceName{ get { return "Ams"; } }
 
-        public string OperationName { get { return "FleetServers"; } }
+        public string OperationName{ get { return "FleetServers"; } }
 
         [SdkCommandArgument("fleetID")]
         public string FleetID { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-
+            
             AccelByte.Sdk.Api.Ams.Model.ApiFleetServersResponse? response = wrapper.FleetServers(operation);
             if (response == null)
                 return "No response from server.";
