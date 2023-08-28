@@ -221,6 +221,28 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeletePlaystationIAPConfig(op);
         }
+        public static Platform.Model.TestResult? Execute(
+            this ValidateExistedPlaystationIAPConfig.ValidateExistedPlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            ValidateExistedPlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidateExistedPlaystationIAPConfig(op);
+        }
+        public static Platform.Model.TestResult? Execute(
+            this ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            ValidatePlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidatePlaystationIAPConfig(op);
+        }
         public static Platform.Model.SteamIAPConfig? Execute(
             this GetSteamIAPConfig.GetSteamIAPConfigBuilder builder,
             string namespace_

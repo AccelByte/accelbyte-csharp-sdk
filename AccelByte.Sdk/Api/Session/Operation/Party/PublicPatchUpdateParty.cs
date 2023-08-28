@@ -135,7 +135,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public Model.ApimodelsPartySessionResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApimodelsPartySessionResponse<T1, T2>? ParseResponse<T1, T2>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -143,11 +143,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsPartySessionResponse<T1>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsPartySessionResponse<T1, T2>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsPartySessionResponse<T1>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsPartySessionResponse<T1, T2>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

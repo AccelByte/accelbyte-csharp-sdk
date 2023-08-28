@@ -20,6 +20,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
     /// Required permission: ADMIN:NAMESPACE:{namespace}:DSLM:SERVER [READ]
     /// 
     /// This endpoint used to retrieve terminated servers in a namespace
+    /// 
+    /// The namespace filter is will give result exact namespace response
     /// ```
     /// </summary>
     public class ListTerminatedServers : AccelByte.Sdk.Core.Operation

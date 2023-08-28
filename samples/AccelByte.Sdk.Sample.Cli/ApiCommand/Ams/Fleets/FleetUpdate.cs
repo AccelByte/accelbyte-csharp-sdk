@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","fleetupdate")]
-    public class FleetUpdateCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "fleetupdate")]
+    public class FleetUpdateCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "FleetUpdate"; } }
+        public string OperationName { get { return "FleetUpdate"; } }
 
         [SdkCommandArgument("fleetID")]
         public string FleetID { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
         [SdkCommandData("body")]
         public ApiFleetParameters Body { get; set; } = new ApiFleetParameters();
-                
+
         public FleetUpdateCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-            
+
             wrapper.FleetUpdate(operation);
             return String.Empty;
         }

@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
 
+        [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TransactionId { get; set; }
+
         [JsonPropertyName("type")]
         [JsonStringEnum]
         public MockIAPReceiptType? Type { get; set; }

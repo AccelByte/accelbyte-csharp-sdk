@@ -20,6 +20,7 @@
 | `/friends/namespaces/{namespace}/me/status/{friendId}` | GET | UserGetFriendshipStatus | [UserGetFriendshipStatus](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserGetFriendshipStatus.cs) | [UserGetFriendshipStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserGetFriendshipStatus.cs) |
 | `/friends/namespaces/{namespace}/me/unfriend` | POST | UserUnfriendRequest | [UserUnfriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserUnfriendRequest.cs) | [UserUnfriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserUnfriendRequest.cs) |
 | `/friends/namespaces/{namespace}/users/{userId}/add/bulk` | POST | AddFriendsWithoutConfirmation | [AddFriendsWithoutConfirmation](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/AddFriendsWithoutConfirmation.cs) | [AddFriendsWithoutConfirmation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/AddFriendsWithoutConfirmation.cs) |
+| `/friends/namespaces/{namespace}/users/{userId}/delete/bulk` | POST | BulkDeleteFriends | [BulkDeleteFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/BulkDeleteFriends.cs) | [BulkDeleteFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/BulkDeleteFriends.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}` | GET | GetListOfFriends | [GetListOfFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetListOfFriends.cs) | [GetListOfFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetListOfFriends.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming` | GET | GetIncomingFriendRequests | [GetIncomingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetIncomingFriendRequests.cs) | [GetIncomingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetIncomingFriendRequests.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing` | GET | GetOutgoingFriendRequests | [GetOutgoingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetOutgoingFriendRequests.cs) | [GetOutgoingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetOutgoingFriendRequests.cs) |
@@ -198,7 +199,8 @@
 | `handlers.GetUsersPresenceResponse` | [HandlersGetUsersPresenceResponse](../../AccelByte.Sdk/Api/Lobby/Model/HandlersGetUsersPresenceResponse.cs) |
 | `handlers.UserPresence` | [HandlersUserPresence](../../AccelByte.Sdk/Api/Lobby/Model/HandlersUserPresence.cs) |
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Lobby/Model/LogAppMessageDeclaration.cs) |
-| `model.BulkAddFriendsRequest` | [ModelBulkAddFriendsRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkAddFriendsRequest.cs) |
+| `model.BulkFriendsRequest` | [ModelBulkFriendsRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkFriendsRequest.cs) |
+| `model.BulkFriendsResponse` | [ModelBulkFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkFriendsResponse.cs) |
 | `model.BulkUsersFreeFormNotificationRequestV1` | [ModelBulkUsersFreeFormNotificationRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelBulkUsersFreeFormNotificationRequestV1.cs) |
 | `model.CreateTemplateRequest` | [ModelCreateTemplateRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTemplateRequest.cs) |
 | `model.CreateTopicRequest` | [ModelCreateTopicRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTopicRequest.cs) |

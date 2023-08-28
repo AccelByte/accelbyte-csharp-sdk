@@ -204,6 +204,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicMakeFactorMyDefaultV4.Builder.SetWrapperObject(this); }
         }
+        public PublicGetUserPublicInfoByUserIdV4.PublicGetUserPublicInfoByUserIdV4Builder PublicGetUserPublicInfoByUserIdV4Op
+        {
+            get { return Operation.PublicGetUserPublicInfoByUserIdV4.Builder.SetWrapperObject(this); }
+        }
         public PublicInviteUserV4.PublicInviteUserV4Builder PublicInviteUserV4Op
         {
             get { return Operation.PublicInviteUserV4.Builder.SetWrapperObject(this); }
@@ -623,6 +627,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserPublicInfoResponseV4? PublicGetUserPublicInfoByUserIdV4(PublicGetUserPublicInfoByUserIdV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

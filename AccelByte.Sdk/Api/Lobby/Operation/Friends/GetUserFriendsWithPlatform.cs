@@ -25,12 +25,28 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             : OperationBuilder<GetUserFriendsWithPlatformBuilder>
         {
 
+            public long? Limit { get; set; }
+
+            public long? Offset { get; set; }
+
 
 
 
 
             internal GetUserFriendsWithPlatformBuilder() { }
 
+
+            public GetUserFriendsWithPlatformBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public GetUserFriendsWithPlatformBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
 
 
 
@@ -57,6 +73,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
 
@@ -68,11 +86,15 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         #endregion
 
         public GetUserFriendsWithPlatform(
-            string namespace_
+            string namespace_,
+            long? limit,
+            long? offset
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 
 

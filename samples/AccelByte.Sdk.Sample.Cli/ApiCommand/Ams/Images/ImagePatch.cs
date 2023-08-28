@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","imagepatch")]
-    public class ImagePatchCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "imagepatch")]
+    public class ImagePatchCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "ImagePatch"; } }
+        public string OperationName { get { return "ImagePatch"; } }
 
         [SdkCommandArgument("imageID")]
         public string ImageID { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
         [SdkCommandData("body")]
         public ApiImageUpdate Body { get; set; } = new ApiImageUpdate();
-                
+
         public ImagePatchCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Ams.Model.ApiImageDetails? response = wrapper.ImagePatch(operation);
             if (response == null)
                 return "No response from server.";

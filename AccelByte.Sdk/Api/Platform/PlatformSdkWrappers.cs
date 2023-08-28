@@ -112,6 +112,17 @@ namespace AccelByte.Sdk.Core
         }
         private Fulfillment? _Fulfillment = null;
 
+        public Clawback Clawback
+        {
+            get
+            {
+                if (_Clawback == null)
+                    _Clawback = new Clawback(_SdkObject);
+                return _Clawback;
+            }
+        }
+        private Clawback? _Clawback = null;
+
         public IAP IAP
         {
             get

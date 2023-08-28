@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","infosupportedinstances")]
-    public class InfoSupportedInstancesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "infosupportedinstances")]
+    public class InfoSupportedInstancesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "InfoSupportedInstances"; } }
+        public string OperationName { get { return "InfoSupportedInstances"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Ams.Model.ApiAvailableInstanceTypesResponse? response = wrapper.InfoSupportedInstances(operation);
             if (response == null)
                 return "No response from server.";

@@ -37,7 +37,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCode(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicPartyJoinCode.PublicPartyJoinCodeBuilder builder,
             ApimodelsJoinByCodeRequest body,
             string namespace_
@@ -48,7 +48,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCode<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCode<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicGetParty.PublicGetPartyBuilder builder,
@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetParty(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicGetParty.PublicGetPartyBuilder builder,
             string namespace_,
             string partyId
@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetParty<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetParty<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicUpdateParty.PublicUpdatePartyBuilder builder,
@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdateParty(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicUpdateParty.PublicUpdatePartyBuilder builder,
             ApimodelsUpdatePartyRequest body,
             string namespace_,
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdateParty<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdateParty<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPatchUpdateParty.PublicPatchUpdatePartyBuilder builder,
@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdateParty(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicPatchUpdateParty.PublicPatchUpdatePartyBuilder builder,
             ApimodelsUpdatePartyRequest body,
             string namespace_,
@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdateParty<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdateParty<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicGeneratePartyCode.PublicGeneratePartyCodeBuilder builder,
@@ -153,7 +153,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCode(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicGeneratePartyCode.PublicGeneratePartyCodeBuilder builder,
             string namespace_,
             string partyId
@@ -164,7 +164,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCode<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCode<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicRevokePartyCode.PublicRevokePartyCodeBuilder builder,
@@ -180,7 +180,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCode(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicRevokePartyCode.PublicRevokePartyCodeBuilder builder,
             string namespace_,
             string partyId
@@ -191,7 +191,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCode<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCode<T1, T2>(op);
         }
         public static void Execute(
             this PublicPartyInvite.PublicPartyInviteBuilder builder,
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeader(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicPromotePartyLeader.PublicPromotePartyLeaderBuilder builder,
             ApimodelsPromoteLeaderRequest body,
             string namespace_,
@@ -237,7 +237,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeader<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeader<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
@@ -253,7 +253,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoin(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
             string namespace_,
             string partyId
@@ -264,7 +264,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoin<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoin<T1, T2>(op);
         }
         public static void Execute(
             this PublicPartyLeave.PublicPartyLeaveBuilder builder,
@@ -321,7 +321,7 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty(op);
         }
 
-        public static Session.Model.ApimodelsPartySessionResponse<T1>? Execute<T1>(
+        public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicCreateParty.PublicCreatePartyBuilder builder,
             ApimodelsCreatePartyRequest body,
             string namespace_
@@ -332,7 +332,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty<T1>(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty<T1, T2>(op);
         }
         public static Session.Model.ApimodelsPartyQueryResponse? Execute(
             this PublicQueryMyParties.PublicQueryMyPartiesBuilder builder,

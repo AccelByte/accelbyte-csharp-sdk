@@ -643,6 +643,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicWebLinkPlatformEstablish.Builder.SetWrapperObject(this); }
         }
+        public PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder PublicProcessWebLinkPlatformV3Op
+        {
+            get { return Operation.PublicProcessWebLinkPlatformV3.Builder.SetWrapperObject(this); }
+        }
         public ResetPasswordV3.ResetPasswordV3Builder ResetPasswordV3Op
         {
             get { return Operation.ResetPasswordV3.Builder.SetWrapperObject(this); }
@@ -2182,6 +2186,25 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelLinkRequest? PublicProcessWebLinkPlatformV3(PublicProcessWebLinkPlatformV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelLinkRequest<T1>? PublicProcessWebLinkPlatformV3<T1>(PublicProcessWebLinkPlatformV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
 
             public AddFriendsWithoutConfirmation Build(
-                ModelBulkAddFriendsRequest body,
+                ModelBulkFriendsRequest body,
                 string namespace_,
                 string userId
             )
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         }
 
         private AddFriendsWithoutConfirmation(AddFriendsWithoutConfirmationBuilder builder,
-            ModelBulkAddFriendsRequest body,
+            ModelBulkFriendsRequest body,
             string namespace_,
             string userId
         )
@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public AddFriendsWithoutConfirmation(
             string namespace_,
             string userId,
-            Model.ModelBulkAddFriendsRequest body
+            Model.ModelBulkFriendsRequest body
         )
         {
             PathParams["namespace"] = namespace_;

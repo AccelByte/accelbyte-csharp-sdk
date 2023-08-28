@@ -119,7 +119,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.BulkStatOperationResult>? BulkAddStats(BulkAddStats input)
+        public List<Model.BulkStatCycleOperationResult>? BulkAddStats(BulkAddStats input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -129,7 +129,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
 
-        public List<Model.BulkStatOperationResult<T1>>? BulkAddStats<T1>(BulkAddStats input)
+        public List<Model.BulkStatCycleOperationResult<T1>>? BulkAddStats<T1>(BulkAddStats input)
         {
             var response = _sdk.RunRequest(input);
 

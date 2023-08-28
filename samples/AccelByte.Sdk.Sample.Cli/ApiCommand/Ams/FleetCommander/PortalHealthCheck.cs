@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","portalhealthcheck")]
-    public class PortalHealthCheckCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "portalhealthcheck")]
+    public class PortalHealthCheckCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "PortalHealthCheck"; } }
+        public string OperationName { get { return "PortalHealthCheck"; } }
 
         public PortalHealthCheckCommand(AccelByteSDK sdk)
         {
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             PortalHealthCheck operation = opBuilder.Build(
             );
 
-            
+
             wrapper.PortalHealthCheck(operation);
             return String.Empty;
         }

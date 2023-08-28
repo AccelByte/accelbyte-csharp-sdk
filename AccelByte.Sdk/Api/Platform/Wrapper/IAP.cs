@@ -95,6 +95,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeletePlaystationIAPConfig.Builder.SetWrapperObject(this); }
         }
+        public ValidateExistedPlaystationIAPConfig.ValidateExistedPlaystationIAPConfigBuilder ValidateExistedPlaystationIAPConfigOp
+        {
+            get { return Operation.ValidateExistedPlaystationIAPConfig.Builder.SetWrapperObject(this); }
+        }
+        public ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder ValidatePlaystationIAPConfigOp
+        {
+            get { return Operation.ValidatePlaystationIAPConfig.Builder.SetWrapperObject(this); }
+        }
         public GetSteamIAPConfig.GetSteamIAPConfigBuilder GetSteamIAPConfigOp
         {
             get { return Operation.GetSteamIAPConfig.Builder.SetWrapperObject(this); }
@@ -364,6 +372,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.TestResult? ValidateExistedPlaystationIAPConfig(ValidateExistedPlaystationIAPConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.TestResult? ValidatePlaystationIAPConfig(ValidatePlaystationIAPConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

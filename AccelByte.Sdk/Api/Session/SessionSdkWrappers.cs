@@ -90,6 +90,17 @@ namespace AccelByte.Sdk.Core
         }
         private PlatformCredential? _PlatformCredential = null;
 
+        public SessionStorage SessionStorage
+        {
+            get
+            {
+                if (_SessionStorage == null)
+                    _SessionStorage = new SessionStorage(_SdkObject);
+                return _SessionStorage;
+            }
+        }
+        private SessionStorage? _SessionStorage = null;
+
         public Player Player
         {
             get

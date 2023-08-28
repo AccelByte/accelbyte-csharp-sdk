@@ -158,7 +158,7 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this AddFriendsWithoutConfirmation.AddFriendsWithoutConfirmationBuilder builder,
-            ModelBulkAddFriendsRequest body,
+            ModelBulkFriendsRequest body,
             string namespace_,
             string userId
         )
@@ -170,6 +170,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).AddFriendsWithoutConfirmation(op);
+        }
+        public static Lobby.Model.ModelBulkFriendsResponse? Execute(
+            this BulkDeleteFriends.BulkDeleteFriendsBuilder builder,
+            ModelBulkFriendsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkDeleteFriends op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).BulkDeleteFriends(op);
         }
         public static Lobby.Model.ModelGetFriendsResponse? Execute(
             this GetListOfFriends.GetListOfFriendsBuilder builder,

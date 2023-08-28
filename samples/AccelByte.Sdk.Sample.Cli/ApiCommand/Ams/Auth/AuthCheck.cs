@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","authcheck")]
-    public class AuthCheckCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "authcheck")]
+    public class AuthCheckCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "AuthCheck"; } }
+        public string OperationName { get { return "AuthCheck"; } }
 
         public AuthCheckCommand(AccelByteSDK sdk)
         {
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             AuthCheck operation = opBuilder.Build(
             );
 
-            
+
             wrapper.AuthCheck(operation);
             return String.Empty;
         }

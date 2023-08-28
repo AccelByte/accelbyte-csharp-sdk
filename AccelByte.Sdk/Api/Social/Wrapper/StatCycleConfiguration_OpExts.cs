@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).DeleteStatCycle(op);
         }
-        public static List<Social.Model.BulkStatOperationResult>? Execute(
+        public static List<Social.Model.BulkStatCycleOperationResult>? Execute(
             this BulkAddStats.BulkAddStatsBuilder builder,
             string cycleId,
             string namespace_
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStats(op);
         }
 
-        public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
+        public static List<Social.Model.BulkStatCycleOperationResult<T1>>? Execute<T1>(
             this BulkAddStats.BulkAddStatsBuilder builder,
             string cycleId,
             string namespace_

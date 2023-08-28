@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             );
 
 
-            List<AccelByte.Sdk.Api.Social.Model.BulkStatOperationResult>? response = wrapper.BulkAddStats(operation);
+            List<AccelByte.Sdk.Api.Social.Model.BulkStatCycleOperationResult>? response = wrapper.BulkAddStats(operation);
             if (response == null)
                 return "No response from server.";
 

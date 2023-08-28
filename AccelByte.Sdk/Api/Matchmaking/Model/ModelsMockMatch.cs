@@ -68,6 +68,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }
 
+        [JsonPropertyName("ticket_ids")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? TicketIds { get; set; }
+
         [JsonPropertyName("time_to_match_seconds")]
         public long? TimeToMatchSeconds { get; set; }
 
@@ -136,6 +140,10 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }
+
+        [JsonPropertyName("ticket_ids")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? TicketIds { get; set; }
 
         [JsonPropertyName("time_to_match_seconds")]
         public long? TimeToMatchSeconds { get; set; }

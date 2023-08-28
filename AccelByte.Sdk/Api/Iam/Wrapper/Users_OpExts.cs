@@ -2052,6 +2052,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicWebLinkPlatformEstablish(op);
         }
+        public static Iam.Model.ModelLinkRequest? Execute(
+            this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
+            string state,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicProcessWebLinkPlatformV3 op = builder.Build(
+                state,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3(op);
+        }
+
+        public static Iam.Model.ModelLinkRequest<T1>? Execute<T1>(
+            this PublicProcessWebLinkPlatformV3.PublicProcessWebLinkPlatformV3Builder builder,
+            string state,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicProcessWebLinkPlatformV3 op = builder.Build(
+                state,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3<T1>(op);
+        }
         public static void Execute(
             this ResetPasswordV3.ResetPasswordV3Builder builder,
             ModelResetPasswordRequestV3 body,

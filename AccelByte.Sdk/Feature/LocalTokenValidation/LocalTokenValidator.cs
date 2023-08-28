@@ -154,7 +154,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
         {
             JwtSecurityToken rawJwt;
             try
-            {                
+            {
                 if (validateFirst)
                     InternalValidateToken(sdk, accessToken, out rawJwt);
                 else

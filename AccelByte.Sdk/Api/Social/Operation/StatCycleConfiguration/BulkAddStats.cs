@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.BulkStatOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.BulkStatCycleOperationResult>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -123,13 +123,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<List<Model.BulkStatCycleOperationResult>>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult>>(payload);
+                    return JsonSerializer.Deserialize<List<Model.BulkStatCycleOperationResult>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<List<Model.BulkStatCycleOperationResult>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
@@ -137,7 +137,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public List<Model.BulkStatOperationResult<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.BulkStatCycleOperationResult<T1>>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -145,11 +145,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult<T1>>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<List<Model.BulkStatCycleOperationResult<T1>>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.BulkStatOperationResult<T1>>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<List<Model.BulkStatCycleOperationResult<T1>>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

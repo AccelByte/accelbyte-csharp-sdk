@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("friendId")]
+        public string? FriendId { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -51,6 +54,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
             var opBuilder = AccelByte.Sdk.Api.Lobby.Operation.GetIncomingFriendRequests.Builder;
 
+            if (FriendId != null)
+                opBuilder.SetFriendId((string)FriendId);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)

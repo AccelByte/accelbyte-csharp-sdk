@@ -67,6 +67,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///                 * amazon
     /// This endpoint redirects to amazon login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating amazon user.
+    /// 
+    ///                 * oculusweb
+    /// This endpoint redirects to oculus login page, then redirect back to Login Website page after successfully authenticating oculus user.
     /// action code : 10702'
     /// </summary>
     public class AuthCodeRequestV3 : AccelByte.Sdk.Core.Operation

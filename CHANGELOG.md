@@ -1,3 +1,15 @@
+<a name="v0.42.0"></a>
+## [v0.42.0]
+### feat
+- **:** added parse access token function
+### docs
+- **:** updated readme for parse access token info
+### chore
+- **:** regenerate ams sdk
+### fix
+- **integration:** fix ams integration test due to spec changes
+
+
 <a name="v0.41.0"></a>
 ## [v0.41.0]
 ### docs

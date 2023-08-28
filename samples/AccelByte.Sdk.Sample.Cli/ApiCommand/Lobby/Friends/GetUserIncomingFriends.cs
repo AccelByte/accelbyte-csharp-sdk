@@ -31,6 +31,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("limit")]
+        public long? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
         public GetUserIncomingFriendsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,6 +48,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
 
             var opBuilder = AccelByte.Sdk.Api.Lobby.Operation.GetUserIncomingFriends.Builder;
 
+            if (Limit != null)
+                opBuilder.SetLimit((long)Limit);
+            if (Offset != null)
+                opBuilder.SetOffset((long)Offset);
 
 
 

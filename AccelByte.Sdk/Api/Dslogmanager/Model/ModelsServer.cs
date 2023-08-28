@@ -10,12 +10,14 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
     public class ModelsServer : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allocation_events")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsAllocationEvent>? AllocationEvents { get; set; }
 
         [JsonPropertyName("allocation_id")]
         public string? AllocationId { get; set; }
 
         [JsonPropertyName("alternate_ips")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AlternateIps { get; set; }
 
         [JsonPropertyName("cpu_limit")]
@@ -64,6 +66,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public int? Port { get; set; }
 
         [JsonPropertyName("ports")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, long>? Ports { get; set; }
 
         [JsonPropertyName("protocol")]
@@ -82,6 +85,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? Status { get; set; }
 
         [JsonPropertyName("status_history")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
         [JsonPropertyName("termination_reason")]

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Model
         public string? GameMode { get; set; }
 
         [JsonPropertyName("matching_allies")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsRequestMatchingAlly>? MatchingAllies { get; set; }
 
         [JsonPropertyName("namespace")]

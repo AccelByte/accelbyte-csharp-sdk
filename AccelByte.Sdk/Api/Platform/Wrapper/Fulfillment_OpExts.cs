@@ -75,5 +75,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCode(op);
         }
+        public static Platform.Model.FulfillmentResult? Execute(
+            this FulfillRewardsV2.FulfillRewardsV2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            FulfillRewardsV2 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsV2(op);
+        }
     }
 }

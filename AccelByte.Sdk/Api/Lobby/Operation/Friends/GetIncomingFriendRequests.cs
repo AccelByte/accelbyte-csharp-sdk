@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             : OperationBuilder<GetIncomingFriendRequestsBuilder>
         {
 
+            public string? FriendId { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
@@ -39,6 +41,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
             internal GetIncomingFriendRequestsBuilder() { }
 
+
+            public GetIncomingFriendRequestsBuilder SetFriendId(string _friendId)
+            {
+                FriendId = _friendId;
+                return this;
+            }
 
             public GetIncomingFriendRequestsBuilder SetLimit(long _limit)
             {
@@ -81,6 +89,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.FriendId is not null) QueryParams["friendId"] = builder.FriendId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
@@ -96,6 +105,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         public GetIncomingFriendRequests(
             string namespace_,
             string userId,
+            string? friendId,
             long? limit,
             long? offset
         )
@@ -103,6 +113,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (friendId is not null) QueryParams["friendId"] = friendId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 

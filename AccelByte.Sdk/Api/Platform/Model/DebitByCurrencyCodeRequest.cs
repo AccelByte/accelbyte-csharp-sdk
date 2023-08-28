@@ -124,6 +124,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly DebitByCurrencyCodeRequestBalanceSource EXPIRATION
             = new DebitByCurrencyCodeRequestBalanceSource("EXPIRATION");
 
+        public static readonly DebitByCurrencyCodeRequestBalanceSource IAPREVOCATION
+            = new DebitByCurrencyCodeRequestBalanceSource("IAP_REVOCATION");
+
         public static readonly DebitByCurrencyCodeRequestBalanceSource ORDERREVOCATION
             = new DebitByCurrencyCodeRequestBalanceSource("ORDER_REVOCATION");
 

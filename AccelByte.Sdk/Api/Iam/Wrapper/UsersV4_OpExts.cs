@@ -547,6 +547,19 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicMakeFactorMyDefaultV4(op);
         }
+        public static Iam.Model.ModelUserPublicInfoResponseV4? Execute(
+            this PublicGetUserPublicInfoByUserIdV4.PublicGetUserPublicInfoByUserIdV4Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserPublicInfoByUserIdV4 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetUserPublicInfoByUserIdV4(op);
+        }
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this PublicInviteUserV4.PublicInviteUserV4Builder builder,
             ModelPublicInviteUserRequestV4 body

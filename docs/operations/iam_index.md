@@ -184,6 +184,7 @@
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/force` | POST | PublicForcePlatformLinkV3 | [PublicForcePlatformLinkV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicForcePlatformLinkV3.cs) | [PublicForcePlatformLinkV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicForcePlatformLinkV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link` | GET | PublicWebLinkPlatform | [PublicWebLinkPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatform.cs) | [PublicWebLinkPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatform.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish` | GET | PublicWebLinkPlatformEstablish | [PublicWebLinkPlatformEstablish](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatformEstablish.cs) | [PublicWebLinkPlatformEstablish](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatformEstablish.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process` | POST | PublicProcessWebLinkPlatformV3 | [PublicProcessWebLinkPlatformV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicProcessWebLinkPlatformV3.cs) | [PublicProcessWebLinkPlatformV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicProcessWebLinkPlatformV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/reset` | POST | ResetPasswordV3 | [ResetPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/ResetPasswordV3.cs) | [ResetPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/ResetPasswordV3.cs) |
 | [DEPRECATED] `/iam/v3/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserByUserIdV3 | [PublicGetUserByUserIdV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserByUserIdV3.cs) | [PublicGetUserByUserIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserByUserIdV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/bans` | GET | PublicGetUserBanHistoryV3 | [PublicGetUserBanHistoryV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserBanHistoryV3.cs) | [PublicGetUserBanHistoryV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserBanHistoryV3.cs) |
@@ -410,6 +411,7 @@
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/email/enable` | POST | PublicEnableMyEmailV4 | [PublicEnableMyEmailV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicEnableMyEmailV4.cs) | [PublicEnableMyEmailV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicEnableMyEmailV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | GET | PublicGetMyEnabledFactorsV4 | [PublicGetMyEnabledFactorsV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetMyEnabledFactorsV4.cs) | [PublicGetMyEnabledFactorsV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetMyEnabledFactorsV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | POST | PublicMakeFactorMyDefaultV4 | [PublicMakeFactorMyDefaultV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicMakeFactorMyDefaultV4.cs) | [PublicMakeFactorMyDefaultV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicMakeFactorMyDefaultV4.cs) |
+| `/iam/v4/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserPublicInfoByUserIdV4 | [PublicGetUserPublicInfoByUserIdV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) | [PublicGetUserPublicInfoByUserIdV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) |
 | `/iam/v4/public/users/invite` | POST | PublicInviteUserV4 | [PublicInviteUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicInviteUserV4.cs) | [PublicInviteUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicInviteUserV4.cs) |
 
 
@@ -430,6 +432,7 @@
 |---|---|---|---|---|
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/metadata` | GET | AdminGetUserSinglePlatformAccount | [AdminGetUserSinglePlatformAccount](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetUserSinglePlatformAccount.cs) | [AdminGetUserSinglePlatformAccount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetUserSinglePlatformAccount.cs) |
 | `/iam/v3/public/namespaces/{namespace}/requests/{requestId}/async/status` | GET | PublicGetAsyncStatus | [PublicGetAsyncStatus](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetAsyncStatus.cs) | [PublicGetAsyncStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetAsyncStatus.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process` | POST | PublicProcessWebLinkPlatformV3 | [PublicProcessWebLinkPlatformV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicProcessWebLinkPlatformV3.cs) | [PublicProcessWebLinkPlatformV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicProcessWebLinkPlatformV3.cs) |
 
 ### OAuth Wrapper:  [OAuth](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -712,6 +715,7 @@
 | `model.UserPasswordUpdateV3Request` | [ModelUserPasswordUpdateV3Request](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPasswordUpdateV3Request.cs) |
 | `model.UserPermissionsResponseV3` | [ModelUserPermissionsResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPermissionsResponseV3.cs) |
 | `model.UserPlatformMetadata` | [ModelUserPlatformMetadata](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformMetadata.cs) |
+| `model.UserPublicInfoResponseV4` | [ModelUserPublicInfoResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPublicInfoResponseV4.cs) |
 | `model.UserResponse` | [ModelUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserResponse.cs) |
 | `model.UserResponseV3` | [ModelUserResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserResponseV3.cs) |
 | `model.UserRolesV4Response` | [ModelUserRolesV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelUserRolesV4Response.cs) |

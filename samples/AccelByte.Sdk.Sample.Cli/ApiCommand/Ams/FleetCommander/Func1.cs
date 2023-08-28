@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams","func1")]
-    public class Func1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "func1")]
+    public class Func1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Ams"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName{ get { return "Func1"; } }
+        public string OperationName { get { return "Func1"; } }
 
         public Func1Command(AccelByteSDK sdk)
         {
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             Func1 operation = opBuilder.Build(
             );
 
-            
+
             wrapper.Func1(operation);
             return String.Empty;
         }

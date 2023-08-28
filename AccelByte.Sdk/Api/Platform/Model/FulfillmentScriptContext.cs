@@ -40,9 +40,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly FulfillmentScriptContextSource DLC
             = new FulfillmentScriptContextSource("DLC");
 
-        public static readonly FulfillmentScriptContextSource DLCREVOCATION
-            = new FulfillmentScriptContextSource("DLC_REVOCATION");
-
         public static readonly FulfillmentScriptContextSource EXPIRATION
             = new FulfillmentScriptContextSource("EXPIRATION");
 
@@ -51,6 +48,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly FulfillmentScriptContextSource IAP
             = new FulfillmentScriptContextSource("IAP");
+
+        public static readonly FulfillmentScriptContextSource IAPCHARGEBACKREVERSED
+            = new FulfillmentScriptContextSource("IAP_CHARGEBACK_REVERSED");
 
         public static readonly FulfillmentScriptContextSource ORDERREVOCATION
             = new FulfillmentScriptContextSource("ORDER_REVOCATION");

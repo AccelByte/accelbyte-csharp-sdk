@@ -200,6 +200,7 @@
 | `A DTO object for user stat item value` | [ADTOObjectForUserStatItemValue](../../AccelByte.Sdk/Api/Social/Model/ADTOObjectForUserStatItemValue.cs) |
 | `Attribute` | [Attribute](../../AccelByte.Sdk/Api/Social/Model/Attribute.cs) |
 | `BulkCycleStatsAdd` | [BulkCycleStatsAdd](../../AccelByte.Sdk/Api/Social/Model/BulkCycleStatsAdd.cs) |
+| `BulkStatCycleOperationResult` | [BulkStatCycleOperationResult](../../AccelByte.Sdk/Api/Social/Model/BulkStatCycleOperationResult.cs) |
 | `BulkStatCycleRequest` | [BulkStatCycleRequest](../../AccelByte.Sdk/Api/Social/Model/BulkStatCycleRequest.cs) |
 | `BulkStatCycleResult` | [BulkStatCycleResult](../../AccelByte.Sdk/Api/Social/Model/BulkStatCycleResult.cs) |
 | `BulkStatItemCreate` | [BulkStatItemCreate](../../AccelByte.Sdk/Api/Social/Model/BulkStatItemCreate.cs) |

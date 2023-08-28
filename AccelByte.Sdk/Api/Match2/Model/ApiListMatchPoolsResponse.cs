@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public List<ApiMatchPool>? Data { get; set; }
 
         [JsonPropertyName("pagination")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsPagination? Pagination { get; set; }
 
     }

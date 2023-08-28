@@ -57,6 +57,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Storage { get; set; }
+
         [JsonPropertyName("teams")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsTeam>? Teams { get; set; }
@@ -73,7 +77,7 @@ namespace AccelByte.Sdk.Api.Session.Model
 
     }
 
-    public class ApimodelsGameSessionResponse<T1> : AccelByte.Sdk.Core.Model
+    public class ApimodelsGameSessionResponse<T1, T2> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("DSInformation")]
         public ApimodelsDSInformationResponse? DSInformation { get; set; }
@@ -122,6 +126,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T2? Storage { get; set; }
 
         [JsonPropertyName("teams")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

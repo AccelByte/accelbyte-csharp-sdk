@@ -60,6 +60,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }
 
+        [JsonPropertyName("ticket_ids")]
+        public List<string>? TicketIds { get; set; }
+
     }
 
     public class ModelsMockTicket<T1, T2> : AccelByte.Sdk.Core.Model
@@ -114,6 +117,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 
         [JsonPropertyName("ticket_id")]
         public string? TicketId { get; set; }
+
+        [JsonPropertyName("ticket_ids")]
+        public List<string>? TicketIds { get; set; }
 
     }
 

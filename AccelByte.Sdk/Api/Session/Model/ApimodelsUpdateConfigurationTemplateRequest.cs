@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? FallbackClaimKeys { get; set; }
 
+        [JsonPropertyName("immutableStorage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ImmutableStorage { get; set; }
+
         [JsonPropertyName("inactiveTimeout")]
         public int? InactiveTimeout { get; set; }
 
