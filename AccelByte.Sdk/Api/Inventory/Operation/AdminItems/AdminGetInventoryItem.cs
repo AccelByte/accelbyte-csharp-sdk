@@ -43,14 +43,16 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             public AdminGetInventoryItem Build(
                 string inventoryId,
-                string itemId,
-                string namespace_
+                string namespace_,
+                string slotId,
+                string sourceItemId
             )
             {
                 AdminGetInventoryItem op = new AdminGetInventoryItem(this,
                     inventoryId,
-                    itemId,
-                    namespace_
+                    namespace_,
+                    slotId,
+                    sourceItemId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -62,13 +64,15 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         private AdminGetInventoryItem(AdminGetInventoryItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["sourceItemId"] = sourceItemId;
 
 
 
@@ -82,13 +86,15 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public AdminGetInventoryItem(
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["sourceItemId"] = sourceItemId;
 
 
 
@@ -99,7 +105,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}/items/{itemId}";
+        public override string Path => "/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}/slots/{slotId}/sourceItems/{sourceItemId}";
 
         public override HttpMethod Method => HttpMethod.Get;
 

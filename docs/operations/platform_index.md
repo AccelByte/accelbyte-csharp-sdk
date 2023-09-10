@@ -207,13 +207,6 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code` | POST | RedeemCode | [RedeemCode](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/RedeemCode.cs) | [RedeemCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/RedeemCode.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards` | POST | FulfillRewards | [FulfillRewards](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewards.cs) | [FulfillRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillRewards.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code` | POST | PublicRedeemCode | [PublicRedeemCode](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/PublicRedeemCode.cs) | [PublicRedeemCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/PublicRedeemCode.cs) |
-| `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards` | POST | FulfillRewardsV2 | [FulfillRewardsV2](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewardsV2.cs) | [FulfillRewardsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillRewardsV2.cs) |
-
-### Clawback Wrapper:  [Clawback](../../AccelByte.Sdk/Api/Platform/Wrapper/Clawback.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/iap/clawback/histories` | GET | QueryIAPClawbackHistory | [QueryIAPClawbackHistory](../../AccelByte.Sdk/Api/Platform/Operation/Clawback/QueryIAPClawbackHistory.cs) | [QueryIAPClawbackHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Clawback/QueryIAPClawbackHistory.cs) |
-| `/platform/admin/namespaces/{namespace}/iap/clawback/playstation/mock` | POST | MockPlayStationStreamEvent | [MockPlayStationStreamEvent](../../AccelByte.Sdk/Api/Platform/Operation/Clawback/MockPlayStationStreamEvent.cs) | [MockPlayStationStreamEvent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Clawback/MockPlayStationStreamEvent.cs) |
 
 ### IAP Wrapper:  [IAP](../../AccelByte.Sdk/Api/Platform/Wrapper/IAP.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -237,8 +230,6 @@
 | `/platform/admin/namespaces/{namespace}/iap/config/playstation` | GET | GetPlayStationIAPConfig | [GetPlayStationIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetPlayStationIAPConfig.cs) | [GetPlayStationIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetPlayStationIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/playstation` | PUT | UpdatePlaystationIAPConfig | [UpdatePlaystationIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdatePlaystationIAPConfig.cs) | [UpdatePlaystationIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdatePlaystationIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/playstation` | DELETE | DeletePlaystationIAPConfig | [DeletePlaystationIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/DeletePlaystationIAPConfig.cs) | [DeletePlaystationIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/DeletePlaystationIAPConfig.cs) |
-| `/platform/admin/namespaces/{namespace}/iap/config/playstation/validate` | GET | ValidateExistedPlaystationIAPConfig | [ValidateExistedPlaystationIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/ValidateExistedPlaystationIAPConfig.cs) | [ValidateExistedPlaystationIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/ValidateExistedPlaystationIAPConfig.cs) |
-| `/platform/admin/namespaces/{namespace}/iap/config/playstation/validate` | PUT | ValidatePlaystationIAPConfig | [ValidatePlaystationIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/ValidatePlaystationIAPConfig.cs) | [ValidatePlaystationIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/ValidatePlaystationIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/steam` | GET | GetSteamIAPConfig | [GetSteamIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetSteamIAPConfig.cs) | [GetSteamIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetSteamIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/steam` | PUT | UpdateSteamIAPConfig | [UpdateSteamIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateSteamIAPConfig.cs) | [UpdateSteamIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdateSteamIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/steam` | DELETE | DeleteSteamIAPConfig | [DeleteSteamIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/DeleteSteamIAPConfig.cs) | [DeleteSteamIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/DeleteSteamIAPConfig.cs) |
@@ -598,10 +589,6 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Clawback Wrapper:  [Clawback](../../AccelByte.Sdk/Api/Platform/Wrapper/Clawback.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
 ### IAP Wrapper:  [IAP](../../AccelByte.Sdk/Api/Platform/Wrapper/IAP.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -704,7 +691,6 @@
 |---|---|
 | `AchievementInfo` | [AchievementInfo](../../AccelByte.Sdk/Api/Platform/Model/AchievementInfo.cs) |
 | `AdditionalData` | [AdditionalData](../../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
-| `AdditionalDataEntitlement` | [AdditionalDataEntitlement](../../AccelByte.Sdk/Api/Platform/Model/AdditionalDataEntitlement.cs) |
 | `AdminOrderCreate` | [AdminOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
 | `AdyenConfig` | [AdyenConfig](../../AccelByte.Sdk/Api/Platform/Model/AdyenConfig.cs) |
 | `AliPayConfig` | [AliPayConfig](../../AccelByte.Sdk/Api/Platform/Model/AliPayConfig.cs) |
@@ -750,9 +736,7 @@
 | `CategoryInfo` | [CategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
 | `CategoryUpdate` | [CategoryUpdate](../../AccelByte.Sdk/Api/Platform/Model/CategoryUpdate.cs) |
 | `CheckoutConfig` | [CheckoutConfig](../../AccelByte.Sdk/Api/Platform/Model/CheckoutConfig.cs) |
-| `ClawbackInfo` | [ClawbackInfo](../../AccelByte.Sdk/Api/Platform/Model/ClawbackInfo.cs) |
 | `ClientRequestParameter` | [ClientRequestParameter](../../AccelByte.Sdk/Api/Platform/Model/ClientRequestParameter.cs) |
-| `ClientTransaction` | [ClientTransaction](../../AccelByte.Sdk/Api/Platform/Model/ClientTransaction.cs) |
 | `CodeCreate` | [CodeCreate](../../AccelByte.Sdk/Api/Platform/Model/CodeCreate.cs) |
 | `CodeCreateResult` | [CodeCreateResult](../../AccelByte.Sdk/Api/Platform/Model/CodeCreateResult.cs) |
 | `CodeInfo` | [CodeInfo](../../AccelByte.Sdk/Api/Platform/Model/CodeInfo.cs) |
@@ -806,7 +790,6 @@
 | `EpicGamesReconcileRequest` | [EpicGamesReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/EpicGamesReconcileRequest.cs) |
 | `EpicGamesReconcileResult` | [EpicGamesReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/EpicGamesReconcileResult.cs) |
 | `ErrorEntity` | [ErrorEntity](../../AccelByte.Sdk/Api/Platform/Model/ErrorEntity.cs) |
-| `EventAdditionalData` | [EventAdditionalData](../../AccelByte.Sdk/Api/Platform/Model/EventAdditionalData.cs) |
 | `EventPayload` | [EventPayload](../../AccelByte.Sdk/Api/Platform/Model/EventPayload.cs) |
 | `ExportStoreRequest` | [ExportStoreRequest](../../AccelByte.Sdk/Api/Platform/Model/ExportStoreRequest.cs) |
 | `ExtensionFulfillmentSummary` | [ExtensionFulfillmentSummary](../../AccelByte.Sdk/Api/Platform/Model/ExtensionFulfillmentSummary.cs) |
@@ -839,7 +822,6 @@
 | `GrantSubscriptionDaysRequest` | [GrantSubscriptionDaysRequest](../../AccelByte.Sdk/Api/Platform/Model/GrantSubscriptionDaysRequest.cs) |
 | `GrpcServerInfo` | [GrpcServerInfo](../../AccelByte.Sdk/Api/Platform/Model/GrpcServerInfo.cs) |
 | `HierarchicalCategoryInfo` | [HierarchicalCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/HierarchicalCategoryInfo.cs) |
-| `IAPClawbackPagingSlicedResult` | [IAPClawbackPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPClawbackPagingSlicedResult.cs) |
 | `IAPConsumeHistoryInfo` | [IAPConsumeHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryInfo.cs) |
 | `IAPConsumeHistoryPagingSlicedResult` | [IAPConsumeHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/IAPConsumeHistoryPagingSlicedResult.cs) |
 | `IAPItemConfigInfo` | [IAPItemConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/IAPItemConfigInfo.cs) |
@@ -1021,8 +1003,6 @@
 | `StoreCreate` | [StoreCreate](../../AccelByte.Sdk/Api/Platform/Model/StoreCreate.cs) |
 | `StoreInfo` | [StoreInfo](../../AccelByte.Sdk/Api/Platform/Model/StoreInfo.cs) |
 | `StoreUpdate` | [StoreUpdate](../../AccelByte.Sdk/Api/Platform/Model/StoreUpdate.cs) |
-| `StreamEvent` | [StreamEvent](../../AccelByte.Sdk/Api/Platform/Model/StreamEvent.cs) |
-| `StreamEventBody` | [StreamEventBody](../../AccelByte.Sdk/Api/Platform/Model/StreamEventBody.cs) |
 | `StripeConfig` | [StripeConfig](../../AccelByte.Sdk/Api/Platform/Model/StripeConfig.cs) |
 | `Subscribable` | [Subscribable](../../AccelByte.Sdk/Api/Platform/Model/Subscribable.cs) |
 | `SubscribeRequest` | [SubscribeRequest](../../AccelByte.Sdk/Api/Platform/Model/SubscribeRequest.cs) |

@@ -30,6 +30,12 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("serverCustomAttributes")]
         public Dictionary<string, object>? ServerCustomAttributes { get; set; }
 
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("slotUsed")]
+        public int? SlotUsed { get; set; }
+
         [JsonPropertyName("source")]
         public string? Source { get; set; }
 
@@ -72,6 +78,12 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 
         [JsonPropertyName("serverCustomAttributes")]
         public T2? ServerCustomAttributes { get; set; }
+
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("slotUsed")]
+        public int? SlotUsed { get; set; }
 
         [JsonPropertyName("source")]
         public string? Source { get; set; }

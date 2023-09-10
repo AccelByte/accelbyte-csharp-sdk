@@ -307,7 +307,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).GameSessionGenerateCode<T1, T2>(op);
         }
-        public static Session.Model.ApimodelsGameSessionResponse? Execute(
+        public static void Execute(
             this PublicRevokeGameSessionCode.PublicRevokeGameSessionCodeBuilder builder,
             string namespace_,
             string sessionId
@@ -318,21 +318,7 @@ namespace AccelByte.Sdk.Api
                 sessionId
             );
 
-            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicRevokeGameSessionCode(op);
-        }
-
-        public static Session.Model.ApimodelsGameSessionResponse<T1, T2>? Execute<T1, T2>(
-            this PublicRevokeGameSessionCode.PublicRevokeGameSessionCodeBuilder builder,
-            string namespace_,
-            string sessionId
-        )
-        {
-            PublicRevokeGameSessionCode op = builder.Build(
-                namespace_,
-                sessionId
-            );
-
-            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicRevokeGameSessionCode<T1, T2>(op);
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicRevokeGameSessionCode(op);
         }
         public static void Execute(
             this PublicGameSessionInvite.PublicGameSessionInviteBuilder builder,

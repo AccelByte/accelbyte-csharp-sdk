@@ -133,9 +133,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly CreditRequestSource IAP
             = new CreditRequestSource("IAP");
 
-        public static readonly CreditRequestSource IAPCHARGEBACKREVERSED
-            = new CreditRequestSource("IAP_CHARGEBACK_REVERSED");
-
         public static readonly CreditRequestSource OTHER
             = new CreditRequestSource("OTHER");
 

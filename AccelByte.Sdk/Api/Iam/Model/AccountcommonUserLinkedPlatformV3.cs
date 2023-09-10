@@ -40,6 +40,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 
+        [JsonPropertyName("xuid")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Xuid { get; set; }
+
     }
 
 

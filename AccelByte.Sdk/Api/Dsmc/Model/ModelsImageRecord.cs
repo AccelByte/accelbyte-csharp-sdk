@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("artifactPath")]
         public string? ArtifactPath { get; set; }
 
+        [JsonPropertyName("coreDumpEnabled")]
+        public bool? CoreDumpEnabled { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
@@ -20,6 +23,12 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 
         [JsonPropertyName("image")]
         public string? Image { get; set; }
+
+        [JsonPropertyName("imageReplications")]
+        public List<ModelsImageReplication>? ImageReplications { get; set; }
+
+        [JsonPropertyName("imageReplicationsMap")]
+        public Dictionary<string, ModelsImageReplication>? ImageReplicationsMap { get; set; }
 
         [JsonPropertyName("imageSize")]
         public long? ImageSize { get; set; }

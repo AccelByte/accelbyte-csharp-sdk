@@ -28,14 +28,16 @@ namespace AccelByte.Sdk.Api
         public static Inventory.Model.ApimodelsItemResp? Execute(
             this AdminGetInventoryItem.AdminGetInventoryItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             AdminGetInventoryItem op = builder.Build(
                 inventoryId,
-                itemId,
-                namespace_
+                namespace_,
+                slotId,
+                sourceItemId
             );
 
             return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminGetInventoryItem(op);
@@ -44,17 +46,54 @@ namespace AccelByte.Sdk.Api
         public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
             this AdminGetInventoryItem.AdminGetInventoryItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             AdminGetInventoryItem op = builder.Build(
                 inventoryId,
-                itemId,
-                namespace_
+                namespace_,
+                slotId,
+                sourceItemId
             );
 
             return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminGetInventoryItem<T1, T2>(op);
+        }
+        public static Inventory.Model.ApimodelsItemResp? Execute(
+            this AdminConsumeUserItem.AdminConsumeUserItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminConsumeUserItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_,
+                userId
+            );
+
+            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminConsumeUserItem(op);
+        }
+
+        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
+            this AdminConsumeUserItem.AdminConsumeUserItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminConsumeUserItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_,
+                userId
+            );
+
+            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminConsumeUserItem<T1, T2>(op);
         }
         public static List<Inventory.Model.ApimodelsUpdateItemResp>? Execute(
             this AdminBulkUpdateMyItems.AdminBulkUpdateMyItemsBuilder builder,
@@ -110,7 +149,7 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Inventory.Model.ApimodelsUpdateItemResp>? Execute(
             this AdminBulkRemoveItems.AdminBulkRemoveItemsBuilder builder,
-            ApimodelsBulkRemoveItemsReq body,
+            List<ApimodelsRemoveInventoryItemReq> body,
             string inventoryId,
             string namespace_,
             string userId
@@ -124,45 +163,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkRemoveItems(op);
-        }
-        public static Inventory.Model.ApimodelsItemResp? Execute(
-            this AdminConsumeUserItem.AdminConsumeUserItemBuilder builder,
-            ApimodelsConsumeItemReq body,
-            string inventoryId,
-            string itemId,
-            string namespace_,
-            string userId
-        )
-        {
-            AdminConsumeUserItem op = builder.Build(
-                body,
-                inventoryId,
-                itemId,
-                namespace_,
-                userId
-            );
-
-            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminConsumeUserItem(op);
-        }
-
-        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
-            this AdminConsumeUserItem.AdminConsumeUserItemBuilder builder,
-            ApimodelsConsumeItemReq body,
-            string inventoryId,
-            string itemId,
-            string namespace_,
-            string userId
-        )
-        {
-            AdminConsumeUserItem op = builder.Build(
-                body,
-                inventoryId,
-                itemId,
-                namespace_,
-                userId
-            );
-
-            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminConsumeUserItem<T1, T2>(op);
         }
         public static Inventory.Model.ApimodelsItemResp? Execute(
             this AdminSaveItem.AdminSaveItemBuilder builder,

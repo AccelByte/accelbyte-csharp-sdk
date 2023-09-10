@@ -55,11 +55,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionResponse? response = wrapper.PublicRevokeGameSessionCode(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.PublicRevokeGameSessionCode(operation);
+            return String.Empty;
         }
     }
 }

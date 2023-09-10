@@ -35,9 +35,11 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public int? MinCount { get; set; }
 
         [JsonPropertyName("region_overrides")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, ModelsPodCountConfigOverride>? RegionOverrides { get; set; }
 
         [JsonPropertyName("regions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Regions { get; set; }
 
         [JsonPropertyName("session_timeout")]

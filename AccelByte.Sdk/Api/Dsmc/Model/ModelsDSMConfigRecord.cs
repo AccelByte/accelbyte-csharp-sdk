@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public int? Port { get; set; }
 
         [JsonPropertyName("ports")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, long>? Ports { get; set; }
 
         [JsonPropertyName("protocol")]

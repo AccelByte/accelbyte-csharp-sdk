@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public ModelsPagingCursor? Paging { get; set; }
 
         [JsonPropertyName("servers")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsServer>? Servers { get; set; }
 
     }

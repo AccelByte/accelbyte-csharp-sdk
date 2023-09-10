@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? EntitlementSummaries { get; set; }
 
-        [JsonPropertyName("id")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Id { get; set; }
-
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

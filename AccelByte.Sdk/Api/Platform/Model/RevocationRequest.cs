@@ -57,9 +57,6 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly RevocationRequestSource DLC
             = new RevocationRequestSource("DLC");
 
-        public static readonly RevocationRequestSource IAP
-            = new RevocationRequestSource("IAP");
-
         public static readonly RevocationRequestSource ORDER
             = new RevocationRequestSource("ORDER");
 

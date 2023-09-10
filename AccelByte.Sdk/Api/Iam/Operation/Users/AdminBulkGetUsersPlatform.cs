@@ -7,57 +7,58 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// fulfillRewardsV2
+    /// AdminBulkGetUsersPlatform
     ///
-    ///  [SERVICE COMMUNICATION ONLY] Fulfill rewards.
-    /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-    ///   *  Returns : fulfillment result
+    /// 
+    /// Notes:
+    /// 
+    /// 
+    /// 
+    /// 
+    ///             * Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+    /// 
+    /// 
+    ///             * This endpoint bulk get users' basic info by userId, max allowed 100 at a time
+    /// 
+    /// 
+    ///             * If namespace is game, will search by game user Id, other wise will search by publisher namespace
     /// </summary>
-    public class FulfillRewardsV2 : AccelByte.Sdk.Core.Operation
+    public class AdminBulkGetUsersPlatform : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FulfillRewardsV2Builder Builder { get => new FulfillRewardsV2Builder(); }
+        public static AdminBulkGetUsersPlatformBuilder Builder { get => new AdminBulkGetUsersPlatformBuilder(); }
 
-        public class FulfillRewardsV2Builder
-            : OperationBuilder<FulfillRewardsV2Builder>
+        public class AdminBulkGetUsersPlatformBuilder
+            : OperationBuilder<AdminBulkGetUsersPlatformBuilder>
         {
 
 
-            public Model.RewardsRequest? Body { get; set; }
+
+
+
+            internal AdminBulkGetUsersPlatformBuilder() { }
 
 
 
 
-            internal FulfillRewardsV2Builder() { }
 
 
-
-            public FulfillRewardsV2Builder SetBody(Model.RewardsRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
-
-
-
-            public FulfillRewardsV2 Build(
-                string namespace_,
-                string userId
+            public AdminBulkGetUsersPlatform Build(
+                ModelUserIDsRequest body,
+                string namespace_
             )
             {
-                FulfillRewardsV2 op = new FulfillRewardsV2(this,
-                    namespace_,
-                    userId
+                AdminBulkGetUsersPlatform op = new AdminBulkGetUsersPlatform(this,
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -67,33 +68,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private FulfillRewardsV2(FulfillRewardsV2Builder builder,
-            string namespace_,
-            string userId
+        private AdminBulkGetUsersPlatform(AdminBulkGetUsersPlatformBuilder builder,
+            ModelUserIDsRequest body,
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
 
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public FulfillRewardsV2(
+        public AdminBulkGetUsersPlatform(
             string namespace_,
-            string userId,
-            Model.RewardsRequest body
+            Model.ModelUserIDsRequest body
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
 
 
@@ -105,7 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards";
+        public override string Path => "/iam/v3/admin/namespaces/{namespace}/users/bulk/platforms";
 
         public override HttpMethod Method => HttpMethod.Post;
 
@@ -116,7 +114,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.FulfillmentResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelListBulkUserPlatformsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -125,13 +123,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.FulfillmentResult>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelListBulkUserPlatformsResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.FulfillmentResult>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelListBulkUserPlatformsResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.FulfillmentResult>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelListBulkUserPlatformsResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

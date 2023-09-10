@@ -1035,6 +1035,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateCountryAgeRestrictionV3(op);
         }
+        public static Iam.Model.AccountcommonUserPlatforms? Execute(
+            this AdminListUserIDByPlatformUserIDsV3.AdminListUserIDByPlatformUserIDsV3Builder builder,
+            ModelPlatformUserIDRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminListUserIDByPlatformUserIDsV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListUserIDByPlatformUserIDsV3(op);
+        }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminGetUserByPlatformUserIDV3.AdminGetUserByPlatformUserIDV3Builder builder,
             string namespace_,
@@ -1099,6 +1114,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListUserIDByUserIDsV3(op);
+        }
+        public static Iam.Model.ModelListBulkUserPlatformsResponse? Execute(
+            this AdminBulkGetUsersPlatform.AdminBulkGetUsersPlatformBuilder builder,
+            ModelUserIDsRequest body,
+            string namespace_
+        )
+        {
+            AdminBulkGetUsersPlatform op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBulkGetUsersPlatform(op);
         }
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this AdminInviteUserV3.AdminInviteUserV3Builder builder,

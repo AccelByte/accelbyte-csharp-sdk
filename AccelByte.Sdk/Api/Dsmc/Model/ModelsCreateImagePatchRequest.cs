@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("artifactPath")]
         public string? ArtifactPath { get; set; }
 
+        [JsonPropertyName("coreDumpEnabled")]
+        public bool? CoreDumpEnabled { get; set; }
+
         [JsonPropertyName("dockerPath")]
         public string? DockerPath { get; set; }
 
@@ -30,8 +33,8 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
 
-        [JsonPropertyName("uploaderFlags")]
-        public List<ModelsUploaderFlag>? UploaderFlags { get; set; }
+        [JsonPropertyName("uploaderFlag")]
+        public string? UploaderFlag { get; set; }
 
         [JsonPropertyName("version")]
         public string? Version { get; set; }

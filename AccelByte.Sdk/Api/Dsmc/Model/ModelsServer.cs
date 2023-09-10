@@ -10,13 +10,19 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     public class ModelsServer : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allocation_events")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsAllocationEvent>? AllocationEvents { get; set; }
 
         [JsonPropertyName("allocation_id")]
         public string? AllocationId { get; set; }
 
         [JsonPropertyName("alternate_ips")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AlternateIps { get; set; }
+
+        [JsonPropertyName("artifact_path")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ArtifactPath { get; set; }
 
         [JsonPropertyName("cpu_limit")]
         public int? CpuLimit { get; set; }
@@ -25,12 +31,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("custom_attribute")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CustomAttribute { get; set; }
 
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 
         [JsonPropertyName("deployment_override")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DeploymentOverride { get; set; }
 
         [JsonPropertyName("game_version")]
@@ -41,6 +49,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 
         [JsonPropertyName("ip")]
         public string? Ip { get; set; }
+
+        [JsonPropertyName("is_core_dump_enabled")]
+        public bool? IsCoreDumpEnabled { get; set; }
 
         [JsonPropertyName("is_override_game_version")]
         public bool? IsOverrideGameVersion { get; set; }
@@ -67,6 +78,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public int? Port { get; set; }
 
         [JsonPropertyName("ports")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, long>? Ports { get; set; }
 
         [JsonPropertyName("protocol")]
@@ -85,6 +97,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Status { get; set; }
 
         [JsonPropertyName("status_history")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
         [JsonPropertyName("termination_reason")]

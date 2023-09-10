@@ -44,7 +44,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             public AdminConsumeUserItem Build(
                 ApimodelsConsumeItemReq body,
                 string inventoryId,
-                string itemId,
                 string namespace_,
                 string userId
             )
@@ -52,7 +51,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
                 AdminConsumeUserItem op = new AdminConsumeUserItem(this,
                     body,
                     inventoryId,
-                    itemId,
                     namespace_,
                     userId
                 );
@@ -67,13 +65,11 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
         private AdminConsumeUserItem(AdminConsumeUserItemBuilder builder,
             ApimodelsConsumeItemReq body,
             string inventoryId,
-            string itemId,
             string namespace_,
             string userId
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -90,14 +86,12 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public AdminConsumeUserItem(
             string inventoryId,
-            string itemId,
             string namespace_,
             string userId,
             Model.ApimodelsConsumeItemReq body
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
@@ -111,7 +105,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/items/{itemId}/consume";
+        public override string Path => "/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/consume";
 
         public override HttpMethod Method => HttpMethod.Post;
 

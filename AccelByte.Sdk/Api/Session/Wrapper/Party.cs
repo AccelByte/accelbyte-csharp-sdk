@@ -185,21 +185,11 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsPartySessionResponse? PublicRevokePartyCode(PublicRevokePartyCode input)
+        public void PublicRevokePartyCode(PublicRevokePartyCode input)
         {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-
-        public Model.ApimodelsPartySessionResponse<T1, T2>? PublicRevokePartyCode<T1, T2>(PublicRevokePartyCode input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1, T2>(
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

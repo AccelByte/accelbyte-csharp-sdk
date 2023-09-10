@@ -12,6 +12,12 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("qty")]
         public int? Qty { get; set; }
 
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("sourceItemId")]
+        public string? SourceItemId { get; set; }
+
     }
 
 

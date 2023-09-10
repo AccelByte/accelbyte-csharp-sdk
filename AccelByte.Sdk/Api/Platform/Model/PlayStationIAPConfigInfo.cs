@@ -9,32 +9,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class PlayStationIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("backOfficeServerClientId")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? BackOfficeServerClientId { get; set; }
-
-        [JsonPropertyName("backOfficeServerClientSecret")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? BackOfficeServerClientSecret { get; set; }
-
-        [JsonPropertyName("enableStreamJob")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public bool? EnableStreamJob { get; set; }
-
         [JsonPropertyName("environment")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Environment { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
-
-        [JsonPropertyName("streamName")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? StreamName { get; set; }
-
-        [JsonPropertyName("streamPartnerName")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? StreamPartnerName { get; set; }
 
     }
 

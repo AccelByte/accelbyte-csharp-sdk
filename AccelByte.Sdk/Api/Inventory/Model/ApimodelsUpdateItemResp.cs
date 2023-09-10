@@ -13,8 +13,11 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApimodelsErrorResponse? ErrorDetails { get; set; }
 
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("sourceItemId")]
+        public string? SourceItemId { get; set; }
 
         [JsonPropertyName("success")]
         public bool? Success { get; set; }

@@ -302,21 +302,11 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApimodelsGameSessionResponse? PublicRevokeGameSessionCode(PublicRevokeGameSessionCode input)
+        public void PublicRevokeGameSessionCode(PublicRevokeGameSessionCode input)
         {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-
-        public Model.ApimodelsGameSessionResponse<T1, T2>? PublicRevokeGameSessionCode<T1, T2>(PublicRevokeGameSessionCode input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1, T2>(
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

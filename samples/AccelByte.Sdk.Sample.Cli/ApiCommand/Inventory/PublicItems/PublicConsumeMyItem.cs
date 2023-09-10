@@ -31,9 +31,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
         [SdkCommandArgument("inventoryId")]
         public string InventoryId { get; set; } = String.Empty;
 
-        [SdkCommandArgument("itemId")]
-        public string ItemId { get; set; } = String.Empty;
-
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
@@ -58,7 +55,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
             PublicConsumeMyItem operation = opBuilder.Build(
                 Body,
                 InventoryId,
-                ItemId,
                 Namespace
             );
 

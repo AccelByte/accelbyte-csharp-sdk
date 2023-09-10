@@ -9,11 +9,11 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 {
     public class ApimodelsTradeItemResp : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("itemId")]
-        public string? ItemId { get; set; }
-
         [JsonPropertyName("qty")]
         public int? Qty { get; set; }
+
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
 
         [JsonPropertyName("sourceItemId")]
         public string? SourceItemId { get; set; }

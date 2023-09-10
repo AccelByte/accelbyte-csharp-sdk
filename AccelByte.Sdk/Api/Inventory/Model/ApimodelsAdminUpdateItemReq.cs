@@ -12,11 +12,14 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("customAttributes")]
         public Dictionary<string, object>? CustomAttributes { get; set; }
 
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-
         [JsonPropertyName("serverCustomAttributes")]
         public Dictionary<string, object>? ServerCustomAttributes { get; set; }
+
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("sourceItemId")]
+        public string? SourceItemId { get; set; }
 
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }
@@ -31,11 +34,14 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("customAttributes")]
         public T1? CustomAttributes { get; set; }
 
-        [JsonPropertyName("id")]
-        public string? Id { get; set; }
-
         [JsonPropertyName("serverCustomAttributes")]
         public T2? ServerCustomAttributes { get; set; }
+
+        [JsonPropertyName("slotId")]
+        public string? SlotId { get; set; }
+
+        [JsonPropertyName("sourceItemId")]
+        public string? SourceItemId { get; set; }
 
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }

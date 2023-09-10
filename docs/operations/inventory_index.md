@@ -17,11 +17,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}/items` | GET | AdminListItems | [AdminListItems](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminListItems.cs) | [AdminListItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminListItems.cs) |
-| `/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}/items/{itemId}` | GET | AdminGetInventoryItem | [AdminGetInventoryItem](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminGetInventoryItem.cs) | [AdminGetInventoryItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminGetInventoryItem.cs) |
+| `/inventory/v1/admin/namespaces/{namespace}/inventories/{inventoryId}/slots/{slotId}/sourceItems/{sourceItemId}` | GET | AdminGetInventoryItem | [AdminGetInventoryItem](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminGetInventoryItem.cs) | [AdminGetInventoryItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminGetInventoryItem.cs) |
+| `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/consume` | POST | AdminConsumeUserItem | [AdminConsumeUserItem](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminConsumeUserItem.cs) | [AdminConsumeUserItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminConsumeUserItem.cs) |
 | `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/items` | PUT | AdminBulkUpdateMyItems | [AdminBulkUpdateMyItems](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminBulkUpdateMyItems.cs) | [AdminBulkUpdateMyItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminBulkUpdateMyItems.cs) |
 | `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/items` | POST | AdminSaveItemToInventory | [AdminSaveItemToInventory](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminSaveItemToInventory.cs) | [AdminSaveItemToInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminSaveItemToInventory.cs) |
 | `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/items` | DELETE | AdminBulkRemoveItems | [AdminBulkRemoveItems](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminBulkRemoveItems.cs) | [AdminBulkRemoveItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminBulkRemoveItems.cs) |
-| `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/inventories/{inventoryId}/items/{itemId}/consume` | POST | AdminConsumeUserItem | [AdminConsumeUserItem](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminConsumeUserItem.cs) | [AdminConsumeUserItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminConsumeUserItem.cs) |
 | `/inventory/v1/admin/namespaces/{namespace}/users/{userId}/items` | POST | AdminSaveItem | [AdminSaveItem](../../AccelByte.Sdk/Api/Inventory/Operation/AdminItems/AdminSaveItem.cs) | [AdminSaveItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminItems/AdminSaveItem.cs) |
 
 ### Admin Inventory Configurations Wrapper:  [AdminInventoryConfigurations](../../AccelByte.Sdk/Api/Inventory/Wrapper/AdminInventoryConfigurations.cs)
@@ -70,12 +70,12 @@
 ### Public Items Wrapper:  [PublicItems](../../AccelByte.Sdk/Api/Inventory/Wrapper/PublicItems.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/consume` | POST | PublicConsumeMyItem | [PublicConsumeMyItem](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicConsumeMyItem.cs) | [PublicConsumeMyItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicConsumeMyItem.cs) |
 | `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items` | GET | PublicListItems | [PublicListItems](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicListItems.cs) | [PublicListItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicListItems.cs) |
 | `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items` | PUT | PublicBulkUpdateMyItems | [PublicBulkUpdateMyItems](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicBulkUpdateMyItems.cs) | [PublicBulkUpdateMyItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicBulkUpdateMyItems.cs) |
 | `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items` | DELETE | PublicBulkRemoveMyItems | [PublicBulkRemoveMyItems](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicBulkRemoveMyItems.cs) | [PublicBulkRemoveMyItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicBulkRemoveMyItems.cs) |
 | `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/movement` | POST | PublicMoveMyItems | [PublicMoveMyItems](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicMoveMyItems.cs) | [PublicMoveMyItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicMoveMyItems.cs) |
-| `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/{itemId}` | GET | PublicGetItem | [PublicGetItem](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicGetItem.cs) | [PublicGetItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicGetItem.cs) |
-| `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/{itemId}/consume` | POST | PublicConsumeMyItem | [PublicConsumeMyItem](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicConsumeMyItem.cs) | [PublicConsumeMyItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicConsumeMyItem.cs) |
+| `/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/slots/{slotId}/sourceItems/{sourceItemId}` | GET | PublicGetItem | [PublicGetItem](../../AccelByte.Sdk/Api/Inventory/Operation/PublicItems/PublicGetItem.cs) | [PublicGetItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/PublicItems/PublicGetItem.cs) |
 
 
 &nbsp;  
@@ -130,7 +130,6 @@
 | Model | Class |
 |---|---|
 | `apimodels.AdminUpdateItemReq` | [ApimodelsAdminUpdateItemReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsAdminUpdateItemReq.cs) |
-| `apimodels.BulkRemoveItemsReq` | [ApimodelsBulkRemoveItemsReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsBulkRemoveItemsReq.cs) |
 | `apimodels.ConsumeItemReq` | [ApimodelsConsumeItemReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsConsumeItemReq.cs) |
 | `apimodels.CreateInventoryConfigurationReq` | [ApimodelsCreateInventoryConfigurationReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsCreateInventoryConfigurationReq.cs) |
 | `apimodels.CreateInventoryReq` | [ApimodelsCreateInventoryReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsCreateInventoryReq.cs) |
@@ -152,6 +151,7 @@
 | `apimodels.MoveItemsReq` | [ApimodelsMoveItemsReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsMoveItemsReq.cs) |
 | `apimodels.MoveItemsResp` | [ApimodelsMoveItemsResp](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsMoveItemsResp.cs) |
 | `apimodels.Paging` | [ApimodelsPaging](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsPaging.cs) |
+| `apimodels.RemoveInventoryItemReq` | [ApimodelsRemoveInventoryItemReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsRemoveInventoryItemReq.cs) |
 | `apimodels.SaveItemReq` | [ApimodelsSaveItemReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsSaveItemReq.cs) |
 | `apimodels.SaveItemToInventoryReq` | [ApimodelsSaveItemToInventoryReq](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsSaveItemToInventoryReq.cs) |
 | `apimodels.TradeItem` | [ApimodelsTradeItem](../../AccelByte.Sdk/Api/Inventory/Model/ApimodelsTradeItem.cs) |

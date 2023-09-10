@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             get { return Operation.AdminGetInventoryItem.Builder.SetWrapperObject(this); }
         }
+        public AdminConsumeUserItem.AdminConsumeUserItemBuilder AdminConsumeUserItemOp
+        {
+            get { return Operation.AdminConsumeUserItem.Builder.SetWrapperObject(this); }
+        }
         public AdminBulkUpdateMyItems.AdminBulkUpdateMyItemsBuilder AdminBulkUpdateMyItemsOp
         {
             get { return Operation.AdminBulkUpdateMyItems.Builder.SetWrapperObject(this); }
@@ -38,10 +42,6 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public AdminBulkRemoveItems.AdminBulkRemoveItemsBuilder AdminBulkRemoveItemsOp
         {
             get { return Operation.AdminBulkRemoveItems.Builder.SetWrapperObject(this); }
-        }
-        public AdminConsumeUserItem.AdminConsumeUserItemBuilder AdminConsumeUserItemOp
-        {
-            get { return Operation.AdminConsumeUserItem.Builder.SetWrapperObject(this); }
         }
         public AdminSaveItem.AdminSaveItemBuilder AdminSaveItemOp
         {
@@ -69,6 +69,25 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         }
 
         public Model.ApimodelsItemResp<T1, T2>? AdminGetInventoryItem<T1, T2>(AdminGetInventoryItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsItemResp? AdminConsumeUserItem(AdminConsumeUserItem input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsItemResp<T1, T2>? AdminConsumeUserItem<T1, T2>(AdminConsumeUserItem input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -110,25 +129,6 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ApimodelsItemResp? AdminConsumeUserItem(AdminConsumeUserItem input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-
-        public Model.ApimodelsItemResp<T1, T2>? AdminConsumeUserItem<T1, T2>(AdminConsumeUserItem input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse<T1, T2>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

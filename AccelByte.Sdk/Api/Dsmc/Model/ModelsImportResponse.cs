@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public List<string>? Affected { get; set; }
 
         [JsonPropertyName("failed")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Failed { get; set; }
 
     }

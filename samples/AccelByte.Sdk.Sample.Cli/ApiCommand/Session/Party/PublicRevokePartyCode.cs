@@ -55,11 +55,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            AccelByte.Sdk.Api.Session.Model.ApimodelsPartySessionResponse? response = wrapper.PublicRevokePartyCode(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.PublicRevokePartyCode(operation);
+            return String.Empty;
         }
     }
 }

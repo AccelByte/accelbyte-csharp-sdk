@@ -39,10 +39,6 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicRedeemCode.Builder.SetWrapperObject(this); }
         }
-        public FulfillRewardsV2.FulfillRewardsV2Builder FulfillRewardsV2Op
-        {
-            get { return Operation.FulfillRewardsV2.Builder.SetWrapperObject(this); }
-        }
         #endregion
 
         public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillmentHistories(QueryFulfillmentHistories input)
@@ -82,15 +78,6 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.FulfillmentResult? PublicRedeemCode(PublicRedeemCode input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.FulfillmentResult? FulfillRewardsV2(FulfillRewardsV2 input)
         {
             var response = _sdk.RunRequest(input);
 

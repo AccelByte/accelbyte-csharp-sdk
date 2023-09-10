@@ -41,14 +41,16 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             public PublicGetItem Build(
                 string inventoryId,
-                string itemId,
-                string namespace_
+                string namespace_,
+                string slotId,
+                string sourceItemId
             )
             {
                 PublicGetItem op = new PublicGetItem(this,
                     inventoryId,
-                    itemId,
-                    namespace_
+                    namespace_,
+                    slotId,
+                    sourceItemId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -60,13 +62,15 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         private PublicGetItem(PublicGetItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["sourceItemId"] = sourceItemId;
 
 
 
@@ -80,13 +84,15 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public PublicGetItem(
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PathParams["inventoryId"] = inventoryId;
-            PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
+            PathParams["slotId"] = slotId;
+            PathParams["sourceItemId"] = sourceItemId;
 
 
 
@@ -97,7 +103,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/items/{itemId}";
+        public override string Path => "/inventory/v1/public/namespaces/{namespace}/users/me/inventories/{inventoryId}/slots/{slotId}/sourceItems/{sourceItemId}";
 
         public override HttpMethod Method => HttpMethod.Get;
 

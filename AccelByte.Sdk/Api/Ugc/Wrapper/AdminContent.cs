@@ -57,6 +57,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminSearchContent.Builder.SetWrapperObject(this); }
         }
+        public AdminGetContentBulkByShareCodes.AdminGetContentBulkByShareCodesBuilder AdminGetContentBulkByShareCodesOp
+        {
+            get { return Operation.AdminGetContentBulkByShareCodes.Builder.SetWrapperObject(this); }
+        }
         public AdminGetUserContentByShareCode.AdminGetUserContentByShareCodeBuilder AdminGetUserContentByShareCodeOp
         {
             get { return Operation.AdminGetUserContentByShareCode.Builder.SetWrapperObject(this); }
@@ -237,6 +241,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsContentDownloadResponse>? AdminGetContentBulkByShareCodes(AdminGetContentBulkByShareCodes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.ModelsContentDownloadResponse<T1>>? AdminGetContentBulkByShareCodes<T1>(AdminGetContentBulkByShareCodes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

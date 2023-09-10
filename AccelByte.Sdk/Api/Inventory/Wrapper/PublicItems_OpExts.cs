@@ -12,6 +12,37 @@ namespace AccelByte.Sdk.Api
 {
     public static class InventoryPublicItems_OpExts
     {
+        public static Inventory.Model.ApimodelsItemResp? Execute(
+            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicConsumeMyItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem(op);
+        }
+
+        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
+            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicConsumeMyItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem<T1, T2>(op);
+        }
         public static Inventory.Model.ApimodelsListItemResp? Execute(
             this PublicListItems.PublicListItemsBuilder builder,
             string inventoryId,
@@ -42,7 +73,7 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Inventory.Model.ApimodelsUpdateItemResp>? Execute(
             this PublicBulkRemoveMyItems.PublicBulkRemoveMyItemsBuilder builder,
-            ApimodelsBulkRemoveItemsReq body,
+            List<ApimodelsRemoveInventoryItemReq> body,
             string inventoryId,
             string namespace_
         )
@@ -73,14 +104,16 @@ namespace AccelByte.Sdk.Api
         public static Inventory.Model.ApimodelsItemResp? Execute(
             this PublicGetItem.PublicGetItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PublicGetItem op = builder.Build(
                 inventoryId,
-                itemId,
-                namespace_
+                namespace_,
+                slotId,
+                sourceItemId
             );
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem(op);
@@ -89,52 +122,19 @@ namespace AccelByte.Sdk.Api
         public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
             this PublicGetItem.PublicGetItemBuilder builder,
             string inventoryId,
-            string itemId,
-            string namespace_
+            string namespace_,
+            string slotId,
+            string sourceItemId
         )
         {
             PublicGetItem op = builder.Build(
                 inventoryId,
-                itemId,
-                namespace_
+                namespace_,
+                slotId,
+                sourceItemId
             );
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem<T1, T2>(op);
-        }
-        public static Inventory.Model.ApimodelsItemResp? Execute(
-            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
-            ApimodelsConsumeItemReq body,
-            string inventoryId,
-            string itemId,
-            string namespace_
-        )
-        {
-            PublicConsumeMyItem op = builder.Build(
-                body,
-                inventoryId,
-                itemId,
-                namespace_
-            );
-
-            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem(op);
-        }
-
-        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
-            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
-            ApimodelsConsumeItemReq body,
-            string inventoryId,
-            string itemId,
-            string namespace_
-        )
-        {
-            PublicConsumeMyItem op = builder.Build(
-                body,
-                inventoryId,
-                itemId,
-                namespace_
-            );
-
-            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem<T1, T2>(op);
         }
     }
 }

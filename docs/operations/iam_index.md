@@ -113,11 +113,13 @@
 | `/iam/v3/admin/namespaces/{namespace}/agerestrictions` | PATCH | AdminUpdateAgeRestrictionConfigV3 | [AdminUpdateAgeRestrictionConfigV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminUpdateAgeRestrictionConfigV3.cs) | [AdminUpdateAgeRestrictionConfigV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminUpdateAgeRestrictionConfigV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/agerestrictions/countries` | GET | AdminGetListCountryAgeRestrictionV3 | [AdminGetListCountryAgeRestrictionV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetListCountryAgeRestrictionV3.cs) | [AdminGetListCountryAgeRestrictionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetListCountryAgeRestrictionV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/agerestrictions/countries/{countryCode}` | PATCH | AdminUpdateCountryAgeRestrictionV3 | [AdminUpdateCountryAgeRestrictionV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminUpdateCountryAgeRestrictionV3.cs) | [AdminUpdateCountryAgeRestrictionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminUpdateCountryAgeRestrictionV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users` | POST | AdminListUserIDByPlatformUserIDsV3 | [AdminListUserIDByPlatformUserIDsV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminListUserIDByPlatformUserIDsV3.cs) | [AdminListUserIDByPlatformUserIDsV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminListUserIDByPlatformUserIDsV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId}` | GET | AdminGetUserByPlatformUserIDV3 | [AdminGetUserByPlatformUserIDV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetUserByPlatformUserIDV3.cs) | [AdminGetUserByPlatformUserIDV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetUserByPlatformUserIDV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/roles/{roleId}/users` | GET | GetAdminUsersByRoleIdV3 | [GetAdminUsersByRoleIdV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/GetAdminUsersByRoleIdV3.cs) | [GetAdminUsersByRoleIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/GetAdminUsersByRoleIdV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users` | GET | AdminGetUserByEmailAddressV3 | [AdminGetUserByEmailAddressV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetUserByEmailAddressV3.cs) | [AdminGetUserByEmailAddressV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetUserByEmailAddressV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/bans` | POST | AdminGetBulkUserBanV3 | [AdminGetBulkUserBanV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetBulkUserBanV3.cs) | [AdminGetBulkUserBanV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetBulkUserBanV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/bulk` | POST | AdminListUserIDByUserIDsV3 | [AdminListUserIDByUserIDsV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminListUserIDByUserIDsV3.cs) | [AdminListUserIDByUserIDsV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminListUserIDByUserIDsV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/users/bulk/platforms` | POST | AdminBulkGetUsersPlatform | [AdminBulkGetUsersPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminBulkGetUsersPlatform.cs) | [AdminBulkGetUsersPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminBulkGetUsersPlatform.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/invite` | POST | AdminInviteUserV3 | [AdminInviteUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminInviteUserV3.cs) | [AdminInviteUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminInviteUserV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/linkhistories` | GET | AdminQueryThirdPlatformLinkHistoryV3 | [AdminQueryThirdPlatformLinkHistoryV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminQueryThirdPlatformLinkHistoryV3.cs) | [AdminQueryThirdPlatformLinkHistoryV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminQueryThirdPlatformLinkHistoryV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/platforms/justice` | GET | AdminListUsersV3 | [AdminListUsersV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminListUsersV3.cs) | [AdminListUsersV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminListUsersV3.cs) |
@@ -626,6 +628,7 @@
 | `model.LinkingHistoryResponseWithPaginationV3` | [ModelLinkingHistoryResponseWithPaginationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelLinkingHistoryResponseWithPaginationV3.cs) |
 | `model.ListAssignedUsersV4Response` | [ModelListAssignedUsersV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListAssignedUsersV4Response.cs) |
 | `model.ListBulkUserBanResponseV3` | [ModelListBulkUserBanResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserBanResponseV3.cs) |
+| `model.ListBulkUserPlatformsResponse` | [ModelListBulkUserPlatformsResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserPlatformsResponse.cs) |
 | `model.ListBulkUserResponse` | [ModelListBulkUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserResponse.cs) |
 | `model.ListEmailAddressRequest` | [ModelListEmailAddressRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelListEmailAddressRequest.cs) |
 | `model.ListRoleV4Response` | [ModelListRoleV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListRoleV4Response.cs) |
@@ -714,6 +717,7 @@
 | `model.UserPasswordUpdateRequest` | [ModelUserPasswordUpdateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPasswordUpdateRequest.cs) |
 | `model.UserPasswordUpdateV3Request` | [ModelUserPasswordUpdateV3Request](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPasswordUpdateV3Request.cs) |
 | `model.UserPermissionsResponseV3` | [ModelUserPermissionsResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPermissionsResponseV3.cs) |
+| `model.UserPlatformInfo` | [ModelUserPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformInfo.cs) |
 | `model.UserPlatformMetadata` | [ModelUserPlatformMetadata](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformMetadata.cs) |
 | `model.UserPublicInfoResponseV4` | [ModelUserPublicInfoResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPublicInfoResponseV4.cs) |
 | `model.UserResponse` | [ModelUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserResponse.cs) |
@@ -723,6 +727,7 @@
 | `model.UserUpdateRequestV3` | [ModelUserUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserUpdateRequestV3.cs) |
 | `model.UserVerificationRequest` | [ModelUserVerificationRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserVerificationRequest.cs) |
 | `model.UserVerificationRequestV3` | [ModelUserVerificationRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserVerificationRequestV3.cs) |
+| `model.UserWithPlatformInfo` | [ModelUserWithPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelUserWithPlatformInfo.cs) |
 | `model.ValidUserIDResponseV4` | [ModelValidUserIDResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelValidUserIDResponseV4.cs) |
 | `model.ValidationDetail` | [ModelValidationDetail](../../AccelByte.Sdk/Api/Iam/Model/ModelValidationDetail.cs) |
 | `model.ValidationDetailPublic` | [ModelValidationDetailPublic](../../AccelByte.Sdk/Api/Iam/Model/ModelValidationDetailPublic.cs) |

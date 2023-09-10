@@ -37,6 +37,7 @@
 | `/dsmcontroller/admin/namespaces/{namespace}/images/versions/{version}/patches/{versionPatch}` | GET | GetImagePatchDetail | [GetImagePatchDetail](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetImagePatchDetail.cs) | [GetImagePatchDetail](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetImagePatchDetail.cs) |
 | `/dsmcontroller/admin/namespaces/{namespace}/repository` | GET | GetRepository | [GetRepository](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/GetRepository.cs) | [GetRepository](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/GetRepository.cs) |
 | `/dsmcontroller/admin/repository` | POST | CreateRepository | [CreateRepository](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/CreateRepository.cs) | [CreateRepository](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/CreateRepository.cs) |
+| `/dsmcontroller/namespaces/{namespace}/images` | GET | ListImagesClient | [ListImagesClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ListImagesClient.cs) | [ListImagesClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ListImagesClient.cs) |
 | `/dsmcontroller/namespaces/{namespace}/images/limit` | GET | ImageLimitClient | [ImageLimitClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageLimitClient.cs) | [ImageLimitClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageLimitClient.cs) |
 | `/dsmcontroller/namespaces/{namespace}/images/versions/{version}` | GET | ImageDetailClient | [ImageDetailClient](../../AccelByte.Sdk/Api/Dsmc/Operation/ImageConfig/ImageDetailClient.cs) | [ImageDetailClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dsmc/ImageConfig/ImageDetailClient.cs) |
 
@@ -196,6 +197,7 @@
 | `models.GetImagePatchDetailResponse` | [ModelsGetImagePatchDetailResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsGetImagePatchDetailResponse.cs) |
 | `models.ImageRecord` | [ModelsImageRecord](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImageRecord.cs) |
 | `models.ImageRecordUpdate` | [ModelsImageRecordUpdate](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImageRecordUpdate.cs) |
+| `models.ImageReplication` | [ModelsImageReplication](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImageReplication.cs) |
 | `models.ImportResponse` | [ModelsImportResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsImportResponse.cs) |
 | `models.InstanceSpec` | [ModelsInstanceSpec](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsInstanceSpec.cs) |
 | `models.ListConfigResponse` | [ModelsListConfigResponse](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsListConfigResponse.cs) |
@@ -229,5 +231,4 @@
 | `models.UpdatePodConfigRequest` | [ModelsUpdatePodConfigRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdatePodConfigRequest.cs) |
 | `models.UpdatePortRequest` | [ModelsUpdatePortRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdatePortRequest.cs) |
 | `models.UpdateRegionOverrideRequest` | [ModelsUpdateRegionOverrideRequest](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUpdateRegionOverrideRequest.cs) |
-| `models.UploaderFlag` | [ModelsUploaderFlag](../../AccelByte.Sdk/Api/Dsmc/Model/ModelsUploaderFlag.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Dsmc/Model/ResponseError.cs) |

@@ -359,6 +359,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminUpdateCountryAgeRestrictionV3.Builder.SetWrapperObject(this); }
         }
+        public AdminListUserIDByPlatformUserIDsV3.AdminListUserIDByPlatformUserIDsV3Builder AdminListUserIDByPlatformUserIDsV3Op
+        {
+            get { return Operation.AdminListUserIDByPlatformUserIDsV3.Builder.SetWrapperObject(this); }
+        }
         public AdminGetUserByPlatformUserIDV3.AdminGetUserByPlatformUserIDV3Builder AdminGetUserByPlatformUserIDV3Op
         {
             get { return Operation.AdminGetUserByPlatformUserIDV3.Builder.SetWrapperObject(this); }
@@ -378,6 +382,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder AdminListUserIDByUserIDsV3Op
         {
             get { return Operation.AdminListUserIDByUserIDsV3.Builder.SetWrapperObject(this); }
+        }
+        public AdminBulkGetUsersPlatform.AdminBulkGetUsersPlatformBuilder AdminBulkGetUsersPlatformOp
+        {
+            get { return Operation.AdminBulkGetUsersPlatform.Builder.SetWrapperObject(this); }
         }
         public AdminInviteUserV3.AdminInviteUserV3Builder AdminInviteUserV3Op
         {
@@ -1531,6 +1539,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.AccountcommonUserPlatforms? AdminListUserIDByPlatformUserIDsV3(AdminListUserIDByPlatformUserIDsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelUserResponseV3? AdminGetUserByPlatformUserIDV3(AdminGetUserByPlatformUserIDV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -1568,6 +1585,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public Model.ModelListUserInformationResult? AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelListBulkUserPlatformsResponse? AdminBulkGetUsersPlatform(AdminBulkGetUsersPlatform input)
         {
             var response = _sdk.RunRequest(input);
 

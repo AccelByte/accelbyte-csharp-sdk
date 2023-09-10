@@ -223,6 +223,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminSearchContent(op);
         }
+        public static List<Ugc.Model.ModelsContentDownloadResponse>? Execute(
+            this AdminGetContentBulkByShareCodes.AdminGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminGetContentBulkByShareCodes(op);
+        }
+
+        public static List<Ugc.Model.ModelsContentDownloadResponse<T1>>? Execute<T1>(
+            this AdminGetContentBulkByShareCodes.AdminGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminGetContentBulkByShareCodes<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponse? Execute(
             this AdminGetUserContentByShareCode.AdminGetUserContentByShareCodeBuilder builder,
             string namespace_,

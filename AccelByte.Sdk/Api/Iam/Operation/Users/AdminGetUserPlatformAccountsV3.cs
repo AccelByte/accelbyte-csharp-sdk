@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public long? Limit { get; set; }
 
+            public string? PlatformId { get; set; }
+
 
 
 
@@ -74,6 +76,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AdminGetUserPlatformAccountsV3Builder SetLimit(long _limit)
             {
                 Limit = _limit;
+                return this;
+            }
+
+            public AdminGetUserPlatformAccountsV3Builder SetPlatformId(string _platformId)
+            {
+                PlatformId = _platformId;
                 return this;
             }
 
@@ -109,6 +117,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.After is not null) QueryParams["after"] = builder.After;
             if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.PlatformId is not null) QueryParams["platformId"] = builder.PlatformId;
 
 
 
@@ -124,7 +133,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string userId,
             string? after,
             string? before,
-            long? limit
+            long? limit,
+            string? platformId
         )
         {
             PathParams["namespace"] = namespace_;
@@ -133,6 +143,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (after is not null) QueryParams["after"] = after;
             if (before is not null) QueryParams["before"] = before;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (platformId is not null) QueryParams["platformId"] = platformId;
 
 
 

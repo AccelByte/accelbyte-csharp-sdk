@@ -216,9 +216,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryRevocationHistoriesSource DLC
             = new QueryRevocationHistoriesSource("DLC");
 
-        public static readonly QueryRevocationHistoriesSource IAP
-            = new QueryRevocationHistoriesSource("IAP");
-
         public static readonly QueryRevocationHistoriesSource ORDER
             = new QueryRevocationHistoriesSource("ORDER");
 
