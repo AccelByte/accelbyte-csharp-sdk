@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateFulfillmentScript
     ///
-    /// Update fulfillment script.
+    ///  [AGS Premium Feature] Update fulfillment script.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=4 (UPDATE)

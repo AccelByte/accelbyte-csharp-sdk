@@ -63,7 +63,7 @@ eval_tap 0 3 'SaveConfig # SKIP deprecated' test.out
 
 #- 4 UpdateImage
 # body param: body
-echo '{"artifactPath": "bBuz5zkoaUEzGS3q", "image": "Zf0PbemSBELbZ0VB", "imageReplicationsMap": {"UGA7nkDeev2Oj060": {"failure_code": "HnOf5S8X1LxkZs42", "region": "33oQWoXFeqeuI2oM", "status": "J0cgAoGfXepE3r5A", "uri": "QUBqS8KtTYZLJ58Q"}, "qcV3IcuNs9MF5BT2": {"failure_code": "KD18yrWorpC65VJh", "region": "4q1z1KJmKedBfbWv", "status": "Ka5Ou124TsbQsxYF", "uri": "xGGHrfQkgXkiA5IZ"}, "PqCqp9vcyt67WAfW": {"failure_code": "XfUfwGB03tz8qIH4", "region": "uRdNO08HN6s9p8Y5", "status": "c9eItJtiNmY3y3n2", "uri": "Rim4NBqhuNtj8FOv"}}, "namespace": "KZjs1tLpERf77LzP", "patchVersion": "oORBkRmZ0A2zyZsb", "persistent": false, "version": "FvWFIHPIbOjpls9B"}' > $TEMP_JSON_INPUT
+echo '{"artifactPath": "bBuz5zkoaUEzGS3q", "coreDumpEnabled": false, "image": "MLqpQwkRRHkaiKsm", "imageReplicationsMap": {"IiRLR3IlNJKxhPfW": {"failure_code": "V6dIabcFbSmeuIBr", "region": "oF7bwRgwKvzESbhp", "status": "xlDdEs4igdKeLmy8", "uri": "tZ5GZi5P12c61ts3"}, "fMI04rm2jUc9iav3": {"failure_code": "tTqlE9oLDPD0Lfle", "region": "8ESU1MO8XnVaEyjm", "status": "ifJDYa1TJPUszmFG", "uri": "EkJVvqDSU3PDyIAG"}, "fGq1FNmRWvUvDPnK": {"failure_code": "oECjGUg867xodwuG", "region": "14ID5l5wj6K2wEMn", "status": "ckjlW6BywsSSZTGl", "uri": "ubsmhjXcScOUvrjJ"}}, "namespace": "BO7tbkTGYKqRMSTi", "patchVersion": "sP0MrSdaFy0pJYCd", "persistent": false, "version": "vWFIHPIbOjpls9BZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateImage \
@@ -73,7 +73,7 @@ eval_tap $? 4 'UpdateImage' test.out
 
 #- 5 CreateImage
 # body param: body
-echo '{"artifactPath": "ZTYc5BsdSSVaAzzn", "coreDumpEnabled": false, "dockerPath": "bgkKeCaS6qyUCscH", "image": "Xs8PlOBlfUOqv7Wm", "imageSize": 57, "namespace": "9KUW0py8KrcQfucS", "persistent": true, "version": "YUMhD9qU89D356pV"}' > $TEMP_JSON_INPUT
+echo '{"artifactPath": "TYc5BsdSSVaAzzn4", "coreDumpEnabled": false, "dockerPath": "bgkKeCaS6qyUCscH", "image": "Xs8PlOBlfUOqv7Wm", "imageSize": 57, "namespace": "9KUW0py8KrcQfucS", "persistent": true, "ulimitFileSize": 96, "version": "X8gFuJORk4j04Yfn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateImage \
@@ -93,7 +93,7 @@ eval_tap $? 6 'ImportImages' test.out
 
 #- 7 CreateImagePatch
 # body param: body
-echo '{"artifactPath": "sUtNanddzgwxYdQc", "coreDumpEnabled": false, "dockerPath": "mCSoGeQCahcox63c", "image": "yDxAAYcRXJdoSTxN", "imageSize": 58, "namespace": "h7eJvAS2W4uqkhwS", "patchVersion": "C7EajwHO3LfvwPew", "persistent": true, "uploaderFlag": "RwU6WLgpQE9nXzhB", "version": "C0uyMR4Xf2nfYvNv"}' > $TEMP_JSON_INPUT
+echo '{"artifactPath": "XTsQUrA0WWyKl2K5", "coreDumpEnabled": false, "dockerPath": "EfefdopcEM0JHfof", "image": "2Hwi7vg3osbh0fL2", "imageSize": 15, "namespace": "K9AIjNmbfoW8bDq5", "patchVersion": "jPqzhN0YdGSrA9LX", "persistent": false, "ulimitFileSize": 46, "uploaderFlag": "19Njm50xCDlPeNq0", "version": "CvMXtyUWXrdZaFea"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateImagePatch \
@@ -118,7 +118,7 @@ eval_tap $? 9 'GetConfig' test.out
 
 #- 10 CreateConfig
 # body param: body
-echo '{"claim_timeout": 67, "creation_timeout": 1, "default_version": "8uQ14AhsxaALiBwp", "port": 81, "ports": {"Hldq0m7NjUZ95Z5X": 61, "t8xnPoWTdHAkcyAy": 23, "drHlPcXGGl0Xw3ve": 56}, "protocol": "CzZVcGomWF1oAqUN", "providers": ["FDtXnXLvOAsW8wYh", "4gq7pRVZVLJiDx3a", "u9b9QjhzDlnJmi4X"], "session_timeout": 1, "unreachable_timeout": 94}' > $TEMP_JSON_INPUT
+echo '{"claim_timeout": 5, "creation_timeout": 42, "default_version": "GT2x6o28Njxyw7RH", "port": 23, "ports": {"ornrCQpMJj5igqat": 56, "xnPoWTdHAkcyAy4d": 35, "i4RbZ0Iy11mfOFjC": 53}, "protocol": "rpCrnbaxhEvn3SGq", "providers": ["cH91fC3aJEoqWaFA", "GD6PRg95m07l03vt", "lMFzeiMRkcOr1L0T"], "session_timeout": 79, "unreachable_timeout": 93}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op CreateConfig \
@@ -137,7 +137,7 @@ eval_tap $? 11 'DeleteConfig' test.out
 
 #- 12 UpdateConfig
 # body param: body
-echo '{"claim_timeout": 57, "creation_timeout": 79, "default_version": "TgoXjfdUQHa3Rxsp", "port": 92, "protocol": "OzSZm9K3cMY617HS", "providers": ["CYZaL46I3PgCcQ0a", "xTWnmyEYLZQTpvLH", "6QPEBP8kSSFjeuL3"], "session_timeout": 47, "unreachable_timeout": 17}' > $TEMP_JSON_INPUT
+echo '{"claim_timeout": 71, "creation_timeout": 13, "default_version": "czbYilOziwG8CPLO", "port": 52, "protocol": "wdbTR2sgzfaQrUCW", "providers": ["9fgo69uv1bkFx8Dm", "bC9UqYdYrdxNnuMc", "AwrSzYnrcetxObei"], "session_timeout": 38, "unreachable_timeout": 87}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn dsmc \
     --op UpdateConfig \
@@ -159,9 +159,9 @@ $CLI_EXE \
     --sn dsmc \
     --op GetAllDeployment \
     --namespace $AB_NAMESPACE \
-    --name 'QQPYwmYFbxRvHYDC' \
-    --count '47' \
-    --offset '70' \
+    --name 'ZelKuD0iJ6fs3zL9' \
+    --count '70' \
+    --offset '30' \
     > test.out 2>&1
 eval_tap $? 14 'GetAllDeployment' test.out
 
@@ -169,7 +169,7 @@ eval_tap $? 14 'GetAllDeployment' test.out
 $CLI_EXE \
     --sn dsmc \
     --op GetDeployment \
-    --deployment 'oGdmzXgf1ewUTvnu' \
+    --deployment '4WxGWRH7fz4BdPhL' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 15 'GetDeployment' test.out

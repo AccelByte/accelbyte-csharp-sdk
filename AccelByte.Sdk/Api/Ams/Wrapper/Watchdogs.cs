@@ -19,12 +19,25 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
 
         #region Operation Builders
+        public LocalWatchdogConnect.LocalWatchdogConnectBuilder LocalWatchdogConnectOp
+        {
+            get { return Operation.LocalWatchdogConnect.Builder.SetWrapperObject(this); }
+        }
         public WatchdogConnect.WatchdogConnectBuilder WatchdogConnectOp
         {
             get { return Operation.WatchdogConnect.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+        public void LocalWatchdogConnect(LocalWatchdogConnect input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void WatchdogConnect(WatchdogConnect input)
         {
             var response = _sdk.RunRequest(input);

@@ -157,6 +157,7 @@
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/roles/{roleId}` | POST | AdminAddUserRoleV3 | [AdminAddUserRoleV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminAddUserRoleV3.cs) | [AdminAddUserRoleV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminAddUserRoleV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/roles/{roleId}` | DELETE | AdminDeleteUserRoleV3 | [AdminDeleteUserRoleV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminDeleteUserRoleV3.cs) | [AdminDeleteUserRoleV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminDeleteUserRoleV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/status` | PATCH | AdminUpdateUserStatusV3 | [AdminUpdateUserStatusV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminUpdateUserStatusV3.cs) | [AdminUpdateUserStatusV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminUpdateUserStatusV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/users/{userId}/trustly/identity` | PATCH | AdminTrustlyUpdateUserIdentity | [AdminTrustlyUpdateUserIdentity](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminTrustlyUpdateUserIdentity.cs) | [AdminTrustlyUpdateUserIdentity](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminTrustlyUpdateUserIdentity.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/verify` | PUT | AdminVerifyUserWithoutVerificationCodeV3 | [AdminVerifyUserWithoutVerificationCodeV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminVerifyUserWithoutVerificationCodeV3.cs) | [AdminVerifyUserWithoutVerificationCodeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminVerifyUserWithoutVerificationCodeV3.cs) |
 | `/iam/v3/admin/users/me` | GET | AdminGetMyUserV3 | [AdminGetMyUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetMyUserV3.cs) | [AdminGetMyUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetMyUserV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/agerestrictions/countries/{countryCode}` | GET | PublicGetCountryAgeRestrictionV3 | [PublicGetCountryAgeRestrictionV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetCountryAgeRestrictionV3.cs) | [PublicGetCountryAgeRestrictionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetCountryAgeRestrictionV3.cs) |
@@ -279,6 +280,14 @@
 | `/iam/v3/public/inputValidations` | GET | PublicGetInputValidations | [PublicGetInputValidations](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidations.cs) | [PublicGetInputValidations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidations.cs) |
 | `/iam/v3/public/inputValidations/{field}` | GET | PublicGetInputValidationByField | [PublicGetInputValidationByField](../../AccelByte.Sdk/Api/Iam/Operation/InputValidations/PublicGetInputValidationByField.cs) | [PublicGetInputValidationByField](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/InputValidations/PublicGetInputValidationByField.cs) |
 
+### Country Wrapper:  [Country](../../AccelByte.Sdk/Api/Iam/Wrapper/Country.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/admin/namespaces/{namespace}/countries` | GET | AdminGetCountryListV3 | [AdminGetCountryListV3](../../AccelByte.Sdk/Api/Iam/Operation/Country/AdminGetCountryListV3.cs) | [AdminGetCountryListV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Country/AdminGetCountryListV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/countries/blacklist` | GET | AdminGetCountryBlacklistV3 | [AdminGetCountryBlacklistV3](../../AccelByte.Sdk/Api/Iam/Operation/Country/AdminGetCountryBlacklistV3.cs) | [AdminGetCountryBlacklistV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Country/AdminGetCountryBlacklistV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/countries/blacklist` | POST | AdminAddCountryBlacklistV3 | [AdminAddCountryBlacklistV3](../../AccelByte.Sdk/Api/Iam/Operation/Country/AdminAddCountryBlacklistV3.cs) | [AdminAddCountryBlacklistV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Country/AdminAddCountryBlacklistV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/countries` | GET | PublicGetCountryListV3 | [PublicGetCountryListV3](../../AccelByte.Sdk/Api/Iam/Operation/Country/PublicGetCountryListV3.cs) | [PublicGetCountryListV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Country/PublicGetCountryListV3.cs) |
+
 ### Third Party Credential Wrapper:  [ThirdPartyCredential](../../AccelByte.Sdk/Api/Iam/Wrapper/ThirdPartyCredential.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -315,8 +324,9 @@
 | `/iam/v3/logout` | POST | Logout | [Logout](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/Logout.cs) | [Logout](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/Logout.cs) |
 | `/iam/v3/namespace/{namespace}/token/request` | POST | RequestGameTokenCodeResponseV3 | [RequestGameTokenCodeResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) | [RequestGameTokenCodeResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenCodeResponseV3.cs) |
 | `/iam/v3/platforms/{platformId}/authenticate` | GET | PlatformAuthenticationV3 | [PlatformAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformAuthenticationV3.cs) | [PlatformAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformAuthenticationV3.cs) |
+| `/iam/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
 | `/iam/v3/token/exchange` | POST | RequestGameTokenResponseV3 | [RequestGameTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestGameTokenResponseV3.cs) | [RequestGameTokenResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestGameTokenResponseV3.cs) |
-| `/iam/v3/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
+| [DEPRECATED] `/iam/v3/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3Deprecate | [PlatformTokenRefreshV3Deprecate](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3Deprecate.cs) | [PlatformTokenRefreshV3Deprecate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3Deprecate.cs) |
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -445,6 +455,10 @@
 |---|---|---|---|---|
 
 ### InputValidations Wrapper:  [InputValidations](../../AccelByte.Sdk/Api/Iam/Wrapper/InputValidations.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Country Wrapper:  [Country](../../AccelByte.Sdk/Api/Iam/Wrapper/Country.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -583,6 +597,9 @@
 | `model.Country` | [ModelCountry](../../AccelByte.Sdk/Api/Iam/Model/ModelCountry.cs) |
 | `model.CountryAgeRestrictionRequest` | [ModelCountryAgeRestrictionRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryAgeRestrictionRequest.cs) |
 | `model.CountryAgeRestrictionV3Request` | [ModelCountryAgeRestrictionV3Request](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryAgeRestrictionV3Request.cs) |
+| `model.CountryBlacklistRequest` | [ModelCountryBlacklistRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryBlacklistRequest.cs) |
+| `model.CountryBlacklistResponse` | [ModelCountryBlacklistResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryBlacklistResponse.cs) |
+| `model.CountryResponse` | [ModelCountryResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryResponse.cs) |
 | `model.CountryV3Response` | [ModelCountryV3Response](../../AccelByte.Sdk/Api/Iam/Model/ModelCountryV3Response.cs) |
 | `model.CreateJusticeUserResponse` | [ModelCreateJusticeUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelCreateJusticeUserResponse.cs) |
 | `model.DeviceBanRequestV4` | [ModelDeviceBanRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelDeviceBanRequestV4.cs) |
@@ -710,6 +727,7 @@
 | `model.UserCreateResponseV3` | [ModelUserCreateResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserCreateResponseV3.cs) |
 | `model.UserDeletionStatusResponse` | [ModelUserDeletionStatusResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserDeletionStatusResponse.cs) |
 | `model.UserIDsRequest` | [ModelUserIDsRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserIDsRequest.cs) |
+| `model.UserIdentityUpdateRequestV3` | [ModelUserIdentityUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserIdentityUpdateRequestV3.cs) |
 | `model.UserInfoResponse` | [ModelUserInfoResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInfoResponse.cs) |
 | `model.UserInformation` | [ModelUserInformation](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInformation.cs) |
 | `model.UserInvitationV3` | [ModelUserInvitationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInvitationV3.cs) |

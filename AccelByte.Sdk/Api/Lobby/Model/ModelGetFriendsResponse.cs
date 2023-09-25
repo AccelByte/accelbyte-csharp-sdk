@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonPropertyName("friendIDs")]
         public List<string>? FriendIDs { get; set; }
 
+        [JsonPropertyName("friends")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelFriendWithPlatform>? Friends { get; set; }
+
         [JsonPropertyName("friendsSinceTimes")]
         public List<string>? FriendsSinceTimes { get; set; }
 

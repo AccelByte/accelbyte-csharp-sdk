@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     ///   *  Action code : 11204
     ///   *  Returns : country code list
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetCountries : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

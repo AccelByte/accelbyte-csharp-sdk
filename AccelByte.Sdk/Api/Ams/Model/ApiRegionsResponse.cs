@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiRegionsResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("qosServers")]
+        public List<ApiQOSServer>? QosServers { get; set; }
+
         [JsonPropertyName("regions")]
         public List<string>? Regions { get; set; }
 

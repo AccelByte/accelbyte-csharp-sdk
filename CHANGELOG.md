@@ -1,3 +1,9 @@
+<a name="v0.44.0"></a>
+## [v0.44.0]
+### ci
+- **generate:** use demo_extend-sdk
+
+
 <a name="v0.43.0"></a>
 ## [v0.43.0]
 

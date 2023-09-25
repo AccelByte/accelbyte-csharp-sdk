@@ -21,25 +21,6 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).ListFulfillmentScripts(op);
         }
-        public static Platform.Model.FulfillmentScriptEvalTestResult? Execute(
-            this TestFulfillmentScriptEval.TestFulfillmentScriptEvalBuilder builder
-        )
-        {
-            TestFulfillmentScriptEval op = builder.Build(
-            );
-
-            return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).TestFulfillmentScriptEval(op);
-        }
-
-        public static Platform.Model.FulfillmentScriptEvalTestResult<T1>? Execute<T1>(
-            this TestFulfillmentScriptEval.TestFulfillmentScriptEvalBuilder builder
-        )
-        {
-            TestFulfillmentScriptEval op = builder.Build(
-            );
-
-            return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).TestFulfillmentScriptEval<T1>(op);
-        }
         public static Platform.Model.FulfillmentScriptInfo? Execute(
             this GetFulfillmentScript.GetFulfillmentScriptBuilder builder,
             string id

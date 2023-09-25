@@ -21,6 +21,7 @@
 | `/friends/namespaces/{namespace}/me/unfriend` | POST | UserUnfriendRequest | [UserUnfriendRequest](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/UserUnfriendRequest.cs) | [UserUnfriendRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/UserUnfriendRequest.cs) |
 | `/friends/namespaces/{namespace}/users/{userId}/add/bulk` | POST | AddFriendsWithoutConfirmation | [AddFriendsWithoutConfirmation](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/AddFriendsWithoutConfirmation.cs) | [AddFriendsWithoutConfirmation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/AddFriendsWithoutConfirmation.cs) |
 | `/friends/namespaces/{namespace}/users/{userId}/delete/bulk` | POST | BulkDeleteFriends | [BulkDeleteFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/BulkDeleteFriends.cs) | [BulkDeleteFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/BulkDeleteFriends.cs) |
+| `/friends/sync/namespaces/{namespace}/me` | PATCH | SyncNativeFriends | [SyncNativeFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/SyncNativeFriends.cs) | [SyncNativeFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/SyncNativeFriends.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}` | GET | GetListOfFriends | [GetListOfFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetListOfFriends.cs) | [GetListOfFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetListOfFriends.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/incoming` | GET | GetIncomingFriendRequests | [GetIncomingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetIncomingFriendRequests.cs) | [GetIncomingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetIncomingFriendRequests.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing` | GET | GetOutgoingFriendRequests | [GetOutgoingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetOutgoingFriendRequests.cs) | [GetOutgoingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetOutgoingFriendRequests.cs) |
@@ -207,6 +208,7 @@
 | `model.CreateTopicRequestV1` | [ModelCreateTopicRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelCreateTopicRequestV1.cs) |
 | `model.FreeFormNotificationRequest` | [ModelFreeFormNotificationRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelFreeFormNotificationRequest.cs) |
 | `model.FreeFormNotificationRequestV1` | [ModelFreeFormNotificationRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelFreeFormNotificationRequestV1.cs) |
+| `model.FriendWithPlatform` | [ModelFriendWithPlatform](../../AccelByte.Sdk/Api/Lobby/Model/ModelFriendWithPlatform.cs) |
 | `model.GetAllNotificationTemplateSlugResp` | [ModelGetAllNotificationTemplateSlugResp](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetAllNotificationTemplateSlugResp.cs) |
 | `model.GetAllNotificationTopicsResponse` | [ModelGetAllNotificationTopicsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetAllNotificationTopicsResponse.cs) |
 | `model.GetFriendsResponse` | [ModelGetFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetFriendsResponse.cs) |
@@ -218,6 +220,8 @@
 | `model.LoadIncomingFriendsWithTimeResponse` | [ModelLoadIncomingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadIncomingFriendsWithTimeResponse.cs) |
 | `model.LoadOutgoingFriendsWithTimeResponse` | [ModelLoadOutgoingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadOutgoingFriendsWithTimeResponse.cs) |
 | `model.Localization` | [ModelLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelLocalization.cs) |
+| `model.NativeFriendRequest` | [ModelNativeFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeFriendRequest.cs) |
+| `model.NativeFriendSyncResponse` | [ModelNativeFriendSyncResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeFriendSyncResponse.cs) |
 | `model.NotificationTemplateResponse` | [ModelNotificationTemplateResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTemplateResponse.cs) |
 | `model.NotificationTopicResponse` | [ModelNotificationTopicResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponse.cs) |
 | `model.NotificationTopicResponseV1` | [ModelNotificationTopicResponseV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponseV1.cs) |

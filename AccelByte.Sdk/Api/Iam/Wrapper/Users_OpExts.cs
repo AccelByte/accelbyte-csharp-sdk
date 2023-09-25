@@ -1680,6 +1680,21 @@ namespace AccelByte.Sdk.Api
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserStatusV3(op);
         }
         public static void Execute(
+            this AdminTrustlyUpdateUserIdentity.AdminTrustlyUpdateUserIdentityBuilder builder,
+            ModelUserIdentityUpdateRequestV3 body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminTrustlyUpdateUserIdentity op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).AdminTrustlyUpdateUserIdentity(op);
+        }
+        public static void Execute(
             this AdminVerifyUserWithoutVerificationCodeV3.AdminVerifyUserWithoutVerificationCodeV3Builder builder,
             string namespace_,
             string userId

@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("artifactPath")]
         public string? ArtifactPath { get; set; }
 
+        [JsonPropertyName("coreDumpEnabled")]
+        public bool? CoreDumpEnabled { get; set; }
+
         [JsonPropertyName("image")]
         public string? Image { get; set; }
 

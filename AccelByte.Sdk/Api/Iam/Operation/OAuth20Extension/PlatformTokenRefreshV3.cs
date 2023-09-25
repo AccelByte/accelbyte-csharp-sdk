@@ -34,32 +34,32 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                           * twitch : The platform_tokenâs value is the authorization code returned by Twitch OAuth.
+    ///                   * twitch : The platform_tokenâs value is the authorization code returned by Twitch OAuth.
     /// 
     /// 
-    ///                           * epicgames : The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
+    ///                   * epicgames : The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
     /// 
     /// 
-    ///                           * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+    ///                   * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
     /// 
     /// 
-    ///                           * ps5 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
+    ///                   * ps5 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
     /// 
     /// 
-    ///                           * amazon : The platform_tokenâs value is authorization code.
+    ///                   * amazon : The platform_tokenâs value is authorization code.
     /// 
     /// 
-    ///                           * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
+    ///                   * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
     /// 
     /// 
-    ///                           * live : The platform_tokenâs value is xbox XSTS token
+    ///                   * live : The platform_tokenâs value is xbox XSTS token
     /// 
     /// 
-    ///                           * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
+    ///                   * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
     /// 
     /// 
     /// 
-    ///                           * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
+    ///                   * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
     /// </summary>
     public class PlatformTokenRefreshV3 : AccelByte.Sdk.Core.Operation
     {
@@ -133,7 +133,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/iam/v3/v3/platforms/{platformId}/token/verify";
+        public override string Path => "/iam/v3/platforms/{platformId}/token/verify";
 
         public override HttpMethod Method => HttpMethod.Post;
 

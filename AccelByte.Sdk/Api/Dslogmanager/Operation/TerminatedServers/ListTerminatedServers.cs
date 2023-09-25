@@ -55,6 +55,8 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
 
             public string? SessionId { get; set; }
 
+            public string? Source { get; set; }
+
             public string? StartDate { get; set; }
 
             public string? Status { get; set; }
@@ -134,6 +136,12 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
                 return this;
             }
 
+            public ListTerminatedServersBuilder SetSource(string _source)
+            {
+                Source = _source;
+                return this;
+            }
+
             public ListTerminatedServersBuilder SetStartDate(string _startDate)
             {
                 StartDate = _startDate;
@@ -188,6 +196,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (builder.Provider is not null) QueryParams["provider"] = builder.Provider;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.SessionId is not null) QueryParams["session_id"] = builder.SessionId;
+            if (builder.Source is not null) QueryParams["source"] = builder.Source;
             if (builder.StartDate is not null) QueryParams["start_date"] = builder.StartDate;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.UserId is not null) QueryParams["user_id"] = builder.UserId;
@@ -214,6 +223,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             string? provider,
             string? region,
             string? sessionId,
+            string? source,
             string? startDate,
             string? status,
             string? userId
@@ -232,6 +242,7 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Operation
             if (provider is not null) QueryParams["provider"] = provider;
             if (region is not null) QueryParams["region"] = region;
             if (sessionId is not null) QueryParams["session_id"] = sessionId;
+            if (source is not null) QueryParams["source"] = source;
             if (startDate is not null) QueryParams["start_date"] = startDate;
             if (status is not null) QueryParams["status"] = status;
             if (userId is not null) QueryParams["user_id"] = userId;

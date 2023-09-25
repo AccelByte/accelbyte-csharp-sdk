@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class BasicMisc_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Basic.Model.CountryObject>? Execute(
             this GetCountries.GetCountriesBuilder builder,
             string namespace_
@@ -102,6 +103,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Misc)builder.WrapperObject!).PublicGetTime(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Basic.Model.CountryObject>? Execute(
             this PublicGetCountries.PublicGetCountriesBuilder builder,
             string namespace_

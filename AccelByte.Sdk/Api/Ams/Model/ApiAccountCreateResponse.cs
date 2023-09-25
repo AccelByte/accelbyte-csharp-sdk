@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiAccountCreateResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("Limits")]
+        public ApiAccountLimits? Limits { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 

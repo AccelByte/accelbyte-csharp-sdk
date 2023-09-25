@@ -30,6 +30,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
 
+        [JsonPropertyName("ulimitFileSize")]
+        public int? UlimitFileSize { get; set; }
+
         [JsonPropertyName("version")]
         public string? Version { get; set; }
 

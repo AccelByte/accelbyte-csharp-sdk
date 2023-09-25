@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetCountries.GetCountriesBuilder GetCountriesOp
         {
             get { return Operation.GetCountries.Builder.SetWrapperObject(this); }
@@ -51,6 +52,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         {
             get { return Operation.PublicGetTime.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetCountries.PublicGetCountriesBuilder PublicGetCountriesOp
         {
             get { return Operation.PublicGetCountries.Builder.SetWrapperObject(this); }
@@ -65,6 +67,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.CountryObject>? GetCountries(GetCountries input)
         {
             var response = _sdk.RunRequest(input);
@@ -74,6 +78,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public List<Model.RetrieveCountryGroupResponse>? GetCountryGroups(GetCountryGroups input)
         {
             var response = _sdk.RunRequest(input);
@@ -137,6 +142,8 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.CountryObject>? PublicGetCountries(PublicGetCountries input)
         {
             var response = _sdk.RunRequest(input);
@@ -146,6 +153,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Dictionary<string, object>? PublicGetLanguages(PublicGetLanguages input)
         {
             var response = _sdk.RunRequest(input);

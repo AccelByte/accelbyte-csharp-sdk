@@ -317,6 +317,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminDownloadContentPreview(op);
         }
+        public static Ugc.Model.ModelsContentDownloadResponse? Execute(
+            this RollbackContentVersion.RollbackContentVersionBuilder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersion op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).RollbackContentVersion(op);
+        }
+
+        public static Ugc.Model.ModelsContentDownloadResponse<T1>? Execute<T1>(
+            this RollbackContentVersion.RollbackContentVersionBuilder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersion op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).RollbackContentVersion<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateScreenshotResponse? Execute(
             this AdminUpdateScreenshots.AdminUpdateScreenshotsBuilder builder,
             ModelsUpdateScreenshotRequest body,
@@ -361,6 +392,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminDeleteContentScreenshot(op);
+        }
+        public static Ugc.Model.ModelsListContentVersionsResponse? Execute(
+            this ListContentVersions.ListContentVersionsBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            ListContentVersions op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).ListContentVersions(op);
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,

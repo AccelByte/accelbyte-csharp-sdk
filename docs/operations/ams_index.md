@@ -59,6 +59,7 @@
 ### Watchdogs Wrapper:  [Watchdogs](../../AccelByte.Sdk/Api/Ams/Wrapper/Watchdogs.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/ams/v1/namespaces/{namespace}/local/{watchdogID}/connect` | GET | LocalWatchdogConnect | [LocalWatchdogConnect](../../AccelByte.Sdk/Api/Ams/Operation/Watchdogs/LocalWatchdogConnect.cs) | [LocalWatchdogConnect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Watchdogs/LocalWatchdogConnect.cs) |
 | `/ams/v1/namespaces/{namespace}/watchdogs/{watchdogID}/connect` | GET | WatchdogConnect | [WatchdogConnect](../../AccelByte.Sdk/Api/Ams/Operation/Watchdogs/WatchdogConnect.cs) | [WatchdogConnect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Watchdogs/WatchdogConnect.cs) |
 
 
@@ -107,6 +108,7 @@
 |---|---|
 | `api.AccountCreateRequest` | [ApiAccountCreateRequest](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountCreateRequest.cs) |
 | `api.AccountCreateResponse` | [ApiAccountCreateResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountCreateResponse.cs) |
+| `api.AccountLimits` | [ApiAccountLimits](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLimits.cs) |
 | `api.AccountLinkRequest` | [ApiAccountLinkRequest](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLinkRequest.cs) |
 | `api.AccountLinkResponse` | [ApiAccountLinkResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLinkResponse.cs) |
 | `api.AccountLinkTokenResponse` | [ApiAccountLinkTokenResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLinkTokenResponse.cs) |
@@ -136,6 +138,7 @@
 | `api.InstanceTypeDescriptionResponse` | [ApiInstanceTypeDescriptionResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypeDescriptionResponse.cs) |
 | `api.PagingInfo` | [ApiPagingInfo](../../AccelByte.Sdk/Api/Ams/Model/ApiPagingInfo.cs) |
 | `api.PortConfiguration` | [ApiPortConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiPortConfiguration.cs) |
+| `api.QOSServer` | [ApiQOSServer](../../AccelByte.Sdk/Api/Ams/Model/ApiQOSServer.cs) |
 | `api.ReferencingFleet` | [ApiReferencingFleet](../../AccelByte.Sdk/Api/Ams/Model/ApiReferencingFleet.cs) |
 | `api.RegionConfig` | [ApiRegionConfig](../../AccelByte.Sdk/Api/Ams/Model/ApiRegionConfig.cs) |
 | `api.RegionsResponse` | [ApiRegionsResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiRegionsResponse.cs) |

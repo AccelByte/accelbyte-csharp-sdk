@@ -73,6 +73,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminDownloadContentPreview.Builder.SetWrapperObject(this); }
         }
+        public RollbackContentVersion.RollbackContentVersionBuilder RollbackContentVersionOp
+        {
+            get { return Operation.RollbackContentVersion.Builder.SetWrapperObject(this); }
+        }
         public AdminUpdateScreenshots.AdminUpdateScreenshotsBuilder AdminUpdateScreenshotsOp
         {
             get { return Operation.AdminUpdateScreenshots.Builder.SetWrapperObject(this); }
@@ -84,6 +88,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public AdminDeleteContentScreenshot.AdminDeleteContentScreenshotBuilder AdminDeleteContentScreenshotOp
         {
             get { return Operation.AdminDeleteContentScreenshot.Builder.SetWrapperObject(this); }
+        }
+        public ListContentVersions.ListContentVersionsBuilder ListContentVersionsOp
+        {
+            get { return Operation.ListContentVersions.Builder.SetWrapperObject(this); }
         }
         public AdminUpdateContentS3.AdminUpdateContentS3Builder AdminUpdateContentS3Op
         {
@@ -311,6 +319,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelsContentDownloadResponse? RollbackContentVersion(RollbackContentVersion input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsContentDownloadResponse<T1>? RollbackContentVersion<T1>(RollbackContentVersion input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsUpdateScreenshotResponse? AdminUpdateScreenshots(AdminUpdateScreenshots input)
         {
             var response = _sdk.RunRequest(input);
@@ -334,6 +361,15 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListContentVersionsResponse? ListContentVersions(ListContentVersions input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

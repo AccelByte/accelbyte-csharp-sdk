@@ -186,6 +186,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).BulkDeleteFriends(op);
         }
+        public static List<Lobby.Model.ModelNativeFriendSyncResponse>? Execute(
+            this SyncNativeFriends.SyncNativeFriendsBuilder builder,
+            List<ModelNativeFriendRequest> body,
+            string namespace_
+        )
+        {
+            SyncNativeFriends op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).SyncNativeFriends(op);
+        }
         public static Lobby.Model.ModelGetFriendsResponse? Execute(
             this GetListOfFriends.GetListOfFriendsBuilder builder,
             string namespace_,

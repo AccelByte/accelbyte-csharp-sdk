@@ -79,6 +79,17 @@ namespace AccelByte.Sdk.Core
         }
         private InputValidations? _InputValidations = null;
 
+        public Country Country
+        {
+            get
+            {
+                if (_Country == null)
+                    _Country = new Country(_SdkObject);
+                return _Country;
+            }
+        }
+        private Country? _Country = null;
+
         public ThirdPartyCredential ThirdPartyCredential
         {
             get

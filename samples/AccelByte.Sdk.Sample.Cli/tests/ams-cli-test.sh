@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..26"
+echo "1..27"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -252,39 +252,48 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 22 'FleetClaimByID' test.out
 
-#- 23 FleetClaimByKeys
+#- 23 LocalWatchdogConnect
+$CLI_EXE \
+    --sn ams \
+    --op LocalWatchdogConnect \
+    --namespace $AB_NAMESPACE \
+    --watchdogID 'lq1jv60HTnmFrl3g' \
+    > test.out 2>&1
+eval_tap $? 23 'LocalWatchdogConnect' test.out
+
+#- 24 FleetClaimByKeys
 # body param: body
-echo '{"claimKeys": ["lq1jv60HTnmFrl3g", "Yx6Xmv1DzPHux3k3", "skhn3mWZjTYM95e4"], "regions": ["aa8xOJu7rNRVdygf", "KmUkzj9mHFpff2vD", "kz68zorEgcExv9nK"]}' > $TEMP_JSON_INPUT
+echo '{"claimKeys": ["Yx6Xmv1DzPHux3k3", "skhn3mWZjTYM95e4", "aa8xOJu7rNRVdygf"], "regions": ["KmUkzj9mHFpff2vD", "kz68zorEgcExv9nK", "MOgO5W8SUaZjCpNt"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByKeys \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 23 'FleetClaimByKeys' test.out
+eval_tap $? 24 'FleetClaimByKeys' test.out
 
-#- 24 WatchdogConnect
+#- 25 WatchdogConnect
 $CLI_EXE \
     --sn ams \
     --op WatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'MOgO5W8SUaZjCpNt' \
+    --watchdogID 'JSMm8kDi3Rwubq7w' \
     > test.out 2>&1
-eval_tap $? 24 'WatchdogConnect' test.out
+eval_tap $? 25 'WatchdogConnect' test.out
 
-#- 25 Func1
+#- 26 Func1
 $CLI_EXE \
     --sn ams \
     --op Func1 \
     > test.out 2>&1
-eval_tap $? 25 'Func1' test.out
+eval_tap $? 26 'Func1' test.out
 
-#- 26 BasicHealthCheck
+#- 27 BasicHealthCheck
 $CLI_EXE \
     --sn ams \
     --op BasicHealthCheck \
     > test.out 2>&1
-eval_tap $? 26 'BasicHealthCheck' test.out
+eval_tap $? 27 'BasicHealthCheck' test.out
 
 
 # remove artifacts

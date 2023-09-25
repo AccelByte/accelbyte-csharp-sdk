@@ -24,6 +24,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("imageDeploymentProfile")]
         public ApiImageDeploymentProfile? ImageDeploymentProfile { get; set; }
 
+        [JsonPropertyName("isLocal")]
+        public bool? IsLocal { get; set; }
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 

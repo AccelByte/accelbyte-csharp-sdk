@@ -535,6 +535,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminUpdateUserStatusV3.Builder.SetWrapperObject(this); }
         }
+        public AdminTrustlyUpdateUserIdentity.AdminTrustlyUpdateUserIdentityBuilder AdminTrustlyUpdateUserIdentityOp
+        {
+            get { return Operation.AdminTrustlyUpdateUserIdentity.Builder.SetWrapperObject(this); }
+        }
         public AdminVerifyUserWithoutVerificationCodeV3.AdminVerifyUserWithoutVerificationCodeV3Builder AdminVerifyUserWithoutVerificationCodeV3Op
         {
             get { return Operation.AdminVerifyUserWithoutVerificationCodeV3.Builder.SetWrapperObject(this); }
@@ -1937,6 +1941,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public void AdminUpdateUserStatusV3(AdminUpdateUserStatusV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminTrustlyUpdateUserIdentity(AdminTrustlyUpdateUserIdentity input)
         {
             var response = _sdk.RunRequest(input);
 

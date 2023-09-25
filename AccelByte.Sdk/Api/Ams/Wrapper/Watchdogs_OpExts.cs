@@ -13,6 +13,19 @@ namespace AccelByte.Sdk.Api
     public static class AmsWatchdogs_OpExts
     {
         public static void Execute(
+            this LocalWatchdogConnect.LocalWatchdogConnectBuilder builder,
+            string namespace_,
+            string watchdogID
+        )
+        {
+            LocalWatchdogConnect op = builder.Build(
+                namespace_,
+                watchdogID
+            );
+
+            ((Ams.Wrapper.Watchdogs)builder.WrapperObject!).LocalWatchdogConnect(op);
+        }
+        public static void Execute(
             this WatchdogConnect.WatchdogConnectBuilder builder,
             string namespace_,
             string watchdogID

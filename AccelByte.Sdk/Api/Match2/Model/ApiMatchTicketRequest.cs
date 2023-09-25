@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? MatchPool { get; set; }
 
         [JsonPropertyName("sessionID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SessionID { get; set; }
 
     }
@@ -35,6 +36,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
         public string? MatchPool { get; set; }
 
         [JsonPropertyName("sessionID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SessionID { get; set; }
 
     }

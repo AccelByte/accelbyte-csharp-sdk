@@ -56,7 +56,7 @@
 ### Misc Wrapper:  [Misc](../../AccelByte.Sdk/Api/Basic/Wrapper/Misc.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/basic/v1/admin/namespaces/{namespace}/misc/countries` | GET | GetCountries | [GetCountries](../../AccelByte.Sdk/Api/Basic/Operation/Misc/GetCountries.cs) | [GetCountries](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/GetCountries.cs) |
+| [DEPRECATED] `/basic/v1/admin/namespaces/{namespace}/misc/countries` | GET | GetCountries | [GetCountries](../../AccelByte.Sdk/Api/Basic/Operation/Misc/GetCountries.cs) | [GetCountries](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/GetCountries.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/misc/countrygroups` | GET | GetCountryGroups | [GetCountryGroups](../../AccelByte.Sdk/Api/Basic/Operation/Misc/GetCountryGroups.cs) | [GetCountryGroups](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/GetCountryGroups.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/misc/countrygroups` | POST | AddCountryGroup | [AddCountryGroup](../../AccelByte.Sdk/Api/Basic/Operation/Misc/AddCountryGroup.cs) | [AddCountryGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/AddCountryGroup.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/misc/countrygroups/{countryGroupCode}` | PUT | UpdateCountryGroup | [UpdateCountryGroup](../../AccelByte.Sdk/Api/Basic/Operation/Misc/UpdateCountryGroup.cs) | [UpdateCountryGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/UpdateCountryGroup.cs) |
@@ -64,7 +64,7 @@
 | `/basic/v1/admin/namespaces/{namespace}/misc/languages` | GET | GetLanguages | [GetLanguages](../../AccelByte.Sdk/Api/Basic/Operation/Misc/GetLanguages.cs) | [GetLanguages](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/GetLanguages.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/misc/timezones` | GET | GetTimeZones | [GetTimeZones](../../AccelByte.Sdk/Api/Basic/Operation/Misc/GetTimeZones.cs) | [GetTimeZones](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/GetTimeZones.cs) |
 | `/basic/v1/public/misc/time` | GET | PublicGetTime | [PublicGetTime](../../AccelByte.Sdk/Api/Basic/Operation/Misc/PublicGetTime.cs) | [PublicGetTime](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/PublicGetTime.cs) |
-| `/basic/v1/public/namespaces/{namespace}/misc/countries` | GET | PublicGetCountries | [PublicGetCountries](../../AccelByte.Sdk/Api/Basic/Operation/Misc/PublicGetCountries.cs) | [PublicGetCountries](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/PublicGetCountries.cs) |
+| [DEPRECATED] `/basic/v1/public/namespaces/{namespace}/misc/countries` | GET | PublicGetCountries | [PublicGetCountries](../../AccelByte.Sdk/Api/Basic/Operation/Misc/PublicGetCountries.cs) | [PublicGetCountries](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/PublicGetCountries.cs) |
 | `/basic/v1/public/namespaces/{namespace}/misc/languages` | GET | PublicGetLanguages | [PublicGetLanguages](../../AccelByte.Sdk/Api/Basic/Operation/Misc/PublicGetLanguages.cs) | [PublicGetLanguages](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/PublicGetLanguages.cs) |
 | `/basic/v1/public/namespaces/{namespace}/misc/timezones` | GET | PublicGetTimeZones | [PublicGetTimeZones](../../AccelByte.Sdk/Api/Basic/Operation/Misc/PublicGetTimeZones.cs) | [PublicGetTimeZones](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Misc/PublicGetTimeZones.cs) |
 

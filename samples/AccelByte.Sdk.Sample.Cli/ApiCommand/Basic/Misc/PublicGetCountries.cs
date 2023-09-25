@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         {
             AccelByte.Sdk.Api.Basic.Wrapper.Misc wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Misc(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Basic.Operation.PublicGetCountries.Builder;
 
             if (Lang != null)
@@ -55,12 +56,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
                 Namespace
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Basic.Model.CountryObject>? response = wrapper.PublicGetCountries(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }
