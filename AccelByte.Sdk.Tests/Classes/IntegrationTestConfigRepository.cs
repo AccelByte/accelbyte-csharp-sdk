@@ -129,6 +129,9 @@ namespace AccelByte.Sdk.Tests
 
         private string UnQuote(string value)
         {
+            if (value == "")
+                return value;
+
             if ((value.Substring(0, 1) == "\"") && (value.Substring(value.Length - 1, 1) == "\""))
                 return value.Substring(1, value.Length - 2);
             else

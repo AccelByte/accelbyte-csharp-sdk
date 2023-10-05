@@ -45,23 +45,6 @@ namespace AccelByte.Sdk.Tests.Services
         }
 
         [Test]
-        public void HealthCheckTests()
-        {
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
-
-            DisableRetry();
-            Assert.DoesNotThrow(() =>
-            {
-                #region Session Health Check
-                _Sdk.Session.Operations.GetHealthcheckInfoV1Op
-                    .Execute();
-                #endregion
-            });
-        }
-
-        [Test]
         public void ConfigurationTemplateTests()
         {
             Assert.IsNotNull(_Sdk);

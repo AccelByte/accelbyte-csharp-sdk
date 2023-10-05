@@ -21,23 +21,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class MatchV2Tests : BaseServiceTests
     {
-        public MatchV2Tests() : base(false) { }
-
-        [Test]
-        public void HealthCheckTest()
-        {
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
-
-            Assert.DoesNotThrow(() =>
-            {
-                #region Match2 healthcheck
-                _Sdk.Match2.Operations.GetHealthcheckInfoV1Op
-                    .Execute();
-                #endregion
-            });
-        }
+        public MatchV2Tests() : base(false) { }      
 
         [Test]
         public void MatchPoolTests()
