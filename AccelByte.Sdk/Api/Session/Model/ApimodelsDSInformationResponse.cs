@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsDSInformationResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("CreatedAt")]
+        public string? CreatedAt { get; set; }
+
         [JsonPropertyName("RequestedAt")]
         public string? RequestedAt { get; set; }
 

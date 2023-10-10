@@ -1,3 +1,11 @@
+<a name="v0.45.0"></a>
+## [v0.45.0]
+### fix
+- **test:** remove match2 health check test
+- **test:** remove ams health test line
+- **:** added public oauth client test
+
+
 <a name="v0.44.0"></a>
 ## [v0.44.0]
 ### ci

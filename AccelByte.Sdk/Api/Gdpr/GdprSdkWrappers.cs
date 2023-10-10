@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private DataDeletion? _DataDeletion = null;
 
+        public Configuration Configuration
+        {
+            get
+            {
+                if (_Configuration == null)
+                    _Configuration = new Configuration(_SdkObject);
+                return _Configuration;
+            }
+        }
+        private Configuration? _Configuration = null;
+
         public DataRetrieval DataRetrieval
         {
             get

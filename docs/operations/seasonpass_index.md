@@ -4,6 +4,11 @@
 
 ## Operations
 
+### Export Wrapper:  [Export](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Export.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/seasonpass/admin/namespace/{namespace}/export` | GET | ExportSeason | [ExportSeason](../../AccelByte.Sdk/Api/Seasonpass/Operation/Export/ExportSeason.cs) | [ExportSeason](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Seasonpass/Export/ExportSeason.cs) |
+
 ### Season Wrapper:  [Season](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Season.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -67,6 +72,10 @@
 &nbsp;  
 
 ## Operations with Generic Response
+
+### Export Wrapper:  [Export](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Export.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### Season Wrapper:  [Season](../../AccelByte.Sdk/Api/Seasonpass/Wrapper/Season.cs)
 | Endpoint | Method | ID | Class | Example |

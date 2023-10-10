@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public Export Export
+        {
+            get
+            {
+                if (_Export == null)
+                    _Export = new Export(_SdkObject);
+                return _Export;
+            }
+        }
+        private Export? _Export = null;
+
         public Season Season
         {
             get

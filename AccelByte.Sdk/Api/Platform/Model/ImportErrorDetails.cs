@@ -13,9 +13,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ErrorCode { get; set; }
 
+        [JsonPropertyName("errorField")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ErrorField { get; set; }
+
         [JsonPropertyName("errorMessage")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ErrorMessage { get; set; }
+
+        [JsonPropertyName("errorValue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ErrorValue { get; set; }
 
         [JsonPropertyName("messageVariables")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

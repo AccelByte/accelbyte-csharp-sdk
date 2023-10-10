@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Language { get; set; }
 
         [JsonPropertyName("price")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Price { get; set; }
 
         [JsonPropertyName("quantity")]
@@ -66,6 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? Language { get; set; }
 
         [JsonPropertyName("price")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Price { get; set; }
 
         [JsonPropertyName("quantity")]

@@ -61,25 +61,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                           1. Seconds: 0-59 * / , -
+    ///                     1. Seconds: 0-59 * / , -
     /// 
     /// 
-    ///                           2. Minutes: 0-59 * / , -
+    ///                     2. Minutes: 0-59 * / , -
     /// 
     /// 
-    ///                           3. Hours: 0-23 * / , -
+    ///                     3. Hours: 0-23 * / , -
     /// 
     /// 
-    ///                           4. Day of month: 1-31 * / , - L W
+    ///                     4. Day of month: 1-31 * / , - L W
     /// 
     /// 
-    ///                           5. Month: 1-12 JAN-DEC * / , -
+    ///                     5. Month: 1-12 JAN-DEC * / , -
     /// 
     /// 
-    ///                           6. Day of week: 0-6 SUN-SAT * / , - L #
+    ///                     6. Day of week: 0-6 SUN-SAT * / , - L #
     /// 
     /// 
-    ///                           7. Year: 1970-2099 * / , -
+    ///                     7. Year: 1970-2099 * / , -
     /// 
     /// 
     /// 
@@ -89,25 +89,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                           1. *: all values in the fields, e.g. * in seconds fields indicates every second
+    ///                     1. *: all values in the fields, e.g. * in seconds fields indicates every second
     /// 
     /// 
-    ///                           2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
+    ///                     2. /: increments of ranges, e.g. 3-59/15 in the minute field indicate the third minute of the hour and every 15 minutes thereafter
     /// 
     /// 
-    ///                           3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
+    ///                     3. ,: separate items of a list, e.g. MON,WED,FRI in day of week
     /// 
     /// 
-    ///                           4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
+    ///                     4. -: range, e.g. 2010-2018 indicates every year between 2010 and 2018, inclusive
     /// 
     /// 
-    ///                           5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
+    ///                     5. L: last, e.g. When used in the day-of-week field, it allows you to specify constructs such as "the last Friday" (5L) of a given month. In the day-of-month field, it specifies the last day of the month.
     /// 
     /// 
-    ///                           6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
+    ///                     6. W: business day, e.g. if you were to specify 15W as the value for the day-of-month field, the meaning is: "the nearest business day to the 15th of the month."
     /// 
     /// 
-    ///                           7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
+    ///                     7. #: must be followed by a number between one and five. It allows you to specify constructs such as "the second Friday" of a given month.
     /// </summary>
     public class AdminAddRolePermissionsV4 : AccelByte.Sdk.Core.Operation
     {

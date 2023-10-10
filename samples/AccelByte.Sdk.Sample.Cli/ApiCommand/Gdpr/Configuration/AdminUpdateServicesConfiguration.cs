@@ -19,39 +19,43 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr", "getadminemailconfiguration")]
-    public class GetAdminEmailConfigurationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "adminupdateservicesconfiguration")]
+    public class AdminUpdateServicesConfigurationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName { get { return "GetAdminEmailConfiguration"; } }
+        public string OperationName { get { return "AdminUpdateServicesConfiguration"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public GetAdminEmailConfigurationCommand(AccelByteSDK sdk)
+        [SdkCommandData("body")]
+        public DtoServiceConfigurationUpdateRequest Body { get; set; } = new DtoServiceConfigurationUpdateRequest();
+
+        public AdminUpdateServicesConfigurationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
+            AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.GetAdminEmailConfiguration.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.AdminUpdateServicesConfiguration.Builder;
 
 
 
-            GetAdminEmailConfiguration operation = opBuilder.Build(
+
+
+            AdminUpdateServicesConfiguration operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 
 
-            List<string>? response = wrapper.GetAdminEmailConfiguration(operation);
+            AccelByte.Sdk.Api.Gdpr.Model.DtoServiceConfigurationUpdateRequest? response = wrapper.AdminUpdateServicesConfiguration(operation);
             if (response == null)
                 return "No response from server.";
 

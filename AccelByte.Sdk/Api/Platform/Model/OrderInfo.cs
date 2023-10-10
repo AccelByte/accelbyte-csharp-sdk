@@ -66,6 +66,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("orderBundleItemInfos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<OrderBundleItemInfo>? OrderBundleItemInfos { get; set; }
+
         [JsonPropertyName("orderNo")]
         public string? OrderNo { get; set; }
 
@@ -210,6 +214,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("orderBundleItemInfos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<OrderBundleItemInfo>? OrderBundleItemInfos { get; set; }
 
         [JsonPropertyName("orderNo")]
         public string? OrderNo { get; set; }

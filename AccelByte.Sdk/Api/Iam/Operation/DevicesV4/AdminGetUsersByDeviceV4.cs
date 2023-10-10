@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission
     /// 
-    ///                                                                                                 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
+    ///                                                                         'ADMIN:NAMESPACE:{namespace}:USER [READ]'
     /// </summary>
     public class AdminGetUsersByDeviceV4 : AccelByte.Sdk.Core.Operation
     {

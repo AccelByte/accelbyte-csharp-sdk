@@ -25,10 +25,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// By default, these cases are not allowed
     /// 
     /// 
-    ///                 * The platform account current is linked by another account
+    ///               * The platform account current is linked by another account
     /// 
     /// 
-    ///                 * The target account ever linked this platform's another account
+    ///               * The target account ever linked this platform's another account
     /// </summary>
     public class AdminLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {

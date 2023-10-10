@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
     public class ApiRegionsResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("qosServers")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ApiQOSServer>? QosServers { get; set; }
 
         [JsonPropertyName("regions")]

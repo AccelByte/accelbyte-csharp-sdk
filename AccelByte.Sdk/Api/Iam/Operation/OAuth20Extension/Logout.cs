@@ -28,10 +28,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                 * VerifyToken to verify token from header
+    ///               * VerifyToken to verify token from header
     /// 
     /// 
-    ///                 * AddTokenToRevocationList to revoke token with TTL
+    ///               * AddTokenToRevocationList to revoke token with TTL
     /// </summary>
     public class Logout : AccelByte.Sdk.Core.Operation
     {

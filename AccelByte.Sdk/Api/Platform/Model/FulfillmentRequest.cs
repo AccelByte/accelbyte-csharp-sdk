@@ -48,6 +48,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public FulfillmentRequestOrigin? Origin { get; set; }
 
+        [JsonPropertyName("overrideBundleItemQty")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, int>? OverrideBundleItemQty { get; set; }
+
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
 
@@ -108,6 +112,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public FulfillmentRequestOrigin? Origin { get; set; }
+
+        [JsonPropertyName("overrideBundleItemQty")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, int>? OverrideBundleItemQty { get; set; }
 
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }

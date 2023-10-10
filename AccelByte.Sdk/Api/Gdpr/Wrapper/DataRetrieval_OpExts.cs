@@ -12,56 +12,6 @@ namespace AccelByte.Sdk.Api
 {
     public static class GdprDataRetrieval_OpExts
     {
-        public static List<string>? Execute(
-            this GetAdminEmailConfiguration.GetAdminEmailConfigurationBuilder builder,
-            string namespace_
-        )
-        {
-            GetAdminEmailConfiguration op = builder.Build(
-                namespace_
-            );
-
-            return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).GetAdminEmailConfiguration(op);
-        }
-        public static void Execute(
-            this UpdateAdminEmailConfiguration.UpdateAdminEmailConfigurationBuilder builder,
-            List<string> body,
-            string namespace_
-        )
-        {
-            UpdateAdminEmailConfiguration op = builder.Build(
-                body,
-                namespace_
-            );
-
-            ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).UpdateAdminEmailConfiguration(op);
-        }
-        public static void Execute(
-            this SaveAdminEmailConfiguration.SaveAdminEmailConfigurationBuilder builder,
-            List<string> body,
-            string namespace_
-        )
-        {
-            SaveAdminEmailConfiguration op = builder.Build(
-                body,
-                namespace_
-            );
-
-            ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).SaveAdminEmailConfiguration(op);
-        }
-        public static void Execute(
-            this DeleteAdminEmailConfiguration.DeleteAdminEmailConfigurationBuilder builder,
-            string namespace_,
-            List<string> emails
-        )
-        {
-            DeleteAdminEmailConfiguration op = builder.Build(
-                namespace_,
-                emails
-            );
-
-            ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).DeleteAdminEmailConfiguration(op);
-        }
         public static Gdpr.Model.ModelsListPersonalDataResponse? Execute(
             this AdminGetListPersonalDataRequest.AdminGetListPersonalDataRequestBuilder builder,
             string namespace_

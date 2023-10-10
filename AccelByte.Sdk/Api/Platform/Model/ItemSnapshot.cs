@@ -44,6 +44,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Features { get; set; }
 
+        [JsonPropertyName("flexible")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Flexible { get; set; }
+
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 

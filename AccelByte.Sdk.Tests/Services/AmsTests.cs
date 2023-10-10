@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            DisableRetry();            
+            DisableRetry();
 
             ApiRegionsResponse? regions = _Sdk.Ams.AMSInfo.InfoRegionsOp
                 .Execute(_Sdk.Namespace);

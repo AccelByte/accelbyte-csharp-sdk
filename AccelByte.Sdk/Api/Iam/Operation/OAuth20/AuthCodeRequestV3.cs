@@ -24,51 +24,51 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                 * steamopenid
+    ///               * steamopenid
     /// This endpoint redirects to steam login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating user steam.
     /// 
-    ///                 * xblweb
+    ///               * xblweb
     /// This endpoint redirects to xbox login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating xbox user.
     /// 
-    ///                 * ps4web
+    ///               * ps4web
     /// This endpoint redirects to psn login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating psn user.
     /// 
-    ///                 * epicgames
+    ///               * epicgames
     /// This endpoint redirects to Epicgames OAuth login page. then redirect to platform
     /// authenticate endpoint after successfully authenticating an Epicgames credential
     /// 
-    ///                 * twitch
+    ///               * twitch
     /// This endpoint redirects to twitch login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating twitch user.
     /// 
-    ///                 * azure
+    ///               * azure
     /// This endpoint redirects to azure login page, then redirect back to platform
     /// authenticate(saml) endpoint after successfully authenticating azure user.
     /// 
-    ///                 * facebook
+    ///               * facebook
     /// This endpoint redirects to facebook login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating facebook user.
     /// 
-    ///                 * google
+    ///               * google
     /// This endpoint redirects to google login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating google user.
     /// 
-    ///                 * snapchat
+    ///               * snapchat
     /// This endpoint redirects to snapchat login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating snapchat user.
     /// 
-    ///                 * discord
+    ///               * discord
     /// This endpoint redirects to discord login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating discord user.
     /// 
-    ///                 * amazon
+    ///               * amazon
     /// This endpoint redirects to amazon login page, then redirect back to platform
     /// authenticate endpoint after successfully authenticating amazon user.
     /// 
-    ///                 * oculusweb
+    ///               * oculusweb
     /// This endpoint redirects to oculus login page, then redirect back to Login Website page after successfully authenticating oculus user.
     /// action code : 10702'
     /// </summary>

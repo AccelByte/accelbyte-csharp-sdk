@@ -41,13 +41,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Supported user data fields :
     /// 
     /// 
-    ///             * displayName
+    ///           * displayName
     /// 
     /// 
-    ///             * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
+    ///           * dateOfBirth : format YYYY-MM-DD, e.g. 2019-04-29
     /// 
     /// 
-    ///             * country : format ISO3166-1 alpha-2 two letter, e.g. US
+    ///           * country : format ISO3166-1 alpha-2 two letter, e.g. US
     /// 
     /// 
     /// 

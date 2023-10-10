@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminQueryGameSessions.Builder.SetWrapperObject(this); }
         }
+        public AdminQueryGameSessionsByAttributes.AdminQueryGameSessionsByAttributesBuilder AdminQueryGameSessionsByAttributesOp
+        {
+            get { return Operation.AdminQueryGameSessionsByAttributes.Builder.SetWrapperObject(this); }
+        }
         public AdminDeleteBulkGameSessions.AdminDeleteBulkGameSessionsBuilder AdminDeleteBulkGameSessionsOp
         {
             get { return Operation.AdminDeleteBulkGameSessions.Builder.SetWrapperObject(this); }
@@ -106,6 +110,15 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         #endregion
 
         public Model.ApimodelsGameSessionQueryResponse? AdminQueryGameSessions(AdminQueryGameSessions input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGameSessionQueryResponse? AdminQueryGameSessionsByAttributes(AdminQueryGameSessionsByAttributes input)
         {
             var response = _sdk.RunRequest(input);
 

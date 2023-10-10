@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                           * azure
+    ///                     * azure
     /// Microsoft login page will redirects to this endpoint after login success
     /// as previously defined on authentication request SAML
     /// </summary>

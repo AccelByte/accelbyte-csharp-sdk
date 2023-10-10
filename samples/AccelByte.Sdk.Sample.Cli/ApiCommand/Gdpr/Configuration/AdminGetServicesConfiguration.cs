@@ -19,44 +19,43 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr", "updateadminemailconfiguration")]
-    public class UpdateAdminEmailConfigurationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "admingetservicesconfiguration")]
+    public class AdminGetServicesConfigurationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName { get { return "UpdateAdminEmailConfiguration"; } }
+        public string OperationName { get { return "AdminGetServicesConfiguration"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public List<string> Body { get; set; } = new List<string>();
-
-        public UpdateAdminEmailConfigurationCommand(AccelByteSDK sdk)
+        public AdminGetServicesConfigurationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
+            AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.UpdateAdminEmailConfiguration.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.AdminGetServicesConfiguration.Builder;
 
 
 
-            UpdateAdminEmailConfiguration operation = opBuilder.Build(
-                Body,
+
+
+            AdminGetServicesConfiguration operation = opBuilder.Build(
                 Namespace
             );
 
 
-            wrapper.UpdateAdminEmailConfiguration(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Gdpr.Model.DtoServicesConfigurationResponse? response = wrapper.AdminGetServicesConfiguration(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

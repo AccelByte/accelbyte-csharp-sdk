@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                           * This endpoint validate the user password by specifying the userId and password
+    ///                     * This endpoint validate the user password by specifying the userId and password
     /// </summary>
     public class PublicValidateUserByUserIDAndPasswordV3 : AccelByte.Sdk.Core.Operation
     {

@@ -63,6 +63,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.ListBasicItemsByFeatures.Builder.SetWrapperObject(this); }
         }
+        public GetItems.GetItemsBuilder GetItemsOp
+        {
+            get { return Operation.GetItems.Builder.SetWrapperObject(this); }
+        }
         public GetItemBySku.GetItemBySkuBuilder GetItemBySkuOp
         {
             get { return Operation.GetItemBySku.Builder.SetWrapperObject(this); }
@@ -70,6 +74,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public GetLocaleItemBySku.GetLocaleItemBySkuBuilder GetLocaleItemBySkuOp
         {
             get { return Operation.GetLocaleItemBySku.Builder.SetWrapperObject(this); }
+        }
+        public GetEstimatedPrice.GetEstimatedPriceBuilder GetEstimatedPriceOp
+        {
+            get { return Operation.GetEstimatedPrice.Builder.SetWrapperObject(this); }
         }
         public GetItemIdBySku.GetItemIdBySkuBuilder GetItemIdBySkuOp
         {
@@ -170,6 +178,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicGetItemBySku.PublicGetItemBySkuBuilder PublicGetItemBySkuOp
         {
             get { return Operation.PublicGetItemBySku.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetEstimatedPrice.PublicGetEstimatedPriceBuilder PublicGetEstimatedPriceOp
+        {
+            get { return Operation.PublicGetEstimatedPrice.Builder.SetWrapperObject(this); }
         }
         public PublicBulkGetItems.PublicBulkGetItemsBuilder PublicBulkGetItemsOp
         {
@@ -330,6 +342,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.FullItemInfo>? GetItems(GetItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.FullItemInfo<T1>>? GetItems<T1>(GetItems input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.FullItemInfo? GetItemBySku(GetItemBySku input)
         {
             var response = _sdk.RunRequest(input);
@@ -364,6 +395,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EstimatedPriceInfo? GetEstimatedPrice(GetEstimatedPrice input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -699,6 +739,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.EstimatedPriceInfo>? PublicGetEstimatedPrice(PublicGetEstimatedPrice input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

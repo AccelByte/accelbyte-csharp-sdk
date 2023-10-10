@@ -177,6 +177,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).ListBasicItemsByFeatures(op);
         }
+        public static List<Platform.Model.FullItemInfo>? Execute(
+            this GetItems.GetItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            GetItems op = builder.Build(
+                namespace_,
+                itemIds
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetItems(op);
+        }
+
+        public static List<Platform.Model.FullItemInfo<T1>>? Execute<T1>(
+            this GetItems.GetItemsBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            GetItems op = builder.Build(
+                namespace_,
+                itemIds
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetItems<T1>(op);
+        }
         public static Platform.Model.FullItemInfo? Execute(
             this GetItemBySku.GetItemBySkuBuilder builder,
             string namespace_,
@@ -230,6 +257,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).GetLocaleItemBySku<T1, T2>(op);
+        }
+        public static Platform.Model.EstimatedPriceInfo? Execute(
+            this GetEstimatedPrice.GetEstimatedPriceBuilder builder,
+            string namespace_,
+            string itemIds,
+            string userId
+        )
+        {
+            GetEstimatedPrice op = builder.Build(
+                namespace_,
+                itemIds,
+                userId
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).GetEstimatedPrice(op);
         }
         public static Platform.Model.ItemId? Execute(
             this GetItemIdBySku.GetItemIdBySkuBuilder builder,
@@ -737,6 +779,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicGetItemBySku<T1, T2>(op);
+        }
+        public static List<Platform.Model.EstimatedPriceInfo>? Execute(
+            this PublicGetEstimatedPrice.PublicGetEstimatedPriceBuilder builder,
+            string namespace_,
+            string itemIds
+        )
+        {
+            PublicGetEstimatedPrice op = builder.Build(
+                namespace_,
+                itemIds
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicGetEstimatedPrice(op);
         }
         public static List<Platform.Model.ItemInfo>? Execute(
             this PublicBulkGetItems.PublicBulkGetItemsBuilder builder,

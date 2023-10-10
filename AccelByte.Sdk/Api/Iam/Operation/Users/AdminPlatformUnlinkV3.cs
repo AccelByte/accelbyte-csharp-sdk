@@ -26,49 +26,49 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                 * steam
+    ///               * steam
     /// 
     /// 
-    ///                 * steamopenid
+    ///               * steamopenid
     /// 
     /// 
-    ///                 * facebook
+    ///               * facebook
     /// 
     /// 
-    ///                 * google
+    ///               * google
     /// 
     /// 
-    ///                 * oculus
+    ///               * oculus
     /// 
     /// 
-    ///                 * twitch
+    ///               * twitch
     /// 
     /// 
-    ///                 * android
+    ///               * android
     /// 
     /// 
-    ///                 * ios
+    ///               * ios
     /// 
     /// 
-    ///                 * apple
+    ///               * apple
     /// 
     /// 
-    ///                 * device
+    ///               * device
     /// 
     /// 
-    ///                 * discord
+    ///               * discord
     /// 
     /// 
-    ///                 * awscognito
+    ///               * awscognito
     /// 
     /// 
-    ///                 * epicgames
+    ///               * epicgames
     /// 
     /// 
-    ///                 * nintendo
+    ///               * nintendo
     /// 
     /// 
-    ///                 * snapchat
+    ///               * snapchat
     /// 
     /// 
     /// 

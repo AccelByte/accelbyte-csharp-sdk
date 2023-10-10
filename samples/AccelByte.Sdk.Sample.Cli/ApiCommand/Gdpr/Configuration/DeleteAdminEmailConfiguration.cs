@@ -19,43 +19,43 @@ using AccelByte.Sdk.Api.Gdpr.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 {
-    [SdkConsoleCommand("gdpr", "saveadminemailconfiguration")]
-    public class SaveAdminEmailConfigurationCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("gdpr", "deleteadminemailconfiguration")]
+    public class DeleteAdminEmailConfigurationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Gdpr"; } }
 
-        public string OperationName { get { return "SaveAdminEmailConfiguration"; } }
+        public string OperationName { get { return "DeleteAdminEmailConfiguration"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public List<string> Body { get; set; } = new List<string>();
+        [SdkCommandArgument("emails")]
+        public List<string> Emails { get; set; } = new List<string>();
 
-        public SaveAdminEmailConfigurationCommand(AccelByteSDK sdk)
+        public DeleteAdminEmailConfigurationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.DataRetrieval(_SDK);
+            AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Gdpr.Wrapper.Configuration(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.SaveAdminEmailConfiguration.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Gdpr.Operation.DeleteAdminEmailConfiguration.Builder;
 
 
 
-            SaveAdminEmailConfiguration operation = opBuilder.Build(
-                Body,
-                Namespace
+
+
+            DeleteAdminEmailConfiguration operation = opBuilder.Build(
+                Namespace,
+                Emails
             );
 
 
-            wrapper.SaveAdminEmailConfiguration(operation);
+            wrapper.DeleteAdminEmailConfiguration(operation);
             return String.Empty;
         }
     }

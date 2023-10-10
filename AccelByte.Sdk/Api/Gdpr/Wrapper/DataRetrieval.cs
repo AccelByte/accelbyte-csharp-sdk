@@ -19,22 +19,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         }
 
         #region Operation Builders
-        public GetAdminEmailConfiguration.GetAdminEmailConfigurationBuilder GetAdminEmailConfigurationOp
-        {
-            get { return Operation.GetAdminEmailConfiguration.Builder.SetWrapperObject(this); }
-        }
-        public UpdateAdminEmailConfiguration.UpdateAdminEmailConfigurationBuilder UpdateAdminEmailConfigurationOp
-        {
-            get { return Operation.UpdateAdminEmailConfiguration.Builder.SetWrapperObject(this); }
-        }
-        public SaveAdminEmailConfiguration.SaveAdminEmailConfigurationBuilder SaveAdminEmailConfigurationOp
-        {
-            get { return Operation.SaveAdminEmailConfiguration.Builder.SetWrapperObject(this); }
-        }
-        public DeleteAdminEmailConfiguration.DeleteAdminEmailConfigurationBuilder DeleteAdminEmailConfigurationOp
-        {
-            get { return Operation.DeleteAdminEmailConfiguration.Builder.SetWrapperObject(this); }
-        }
         public AdminGetListPersonalDataRequest.AdminGetListPersonalDataRequestBuilder AdminGetListPersonalDataRequestOp
         {
             get { return Operation.AdminGetListPersonalDataRequest.Builder.SetWrapperObject(this); }
@@ -73,42 +57,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         }
         #endregion
 
-        public List<string>? GetAdminEmailConfiguration(GetAdminEmailConfiguration input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void UpdateAdminEmailConfiguration(UpdateAdminEmailConfiguration input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void SaveAdminEmailConfiguration(SaveAdminEmailConfiguration input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public void DeleteAdminEmailConfiguration(DeleteAdminEmailConfiguration input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public Model.ModelsListPersonalDataResponse? AdminGetListPersonalDataRequest(AdminGetListPersonalDataRequest input)
         {
             var response = _sdk.RunRequest(input);

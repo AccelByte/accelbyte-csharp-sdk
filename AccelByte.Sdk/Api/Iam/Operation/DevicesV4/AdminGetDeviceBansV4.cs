@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Required permission
     /// 
-    ///                                                                                                 'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+    ///                                                                         'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
     /// </summary>
     public class AdminGetDeviceBansV4 : AccelByte.Sdk.Core.Operation
     {

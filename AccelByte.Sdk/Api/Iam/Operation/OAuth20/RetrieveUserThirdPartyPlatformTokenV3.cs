@@ -34,22 +34,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///                 * (psn) ps4web
+    ///               * (psn) ps4web
     /// 
     /// 
-    ///                 * (psn) ps4
+    ///               * (psn) ps4
     /// 
     /// 
-    ///                 * (psn) ps5
+    ///               * (psn) ps5
     /// 
     /// 
-    ///                 * epicgames
+    ///               * epicgames
     /// 
     /// 
-    ///                 * twitch
+    ///               * twitch
     /// 
     /// 
-    ///                 * awscognito
+    ///               * awscognito
     /// </summary>
     public class RetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {

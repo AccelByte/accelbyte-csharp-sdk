@@ -43,15 +43,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
-    ///  Several case of updating email address
+    ///  Response body logic when user updating email address:
     /// 
-    ///                   * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
-    /// 
-    /// 
-    ///                   * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+    ///                 * User want to update email address of which have been verified, newEmailAddress response field will be filled with new email address.
     /// 
     /// 
-    ///                   * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+    ///                 * User want to update email address of which have not been verified, { oldEmailAddress, emailAddress} response field will be filled with new email address.
+    /// 
+    /// 
+    ///                 * User want to update email address of which have been verified and updated before, { oldEmailAddress, emailAddress} response field will be filled with verified email before. newEmailAddress response field will be filled with newest email address.
+    /// 
     /// 
     /// 
     /// Important notes:
