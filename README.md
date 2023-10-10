@@ -53,7 +53,7 @@ if (!login)
 }
 ```
 
-### Login Using OAuth Client (Public or Private)
+### Login Using OAuth Client
 
 ```csharp
 bool login = sdk.LoginClient();
@@ -62,6 +62,8 @@ if (!login)
     // Login failed  
 }
 ```
+
+> :warning: **Please use LoginClient() function with confidential OAuth client:** Using LoginClient() function with public OAuth client is not supported.
 
 ## Interacting with a Service Endpoint
 

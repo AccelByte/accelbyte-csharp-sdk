@@ -166,5 +166,39 @@ namespace AccelByte.Sdk.Tests.Integration
                 Assert.AreEqual(sdk.Configuration.ConfigRepository.ClientId, payload.ClientId);
             }
         }
+
+        /// <summary>
+        /// WARNING: Please use LoginClient() function with confidential OAuth client.
+        /// Using LoginClient() function with public OAuth client is not supported.
+        /// This test is kept here for historical reason only.
+        /// </summary>
+        [Test]
+        public void PublicClientTokenValidationTestUsingDefaultValidator()
+        {
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.PublicClient)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginClient((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            Thread.Sleep(2000);
+
+            bool b = sdk.ValidateToken(accessToken);
+            Assert.IsTrue(b);
+
+            sdk.Iam.OAuth20.TokenRevocationV3Op.Execute(accessToken);
+            Thread.Sleep(3000);
+
+            b = sdk.ValidateToken(accessToken);
+            Assert.IsFalse(b);
+        }
     }
 }

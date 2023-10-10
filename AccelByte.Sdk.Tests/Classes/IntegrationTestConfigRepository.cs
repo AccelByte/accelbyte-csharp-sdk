@@ -22,6 +22,8 @@ namespace AccelByte.Sdk.Tests
 
         public static readonly IntegrationTestConfigRepository Admin = new IntegrationTestConfigRepository("AB_CLIENT_ID", "AB_CLIENT_SECRET", "AB_NAMESPACE");
 
+        public static readonly IntegrationTestConfigRepository PublicClient = new IntegrationTestConfigRepository("PUBLIC_AB_CLIENT_ID", "", "AB_NAMESPACE");
+
 
         private string _EnvName_ClientId;
 
@@ -57,6 +59,9 @@ namespace AccelByte.Sdk.Tests
         {
             get
             {
+                if (_EnvName_ClientSecret == "")
+                    return "";
+
                 string? temp = Environment.GetEnvironmentVariable(_EnvName_ClientSecret);
                 if (temp != null)
                     return UnQuote(temp);
