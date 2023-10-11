@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Core
                 throw new Exception("Null credential repository");
 
             ICredentialRepository cred = Configuration.Credential;
-            return LoginUser(cred.Username, cred.Password, null);
+            return LoginUser(cred.Username, cred.Password, "", null);
         }
 
         public bool LoginUser(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
@@ -104,15 +104,34 @@ namespace AccelByte.Sdk.Core
                 throw new Exception("Null credential repository");
 
             ICredentialRepository cred = Configuration.Credential;
-            return LoginUser(cred.Username, cred.Password, onTokenReceived);
+            return LoginUser(cred.Username, cred.Password, "", onTokenReceived);
+        }
+
+        public bool LoginUser(string scopes)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return LoginUser(cred.Username, cred.Password, scopes, null);
+        }
+
+        public bool LoginUser(string scopes, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return LoginUser(cred.Username, cred.Password, scopes, onTokenReceived);
         }
 
         public bool LoginUser(string username, string password)
-        {
-            return LoginUser(username, password, null);
-        }
+            => LoginUser(username, password, "", null);
 
         public bool LoginUser(string username, string password, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+            => LoginUser(username, password, "", onTokenReceived);
+
+        public bool LoginUser(string username, string password, string? scopes, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
             if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
             {
@@ -133,11 +152,30 @@ namespace AccelByte.Sdk.Core
             var clientId = Configuration.ConfigRepository.ClientId;
 
             var oAuth20 = new OAuth20(this);
-            var authorizeV3 = AuthorizeV3.Builder
-                .SetCodeChallenge(codeChallenge)
-                .SetCodeChallengeMethod("S256")
-                .SetScope("commerce account social publishing analytics")
-                .Build(clientId, "code");
+            AuthorizeV3 authorizeV3;
+            if (scopes == null)
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .Build(clientId, "code");
+            }
+            else if (scopes == "")
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .SetScope("commerce account social publishing analytics")
+                    .Build(clientId, "code");
+            }
+            else
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .SetScope(scopes)
+                    .Build(clientId, "code");
+            }
 
             var authorizeV3Response = oAuth20.AuthorizeV3(authorizeV3);
 
