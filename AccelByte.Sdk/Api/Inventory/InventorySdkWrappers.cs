@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public AdminChainingOperations AdminChainingOperations
+        {
+            get
+            {
+                if (_AdminChainingOperations == null)
+                    _AdminChainingOperations = new AdminChainingOperations(_SdkObject);
+                return _AdminChainingOperations;
+            }
+        }
+        private AdminChainingOperations? _AdminChainingOperations = null;
+
         public AdminInventories AdminInventories
         {
             get
