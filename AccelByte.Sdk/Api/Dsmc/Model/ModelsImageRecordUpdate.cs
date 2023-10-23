@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? ArtifactPath { get; set; }
 
         [JsonPropertyName("coreDumpEnabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? CoreDumpEnabled { get; set; }
 
         [JsonPropertyName("image")]

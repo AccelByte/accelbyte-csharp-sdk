@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         public List<ApimodelsOperation>? Operations { get; set; }
 
         [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RequestId { get; set; }
 
     }

@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         [SdkCommandArgument("creator")]
         public string? Creator { get; set; }
 
+        [SdkCommandArgument("ishidden")]
+        public string? Ishidden { get; set; }
+
         [SdkCommandArgument("isofficial")]
         public string? Isofficial { get; set; }
 
@@ -80,6 +83,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
             if (Creator != null)
                 opBuilder.SetCreator((string)Creator);
+            if (Ishidden != null)
+                opBuilder.SetIshidden((string)Ishidden);
             if (Isofficial != null)
                 opBuilder.SetIsofficial((string)Isofficial);
             if (Limit != null)

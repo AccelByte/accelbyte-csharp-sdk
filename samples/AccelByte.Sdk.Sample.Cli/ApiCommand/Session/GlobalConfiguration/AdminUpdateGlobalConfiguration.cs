@@ -19,43 +19,39 @@ using AccelByte.Sdk.Api.Session.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 {
-    [SdkConsoleCommand("session", "publicquerygamesessions")]
-    public class PublicQueryGameSessionsCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("session", "adminupdateglobalconfiguration")]
+    public class AdminUpdateGlobalConfigurationCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Session"; } }
 
-        public string OperationName { get { return "PublicQueryGameSessions"; } }
-
-        [SdkCommandArgument("namespace")]
-        public string Namespace { get; set; } = String.Empty;
+        public string OperationName { get { return "AdminUpdateGlobalConfiguration"; } }
 
         [SdkCommandData("body")]
-        public Dictionary<string, object> Body { get; set; } = new Dictionary<string, object>();
+        public ApimodelsPutGlobalConfigurationRequest Body { get; set; } = new ApimodelsPutGlobalConfigurationRequest();
 
-        public PublicQueryGameSessionsCommand(AccelByteSDK sdk)
+        public AdminUpdateGlobalConfigurationCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Session.Wrapper.GameSession wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GameSession(_SDK);
+            AccelByte.Sdk.Api.Session.Wrapper.GlobalConfiguration wrapper = new AccelByte.Sdk.Api.Session.Wrapper.GlobalConfiguration(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Session.Operation.PublicQueryGameSessions.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Session.Operation.AdminUpdateGlobalConfiguration.Builder;
 
 
 
-            PublicQueryGameSessions operation = opBuilder.Build(
-                Body,
-                Namespace
+
+
+            AdminUpdateGlobalConfiguration operation = opBuilder.Build(
+                Body
             );
 
 
-            AccelByte.Sdk.Api.Session.Model.ApimodelsGameSessionQueryResponse? response = wrapper.PublicQueryGameSessions(operation);
+            AccelByte.Sdk.Api.Session.Model.ApimodelsGlobalConfigurationResponse? response = wrapper.AdminUpdateGlobalConfiguration(operation);
             if (response == null)
                 return "No response from server.";
 

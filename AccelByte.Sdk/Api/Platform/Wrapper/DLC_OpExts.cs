@@ -120,6 +120,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetUserDLC<T1>(op);
         }
+        public static Platform.Model.DLCConfigRewardShortInfo? Execute(
+            this GeDLCDurableRewardShortMap.GeDLCDurableRewardShortMapBuilder builder,
+            string namespace_,
+            string dlcType
+        )
+        {
+            GeDLCDurableRewardShortMap op = builder.Build(
+                namespace_,
+                dlcType
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).GeDLCDurableRewardShortMap(op);
+        }
         public static void Execute(
             this SyncEpicGameDLC.SyncEpicGameDLCBuilder builder,
             string namespace_,

@@ -16,7 +16,12 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("message")]
         public string? Message { get; set; }
 
+        [JsonPropertyName("replayed")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? Replayed { get; set; }
+
         [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? RequestId { get; set; }
 
     }

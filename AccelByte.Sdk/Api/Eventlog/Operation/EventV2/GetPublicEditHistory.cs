@@ -16,37 +16,15 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// <summary>
     /// GetPublicEditHistory
     ///
-    /// 
-    /// 
     /// Available Type:
+    /// * email
+    /// * password
+    /// * displayname
+    /// * dateofbirth
+    /// * country
+    /// * language
     /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * email
-    /// 
-    /// 
-    ///   * password
-    /// 
-    /// 
-    ///   * displayname
-    /// 
-    /// 
-    ///   * dateofbirth
-    /// 
-    /// 
-    ///   * country
-    /// 
-    /// 
-    ///   * language
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Requires a valid user access token
+    /// Requires valid user access token
     /// </summary>
     public class GetPublicEditHistory : AccelByte.Sdk.Core.Operation
     {

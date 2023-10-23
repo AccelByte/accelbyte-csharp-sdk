@@ -46,6 +46,17 @@ namespace AccelByte.Sdk.Core
         }
         private EnvironmentVariable? _EnvironmentVariable = null;
 
+        public GlobalConfiguration GlobalConfiguration
+        {
+            get
+            {
+                if (_GlobalConfiguration == null)
+                    _GlobalConfiguration = new GlobalConfiguration(_SdkObject);
+                return _GlobalConfiguration;
+            }
+        }
+        private GlobalConfiguration? _GlobalConfiguration = null;
+
         public ConfigurationTemplate ConfigurationTemplate
         {
             get

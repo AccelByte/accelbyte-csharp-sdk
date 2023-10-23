@@ -1,3 +1,10 @@
+<a name="v0.46.0"></a>
+## [v0.46.0]
+### feat
+- **:** added login user with configurable scopes
+- **:** update inventory service for ags 3.59
+
+
 <a name="v0.45.0"></a>
 ## [v0.45.0]
 ### fix

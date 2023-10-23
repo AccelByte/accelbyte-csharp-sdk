@@ -94,17 +94,17 @@ namespace AccelByte.Sdk.Api
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).CreateGameSession<T1, T2>(op);
         }
         public static Session.Model.ApimodelsGameSessionQueryResponse? Execute(
-            this PublicQueryGameSessions.PublicQueryGameSessionsBuilder builder,
+            this PublicQueryGameSessionsByAttributes.PublicQueryGameSessionsByAttributesBuilder builder,
             Dictionary<string, object> body,
             string namespace_
         )
         {
-            PublicQueryGameSessions op = builder.Build(
+            PublicQueryGameSessionsByAttributes op = builder.Build(
                 body,
                 namespace_
             );
 
-            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicQueryGameSessions(op);
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicQueryGameSessionsByAttributes(op);
         }
         public static Session.Model.ApimodelsGameSessionResponse? Execute(
             this PublicSessionJoinCode.PublicSessionJoinCodeBuilder builder,

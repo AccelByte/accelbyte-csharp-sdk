@@ -143,6 +143,7 @@
 | `/platform/admin/namespaces/{namespace}/dlc/config/platformMap` | DELETE | DeletePlatformDLCConfig | [DeletePlatformDLCConfig](../../AccelByte.Sdk/Api/Platform/Operation/DLC/DeletePlatformDLCConfig.cs) | [DeletePlatformDLCConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/DeletePlatformDLCConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/dlc` | GET | GetUserDLCByPlatform | [GetUserDLCByPlatform](../../AccelByte.Sdk/Api/Platform/Operation/DLC/GetUserDLCByPlatform.cs) | [GetUserDLCByPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GetUserDLCByPlatform.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/dlc/records` | GET | GetUserDLC | [GetUserDLC](../../AccelByte.Sdk/Api/Platform/Operation/DLC/GetUserDLC.cs) | [GetUserDLC](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GetUserDLC.cs) |
+| `/platform/public/namespaces/{namespace}/dlc/rewards/durable/map` | GET | GeDLCDurableRewardShortMap | [GeDLCDurableRewardShortMap](../../AccelByte.Sdk/Api/Platform/Operation/DLC/GeDLCDurableRewardShortMap.cs) | [GeDLCDurableRewardShortMap](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/GeDLCDurableRewardShortMap.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/epicgames/sync` | PUT | SyncEpicGameDLC | [SyncEpicGameDLC](../../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncEpicGameDLC.cs) | [SyncEpicGameDLC](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncEpicGameDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/oculus/sync` | PUT | SyncOculusDLC | [SyncOculusDLC](../../AccelByte.Sdk/Api/Platform/Operation/DLC/SyncOculusDLC.cs) | [SyncOculusDLC](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/SyncOculusDLC.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/dlc/psn/sync` | PUT | PublicSyncPsnDlcInventory | [PublicSyncPsnDlcInventory](../../AccelByte.Sdk/Api/Platform/Operation/DLC/PublicSyncPsnDlcInventory.cs) | [PublicSyncPsnDlcInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/DLC/PublicSyncPsnDlcInventory.cs) |
@@ -775,6 +776,7 @@
 | `CurrencyUpdate` | [CurrencyUpdate](../../AccelByte.Sdk/Api/Platform/Model/CurrencyUpdate.cs) |
 | `CurrencyWallet` | [CurrencyWallet](../../AccelByte.Sdk/Api/Platform/Model/CurrencyWallet.cs) |
 | `Customization` | [Customization](../../AccelByte.Sdk/Api/Platform/Model/Customization.cs) |
+| `DLCConfigRewardShortInfo` | [DLCConfigRewardShortInfo](../../AccelByte.Sdk/Api/Platform/Model/DLCConfigRewardShortInfo.cs) |
 | `DLCItem` | [DLCItem](../../AccelByte.Sdk/Api/Platform/Model/DLCItem.cs) |
 | `DLCItemConfigInfo` | [DLCItemConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigInfo.cs) |
 | `DLCItemConfigUpdate` | [DLCItemConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigUpdate.cs) |

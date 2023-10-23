@@ -407,6 +407,45 @@ namespace AccelByte.Sdk.Api
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).ListContentVersions(op);
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
+            this AdminUpdateContentS3ByShareCode.AdminUpdateContentS3ByShareCodeBuilder builder,
+            ModelsAdminUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentS3ByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminUpdateContentS3ByShareCode(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
+            this AdminUpdateContentS3ByShareCode.AdminUpdateContentS3ByShareCodeBuilder builder,
+            ModelsAdminUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentS3ByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminUpdateContentS3ByShareCode<T1>(op);
+        }
+        public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this AdminUpdateContentS3.AdminUpdateContentS3Builder builder,
             ModelsAdminUpdateContentRequest body,
             string channelId,
@@ -444,6 +483,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).AdminUpdateContentS3<T1>(op);
+        }
+        public static void Execute(
+            this DeleteContentByShareCode.DeleteContentByShareCodeBuilder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            DeleteContentByShareCode op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            ((Ugc.Wrapper.AdminContent)builder.WrapperObject!).DeleteContentByShareCode(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
