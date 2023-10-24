@@ -3,6 +3,9 @@
 ### feat
 - **:** added login user with configurable scopes
 - **:** update inventory service for ags 3.59
+### fix
+- **:** fix session tests due to op rename
+- **:** update integration test and sample app to replace deprecated endpoints
 
 
 <a name="v0.45.0"></a>
