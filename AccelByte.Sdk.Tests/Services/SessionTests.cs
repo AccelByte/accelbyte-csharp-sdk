@@ -216,7 +216,7 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             #region Query game sessions
-            var response = _Sdk.Session.GameSession.PublicQueryGameSessionsOp
+            var response = _Sdk.Session.GameSession.PublicQueryGameSessionsByAttributesOp
                 .Execute(new Dictionary<string, object>() { }, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(response);
