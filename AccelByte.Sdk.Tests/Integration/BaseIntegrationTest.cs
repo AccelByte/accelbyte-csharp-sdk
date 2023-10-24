@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Tests.Integration
 
         protected string UnQuote(string value)
         {
+            if (value.Trim() == "")
+                return value.Trim();
+
             if ((value.Substring(0, 1) == "\"") && (value.Substring(value.Length - 1, 1) == "\""))
                 return value.Substring(1, value.Length - 2);
             else

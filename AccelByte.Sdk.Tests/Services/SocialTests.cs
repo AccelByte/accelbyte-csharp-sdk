@@ -79,4 +79,56 @@ namespace AccelByte.Sdk.Tests.Services
             #endregion
         }
     }
+
+    [TestFixture(Category = "FluentIntegration")]
+    [Explicit]
+    public class SocialTestsWithOAuthClient: BaseServiceTests
+    {
+        public SocialTestsWithOAuthClient() : base(false) { }
+
+        [Test]
+        public void OAuthClientTest()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
+            if (user_login_id == null)
+                throw new Exception("This test requires the value of AB_USERNAME env var. Please specify one.");
+
+            user_login_id = UnQuote(user_login_id);
+            string stat_code = "cs-server-sdk-test";
+
+            var searchResp = _Sdk.Iam.Users.AdminSearchUserV3Op
+                .SetQuery(user_login_id)
+                .Execute(_Sdk.Namespace);
+            Assert.IsNotNull(searchResp);
+
+            string user_id = searchResp!.Data![0].UserId!;
+
+            _Sdk.Social.UserStatistic.CreateUserStatItemOp
+                .Execute(_Sdk.Namespace, stat_code, user_id);
+
+            var gsResult = _Sdk.Social.UserStatistic.GetUserStatItemsOp
+                .SetLimit(10)
+                .SetOffset(0)
+                .SetStatCodes(stat_code)
+                .Execute(_Sdk.Namespace, user_id);
+            Assert.IsNotNull(gsResult);
+            if (gsResult != null)
+                Assert.Greater(gsResult.Data!.Count, 0);
+
+            var incResult = _Sdk.Social.UserStatistic.IncUserStatItemValueOp
+                .SetBody(new StatItemInc()
+                {
+                    Inc = 5
+                })
+                .Execute(_Sdk.Namespace, stat_code, user_id);
+            Assert.IsNotNull(incResult);
+
+            _Sdk.Social.UserStatistic.DeleteUserStatItemsOp
+                .Execute(_Sdk.Namespace, stat_code, user_id);
+        }
+    }
 }
