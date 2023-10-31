@@ -142,6 +142,60 @@ namespace AccelByte.Sdk.Tests.Integration
         }
 
         [Test]
+        public void UserPermissionValidationTestUsingDefaultValidator()
+        {
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginUser((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            Thread.Sleep(2000);
+
+            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:USER";
+            int tAction = 2;
+
+            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+        }
+
+        [Test]
+        public void UserPermissionValidationTestUsingLocalValidator()
+        {
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .UseLocalTokenValidator()
+                .UseAutoRefreshForTokenRevocationList()
+                .EnableLog()
+                .Build();
+
+            string accessToken = String.Empty;
+            sdk.LoginUser((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            Thread.Sleep(2000);
+
+            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:USER";
+            int tAction = 2;
+
+            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+        }
+
+        [Test]
         public void ParseAccessTokenNoValidationTest()
         {
             using AccelByteSDK sdk = AccelByteSDK.Builder

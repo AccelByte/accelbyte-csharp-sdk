@@ -326,6 +326,14 @@ namespace AccelByte.Sdk.Core
             else
                 throw new Exception("Could not validate token. No token validator assigned.");
         }
+
+        public bool ValidateToken(string accessToken, string permission, int action, string? aNamespace, string? userId)
+        {
+            if (Configuration.TokenValidator != null)
+                return Configuration.TokenValidator.Validate(this, accessToken, permission, action, aNamespace, userId);
+            else
+                throw new Exception("Could not validate token. No token validator assigned.");
+        }
     }
 
     public partial class AccelByteSdkBuilder<T> where T : AccelByteSDK

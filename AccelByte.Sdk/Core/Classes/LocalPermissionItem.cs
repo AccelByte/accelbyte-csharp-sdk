@@ -10,12 +10,10 @@ using System.Threading.Tasks;
 
 namespace AccelByte.Sdk.Core
 {
-    public interface ITokenValidator
+    public class LocalPermissionItem
     {
-        bool Validate(AccelByteSDK sdk, string accessToken);
+        public string Resource { get; set; } = String.Empty;
 
-        bool Validate(AccelByteSDK sdk, string accessToken, string permission, int action);
-
-        bool Validate(AccelByteSDK sdk, string accessToken, string permission, int action, string? aNamespace, string? userId);
+        public int Action { get; set; } = 0;
     }
 }

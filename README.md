@@ -285,9 +285,29 @@ NOTE: `LoginClient` does not have refresh token, instead it will execute actual 
 
 Working example code for on-demand refresh token is available in this [sample app](samples/AccelByte.Sdk.Sample.OnDemandTokenRefresh).
 
+## Token Validation
+Token validation is available since version 0.27.
+
+Use following method to validate access token.
+```csharp
+bool isValid = sdk.ValidateToken(accessTokenStr);
+```
+
+Permission validation is available only for OAuth Client token before version 0.47. From version 0.47 onwards, permission validation can accept user token.
+To validate permission from user token, you need to instantiate the SDK with OAuth Client that has `ADMIN:ROLE [READ]` permission assigned to it.
+
+To validate permission and action, use following method.
+```csharp
+bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
+```
+
+To validate permission and action with specified namespace and/or userid, use following method.
+```csharp
+bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt, namespaceId, userId);
+```
 
 ## Local Token Validation
-Local token validation is available since version 0.27. Currently only support for oauth client token.
+Local token validation is available since version 0.27.
 To enable it, include `AccelByte.Sdk.Feature.LocalTokenValidation` and instantiate the sdk with following code.
 ```csharp
 //Add core namespace
@@ -308,15 +328,7 @@ AccelByteSDK sdk = AccelByteSDK.Builder
     .UseAutoRefreshForTokenRevocationList()
     .Build();
 ```
-
-And then use following method to validate access token.
-```csharp
-bool isValid = sdk.ValidateToken(accessTokenStr);
-```
-Or, if you need to validate permission and action, use following method.
-```csharp
-bool isValid = sdk.ValidateToken(accessTokenStr, permissionStr, actionInt);
-```
+Then use the usual `ValidateToken` methods.
 
 Since version 0.42, `ParseAccessToken` function added to get the access token payload. This function requires 2 parameters. First, is the access token itself. Second, is to set whether the function will validate the access token or not. Set `true` if validation is required.
 To use it, just include `AccelByte.Sdk.Feature.LocalTokenValidation`. If validation is required, instantiate the sdk with following code.

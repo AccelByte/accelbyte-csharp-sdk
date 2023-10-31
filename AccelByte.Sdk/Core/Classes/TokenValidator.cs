@@ -8,10 +8,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AccelByte.Sdk.Api;
+
 namespace AccelByte.Sdk.Core
 {
     public abstract class TokenValidator
     {
+        private Dictionary<string, List<LocalPermissionItem>> _PermissionCache = new();
+
+        protected void AddPermissionToCache(string key, List<LocalPermissionItem> permissions)
+        {
+            _PermissionCache.Add(key, permissions);
+        }
+
+        protected void ClearPermissionCache()
+        {
+            _PermissionCache.Clear();
+        }
+
+        protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId)
+        {
+            if (_PermissionCache.ContainsKey(roleId))
+                return _PermissionCache[roleId];
+
+            try
+            {
+                var response = sdk.Iam.Roles.AdminGetRoleV4Op.Execute(roleId);
+                if (response == null)
+                    throw new Exception("Null response");
+
+                List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                foreach (var item in response.Permissions!)
+                {
+                    permissions.Add(new LocalPermissionItem()
+                    {
+                        Resource = item.Resource!,
+                        Action = item.Action!.Value
+                    });
+                }
+
+                _PermissionCache[roleId] = permissions;
+                return permissions;
+            }
+            catch
+            {
+                return new List<LocalPermissionItem>();
+            }
+        }
+
+        protected string ReplacePlaceholder(string sResource, Dictionary<string, string> parameters)
+        {
+            string result = sResource;
+            foreach (var param in parameters)
+                result = result.Replace("{" + param.Key + "}", param.Value);
+            return result;
+        }
+
         protected bool IsResourceAllowed(string accessPermissionResource, string requiredPermissionResource)
         {
             string[] requiredPermResSections = requiredPermissionResource.Split(':');
