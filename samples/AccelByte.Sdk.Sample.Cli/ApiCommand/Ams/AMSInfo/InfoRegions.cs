@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             );
 
 
-            AccelByte.Sdk.Api.Ams.Model.ApiRegionsResponse? response = wrapper.InfoRegions(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiAMSRegionsResponse? response = wrapper.InfoRegions(operation);
             if (response == null)
                 return "No response from server.";
 

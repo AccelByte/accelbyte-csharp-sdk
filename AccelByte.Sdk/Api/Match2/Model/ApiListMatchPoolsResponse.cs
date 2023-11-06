@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
     public class ApiListMatchPoolsResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("data")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ApiMatchPool>? Data { get; set; }
 
         [JsonPropertyName("pagination")]

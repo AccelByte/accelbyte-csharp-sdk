@@ -49,6 +49,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminDeleteBulkGameSessions(op);
         }
+        public static void Execute(
+            this AdminSetDSReady.AdminSetDSReadyBuilder builder,
+            ApimodelsSetDSReadyRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminSetDSReady op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminSetDSReady(op);
+        }
         public static Session.Model.ApimodelsUpdateGameSessionMemberStatusResponse? Execute(
             this AdminUpdateGameSessionMember.AdminUpdateGameSessionMemberBuilder builder,
             string memberId,

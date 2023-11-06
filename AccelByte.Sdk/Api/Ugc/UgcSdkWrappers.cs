@@ -79,16 +79,16 @@ namespace AccelByte.Sdk.Core
         }
         private Anonymization? _Anonymization = null;
 
-        public PublicContent PublicContent
+        public PublicContentLegacy PublicContentLegacy
         {
             get
             {
-                if (_PublicContent == null)
-                    _PublicContent = new PublicContent(_SdkObject);
-                return _PublicContent;
+                if (_PublicContentLegacy == null)
+                    _PublicContentLegacy = new PublicContentLegacy(_SdkObject);
+                return _PublicContentLegacy;
             }
         }
-        private PublicContent? _PublicContent = null;
+        private PublicContentLegacy? _PublicContentLegacy = null;
 
         public PublicFollow PublicFollow
         {
@@ -101,27 +101,27 @@ namespace AccelByte.Sdk.Core
         }
         private PublicFollow? _PublicFollow = null;
 
-        public PublicLike PublicLike
+        public PublicLikeLegacy PublicLikeLegacy
         {
             get
             {
-                if (_PublicLike == null)
-                    _PublicLike = new PublicLike(_SdkObject);
-                return _PublicLike;
+                if (_PublicLikeLegacy == null)
+                    _PublicLikeLegacy = new PublicLikeLegacy(_SdkObject);
+                return _PublicLikeLegacy;
             }
         }
-        private PublicLike? _PublicLike = null;
+        private PublicLikeLegacy? _PublicLikeLegacy = null;
 
-        public PublicDownloadCount PublicDownloadCount
+        public PublicDownloadCountLegacy PublicDownloadCountLegacy
         {
             get
             {
-                if (_PublicDownloadCount == null)
-                    _PublicDownloadCount = new PublicDownloadCount(_SdkObject);
-                return _PublicDownloadCount;
+                if (_PublicDownloadCountLegacy == null)
+                    _PublicDownloadCountLegacy = new PublicDownloadCountLegacy(_SdkObject);
+                return _PublicDownloadCountLegacy;
             }
         }
-        private PublicDownloadCount? _PublicDownloadCount = null;
+        private PublicDownloadCountLegacy? _PublicDownloadCountLegacy = null;
 
         public PublicTag PublicTag
         {
@@ -177,6 +177,50 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PublicGroup? _PublicGroup = null;
+
+        public AdminContentV2 AdminContentV2
+        {
+            get
+            {
+                if (_AdminContentV2 == null)
+                    _AdminContentV2 = new AdminContentV2(_SdkObject);
+                return _AdminContentV2;
+            }
+        }
+        private AdminContentV2? _AdminContentV2 = null;
+
+        public PublicContentV2 PublicContentV2
+        {
+            get
+            {
+                if (_PublicContentV2 == null)
+                    _PublicContentV2 = new PublicContentV2(_SdkObject);
+                return _PublicContentV2;
+            }
+        }
+        private PublicContentV2? _PublicContentV2 = null;
+
+        public PublicDownloadCountV2 PublicDownloadCountV2
+        {
+            get
+            {
+                if (_PublicDownloadCountV2 == null)
+                    _PublicDownloadCountV2 = new PublicDownloadCountV2(_SdkObject);
+                return _PublicDownloadCountV2;
+            }
+        }
+        private PublicDownloadCountV2? _PublicDownloadCountV2 = null;
+
+        public PublicLikeV2 PublicLikeV2
+        {
+            get
+            {
+                if (_PublicLikeV2 == null)
+                    _PublicLikeV2 = new PublicLikeV2(_SdkObject);
+                return _PublicLikeV2;
+            }
+        }
+        private PublicLikeV2? _PublicLikeV2 = null;
 
         internal UgcSdkWrappers(AccelByteSDK sdk)
         {

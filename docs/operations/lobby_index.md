@@ -35,6 +35,23 @@
 | `/lobby/v1/admin/config/namespaces/{namespace}/export` | GET | AdminExportConfigV1 | [AdminExportConfigV1](../../AccelByte.Sdk/Api/Lobby/Operation/Config/AdminExportConfigV1.cs) | [AdminExportConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Config/AdminExportConfigV1.cs) |
 | `/lobby/v1/admin/config/namespaces/{namespace}/import` | POST | AdminImportConfigV1 | [AdminImportConfigV1](../../AccelByte.Sdk/Api/Lobby/Operation/Config/AdminImportConfigV1.cs) | [AdminImportConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Config/AdminImportConfigV1.cs) |
 
+### admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Lobby/Wrapper/Admin.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/lobby/v1/admin/global-configurations` | GET | AdminGetGlobalConfig | [AdminGetGlobalConfig](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/AdminGetGlobalConfig.cs) | [AdminGetGlobalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/AdminGetGlobalConfig.cs) |
+| `/lobby/v1/admin/global-configurations` | PUT | AdminUpdateGlobalConfig | [AdminUpdateGlobalConfig](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/AdminUpdateGlobalConfig.cs) | [AdminUpdateGlobalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/AdminUpdateGlobalConfig.cs) |
+| `/lobby/v1/admin/global-configurations` | DELETE | AdminDeleteGlobalConfig | [AdminDeleteGlobalConfig](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/AdminDeleteGlobalConfig.cs) | [AdminDeleteGlobalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/AdminDeleteGlobalConfig.cs) |
+| `/notification/namespaces/{namespace}/freeform` | POST | FreeFormNotification | [FreeFormNotification](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/FreeFormNotification.cs) | [FreeFormNotification](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/FreeFormNotification.cs) |
+| `/notification/namespaces/{namespace}/templated` | POST | NotificationWithTemplate | [NotificationWithTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/NotificationWithTemplate.cs) | [NotificationWithTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/NotificationWithTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates` | GET | GetGameTemplate | [GetGameTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetGameTemplate.cs) | [GetGameTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetGameTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates` | POST | CreateTemplate | [CreateTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/CreateTemplate.cs) | [CreateTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/CreateTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}` | GET | GetSlugTemplate | [GetSlugTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetSlugTemplate.cs) | [GetSlugTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetSlugTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}` | DELETE | DeleteTemplateSlug | [DeleteTemplateSlug](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/DeleteTemplateSlug.cs) | [DeleteTemplateSlug](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/DeleteTemplateSlug.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | GET | GetLocalizationTemplate | [GetLocalizationTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetLocalizationTemplate.cs) | [GetLocalizationTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetLocalizationTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | PUT | UpdateLocalizationTemplate | [UpdateLocalizationTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/UpdateLocalizationTemplate.cs) | [UpdateLocalizationTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/UpdateLocalizationTemplate.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | DELETE | DeleteTemplateLocalization | [DeleteTemplateLocalization](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/DeleteTemplateLocalization.cs) | [DeleteTemplateLocalization](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/DeleteTemplateLocalization.cs) |
+| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}/publish` | POST | PublishTemplate | [PublishTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/PublishTemplate.cs) | [PublishTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/PublishTemplate.cs) |
+
 ### notification Wrapper:  [Notification](../../AccelByte.Sdk/Api/Lobby/Wrapper/Notification.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -126,20 +143,6 @@
 |---|---|---|---|---|
 | `/lobby/v1/public/presence/namespaces/{namespace}/users/presence` | GET | UsersPresenceHandlerV1 | [UsersPresenceHandlerV1](../../AccelByte.Sdk/Api/Lobby/Operation/Presence/UsersPresenceHandlerV1.cs) | [UsersPresenceHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Presence/UsersPresenceHandlerV1.cs) |
 
-### admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Lobby/Wrapper/Admin.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/notification/namespaces/{namespace}/freeform` | POST | FreeFormNotification | [FreeFormNotification](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/FreeFormNotification.cs) | [FreeFormNotification](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/FreeFormNotification.cs) |
-| `/notification/namespaces/{namespace}/templated` | POST | NotificationWithTemplate | [NotificationWithTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/NotificationWithTemplate.cs) | [NotificationWithTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/NotificationWithTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates` | GET | GetGameTemplate | [GetGameTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetGameTemplate.cs) | [GetGameTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetGameTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates` | POST | CreateTemplate | [CreateTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/CreateTemplate.cs) | [CreateTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/CreateTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}` | GET | GetSlugTemplate | [GetSlugTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetSlugTemplate.cs) | [GetSlugTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetSlugTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}` | DELETE | DeleteTemplateSlug | [DeleteTemplateSlug](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/DeleteTemplateSlug.cs) | [DeleteTemplateSlug](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/DeleteTemplateSlug.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | GET | GetLocalizationTemplate | [GetLocalizationTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/GetLocalizationTemplate.cs) | [GetLocalizationTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/GetLocalizationTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | PUT | UpdateLocalizationTemplate | [UpdateLocalizationTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/UpdateLocalizationTemplate.cs) | [UpdateLocalizationTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/UpdateLocalizationTemplate.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}` | DELETE | DeleteTemplateLocalization | [DeleteTemplateLocalization](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/DeleteTemplateLocalization.cs) | [DeleteTemplateLocalization](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/DeleteTemplateLocalization.cs) |
-| `/notification/namespaces/{namespace}/templates/{templateSlug}/languages/{templateLanguage}/publish` | POST | PublishTemplate | [PublishTemplate](../../AccelByte.Sdk/Api/Lobby/Operation/Admin/PublishTemplate.cs) | [PublishTemplate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Admin/PublishTemplate.cs) |
-
 
 &nbsp;  
 
@@ -150,6 +153,10 @@
 |---|---|---|---|---|
 
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Lobby/Wrapper/Admin.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -186,10 +193,6 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### admin Wrapper:  [Admin](../../AccelByte.Sdk/Api/Lobby/Wrapper/Admin.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
 
 &nbsp;  
 
@@ -215,6 +218,7 @@
 | `model.GetUserFriendsResponse` | [ModelGetUserFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserFriendsResponse.cs) |
 | `model.GetUserIncomingFriendsResponse` | [ModelGetUserIncomingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserIncomingFriendsResponse.cs) |
 | `model.GetUserOutgoingFriendsResponse` | [ModelGetUserOutgoingFriendsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelGetUserOutgoingFriendsResponse.cs) |
+| `model.GlobalConfiguration` | [ModelGlobalConfiguration](../../AccelByte.Sdk/Api/Lobby/Model/ModelGlobalConfiguration.cs) |
 | `model.IncomingFriendsWithTimeData` | [ModelIncomingFriendsWithTimeData](../../AccelByte.Sdk/Api/Lobby/Model/ModelIncomingFriendsWithTimeData.cs) |
 | `model.ListBulkUserPlatformsResponse` | [ModelListBulkUserPlatformsResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelListBulkUserPlatformsResponse.cs) |
 | `model.LoadIncomingFriendsWithTimeResponse` | [ModelLoadIncomingFriendsWithTimeResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelLoadIncomingFriendsWithTimeResponse.cs) |
@@ -229,6 +233,7 @@
 | `model.NotificationWithTemplateRequestV1` | [ModelNotificationWithTemplateRequestV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationWithTemplateRequestV1.cs) |
 | `model.OutgoingFriendsWithTimeData` | [ModelOutgoingFriendsWithTimeData](../../AccelByte.Sdk/Api/Lobby/Model/ModelOutgoingFriendsWithTimeData.cs) |
 | `model.Pagination` | [ModelPagination](../../AccelByte.Sdk/Api/Lobby/Model/ModelPagination.cs) |
+| `model.PutGlobalConfigurationRequest` | [ModelPutGlobalConfigurationRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelPutGlobalConfigurationRequest.cs) |
 | `model.TemplateContent` | [ModelTemplateContent](../../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateContent.cs) |
 | `model.TemplateLocalization` | [ModelTemplateLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateLocalization.cs) |
 | `model.TemplateLocalizationResponse` | [ModelTemplateLocalizationResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelTemplateLocalizationResponse.cs) |

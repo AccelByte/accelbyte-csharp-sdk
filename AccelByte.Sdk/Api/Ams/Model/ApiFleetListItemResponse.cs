@@ -9,12 +9,6 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiFleetListItemResponse : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("activeDs")]
-        public int? ActiveDs { get; set; }
-
-        [JsonPropertyName("claimedDs")]
-        public int? ClaimedDs { get; set; }
-
         [JsonPropertyName("counts")]
         public List<ApiFleetRegionalServerCounts>? Counts { get; set; }
 

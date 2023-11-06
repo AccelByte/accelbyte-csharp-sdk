@@ -51,6 +51,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Ip { get; set; }
 
         [JsonPropertyName("is_core_dump_enabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsCoreDumpEnabled { get; set; }
 
         [JsonPropertyName("is_override_game_version")]

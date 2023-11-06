@@ -1542,14 +1542,14 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 217 'Logout' test.out
 
-#- 218 RequestGameTokenCodeResponseV3
+#- 218 RequestTokenExchangeCodeV3
 $CLI_EXE \
     --sn iam \
-    --op RequestGameTokenCodeResponseV3 \
+    --op RequestTokenExchangeCodeV3 \
     --namespace $AB_NAMESPACE \
     --client_id 'Gi7nGPIB4PAc9cmk' \
     > test.out 2>&1
-eval_tap $? 218 'RequestGameTokenCodeResponseV3' test.out
+eval_tap $? 218 'RequestTokenExchangeCodeV3' test.out
 
 #- 219 AdminRetrieveUserThirdPartyPlatformTokenV3
 $CLI_EXE \
@@ -2295,14 +2295,14 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 290 'LogoutSSOClient' test.out
 
-#- 291 RequestGameTokenResponseV3
+#- 291 RequestTargetTokenResponseV3
 $CLI_EXE \
     --sn iam \
-    --op RequestGameTokenResponseV3 \
+    --op RequestTargetTokenResponseV3 \
     --additionalData '3qU9HQob50wMZDQS' \
     --code 'OqNumwQ67G4W7SUv' \
     > test.out 2>&1
-eval_tap $? 291 'RequestGameTokenResponseV3' test.out
+eval_tap $? 291 'RequestTargetTokenResponseV3' test.out
 
 #- 292 PlatformTokenRefreshV3Deprecate
 eval_tap 0 292 'PlatformTokenRefreshV3Deprecate # SKIP deprecated' test.out
@@ -2961,7 +2961,7 @@ eval_tap $? 362 'PublicGetUserPublicInfoByUserIdV4' test.out
 
 #- 363 PublicInviteUserV4
 # body param: body
-echo '{"emailAddress": "2RfdbfCeSRn1LKFt", "namespace": "cxP5XZwXhWCG2kkW", "namespaceDisplayName": "QJsDs3RKP1Urpj4x"}' > $TEMP_JSON_INPUT
+echo '{"additionalData": "2RfdbfCeSRn1LKFt", "emailAddress": "cxP5XZwXhWCG2kkW", "namespace": "QJsDs3RKP1Urpj4x", "namespaceDisplayName": "8PnX6KfY2p9PKAhd"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicInviteUserV4 \

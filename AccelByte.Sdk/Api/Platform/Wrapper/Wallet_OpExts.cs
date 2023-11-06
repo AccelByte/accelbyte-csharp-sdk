@@ -128,6 +128,21 @@ namespace AccelByte.Sdk.Api
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).CreditUserWallet(op);
         }
         public static Platform.Model.PlatformWallet? Execute(
+            this DebitByWalletPlatform.DebitByWalletPlatformBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            DebitByWalletPlatform op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitByWalletPlatform(op);
+        }
+        public static Platform.Model.PlatformWallet? Execute(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
             string currencyCode,
             string namespace_,

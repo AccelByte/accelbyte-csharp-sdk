@@ -347,6 +347,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions` | GET | ListUserCurrencyTransactions | [ListUserCurrencyTransactions](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserCurrencyTransactions.cs) | [ListUserCurrencyTransactions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserCurrencyTransactions.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check` | GET | CheckWallet | [CheckWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/CheckWallet.cs) | [CheckWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CheckWallet.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit` | PUT | CreditUserWallet | [CreditUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/CreditUserWallet.cs) | [CreditUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CreditUserWallet.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform` | PUT | DebitByWalletPlatform | [DebitByWalletPlatform](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitByWalletPlatform.cs) | [DebitByWalletPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitByWalletPlatform.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/payment` | PUT | PayWithUserWallet | [PayWithUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/PayWithUserWallet.cs) | [PayWithUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/PayWithUserWallet.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}` | GET | GetUserWallet | [GetUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetUserWallet.cs) | [GetUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetUserWallet.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/debit` | PUT | DebitUserWallet | [DebitUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWallet.cs) | [DebitUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitUserWallet.cs) |
@@ -459,6 +460,13 @@
 | `/platform/admin/namespaces/{namespace}/tickets/{boothName}/id` | GET | GetTicketBoothID | [GetTicketBoothID](../../AccelByte.Sdk/Api/Platform/Operation/Ticket/GetTicketBoothID.cs) | [GetTicketBoothID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/GetTicketBoothID.cs) |
 | `/platform/admin/namespaces/{namespace}/tickets/{boothName}/increment` | PUT | IncreaseTicketSale | [IncreaseTicketSale](../../AccelByte.Sdk/Api/Platform/Operation/Ticket/IncreaseTicketSale.cs) | [IncreaseTicketSale](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/IncreaseTicketSale.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/tickets/{boothName}` | POST | AcquireUserTicket | [AcquireUserTicket](../../AccelByte.Sdk/Api/Platform/Operation/Ticket/AcquireUserTicket.cs) | [AcquireUserTicket](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Ticket/AcquireUserTicket.cs) |
+
+### TradeAction Wrapper:  [TradeAction](../../AccelByte.Sdk/Api/Platform/Wrapper/TradeAction.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/trade/commit` | POST | Commit | [Commit](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/Commit.cs) | [Commit](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/Commit.cs) |
+| `/platform/admin/namespaces/{namespace}/trade/history/byCriteria` | GET | GetTradeHistoryByCriteria | [GetTradeHistoryByCriteria](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/GetTradeHistoryByCriteria.cs) | [GetTradeHistoryByCriteria](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/GetTradeHistoryByCriteria.cs) |
+| `/platform/admin/namespaces/{namespace}/trade/{transactionId}` | GET | GetTradeHistoryByTransactionId | [GetTradeHistoryByTransactionId](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/GetTradeHistoryByTransactionId.cs) | [GetTradeHistoryByTransactionId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/GetTradeHistoryByTransactionId.cs) |
 
 ### Achievement(Platform) Wrapper:  [AchievementPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/AchievementPlatform.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -664,6 +672,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### TradeAction Wrapper:  [TradeAction](../../AccelByte.Sdk/Api/Platform/Wrapper/TradeAction.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/trade/commit` | POST | Commit | [Commit](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/Commit.cs) | [Commit](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/Commit.cs) |
+
 ### Achievement(Platform) Wrapper:  [AchievementPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/AchievementPlatform.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -705,6 +718,8 @@
 | Model | Class |
 |---|---|
 | `AchievementInfo` | [AchievementInfo](../../AccelByte.Sdk/Api/Platform/Model/AchievementInfo.cs) |
+| `Action` | [Action](../../AccelByte.Sdk/Api/Platform/Model/Action.cs) |
+| `ActionRequest` | [ActionRequest](../../AccelByte.Sdk/Api/Platform/Model/ActionRequest.cs) |
 | `AdditionalData` | [AdditionalData](../../AccelByte.Sdk/Api/Platform/Model/AdditionalData.cs) |
 | `AdditionalDataEntitlement` | [AdditionalDataEntitlement](../../AccelByte.Sdk/Api/Platform/Model/AdditionalDataEntitlement.cs) |
 | `AdminOrderCreate` | [AdminOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/AdminOrderCreate.cs) |
@@ -765,6 +780,7 @@
 | `ConditionMatchResult` | [ConditionMatchResult](../../AccelByte.Sdk/Api/Platform/Model/ConditionMatchResult.cs) |
 | `ConsumableEntitlementRevocationConfig` | [ConsumableEntitlementRevocationConfig](../../AccelByte.Sdk/Api/Platform/Model/ConsumableEntitlementRevocationConfig.cs) |
 | `ConsumeItem` | [ConsumeItem](../../AccelByte.Sdk/Api/Platform/Model/ConsumeItem.cs) |
+| `CreditPayload` | [CreditPayload](../../AccelByte.Sdk/Api/Platform/Model/CreditPayload.cs) |
 | `CreditRequest` | [CreditRequest](../../AccelByte.Sdk/Api/Platform/Model/CreditRequest.cs) |
 | `CreditResult` | [CreditResult](../../AccelByte.Sdk/Api/Platform/Model/CreditResult.cs) |
 | `CreditRevocation` | [CreditRevocation](../../AccelByte.Sdk/Api/Platform/Model/CreditRevocation.cs) |
@@ -782,6 +798,8 @@
 | `DLCItemConfigUpdate` | [DLCItemConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/DLCItemConfigUpdate.cs) |
 | `DLCRecord` | [DLCRecord](../../AccelByte.Sdk/Api/Platform/Model/DLCRecord.cs) |
 | `DebitByCurrencyCodeRequest` | [DebitByCurrencyCodeRequest](../../AccelByte.Sdk/Api/Platform/Model/DebitByCurrencyCodeRequest.cs) |
+| `DebitByWalletPlatformRequest` | [DebitByWalletPlatformRequest](../../AccelByte.Sdk/Api/Platform/Model/DebitByWalletPlatformRequest.cs) |
+| `DebitPayload` | [DebitPayload](../../AccelByte.Sdk/Api/Platform/Model/DebitPayload.cs) |
 | `DebitRequest` | [DebitRequest](../../AccelByte.Sdk/Api/Platform/Model/DebitRequest.cs) |
 | `DebitResult` | [DebitResult](../../AccelByte.Sdk/Api/Platform/Model/DebitResult.cs) |
 | `DeleteRewardConditionRequest` | [DeleteRewardConditionRequest](../../AccelByte.Sdk/Api/Platform/Model/DeleteRewardConditionRequest.cs) |
@@ -818,6 +836,7 @@
 | `ExternalPaymentOrderCreate` | [ExternalPaymentOrderCreate](../../AccelByte.Sdk/Api/Platform/Model/ExternalPaymentOrderCreate.cs) |
 | `FieldValidationError` | [FieldValidationError](../../AccelByte.Sdk/Api/Platform/Model/FieldValidationError.cs) |
 | `FixedPeriodRotationConfig` | [FixedPeriodRotationConfig](../../AccelByte.Sdk/Api/Platform/Model/FixedPeriodRotationConfig.cs) |
+| `FulFillItemPayload` | [FulFillItemPayload](../../AccelByte.Sdk/Api/Platform/Model/FulFillItemPayload.cs) |
 | `FulfillCodeRequest` | [FulfillCodeRequest](../../AccelByte.Sdk/Api/Platform/Model/FulfillCodeRequest.cs) |
 | `FulfillmentError` | [FulfillmentError](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentError.cs) |
 | `FulfillmentHistoryInfo` | [FulfillmentHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentHistoryInfo.cs) |
@@ -898,6 +917,8 @@
 | `OculusIAPConfigInfo` | [OculusIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigInfo.cs) |
 | `OculusIAPConfigRequest` | [OculusIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigRequest.cs) |
 | `OculusReconcileResult` | [OculusReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/OculusReconcileResult.cs) |
+| `Operation` | [Operation](../../AccelByte.Sdk/Api/Platform/Model/Operation.cs) |
+| `OperationRequest` | [OperationRequest](../../AccelByte.Sdk/Api/Platform/Model/OperationRequest.cs) |
 | `OptionBoxConfig` | [OptionBoxConfig](../../AccelByte.Sdk/Api/Platform/Model/OptionBoxConfig.cs) |
 | `Order` | [Order](../../AccelByte.Sdk/Api/Platform/Model/Order.cs) |
 | `OrderBundleItemInfo` | [OrderBundleItemInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderBundleItemInfo.cs) |
@@ -994,6 +1015,7 @@
 | `RevocationResult` | [RevocationResult](../../AccelByte.Sdk/Api/Platform/Model/RevocationResult.cs) |
 | `RevokeCurrency` | [RevokeCurrency](../../AccelByte.Sdk/Api/Platform/Model/RevokeCurrency.cs) |
 | `RevokeEntitlement` | [RevokeEntitlement](../../AccelByte.Sdk/Api/Platform/Model/RevokeEntitlement.cs) |
+| `RevokeEntitlementPayload` | [RevokeEntitlementPayload](../../AccelByte.Sdk/Api/Platform/Model/RevokeEntitlementPayload.cs) |
 | `RevokeEntry` | [RevokeEntry](../../AccelByte.Sdk/Api/Platform/Model/RevokeEntry.cs) |
 | `RevokeItem` | [RevokeItem](../../AccelByte.Sdk/Api/Platform/Model/RevokeItem.cs) |
 | `RevokeItemSummary` | [RevokeItemSummary](../../AccelByte.Sdk/Api/Platform/Model/RevokeItemSummary.cs) |
@@ -1051,6 +1073,8 @@
 | `TicketSaleIncrementResult` | [TicketSaleIncrementResult](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementResult.cs) |
 | `Time-limited balance` | [TimeLimitedBalance](../../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
 | `TimedOwnership` | [TimedOwnership](../../AccelByte.Sdk/Api/Platform/Model/TimedOwnership.cs) |
+| `TradeChainActionHistoryInfo` | [TradeChainActionHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/TradeChainActionHistoryInfo.cs) |
+| `TradeChainedActionCommitRequest` | [TradeChainedActionCommitRequest](../../AccelByte.Sdk/Api/Platform/Model/TradeChainedActionCommitRequest.cs) |
 | `TradeNotification` | [TradeNotification](../../AccelByte.Sdk/Api/Platform/Model/TradeNotification.cs) |
 | `Transaction` | [Transaction](../../AccelByte.Sdk/Api/Platform/Model/Transaction.cs) |
 | `TransactionAmountDetails` | [TransactionAmountDetails](../../AccelByte.Sdk/Api/Platform/Model/TransactionAmountDetails.cs) |

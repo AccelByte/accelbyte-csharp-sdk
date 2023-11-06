@@ -12,6 +12,19 @@ namespace AccelByte.Sdk.Api
 {
     public static class AmsImages_OpExts
     {
+        public static Ams.Model.ApiFleetArtifactsSampleRulesResponse? Execute(
+            this FleetArtifactSamplingRulesGet.FleetArtifactSamplingRulesGetBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetArtifactSamplingRulesGet op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Images)builder.WrapperObject!).FleetArtifactSamplingRulesGet(op);
+        }
         public static Ams.Model.ApiImageList? Execute(
             this ImageList.ImageListBuilder builder,
             string namespace_

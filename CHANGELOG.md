@@ -1,3 +1,9 @@
+<a name="v0.47.0"></a>
+## [v0.47.0]
+### feat
+- **:** add permission validation function
+
+
 <a name="v0.46.0"></a>
 ## [v0.46.0]
 ### feat

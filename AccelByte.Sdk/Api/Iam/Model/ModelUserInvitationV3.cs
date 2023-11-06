@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUserInvitationV3 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("additionalData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AdditionalData { get; set; }
+
         [JsonPropertyName("email")]
         public string? Email { get; set; }
 

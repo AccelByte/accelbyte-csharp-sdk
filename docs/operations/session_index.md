@@ -42,12 +42,24 @@
 | `/session/v1/admin/namespaces/{namespace}/dsconfigs` | GET | AdminGetDSMCConfiguration | [AdminGetDSMCConfiguration](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminGetDSMCConfiguration.cs) | [AdminGetDSMCConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminGetDSMCConfiguration.cs) |
 | `/session/v1/admin/namespaces/{namespace}/dsconfigs/sync` | GET | AdminSyncDSMCConfiguration | [AdminSyncDSMCConfiguration](../../AccelByte.Sdk/Api/Session/Operation/ConfigurationTemplate/AdminSyncDSMCConfiguration.cs) | [AdminSyncDSMCConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/ConfigurationTemplate/AdminSyncDSMCConfiguration.cs) |
 
+### Certificate Wrapper:  [Certificate](../../AccelByte.Sdk/Api/Session/Wrapper/Certificate.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl` | PUT | HandleUploadXboxPFXCertificate | [HandleUploadXboxPFXCertificate](../../AccelByte.Sdk/Api/Session/Operation/Certificate/HandleUploadXboxPFXCertificate.cs) | [HandleUploadXboxPFXCertificate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Certificate/HandleUploadXboxPFXCertificate.cs) |
+
+### Max Active Wrapper:  [MaxActive](../../AccelByte.Sdk/Api/Session/Wrapper/MaxActive.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/configurations/{name}/memberactivesession/{userId}` | GET | AdminGetMemberActiveSession | [AdminGetMemberActiveSession](../../AccelByte.Sdk/Api/Session/Operation/MaxActive/AdminGetMemberActiveSession.cs) | [AdminGetMemberActiveSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/MaxActive/AdminGetMemberActiveSession.cs) |
+| `/session/v1/admin/namespaces/{namespace}/configurations/{name}/reconcile` | POST | AdminReconcileMaxActiveSession | [AdminReconcileMaxActiveSession](../../AccelByte.Sdk/Api/Session/Operation/MaxActive/AdminReconcileMaxActiveSession.cs) | [AdminReconcileMaxActiveSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/MaxActive/AdminReconcileMaxActiveSession.cs) |
+
 ### Game Session Wrapper:  [GameSession](../../AccelByte.Sdk/Api/Session/Wrapper/GameSession.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/session/v1/admin/namespaces/{namespace}/gamesessions` | GET | AdminQueryGameSessions | [AdminQueryGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AdminQueryGameSessions.cs) | [AdminQueryGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AdminQueryGameSessions.cs) |
 | `/session/v1/admin/namespaces/{namespace}/gamesessions` | POST | AdminQueryGameSessionsByAttributes | [AdminQueryGameSessionsByAttributes](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AdminQueryGameSessionsByAttributes.cs) | [AdminQueryGameSessionsByAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AdminQueryGameSessionsByAttributes.cs) |
 | `/session/v1/admin/namespaces/{namespace}/gamesessions/bulk` | DELETE | AdminDeleteBulkGameSessions | [AdminDeleteBulkGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AdminDeleteBulkGameSessions.cs) | [AdminDeleteBulkGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AdminDeleteBulkGameSessions.cs) |
+| `/session/v1/admin/namespaces/{namespace}/gamesessions/{sessionId}/ds` | PUT | AdminSetDSReady | [AdminSetDSReady](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AdminSetDSReady.cs) | [AdminSetDSReady](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AdminSetDSReady.cs) |
 | `/session/v1/admin/namespaces/{namespace}/gamesessions/{sessionId}/members/{memberId}/status/{statusType}` | PUT | AdminUpdateGameSessionMember | [AdminUpdateGameSessionMember](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AdminUpdateGameSessionMember.cs) | [AdminUpdateGameSessionMember](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AdminUpdateGameSessionMember.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesession` | POST | CreateGameSession | [CreateGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/CreateGameSession.cs) | [CreateGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/CreateGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions` | POST | PublicQueryGameSessionsByAttributes | [PublicQueryGameSessionsByAttributes](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryGameSessionsByAttributes.cs) | [PublicQueryGameSessionsByAttributes](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryGameSessionsByAttributes.cs) |
@@ -138,6 +150,14 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Certificate Wrapper:  [Certificate](../../AccelByte.Sdk/Api/Session/Wrapper/Certificate.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Max Active Wrapper:  [MaxActive](../../AccelByte.Sdk/Api/Session/Wrapper/MaxActive.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Game Session Wrapper:  [GameSession](../../AccelByte.Sdk/Api/Session/Wrapper/GameSession.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -221,6 +241,7 @@
 | `apimodels.RequestMember` | [ApimodelsRequestMember](../../AccelByte.Sdk/Api/Session/Model/ApimodelsRequestMember.cs) |
 | `apimodels.ResponseDeleteBulkGameSessions` | [ApimodelsResponseDeleteBulkGameSessions](../../AccelByte.Sdk/Api/Session/Model/ApimodelsResponseDeleteBulkGameSessions.cs) |
 | `apimodels.SessionInviteRequest` | [ApimodelsSessionInviteRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsSessionInviteRequest.cs) |
+| `apimodels.SetDSReadyRequest` | [ApimodelsSetDSReadyRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsSetDSReadyRequest.cs) |
 | `apimodels.UpdateConfigurationTemplateRequest` | [ApimodelsUpdateConfigurationTemplateRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateConfigurationTemplateRequest.cs) |
 | `apimodels.UpdateGameSessionBackfillRequest` | [ApimodelsUpdateGameSessionBackfillRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionBackfillRequest.cs) |
 | `apimodels.UpdateGameSessionMemberStatusResponse` | [ApimodelsUpdateGameSessionMemberStatusResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionMemberStatusResponse.cs) |
@@ -230,11 +251,13 @@
 | `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Session/Model/ModelsDSMConfigRecord.cs) |
 | `models.DefaultDSMCConfig` | [ModelsDefaultDSMCConfig](../../AccelByte.Sdk/Api/Session/Model/ModelsDefaultDSMCConfig.cs) |
 | `models.GameServer` | [ModelsGameServer](../../AccelByte.Sdk/Api/Session/Model/ModelsGameServer.cs) |
+| `models.MemberActiveSession` | [ModelsMemberActiveSession](../../AccelByte.Sdk/Api/Session/Model/ModelsMemberActiveSession.cs) |
 | `models.NativeSessionSetting` | [ModelsNativeSessionSetting](../../AccelByte.Sdk/Api/Session/Model/ModelsNativeSessionSetting.cs) |
 | `models.PSNAppServerCredentials` | [ModelsPSNAppServerCredentials](../../AccelByte.Sdk/Api/Session/Model/ModelsPSNAppServerCredentials.cs) |
 | `models.PartyMembers` | [ModelsPartyMembers](../../AccelByte.Sdk/Api/Session/Model/ModelsPartyMembers.cs) |
 | `models.PlatformCredentials` | [ModelsPlatformCredentials](../../AccelByte.Sdk/Api/Session/Model/ModelsPlatformCredentials.cs) |
 | `models.PortConfigurationAMS` | [ModelsPortConfigurationAMS](../../AccelByte.Sdk/Api/Session/Model/ModelsPortConfigurationAMS.cs) |
+| `models.RequestReconcileMaxActiveSession` | [ModelsRequestReconcileMaxActiveSession](../../AccelByte.Sdk/Api/Session/Model/ModelsRequestReconcileMaxActiveSession.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
 | `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Session/Model/ResponseError.cs) |

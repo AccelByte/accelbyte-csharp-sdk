@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Tests.Services
 
     [TestFixture(Category = "FluentIntegration")]
     [Explicit]
-    public class SocialTestsWithOAuthClient: BaseServiceTests
+    public class SocialTestsWithOAuthClient : BaseServiceTests
     {
         public SocialTestsWithOAuthClient() : base(false) { }
 

@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Match2.Model
     public class ApiListMatchFunctionsResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("configs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ApiMatchFunctionConfig>? Configs { get; set; }
 
         [JsonPropertyName("functions")]

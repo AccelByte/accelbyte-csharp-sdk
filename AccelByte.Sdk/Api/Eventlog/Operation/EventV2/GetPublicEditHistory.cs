@@ -23,8 +23,6 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
     /// * dateofbirth
     /// * country
     /// * language
-    /// 
-    /// Requires valid user access token
     /// </summary>
     public class GetPublicEditHistory : AccelByte.Sdk.Core.Operation
     {

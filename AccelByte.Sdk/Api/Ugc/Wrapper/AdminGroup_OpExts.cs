@@ -165,5 +165,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroupContents(op);
         }
+        public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
+            this AdminGetOfficialGroupContentsV2.AdminGetOfficialGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            AdminGetOfficialGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetOfficialGroupContentsV2(op);
+        }
+        public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
+            this AdminGetUserGroupContentsV2.AdminGetUserGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetUserGroupContentsV2(op);
+        }
     }
 }

@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ApimodelsDeleteBulkGameSessionsAPIResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("failed")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ApimodelsResponseDeleteBulkGameSessions>? Failed { get; set; }
 
         [JsonPropertyName("success")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Success { get; set; }
 
     }

@@ -27,6 +27,14 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 
+        [JsonPropertyName("disableCodeGeneration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DisableCodeGeneration { get; set; }
+
+        [JsonPropertyName("dsManualSetReady")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DsManualSetReady { get; set; }
+
         [JsonPropertyName("dsSource")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? DsSource { get; set; }

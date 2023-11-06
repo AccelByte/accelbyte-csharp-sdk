@@ -288,6 +288,17 @@ namespace AccelByte.Sdk.Core
         }
         private Ticket? _Ticket = null;
 
+        public TradeAction TradeAction
+        {
+            get
+            {
+                if (_TradeAction == null)
+                    _TradeAction = new TradeAction(_SdkObject);
+                return _TradeAction;
+            }
+        }
+        private TradeAction? _TradeAction = null;
+
         public AchievementPlatform AchievementPlatform
         {
             get

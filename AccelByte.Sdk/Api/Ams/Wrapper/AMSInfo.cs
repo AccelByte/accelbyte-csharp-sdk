@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
         #endregion
 
-        public Model.ApiRegionsResponse? InfoRegions(InfoRegions input)
+        public Model.ApiAMSRegionsResponse? InfoRegions(InfoRegions input)
         {
             var response = _sdk.RunRequest(input);
 

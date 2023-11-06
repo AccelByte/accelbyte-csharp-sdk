@@ -58,6 +58,8 @@
 | `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}` | PUT | AdminUpdateGroup | [AdminUpdateGroup](../../AccelByte.Sdk/Api/Ugc/Operation/AdminGroup/AdminUpdateGroup.cs) | [AdminUpdateGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminGroup/AdminUpdateGroup.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}` | DELETE | AdminDeleteGroup | [AdminDeleteGroup](../../AccelByte.Sdk/Api/Ugc/Operation/AdminGroup/AdminDeleteGroup.cs) | [AdminDeleteGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminGroup/AdminDeleteGroup.cs) |
 | `/ugc/v1/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents` | GET | AdminGetGroupContents | [AdminGetGroupContents](../../AccelByte.Sdk/Api/Ugc/Operation/AdminGroup/AdminGetGroupContents.cs) | [AdminGetGroupContents](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminGroup/AdminGetGroupContents.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/groups/{groupId}/contents` | GET | AdminGetOfficialGroupContentsV2 | [AdminGetOfficialGroupContentsV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminGroup/AdminGetOfficialGroupContentsV2.cs) | [AdminGetOfficialGroupContentsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminGroup/AdminGetOfficialGroupContentsV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents` | GET | AdminGetUserGroupContentsV2 | [AdminGetUserGroupContentsV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminGroup/AdminGetUserGroupContentsV2.cs) | [AdminGetUserGroupContentsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminGroup/AdminGetUserGroupContentsV2.cs) |
 
 ### Admin Tag Wrapper:  [AdminTag](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminTag.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -87,24 +89,24 @@
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/groups` | DELETE | DeleteAllUserGroup | [DeleteAllUserGroup](../../AccelByte.Sdk/Api/Ugc/Operation/Anonymization/DeleteAllUserGroup.cs) | [DeleteAllUserGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/Anonymization/DeleteAllUserGroup.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/states` | DELETE | DeleteAllUserStates | [DeleteAllUserStates](../../AccelByte.Sdk/Api/Ugc/Operation/Anonymization/DeleteAllUserStates.cs) | [DeleteAllUserStates](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/Anonymization/DeleteAllUserStates.cs) |
 
-### Public Content Wrapper:  [PublicContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContent.cs)
+### Public Content (Legacy) Wrapper:  [PublicContentLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ugc/v1/public/namespaces/{namespace}/channels/{channelId}/contents` | GET | SearchChannelSpecificContent | [SearchChannelSpecificContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/SearchChannelSpecificContent.cs) | [SearchChannelSpecificContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/SearchChannelSpecificContent.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents` | GET | PublicSearchContent | [PublicSearchContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicSearchContent.cs) | [PublicSearchContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicSearchContent.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicGetContentBulk.cs) | [PublicGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicGetContentBulk.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicDownloadContentByShareCode | [PublicDownloadContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByShareCode.cs) | [PublicDownloadContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByShareCode.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByContentID.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/preview` | GET | PublicDownloadContentPreview | [PublicDownloadContentPreview](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentPreview.cs) | [PublicDownloadContentPreview](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentPreview.cs) |
-| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | CreateContentDirect | [CreateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentDirect.cs) | [CreateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentDirect.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3` | POST | CreateContentS3 | [CreateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentS3.cs) | [CreateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentS3.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | UpdateContentS3 | [UpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentS3.cs) | [UpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentS3.cs) |
-| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | UpdateContentDirect | [UpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentDirect.cs) | [UpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentDirect.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | DELETE | DeleteContent | [DeleteContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/DeleteContent.cs) | [DeleteContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/DeleteContent.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents` | GET | PublicGetUserContent | [PublicGetUserContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicGetUserContent.cs) | [PublicGetUserContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicGetUserContent.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | PUT | UpdateScreenshots | [UpdateScreenshots](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateScreenshots.cs) | [UpdateScreenshots](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateScreenshots.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | POST | UploadContentScreenshot | [UploadContentScreenshot](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UploadContentScreenshot.cs) | [UploadContentScreenshot](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UploadContentScreenshot.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots/{screenshotId}` | DELETE | DeleteContentScreenshot | [DeleteContentScreenshot](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/DeleteContentScreenshot.cs) | [DeleteContentScreenshot](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/DeleteContentScreenshot.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/channels/{channelId}/contents` | GET | SearchChannelSpecificContent | [SearchChannelSpecificContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/SearchChannelSpecificContent.cs) | [SearchChannelSpecificContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/SearchChannelSpecificContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents` | GET | PublicSearchContent | [PublicSearchContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicSearchContent.cs) | [PublicSearchContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicSearchContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicGetContentBulk.cs) | [PublicGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicGetContentBulk.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicDownloadContentByShareCode | [PublicDownloadContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicDownloadContentByShareCode.cs) | [PublicDownloadContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicDownloadContentByShareCode.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicDownloadContentByContentID.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/preview` | GET | PublicDownloadContentPreview | [PublicDownloadContentPreview](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicDownloadContentPreview.cs) | [PublicDownloadContentPreview](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicDownloadContentPreview.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | CreateContentDirect | [CreateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/CreateContentDirect.cs) | [CreateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/CreateContentDirect.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3` | POST | CreateContentS3 | [CreateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/CreateContentS3.cs) | [CreateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/CreateContentS3.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | UpdateContentS3 | [UpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UpdateContentS3.cs) | [UpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UpdateContentS3.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | UpdateContentDirect | [UpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UpdateContentDirect.cs) | [UpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UpdateContentDirect.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | DELETE | DeleteContent | [DeleteContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/DeleteContent.cs) | [DeleteContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/DeleteContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents` | GET | PublicGetUserContent | [PublicGetUserContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicGetUserContent.cs) | [PublicGetUserContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicGetUserContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | PUT | UpdateScreenshots | [UpdateScreenshots](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UpdateScreenshots.cs) | [UpdateScreenshots](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UpdateScreenshots.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | POST | UploadContentScreenshot | [UploadContentScreenshot](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UploadContentScreenshot.cs) | [UploadContentScreenshot](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UploadContentScreenshot.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots/{screenshotId}` | DELETE | DeleteContentScreenshot | [DeleteContentScreenshot](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/DeleteContentScreenshot.cs) | [DeleteContentScreenshot](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/DeleteContentScreenshot.cs) |
 
 ### Public Follow Wrapper:  [PublicFollow](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicFollow.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -115,16 +117,16 @@
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/followers` | GET | GetPublicFollowers | [GetPublicFollowers](../../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetPublicFollowers.cs) | [GetPublicFollowers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicFollow/GetPublicFollowers.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/following` | GET | GetPublicFollowing | [GetPublicFollowing](../../AccelByte.Sdk/Api/Ugc/Operation/PublicFollow/GetPublicFollowing.cs) | [GetPublicFollowing](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicFollow/GetPublicFollowing.cs) |
 
-### Public Like Wrapper:  [PublicLike](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLike.cs)
+### Public Like (Legacy) Wrapper:  [PublicLikeLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLikeLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ugc/v1/public/namespaces/{namespace}/contents/liked` | GET | GetLikedContent | [GetLikedContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLike/GetLikedContent.cs) | [GetLikedContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLike/GetLikedContent.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/like` | PUT | UpdateContentLikeStatus | [UpdateContentLikeStatus](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLike/UpdateContentLikeStatus.cs) | [UpdateContentLikeStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLike/UpdateContentLikeStatus.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/liked` | GET | GetLikedContent | [GetLikedContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeLegacy/GetLikedContent.cs) | [GetLikedContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeLegacy/GetLikedContent.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/like` | PUT | UpdateContentLikeStatus | [UpdateContentLikeStatus](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeLegacy/UpdateContentLikeStatus.cs) | [UpdateContentLikeStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeLegacy/UpdateContentLikeStatus.cs) |
 
-### Public Download Count Wrapper:  [PublicDownloadCount](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCount.cs)
+### Public Download Count (Legacy) Wrapper:  [PublicDownloadCountLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCountLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/downloadcount` | POST | AddDownloadCount | [AddDownloadCount](../../AccelByte.Sdk/Api/Ugc/Operation/PublicDownloadCount/AddDownloadCount.cs) | [AddDownloadCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicDownloadCount/AddDownloadCount.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}/downloadcount` | POST | AddDownloadCount | [AddDownloadCount](../../AccelByte.Sdk/Api/Ugc/Operation/PublicDownloadCountLegacy/AddDownloadCount.cs) | [AddDownloadCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicDownloadCountLegacy/AddDownloadCount.cs) |
 
 ### Public Tag Wrapper:  [PublicTag](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicTag.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -159,6 +161,60 @@
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId}` | PUT | UpdateGroup | [UpdateGroup](../../AccelByte.Sdk/Api/Ugc/Operation/PublicGroup/UpdateGroup.cs) | [UpdateGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicGroup/UpdateGroup.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId}` | DELETE | DeleteGroup | [DeleteGroup](../../AccelByte.Sdk/Api/Ugc/Operation/PublicGroup/DeleteGroup.cs) | [DeleteGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicGroup/DeleteGroup.cs) |
 | `/ugc/v1/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents` | GET | GetGroupContent | [GetGroupContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicGroup/GetGroupContent.cs) | [GetGroupContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicGroup/GetGroupContent.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/groups/{groupId}/contents` | GET | PublicGetGroupContentsV2 | [PublicGetGroupContentsV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicGroup/PublicGetGroupContentsV2.cs) | [PublicGetGroupContentsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicGroup/PublicGetGroupContentsV2.cs) |
+
+### Admin Content V2 Wrapper:  [AdminContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminContentV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents` | GET | AdminGetContentByChannelIDV2 | [AdminGetContentByChannelIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByChannelIDV2.cs) | [AdminGetContentByChannelIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByChannelIDV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents` | POST | AdminCreateContentV2 | [AdminCreateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminCreateContentV2.cs) | [AdminCreateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminCreateContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | DELETE | AdminDeleteOfficialContentV2 | [AdminDeleteOfficialContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminDeleteOfficialContentV2.cs) | [AdminDeleteOfficialContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminDeleteOfficialContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | PATCH | AdminUpdateOfficialContentV2 | [AdminUpdateOfficialContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateOfficialContentV2.cs) | [AdminUpdateOfficialContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateOfficialContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | AdminUpdateOfficialContentFileLocation | [AdminUpdateOfficialContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateOfficialContentFileLocation.cs) | [AdminUpdateOfficialContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateOfficialContentFileLocation.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}/uploadUrl` | PATCH | AdminGenerateOfficialContentUploadURLV2 | [AdminGenerateOfficialContentUploadURLV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGenerateOfficialContentUploadURLV2.cs) | [AdminGenerateOfficialContentUploadURLV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGenerateOfficialContentUploadURLV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents` | GET | AdminListContentV2 | [AdminListContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminListContentV2.cs) | [AdminListContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminListContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/bulk` | POST | AdminBulkGetContentByIDsV2 | [AdminBulkGetContentByIDsV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminBulkGetContentByIDsV2.cs) | [AdminBulkGetContentByIDsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminBulkGetContentByIDsV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | AdminGetContentByShareCodeV2 | [AdminGetContentByShareCodeV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByShareCodeV2.cs) | [AdminGetContentByShareCodeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByShareCodeV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/{contentId}` | GET | AdminGetContentByContentIDV2 | [AdminGetContentByContentIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByContentIDV2.cs) | [AdminGetContentByContentIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByContentIDV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/{contentId}/screenshots` | PUT | AdminUpdateScreenshotsV2 | [AdminUpdateScreenshotsV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateScreenshotsV2.cs) | [AdminUpdateScreenshotsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateScreenshotsV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/{contentId}/screenshots` | POST | AdminUploadContentScreenshotV2 | [AdminUploadContentScreenshotV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUploadContentScreenshotV2.cs) | [AdminUploadContentScreenshotV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUploadContentScreenshotV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/{contentId}/screenshots/{screenshotId}` | DELETE | AdminDeleteContentScreenshotV2 | [AdminDeleteContentScreenshotV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminDeleteContentScreenshotV2.cs) | [AdminDeleteContentScreenshotV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminDeleteContentScreenshotV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | DELETE | AdminDeleteUserContentV2 | [AdminDeleteUserContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminDeleteUserContentV2.cs) | [AdminDeleteUserContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminDeleteUserContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PATCH | AdminUpdateUserContentV2 | [AdminUpdateUserContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateUserContentV2.cs) | [AdminUpdateUserContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateUserContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | AdminUpdateUserContentFileLocation | [AdminUpdateUserContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateUserContentFileLocation.cs) | [AdminUpdateUserContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateUserContentFileLocation.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/uploadUrl` | PATCH | AdminGenerateUserContentUploadURLV2 | [AdminGenerateUserContentUploadURLV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGenerateUserContentUploadURLV2.cs) | [AdminGenerateUserContentUploadURLV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGenerateUserContentUploadURLV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/contents` | GET | AdminGetContentByUserIDV2 | [AdminGetContentByUserIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByUserIDV2.cs) | [AdminGetContentByUserIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByUserIDV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/contents/{contentId}/hide` | PUT | AdminUpdateContentHideStatusV2 | [AdminUpdateContentHideStatusV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateContentHideStatusV2.cs) | [AdminUpdateContentHideStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateContentHideStatusV2.cs) |
+
+### Public Content V2 Wrapper:  [PublicContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/channels/{channelId}/contents` | GET | PublicGetContentByChannelIDV2 | [PublicGetContentByChannelIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByChannelIDV2.cs) | [PublicGetContentByChannelIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByChannelIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents` | GET | PublicListContentV2 | [PublicListContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicListContentV2.cs) | [PublicListContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicListContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/bulk` | POST | PublicBulkGetContentByIDV2 | [PublicBulkGetContentByIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicBulkGetContentByIDV2.cs) | [PublicBulkGetContentByIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicBulkGetContentByIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicGetContentByShareCodeV2 | [PublicGetContentByShareCodeV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByShareCodeV2.cs) | [PublicGetContentByShareCodeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByShareCodeV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicGetContentByIDV2 | [PublicGetContentByIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByIDV2.cs) | [PublicGetContentByIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | PublicCreateContentV2 | [PublicCreateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicCreateContentV2.cs) | [PublicCreateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicCreateContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | DELETE | PublicDeleteContentV2 | [PublicDeleteContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicDeleteContentV2.cs) | [PublicDeleteContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicDeleteContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PATCH | PublicUpdateContentV2 | [PublicUpdateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicUpdateContentV2.cs) | [PublicUpdateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicUpdateContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | PublicUpdateContentFileLocation | [PublicUpdateContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicUpdateContentFileLocation.cs) | [PublicUpdateContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicUpdateContentFileLocation.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/uploadUrl` | PATCH | PublicGenerateContentUploadURLV2 | [PublicGenerateContentUploadURLV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGenerateContentUploadURLV2.cs) | [PublicGenerateContentUploadURLV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGenerateContentUploadURLV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/contents` | GET | PublicGetContentByUserIDV2 | [PublicGetContentByUserIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByUserIDV2.cs) | [PublicGetContentByUserIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByUserIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | PUT | UpdateScreenshotsV2 | [UpdateScreenshotsV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/UpdateScreenshotsV2.cs) | [UpdateScreenshotsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/UpdateScreenshotsV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots` | POST | UploadContentScreenshotV2 | [UploadContentScreenshotV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/UploadContentScreenshotV2.cs) | [UploadContentScreenshotV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/UploadContentScreenshotV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/contents/{contentId}/screenshots/{screenshotId}` | DELETE | DeleteContentScreenshotV2 | [DeleteContentScreenshotV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/DeleteContentScreenshotV2.cs) | [DeleteContentScreenshotV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/DeleteContentScreenshotV2.cs) |
+
+### Public Download Count V2 Wrapper:  [PublicDownloadCountV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCountV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/downloadcount` | POST | PublicAddDownloadCountV2 | [PublicAddDownloadCountV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicDownloadCountV2/PublicAddDownloadCountV2.cs) | [PublicAddDownloadCountV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicDownloadCountV2/PublicAddDownloadCountV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/downloader` | GET | PublicListContentDownloaderV2 | [PublicListContentDownloaderV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicDownloadCountV2/PublicListContentDownloaderV2.cs) | [PublicListContentDownloaderV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicDownloadCountV2/PublicListContentDownloaderV2.cs) |
+
+### Public Like V2 Wrapper:  [PublicLikeV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLikeV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/like` | GET | PublicListContentLikeV2 | [PublicListContentLikeV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeV2/PublicListContentLikeV2.cs) | [PublicListContentLikeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeV2/PublicListContentLikeV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/like` | PUT | UpdateContentLikeStatusV2 | [UpdateContentLikeStatusV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeV2/UpdateContentLikeStatusV2.cs) | [UpdateContentLikeStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeV2/UpdateContentLikeStatusV2.cs) |
 
 
 &nbsp;  
@@ -202,26 +258,26 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Public Content Wrapper:  [PublicContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContent.cs)
+### Public Content (Legacy) Wrapper:  [PublicContentLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicGetContentBulk.cs) | [PublicGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicGetContentBulk.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicDownloadContentByShareCode | [PublicDownloadContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByShareCode.cs) | [PublicDownloadContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByShareCode.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/PublicDownloadContentByContentID.cs) |
-| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | CreateContentDirect | [CreateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentDirect.cs) | [CreateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentDirect.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3` | POST | CreateContentS3 | [CreateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/CreateContentS3.cs) | [CreateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/CreateContentS3.cs) |
-| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | UpdateContentS3 | [UpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentS3.cs) | [UpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentS3.cs) |
-| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | UpdateContentDirect | [UpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContent/UpdateContentDirect.cs) | [UpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContent/UpdateContentDirect.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/bulk` | POST | PublicGetContentBulk | [PublicGetContentBulk](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicGetContentBulk.cs) | [PublicGetContentBulk](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicGetContentBulk.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicDownloadContentByShareCode | [PublicDownloadContentByShareCode](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicDownloadContentByShareCode.cs) | [PublicDownloadContentByShareCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicDownloadContentByShareCode.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicDownloadContentByContentID | [PublicDownloadContentByContentID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/PublicDownloadContentByContentID.cs) | [PublicDownloadContentByContentID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/PublicDownloadContentByContentID.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | CreateContentDirect | [CreateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/CreateContentDirect.cs) | [CreateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/CreateContentDirect.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3` | POST | CreateContentS3 | [CreateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/CreateContentS3.cs) | [CreateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/CreateContentS3.cs) |
+| `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/s3/{contentId}` | PUT | UpdateContentS3 | [UpdateContentS3](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UpdateContentS3.cs) | [UpdateContentS3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UpdateContentS3.cs) |
+| [DEPRECATED] `/ugc/v1/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PUT | UpdateContentDirect | [UpdateContentDirect](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentLegacy/UpdateContentDirect.cs) | [UpdateContentDirect](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentLegacy/UpdateContentDirect.cs) |
 
 ### Public Follow Wrapper:  [PublicFollow](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicFollow.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Public Like Wrapper:  [PublicLike](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLike.cs)
+### Public Like (Legacy) Wrapper:  [PublicLikeLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLikeLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Public Download Count Wrapper:  [PublicDownloadCount](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCount.cs)
+### Public Download Count (Legacy) Wrapper:  [PublicDownloadCountLegacy](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCountLegacy.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -245,6 +301,37 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Admin Content V2 Wrapper:  [AdminContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminContentV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents` | POST | AdminCreateContentV2 | [AdminCreateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminCreateContentV2.cs) | [AdminCreateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminCreateContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}` | PATCH | AdminUpdateOfficialContentV2 | [AdminUpdateOfficialContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateOfficialContentV2.cs) | [AdminUpdateOfficialContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateOfficialContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | AdminUpdateOfficialContentFileLocation | [AdminUpdateOfficialContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateOfficialContentFileLocation.cs) | [AdminUpdateOfficialContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateOfficialContentFileLocation.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/bulk` | POST | AdminBulkGetContentByIDsV2 | [AdminBulkGetContentByIDsV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminBulkGetContentByIDsV2.cs) | [AdminBulkGetContentByIDsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminBulkGetContentByIDsV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | AdminGetContentByShareCodeV2 | [AdminGetContentByShareCodeV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByShareCodeV2.cs) | [AdminGetContentByShareCodeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByShareCodeV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/contents/{contentId}` | GET | AdminGetContentByContentIDV2 | [AdminGetContentByContentIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminGetContentByContentIDV2.cs) | [AdminGetContentByContentIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminGetContentByContentIDV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PATCH | AdminUpdateUserContentV2 | [AdminUpdateUserContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateUserContentV2.cs) | [AdminUpdateUserContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateUserContentV2.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | AdminUpdateUserContentFileLocation | [AdminUpdateUserContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateUserContentFileLocation.cs) | [AdminUpdateUserContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateUserContentFileLocation.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/contents/{contentId}/hide` | PUT | AdminUpdateContentHideStatusV2 | [AdminUpdateContentHideStatusV2](../../AccelByte.Sdk/Api/Ugc/Operation/AdminContentV2/AdminUpdateContentHideStatusV2.cs) | [AdminUpdateContentHideStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminContentV2/AdminUpdateContentHideStatusV2.cs) |
+
+### Public Content V2 Wrapper:  [PublicContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/contents/bulk` | POST | PublicBulkGetContentByIDV2 | [PublicBulkGetContentByIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicBulkGetContentByIDV2.cs) | [PublicBulkGetContentByIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicBulkGetContentByIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/sharecodes/{shareCode}` | GET | PublicGetContentByShareCodeV2 | [PublicGetContentByShareCodeV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByShareCodeV2.cs) | [PublicGetContentByShareCodeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByShareCodeV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}` | GET | PublicGetContentByIDV2 | [PublicGetContentByIDV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicGetContentByIDV2.cs) | [PublicGetContentByIDV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicGetContentByIDV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents` | POST | PublicCreateContentV2 | [PublicCreateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicCreateContentV2.cs) | [PublicCreateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicCreateContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}` | PATCH | PublicUpdateContentV2 | [PublicUpdateContentV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicUpdateContentV2.cs) | [PublicUpdateContentV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicUpdateContentV2.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/channels/{channelId}/contents/{contentId}/fileLocation` | PATCH | PublicUpdateContentFileLocation | [PublicUpdateContentFileLocation](../../AccelByte.Sdk/Api/Ugc/Operation/PublicContentV2/PublicUpdateContentFileLocation.cs) | [PublicUpdateContentFileLocation](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicContentV2/PublicUpdateContentFileLocation.cs) |
+
+### Public Download Count V2 Wrapper:  [PublicDownloadCountV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicDownloadCountV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Public Like V2 Wrapper:  [PublicLikeV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicLikeV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -253,18 +340,25 @@
 | Model | Class |
 |---|---|
 | `models.AddDownloadCountResponse` | [ModelsAddDownloadCountResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAddDownloadCountResponse.cs) |
+| `models.AdminContentRequestV2` | [ModelsAdminContentRequestV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminContentRequestV2.cs) |
 | `models.AdminGetContentBulkRequest` | [ModelsAdminGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminGetContentBulkRequest.cs) |
 | `models.AdminUpdateContentRequest` | [ModelsAdminUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminUpdateContentRequest.cs) |
+| `models.AdminUpdateContentRequestV2` | [ModelsAdminUpdateContentRequestV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminUpdateContentRequestV2.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelRequest.cs) |
 | `models.ChannelResponse` | [ModelsChannelResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelResponse.cs) |
 | `models.ContentDownloadResponse` | [ModelsContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponse.cs) |
+| `models.ContentDownloadResponseV2` | [ModelsContentDownloadResponseV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloadResponseV2.cs) |
+| `models.ContentDownloaderResponse` | [ModelsContentDownloaderResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentDownloaderResponse.cs) |
 | `models.ContentLikeRequest` | [ModelsContentLikeRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeRequest.cs) |
 | `models.ContentLikeResponse` | [ModelsContentLikeResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikeResponse.cs) |
+| `models.ContentLikersResponse` | [ModelsContentLikersResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentLikersResponse.cs) |
+| `models.ContentRequestV2` | [ModelsContentRequestV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentRequestV2.cs) |
 | `models.ContentSnapshot` | [ModelsContentSnapshot](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentSnapshot.cs) |
 | `models.ContentVersionResponse` | [ModelsContentVersionResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsContentVersionResponse.cs) |
 | `models.CreateContentRequest` | [ModelsCreateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequest.cs) |
 | `models.CreateContentRequestS3` | [ModelsCreateContentRequestS3](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentRequestS3.cs) |
 | `models.CreateContentResponse` | [ModelsCreateContentResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentResponse.cs) |
+| `models.CreateContentResponseV2` | [ModelsCreateContentResponseV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateContentResponseV2.cs) |
 | `models.CreateGroupRequest` | [ModelsCreateGroupRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateGroupRequest.cs) |
 | `models.CreateGroupResponse` | [ModelsCreateGroupResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateGroupResponse.cs) |
 | `models.CreateScreenshotRequest` | [ModelsCreateScreenshotRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateScreenshotRequest.cs) |
@@ -276,12 +370,17 @@
 | `models.CreatorFollowState` | [ModelsCreatorFollowState](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorFollowState.cs) |
 | `models.CreatorOverviewResponse` | [ModelsCreatorOverviewResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorOverviewResponse.cs) |
 | `models.CreatorResponse` | [ModelsCreatorResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreatorResponse.cs) |
+| `models.GenerateContentUploadURLRequest` | [ModelsGenerateContentUploadURLRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsGenerateContentUploadURLRequest.cs) |
+| `models.GenerateContentUploadURLResponse` | [ModelsGenerateContentUploadURLResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsGenerateContentUploadURLResponse.cs) |
 | `models.GetContentBulkByShareCodesRequest` | [ModelsGetContentBulkByShareCodesRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsGetContentBulkByShareCodesRequest.cs) |
 | `models.GetContentPreviewResponse` | [ModelsGetContentPreviewResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsGetContentPreviewResponse.cs) |
 | `models.HideContentRequest` | [ModelsHideContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsHideContentRequest.cs) |
 | `models.LikeState` | [ModelsLikeState](../../AccelByte.Sdk/Api/Ugc/Model/ModelsLikeState.cs) |
 | `models.ListContentVersionsResponse` | [ModelsListContentVersionsResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsListContentVersionsResponse.cs) |
 | `models.PaginatedContentDownloadResponse` | [ModelsPaginatedContentDownloadResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedContentDownloadResponse.cs) |
+| `models.PaginatedContentDownloadResponseV2` | [ModelsPaginatedContentDownloadResponseV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedContentDownloadResponseV2.cs) |
+| `models.PaginatedContentDownloaderResponse` | [ModelsPaginatedContentDownloaderResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedContentDownloaderResponse.cs) |
+| `models.PaginatedContentLikersResponse` | [ModelsPaginatedContentLikersResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedContentLikersResponse.cs) |
 | `models.PaginatedCreatorOverviewResponse` | [ModelsPaginatedCreatorOverviewResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedCreatorOverviewResponse.cs) |
 | `models.PaginatedGetChannelResponse` | [ModelsPaginatedGetChannelResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGetChannelResponse.cs) |
 | `models.PaginatedGetTagResponse` | [ModelsPaginatedGetTagResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGetTagResponse.cs) |
@@ -296,6 +395,9 @@
 | `models.ScreenshotResponse` | [ModelsScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsScreenshotResponse.cs) |
 | `models.UpdateChannelRequest` | [ModelsUpdateChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateChannelRequest.cs) |
 | `models.UpdateContentRequest` | [ModelsUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateContentRequest.cs) |
+| `models.UpdateContentRequestV2` | [ModelsUpdateContentRequestV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateContentRequestV2.cs) |
+| `models.UpdateContentResponseV2` | [ModelsUpdateContentResponseV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateContentResponseV2.cs) |
+| `models.UpdateFileLocationRequest` | [ModelsUpdateFileLocationRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateFileLocationRequest.cs) |
 | `models.UpdateScreenshotRequest` | [ModelsUpdateScreenshotRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotRequest.cs) |
 | `models.UpdateScreenshotResponse` | [ModelsUpdateScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotResponse.cs) |
 | `models.UserFollowRequest` | [ModelsUserFollowRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowRequest.cs) |

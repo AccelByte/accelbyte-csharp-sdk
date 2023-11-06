@@ -63,6 +63,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminGetGroupContents.Builder.SetWrapperObject(this); }
         }
+        public AdminGetOfficialGroupContentsV2.AdminGetOfficialGroupContentsV2Builder AdminGetOfficialGroupContentsV2Op
+        {
+            get { return Operation.AdminGetOfficialGroupContentsV2.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetUserGroupContentsV2.AdminGetUserGroupContentsV2Builder AdminGetUserGroupContentsV2Op
+        {
+            get { return Operation.AdminGetUserGroupContentsV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsPaginatedGroupResponse? SingleAdminGetAllGroups(SingleAdminGetAllGroups input)
@@ -156,6 +164,24 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public Model.ModelsPaginatedContentDownloadResponse? AdminGetGroupContents(AdminGetGroupContents input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedContentDownloadResponseV2? AdminGetOfficialGroupContentsV2(AdminGetOfficialGroupContentsV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPaginatedContentDownloadResponseV2? AdminGetUserGroupContentsV2(AdminGetUserGroupContentsV2 input)
         {
             var response = _sdk.RunRequest(input);
 

@@ -51,6 +51,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// }
     /// - if the game client wants to enable push context to PSN, game client will need to store PSN_PUSH_CONTEXT_ID on the player attributes, otherwise Session service will try to populate from the session attributes or auto generate with random UUID if empty.
     /// - TieTeamsSessionLifetime (optional, default: false): If it is set to true, the lifetime of any partyId session inside teams attribute will be tied to the game session. Only applies when the teams partyId is game session.
+    /// - DisableCodeGeneration (optional, default: false): If it is set to true, code will not be generated for party session automatically.
+    /// - DSManualSetReady (optional, default: false): The DS need to call specific end point to flag the DS for game session is ready to accept client connection.
     /// </summary>
     public class AdminCreateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

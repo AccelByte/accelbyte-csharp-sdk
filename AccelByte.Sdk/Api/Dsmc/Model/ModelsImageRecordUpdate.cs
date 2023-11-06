@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     public class ModelsImageRecordUpdate : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("artifactPath")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ArtifactPath { get; set; }
 
         [JsonPropertyName("coreDumpEnabled")]
@@ -20,6 +21,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public string? Image { get; set; }
 
         [JsonPropertyName("imageReplicationsMap")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, ModelsImageReplication>? ImageReplicationsMap { get; set; }
 
         [JsonPropertyName("namespace")]

@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private Config? _Config = null;
 
+        public Admin Admin
+        {
+            get
+            {
+                if (_Admin == null)
+                    _Admin = new Admin(_SdkObject);
+                return _Admin;
+            }
+        }
+        private Admin? _Admin = null;
+
         public Notification Notification
         {
             get
@@ -111,17 +122,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Presence? _Presence = null;
-
-        public Admin Admin
-        {
-            get
-            {
-                if (_Admin == null)
-                    _Admin = new Admin(_SdkObject);
-                return _Admin;
-            }
-        }
-        private Admin? _Admin = null;
 
         internal LobbySdkWrappers(AccelByteSDK sdk)
         {

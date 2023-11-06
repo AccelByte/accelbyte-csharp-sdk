@@ -127,6 +127,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkResetUserStatItem<T1>(op);
         }
+        public static Social.Model.StatItemValuePagingSlicedResult? Execute(
+            this GetStatItems.GetStatItemsBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetStatItems op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).GetStatItems(op);
+        }
         public static Social.Model.UserStatItemPagingSlicedResult? Execute(
             this GetUserStatItems.GetUserStatItemsBuilder builder,
             string namespace_,

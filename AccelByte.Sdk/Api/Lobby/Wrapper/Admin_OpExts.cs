@@ -12,6 +12,35 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyAdmin_OpExts
     {
+        public static Lobby.Model.ModelGlobalConfiguration? Execute(
+            this AdminGetGlobalConfig.AdminGetGlobalConfigBuilder builder
+        )
+        {
+            AdminGetGlobalConfig op = builder.Build(
+            );
+
+            return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminGetGlobalConfig(op);
+        }
+        public static Lobby.Model.ModelGlobalConfiguration? Execute(
+            this AdminUpdateGlobalConfig.AdminUpdateGlobalConfigBuilder builder,
+            ModelPutGlobalConfigurationRequest body
+        )
+        {
+            AdminUpdateGlobalConfig op = builder.Build(
+                body
+            );
+
+            return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminUpdateGlobalConfig(op);
+        }
+        public static string? Execute(
+            this AdminDeleteGlobalConfig.AdminDeleteGlobalConfigBuilder builder
+        )
+        {
+            AdminDeleteGlobalConfig op = builder.Build(
+            );
+
+            return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminDeleteGlobalConfig(op);
+        }
         public static void Execute(
             this FreeFormNotification.FreeFormNotificationBuilder builder,
             ModelFreeFormNotificationRequest body,

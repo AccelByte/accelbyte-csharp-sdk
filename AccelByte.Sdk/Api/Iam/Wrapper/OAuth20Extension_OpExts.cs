@@ -108,18 +108,18 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).Logout(op);
         }
-        public static Iam.Model.OauthmodelGameTokenCodeResponse? Execute(
-            this RequestGameTokenCodeResponseV3.RequestGameTokenCodeResponseV3Builder builder,
+        public static Iam.Model.OauthmodelTargetTokenCodeResponse? Execute(
+            this RequestTokenExchangeCodeV3.RequestTokenExchangeCodeV3Builder builder,
             string clientId,
             string namespace_
         )
         {
-            RequestGameTokenCodeResponseV3 op = builder.Build(
+            RequestTokenExchangeCodeV3 op = builder.Build(
                 clientId,
                 namespace_
             );
 
-            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenCodeResponseV3(op);
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenExchangeCodeV3(op);
         }
         public static string Execute(
             this PlatformAuthenticationV3.PlatformAuthenticationV3Builder builder,
@@ -148,15 +148,15 @@ namespace AccelByte.Sdk.Api
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformTokenRefreshV3(op);
         }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
-            this RequestGameTokenResponseV3.RequestGameTokenResponseV3Builder builder,
+            this RequestTargetTokenResponseV3.RequestTargetTokenResponseV3Builder builder,
             string code
         )
         {
-            RequestGameTokenResponseV3 op = builder.Build(
+            RequestTargetTokenResponseV3 op = builder.Build(
                 code
             );
 
-            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestGameTokenResponseV3(op);
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTargetTokenResponseV3(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.OauthmodelPlatformTokenRefreshResponseV3? Execute(

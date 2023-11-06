@@ -57,6 +57,17 @@ namespace AccelByte.Sdk.Core
         }
         private Fleets? _Fleets = null;
 
+        public Images Images
+        {
+            get
+            {
+                if (_Images == null)
+                    _Images = new Images(_SdkObject);
+                return _Images;
+            }
+        }
+        private Images? _Images = null;
+
         public Servers Servers
         {
             get
@@ -68,16 +79,16 @@ namespace AccelByte.Sdk.Core
         }
         private Servers? _Servers = null;
 
-        public Images Images
+        public AMSQoS AMSQoS
         {
             get
             {
-                if (_Images == null)
-                    _Images = new Images(_SdkObject);
-                return _Images;
+                if (_AMSQoS == null)
+                    _AMSQoS = new AMSQoS(_SdkObject);
+                return _AMSQoS;
             }
         }
-        private Images? _Images = null;
+        private AMSQoS? _AMSQoS = null;
 
         public AMSInfo AMSInfo
         {

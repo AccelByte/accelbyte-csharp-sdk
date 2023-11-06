@@ -136,6 +136,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly DebitByCurrencyCodeRequestBalanceSource PAYMENT
             = new DebitByCurrencyCodeRequestBalanceSource("PAYMENT");
 
+        public static readonly DebitByCurrencyCodeRequestBalanceSource TRADE
+            = new DebitByCurrencyCodeRequestBalanceSource("TRADE");
+
 
         public static implicit operator DebitByCurrencyCodeRequestBalanceSource(string value)
         {

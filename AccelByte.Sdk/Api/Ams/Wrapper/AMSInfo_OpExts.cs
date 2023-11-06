@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class AmsAMSInfo_OpExts
     {
-        public static Ams.Model.ApiRegionsResponse? Execute(
+        public static Ams.Model.ApiAMSRegionsResponse? Execute(
             this InfoRegions.InfoRegionsBuilder builder,
             string namespace_
         )

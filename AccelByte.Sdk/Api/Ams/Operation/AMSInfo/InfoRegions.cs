@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiRegionsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiAMSRegionsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -104,13 +104,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ApiRegionsResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiAMSRegionsResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ApiRegionsResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiAMSRegionsResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiRegionsResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiAMSRegionsResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

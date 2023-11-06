@@ -121,7 +121,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             try
             {
                 InternalValidateToken(sdk, accessToken, out JwtSecurityToken rawJwt);
-                AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);                
+                AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);
 
                 bool foundMatchingPermission = false;
                 if ((payload.Permissions != null) && (payload.Permissions.Count > 0))

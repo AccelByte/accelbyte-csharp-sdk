@@ -68,6 +68,28 @@ namespace AccelByte.Sdk.Core
         }
         private ConfigurationTemplate? _ConfigurationTemplate = null;
 
+        public Certificate Certificate
+        {
+            get
+            {
+                if (_Certificate == null)
+                    _Certificate = new Certificate(_SdkObject);
+                return _Certificate;
+            }
+        }
+        private Certificate? _Certificate = null;
+
+        public MaxActive MaxActive
+        {
+            get
+            {
+                if (_MaxActive == null)
+                    _MaxActive = new MaxActive(_SdkObject);
+                return _MaxActive;
+            }
+        }
+        private MaxActive? _MaxActive = null;
+
         public GameSession GameSession
         {
             get

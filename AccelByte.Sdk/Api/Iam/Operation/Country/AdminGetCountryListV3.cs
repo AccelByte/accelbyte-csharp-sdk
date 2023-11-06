@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetCountryListV3
     ///
-    /// Admin get country list:
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MISC [READ]
+    /// Admin get country list
     /// </summary>
     public class AdminGetCountryListV3 : AccelByte.Sdk.Core.Operation
     {

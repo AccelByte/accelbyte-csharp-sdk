@@ -102,5 +102,20 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupContent(op);
         }
+        public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
+            this PublicGetGroupContentsV2.PublicGetGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).PublicGetGroupContentsV2(op);
+        }
     }
 }
