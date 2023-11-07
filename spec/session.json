@@ -607,7 +607,7 @@
           },
           {
             "description": "certificate name",
-            "in": "path",
+            "in": "formData",
             "name": "certname",
             "required": true,
             "type": "string"

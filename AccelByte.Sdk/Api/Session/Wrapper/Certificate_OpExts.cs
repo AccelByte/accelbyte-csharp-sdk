@@ -14,16 +14,16 @@ namespace AccelByte.Sdk.Api
     {
         public static Session.Model.ModelsPlatformCredentials? Execute(
             this HandleUploadXboxPFXCertificate.HandleUploadXboxPFXCertificateBuilder builder,
+            string certname,
             Stream file,
             string password,
-            string certname,
             string namespace_
         )
         {
             HandleUploadXboxPFXCertificate op = builder.Build(
+                certname,
                 file,
                 password,
-                certname,
                 namespace_
             );
 

@@ -28,14 +28,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
         public string OperationName { get { return "HandleUploadXboxPFXCertificate"; } }
 
-        [SdkCommandArgument("certname")]
-        public string Certname { get; set; } = String.Empty;
-
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("description")]
         public string Description { get; set; } = String.Empty;
+
+        [SdkCommandArgument("certname")]
+        public string Certname { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream File { get; set; } = new MemoryStream();
@@ -61,9 +61,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
 
             HandleUploadXboxPFXCertificate operation = opBuilder.Build(
+                Certname,
                 File,
                 Password,
-                Certname,
                 Namespace
             );
 

@@ -147,9 +147,9 @@ echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn session \
     --op HandleUploadXboxPFXCertificate \
-    --certname 'cHXs8PlOBlfUOqv7' \
     --namespace $AB_NAMESPACE \
-    --description 'WmCuqcsNM7YAnbq4' \
+    --description 'cHXs8PlOBlfUOqv7' \
+    --certname 'WmCuqcsNM7YAnbq4' \
     --upload $TEMP_FILE_UPLOAD \
     --password 'DjmYUMhD9qU89D35' \
     > test.out 2>&1

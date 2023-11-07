@@ -47,16 +47,16 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
             public HandleUploadXboxPFXCertificate Build(
+                string certname,
                 Stream file,
                 string password,
-                string certname,
                 string namespace_
             )
             {
                 HandleUploadXboxPFXCertificate op = new HandleUploadXboxPFXCertificate(this,
+                    certname,
                     file,
                     password,
-                    certname,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -68,17 +68,17 @@ namespace AccelByte.Sdk.Api.Session.Operation
         }
 
         private HandleUploadXboxPFXCertificate(HandleUploadXboxPFXCertificateBuilder builder,
+            string certname,
             Stream file,
             string password,
-            string certname,
             string namespace_
         )
         {
-            PathParams["certname"] = certname;
             PathParams["namespace"] = namespace_;
 
 
             if (builder.Description is not null) FormParams["description"] = builder.Description;
+            if (certname is not null) FormParams["certname"] = certname;
             if (file is not null) FormParams["file"] = file;
             if (password is not null) FormParams["password"] = password;
 
@@ -91,18 +91,18 @@ namespace AccelByte.Sdk.Api.Session.Operation
         #endregion
 
         public HandleUploadXboxPFXCertificate(
-            string certname,
             string namespace_,
             string? description,
+            string certname,
             Stream file,
             string password
         )
         {
-            PathParams["certname"] = certname;
             PathParams["namespace"] = namespace_;
 
 
             if (description is not null) FormParams["description"] = description;
+            if (certname is not null) FormParams["certname"] = certname;
             if (file is not null) FormParams["file"] = file;
             if (password is not null) FormParams["password"] = password;
 
