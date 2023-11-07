@@ -19,7 +19,7 @@ using AccelByte.Sdk.Api.Platform.Model;
 
 namespace AccelByte.Sdk.Sample.CustomOperation
 {
-    public class MyCustomOperation : Operation
+    public class MyCustomOperation : AccelByte.Sdk.Core.Operation
     {
         //Use existing endpoint only for this sample.
         public override string Path => "/achievement/v1/public/namespaces/{namespace}/tags";
