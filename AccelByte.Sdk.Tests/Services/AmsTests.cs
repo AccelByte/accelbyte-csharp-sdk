@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             DisableRetry();
 
-            ApiRegionsResponse? regions = _Sdk.Ams.AMSInfo.InfoRegionsOp
+            ApiAMSRegionsResponse? regions = _Sdk.Ams.AMSInfo.InfoRegionsOp
                 .Execute(_Sdk.Namespace);
             Assert.IsNotNull(regions);
             Assert.GreaterOrEqual(regions!.Regions!.Count, 1);
