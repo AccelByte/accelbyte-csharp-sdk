@@ -864,18 +864,19 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --by '2Ugl7sPCMcCq8KOF' \
     --endDate '1FPASWEGLvHi2yA6' \
-    --limit '69' \
-    --offset '38' \
-    --platformBy 'Ja29YjFCGXPzxvGW' \
-    --platformId 'XSYKxZFwAJdGF5bh' \
-    --query 'jI1EEc3WV5k6IPw3' \
-    --startDate 'luGBMK9OmEmytZjY' \
+    --includeTotal 'true' \
+    --limit '72' \
+    --offset '0' \
+    --platformBy 'JoVWUuZ6fQXMhnC8' \
+    --platformId 'iRACppkc2GjnJ6Mq' \
+    --query 'okeFNTOal7C9QhMy' \
+    --startDate 'KSxoXxGxkYjDcp3p' \
     > test.out 2>&1
 eval_tap $? 154 'AdminSearchUserV3' test.out
 
 #- 155 AdminGetBulkUserByEmailAddressV3
 # body param: body
-echo '{"listEmailAddressRequest": ["EiOxHZltYdZOiBaf", "Lm9cc3OUVUdC6vEQ", "0Fb0fOzSwVrTe2Pi"]}' > $TEMP_JSON_INPUT
+echo '{"listEmailAddressRequest": ["GTMJShikvBpSOkSV", "huAqkZqR3gW3GfD7", "JtchRl8UCypNxxUb"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminGetBulkUserByEmailAddressV3 \
@@ -889,18 +890,18 @@ $CLI_EXE \
     --sn iam \
     --op AdminGetUserByUserIdV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'x8IgOyJOxbfiuUDd' \
+    --userId 'XgFF9TJrlNNryir2' \
     > test.out 2>&1
 eval_tap $? 156 'AdminGetUserByUserIdV3' test.out
 
 #- 157 AdminUpdateUserV3
 # body param: body
-echo '{"avatarUrl": "zfJOveiGttirPw49", "country": "eDkkTlieINXiZneS", "dateOfBirth": "Gu4x8wWgDhy2xaMb", "displayName": "K98KZuPAGpzW8YEo", "languageTag": "vlYXMD76ZVrjTwBh", "userName": "G6PxRbXyacvJKvH2"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "rcfzqMDXs2AMIqwX", "country": "xAtcjA062eWYCE2B", "dateOfBirth": "ZKl6Ks6ND0evlW05", "displayName": "Ize0EKI1ogofwrtj", "languageTag": "PjSrjvrgKMZ79d1x", "userName": "h7UR0UxrnZ5OMXgR"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'fI227sFhXEPpERr1' \
+    --userId 'DRM3gg9nVFQuxaks' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 157 'AdminUpdateUserV3' test.out
@@ -910,54 +911,54 @@ $CLI_EXE \
     --sn iam \
     --op AdminGetUserBanV3 \
     --namespace $AB_NAMESPACE \
-    --userId '0WrTTWC1vHxSVm1r' \
+    --userId 'qHEV6l9c1J0YV5SA' \
     --activeOnly 'true' \
-    --after 'LDUorN8n8OKt3ebT' \
-    --before 'MfmV8RpXci3oXtKe' \
-    --limit '59' \
+    --after 'WFWpU4iAd1zlFBNJ' \
+    --before 'u2WkeGDSzlCaFt7C' \
+    --limit '42' \
     > test.out 2>&1
 eval_tap $? 158 'AdminGetUserBanV3' test.out
 
 #- 159 AdminBanUserV3
 # body param: body
-echo '{"ban": "lMfYcKvIDQryhqRP", "comment": "waSbAakeTI3GtLp3", "endDate": "3o0hY1hJyjnnZKdS", "reason": "iFaVEfxNwD82TygH", "skipNotif": true}' > $TEMP_JSON_INPUT
+echo '{"ban": "MfYcKvIDQryhqRPw", "comment": "aSbAakeTI3GtLp33", "endDate": "o0hY1hJyjnnZKdSi", "reason": "FaVEfxNwD82TygHq", "skipNotif": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBanUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'fxl91A6ODfId1vJ6' \
+    --userId 'CY44tteOU73MUia8' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 159 'AdminBanUserV3' test.out
 
 #- 160 AdminUpdateUserBanV3
 # body param: body
-echo '{"enabled": true, "skipNotif": true}' > $TEMP_JSON_INPUT
+echo '{"enabled": true, "skipNotif": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserBanV3 \
-    --banId 'HeEezPfPVoLzuail' \
+    --banId 'bcNco2qPofshHt88' \
     --namespace $AB_NAMESPACE \
-    --userId 'Zgh0VftM4duhPOP3' \
+    --userId 'ZrOopYOMqbJVfyl0' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 160 'AdminUpdateUserBanV3' test.out
 
 #- 161 AdminSendVerificationCodeV3
 # body param: body
-echo '{"context": "T7IILgTKDtEBnyyd", "emailAddress": "nlmrax9HkcVJkcKN", "languageTag": "qoctZZip2UOwEpVO"}' > $TEMP_JSON_INPUT
+echo '{"context": "ssL0Nn5BZz9qxx7l", "emailAddress": "z9uMrrT54dKxRwFR", "languageTag": "slFsKiWo4atNdaNI"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminSendVerificationCodeV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'ojiniOJfBmQBpvpD' \
+    --userId 'XOzCVa9CaE9mVJJq' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 161 'AdminSendVerificationCodeV3' test.out
 
 #- 162 AdminVerifyAccountV3
 # body param: body
-echo '{"Code": "w5KbvwvhRu00Z9kQ", "ContactType": "6CfVEKuBGQj6IM6y", "LanguageTag": "C2yo6eKkz3So92Lm", "validateOnly": true}' > $TEMP_JSON_INPUT
+echo '{"Code": "gitULlhI9rKPyF7y", "ContactType": "tpQiDiCAh2lkPXOO", "LanguageTag": "Jp91w7ACgmrezLCJ", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminVerifyAccountV3 \

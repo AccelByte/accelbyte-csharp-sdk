@@ -152,6 +152,62 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicCreateContentV2<T1>(op);
         }
+        public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
+            this PublicUpdateContentByShareCodeV2.PublicUpdateContentByShareCodeV2Builder builder,
+            ModelsUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicUpdateContentByShareCodeV2(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
+            this PublicUpdateContentByShareCodeV2.PublicUpdateContentByShareCodeV2Builder builder,
+            ModelsUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicUpdateContentByShareCodeV2<T1>(op);
+        }
+        public static void Execute(
+            this PublicDeleteContentByShareCodeV2.PublicDeleteContentByShareCodeV2Builder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicDeleteContentByShareCodeV2 op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicDeleteContentByShareCodeV2(op);
+        }
         public static void Execute(
             this PublicDeleteContentV2.PublicDeleteContentV2Builder builder,
             string channelId,

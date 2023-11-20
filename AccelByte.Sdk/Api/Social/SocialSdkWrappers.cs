@@ -68,17 +68,6 @@ namespace AccelByte.Sdk.Core
         }
         private StatCycleConfiguration? _StatCycleConfiguration = null;
 
-        public UserStatistic UserStatistic
-        {
-            get
-            {
-                if (_UserStatistic == null)
-                    _UserStatistic = new UserStatistic(_SdkObject);
-                return _UserStatistic;
-            }
-        }
-        private UserStatistic? _UserStatistic = null;
-
         public StatConfiguration StatConfiguration
         {
             get
@@ -89,6 +78,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private StatConfiguration? _StatConfiguration = null;
+
+        public UserStatistic UserStatistic
+        {
+            get
+            {
+                if (_UserStatistic == null)
+                    _UserStatistic = new UserStatistic(_SdkObject);
+                return _UserStatistic;
+            }
+        }
+        private UserStatistic? _UserStatistic = null;
 
         public UserStatisticCycle UserStatisticCycle
         {

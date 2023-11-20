@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("endDate")]
         public string? EndDate { get; set; }
 
+        [SdkCommandArgument("includeTotal")]
+        public bool? IncludeTotal { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -70,6 +73,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetBy((string)By);
             if (EndDate != null)
                 opBuilder.SetEndDate((string)EndDate);
+            if (IncludeTotal != null)
+                opBuilder.SetIncludeTotal((bool)IncludeTotal);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)

@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelGetPublisherUserV3Response? response = wrapper.PublicGetPublisherUserV3(operation);
+            AccelByte.Sdk.Api.Iam.Model.ModelGetPublisherUserResponse? response = wrapper.PublicGetPublisherUserV3(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.AdminBulkGetContentByIDsV2.Builder.SetWrapperObject(this); }
         }
+        public AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder AdminGetContentBulkByShareCodesV2Op
+        {
+            get { return Operation.AdminGetContentBulkByShareCodesV2.Builder.SetWrapperObject(this); }
+        }
         public AdminGetContentByShareCodeV2.AdminGetContentByShareCodeV2Builder AdminGetContentByShareCodeV2Op
         {
             get { return Operation.AdminGetContentByShareCodeV2.Builder.SetWrapperObject(this); }
@@ -58,6 +62,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public AdminGetContentByContentIDV2.AdminGetContentByContentIDV2Builder AdminGetContentByContentIDV2Op
         {
             get { return Operation.AdminGetContentByContentIDV2.Builder.SetWrapperObject(this); }
+        }
+        public RollbackContentVersionV2.RollbackContentVersionV2Builder RollbackContentVersionV2Op
+        {
+            get { return Operation.RollbackContentVersionV2.Builder.SetWrapperObject(this); }
         }
         public AdminUpdateScreenshotsV2.AdminUpdateScreenshotsV2Builder AdminUpdateScreenshotsV2Op
         {
@@ -70,6 +78,18 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public AdminDeleteContentScreenshotV2.AdminDeleteContentScreenshotV2Builder AdminDeleteContentScreenshotV2Op
         {
             get { return Operation.AdminDeleteContentScreenshotV2.Builder.SetWrapperObject(this); }
+        }
+        public ListContentVersionsV2.ListContentVersionsV2Builder ListContentVersionsV2Op
+        {
+            get { return Operation.ListContentVersionsV2.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder AdminUpdateContentByShareCodeV2Op
+        {
+            get { return Operation.AdminUpdateContentByShareCodeV2.Builder.SetWrapperObject(this); }
+        }
+        public AdminDeleteContentByShareCodeV2.AdminDeleteContentByShareCodeV2Builder AdminDeleteContentByShareCodeV2Op
+        {
+            get { return Operation.AdminDeleteContentByShareCodeV2.Builder.SetWrapperObject(this); }
         }
         public AdminDeleteUserContentV2.AdminDeleteUserContentV2Builder AdminDeleteUserContentV2Op
         {
@@ -209,6 +229,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ModelsContentDownloadResponseV2>? AdminGetContentBulkByShareCodesV2(AdminGetContentBulkByShareCodesV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.ModelsContentDownloadResponseV2<T1>>? AdminGetContentBulkByShareCodesV2<T1>(AdminGetContentBulkByShareCodesV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsContentDownloadResponseV2? AdminGetContentByShareCodeV2(AdminGetContentByShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
@@ -247,6 +286,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelsContentDownloadResponse? RollbackContentVersionV2(RollbackContentVersionV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsContentDownloadResponse<T1>? RollbackContentVersionV2<T1>(RollbackContentVersionV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsUpdateScreenshotResponse? AdminUpdateScreenshotsV2(AdminUpdateScreenshotsV2 input)
         {
             var response = _sdk.RunRequest(input);
@@ -266,6 +324,43 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.Payload);
         }
         public void AdminDeleteContentScreenshotV2(AdminDeleteContentScreenshotV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListContentVersionsResponse? ListContentVersionsV2(ListContentVersionsV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCreateContentResponseV2? AdminUpdateContentByShareCodeV2(AdminUpdateContentByShareCodeV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsCreateContentResponseV2<T1>? AdminUpdateContentByShareCodeV2<T1>(AdminUpdateContentByShareCodeV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminDeleteContentByShareCodeV2(AdminDeleteContentByShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
 

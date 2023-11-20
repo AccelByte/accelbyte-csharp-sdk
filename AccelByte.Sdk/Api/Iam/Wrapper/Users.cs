@@ -2341,7 +2341,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelGetPublisherUserV3Response? PublicGetPublisherUserV3(PublicGetPublisherUserV3 input)
+        public Model.ModelGetPublisherUserResponse? PublicGetPublisherUserV3(PublicGetPublisherUserV3 input)
         {
             var response = _sdk.RunRequest(input);
 

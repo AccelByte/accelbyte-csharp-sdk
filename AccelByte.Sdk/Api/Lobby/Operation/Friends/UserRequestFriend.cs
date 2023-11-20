@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// userRequestFriend
     ///
     /// Client should provide either friendID or friendPublicID. If both are provided, friendID will be chosen to be used.
+    /// This endpoint will only send a pending invite that can be either rejected/accepted
     /// </summary>
     public class UserRequestFriend : AccelByte.Sdk.Core.Operation
     {

@@ -54,6 +54,7 @@
 | `/social/v1/admin/namespaces/{namespace}/statCycles` | GET | GetStatCycles | [GetStatCycles](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/GetStatCycles.cs) | [GetStatCycles](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/GetStatCycles.cs) |
 | `/social/v1/admin/namespaces/{namespace}/statCycles` | POST | CreateStatCycle | [CreateStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/CreateStatCycle.cs) | [CreateStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/CreateStatCycle.cs) |
 | `/social/v1/admin/namespaces/{namespace}/statCycles/bulk` | POST | BulkGetStatCycle | [BulkGetStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/BulkGetStatCycle.cs) | [BulkGetStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/BulkGetStatCycle.cs) |
+| `/social/v1/admin/namespaces/{namespace}/statCycles/export` | GET | ExportStatCycle | [ExportStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/ExportStatCycle.cs) | [ExportStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/ExportStatCycle.cs) |
 | `/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}` | GET | GetStatCycle | [GetStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/GetStatCycle.cs) | [GetStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/GetStatCycle.cs) |
 | `/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}` | PUT | UpdateStatCycle | [UpdateStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/UpdateStatCycle.cs) | [UpdateStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/UpdateStatCycle.cs) |
 | `/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}` | DELETE | DeleteStatCycle | [DeleteStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/DeleteStatCycle.cs) | [DeleteStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/DeleteStatCycle.cs) |
@@ -62,6 +63,21 @@
 | `/social/v1/public/namespaces/{namespace}/statCycles` | GET | GetStatCycles1 | [GetStatCycles1](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/GetStatCycles1.cs) | [GetStatCycles1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/GetStatCycles1.cs) |
 | `/social/v1/public/namespaces/{namespace}/statCycles/bulk` | POST | BulkGetStatCycle1 | [BulkGetStatCycle1](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/BulkGetStatCycle1.cs) | [BulkGetStatCycle1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/BulkGetStatCycle1.cs) |
 | `/social/v1/public/namespaces/{namespace}/statCycles/{cycleId}` | GET | GetStatCycle1 | [GetStatCycle1](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/GetStatCycle1.cs) | [GetStatCycle1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/GetStatCycle1.cs) |
+
+### StatConfiguration Wrapper:  [StatConfiguration](../../AccelByte.Sdk/Api/Social/Wrapper/StatConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/social/v1/admin/namespaces/{namespace}/statCycles/import` | POST | ImportStatCycle | [ImportStatCycle](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/ImportStatCycle.cs) | [ImportStatCycle](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/ImportStatCycle.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats` | GET | GetStats | [GetStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/GetStats.cs) | [GetStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/GetStats.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats` | POST | CreateStat | [CreateStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat.cs) | [CreateStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/export` | GET | ExportStats | [ExportStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/ExportStats.cs) | [ExportStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/ExportStats.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/import` | POST | ImportStats | [ImportStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/ImportStats.cs) | [ImportStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/ImportStats.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/search` | GET | QueryStats | [QueryStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/QueryStats.cs) | [QueryStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/QueryStats.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | GET | GetStat | [GetStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/GetStat.cs) | [GetStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/GetStat.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | DELETE | DeleteStat | [DeleteStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteStat.cs) | [DeleteStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteStat.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | PATCH | UpdateStat | [UpdateStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/UpdateStat.cs) | [UpdateStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/UpdateStat.cs) |
+| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied` | DELETE | DeleteTiedStat | [DeleteTiedStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteTiedStat.cs) | [DeleteTiedStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteTiedStat.cs) |
+| `/social/v1/public/namespaces/{namespace}/stats` | POST | CreateStat1 | [CreateStat1](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat1.cs) | [CreateStat1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat1.cs) |
 
 ### UserStatistic Wrapper:  [UserStatistic](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatistic.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -110,20 +126,6 @@
 | `/social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem2 | [BulkUpdateUserStatItem2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem2.cs) | [BulkUpdateUserStatItem2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem2.cs) |
 | `/social/v2/public/namespaces/{namespace}/users/{userId}/stats/{statCode}/statitems/value` | PUT | UpdateUserStatItemValue1 | [UpdateUserStatItemValue1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/UpdateUserStatItemValue1.cs) | [UpdateUserStatItemValue1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/UpdateUserStatItemValue1.cs) |
 
-### StatConfiguration Wrapper:  [StatConfiguration](../../AccelByte.Sdk/Api/Social/Wrapper/StatConfiguration.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/social/v1/admin/namespaces/{namespace}/stats` | GET | GetStats | [GetStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/GetStats.cs) | [GetStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/GetStats.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats` | POST | CreateStat | [CreateStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat.cs) | [CreateStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/export` | GET | ExportStats | [ExportStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/ExportStats.cs) | [ExportStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/ExportStats.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/import` | POST | ImportStats | [ImportStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/ImportStats.cs) | [ImportStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/ImportStats.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/search` | GET | QueryStats | [QueryStats](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/QueryStats.cs) | [QueryStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/QueryStats.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | GET | GetStat | [GetStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/GetStat.cs) | [GetStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/GetStat.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | DELETE | DeleteStat | [DeleteStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteStat.cs) | [DeleteStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteStat.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}` | PATCH | UpdateStat | [UpdateStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/UpdateStat.cs) | [UpdateStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/UpdateStat.cs) |
-| `/social/v1/admin/namespaces/{namespace}/stats/{statCode}/tied` | DELETE | DeleteTiedStat | [DeleteTiedStat](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/DeleteTiedStat.cs) | [DeleteTiedStat](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/DeleteTiedStat.cs) |
-| `/social/v1/public/namespaces/{namespace}/stats` | POST | CreateStat1 | [CreateStat1](../../AccelByte.Sdk/Api/Social/Operation/StatConfiguration/CreateStat1.cs) | [CreateStat1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatConfiguration/CreateStat1.cs) |
-
 ### UserStatisticCycle Wrapper:  [UserStatisticCycle](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatisticCycle.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -157,6 +159,10 @@
 |---|---|---|---|---|
 | `/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}/stats/add/bulk` | POST | BulkAddStats | [BulkAddStats](../../AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/BulkAddStats.cs) | [BulkAddStats](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/StatCycleConfiguration/BulkAddStats.cs) |
 
+### StatConfiguration Wrapper:  [StatConfiguration](../../AccelByte.Sdk/Api/Social/Wrapper/StatConfiguration.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### UserStatistic Wrapper:  [UserStatistic](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatistic.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -179,10 +185,6 @@
 | `/social/v2/admin/namespaces/{namespace}/users/{userId}/statitems/value/reset/bulk` | PUT | BulkResetUserStatItemValues | [BulkResetUserStatItemValues](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkResetUserStatItemValues.cs) | [BulkResetUserStatItemValues](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkResetUserStatItemValues.cs) |
 | `/social/v2/public/namespaces/{namespace}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem1 | [BulkUpdateUserStatItem1](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem1.cs) | [BulkUpdateUserStatItem1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem1.cs) |
 | `/social/v2/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk` | PUT | BulkUpdateUserStatItem2 | [BulkUpdateUserStatItem2](../../AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkUpdateUserStatItem2.cs) | [BulkUpdateUserStatItem2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Social/UserStatistic/BulkUpdateUserStatItem2.cs) |
-
-### StatConfiguration Wrapper:  [StatConfiguration](../../AccelByte.Sdk/Api/Social/Wrapper/StatConfiguration.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
 
 ### UserStatisticCycle Wrapper:  [UserStatisticCycle](../../AccelByte.Sdk/Api/Social/Wrapper/UserStatisticCycle.cs)
 | Endpoint | Method | ID | Class | Example |

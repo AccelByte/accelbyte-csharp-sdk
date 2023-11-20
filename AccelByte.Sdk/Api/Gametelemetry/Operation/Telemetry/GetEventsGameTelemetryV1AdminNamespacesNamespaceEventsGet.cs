@@ -33,11 +33,15 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 
             public string? EventPayload { get; set; }
 
+            public string? FlightId { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
 
             public string? StartTime { get; set; }
+
+            public string? UserId { get; set; }
 
 
 
@@ -70,6 +74,12 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
                 return this;
             }
 
+            public GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder SetFlightId(string _flightId)
+            {
+                FlightId = _flightId;
+                return this;
+            }
+
             public GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
@@ -85,6 +95,12 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             public GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder SetStartTime(string _startTime)
             {
                 StartTime = _startTime;
+                return this;
+            }
+
+            public GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
                 return this;
             }
 
@@ -117,9 +133,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             if (builder.EventId is not null) QueryParams["eventId"] = builder.EventId;
             if (builder.EventName is not null) QueryParams["eventName"] = builder.EventName;
             if (builder.EventPayload is not null) QueryParams["eventPayload"] = builder.EventPayload;
+            if (builder.FlightId is not null) QueryParams["flightId"] = builder.FlightId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.StartTime is not null) QueryParams["startTime"] = builder.StartTime;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
 
 
 
@@ -137,9 +155,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             string? eventId,
             string? eventName,
             string? eventPayload,
+            string? flightId,
             long? limit,
             long? offset,
-            string? startTime
+            string? startTime,
+            string? userId
         )
         {
             PathParams["namespace"] = namespace_;
@@ -148,9 +168,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
             if (eventId is not null) QueryParams["eventId"] = eventId;
             if (eventName is not null) QueryParams["eventName"] = eventName;
             if (eventPayload is not null) QueryParams["eventPayload"] = eventPayload;
+            if (flightId is not null) QueryParams["flightId"] = flightId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (startTime is not null) QueryParams["startTime"] = startTime;
+            if (userId is not null) QueryParams["userId"] = userId;
 
 
 

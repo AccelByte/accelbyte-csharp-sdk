@@ -13,6 +13,15 @@ namespace AccelByte.Sdk.Api
     public static class GametelemetryTelemetry_OpExts
     {
         public static void Execute(
+            this GetNamespacesGameTelemetryV1AdminNamespacesGet.GetNamespacesGameTelemetryV1AdminNamespacesGetBuilder builder
+        )
+        {
+            GetNamespacesGameTelemetryV1AdminNamespacesGet op = builder.Build(
+            );
+
+            ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetNamespacesGameTelemetryV1AdminNamespacesGet(op);
+        }
+        public static void Execute(
             this GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder builder,
             string namespace_
         )

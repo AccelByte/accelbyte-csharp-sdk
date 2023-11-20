@@ -12,6 +12,17 @@ namespace AccelByte.Sdk.Api
 {
     public static class SocialStatConfiguration_OpExts
     {
+        public static Social.Model.StatImportInfo? Execute(
+            this ImportStatCycle.ImportStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            ImportStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ImportStatCycle(op);
+        }
         public static Social.Model.StatPagingSlicedResult? Execute(
             this GetStats.GetStatsBuilder builder,
             string namespace_

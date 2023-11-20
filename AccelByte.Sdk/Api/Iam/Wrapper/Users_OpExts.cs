@@ -2261,7 +2261,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForceLinkPlatformWithProgression(op);
         }
-        public static Iam.Model.ModelGetPublisherUserV3Response? Execute(
+        public static Iam.Model.ModelGetPublisherUserResponse? Execute(
             this PublicGetPublisherUserV3.PublicGetPublisherUserV3Builder builder,
             string namespace_,
             string userId

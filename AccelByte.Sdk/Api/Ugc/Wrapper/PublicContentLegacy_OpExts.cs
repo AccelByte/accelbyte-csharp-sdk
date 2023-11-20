@@ -202,6 +202,45 @@ namespace AccelByte.Sdk.Api
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentS3<T1>(op);
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
+            this PublicUpdateContentByShareCode.PublicUpdateContentByShareCodeBuilder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCode(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
+            this PublicUpdateContentByShareCode.PublicUpdateContentByShareCodeBuilder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCode<T1>(op);
+        }
+        public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentS3.UpdateContentS3Builder builder,
             ModelsUpdateContentRequest body,
             string channelId,
@@ -239,6 +278,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentS3<T1>(op);
+        }
+        public static void Execute(
+            this PublicDeleteContentByShareCode.PublicDeleteContentByShareCodeBuilder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicDeleteContentByShareCode op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDeleteContentByShareCode(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(

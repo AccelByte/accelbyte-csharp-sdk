@@ -196,6 +196,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminBulkGetContentByIDsV2<T1>(op);
         }
+        public static List<Ugc.Model.ModelsContentDownloadResponseV2>? Execute(
+            this AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2(op);
+        }
+
+        public static List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>? Execute<T1>(
+            this AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponseV2? Execute(
             this AdminGetContentByShareCodeV2.AdminGetContentByShareCodeV2Builder builder,
             string namespace_,
@@ -250,6 +277,37 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByContentIDV2<T1>(op);
         }
+        public static Ugc.Model.ModelsContentDownloadResponse? Execute(
+            this RollbackContentVersionV2.RollbackContentVersionV2Builder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersionV2 op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2(op);
+        }
+
+        public static Ugc.Model.ModelsContentDownloadResponse<T1>? Execute<T1>(
+            this RollbackContentVersionV2.RollbackContentVersionV2Builder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersionV2 op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateScreenshotResponse? Execute(
             this AdminUpdateScreenshotsV2.AdminUpdateScreenshotsV2Builder builder,
             ModelsUpdateScreenshotRequest body,
@@ -294,6 +352,75 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentScreenshotV2(op);
+        }
+        public static Ugc.Model.ModelsListContentVersionsResponse? Execute(
+            this ListContentVersionsV2.ListContentVersionsV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            ListContentVersionsV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).ListContentVersionsV2(op);
+        }
+        public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
+            this AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
+            this AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2<T1>(op);
+        }
+        public static void Execute(
+            this AdminDeleteContentByShareCodeV2.AdminDeleteContentByShareCodeV2Builder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminDeleteContentByShareCodeV2 op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentByShareCodeV2(op);
         }
         public static void Execute(
             this AdminDeleteUserContentV2.AdminDeleteUserContentV2Builder builder,

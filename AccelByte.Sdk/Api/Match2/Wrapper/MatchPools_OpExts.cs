@@ -103,5 +103,18 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).GetPlayerMetric(op);
         }
+        public static Match2.Model.ApiListMatchPoolTicketsResponse? Execute(
+            this AdminGetMatchPoolTickets.AdminGetMatchPoolTicketsBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            AdminGetMatchPoolTickets op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).AdminGetMatchPoolTickets(op);
+        }
     }
 }

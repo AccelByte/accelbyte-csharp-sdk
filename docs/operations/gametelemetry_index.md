@@ -7,6 +7,7 @@
 ### telemetry Wrapper:  [Telemetry](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/Telemetry.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/game-telemetry/v1/admin/namespaces` | GET | GetNamespacesGameTelemetryV1AdminNamespacesGet | [GetNamespacesGameTelemetryV1AdminNamespacesGet](../../AccelByte.Sdk/Api/Gametelemetry/Operation/Telemetry/GetNamespacesGameTelemetryV1AdminNamespacesGet.cs) | [GetNamespacesGameTelemetryV1AdminNamespacesGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gametelemetry/Telemetry/GetNamespacesGameTelemetryV1AdminNamespacesGet.cs) |
 | `/game-telemetry/v1/admin/namespaces/{namespace}/events` | GET | GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../AccelByte.Sdk/Api/Gametelemetry/Operation/Telemetry/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) | [GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gametelemetry/Telemetry/GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.cs) |
 
 ### Gametelemetry Operations Wrapper:  [GametelemetryOperations](../../AccelByte.Sdk/Api/Gametelemetry/Wrapper/GametelemetryOperations.cs)

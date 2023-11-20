@@ -19,12 +19,25 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Wrapper
         }
 
         #region Operation Builders
+        public GetNamespacesGameTelemetryV1AdminNamespacesGet.GetNamespacesGameTelemetryV1AdminNamespacesGetBuilder GetNamespacesGameTelemetryV1AdminNamespacesGetOp
+        {
+            get { return Operation.GetNamespacesGameTelemetryV1AdminNamespacesGet.Builder.SetWrapperObject(this); }
+        }
         public GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetOp
         {
             get { return Operation.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+        public void GetNamespacesGameTelemetryV1AdminNamespacesGet(GetNamespacesGameTelemetryV1AdminNamespacesGet input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet input)
         {
             var response = _sdk.RunRequest(input);
