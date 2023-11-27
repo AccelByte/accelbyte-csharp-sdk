@@ -30,6 +30,24 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            if (IsUsingAGSStarter())
+            {
+                bool isLogoutOk = _Sdk.Logout();
+                if (!isLogoutOk)
+                {
+                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
+                    return;
+                }
+                bool isLoginOk = _Sdk.LoginClient();
+                if (!isLoginOk)
+                {
+                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
+                    return;
+                }
+                Assert.AreEqual(true, isLoginOk);
+                Assert.AreEqual(LoginType.Client, _Sdk.Configuration.TokenRepository.LoginType);
+            }
+
             #region List servers
             ModelsListServerResponse? aggrs = _Sdk.Qosm.Public.ListServerOp.Execute();
             #endregion
@@ -42,6 +60,24 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
+
+            if (IsUsingAGSStarter())
+            {
+                bool isLogoutOk = _Sdk.Logout();
+                if (!isLogoutOk)
+                {
+                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
+                    return;
+                }
+                bool isLoginOk = _Sdk.LoginClient();
+                if (!isLoginOk)
+                {
+                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
+                    return;
+                }
+                Assert.AreEqual(true, isLoginOk);
+                Assert.AreEqual(LoginType.Client, _Sdk.Configuration.TokenRepository.LoginType);
+            }
 
             ModelsListServerResponse? listServers = _Sdk.Qosm.Public.ListServerOp.Execute();
 
