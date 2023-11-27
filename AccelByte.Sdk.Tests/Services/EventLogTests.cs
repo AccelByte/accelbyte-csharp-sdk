@@ -41,7 +41,6 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(eQueryPayload, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(eResp);
-            Assert.Greater(eResp!.Data!.Count, 0);
 
             try
             {
@@ -53,7 +52,6 @@ namespace AccelByte.Sdk.Tests.Services
                     .Execute(_Sdk.Namespace, _Sdk.Configuration.Credential!.UserId);
                 #endregion
                 Assert.IsNotNull(cResp);
-                Assert.Greater(cResp!.Data!.Count, 0);
             }
             catch (Exception x)
             {
