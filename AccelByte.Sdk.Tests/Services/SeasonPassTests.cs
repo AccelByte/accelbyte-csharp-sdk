@@ -27,6 +27,12 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
+            }
+
             string nameSeason = "CSharpServerSDKTestSeason";
             DateTime? startTime = new DateTime();
             DateTime? endTime = new DateTime().AddDays(2);

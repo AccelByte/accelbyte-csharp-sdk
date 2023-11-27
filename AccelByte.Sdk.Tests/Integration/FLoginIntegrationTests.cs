@@ -87,6 +87,12 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk == null)
                 return;
 
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
+            }
+
             string platformId = "phantauth";
             string clientId = "test.client";
             string clientSecret = "UTBcWwt5";

@@ -26,6 +26,12 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
+            }
+
             string stat_code = "csharpserversdkteststat";
 
             #region Create a stat
@@ -92,6 +98,12 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
+
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
+            }
 
             string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
             if (user_login_id == null)
