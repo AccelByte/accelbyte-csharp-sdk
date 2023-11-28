@@ -28,8 +28,8 @@ namespace AccelByte.Sdk.Tests.Services
             _UseUserLogin = useUserLogin;
 
             _RetryPolicy = HttpClientPolicy.Default;
-            _RetryPolicy.MaxRetryCount = 1000;
-            _RetryPolicy.RetryInterval = 1000;
+            _RetryPolicy.MaxRetryCount = 3;
+            _RetryPolicy.RetryInterval = 500;
             _RetryPolicy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
         }
 
