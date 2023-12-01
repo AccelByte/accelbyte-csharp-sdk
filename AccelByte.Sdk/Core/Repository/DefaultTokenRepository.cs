@@ -101,6 +101,7 @@ namespace AccelByte.Sdk.Core.Repository
                 _Token = String.Empty;
                 _TokenExpiryIn = 0;
                 IssuedTimestamp = 0;
+                TokenData = null;
             }
         }
 
