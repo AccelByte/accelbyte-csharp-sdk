@@ -73,6 +73,20 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminCreateConfigurationTemplateV1(op);
         }
+
+        public static Session.Model.ApimodelsConfigurationTemplateResponse<T1>? Execute<T1>(
+            this AdminCreateConfigurationTemplateV1.AdminCreateConfigurationTemplateV1Builder builder,
+            ApimodelsCreateConfigurationTemplateRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateConfigurationTemplateV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminCreateConfigurationTemplateV1<T1>(op);
+        }
         public static Session.Model.ApimodelsConfigurationTemplatesResponse? Execute(
             this AdminGetAllConfigurationTemplatesV1.AdminGetAllConfigurationTemplatesV1Builder builder,
             string namespace_
@@ -97,6 +111,20 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetConfigurationTemplateV1(op);
         }
+
+        public static Session.Model.ApimodelsConfigurationTemplateResponse<T1>? Execute<T1>(
+            this AdminGetConfigurationTemplateV1.AdminGetConfigurationTemplateV1Builder builder,
+            string name,
+            string namespace_
+        )
+        {
+            AdminGetConfigurationTemplateV1 op = builder.Build(
+                name,
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetConfigurationTemplateV1<T1>(op);
+        }
         public static Session.Model.ApimodelsConfigurationTemplateResponse? Execute(
             this AdminUpdateConfigurationTemplateV1.AdminUpdateConfigurationTemplateV1Builder builder,
             ApimodelsUpdateConfigurationTemplateRequest body,
@@ -111,6 +139,22 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminUpdateConfigurationTemplateV1(op);
+        }
+
+        public static Session.Model.ApimodelsConfigurationTemplateResponse<T1>? Execute<T1>(
+            this AdminUpdateConfigurationTemplateV1.AdminUpdateConfigurationTemplateV1Builder builder,
+            ApimodelsUpdateConfigurationTemplateRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            AdminUpdateConfigurationTemplateV1 op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminUpdateConfigurationTemplateV1<T1>(op);
         }
         public static void Execute(
             this AdminDeleteConfigurationTemplateV1.AdminDeleteConfigurationTemplateV1Builder builder,

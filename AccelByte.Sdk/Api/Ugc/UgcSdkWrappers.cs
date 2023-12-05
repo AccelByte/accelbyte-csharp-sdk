@@ -189,6 +189,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminContentV2? _AdminContentV2 = null;
 
+        public AdminConfig AdminConfig
+        {
+            get
+            {
+                if (_AdminConfig == null)
+                    _AdminConfig = new AdminConfig(_SdkObject);
+                return _AdminConfig;
+            }
+        }
+        private AdminConfig? _AdminConfig = null;
+
         public PublicContentV2 PublicContentV2
         {
             get

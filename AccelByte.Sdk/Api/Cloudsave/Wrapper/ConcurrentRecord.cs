@@ -42,20 +42,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PutPlayerRecordConcurrentHandlerV1(PutPlayerRecordConcurrentHandlerV1 input)
+        public Model.ModelsPlayerRecordConcurrentUpdateResponse? PutPlayerRecordConcurrentHandlerV1(PutPlayerRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PutPlayerPublicRecordConcurrentHandlerV1(PutPlayerPublicRecordConcurrentHandlerV1 input)
+        public Model.ModelsPlayerRecordConcurrentUpdateResponse? PutPlayerPublicRecordConcurrentHandlerV1(PutPlayerPublicRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

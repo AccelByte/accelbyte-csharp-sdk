@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.PublicBulkGetContentByIDV2.Builder.SetWrapperObject(this); }
         }
+        public PublicGetContentBulkByShareCodesV2.PublicGetContentBulkByShareCodesV2Builder PublicGetContentBulkByShareCodesV2Op
+        {
+            get { return Operation.PublicGetContentBulkByShareCodesV2.Builder.SetWrapperObject(this); }
+        }
         public PublicGetContentByShareCodeV2.PublicGetContentByShareCodeV2Builder PublicGetContentByShareCodeV2Op
         {
             get { return Operation.PublicGetContentByShareCodeV2.Builder.SetWrapperObject(this); }
@@ -62,6 +66,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public PublicUpdateContentFileLocation.PublicUpdateContentFileLocationBuilder PublicUpdateContentFileLocationOp
         {
             get { return Operation.PublicUpdateContentFileLocation.Builder.SetWrapperObject(this); }
+        }
+        public UpdateContentShareCodeV2.UpdateContentShareCodeV2Builder UpdateContentShareCodeV2Op
+        {
+            get { return Operation.UpdateContentShareCodeV2.Builder.SetWrapperObject(this); }
         }
         public PublicGenerateContentUploadURLV2.PublicGenerateContentUploadURLV2Builder PublicGenerateContentUploadURLV2Op
         {
@@ -114,6 +122,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
 
         public List<Model.ModelsContentDownloadResponseV2<T1>>? PublicBulkGetContentByIDV2<T1>(PublicBulkGetContentByIDV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsContentDownloadResponseV2>? PublicGetContentBulkByShareCodesV2(PublicGetContentBulkByShareCodesV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.ModelsContentDownloadResponseV2<T1>>? PublicGetContentBulkByShareCodesV2<T1>(PublicGetContentBulkByShareCodesV2 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -246,6 +273,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
 
         public Model.ModelsUpdateContentResponseV2<T1>? PublicUpdateContentFileLocation<T1>(PublicUpdateContentFileLocation input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCreateContentResponseV2? UpdateContentShareCodeV2(UpdateContentShareCodeV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsCreateContentResponseV2<T1>? UpdateContentShareCodeV2<T1>(UpdateContentShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
 

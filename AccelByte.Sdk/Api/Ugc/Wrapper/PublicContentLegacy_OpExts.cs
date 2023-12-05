@@ -63,6 +63,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulk<T1>(op);
         }
+        public static List<Ugc.Model.ModelsContentDownloadResponse>? Execute(
+            this PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodes(op);
+        }
+
+        public static List<Ugc.Model.ModelsContentDownloadResponse<T1>>? Execute<T1>(
+            this PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodes<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponse? Execute(
             this PublicDownloadContentByShareCode.PublicDownloadContentByShareCodeBuilder builder,
             string namespace_,
@@ -352,6 +379,45 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).DeleteContent(op);
+        }
+        public static Ugc.Model.ModelsCreateContentResponse? Execute(
+            this UpdateContentShareCode.UpdateContentShareCodeBuilder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCode op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCode(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
+            this UpdateContentShareCode.UpdateContentShareCodeBuilder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCode op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCode<T1>(op);
         }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this PublicGetUserContent.PublicGetUserContentBuilder builder,

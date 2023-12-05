@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutGameRecordConcurrentHandlerV1(op);
         }
-        public static void Execute(
+        public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
             string key,
@@ -42,9 +42,9 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1(op);
+            return ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1(op);
         }
-        public static void Execute(
+        public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
             string key,
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1(op);
+            return ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1(op);
         }
     }
 }

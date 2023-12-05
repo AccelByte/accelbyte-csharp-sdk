@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             get { return Operation.PublicGetContentBulk.Builder.SetWrapperObject(this); }
         }
+        public PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder PublicGetContentBulkByShareCodesOp
+        {
+            get { return Operation.PublicGetContentBulkByShareCodes.Builder.SetWrapperObject(this); }
+        }
         public PublicDownloadContentByShareCode.PublicDownloadContentByShareCodeBuilder PublicDownloadContentByShareCodeOp
         {
             get { return Operation.PublicDownloadContentByShareCode.Builder.SetWrapperObject(this); }
@@ -72,6 +76,10 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public DeleteContent.DeleteContentBuilder DeleteContentOp
         {
             get { return Operation.DeleteContent.Builder.SetWrapperObject(this); }
+        }
+        public UpdateContentShareCode.UpdateContentShareCodeBuilder UpdateContentShareCodeOp
+        {
+            get { return Operation.UpdateContentShareCode.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserContent.PublicGetUserContentBuilder PublicGetUserContentOp
         {
@@ -120,6 +128,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         }
 
         public List<Model.ModelsContentDownloadResponse<T1>>? PublicGetContentBulk<T1>(PublicGetContentBulk input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsContentDownloadResponse>? PublicGetContentBulkByShareCodes(PublicGetContentBulkByShareCodes input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.ModelsContentDownloadResponse<T1>>? PublicGetContentBulkByShareCodes<T1>(PublicGetContentBulkByShareCodes input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -290,6 +317,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsCreateContentResponse? UpdateContentShareCode(UpdateContentShareCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsCreateContentResponse<T1>? UpdateContentShareCode<T1>(UpdateContentShareCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

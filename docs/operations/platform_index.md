@@ -850,6 +850,7 @@
 | `FullAppInfo` | [FullAppInfo](../../AccelByte.Sdk/Api/Platform/Model/FullAppInfo.cs) |
 | `FullCategoryInfo` | [FullCategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/FullCategoryInfo.cs) |
 | `FullItemInfo` | [FullItemInfo](../../AccelByte.Sdk/Api/Platform/Model/FullItemInfo.cs) |
+| `FullItemPagingResult` | [FullItemPagingResult](../../AccelByte.Sdk/Api/Platform/Model/FullItemPagingResult.cs) |
 | `FullItemPagingSlicedResult` | [FullItemPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/FullItemPagingSlicedResult.cs) |
 | `FullSectionInfo` | [FullSectionInfo](../../AccelByte.Sdk/Api/Platform/Model/FullSectionInfo.cs) |
 | `FullViewInfo` | [FullViewInfo](../../AccelByte.Sdk/Api/Platform/Model/FullViewInfo.cs) |
@@ -1040,6 +1041,7 @@
 | `ServicePluginConfigUpdate` | [ServicePluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/ServicePluginConfigUpdate.cs) |
 | `Slide` | [Slide](../../AccelByte.Sdk/Api/Platform/Model/Slide.cs) |
 | `StackableEntitlementInfo` | [StackableEntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/StackableEntitlementInfo.cs) |
+| `SteamAchievement` | [SteamAchievement](../../AccelByte.Sdk/Api/Platform/Model/SteamAchievement.cs) |
 | `SteamAchievementUpdateRequest` | [SteamAchievementUpdateRequest](../../AccelByte.Sdk/Api/Platform/Model/SteamAchievementUpdateRequest.cs) |
 | `SteamDLCSyncRequest` | [SteamDLCSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/SteamDLCSyncRequest.cs) |
 | `SteamIAPConfig` | [SteamIAPConfig](../../AccelByte.Sdk/Api/Platform/Model/SteamIAPConfig.cs) |
@@ -1071,7 +1073,7 @@
 | `TicketSaleDecrementRequest` | [TicketSaleDecrementRequest](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleDecrementRequest.cs) |
 | `TicketSaleIncrementRequest` | [TicketSaleIncrementRequest](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementRequest.cs) |
 | `TicketSaleIncrementResult` | [TicketSaleIncrementResult](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementResult.cs) |
-| `Time-limited balance` | [TimeLimitedBalance](../../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
+| `TimeLimitedBalance` | [TimeLimitedBalance](../../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
 | `TimedOwnership` | [TimedOwnership](../../AccelByte.Sdk/Api/Platform/Model/TimedOwnership.cs) |
 | `TradeChainActionHistoryInfo` | [TradeChainActionHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/TradeChainActionHistoryInfo.cs) |
 | `TradeChainedActionCommitRequest` | [TradeChainedActionCommitRequest](../../AccelByte.Sdk/Api/Platform/Model/TradeChainedActionCommitRequest.cs) |
@@ -1103,8 +1105,7 @@
 | `XblReconcileResult` | [XblReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileResult.cs) |
 | `XblUserAchievements` | [XblUserAchievements](../../AccelByte.Sdk/Api/Platform/Model/XblUserAchievements.cs) |
 | `XblUserSessionRequest` | [XblUserSessionRequest](../../AccelByte.Sdk/Api/Platform/Model/XblUserSessionRequest.cs) |
+| `XboxAchievement` | [XboxAchievement](../../AccelByte.Sdk/Api/Platform/Model/XboxAchievement.cs) |
 | `XsollaConfig` | [XsollaConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaConfig.cs) |
 | `XsollaPaywallConfig` | [XsollaPaywallConfig](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfig.cs) |
 | `XsollaPaywallConfigRequest` | [XsollaPaywallConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/XsollaPaywallConfigRequest.cs) |
-| `steam achievement` | [SteamAchievement](../../AccelByte.Sdk/Api/Platform/Model/SteamAchievement.cs) |
-| `xbox achievement` | [XboxAchievement](../../AccelByte.Sdk/Api/Platform/Model/XboxAchievement.cs) |

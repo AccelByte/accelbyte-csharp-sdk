@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("code_verifier")]
         public string CodeVerifier { get; set; } = String.Empty;
 
+        [SdkCommandArgument("extendNamespace")]
+        public string ExtendNamespace { get; set; } = String.Empty;
+
         [SdkCommandArgument("extend_exp")]
         public bool ExtendExp { get; set; } = false;
 
@@ -79,6 +82,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetCode((string)Code);
             if (CodeVerifier != null)
                 opBuilder.SetCodeVerifier((string)CodeVerifier);
+            if (ExtendNamespace != null)
+                opBuilder.SetExtendNamespace((string)ExtendNamespace);
             if (ExtendExp != null)
                 opBuilder.SetExtendExp((bool)ExtendExp);
             if (Password != null)

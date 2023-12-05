@@ -447,6 +447,21 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGameSessionReject(op);
         }
+        public static Session.Model.ApimodelsServerSecret? Execute(
+            this GetSessionServerSecret.GetSessionServerSecretBuilder builder,
+            ApimodelsServerSecret body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            GetSessionServerSecret op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).GetSessionServerSecret(op);
+        }
         public static Session.Model.ApimodelsGameSessionResponse? Execute(
             this AppendTeamGameSession.AppendTeamGameSessionBuilder builder,
             ApimodelsAppendTeamGameSessionRequest body,

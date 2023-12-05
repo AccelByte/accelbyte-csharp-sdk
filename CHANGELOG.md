@@ -1,3 +1,9 @@
+<a name="v0.49.0"></a>
+## [v0.49.0]
+### fix
+- **:** fix token data is not cleared when RemoveToken is called
+
+
 <a name="v0.48.0"></a>
 ## [v0.48.0]
 

@@ -110,6 +110,16 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public Model.ApimodelsConfigurationTemplateResponse<T1>? AdminCreateConfigurationTemplateV1<T1>(AdminCreateConfigurationTemplateV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsConfigurationTemplatesResponse? AdminGetAllConfigurationTemplatesV1(AdminGetAllConfigurationTemplatesV1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -128,11 +138,31 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public Model.ApimodelsConfigurationTemplateResponse<T1>? AdminGetConfigurationTemplateV1<T1>(AdminGetConfigurationTemplateV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsConfigurationTemplateResponse? AdminUpdateConfigurationTemplateV1(AdminUpdateConfigurationTemplateV1 input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsConfigurationTemplateResponse<T1>? AdminUpdateConfigurationTemplateV1<T1>(AdminUpdateConfigurationTemplateV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

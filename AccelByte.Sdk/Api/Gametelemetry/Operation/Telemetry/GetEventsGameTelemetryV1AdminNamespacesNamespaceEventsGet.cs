@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
 {
     /// <summary>
     /// get_events_game_telemetry_v1_admin_namespaces__namespace__events_get
+    ///
+    /// This endpoint requires valid JWT token and telemetry permission
+    /// This endpoint retrieves event list
     /// </summary>
     public class GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet : AccelByte.Sdk.Core.Operation
     {

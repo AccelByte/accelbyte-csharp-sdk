@@ -59,8 +59,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             );
 
 
-            wrapper.PublicPartyInvite(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Session.Model.ApimodelsSessionInviteResponse? response = wrapper.PublicPartyInvite(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

@@ -42,7 +42,7 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutGameRecordConcurrentHandlerV1(op);
         }
-        public static void Execute(
+        public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this AdminPutAdminPlayerRecordConcurrentHandlerV1.AdminPutAdminPlayerRecordConcurrentHandlerV1Builder builder,
             ModelsAdminPlayerConcurrentRecordRequest body,
             string key,
@@ -57,9 +57,9 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutAdminPlayerRecordConcurrentHandlerV1(op);
+            return ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutAdminPlayerRecordConcurrentHandlerV1(op);
         }
-        public static void Execute(
+        public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this AdminPutPlayerRecordConcurrentHandlerV1.AdminPutPlayerRecordConcurrentHandlerV1Builder builder,
             ModelsAdminConcurrentRecordRequest body,
             string key,
@@ -74,9 +74,9 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutPlayerRecordConcurrentHandlerV1(op);
+            return ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutPlayerRecordConcurrentHandlerV1(op);
         }
-        public static void Execute(
+        public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this AdminPutPlayerPublicRecordConcurrentHandlerV1.AdminPutPlayerPublicRecordConcurrentHandlerV1Builder builder,
             ModelsAdminConcurrentRecordRequest body,
             string key,
@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutPlayerPublicRecordConcurrentHandlerV1(op);
+            return ((Cloudsave.Wrapper.AdminConcurrentRecord)builder.WrapperObject!).AdminPutPlayerPublicRecordConcurrentHandlerV1(op);
         }
     }
 }

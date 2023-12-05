@@ -194,11 +194,11 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicPartyInvite(PublicPartyInvite input)
+        public Model.ApimodelsSessionInviteResponse? PublicPartyInvite(PublicPartyInvite input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

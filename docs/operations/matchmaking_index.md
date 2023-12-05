@@ -133,6 +133,9 @@
 | `models.Role` | [ModelsRole](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRole.cs) |
 | `models.RuleSet` | [ModelsRuleSet](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSet.cs) |
 | `models.RuleSetV1` | [ModelsRuleSetV1](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsRuleSetV1.cs) |
+| `models.SelectionRule` | [ModelsSelectionRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSelectionRule.cs) |
+| `models.SortTicket` | [ModelsSortTicket](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSortTicket.cs) |
+| `models.SortTicketRule` | [ModelsSortTicketRule](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSortTicketRule.cs) |
 | `models.StatResumeResponse` | [ModelsStatResumeResponse](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsStatResumeResponse.cs) |
 | `models.SubGameMode` | [ModelsSubGameMode](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsSubGameMode.cs) |
 | `models.TicketMetricResultRecord` | [ModelsTicketMetricResultRecord](../../AccelByte.Sdk/Api/Matchmaking/Model/ModelsTicketMetricResultRecord.cs) |

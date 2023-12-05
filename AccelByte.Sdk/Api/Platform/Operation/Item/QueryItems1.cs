@@ -70,6 +70,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? TargetNamespace { get; set; }
 
+            public bool? WithTotal { get; set; }
+
 
 
 
@@ -179,6 +181,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public QueryItems1Builder SetWithTotal(bool _withTotal)
+            {
+                WithTotal = _withTotal;
+                return this;
+            }
+
 
 
 
@@ -221,6 +229,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
             if (builder.TargetNamespace is not null) QueryParams["targetNamespace"] = builder.TargetNamespace;
+            if (builder.WithTotal != null) QueryParams["withTotal"] = Convert.ToString(builder.WithTotal)!;
 
 
 
@@ -250,7 +259,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             List<QueryItems1SortBy>? sortBy,
             string? storeId,
             string? tags,
-            string? targetNamespace
+            string? targetNamespace,
+            bool? withTotal
         )
         {
             PathParams["namespace"] = namespace_;
@@ -272,6 +282,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (storeId is not null) QueryParams["storeId"] = storeId;
             if (tags is not null) QueryParams["tags"] = tags;
             if (targetNamespace is not null) QueryParams["targetNamespace"] = targetNamespace;
+            if (withTotal != null) QueryParams["withTotal"] = Convert.ToString(withTotal)!;
 
 
 
@@ -293,7 +304,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.FullItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.FullItemPagingResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -302,13 +313,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.FullItemPagingSlicedResult>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.FullItemPagingResult>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.FullItemPagingSlicedResult>(payload);
+                    return JsonSerializer.Deserialize<Model.FullItemPagingResult>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.FullItemPagingSlicedResult>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.FullItemPagingResult>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

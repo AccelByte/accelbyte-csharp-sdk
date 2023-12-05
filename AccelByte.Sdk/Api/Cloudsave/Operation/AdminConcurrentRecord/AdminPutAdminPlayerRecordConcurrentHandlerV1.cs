@@ -144,12 +144,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             : OperationBuilder<AdminPutAdminPlayerRecordConcurrentHandlerV1Builder>
         {
 
+            public bool? ResponseBody { get; set; }
+
 
 
 
 
             internal AdminPutAdminPlayerRecordConcurrentHandlerV1Builder() { }
 
+
+            public AdminPutAdminPlayerRecordConcurrentHandlerV1Builder SetResponseBody(bool _responseBody)
+            {
+                ResponseBody = _responseBody;
+                return this;
+            }
 
 
 
@@ -187,6 +195,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.ResponseBody != null) QueryParams["responseBody"] = Convert.ToString(builder.ResponseBody)!;
 
 
 
@@ -202,6 +211,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             string key,
             string namespace_,
             string userId,
+            bool? responseBody,
             Model.ModelsAdminPlayerConcurrentRecordRequest body
         )
         {
@@ -209,6 +219,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (responseBody != null) QueryParams["responseBody"] = Convert.ToString(responseBody)!;
 
 
 
@@ -230,11 +241,22 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsPlayerRecordConcurrentUpdateResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.ModelsPlayerRecordConcurrentUpdateResponse>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.ModelsPlayerRecordConcurrentUpdateResponse>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.ModelsPlayerRecordConcurrentUpdateResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -50,6 +50,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminRetrievePlayerRecords(op);
         }
+        public static Cloudsave.Model.ModelsBulkGetAdminPlayerRecordResponse? Execute(
+            this AdminGetPlayerRecordsHandlerV1.AdminGetPlayerRecordsHandlerV1Builder builder,
+            ModelsBulkGetPlayerRecordsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerRecordsHandlerV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminGetPlayerRecordsHandlerV1(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this AdminGetPlayerRecordHandlerV1.AdminGetPlayerRecordHandlerV1Builder builder,
             string key,

@@ -63,6 +63,33 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicBulkGetContentByIDV2<T1>(op);
         }
+        public static List<Ugc.Model.ModelsContentDownloadResponseV2>? Execute(
+            this PublicGetContentBulkByShareCodesV2.PublicGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicGetContentBulkByShareCodesV2(op);
+        }
+
+        public static List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>? Execute<T1>(
+            this PublicGetContentBulkByShareCodesV2.PublicGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicGetContentBulkByShareCodesV2<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponseV2? Execute(
             this PublicGetContentByShareCodeV2.PublicGetContentByShareCodeV2Builder builder,
             string namespace_,
@@ -302,6 +329,45 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).PublicUpdateContentFileLocation<T1>(op);
+        }
+        public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
+            this UpdateContentShareCodeV2.UpdateContentShareCodeV2Builder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).UpdateContentShareCodeV2(op);
+        }
+
+        public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
+            this UpdateContentShareCodeV2.UpdateContentShareCodeV2Builder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return ((Ugc.Wrapper.PublicContentV2)builder.WrapperObject!).UpdateContentShareCodeV2<T1>(op);
         }
         public static Ugc.Model.ModelsGenerateContentUploadURLResponse? Execute(
             this PublicGenerateContentUploadURLV2.PublicGenerateContentUploadURLV2Builder builder,

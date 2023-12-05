@@ -179,7 +179,7 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCode(op);
         }
-        public static void Execute(
+        public static Session.Model.ApimodelsSessionInviteResponse? Execute(
             this PublicPartyInvite.PublicPartyInviteBuilder builder,
             ApimodelsSessionInviteRequest body,
             string namespace_,
@@ -192,7 +192,7 @@ namespace AccelByte.Sdk.Api
                 partyId
             );
 
-            ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyInvite(op);
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyInvite(op);
         }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPromotePartyLeader.PublicPromotePartyLeaderBuilder builder,

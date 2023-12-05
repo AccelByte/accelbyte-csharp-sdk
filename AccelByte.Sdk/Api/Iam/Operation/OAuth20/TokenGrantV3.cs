@@ -50,6 +50,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// 
     /// 
+    ///                 5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
+    /// 
+    ///     It generates a token by checking the client credentials provided through Authorization header.
+    ///    It only allow publisher namespace client.
+    ///    In generated token:
+    ///      1.There wil be no roles, namespace_roles & permission.
+    ///      2.The scope will be fixed as 'extend'.
+    ///      3.There will have a new field 'extend_namespace', the value is from token request body.
+    /// 
+    /// 
+    /// 
+    /// 
     /// 
     /// ## Access Token Content
     /// 
@@ -275,6 +287,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? CodeVerifier { get; set; }
 
+            public string? ExtendNamespace { get; set; }
+
             public bool? ExtendExp { get; set; }
 
             public string? Password { get; set; }
@@ -313,6 +327,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public TokenGrantV3Builder SetCodeVerifier(string _codeVerifier)
             {
                 CodeVerifier = _codeVerifier;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetExtendNamespace(string _extendNamespace)
+            {
+                ExtendNamespace = _extendNamespace;
                 return this;
             }
 
@@ -373,6 +393,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
             if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
+            if (builder.ExtendNamespace is not null) FormParams["extendNamespace"] = builder.ExtendNamespace;
             if (builder.ExtendExp != null) FormParams["extend_exp"] = Convert.ToString(builder.ExtendExp)!;
             if (builder.Password is not null) FormParams["password"] = builder.Password;
             if (builder.RedirectUri is not null) FormParams["redirect_uri"] = builder.RedirectUri;
@@ -393,6 +414,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? clientId,
             string? code,
             string? codeVerifier,
+            string? extendNamespace,
             bool? extendExp,
             string? password,
             string? redirectUri,
@@ -407,6 +429,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientId is not null) FormParams["client_id"] = clientId;
             if (code is not null) FormParams["code"] = code;
             if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;
+            if (extendNamespace is not null) FormParams["extendNamespace"] = extendNamespace;
             if (extendExp != null) FormParams["extend_exp"] = Convert.ToString(extendExp)!;
             if (password is not null) FormParams["password"] = password;
             if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
@@ -469,6 +492,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public static readonly TokenGrantV3GrantType RefreshToken
             = new TokenGrantV3GrantType("refresh_token");
+
+        public static readonly TokenGrantV3GrantType UrnietfparamsoauthgrantTypeextendClientCredentials
+            = new TokenGrantV3GrantType("urn:ietf:params:oauth:grant-type:extend_client_credentials");
 
 
         public static implicit operator TokenGrantV3GrantType(string value)

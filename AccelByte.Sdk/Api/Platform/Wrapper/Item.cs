@@ -826,7 +826,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingSlicedResult? QueryItems1(QueryItems1 input)
+        public Model.FullItemPagingResult? QueryItems1(QueryItems1 input)
         {
             var response = _sdk.RunRequest(input);
 

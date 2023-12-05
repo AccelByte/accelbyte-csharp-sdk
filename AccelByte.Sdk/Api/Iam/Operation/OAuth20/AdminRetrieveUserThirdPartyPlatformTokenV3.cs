@@ -53,10 +53,27 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///               * (psn) ps5
     /// 
     /// 
-    ///               * xbox live
+    ///               * epicgames
     /// 
     /// 
-    ///               * steam
+    ///               * twitch
+    /// 
+    /// 
+    ///               * awscognito
+    /// 
+    /// 
+    ///               *
+    /// 
+    ///               * eaorigin
+    /// 
+    /// 
+    ///               * snapchat
+    /// 
+    /// 
+    ///               * twitch
+    /// 
+    /// 
+    ///               * live
     /// </summary>
     public class AdminRetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {

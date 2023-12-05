@@ -899,7 +899,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).PublicGetItem<T1, T2>(op);
         }
-        public static Platform.Model.FullItemPagingSlicedResult? Execute(
+        public static Platform.Model.FullItemPagingResult? Execute(
             this QueryItems1.QueryItems1Builder builder,
             string namespace_
         )

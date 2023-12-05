@@ -32,6 +32,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         {
             get { return Operation.AdminRetrievePlayerRecords.Builder.SetWrapperObject(this); }
         }
+        public AdminGetPlayerRecordsHandlerV1.AdminGetPlayerRecordsHandlerV1Builder AdminGetPlayerRecordsHandlerV1Op
+        {
+            get { return Operation.AdminGetPlayerRecordsHandlerV1.Builder.SetWrapperObject(this); }
+        }
         public AdminGetPlayerRecordHandlerV1.AdminGetPlayerRecordHandlerV1Builder AdminGetPlayerRecordHandlerV1Op
         {
             get { return Operation.AdminGetPlayerRecordHandlerV1.Builder.SetWrapperObject(this); }
@@ -92,6 +96,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
 #pragma warning restore ab_deprecated_operation
         public Model.ModelsListPlayerRecordKeysResponse? AdminRetrievePlayerRecords(AdminRetrievePlayerRecords input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsBulkGetAdminPlayerRecordResponse? AdminGetPlayerRecordsHandlerV1(AdminGetPlayerRecordsHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
