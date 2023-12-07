@@ -400,4 +400,4 @@ Reference about AccelByte Gaming Services endpoints and their corresponding SDK 
 
 Sample app documentations are available in the [docs/samples](docs/samples/) directory.
 
-For documentation about AccelByte Gaming Services and SDK, see [docs.accelbyte.io](https://docs-old.accelbyte.io/)
+For documentation about AccelByte Gaming Services and SDK, see [docs.accelbyte.io](https://docs.accelbyte.io/)
