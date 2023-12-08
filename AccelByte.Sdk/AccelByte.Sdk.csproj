@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -10,7 +10,7 @@
     <Version>0.49.0</Version>
     <AssemblyVersion>0.49.0</AssemblyVersion>
     <Company>AccelByte</Company>
-    <Copyright>Copyright(c) AccelByte 2022</Copyright>
+    <Copyright>Copyright(c) AccelByte 2022-2023</Copyright>
     <Description>AccelByte .NET (C#) SDK
 A software development kit (SDK) for interacting with AccelByte services.</Description>
     <PackageProjectUrl>https://github.com/AccelByte/accelbyte-csharp-sdk</PackageProjectUrl>
