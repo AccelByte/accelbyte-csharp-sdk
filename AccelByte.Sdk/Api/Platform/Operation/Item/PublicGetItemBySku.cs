@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<PublicGetItemBySkuBuilder>
         {
 
+            public bool? AutoCalcEstimatedPrice { get; set; }
+
             public string? Language { get; set; }
 
             public string? Region { get; set; }
@@ -45,6 +47,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal PublicGetItemBySkuBuilder() { }
 
+
+            public PublicGetItemBySkuBuilder SetAutoCalcEstimatedPrice(bool _autoCalcEstimatedPrice)
+            {
+                AutoCalcEstimatedPrice = _autoCalcEstimatedPrice;
+                return this;
+            }
 
             public PublicGetItemBySkuBuilder SetLanguage(string _language)
             {
@@ -92,6 +100,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.AutoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(builder.AutoCalcEstimatedPrice)!;
             if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
@@ -108,6 +117,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public PublicGetItemBySku(
             string namespace_,
+            bool? autoCalcEstimatedPrice,
             string? language,
             string? region,
             string? storeId,
@@ -116,6 +126,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (autoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(autoCalcEstimatedPrice)!;
             if (language is not null) QueryParams["language"] = language;
             if (region is not null) QueryParams["region"] = region;
             if (storeId is not null) QueryParams["storeId"] = storeId;

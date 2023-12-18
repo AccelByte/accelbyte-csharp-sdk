@@ -16,26 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SetRoleAsAdmin
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
-    /// 
-    /// 
     /// Admin roles has its members listed in the role.
-    /// 
-    /// 
-    /// 
     /// 
     /// Role can be set as admin role only when it has at least 1 manager.
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/admin [POST]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/admin [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SetRoleAsAdmin : AccelByte.Sdk.Core.Operation

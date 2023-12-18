@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminBulkBlockPlayersV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:BLOCK [CREATE]` with scope `social`
-    /// 
     /// Bulk block player in a namespace by list of user id
     /// </summary>
     public class AdminBulkBlockPlayersV1 : AccelByte.Sdk.Core.Operation

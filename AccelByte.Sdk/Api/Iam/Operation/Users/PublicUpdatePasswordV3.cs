@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdatePasswordV3
     ///
-    /// Required valid user authorization.
     /// action code: 10107
     /// </summary>
     public class PublicUpdatePasswordV3 : AccelByte.Sdk.Core.Operation

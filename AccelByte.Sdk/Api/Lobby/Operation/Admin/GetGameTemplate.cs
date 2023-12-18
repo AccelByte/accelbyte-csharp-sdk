@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getGameTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [READ]` with scope `social`
-    /// 
     /// Get all templates in a namespace
     /// </summary>
     public class GetGameTemplate : AccelByte.Sdk.Core.Operation

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// createReason
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [CREATE]
+    /// This endpoint create a reason for a namespace.
     /// </summary>
     public class CreateReason : AccelByte.Sdk.Core.Operation
     {

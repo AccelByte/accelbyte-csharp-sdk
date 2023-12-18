@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicRedeemCode
     ///
-    /// Redeem campaign code.
+    /// Redeem campaign code, this api have rate limit, default: only allow request once per user in 2 seconds
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)

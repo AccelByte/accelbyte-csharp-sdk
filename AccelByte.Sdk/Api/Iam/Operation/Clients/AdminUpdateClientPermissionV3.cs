@@ -16,17 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateClientPermissionV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]'
-    /// 
-    /// 
-    ///  Note for Multi Tenant Mode:
-    /// 
+    /// **Note for Multi Tenant Mode:**
     /// 1. The assigned permission(s) should be restricted in the Default Client permission collection.
-    /// 
-    /// 
-    /// 
     /// action code: 10307
     /// </summary>
     public class AdminUpdateClientPermissionV3 : AccelByte.Sdk.Core.Operation

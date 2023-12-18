@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// get list of friends
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
-    /// 
-    /// get list of friends in a namespace.
+    /// Get list of friends in a namespace.
     /// </summary>
     public class GetListOfFriends : AccelByte.Sdk.Core.Operation
     {

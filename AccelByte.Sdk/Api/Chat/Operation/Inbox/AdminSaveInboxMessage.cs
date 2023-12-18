@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminSaveInboxMessage op = new AdminSaveInboxMessage(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -61,31 +61,31 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminSaveInboxMessage(
-            string namespace_,            
-            Model.ModelsSaveInboxMessageRequest body            
+            string namespace_,
+            Model.ModelsSaveInboxMessageRequest body
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,9 +100,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsSaveInboxMessageResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -118,18 +118,18 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsSaveInboxMessageResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
 
         public Model.ModelsSaveInboxMessageResponse<T1>? ParseResponse<T1>(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
-            }            
+            }
             else if (code == (HttpStatusCode)201)
             {
                 return JsonSerializer.Deserialize<Model.ModelsSaveInboxMessageResponse<T1>>(payload, ResponseJsonOptions);
@@ -138,8 +138,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsSaveInboxMessageResponse<T1>>(payload, ResponseJsonOptions);
             }
-            
-            var payloadString = Helper.ConvertInputStreamToString(payload);            
+
+            var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
         }
     }

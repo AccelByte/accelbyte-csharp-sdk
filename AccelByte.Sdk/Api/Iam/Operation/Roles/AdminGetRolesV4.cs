@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRolesV4
     ///
-    /// Required permission ADMIN:ROLE [READ]
-    /// 
     /// action code: 10414
     /// </summary>
     public class AdminGetRolesV4 : AccelByte.Sdk.Core.Operation

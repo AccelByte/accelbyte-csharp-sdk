@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.ListUserCurrencyTransactions.Builder.SetWrapperObject(this); }
         }
+        public CheckBalance.CheckBalanceBuilder CheckBalanceOp
+        {
+            get { return Operation.CheckBalance.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public CheckWallet.CheckWalletBuilder CheckWalletOp
         {
@@ -167,6 +171,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void CheckBalance(CheckBalance input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

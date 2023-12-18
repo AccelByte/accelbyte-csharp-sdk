@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// DequeueSessionHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:SESSION [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Dequeues joinable session so that it will not be matched with player's match request tickets.
     /// 
     /// This endpoint is intended to be called by game server to let matchmaker know that

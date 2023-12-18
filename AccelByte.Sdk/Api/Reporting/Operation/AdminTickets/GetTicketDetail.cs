@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// getTicketDetail
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [READ]
+    /// This endpoint will return ticket detail with ticket id.
     /// </summary>
     public class GetTicketDetail : AccelByte.Sdk.Core.Operation
     {

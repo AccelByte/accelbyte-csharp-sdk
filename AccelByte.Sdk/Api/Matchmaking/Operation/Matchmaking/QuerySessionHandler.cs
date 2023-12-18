@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// QuerySessionHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:SESSION [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Queries the specified session's status. Game servers are expected to
     /// call this periodically as long as it has a session in queue to see
     /// if there are new players being matched to the session.

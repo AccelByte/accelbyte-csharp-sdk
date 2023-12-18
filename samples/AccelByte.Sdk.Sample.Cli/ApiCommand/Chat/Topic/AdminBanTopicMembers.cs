@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminbantopicmembers")]
-    public class AdminBanTopicMembersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminbantopicmembers")]
+    public class AdminBanTopicMembersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminBanTopicMembers"; } }
+        public string OperationName { get { return "AdminBanTopicMembers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ModelsBanTopicMemberParam Body { get; set; } = new ModelsBanTopicMemberParam();
-                
+
         public AdminBanTopicMembersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsBanTopicMemberResult? response = wrapper.AdminBanTopicMembers(operation);
             if (response == null)
                 return "No response from server.";

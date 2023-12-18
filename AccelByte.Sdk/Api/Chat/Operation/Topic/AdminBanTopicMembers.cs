@@ -45,9 +45,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminBanTopicMembers op = new AdminBanTopicMembers(this,
-                    body,                    
-                    namespace_,                    
-                    topic                    
+                    body,
+                    namespace_,
+                    topic
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminBanTopicMembers(
-            string namespace_,            
-            string topic,            
-            Model.ModelsBanTopicMemberParam body            
+            string namespace_,
+            string topic,
+            Model.ModelsBanTopicMemberParam body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsBanTopicMemberResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsBanTopicMemberResult>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

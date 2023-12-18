@@ -45,9 +45,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminProfanityUpdate op = new AdminProfanityUpdate(this,
-                    body,                    
-                    id,                    
-                    namespace_                    
+                    body,
+                    id,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -65,33 +65,33 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminProfanityUpdate(
-            string id,            
-            string namespace_,            
-            Model.ModelsDictionaryUpdateRequest body            
+            string id,
+            string namespace_,
+            Model.ModelsDictionaryUpdateRequest body
         )
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsDictionary? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsDictionary>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

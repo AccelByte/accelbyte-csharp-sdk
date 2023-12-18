@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminCreateExtensionCategory
     ///
-    /// Required permission: ADMIN:REPORTINGCONFIG [CREATE]
     /// Create extension category data
     /// </summary>
     public class AdminCreateExtensionCategory : AccelByte.Sdk.Core.Operation

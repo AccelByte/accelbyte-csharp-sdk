@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminGetInboxStats op = new AdminGetInboxStats(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -66,33 +66,33 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (builder.MessageId is not null) QueryParams["messageId"] = builder.MessageId;
-            
 
-            
+            if (builder.MessageId is not null) QueryParams["messageId"] = builder.MessageId;
+
+
+
             CollectionFormatMap["messageId"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminGetInboxStats(
-            string namespace_,            
-            List<string>? messageId            
+            string namespace_,
+            List<string>? messageId
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            if (messageId is not null) QueryParams["messageId"] = messageId;
-            
 
-            
+            if (messageId is not null) QueryParams["messageId"] = messageId;
+
+
+
             CollectionFormatMap["messageId"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -107,9 +107,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsGetInboxStatsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -125,9 +125,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsGetInboxStatsResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

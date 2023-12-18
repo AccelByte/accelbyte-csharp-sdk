@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// UpdateClientPermission
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'CLIENT:ADMIN [UPDATE]'
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: iam/v3/admin/namespaces/{namespace}/clients/{clientId}/permissions [PUT]
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _iam/v3/admin/namespaces/{namespace}/clients/{clientId}/permissions [PUT]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdateClientPermission : AccelByte.Sdk.Core.Operation

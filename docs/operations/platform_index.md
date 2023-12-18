@@ -181,7 +181,9 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/enable` | PUT | EnableUserEntitlement | [EnableUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/EnableUserEntitlement.cs) | [EnableUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/EnableUserEntitlement.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/history` | GET | GetUserEntitlementHistories | [GetUserEntitlementHistories](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetUserEntitlementHistories.cs) | [GetUserEntitlementHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetUserEntitlementHistories.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke` | PUT | RevokeUserEntitlement | [RevokeUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlement.cs) | [RevokeUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUserEntitlement.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revokeByUseCount` | PUT | RevokeUseCount | [RevokeUseCount](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUseCount.cs) | [RevokeUseCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUseCount.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount` | POST | RevokeUserEntitlementByUseCount | [RevokeUserEntitlementByUseCount](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlementByUseCount.cs) | [RevokeUserEntitlementByUseCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUserEntitlementByUseCount.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revoke/byUseCount/preCheck` | GET | PreCheckRevokeUserEntitlementByUseCount | [PreCheckRevokeUserEntitlementByUseCount](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PreCheckRevokeUserEntitlementByUseCount.cs) | [PreCheckRevokeUserEntitlementByUseCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PreCheckRevokeUserEntitlementByUseCount.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/revokeByUseCount` | PUT | RevokeUseCount | [RevokeUseCount](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUseCount.cs) | [RevokeUseCount](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/RevokeUseCount.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/entitlements/{entitlementId}/sell` | PUT | SellUserEntitlement | [SellUserEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/SellUserEntitlement.cs) | [SellUserEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/SellUserEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/any` | GET | PublicExistsAnyMyActiveEntitlement | [PublicExistsAnyMyActiveEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicExistsAnyMyActiveEntitlement.cs) | [PublicExistsAnyMyActiveEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicExistsAnyMyActiveEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/entitlements/ownership/byAppId` | GET | PublicGetMyAppEntitlementOwnershipByAppId | [PublicGetMyAppEntitlementOwnershipByAppId](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicGetMyAppEntitlementOwnershipByAppId.cs) | [PublicGetMyAppEntitlementOwnershipByAppId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/PublicGetMyAppEntitlementOwnershipByAppId.cs) |
@@ -208,6 +210,7 @@
 | `/platform/admin/namespaces/{namespace}/fulfillment/history` | GET | QueryFulfillmentHistories | [QueryFulfillmentHistories](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/QueryFulfillmentHistories.cs) | [QueryFulfillmentHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/QueryFulfillmentHistories.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment` | POST | FulfillItem | [FulfillItem](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillItem.cs) | [FulfillItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillItem.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/code` | POST | RedeemCode | [RedeemCode](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/RedeemCode.cs) | [RedeemCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/RedeemCode.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/preCheck` | POST | PreCheckFulfillItem | [PreCheckFulfillItem](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/PreCheckFulfillItem.cs) | [PreCheckFulfillItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/PreCheckFulfillItem.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards` | POST | FulfillRewards | [FulfillRewards](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewards.cs) | [FulfillRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillRewards.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/fulfillment/code` | POST | PublicRedeemCode | [PublicRedeemCode](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/PublicRedeemCode.cs) | [PublicRedeemCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/PublicRedeemCode.cs) |
 | `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards` | POST | FulfillRewardsV2 | [FulfillRewardsV2](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewardsV2.cs) | [FulfillRewardsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillRewardsV2.cs) |
@@ -345,6 +348,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/summary` | GET | QueryUserCurrencyWallets | [QueryUserCurrencyWallets](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/QueryUserCurrencyWallets.cs) | [QueryUserCurrencyWallets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/QueryUserCurrencyWallets.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/debit` | PUT | DebitUserWalletByCurrencyCode | [DebitUserWalletByCurrencyCode](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWalletByCurrencyCode.cs) | [DebitUserWalletByCurrencyCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitUserWalletByCurrencyCode.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/currencies/{currencyCode}/transactions` | GET | ListUserCurrencyTransactions | [ListUserCurrencyTransactions](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserCurrencyTransactions.cs) | [ListUserCurrencyTransactions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserCurrencyTransactions.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/balanceCheck` | POST | CheckBalance | [CheckBalance](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/CheckBalance.cs) | [CheckBalance](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CheckBalance.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/check` | GET | CheckWallet | [CheckWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/CheckWallet.cs) | [CheckWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CheckWallet.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/credit` | PUT | CreditUserWallet | [CreditUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/CreditUserWallet.cs) | [CreditUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/CreditUserWallet.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{currencyCode}/debitByWalletPlatform` | PUT | DebitByWalletPlatform | [DebitByWalletPlatform](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitByWalletPlatform.cs) | [DebitByWalletPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DebitByWalletPlatform.cs) |
@@ -424,6 +428,7 @@
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishAll` | PUT | PublishAll | [PublishAll](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/PublishAll.cs) | [PublishAll](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/PublishAll.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/publishSelected` | PUT | PublishSelected | [PublishSelected](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/PublishSelected.cs) | [PublishSelected](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/PublishSelected.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/selectAll` | PUT | SelectAllRecords | [SelectAllRecords](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/SelectAllRecords.cs) | [SelectAllRecords](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/SelectAllRecords.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/selectAllByCriteria` | PUT | SelectAllRecordsByCriteria | [SelectAllRecordsByCriteria](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/SelectAllRecordsByCriteria.cs) | [SelectAllRecordsByCriteria](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/SelectAllRecordsByCriteria.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/statistics` | GET | GetStatistic | [GetStatistic](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/GetStatistic.cs) | [GetStatistic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/GetStatistic.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/unselectAll` | PUT | UnselectAllRecords | [UnselectAllRecords](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/UnselectAllRecords.cs) | [UnselectAllRecords](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/UnselectAllRecords.cs) |
 | `/platform/admin/namespaces/{namespace}/stores/{storeId}/catalogChanges/{changeId}/select` | PUT | SelectRecord | [SelectRecord](../../AccelByte.Sdk/Api/Platform/Operation/CatalogChanges/SelectRecord.cs) | [SelectRecord](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/CatalogChanges/SelectRecord.cs) |
@@ -676,6 +681,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/platform/admin/namespaces/{namespace}/trade/commit` | POST | Commit | [Commit](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/Commit.cs) | [Commit](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/Commit.cs) |
+| `/platform/admin/namespaces/{namespace}/trade/{transactionId}` | GET | GetTradeHistoryByTransactionId | [GetTradeHistoryByTransactionId](../../AccelByte.Sdk/Api/Platform/Operation/TradeAction/GetTradeHistoryByTransactionId.cs) | [GetTradeHistoryByTransactionId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/TradeAction/GetTradeHistoryByTransactionId.cs) |
 
 ### Achievement(Platform) Wrapper:  [AchievementPlatform](../../AccelByte.Sdk/Api/Platform/Wrapper/AchievementPlatform.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -762,7 +768,7 @@
 | `CampaignUpdate` | [CampaignUpdate](../../AccelByte.Sdk/Api/Platform/Model/CampaignUpdate.cs) |
 | `CancelRequest` | [CancelRequest](../../AccelByte.Sdk/Api/Platform/Model/CancelRequest.cs) |
 | `CatalogChangeInfo` | [CatalogChangeInfo](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangeInfo.cs) |
-| `CatalogChangePagingSlicedResult` | [CatalogChangePagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangePagingSlicedResult.cs) |
+| `CatalogChangePagingResult` | [CatalogChangePagingResult](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangePagingResult.cs) |
 | `CatalogChangeStatistics` | [CatalogChangeStatistics](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangeStatistics.cs) |
 | `CategoryCreate` | [CategoryCreate](../../AccelByte.Sdk/Api/Platform/Model/CategoryCreate.cs) |
 | `CategoryInfo` | [CategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
@@ -811,10 +817,12 @@
 | `EntitlementGrant` | [EntitlementGrant](../../AccelByte.Sdk/Api/Platform/Model/EntitlementGrant.cs) |
 | `EntitlementGrantResult` | [EntitlementGrantResult](../../AccelByte.Sdk/Api/Platform/Model/EntitlementGrantResult.cs) |
 | `EntitlementHistoryInfo` | [EntitlementHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/EntitlementHistoryInfo.cs) |
+| `EntitlementIfc` | [EntitlementIfc](../../AccelByte.Sdk/Api/Platform/Model/EntitlementIfc.cs) |
 | `EntitlementInfo` | [EntitlementInfo](../../AccelByte.Sdk/Api/Platform/Model/EntitlementInfo.cs) |
 | `EntitlementLootBoxReward` | [EntitlementLootBoxReward](../../AccelByte.Sdk/Api/Platform/Model/EntitlementLootBoxReward.cs) |
 | `EntitlementOwnership` | [EntitlementOwnership](../../AccelByte.Sdk/Api/Platform/Model/EntitlementOwnership.cs) |
 | `EntitlementPagingSlicedResult` | [EntitlementPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/EntitlementPagingSlicedResult.cs) |
+| `EntitlementPrechekResult` | [EntitlementPrechekResult](../../AccelByte.Sdk/Api/Platform/Model/EntitlementPrechekResult.cs) |
 | `EntitlementRevocation` | [EntitlementRevocation](../../AccelByte.Sdk/Api/Platform/Model/EntitlementRevocation.cs) |
 | `EntitlementRevocationConfig` | [EntitlementRevocationConfig](../../AccelByte.Sdk/Api/Platform/Model/EntitlementRevocationConfig.cs) |
 | `EntitlementRevokeResult` | [EntitlementRevokeResult](../../AccelByte.Sdk/Api/Platform/Model/EntitlementRevokeResult.cs) |
@@ -987,6 +995,7 @@
 | `PlayStationReconcileResult` | [PlayStationReconcileResult](../../AccelByte.Sdk/Api/Platform/Model/PlayStationReconcileResult.cs) |
 | `PlaystationIAPConfigRequest` | [PlaystationIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/PlaystationIAPConfigRequest.cs) |
 | `PopulatedItemInfo` | [PopulatedItemInfo](../../AccelByte.Sdk/Api/Platform/Model/PopulatedItemInfo.cs) |
+| `PreCheckFulfillmentRequest` | [PreCheckFulfillmentRequest](../../AccelByte.Sdk/Api/Platform/Model/PreCheckFulfillmentRequest.cs) |
 | `Predicate` | [Predicate](../../AccelByte.Sdk/Api/Platform/Model/Predicate.cs) |
 | `PredicateValidateResult` | [PredicateValidateResult](../../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
 | `PublicCustomConfigInfo` | [PublicCustomConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PublicCustomConfigInfo.cs) |
@@ -1075,6 +1084,7 @@
 | `TicketSaleIncrementResult` | [TicketSaleIncrementResult](../../AccelByte.Sdk/Api/Platform/Model/TicketSaleIncrementResult.cs) |
 | `TimeLimitedBalance` | [TimeLimitedBalance](../../AccelByte.Sdk/Api/Platform/Model/TimeLimitedBalance.cs) |
 | `TimedOwnership` | [TimedOwnership](../../AccelByte.Sdk/Api/Platform/Model/TimedOwnership.cs) |
+| `TradeActionPagingSlicedResult` | [TradeActionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/TradeActionPagingSlicedResult.cs) |
 | `TradeChainActionHistoryInfo` | [TradeChainActionHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/TradeChainActionHistoryInfo.cs) |
 | `TradeChainedActionCommitRequest` | [TradeChainedActionCommitRequest](../../AccelByte.Sdk/Api/Platform/Model/TradeChainedActionCommitRequest.cs) |
 | `TradeNotification` | [TradeNotification](../../AccelByte.Sdk/Api/Platform/Model/TradeNotification.cs) |

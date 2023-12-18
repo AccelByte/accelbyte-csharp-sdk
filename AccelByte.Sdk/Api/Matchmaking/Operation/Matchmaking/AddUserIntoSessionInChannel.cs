@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// AddUserIntoSessionInChannel
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Create]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Add user into the session in a channel.
     /// </summary>
     public class AddUserIntoSessionInChannel : AccelByte.Sdk.Core.Operation

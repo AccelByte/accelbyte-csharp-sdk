@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// notificationWithTemplateByUserID
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:NOTIFICATION [CREATE]` with scope `social`
-    /// 
     /// Sends notification to a user with predefined template.
     /// 
     /// In the request body, specify which template slug (template identifier) to use and the template language.

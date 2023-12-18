@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminProfanityDelete op = new AdminProfanityDelete(this,
-                    id,                    
-                    namespace_                    
+                    id,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -62,30 +62,30 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminProfanityDelete(
-            string id,            
-            string namespace_            
+            string id,
+            string namespace_
         )
         {
             PathParams["id"] = id;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,16 +100,16 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

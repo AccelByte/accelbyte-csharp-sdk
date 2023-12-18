@@ -16,15 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateDeviceBanV4
     ///
-    /// 
-    /// 
-    /// This is the endpoint for an admin to update a device ban config.
-    /// 
-    /// 
-    /// 
-    /// Required permission
-    /// 
-    ///                                                                         'ADMIN:NAMESPACE:{namespace}:DEVICE [UPDATE]'
+    /// This is the endpoint for an admin to update a device ban config
     /// </summary>
     public class AdminUpdateDeviceBanV4 : AccelByte.Sdk.Core.Operation
     {

@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class CatalogChangePagingSlicedResult : AccelByte.Sdk.Core.Model
+    public class CatalogChangePagingResult : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("data")]
         public List<CatalogChangeInfo>? Data { get; set; }
@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("paging")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Paging? Paging { get; set; }
+
+        [JsonPropertyName("total")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? Total { get; set; }
 
     }
 

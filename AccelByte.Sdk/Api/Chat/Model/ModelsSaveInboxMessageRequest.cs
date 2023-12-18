@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         {
 
         }
-    }    
+    }
 
     public class ModelsSaveInboxMessageRequestStatus : StringEnum<ModelsSaveInboxMessageRequestStatus>
     {
@@ -98,5 +98,5 @@ namespace AccelByte.Sdk.Api.Chat.Model
         {
 
         }
-    }    
+    }
 }

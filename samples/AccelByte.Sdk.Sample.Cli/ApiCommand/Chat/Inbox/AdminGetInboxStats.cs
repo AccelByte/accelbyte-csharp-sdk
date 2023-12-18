@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","admingetinboxstats")]
-    public class AdminGetInboxStatsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "admingetinboxstats")]
+    public class AdminGetInboxStatsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminGetInboxStats"; } }
+        public string OperationName { get { return "AdminGetInboxStats"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsGetInboxStatsResponse? response = wrapper.AdminGetInboxStats(operation);
             if (response == null)
                 return "No response from server.";

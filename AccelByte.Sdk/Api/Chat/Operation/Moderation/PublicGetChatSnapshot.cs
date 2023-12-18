@@ -45,9 +45,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 PublicGetChatSnapshot op = new PublicGetChatSnapshot(this,
-                    chatId,                    
-                    namespace_,                    
-                    topic                    
+                    chatId,
+                    namespace_,
+                    topic
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -66,32 +66,32 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             PathParams["chatId"] = chatId;
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicGetChatSnapshot(
-            string chatId,            
-            string namespace_,            
-            string topic            
+            string chatId,
+            string namespace_,
+            string topic
         )
         {
             PathParams["chatId"] = chatId;
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -106,9 +106,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsChatSnapshots? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -124,9 +124,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsChatSnapshots>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

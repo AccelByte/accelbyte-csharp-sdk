@@ -2762,7 +2762,7 @@
           }
         ],
         "produces": [
-          "multipart/form-data"
+          "application/json"
         ],
         "responses": {
           "200": {

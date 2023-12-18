@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// DeleteSessionInChannel
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Delete]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Delete a session in a channel.
     /// </summary>
     public class DeleteSessionInChannel : AccelByte.Sdk.Core.Operation

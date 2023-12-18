@@ -49,6 +49,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RedeemCode(op);
         }
+        public static List<Platform.Model.FulfillmentItem>? Execute(
+            this PreCheckFulfillItem.PreCheckFulfillItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PreCheckFulfillItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PreCheckFulfillItem(op);
+        }
         public static void Execute(
             this FulfillRewards.FulfillRewardsBuilder builder,
             string namespace_,

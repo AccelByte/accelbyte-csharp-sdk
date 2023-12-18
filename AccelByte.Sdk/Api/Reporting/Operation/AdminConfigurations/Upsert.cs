@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// Upsert
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REPORTINGCONFIG [CREATE]
     /// The behaviour of this endpoint is upsert based on the namespace.
     /// So, you can use this for both creating & updating the configuration.
     /// TimeInterval is in nanoseconds.

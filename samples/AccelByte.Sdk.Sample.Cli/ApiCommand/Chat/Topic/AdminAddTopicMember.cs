@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminaddtopicmember")]
-    public class AdminAddTopicMemberCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminaddtopicmember")]
+    public class AdminAddTopicMemberCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminAddTopicMember"; } }
+        public string OperationName { get { return "AdminAddTopicMember"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ApiAddMemberParams Body { get; set; } = new ApiAddMemberParams();
-                
+
         public AdminAddTopicMemberCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -62,7 +62,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 UserId
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.MessageActionAddUserToTopicResult? response = wrapper.AdminAddTopicMember(operation);
             if (response == null)
                 return "No response from server.";

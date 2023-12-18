@@ -16,30 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserByPlatformUserID
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint(Public): /iam/v3/public/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId} [GET]
-    /// 
-    ///   * Substitute endpoint(Admin): /iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId} [GET]
-    /// 
-    /// 
-    /// 
-    ///   * Note:
-    ///     1. difference in V3 response, format difference: Pascal case => Camel case
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER [READ]'
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint(Public): _/iam/v3/public/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId} [GET]_**
+    /// - **Substitute endpoint(Admin): _/iam/v3/admin/namespaces/{namespace}/platforms/{platformId}/users/{platformUserId} [GET]_**
+    /// - **Note:**
+    /// 1. difference in V3 response, format difference: Pascal case => Camel case
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserByPlatformUserID : AccelByte.Sdk.Core.Operation

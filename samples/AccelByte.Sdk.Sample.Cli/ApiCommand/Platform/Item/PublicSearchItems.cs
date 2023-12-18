@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("autoCalcEstimatedPrice")]
+        public bool? AutoCalcEstimatedPrice { get; set; }
+
         [SdkCommandArgument("itemType")]
         public string? ItemType { get; set; }
 
@@ -63,6 +66,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicSearchItems.Builder;
 
+            if (AutoCalcEstimatedPrice != null)
+                opBuilder.SetAutoCalcEstimatedPrice((bool)AutoCalcEstimatedPrice);
             if (ItemType != null)
                 opBuilder.SetItemType(PublicSearchItemsItemType.NewValue(ItemType));
             if (Limit != null)

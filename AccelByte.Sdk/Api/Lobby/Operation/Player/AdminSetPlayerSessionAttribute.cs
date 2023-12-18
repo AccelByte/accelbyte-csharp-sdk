@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminSetPlayerSessionAttribute
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:ATTRIBUTES [UPDATE]` with scope `social`
-    /// 
-    /// set player's session attribute by user id in a namespace.
+    /// Set player's session attribute by user id in a namespace.
     /// </summary>
     public class AdminSetPlayerSessionAttribute : AccelByte.Sdk.Core.Operation
     {

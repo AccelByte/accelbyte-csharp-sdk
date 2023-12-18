@@ -16,45 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This Endpoint support update user based on given data. Single request can update single field or multi fields.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Supported field {country, displayName, emailAddress, languageTag, dateOfBirth}
-    /// 
-    /// 
-    /// 
-    /// 
+    /// This Endpoint support update user based on given data. **Single request can update single field or multi fields.**
+    /// Supported field {country, displayName, languageTag, dateOfBirth, avatarUrl, userName}
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
-    /// 
-    /// 
-    /// 
-    /// 
     /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
     /// 
-    /// 
-    /// 
-    ///  Response body logic when user updating email address:
-    /// 
-    ///           * User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
-    /// 
-    /// 
-    ///           * User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
-    /// 
-    /// 
-    ///           * User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
-    /// 
-    /// 
-    /// 
+    /// **Response body logic when user updating email address:**
+    /// - User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.
+    /// - User want to update email address of which have not been verified, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with new email address.
+    /// - User want to update email address of which have been verified and updated before, {LoginId, OldEmailAddress, EmailAddress} response field will be filled with verified email before. NewEmailAddress response field will be filled with newest email address.
     /// 
     /// action code : 10103
     /// </summary>

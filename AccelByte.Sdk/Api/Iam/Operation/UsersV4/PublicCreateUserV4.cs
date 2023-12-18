@@ -17,10 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicCreateUserV4
     ///
     /// Create a new user with unique email address and username.
-    /// 
-    /// 
-    /// 
-    /// Required attributes:
+    /// **Required attributes:**
     /// - authType: possible value is EMAILPASSWD
     /// - emailAddress: Please refer to the rule from /v3/public/inputValidations API.
     /// - username: Please refer to the rule from /v3/public/inputValidations API.
@@ -28,14 +25,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - country: ISO3166-1 alpha-2 two letter, e.g. US.
     /// - dateOfBirth: YYYY-MM-DD, e.g. 1990-01-01. valid values are between 1905-01-01 until current date.
     /// 
-    /// 
-    /// Not required attributes:
+    /// **Not required attributes:**
     /// - displayName: Please refer to the rule from /v3/public/inputValidations API.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint support accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
     /// </summary>
     public class PublicCreateUserV4 : AccelByte.Sdk.Core.Operation

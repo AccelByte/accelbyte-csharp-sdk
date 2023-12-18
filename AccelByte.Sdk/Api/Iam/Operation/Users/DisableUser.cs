@@ -16,34 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DisableUser
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]_**
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///     * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/status [PATCH]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:USERSTATUS:USER:{userId} [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
-    /// For Deletion Account purpose fill the reason with:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///     * DeactivateAccount : if your deletion request comes from user
-    /// 
-    /// 
-    ///     * AdminDeactivateAccount : if your deletion request comes from admin
+    /// For **Deletion Account** purpose fill the reason with:
+    /// - **DeactivateAccount** : if your deletion request comes from user
+    /// - **AdminDeactivateAccount** : if your deletion request comes from admin
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DisableUser : AccelByte.Sdk.Core.Operation

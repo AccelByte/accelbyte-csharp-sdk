@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetBulkPlayerBlockedPlayersV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:BLOCK [READ]` with scope `social`
-    /// 
-    /// get blocked players data by bulk user ids in a namespace.
+    /// Get blocked players data by bulk user ids in a namespace.
     /// </summary>
     public class AdminGetBulkPlayerBlockedPlayersV1 : AccelByte.Sdk.Core.Operation
     {

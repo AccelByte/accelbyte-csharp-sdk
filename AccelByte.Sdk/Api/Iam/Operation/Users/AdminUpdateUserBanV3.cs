@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserBanV3
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId}
-    /// [UPDATE]
     /// Set ban status for a single user for a specific ban. Retrieve
     /// user ban and choose the ban ID. Set the form parameter to true/false to enable
     /// or disable the ban.

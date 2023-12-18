@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// CreateClient
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'CLIENT:ADMIN [CREATE]'.
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/clients [POST]
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/clients [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class CreateClient : AccelByte.Sdk.Core.Operation

@@ -16,84 +16,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestOneTimeLinkingCodeV3
     ///
-    /// 
-    /// 
     /// This endpoint is being used to request the one time code [8 length] for headless account to link or upgrade to a full account.
-    /// 
-    /// It requires a valid user token.
-    /// 
     /// Should specify the target platform id and current user should already linked to this platform.
-    /// 
     /// Current user should be a headless account.
-    /// 
-    /// 
-    /// 
     /// ## Supported platforms:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///               * steam
-    /// 
-    /// 
-    ///               * steamopenid
-    /// 
-    /// 
-    ///               * facebook
-    /// 
-    /// 
-    ///               * google
-    /// 
-    /// 
-    ///               * oculus
-    /// 
-    /// 
-    ///               * twitch
-    /// 
-    /// 
-    ///               * discord
-    /// 
-    /// 
-    ///               * android
-    /// 
-    /// 
-    ///               * ios
-    /// 
-    /// 
-    ///               * apple
-    /// 
-    /// 
-    ///               * device
-    /// 
-    /// 
-    ///               * justice
-    /// 
-    /// 
-    ///               * epicgames
-    /// 
-    /// 
-    ///               * ps4
-    /// 
-    /// 
-    ///               * ps5
-    /// 
-    /// 
-    ///               * nintendo
-    /// 
-    /// 
-    ///               * awscognito
-    /// 
-    /// 
-    ///               * live
-    /// 
-    /// 
-    ///               * xblweb
-    /// 
-    /// 
-    ///               * netflix
-    /// 
-    /// 
-    ///               * snapchat
+    /// - **steam**
+    /// - **steamopenid**
+    /// - **facebook**
+    /// - **google**
+    /// - **oculus**
+    /// - **twitch**
+    /// - **discord**
+    /// - **android**
+    /// - **ios**
+    /// - **apple**
+    /// - **device**
+    /// - **justice**
+    /// - **epicgames**
+    /// - **ps4**
+    /// - **ps5**
+    /// - **nintendo**
+    /// - **awscognito**
+    /// - **live**
+    /// - **xblweb**
+    /// - **netflix**
+    /// - **snapchat**
     /// </summary>
     public class RequestOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation
     {

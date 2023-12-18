@@ -16,22 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// ResetPassword
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/reset [POST]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PASSWORD:USER [UPDATE]' or valid basic auth header
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/reset [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class ResetPassword : AccelByte.Sdk.Core.Operation

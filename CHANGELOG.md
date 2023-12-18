@@ -1,3 +1,23 @@
+<a name="v0.50.0"></a>
+## [v0.50.0]
+### chore
+- **git:** ignore macOS files
+### test
+- **base:** reduce retries to 3
+- **core:** add using AGS starter flag
+- **eventlog:** remove count assert
+- **integration:** adjust tests to use client credentials for AGS starter environments
+- **integration:** disable some tests for AGS starter environments
+### ci
+- **nightly:** add integration tests for AGS starter
+### docs
+- **:** update accelbyte doc portal links
+### feat
+- **:** add extend namespace to access token payload model
+- **api:** bootstrap chat service support
+- **:** add chatv2 integration tests
+
+
 <a name="v0.49.0"></a>
 ## [v0.49.0]
 ### fix

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetSingleMatchmakingChannel
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Reads single channel based on namespace and channel name
     /// 
     /// Action Code: 510112

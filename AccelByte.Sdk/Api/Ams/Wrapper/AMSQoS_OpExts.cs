@@ -12,6 +12,17 @@ namespace AccelByte.Sdk.Api
 {
     public static class AmsAMSQoS_OpExts
     {
+        public static Ams.Model.ApiQoSEndpointResponse? Execute(
+            this QoSRegionsGet.QoSRegionsGetBuilder builder,
+            string namespace_
+        )
+        {
+            QoSRegionsGet op = builder.Build(
+                namespace_
+            );
+
+            return ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsGet(op);
+        }
         public static void Execute(
             this QoSRegionsUpdate.QoSRegionsUpdateBuilder builder,
             ApiUpdateServerRequest body,
@@ -26,17 +37,6 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsUpdate(op);
-        }
-        public static Ams.Model.ApiQoSEndpointResponse? Execute(
-            this QoSRegionsGet.QoSRegionsGetBuilder builder,
-            string namespace_
-        )
-        {
-            QoSRegionsGet op = builder.Build(
-                namespace_
-            );
-
-            return ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsGet(op);
         }
     }
 }

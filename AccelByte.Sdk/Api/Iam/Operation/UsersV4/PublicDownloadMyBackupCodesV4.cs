@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDownloadMyBackupCodesV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to download backup codes.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class PublicDownloadMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {

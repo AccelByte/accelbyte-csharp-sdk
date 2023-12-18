@@ -17,9 +17,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicForceLinkPlatformWithProgression
     ///
     /// Force update other account's Platform Account relation to current User Account.
-    /// 
     /// This endpoint can transfer progression from 3rd platform binding account's to current account.
-    /// This endpoint need the same requestID which also used in Get link status.
+    /// This endpoint need the same requestID which also used in [Get link status](#operations-Users-PublicGetAsyncStatus).
     /// </summary>
     public class PublicForceLinkPlatformWithProgression : AccelByte.Sdk.Core.Operation
     {

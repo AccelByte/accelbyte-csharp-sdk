@@ -17,10 +17,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetUserByPlatformUserIDV3
     ///
     /// Get User By Platform User ID
-    /// 
     /// This endpoint return user information by given platform ID and platform user ID
-    /// 
-    /// nintendo platform user ID : NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
+    /// **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
     /// </summary>
     public class PublicGetUserByPlatformUserIDV3 : AccelByte.Sdk.Core.Operation
     {

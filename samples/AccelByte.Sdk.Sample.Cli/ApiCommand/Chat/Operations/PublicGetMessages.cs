@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","publicgetmessages")]
-    public class PublicGetMessagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "publicgetmessages")]
+    public class PublicGetMessagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "PublicGetMessages"; } }
+        public string OperationName { get { return "PublicGetMessages"; } }
 
         public PublicGetMessagesCommand(AccelByteSDK sdk)
         {
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
             PublicGetMessages operation = opBuilder.Build(
             );
 
-            
+
             List<AccelByte.Sdk.Api.Chat.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

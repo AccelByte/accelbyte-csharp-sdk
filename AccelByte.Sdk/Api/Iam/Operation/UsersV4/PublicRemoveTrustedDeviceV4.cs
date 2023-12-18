@@ -16,19 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicRemoveTrustedDeviceV4
     ///
-    /// 
-    /// 
     /// (Only for test)This endpoint is used to remove trusted device.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint Requires device_token in cookie
     /// </summary>
     public class PublicRemoveTrustedDeviceV4 : AccelByte.Sdk.Core.Operation

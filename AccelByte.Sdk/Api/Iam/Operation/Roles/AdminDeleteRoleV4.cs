@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteRoleV4
     ///
-    /// Required permission ADMIN:ROLE [DELETE]
-    /// 
     /// Removes role ID from user's Roles and NamespaceRoles before deleting the role.
-    /// 
     /// action code: 10403
     /// </summary>
     public class AdminDeleteRoleV4 : AccelByte.Sdk.Core.Operation

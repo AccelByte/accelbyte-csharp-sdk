@@ -16,104 +16,28 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AddThirdPartyLoginPlatformCredentialV3
     ///
-    /// 
-    /// 
     /// This is the API to Add 3rd Platform Credential.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// It needs ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:CLIENT [CREATE] resource.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for apple is base64 encoded private key.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// No secret for awscognito , we only need to configure AWS Cognito Region and User Pool
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for discord is client secret of the twitch client id.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for epicgames is client secret of the epicgames client id.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for facebook is client secret of the facebook client id.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for google is client secret of the google OAuth client.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// No secret for nintendo , we only need to configure app id of the game
-    /// 
-    /// 
-    /// 
-    /// 
-    /// No secret for netflix , we configure the Root, Public, Private Key certificate pem file and target environment; value: [sandbox, production]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for oculus is app secret of the oculus app.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for ps4, ps5, and ps4web is client secret of the psn web server.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for steam is the Steam Web API Key.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for steamopenid is the Steam Web API Key.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for twitch is client secret of the twitch client.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for live is the Relying Party Private Key in base64 encode PEM format.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// The secret for xblwebapi is client secret of the xbl client.
-    /// 
-    /// 
-    /// 
+    /// - The secret for **apple** is base64 encoded private key.
+    /// - No secret for **awscognito**, we only need to configure AWS Cognito Region and User Pool
+    /// - The secret for **discord** is client secret of the twitch client id.
+    /// - The secret for **epicgames** is client secret of the epicgames client id.
+    /// - The secret for **facebook** is client secret of the facebook client id.
+    /// - The secret for **google** is client secret of the google OAuth client.
+    /// - No secret for **nintendo**, we only need to configure app id of the game
+    /// - No secret for **netflix**, we configure the Root, Public, Private Key certificate pem file and target environment; value: [sandbox, production]
+    /// - The secret for **oculus** is app secret of the oculus app.
+    /// - The secret for **ps4, ps5, and ps4web** is client secret of the psn web server.
+    /// - The secret for **steam** is the Steam Web API Key.
+    /// - The secret for **steamopenid** is the Steam Web API Key.
+    /// - The secret for **twitch** is client secret of the twitch client.
+    /// - The secret for **live** is the Relying Party Private Key in base64 encode PEM format.
+    /// - The secret for **xblwebapi** is client secret of the xbl client.
     /// 
     /// If generic oauth flow is set to true:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///             * Current supported value for TokenAuthenticationType are code, idToken and bearerToken
-    /// 
-    /// 
-    ///             * `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
+    /// - Current supported value for TokenAuthenticationType are **code, idToken and bearerToken**
+    /// - `TokenClaimsMapping` is used to extract user info from idToken claims or user info endpoint response accessed using bearerToken.
     /// Its a JSON format with key should be `name`, `email` and `avatarUrl`
-    /// since IAM will look up for these key when extracting user info. default claims keys : userIdentity/sub, name, email and avatarUrl/picture
+    /// since IAM will look up for these key when extracting user info. **default claims keys : userIdentity/sub, name, email and avatarUrl/picture**
     /// </summary>
     public class AddThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {

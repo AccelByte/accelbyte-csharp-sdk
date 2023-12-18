@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicSendVerificationLinkV3
     ///
-    /// Required valid user authorization
-    /// 
-    /// 
     /// The verification link is sent to email address
-    /// 
-    /// 
-    /// 
-    /// 
     /// It will not send request if user email is already verified
     /// </summary>
     public class PublicSendVerificationLinkV3 : AccelByte.Sdk.Core.Operation

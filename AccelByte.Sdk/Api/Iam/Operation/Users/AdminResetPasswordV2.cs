@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminResetPasswordV2
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///             * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/password [PUT]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PASSWORD:USER:{userId} [UPDATE]'
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/password [PUT]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminResetPasswordV2 : AccelByte.Sdk.Core.Operation

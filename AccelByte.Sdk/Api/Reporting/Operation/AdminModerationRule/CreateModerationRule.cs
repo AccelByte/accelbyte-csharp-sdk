@@ -16,57 +16,17 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// createModerationRule
     ///
-    /// 
-    /// 
     /// This endpoint create moderation rule.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:RULE [CREATE]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Supported Category:
-    /// 
-    ///   * UGC
-    ///   * USER
-    ///   * CHAT
-    ///   * EXTENSION
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+    /// Supported Category: - UGC - USER - CHAT - EXTENSION
     /// Supported Action (GOING TO DEPRECATE, for replacement please use "actions"):
     /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * HideContent
-    /// 
-    /// 
-    /// 
-    /// 
+    /// * HideContent
     /// 
     /// Supported Actions:
     /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * hideContent : Hide the content
-    /// 
-    /// 
-    ///   * banAccount : Ban the user account
-    /// 
-    /// 
-    ///   * deleteChat : Delete chat
+    /// * **hideContent**: Hide the content
+    /// * **banAccount**: Ban the user account
+    /// * **deleteChat**: Delete chat
     /// </summary>
     public class CreateModerationRule : AccelByte.Sdk.Core.Operation
     {

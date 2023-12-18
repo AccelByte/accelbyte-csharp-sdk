@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminGetPlayerRecordsHandlerV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:USER:{userId}:RECORD [READ]`
-    /// --------------------|-----------------------------------------------------------
+    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:USER:*:CLOUDSAVE:RECORD [READ]`
+    /// --------------------|--------------------------------------------------------------
     /// Required Scope      | `social`
     /// 
     /// 

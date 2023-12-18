@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminRemoveRoleAdminV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:ROLE [UPDATE]'
-    /// 
     /// code: 10413
     /// </summary>
     public class AdminRemoveRoleAdminV3 : AccelByte.Sdk.Core.Operation

@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// listTickets
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [READ]
     /// Tickets list can be ordered by:
     /// - createdAt
     /// - reportsCount

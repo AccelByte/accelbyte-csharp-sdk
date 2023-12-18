@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","publicgetchatsnapshot")]
-    public class PublicGetChatSnapshotCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "publicgetchatsnapshot")]
+    public class PublicGetChatSnapshotCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "PublicGetChatSnapshot"; } }
+        public string OperationName { get { return "PublicGetChatSnapshot"; } }
 
         [SdkCommandArgument("chatId")]
         public string ChatId { get; set; } = String.Empty;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsChatSnapshots? response = wrapper.PublicGetChatSnapshot(operation);
             if (response == null)
                 return "No response from server.";

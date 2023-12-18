@@ -16,25 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserPlatformAccountsV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]'.
-    /// 
-    /// 
-    /// 
-    /// 
     /// ## Justice Platform Account
-    /// 
-    /// 
-    /// 
-    /// 
     /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ]
     /// is required in order to read the UserID who linked with the user.
-    /// 
-    /// 
-    /// 
     /// Gets platform accounts that are already linked with user account
-    /// 
     /// action code : 10128
     /// </summary>
     public class AdminGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation

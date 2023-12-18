@@ -188,6 +188,7 @@
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link` | GET | PublicWebLinkPlatform | [PublicWebLinkPlatform](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatform.cs) | [PublicWebLinkPlatform](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatform.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/establish` | GET | PublicWebLinkPlatformEstablish | [PublicWebLinkPlatformEstablish](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicWebLinkPlatformEstablish.cs) | [PublicWebLinkPlatformEstablish](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicWebLinkPlatformEstablish.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/web/link/process` | POST | PublicProcessWebLinkPlatformV3 | [PublicProcessWebLinkPlatformV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicProcessWebLinkPlatformV3.cs) | [PublicProcessWebLinkPlatformV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicProcessWebLinkPlatformV3.cs) |
+| `/iam/v3/public/namespaces/{namespace}/users/platforms` | POST | PublicGetUsersPlatformInfosV3 | [PublicGetUsersPlatformInfosV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUsersPlatformInfosV3.cs) | [PublicGetUsersPlatformInfosV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUsersPlatformInfosV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/reset` | POST | ResetPasswordV3 | [ResetPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/ResetPasswordV3.cs) | [ResetPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/ResetPasswordV3.cs) |
 | [DEPRECATED] `/iam/v3/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserByUserIdV3 | [PublicGetUserByUserIdV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserByUserIdV3.cs) | [PublicGetUserByUserIdV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserByUserIdV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/bans` | GET | PublicGetUserBanHistoryV3 | [PublicGetUserBanHistoryV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetUserBanHistoryV3.cs) | [PublicGetUserBanHistoryV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetUserBanHistoryV3.cs) |
@@ -344,6 +345,7 @@
 | `/iam/v3/oauth/platforms/{platformId}/token` | POST | PlatformTokenGrantV3 | [PlatformTokenGrantV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/PlatformTokenGrantV3.cs) | [PlatformTokenGrantV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/PlatformTokenGrantV3.cs) |
 | `/iam/v3/oauth/revocationlist` | GET | GetRevocationListV3 | [GetRevocationListV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/GetRevocationListV3.cs) | [GetRevocationListV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/GetRevocationListV3.cs) |
 | `/iam/v3/oauth/revoke` | POST | TokenRevocationV3 | [TokenRevocationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenRevocationV3.cs) | [TokenRevocationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenRevocationV3.cs) |
+| `/iam/v3/oauth/simultaneousLogin` | POST | SimultaneousLoginV3 | [SimultaneousLoginV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/SimultaneousLoginV3.cs) | [SimultaneousLoginV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/SimultaneousLoginV3.cs) |
 | `/iam/v3/oauth/token` | POST | TokenGrantV3 | [TokenGrantV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/TokenGrantV3.cs) | [TokenGrantV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/TokenGrantV3.cs) |
 | `/iam/v3/oauth/verify` | POST | VerifyTokenV3 | [VerifyTokenV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/VerifyTokenV3.cs) | [VerifyTokenV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/VerifyTokenV3.cs) |
 
@@ -378,6 +380,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/iam/v4/admin/namespaces/{namespace}/test_users` | POST | AdminCreateTestUsersV4 | [AdminCreateTestUsersV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminCreateTestUsersV4.cs) | [AdminCreateTestUsersV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminCreateTestUsersV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/users/bulk/accountType` | PATCH | AdminBulkUpdateUserAccountTypeV4 | [AdminBulkUpdateUserAccountTypeV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminBulkUpdateUserAccountTypeV4.cs) | [AdminBulkUpdateUserAccountTypeV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminBulkUpdateUserAccountTypeV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/bulk/validate` | POST | AdminBulkCheckValidUserIDV4 | [AdminBulkCheckValidUserIDV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminBulkCheckValidUserIDV4.cs) | [AdminBulkCheckValidUserIDV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminBulkCheckValidUserIDV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}` | PUT | AdminUpdateUserV4 | [AdminUpdateUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminUpdateUserV4.cs) | [AdminUpdateUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminUpdateUserV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/{userId}/email` | PUT | AdminUpdateUserEmailAddressV4 | [AdminUpdateUserEmailAddressV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminUpdateUserEmailAddressV4.cs) | [AdminUpdateUserEmailAddressV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminUpdateUserEmailAddressV4.cs) |
@@ -591,6 +594,7 @@
 | `model.BackupCodesResponseV4` | [ModelBackupCodesResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelBackupCodesResponseV4.cs) |
 | `model.BanCreateRequest` | [ModelBanCreateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelBanCreateRequest.cs) |
 | `model.BanUpdateRequest` | [ModelBanUpdateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelBanUpdateRequest.cs) |
+| `model.BulkAccountTypeUpdateRequestV4` | [ModelBulkAccountTypeUpdateRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelBulkAccountTypeUpdateRequestV4.cs) |
 | `model.BulkBanCreateRequestV3` | [ModelBulkBanCreateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelBulkBanCreateRequestV3.cs) |
 | `model.BulkUnbanCreateRequestV3` | [ModelBulkUnbanCreateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelBulkUnbanCreateRequestV3.cs) |
 | `model.CheckValidUserIDRequestV4` | [ModelCheckValidUserIDRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelCheckValidUserIDRequestV4.cs) |
@@ -735,6 +739,7 @@
 | `model.UserPasswordUpdateV3Request` | [ModelUserPasswordUpdateV3Request](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPasswordUpdateV3Request.cs) |
 | `model.UserPermissionsResponseV3` | [ModelUserPermissionsResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPermissionsResponseV3.cs) |
 | `model.UserPlatformInfo` | [ModelUserPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformInfo.cs) |
+| `model.UserPlatformInfos` | [ModelUserPlatformInfos](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformInfos.cs) |
 | `model.UserPlatformMetadata` | [ModelUserPlatformMetadata](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPlatformMetadata.cs) |
 | `model.UserPublicInfoResponseV4` | [ModelUserPublicInfoResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPublicInfoResponseV4.cs) |
 | `model.UserResponse` | [ModelUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserResponse.cs) |
@@ -745,6 +750,8 @@
 | `model.UserVerificationRequest` | [ModelUserVerificationRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserVerificationRequest.cs) |
 | `model.UserVerificationRequestV3` | [ModelUserVerificationRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserVerificationRequestV3.cs) |
 | `model.UserWithPlatformInfo` | [ModelUserWithPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelUserWithPlatformInfo.cs) |
+| `model.UsersPlatformInfosRequestV3` | [ModelUsersPlatformInfosRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUsersPlatformInfosRequestV3.cs) |
+| `model.UsersPlatformInfosResponse` | [ModelUsersPlatformInfosResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUsersPlatformInfosResponse.cs) |
 | `model.ValidUserIDResponseV4` | [ModelValidUserIDResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelValidUserIDResponseV4.cs) |
 | `model.ValidationDetail` | [ModelValidationDetail](../../AccelByte.Sdk/Api/Iam/Model/ModelValidationDetail.cs) |
 | `model.ValidationDetailPublic` | [ModelValidationDetailPublic](../../AccelByte.Sdk/Api/Iam/Model/ModelValidationDetailPublic.cs) |

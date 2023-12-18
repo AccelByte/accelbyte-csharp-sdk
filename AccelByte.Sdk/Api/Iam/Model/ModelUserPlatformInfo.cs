@@ -9,13 +9,23 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUserPlatformInfo : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("platformAvatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformAvatarUrl { get; set; }
+
         [JsonPropertyName("platformDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformDisplayName { get; set; }
+
+        [JsonPropertyName("platformGroup")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformGroup { get; set; }
 
         [JsonPropertyName("platformId")]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("platformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
     }

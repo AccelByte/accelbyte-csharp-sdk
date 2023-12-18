@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// publishTemplateLocalizationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
-    /// 
     /// Publish notification template draft. Empty draft can not be published.
     /// 
     /// Action Code: 50210

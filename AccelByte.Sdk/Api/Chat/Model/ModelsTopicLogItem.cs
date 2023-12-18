@@ -62,5 +62,5 @@ namespace AccelByte.Sdk.Api.Chat.Model
         {
 
         }
-    }    
+    }
 }

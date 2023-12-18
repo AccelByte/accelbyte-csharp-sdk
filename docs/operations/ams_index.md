@@ -24,6 +24,16 @@
 | `/ams/v1/admin/namespaces/{namespace}/account/link` | GET | AccountLinkTokenGet | [AccountLinkTokenGet](../../AccelByte.Sdk/Api/Ams/Operation/Account/AccountLinkTokenGet.cs) | [AccountLinkTokenGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AccountLinkTokenGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/account/link` | POST | AccountLink | [AccountLink](../../AccelByte.Sdk/Api/Ams/Operation/Account/AccountLink.cs) | [AccountLink](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AccountLink.cs) |
 
+### Artifacts Wrapper:  [Artifacts](../../AccelByte.Sdk/Api/Ams/Wrapper/Artifacts.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/v1/admin/namespaces/{namespace}/artifacts` | GET | ArtifactGet | [ArtifactGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactGet.cs) | [ArtifactGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/artifacts/usage` | GET | ArtifactUsageGet | [ArtifactUsageGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactUsageGet.cs) | [ArtifactUsageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactUsageGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}` | DELETE | ArtifactDelete | [ArtifactDelete](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactDelete.cs) | [ArtifactDelete](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactDelete.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}/url` | GET | ArtifactGetURL | [ArtifactGetURL](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactGetURL.cs) | [ArtifactGetURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactGetURL.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules` | GET | FleetArtifactSamplingRulesGet | [FleetArtifactSamplingRulesGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/FleetArtifactSamplingRulesGet.cs) | [FleetArtifactSamplingRulesGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/FleetArtifactSamplingRulesGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules` | PUT | FleetArtifactSamplingRulesSet | [FleetArtifactSamplingRulesSet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/FleetArtifactSamplingRulesSet.cs) | [FleetArtifactSamplingRulesSet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/FleetArtifactSamplingRulesSet.cs) |
+
 ### Fleets Wrapper:  [Fleets](../../AccelByte.Sdk/Api/Ams/Wrapper/Fleets.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -36,14 +46,6 @@
 | `/ams/v1/namespaces/{namespace}/fleets/{fleetID}/claim` | PUT | FleetClaimByID | [FleetClaimByID](../../AccelByte.Sdk/Api/Ams/Operation/Fleets/FleetClaimByID.cs) | [FleetClaimByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Fleets/FleetClaimByID.cs) |
 | `/ams/v1/namespaces/{namespace}/servers/claim` | PUT | FleetClaimByKeys | [FleetClaimByKeys](../../AccelByte.Sdk/Api/Ams/Operation/Fleets/FleetClaimByKeys.cs) | [FleetClaimByKeys](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Fleets/FleetClaimByKeys.cs) |
 
-### Images Wrapper:  [Images](../../AccelByte.Sdk/Api/Ams/Wrapper/Images.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules` | GET | FleetArtifactSamplingRulesGet | [FleetArtifactSamplingRulesGet](../../AccelByte.Sdk/Api/Ams/Operation/Images/FleetArtifactSamplingRulesGet.cs) | [FleetArtifactSamplingRulesGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/FleetArtifactSamplingRulesGet.cs) |
-| `/ams/v1/admin/namespaces/{namespace}/images` | GET | ImageList | [ImageList](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageList.cs) | [ImageList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageList.cs) |
-| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | GET | ImageGet | [ImageGet](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageGet.cs) | [ImageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageGet.cs) |
-| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | PATCH | ImagePatch | [ImagePatch](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImagePatch.cs) | [ImagePatch](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImagePatch.cs) |
-
 ### Servers Wrapper:  [Servers](../../AccelByte.Sdk/Api/Ams/Wrapper/Servers.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -51,11 +53,18 @@
 | `/ams/v1/admin/namespaces/{namespace}/servers/{serverID}` | GET | FleetServerInfo | [FleetServerInfo](../../AccelByte.Sdk/Api/Ams/Operation/Servers/FleetServerInfo.cs) | [FleetServerInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/FleetServerInfo.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/servers/{serverID}/history` | GET | ServerHistory | [ServerHistory](../../AccelByte.Sdk/Api/Ams/Operation/Servers/ServerHistory.cs) | [ServerHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/ServerHistory.cs) |
 
+### Images Wrapper:  [Images](../../AccelByte.Sdk/Api/Ams/Wrapper/Images.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/v1/admin/namespaces/{namespace}/images` | GET | ImageList | [ImageList](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageList.cs) | [ImageList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageList.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | GET | ImageGet | [ImageGet](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageGet.cs) | [ImageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | PATCH | ImagePatch | [ImagePatch](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImagePatch.cs) | [ImagePatch](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImagePatch.cs) |
+
 ### AMS QoS Wrapper:  [AMSQoS](../../AccelByte.Sdk/Api/Ams/Wrapper/AMSQoS.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/ams/v1/admin/namespaces/{namespace}/qos` | GET | QoSRegionsGet | [QoSRegionsGet](../../AccelByte.Sdk/Api/Ams/Operation/AMSQoS/QoSRegionsGet.cs) | [QoSRegionsGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/AMSQoS/QoSRegionsGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/qos/{region}` | PATCH | QoSRegionsUpdate | [QoSRegionsUpdate](../../AccelByte.Sdk/Api/Ams/Operation/AMSQoS/QoSRegionsUpdate.cs) | [QoSRegionsUpdate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/AMSQoS/QoSRegionsUpdate.cs) |
-| `/ams/v1/namespaces/{namespace}/qos` | GET | QoSRegionsGet | [QoSRegionsGet](../../AccelByte.Sdk/Api/Ams/Operation/AMSQoS/QoSRegionsGet.cs) | [QoSRegionsGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/AMSQoS/QoSRegionsGet.cs) |
 
 ### AMS Info Wrapper:  [AMSInfo](../../AccelByte.Sdk/Api/Ams/Wrapper/AMSInfo.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -86,15 +95,19 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Artifacts Wrapper:  [Artifacts](../../AccelByte.Sdk/Api/Ams/Wrapper/Artifacts.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Fleets Wrapper:  [Fleets](../../AccelByte.Sdk/Api/Ams/Wrapper/Fleets.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Images Wrapper:  [Images](../../AccelByte.Sdk/Api/Ams/Wrapper/Images.cs)
+### Servers Wrapper:  [Servers](../../AccelByte.Sdk/Api/Ams/Wrapper/Servers.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Servers Wrapper:  [Servers](../../AccelByte.Sdk/Api/Ams/Wrapper/Servers.cs)
+### Images Wrapper:  [Images](../../AccelByte.Sdk/Api/Ams/Wrapper/Images.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -125,13 +138,16 @@
 | `api.AccountLinkResponse` | [ApiAccountLinkResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLinkResponse.cs) |
 | `api.AccountLinkTokenResponse` | [ApiAccountLinkTokenResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountLinkTokenResponse.cs) |
 | `api.AccountResponse` | [ApiAccountResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAccountResponse.cs) |
-| `api.ArtifactSamplingRuleResponse` | [ApiArtifactSamplingRuleResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactSamplingRuleResponse.cs) |
-| `api.ArtifactTypeSamplingRulesResponse` | [ApiArtifactTypeSamplingRulesResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactTypeSamplingRulesResponse.cs) |
+| `api.ArtifactResponse` | [ApiArtifactResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactResponse.cs) |
+| `api.ArtifactSamplingRule` | [ApiArtifactSamplingRule](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactSamplingRule.cs) |
+| `api.ArtifactTypeSamplingRules` | [ApiArtifactTypeSamplingRules](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactTypeSamplingRules.cs) |
+| `api.ArtifactURLResponse` | [ApiArtifactURLResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactURLResponse.cs) |
+| `api.ArtifactUsageResponse` | [ApiArtifactUsageResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactUsageResponse.cs) |
 | `api.AvailableInstanceTypesResponse` | [ApiAvailableInstanceTypesResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAvailableInstanceTypesResponse.cs) |
 | `api.DSHistoryEvent` | [ApiDSHistoryEvent](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryEvent.cs) |
 | `api.DSHistoryList` | [ApiDSHistoryList](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryList.cs) |
 | `api.DSHostConfiguration` | [ApiDSHostConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHostConfiguration.cs) |
-| `api.FleetArtifactsSampleRulesResponse` | [ApiFleetArtifactsSampleRulesResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetArtifactsSampleRulesResponse.cs) |
+| `api.FleetArtifactsSampleRules` | [ApiFleetArtifactsSampleRules](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetArtifactsSampleRules.cs) |
 | `api.FleetClaimByKeysReq` | [ApiFleetClaimByKeysReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimByKeysReq.cs) |
 | `api.FleetClaimReq` | [ApiFleetClaimReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimReq.cs) |
 | `api.FleetClaimResponse` | [ApiFleetClaimResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimResponse.cs) |

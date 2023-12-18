@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminResetPasswordV3
     ///
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PASSWORD:USER:{userId} [UPDATE]'
+    /// Update User Password
     /// </summary>
     public class AdminResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {

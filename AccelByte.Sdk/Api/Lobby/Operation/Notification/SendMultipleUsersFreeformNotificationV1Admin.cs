@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// sendMultipleUsersFreeformNotificationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
-    /// 
     /// Sends notification to multiple user.
     /// Action Code: 50211
     /// </summary>

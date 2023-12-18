@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableMyAuthenticatorV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to disable 2FA authenticator.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class AdminDisableMyAuthenticatorV4 : AccelByte.Sdk.Core.Operation
     {

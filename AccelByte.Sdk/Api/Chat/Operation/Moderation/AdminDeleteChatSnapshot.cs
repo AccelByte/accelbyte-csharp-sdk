@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminDeleteChatSnapshot op = new AdminDeleteChatSnapshot(this,
-                    chatId,                    
-                    namespace_                    
+                    chatId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -62,30 +62,30 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["chatId"] = chatId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminDeleteChatSnapshot(
-            string chatId,            
-            string namespace_            
+            string chatId,
+            string namespace_
         )
         {
             PathParams["chatId"] = chatId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -100,16 +100,16 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

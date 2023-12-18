@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminSubmitReport
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [CREATE]
     /// Submit a report and will return ticket for reported object.
     /// New ticket will be created if no OPEN ticket present for reported object (based by objectId and objectType) in a namespace.
     /// 
@@ -24,12 +23,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// Reporting the same user / object in the same OPEN ticket will return HTTP code 409 (conflict).
     /// 
     /// Fill the 'reason' field with a 'reason title'
-    /// Supported category:
-    /// 
-    ///   * UGC
-    ///   * USER
-    ///   * CHAT
-    ///   * EXTENSION
+    /// Supported category: - UGC - USER - CHAT - EXTENSION
     /// </summary>
     public class AdminSubmitReport : AccelByte.Sdk.Core.Operation
     {

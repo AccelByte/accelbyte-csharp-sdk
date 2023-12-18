@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetAllSessionsInChannel
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get all sessions in a channel.
     /// 
     /// if party_id value empty/null, field will not show in response body.

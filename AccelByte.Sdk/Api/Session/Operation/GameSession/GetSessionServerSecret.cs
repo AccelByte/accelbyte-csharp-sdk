@@ -59,13 +59,11 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
             public GetSessionServerSecret Build(
-                ApimodelsServerSecret body,
                 string namespace_,
                 string sessionId
             )
             {
                 GetSessionServerSecret op = new GetSessionServerSecret(this,
-                    body,
                     namespace_,
                     sessionId
                 );
@@ -78,7 +76,6 @@ namespace AccelByte.Sdk.Api.Session.Operation
         }
 
         private GetSessionServerSecret(GetSessionServerSecretBuilder builder,
-            ApimodelsServerSecret body,
             string namespace_,
             string sessionId
         )
@@ -90,7 +87,6 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -99,8 +95,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public GetSessionServerSecret(
             string namespace_,
-            string sessionId,
-            Model.ApimodelsServerSecret body
+            string sessionId
         )
         {
             PathParams["namespace"] = namespace_;
@@ -110,7 +105,6 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

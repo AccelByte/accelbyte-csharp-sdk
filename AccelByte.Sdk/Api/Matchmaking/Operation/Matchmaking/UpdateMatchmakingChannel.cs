@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// UpdateMatchmakingChannel
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Update]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Update channel based on namespace and channel name
     /// 
     /// Action Code: 510111

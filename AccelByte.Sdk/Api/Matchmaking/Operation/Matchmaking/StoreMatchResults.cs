@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// StoreMatchResults
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHRESULT [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Process match result into final attribute value and stores it to player attribute
     /// 
     /// Will return final attribute value

@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// BanUser
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///     * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/bans [POST]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [CREATE]'.
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class BanUser : AccelByte.Sdk.Core.Operation

@@ -16,9 +16,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// createReasonGroup
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [CREATE]
-    /// Create a reason group for easier query. You can query reasons by specifying the group title in the list reasons query.
-    /// Reason group title is case insensitive, meaning you can't have reason if you already create a reason titled Reason
+    /// Create a reason group for easier query. You can query reasons by specifying
+    /// the group title in the list reasons query. Reason group title is case insensitive,
+    /// meaning you can't have **reason** if you already create a reason titled **Reason**
     /// </summary>
     public class CreateReasonGroup : AccelByte.Sdk.Core.Operation
     {

@@ -19,21 +19,21 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminsaveinboxmessage")]
-    public class AdminSaveInboxMessageCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminsaveinboxmessage")]
+    public class AdminSaveInboxMessageCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminSaveInboxMessage"; } }
+        public string OperationName { get { return "AdminSaveInboxMessage"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsSaveInboxMessageRequest Body { get; set; } = new ModelsSaveInboxMessageRequest();
-                
+
         public AdminSaveInboxMessageCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsSaveInboxMessageResponse? response = wrapper.AdminSaveInboxMessage(operation);
             if (response == null)
                 return "No response from server.";

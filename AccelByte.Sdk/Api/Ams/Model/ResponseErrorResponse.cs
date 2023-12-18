@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
 
+        [JsonPropertyName("errorType")]
+        public string? ErrorType { get; set; }
+
         [JsonPropertyName("traceId")]
         public string? TraceId { get; set; }
 

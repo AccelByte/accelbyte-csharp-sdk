@@ -35,6 +35,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public PublicQueryItemsAppType? AppType { get; set; }
 
+            public bool? AutoCalcEstimatedPrice { get; set; }
+
             public string? BaseAppId { get; set; }
 
             public string? CategoryPath { get; set; }
@@ -69,6 +71,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public PublicQueryItemsBuilder SetAppType(PublicQueryItemsAppType _appType)
             {
                 AppType = _appType;
+                return this;
+            }
+
+            public PublicQueryItemsBuilder SetAutoCalcEstimatedPrice(bool _autoCalcEstimatedPrice)
+            {
+                AutoCalcEstimatedPrice = _autoCalcEstimatedPrice;
                 return this;
             }
 
@@ -170,6 +178,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
+            if (builder.AutoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(builder.AutoCalcEstimatedPrice)!;
             if (builder.BaseAppId is not null) QueryParams["baseAppId"] = builder.BaseAppId;
             if (builder.CategoryPath is not null) QueryParams["categoryPath"] = builder.CategoryPath;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
@@ -196,6 +205,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicQueryItems(
             string namespace_,
             PublicQueryItemsAppType? appType,
+            bool? autoCalcEstimatedPrice,
             string? baseAppId,
             string? categoryPath,
             string? features,
@@ -213,6 +223,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
 
             if (appType is not null) QueryParams["appType"] = appType.Value;
+            if (autoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(autoCalcEstimatedPrice)!;
             if (baseAppId is not null) QueryParams["baseAppId"] = baseAppId;
             if (categoryPath is not null) QueryParams["categoryPath"] = categoryPath;
             if (features is not null) QueryParams["features"] = features;

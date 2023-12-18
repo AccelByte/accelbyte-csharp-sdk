@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateRoleV4
     ///
-    /// Required permission: ADMIN:ROLE [CREATE]
-    /// 
     /// Create role request body:
     /// - roleName: specify role name, alphanumeric, cannot have special character (required)
     /// - adminRole: specify if role is for admin user (default false)

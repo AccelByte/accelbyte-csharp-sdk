@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserPermissionBulkV3
     ///
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:PERMISSION:USER:{userId} [DELETE]'
+    /// Delete User Permission
     /// </summary>
     public class AdminDeleteUserPermissionBulkV3 : AccelByte.Sdk.Core.Operation
     {

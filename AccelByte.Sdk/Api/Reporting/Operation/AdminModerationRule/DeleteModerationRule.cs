@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// deleteModerationRule
     ///
-    /// 
-    /// 
     /// This endpoint delete moderation rule.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:RULE [DELETE]
     /// </summary>
     public class DeleteModerationRule : AccelByte.Sdk.Core.Operation
     {

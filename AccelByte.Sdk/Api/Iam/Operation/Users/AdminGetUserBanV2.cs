@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserBanV2
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///             * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/bans [GET]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [READ]'.
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans [GET]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetUserBanV2 : AccelByte.Sdk.Core.Operation

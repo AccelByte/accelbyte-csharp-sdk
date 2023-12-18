@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// Rebalance
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:REBALANCE [Update]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Do rebalance the teams based on MMR from given matchID,
     /// consider attribute name "mmr" (case-insensitive),
     /// or any first attribute with criteria "distance"

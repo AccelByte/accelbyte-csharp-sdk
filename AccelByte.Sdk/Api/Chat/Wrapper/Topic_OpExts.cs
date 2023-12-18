@@ -149,7 +149,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicInfo(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Chat.Model.ModelsChatMessageWithPaginationResponse? Execute(
             this AdminTopicChatHistory.AdminTopicChatHistoryBuilder builder,
             string namespace_,

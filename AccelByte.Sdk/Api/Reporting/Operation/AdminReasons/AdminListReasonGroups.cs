@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminListReasonGroups
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [READ]
-    /// Return list of reason groups ID and title under given namespace. To fetch the reasons inside a group, use get reason group endpoint.
+    /// Return list of reason groups ID and title under given namespace.
+    /// To fetch the reasons inside a group, use get reason group endpoint.
     /// </summary>
     public class AdminListReasonGroups : AccelByte.Sdk.Core.Operation
     {

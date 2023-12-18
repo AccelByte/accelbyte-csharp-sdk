@@ -16,50 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformTokenRefreshV3
     ///
-    /// 
-    /// 
     /// This endpoint will validate the third party platform token, for some platforms will also refresh the token stored in IAM, it will not generate any event or AB access/refresh token.
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint can be used by game client to refresh third party token if game client got platform token not found error, for example got 404
     /// platform token not found from IAP/DLC.
     /// 
-    /// 
-    /// 
-    /// 
     /// ## Platforms will refresh stored token:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 * twitch : The platform_tokenâs value is the authorization code returned by Twitch OAuth.
-    /// 
-    /// 
-    ///                 * epicgames : The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
-    /// 
-    /// 
-    ///                 * ps4 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
-    /// 
-    /// 
-    ///                 * ps5 : The platform_tokenâs value is the authorization code returned by Sony OAuth.
-    /// 
-    /// 
-    ///                 * amazon : The platform_tokenâs value is authorization code.
-    /// 
-    /// 
-    ///                 * awscognito : The platform_tokenâs value is the aws cognito access token or id token (JWT).
-    /// 
-    /// 
-    ///                 * live : The platform_tokenâs value is xbox XSTS token
-    /// 
-    /// 
-    ///                 * snapchat : The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
-    /// 
-    /// 
-    /// 
-    ///                 * for specific generic oauth (OIDC) : The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
+    /// - **twitch**: The platform_tokenâs value is the authorization code returned by Twitch OAuth.
+    /// - **epicgames**: The platform_tokenâs value is an access-token or authorization code obtained from Epicgames EOS Account Service.
+    /// - **ps4**: The platform_tokenâs value is the authorization code returned by Sony OAuth.
+    /// - **ps5**: The platform_tokenâs value is the authorization code returned by Sony OAuth.
+    /// - **amazon**: The platform_tokenâs value is authorization code.
+    /// - **awscognito**: The platform_tokenâs value is the aws cognito access token or id token (JWT).
+    /// - **live**: The platform_tokenâs value is xbox XSTS token
+    /// - **snapchat**: The platform_tokenâs value is the authorization code returned by Snapchat OAuth.
+    /// - **for specific generic oauth (OIDC)**: The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
     /// </summary>
     public class PlatformTokenRefreshV3 : AccelByte.Sdk.Core.Operation
     {

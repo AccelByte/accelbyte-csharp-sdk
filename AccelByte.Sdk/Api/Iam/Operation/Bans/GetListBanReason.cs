@@ -16,22 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetListBanReason
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'BAN:ADMIN [READ]' or 'ADMIN:BAN [READ]'
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint: /iam/v3/admin/bans/reasons [GET]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/bans/reasons [GET]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetListBanReason : AccelByte.Sdk.Core.Operation

@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminprofanitydelete")]
-    public class AdminProfanityDeleteCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminprofanitydelete")]
+    public class AdminProfanityDeleteCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminProfanityDelete"; } }
+        public string OperationName { get { return "AdminProfanityDelete"; } }
 
         [SdkCommandArgument("id")]
         public string Id { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             wrapper.AdminProfanityDelete(operation);
             return String.Empty;
         }

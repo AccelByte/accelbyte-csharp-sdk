@@ -659,6 +659,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicProcessWebLinkPlatformV3.Builder.SetWrapperObject(this); }
         }
+        public PublicGetUsersPlatformInfosV3.PublicGetUsersPlatformInfosV3Builder PublicGetUsersPlatformInfosV3Op
+        {
+            get { return Operation.PublicGetUsersPlatformInfosV3.Builder.SetWrapperObject(this); }
+        }
         public ResetPasswordV3.ResetPasswordV3Builder ResetPasswordV3Op
         {
             get { return Operation.ResetPasswordV3.Builder.SetWrapperObject(this); }
@@ -2244,6 +2248,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUsersPlatformInfosResponse? PublicGetUsersPlatformInfosV3(PublicGetUsersPlatformInfosV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

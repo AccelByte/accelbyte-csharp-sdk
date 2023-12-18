@@ -2126,6 +2126,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicProcessWebLinkPlatformV3<T1>(op);
         }
+        public static Iam.Model.ModelUsersPlatformInfosResponse? Execute(
+            this PublicGetUsersPlatformInfosV3.PublicGetUsersPlatformInfosV3Builder builder,
+            ModelUsersPlatformInfosRequestV3 body,
+            string namespace_
+        )
+        {
+            PublicGetUsersPlatformInfosV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetUsersPlatformInfosV3(op);
+        }
         public static void Execute(
             this ResetPasswordV3.ResetPasswordV3Builder builder,
             ModelResetPasswordRequestV3 body,

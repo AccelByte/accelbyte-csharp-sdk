@@ -18,16 +18,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This endpoint is being used to authenticate a user account and perform platform link.
     /// It validates user's email / username and password.
-    /// If user already enable 2FA, then invoke /mfa/verify using mfa_token from this endpoint response.
-    /// 
-    /// 
+    /// If user already enable 2FA, then invoke _/mfa/verify_ using **mfa_token** from this endpoint response.
     /// 
     /// ## Device Cookie Validation
     /// 
-    /// 
-    /// 
-    /// Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
-    /// This endpoint will read device cookie from cookie auth-trust-id. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
+    /// Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP](https://owasp.org/www-community/Slow_Down_Online_Guessing_Attacks_with_Device_Cookies).
+    /// This endpoint will read device cookie from cookie **auth-trust-id**. If device cookie not found, it will generate a new one and set it into cookie when successfully authenticate.
     /// </summary>
     public class AuthenticationWithPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {

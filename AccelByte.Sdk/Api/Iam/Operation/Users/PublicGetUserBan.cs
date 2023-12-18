@@ -16,15 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserBan
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/bans [GET]
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/{userId}/bans [GET]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetUserBan : AccelByte.Sdk.Core.Operation

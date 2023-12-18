@@ -16,18 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetBulkUserBanV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint returns user bans of userIDs specified in the payload
-    /// 
-    /// 
-    /// 
-    /// 
     /// action code : 10127
     /// </summary>
     public class AdminGetBulkUserBanV3 : AccelByte.Sdk.Core.Operation

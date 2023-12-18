@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetUserPartyV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [READ]` with scope `social`
-    /// 
-    /// get party data in a namespace.
+    /// Get party data in a namespace.
     /// </summary>
     public class AdminGetUserPartyV1 : AccelByte.Sdk.Core.Operation
     {

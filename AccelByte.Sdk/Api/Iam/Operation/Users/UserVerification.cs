@@ -16,28 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// UserVerification
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/code/verify [POST]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
-    /// 
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/code/verify [POST]_**
     /// 
     /// Redeems a verification code sent to a user to verify the user's contact address is correct
-    /// 
-    /// 
-    /// Available ContactType : email or phone
+    /// Available ContactType : *email* or *phone*
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UserVerification : AccelByte.Sdk.Core.Operation

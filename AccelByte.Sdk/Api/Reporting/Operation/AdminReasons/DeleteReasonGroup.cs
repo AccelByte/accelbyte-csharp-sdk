@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// deleteReasonGroup
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [DELETE]
+    /// This endpoint delete a reason group for a namespace with ID.
     /// </summary>
     public class DeleteReasonGroup : AccelByte.Sdk.Core.Operation
     {

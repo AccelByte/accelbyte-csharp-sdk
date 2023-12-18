@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// FleetArtifactSamplingRulesGet
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACTS [READ]
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACT [READ]
     /// </summary>
     public class FleetArtifactSamplingRulesGet : AccelByte.Sdk.Core.Operation
     {
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiFleetArtifactsSampleRulesResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiFleetArtifactsSampleRules? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -110,13 +110,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRulesResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRules>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRulesResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRules>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRulesResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiFleetArtifactsSampleRules>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

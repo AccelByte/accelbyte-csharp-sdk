@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicPlatformUnlinkAllV3
     ///
-    /// Required valid user authorization.
-    /// 
     /// Unlink user's account from third platform in all namespaces.
     /// 
     /// This API support to handling platform group use case:

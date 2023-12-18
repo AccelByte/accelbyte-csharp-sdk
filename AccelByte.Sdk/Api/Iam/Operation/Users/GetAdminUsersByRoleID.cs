@@ -16,38 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetAdminUsersByRoleID
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint(Public): /iam/v3/admin/namespaces/{namespace}/roles/{roleId}/users [GET]
-    /// 
-    /// 
-    /// 
-    ///   * Note:
-    ///     difference in V3 response, format difference: Pascal case => Camel case
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
-    /// 
-    /// 
-    /// 
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint(Public): _/iam/v3/admin/namespaces/{namespace}/roles/{roleId}/users [GET]_**
+    /// - **Note:**
+    /// difference in V3 response, format difference: Pascal case => Camel case
     /// 
     /// This endpoint search admin users which have the roleId
-    /// 
-    /// 
-    /// 
     /// 
     /// Notes : this endpoint only accept admin role. Admin Role is role which have admin status and members.
     /// Use endpoint [GET] /roles/{roleId}/admin to check the role status

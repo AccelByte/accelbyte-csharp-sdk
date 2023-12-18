@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.RedeemCode.Builder.SetWrapperObject(this); }
         }
+        public PreCheckFulfillItem.PreCheckFulfillItemBuilder PreCheckFulfillItemOp
+        {
+            get { return Operation.PreCheckFulfillItem.Builder.SetWrapperObject(this); }
+        }
         public FulfillRewards.FulfillRewardsBuilder FulfillRewardsOp
         {
             get { return Operation.FulfillRewards.Builder.SetWrapperObject(this); }
@@ -64,6 +68,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.FulfillmentResult? RedeemCode(RedeemCode input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.FulfillmentItem>? PreCheckFulfillItem(PreCheckFulfillItem input)
         {
             var response = _sdk.RunRequest(input);
 

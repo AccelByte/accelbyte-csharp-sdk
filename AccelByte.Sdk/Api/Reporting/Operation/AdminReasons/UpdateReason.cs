@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// updateReason
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [UPDATE]
+    /// This endpoint update a reason for a namespace with ID.
     /// </summary>
     public class UpdateReason : AccelByte.Sdk.Core.Operation
     {

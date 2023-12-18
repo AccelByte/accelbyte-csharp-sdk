@@ -19,21 +19,21 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","importconfig")]
-    public class ImportConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "importconfig")]
+    public class ImportConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "ImportConfig"; } }
+        public string OperationName { get { return "ImportConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
-                    
+
         public ImportConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsImportConfigResponse? response = wrapper.ImportConfig(operation);
             if (response == null)
                 return "No response from server.";

@@ -16,13 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicListUserAllPlatformAccountsDistinctV3
     ///
-    /// 
-    /// 
     /// This endpoint retrieves platform accounts linked to user.
-    /// 
     /// It will query all linked platform accounts and result will be distinct & grouped, same platform we will pick oldest linked one.
-    /// 
-    /// Required valid user authorization.
     /// </summary>
     public class PublicListUserAllPlatformAccountsDistinctV3 : AccelByte.Sdk.Core.Operation
     {

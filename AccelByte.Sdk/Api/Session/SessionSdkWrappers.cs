@@ -145,6 +145,17 @@ namespace AccelByte.Sdk.Core
         }
         private Player? _Player = null;
 
+        public RecentPlayer RecentPlayer
+        {
+            get
+            {
+                if (_RecentPlayer == null)
+                    _RecentPlayer = new RecentPlayer(_SdkObject);
+                return _RecentPlayer;
+            }
+        }
+        private RecentPlayer? _RecentPlayer = null;
+
         internal SessionSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

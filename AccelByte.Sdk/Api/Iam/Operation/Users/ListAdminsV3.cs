@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// ListAdminsV3
     ///
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER [READ] permission.
-    /// 
     /// List all users that has admin role (role that has admin_role attribute set to true).
     /// 
     /// The endpoint will return all admin from all namespace when called from publisher namespace.

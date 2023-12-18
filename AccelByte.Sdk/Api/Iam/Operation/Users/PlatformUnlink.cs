@@ -16,68 +16,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformUnlink
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
-    /// 
-    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'.
-    /// 
-    /// 
-    /// 
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]_**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]_**
     /// 
     /// ## Supported platforms:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///           * steam
-    /// 
-    /// 
-    ///           * steamopenid
-    /// 
-    /// 
-    ///           * facebook
-    /// 
-    /// 
-    ///           * google
-    /// 
-    /// 
-    ///           * oculus
-    /// 
-    /// 
-    ///           * twitch
-    /// 
-    /// 
-    ///           * android
-    /// 
-    /// 
-    ///           * ios
-    /// 
-    /// 
-    ///           * device
-    /// 
-    /// 
-    ///           * justice : A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - **steam**
+    /// - **steamopenid**
+    /// - **facebook**
+    /// - **google**
+    /// - **oculus**
+    /// - **twitch**
+    /// - **android**
+    /// - **ios**
+    /// - **device**
+    /// - **justice**: A user might have several 'justiceâ platform on different namespaces. Thatâs why the platform_namespace need to be specified when the platform ID is âjusticeâ. The platform_namespace is the designated userâs namespace.
     /// Unlink user's account with platform. 'justice' platform might have multiple accounts from different namespaces linked. platform_namespace need to be specified when the platform ID is 'justice'.
-    /// 
     /// Unlinking justice platform will enable password token grant and password update.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

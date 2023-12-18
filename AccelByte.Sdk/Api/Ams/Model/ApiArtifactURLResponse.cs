@@ -7,13 +7,10 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Ams.Model
 {
-    public class ApiArtifactTypeSamplingRulesResponse : AccelByte.Sdk.Core.Model
+    public class ApiArtifactURLResponse : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("crashed")]
-        public ApiArtifactSamplingRuleResponse? Crashed { get; set; }
-
-        [JsonPropertyName("success")]
-        public ApiArtifactSamplingRuleResponse? Success { get; set; }
+        [JsonPropertyName("url")]
+        public string? Url { get; set; }
 
     }
 

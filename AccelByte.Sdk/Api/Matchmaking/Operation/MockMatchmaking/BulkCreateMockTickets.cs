@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// BulkCreateMockTickets
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Create]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Create and queue mock tickets into specified game mode's pool.
     /// The tickets input will be used as is.
     /// '

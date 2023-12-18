@@ -16,28 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RevokeUserV3
     ///
-    /// 
-    /// 
     /// This endpoint revokes all access tokens and refresh tokens a user has prior the revocation time.
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint requires authorized requests header with valid access token.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// It is a convenient feature for the developer (or admin) who wanted to revokes all user's access tokens and refresh tokens generated before some period of time.
-    /// 
-    /// 
-    /// 
-    /// 
     /// action code : 10707
     /// </summary>
     public class RevokeUserV3 : AccelByte.Sdk.Core.Operation

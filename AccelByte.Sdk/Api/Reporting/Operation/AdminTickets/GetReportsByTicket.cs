@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// getReportsByTicket
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [READ]
     /// List reports ordered by createdAt in descending order.
     /// </summary>
     public class GetReportsByTicket : AccelByte.Sdk.Core.Operation

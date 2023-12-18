@@ -52,20 +52,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void GetTradeHistoryByCriteria(GetTradeHistoryByCriteria input)
+        public Model.TradeActionPagingSlicedResult? GetTradeHistoryByCriteria(GetTradeHistoryByCriteria input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void GetTradeHistoryByTransactionId(GetTradeHistoryByTransactionId input)
+        public Model.TradeChainActionHistoryInfo? GetTradeHistoryByTransactionId(GetTradeHistoryByTransactionId input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.TradeChainActionHistoryInfo<T1>? GetTradeHistoryByTransactionId<T1>(GetTradeHistoryByTransactionId input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

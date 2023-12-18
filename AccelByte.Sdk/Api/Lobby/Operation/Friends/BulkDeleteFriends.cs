@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// bulkDeleteFriends
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [DELETE]` with scope `social`
-    /// 
-    /// friends request in a namespace.
+    /// Friends request in a namespace.
     /// </summary>
     public class BulkDeleteFriends : AccelByte.Sdk.Core.Operation
     {

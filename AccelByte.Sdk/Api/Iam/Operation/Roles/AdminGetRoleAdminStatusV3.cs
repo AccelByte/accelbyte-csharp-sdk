@@ -16,18 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRoleAdminStatusV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:ROLE [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Admin roles has its members listed in the role.
-    /// 
-    /// 
-    /// 
-    /// 
     /// action code: 10420
     /// </summary>
     public class AdminGetRoleAdminStatusV3 : AccelByte.Sdk.Core.Operation

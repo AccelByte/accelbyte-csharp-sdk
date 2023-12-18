@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminJoinPartyV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [UPDATE]` with scope `social`
-    /// 
-    /// admin join a player into a party.
+    /// Admin join a player into a party.
     /// </summary>
     public class AdminJoinPartyV1 : AccelByte.Sdk.Core.Operation
     {

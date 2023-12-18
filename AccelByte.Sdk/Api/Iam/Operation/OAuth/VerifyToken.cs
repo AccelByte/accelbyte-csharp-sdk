@@ -16,20 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// VerifyToken
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
     /// This endpoint requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret.
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/oauth/verify [POST]
-    /// 
-    /// 
-    ///           * Note: difference in V3 response:
-    ///     1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/oauth/verify [POST]_**
+    /// - **Note: difference in V3 response:**
+    /// 1. format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class VerifyToken : AccelByte.Sdk.Core.Operation

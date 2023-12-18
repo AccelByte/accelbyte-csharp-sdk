@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetListBanReasonV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:BAN [READ]'
-    /// 
-    /// 
     /// Ban reasons is the code available to justify ban assignment. It is applicable globally for any namespace.
-    /// 
-    /// 
     /// action code : 10202
     /// </summary>
     public class AdminGetListBanReasonV3 : AccelByte.Sdk.Core.Operation

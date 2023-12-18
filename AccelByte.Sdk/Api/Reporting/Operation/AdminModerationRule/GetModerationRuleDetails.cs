@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// getModerationRuleDetails
     ///
-    /// 
-    /// 
     /// This endpoint get moderation rule.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:RULE [READ]
     /// </summary>
     public class GetModerationRuleDetails : AccelByte.Sdk.Core.Operation
     {

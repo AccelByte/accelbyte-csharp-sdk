@@ -16,19 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DeleteRolePermission
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v4/admin/roles/{roleId}/permissions [DELETE]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/permissions/{resource}/{action} [DELETE]_**
+    /// - **Substitute endpoint: _/iam/v4/admin/roles/{roleId}/permissions [DELETE]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteRolePermission : AccelByte.Sdk.Core.Operation

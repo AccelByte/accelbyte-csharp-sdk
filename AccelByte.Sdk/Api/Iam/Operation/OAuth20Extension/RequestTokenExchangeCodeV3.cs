@@ -18,16 +18,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This endpoint is being used to request the code to exchange a new token.
     /// The target new token's clientId should NOT be same with current using one.
-    /// 
-    /// It requires a valid user token.
-    /// 
     /// Path namespace should be target namespace.
-    /// 
     /// Client ID should match the target namespace.
     /// 
-    /// 
-    /// 
-    /// The code in response can be consumed by /iam/v3/token/exchange
+    /// The code in response can be consumed by `/iam/v3/token/exchange`
     /// </summary>
     public class RequestTokenExchangeCodeV3 : AccelByte.Sdk.Core.Operation
     {

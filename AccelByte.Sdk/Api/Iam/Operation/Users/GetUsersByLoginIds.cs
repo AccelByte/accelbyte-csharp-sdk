@@ -16,24 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUsersByLoginIds
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * Substitute endpoint(query by email list): /iam/v3/public/namespaces/{namespace}/users/bulk/basic [POST]
-    /// 
-    ///   * Substitute endpoint(query by user id list): /iam/v3/admin/namespaces/{namespace}/users/search/bulk [POST]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER [READ]'
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint(query by email list): _/iam/v3/public/namespaces/{namespace}/users/bulk/basic [POST]_**
+    /// - **Substitute endpoint(query by user id list): _/iam/v3/admin/namespaces/{namespace}/users/search/bulk [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUsersByLoginIds : AccelByte.Sdk.Core.Operation

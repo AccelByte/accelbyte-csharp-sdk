@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("autoCalcEstimatedPrice")]
+        public bool? AutoCalcEstimatedPrice { get; set; }
+
         [SdkCommandArgument("language")]
         public string? Language { get; set; }
 
@@ -57,6 +60,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicListActiveSections.Builder;
 
+            if (AutoCalcEstimatedPrice != null)
+                opBuilder.SetAutoCalcEstimatedPrice((bool)AutoCalcEstimatedPrice);
             if (Language != null)
                 opBuilder.SetLanguage((string)Language);
             if (Region != null)

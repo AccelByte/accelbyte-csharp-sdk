@@ -52,13 +52,13 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             get { return Operation.AdminProfanityDelete.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsDictionaryQueryResult? AdminProfanityQuery(AdminProfanityQuery input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -94,7 +94,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -112,15 +112,16 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminProfanityDelete(AdminProfanityDelete input) {
+        public void AdminProfanityDelete(AdminProfanityDelete input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddCountryBlacklistV3
     ///
-    /// Admin update country blacklist:
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MISC [UPDATE]
+    /// Admin update country blacklist
     /// </summary>
     public class AdminAddCountryBlacklistV3 : AccelByte.Sdk.Core.Operation
     {

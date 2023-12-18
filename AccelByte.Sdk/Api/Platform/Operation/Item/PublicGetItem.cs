@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<PublicGetItemBuilder>
         {
 
+            public bool? AutoCalcEstimatedPrice { get; set; }
+
             public string? Language { get; set; }
 
             public bool? PopulateBundle { get; set; }
@@ -47,6 +49,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal PublicGetItemBuilder() { }
 
+
+            public PublicGetItemBuilder SetAutoCalcEstimatedPrice(bool _autoCalcEstimatedPrice)
+            {
+                AutoCalcEstimatedPrice = _autoCalcEstimatedPrice;
+                return this;
+            }
 
             public PublicGetItemBuilder SetLanguage(string _language)
             {
@@ -101,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
 
+            if (builder.AutoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(builder.AutoCalcEstimatedPrice)!;
             if (builder.Language is not null) QueryParams["language"] = builder.Language;
             if (builder.PopulateBundle != null) QueryParams["populateBundle"] = Convert.ToString(builder.PopulateBundle)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
@@ -118,6 +127,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public PublicGetItem(
             string itemId,
             string namespace_,
+            bool? autoCalcEstimatedPrice,
             string? language,
             bool? populateBundle,
             string? region,
@@ -127,6 +137,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
 
+            if (autoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(autoCalcEstimatedPrice)!;
             if (language is not null) QueryParams["language"] = language;
             if (populateBundle != null) QueryParams["populateBundle"] = Convert.ToString(populateBundle)!;
             if (region is not null) QueryParams["region"] = region;

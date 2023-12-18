@@ -16,16 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetRoles
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE [READ]'
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles [GET]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles [GET]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetRoles : AccelByte.Sdk.Core.Operation

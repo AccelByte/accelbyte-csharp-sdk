@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminBulkGetUsersPlatform
     ///
-    /// 
-    /// 
     /// Notes:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///             * Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
-    /// 
-    /// 
-    ///             * This endpoint bulk get users' basic info by userId, max allowed 100 at a time
-    /// 
-    /// 
-    ///             * If namespace is game, will search by game user Id, other wise will search by publisher namespace
+    /// - This endpoint bulk get users' basic info by userId, max allowed 100 at a time
+    /// - If namespace is game, will search by game user Id, other wise will search by publisher namespace
     /// </summary>
     public class AdminBulkGetUsersPlatform : AccelByte.Sdk.Core.Operation
     {

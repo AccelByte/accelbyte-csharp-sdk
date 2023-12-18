@@ -16,18 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetListJusticePlatformAccounts
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/{userId}/platforms/justice [GET]
-    /// 
-    /// 
-    /// 
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/{userId}/platforms/justice [GET]_**
     /// 
     /// This endpoint gets list justice platform account by providing publisher namespace and publisher userID.
     /// </summary>

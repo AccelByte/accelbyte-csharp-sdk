@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteClientPermissionV3
     ///
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:CLIENT [UPDATE]'
     /// action code : 10304
     /// </summary>
     public class AdminDeleteClientPermissionV3 : AccelByte.Sdk.Core.Operation

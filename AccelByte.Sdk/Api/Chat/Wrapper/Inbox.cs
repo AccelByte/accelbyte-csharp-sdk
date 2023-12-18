@@ -72,23 +72,23 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             get { return Operation.AdminGetInboxStats.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public List<Model.ModelsGetInboxCategoriesResponseItem>? AdminGetInboxCategories(AdminGetInboxCategories input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public List<Model.ModelsGetInboxCategoriesResponseItem<T1>>? AdminGetInboxCategories<T1>(AdminGetInboxCategories input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -97,33 +97,35 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsAddInboxCategoryResponse<T1>? AdminAddInboxCategory<T1>(AdminAddInboxCategory input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteInboxCategory(AdminDeleteInboxCategory input) {
+        public void AdminDeleteInboxCategory(AdminDeleteInboxCategory input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateInboxCategory(AdminUpdateInboxCategory input) {
+        public void AdminUpdateInboxCategory(AdminUpdateInboxCategory input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -132,15 +134,16 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteInboxMessage(AdminDeleteInboxMessage input) {
+        public void AdminDeleteInboxMessage(AdminDeleteInboxMessage input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -149,7 +152,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -158,17 +161,17 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        
+
         public Model.ModelsSaveInboxMessageResponse<T1>? AdminSaveInboxMessage<T1>(AdminSaveInboxMessage input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse<T1>(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -177,7 +180,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -186,15 +189,16 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminUpdateInboxMessage(AdminUpdateInboxMessage input) {
+        public void AdminUpdateInboxMessage(AdminUpdateInboxMessage input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -203,7 +207,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -212,7 +216,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

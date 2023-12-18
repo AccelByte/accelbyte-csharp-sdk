@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","exportconfig")]
-    public class ExportConfigCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "exportconfig")]
+    public class ExportConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "ExportConfig"; } }
+        public string OperationName { get { return "ExportConfig"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             List<AccelByte.Sdk.Api.Chat.Model.ModelsConfigExport>? response = wrapper.ExportConfig(operation);
             if (response == null)
                 return "No response from server.";

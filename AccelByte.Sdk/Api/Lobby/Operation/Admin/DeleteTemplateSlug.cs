@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteTemplateSlug
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [DELETE]` with scope `social`
-    /// 
     /// Delete localization template
     /// </summary>
     public class DeleteTemplateSlug : AccelByte.Sdk.Core.Operation

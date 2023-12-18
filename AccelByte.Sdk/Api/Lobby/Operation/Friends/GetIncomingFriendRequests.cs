@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// get incoming friend requests
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [READ]` with scope `social`
-    /// 
-    /// get list of incoming friend requests.
+    /// Get list of incoming friend requests.
     /// </summary>
     public class GetIncomingFriendRequests : AccelByte.Sdk.Core.Operation
     {

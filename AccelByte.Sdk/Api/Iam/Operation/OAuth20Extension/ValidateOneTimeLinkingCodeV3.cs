@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// ValidateOneTimeLinkingCodeV3
     ///
-    /// 
-    /// 
     /// This endpoint is being used to validate one time link code.
     /// </summary>
     public class ValidateOneTimeLinkingCodeV3 : AccelByte.Sdk.Core.Operation

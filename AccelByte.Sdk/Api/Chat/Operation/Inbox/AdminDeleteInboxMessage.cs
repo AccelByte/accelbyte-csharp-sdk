@@ -52,8 +52,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminDeleteInboxMessage op = new AdminDeleteInboxMessage(this,
-                    messageId,                    
-                    namespace_                    
+                    messageId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -70,33 +70,33 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["messageId"] = messageId;
             PathParams["namespace"] = namespace_;
-            
-            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
-            
 
-            
-            
-            
+            if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminDeleteInboxMessage(
-            string messageId,            
-            string namespace_,            
-            bool? force            
+            string messageId,
+            string namespace_,
+            bool? force
         )
         {
             PathParams["messageId"] = messageId;
             PathParams["namespace"] = namespace_;
-            
-            if (force != null) QueryParams["force"] = Convert.ToString(force)!;
-            
 
-            
-            
-            
+            if (force != null) QueryParams["force"] = Convert.ToString(force)!;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -111,16 +111,16 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

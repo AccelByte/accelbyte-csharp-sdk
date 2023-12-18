@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "PublicGetMyUserV3"; } }
 
+        [SdkCommandArgument("includeAllPlatforms")]
+        public bool? IncludeAllPlatforms { get; set; }
+
         public PublicGetMyUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -39,6 +42,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.PublicGetMyUserV3.Builder;
 
+            if (IncludeAllPlatforms != null)
+                opBuilder.SetIncludeAllPlatforms((bool)IncludeAllPlatforms);
 
 
 

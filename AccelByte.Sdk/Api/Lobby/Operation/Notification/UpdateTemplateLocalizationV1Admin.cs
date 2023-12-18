@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// updateTemplateLocalizationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [UPDATE]` with scope `social`
-    /// 
-    /// update template localization
+    /// Update template localization
     /// 
     /// Action Code: 50208
     /// </summary>

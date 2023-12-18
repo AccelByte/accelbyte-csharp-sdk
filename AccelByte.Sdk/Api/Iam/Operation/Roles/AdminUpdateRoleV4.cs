@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateRoleV4
     ///
-    /// Required permission ADMIN:ROLE [UPDATE]
-    /// 
     /// Update role request body:
     /// - roleName: specify role name, alphanumeric, cannot have special character (required)
     /// - adminRole: specify if role is for admin user (default false)

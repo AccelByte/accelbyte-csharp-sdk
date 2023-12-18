@@ -16,20 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminVerifyAccountV3
     ///
-    /// 
-    /// 
     /// Will verify account and consume code if validateOnly is set false in request body
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
-    /// 
-    /// 
     /// Redeems a verification code sent to a user to verify the user's contact address is correct
-    /// 
-    /// 
-    /// Available ContactType : email or phone
+    /// Available ContactType : **email** or **phone**
     /// </summary>
     public class AdminVerifyAccountV3 : AccelByte.Sdk.Core.Operation
     {

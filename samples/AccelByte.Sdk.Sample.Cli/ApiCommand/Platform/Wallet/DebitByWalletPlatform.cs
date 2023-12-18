@@ -37,8 +37,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public DebitByWalletPlatformRequest Body { get; set; } = new DebitByWalletPlatformRequest();
+        [SdkCommandData("request")]
+        public DebitByWalletPlatformRequest Request { get; set; } = new DebitByWalletPlatformRequest();
 
         public DebitByWalletPlatformCommand(AccelByteSDK sdk)
         {
@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DebitByWalletPlatform.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.DebitByWalletPlatformRequest)Body);
 
 
 
             DebitByWalletPlatform operation = opBuilder.Build(
+                Request,
                 CurrencyCode,
                 Namespace,
                 UserId

@@ -16,18 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserBanHistoryV3
     ///
-    /// Required valid user authorization.
-    /// 
-    /// 
     /// Notes:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 * This endpoint retrieve the first page of the data if after and before parameters is empty
-    /// 
-    /// 
-    ///                 * The pagination is not working yet
+    /// - This endpoint retrieve the first page of the data if after and before parameters is empty
+    /// - **The pagination is not working yet**
     /// </summary>
     public class PublicGetUserBanHistoryV3 : AccelByte.Sdk.Core.Operation
     {

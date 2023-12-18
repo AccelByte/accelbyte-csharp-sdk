@@ -16,35 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RevokeAUser
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint revokes a user.
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint requires all requests to have Authorization header set with Bearer access authentication with valid access token.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER:{userID}:ADMIN [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// When other clients know that the userID has been revoked and the token is issued before the revocation, forcing a new token will contain banned permissions.
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/oauth/admin/namespaces/{namespace}/users/{userId}/revoke [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RevokeAUser : AccelByte.Sdk.Core.Operation

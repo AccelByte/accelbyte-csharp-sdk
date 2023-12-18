@@ -387,6 +387,39 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlement(op);
         }
+        public static Platform.Model.EntitlementIfc? Execute(
+            this RevokeUserEntitlementByUseCount.RevokeUserEntitlementByUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeUserEntitlementByUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlementByUseCount(op);
+        }
+        public static Platform.Model.EntitlementPrechekResult? Execute(
+            this PreCheckRevokeUserEntitlementByUseCount.PreCheckRevokeUserEntitlementByUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId,
+            int quantity
+        )
+        {
+            PreCheckRevokeUserEntitlementByUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId,
+                quantity
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PreCheckRevokeUserEntitlementByUseCount(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this RevokeUseCount.RevokeUseCountBuilder builder,
             string entitlementId,

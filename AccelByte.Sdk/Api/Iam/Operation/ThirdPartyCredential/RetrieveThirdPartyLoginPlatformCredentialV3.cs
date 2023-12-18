@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RetrieveThirdPartyLoginPlatformCredentialV3
     ///
-    /// This is the API to Get 3rd Platform Credential. It needs ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:CLIENT [READ] resource
+    /// This is the API to Get 3rd Platform Credential.
     /// </summary>
     public class RetrieveThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// updateTicketResolutions
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [UPDATE]
     /// Update ticket resolution status to either OPEN or CLOSED. It is mandatory to provide notes
     /// </summary>
     public class UpdateTicketResolutions : AccelByte.Sdk.Core.Operation

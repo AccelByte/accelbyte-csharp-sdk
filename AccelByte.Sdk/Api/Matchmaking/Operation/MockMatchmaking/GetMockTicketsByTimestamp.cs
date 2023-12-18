@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetMockTicketsByTimestamp
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Read mock tickets after the specified timestamp in a channel.
     /// '
     /// </summary>

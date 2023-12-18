@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminCreateTestUsersV4
     ///
     /// Create test users and not send verification code email.
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:USER
     /// </summary>
     public class AdminCreateTestUsersV4 : AccelByte.Sdk.Core.Operation
     {

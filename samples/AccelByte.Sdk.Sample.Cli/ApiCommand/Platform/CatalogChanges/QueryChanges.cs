@@ -67,6 +67,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("updatedAtStart")]
         public string? UpdatedAtStart { get; set; }
 
+        [SdkCommandArgument("withTotal")]
+        public bool? WithTotal { get; set; }
+
         public QueryChangesCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -100,6 +103,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetUpdatedAtEnd((string)UpdatedAtEnd);
             if (UpdatedAtStart != null)
                 opBuilder.SetUpdatedAtStart((string)UpdatedAtStart);
+            if (WithTotal != null)
+                opBuilder.SetWithTotal((bool)WithTotal);
 
 
 
@@ -110,7 +115,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.CatalogChangePagingSlicedResult? response = wrapper.QueryChanges(operation);
+            AccelByte.Sdk.Api.Platform.Model.CatalogChangePagingResult? response = wrapper.QueryChanges(operation);
             if (response == null)
                 return "No response from server.";
 

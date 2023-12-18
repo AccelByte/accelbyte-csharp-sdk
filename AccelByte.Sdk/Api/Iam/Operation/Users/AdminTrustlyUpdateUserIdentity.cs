@@ -16,28 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminTrustlyUpdateUserIdentity
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:IDENTITY [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint ONLY accept Client Token
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint is utilized for specific scenarios where email notifications are disabled
-    /// 
-    /// 
-    /// 
-    /// 
+    /// This endpoint ONLY accept **Client Token**
+    /// This endpoint is utilized for specific scenarios where **email notifications are disabled**
     /// The user's email will be marked as verified
-    /// 
-    /// 
-    /// 
     /// 
     /// action code : 10103
     /// </summary>

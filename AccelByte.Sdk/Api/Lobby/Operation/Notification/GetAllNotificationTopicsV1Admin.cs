@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// getAllNotificationTopicsV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [READ]` with scope `social`
-    /// 
-    /// get topic by namespace.
+    /// Get topic by namespace.
     /// 
     /// Action Code: 50213
     /// </summary>

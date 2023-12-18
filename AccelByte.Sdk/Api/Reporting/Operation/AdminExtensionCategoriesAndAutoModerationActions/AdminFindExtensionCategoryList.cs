@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminFindExtensionCategoryList
     ///
-    /// Required permission: ADMIN:REPORTINGCONFIG [READ]
     /// Get a list of extension category data with the specified name
     /// </summary>
     public class AdminFindExtensionCategoryList : AccelByte.Sdk.Core.Operation

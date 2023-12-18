@@ -94,6 +94,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactions(op);
         }
+        public static void Execute(
+            this CheckBalance.CheckBalanceBuilder builder,
+            DebitByWalletPlatformRequest request,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            CheckBalance op = builder.Build(
+                request,
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalance(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this CheckWallet.CheckWalletBuilder builder,
@@ -129,12 +146,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlatformWallet? Execute(
             this DebitByWalletPlatform.DebitByWalletPlatformBuilder builder,
+            DebitByWalletPlatformRequest request,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             DebitByWalletPlatform op = builder.Build(
+                request,
                 currencyCode,
                 namespace_,
                 userId

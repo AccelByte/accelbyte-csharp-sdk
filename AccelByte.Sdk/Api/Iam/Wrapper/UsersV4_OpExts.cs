@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminCreateTestUsersV4(op);
         }
+        public static void Execute(
+            this AdminBulkUpdateUserAccountTypeV4.AdminBulkUpdateUserAccountTypeV4Builder builder,
+            ModelBulkAccountTypeUpdateRequestV4 body,
+            string namespace_
+        )
+        {
+            AdminBulkUpdateUserAccountTypeV4 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminBulkUpdateUserAccountTypeV4(op);
+        }
         public static Iam.Model.ModelListValidUserIDResponseV4? Execute(
             this AdminBulkCheckValidUserIDV4.AdminBulkCheckValidUserIDV4Builder builder,
             ModelCheckValidUserIDRequestV4 body,

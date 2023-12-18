@@ -17,26 +17,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Change2FAMethod
     ///
     /// Change 2FA method
-    /// 
-    /// 
-    /// 
     /// This endpoint is used for change 2FA method. Only enabled methods are accepted.
-    /// 
-    /// 
-    /// 
-    /// 
     /// Supported methods:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///               * authenticator
-    /// 
-    /// 
-    ///               * backupCode
-    /// 
-    /// 
-    ///               * email
+    /// - authenticator
+    /// - backupCode
+    /// - email
     /// </summary>
     public class Change2faMethod : AccelByte.Sdk.Core.Operation
     {

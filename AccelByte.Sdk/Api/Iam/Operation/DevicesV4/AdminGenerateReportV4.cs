@@ -16,15 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGenerateReportV4
     ///
-    /// 
-    /// 
-    /// This is the endpoint for an admin to generate device report.
-    /// 
-    /// 
-    /// 
-    /// Required permission
-    /// 
-    ///                                                                         'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+    /// This is the endpoint for an admin to generate device report
     /// </summary>
     public class AdminGenerateReportV4 : AccelByte.Sdk.Core.Operation
     {

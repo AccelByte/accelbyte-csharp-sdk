@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRolesV3
     ///
-    /// Required permission 'ADMIN:ROLE [READ]'
-    /// 
-    /// 
     /// action code: 10414
     /// </summary>
     public class AdminGetRolesV3 : AccelByte.Sdk.Core.Operation

@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserByEmailAddressV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:USER [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint search user who owns the given email address
-    /// 
-    /// 
-    /// 
     /// action code : 10132
     /// </summary>
     public class AdminGetUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation

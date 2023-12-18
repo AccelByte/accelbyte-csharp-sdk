@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.ExportStatCycle.Builder.SetWrapperObject(this); }
         }
+        public ImportStatCycle.ImportStatCycleBuilder ImportStatCycleOp
+        {
+            get { return Operation.ImportStatCycle.Builder.SetWrapperObject(this); }
+        }
         public GetStatCycle.GetStatCycleBuilder GetStatCycleOp
         {
             get { return Operation.GetStatCycle.Builder.SetWrapperObject(this); }
@@ -97,6 +101,15 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public Stream? ExportStatCycle(ExportStatCycle input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.StatImportInfo? ImportStatCycle(ImportStatCycle input)
         {
             var response = _sdk.RunRequest(input);
 

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// ExportChannels
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Export channels configuration to file.
     /// 
     /// Action Code: 510114

@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminFindActionList
     ///
-    /// Required permission: ADMIN:REPORTINGCONFIG [READ]
     /// Get a list of auto moderation actions
     /// </summary>
     public class AdminFindActionList : AccelByte.Sdk.Core.Operation

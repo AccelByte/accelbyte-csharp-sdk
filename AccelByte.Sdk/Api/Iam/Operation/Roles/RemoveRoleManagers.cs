@@ -16,16 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RemoveRoleManagers
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [DELETE]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/managers [DELETE]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RemoveRoleManagers : AccelByte.Sdk.Core.Operation

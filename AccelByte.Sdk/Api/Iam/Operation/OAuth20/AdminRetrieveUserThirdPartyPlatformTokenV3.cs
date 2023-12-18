@@ -17,63 +17,23 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminRetrieveUserThirdPartyPlatformTokenV3
     ///
     /// Admin Retrieve User Third Party Platform Token
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint used for retrieving third party platform token for user that login using third party,
     /// if user have not link requested platform in game namespace, will try to retrieving third party platform token from publisher namespace.
     /// Passing platform group name or it's member will return same access token that can be used across the platform members.
     /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// Notes:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///               * Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId} [READ]
-    /// 
-    /// 
-    /// 
-    /// 
     /// The third party platform and platform group covered for this is:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///               * (psn) ps4web
-    /// 
-    /// 
-    ///               * (psn) ps4
-    /// 
-    /// 
-    ///               * (psn) ps5
-    /// 
-    /// 
-    ///               * epicgames
-    /// 
-    /// 
-    ///               * twitch
-    /// 
-    /// 
-    ///               * awscognito
-    /// 
-    /// 
-    ///               *
-    /// 
-    ///               * eaorigin
-    /// 
-    /// 
-    ///               * snapchat
-    /// 
-    /// 
-    ///               * twitch
-    /// 
-    /// 
-    ///               * live
+    /// - (psn) ps4web
+    /// - (psn) ps4
+    /// - (psn) ps5
+    /// - epicgames
+    /// - twitch
+    /// - awscognito
+    /// -
+    /// - eaorigin
+    /// - snapchat
+    /// - twitch
+    /// - live
     /// </summary>
     public class AdminRetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {

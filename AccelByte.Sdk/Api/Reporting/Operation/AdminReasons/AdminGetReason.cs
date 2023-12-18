@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminGetReason
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [READ]
+    /// This endpoint get a single reason.
     /// </summary>
     public class AdminGetReason : AccelByte.Sdk.Core.Operation
     {

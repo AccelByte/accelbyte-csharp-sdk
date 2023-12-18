@@ -16,21 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// upgradeHeadlessAccount
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
     /// 
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/headless/verify [POST]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'NAMESPACE:{namespace}:USER:{userId} [UPDATE]'
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/headless/verify [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpgradeHeadlessAccount : AccelByte.Sdk.Core.Operation

@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<PublicSearchItemsBuilder>
         {
 
+            public bool? AutoCalcEstimatedPrice { get; set; }
+
             public PublicSearchItemsItemType? ItemType { get; set; }
 
             public int? Limit { get; set; }
@@ -49,6 +51,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal PublicSearchItemsBuilder() { }
 
+
+            public PublicSearchItemsBuilder SetAutoCalcEstimatedPrice(bool _autoCalcEstimatedPrice)
+            {
+                AutoCalcEstimatedPrice = _autoCalcEstimatedPrice;
+                return this;
+            }
 
             public PublicSearchItemsBuilder SetItemType(PublicSearchItemsItemType _itemType)
             {
@@ -111,6 +119,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.AutoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(builder.AutoCalcEstimatedPrice)!;
             if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -130,6 +139,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public PublicSearchItems(
             string namespace_,
+            bool? autoCalcEstimatedPrice,
             PublicSearchItemsItemType? itemType,
             int? limit,
             int? offset,
@@ -141,6 +151,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (autoCalcEstimatedPrice != null) QueryParams["autoCalcEstimatedPrice"] = Convert.ToString(autoCalcEstimatedPrice)!;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;

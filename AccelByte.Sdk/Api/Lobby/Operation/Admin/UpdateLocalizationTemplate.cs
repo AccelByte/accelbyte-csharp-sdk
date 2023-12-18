@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// updateLocalizationTemplate
     ///
-    /// Required permission : `NAMESPACE:{namespace}:TEMPLATE [UPDATE]` with scope `social`
-    /// 
     /// Modify draft template
     /// </summary>
     public class UpdateLocalizationTemplate : AccelByte.Sdk.Core.Operation

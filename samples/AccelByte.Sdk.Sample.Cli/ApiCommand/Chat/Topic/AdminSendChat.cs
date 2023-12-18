@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminsendchat")]
-    public class AdminSendChatCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminsendchat")]
+    public class AdminSendChatCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminSendChat"; } }
+        public string OperationName { get { return "AdminSendChat"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ApiSendChatParams Body { get; set; } = new ApiSendChatParams();
-                
+
         public AdminSendChatCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             List<AccelByte.Sdk.Api.Chat.Model.ModelsChatMessageResponse>? response = wrapper.AdminSendChat(operation);
             if (response == null)
                 return "No response from server.";

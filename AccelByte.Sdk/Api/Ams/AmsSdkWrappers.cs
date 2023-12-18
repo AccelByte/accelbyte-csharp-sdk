@@ -46,6 +46,17 @@ namespace AccelByte.Sdk.Core
         }
         private Account? _Account = null;
 
+        public Artifacts Artifacts
+        {
+            get
+            {
+                if (_Artifacts == null)
+                    _Artifacts = new Artifacts(_SdkObject);
+                return _Artifacts;
+            }
+        }
+        private Artifacts? _Artifacts = null;
+
         public Fleets Fleets
         {
             get
@@ -57,17 +68,6 @@ namespace AccelByte.Sdk.Core
         }
         private Fleets? _Fleets = null;
 
-        public Images Images
-        {
-            get
-            {
-                if (_Images == null)
-                    _Images = new Images(_SdkObject);
-                return _Images;
-            }
-        }
-        private Images? _Images = null;
-
         public Servers Servers
         {
             get
@@ -78,6 +78,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Servers? _Servers = null;
+
+        public Images Images
+        {
+            get
+            {
+                if (_Images == null)
+                    _Images = new Images(_SdkObject);
+                return _Images;
+            }
+        }
+        private Images? _Images = null;
 
         public AMSQoS AMSQoS
         {

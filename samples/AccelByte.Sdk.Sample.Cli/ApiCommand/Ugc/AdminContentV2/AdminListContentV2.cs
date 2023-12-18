@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("isOfficial")]
+        public bool? IsOfficial { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -63,6 +66,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ugc
 
             var opBuilder = AccelByte.Sdk.Api.Ugc.Operation.AdminListContentV2.Builder;
 
+            if (IsOfficial != null)
+                opBuilder.SetIsOfficial((bool)IsOfficial);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (Name != null)

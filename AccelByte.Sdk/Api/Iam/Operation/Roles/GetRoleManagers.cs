@@ -16,21 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetRoleManagers
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE [READ]'
-    /// 
-    /// 
     /// Role can only be assigned to other users by the role's manager.
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/managers [GET]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/managers [GET]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetRoleManagers : AccelByte.Sdk.Core.Operation

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetStatData
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get a channel's stat data (mean, stddev, min, max) according to the stats collected from statistics service.
     /// '
     /// </summary>

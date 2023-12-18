@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","admintopiclist")]
-    public class AdminTopicListCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "admintopiclist")]
+    public class AdminTopicListCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminTopicList"; } }
+        public string OperationName { get { return "AdminTopicList"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             List<AccelByte.Sdk.Api.Chat.Model.ModelsTopicResponse>? response = wrapper.AdminTopicList(operation);
             if (response == null)
                 return "No response from server.";

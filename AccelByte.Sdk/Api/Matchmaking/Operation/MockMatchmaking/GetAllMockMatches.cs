@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetAllMockMatches
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Read all mock matches in a channel resulted from matching mock tickets.
     /// '
     /// </summary>

@@ -84,8 +84,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminTopicMembers op = new AdminTopicMembers(this,
-                    namespace_,                    
-                    topic                    
+                    namespace_,
+                    topic
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -102,45 +102,45 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
+
             if (builder.IsBanned != null) QueryParams["isBanned"] = Convert.ToString(builder.IsBanned)!;
             if (builder.IsModerator != null) QueryParams["isModerator"] = Convert.ToString(builder.IsModerator)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.ShardId is not null) QueryParams["shardId"] = builder.ShardId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminTopicMembers(
-            string namespace_,            
-            string topic,            
-            bool? isBanned,            
-            bool? isModerator,            
-            long? limit,            
-            long? offset,            
-            string? shardId            
+            string namespace_,
+            string topic,
+            bool? isBanned,
+            bool? isModerator,
+            long? limit,
+            long? offset,
+            string? shardId
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
+
             if (isBanned != null) QueryParams["isBanned"] = Convert.ToString(isBanned)!;
             if (isModerator != null) QueryParams["isModerator"] = Convert.ToString(isModerator)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (shardId is not null) QueryParams["shardId"] = shardId;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -155,9 +155,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsTopicMemberWithPaginationResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -173,9 +173,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsTopicMemberWithPaginationResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

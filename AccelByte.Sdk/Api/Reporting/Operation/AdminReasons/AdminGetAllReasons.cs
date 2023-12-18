@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminGetAllReasons
     ///
-    /// 
-    /// 
     /// This endpoint get all reasons without pagination.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:REASON [READ]
     /// </summary>
     public class AdminGetAllReasons : AccelByte.Sdk.Core.Operation
     {

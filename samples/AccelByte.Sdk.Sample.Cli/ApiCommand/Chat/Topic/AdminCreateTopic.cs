@@ -19,21 +19,21 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","admincreatetopic")]
-    public class AdminCreateTopicCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "admincreatetopic")]
+    public class AdminCreateTopicCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminCreateTopic"; } }
+        public string OperationName { get { return "AdminCreateTopic"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ApiCreateTopicParams Body { get; set; } = new ApiCreateTopicParams();
-                
+
         public AdminCreateTopicCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ApiCreateTopicResponse? response = wrapper.AdminCreateTopic(operation);
             if (response == null)
                 return "No response from server.";

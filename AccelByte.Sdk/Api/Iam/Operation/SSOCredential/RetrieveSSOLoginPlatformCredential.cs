@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RetrieveSSOLoginPlatformCredential
     ///
-    /// This is the API to Get SSO Platform Credential. It needs ADMIN:NAMESPACE:{namespace}:PLATFORM:{platformId}:SSO [READ] resource
+    /// This is the API to Get SSO Platform Credential.
     /// </summary>
     public class RetrieveSSOLoginPlatformCredential : AccelByte.Sdk.Core.Operation
     {

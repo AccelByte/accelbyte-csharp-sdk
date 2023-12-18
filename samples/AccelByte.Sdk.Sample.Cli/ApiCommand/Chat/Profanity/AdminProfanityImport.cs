@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminprofanityimport")]
-    public class AdminProfanityImportCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminprofanityimport")]
+    public class AdminProfanityImportCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminProfanityImport"; } }
+        public string OperationName { get { return "AdminProfanityImport"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandFile("file")]
         public Stream File { get; set; } = new MemoryStream();
-                    
+
         public AdminProfanityImportCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsDictionaryImportResult? response = wrapper.AdminProfanityImport(operation);
             if (response == null)
                 return "No response from server.";

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// CleanAllMocks
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Update]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Delete all mock tickets and matches in a channel.
     /// '
     /// </summary>

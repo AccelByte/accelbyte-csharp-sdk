@@ -56,6 +56,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ExportStatCycle(op);
         }
+        public static Social.Model.StatImportInfo? Execute(
+            this ImportStatCycle.ImportStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            ImportStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ImportStatCycle(op);
+        }
         public static Social.Model.StatCycleInfo? Execute(
             this GetStatCycle.GetStatCycleBuilder builder,
             string cycleId,

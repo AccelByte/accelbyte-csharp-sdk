@@ -15,8 +15,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("currencyNamespace")]
         public string? CurrencyNamespace { get; set; }
 
+        [JsonPropertyName("discountExpireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? DiscountExpireAt { get; set; }
+
+        [JsonPropertyName("discountPurchaseAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? DiscountPurchaseAt { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
+
+        [JsonPropertyName("expireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? ExpireAt { get; set; }
 
         [JsonPropertyName("price")]
         public int? Price { get; set; }
@@ -24,6 +36,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("priceDetails")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<SubItemAvailablePrice>? PriceDetails { get; set; }
+
+        [JsonPropertyName("purchaseAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? PurchaseAt { get; set; }
 
     }
 

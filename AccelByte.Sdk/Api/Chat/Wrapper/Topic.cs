@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         {
             get { return Operation.AdminChannelTopicInfo.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminTopicChatHistory.AdminTopicChatHistoryBuilder AdminTopicChatHistoryOp
         {
             get { return Operation.AdminTopicChatHistory.Builder.SetWrapperObject(this); }
@@ -137,13 +137,13 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             get { return Operation.PublicUnmuteUser.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ModelsChatMessageWithPaginationResponse? AdminChatHistory(AdminChatHistory input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -152,7 +152,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -161,7 +161,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -170,7 +170,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -179,7 +179,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -188,7 +188,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -197,7 +197,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -206,7 +206,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -215,7 +215,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -233,36 +233,37 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsChatMessageWithPaginationResponse? AdminTopicChatHistory(AdminTopicChatHistory input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
         public List<Model.ModelsChatMessageResponse>? AdminSendChat(AdminSendChat input)
         {
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void AdminDeleteChat(AdminDeleteChat input) {
+        public void AdminDeleteChat(AdminDeleteChat input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -271,7 +272,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -280,7 +281,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -289,7 +290,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -298,7 +299,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -307,7 +308,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -316,7 +317,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -325,7 +326,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -334,7 +335,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -343,7 +344,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -352,7 +353,7 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -361,23 +362,25 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicDeleteChat(PublicDeleteChat input) {
+        public void PublicDeleteChat(PublicDeleteChat input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicMuteUser(PublicMuteUser input) {
+        public void PublicMuteUser(PublicMuteUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -386,15 +389,16 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public void PublicUnmuteUser(PublicUnmuteUser input) {
+        public void PublicUnmuteUser(PublicUnmuteUser input)
+        {
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetThirdPartyConfig
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:THIRDPARTY:CONFIG [READ]` with scope `social`
-    /// 
-    /// get third party config for specified namespace.
+    /// Get third party config for specified namespace.
     /// </summary>
     public class AdminGetThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {

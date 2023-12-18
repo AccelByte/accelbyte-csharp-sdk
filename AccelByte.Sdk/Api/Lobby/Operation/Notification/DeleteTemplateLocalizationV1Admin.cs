@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// deleteTemplateLocalizationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [DELETE]` with scope `social`
-    /// 
-    /// delete template localization
+    /// Delete template localization
     /// 
     /// Action Code: 50209
     /// </summary>

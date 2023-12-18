@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// QueueSessionHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:SESSION [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Queues joinable session so that it will be matched with player's match request tickets.
     /// The session queued must be in a channel/game mode that is set to have joinable flag.
     /// The session will be in queue until it is full or expired.

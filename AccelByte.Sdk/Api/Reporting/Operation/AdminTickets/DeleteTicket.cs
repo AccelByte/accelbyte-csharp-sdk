@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// deleteTicket
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [DELETE]
     /// This endpoint will delete ticket and all its reports.
     /// </summary>
     public class DeleteTicket : AccelByte.Sdk.Core.Operation

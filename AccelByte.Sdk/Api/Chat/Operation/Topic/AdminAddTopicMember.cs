@@ -46,10 +46,10 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminAddTopicMember op = new AdminAddTopicMember(this,
-                    body,                    
-                    namespace_,                    
-                    topic,                    
-                    userId                    
+                    body,
+                    namespace_,
+                    topic,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -69,35 +69,35 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminAddTopicMember(
-            string namespace_,            
-            string topic,            
-            string userId,            
-            Model.ApiAddMemberParams body            
+            string namespace_,
+            string topic,
+            string userId,
+            Model.ApiAddMemberParams body
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -112,9 +112,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.MessageActionAddUserToTopicResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -130,9 +130,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.MessageActionAddUserToTopicResult>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

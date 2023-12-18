@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminremovetopicmember")]
-    public class AdminRemoveTopicMemberCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminremovetopicmember")]
+    public class AdminRemoveTopicMemberCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminRemoveTopicMember"; } }
+        public string OperationName { get { return "AdminRemoveTopicMember"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 UserId
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.MessageActionAddUserToTopicResult? response = wrapper.AdminRemoveTopicMember(operation);
             if (response == null)
                 return "No response from server.";

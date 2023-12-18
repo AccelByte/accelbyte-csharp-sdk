@@ -68,8 +68,8 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 PublicChatHistory op = new PublicChatHistory(this,
-                    namespace_,                    
-                    topic                    
+                    namespace_,
+                    topic
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -86,39 +86,39 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.StartCreatedAt != null) QueryParams["startCreatedAt"] = Convert.ToString(builder.StartCreatedAt)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public PublicChatHistory(
-            string namespace_,            
-            string topic,            
-            long? limit,            
-            string? order,            
-            long? startCreatedAt            
+            string namespace_,
+            string topic,
+            long? limit,
+            string? order,
+            long? startCreatedAt
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["topic"] = topic;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (order is not null) QueryParams["order"] = order;
             if (startCreatedAt != null) QueryParams["startCreatedAt"] = Convert.ToString(startCreatedAt)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -133,9 +133,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public List<Model.ModelsChatMessageResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -151,9 +151,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<List<Model.ModelsChatMessageResponse>>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -15,8 +15,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// AdminDeleteRolePermissionsV4
-    ///
-    /// Required permission ADMIN:ROLE [UPDATE]
     /// </summary>
     public class AdminDeleteRolePermissionsV4 : AccelByte.Sdk.Core.Operation
     {

@@ -16,15 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableUserMFAV4
     ///
-    /// 
-    /// 
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:USER:{userId} [DELETE] permission
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint is used to disable user 2FA.
+    /// **This endpoint is used to disable user 2FA.**
     /// </summary>
     public class AdminDisableUserMFAV4 : AccelByte.Sdk.Core.Operation
     {

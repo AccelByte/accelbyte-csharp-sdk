@@ -16,31 +16,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// CreateRole
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE:ADMIN [CREATE]' or 'ADMIN:ROLE [CREATE]'
-    /// 
-    /// 
     /// Role can only be assigned to other users by the role's manager.
-    /// 
-    /// 
-    /// 
     /// 
     /// If role is an administrator role (i.e. AdminRole == true), it will list out the role's members.
     /// 
-    /// 
-    /// 
-    /// 
     /// Administrator role can be created only when at least 1 manager is specified.
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles [POST]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class CreateRole : AccelByte.Sdk.Core.Operation

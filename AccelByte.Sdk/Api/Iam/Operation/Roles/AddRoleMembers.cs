@@ -16,26 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AddRoleMembers
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Required permission 'ROLE:ADMIN [UPDATE]' or 'ADMIN:ROLE [UPDATE]'
-    /// 
-    /// 
     /// Admin roles has its members listed in the role.
-    /// 
-    /// 
-    /// 
     /// 
     /// Role can only be assigned to other users by the role's manager.
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///           * Substitute endpoint: /iam/v3/admin/roles/{roleId}/members [POST]
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId}/members [POST]_**
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AddRoleMembers : AccelByte.Sdk.Core.Operation

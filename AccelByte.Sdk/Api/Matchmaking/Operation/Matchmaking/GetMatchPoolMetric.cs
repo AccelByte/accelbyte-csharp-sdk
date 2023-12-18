@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// GetMatchPoolMetric
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL:METRICS [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get metric for a specific match pool
     /// 
     /// Result: queue_time in seconds

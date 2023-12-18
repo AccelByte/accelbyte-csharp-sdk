@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// addFriendsWithoutConfirmation
     ///
-    /// Required permission : `NAMESPACE:{namespace}:USER:{userId}:FRIENDS [CREATE]` with scope `social`
-    /// 
-    /// friends request in a namespace.
+    /// Friends request in a namespace.
     /// </summary>
     public class AddFriendsWithoutConfirmation : AccelByte.Sdk.Core.Operation
     {

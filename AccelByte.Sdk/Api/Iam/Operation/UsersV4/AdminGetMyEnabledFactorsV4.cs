@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetMyEnabledFactorsV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to get user enabled factors.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class AdminGetMyEnabledFactorsV4 : AccelByte.Sdk.Core.Operation
     {

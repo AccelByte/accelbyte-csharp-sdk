@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRoleV4
     ///
-    /// Required permission ADMIN:ROLE [READ]
-    /// 
     /// action code: 10419
     /// </summary>
     public class AdminGetRoleV4 : AccelByte.Sdk.Core.Operation

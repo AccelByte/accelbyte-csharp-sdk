@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminCreateModAction
     ///
-    /// Required permission: ADMIN:REPORTINGCONFIG [CREATE]
     /// Create auto moderation action
     /// </summary>
     public class AdminCreateModAction : AccelByte.Sdk.Core.Operation

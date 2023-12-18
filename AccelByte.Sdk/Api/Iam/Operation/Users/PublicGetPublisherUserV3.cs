@@ -16,15 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetPublisherUserV3
     ///
-    /// 
-    /// 
-    /// Required permissions 'NAMESPACE:{namespace}:USER:{userId}:PUBLISHER [READ].
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Restriction:
-    /// Path Parameter namespace can be provided only with game namespace
+    /// **Restriction:**
+    /// Path Parameter **namespace** can be provided only with game namespace
     /// </summary>
     public class PublicGetPublisherUserV3 : AccelByte.Sdk.Core.Operation
     {

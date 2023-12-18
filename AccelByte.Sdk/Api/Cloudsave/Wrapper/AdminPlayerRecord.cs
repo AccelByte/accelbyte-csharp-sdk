@@ -32,6 +32,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         {
             get { return Operation.AdminRetrievePlayerRecords.Builder.SetWrapperObject(this); }
         }
+        public AdminPutPlayerRecordsHandlerV1.AdminPutPlayerRecordsHandlerV1Builder AdminPutPlayerRecordsHandlerV1Op
+        {
+            get { return Operation.AdminPutPlayerRecordsHandlerV1.Builder.SetWrapperObject(this); }
+        }
         public AdminGetPlayerRecordsHandlerV1.AdminGetPlayerRecordsHandlerV1Builder AdminGetPlayerRecordsHandlerV1Op
         {
             get { return Operation.AdminGetPlayerRecordsHandlerV1.Builder.SetWrapperObject(this); }
@@ -100,6 +104,25 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsBulkUpdatePlayerRecordResponse>? AdminPutPlayerRecordsHandlerV1(AdminPutPlayerRecordsHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.ModelsBulkUpdatePlayerRecordResponse<T1>>? AdminPutPlayerRecordsHandlerV1<T1>(AdminPutPlayerRecordsHandlerV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

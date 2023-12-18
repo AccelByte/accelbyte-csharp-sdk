@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Ams.Wrapper.Images wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Images(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.Artifacts wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Artifacts(_SDK);
 
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.FleetArtifactSamplingRulesGet.Builder;
 
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             );
 
 
-            AccelByte.Sdk.Api.Ams.Model.ApiFleetArtifactsSampleRulesResponse? response = wrapper.FleetArtifactSamplingRulesGet(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiFleetArtifactsSampleRules? response = wrapper.FleetArtifactSamplingRulesGet(operation);
             if (response == null)
                 return "No response from server.";
 

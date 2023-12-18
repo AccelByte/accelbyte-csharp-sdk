@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetGlobalConfig
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CONFIG [READ]` with scope `social`
-    /// get dsmc global configuration.
+    /// Get dsmc global configuration.
     /// </summary>
     public class AdminGetGlobalConfig : AccelByte.Sdk.Core.Operation
     {

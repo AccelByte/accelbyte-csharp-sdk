@@ -16,18 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetInputValidations
     ///
-    /// 
-    /// 
     /// No role required
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is to get list of input validation configuration.
-    /// 
-    /// 
-    /// 
-    /// 
     /// `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it will be empty.
     /// </summary>
     public class PublicGetInputValidations : AccelByte.Sdk.Core.Operation

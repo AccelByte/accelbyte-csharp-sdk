@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// CreateChannelHandler
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Creates a new matchmaking channel.
     /// 
     /// Matchmaking channels is a list of pool name that is eligible for matchmaking processes.

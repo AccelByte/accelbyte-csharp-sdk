@@ -16,15 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDecryptDeviceV4
     ///
-    /// 
-    /// 
-    /// This is the endpoint for an admin to decrypt device id.
-    /// 
-    /// 
-    /// 
-    /// Required permission
-    /// 
-    ///                                                                         'ADMIN:NAMESPACE:{namespace}:DEVICE [READ]'
+    /// This is the endpoint for an admin to decrypt device id
     /// </summary>
     public class AdminDecryptDeviceV4 : AccelByte.Sdk.Core.Operation
     {

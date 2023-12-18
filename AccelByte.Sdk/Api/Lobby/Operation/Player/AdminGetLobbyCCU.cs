@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetLobbyCCU
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:LOBBY:CCU [READ]` with scope `social`
-    /// 
     /// Get the number of players connected to the Lobby in the given namespace.
     /// </summary>
     public class AdminGetLobbyCCU : AccelByte.Sdk.Core.Operation

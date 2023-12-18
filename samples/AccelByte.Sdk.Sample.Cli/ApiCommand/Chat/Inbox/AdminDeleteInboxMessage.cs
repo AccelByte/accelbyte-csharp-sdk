@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","admindeleteinboxmessage")]
-    public class AdminDeleteInboxMessageCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "admindeleteinboxmessage")]
+    public class AdminDeleteInboxMessageCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminDeleteInboxMessage"; } }
+        public string OperationName { get { return "AdminDeleteInboxMessage"; } }
 
         [SdkCommandArgument("messageId")]
         public string MessageId { get; set; } = String.Empty;
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             wrapper.AdminDeleteInboxMessage(operation);
             return String.Empty;
         }

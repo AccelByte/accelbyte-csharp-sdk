@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Tests.Services
             if (getResult != null)
             {
                 bool found = false;
-                foreach ( var item in getResult)
+                foreach (var item in getResult)
                 {
                     if (item.Name == inboxName)
                     {

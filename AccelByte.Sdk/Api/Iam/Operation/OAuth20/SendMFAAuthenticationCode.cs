@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// SendMFAAuthenticationCode
     ///
     /// Send 2FA code
-    /// 
-    /// 
-    /// 
     /// This endpoint is used for sending 2FA code.
     /// </summary>
     public class SendMFAAuthenticationCode : AccelByte.Sdk.Core.Operation

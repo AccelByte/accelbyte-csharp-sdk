@@ -55,8 +55,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            wrapper.GetTradeHistoryByTransactionId(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.TradeChainActionHistoryInfo? response = wrapper.GetTradeHistoryByTransactionId(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

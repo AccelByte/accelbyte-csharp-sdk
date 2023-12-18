@@ -19,21 +19,21 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminaddinboxcategory")]
-    public class AdminAddInboxCategoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminaddinboxcategory")]
+    public class AdminAddInboxCategoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminAddInboxCategory"; } }
+        public string OperationName { get { return "AdminAddInboxCategory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
         public ModelsAddInboxCategoryRequest Body { get; set; } = new ModelsAddInboxCategoryRequest();
-                
+
         public AdminAddInboxCategoryCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsAddInboxCategoryResponse? response = wrapper.AdminAddInboxCategory(operation);
             if (response == null)
                 return "No response from server.";

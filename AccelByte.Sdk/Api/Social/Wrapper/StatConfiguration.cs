@@ -19,10 +19,6 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
 
         #region Operation Builders
-        public ImportStatCycle.ImportStatCycleBuilder ImportStatCycleOp
-        {
-            get { return Operation.ImportStatCycle.Builder.SetWrapperObject(this); }
-        }
         public GetStats.GetStatsBuilder GetStatsOp
         {
             get { return Operation.GetStats.Builder.SetWrapperObject(this); }
@@ -65,15 +61,6 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
         #endregion
 
-        public Model.StatImportInfo? ImportStatCycle(ImportStatCycle input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public Model.StatPagingSlicedResult? GetStats(GetStats input)
         {
             var response = _sdk.RunRequest(input);

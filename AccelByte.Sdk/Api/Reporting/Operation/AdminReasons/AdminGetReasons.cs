@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
 {
     /// <summary>
     /// adminGetReasons
+    ///
+    /// This endpoint get reasons with pagination
     /// </summary>
     public class AdminGetReasons : AccelByte.Sdk.Core.Operation
     {

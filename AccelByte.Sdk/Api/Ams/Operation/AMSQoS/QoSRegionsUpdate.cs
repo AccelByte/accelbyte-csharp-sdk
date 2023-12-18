@@ -15,6 +15,11 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
     /// QoSRegionsUpdate
+    ///
+    /// ```
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:QOS:SERVER [UPDATE]
+    /// 
+    /// This endpoint updates the registered QoS service's configurable configuration.
     /// </summary>
     public class QoSRegionsUpdate : AccelByte.Sdk.Core.Operation
     {

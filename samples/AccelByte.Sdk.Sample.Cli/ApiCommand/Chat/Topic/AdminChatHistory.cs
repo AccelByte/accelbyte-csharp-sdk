@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminchathistory")]
-    public class AdminChatHistoryCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminchathistory")]
+    public class AdminChatHistoryCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminChatHistory"; } }
+        public string OperationName { get { return "AdminChatHistory"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -100,7 +100,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsChatMessageWithPaginationResponse? response = wrapper.AdminChatHistory(operation);
             if (response == null)
                 return "No response from server.";

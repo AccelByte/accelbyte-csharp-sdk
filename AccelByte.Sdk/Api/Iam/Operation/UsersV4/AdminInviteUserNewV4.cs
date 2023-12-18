@@ -16,19 +16,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminInviteUserNewV4
     ///
-    /// Required permission 'ADMIN:USER:INVITE [CREATE]
-    /// 
     /// Use this endpoint to invite admin or non-admin user and assign role to them. The role must be scoped to namespace. An admin user can only
-    /// assign role with namespaces that the admin user has required permission which is same as the required permission of endpoint: [AdminAddUserRoleV4].
+    /// assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of endpoint: [AdminAddUserRoleV4].
     /// 
     /// Detail request body :
-    /// - Email Address is required, List of email addresses that will be invited
-    /// - isAdmin is required, true if user is admin, false if user is not admin
-    /// - Namespace is optional. Only works on multi tenant mode,
+    /// - **emailAddresses** is required, List of email addresses that will be invited
+    /// - **isAdmin** is required, true if user is admin, false if user is not admin
+    /// - **namespace** is optional. Only works on multi tenant mode,
     /// if not specified then it will be assigned Publisher namespace,
     /// if specified, it will become that studio/publisher where user is invited to.
-    /// - Role is optional, if not specified then it will only assign User role.
-    /// - Assigned Namespaces is optional, List of namespaces which the Role will be assigned to the user, only works when Role is not empty.
+    /// - **roleId** is optional, if not specified then it will only assign User role.
+    /// - **assignedNamespaces** is optional, List of namespaces which the Role will be assigned to the user, only works when Role is not empty.
     /// 
     /// The invited admin will also assigned with "User" role by default.
     /// </summary>

@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateCountryAgeRestrictionV3
     ///
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:AGERESTRICTION [UPDATE]'
     /// action code: 10123
     /// </summary>
     public class AdminUpdateCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation

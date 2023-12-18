@@ -449,13 +449,11 @@ namespace AccelByte.Sdk.Api
         }
         public static Session.Model.ApimodelsServerSecret? Execute(
             this GetSessionServerSecret.GetSessionServerSecretBuilder builder,
-            ApimodelsServerSecret body,
             string namespace_,
             string sessionId
         )
         {
             GetSessionServerSecret op = builder.Build(
-                body,
                 namespace_,
                 sessionId
             );

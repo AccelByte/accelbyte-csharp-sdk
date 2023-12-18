@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicSendMyMFAEmailCodeV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to send email code.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class PublicSendMyMFAEmailCodeV4 : AccelByte.Sdk.Core.Operation
     {

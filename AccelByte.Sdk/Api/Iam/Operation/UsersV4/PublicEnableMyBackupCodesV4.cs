@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicEnableMyBackupCodesV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to enable 2FA backup codes.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class PublicEnableMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {

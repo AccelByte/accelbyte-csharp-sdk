@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// UpdateThirdPartyLoginPlatformDomainV3
     ///
-    /// 
-    /// 
     /// This is the API to set 3rd Platform domain.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// It needs ADMIN:NAMESPACE:{namespace}:CLIENTDOMAIN [UPDATE] resource.
     /// </summary>
     public class UpdateThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {

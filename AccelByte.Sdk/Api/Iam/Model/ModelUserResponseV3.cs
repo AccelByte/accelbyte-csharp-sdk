@@ -90,12 +90,20 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
+        [JsonPropertyName("platformInfos")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelUserPlatformInfo>? PlatformInfos { get; set; }
+
         [JsonPropertyName("platformUserId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformUserId { get; set; }
 
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
+
+        [JsonPropertyName("testAccount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? TestAccount { get; set; }
 
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }

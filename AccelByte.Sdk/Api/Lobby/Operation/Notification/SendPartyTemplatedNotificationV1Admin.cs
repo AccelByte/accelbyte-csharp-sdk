@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// sendPartyTemplatedNotificationV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
-    /// 
     /// Sends templated notification to a party.
     /// 
     /// In the request body, specify which template slug (template identifier) to use and the template language.

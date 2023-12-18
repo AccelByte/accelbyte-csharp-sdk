@@ -7,13 +7,13 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Ams.Model
 {
-    public class ApiFleetArtifactsSampleRulesResponse : AccelByte.Sdk.Core.Model
+    public class ApiFleetArtifactsSampleRules : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("coredumps")]
-        public ApiArtifactTypeSamplingRulesResponse? Coredumps { get; set; }
+        public ApiArtifactTypeSamplingRules? Coredumps { get; set; }
 
         [JsonPropertyName("logs")]
-        public ApiArtifactTypeSamplingRulesResponse? Logs { get; set; }
+        public ApiArtifactTypeSamplingRules? Logs { get; set; }
 
     }
 

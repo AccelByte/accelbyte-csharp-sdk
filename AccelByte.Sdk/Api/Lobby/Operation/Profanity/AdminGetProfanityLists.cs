@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetProfanityLists
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [READ]` with scope `social`
-    /// 
-    /// get lists
+    /// Get lists
     /// </summary>
     public class AdminGetProfanityLists : AccelByte.Sdk.Core.Operation
     {

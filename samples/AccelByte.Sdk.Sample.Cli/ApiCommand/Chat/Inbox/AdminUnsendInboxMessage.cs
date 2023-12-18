@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminunsendinboxmessage")]
-    public class AdminUnsendInboxMessageCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminunsendinboxmessage")]
+    public class AdminUnsendInboxMessageCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminUnsendInboxMessage"; } }
+        public string OperationName { get { return "AdminUnsendInboxMessage"; } }
 
         [SdkCommandArgument("inbox")]
         public string Inbox { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ModelsUnsendInboxMessageRequest Body { get; set; } = new ModelsUnsendInboxMessageRequest();
-                
+
         public AdminUnsendInboxMessageCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsUnsendInboxMessageResponse? response = wrapper.AdminUnsendInboxMessage(operation);
             if (response == null)
                 return "No response from server.";

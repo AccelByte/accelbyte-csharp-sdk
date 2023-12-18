@@ -40,6 +40,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("platformBy")]
+        public string? PlatformBy { get; set; }
+
+        [SdkCommandArgument("platformId")]
+        public string? PlatformId { get; set; }
+
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
@@ -60,6 +66,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (PlatformBy != null)
+                opBuilder.SetPlatformBy((string)PlatformBy);
+            if (PlatformId != null)
+                opBuilder.SetPlatformId((string)PlatformId);
             if (Query != null)
                 opBuilder.SetQuery((string)Query);
 

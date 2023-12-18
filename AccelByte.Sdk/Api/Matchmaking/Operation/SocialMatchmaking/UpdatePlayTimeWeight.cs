@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// UpdatePlayTimeWeight
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Update a connection weight between player and playtime.
     /// 
     /// This endpoint is intended to be called by admin for debugging purpose on social matchmaking rule.

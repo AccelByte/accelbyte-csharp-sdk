@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         {
 
         }
-    }    
+    }
 
     public class ModelsGetInboxMessagesResponseDataStatus : StringEnum<ModelsGetInboxMessagesResponseDataStatus>
     {
@@ -127,5 +127,5 @@ namespace AccelByte.Sdk.Api.Chat.Model
         {
 
         }
-    }    
+    }
 }

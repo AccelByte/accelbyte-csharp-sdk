@@ -16,18 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserBanV3
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint retrieve the first page of the data if after and before parameters is empty
-    /// 
-    /// 
-    /// 
-    /// 
     /// action code : 10126
     /// </summary>
     public class AdminGetUserBanV3 : AccelByte.Sdk.Core.Operation

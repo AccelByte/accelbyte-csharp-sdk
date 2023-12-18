@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             )
             {
                 AdminQueryTopicLog op = new AdminQueryTopicLog(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -122,7 +122,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.EndCreatedAt != null) QueryParams["endCreatedAt"] = Convert.ToString(builder.EndCreatedAt)!;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -131,31 +131,31 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             if (builder.TopicId is not null) QueryParams["topicId"] = builder.TopicId;
             if (builder.TopicIds is not null) QueryParams["topicIds"] = builder.TopicIds;
             if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
-            
 
-            
+
+
             CollectionFormatMap["topicIds"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminQueryTopicLog(
-            string namespace_,            
-            long? endCreatedAt,            
-            long? limit,            
-            long? offset,            
-            string? senderUserId,            
-            long? startCreatedAt,            
-            string? topicId,            
-            List<string>? topicIds,            
-            string? userId            
+            string namespace_,
+            long? endCreatedAt,
+            long? limit,
+            long? offset,
+            string? senderUserId,
+            long? startCreatedAt,
+            string? topicId,
+            List<string>? topicIds,
+            string? userId
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (endCreatedAt != null) QueryParams["endCreatedAt"] = Convert.ToString(endCreatedAt)!;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
@@ -164,12 +164,12 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             if (topicId is not null) QueryParams["topicId"] = topicId;
             if (topicIds is not null) QueryParams["topicIds"] = topicIds;
             if (userId is not null) QueryParams["userId"] = userId;
-            
 
-            
+
+
             CollectionFormatMap["topicIds"] = "multi";
-            
-            
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -184,9 +184,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ModelsTopicLogWithPaginationResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -202,9 +202,9 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             {
                 return JsonSerializer.Deserialize<Model.ModelsTopicLogWithPaginationResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

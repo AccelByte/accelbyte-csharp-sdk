@@ -38,10 +38,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// 
     /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get session history detailed.
     /// 
     /// if party_id value empty/null, field will not show in response body.

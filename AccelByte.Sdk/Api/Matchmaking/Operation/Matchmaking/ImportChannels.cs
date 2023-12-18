@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// ImportChannels
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Update]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Import channels configuration from file. It will merge with existing channels.
     /// Available import strategy:
     /// - leaveOut: if channel with same key exist, the existing will be used and imported one will be ignored (default)

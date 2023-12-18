@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminMakeFactorMyDefaultV4
     ///
-    /// 
-    /// 
     /// This endpoint is used to make 2FA factor default.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint Requires valid user access token
     /// </summary>
     public class AdminMakeFactorMyDefaultV4 : AccelByte.Sdk.Core.Operation
     {

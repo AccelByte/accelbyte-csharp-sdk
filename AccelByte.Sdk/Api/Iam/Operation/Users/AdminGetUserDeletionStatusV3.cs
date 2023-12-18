@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserDeletionStatusV3
     ///
-    /// Required permissions 'ADMIN:NAMESPACE:{namespace}:DELETIONSTATUS:USER:{userId} [READ]'
     /// action code : 10145
     /// </summary>
     public class AdminGetUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation

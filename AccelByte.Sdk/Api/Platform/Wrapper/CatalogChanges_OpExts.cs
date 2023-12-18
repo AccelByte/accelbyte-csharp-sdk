@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformCatalogChanges_OpExts
     {
-        public static Platform.Model.CatalogChangePagingSlicedResult? Execute(
+        public static Platform.Model.CatalogChangePagingResult? Execute(
             this QueryChanges.QueryChangesBuilder builder,
             string namespace_,
             string storeId
@@ -63,6 +63,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecords(op);
+        }
+        public static void Execute(
+            this SelectAllRecordsByCriteria.SelectAllRecordsByCriteriaBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectAllRecordsByCriteria op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecordsByCriteria(op);
         }
         public static Platform.Model.CatalogChangeStatistics? Execute(
             this GetStatistic.GetStatisticBuilder builder,

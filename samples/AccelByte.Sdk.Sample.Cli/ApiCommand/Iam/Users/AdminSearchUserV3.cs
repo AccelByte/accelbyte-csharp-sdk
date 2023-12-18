@@ -58,6 +58,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
 
+        [SdkCommandArgument("testAccount")]
+        public bool? TestAccount { get; set; }
+
         public AdminSearchUserV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -87,6 +90,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetQuery((string)Query);
             if (StartDate != null)
                 opBuilder.SetStartDate((string)StartDate);
+            if (TestAccount != null)
+                opBuilder.SetTestAccount((bool)TestAccount);
 
 
 

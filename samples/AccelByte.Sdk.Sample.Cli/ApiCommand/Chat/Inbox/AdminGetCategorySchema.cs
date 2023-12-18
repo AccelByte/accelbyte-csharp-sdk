@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","admingetcategoryschema")]
-    public class AdminGetCategorySchemaCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "admingetcategoryschema")]
+    public class AdminGetCategorySchemaCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminGetCategorySchema"; } }
+        public string OperationName { get { return "AdminGetCategorySchema"; } }
 
         [SdkCommandArgument("category")]
         public string Category { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsJSONSchemaType? response = wrapper.AdminGetCategorySchema(operation);
             if (response == null)
                 return "No response from server.";

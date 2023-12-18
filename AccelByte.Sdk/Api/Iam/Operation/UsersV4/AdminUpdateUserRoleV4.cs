@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserRoleV4
     ///
-    /// This endpoint requires ADMIN:NAMESPACE:{namespace}:ROLE:USER:* [UPDATE] permission.
-    /// 
     /// User's roles will be replaced with roles from request body.
+    /// An admin user can only assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of this endpoint.
     /// </summary>
     public class AdminUpdateUserRoleV4 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// ticketStatistic
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:TICKET [READ]
+    /// Ticket statistic can be filtered by:
+    /// - category
+    /// - extension category
     /// </summary>
     public class TicketStatistic : AccelByte.Sdk.Core.Operation
     {

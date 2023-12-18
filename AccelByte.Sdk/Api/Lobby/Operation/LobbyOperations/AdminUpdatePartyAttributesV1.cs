@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminUpdatePartyAttributesV1
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PARTY:STORAGE [UPDATE]` with scope `social`
-    /// 
-    /// update party attributes in a namespace.
+    /// Update party attributes in a namespace.
     /// </summary>
     public class AdminUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation
     {

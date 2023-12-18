@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.SelectAllRecords.Builder.SetWrapperObject(this); }
         }
+        public SelectAllRecordsByCriteria.SelectAllRecordsByCriteriaBuilder SelectAllRecordsByCriteriaOp
+        {
+            get { return Operation.SelectAllRecordsByCriteria.Builder.SetWrapperObject(this); }
+        }
         public GetStatistic.GetStatisticBuilder GetStatisticOp
         {
             get { return Operation.GetStatistic.Builder.SetWrapperObject(this); }
@@ -53,7 +57,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
-        public Model.CatalogChangePagingSlicedResult? QueryChanges(QueryChanges input)
+        public Model.CatalogChangePagingResult? QueryChanges(QueryChanges input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -81,6 +85,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public void SelectAllRecords(SelectAllRecords input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SelectAllRecordsByCriteria(SelectAllRecordsByCriteria input)
         {
             var response = _sdk.RunRequest(input);
 

@@ -16,108 +16,48 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateClientV3
     ///
-    /// Add a new OAuth 2.0 client. Protected by the permission: ADMIN:NAMESPACE:{namespace}:CLIENT [CREATE]
-    /// 
+    /// Add a new OAuth 2.0 client
     /// A new client automatically granted with these scopes: commerce, account, analytics, publishing, social.
     /// 
-    /// Note for Multi Tenant Mode:
-    /// 
+    /// **Note for Multi Tenant Mode:**
     /// New Confidential Client will have Default Client Role assigned to it. The role will have all
     /// permissions to access all APIs that's supported by game server SDK and DS uploader.
-    /// 
-    /// However if Game Admin create Confidential Client and the permission(s) are specified in request body,
+    /// However if **Game Admin** create Confidential Client and the permission(s) are specified in request body,
     /// then the Default Client Role will not be assigned.
-    /// 
     /// But in this case, the assigned permissions will be restricted in the Default Client Permission collection only.
     /// 
     /// action code: 10301
     /// 
-    /// 
-    /// 
-    /// Fields Description:
-    /// 
-    /// 
-    ///             * clientId : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
-    /// 
-    /// 
-    ///             * clientName : The client name. e.g E-commerce
-    /// 
-    /// 
-    ///             * secret : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
-    /// 
-    /// 
-    ///             * namespace : The namespace where the client lives. e.g sample-game
-    /// 
-    /// 
-    ///             * redirectUri : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
-    /// 
-    /// 
-    ///             * oauthClientType : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
+    /// **Fields Description:**
+    /// - **clientId** : The client ID. e.g f815e5c44f364993961be3b3f26a7bf4
+    /// - **clientName** : The client name. e.g E-commerce
+    /// - **secret** : The client's secret. It's empty if the client's type is a public client. Otherwise, the client secret is required
+    /// - **namespace** : The namespace where the client lives. e.g sample-game
+    /// - **redirectUri** : Contains the redirect URI used in OAuth callback. e.g https://example.net/platform
+    /// - **oauthClientType** : The OAuth 2.0 client type. The client type determines whether the authorization needs Proof Of Key Exchange or not.
     /// A public client type doesn't have a client secret and should use PKCE flow.
     /// A confidential client type has a client secret and don't use PKCE flow
     /// Supported oAuthClientType :
-    /// 
-    ///               * Public
-    /// 
-    /// 
-    ///               * Confidential
-    /// 
-    /// 
-    ///             * audiences : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
-    /// 
-    /// 
-    ///             * baseUri : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
-    /// 
-    /// 
-    ///             * clientPermissions : Contains the client's permissions
-    /// 
-    /// 
-    ///             * deletable : The flag to identify whether client is deletable (optional). default value: true
-    /// 
-    /// 
-    ///             * clientPlatform : available client platform (optional). default value: ""
-    /// 
-    /// 
-    ///               * Playstation
-    /// 
-    /// 
-    ///               * Xbox
-    /// 
-    /// 
-    ///               * Steam
-    /// 
-    /// 
-    ///               * Epic
-    /// 
-    /// 
-    ///               * IOS
-    /// 
-    /// 
-    ///               * GooglePlay
-    /// 
-    /// 
-    ///               * Nintendo
-    /// 
-    /// 
-    ///               * Oculus
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///             * twoFactorEnabled : The flag to indicate whether 2FA validation is enable for this client. default value: false
-    /// 
-    /// 
-    ///             * oauthAccessTokenExpiration : a configurable expiration time for access_token , default value: 0 (mean fetch value from environment variable)
-    /// 
-    /// 
-    ///             * oauthRefreshTokenExpiration : a configurable expiration time for refresh_token , default value: 0 (mean fetch value from environment variable)
-    /// 
-    /// 
-    ///             * oauthAccessTokenExpirationTimeUnit : a configurable expiration time unit for access_token , default value: SECONDS
-    /// 
-    /// 
-    ///             * oauthRefreshTokenExpirationTimeUnit : a configurable expiration time unit for refresh_token , default value: SECONDS
+    /// - **Public**
+    /// - **Confidential**
+    /// - **audiences** : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
+    /// - **baseUri** : A base URI of the application. It is used for making sure the token is intended to be used by the client. e.g https://example.net/platform
+    /// - **clientPermissions** : Contains the client's permissions
+    /// - **deletable** : The flag to identify whether client is deletable (optional). default value: true
+    /// - **clientPlatform**: available client platform (optional). default value: ""
+    /// - Playstation
+    /// - Xbox
+    /// - Steam
+    /// - Epic
+    /// - IOS
+    /// - GooglePlay
+    /// - Nintendo
+    /// - Oculus
+    /// - **twoFactorEnabled**: The flag to indicate whether 2FA validation is enable for this client. default value: false
+    /// - **oauthAccessTokenExpiration**: a configurable expiration time for **access_token**, default value: 0 (mean fetch value from environment variable)
+    /// - **oauthRefreshTokenExpiration**: a configurable expiration time for **refresh_token**, default value: 0 (mean fetch value from environment variable)
+    /// - **oauthAccessTokenExpirationTimeUnit**: a configurable expiration time unit for **access_token**, default value: SECONDS
+    /// - **oauthRefreshTokenExpirationTimeUnit**: a configurable expiration time unit for **refresh_token**, default value: SECONDS
     /// </summary>
     public class AdminCreateClientV3 : AccelByte.Sdk.Core.Operation
     {

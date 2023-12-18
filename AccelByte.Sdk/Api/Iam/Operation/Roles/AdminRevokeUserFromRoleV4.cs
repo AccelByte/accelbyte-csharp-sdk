@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminRevokeUserFromRoleV4
     ///
-    /// Required permission ADMIN:ROLE [UPDATE]
-    /// 
     /// Current implementation will revoke user from role in all assigned namespaces.
     /// 
     /// Parameters:

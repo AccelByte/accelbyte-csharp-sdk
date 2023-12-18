@@ -16,256 +16,59 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenGrantV3
     ///
-    /// 
-    /// 
     /// This endpoint supports grant type:
-    /// 
-    /// 
-    /// 
-    ///                 1. Grant Type == `authorization_code`:
-    /// 
-    ///     It generates the user token by given the authorization
+    /// 1. Grant Type == `authorization_code`:
+    /// It generates the user token by given the authorization
     /// code which generated in "/iam/v3/authenticate" API response. It should also pass
     /// in the redirect_uri, which should be the same as generating the
     /// authorization code request.
-    /// 
-    /// 
-    /// 
-    ///                 2. Grant Type == `password`:
-    /// 
-    ///     The grant type to use for authenticating a user, whether it's by email / username and password combination
+    /// 2. Grant Type == `password`:
+    /// The grant type to use for authenticating a user, whether it's by email / username and password combination
     /// or through platform.
-    /// 
-    /// 
-    /// 
-    ///                 3. Grant Type == `refresh_token`:
-    /// 
-    ///     Used to get a new access token for a valid refresh token.
-    /// 
-    /// 
-    /// 
-    ///                 4. Grant Type == `client_credentials`:
-    /// 
-    ///     It generates a token by checking the client credentials provided through Authorization header.
-    /// 
-    /// 
-    /// 
-    ///                 5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
-    /// 
-    ///     It generates a token by checking the client credentials provided through Authorization header.
-    ///    It only allow publisher namespace client.
-    ///    In generated token:
-    ///      1.There wil be no roles, namespace_roles & permission.
-    ///      2.The scope will be fixed as 'extend'.
-    ///      3.There will have a new field 'extend_namespace', the value is from token request body.
-    /// 
-    /// 
-    /// 
-    /// 
+    /// 3. Grant Type == `refresh_token`:
+    /// Used to get a new access token for a valid refresh token.
+    /// 4. Grant Type == `client_credentials`:
+    /// It generates a token by checking the client credentials provided through Authorization header.
+    /// 5. Grant Type == `urn:ietf:params:oauth:grant-type:extend_client_credentials`:
+    /// It generates a token by checking the client credentials provided through Authorization header.
+    /// It only allow publisher namespace client.
+    /// In generated token:
+    /// 1. There wil be no roles, namespace_roles & permission.
+    /// 2. The scope will be fixed as 'extend'.
+    /// 3. There will have a new field 'extend_namespace', the value is from token request body.
     /// 
     /// ## Access Token Content
-    /// 
-    /// 
-    /// 
-    /// 
     /// Following is the access tokenâs content:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// namespace. It is the namespace the token was generated from.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// display_name. The display name of the sub. It is empty if the token is generated from the client credential
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// roles. The subâs roles. It is empty if the token is generated from the client credential
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// namespace_roles. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// permissions. The sub or audâ permissions
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// bans. The subâs list of bans. It is used by the IAM client for validating the token.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// jflgs. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                   * 1: Email Address Verified
-    /// 
-    /// 
-    /// 
-    ///                   * 2: Phone Number Verified
-    /// 
-    /// 
-    /// 
-    ///                   * 4: Anonymous
-    /// 
-    /// 
-    /// 
-    ///                   * 8: Suspicious Login
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// aud. The aud is the targeted resource server.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// iat. The time the token issues at. It is in Epoch time format
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// exp. The time the token expires. It is in Epoch time format
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// client_id. The UserID. The sub is omitted if the token is generated from client credential
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///                 *
-    /// 
-    /// 
-    /// scope. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - **namespace**. It is the namespace the token was generated from.
+    /// - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
+    /// - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    /// - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
+    /// - **permissions**. The sub or audâ permissions
+    /// - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
+    /// - **jflgs**. It stands for Justice Flags. It is a special flag used for storing additional status information regarding the sub. It is implemented as a bit mask. Following explains what each bit represents:
+    /// - 1: Email Address Verified
+    /// - 2: Phone Number Verified
+    /// - 4: Anonymous
+    /// - 8: Suspicious Login
+    /// - **aud**. The aud is the targeted resource server.
+    /// - **iat**. The time the token issues at. It is in Epoch time format
+    /// - **exp**. The time the token expires. It is in Epoch time format
+    /// - **client_id**. The UserID. The sub is omitted if the token is generated from client credential
+    /// - **scope**. The scope of the access request, expressed as a list of space-delimited, case-sensitive strings
     /// 
     /// ## Bans
-    /// 
-    /// 
-    /// 
-    /// 
     /// The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
-    /// 
-    /// 
-    /// 
-    /// 
     /// ## Device Cookie Validation
-    /// 
-    /// 
-    /// 
-    /// 
-    /// For grant type "password" only
-    /// 
-    /// 
-    /// 
-    /// 
+    /// _**For grant type "password" only**_
     /// Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint will read device cookie from request header Auth-Trust-Id. If device cookie not found, it will generate a new one and set it into response body auth_trust_id when successfully login.
-    /// 
-    /// 
-    /// 
-    /// 
+    /// This endpoint will read device cookie from request header **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
     /// ## Track Login History
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint will track login history to detect suspicious login activity, please provide Device-Id (alphanumeric) in request header parameter otherwise it will set to "unknown".
-    /// 
-    /// 
-    /// 
-    /// 
+    /// This endpoint will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
     /// Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
-    /// 
-    /// 
-    /// 
-    /// 
     /// ## 2FA remember device
-    /// 
-    /// 
-    /// 
-    /// 
     /// To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    /// 
-    /// 
-    /// 
-    /// 
     /// ## Response note
-    /// 
-    /// 
-    /// 
-    /// 
     /// If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
-    /// 
-    /// 
-    /// 
-    /// 
     /// action code: 10703
     /// </summary>
     public class TokenGrantV3 : AccelByte.Sdk.Core.Operation

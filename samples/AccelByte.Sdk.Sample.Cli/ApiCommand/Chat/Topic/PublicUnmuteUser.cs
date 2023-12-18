@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","publicunmuteuser")]
-    public class PublicUnmuteUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "publicunmuteuser")]
+    public class PublicUnmuteUserCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "PublicUnmuteUser"; } }
+        public string OperationName { get { return "PublicUnmuteUser"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ApiUnmuteUserRequest Body { get; set; } = new ApiUnmuteUserRequest();
-                
+
         public PublicUnmuteUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             wrapper.PublicUnmuteUser(operation);
             return String.Empty;
         }

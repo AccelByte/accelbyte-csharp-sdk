@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminupdateinboxmessage")]
-    public class AdminUpdateInboxMessageCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminupdateinboxmessage")]
+    public class AdminUpdateInboxMessageCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminUpdateInboxMessage"; } }
+        public string OperationName { get { return "AdminUpdateInboxMessage"; } }
 
         [SdkCommandArgument("messageId")]
         public string MessageId { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ModelsUpdateInboxMessageRequest Body { get; set; } = new ModelsUpdateInboxMessageRequest();
-                
+
         public AdminUpdateInboxMessageCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Namespace
             );
 
-            
+
             wrapper.AdminUpdateInboxMessage(operation);
             return String.Empty;
         }

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminCreateProfanityList
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [CREATE]` with scope `social`
-    /// 
-    /// create a new list
+    /// Create a new list
     /// </summary>
     public class AdminCreateProfanityList : AccelByte.Sdk.Core.Operation
     {

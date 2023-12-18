@@ -64,6 +64,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("joinability")]
         public string? Joinability { get; set; }
 
+        [JsonPropertyName("leaderElectionGracePeriod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? LeaderElectionGracePeriod { get; set; }
+
         [JsonPropertyName("maxActiveSessions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxActiveSessions { get; set; }
@@ -155,6 +159,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("joinability")]
         public string? Joinability { get; set; }
+
+        [JsonPropertyName("leaderElectionGracePeriod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? LeaderElectionGracePeriod { get; set; }
 
         [JsonPropertyName("maxActiveSessions")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

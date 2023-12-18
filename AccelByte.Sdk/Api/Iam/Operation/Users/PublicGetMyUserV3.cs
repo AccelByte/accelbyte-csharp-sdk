@@ -16,10 +16,21 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetMyUserV3
     ///
-    /// 
-    /// 
-    /// Require valid user authorization
     /// Get my user data
+    /// 
+    /// __Supported 3rd platforms:__
+    /// 
+    /// * __PSN(ps4web, ps4, ps5)__
+    /// * display name
+    /// * avatar
+    /// * __Xbox(live, xblweb)__
+    /// * display name
+    /// * __Steam(steam, steamopenid)__
+    /// * display name
+    /// * avatar
+    /// * __EpicGames(epicgames)__
+    /// * display name
+    /// 
     /// action code : 10147
     /// </summary>
     public class PublicGetMyUserV3 : AccelByte.Sdk.Core.Operation
@@ -31,12 +42,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicGetMyUserV3Builder>
         {
 
+            public bool? IncludeAllPlatforms { get; set; }
+
 
 
 
 
             internal PublicGetMyUserV3Builder() { }
 
+
+            public PublicGetMyUserV3Builder SetIncludeAllPlatforms(bool _includeAllPlatforms)
+            {
+                IncludeAllPlatforms = _includeAllPlatforms;
+                return this;
+            }
 
 
 
@@ -59,6 +78,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
 
+            if (builder.IncludeAllPlatforms != null) QueryParams["includeAllPlatforms"] = Convert.ToString(builder.IncludeAllPlatforms)!;
 
 
 
@@ -70,9 +90,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PublicGetMyUserV3(
+            bool? includeAllPlatforms
         )
         {
 
+            if (includeAllPlatforms != null) QueryParams["includeAllPlatforms"] = Convert.ToString(includeAllPlatforms)!;
 
 
 

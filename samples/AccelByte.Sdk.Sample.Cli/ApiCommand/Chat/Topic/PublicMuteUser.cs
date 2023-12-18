@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","publicmuteuser")]
-    public class PublicMuteUserCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "publicmuteuser")]
+    public class PublicMuteUserCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "PublicMuteUser"; } }
+        public string OperationName { get { return "PublicMuteUser"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ApiMuteUserRequest Body { get; set; } = new ApiMuteUserRequest();
-                
+
         public PublicMuteUserCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             wrapper.PublicMuteUser(operation);
             return String.Empty;
         }

@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// adminGetUnusedReasons
     ///
-    /// 
-    /// 
     /// This endpoint get reasons not used by moderation rules.
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:REASON [READ]
     /// </summary>
     public class AdminGetUnusedReasons : AccelByte.Sdk.Core.Operation
     {

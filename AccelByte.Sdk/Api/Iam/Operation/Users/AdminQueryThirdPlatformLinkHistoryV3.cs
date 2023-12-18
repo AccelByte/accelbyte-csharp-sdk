@@ -16,13 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminQueryThirdPlatformLinkHistoryV3
     ///
-    /// 
-    /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER [READ]
-    /// 
-    /// 
-    /// 
-    ///           * if limit is not defined, The default limit is 100
+    /// if limit is not defined, The default limit is 100
     /// </summary>
     public class AdminQueryThirdPlatformLinkHistoryV3 : AccelByte.Sdk.Core.Operation
     {

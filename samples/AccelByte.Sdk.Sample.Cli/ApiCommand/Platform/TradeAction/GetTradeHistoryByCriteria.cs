@@ -76,8 +76,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            wrapper.GetTradeHistoryByCriteria(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.TradeActionPagingSlicedResult? response = wrapper.GetTradeHistoryByCriteria(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// createNotificationTopicV1Admin
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:NOTIFICATION [CREATE]` with scope `social`
-    /// 
     /// Create new notification topic.
     /// 
     /// topic should be alphabets, no special char except underscore, uppercase and no spacing. for example: TOPIC_TEST.

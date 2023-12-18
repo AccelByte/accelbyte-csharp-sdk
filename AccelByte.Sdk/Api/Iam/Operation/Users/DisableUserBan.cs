@@ -16,39 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DisableUserBan
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
+    /// ### Endpoint migration guide
+    /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/{banId} [PATCH]_**
     /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///     * Substitute endpoint: /iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/{banId} [PATCH]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:BAN:USER:{userId} [UPDATE]'.
-    /// "+
-    /// "
-    ///  Notes for using IAM in publisher - game studio scenarios
-    /// "+
-    /// "
-    /// 
+    /// **Notes for using IAM in publisher - game studio scenarios**
     /// The endpoint allows:
-    /// 
-    /// "+
-    /// "
-    ///     * The admin user in publisher namespace disables userâs ban in publisher namespace.
-    /// "+
-    /// "
-    ///     * The admin user in game namespace disables userâs ban in game namespace.
-    /// "+
-    /// "
-    ///     * The admin user in publisher namespace disables userâs ban in publisher namespace.
-    /// "+
-    /// "
+    /// - The admin user in publisher namespace disables userâs ban in publisher namespace.
+    /// - The admin user in game namespace disables userâs ban in game namespace.
+    /// - The admin user in publisher namespace disables userâs ban in publisher namespace.
     /// 
     /// Other scenarios are not supported and will return 403: Forbidden.
     /// </summary>

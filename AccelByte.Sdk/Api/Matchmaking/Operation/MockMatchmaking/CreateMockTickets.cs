@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// <summary>
     /// CreateMockTickets
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Create]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Create and queue mock tickets into specified game mode's pool.
     /// Ticket's MMRs will be randomized using Normal distribution according to the input mean and standard deviation.
     /// All mock tickets and matches will be cleaned up automatically after 1 day.

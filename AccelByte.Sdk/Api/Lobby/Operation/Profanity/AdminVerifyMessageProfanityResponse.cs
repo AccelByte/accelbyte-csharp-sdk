@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminVerifyMessageProfanityResponse
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:PROFANITY [READ]` with scope `social`
-    /// 
-    /// verify a message directly from the UI or other services
+    /// Verify a message directly from the UI or other services
     /// </summary>
     public class AdminVerifyMessageProfanityResponse : AccelByte.Sdk.Core.Operation
     {

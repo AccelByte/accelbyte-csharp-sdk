@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteRoleV3
     ///
-    /// Required permission ''ADMIN:ROLE [DELETE]''
     /// action code: 10403
     /// </summary>
     public class AdminDeleteRoleV3 : AccelByte.Sdk.Core.Operation

@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Chat.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 {
-    [SdkConsoleCommand("chat","adminunbantopicmembers")]
-    public class AdminUnbanTopicMembersCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("chat", "adminunbantopicmembers")]
+    public class AdminUnbanTopicMembersCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Chat"; } }
+        public string ServiceName { get { return "Chat"; } }
 
-        public string OperationName{ get { return "AdminUnbanTopicMembers"; } }
+        public string OperationName { get { return "AdminUnbanTopicMembers"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
 
         [SdkCommandData("body")]
         public ModelsUnbanTopicMemberParam Body { get; set; } = new ModelsUnbanTopicMemberParam();
-                
+
         public AdminUnbanTopicMembersCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
                 Topic
             );
 
-            
+
             AccelByte.Sdk.Api.Chat.Model.ModelsUnbanTopicMemberResult? response = wrapper.AdminUnbanTopicMembers(operation);
             if (response == null)
                 return "No response from server.";

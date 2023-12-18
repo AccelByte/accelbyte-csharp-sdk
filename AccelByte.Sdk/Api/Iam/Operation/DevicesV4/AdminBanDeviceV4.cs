@@ -16,15 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminBanDeviceV4
     ///
-    /// 
-    /// 
-    /// This is the endpoint for an admin to ban a device.
-    /// 
-    /// 
-    /// 
-    /// Required permission
-    /// 
-    ///                                                                         'ADMIN:NAMESPACE:{namespace}:DEVICE [CREATE]'
+    /// This is the endpoint for an admin to ban a device
     /// </summary>
     public class AdminBanDeviceV4 : AccelByte.Sdk.Core.Operation
     {

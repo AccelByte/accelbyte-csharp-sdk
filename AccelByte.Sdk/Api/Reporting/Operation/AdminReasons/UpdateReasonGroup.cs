@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Reporting.Operation
     /// <summary>
     /// updateReasonGroup
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:REASON [UPDATE]
-    /// Reason group title is case insensitive, meaning you can't have reason if you already create a reason titled Reason
+    /// Reason group title is case insensitive, meaning you can't have **reason** if you already create a reason titled **Reason**
     /// If no reasonIds passed when updating, the current reasons under the reason group will be kept (reasons will not be removed from the group).
     /// </summary>
     public class UpdateReasonGroup : AccelByte.Sdk.Core.Operation

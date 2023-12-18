@@ -16,19 +16,40 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicSearchUserV3
     ///
+    /// This endpoint search all users on the specified namespace that match the query on these fields: display name, and username or by 3rd party display name.
+    /// The query length should greater than 2ï¼otherwise will not query the database. The default limit value is 100.
+    /// **Note: searching by 3rd party platform display name is exact query**
+    /// ---
+    /// When searching by 3rd party platform display name:
+    /// 1. set __by__ to __thirdPartyPlatform__
+    /// 2. set __platformId__ to the supported platform id
+    /// 3. set __platformBy__ to __platformDisplayName__
+    /// ---
+    /// Supported platform id:
     /// 
-    /// 
-    /// Requires valid user access token
-    /// 
-    /// 
-    /// 
-    /// 
-    /// This endpoint search all users on the specified namespace that match the query on these fields: display name, and username.
-    /// The query length should greater than 1ï¼otherwise will not query the database. The default limit value is 100
-    /// 
-    /// 
-    /// 
-    /// action code : 10132
+    /// * steam
+    /// * steamopenid
+    /// * facebook
+    /// * google
+    /// * oculus
+    /// * oculusweb
+    /// * twitch
+    /// * discord
+    /// * android
+    /// * ios
+    /// * apple
+    /// * device
+    /// * epicgames
+    /// * ps4
+    /// * ps5
+    /// * ps4web
+    /// * nintendo
+    /// * awscognito
+    /// * live
+    /// * xblweb
+    /// * netflix
+    /// * snapchat
+    /// * oidc platform id
     /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {
@@ -44,6 +65,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
+
+            public string? PlatformBy { get; set; }
+
+            public string? PlatformId { get; set; }
 
             public string? Query { get; set; }
 
@@ -69,6 +94,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public PublicSearchUserV3Builder SetOffset(long _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public PublicSearchUserV3Builder SetPlatformBy(string _platformBy)
+            {
+                PlatformBy = _platformBy;
+                return this;
+            }
+
+            public PublicSearchUserV3Builder SetPlatformId(string _platformId)
+            {
+                PlatformId = _platformId;
                 return this;
             }
 
@@ -106,6 +143,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.By is not null) QueryParams["by"] = builder.By;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.PlatformBy is not null) QueryParams["platformBy"] = builder.PlatformBy;
+            if (builder.PlatformId is not null) QueryParams["platformId"] = builder.PlatformId;
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
 
 
@@ -122,6 +161,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? by,
             long? limit,
             long? offset,
+            string? platformBy,
+            string? platformId,
             string? query
         )
         {
@@ -130,6 +171,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (by is not null) QueryParams["by"] = by;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (platformBy is not null) QueryParams["platformBy"] = platformBy;
+            if (platformId is not null) QueryParams["platformId"] = platformId;
             if (query is not null) QueryParams["query"] = query;
 
 

@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetAllPlayerSessionAttribute
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PLAYER:ATTRIBUTES [READ]` with scope `social`
-    /// 
-    /// get all player's session attribute by user id in a namespace.
+    /// Get all player's session attribute by user id in a namespace.
     /// </summary>
     public class AdminGetAllPlayerSessionAttribute : AccelByte.Sdk.Core.Operation
     {

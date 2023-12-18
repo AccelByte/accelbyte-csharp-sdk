@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.TradeAction)builder.WrapperObject!).Commit<T1>(op);
         }
-        public static void Execute(
+        public static Platform.Model.TradeActionPagingSlicedResult? Execute(
             this GetTradeHistoryByCriteria.GetTradeHistoryByCriteriaBuilder builder,
             string namespace_
         )
@@ -44,9 +44,9 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Platform.Wrapper.TradeAction)builder.WrapperObject!).GetTradeHistoryByCriteria(op);
+            return ((Platform.Wrapper.TradeAction)builder.WrapperObject!).GetTradeHistoryByCriteria(op);
         }
-        public static void Execute(
+        public static Platform.Model.TradeChainActionHistoryInfo? Execute(
             this GetTradeHistoryByTransactionId.GetTradeHistoryByTransactionIdBuilder builder,
             string namespace_,
             string transactionId
@@ -57,7 +57,21 @@ namespace AccelByte.Sdk.Api
                 transactionId
             );
 
-            ((Platform.Wrapper.TradeAction)builder.WrapperObject!).GetTradeHistoryByTransactionId(op);
+            return ((Platform.Wrapper.TradeAction)builder.WrapperObject!).GetTradeHistoryByTransactionId(op);
+        }
+
+        public static Platform.Model.TradeChainActionHistoryInfo<T1>? Execute<T1>(
+            this GetTradeHistoryByTransactionId.GetTradeHistoryByTransactionIdBuilder builder,
+            string namespace_,
+            string transactionId
+        )
+        {
+            GetTradeHistoryByTransactionId op = builder.Build(
+                namespace_,
+                transactionId
+            );
+
+            return ((Platform.Wrapper.TradeAction)builder.WrapperObject!).GetTradeHistoryByTransactionId<T1>(op);
         }
     }
 }

@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("regions")]
         public List<ApiRegionConfig>? Regions { get; set; }
 
+        [JsonPropertyName("samplingRules")]
+        public ApiFleetArtifactsSampleRules? SamplingRules { get; set; }
+
     }
 
 

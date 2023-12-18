@@ -38,10 +38,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// 
     /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:CHANNEL [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Search sessions.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

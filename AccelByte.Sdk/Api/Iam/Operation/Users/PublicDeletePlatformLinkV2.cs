@@ -16,62 +16,24 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDeletePlatformLinkV2
     ///
-    /// 
-    /// 
     /// ## The endpoint is going to be deprecated
-    /// 
-    /// 
-    /// Endpoint migration guide
-    /// 
-    /// 
-    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]
-    /// 
-    ///             * Substitute endpoint: /iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId} [DELETE]_**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/all [DELETE]_**
     /// 
     /// ## Supported platforms:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///             * steam
-    /// 
-    /// 
-    ///             * steamopenid
-    /// 
-    /// 
-    ///             * facebook
-    /// 
-    /// 
-    ///             * google
-    /// 
-    /// 
-    ///             * oculus
-    /// 
-    /// 
-    ///             * twitch
-    /// 
-    /// 
-    ///             * android
-    /// 
-    /// 
-    ///             * ios
-    /// 
-    /// 
-    ///             * device
-    /// 
-    /// 
-    ///             * discord
-    /// 
-    /// 
-    /// 
+    /// - **steam**
+    /// - **steamopenid**
+    /// - **facebook**
+    /// - **google**
+    /// - **oculus**
+    /// - **twitch**
+    /// - **android**
+    /// - **ios**
+    /// - **device**
+    /// - **discord**
     /// 
     /// Delete link of user's account with platform. 'justice' platform might have multiple accounts from different namespaces linked. platform_namespace need to be specified when the platform ID is 'justice'.
-    /// 
     /// Delete link of justice platform will enable password token grant and password update.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
