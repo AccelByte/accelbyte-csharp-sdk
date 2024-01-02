@@ -81,6 +81,11 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryMyGameSessions | [PublicQueryMyGameSessions](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicQueryMyGameSessions.cs) | [PublicQueryMyGameSessions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicQueryMyGameSessions.cs) |
 
+### Native Session Wrapper:  [NativeSession](../../AccelByte.Sdk/Api/Session/Wrapper/NativeSession.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/namespaces/{namespace}/native-sessions` | GET | AdminGetListNativeSession | [AdminGetListNativeSession](../../AccelByte.Sdk/Api/Session/Operation/NativeSession/AdminGetListNativeSession.cs) | [AdminGetListNativeSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/NativeSession/AdminGetListNativeSession.cs) |
+
 ### Party Wrapper:  [Party](../../AccelByte.Sdk/Api/Session/Wrapper/Party.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -129,7 +134,7 @@
 ### Recent Player Wrapper:  [RecentPlayer](../../AccelByte.Sdk/Api/Session/Wrapper/RecentPlayer.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/session/v1/public/namespaces/{namespace}/recent-player/{userId}` | GET | PublicGetRecentPlayer | [PublicGetRecentPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/PublicGetRecentPlayer.cs) | [PublicGetRecentPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/PublicGetRecentPlayer.cs) |
+| `/session/v1/public/namespaces/{namespace}/recent-player` | GET | PublicGetRecentPlayer | [PublicGetRecentPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/PublicGetRecentPlayer.cs) | [PublicGetRecentPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/PublicGetRecentPlayer.cs) |
 
 
 &nbsp;  
@@ -181,6 +186,10 @@
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/join` | POST | JoinGameSession | [JoinGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/JoinGameSession.cs) | [JoinGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/JoinGameSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/leader` | POST | PublicPromoteGameSessionLeader | [PublicPromoteGameSessionLeader](../../AccelByte.Sdk/Api/Session/Operation/GameSession/PublicPromoteGameSessionLeader.cs) | [PublicPromoteGameSessionLeader](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/PublicPromoteGameSessionLeader.cs) |
 | `/session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}/teams` | POST | AppendTeamGameSession | [AppendTeamGameSession](../../AccelByte.Sdk/Api/Session/Operation/GameSession/AppendTeamGameSession.cs) | [AppendTeamGameSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/GameSession/AppendTeamGameSession.cs) |
+
+### Native Session Wrapper:  [NativeSession](../../AccelByte.Sdk/Api/Session/Wrapper/NativeSession.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### Party Wrapper:  [Party](../../AccelByte.Sdk/Api/Session/Wrapper/Party.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -239,6 +248,7 @@
 | `apimodels.GlobalConfigurationResponse` | [ApimodelsGlobalConfigurationResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsGlobalConfigurationResponse.cs) |
 | `apimodels.JoinByCodeRequest` | [ApimodelsJoinByCodeRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsJoinByCodeRequest.cs) |
 | `apimodels.KickResponse` | [ApimodelsKickResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsKickResponse.cs) |
+| `apimodels.NativeSessionPagingResponse` | [ApimodelsNativeSessionPagingResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsNativeSessionPagingResponse.cs) |
 | `apimodels.Pagination` | [ApimodelsPagination](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPagination.cs) |
 | `apimodels.PartyQueryResponse` | [ApimodelsPartyQueryResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartyQueryResponse.cs) |
 | `apimodels.PartySessionResponse` | [ApimodelsPartySessionResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartySessionResponse.cs) |
@@ -263,6 +273,8 @@
 | `apimodels.UpdateGameSessionRequest` | [ApimodelsUpdateGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionRequest.cs) |
 | `apimodels.UpdatePartyRequest` | [ApimodelsUpdatePartyRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdatePartyRequest.cs) |
 | `apimodels.UserResponse` | [ApimodelsUserResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUserResponse.cs) |
+| `model.NativeSession` | [ModelNativeSession](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSession.cs) |
+| `model.NativeSessionMember` | [ModelNativeSessionMember](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSessionMember.cs) |
 | `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Session/Model/ModelsDSMConfigRecord.cs) |
 | `models.DefaultDSMCConfig` | [ModelsDefaultDSMCConfig](../../AccelByte.Sdk/Api/Session/Model/ModelsDefaultDSMCConfig.cs) |
 | `models.GameServer` | [ModelsGameServer](../../AccelByte.Sdk/Api/Session/Model/ModelsGameServer.cs) |
@@ -275,6 +287,6 @@
 | `models.RecentPlayerQueryResponse` | [ModelsRecentPlayerQueryResponse](../../AccelByte.Sdk/Api/Session/Model/ModelsRecentPlayerQueryResponse.cs) |
 | `models.RequestReconcileMaxActiveSession` | [ModelsRequestReconcileMaxActiveSession](../../AccelByte.Sdk/Api/Session/Model/ModelsRequestReconcileMaxActiveSession.cs) |
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
-| `models.UserInfo` | [ModelsUserInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserInfo.cs) |
+| `models.UserInfoResponse` | [ModelsUserInfoResponse](../../AccelByte.Sdk/Api/Session/Model/ModelsUserInfoResponse.cs) |
 | `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Session/Model/ResponseError.cs) |

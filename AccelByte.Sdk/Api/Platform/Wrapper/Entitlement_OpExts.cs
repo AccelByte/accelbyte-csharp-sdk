@@ -34,6 +34,28 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1(op);
         }
+        public static Platform.Model.EntitlementConfigInfo? Execute(
+            this EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder builder,
+            string namespace_
+        )
+        {
+            EnableEntitlementOriginFeature op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).EnableEntitlementOriginFeature(op);
+        }
+        public static Platform.Model.EntitlementConfigInfo? Execute(
+            this GetEntitlementConfigInfo.GetEntitlementConfigInfoBuilder builder,
+            string namespace_
+        )
+        {
+            GetEntitlementConfigInfo op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlementConfigInfo(op);
+        }
         public static Platform.Model.BulkEntitlementGrantResult? Execute(
             this GrantEntitlements.GrantEntitlementsBuilder builder,
             string namespace_
@@ -68,6 +90,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlement(op);
+        }
+        public static Platform.Model.EntitlementPlatformConfigInfo? Execute(
+            this GetPlatformEntitlementConfig.GetPlatformEntitlementConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            GetPlatformEntitlementConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetPlatformEntitlementConfig(op);
+        }
+        public static Platform.Model.EntitlementPlatformConfigInfo? Execute(
+            this UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            UpdatePlatformEntitlementConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdatePlatformEntitlementConfig(op);
         }
         public static Platform.Model.EntitlementPagingSlicedResult? Execute(
             this QueryUserEntitlements.QueryUserEntitlementsBuilder builder,
@@ -554,6 +602,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlementsByAppType(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this PublicGetUserEntitlementByItemId.PublicGetUserEntitlementByItemIdBuilder builder,
             string namespace_,
@@ -569,6 +618,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementByItemId(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this PublicGetUserEntitlementBySku.PublicGetUserEntitlementBySkuBuilder builder,
             string namespace_,

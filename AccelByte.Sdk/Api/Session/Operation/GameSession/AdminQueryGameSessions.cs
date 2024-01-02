@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminQueryGameSessions
     ///
-    /// Get all game sessions. Requires ADMIN:NAMESPACE:{namespace}:SESSION:GAME [READ]
+    /// Get all game sessions.
     /// </summary>
     public class AdminQueryGameSessions : AccelByte.Sdk.Core.Operation
     {

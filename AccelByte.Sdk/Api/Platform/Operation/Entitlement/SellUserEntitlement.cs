@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EntitlementSoldRequest? Body { get; set; }
+            public Model.AdminEntitlementSoldRequest? Body { get; set; }
 
 
 
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SellUserEntitlementBuilder SetBody(Model.EntitlementSoldRequest _body)
+            public SellUserEntitlementBuilder SetBody(Model.AdminEntitlementSoldRequest _body)
             {
                 Body = _body;
                 return this;
@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string entitlementId,
             string namespace_,
             string userId,
-            Model.EntitlementSoldRequest body
+            Model.AdminEntitlementSoldRequest body
         )
         {
             PathParams["entitlementId"] = entitlementId;

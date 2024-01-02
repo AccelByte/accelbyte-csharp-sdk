@@ -29,6 +29,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementGrantOrigin? Origin { get; set; }
+
         [JsonPropertyName("quantity")]
         public int? Quantity { get; set; }
 
@@ -52,6 +57,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
+
+    public class EntitlementGrantOrigin : StringEnum<EntitlementGrantOrigin>
+    {
+        public static readonly EntitlementGrantOrigin Epic
+            = new EntitlementGrantOrigin("Epic");
+
+        public static readonly EntitlementGrantOrigin GooglePlay
+            = new EntitlementGrantOrigin("GooglePlay");
+
+        public static readonly EntitlementGrantOrigin IOS
+            = new EntitlementGrantOrigin("IOS");
+
+        public static readonly EntitlementGrantOrigin Nintendo
+            = new EntitlementGrantOrigin("Nintendo");
+
+        public static readonly EntitlementGrantOrigin Oculus
+            = new EntitlementGrantOrigin("Oculus");
+
+        public static readonly EntitlementGrantOrigin Other
+            = new EntitlementGrantOrigin("Other");
+
+        public static readonly EntitlementGrantOrigin Playstation
+            = new EntitlementGrantOrigin("Playstation");
+
+        public static readonly EntitlementGrantOrigin Steam
+            = new EntitlementGrantOrigin("Steam");
+
+        public static readonly EntitlementGrantOrigin System
+            = new EntitlementGrantOrigin("System");
+
+        public static readonly EntitlementGrantOrigin Twitch
+            = new EntitlementGrantOrigin("Twitch");
+
+        public static readonly EntitlementGrantOrigin Xbox
+            = new EntitlementGrantOrigin("Xbox");
+
+
+        public static implicit operator EntitlementGrantOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementGrantOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class EntitlementGrantSource : StringEnum<EntitlementGrantSource>
     {

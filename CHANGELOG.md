@@ -1,3 +1,11 @@
+<a name="v0.51.0"></a>
+## [v0.51.0]
+### ci
+- **coverity:** update cov-analysis to 2023.6.2
+### test
+- **integration:** fix qosm test when there is no server
+
+
 <a name="v0.50.0"></a>
 ## [v0.50.0]
 ### chore

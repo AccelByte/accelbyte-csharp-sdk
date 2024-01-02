@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelUserIdentityUpdateRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("emailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Password { get; set; }
 
     }

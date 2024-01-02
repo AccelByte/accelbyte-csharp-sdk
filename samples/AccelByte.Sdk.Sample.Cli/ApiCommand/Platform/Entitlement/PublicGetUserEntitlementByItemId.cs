@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.Entitlement wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.Entitlement(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicGetUserEntitlementByItemId.Builder;
 
             if (EntitlementClazz != null)
@@ -63,12 +64,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 ItemId
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.EntitlementInfo? response = wrapper.PublicGetUserEntitlementByItemId(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

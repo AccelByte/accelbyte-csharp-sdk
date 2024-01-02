@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
-    /// 
     /// Get the session by session ID
     /// </summary>
     public class GetSession : AccelByte.Sdk.Core.Operation

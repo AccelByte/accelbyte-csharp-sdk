@@ -11,6 +11,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class RewardsRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RewardsRequestEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("metadata")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Metadata { get; set; }
@@ -36,6 +41,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class RewardsRequest<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RewardsRequestEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("metadata")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Metadata { get; set; }
@@ -59,6 +69,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+    public class RewardsRequestEntitlementOrigin : StringEnum<RewardsRequestEntitlementOrigin>
+    {
+        public static readonly RewardsRequestEntitlementOrigin Epic
+            = new RewardsRequestEntitlementOrigin("Epic");
+
+        public static readonly RewardsRequestEntitlementOrigin GooglePlay
+            = new RewardsRequestEntitlementOrigin("GooglePlay");
+
+        public static readonly RewardsRequestEntitlementOrigin IOS
+            = new RewardsRequestEntitlementOrigin("IOS");
+
+        public static readonly RewardsRequestEntitlementOrigin Nintendo
+            = new RewardsRequestEntitlementOrigin("Nintendo");
+
+        public static readonly RewardsRequestEntitlementOrigin Oculus
+            = new RewardsRequestEntitlementOrigin("Oculus");
+
+        public static readonly RewardsRequestEntitlementOrigin Other
+            = new RewardsRequestEntitlementOrigin("Other");
+
+        public static readonly RewardsRequestEntitlementOrigin Playstation
+            = new RewardsRequestEntitlementOrigin("Playstation");
+
+        public static readonly RewardsRequestEntitlementOrigin Steam
+            = new RewardsRequestEntitlementOrigin("Steam");
+
+        public static readonly RewardsRequestEntitlementOrigin System
+            = new RewardsRequestEntitlementOrigin("System");
+
+        public static readonly RewardsRequestEntitlementOrigin Twitch
+            = new RewardsRequestEntitlementOrigin("Twitch");
+
+        public static readonly RewardsRequestEntitlementOrigin Xbox
+            = new RewardsRequestEntitlementOrigin("Xbox");
+
+
+        public static implicit operator RewardsRequestEntitlementOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public RewardsRequestEntitlementOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class RewardsRequestOrigin : StringEnum<RewardsRequestOrigin>
     {

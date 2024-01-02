@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// MatchTicketDetails
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:TICKET [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get details for a specific match ticket
     /// </summary>
     public class MatchTicketDetails : AccelByte.Sdk.Core.Operation

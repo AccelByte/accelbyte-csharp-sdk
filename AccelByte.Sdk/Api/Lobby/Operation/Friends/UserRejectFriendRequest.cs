@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// userRejectFriendRequest
+    ///
+    /// User reject a friend request.
     /// </summary>
     public class UserRejectFriendRequest : AccelByte.Sdk.Core.Operation
     {

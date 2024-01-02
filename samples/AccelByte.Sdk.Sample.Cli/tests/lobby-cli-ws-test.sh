@@ -39,7 +39,7 @@ TEMP_FILE_UPLOAD="file_upload.bin"
 SERVICE_NAME="lobby"
 
 echo "TAP version 13"
-echo "1..103"
+echo "1..105"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -844,293 +844,315 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 73 'PersonalChatResponse' test.out
 
-#- 74 RejectFriendsNotif
+#- 74 RefreshTokenRequest
+# echo "Testing 'RefreshTokenRequest'"
+printf 'type: refreshTokenRequest\nid: czgRu4VYjQq4VIVF\ntoken: UqNPuW223zuUv8Sh' > $TEMP_FILE_UPLOAD
+$CLI_EXE \
+    --ws \
+    --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
+    --ws-payload-file $TEMP_FILE_UPLOAD \
+    > test.out 2>&1
+eval_tap $? 74 'RefreshTokenRequest' test.out
+
+#- 75 RefreshTokenResponse
+# echo "Testing 'RefreshTokenResponse'"
+printf 'type: refreshTokenResponse\nid: wWgdAibFBESdI0Ab\ncode: 3' > $TEMP_FILE_UPLOAD
+$CLI_EXE \
+    --ws \
+    --sn $SERVICE_NAME \
+    --retry-on-ws-message-error \
+    --ws-payload-file $TEMP_FILE_UPLOAD \
+    > test.out 2>&1
+eval_tap $? 75 'RefreshTokenResponse' test.out
+
+#- 76 RejectFriendsNotif
 # echo "Testing 'RejectFriendsNotif'"
-printf 'type: rejectFriendsNotif\nuserId: czgRu4VYjQq4VIVF' > $TEMP_FILE_UPLOAD
+printf 'type: rejectFriendsNotif\nuserId: 1zgjMC3hp1s4tElQ' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 74 'RejectFriendsNotif' test.out
+eval_tap $? 76 'RejectFriendsNotif' test.out
 
-#- 75 RejectFriendsRequest
+#- 77 RejectFriendsRequest
 # echo "Testing 'RejectFriendsRequest'"
-printf 'type: rejectFriendsRequest\nid: bYBe9hLKcN6myFUW\nfriendId: UqNPuW223zuUv8Sh' > $TEMP_FILE_UPLOAD
+printf 'type: rejectFriendsRequest\nid: rKDcRkI5LI6UqivH\nfriendId: hEA9ThpSbyAYJeBC' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 75 'RejectFriendsRequest' test.out
+eval_tap $? 77 'RejectFriendsRequest' test.out
 
-#- 76 RejectFriendsResponse
+#- 78 RejectFriendsResponse
 # echo "Testing 'RejectFriendsResponse'"
-printf 'type: rejectFriendsResponse\nid: 1zgjMC3hp1s4tElQ\ncode: 11' > $TEMP_FILE_UPLOAD
+printf 'type: rejectFriendsResponse\nid: WToF03dQYi0OxI4D\ncode: 30' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 76 'RejectFriendsResponse' test.out
+eval_tap $? 78 'RejectFriendsResponse' test.out
 
-#- 77 RematchmakingNotif
+#- 79 RematchmakingNotif
 # echo "Testing 'RematchmakingNotif'"
-printf 'type: rematchmakingNotif\nbanDuration: 16' > $TEMP_FILE_UPLOAD
+printf 'type: rematchmakingNotif\nbanDuration: 51' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 77 'RematchmakingNotif' test.out
+eval_tap $? 79 'RematchmakingNotif' test.out
 
-#- 78 RequestFriendsNotif
+#- 80 RequestFriendsNotif
 # echo "Testing 'RequestFriendsNotif'"
-printf 'type: requestFriendsNotif\nfriendId: cUySnsIREQUlwDt2' > $TEMP_FILE_UPLOAD
+printf 'type: requestFriendsNotif\nfriendId: Zd2V80fjN9CwM4qN' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 78 'RequestFriendsNotif' test.out
+eval_tap $? 80 'RequestFriendsNotif' test.out
 
-#- 79 RequestFriendsRequest
+#- 81 RequestFriendsRequest
 # echo "Testing 'RequestFriendsRequest'"
-printf 'type: requestFriendsRequest\nid: WToF03dQYi0OxI4D\nfriendId: XB6DgoJm4dqrLVSB' > $TEMP_FILE_UPLOAD
+printf 'type: requestFriendsRequest\nid: laFjsd7gSFkIVGnX\nfriendId: T3awIjWoFCW5BTW9' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 79 'RequestFriendsRequest' test.out
+eval_tap $? 81 'RequestFriendsRequest' test.out
 
-#- 80 RequestFriendsResponse
+#- 82 RequestFriendsResponse
 # echo "Testing 'RequestFriendsResponse'"
-printf 'type: requestFriendsResponse\nid: Zd2V80fjN9CwM4qN\ncode: 51' > $TEMP_FILE_UPLOAD
+printf 'type: requestFriendsResponse\nid: 4nelbmKVyNZY8IVt\ncode: 72' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 80 'RequestFriendsResponse' test.out
+eval_tap $? 82 'RequestFriendsResponse' test.out
 
-#- 81 SendChannelChatRequest
+#- 83 SendChannelChatRequest
 # echo "Testing 'SendChannelChatRequest'"
-printf 'type: sendChannelChatRequest\nid: laFjsd7gSFkIVGnX\nchannelSlug: T3awIjWoFCW5BTW9\npayload: JLeUdD8XNxAkoeHk' > $TEMP_FILE_UPLOAD
+printf 'type: sendChannelChatRequest\nid: j0XYtINcOQIiLdvp\nchannelSlug: OeznPwNRnztP1VeN\npayload: uYVOAU9uuKPGNN6m' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 81 'SendChannelChatRequest' test.out
+eval_tap $? 83 'SendChannelChatRequest' test.out
 
-#- 82 SendChannelChatResponse
+#- 84 SendChannelChatResponse
 # echo "Testing 'SendChannelChatResponse'"
-printf 'type: sendChannelChatResponse\nid: BXouyKC6RnO4PckO\ncode: 83' > $TEMP_FILE_UPLOAD
+printf 'type: sendChannelChatResponse\nid: BLNzJxMR9F8QPVUh\ncode: 12' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 82 'SendChannelChatResponse' test.out
+eval_tap $? 84 'SendChannelChatResponse' test.out
 
-#- 83 SetReadyConsentNotif
+#- 85 SetReadyConsentNotif
 # echo "Testing 'SetReadyConsentNotif'"
-printf 'type: setReadyConsentNotif\nmatchId: 3syHJOMlgAqtsnZl\nuserId: LvEczKKAyiQv93N1' > $TEMP_FILE_UPLOAD
+printf 'type: setReadyConsentNotif\nmatchId: 3Fxn8VCvtdiiwNMA\nuserId: dIodiW3hcYuKSRkk' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 83 'SetReadyConsentNotif' test.out
+eval_tap $? 85 'SetReadyConsentNotif' test.out
 
-#- 84 SetReadyConsentRequest
+#- 86 SetReadyConsentRequest
 # echo "Testing 'SetReadyConsentRequest'"
-printf 'type: setReadyConsentRequest\nid: fbGovPLBpXX8vScP\nmatchId: hhhoeTbxungca58m' > $TEMP_FILE_UPLOAD
+printf 'type: setReadyConsentRequest\nid: KQKIVOduQwwDrBnp\nmatchId: QpIKdlw0Q8Qm0lpT' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 84 'SetReadyConsentRequest' test.out
+eval_tap $? 86 'SetReadyConsentRequest' test.out
 
-#- 85 SetReadyConsentResponse
+#- 87 SetReadyConsentResponse
 # echo "Testing 'SetReadyConsentResponse'"
-printf 'type: setReadyConsentResponse\nid: uNcxsQxrsxbLSv7u\ncode: 7' > $TEMP_FILE_UPLOAD
+printf 'type: setReadyConsentResponse\nid: 3KrfqoZi5xiHiQI9\ncode: 41' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 85 'SetReadyConsentResponse' test.out
+eval_tap $? 87 'SetReadyConsentResponse' test.out
 
-#- 86 SetSessionAttributeRequest
+#- 88 SetSessionAttributeRequest
 # echo "Testing 'SetSessionAttributeRequest'"
-printf 'type: setSessionAttributeRequest\nid: FZXdW5GyQ2mveLZE\nkey: nmSCeWTCXfARUx3U\nnamespace: 3KrfqoZi5xiHiQI9\nvalue: ieQ8y75Biw4pKJ8h' > $TEMP_FILE_UPLOAD
+printf 'type: setSessionAttributeRequest\nid: ieQ8y75Biw4pKJ8h\nkey: ey5JmuUDlojEc712\nnamespace: JEhS1VFA1Eo4Rxcn\nvalue: q5DtzSaifByaju2T' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 86 'SetSessionAttributeRequest' test.out
+eval_tap $? 88 'SetSessionAttributeRequest' test.out
 
-#- 87 SetSessionAttributeResponse
+#- 89 SetSessionAttributeResponse
 # echo "Testing 'SetSessionAttributeResponse'"
-printf 'type: setSessionAttributeResponse\nid: KUh2wepEjvh8sTPE\ncode: 9' > $TEMP_FILE_UPLOAD
+printf 'type: setSessionAttributeResponse\nid: QdHndDWB60eGxKad\ncode: 60' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 87 'SetSessionAttributeResponse' test.out
+eval_tap $? 89 'SetSessionAttributeResponse' test.out
 
-#- 88 SetUserStatusRequest
+#- 90 SetUserStatusRequest
 # echo "Testing 'SetUserStatusRequest'"
-printf 'type: setUserStatusRequest\nid: 5DtzSaifByaju2TY\nactivity: 7JfL8ZG7IBiOpvSK\navailability: 90' > $TEMP_FILE_UPLOAD
+printf 'type: setUserStatusRequest\nid: z92mfgwfewY0DMU8\nactivity: Af6UL9MkkVf8dHJY\navailability: 73' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 88 'SetUserStatusRequest' test.out
+eval_tap $? 90 'SetUserStatusRequest' test.out
 
-#- 89 SetUserStatusResponse
+#- 91 SetUserStatusResponse
 # echo "Testing 'SetUserStatusResponse'"
-printf 'type: setUserStatusResponse\nid: QdHndDWB60eGxKad\ncode: 60' > $TEMP_FILE_UPLOAD
+printf 'type: setUserStatusResponse\nid: FU71K0CzXzdQIWh5\ncode: 86' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 89 'SetUserStatusResponse' test.out
+eval_tap $? 91 'SetUserStatusResponse' test.out
 
-#- 90 ShutdownNotif
+#- 92 ShutdownNotif
 # echo "Testing 'ShutdownNotif'"
-printf 'type: shutdownNotif\nmessage: Af6UL9MkkVf8dHJY' > $TEMP_FILE_UPLOAD
+printf 'type: shutdownNotif\nmessage: PSp024SIhnu3h3uK' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 90 'ShutdownNotif' test.out
+eval_tap $? 92 'ShutdownNotif' test.out
 
-#- 91 SignalingP2PNotif
+#- 93 SignalingP2PNotif
 # echo "Testing 'SignalingP2PNotif'"
-printf 'type: signalingP2PNotif\ndestinationId: JF19NcUSJgQSBwkX\nmessage: 1FU71K0CzXzdQIWh' > $TEMP_FILE_UPLOAD
+printf 'type: signalingP2PNotif\ndestinationId: 1jRHhQ2uS27tXHvt\nmessage: xi6EbWHrMrbpZd2b' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 91 'SignalingP2PNotif' test.out
+eval_tap $? 93 'SignalingP2PNotif' test.out
 
-#- 92 StartMatchmakingRequest
+#- 94 StartMatchmakingRequest
 # echo "Testing 'StartMatchmakingRequest'"
-printf 'type: startMatchmakingRequest\nid: txi6EbWHrMrbpZd2\nextraAttributes: 5PSp024SIhnu3h3u\ngameMode: K1jRHhQ2uS27tXHv\npartyAttributes: {"bt6P3sZXAZkdh450":{},"P2HCQEysNYmCndtX":{},"XQgiHJgjwpCxGEBs":{}}\npriority: 4\ntempParty: WpfaSkgXo8j70KrU' > $TEMP_FILE_UPLOAD
+printf 'type: startMatchmakingRequest\nid: QgiHJgjwpCxGEBsc\nextraAttributes: t6P3sZXAZkdh450P\ngameMode: 2HCQEysNYmCndtXX\npartyAttributes: {"3HVarhLlwlmf1l5J":{},"hrQSpGlguvTECefh":{},"iKKuc8Urg4atANoO":{}}\npriority: 11\ntempParty: iOvxo4sO2v2SBoI1' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 92 'StartMatchmakingRequest' test.out
+eval_tap $? 94 'StartMatchmakingRequest' test.out
 
-#- 93 StartMatchmakingResponse
+#- 95 StartMatchmakingResponse
 # echo "Testing 'StartMatchmakingResponse'"
-printf 'type: startMatchmakingResponse\nid: hrQSpGlguvTECefh\ncode: 5' > $TEMP_FILE_UPLOAD
+printf 'type: startMatchmakingResponse\nid: w4mFyLcIq00Vl8sx\ncode: 5' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 93 'StartMatchmakingResponse' test.out
+eval_tap $? 95 'StartMatchmakingResponse' test.out
 
-#- 94 UnblockPlayerNotif
+#- 96 UnblockPlayerNotif
 # echo "Testing 'UnblockPlayerNotif'"
-printf 'type: unblockPlayerNotif\nunblockedUserId: iKKuc8Urg4atANoO\nuserId: fyCbfBoH6zLgTsYm' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerNotif\nunblockedUserId: zC1fJxroZeNIlbxA\nuserId: UeRUjUbaPklfVic7' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 94 'UnblockPlayerNotif' test.out
+eval_tap $? 96 'UnblockPlayerNotif' test.out
 
-#- 95 UnblockPlayerRequest
+#- 97 UnblockPlayerRequest
 # echo "Testing 'UnblockPlayerRequest'"
-printf 'type: unblockPlayerRequest\nid: Aw4mFyLcIq00Vl8s\nnamespace: xzC1fJxroZeNIlbx\nunblockedUserId: AUeRUjUbaPklfVic' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerRequest\nid: zYJTjpmhWVBgTDm8\nnamespace: IGJL3sEpnq2qNgEj\nunblockedUserId: KMemoxx1k2s5gW8z' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 95 'UnblockPlayerRequest' test.out
+eval_tap $? 97 'UnblockPlayerRequest' test.out
 
-#- 96 UnblockPlayerResponse
+#- 98 UnblockPlayerResponse
 # echo "Testing 'UnblockPlayerResponse'"
-printf 'type: unblockPlayerResponse\nid: NQDgVJljnvyeys0K\ncode: 52\nnamespace: d9lSy4dXRirNN1XT\nunblockedUserId: VbZINAYTfmDdnbfK' > $TEMP_FILE_UPLOAD
+printf 'type: unblockPlayerResponse\nid: LdllLcrgG7MUCvBQ\ncode: 54\nnamespace: xDMKfZnQUHzroRIL\nunblockedUserId: UYE0mbvUdfY0BqpF' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 96 'UnblockPlayerResponse' test.out
+eval_tap $? 98 'UnblockPlayerResponse' test.out
 
-#- 97 UnfriendNotif
+#- 99 UnfriendNotif
 # echo "Testing 'UnfriendNotif'"
-printf 'type: unfriendNotif\nfriendId: LdllLcrgG7MUCvBQ' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendNotif\nfriendId: wpFSBitprtx35PWw' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 97 'UnfriendNotif' test.out
+eval_tap $? 99 'UnfriendNotif' test.out
 
-#- 98 UnfriendRequest
+#- 100 UnfriendRequest
 # echo "Testing 'UnfriendRequest'"
-printf 'type: unfriendRequest\nid: UYE0mbvUdfY0BqpF\nfriendId: xDMKfZnQUHzroRIL' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendRequest\nid: SvR4rhLLvUwAWnj9\nfriendId: BW4wLASmNzxcUMh0' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 98 'UnfriendRequest' test.out
+eval_tap $? 100 'UnfriendRequest' test.out
 
-#- 99 UnfriendResponse
+#- 101 UnfriendResponse
 # echo "Testing 'UnfriendResponse'"
-printf 'type: unfriendResponse\nid: PaGCQl5y1gekeqHn\ncode: 47' > $TEMP_FILE_UPLOAD
+printf 'type: unfriendResponse\nid: CDORAsuT0lseQtOo\ncode: 50' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 99 'UnfriendResponse' test.out
+eval_tap $? 101 'UnfriendResponse' test.out
 
-#- 100 UserBannedNotification
+#- 102 UserBannedNotification
 # echo "Testing 'UserBannedNotification'"
 printf 'type: userBannedNotification' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -1139,40 +1161,40 @@ $CLI_EXE \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 100 'UserBannedNotification' test.out
+eval_tap $? 102 'UserBannedNotification' test.out
 
-#- 101 UserMetricRequest
+#- 103 UserMetricRequest
 # echo "Testing 'UserMetricRequest'"
-printf 'type: userMetricRequest\nid: zZfY22Z1SmIc5NTR' > $TEMP_FILE_UPLOAD
+printf 'type: userMetricRequest\nid: ohdBYhvvwspKpEPU' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 101 'UserMetricRequest' test.out
+eval_tap $? 103 'UserMetricRequest' test.out
 
-#- 102 UserMetricResponse
+#- 104 UserMetricResponse
 # echo "Testing 'UserMetricResponse'"
-printf 'type: userMetricResponse\nid: vR4rhLLvUwAWnj9y\ncode: 50\nplayerCount: 85' > $TEMP_FILE_UPLOAD
+printf 'type: userMetricResponse\nid: SFh8ZLYsKNsz83B3\ncode: 96\nplayerCount: 42' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 102 'UserMetricResponse' test.out
+eval_tap $? 104 'UserMetricResponse' test.out
 
-#- 103 UserStatusNotif
+#- 105 UserStatusNotif
 # echo "Testing 'UserStatusNotif'"
-printf 'type: userStatusNotif\nactivity: DORAsuT0lseQtOoo\navailability: 16\nlastSeenAt: jjBQfnFyRj8oJlSS\nuserId: Fh8ZLYsKNsz83B3u' > $TEMP_FILE_UPLOAD
+printf 'type: userStatusNotif\nactivity: vN9SDRKye6n1t8RX\navailability: 64\nlastSeenAt: IDYp3uk6SY3LbL8I\nuserId: j6Hou1skD80rM9MH' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \
     --retry-on-ws-message-error \
     --ws-payload-file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 103 'UserStatusNotif' test.out
+eval_tap $? 105 'UserStatusNotif' test.out
 
 
 exit $EXIT_CODE

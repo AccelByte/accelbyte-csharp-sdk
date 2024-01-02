@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// CreateMatchPool
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:POOL [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Creates a new matchmaking pool.
     /// 
     /// A pool is isolated from other pools (i.e. tickets may be matched with other tickets in the same pool, but not with tickets in other pools).

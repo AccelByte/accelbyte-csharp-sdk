@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// AdminDeleteSession
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]
-    /// 
-    /// Required scope: social
-    /// 
     /// Admin delete the session by session ID
     /// </summary>
     public class AdminDeleteSession : AccelByte.Sdk.Core.Operation

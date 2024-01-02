@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// CreateMatchTicket
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:TICKET [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Creates a new request for matchmaking.
     /// 
     /// Cross Platform: Allow player to play game with "any" registered platforms.

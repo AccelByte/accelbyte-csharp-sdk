@@ -61,6 +61,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("noOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? NoOrigin { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementIfcOrigin? Origin { get; set; }
+
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
@@ -156,6 +165,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public EntitlementIfcClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class EntitlementIfcOrigin : StringEnum<EntitlementIfcOrigin>
+    {
+        public static readonly EntitlementIfcOrigin Epic
+            = new EntitlementIfcOrigin("Epic");
+
+        public static readonly EntitlementIfcOrigin GooglePlay
+            = new EntitlementIfcOrigin("GooglePlay");
+
+        public static readonly EntitlementIfcOrigin IOS
+            = new EntitlementIfcOrigin("IOS");
+
+        public static readonly EntitlementIfcOrigin Nintendo
+            = new EntitlementIfcOrigin("Nintendo");
+
+        public static readonly EntitlementIfcOrigin Oculus
+            = new EntitlementIfcOrigin("Oculus");
+
+        public static readonly EntitlementIfcOrigin Other
+            = new EntitlementIfcOrigin("Other");
+
+        public static readonly EntitlementIfcOrigin Playstation
+            = new EntitlementIfcOrigin("Playstation");
+
+        public static readonly EntitlementIfcOrigin Steam
+            = new EntitlementIfcOrigin("Steam");
+
+        public static readonly EntitlementIfcOrigin System
+            = new EntitlementIfcOrigin("System");
+
+        public static readonly EntitlementIfcOrigin Twitch
+            = new EntitlementIfcOrigin("Twitch");
+
+        public static readonly EntitlementIfcOrigin Xbox
+            = new EntitlementIfcOrigin("Xbox");
+
+
+        public static implicit operator EntitlementIfcOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementIfcOrigin(string enumValue)
             : base(enumValue)
         {
 

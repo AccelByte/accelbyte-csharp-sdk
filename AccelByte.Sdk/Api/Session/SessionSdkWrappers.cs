@@ -101,6 +101,17 @@ namespace AccelByte.Sdk.Core
         }
         private GameSession? _GameSession = null;
 
+        public NativeSession NativeSession
+        {
+            get
+            {
+                if (_NativeSession == null)
+                    _NativeSession = new NativeSession(_SdkObject);
+                return _NativeSession;
+            }
+        }
+        private NativeSession? _NativeSession = null;
+
         public Party Party
         {
             get

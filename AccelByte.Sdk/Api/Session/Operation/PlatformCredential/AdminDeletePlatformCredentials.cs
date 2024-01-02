@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminDeletePlatformCredentials
     ///
-    /// Delete platform credentials used for Native Session sync. Requires ADMIN:NAMESPACE:{namespace}:SESSION:PLATFORMCREDENTIAL [DELETE]
+    /// Delete platform credentials used for Native Session sync.
     /// </summary>
     public class AdminDeletePlatformCredentials : AccelByte.Sdk.Core.Operation
     {

@@ -49,6 +49,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("features")]
         public List<string>? Features { get; set; }
 
+        [SdkCommandArgument("fuzzyMatchName")]
+        public bool? FuzzyMatchName { get; set; }
+
         [SdkCommandArgument("itemId")]
         public List<string>? ItemId { get; set; }
 
@@ -57,6 +60,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
+
+        [SdkCommandArgument("origin")]
+        public string? Origin { get; set; }
 
         public QueryUserEntitlementsCommand(AccelByteSDK sdk)
         {
@@ -79,12 +85,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetEntitlementName((string)EntitlementName);
             if (Features != null)
                 opBuilder.SetFeatures((List<string>)Features);
+            if (FuzzyMatchName != null)
+                opBuilder.SetFuzzyMatchName((bool)FuzzyMatchName);
             if (ItemId != null)
                 opBuilder.SetItemId((List<string>)ItemId);
             if (Limit != null)
                 opBuilder.SetLimit((int)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((int)Offset);
+            if (Origin != null)
+                opBuilder.SetOrigin(QueryUserEntitlementsOrigin.NewValue(Origin));
 
 
 

@@ -40,6 +40,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("noOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? NoOrigin { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementSummaryOrigin? Origin { get; set; }
+
         [JsonPropertyName("stackable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Stackable { get; set; }
@@ -100,6 +109,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public EntitlementSummaryClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class EntitlementSummaryOrigin : StringEnum<EntitlementSummaryOrigin>
+    {
+        public static readonly EntitlementSummaryOrigin Epic
+            = new EntitlementSummaryOrigin("Epic");
+
+        public static readonly EntitlementSummaryOrigin GooglePlay
+            = new EntitlementSummaryOrigin("GooglePlay");
+
+        public static readonly EntitlementSummaryOrigin IOS
+            = new EntitlementSummaryOrigin("IOS");
+
+        public static readonly EntitlementSummaryOrigin Nintendo
+            = new EntitlementSummaryOrigin("Nintendo");
+
+        public static readonly EntitlementSummaryOrigin Oculus
+            = new EntitlementSummaryOrigin("Oculus");
+
+        public static readonly EntitlementSummaryOrigin Other
+            = new EntitlementSummaryOrigin("Other");
+
+        public static readonly EntitlementSummaryOrigin Playstation
+            = new EntitlementSummaryOrigin("Playstation");
+
+        public static readonly EntitlementSummaryOrigin Steam
+            = new EntitlementSummaryOrigin("Steam");
+
+        public static readonly EntitlementSummaryOrigin System
+            = new EntitlementSummaryOrigin("System");
+
+        public static readonly EntitlementSummaryOrigin Twitch
+            = new EntitlementSummaryOrigin("Twitch");
+
+        public static readonly EntitlementSummaryOrigin Xbox
+            = new EntitlementSummaryOrigin("Xbox");
+
+
+        public static implicit operator EntitlementSummaryOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementSummaryOrigin(string enumValue)
             : base(enumValue)
         {
 

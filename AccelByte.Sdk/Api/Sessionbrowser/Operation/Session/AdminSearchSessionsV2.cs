@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// AdminSearchSessionsV2
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:SESSION [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Search sessions. Optimize the query by differentiating query with filter namespace only and filter with namespace & other filter (partyID, userID, matchID).
     /// Query with filter namespace only will not group whole session data while query with filter namespace & other filter will include session data.
     /// </summary>

@@ -14,13 +14,11 @@ namespace AccelByte.Sdk.Api
     {
         public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
             this PublicGetRecentPlayer.PublicGetRecentPlayerBuilder builder,
-            string namespace_,
-            string userId
+            string namespace_
         )
         {
             PublicGetRecentPlayer op = builder.Build(
-                namespace_,
-                userId
+                namespace_
             );
 
             return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentPlayer(op);

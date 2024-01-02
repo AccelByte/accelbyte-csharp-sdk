@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - epicgames
     /// - twitch
     /// - awscognito
-    /// -
+    /// - amazon
     /// - eaorigin
     /// - snapchat
     /// - twitch

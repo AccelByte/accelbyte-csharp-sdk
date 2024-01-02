@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// RuleSetList
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:RULES [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// List rule sets.
     /// </summary>
     public class RuleSetList : AccelByte.Sdk.Core.Operation

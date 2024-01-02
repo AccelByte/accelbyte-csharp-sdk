@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// CreateMatchFunction
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:FUNCTIONS [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Creates a new matchmaking function.
     /// </summary>
     public class CreateMatchFunction : AccelByte.Sdk.Core.Operation

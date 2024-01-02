@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// This endpoint is utilized for specific scenarios where **email notifications are disabled**
     /// The user's email will be marked as verified
     /// 
+    /// Note:
+    /// - emailAddress or password field are optional
+    /// - request body can't be empty
+    /// 
     /// action code : 10103
     /// </summary>
     public class AdminTrustlyUpdateUserIdentity : AccelByte.Sdk.Core.Operation

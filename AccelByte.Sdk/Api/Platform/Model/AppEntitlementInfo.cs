@@ -38,6 +38,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("noOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? NoOrigin { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public AppEntitlementInfoOrigin? Origin { get; set; }
+
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
@@ -82,6 +91,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public AppEntitlementInfoAppType(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class AppEntitlementInfoOrigin : StringEnum<AppEntitlementInfoOrigin>
+    {
+        public static readonly AppEntitlementInfoOrigin Epic
+            = new AppEntitlementInfoOrigin("Epic");
+
+        public static readonly AppEntitlementInfoOrigin GooglePlay
+            = new AppEntitlementInfoOrigin("GooglePlay");
+
+        public static readonly AppEntitlementInfoOrigin IOS
+            = new AppEntitlementInfoOrigin("IOS");
+
+        public static readonly AppEntitlementInfoOrigin Nintendo
+            = new AppEntitlementInfoOrigin("Nintendo");
+
+        public static readonly AppEntitlementInfoOrigin Oculus
+            = new AppEntitlementInfoOrigin("Oculus");
+
+        public static readonly AppEntitlementInfoOrigin Other
+            = new AppEntitlementInfoOrigin("Other");
+
+        public static readonly AppEntitlementInfoOrigin Playstation
+            = new AppEntitlementInfoOrigin("Playstation");
+
+        public static readonly AppEntitlementInfoOrigin Steam
+            = new AppEntitlementInfoOrigin("Steam");
+
+        public static readonly AppEntitlementInfoOrigin System
+            = new AppEntitlementInfoOrigin("System");
+
+        public static readonly AppEntitlementInfoOrigin Twitch
+            = new AppEntitlementInfoOrigin("Twitch");
+
+        public static readonly AppEntitlementInfoOrigin Xbox
+            = new AppEntitlementInfoOrigin("Xbox");
+
+
+        public static implicit operator AppEntitlementInfoOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AppEntitlementInfoOrigin(string enumValue)
             : base(enumValue)
         {
 

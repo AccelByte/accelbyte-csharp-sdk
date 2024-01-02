@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// UpdateMatchFunction
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:FUNCTIONS [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Update existing matchmaking function.
     /// </summary>
     public class UpdateMatchFunction : AccelByte.Sdk.Core.Operation

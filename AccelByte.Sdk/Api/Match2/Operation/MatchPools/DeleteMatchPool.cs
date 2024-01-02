@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// DeleteMatchPool
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:POOL [DELETE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Deletes an existing matchmaking pool.
     /// </summary>
     public class DeleteMatchPool : AccelByte.Sdk.Core.Operation

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// RemovePlayerFromSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]
-    /// 
-    /// Required scope: social
-    /// 
     /// Remove player from game session
     /// </summary>
     public class RemovePlayerFromSession : AccelByte.Sdk.Core.Operation

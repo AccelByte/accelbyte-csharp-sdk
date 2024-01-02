@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// GetPlayerMetric
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:METRICS [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get player metric for a specific match pool
     /// </summary>
     public class GetPlayerMetric : AccelByte.Sdk.Core.Operation

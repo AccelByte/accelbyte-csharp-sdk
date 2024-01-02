@@ -11,6 +11,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class DLCRecord : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOriginSyncResult")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }
+
+        [JsonPropertyName("entitlementOriginSyncStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public DLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -60,6 +69,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class DLCRecord<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOriginSyncResult")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }
+
+        [JsonPropertyName("entitlementOriginSyncStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public DLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -107,6 +125,30 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+    public class DLCRecordEntitlementOriginSyncStatus : StringEnum<DLCRecordEntitlementOriginSyncStatus>
+    {
+        public static readonly DLCRecordEntitlementOriginSyncStatus NOTSYNCED
+            = new DLCRecordEntitlementOriginSyncStatus("NOT_SYNCED");
+
+        public static readonly DLCRecordEntitlementOriginSyncStatus SYNCED
+            = new DLCRecordEntitlementOriginSyncStatus("SYNCED");
+
+        public static readonly DLCRecordEntitlementOriginSyncStatus SYNCEDFAILED
+            = new DLCRecordEntitlementOriginSyncStatus("SYNCED_FAILED");
+
+
+        public static implicit operator DLCRecordEntitlementOriginSyncStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public DLCRecordEntitlementOriginSyncStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class DLCRecordStatus : StringEnum<DLCRecordStatus>
     {

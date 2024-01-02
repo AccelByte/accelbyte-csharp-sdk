@@ -22,6 +22,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<CreditSummary>? CreditSummaries { get; set; }
 
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FulfillmentHistoryInfoEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("entitlementSummaries")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementSummary>? EntitlementSummaries { get; set; }
@@ -65,6 +70,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
+
+    public class FulfillmentHistoryInfoEntitlementOrigin : StringEnum<FulfillmentHistoryInfoEntitlementOrigin>
+    {
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Epic
+            = new FulfillmentHistoryInfoEntitlementOrigin("Epic");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin GooglePlay
+            = new FulfillmentHistoryInfoEntitlementOrigin("GooglePlay");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin IOS
+            = new FulfillmentHistoryInfoEntitlementOrigin("IOS");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Nintendo
+            = new FulfillmentHistoryInfoEntitlementOrigin("Nintendo");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Oculus
+            = new FulfillmentHistoryInfoEntitlementOrigin("Oculus");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Other
+            = new FulfillmentHistoryInfoEntitlementOrigin("Other");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Playstation
+            = new FulfillmentHistoryInfoEntitlementOrigin("Playstation");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Steam
+            = new FulfillmentHistoryInfoEntitlementOrigin("Steam");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin System
+            = new FulfillmentHistoryInfoEntitlementOrigin("System");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Twitch
+            = new FulfillmentHistoryInfoEntitlementOrigin("Twitch");
+
+        public static readonly FulfillmentHistoryInfoEntitlementOrigin Xbox
+            = new FulfillmentHistoryInfoEntitlementOrigin("Xbox");
+
+
+        public static implicit operator FulfillmentHistoryInfoEntitlementOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public FulfillmentHistoryInfoEntitlementOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class FulfillmentHistoryInfoStatus : StringEnum<FulfillmentHistoryInfoStatus>
     {

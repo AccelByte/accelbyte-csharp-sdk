@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("platform")]
+        public string? Platform { get; set; }
+
         [SdkCommandArgument("itemIds")]
         public List<string> ItemIds { get; set; } = new List<string>();
 
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.ExistsAnyUserActiveEntitlementByItemIds.Builder;
 
+            if (Platform != null)
+                opBuilder.SetPlatform((string)Platform);
 
 
 

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// RuleSetDetails
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:RULES [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get details for a specific rule set
     /// </summary>
     public class RuleSetDetails : AccelByte.Sdk.Core.Operation

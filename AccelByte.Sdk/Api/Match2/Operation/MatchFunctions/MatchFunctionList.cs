@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// MatchFunctionList
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:FUNCTIONS [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// List existing match functions.
     /// </summary>
     public class MatchFunctionList : AccelByte.Sdk.Core.Operation

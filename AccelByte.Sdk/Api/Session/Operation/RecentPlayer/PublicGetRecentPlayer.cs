@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public long? Limit { get; set; }
 
+            public string? UserId { get; set; }
+
 
 
 
@@ -42,18 +44,22 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
+            public PublicGetRecentPlayerBuilder SetUserId(string _userId)
+            {
+                UserId = _userId;
+                return this;
+            }
+
 
 
 
 
             public PublicGetRecentPlayer Build(
-                string namespace_,
-                string userId
+                string namespace_
             )
             {
                 PublicGetRecentPlayer op = new PublicGetRecentPlayer(this,
-                    namespace_,
-                    userId
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -64,14 +70,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
         }
 
         private PublicGetRecentPlayer(PublicGetRecentPlayerBuilder builder,
-            string namespace_,
-            string userId
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
 
 
 
@@ -84,14 +89,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public PublicGetRecentPlayer(
             string namespace_,
-            string userId,
-            long? limit
+            long? limit,
+            string? userId
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["userId"] = userId;
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (userId is not null) QueryParams["userId"] = userId;
 
 
 
@@ -101,7 +106,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/session/v1/public/namespaces/{namespace}/recent-player/{userId}";
+        public override string Path => "/session/v1/public/namespaces/{namespace}/recent-player";
 
         public override HttpMethod Method => HttpMethod.Get;
 

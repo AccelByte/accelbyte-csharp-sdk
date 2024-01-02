@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// userUnfriendRequest
+    ///
+    /// User unfriend a friend.
     /// </summary>
     public class UserUnfriendRequest : AccelByte.Sdk.Core.Operation
     {

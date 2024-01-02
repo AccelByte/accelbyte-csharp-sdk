@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// getUserFriendsWithPlatform
+    ///
+    /// Get list of friends with platform data in a namespace.
     /// </summary>
     public class GetUserFriendsWithPlatform : AccelByte.Sdk.Core.Operation
     {

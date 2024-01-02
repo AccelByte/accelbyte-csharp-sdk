@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// AddPlayerToSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]
-    /// 
-    /// Required scope: social
-    /// 
     /// Add player to game session
     /// </summary>
     public class AddPlayerToSession : AccelByte.Sdk.Core.Operation

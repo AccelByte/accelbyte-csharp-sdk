@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// RejectBackfill
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:BACKFILL [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Reject backfill proposal
     /// </summary>
     public class RejectBackfill : AccelByte.Sdk.Core.Operation

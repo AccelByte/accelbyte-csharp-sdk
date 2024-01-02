@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetUserEntitlementByItemId : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

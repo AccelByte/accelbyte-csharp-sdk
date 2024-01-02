@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// DeleteRuleSet
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:RULES [DELETE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Deletes an existing rule set.
     /// </summary>
     public class DeleteRuleSet : AccelByte.Sdk.Core.Operation

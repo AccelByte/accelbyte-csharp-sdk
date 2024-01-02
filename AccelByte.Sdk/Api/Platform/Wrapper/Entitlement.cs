@@ -27,6 +27,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.QueryEntitlements1.Builder.SetWrapperObject(this); }
         }
+        public EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder EnableEntitlementOriginFeatureOp
+        {
+            get { return Operation.EnableEntitlementOriginFeature.Builder.SetWrapperObject(this); }
+        }
+        public GetEntitlementConfigInfo.GetEntitlementConfigInfoBuilder GetEntitlementConfigInfoOp
+        {
+            get { return Operation.GetEntitlementConfigInfo.Builder.SetWrapperObject(this); }
+        }
         public GrantEntitlements.GrantEntitlementsBuilder GrantEntitlementsOp
         {
             get { return Operation.GrantEntitlements.Builder.SetWrapperObject(this); }
@@ -38,6 +46,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public GetEntitlement.GetEntitlementBuilder GetEntitlementOp
         {
             get { return Operation.GetEntitlement.Builder.SetWrapperObject(this); }
+        }
+        public GetPlatformEntitlementConfig.GetPlatformEntitlementConfigBuilder GetPlatformEntitlementConfigOp
+        {
+            get { return Operation.GetPlatformEntitlementConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder UpdatePlatformEntitlementConfigOp
+        {
+            get { return Operation.UpdatePlatformEntitlementConfig.Builder.SetWrapperObject(this); }
         }
         public QueryUserEntitlements.QueryUserEntitlementsBuilder QueryUserEntitlementsOp
         {
@@ -176,10 +192,12 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicQueryUserEntitlementsByAppType.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserEntitlementByItemId.PublicGetUserEntitlementByItemIdBuilder PublicGetUserEntitlementByItemIdOp
         {
             get { return Operation.PublicGetUserEntitlementByItemId.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserEntitlementBySku.PublicGetUserEntitlementBySkuBuilder PublicGetUserEntitlementBySkuOp
         {
             get { return Operation.PublicGetUserEntitlementBySku.Builder.SetWrapperObject(this); }
@@ -236,6 +254,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.EntitlementConfigInfo? EnableEntitlementOriginFeature(EnableEntitlementOriginFeature input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementConfigInfo? GetEntitlementConfigInfo(GetEntitlementConfigInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.BulkEntitlementGrantResult? GrantEntitlements(GrantEntitlements input)
         {
             var response = _sdk.RunRequest(input);
@@ -255,6 +291,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.EntitlementInfo? GetEntitlement(GetEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementPlatformConfigInfo? GetPlatformEntitlementConfig(GetPlatformEntitlementConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementPlatformConfigInfo? UpdatePlatformEntitlementConfig(UpdatePlatformEntitlementConfig input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -572,6 +626,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.EntitlementInfo? PublicGetUserEntitlementByItemId(PublicGetUserEntitlementByItemId input)
         {
             var response = _sdk.RunRequest(input);
@@ -581,6 +637,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.EntitlementInfo? PublicGetUserEntitlementBySku(PublicGetUserEntitlementBySku input)
         {
             var response = _sdk.RunRequest(input);
@@ -590,6 +649,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.Ownership? PublicExistsAnyUserActiveEntitlement(PublicExistsAnyUserActiveEntitlement input)
         {
             var response = _sdk.RunRequest(input);

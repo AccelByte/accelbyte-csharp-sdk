@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetActiveMatchmakingGameSessions
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
+    /// Get all active session for matchmaking game, this return only dedicated session type
     /// </summary>
     public class GetActiveMatchmakingGameSessions : AccelByte.Sdk.Core.Operation
     {

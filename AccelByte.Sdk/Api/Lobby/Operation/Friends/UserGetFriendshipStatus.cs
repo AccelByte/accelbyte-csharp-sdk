@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// userGetFriendshipStatus
+    ///
+    /// User get friendship status.
     /// </summary>
     public class UserGetFriendshipStatus : AccelByte.Sdk.Core.Operation
     {

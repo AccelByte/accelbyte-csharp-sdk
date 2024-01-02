@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<string>? Features { get; set; }
 
         [JsonPropertyName("grantedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? GrantedAt { get; set; }
 
         [JsonPropertyName("grantedCode")]
@@ -56,16 +57,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("noOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? NoOrigin { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementInfoOrigin? Origin { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EntitlementInfoSource? Source { get; set; }
 
@@ -86,6 +98,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? StoreId { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EntitlementInfoType? Type { get; set; }
 
@@ -97,6 +110,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? UseCount { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }
@@ -160,6 +174,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public EntitlementInfoClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class EntitlementInfoOrigin : StringEnum<EntitlementInfoOrigin>
+    {
+        public static readonly EntitlementInfoOrigin Epic
+            = new EntitlementInfoOrigin("Epic");
+
+        public static readonly EntitlementInfoOrigin GooglePlay
+            = new EntitlementInfoOrigin("GooglePlay");
+
+        public static readonly EntitlementInfoOrigin IOS
+            = new EntitlementInfoOrigin("IOS");
+
+        public static readonly EntitlementInfoOrigin Nintendo
+            = new EntitlementInfoOrigin("Nintendo");
+
+        public static readonly EntitlementInfoOrigin Oculus
+            = new EntitlementInfoOrigin("Oculus");
+
+        public static readonly EntitlementInfoOrigin Other
+            = new EntitlementInfoOrigin("Other");
+
+        public static readonly EntitlementInfoOrigin Playstation
+            = new EntitlementInfoOrigin("Playstation");
+
+        public static readonly EntitlementInfoOrigin Steam
+            = new EntitlementInfoOrigin("Steam");
+
+        public static readonly EntitlementInfoOrigin System
+            = new EntitlementInfoOrigin("System");
+
+        public static readonly EntitlementInfoOrigin Twitch
+            = new EntitlementInfoOrigin("Twitch");
+
+        public static readonly EntitlementInfoOrigin Xbox
+            = new EntitlementInfoOrigin("Xbox");
+
+
+        public static implicit operator EntitlementInfoOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementInfoOrigin(string enumValue)
             : base(enumValue)
         {
 

@@ -200,6 +200,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminConfig? _AdminConfig = null;
 
+        public AdminStagingContent AdminStagingContent
+        {
+            get
+            {
+                if (_AdminStagingContent == null)
+                    _AdminStagingContent = new AdminStagingContent(_SdkObject);
+                return _AdminStagingContent;
+            }
+        }
+        private AdminStagingContent? _AdminStagingContent = null;
+
         public PublicContentV2 PublicContentV2
         {
             get
@@ -232,6 +243,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PublicLikeV2? _PublicLikeV2 = null;
+
+        public PublicStagingContent PublicStagingContent
+        {
+            get
+            {
+                if (_PublicStagingContent == null)
+                    _PublicStagingContent = new PublicStagingContent(_SdkObject);
+                return _PublicStagingContent;
+            }
+        }
+        private PublicStagingContent? _PublicStagingContent = null;
 
         internal UgcSdkWrappers(AccelByteSDK sdk)
         {

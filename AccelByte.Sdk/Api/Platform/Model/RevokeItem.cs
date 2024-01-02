@@ -11,6 +11,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class RevokeItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public RevokeItemEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("itemIdentity")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ItemIdentity { get; set; }
@@ -28,6 +33,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
+
+    public class RevokeItemEntitlementOrigin : StringEnum<RevokeItemEntitlementOrigin>
+    {
+        public static readonly RevokeItemEntitlementOrigin Epic
+            = new RevokeItemEntitlementOrigin("Epic");
+
+        public static readonly RevokeItemEntitlementOrigin GooglePlay
+            = new RevokeItemEntitlementOrigin("GooglePlay");
+
+        public static readonly RevokeItemEntitlementOrigin IOS
+            = new RevokeItemEntitlementOrigin("IOS");
+
+        public static readonly RevokeItemEntitlementOrigin Nintendo
+            = new RevokeItemEntitlementOrigin("Nintendo");
+
+        public static readonly RevokeItemEntitlementOrigin Oculus
+            = new RevokeItemEntitlementOrigin("Oculus");
+
+        public static readonly RevokeItemEntitlementOrigin Other
+            = new RevokeItemEntitlementOrigin("Other");
+
+        public static readonly RevokeItemEntitlementOrigin Playstation
+            = new RevokeItemEntitlementOrigin("Playstation");
+
+        public static readonly RevokeItemEntitlementOrigin Steam
+            = new RevokeItemEntitlementOrigin("Steam");
+
+        public static readonly RevokeItemEntitlementOrigin System
+            = new RevokeItemEntitlementOrigin("System");
+
+        public static readonly RevokeItemEntitlementOrigin Twitch
+            = new RevokeItemEntitlementOrigin("Twitch");
+
+        public static readonly RevokeItemEntitlementOrigin Xbox
+            = new RevokeItemEntitlementOrigin("Xbox");
+
+
+        public static implicit operator RevokeItemEntitlementOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public RevokeItemEntitlementOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class RevokeItemItemIdentityType : StringEnum<RevokeItemItemIdentityType>
     {

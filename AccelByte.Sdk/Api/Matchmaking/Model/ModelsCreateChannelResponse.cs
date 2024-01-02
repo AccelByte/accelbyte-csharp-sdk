@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
 {
     public class ModelsCreateChannelResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("blocked_player_option")]
+        public string? BlockedPlayerOption { get; set; }
+
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 

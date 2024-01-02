@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// UpdateSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [UPDATE]
-    /// 
-    /// Required scope: social
-    /// 
     /// Update game session, used to update the current player
     /// </summary>
     public class UpdateSession : AccelByte.Sdk.Core.Operation

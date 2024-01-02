@@ -1556,6 +1556,21 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformLinkV3(op);
         }
+        public static void Execute(
+            this AdminDeleteUserLinkingHistoryByPlatformIDV3.AdminDeleteUserLinkingHistoryByPlatformIDV3Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminDeleteUserLinkingHistoryByPlatformIDV3 op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserLinkingHistoryByPlatformIDV3(op);
+        }
         public static Iam.Model.ModelTokenThirdPartyLinkStatusResponse? Execute(
             this AdminGetThirdPartyPlatformTokenLinkStatusV3.AdminGetThirdPartyPlatformTokenLinkStatusV3Builder builder,
             string platformToken,

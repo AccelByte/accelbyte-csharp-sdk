@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// CreateRuleSet
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:RULES [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Creates a new rules set.
     /// 
     /// A rule set has a name and contains arbitrary data which is meaningful to some particular match function(s)

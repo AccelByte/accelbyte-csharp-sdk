@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 {
     /// <summary>
     /// getUserIncomingFriendsWithTime
+    ///
+    /// Get list of incoming friends with requested time info in a namespace.
     /// </summary>
     public class GetUserIncomingFriendsWithTime : AccelByte.Sdk.Core.Operation
     {

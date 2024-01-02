@@ -201,6 +201,14 @@
 | `/ugc/v2/admin/namespaces/{namespace}/configs` | GET | AdminGetConfigs | [AdminGetConfigs](../../AccelByte.Sdk/Api/Ugc/Operation/AdminConfig/AdminGetConfigs.cs) | [AdminGetConfigs](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminConfig/AdminGetConfigs.cs) |
 | `/ugc/v2/admin/namespaces/{namespace}/configs/{key}` | PATCH | AdminUpdateConfig | [AdminUpdateConfig](../../AccelByte.Sdk/Api/Ugc/Operation/AdminConfig/AdminUpdateConfig.cs) | [AdminUpdateConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminConfig/AdminUpdateConfig.cs) |
 
+### Admin Staging Content Wrapper:  [AdminStagingContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminStagingContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/admin/namespaces/{namespace}/staging-contents` | GET | AdminListStagingContents | [AdminListStagingContents](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminListStagingContents.cs) | [AdminListStagingContents](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminListStagingContents.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/staging-contents/{contentId}` | GET | AdminGetStagingContentByID | [AdminGetStagingContentByID](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminGetStagingContentByID.cs) | [AdminGetStagingContentByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminGetStagingContentByID.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/staging-contents/{contentId}/approve` | POST | AdminApproveStagingContent | [AdminApproveStagingContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminApproveStagingContent.cs) | [AdminApproveStagingContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminApproveStagingContent.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/users/{userId}/staging-contents` | GET | AdminListUserStagingContents | [AdminListUserStagingContents](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminListUserStagingContents.cs) | [AdminListUserStagingContents](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminListUserStagingContents.cs) |
+
 ### Public Content V2 Wrapper:  [PublicContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentV2.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -234,6 +242,14 @@
 |---|---|---|---|---|
 | `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/like` | GET | PublicListContentLikeV2 | [PublicListContentLikeV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeV2/PublicListContentLikeV2.cs) | [PublicListContentLikeV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeV2/PublicListContentLikeV2.cs) |
 | `/ugc/v2/public/namespaces/{namespace}/contents/{contentId}/like` | PUT | UpdateContentLikeStatusV2 | [UpdateContentLikeStatusV2](../../AccelByte.Sdk/Api/Ugc/Operation/PublicLikeV2/UpdateContentLikeStatusV2.cs) | [UpdateContentLikeStatusV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicLikeV2/UpdateContentLikeStatusV2.cs) |
+
+### Public Staging Content Wrapper:  [PublicStagingContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicStagingContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents` | GET | ListUserStagingContents | [ListUserStagingContents](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/ListUserStagingContents.cs) | [ListUserStagingContents](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/ListUserStagingContents.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents/{contentId}` | GET | GetUserStagingContentByID | [GetUserStagingContentByID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/GetUserStagingContentByID.cs) | [GetUserStagingContentByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/GetUserStagingContentByID.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents/{contentId}` | PUT | UpdateStagingContent | [UpdateStagingContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/UpdateStagingContent.cs) | [UpdateStagingContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/UpdateStagingContent.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents/{contentId}` | DELETE | DeleteUserStagingContentByID | [DeleteUserStagingContentByID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/DeleteUserStagingContentByID.cs) | [DeleteUserStagingContentByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/DeleteUserStagingContentByID.cs) |
 
 
 &nbsp;  
@@ -343,6 +359,12 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Admin Staging Content Wrapper:  [AdminStagingContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/AdminStagingContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/admin/namespaces/{namespace}/staging-contents/{contentId}` | GET | AdminGetStagingContentByID | [AdminGetStagingContentByID](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminGetStagingContentByID.cs) | [AdminGetStagingContentByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminGetStagingContentByID.cs) |
+| `/ugc/v2/admin/namespaces/{namespace}/staging-contents/{contentId}/approve` | POST | AdminApproveStagingContent | [AdminApproveStagingContent](../../AccelByte.Sdk/Api/Ugc/Operation/AdminStagingContent/AdminApproveStagingContent.cs) | [AdminApproveStagingContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/AdminStagingContent/AdminApproveStagingContent.cs) |
+
 ### Public Content V2 Wrapper:  [PublicContentV2](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicContentV2.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -364,6 +386,12 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Public Staging Content Wrapper:  [PublicStagingContent](../../AccelByte.Sdk/Api/Ugc/Wrapper/PublicStagingContent.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents/{contentId}` | GET | GetUserStagingContentByID | [GetUserStagingContentByID](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/GetUserStagingContentByID.cs) | [GetUserStagingContentByID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/GetUserStagingContentByID.cs) |
+| `/ugc/v2/public/namespaces/{namespace}/users/{userId}/staging-contents/{contentId}` | PUT | UpdateStagingContent | [UpdateStagingContent](../../AccelByte.Sdk/Api/Ugc/Operation/PublicStagingContent/UpdateStagingContent.cs) | [UpdateStagingContent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ugc/PublicStagingContent/UpdateStagingContent.cs) |
+
 
 &nbsp;  
 
@@ -376,6 +404,7 @@
 | `models.AdminGetContentBulkRequest` | [ModelsAdminGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminGetContentBulkRequest.cs) |
 | `models.AdminUpdateContentRequest` | [ModelsAdminUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminUpdateContentRequest.cs) |
 | `models.AdminUpdateContentRequestV2` | [ModelsAdminUpdateContentRequestV2](../../AccelByte.Sdk/Api/Ugc/Model/ModelsAdminUpdateContentRequestV2.cs) |
+| `models.ApproveStagingContentRequest` | [ModelsApproveStagingContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsApproveStagingContentRequest.cs) |
 | `models.ChannelRequest` | [ModelsChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelRequest.cs) |
 | `models.ChannelResponse` | [ModelsChannelResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsChannelResponse.cs) |
 | `models.ConfigResponse` | [ModelsConfigResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsConfigResponse.cs) |
@@ -420,6 +449,7 @@
 | `models.PaginatedGetTagResponse` | [ModelsPaginatedGetTagResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGetTagResponse.cs) |
 | `models.PaginatedGetTypeResponse` | [ModelsPaginatedGetTypeResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGetTypeResponse.cs) |
 | `models.PaginatedGroupResponse` | [ModelsPaginatedGroupResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedGroupResponse.cs) |
+| `models.PaginatedListStagingContentResponse` | [ModelsPaginatedListStagingContentResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPaginatedListStagingContentResponse.cs) |
 | `models.PagingCursor` | [ModelsPagingCursor](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPagingCursor.cs) |
 | `models.PayloadURL` | [ModelsPayloadURL](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPayloadURL.cs) |
 | `models.PreviewURL` | [ModelsPreviewURL](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPreviewURL.cs) |
@@ -427,6 +457,7 @@
 | `models.PublicCreateContentRequestS3` | [ModelsPublicCreateContentRequestS3](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicCreateContentRequestS3.cs) |
 | `models.PublicGetContentBulkRequest` | [ModelsPublicGetContentBulkRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsPublicGetContentBulkRequest.cs) |
 | `models.ScreenshotResponse` | [ModelsScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsScreenshotResponse.cs) |
+| `models.StagingContentResponse` | [ModelsStagingContentResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsStagingContentResponse.cs) |
 | `models.UpdateChannelRequest` | [ModelsUpdateChannelRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateChannelRequest.cs) |
 | `models.UpdateConfigRequest` | [ModelsUpdateConfigRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateConfigRequest.cs) |
 | `models.UpdateContentRequest` | [ModelsUpdateContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateContentRequest.cs) |
@@ -436,6 +467,7 @@
 | `models.UpdateFileLocationRequest` | [ModelsUpdateFileLocationRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateFileLocationRequest.cs) |
 | `models.UpdateScreenshotRequest` | [ModelsUpdateScreenshotRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotRequest.cs) |
 | `models.UpdateScreenshotResponse` | [ModelsUpdateScreenshotResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateScreenshotResponse.cs) |
+| `models.UpdateStagingContentRequest` | [ModelsUpdateStagingContentRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUpdateStagingContentRequest.cs) |
 | `models.UserFollowRequest` | [ModelsUserFollowRequest](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowRequest.cs) |
 | `models.UserFollowResponse` | [ModelsUserFollowResponse](../../AccelByte.Sdk/Api/Ugc/Model/ModelsUserFollowResponse.cs) |
 | `models.createScreenshotRequestItem` | [ModelsCreateScreenshotRequestItem](../../AccelByte.Sdk/Api/Ugc/Model/ModelsCreateScreenshotRequestItem.cs) |

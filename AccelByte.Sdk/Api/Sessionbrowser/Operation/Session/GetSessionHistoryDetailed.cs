@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetSessionHistoryDetailed
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [Read]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get session history detailed.
     /// 
     /// if party_id value empty/null, field will not show in response body.

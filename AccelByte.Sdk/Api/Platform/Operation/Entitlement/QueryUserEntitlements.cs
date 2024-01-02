@@ -42,11 +42,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public List<string>? Features { get; set; }
 
+            public bool? FuzzyMatchName { get; set; }
+
             public List<string>? ItemId { get; set; }
 
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
+
+            public QueryUserEntitlementsOrigin? Origin { get; set; }
 
 
 
@@ -85,6 +89,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
+            public QueryUserEntitlementsBuilder SetFuzzyMatchName(bool _fuzzyMatchName)
+            {
+                FuzzyMatchName = _fuzzyMatchName;
+                return this;
+            }
+
             public QueryUserEntitlementsBuilder SetItemId(List<string> _itemId)
             {
                 ItemId = _itemId;
@@ -100,6 +110,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryUserEntitlementsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetOrigin(QueryUserEntitlementsOrigin _origin)
+            {
+                Origin = _origin;
                 return this;
             }
 
@@ -137,9 +153,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
             if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
+            if (builder.FuzzyMatchName != null) QueryParams["fuzzyMatchName"] = Convert.ToString(builder.FuzzyMatchName)!;
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Origin is not null) QueryParams["origin"] = builder.Origin.Value;
 
 
 
@@ -160,9 +178,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             QueryUserEntitlementsEntitlementClazz? entitlementClazz,
             string? entitlementName,
             List<string>? features,
+            bool? fuzzyMatchName,
             List<string>? itemId,
             int? limit,
-            int? offset
+            int? offset,
+            QueryUserEntitlementsOrigin? origin
         )
         {
             PathParams["namespace"] = namespace_;
@@ -173,9 +193,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
             if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
             if (features is not null) QueryParams["features"] = features;
+            if (fuzzyMatchName != null) QueryParams["fuzzyMatchName"] = Convert.ToString(fuzzyMatchName)!;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (origin is not null) QueryParams["origin"] = origin.Value;
 
 
 
@@ -279,6 +301,54 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         public QueryUserEntitlementsEntitlementClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class QueryUserEntitlementsOrigin : StringEnum<QueryUserEntitlementsOrigin>
+    {
+        public static readonly QueryUserEntitlementsOrigin Epic
+            = new QueryUserEntitlementsOrigin("Epic");
+
+        public static readonly QueryUserEntitlementsOrigin GooglePlay
+            = new QueryUserEntitlementsOrigin("GooglePlay");
+
+        public static readonly QueryUserEntitlementsOrigin IOS
+            = new QueryUserEntitlementsOrigin("IOS");
+
+        public static readonly QueryUserEntitlementsOrigin Nintendo
+            = new QueryUserEntitlementsOrigin("Nintendo");
+
+        public static readonly QueryUserEntitlementsOrigin Oculus
+            = new QueryUserEntitlementsOrigin("Oculus");
+
+        public static readonly QueryUserEntitlementsOrigin Other
+            = new QueryUserEntitlementsOrigin("Other");
+
+        public static readonly QueryUserEntitlementsOrigin Playstation
+            = new QueryUserEntitlementsOrigin("Playstation");
+
+        public static readonly QueryUserEntitlementsOrigin Steam
+            = new QueryUserEntitlementsOrigin("Steam");
+
+        public static readonly QueryUserEntitlementsOrigin System
+            = new QueryUserEntitlementsOrigin("System");
+
+        public static readonly QueryUserEntitlementsOrigin Twitch
+            = new QueryUserEntitlementsOrigin("Twitch");
+
+        public static readonly QueryUserEntitlementsOrigin Xbox
+            = new QueryUserEntitlementsOrigin("Xbox");
+
+
+        public static implicit operator QueryUserEntitlementsOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public QueryUserEntitlementsOrigin(string enumValue)
             : base(enumValue)
         {
 

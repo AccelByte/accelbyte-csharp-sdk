@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// DeleteMatchTicket
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:TICKET [DELETE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Deletes an existing matchmaking ticket.
     /// </summary>
     public class DeleteMatchTicket : AccelByte.Sdk.Core.Operation

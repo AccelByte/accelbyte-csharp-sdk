@@ -19,6 +19,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? CustomRevocation { get; set; }
 
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public ItemRevocationEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("entitlementRevocations")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementRevocation>? EntitlementRevocations { get; set; }
@@ -73,6 +78,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? CustomRevocation { get; set; }
 
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public ItemRevocationEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("entitlementRevocations")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementRevocation>? EntitlementRevocations { get; set; }
@@ -117,6 +127,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+    public class ItemRevocationEntitlementOrigin : StringEnum<ItemRevocationEntitlementOrigin>
+    {
+        public static readonly ItemRevocationEntitlementOrigin Epic
+            = new ItemRevocationEntitlementOrigin("Epic");
+
+        public static readonly ItemRevocationEntitlementOrigin GooglePlay
+            = new ItemRevocationEntitlementOrigin("GooglePlay");
+
+        public static readonly ItemRevocationEntitlementOrigin IOS
+            = new ItemRevocationEntitlementOrigin("IOS");
+
+        public static readonly ItemRevocationEntitlementOrigin Nintendo
+            = new ItemRevocationEntitlementOrigin("Nintendo");
+
+        public static readonly ItemRevocationEntitlementOrigin Oculus
+            = new ItemRevocationEntitlementOrigin("Oculus");
+
+        public static readonly ItemRevocationEntitlementOrigin Other
+            = new ItemRevocationEntitlementOrigin("Other");
+
+        public static readonly ItemRevocationEntitlementOrigin Playstation
+            = new ItemRevocationEntitlementOrigin("Playstation");
+
+        public static readonly ItemRevocationEntitlementOrigin Steam
+            = new ItemRevocationEntitlementOrigin("Steam");
+
+        public static readonly ItemRevocationEntitlementOrigin System
+            = new ItemRevocationEntitlementOrigin("System");
+
+        public static readonly ItemRevocationEntitlementOrigin Twitch
+            = new ItemRevocationEntitlementOrigin("Twitch");
+
+        public static readonly ItemRevocationEntitlementOrigin Xbox
+            = new ItemRevocationEntitlementOrigin("Xbox");
+
+
+        public static implicit operator ItemRevocationEntitlementOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ItemRevocationEntitlementOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class ItemRevocationItemType : StringEnum<ItemRevocationItemType>
     {

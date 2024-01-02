@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public List<string>? Ids { get; set; }
 
+            public string? Platform { get; set; }
+
 
 
 
@@ -43,6 +45,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public GetUserEntitlementOwnershipByItemIdsBuilder SetIds(List<string> _ids)
             {
                 Ids = _ids;
+                return this;
+            }
+
+            public GetUserEntitlementOwnershipByItemIdsBuilder SetPlatform(string _platform)
+            {
+                Platform = _platform;
                 return this;
             }
 
@@ -76,6 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["userId"] = userId;
 
             if (builder.Ids is not null) QueryParams["ids"] = builder.Ids;
+            if (builder.Platform is not null) QueryParams["platform"] = builder.Platform;
 
 
 
@@ -90,13 +99,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public GetUserEntitlementOwnershipByItemIds(
             string namespace_,
             string userId,
-            List<string>? ids
+            List<string>? ids,
+            string? platform
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
             if (ids is not null) QueryParams["ids"] = ids;
+            if (platform is not null) QueryParams["platform"] = platform;
 
 
 

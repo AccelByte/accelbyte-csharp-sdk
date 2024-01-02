@@ -16,11 +16,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// DeleteBackfill
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:BACKFILL [DELETE]
-    /// 
-    /// Required Scope: social
-    /// 
-    /// Delete backfill ticket
+    /// Delete backfill ticket.
     /// </summary>
     public class DeleteBackfill : AccelByte.Sdk.Core.Operation
     {

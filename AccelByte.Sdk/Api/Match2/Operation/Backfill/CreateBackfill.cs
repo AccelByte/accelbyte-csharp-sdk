@@ -16,11 +16,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// CreateBackfill
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:BACKFILL [CREATE]
-    /// 
-    /// Required Scope: social
-    /// 
-    /// Create backfill ticket
+    /// Create backfill ticket.
     /// </summary>
     public class CreateBackfill : AccelByte.Sdk.Core.Operation
     {

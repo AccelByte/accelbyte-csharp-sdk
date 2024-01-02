@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// AdminQuerySession
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
+    /// Query to available game session
     /// </summary>
     public class AdminQuerySession : AccelByte.Sdk.Core.Operation
     {

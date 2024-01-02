@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// DeleteMatchFunction
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:FUNCTIONS [DELETE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Deletes an existing match function.
     /// </summary>
     public class DeleteMatchFunction : AccelByte.Sdk.Core.Operation

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// DeleteSession
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [DELETE]
-    /// 
-    /// Required scope: social
-    /// 
     /// Delete the session (p2p) by session ID
     /// </summary>
     public class DeleteSession : AccelByte.Sdk.Core.Operation

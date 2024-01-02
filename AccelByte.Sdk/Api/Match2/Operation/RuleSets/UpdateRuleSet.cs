@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// UpdateRuleSet
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:RULES [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Updates an existing matchmaking rule set.
     /// 
     /// To use custom rules set please set enable_custom_match_function=true. Default (false).

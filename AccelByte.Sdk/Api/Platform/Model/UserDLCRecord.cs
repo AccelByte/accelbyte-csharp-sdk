@@ -11,6 +11,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class UserDLCRecord : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOriginSyncResult")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }
+
+        [JsonPropertyName("entitlementOriginSyncStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public UserDLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -73,6 +82,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class UserDLCRecord<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementOriginSyncResult")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }
+
+        [JsonPropertyName("entitlementOriginSyncStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public UserDLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -133,6 +151,30 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+    public class UserDLCRecordEntitlementOriginSyncStatus : StringEnum<UserDLCRecordEntitlementOriginSyncStatus>
+    {
+        public static readonly UserDLCRecordEntitlementOriginSyncStatus NOTSYNCED
+            = new UserDLCRecordEntitlementOriginSyncStatus("NOT_SYNCED");
+
+        public static readonly UserDLCRecordEntitlementOriginSyncStatus SYNCED
+            = new UserDLCRecordEntitlementOriginSyncStatus("SYNCED");
+
+        public static readonly UserDLCRecordEntitlementOriginSyncStatus SYNCEDFAILED
+            = new UserDLCRecordEntitlementOriginSyncStatus("SYNCED_FAILED");
+
+
+        public static implicit operator UserDLCRecordEntitlementOriginSyncStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public UserDLCRecordEntitlementOriginSyncStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class UserDLCRecordPlatform : StringEnum<UserDLCRecordPlatform>
     {

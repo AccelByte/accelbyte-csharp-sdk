@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// MatchPoolList
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:POOL [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// List matchmaking pools.
     /// </summary>
     public class MatchPoolList : AccelByte.Sdk.Core.Operation

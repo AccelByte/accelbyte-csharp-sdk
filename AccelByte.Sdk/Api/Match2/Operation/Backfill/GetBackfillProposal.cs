@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// GetBackfillProposal
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:BACKFILL [GET]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get backfill proposal
     /// </summary>
     public class GetBackfillProposal : AccelByte.Sdk.Core.Operation

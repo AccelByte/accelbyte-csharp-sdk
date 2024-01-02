@@ -289,6 +289,14 @@ namespace AccelByte.Sdk.Api.Lobby
         [WebSocketEvent("personalChatResponse")]
         public Action<PersonalChatResponse>? OnPersonalChatResponse { get; set; } = null;
 
+        public async Task SendRefreshTokenRequest(RefreshTokenRequest payload, int errorCode)
+        {
+            await Send(payload, errorCode);
+        }
+
+        [WebSocketEvent("refreshTokenResponse")]
+        public Action<RefreshTokenResponse>? OnRefreshTokenResponse { get; set; } = null;
+
         [WebSocketEvent("rejectFriendsNotif")]
         public Action<RejectFriendsNotif>? OnRejectFriendsNotif { get; set; } = null;
 

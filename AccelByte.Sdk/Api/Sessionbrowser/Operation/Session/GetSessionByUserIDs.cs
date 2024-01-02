@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetSessionByUserIDs
     ///
-    /// Required permission: NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
-    /// 
     /// Query game sessions by comma separated user ids
     /// </summary>
     public class GetSessionByUserIDs : AccelByte.Sdk.Core.Operation

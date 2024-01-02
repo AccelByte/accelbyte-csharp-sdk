@@ -36,6 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public List<string>? Features { get; set; }
 
         [JsonPropertyName("grantedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? GrantedAt { get; set; }
 
         [JsonPropertyName("grantedCode")]
@@ -56,16 +57,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public ItemSnapshot? ItemSnapshot { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
+
+        [JsonPropertyName("noOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? NoOrigin { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public StackableEntitlementInfoOrigin? Origin { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Sku { get; set; }
 
         [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public StackableEntitlementInfoSource? Source { get; set; }
 
@@ -90,6 +102,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? StoreId { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public StackableEntitlementInfoType? Type { get; set; }
 
@@ -101,6 +114,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public int? UseCount { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }
@@ -164,6 +178,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public StackableEntitlementInfoClazz(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class StackableEntitlementInfoOrigin : StringEnum<StackableEntitlementInfoOrigin>
+    {
+        public static readonly StackableEntitlementInfoOrigin Epic
+            = new StackableEntitlementInfoOrigin("Epic");
+
+        public static readonly StackableEntitlementInfoOrigin GooglePlay
+            = new StackableEntitlementInfoOrigin("GooglePlay");
+
+        public static readonly StackableEntitlementInfoOrigin IOS
+            = new StackableEntitlementInfoOrigin("IOS");
+
+        public static readonly StackableEntitlementInfoOrigin Nintendo
+            = new StackableEntitlementInfoOrigin("Nintendo");
+
+        public static readonly StackableEntitlementInfoOrigin Oculus
+            = new StackableEntitlementInfoOrigin("Oculus");
+
+        public static readonly StackableEntitlementInfoOrigin Other
+            = new StackableEntitlementInfoOrigin("Other");
+
+        public static readonly StackableEntitlementInfoOrigin Playstation
+            = new StackableEntitlementInfoOrigin("Playstation");
+
+        public static readonly StackableEntitlementInfoOrigin Steam
+            = new StackableEntitlementInfoOrigin("Steam");
+
+        public static readonly StackableEntitlementInfoOrigin System
+            = new StackableEntitlementInfoOrigin("System");
+
+        public static readonly StackableEntitlementInfoOrigin Twitch
+            = new StackableEntitlementInfoOrigin("Twitch");
+
+        public static readonly StackableEntitlementInfoOrigin Xbox
+            = new StackableEntitlementInfoOrigin("Xbox");
+
+
+        public static implicit operator StackableEntitlementInfoOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public StackableEntitlementInfoOrigin(string enumValue)
             : base(enumValue)
         {
 

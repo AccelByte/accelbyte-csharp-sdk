@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetTotalActiveSession
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
+    /// Get all active session
     /// </summary>
     public class GetTotalActiveSession : AccelByte.Sdk.Core.Operation
     {

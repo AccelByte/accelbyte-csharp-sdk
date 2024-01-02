@@ -19,6 +19,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? NullFieldList { get; set; }
 
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementUpdateOrigin? Origin { get; set; }
+
+        [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Reason { get; set; }
+
         [JsonPropertyName("startDate")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? StartDate { get; set; }
@@ -35,6 +44,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
+
+    public class EntitlementUpdateOrigin : StringEnum<EntitlementUpdateOrigin>
+    {
+        public static readonly EntitlementUpdateOrigin Epic
+            = new EntitlementUpdateOrigin("Epic");
+
+        public static readonly EntitlementUpdateOrigin GooglePlay
+            = new EntitlementUpdateOrigin("GooglePlay");
+
+        public static readonly EntitlementUpdateOrigin IOS
+            = new EntitlementUpdateOrigin("IOS");
+
+        public static readonly EntitlementUpdateOrigin Nintendo
+            = new EntitlementUpdateOrigin("Nintendo");
+
+        public static readonly EntitlementUpdateOrigin Oculus
+            = new EntitlementUpdateOrigin("Oculus");
+
+        public static readonly EntitlementUpdateOrigin Other
+            = new EntitlementUpdateOrigin("Other");
+
+        public static readonly EntitlementUpdateOrigin Playstation
+            = new EntitlementUpdateOrigin("Playstation");
+
+        public static readonly EntitlementUpdateOrigin Steam
+            = new EntitlementUpdateOrigin("Steam");
+
+        public static readonly EntitlementUpdateOrigin System
+            = new EntitlementUpdateOrigin("System");
+
+        public static readonly EntitlementUpdateOrigin Twitch
+            = new EntitlementUpdateOrigin("Twitch");
+
+        public static readonly EntitlementUpdateOrigin Xbox
+            = new EntitlementUpdateOrigin("Xbox");
+
+
+        public static implicit operator EntitlementUpdateOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementUpdateOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class EntitlementUpdateStatus : StringEnum<EntitlementUpdateStatus>
     {

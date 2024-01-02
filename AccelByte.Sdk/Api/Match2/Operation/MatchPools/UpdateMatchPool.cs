@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// UpdateMatchPool
     ///
-    /// Required Permission: NAMESPACE:{namespace}:MATCHMAKING:POOL [UPDATE]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Updates an existing matchmaking pool.
     /// 
     /// ticket_expiration_seconds and backfill_ticket_expiration_seconds will be set to 300 seconds (5 minutes) by default if not filled.

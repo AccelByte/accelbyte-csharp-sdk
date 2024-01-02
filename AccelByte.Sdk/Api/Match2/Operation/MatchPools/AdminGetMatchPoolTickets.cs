@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// <summary>
     /// adminGetMatchPoolTickets
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:MATCHMAKING:POOL:TICKETS [READ]
-    /// 
-    /// Required Scope: social
-    /// 
     /// Get tickets in queue for a specific match pool
     /// 
     /// Result: number of tickets and list of ticket detail in a match pool.

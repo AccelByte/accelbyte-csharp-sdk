@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     /// <summary>
     /// GetActiveCustomGameSessions
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:SESSIONBROWSER:SESSION [READ]
-    /// 
-    /// Required scope: social
+    /// Get all active session for custom game, this return only dedicated session type
     /// </summary>
     public class GetActiveCustomGameSessions : AccelByte.Sdk.Core.Operation
     {

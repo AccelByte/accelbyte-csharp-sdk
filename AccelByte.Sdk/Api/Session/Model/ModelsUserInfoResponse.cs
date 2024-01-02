@@ -7,8 +7,12 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Session.Model
 {
-    public class ModelsUserInfo : AccelByte.Sdk.Core.Model
+    public class ModelsUserInfoResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("lastPlayedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? LastPlayedTime { get; set; }
+
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }

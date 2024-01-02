@@ -14,6 +14,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("count")]
         public int? Count { get; set; }
 
+        [JsonPropertyName("entitlementOrigin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public FulFillItemPayloadEntitlementOrigin? EntitlementOrigin { get; set; }
+
         [JsonPropertyName("itemIdentity")]
         public string? ItemIdentity { get; set; }
 
@@ -24,6 +29,54 @@ namespace AccelByte.Sdk.Api.Platform.Model
     }
 
 
+
+    public class FulFillItemPayloadEntitlementOrigin : StringEnum<FulFillItemPayloadEntitlementOrigin>
+    {
+        public static readonly FulFillItemPayloadEntitlementOrigin Epic
+            = new FulFillItemPayloadEntitlementOrigin("Epic");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin GooglePlay
+            = new FulFillItemPayloadEntitlementOrigin("GooglePlay");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin IOS
+            = new FulFillItemPayloadEntitlementOrigin("IOS");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Nintendo
+            = new FulFillItemPayloadEntitlementOrigin("Nintendo");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Oculus
+            = new FulFillItemPayloadEntitlementOrigin("Oculus");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Other
+            = new FulFillItemPayloadEntitlementOrigin("Other");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Playstation
+            = new FulFillItemPayloadEntitlementOrigin("Playstation");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Steam
+            = new FulFillItemPayloadEntitlementOrigin("Steam");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin System
+            = new FulFillItemPayloadEntitlementOrigin("System");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Twitch
+            = new FulFillItemPayloadEntitlementOrigin("Twitch");
+
+        public static readonly FulFillItemPayloadEntitlementOrigin Xbox
+            = new FulFillItemPayloadEntitlementOrigin("Xbox");
+
+
+        public static implicit operator FulFillItemPayloadEntitlementOrigin(string value)
+        {
+            return NewValue(value);
+        }
+
+        public FulFillItemPayloadEntitlementOrigin(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class FulFillItemPayloadItemIdentityType : StringEnum<FulFillItemPayloadItemIdentityType>
     {
