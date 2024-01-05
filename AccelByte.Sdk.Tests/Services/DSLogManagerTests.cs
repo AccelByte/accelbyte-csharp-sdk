@@ -13,7 +13,7 @@ using AccelByte.Sdk.Api.Dslogmanager.Model;
 
 namespace AccelByte.Sdk.Tests.Services
 {
-    [TestFixture(Category = "FluentIntegration")]
+    [TestFixture(Category = "ArmadaIntegration")]
     [Explicit]
     public class DSLogManagerTests : BaseServiceTests
     {
@@ -26,11 +26,9 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            #region Get terminated servers
             ModelsListTerminatedServersResponse? tsResp = _Sdk.Dslogmanager.TerminatedServers.ListTerminatedServersOp
                 .SetLimit(10)
                 .Execute(_Sdk.Namespace);
-            #endregion
             Assert.IsNotNull(tsResp);
         }
     }

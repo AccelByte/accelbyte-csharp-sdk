@@ -17,7 +17,7 @@ using AccelByte.Sdk.Tests.Model;
 
 namespace AccelByte.Sdk.Tests.Services
 {
-    [TestFixture(Category = "FluentIntegration")]
+    [TestFixture(Category = "ArmadaIntegration")]
     [Explicit]
     public class QosmTests : BaseServiceTests
     {
@@ -48,9 +48,7 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.AreEqual(LoginType.Client, _Sdk.Configuration.TokenRepository.LoginType);
             }
 
-            #region List servers
             ModelsListServerResponse? aggrs = _Sdk.Qosm.Public.ListServerOp.Execute();
-            #endregion
             Assert.IsNotNull(aggrs);
         }
 
@@ -98,7 +96,6 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.Ignore("response 'Servers' is empty");
             }
 
-            #region Execute heartbeat test against a server
             ModelsHeartbeatRequest createHeartbeat = new ModelsHeartbeatRequest()
             {
                 Ip = respIp,
@@ -107,7 +104,6 @@ namespace AccelByte.Sdk.Tests.Services
             };
 
             _Sdk.Qosm.Server.HeartbeatOp.Execute(createHeartbeat);
-            #endregion
         }
     }
 }

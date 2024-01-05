@@ -14,7 +14,7 @@ using AccelByte.Sdk.Api.Dsmc.Model;
 
 namespace AccelByte.Sdk.Tests.Services
 {
-    [TestFixture(Category = "FluentIntegration")]
+    [TestFixture(Category = "ArmadaIntegration")]
     [Explicit]
     public class DsmcTests : BaseServiceTests
     {
@@ -33,10 +33,8 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
             }
 
-            #region Get local server list
             ModelsListServerResponse? serverResp = _Sdk.Dsmc.Admin.ListLocalServerOp
                 .Execute(_Sdk.Namespace);
-            #endregion
             Assert.IsNotNull(serverResp);
         }
 
@@ -89,7 +87,6 @@ namespace AccelByte.Sdk.Tests.Services
                 session_id = cResp.SessionId!;
             }
 
-            #region Register a session to DSMC service
             ModelsCreateSessionRequest sessionRequest = new ModelsCreateSessionRequest()
             {
                 ClientVersion = "0.3.0",
@@ -125,28 +122,21 @@ namespace AccelByte.Sdk.Tests.Services
 
             ModelsSessionResponse? csResp = _Sdk.Dsmc.Session.CreateSessionOp
                 .Execute(sessionRequest, _Sdk.Namespace);
-            #endregion
             Assert.IsNotNull(csResp);
 
-            #region Get registered session
             csResp = _Sdk.Dsmc.Session.GetSessionOp.Execute(_Sdk.Namespace, session_id);
-            #endregion
             Assert.IsNotNull(csResp);
 
             //Waiting for the server to be ready
             Thread.Sleep(5000);
 
-            #region Claim server for specified session
             ModelsClaimSessionRequest claimServer = new ModelsClaimSessionRequest()
             {
                 SessionId = session_id
             };
             _Sdk.Dsmc.Session.ClaimServerOp.Execute(claimServer, _Sdk.Namespace);
-            #endregion
 
-            #region Delete a session from DSMC
             _Sdk.Dsmc.Admin.DeleteSessionOp.Execute(_Sdk.Namespace, session_id);
-            #endregion
 
             Api.Sessionbrowser.Model.ModelsSessionResponse? delResp = _Sdk.Sessionbrowser.Session.DeleteSessionOp
                 .Execute(_Sdk.Namespace, session_id);
