@@ -29,20 +29,8 @@ namespace AccelByte.Sdk.Tests.Services
 
             if (IsUsingAGSStarter())
             {
-                bool isLogoutOk = _Sdk.Logout();
-                if (!isLogoutOk)
-                {
-                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
-                    return;
-                }
-                bool isLoginOk = _Sdk.LoginClient();
-                if (!isLoginOk)
-                {
-                    Assert.Inconclusive("Failed to run in AGS Starter environment.");
-                    return;
-                }
-                Assert.AreEqual(true, isLoginOk);
-                Assert.AreEqual(LoginType.Client, _Sdk.Configuration.TokenRepository.LoginType);
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
             }
 
             string firstEmailToTest = "dummy@example.com";
