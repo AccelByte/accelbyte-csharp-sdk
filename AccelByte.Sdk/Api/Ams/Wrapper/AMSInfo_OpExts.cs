@@ -34,5 +34,14 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoSupportedInstances(op);
         }
+        public static void Execute(
+            this UploadURLGet.UploadURLGetBuilder builder
+        )
+        {
+            UploadURLGet op = builder.Build(
+            );
+
+            ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).UploadURLGet(op);
+        }
     }
 }

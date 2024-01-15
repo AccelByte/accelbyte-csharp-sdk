@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentCallbackConfig
     ///
-    /// Get payment callback configuration.
+    ///  [Not Supported Yet In Starter] Get payment callback configuration.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT:CONFIG", action=2 (READ)

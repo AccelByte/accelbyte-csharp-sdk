@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
     /// AuthCheck
+    ///
+    /// Check if fleet commander is authorized to talk to AMS with this IAM
     /// </summary>
     public class AuthCheck : AccelByte.Sdk.Core.Operation
     {

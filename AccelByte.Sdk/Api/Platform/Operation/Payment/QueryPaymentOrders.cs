@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// queryPaymentOrders
     ///
-    /// Query payment orders.
+    ///  [Not Supported Yet In Starter] Query payment orders.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateItemTypeConfig
     ///
-    /// This API is used to update an item type config.
+    ///  [Not Supported Yet In Starter] This API is used to update an item type config.
     /// 
     /// *  Required permission : resource="ADMIN:ITEM:CONFIG", action=4 (UPDATE)
     /// *  Returns : item type config data

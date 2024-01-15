@@ -16,15 +16,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostGameBinaryPresignedURLV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
-    /// Required scope: `social`
-    /// 
     /// Request presigned URL to upload the binary record to s3.
     /// 
-    /// 
     /// Other detail info:
-    /// 
-    /// 
     /// 
     /// Supported file types: jpeg, jpg, png, bmp, gif, mp3, webp, and bin.
     /// </summary>

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// FleetClaimByKeys
     ///
+    /// Claim a dedicated server from fleets with matching claim keys
+    /// 
     /// Required Permission: NAMESPACE:{namespace}:AMS:SERVER:CLAIM [UPDATE]
     /// </summary>
     public class FleetClaimByKeys : AccelByte.Sdk.Core.Operation

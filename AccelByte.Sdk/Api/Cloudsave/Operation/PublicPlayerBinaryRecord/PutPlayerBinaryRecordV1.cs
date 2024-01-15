@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// putPlayerBinaryRecordV1
     ///
-    /// Required permission: `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [UPDATE]`
-    /// Required scope: `social`
-    /// 
     /// Update a player binary record file by its key
     /// </summary>
     public class PutPlayerBinaryRecordV1 : AccelByte.Sdk.Core.Operation

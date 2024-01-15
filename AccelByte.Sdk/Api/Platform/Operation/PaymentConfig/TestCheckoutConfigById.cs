@@ -16,7 +16,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testCheckoutConfigById
     ///
-    /// Test checkout.com configuration in payment merchant config. Other detail info:
+    ///  [Not Supported Yet In Starter] Test checkout.com configuration in payment merchant config. Other detail info:
+    /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
     ///   *  Returns : test result
     /// </summary>

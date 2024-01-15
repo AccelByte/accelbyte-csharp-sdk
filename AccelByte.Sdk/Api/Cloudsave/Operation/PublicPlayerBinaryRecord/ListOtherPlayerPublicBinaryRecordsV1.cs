@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// listOtherPlayerPublicBinaryRecordsV1
     ///
-    /// Required Permission: `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [READ]`
-    /// Required Scope: `social`
-    /// 
     /// Retrieve list of other player public binary records under given namespace.
     /// </summary>
     public class ListOtherPlayerPublicBinaryRecordsV1 : AccelByte.Sdk.Core.Operation

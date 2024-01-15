@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// ArtifactGet
     ///
+    /// Get all artifacts matching the provided search criteria. When criteria is not specified the data returned won't have been filtered on those parameters
+    /// 
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:ARTIFACT [READ]
     /// </summary>
     public class ArtifactGet : AccelByte.Sdk.Core.Operation
@@ -29,6 +31,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             public string? ArtifactType { get; set; }
 
+            public long? Count { get; set; }
+
             public string? EndDate { get; set; }
 
             public string? FleetID { get; set; }
@@ -39,7 +43,11 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             public long? MinSize { get; set; }
 
+            public long? Offset { get; set; }
+
             public string? Region { get; set; }
+
+            public string? ServerId { get; set; }
 
             public string? StartDate { get; set; }
 
@@ -55,6 +63,12 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             public ArtifactGetBuilder SetArtifactType(string _artifactType)
             {
                 ArtifactType = _artifactType;
+                return this;
+            }
+
+            public ArtifactGetBuilder SetCount(long _count)
+            {
+                Count = _count;
                 return this;
             }
 
@@ -88,9 +102,21 @@ namespace AccelByte.Sdk.Api.Ams.Operation
                 return this;
             }
 
+            public ArtifactGetBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
             public ArtifactGetBuilder SetRegion(string _region)
             {
                 Region = _region;
+                return this;
+            }
+
+            public ArtifactGetBuilder SetServerId(string _serverId)
+            {
+                ServerId = _serverId;
                 return this;
             }
 
@@ -132,12 +158,15 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.ArtifactType is not null) QueryParams["artifactType"] = builder.ArtifactType;
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
             if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.FleetID is not null) QueryParams["fleetID"] = builder.FleetID;
             if (builder.ImageID is not null) QueryParams["imageID"] = builder.ImageID;
             if (builder.MaxSize != null) QueryParams["maxSize"] = Convert.ToString(builder.MaxSize)!;
             if (builder.MinSize != null) QueryParams["minSize"] = Convert.ToString(builder.MinSize)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.ServerId is not null) QueryParams["serverId"] = builder.ServerId;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
 
@@ -153,12 +182,15 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         public ArtifactGet(
             string namespace_,
             string? artifactType,
+            long? count,
             string? endDate,
             string? fleetID,
             string? imageID,
             long? maxSize,
             long? minSize,
+            long? offset,
             string? region,
+            string? serverId,
             string? startDate,
             string? status
         )
@@ -166,12 +198,15 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["namespace"] = namespace_;
 
             if (artifactType is not null) QueryParams["artifactType"] = artifactType;
+            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (fleetID is not null) QueryParams["fleetID"] = fleetID;
             if (imageID is not null) QueryParams["imageID"] = imageID;
             if (maxSize != null) QueryParams["maxSize"] = Convert.ToString(maxSize)!;
             if (minSize != null) QueryParams["minSize"] = Convert.ToString(minSize)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
+            if (serverId is not null) QueryParams["serverId"] = serverId;
             if (startDate is not null) QueryParams["startDate"] = startDate;
             if (status is not null) QueryParams["status"] = status;
 

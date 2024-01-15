@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminDeleteAdminPlayerRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [DELETE]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Delete a record (arbitrary JSON data) in user-level with given key.
     /// </summary>
     public class AdminDeleteAdminPlayerRecordV1 : AccelByte.Sdk.Core.Operation

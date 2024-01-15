@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// deletePluginConfig
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:PLUGINS [DELETE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will delete grpc plugins configuration
     /// </summary>

@@ -13,6 +13,54 @@ namespace AccelByte.Sdk.Api
     public static class AmsAccount_OpExts
     {
         public static Ams.Model.ApiAccountResponse? Execute(
+            this AdminAccountGet.AdminAccountGetBuilder builder,
+            string namespace_
+        )
+        {
+            AdminAccountGet op = builder.Build(
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountGet(op);
+        }
+        public static Ams.Model.ApiAccountCreateResponse? Execute(
+            this AdminAccountCreate.AdminAccountCreateBuilder builder,
+            ApiAccountCreateRequest body,
+            string namespace_
+        )
+        {
+            AdminAccountCreate op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountCreate(op);
+        }
+        public static Ams.Model.ApiAccountLinkTokenResponse? Execute(
+            this AdminAccountLinkTokenGet.AdminAccountLinkTokenGetBuilder builder,
+            string namespace_
+        )
+        {
+            AdminAccountLinkTokenGet op = builder.Build(
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenGet(op);
+        }
+        public static Ams.Model.ApiAccountLinkResponse? Execute(
+            this AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder builder,
+            ApiAccountLinkRequest body,
+            string namespace_
+        )
+        {
+            AdminAccountLinkTokenPost op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenPost(op);
+        }
+        public static Ams.Model.ApiAccountResponse? Execute(
             this AccountGet.AccountGetBuilder builder,
             string namespace_
         )
@@ -22,43 +70,6 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AccountGet(op);
-        }
-        public static Ams.Model.ApiAccountCreateResponse? Execute(
-            this AccountCreate.AccountCreateBuilder builder,
-            ApiAccountCreateRequest body,
-            string namespace_
-        )
-        {
-            AccountCreate op = builder.Build(
-                body,
-                namespace_
-            );
-
-            return ((Ams.Wrapper.Account)builder.WrapperObject!).AccountCreate(op);
-        }
-        public static Ams.Model.ApiAccountLinkTokenResponse? Execute(
-            this AccountLinkTokenGet.AccountLinkTokenGetBuilder builder,
-            string namespace_
-        )
-        {
-            AccountLinkTokenGet op = builder.Build(
-                namespace_
-            );
-
-            return ((Ams.Wrapper.Account)builder.WrapperObject!).AccountLinkTokenGet(op);
-        }
-        public static Ams.Model.ApiAccountLinkResponse? Execute(
-            this AccountLink.AccountLinkBuilder builder,
-            ApiAccountLinkRequest body,
-            string namespace_
-        )
-        {
-            AccountLink op = builder.Build(
-                body,
-                namespace_
-            );
-
-            return ((Ams.Wrapper.Account)builder.WrapperObject!).AccountLink(op);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetQRCode
     ///
-    /// Get qrcode.
+    ///  [Not Supported Yet In Starter] Get qrcode.
     /// Other detail info:
     /// 
     ///   * Returns : QRCode image stream

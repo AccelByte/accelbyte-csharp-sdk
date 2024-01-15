@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=1 (CREATE)
     ///   *  Returns : created reward data
+    ///   *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
     /// </summary>
     public class CreateReward : AccelByte.Sdk.Core.Operation
     {

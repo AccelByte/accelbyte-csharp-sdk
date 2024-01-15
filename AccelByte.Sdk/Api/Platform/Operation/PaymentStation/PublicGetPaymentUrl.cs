@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetPaymentUrl
     ///
-    /// Get payment url.
+    ///  [Not Supported Yet In Starter] Get payment url.
     /// Other detail info:
     /// 
     ///   * Returns : Get payment link

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=4 (UPDATE)
     ///   *  Returns : reward instance
+    ///   *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
     /// </summary>
     public class UpdateReward : AccelByte.Sdk.Core.Operation
     {

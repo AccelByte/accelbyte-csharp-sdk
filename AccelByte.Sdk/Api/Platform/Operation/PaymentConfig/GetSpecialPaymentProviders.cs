@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getSpecialPaymentProviders
     ///
-    /// Get special payment providers, such as ALIPAY, WXPAY.
+    ///  [Not Supported Yet In Starter] Get special payment providers, such as ALIPAY, WXPAY.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)

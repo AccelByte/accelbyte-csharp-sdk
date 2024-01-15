@@ -16,14 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// bulkGetAdminPlayerRecordByUserIdsV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
-    /// --------------------|-------------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// Bulk get admin player record by userIds, max allowed 20 at a time.
     /// </summary>
     public class BulkGetAdminPlayerRecordByUserIdsV1 : AccelByte.Sdk.Core.Operation

@@ -16,13 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutPlayerRecordsHandlerV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:USER:*:CLOUDSAVE:RECORD [UPDATE]`
-    /// --------------------|----------------------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoints will create new player record or replace the existing player record in bulk.
     /// Maximum bulk key limit per request 10.
     /// </summary>

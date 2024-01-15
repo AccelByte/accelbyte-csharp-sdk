@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testAdyenConfig
     ///
-    /// Test adyen configuration.
+    ///  [Not Supported Yet In Starter] Test adyen configuration.
     /// 
     /// #### Check List:
     /// 

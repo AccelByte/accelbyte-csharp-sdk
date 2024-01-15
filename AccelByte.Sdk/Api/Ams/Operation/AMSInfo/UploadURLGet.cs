@@ -14,42 +14,32 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// FleetUpdate
-    ///
-    /// Optionally, sampling rules for the fleet can also be updated
-    /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [UPDATE]
+    /// UploadURLGet
     /// </summary>
-    public class FleetUpdate : AccelByte.Sdk.Core.Operation
+    public class UploadURLGet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FleetUpdateBuilder Builder { get => new FleetUpdateBuilder(); }
+        public static UploadURLGetBuilder Builder { get => new UploadURLGetBuilder(); }
 
-        public class FleetUpdateBuilder
-            : OperationBuilder<FleetUpdateBuilder>
+        public class UploadURLGetBuilder
+            : OperationBuilder<UploadURLGetBuilder>
         {
 
 
 
 
 
-            internal FleetUpdateBuilder() { }
+            internal UploadURLGetBuilder() { }
 
 
 
 
 
 
-            public FleetUpdate Build(
-                ApiFleetParameters body,
-                string fleetID,
-                string namespace_
+            public UploadURLGet Build(
             )
             {
-                FleetUpdate op = new FleetUpdate(this,
-                    body,
-                    fleetID,
-                    namespace_
+                UploadURLGet op = new UploadURLGet(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -59,50 +49,38 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private FleetUpdate(FleetUpdateBuilder builder,
-            ApiFleetParameters body,
-            string fleetID,
-            string namespace_
+        private UploadURLGet(UploadURLGetBuilder builder
         )
         {
-            PathParams["fleetID"] = fleetID;
-            PathParams["namespace"] = namespace_;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public FleetUpdate(
-            string fleetID,
-            string namespace_,
-            Model.ApiFleetParameters body
+        public UploadURLGet(
         )
         {
-            PathParams["fleetID"] = fleetID;
-            PathParams["namespace"] = namespace_;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}";
+        public override string Path => "/ams/v1/upload-url";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
@@ -111,7 +89,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)204)
+            if (code == (HttpStatusCode)200)
             {
                 return;
             }

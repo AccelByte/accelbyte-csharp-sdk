@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminGetPlayerBinaryRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]`
-    /// Required scope: `social`
     /// Get a player binary record by its key.
     /// </summary>
     public class AdminGetPlayerBinaryRecordV1 : AccelByte.Sdk.Core.Operation

@@ -16,107 +16,58 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostPlayerPublicRecordHandlerV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [CREATE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will create new player public record or append the existing player public record.
     /// 
-    ///  Append example:
+    /// **Append example:**
     /// 
     /// Example 1
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value" }
-    /// 
+    /// `{ "data1": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value", "data2": "new value" }
-    /// 
+    /// `{ "data1": "value", "data2": "new value" }`
     /// 
     /// 
     /// Example 2
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data2": "value" }
-    /// 
+    /// `{ "data1": { "data2": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data3": "new value" }
-    /// 
+    /// `{ "data1": { "data3": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data2": "value", "data3": "new value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// `{ "data1": { "data2": "value", "data3": "new value" }`
     /// 
     /// 
     /// ## Restriction
-    /// 
-    /// 
     /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use "." as the key name
-    /// -
-    /// 
-    /// 
-    ///     { "data.2": "value" }
-    /// 
-    /// 
-    /// 2. Cannot use "$" as the prefix in key names
-    /// -
-    /// 
-    /// 
-    ///     { "$data": "value" }
-    /// 
-    /// 
+    /// 1. Cannot use **"."** as the key name
+    /// - `{ "data.2": "value" }`
+    /// 2. Cannot use **"$"** as the prefix in key names
+    /// - `{ "$data": "value" }`
     /// 3. Cannot use empty string in key names
-    /// -
-    /// 
-    /// 
-    ///     { "": "value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Warning: This endpoint is going to deprecate
     /// 
-    /// 
-    /// 
     /// This endpoint is going to deprecate in the future please don't use it.
     /// 
     /// For alternative, please use these endpoints:
-    /// - POST /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
-    /// - PUT /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
-    /// - DELETE /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}
+    /// - **POST /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}** and utilizing **__META** functionality
+    /// - **PUT /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}** and utilizing **__META** functionality
+    /// - **DELETE /cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/records/{key}**
     /// </summary>
     public class AdminPostPlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

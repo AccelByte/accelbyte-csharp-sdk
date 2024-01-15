@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// searchItemTypeConfig
     ///
-    /// This API is used to get an item type config.
+    ///  [Not Supported Yet In Starter] This API is used to get an item type config.
     /// 
     /// Other detail info:
     /// 

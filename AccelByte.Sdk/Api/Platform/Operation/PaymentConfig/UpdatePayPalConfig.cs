@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePayPalConfig
     ///
-    /// Update PayPal config.
+    ///  [Not Supported Yet In Starter] Update PayPal config.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)

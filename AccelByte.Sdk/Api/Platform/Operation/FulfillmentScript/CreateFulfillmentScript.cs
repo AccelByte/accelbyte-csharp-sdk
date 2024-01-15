@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createFulfillmentScript
     ///
-    ///  [AGS Premium Feature] Create fulfillment script.
+    ///  [Not Supported Yet In Starter] Create fulfillment script.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=1 (CREATE)

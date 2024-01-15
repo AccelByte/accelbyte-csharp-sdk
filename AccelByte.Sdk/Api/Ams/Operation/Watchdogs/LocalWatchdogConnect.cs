@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// LocalWatchdogConnect
     ///
+    /// This is to support local ds development scenarios
+    /// 
     /// Required Permission: NAMESPACE:{namespace}:AMS:LOCALDS [CREATE]
     /// </summary>
     public class LocalWatchdogConnect : AccelByte.Sdk.Core.Operation

@@ -19,52 +19,65 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
 
         #region Operation Builders
+        public AdminAccountGet.AdminAccountGetBuilder AdminAccountGetOp
+        {
+            get { return Operation.AdminAccountGet.Builder.SetWrapperObject(this); }
+        }
+        public AdminAccountCreate.AdminAccountCreateBuilder AdminAccountCreateOp
+        {
+            get { return Operation.AdminAccountCreate.Builder.SetWrapperObject(this); }
+        }
+        public AdminAccountLinkTokenGet.AdminAccountLinkTokenGetBuilder AdminAccountLinkTokenGetOp
+        {
+            get { return Operation.AdminAccountLinkTokenGet.Builder.SetWrapperObject(this); }
+        }
+        public AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder AdminAccountLinkTokenPostOp
+        {
+            get { return Operation.AdminAccountLinkTokenPost.Builder.SetWrapperObject(this); }
+        }
         public AccountGet.AccountGetBuilder AccountGetOp
         {
             get { return Operation.AccountGet.Builder.SetWrapperObject(this); }
         }
-        public AccountCreate.AccountCreateBuilder AccountCreateOp
-        {
-            get { return Operation.AccountCreate.Builder.SetWrapperObject(this); }
-        }
-        public AccountLinkTokenGet.AccountLinkTokenGetBuilder AccountLinkTokenGetOp
-        {
-            get { return Operation.AccountLinkTokenGet.Builder.SetWrapperObject(this); }
-        }
-        public AccountLink.AccountLinkBuilder AccountLinkOp
-        {
-            get { return Operation.AccountLink.Builder.SetWrapperObject(this); }
-        }
         #endregion
 
+        public Model.ApiAccountResponse? AdminAccountGet(AdminAccountGet input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiAccountCreateResponse? AdminAccountCreate(AdminAccountCreate input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiAccountLinkTokenResponse? AdminAccountLinkTokenGet(AdminAccountLinkTokenGet input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiAccountLinkResponse? AdminAccountLinkTokenPost(AdminAccountLinkTokenPost input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApiAccountResponse? AccountGet(AccountGet input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ApiAccountCreateResponse? AccountCreate(AccountCreate input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ApiAccountLinkTokenResponse? AccountLinkTokenGet(AccountLinkTokenGet input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ApiAccountLinkResponse? AccountLink(AccountLink input)
         {
             var response = _sdk.RunRequest(input);
 

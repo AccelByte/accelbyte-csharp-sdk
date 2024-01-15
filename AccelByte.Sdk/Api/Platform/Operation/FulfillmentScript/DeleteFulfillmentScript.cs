@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// deleteFulfillmentScript
     ///
-    /// Delete fulfillment script.
+    ///  [Not Supported Yet In Starter] Delete fulfillment script.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=8 (DELETE)

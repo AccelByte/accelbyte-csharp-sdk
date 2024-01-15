@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testWxPayConfigById
     ///
-    /// Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
+    ///  [Not Supported Yet In Starter] Test WxPay configuration in payment merchant config. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)

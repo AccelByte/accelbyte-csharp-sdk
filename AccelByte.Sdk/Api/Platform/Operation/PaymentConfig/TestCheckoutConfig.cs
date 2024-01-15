@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testCheckoutConfig
     ///
-    /// Test checkout.com configuration.
+    ///  [Not Supported Yet In Starter] Test checkout.com configuration.
     /// 
     /// #### Check List:
     /// 

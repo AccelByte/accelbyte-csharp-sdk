@@ -61,9 +61,17 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonPropertyName("SpamMuteDuration")]
         public long? SpamMuteDuration { get; set; }
 
+        [JsonPropertyName("defaultDictionaryLoaded")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DefaultDictionaryLoaded { get; set; }
+
         [JsonPropertyName("enableClanChat")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableClanChat { get; set; }
+
+        [JsonPropertyName("useDefaultDictionary")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? UseDefaultDictionary { get; set; }
 
     }
 

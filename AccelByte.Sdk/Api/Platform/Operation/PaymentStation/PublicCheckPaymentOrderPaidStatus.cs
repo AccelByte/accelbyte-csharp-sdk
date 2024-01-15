@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicCheckPaymentOrderPaidStatus
     ///
-    /// Check payment order paid status.
+    ///  [Not Supported Yet In Starter] Check payment order paid status.
     /// Other detail info:
     /// 
     ///   * Returns : Payment order paid result

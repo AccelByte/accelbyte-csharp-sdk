@@ -56,6 +56,11 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         [JsonPropertyName("socialMatchmaking")]
         public bool? SocialMatchmaking { get; set; }
 
+        [JsonPropertyName("sub_gamemode_selection")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public ModelsUpdateChannelRequestSubGamemodeSelection? SubGamemodeSelection { get; set; }
+
         [JsonPropertyName("ticket_observability_enable")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? TicketObservabilityEnable { get; set; }
@@ -85,6 +90,27 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         }
 
         public ModelsUpdateChannelRequestBlockedPlayerOption(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class ModelsUpdateChannelRequestSubGamemodeSelection : StringEnum<ModelsUpdateChannelRequestSubGamemodeSelection>
+    {
+        public static readonly ModelsUpdateChannelRequestSubGamemodeSelection Random
+            = new ModelsUpdateChannelRequestSubGamemodeSelection("random");
+
+        public static readonly ModelsUpdateChannelRequestSubGamemodeSelection TicketOrder
+            = new ModelsUpdateChannelRequestSubGamemodeSelection("ticketOrder");
+
+
+        public static implicit operator ModelsUpdateChannelRequestSubGamemodeSelection(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ModelsUpdateChannelRequestSubGamemodeSelection(string enumValue)
             : base(enumValue)
         {
 

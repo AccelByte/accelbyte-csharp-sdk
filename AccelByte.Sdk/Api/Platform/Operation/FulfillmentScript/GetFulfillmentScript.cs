@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getFulfillmentScript
     ///
-    /// Get fulfillment script by id.
+    ///  [Not Supported Yet In Starter] Get fulfillment script by id.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:FULFILLMENT", action=2 (READ)

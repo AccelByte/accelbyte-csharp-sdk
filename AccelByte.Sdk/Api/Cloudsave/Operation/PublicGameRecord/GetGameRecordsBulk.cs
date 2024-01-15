@@ -16,14 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// getGameRecordsBulk
     ///
-    /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
-    /// --------------------|-------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// Bulk get game records. Maximum key per request 20.
     /// </summary>
     public class GetGameRecordsBulk : AccelByte.Sdk.Core.Operation

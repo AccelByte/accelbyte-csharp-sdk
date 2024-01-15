@@ -14,36 +14,36 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// AccountLink
+    /// AdminAccountCreate
     ///
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [CREATE]
     /// </summary>
-    public class AccountLink : AccelByte.Sdk.Core.Operation
+    public class AdminAccountCreate : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AccountLinkBuilder Builder { get => new AccountLinkBuilder(); }
+        public static AdminAccountCreateBuilder Builder { get => new AdminAccountCreateBuilder(); }
 
-        public class AccountLinkBuilder
-            : OperationBuilder<AccountLinkBuilder>
+        public class AdminAccountCreateBuilder
+            : OperationBuilder<AdminAccountCreateBuilder>
         {
 
 
 
 
 
-            internal AccountLinkBuilder() { }
+            internal AdminAccountCreateBuilder() { }
 
 
 
 
 
 
-            public AccountLink Build(
-                ApiAccountLinkRequest body,
+            public AdminAccountCreate Build(
+                ApiAccountCreateRequest body,
                 string namespace_
             )
             {
-                AccountLink op = new AccountLink(this,
+                AdminAccountCreate op = new AdminAccountCreate(this,
                     body,
                     namespace_
                 );
@@ -55,8 +55,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private AccountLink(AccountLinkBuilder builder,
-            ApiAccountLinkRequest body,
+        private AdminAccountCreate(AdminAccountCreateBuilder builder,
+            ApiAccountCreateRequest body,
             string namespace_
         )
         {
@@ -73,9 +73,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         }
         #endregion
 
-        public AccountLink(
+        public AdminAccountCreate(
             string namespace_,
-            Model.ApiAccountLinkRequest body
+            Model.ApiAccountCreateRequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -90,7 +90,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/admin/namespaces/{namespace}/account/link";
+        public override string Path => "/ams/v1/admin/namespaces/{namespace}/account";
 
         public override HttpMethod Method => HttpMethod.Post;
 
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiAccountLinkResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiAccountCreateResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -110,13 +110,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiAccountCreateResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiAccountCreateResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiAccountCreateResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

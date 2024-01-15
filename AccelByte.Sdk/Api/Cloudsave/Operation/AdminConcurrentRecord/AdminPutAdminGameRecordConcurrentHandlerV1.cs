@@ -16,118 +16,59 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutAdminGameRecordConcurrentHandlerV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]`
-    /// --------------------|---------------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will create new game record or replace the existing game record.
     /// 
-    ///  Replace behaviour:
+    /// **Replace behaviour:**
     /// The existing value will be replaced completely with the new value.
     /// 
     /// Example
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value" }
-    /// 
+    /// `{ "data1": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
-    /// 
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// 
     /// 
     /// ## Restriction
-    /// 
-    /// 
     /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use "." as the key name
-    /// -
-    /// 
-    /// 
-    ///     { "data.2": "value" }
-    /// 
-    /// 
-    /// 2. Cannot use "$" as the prefix in key names
-    /// -
-    /// 
-    /// 
-    ///     { "$data": "value" }
-    /// 
-    /// 
+    /// 1. Cannot use **"."** as the key name
+    /// - `{ "data.2": "value" }`
+    /// 2. Cannot use **"$"** as the prefix in key names
+    /// - `{ "$data": "value" }`
     /// 3. Cannot use empty string in key names
-    /// -
-    /// 
-    /// 
-    ///     { "": "value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Reserved Word
     /// 
-    /// 
-    /// 
-    /// Reserved Word List: __META
+    /// Reserved Word List: **__META**
     /// 
     /// The reserved word cannot be used as a field in record value,
     /// If still defining the field when creating or updating the record, it will be ignored.
     /// 
     /// 
-    /// 
-    /// 
     /// ## Parameters Notes
-    /// 
-    /// 
     /// 1. updatedAt (required: true)
     /// Time format style: RFC3339
     /// 2. value
     /// Json
-    ///  Request Body Example:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///         {
-    ///             "value": {},
-    ///             "updatedAt": "2022-03-17T10:42:15.444Z"
-    ///         }
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
+    /// **Request Body Example:**
+    /// ```
+    /// {
+    /// "value": {},
+    /// "updatedAt": "2022-03-17T10:42:15.444Z"
+    /// }
+    /// ```
     /// ## Optimistic Concurrency Control
-    /// 
-    /// 
     /// 
     /// This endpoint implement optimistic concurrency control to avoid race condition.
     /// If the record has been updated since the client fetch it, the server will return HTTP status code 412 (precondition failed)

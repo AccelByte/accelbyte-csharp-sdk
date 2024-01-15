@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class OauthmodelTokenThirdPartyResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("platformUserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformUserId { get; set; }
+
         [JsonPropertyName("platform_token")]
         public string? PlatformToken { get; set; }
 

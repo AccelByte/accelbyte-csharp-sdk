@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public string? Ip { get; set; }
 
         [JsonPropertyName("last_update")]
-        public ApiTime? LastUpdate { get; set; }
+        public DateTime? LastUpdate { get; set; }
 
         [JsonPropertyName("port")]
         public int? Port { get; set; }

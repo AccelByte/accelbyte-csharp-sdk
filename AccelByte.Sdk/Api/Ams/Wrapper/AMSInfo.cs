@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.InfoSupportedInstances.Builder.SetWrapperObject(this); }
         }
+        public UploadURLGet.UploadURLGetBuilder UploadURLGetOp
+        {
+            get { return Operation.UploadURLGet.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ApiAMSRegionsResponse? InfoRegions(InfoRegions input)
@@ -43,6 +47,15 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             var response = _sdk.RunRequest(input);
 
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void UploadURLGet(UploadURLGet input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

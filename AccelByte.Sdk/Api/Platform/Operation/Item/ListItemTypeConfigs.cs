@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// listItemTypeConfigs
     ///
-    /// This API is used to get all item type configs.
+    ///  [Not Supported Yet In Starter] This API is used to get all item type configs.
     /// 
     /// Other detail info:
     /// 

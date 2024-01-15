@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// bulkGetPlayerPublicBinaryRecordsV1
     ///
-    /// Required Permission: `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [READ]`
-    /// Required Scope: `social`
-    /// 
     /// Bulk get other player's public binary record by userIds, max allowed 20 at a time. Only record with `isPublic=true` can be
     /// retrieved using this endpoint.
     /// </summary>

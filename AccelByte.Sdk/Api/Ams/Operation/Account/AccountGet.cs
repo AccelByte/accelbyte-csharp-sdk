@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// AccountGet
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
+    /// Required Permission: NAMESPACE:{namespace}:AMS:ACCOUNT [READ]
     /// </summary>
     public class AccountGet : AccelByte.Sdk.Core.Operation
     {
@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/ams/v1/admin/namespaces/{namespace}/account";
+        public override string Path => "/ams/v1/namespaces/{namespace}/account";
 
         public override HttpMethod Method => HttpMethod.Get;
 

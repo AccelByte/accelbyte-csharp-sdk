@@ -16,69 +16,36 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutAdminPlayerRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [UPDATE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will create new admin player record or replace the existing admin player record.
     /// 
-    ///  Replace behaviour:
+    /// **Replace behaviour:**
     /// The existing value will be replaced completely with the new value.
     /// 
     /// Example
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value" }
-    /// 
+    /// `{ "data1": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
-    /// 
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// 
     /// 
     /// ## Restriction
-    /// 
-    /// 
     /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use "." as the key name
-    /// -
-    /// 
-    /// 
-    ///     { "data.2": "value" }
-    /// 
-    /// 
-    /// 2. Cannot use "$" as the prefix in key names
-    /// -
-    /// 
-    /// 
-    ///     { "$data": "value" }
-    /// 
-    /// 
+    /// 1. Cannot use **"."** as the key name
+    /// - `{ "data.2": "value" }`
+    /// 2. Cannot use **"$"** as the prefix in key names
+    /// - `{ "$data": "value" }`
     /// 3. Cannot use empty string in key names
-    /// -
-    /// 
-    /// 
-    ///     { "": "value" }
+    /// - `{ "": "value" }`
     /// </summary>
     public class AdminPutAdminPlayerRecordV1 : AccelByte.Sdk.Core.Operation
     {

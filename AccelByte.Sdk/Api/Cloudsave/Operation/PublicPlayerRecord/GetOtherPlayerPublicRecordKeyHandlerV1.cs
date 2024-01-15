@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// getOtherPlayerPublicRecordKeyHandlerV1
     ///
-    /// Required valid user token with permission: `NAMESPACE:{namespace}:USER:*:PUBLIC:CLOUDSAVE:RECORD [READ]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of other public player records key under given namespace.
     /// </summary>
     public class GetOtherPlayerPublicRecordKeyHandlerV1 : AccelByte.Sdk.Core.Operation

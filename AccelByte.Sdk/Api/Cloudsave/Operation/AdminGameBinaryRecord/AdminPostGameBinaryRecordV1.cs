@@ -16,18 +16,12 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostGameBinaryRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
-    /// Required scope: `social`
-    /// 
     /// Create a game binary record.
-    /// 
     /// 
     /// Other detail info:
     /// 
-    /// 
-    /// 
     /// `key` should follow these rules:
-    /// 1. support uppercase and lowercase letters, numbers, and separators "-" , "_" , "." are allowed
+    /// 1. support uppercase and lowercase letters, numbers, and separators **"-"**, **"_"**, **"."** are allowed
     /// 2. begin and end with letters or numbers
     /// 3. spaces are not allowed
     /// 4. separators must not appears twice in a row

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicDeletePaymentAccount
     ///
-    /// Delete payment account.
+    ///  [Not Supported Yet In Starter] Delete payment account.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:PAYMENT:ACCOUNT", action=8 (DELETE)

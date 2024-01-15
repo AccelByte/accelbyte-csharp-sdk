@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// RetrievePlayerRecords
     ///
-    /// Required valid user token
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of player records key under given namespace.
     /// </summary>
     public class RetrievePlayerRecords : AccelByte.Sdk.Core.Operation

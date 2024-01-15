@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// refundPaymentOrderByDedicated
     ///
-    /// 
+    ///  [Not Supported Yet In Starter]
     /// 
     /// This API is used to refund payment order by paymentOrderNo from non justice service. e.g. dedicated server.
     /// 

@@ -16,14 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// deleteGameRecordHandlerV1
     ///
-    /// Required Permission | `NAMESPACE:{namespace}:CLOUDSAVE:RECORD [DELETE]`
-    /// --------------------|---------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
     /// Delete records by its key
     /// </summary>
     public class DeleteGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation

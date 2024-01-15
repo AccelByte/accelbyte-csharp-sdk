@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePaymentProviderConfig
     ///
-    /// Update payment provider config.
+    ///  [Not Supported Yet In Starter] Update payment provider config.
     /// 
     /// 
     /// 

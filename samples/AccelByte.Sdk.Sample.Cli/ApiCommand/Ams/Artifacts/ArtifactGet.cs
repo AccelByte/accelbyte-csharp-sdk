@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("artifactType")]
         public string? ArtifactType { get; set; }
 
+        [SdkCommandArgument("count")]
+        public long? Count { get; set; }
+
         [SdkCommandArgument("endDate")]
         public string? EndDate { get; set; }
 
@@ -49,8 +52,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("minSize")]
         public long? MinSize { get; set; }
 
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
+
+        [SdkCommandArgument("serverId")]
+        public string? ServerId { get; set; }
 
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
@@ -71,6 +80,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             if (ArtifactType != null)
                 opBuilder.SetArtifactType((string)ArtifactType);
+            if (Count != null)
+                opBuilder.SetCount((long)Count);
             if (EndDate != null)
                 opBuilder.SetEndDate((string)EndDate);
             if (FleetID != null)
@@ -81,8 +92,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 opBuilder.SetMaxSize((long)MaxSize);
             if (MinSize != null)
                 opBuilder.SetMinSize((long)MinSize);
+            if (Offset != null)
+                opBuilder.SetOffset((long)Offset);
             if (Region != null)
                 opBuilder.SetRegion((string)Region);
+            if (ServerId != null)
+                opBuilder.SetServerId((string)ServerId);
             if (StartDate != null)
                 opBuilder.SetStartDate((string)StartDate);
             if (Status != null)

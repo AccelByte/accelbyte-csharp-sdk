@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// listPlayerRecordHandlerV1
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of player records key and userID under given namespace.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateWxPayConfigCert
     ///
-    /// Upload wxpay cert file.
+    ///  [Not Supported Yet In Starter] Upload wxpay cert file.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)

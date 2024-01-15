@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetPaymentMethods
     ///
-    /// Get payment methods.
+    ///  [Not Supported Yet In Starter] Get payment methods.
     /// Other detail info:
     /// 
     ///   * Returns : Payment method list

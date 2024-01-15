@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// deletePlayerBinaryRecordV1
     ///
-    /// Required permission: `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [DELETE]`
-    /// Required scope: `social`
-    /// 
     /// Delete a player binary record. Only player who own the record can delete it
     /// </summary>
     public class DeletePlayerBinaryRecordV1 : AccelByte.Sdk.Core.Operation

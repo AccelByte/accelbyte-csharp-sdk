@@ -16,14 +16,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// updatePluginConfig
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:PLUGINS [UPDATE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will update grpc plugins configuration
     /// </summary>

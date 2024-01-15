@@ -16,13 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// bulkGetPlayerRecordSizeHandlerV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
-    /// --------------------|-------------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
     /// Bulk get player's record size, max allowed 20 at a time, that can be
     /// retrieved using this endpoint.
     /// </summary>

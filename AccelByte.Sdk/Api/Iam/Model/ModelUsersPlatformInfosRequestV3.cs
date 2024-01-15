@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class ModelUsersPlatformInfosRequestV3 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
         [JsonPropertyName("userIds")]

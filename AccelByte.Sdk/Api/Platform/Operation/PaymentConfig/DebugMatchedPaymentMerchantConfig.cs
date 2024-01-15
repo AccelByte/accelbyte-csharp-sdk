@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// debugMatchedPaymentMerchantConfig
     ///
-    /// Debug matched payment merchant config.
+    ///  [Not Supported Yet In Starter] Debug matched payment merchant config.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)

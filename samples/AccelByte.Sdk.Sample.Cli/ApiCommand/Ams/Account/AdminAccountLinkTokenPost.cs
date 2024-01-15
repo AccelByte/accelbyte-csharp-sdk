@@ -19,19 +19,22 @@ using AccelByte.Sdk.Api.Ams.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("ams", "accountlinktokenget")]
-    public class AccountLinkTokenGetCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "adminaccountlinktokenpost")]
+    public class AdminAccountLinkTokenPostCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName { get { return "AccountLinkTokenGet"; } }
+        public string OperationName { get { return "AdminAccountLinkTokenPost"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public AccountLinkTokenGetCommand(AccelByteSDK sdk)
+        [SdkCommandData("body")]
+        public ApiAccountLinkRequest Body { get; set; } = new ApiAccountLinkRequest();
+
+        public AdminAccountLinkTokenPostCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -40,18 +43,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         {
             AccelByte.Sdk.Api.Ams.Wrapper.Account wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Account(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.AccountLinkTokenGet.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.AdminAccountLinkTokenPost.Builder;
 
 
 
 
 
-            AccountLinkTokenGet operation = opBuilder.Build(
+            AdminAccountLinkTokenPost operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Ams.Model.ApiAccountLinkTokenResponse? response = wrapper.AccountLinkTokenGet(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiAccountLinkResponse? response = wrapper.AdminAccountLinkTokenPost(operation);
             if (response == null)
                 return "No response from server.";
 

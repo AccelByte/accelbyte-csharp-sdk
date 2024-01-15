@@ -16,13 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminGetPlayerRecordsHandlerV1
     ///
-    /// Required Permission | `ADMIN:NAMESPACE:{namespace}:USER:*:CLOUDSAVE:RECORD [READ]`
-    /// --------------------|--------------------------------------------------------------
-    /// Required Scope      | `social`
-    /// 
-    /// 
-    /// 
-    /// 
     /// Retrieve player record key and payload in bulk under given namespace.
     /// Maximum bulk key limit per request 20.
     /// </summary>

@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminListAdminGameRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [READ]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of records key by namespace
     /// </summary>
     public class AdminListAdminGameRecordV1 : AccelByte.Sdk.Core.Operation

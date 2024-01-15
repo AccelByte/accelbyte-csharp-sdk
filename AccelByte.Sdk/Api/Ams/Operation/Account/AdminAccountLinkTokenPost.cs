@@ -14,35 +14,41 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// AccountLinkTokenGet
+    /// AdminAccountLinkTokenPost
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
+    /// This route will attempt to register the account to namespace linkage in AMS and requires a valid account link token. This route fails if an account is already linked
+    /// 
+    /// AdminAccountLink
+    /// 
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [CREATE]
     /// </summary>
-    public class AccountLinkTokenGet : AccelByte.Sdk.Core.Operation
+    public class AdminAccountLinkTokenPost : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AccountLinkTokenGetBuilder Builder { get => new AccountLinkTokenGetBuilder(); }
+        public static AdminAccountLinkTokenPostBuilder Builder { get => new AdminAccountLinkTokenPostBuilder(); }
 
-        public class AccountLinkTokenGetBuilder
-            : OperationBuilder<AccountLinkTokenGetBuilder>
+        public class AdminAccountLinkTokenPostBuilder
+            : OperationBuilder<AdminAccountLinkTokenPostBuilder>
         {
 
 
 
 
 
-            internal AccountLinkTokenGetBuilder() { }
+            internal AdminAccountLinkTokenPostBuilder() { }
 
 
 
 
 
 
-            public AccountLinkTokenGet Build(
+            public AdminAccountLinkTokenPost Build(
+                ApiAccountLinkRequest body,
                 string namespace_
             )
             {
-                AccountLinkTokenGet op = new AccountLinkTokenGet(this,
+                AdminAccountLinkTokenPost op = new AdminAccountLinkTokenPost(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -53,7 +59,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             }
         }
 
-        private AccountLinkTokenGet(AccountLinkTokenGetBuilder builder,
+        private AdminAccountLinkTokenPost(AdminAccountLinkTokenPostBuilder builder,
+            ApiAccountLinkRequest body,
             string namespace_
         )
         {
@@ -63,14 +70,16 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public AccountLinkTokenGet(
-            string namespace_
+        public AdminAccountLinkTokenPost(
+            string namespace_,
+            Model.ApiAccountLinkRequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -79,6 +88,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -86,7 +96,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         public override string Path => "/ams/v1/admin/namespaces/{namespace}/account/link";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Post;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -95,7 +105,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ApiAccountLinkTokenResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiAccountLinkResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -104,13 +114,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ApiAccountLinkTokenResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ApiAccountLinkTokenResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApiAccountLinkTokenResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiAccountLinkResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentPublicConfig
     ///
-    /// Get payment provider public config, at current only Strip provide public config.
+    ///  [Not Supported Yet In Starter] Get payment provider public config, at current only Strip provide public config.
     /// Other detail info:
     /// 
     ///   * Returns : Public config

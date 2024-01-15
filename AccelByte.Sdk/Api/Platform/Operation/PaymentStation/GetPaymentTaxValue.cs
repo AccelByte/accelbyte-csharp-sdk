@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentTaxValue
     ///
-    /// Check and get a payment order's should pay tax.
+    ///  [Not Supported Yet In Starter] Check and get a payment order's should pay tax.
     /// Other detail info:
     /// 
     ///   * Returns : tax result

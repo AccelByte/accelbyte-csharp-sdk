@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminGetPlayerRecordSizeHandlerV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Get a size of the player record
     /// </summary>
     public class AdminGetPlayerRecordSizeHandlerV1 : AccelByte.Sdk.Core.Operation

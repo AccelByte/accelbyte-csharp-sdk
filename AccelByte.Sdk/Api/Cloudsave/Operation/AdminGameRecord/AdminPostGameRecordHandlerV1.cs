@@ -16,123 +16,72 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPostGameRecordHandlerV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [CREATE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will create new game record or append the existing game record.
     /// 
-    ///  Append example:
+    /// **Append example:**
     /// 
     /// Example 1
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value" }
-    /// 
+    /// `{ "data1": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value", "data2": "new value" }
-    /// 
+    /// `{ "data1": "value", "data2": "new value" }`
     /// 
     /// 
     /// Example 2
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data2": "value" }
-    /// 
+    /// `{ "data1": { "data2": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data3": "new value" }
-    /// 
+    /// `{ "data1": { "data3": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data1": { "data2": "value", "data3": "new value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// `{ "data1": { "data2": "value", "data3": "new value" }`
     /// 
     /// 
     /// ## Restriction
-    /// 
-    /// 
     /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use "." as the key name
-    /// -
-    /// 
-    /// 
-    ///     { "data.2": "value" }
-    /// 
-    /// 
-    /// 2. Cannot use "$" as the prefix in key names
-    /// -
-    /// 
-    /// 
-    ///     { "$data": "value" }
-    /// 
-    /// 
+    /// 1. Cannot use **"."** as the key name
+    /// - `{ "data.2": "value" }`
+    /// 2. Cannot use **"$"** as the prefix in key names
+    /// - `{ "$data": "value" }`
     /// 3. Cannot use empty string in key names
-    /// -
-    /// 
-    /// 
-    ///     { "": "value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Record Metadata
     /// 
-    /// 
-    /// 
     /// Metadata allows user to define the behaviour of the record.
-    /// Metadata can be defined in request body with field name __META.
-    /// When creating record, if __META field is not defined, the metadata value will use the default value.
-    /// When updating record, if __META field is not defined, the existing metadata value will stay as is.
+    /// Metadata can be defined in request body with field name **__META**.
+    /// When creating record, if **__META** field is not defined, the metadata value will use the default value.
+    /// When updating record, if **__META** field is not defined, the existing metadata value will stay as is.
     /// 
-    ///  Metadata List:
+    /// **Metadata List:**
     /// 1. set_by (default: CLIENT, type: string)
     /// Indicate which party that could modify the game record.
     /// SERVER: record can be modified by server only.
     /// CLIENT: record can be modified by client and server.
     /// 
-    ///  Request Body Example:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///         {
-    ///             "__META": {
-    ///                 "set_by": "SERVER"
-    ///             }
-    ///             ...
-    ///         }
+    /// **Request Body Example:**
+    /// ```
+    /// {
+    /// "__META": {
+    /// "set_by": "SERVER"
+    /// }
+    /// ...
+    /// }
+    /// ```
     /// </summary>
     public class AdminPostGameRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// FleetCreate
     ///
+    /// Optionally, sampling rules for the fleet can also be specified
+    /// 
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [CREATE]
     /// </summary>
     public class FleetCreate : AccelByte.Sdk.Core.Operation

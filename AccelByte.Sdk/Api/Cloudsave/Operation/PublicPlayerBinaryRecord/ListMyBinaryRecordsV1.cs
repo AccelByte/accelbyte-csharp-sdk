@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// listMyBinaryRecordsV1
     ///
-    /// Required valid user token
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of my binary records by namespace.
     /// </summary>
     public class ListMyBinaryRecordsV1 : AccelByte.Sdk.Core.Operation

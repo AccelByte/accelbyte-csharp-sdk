@@ -16,24 +16,17 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// publicDeletePlayerPublicRecordHandlerV1
     ///
-    /// Required valid user authorization
-    /// Required scope: `social`
-    /// 
     /// Delete player public record.
-    /// 
-    /// 
     /// 
     /// 
     /// ## Warning: This endpoint is going to deprecate
     /// 
-    /// 
-    /// 
     /// This endpoint is going to deprecate in the future please don't use it.
     /// 
     /// For alternative, please use these endpoints:
-    /// - POST /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
-    /// - PUT /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key} and utilizing __META functionality
-    /// - DELETE /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}
+    /// - **POST /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}** and utilizing **__META** functionality
+    /// - **PUT /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}** and utilizing **__META** functionality
+    /// - **DELETE /cloudsave/v1/namespaces/{namespace}/users/{userId}/records/{key}**
     /// </summary>
     public class PublicDeletePlayerPublicRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

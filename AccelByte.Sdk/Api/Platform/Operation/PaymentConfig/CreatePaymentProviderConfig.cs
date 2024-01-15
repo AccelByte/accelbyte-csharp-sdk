@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createPaymentProviderConfig
     ///
-    /// Create payment provider config.
+    ///  [Not Supported Yet In Starter] Create payment provider config.
     /// 
     /// 
     /// 

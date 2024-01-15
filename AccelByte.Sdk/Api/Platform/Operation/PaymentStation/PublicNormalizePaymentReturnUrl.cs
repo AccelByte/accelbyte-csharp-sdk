@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicNormalizePaymentReturnUrl
     ///
-    /// Normalize payment return url for payment provider
+    ///  [Not Supported Yet In Starter] Normalize payment return url for payment provider
     /// Field                                                                                                                                                        | Type   | Required | Description
     /// -------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|----------|-----------------------
     /// orderNo                                                                                                                                                      | String | Yes      | order no

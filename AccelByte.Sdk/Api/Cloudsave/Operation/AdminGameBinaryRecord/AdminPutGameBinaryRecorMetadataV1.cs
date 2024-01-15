@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminPutGameBinaryRecorMetadataV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [UPDATE]`
-    /// Required scope: `social`
-    /// 
     /// Update a game binary record metadata by its key
     /// </summary>
     public class AdminPutGameBinaryRecorMetadataV1 : AccelByte.Sdk.Core.Operation

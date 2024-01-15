@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// getPlayerPublicBinaryRecordsV1
     ///
-    /// Required Permission: `NAMESPACE:{namespace}:USER:{userId}:PUBLIC:CLOUDSAVE:RECORD [READ]`
-    /// Required Scope: `social`
-    /// 
     /// Get other player's public binary record. Only record with `isPublic=true` can be
     /// retrieved using this endpoint.
     /// </summary>

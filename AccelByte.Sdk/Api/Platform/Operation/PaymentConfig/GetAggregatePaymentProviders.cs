@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getAggregatePaymentProviders
     ///
-    /// Get aggregate payment providers, such as XSOLLA, ADYEN.
+    ///  [Not Supported Yet In Starter] Get aggregate payment providers, such as XSOLLA, ADYEN.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)

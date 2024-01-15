@@ -7,48 +7,43 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Platform.Model;
+using AccelByte.Sdk.Api.Ams.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Platform.Operation
+namespace AccelByte.Sdk.Api.Ams.Operation
 {
     /// <summary>
-    /// getItemTypeConfig
+    /// AdminAccountGet
     ///
-    ///  [Not Supported Yet In Starter] This API is used to get an item type config.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:ITEM:CONFIG", action=2 (READ)
-    ///   *  Returns : item type config data
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
     /// </summary>
-    public class GetItemTypeConfig : AccelByte.Sdk.Core.Operation
+    public class AdminAccountGet : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static GetItemTypeConfigBuilder Builder { get => new GetItemTypeConfigBuilder(); }
+        public static AdminAccountGetBuilder Builder { get => new AdminAccountGetBuilder(); }
 
-        public class GetItemTypeConfigBuilder
-            : OperationBuilder<GetItemTypeConfigBuilder>
+        public class AdminAccountGetBuilder
+            : OperationBuilder<AdminAccountGetBuilder>
         {
 
 
 
 
 
-            internal GetItemTypeConfigBuilder() { }
+            internal AdminAccountGetBuilder() { }
 
 
 
 
 
 
-            public GetItemTypeConfig Build(
-                string id
+            public AdminAccountGet Build(
+                string namespace_
             )
             {
-                GetItemTypeConfig op = new GetItemTypeConfig(this,
-                    id
+                AdminAccountGet op = new AdminAccountGet(this,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -58,11 +53,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private GetItemTypeConfig(GetItemTypeConfigBuilder builder,
-            string id
+        private AdminAccountGet(AdminAccountGetBuilder builder,
+            string namespace_
         )
         {
-            PathParams["id"] = id;
+            PathParams["namespace"] = namespace_;
 
 
 
@@ -74,11 +69,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public GetItemTypeConfig(
-            string id
+        public AdminAccountGet(
+            string namespace_
         )
         {
-            PathParams["id"] = id;
+            PathParams["namespace"] = namespace_;
 
 
 
@@ -89,18 +84,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/items/configs/{id}";
+        public override string Path => "/ams/v1/admin/namespaces/{namespace}/account";
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ItemTypeConfigInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiAccountResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -109,13 +104,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ItemTypeConfigInfo>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiAccountResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ItemTypeConfigInfo>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiAccountResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ItemTypeConfigInfo>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiAccountResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -16,100 +16,59 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// putPlayerRecordHandlerV1
     ///
-    /// Required permission: `NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [UPDATE]`
-    /// Required scope: `social`
-    /// 
-    /// 
-    /// 
     /// ## Description
-    /// 
-    /// 
     /// 
     /// This endpoints will create new player record or replace the existing player record.
     /// Only user that own the existing player record could modify it.
     /// 
-    ///  Replace behaviour:
+    /// **Replace behaviour:**
     /// The existing value will be replaced completely with the new value.
     /// 
     /// Example
     /// - Existing JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data1": "value" }
-    /// 
+    /// `{ "data1": "value" }`
     /// 
     /// - New JSON:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// - Result:
     /// 
-    /// 
-    /// 
-    ///     { "data2": "new value" }
-    /// 
-    /// 
-    /// 
+    /// `{ "data2": "new value" }`
     /// 
     /// 
     /// 
     /// ## Restriction
-    /// 
-    /// 
     /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use "." as the key name
-    /// -
-    /// 
-    /// 
-    ///     { "data.2": "value" }
-    /// 
-    /// 
-    /// 2. Cannot use "$" as the prefix in key names
-    /// -
-    /// 
-    /// 
-    ///     { "$data": "value" }
-    /// 
-    /// 
+    /// 1. Cannot use **"."** as the key name
+    /// - `{ "data.2": "value" }`
+    /// 2. Cannot use **"$"** as the prefix in key names
+    /// - `{ "$data": "value" }`
     /// 3. Cannot use empty string in key names
-    /// -
-    /// 
-    /// 
-    ///     { "": "value" }
-    /// 
-    /// 
-    /// 
-    /// 
+    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Record Metadata
     /// 
-    /// 
-    /// 
     /// Metadata allows user to define the behaviour of the record.
-    /// Metadata can be defined in request body with field name __META.
-    /// When creating record, if __META field is not defined, the metadata value will use the default value.
-    /// When updating record, if __META field is not defined, the existing metadata value will stay as is.
+    /// Metadata can be defined in request body with field name **__META**.
+    /// When creating record, if **__META** field is not defined, the metadata value will use the default value.
+    /// When updating record, if **__META** field is not defined, the existing metadata value will stay as is.
     /// 
-    ///  Metadata List:
+    /// **Metadata List:**
     /// 1. is_public (default: false, type: bool)
     /// Indicate whether the player record is a public record or not.
     /// 
-    ///  Request Body Example:
-    /// 
-    /// 
-    /// 
-    /// 
-    ///         {
-    ///             "__META": {
-    ///                 "is_public": true
-    ///             }
-    ///             ...
-    ///         }
+    /// **Request Body Example:**
+    /// ```
+    /// {
+    /// "__META": {
+    /// "is_public": true
+    /// }
+    /// ...
+    /// }
+    /// ```
     /// </summary>
     public class PutPlayerRecordHandlerV1 : AccelByte.Sdk.Core.Operation
     {

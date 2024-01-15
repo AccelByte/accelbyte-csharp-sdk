@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testPayPalConfig
     ///
-    /// Test PayPal configuration.
+    ///  [Not Supported Yet In Starter] Test PayPal configuration.
     /// 
     /// #### Check List:
     /// 

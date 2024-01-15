@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// bulkGetGameBinaryRecordV1
     ///
-    /// Required valid user token
-    /// Required scope: `social`
-    /// 
     /// Bulk get game binary records. Maximum key per request 20.
     /// </summary>
     public class BulkGetGameBinaryRecordV1 : AccelByte.Sdk.Core.Operation

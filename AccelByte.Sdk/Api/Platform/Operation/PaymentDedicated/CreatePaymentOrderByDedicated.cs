@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createPaymentOrderByDedicated
     ///
-    /// 
+    ///  [Not Supported Yet In Starter]
     /// 
     /// This API is used to create payment order from non justice service. e.g. from dedicated server, the result contains the payment station url.
     /// 

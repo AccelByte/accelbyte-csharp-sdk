@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminListAdminUserRecordsV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:USER:{userId}:CLOUDSAVE:RECORD [READ]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// Retrieve list of admin player records key and userID under given namespace.
     /// </summary>
     public class AdminListAdminUserRecordsV1 : AccelByte.Sdk.Core.Operation

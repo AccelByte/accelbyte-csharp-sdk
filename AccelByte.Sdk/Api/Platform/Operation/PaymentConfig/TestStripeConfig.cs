@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testStripeConfig
     ///
-    /// Test stripe configuration.
+    ///  [Not Supported Yet In Starter] Test stripe configuration.
     /// 
     /// #### Check List:
     /// 

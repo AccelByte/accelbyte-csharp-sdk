@@ -16,10 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminDeleteAdminGameRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [DELETE]`
-    /// 
-    /// Required scope: `social`
-    /// 
     /// This endpoints delete game record in namespace-level
     /// </summary>
     public class AdminDeleteAdminGameRecordV1 : AccelByte.Sdk.Core.Operation

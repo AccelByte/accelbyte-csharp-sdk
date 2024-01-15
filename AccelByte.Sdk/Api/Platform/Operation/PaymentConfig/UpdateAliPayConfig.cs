@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateAliPayConfig
     ///
-    /// Update alipay configuration.
+    ///  [Not Supported Yet In Starter] Update alipay configuration.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)

@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// ImagePatch
     ///
+    /// This allows editing of the image name, toggling `IsProtected`, or adding & removal of tags
+    /// 
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [UPDATE]
     /// </summary>
     public class ImagePatch : AccelByte.Sdk.Core.Operation

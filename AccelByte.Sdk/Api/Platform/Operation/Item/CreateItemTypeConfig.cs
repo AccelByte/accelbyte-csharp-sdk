@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createItemTypeConfig
     ///
-    /// This API is used to create an item type config.
+    ///  [Not Supported Yet In Starter] This API is used to create an item type config.
     /// 
     /// *  Required permission : resource="ADMIN:ITEM:CONFIG", action=1 (CREATE)
     /// *  Returns : item type config data

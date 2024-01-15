@@ -1,3 +1,10 @@
+<a name="v0.52.0"></a>
+## [v0.52.0]
+### fix
+- **test:** move armada related test to different category
+- **test:** disable gdpr integration test for ags starter
+
+
 <a name="v0.51.0"></a>
 ## [v0.51.0]
 ### ci

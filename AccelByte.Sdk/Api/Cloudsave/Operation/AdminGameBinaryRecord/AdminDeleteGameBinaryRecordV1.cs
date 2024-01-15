@@ -16,9 +16,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// <summary>
     /// adminDeleteGameBinaryRecordV1
     ///
-    /// Required permission: `ADMIN:NAMESPACE:{namespace}:CLOUDSAVE:RECORD [DELETE]`
-    /// Required scope: `social`
-    /// 
     /// Delete a game binary record.
     /// </summary>
     public class AdminDeleteGameBinaryRecordV1 : AccelByte.Sdk.Core.Operation

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateCheckoutConfig
     ///
-    /// Update checkout.com config.
+    ///  [Not Supported Yet In Starter] Update checkout.com config.
     /// Other detail info:
     /// 
     ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)

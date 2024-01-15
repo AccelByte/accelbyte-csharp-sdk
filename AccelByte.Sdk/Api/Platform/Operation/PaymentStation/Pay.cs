@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// pay
     ///
-    /// Do payment(For now, this only support checkout.com).
+    ///  [Not Supported Yet In Starter] Do payment(For now, this only support checkout.com).
     /// Other detail info:
     /// 
     ///   * Returns : Payment process result
