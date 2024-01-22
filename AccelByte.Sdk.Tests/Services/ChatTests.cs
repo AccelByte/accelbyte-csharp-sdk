@@ -36,21 +36,25 @@ namespace AccelByte.Sdk.Tests.Services
 
             string profanityWord = $"xsdk{Helper.GenerateRandomAlphabet(4)}";
 
+            #region Register a new profanity word
             var createResult = _Sdk.Chat.Profanity.AdminProfanityCreateOp
                 .Execute(new ModelsDictionaryInsertRequest()
                 {
                     Word = profanityWord,
                     WordType = "PROFANITY"
                 }, _Sdk.Namespace);
+            #endregion
             Assert.IsNotNull(createResult);
             if (createResult != null)
                 Assert.AreEqual(profanityWord, createResult.Word);
 
+            #region Query profanity word
             var queryResults = _Sdk.Chat.Profanity.AdminProfanityQueryOp
                 .SetIncludeChildren(false)
                 .SetWordType("PROFANITY")
                 .SetStartWith(profanityWord)
                 .Execute(_Sdk.Namespace);
+            #endregion
             Assert.IsNotNull(queryResults);
             if (queryResults == null)
                 throw new Exception("NULL query result.");
@@ -66,16 +70,20 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.AreEqual(profanityWord, word.Word);
 
             string editProfanityWord = $"xsdk{Helper.GenerateRandomAlphabet(4)}";
+            #region Update profanity word
             var updateResult = _Sdk.Chat.Profanity.AdminProfanityUpdateOp
                 .Execute(new ModelsDictionaryUpdateRequest()
                 {
                     WordType = "PROFANITY",
                     Word = editProfanityWord
                 }, word.Id!, _Sdk.Namespace);
+            #endregion
             Assert.IsNotNull(updateResult);
 
+            #region Delete profanity word
             _Sdk.Chat.Profanity.AdminProfanityDeleteOp
                 .Execute(word.Id!, _Sdk.Namespace);
+            #endregion
         }
 
         [Test]
@@ -93,6 +101,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             string inboxName = $"xsdk_{Helper.GenerateRandomAlphabet(4)}";
 
+            #region Add chat inbox category
             var insertResult = _Sdk.Chat.Inbox.AdminAddInboxCategoryOp
                 .Execute(new ModelsAddInboxCategoryRequest()
                 {
@@ -100,11 +109,14 @@ namespace AccelByte.Sdk.Tests.Services
                     Name = inboxName
 
                 }, _Sdk.Namespace);
+            #endregion
             Assert.IsNotNull(insertResult);
             Assert.AreEqual(inboxName, insertResult!.Name);
 
+            #region Get chat inbox categories
             var getResult = _Sdk.Chat.Inbox.AdminGetInboxCategoriesOp
                 .Execute(_Sdk.Namespace);
+            #endregion
             Assert.IsNotNull(getResult);
             if (getResult != null)
             {
@@ -122,14 +134,18 @@ namespace AccelByte.Sdk.Tests.Services
                     Assert.Fail($"'{inboxName}' not found.");
             }
 
+            #region Update chat inbox category
             _Sdk.Chat.Inbox.AdminUpdateInboxCategoryOp
                 .Execute(new ModelsUpdateInboxCategoryRequest()
                 {
                     ExpiresIn = 1800000000
                 }, inboxName, _Sdk.Namespace);
+            #endregion
 
+            #region Delete chat inbox category
             _Sdk.Chat.Inbox.AdminDeleteInboxCategoryOp
                 .Execute(inboxName, _Sdk.Namespace);
+            #endregion
         }
     }
 }
