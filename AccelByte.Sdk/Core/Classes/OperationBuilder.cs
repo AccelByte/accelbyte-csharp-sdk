@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Core
         internal object? WrapperObject { get; set; } = null;
 
         protected string PreferredSecurityMethod { get; set; } = String.Empty;
+
+        protected string FlightId { get; set; } = String.Empty;
 
         protected JsonSerializerOptions? RequestJsonOptions { get; set; } = null;
 
@@ -44,6 +46,12 @@ namespace AccelByte.Sdk.Core
         {
             RequestJsonOptions = options;
             ResponseJsonOptions = options;
+            return (T)this;
+        }
+
+        public T UpdateFlightId(string flightId)
+        {
+            FlightId = flightId;
             return (T)this;
         }
 

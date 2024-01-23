@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -65,6 +65,11 @@ namespace AccelByte.Sdk.Core.Pipeline
                 string amazonTraceId = String.Format("{0}-{1}-{2}", config.ConfigRepository.TraceIdVersion, uTime, guid);
                 operation.HeaderParams["X-Amzn-Trace-Id"] = amazonTraceId;
             }
+
+            string xFlightId = operation.FlightId;
+            if (xFlightId == "")
+                xFlightId = sdk.FlightId;
+            operation.HeaderParams["x-flight-id"] = xFlightId;
 
             return operation;
         }

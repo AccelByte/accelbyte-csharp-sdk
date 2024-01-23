@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2023 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Core
         public string Namespace { get => Configuration.ConfigRepository.Namespace; }
 
         public SdkLocalData LocalData { get; } = new SdkLocalData();
+
+        public string FlightId { get; private set; } = String.Empty;
 
         public AccelByteSDK(AccelByteConfig config)
         {
@@ -334,9 +336,29 @@ namespace AccelByte.Sdk.Core
             else
                 throw new Exception("Could not validate token. No token validator assigned.");
         }
+
+        public void UpdateFlightId(string flightId)
+        {
+            FlightId = flightId;
+        }
     }
 
-    public partial class AccelByteSdkBuilder<T> where T : AccelByteSDK
+    public abstract class AccelByteSdkBuilder
+    {
+        private static string _DefaultFlightId;
+
+        protected string GetDefaultFlightId()
+        {
+            return _DefaultFlightId;
+        }
+
+        static AccelByteSdkBuilder()
+        {
+            _DefaultFlightId = Guid.NewGuid().ToString();
+        }
+    }
+
+    public partial class AccelByteSdkBuilder<T> : AccelByteSdkBuilder where T : AccelByteSDK
     {
         private IHttpClient? _Client = null;
 
@@ -359,6 +381,8 @@ namespace AccelByte.Sdk.Core
         private bool _UseRefreshIfPossible = false;
 
         private Action<LoginType, AuthActionType, TokenData?, AccelByteSDK>? _OnAfterLogin = null;
+
+        private string _FlightId = "";
 
         public AccelByteSdkBuilder<T> SetHttpClient(IHttpClient client)
         {
@@ -464,6 +488,12 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
+        public AccelByteSdkBuilder<T> SetFlightId(string flightId)
+        {
+            _FlightId = flightId;
+            return this;
+        }
+
         public virtual T Build()
         {
             if (_Client == null)
@@ -495,11 +525,6 @@ namespace AccelByte.Sdk.Core
             else
                 config.TokenValidator = new DefaultTokenValidator();
 
-            /*AccelByteSDK sdk;
-            if (_Services.Count > 0)
-                sdk = new AccelByteSDK(config, _Services);
-            else
-                sdk = new AccelByteSDK(config);*/
             T? sdk;
             if (_Services.Count > 0)
                 sdk = (T?)Activator.CreateInstance(typeof(T), config, _Services);
@@ -520,6 +545,10 @@ namespace AccelByte.Sdk.Core
                 foreach (IOperationProcessPipeline opp in _OpProcesses)
                     sdk.OpProcess.AppendToChain(opp);
             }
+
+            if (_FlightId == "")
+                _FlightId = GetDefaultFlightId();
+            sdk.UpdateFlightId(_FlightId);
 
             return sdk;
         }
