@@ -113,6 +113,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
                 op.ResponseJsonOptions = ResponseJsonOptions;
+                op.FlightId = FlightId;
 
                 return op;
             }

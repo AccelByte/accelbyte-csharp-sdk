@@ -56,6 +56,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
                 op.ResponseJsonOptions = ResponseJsonOptions;
+                op.FlightId = FlightId;
 
                 return op;
             }

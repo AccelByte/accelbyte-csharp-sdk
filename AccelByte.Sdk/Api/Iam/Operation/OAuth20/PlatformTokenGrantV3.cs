@@ -165,6 +165,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
                 op.ResponseJsonOptions = ResponseJsonOptions;
+                op.FlightId = FlightId;
 
                 return op;
             }

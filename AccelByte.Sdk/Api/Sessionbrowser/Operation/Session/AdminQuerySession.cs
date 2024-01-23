@@ -122,6 +122,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
                 op.ResponseJsonOptions = ResponseJsonOptions;
+                op.FlightId = FlightId;
 
                 return op;
             }

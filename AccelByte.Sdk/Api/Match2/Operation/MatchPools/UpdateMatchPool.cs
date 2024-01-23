@@ -67,6 +67,7 @@ namespace AccelByte.Sdk.Api.Match2.Operation
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
                 op.ResponseJsonOptions = ResponseJsonOptions;
+                op.FlightId = FlightId;
 
                 return op;
             }
