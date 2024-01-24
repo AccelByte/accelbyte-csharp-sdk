@@ -386,6 +386,28 @@ ModelsGameRecordResponse<GameRecordExample>? response = sdk.Cloudsave.PublicGame
 ```
 The list of which endpoints that support it can be found in [here](docs/operations/)
 
+## FlightID
+Since 0.53, C# Extend SDK enable support for FlightID transmission during Http request. By default, new flight id will be generated when the sdk is loaded. There will be some case that this default value need to be updated with new value.
+-   To update default flight id globally, use following code:
+    ```csharp
+    AccelByteConfig.UpdateDefaultFlightId("<new flight id value>");
+    ```
+    This will update the default flight id, and will be used by newly created sdk object (won't affect existing sdk object created before this code get executed).
+
+-   To update flight id value in sdk object, use following code:
+    ```csharp
+    sdk.UpdateFlightId("<new flight id value>");
+    ```
+    This will update the flight id value stored inside the sdk object. Will be used for all operations executed by the sdk object.
+
+-   To update flight id value for specific operation, use `UpdateFlightId` method when building the operation object.
+    ```csharp
+    // Make a call to getMyProfileInfo endpoint
+    UserProfilePrivateInfo? response = sdk.Basic.UserProfile.GetMyProfileInfoOp
+        .UpdateFlightId("<new flight id value>")
+        .Execute(sdk.Namespace);
+    ```
+
 ## Samples
 
 See common use cases [here](docs/common_use_cases.md).
