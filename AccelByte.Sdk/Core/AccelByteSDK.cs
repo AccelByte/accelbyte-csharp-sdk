@@ -343,22 +343,7 @@ namespace AccelByte.Sdk.Core
         }
     }
 
-    public abstract class AccelByteSdkBuilder
-    {
-        private static string _DefaultFlightId;
-
-        protected string GetDefaultFlightId()
-        {
-            return _DefaultFlightId;
-        }
-
-        static AccelByteSdkBuilder()
-        {
-            _DefaultFlightId = Guid.NewGuid().ToString();
-        }
-    }
-
-    public partial class AccelByteSdkBuilder<T> : AccelByteSdkBuilder where T : AccelByteSDK
+    public partial class AccelByteSdkBuilder<T> where T : AccelByteSDK
     {
         private IHttpClient? _Client = null;
 
@@ -547,7 +532,7 @@ namespace AccelByte.Sdk.Core
             }
 
             if (_FlightId == "")
-                _FlightId = GetDefaultFlightId();
+                _FlightId = AccelByteConfig.DefaultFlightId;
             sdk.UpdateFlightId(_FlightId);
 
             return sdk;
