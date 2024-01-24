@@ -42,12 +42,16 @@ namespace AccelByte.Sdk.Tests
 
             public HttpbinAnythingOperation Create(HttpMethod method)
             {
-                return new HttpbinAnythingOperation(this, method);
+                var op = new HttpbinAnythingOperation(this, method);
+                op.FlightId = FlightId;
+                return op;
             }
 
             public HttpbinAnythingOperation Create(string method)
             {
-                return new HttpbinAnythingOperation(this, new HttpMethod(method));
+                var op = new HttpbinAnythingOperation(this, new HttpMethod(method));
+                op.FlightId = FlightId;
+                return op;
             }
         }
 

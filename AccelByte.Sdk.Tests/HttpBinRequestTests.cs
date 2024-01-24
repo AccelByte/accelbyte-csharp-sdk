@@ -381,5 +381,141 @@ namespace AccelByte.Sdk.Tests
             Assert.IsNotNull(x);
             Assert.AreEqual((HttpStatusCode)statusCode, x!.StatusCode);
         }
+
+        [Test]
+        public void DefaultFlightIdRequestTest()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            HttpbinAnythingOperation op = HttpbinAnythingOperation.Builder
+                .Create(HttpMethod.Get);
+            var result = op.Execute(_Sdk);
+
+            Assert.IsNotNull(result);
+            if (result != null)
+            {
+                Assert.IsNotNull(result.Headers);
+                if (result.Headers != null)
+                {
+                    string hFlightId = "";
+                    if (result.Headers.ContainsKey("X-Flight-Id"))
+                        hFlightId = result.Headers["X-Flight-Id"].Trim();
+                    else if (result.Headers.ContainsKey("x-flight-id"))
+                        hFlightId = result.Headers["x-flight-id"].Trim();
+                    else
+                        Assert.Fail("No x-flight-id in response data.");
+
+                    string expectedFlightId = AccelByteConfig.DefaultFlightId;
+                    Assert.AreEqual(expectedFlightId, hFlightId);
+                }
+            }
+        }
+
+        [Test]
+        public void SdkObjectFlightIdRequestTest()
+        {
+            string newFlightId = Guid.NewGuid().ToString();
+
+            var sdk = AccelByteSDK.Builder
+                .SetHttpClient(GetHttpClientObject())
+                .SetConfigRepository(new HttpbinConfigRepository("client"))
+                .UseDefaultTokenRepository()
+                .EnableLog()
+                .Build();
+            sdk.UpdateFlightId(newFlightId);
+
+            HttpbinAnythingOperation op = HttpbinAnythingOperation.Builder
+                .Create(HttpMethod.Get);
+            var result = op.Execute(sdk);
+
+            Assert.IsNotNull(result);
+            if (result != null)
+            {
+                Assert.IsNotNull(result.Headers);
+                if (result.Headers != null)
+                {
+                    string hFlightId = "";
+                    if (result.Headers.ContainsKey("X-Flight-Id"))
+                        hFlightId = result.Headers["X-Flight-Id"].Trim();
+                    else if (result.Headers.ContainsKey("x-flight-id"))
+                        hFlightId = result.Headers["x-flight-id"].Trim();
+                    else
+                        Assert.Fail("No x-flight-id in response data.");
+
+                    Assert.AreEqual(newFlightId, hFlightId);
+                }
+            }
+        }
+
+        [Test]
+        public void SdkBuildFlightIdRequestTest()
+        {
+            string newFlightId = Guid.NewGuid().ToString();
+
+            var sdk = AccelByteSDK.Builder
+                .SetHttpClient(GetHttpClientObject())
+                .SetConfigRepository(new HttpbinConfigRepository("client"))
+                .UseDefaultTokenRepository()
+                .SetFlightId(newFlightId)
+                .EnableLog()
+                .Build();
+
+            HttpbinAnythingOperation op = HttpbinAnythingOperation.Builder
+                .Create(HttpMethod.Get);
+            var result = op.Execute(sdk);
+
+            Assert.IsNotNull(result);
+            if (result != null)
+            {
+                Assert.IsNotNull(result.Headers);
+                if (result.Headers != null)
+                {
+                    string hFlightId = "";
+                    if (result.Headers.ContainsKey("X-Flight-Id"))
+                        hFlightId = result.Headers["X-Flight-Id"].Trim();
+                    else if (result.Headers.ContainsKey("x-flight-id"))
+                        hFlightId = result.Headers["x-flight-id"].Trim();
+                    else
+                        Assert.Fail("No x-flight-id in response data.");
+
+                    Assert.AreEqual(newFlightId, hFlightId);
+                }
+            }
+        }
+
+        [Test]
+        public void OperationObjectFlightIdRequestTest()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string newFlightId = Guid.NewGuid().ToString();
+            HttpbinAnythingOperation op = HttpbinAnythingOperation.Builder
+                .UpdateFlightId(newFlightId)
+                .Create(HttpMethod.Get);
+            var result = op.Execute(_Sdk);
+
+            Assert.IsNotNull(result);
+            if (result != null)
+            {
+                Assert.IsNotNull(result.Headers);
+                if (result.Headers != null)
+                {
+                    string hFlightId = "";
+                    if (result.Headers.ContainsKey("X-Flight-Id"))
+                        hFlightId = result.Headers["X-Flight-Id"].Trim();
+                    else if (result.Headers.ContainsKey("x-flight-id"))
+                        hFlightId = result.Headers["x-flight-id"].Trim();
+                    else
+                        Assert.Fail("No x-flight-id in response data.");
+
+                    Assert.AreEqual(newFlightId, hFlightId);
+                }
+            }
+
+        }
     }
 }
