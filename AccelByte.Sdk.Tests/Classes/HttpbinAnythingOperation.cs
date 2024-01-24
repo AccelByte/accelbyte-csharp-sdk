@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Tests
 {
     public class HttpbinAnythingOperation : Operation
     {
-        public static readonly HttpbinAnythingOperationBuilder Builder = new HttpbinAnythingOperationBuilder();
+        public static HttpbinAnythingOperationBuilder Builder { get => new HttpbinAnythingOperationBuilder(); }
 
         public class HttpbinAnythingOperationBuilder
             : OperationBuilder<HttpbinAnythingOperationBuilder>
