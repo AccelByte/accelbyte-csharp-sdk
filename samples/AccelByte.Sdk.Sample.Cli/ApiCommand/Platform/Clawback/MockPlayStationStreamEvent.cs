@@ -56,8 +56,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            wrapper.MockPlayStationStreamEvent(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.ClawbackInfo? response = wrapper.MockPlayStationStreamEvent(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

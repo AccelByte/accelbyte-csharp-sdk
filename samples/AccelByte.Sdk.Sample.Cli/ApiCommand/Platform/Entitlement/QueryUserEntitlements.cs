@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("appType")]
         public string? AppType { get; set; }
 
+        [SdkCommandArgument("collectionId")]
+        public string? CollectionId { get; set; }
+
         [SdkCommandArgument("entitlementClazz")]
         public string? EntitlementClazz { get; set; }
 
@@ -79,6 +82,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetActiveOnly((bool)ActiveOnly);
             if (AppType != null)
                 opBuilder.SetAppType(QueryUserEntitlementsAppType.NewValue(AppType));
+            if (CollectionId != null)
+                opBuilder.SetCollectionId((string)CollectionId);
             if (EntitlementClazz != null)
                 opBuilder.SetEntitlementClazz(QueryUserEntitlementsEntitlementClazz.NewValue(EntitlementClazz));
             if (EntitlementName != null)

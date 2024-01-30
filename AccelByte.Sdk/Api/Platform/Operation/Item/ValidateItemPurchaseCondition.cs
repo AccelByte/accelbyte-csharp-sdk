@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<ValidateItemPurchaseConditionBuilder>
         {
 
+            public string? Platform { get; set; }
+
 
             public Model.ItemPurchaseConditionValidateRequest? Body { get; set; }
 
@@ -35,6 +37,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal ValidateItemPurchaseConditionBuilder() { }
 
+
+            public ValidateItemPurchaseConditionBuilder SetPlatform(string _platform)
+            {
+                Platform = _platform;
+                return this;
+            }
 
 
             public ValidateItemPurchaseConditionBuilder SetBody(Model.ItemPurchaseConditionValidateRequest _body)
@@ -71,6 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Platform is not null) QueryParams["platform"] = builder.Platform;
             if (userId is not null) QueryParams["userId"] = userId;
 
 
@@ -85,12 +94,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public ValidateItemPurchaseCondition(
             string namespace_,
+            string? platform,
             string userId,
             Model.ItemPurchaseConditionValidateRequest body
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (platform is not null) QueryParams["platform"] = platform;
             if (userId is not null) QueryParams["userId"] = userId;
 
 

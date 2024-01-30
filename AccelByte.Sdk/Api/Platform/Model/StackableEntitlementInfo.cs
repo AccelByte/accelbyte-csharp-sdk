@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public StackableEntitlementInfoClazz? Clazz { get; set; }
 
+        [JsonPropertyName("collectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CollectionId { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
@@ -71,6 +75,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public StackableEntitlementInfoOrigin? Origin { get; set; }
+
+        [JsonPropertyName("platformAvailable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? PlatformAvailable { get; set; }
 
         [JsonPropertyName("sku")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

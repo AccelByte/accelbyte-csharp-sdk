@@ -24,6 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public ImportStoreItemInfoItemType? ItemType { get; set; }
 
         [JsonPropertyName("localizations")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, Localization>? Localizations { get; set; }
 
         [JsonPropertyName("name")]

@@ -21,6 +21,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
 
+        [JsonPropertyName("entitlementPlatform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public AdminOrderCreateEntitlementPlatform? EntitlementPlatform { get; set; }
+
         [JsonPropertyName("ext")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
@@ -77,6 +82,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
 
+        [JsonPropertyName("entitlementPlatform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public AdminOrderCreateEntitlementPlatform? EntitlementPlatform { get; set; }
+
         [JsonPropertyName("ext")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Ext { get; set; }
@@ -121,6 +131,48 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+
+    public class AdminOrderCreateEntitlementPlatform : StringEnum<AdminOrderCreateEntitlementPlatform>
+    {
+        public static readonly AdminOrderCreateEntitlementPlatform Epic
+            = new AdminOrderCreateEntitlementPlatform("Epic");
+
+        public static readonly AdminOrderCreateEntitlementPlatform GooglePlay
+            = new AdminOrderCreateEntitlementPlatform("GooglePlay");
+
+        public static readonly AdminOrderCreateEntitlementPlatform IOS
+            = new AdminOrderCreateEntitlementPlatform("IOS");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Nintendo
+            = new AdminOrderCreateEntitlementPlatform("Nintendo");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Oculus
+            = new AdminOrderCreateEntitlementPlatform("Oculus");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Other
+            = new AdminOrderCreateEntitlementPlatform("Other");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Playstation
+            = new AdminOrderCreateEntitlementPlatform("Playstation");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Steam
+            = new AdminOrderCreateEntitlementPlatform("Steam");
+
+        public static readonly AdminOrderCreateEntitlementPlatform Xbox
+            = new AdminOrderCreateEntitlementPlatform("Xbox");
+
+
+        public static implicit operator AdminOrderCreateEntitlementPlatform(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminOrderCreateEntitlementPlatform(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class AdminOrderCreatePlatform : StringEnum<AdminOrderCreatePlatform>
     {

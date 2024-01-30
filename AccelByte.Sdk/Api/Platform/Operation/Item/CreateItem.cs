@@ -238,7 +238,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// 
     /// 
-    /// ## Restrictions for item extension and localization extension
+    /// ## Restrictions for item extension and localization extension and inventory config custom attributes
     /// 
     /// 
     /// 1. Cannot use "." as the key name

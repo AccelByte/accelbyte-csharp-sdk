@@ -27,6 +27,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.CreateStore.Builder.SetWrapperObject(this); }
         }
+        public GetCatalogDefinition.GetCatalogDefinitionBuilder GetCatalogDefinitionOp
+        {
+            get { return Operation.GetCatalogDefinition.Builder.SetWrapperObject(this); }
+        }
+        public DownloadCSVTemplates.DownloadCSVTemplatesBuilder DownloadCSVTemplatesOp
+        {
+            get { return Operation.DownloadCSVTemplates.Builder.SetWrapperObject(this); }
+        }
+        public ExportStoreByCSV.ExportStoreByCSVBuilder ExportStoreByCSVOp
+        {
+            get { return Operation.ExportStoreByCSV.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public ImportStore.ImportStoreBuilder ImportStoreOp
         {
@@ -69,6 +81,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.ExportStore.Builder.SetWrapperObject(this); }
         }
+        public QueryImportHistory.QueryImportHistoryBuilder QueryImportHistoryOp
+        {
+            get { return Operation.QueryImportHistory.Builder.SetWrapperObject(this); }
+        }
+        public ImportStoreByCSV.ImportStoreByCSVBuilder ImportStoreByCSVOp
+        {
+            get { return Operation.ImportStoreByCSV.Builder.SetWrapperObject(this); }
+        }
         public PublicListStores.PublicListStoresBuilder PublicListStoresOp
         {
             get { return Operation.PublicListStores.Builder.SetWrapperObject(this); }
@@ -93,6 +113,33 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.StoreInfo? CreateStore(CreateStore input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.CatalogDefinitionInfo>? GetCatalogDefinition(GetCatalogDefinition input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Stream? DownloadCSVTemplates(DownloadCSVTemplates input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Stream? ExportStoreByCSV(ExportStoreByCSV input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -197,6 +244,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
+        public Model.ImportStoreHistoryPagingResult? QueryImportHistory(QueryImportHistory input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ImportStoreResult? ImportStoreByCSV(ImportStoreByCSV input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.StoreInfo>? PublicListStores(PublicListStores input)
         {
             var response = _sdk.RunRequest(input);

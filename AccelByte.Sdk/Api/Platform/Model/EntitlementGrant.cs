@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class EntitlementGrant : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("collectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CollectionId { get; set; }
+
         [JsonPropertyName("endDate")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? EndDate { get; set; }

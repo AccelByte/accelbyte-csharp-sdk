@@ -1,3 +1,19 @@
+<a name="v0.53.0"></a>
+## [v0.53.0]
+### feat
+- **:** add chat service common use case markers
+- **:** add core flightid support
+- **:** add flightid httpbin test
+### fix
+- **:** update vulnerable dependency
+- **:** move default flightid to config class
+- **:** change httpbin op static builder field to static prop
+### chore
+- **:** regenerate sdk to implement flightid
+### docs
+- **:** add flightid info to readme
+
+
 <a name="v0.52.0"></a>
 ## [v0.52.0]
 ### fix

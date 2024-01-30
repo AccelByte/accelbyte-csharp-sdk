@@ -14,6 +14,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("count")]
         public int? Count { get; set; }
 
+        [JsonPropertyName("entitlementCollectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntitlementCollectionId { get; set; }
+
         [JsonPropertyName("entitlementOrigin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]

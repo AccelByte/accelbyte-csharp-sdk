@@ -602,6 +602,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlementsByAppType(op);
         }
+        public static List<Platform.Model.EntitlementInfo>? Execute(
+            this PublicGetUserEntitlementsByIds.PublicGetUserEntitlementsByIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserEntitlementsByIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementsByIds(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this PublicGetUserEntitlementByItemId.PublicGetUserEntitlementByItemIdBuilder builder,
@@ -749,6 +762,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSellUserEntitlement(op);
+        }
+        public static Platform.Model.EntitlementSplitResult? Execute(
+            this PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSplitUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSplitUserEntitlement(op);
+        }
+        public static Platform.Model.EntitlementTransferResult? Execute(
+            this PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicTransferUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicTransferUserEntitlement(op);
         }
     }
 }

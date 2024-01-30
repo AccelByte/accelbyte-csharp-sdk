@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public EntitlementDecrementResultClazz? Clazz { get; set; }
 
+        [JsonPropertyName("collectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CollectionId { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
@@ -71,6 +75,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public EntitlementDecrementResultOrigin? Origin { get; set; }
+
+        [JsonPropertyName("platformAvailable")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? PlatformAvailable { get; set; }
 
         [JsonPropertyName("replayed")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

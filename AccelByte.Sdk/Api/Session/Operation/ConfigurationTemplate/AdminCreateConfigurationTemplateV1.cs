@@ -54,6 +54,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - DisableCodeGeneration (optional, default: false): If it is set to true, code will not be generated for party session automatically.
     /// - DSManualSetReady (optional, default: false): The DS need to call specific end point to flag the DS for game session is ready to accept client connection.
     /// - EnableSecret (optional, default: false): if configuration template is created with TypeDS and EnableSecret is True, A secret will be created
+    /// - LeaderElectionGracePeriod this is on second (optional, default:0) this is only use for party session, if value > 0 if leader disconnect will be wait until value reach and leader will be change after reach
+    /// - ManualRejoin (optional, default: false): indicates if game client will handle manual rejoin upon websocket reconnection when enabled.
     /// </summary>
     public class AdminCreateConfigurationTemplateV1 : AccelByte.Sdk.Core.Operation
     {

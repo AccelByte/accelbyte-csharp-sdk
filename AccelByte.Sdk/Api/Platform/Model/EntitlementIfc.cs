@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public EntitlementIfcClazz? Clazz { get; set; }
 
+        [JsonPropertyName("collectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CollectionId { get; set; }
+
         [JsonPropertyName("createdAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }

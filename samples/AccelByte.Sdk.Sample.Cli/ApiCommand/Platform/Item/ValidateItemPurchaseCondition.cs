@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("platform")]
+        public string? Platform { get; set; }
+
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.ValidateItemPurchaseCondition.Builder;
 
+            if (Platform != null)
+                opBuilder.SetPlatform((string)Platform);
 
             if (Body != null)
                 opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemPurchaseConditionValidateRequest)Body);

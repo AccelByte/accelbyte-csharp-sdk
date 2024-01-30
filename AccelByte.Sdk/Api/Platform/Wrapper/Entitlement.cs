@@ -192,6 +192,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicQueryUserEntitlementsByAppType.Builder.SetWrapperObject(this); }
         }
+        public PublicGetUserEntitlementsByIds.PublicGetUserEntitlementsByIdsBuilder PublicGetUserEntitlementsByIdsOp
+        {
+            get { return Operation.PublicGetUserEntitlementsByIds.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserEntitlementByItemId.PublicGetUserEntitlementByItemIdBuilder PublicGetUserEntitlementByItemIdOp
         {
@@ -233,6 +237,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicSellUserEntitlement.PublicSellUserEntitlementBuilder PublicSellUserEntitlementOp
         {
             get { return Operation.PublicSellUserEntitlement.Builder.SetWrapperObject(this); }
+        }
+        public PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder PublicSplitUserEntitlementOp
+        {
+            get { return Operation.PublicSplitUserEntitlement.Builder.SetWrapperObject(this); }
+        }
+        public PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder PublicTransferUserEntitlementOp
+        {
+            get { return Operation.PublicTransferUserEntitlement.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -626,6 +638,15 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.EntitlementInfo>? PublicGetUserEntitlementsByIds(PublicGetUserEntitlementsByIds input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.EntitlementInfo? PublicGetUserEntitlementByItemId(PublicGetUserEntitlementByItemId input)
@@ -714,6 +735,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public Model.EntitlementSoldResult? PublicSellUserEntitlement(PublicSellUserEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementSplitResult? PublicSplitUserEntitlement(PublicSplitUserEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementTransferResult? PublicTransferUserEntitlement(PublicTransferUserEntitlement input)
         {
             var response = _sdk.RunRequest(input);
 

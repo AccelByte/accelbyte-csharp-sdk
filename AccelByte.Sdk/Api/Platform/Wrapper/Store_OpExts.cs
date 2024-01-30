@@ -34,6 +34,41 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStore(op);
         }
+        public static List<Platform.Model.CatalogDefinitionInfo>? Execute(
+            this GetCatalogDefinition.GetCatalogDefinitionBuilder builder,
+            string namespace_,
+            string catalogType
+        )
+        {
+            GetCatalogDefinition op = builder.Build(
+                namespace_,
+                catalogType
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).GetCatalogDefinition(op);
+        }
+        public static Stream? Execute(
+            this DownloadCSVTemplates.DownloadCSVTemplatesBuilder builder,
+            string namespace_
+        )
+        {
+            DownloadCSVTemplates op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).DownloadCSVTemplates(op);
+        }
+        public static Stream? Execute(
+            this ExportStoreByCSV.ExportStoreByCSVBuilder builder,
+            string namespace_
+        )
+        {
+            ExportStoreByCSV op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStoreByCSV(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.StoreInfo? Execute(
             this ImportStore.ImportStoreBuilder builder,
@@ -155,6 +190,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore(op);
+        }
+        public static Platform.Model.ImportStoreHistoryPagingResult? Execute(
+            this QueryImportHistory.QueryImportHistoryBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            QueryImportHistory op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).QueryImportHistory(op);
+        }
+        public static Platform.Model.ImportStoreResult? Execute(
+            this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            ImportStoreByCSV op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStoreByCSV(op);
         }
         public static List<Platform.Model.StoreInfo>? Execute(
             this PublicListStores.PublicListStoresBuilder builder,

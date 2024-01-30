@@ -38,11 +38,21 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void MockPlayStationStreamEvent(MockPlayStationStreamEvent input)
+        public Model.ClawbackInfo? MockPlayStationStreamEvent(MockPlayStationStreamEvent input)
         {
             var response = _sdk.RunRequest(input);
 
-            input.ParseResponse(
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ClawbackInfo<T1, T2>? MockPlayStationStreamEvent<T1, T2>(MockPlayStationStreamEvent input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1, T2>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

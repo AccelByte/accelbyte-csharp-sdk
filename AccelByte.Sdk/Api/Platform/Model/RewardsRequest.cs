@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class RewardsRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementCollectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntitlementCollectionId { get; set; }
+
         [JsonPropertyName("entitlementOrigin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
@@ -41,6 +45,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class RewardsRequest<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("entitlementCollectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntitlementCollectionId { get; set; }
+
         [JsonPropertyName("entitlementOrigin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]

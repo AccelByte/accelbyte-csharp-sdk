@@ -59,6 +59,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? LeaderElectionGracePeriod { get; set; }
 
+        [JsonPropertyName("manualRejoin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ManualRejoin { get; set; }
+
         [JsonPropertyName("maxActiveSession")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxActiveSession { get; set; }
@@ -150,6 +154,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("leaderElectionGracePeriod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? LeaderElectionGracePeriod { get; set; }
+
+        [JsonPropertyName("manualRejoin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? ManualRejoin { get; set; }
 
         [JsonPropertyName("maxActiveSession")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

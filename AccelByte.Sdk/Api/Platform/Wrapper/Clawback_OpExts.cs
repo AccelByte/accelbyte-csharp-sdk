@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Clawback)builder.WrapperObject!).QueryIAPClawbackHistory(op);
         }
-        public static void Execute(
+        public static Platform.Model.ClawbackInfo? Execute(
             this MockPlayStationStreamEvent.MockPlayStationStreamEventBuilder builder,
             string namespace_
         )
@@ -32,7 +32,19 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEvent(op);
+            return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEvent(op);
+        }
+
+        public static Platform.Model.ClawbackInfo<T1, T2>? Execute<T1, T2>(
+            this MockPlayStationStreamEvent.MockPlayStationStreamEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockPlayStationStreamEvent op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEvent<T1, T2>(op);
         }
     }
 }

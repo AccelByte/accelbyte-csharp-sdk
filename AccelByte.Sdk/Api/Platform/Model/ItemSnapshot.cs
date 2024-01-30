@@ -48,6 +48,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Flexible { get; set; }
 
+        [JsonPropertyName("inventoryConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public InventoryConfig? InventoryConfig { get; set; }
+
         [JsonPropertyName("itemId")]
         public string? ItemId { get; set; }
 
