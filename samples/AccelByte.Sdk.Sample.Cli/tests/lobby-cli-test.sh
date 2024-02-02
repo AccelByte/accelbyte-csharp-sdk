@@ -251,7 +251,7 @@ $CLI_EXE \
     --sn lobby \
     --op AdminImportConfigV1 \
     --namespace $AB_NAMESPACE \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 21 'AdminImportConfigV1' test.out
 

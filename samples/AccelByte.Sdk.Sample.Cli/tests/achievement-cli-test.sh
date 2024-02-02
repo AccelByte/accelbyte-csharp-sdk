@@ -91,7 +91,7 @@ $CLI_EXE \
     --sn achievement \
     --op ImportAchievements \
     --namespace $AB_NAMESPACE \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     --strategy 'au9b9QjhzDlnJmi4' \
     > test.out 2>&1
 eval_tap $? 5 'ImportAchievements' test.out

@@ -87,7 +87,7 @@ echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn dsmc \
     --op ImportImages \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 6 'ImportImages' test.out
 
@@ -607,7 +607,7 @@ $CLI_EXE \
     --sn dsmc \
     --op ImportConfigV1 \
     --namespace $AB_NAMESPACE \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 57 'ImportConfigV1' test.out
 

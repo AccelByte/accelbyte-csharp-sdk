@@ -423,7 +423,7 @@ $CLI_EXE \
     --sn chat \
     --op ImportConfig \
     --namespace $AB_NAMESPACE \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 35 'ImportConfig' test.out
 
@@ -655,7 +655,7 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --action 'LEAVEOUT' \
     --showResult 'true' \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
 eval_tap $? 56 'AdminProfanityImport' test.out
 

@@ -150,7 +150,7 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --description 'cHXs8PlOBlfUOqv7' \
     --certname 'WmCuqcsNM7YAnbq4' \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     --password 'DjmYUMhD9qU89D35' \
     > test.out 2>&1
 eval_tap $? 13 'HandleUploadXboxPFXCertificate' test.out

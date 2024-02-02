@@ -200,7 +200,7 @@ $CLI_EXE \
     --sn matchmaking \
     --op ImportChannels \
     --namespace $AB_NAMESPACE \
-    --upload $TEMP_FILE_UPLOAD \
+    --upload file $TEMP_FILE_UPLOAD \
     --strategy 'bTMfmV8RpXci3oXt' \
     > test.out 2>&1
 eval_tap $? 17 'ImportChannels' test.out
