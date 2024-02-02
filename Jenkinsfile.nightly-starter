@@ -24,39 +24,18 @@ pipeline {
           gitRepositoryName = git.getRepositoryName()
           gitCommitHash = git.getCommitHash()
           bitbucketCommitHref = "https://api.bitbucket.org/2.0/repositories/accelbyte/${gitRepositoryName}/commit/${gitCommitHash}"
-          bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "INPROGRESS", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+          bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "INPROGRESS", env.JOB_NAME.take(30), "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
         }
       }
     }
     stage('Test') {
       stages {
-        stage('Deploy Justice Codegen') {
-          steps {
-            sshagent(credentials: [bitbucketCredentialsSsh]) {
-              sh "rm -rf .justice-codegen-sdk-mock-server"
-              sh "git clone --depth 1 git@bitbucket.org:accelbyte/justice-codegen-sdk-mock-server.git .justice-codegen-sdk-mock-server"
-            }
-          }
-        }
-        stage('CLI Tests') {
-          steps {            
-            sh "make test_cli SDK_MOCK_SERVER_PATH=.justice-codegen-sdk-mock-server"
-          }
-          post {
-            always {
-              script {
-                archiveArtifacts artifacts: 'samples/AccelByte.Sdk.Sample.Cli/tests/*.tap'
-                step([$class: "TapPublisher", testResults: "samples/AccelByte.Sdk.Sample.Cli/tests/*.tap"])
-              }
-            }
-          }
-        }
         stage('Integration Tests') {
           options {
-            lock("justice-demo-serversdktest")
+            lock("justice-starter-serversdktest")
           }
           steps {
-            withCredentials([file(credentialsId: 'justice-codegen-sdk-integration-test-env', variable: 'ENV_FILE_PATH')]) {
+            withCredentials([file(credentialsId: 'justice-codegen-sdk-integration-starter-test-env', variable: 'ENV_FILE_PATH')]) {
               sh 'make test_integration ENV_FILE_PATH="$ENV_FILE_PATH"'
             }
           }
@@ -67,7 +46,7 @@ pipeline {
   post {
     success {
       script {
-        bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "SUCCESSFUL", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+        bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "SUCCESSFUL", env.JOB_NAME.take(30), "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
         
         //gitRepositoryName = git.getRepositoryName()
         //gitBranchName = sh(script: "echo ${env.GIT_BRANCH} | grep -oP '(?<=origin/).+'", returnStdout: true).trim()
@@ -87,7 +66,7 @@ pipeline {
     }
     failure {
       script {
-        bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "FAILED", env.JOB_NAME, "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
+        bitbucket.setBuildStatus(bitbucketCredentialsHttps, bitbucketCommitHref, "FAILED", env.JOB_NAME.take(30), "${env.JOB_NAME}-${env.BUILD_NUMBER}", "Jenkins", "${env.BUILD_URL}console")
         
         message = """
             :no_entry: <${env.BUILD_URL}|${env.JOB_NAME}-${env.BUILD_NUMBER}> *failed*
