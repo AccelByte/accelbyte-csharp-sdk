@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -11,7 +11,6 @@ using System.IO;
 
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
-using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli
 {
@@ -37,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public string OperationName { get; private set; } = String.Empty;
 
-        public Stream? FileUpload { get; private set; } = null;
+        public Dictionary<string, Stream> FileUploads { get; private set; } = new();
 
         public bool IsHelpAsked { get; private set; } = false;
 
@@ -57,6 +56,11 @@ namespace AccelByte.Sdk.Sample.Cli
 
         public bool IsRetryOnWSMessageError { get; private set; } = false;
 
+        protected bool HasDoubleHyphen(string text)
+        {
+            return (text.Substring(0, Math.Min(2, text.Length)) == "--");
+        }
+
         public CommandArguments(string[] args)
         {
             _Parameters = new Dictionary<string, string>();
@@ -73,20 +77,32 @@ namespace AccelByte.Sdk.Sample.Cli
                     if (part.Length <= 2)
                         throw new CommandArgumentException();
 
-                    if (part.Substring(0, Math.Min(2, part.Length)) == "--")
+                    if (HasDoubleHyphen(part))
                     {
                         string aKey = part.Substring(2).Trim();
                         string aValue = String.Empty;
+                        string aMoreValue = String.Empty;
+
                         if (args.Length > (cIndex + 1))
                         {
                             aValue = args[cIndex + 1].Trim();
-                            if (aValue.Substring(0, Math.Min(2, aValue.Length)) == "--")
+                            if (HasDoubleHyphen(aValue))
                             {
                                 aValue = String.Empty;
                                 cIndex += 1;
                             }
                             else
+                            {
                                 cIndex += 2;
+                                if (args.Length > cIndex)
+                                {
+                                    aMoreValue = args[cIndex].Trim();
+                                    if (!HasDoubleHyphen(aMoreValue))
+                                        cIndex += 1;
+                                    else
+                                        aMoreValue = String.Empty;
+                                }
+                            }
                         }
                         else
                         {
@@ -124,14 +140,31 @@ namespace AccelByte.Sdk.Sample.Cli
                         else if (aKey == "upload")
                         {
                             //set file to be uploaded.
-                            if (aValue == String.Empty)
-                                throw new CommandArgumentException("File upload is specified but has empty value.");
-                            if (!File.Exists(aValue))
-                                throw new CommandArgumentException("Specified file for upload does not exists.");
-                            FileUploadStream fuStream = new FileUploadStream(aValue, FileMode.Open, FileAccess.Read);
-                            MimeTypes mt = new MimeTypes();
-                            fuStream.MimeType = mt.ConvertFromFilename(aValue, "application/octet-stream");
-                            FileUpload = fuStream;
+                            if (aMoreValue != "")
+                            {
+                                if (!File.Exists(aMoreValue))
+                                    throw new CommandArgumentException("Specified file for upload does not exists.");
+
+                                FileUploadStream fuStream = new FileUploadStream(aMoreValue, FileMode.Open, FileAccess.Read);
+                                MimeTypes mt = new MimeTypes();
+                                fuStream.MimeType = mt.ConvertFromFilename(aMoreValue, "application/octet-stream");
+                                FileUploads.Add(aValue, fuStream);
+                            }
+                            else
+                            {
+                                if (aValue == String.Empty)
+                                    throw new CommandArgumentException("File upload is specified but has empty value.");
+                                if (!File.Exists(aValue))
+                                    throw new CommandArgumentException("Specified file for upload does not exists.");
+
+                                FileUploadStream fuStream = new FileUploadStream(aValue, FileMode.Open, FileAccess.Read);
+                                MimeTypes mt = new MimeTypes();
+                                fuStream.MimeType = mt.ConvertFromFilename(aValue, "application/octet-stream");
+                                if (FileUploads.ContainsKey("___"))
+                                    FileUploads["___"] = fuStream;
+                                else
+                                    FileUploads.Add("___", fuStream);
+                            }
                         }
                         else if (aKey == "lt")
                         {
@@ -239,7 +272,8 @@ namespace AccelByte.Sdk.Sample.Cli
                 + "\t--pass\tSpecify password for login operation\n"
                 + "\t--reqfile\tSpecify json file to be used as request body\n"
                 + "\t--reqbody\tSpecify json string to be used as request body\n"
-                + "\t--upload\tSpecify a file to be uploaded\n"
+                + "\t--upload <filename>\tSpecify a file to be uploaded\n"
+                + "\t--upload <parameterName> <fileName>\tSpecify a file to be uploaded with named parameter\n"
                 + "\t--ws\tEnable web socket service. Specify which service using '--sn' option\n"
                 + "\t--ws-payload\tSet web socket data payload to send\n"
                 + "\t--ws-payload-file\tSpecify a file to be loaded as web socket data payload\n"
