@@ -326,6 +326,8 @@ AccelByteSDK sdk = AccelByteSDK.Builder
     .UseLocalTokenValidator()
     // call this to enable auto refresh for token revocation list
     .UseAutoRefreshForTokenRevocationList()
+    // call this to enable auto cache clear for token validator
+    .UseTokenValidatorAutoClearCache()
     .Build();
 ```
 Then use the usual `ValidateToken` methods.
@@ -349,6 +351,8 @@ AccelByteSDK sdk = AccelByteSDK.Builder
     .UseLocalTokenValidator()
     // call this to enable auto refresh for token revocation list
     .UseAutoRefreshForTokenRevocationList()
+    // call this to enable auto cache clear for token validator
+    .UseTokenValidatorAutoClearCache()
     .Build();
 ```
 
@@ -360,6 +364,10 @@ var payload = sdk.ParseAccessToken('<access token>', false);
 var payload = sdk.ParseAccessToken('<access token>', true);
 ```
 `ParseAccessToken` will return null if the access token is invalid.
+
+Since version 0.54, both permission and namespace context cache can be cleared manually or automatically with set interval.
+- To use it manually, call `sdk.Configuration.TokenValidator.InvalidateCache()`.
+- to enable auto clear, instantiate the sdk with `UseTokenValidatorAutoClearCache(<interval in seconds>)` method.
 
 ## Operation with Generic Response
 Since 0.28, C# Extend SDK enable overloaded `ParseOperation` method with generic data type that applies to almost all operations with response model which has one or more object data type in it.

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -12,6 +12,8 @@ namespace AccelByte.Sdk.Core
 {
     public interface ITokenValidator
     {
+        void InvalidateCache();
+
         bool Validate(AccelByteSDK sdk, string accessToken);
 
         bool Validate(AccelByteSDK sdk, string accessToken, string permission, int action);

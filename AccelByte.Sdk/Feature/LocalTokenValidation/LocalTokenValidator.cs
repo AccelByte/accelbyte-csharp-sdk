@@ -180,7 +180,10 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
 
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
                 if (aNamespace != null)
+                {
+                    GetNamespaceContext(sdk, aNamespace);
                     pParams.Add("namespace", aNamespace);
+                }   
                 if (userId != null)
                     pParams.Add("userId", userId);
 

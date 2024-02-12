@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -16,14 +16,32 @@ namespace AccelByte.Sdk.Core
     {
         private Dictionary<string, List<LocalPermissionItem>> _PermissionCache = new();
 
+        private Dictionary<string, LocalNamespaceContext> _NamespaceContextCache = new();
+
         protected void AddPermissionToCache(string key, List<LocalPermissionItem> permissions)
         {
             _PermissionCache.Add(key, permissions);
         }
 
+        protected void AddNamespaceContextToCache(string key,LocalNamespaceContext namespaceContext)
+        {
+            _NamespaceContextCache.Add(key, namespaceContext);                
+        }
+
         protected void ClearPermissionCache()
         {
             _PermissionCache.Clear();
+        }
+
+        protected void ClearNamespaceContextCache()
+        {
+            _NamespaceContextCache.Clear();
+        }
+
+        public void InvalidateCache()
+        {
+            _PermissionCache.Clear();
+            _NamespaceContextCache.Clear();
         }
 
         protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId)
@@ -35,7 +53,7 @@ namespace AccelByte.Sdk.Core
             {
                 var response = sdk.Iam.Roles.AdminGetRoleV4Op.Execute(roleId);
                 if (response == null)
-                    throw new Exception("Null response");
+                    throw new Exception("Null response from Iam::Roles::AdminGetRoleV4Op");
 
                 List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
                 foreach (var item in response.Permissions!)
@@ -53,6 +71,29 @@ namespace AccelByte.Sdk.Core
             catch
             {
                 return new List<LocalPermissionItem>();
+            }
+        }
+
+        protected virtual LocalNamespaceContext GetNamespaceContext(AccelByteSDK sdk, string aNamespace)
+        {
+            if (_NamespaceContextCache.ContainsKey(aNamespace))
+                return _NamespaceContextCache[aNamespace];
+
+            try
+            {
+                var response = sdk.Basic.Namespace.GetNamespaceContextOp.Execute(aNamespace);
+                if (response == null)
+                    throw new Exception("Null response from Basic::Namespace::GetNamespaceContextOp");
+
+                if (!_NamespaceContextCache.ContainsKey(aNamespace))
+                    _NamespaceContextCache.Add(aNamespace, new LocalNamespaceContext(response));
+                else
+                    _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
+                return _NamespaceContextCache[aNamespace];
+            }
+            catch
+            {
+                return new LocalNamespaceContext();
             }
         }
 
@@ -83,7 +124,31 @@ namespace AccelByte.Sdk.Core
 
 
                 if ((userSection != requiredSection) && (userSection != "*"))
+                {
+                    if (userSection.EndsWith("-") && (i > 0))
+                    {
+                        string previousUserSection = accessPermResSections[i - 1];
+                        if (previousUserSection == "NAMESPACE")
+                        {
+                            if ((requiredSection.Contains("-")) &&
+                                (requiredSection.Split("-").Length == 2) &&
+                                (requiredSection.StartsWith(userSection)))
+                                continue;
+
+                            if (userSection == $"{requiredSection}-")
+                                continue;
+
+                            if (_NamespaceContextCache.ContainsKey(requiredSection))
+                            {
+                                LocalNamespaceContext context = _NamespaceContextCache[requiredSection];
+                                if ((context.Type == NamespaceType.Game) && (userSection.StartsWith(context.StudioNamespace)))
+                                    continue;
+                            }
+                        }
+                    }
+
                     return false;
+                }                    
             }
 
             if (accessPermResSectionLen == requiredPermResSectionLen)

@@ -479,6 +479,18 @@ namespace AccelByte.Sdk.Core
             return this;
         }
 
+        public AccelByteSdkBuilder<T> UseTokenValidatorAutoClearCache(int refreshInterval)
+        {
+            _Services.Add(new CacheInvalidationSdkService(refreshInterval));
+            return this;
+        }
+
+        public AccelByteSdkBuilder<T> UseTokenValidatorAutoClearCache()
+        {
+            _Services.Add(new CacheInvalidationSdkService(3600));
+            return this;
+        }
+
         public virtual T Build()
         {
             if (_Client == null)
