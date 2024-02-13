@@ -42,6 +42,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("reachMinimumAge")]
         public bool? ReachMinimumAge { get; set; }
 
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
     }
 
 

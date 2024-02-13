@@ -102,7 +102,7 @@ namespace AccelByte.Sdk.Core
                 {
                     GetNamespaceContext(sdk, aNamespace);
                     pParams.Add("namespace", aNamespace);
-                }   
+                }
                 if (userId != null)
                     pParams.Add("userId", userId);
 

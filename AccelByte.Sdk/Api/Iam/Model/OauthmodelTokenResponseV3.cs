@@ -67,6 +67,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("token_type")]
         public string? TokenType { get; set; }
 
+        [JsonPropertyName("unique_display_name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("user_id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }

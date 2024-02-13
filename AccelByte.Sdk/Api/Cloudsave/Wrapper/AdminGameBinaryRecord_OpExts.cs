@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class CloudsaveAdminGameBinaryRecord_OpExts
     {
-        public static Cloudsave.Model.ModelsListGameBinaryRecordsResponse? Execute(
+        public static Cloudsave.Model.ModelsListGameBinaryRecordsAdminResponse? Execute(
             this AdminListGameBinaryRecordsV1.AdminListGameBinaryRecordsV1Builder builder,
             string namespace_
         )
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPostGameBinaryRecordV1(op);
         }
-        public static Cloudsave.Model.ModelsGameBinaryRecordResponse? Execute(
+        public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminGetGameBinaryRecordV1.AdminGetGameBinaryRecordV1Builder builder,
             string key,
             string namespace_
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminGetGameBinaryRecordV1(op);
         }
-        public static Cloudsave.Model.ModelsGameBinaryRecordResponse? Execute(
+        public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminPutGameBinaryRecordV1.AdminPutGameBinaryRecordV1Builder builder,
             ModelsBinaryRecordRequest body,
             string key,
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminDeleteGameBinaryRecordV1(op);
         }
-        public static Cloudsave.Model.ModelsGameBinaryRecordResponse? Execute(
+        public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminPutGameBinaryRecorMetadataV1.AdminPutGameBinaryRecorMetadataV1Builder builder,
             ModelsGameBinaryRecordMetadataRequest body,
             string key,

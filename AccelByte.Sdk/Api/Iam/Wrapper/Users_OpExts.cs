@@ -1907,7 +1907,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.ModelUserCreateResponseV3? Execute(
             this CreateUserFromInvitationV3.CreateUserFromInvitationV3Builder builder,
-            ModelUserCreateFromInvitationRequestV3 body,
+            ModelUserCreateRequestV3 body,
             string invitationId,
             string namespace_
         )

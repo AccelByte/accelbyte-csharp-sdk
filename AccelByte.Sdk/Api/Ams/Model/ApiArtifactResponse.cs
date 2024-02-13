@@ -36,6 +36,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("region")]
+        public string? Region { get; set; }
+
         [JsonPropertyName("sizeBytes")]
         public long? SizeBytes { get; set; }
 

@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
 
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 

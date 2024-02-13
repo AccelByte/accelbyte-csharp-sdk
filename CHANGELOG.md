@@ -1,3 +1,19 @@
+<a name="v0.54.0"></a>
+## [v0.54.0]
+### docs
+- **samples:** tic tac toe - update create game namespace link
+### ci
+- **nightly-starter:** separate from nightly
+### test
+- **integration:** temporarily disable configuration template tests in ags starter
+### fix
+- **clitest:** add support for multiple file uploads
+### chore
+- **:** regenerate cli tests
+### feat
+- **:** added namespace revamp support
+
+
 <a name="v0.53.0"></a>
 ## [v0.53.0]
 ### feat

@@ -18,6 +18,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("isAdmin")]
         public bool? IsAdmin { get; set; }
 
+        [JsonPropertyName("isNewStudio")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsNewStudio { get; set; }
+
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }

@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             );
 
 
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsGameRecordResponse? response = wrapper.AdminPostGameRecordHandlerV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsGameRecordAdminResponse? response = wrapper.AdminPostGameRecordHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 

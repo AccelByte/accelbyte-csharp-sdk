@@ -111,7 +111,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             );
 
 
-            List<AccelByte.Sdk.Api.Ams.Model.ApiArtifactResponse>? response = wrapper.ArtifactGet(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiArtifactListResponse? response = wrapper.ArtifactGet(operation);
             if (response == null)
                 return "No response from server.";
 

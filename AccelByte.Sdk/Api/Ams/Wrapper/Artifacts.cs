@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         }
         #endregion
 
-        public List<Model.ApiArtifactResponse>? ArtifactGet(ArtifactGet input)
+        public Model.ApiArtifactListResponse? ArtifactGet(ArtifactGet input)
         {
             var response = _sdk.RunRequest(input);
 

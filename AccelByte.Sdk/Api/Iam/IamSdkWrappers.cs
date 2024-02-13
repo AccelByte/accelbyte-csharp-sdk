@@ -79,6 +79,17 @@ namespace AccelByte.Sdk.Core
         }
         private InputValidations? _InputValidations = null;
 
+        public Config Config
+        {
+            get
+            {
+                if (_Config == null)
+                    _Config = new Config(_SdkObject);
+                return _Config;
+            }
+        }
+        private Config? _Config = null;
+
         public Country Country
         {
             get

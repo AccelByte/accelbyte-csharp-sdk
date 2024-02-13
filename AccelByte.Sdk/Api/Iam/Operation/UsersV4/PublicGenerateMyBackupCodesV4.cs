@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// This endpoint is used to generate 8-digits backup codes.
     /// Each code is a one-time code and will be deleted once used.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGenerateMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

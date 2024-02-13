@@ -29,6 +29,8 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
 
             public string? FriendId { get; set; }
 
+            public List<string>? FriendIds { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
@@ -43,6 +45,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             public GetListOfFriendsBuilder SetFriendId(string _friendId)
             {
                 FriendId = _friendId;
+                return this;
+            }
+
+            public GetListOfFriendsBuilder SetFriendIds(List<string> _friendIds)
+            {
+                FriendIds = _friendIds;
                 return this;
             }
 
@@ -89,11 +97,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
 
             if (builder.FriendId is not null) QueryParams["friendId"] = builder.FriendId;
+            if (builder.FriendIds is not null) QueryParams["friendIds"] = builder.FriendIds;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
 
+            CollectionFormatMap["friendIds"] = "csv";
 
 
 
@@ -105,6 +115,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             string namespace_,
             string userId,
             string? friendId,
+            List<string>? friendIds,
             long? limit,
             long? offset
         )
@@ -113,11 +124,13 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             PathParams["userId"] = userId;
 
             if (friendId is not null) QueryParams["friendId"] = friendId;
+            if (friendIds is not null) QueryParams["friendIds"] = friendIds;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 
 
+            CollectionFormatMap["friendIds"] = "csv";
 
 
 

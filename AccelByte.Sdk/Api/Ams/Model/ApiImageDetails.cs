@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("executable")]
+        public string? Executable { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 

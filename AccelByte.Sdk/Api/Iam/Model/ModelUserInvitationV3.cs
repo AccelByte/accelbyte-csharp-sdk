@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
+        [JsonPropertyName("isNewStudio")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsNewStudio { get; set; }
+
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
@@ -33,6 +37,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("roles")]
         public List<AccountcommonNamespaceRole>? Roles { get; set; }
+
+        [JsonPropertyName("studioNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StudioNamespace { get; set; }
 
     }
 

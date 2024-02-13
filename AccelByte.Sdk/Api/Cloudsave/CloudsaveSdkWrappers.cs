@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminGameBinaryRecord? _AdminGameBinaryRecord = null;
 
+        public TTLConfig TTLConfig
+        {
+            get
+            {
+                if (_TTLConfig == null)
+                    _TTLConfig = new TTLConfig(_SdkObject);
+                return _TTLConfig;
+            }
+        }
+        private TTLConfig? _TTLConfig = null;
+
         public AdminConcurrentRecord AdminConcurrentRecord
         {
             get
@@ -67,6 +78,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private AdminGameRecord? _AdminGameRecord = null;
+
+        public Tags Tags
+        {
+            get
+            {
+                if (_Tags == null)
+                    _Tags = new Tags(_SdkObject);
+                return _Tags;
+            }
+        }
+        private Tags? _Tags = null;
 
         public AdminPlayerRecord AdminPlayerRecord
         {

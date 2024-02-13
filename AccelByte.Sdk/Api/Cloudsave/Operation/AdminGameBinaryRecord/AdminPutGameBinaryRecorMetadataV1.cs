@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsGameBinaryRecordResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsGameBinaryRecordAdminResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -117,13 +117,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordAdminResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordAdminResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsGameBinaryRecordAdminResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

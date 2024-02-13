@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("region")]
         public string? Region { get; set; }
 
+        [JsonPropertyName("sessionId")]
+        public string? SessionId { get; set; }
+
     }
 
 

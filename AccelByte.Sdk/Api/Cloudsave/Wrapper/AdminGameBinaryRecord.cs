@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
 
-        public Model.ModelsListGameBinaryRecordsResponse? AdminListGameBinaryRecordsV1(AdminListGameBinaryRecordsV1 input)
+        public Model.ModelsListGameBinaryRecordsAdminResponse? AdminListGameBinaryRecordsV1(AdminListGameBinaryRecordsV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameBinaryRecordResponse? AdminGetGameBinaryRecordV1(AdminGetGameBinaryRecordV1 input)
+        public Model.ModelsGameBinaryRecordAdminResponse? AdminGetGameBinaryRecordV1(AdminGetGameBinaryRecordV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameBinaryRecordResponse? AdminPutGameBinaryRecordV1(AdminPutGameBinaryRecordV1 input)
+        public Model.ModelsGameBinaryRecordAdminResponse? AdminPutGameBinaryRecordV1(AdminPutGameBinaryRecordV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -94,7 +94,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameBinaryRecordResponse? AdminPutGameBinaryRecorMetadataV1(AdminPutGameBinaryRecorMetadataV1 input)
+        public Model.ModelsGameBinaryRecordAdminResponse? AdminPutGameBinaryRecorMetadataV1(AdminPutGameBinaryRecorMetadataV1 input)
         {
             var response = _sdk.RunRequest(input);
 

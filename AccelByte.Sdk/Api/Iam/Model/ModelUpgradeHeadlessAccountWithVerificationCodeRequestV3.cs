@@ -30,6 +30,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("password")]
         public string? Password { get; set; }
 
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("validateOnly")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? ValidateOnly { get; set; }

@@ -120,6 +120,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkBlockPlayersV1(op);
         }
+        public static void Execute(
+            this PublicPlayerBlockPlayersV1.PublicPlayerBlockPlayersV1Builder builder,
+            ModelsBlockPlayerRequest body,
+            string namespace_
+        )
+        {
+            PublicPlayerBlockPlayersV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicPlayerBlockPlayersV1(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerBlockedUsersResponse? Execute(
             this PublicGetPlayerBlockedPlayersV1.PublicGetPlayerBlockedPlayersV1Builder builder,
             string namespace_
@@ -141,6 +154,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerBlockedByPlayersV1(op);
+        }
+        public static void Execute(
+            this PublicUnblockPlayerV1.PublicUnblockPlayerV1Builder builder,
+            ModelsUnblockPlayerRequest body,
+            string namespace_
+        )
+        {
+            PublicUnblockPlayerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicUnblockPlayerV1(op);
         }
     }
 }

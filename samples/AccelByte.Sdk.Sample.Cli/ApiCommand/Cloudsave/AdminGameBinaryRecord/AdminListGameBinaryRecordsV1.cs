@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
             );
 
 
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListGameBinaryRecordsResponse? response = wrapper.AdminListGameBinaryRecordsV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListGameBinaryRecordsAdminResponse? response = wrapper.AdminListGameBinaryRecordsV1(operation);
             if (response == null)
                 return "No response from server.";
 

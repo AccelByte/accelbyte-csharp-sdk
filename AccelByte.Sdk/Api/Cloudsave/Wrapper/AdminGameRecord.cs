@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? AdminGetGameRecordHandlerV1(AdminGetGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse? AdminGetGameRecordHandlerV1(AdminGetGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
 
-        public Model.ModelsGameRecordResponse<T1>? AdminGetGameRecordHandlerV1<T1>(AdminGetGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse<T1>? AdminGetGameRecordHandlerV1<T1>(AdminGetGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? AdminPutGameRecordHandlerV1(AdminPutGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse? AdminPutGameRecordHandlerV1(AdminPutGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
 
-        public Model.ModelsGameRecordResponse<T1>? AdminPutGameRecordHandlerV1<T1>(AdminPutGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse<T1>? AdminPutGameRecordHandlerV1<T1>(AdminPutGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsGameRecordResponse? AdminPostGameRecordHandlerV1(AdminPostGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse? AdminPostGameRecordHandlerV1(AdminPostGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
                     response.Payload);
         }
 
-        public Model.ModelsGameRecordResponse<T1>? AdminPostGameRecordHandlerV1<T1>(AdminPostGameRecordHandlerV1 input)
+        public Model.ModelsGameRecordAdminResponse<T1>? AdminPostGameRecordHandlerV1<T1>(AdminPostGameRecordHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
 

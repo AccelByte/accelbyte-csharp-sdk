@@ -15,9 +15,6 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("exitCode")]
         public int? ExitCode { get; set; }
 
-        [JsonPropertyName("gameSession")]
-        public string? GameSession { get; set; }
-
         [JsonPropertyName("ipAddress")]
         public string? IpAddress { get; set; }
 

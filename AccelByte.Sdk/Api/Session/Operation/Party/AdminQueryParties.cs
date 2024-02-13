@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             : OperationBuilder<AdminQueryPartiesBuilder>
         {
 
+            public string? IsSoftDeleted { get; set; }
+
             public string? Joinability { get; set; }
 
             public string? Key { get; set; }
@@ -55,6 +57,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             internal AdminQueryPartiesBuilder() { }
 
+
+            public AdminQueryPartiesBuilder SetIsSoftDeleted(string _isSoftDeleted)
+            {
+                IsSoftDeleted = _isSoftDeleted;
+                return this;
+            }
 
             public AdminQueryPartiesBuilder SetJoinability(string _joinability)
             {
@@ -148,6 +156,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.IsSoftDeleted is not null) QueryParams["isSoftDeleted"] = builder.IsSoftDeleted;
             if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
             if (builder.Key is not null) QueryParams["key"] = builder.Key;
             if (builder.LeaderID is not null) QueryParams["leaderID"] = builder.LeaderID;
@@ -171,6 +180,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public AdminQueryParties(
             string namespace_,
+            string? isSoftDeleted,
             string? joinability,
             string? key,
             string? leaderID,
@@ -186,6 +196,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (isSoftDeleted is not null) QueryParams["isSoftDeleted"] = isSoftDeleted;
             if (joinability is not null) QueryParams["joinability"] = joinability;
             if (key is not null) QueryParams["key"] = key;
             if (leaderID is not null) QueryParams["leaderID"] = leaderID;

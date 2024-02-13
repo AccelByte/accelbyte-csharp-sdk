@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Core
                 StudioNamespace = studioNamespace,
                 Type = NamespaceType.Game
             };
-        }   
+        }
 
         public string Namespace { get; set; } = "";
 

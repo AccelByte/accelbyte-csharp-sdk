@@ -338,11 +338,11 @@ eval_tap $? 30 'AccountGet' test.out
 
 #- 31 FleetClaimByID
 # body param: body
-echo '{"region": "cGkPgQ0hb2tLrsMe"}' > $TEMP_JSON_INPUT
+echo '{"region": "cGkPgQ0hb2tLrsMe", "sessionId": "oZiRYkbhEM1zTNY3"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByID \
-    --fleetID 'oZiRYkbhEM1zTNY3' \
+    --fleetID 'lpincuf5d5saQvKf' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -353,13 +353,13 @@ $CLI_EXE \
     --sn ams \
     --op LocalWatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'lpincuf5d5saQvKf' \
+    --watchdogID 'FRqBam8jPtKHTmzo' \
     > test.out 2>&1
 eval_tap $? 32 'LocalWatchdogConnect' test.out
 
 #- 33 FleetClaimByKeys
 # body param: body
-echo '{"claimKeys": ["FRqBam8jPtKHTmzo", "0JmcQmnsUigVynjG", "FyVicGQAVv32ftRA"], "regions": ["smC0RuRA8j1AJ3hN", "WWhADRqJvaZrf2qX", "QFCzRV1paELj5dw3"]}' > $TEMP_JSON_INPUT
+echo '{"claimKeys": ["0JmcQmnsUigVynjG", "FyVicGQAVv32ftRA", "smC0RuRA8j1AJ3hN"], "regions": ["WWhADRqJvaZrf2qX", "QFCzRV1paELj5dw3", "LK0gPYhPPG5sAIfY"], "sessionId": "tYozA2OntGCwQSHH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByKeys \
@@ -373,7 +373,7 @@ $CLI_EXE \
     --sn ams \
     --op WatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'LK0gPYhPPG5sAIfY' \
+    --watchdogID 'dPLwjTngrvb2E1X9' \
     > test.out 2>&1
 eval_tap $? 34 'WatchdogConnect' test.out
 

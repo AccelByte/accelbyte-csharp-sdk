@@ -225,6 +225,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetIncomingFriendRequests(op);
         }
+        public static Lobby.Model.ModelFriendshipConnectionResponse? Execute(
+            this AdminListFriendsOfFriends.AdminListFriendsOfFriendsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListFriendsOfFriends op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Lobby.Wrapper.Friends)builder.WrapperObject!).AdminListFriendsOfFriends(op);
+        }
         public static Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse? Execute(
             this GetOutgoingFriendRequests.GetOutgoingFriendRequestsBuilder builder,
             string namespace_,

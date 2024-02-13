@@ -63,6 +63,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
 
+        [JsonPropertyName("uniqueDisplayName")]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 

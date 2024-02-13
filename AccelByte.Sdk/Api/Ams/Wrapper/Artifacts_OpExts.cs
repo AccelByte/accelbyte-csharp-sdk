@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class AmsArtifacts_OpExts
     {
-        public static List<Ams.Model.ApiArtifactResponse>? Execute(
+        public static Ams.Model.ApiArtifactListResponse? Execute(
             this ArtifactGet.ArtifactGetBuilder builder,
             string namespace_
         )

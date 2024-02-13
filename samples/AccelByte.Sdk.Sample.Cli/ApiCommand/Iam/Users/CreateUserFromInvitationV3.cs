@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelUserCreateFromInvitationRequestV3 Body { get; set; } = new ModelUserCreateFromInvitationRequestV3();
+        public ModelUserCreateRequestV3 Body { get; set; } = new ModelUserCreateRequestV3();
 
         public CreateUserFromInvitationV3Command(AccelByteSDK sdk)
         {

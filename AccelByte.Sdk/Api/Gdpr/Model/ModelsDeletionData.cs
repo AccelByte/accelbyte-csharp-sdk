@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonPropertyName("Status")]
         public string? Status { get; set; }
 
+        [JsonPropertyName("UniqueDisplayName")]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("UserID")]
         public string? UserID { get; set; }
 

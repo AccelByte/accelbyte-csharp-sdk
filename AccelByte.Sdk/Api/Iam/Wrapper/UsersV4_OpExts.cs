@@ -214,6 +214,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGenerateMyAuthenticatorKeyV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this AdminGetMyBackupCodesV4.AdminGetMyBackupCodesV4Builder builder
         )
@@ -223,6 +224,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this AdminGenerateMyBackupCodesV4.AdminGenerateMyBackupCodesV4Builder builder
         )
@@ -241,6 +243,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
             this AdminDownloadMyBackupCodesV4.AdminDownloadMyBackupCodesV4Builder builder
         )
@@ -250,6 +253,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDownloadMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this AdminEnableMyBackupCodesV4.AdminEnableMyBackupCodesV4Builder builder
         )
@@ -258,6 +262,33 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableMyBackupCodesV4(op);
+        }
+        public static void Execute(
+            this AdminGetBackupCodesV4.AdminGetBackupCodesV4Builder builder
+        )
+        {
+            AdminGetBackupCodesV4 op = builder.Build(
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetBackupCodesV4(op);
+        }
+        public static void Execute(
+            this AdminGenerateBackupCodesV4.AdminGenerateBackupCodesV4Builder builder
+        )
+        {
+            AdminGenerateBackupCodesV4 op = builder.Build(
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGenerateBackupCodesV4(op);
+        }
+        public static void Execute(
+            this AdminEnableBackupCodesV4.AdminEnableBackupCodesV4Builder builder
+        )
+        {
+            AdminEnableBackupCodesV4 op = builder.Build(
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableBackupCodesV4(op);
         }
         public static void Execute(
             this AdminSendMyMFAEmailCodeV4.AdminSendMyMFAEmailCodeV4Builder builder
@@ -348,7 +379,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.AccountCreateUserResponseV4? Execute(
             this CreateUserFromInvitationV4.CreateUserFromInvitationV4Builder builder,
-            ModelUserCreateFromInvitationRequestV4 body,
+            AccountCreateUserRequestV4 body,
             string invitationId,
             string namespace_
         )
@@ -446,6 +477,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGenerateMyAuthenticatorKeyV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this PublicGetMyBackupCodesV4.PublicGetMyBackupCodesV4Builder builder,
             string namespace_
@@ -457,6 +489,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this PublicGenerateMyBackupCodesV4.PublicGenerateMyBackupCodesV4Builder builder,
             string namespace_
@@ -479,6 +512,7 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDisableMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
             this PublicDownloadMyBackupCodesV4.PublicDownloadMyBackupCodesV4Builder builder,
             string namespace_
@@ -490,6 +524,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicDownloadMyBackupCodesV4(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelBackupCodesResponseV4? Execute(
             this PublicEnableMyBackupCodesV4.PublicEnableMyBackupCodesV4Builder builder,
             string namespace_
@@ -500,6 +535,39 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicEnableMyBackupCodesV4(op);
+        }
+        public static void Execute(
+            this PublicGetBackupCodesV4.PublicGetBackupCodesV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetBackupCodesV4 op = builder.Build(
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetBackupCodesV4(op);
+        }
+        public static void Execute(
+            this PublicGenerateBackupCodesV4.PublicGenerateBackupCodesV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGenerateBackupCodesV4 op = builder.Build(
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGenerateBackupCodesV4(op);
+        }
+        public static void Execute(
+            this PublicEnableBackupCodesV4.PublicEnableBackupCodesV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicEnableBackupCodesV4 op = builder.Build(
+                namespace_
+            );
+
+            ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicEnableBackupCodesV4(op);
         }
         public static void Execute(
             this PublicRemoveTrustedDeviceV4.PublicRemoveTrustedDeviceV4Builder builder,

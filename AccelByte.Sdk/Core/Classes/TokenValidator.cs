@@ -23,9 +23,9 @@ namespace AccelByte.Sdk.Core
             _PermissionCache.Add(key, permissions);
         }
 
-        protected void AddNamespaceContextToCache(string key,LocalNamespaceContext namespaceContext)
+        protected void AddNamespaceContextToCache(string key, LocalNamespaceContext namespaceContext)
         {
-            _NamespaceContextCache.Add(key, namespaceContext);                
+            _NamespaceContextCache.Add(key, namespaceContext);
         }
 
         protected void ClearPermissionCache()
@@ -148,7 +148,7 @@ namespace AccelByte.Sdk.Core
                     }
 
                     return false;
-                }                    
+                }
             }
 
             if (accessPermResSectionLen == requiredPermResSectionLen)

@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("platformUsers")]
         public List<AccountcommonPlatformUserInformationV3>? PlatformUsers { get; set; }
 
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("username")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Username { get; set; }
