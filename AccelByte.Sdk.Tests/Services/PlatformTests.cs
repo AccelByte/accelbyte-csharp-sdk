@@ -20,18 +20,11 @@ namespace AccelByte.Sdk.Tests.Services
     {
         public PlatformTests() : base(true) { }
 
-        [Test]
-        public void StoreTests()
+        protected void CheckAndClearStores(AccelByteSDK sdk)
         {
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
-
-            string store_id = String.Empty;
-
             //Check whether draft store is already exists or not
-            List<StoreInfo>? stores = _Sdk.Platform.Store.ListStoresOp
-                .Execute(_Sdk.Namespace);
+            List<StoreInfo>? stores = sdk.Platform.Store.ListStoresOp
+                .Execute(sdk.Namespace);
             if ((stores != null) && (stores.Count > 0))
             {
                 foreach (var store in stores)
@@ -39,11 +32,29 @@ namespace AccelByte.Sdk.Tests.Services
                     if (store.Published! != true)
                     {
                         //draft store exists. delete it first.
-                        _Sdk.Platform.Store.DeleteStoreOp
-                            .Execute(_Sdk.Namespace, store.StoreId!);
+                        sdk.Platform.Store.DeleteStoreOp
+                            .Execute(sdk.Namespace, store.StoreId!);
+                    }
+                    else
+                    {
+                        //published store exists. delete it too
+                        sdk.Platform.Store.DeletePublishedStoreOp
+                            .Execute(sdk.Namespace);
                     }
                 }
             }
+        }
+
+        [Test]
+        public void StoreTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            CheckAndClearStores(_Sdk);
+
+            string store_id = String.Empty;
 
             #region Create a store
             StoreCreate createStore = new StoreCreate()
@@ -102,23 +113,9 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            string store_id = String.Empty;
+            CheckAndClearStores(_Sdk);
 
-            //Check whether draft store is already exists or not
-            List<StoreInfo>? stores = _Sdk.Platform.Store.ListStoresOp
-                .Execute(_Sdk.Namespace);
-            if ((stores != null) && (stores.Count > 0))
-            {
-                foreach (var store in stores)
-                {
-                    if (store.Published! != true)
-                    {
-                        //draft store exists. delete it first.
-                        _Sdk.Platform.Store.DeleteStoreOp
-                            .Execute(_Sdk.Namespace, store.StoreId!);
-                    }
-                }
-            }
+            string store_id = String.Empty;
 
             StoreCreate createStore = new StoreCreate()
             {

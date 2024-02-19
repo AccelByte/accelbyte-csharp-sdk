@@ -52,6 +52,12 @@ namespace AccelByte.Sdk.Tests.Services
                         _Sdk.Platform.Store.DeleteStoreOp
                             .Execute(_Sdk.Namespace, store.StoreId!);
                     }
+                    else
+                    {
+                        //published store exists. delete it too
+                        _Sdk.Platform.Store.DeletePublishedStoreOp
+                            .Execute(_Sdk.Namespace);
+                    }
                 }
             }
 
@@ -188,7 +194,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             // Delete a season
             _Sdk.Seasonpass.Season.DeleteSeasonOp
-            .Execute(_Sdk.Namespace, cSeasonId);
+                .Execute(_Sdk.Namespace, cSeasonId);
         }
 
         [TearDown]
@@ -198,21 +204,26 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            List<StoreInfo>? listStores = _Sdk.Platform.Store.ListStoresOp.Execute(_Sdk.Namespace);
-            if (listStores == null)
+            //Clean stores
+            List<StoreInfo>? stores = _Sdk.Platform.Store.ListStoresOp
+                .Execute(_Sdk.Namespace);
+            if ((stores != null) && (stores.Count > 0))
             {
-                Assert.Fail("List stores is null");
-                return;
-            }
-
-            // Check list of stores
-            String defaultDraftStoreId;
-            if (listStores.Count > 0)
-            {
-                // Draft store is exist. Grab the storeId from the first store on list
-                defaultDraftStoreId = listStores[0].StoreId!;
-                StoreInfo? cStore = _Sdk.Platform.Store.DeleteStoreOp
-                    .Execute(_Sdk.Namespace, defaultDraftStoreId);
+                foreach (var store in stores)
+                {
+                    if (store.Published! != true)
+                    {
+                        //draft store exists. delete it.
+                        _Sdk.Platform.Store.DeleteStoreOp
+                            .Execute(_Sdk.Namespace, store.StoreId!);
+                    }
+                    else
+                    {
+                        //published store exists. delete it.
+                        _Sdk.Platform.Store.DeletePublishedStoreOp
+                            .Execute(_Sdk.Namespace);
+                    }
+                }
             }
         }
     }
