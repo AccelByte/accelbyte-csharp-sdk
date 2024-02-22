@@ -89,7 +89,6 @@ ModelsPaginatedAchievementResponse? gaResp = _Sdk.Achievement.Achievements.Admin
 ```csharp
 _Sdk.Achievement.Achievements.AdminDeleteAchievementOp.Execute(achievement_code, _Sdk.Namespace);
 ```
-
 ## Basic
 
 Source: [BasicTests.cs](../AccelByte.Sdk.Tests/Services/BasicTests.cs)
@@ -120,7 +119,7 @@ UserProfilePrivateInfo? ownResp = _Sdk.Basic.UserProfile.GetMyProfileInfoOp
 ### Update user's own profile info
 
 ```csharp
-UserProfilePrivateUpdate updateProfile = new UserProfilePrivateUpdate()
+UserProfileUpdate updateProfile = new UserProfileUpdate()
 {
     TimeZone = "Asia/Jakarta"
 };
@@ -136,7 +135,6 @@ UserProfilePrivateInfo? updResp = _Sdk.Basic.UserProfile.UpdateMyProfileOp
 UserProfilePrivateInfo? delResp = _Sdk.Basic.UserProfile.DeleteUserProfileOp
     .Execute(_Sdk.Namespace, userId);
 ```
-
 ## CloudSave
 
 Source: [CloudSaveTests.cs](../AccelByte.Sdk.Tests/Services/CloudSaveTests.cs)
@@ -182,92 +180,6 @@ _Sdk.Cloudsave.PublicGameRecord.PutGameRecordHandlerV1Op
 _Sdk.Cloudsave.PublicGameRecord.DeleteGameRecordHandlerV1Op
     .Execute("foo_bar_record", _Sdk.Namespace);
 ```
-
-## DSLogManager
-
-Source: [DSLogManagerTests.cs](../AccelByte.Sdk.Tests/Services/DSLogManagerTests.cs)
-
-### Get terminated servers
-
-```csharp
-ModelsListTerminatedServersResponse? tsResp = _Sdk.Dslogmanager.TerminatedServers.ListTerminatedServersOp
-    .SetLimit(10)
-    .Execute(_Sdk.Namespace);
-```
-
-## DSMC
-
-Source: [DsmcTests.cs](../AccelByte.Sdk.Tests/Services/DsmcTests.cs)
-
-### Get local server list
-
-```csharp
-ModelsListServerResponse? serverResp = _Sdk.Dsmc.Admin.ListLocalServerOp
-    .Execute(_Sdk.Namespace);
-```
-
-### Register a session to DSMC service
-
-```csharp
-ModelsCreateSessionRequest sessionRequest = new ModelsCreateSessionRequest()
-{
-    ClientVersion = "0.3.0",
-    Configuration = "",
-    Deployment = target_deployment,
-    GameMode = game_mode,
-    MatchingAllies = new List<ModelsRequestMatchingAlly>()
-    {
-        new ModelsRequestMatchingAlly()
-        {
-            MatchingParties = new List<ModelsRequestMatchParty>()
-            {
-                new ModelsRequestMatchParty()
-                {
-                    PartyAttributes = new Dictionary<string, object>(),
-                    PartyId = party_id,
-                    PartyMembers = new List<ModelsRequestMatchMember>()
-                    {
-                        new ModelsRequestMatchMember()
-                        {
-                            UserId = party_user_id
-                        }
-                    }
-                }
-            }
-        }
-    },
-    Region = "",
-    PodName = "",
-    SessionId = session_id,
-    Namespace = _Sdk.Namespace,
-};
-
-ModelsSessionResponse? csResp = _Sdk.Dsmc.Session.CreateSessionOp
-    .Execute(sessionRequest, _Sdk.Namespace);
-```
-
-### Get registered session
-
-```csharp
-csResp = _Sdk.Dsmc.Session.GetSessionOp.Execute(_Sdk.Namespace, session_id);
-```
-
-### Claim server for specified session
-
-```csharp
-ModelsClaimSessionRequest claimServer = new ModelsClaimSessionRequest()
-{
-    SessionId = session_id
-};
-_Sdk.Dsmc.Session.ClaimServerOp.Execute(claimServer, _Sdk.Namespace);
-```
-
-### Delete a session from DSMC
-
-```csharp
-_Sdk.Dsmc.Admin.DeleteSessionOp.Execute(_Sdk.Namespace, session_id);
-```
-
 ## EventLog
 
 Source: [EventLogTests.cs](../AccelByte.Sdk.Tests/Services/EventLogTests.cs)
@@ -294,7 +206,6 @@ ModelsEventResponseV2? cResp = _Sdk.Eventlog.EventV2.GetEventSpecificUserV2Handl
     .SetPageSize(10)
     .Execute(_Sdk.Namespace, _Sdk.Configuration.Credential!.UserId);
 ```
-
 ## GameTelemetry
 
 Source: [GameTelemetryTests.cs](../AccelByte.Sdk.Tests/Services/GameTelemetryTests.cs)
@@ -341,7 +252,6 @@ Dictionary<string, object>? resGet = _Sdk.Gametelemetry.GametelemetryOperations
     .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
     .Execute(steamId);
 ```
-
 ## GDPR
 
 Source: [GdprTests.cs](../AccelByte.Sdk.Tests/Services/GdprTests.cs)
@@ -349,7 +259,7 @@ Source: [GdprTests.cs](../AccelByte.Sdk.Tests/Services/GdprTests.cs)
 ### Save e-mail configuration
 
 ```csharp
-_Sdk.Gdpr.DataRetrieval.SaveAdminEmailConfigurationOp
+_Sdk.Gdpr.Configuration.SaveAdminEmailConfigurationOp
     .Execute(new List<string>
     {
         firstEmailToTest
@@ -359,24 +269,23 @@ _Sdk.Gdpr.DataRetrieval.SaveAdminEmailConfigurationOp
 ### Get e-mail configuration
 
 ```csharp
-List<string>? emails = _Sdk.Gdpr.DataRetrieval.GetAdminEmailConfigurationOp
+List<string>? emails = _Sdk.Gdpr.Configuration.GetAdminEmailConfigurationOp
     .Execute(_Sdk.Namespace);
 ```
 
 ### Update e-mail configuration
 
 ```csharp
-_Sdk.Gdpr.DataRetrieval.UpdateAdminEmailConfigurationOp
+_Sdk.Gdpr.Configuration.UpdateAdminEmailConfigurationOp
     .Execute(new List<string>() { anotherEmailToTest }, _Sdk.Namespace);
 ```
 
 ### Delete e-mail configuration
 
 ```csharp
-_Sdk.Gdpr.DataRetrieval.DeleteAdminEmailConfigurationOp
+_Sdk.Gdpr.Configuration.DeleteAdminEmailConfigurationOp
     .Execute(_Sdk.Namespace, new List<string>() { anotherEmailToTest });
 ```
-
 ## Group
 
 Source: [GroupTests.cs](../AccelByte.Sdk.Tests/Services/GroupTests.cs)
@@ -447,7 +356,6 @@ _Sdk.Group.Group.DeleteGroupPublicV1Op
 _Sdk.Group.Configuration.DeleteGroupConfigurationV1Op
     .Execute(configuration_code, _Sdk.Namespace);
 ```
-
 ## IAM
 
 Source: [IAMTests.cs](../AccelByte.Sdk.Tests/Services/IAMTests.cs)
@@ -511,7 +419,6 @@ ModelUserResponseV3? uuResp = _Sdk.Iam.UsersV4.AdminUpdateUserV4Op
 ```csharp
 _Sdk.Iam.Users.AdminDeleteUserInformationV3Op.Execute(_Sdk.Namespace, user_id);
 ```
-
 ## Leaderboard
 
 Source: [LeaderboardTests.cs](../AccelByte.Sdk.Tests/Services/LeaderboardTests.cs)
@@ -523,7 +430,7 @@ ModelsLeaderboardConfigReq newLeaderboard = new ModelsLeaderboardConfigReq()
 {
     LeaderboardCode = leaderboard_code,
     Name = "CSharp SDK Leaderboard Test",
-    StatCode = "1",
+    StatCode = stat_code,
     SeasonPeriod = 36,
     Descending = false,
     StartTime = start_time,
@@ -560,7 +467,7 @@ ModelsGetLeaderboardConfigResp? gLeaderboard = _Sdk.Leaderboard.LeaderboardConfi
 ModelsUpdateLeaderboardConfigReq updateLeaderboard = new ModelsUpdateLeaderboardConfigReq()
 {
     Name = "CSharp SDK Leaderboard Test",
-    StatCode = "1",
+    StatCode = stat_code,
     StartTime = start_time,
     SeasonPeriod = 40
 };
@@ -575,7 +482,6 @@ ModelsGetLeaderboardConfigResp? uLeaderboard = _Sdk.Leaderboard.LeaderboardConfi
 _Sdk.Leaderboard.LeaderboardConfiguration.DeleteLeaderboardConfigurationAdminV1Op
     .Execute(leaderboard_code, _Sdk.Namespace);
 ```
-
 ## Legal
 
 Source: [LegalTests.cs](../AccelByte.Sdk.Tests/Services/LegalTests.cs)
@@ -647,7 +553,6 @@ _Sdk.Legal.Agreement.ChangePreferenceConsentOp
 List<RetrieveAcceptedAgreementResponse>? aggrs = _Sdk.Legal.Agreement.RetrieveAgreementsPublicOp
     .Execute();
 ```
-
 ## Lobby
 
 Source: [LobbyTests.cs](../AccelByte.Sdk.Tests/Services/LobbyTests.cs)
@@ -664,7 +569,6 @@ ModelFreeFormNotificationRequest notifBody = new ModelFreeFormNotificationReques
 _Sdk.Lobby.Admin.FreeFormNotificationOp
     .Execute(notifBody, _Sdk.Namespace);
 ```
-
 ## Matchmaking
 
 Source: [MatchmakingTests.cs](../AccelByte.Sdk.Tests/Services/MatchmakingTests.cs)
@@ -739,17 +643,9 @@ _Sdk.Matchmaking.Matchmaking.UpdateMatchmakingChannelOp
 _Sdk.Matchmaking.Matchmaking.DeleteChannelHandlerOp
     .Execute(channel_name, _Sdk.Namespace);
 ```
-
 ## MatchmakingV2
 
 Source: [MatchV2Tests.cs](../AccelByte.Sdk.Tests/Services/MatchV2Tests.cs)
-
-### Match2 healthcheck
-
-```csharp
-_Sdk.Match2.Operations.GetHealthcheckInfoV1Op
-    .Execute();
-```
 
 ### Create a match rule set
 
@@ -792,6 +688,13 @@ ApiListMatchPoolsResponse? poolList = _Sdk.Match2.MatchPools.MatchPoolListOp
     .Execute(_Sdk.Namespace);
 ```
 
+### Get match pool detail
+
+```csharp
+ApiMatchPool? matchPool = _Sdk.Match2.MatchPools.MatchPoolDetailsOp
+    .Execute(_Sdk.Namespace, poolName);
+```
+
 ### User create a match ticket
 
 ```csharp
@@ -832,7 +735,6 @@ _Sdk.Match2.RuleSets.DeleteRuleSetOp
 ApiListMatchFunctionsResponse? response = _Sdk.Match2.MatchFunctions.MatchFunctionListOp
     .Execute(_Sdk.Namespace);
 ```
-
 ## Platform
 
 Source: [PlatformTests.cs](../AccelByte.Sdk.Tests/Services/PlatformTests.cs)
@@ -898,33 +800,27 @@ ImportStoreResult? result = _Sdk.Platform.Store.ImportStore1Op
     .SetStoreId(store_id)
     .Execute(_Sdk.Namespace);
 ```
-
-## QOSM
-
-Source: [QosmTests.cs](../AccelByte.Sdk.Tests/Services/QosmTests.cs)
-
-### List servers
-
-```csharp
-ModelsListServerResponse? aggrs = _Sdk.Qosm.Public.ListServerOp.Execute();
-```
-
-### Execute heartbeat test against a server
-
-```csharp
-ModelsHeartbeatRequest createHeartbeat = new ModelsHeartbeatRequest()
-{
-    Ip = respIp,
-    Region = respRegion,
-    Port = respPort,
-};
-
-_Sdk.Qosm.Server.HeartbeatOp.Execute(createHeartbeat);
-```
-
 ## SeasonPass
 
 Source: [SeasonPassTests.cs](../AccelByte.Sdk.Tests/Services/SeasonPassTests.cs)
+
+### Create a store
+
+```csharp
+StoreCreate createStore = new StoreCreate()
+{
+    Title = "CSharp SDK Store Test",
+    Description = "Description for CSharp Server SDK store service integration test.",
+    DefaultLanguage = "en",
+    DefaultRegion = "US",
+    SupportedLanguages = new List<string>() { "en", "id" },
+    SupportedRegions = new List<string>() { "US", "ID" }
+};
+
+StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
+    .SetBody(createStore)
+    .Execute(_Sdk.Namespace);
+```
 
 ### Create a season
 
@@ -979,17 +875,9 @@ SeasonInfo? uSeason = _Sdk.Seasonpass.Season.UpdateSeasonOp
     .SetBody(uSeasonBody)
     .Execute(_Sdk.Namespace, cSeasonId);
 ```
-
 ## Session
 
 Source: [SessionTests.cs](../AccelByte.Sdk.Tests/Services/SessionTests.cs)
-
-### Session Health Check
-
-```csharp
-_Sdk.Session.Operations.GetHealthcheckInfoV1Op
-    .Execute();
-```
 
 ### Create session configuration template
 
@@ -1035,7 +923,7 @@ ApimodelsConfigurationTemplateResponse? uptTemplate = _Sdk.Session.Configuration
 ### Delete session configuration template
 
 ```csharp
-ResponseError? response = _Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
+_Sdk.Session.ConfigurationTemplate.AdminDeleteConfigurationTemplateV1Op
     .Execute(cfgTemplateName, _Sdk.Namespace);
 ```
 
@@ -1075,7 +963,7 @@ sdk.Session.GameSession.DeleteGameSessionOp
 ### Query game sessions
 
 ```csharp
-var response = _Sdk.Session.GameSession.PublicQueryGameSessionsOp
+var response = _Sdk.Session.GameSession.PublicQueryGameSessionsByAttributesOp
     .Execute(new Dictionary<string, object>() { }, _Sdk.Namespace);
 ```
 
@@ -1123,7 +1011,6 @@ ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp
 sdk.Session.Party.PublicPartyLeaveOp
     .Execute(sdk.Namespace, partyId);
 ```
-
 ## SessionBrowser
 
 Source: [SessionBrowserTests.cs](../AccelByte.Sdk.Tests/Services/SessionBrowserTests.cs)
@@ -1133,7 +1020,7 @@ Source: [SessionBrowserTests.cs](../AccelByte.Sdk.Tests/Services/SessionBrowserT
 ```csharp
 ModelsCreateSessionRequest createSession = new ModelsCreateSessionRequest()
 {
-    SessionType = "p2p",
+    SessionType = "dedicated",
     GameVersion = "0.3.0",
     Namespace = _Sdk.Namespace,
     Username = usernameToTest,
@@ -1171,10 +1058,10 @@ ModelsSessionResponse? uResp = _Sdk.Sessionbrowser.Session.UpdateSessionOp
 ### Delete a session
 
 ```csharp
-ModelsSessionResponse? dResp = _Sdk.Sessionbrowser.Session.DeleteSessionOp
+ModelsAdminSessionResponse? dResp = _Sdk.Sessionbrowser.Session.AdminDeleteSessionOp
     .Execute(_Sdk.Namespace, session_id);
+Assert.IsNotNull(dResp);
 ```
-
 ## Social
 
 Source: [SocialTests.cs](../AccelByte.Sdk.Tests/Services/SocialTests.cs)
@@ -1227,7 +1114,6 @@ StatInfo? uStat = _Sdk.Social.StatConfiguration.UpdateStatOp
 _Sdk.Social.StatConfiguration.DeleteStatOp
     .Execute(_Sdk.Namespace, stat_code);
 ```
-
 ## UGC
 
 Source: [UgcTests.cs](../AccelByte.Sdk.Tests/Services/UgcTests.cs)
