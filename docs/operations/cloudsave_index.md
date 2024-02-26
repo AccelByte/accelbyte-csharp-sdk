@@ -64,13 +64,12 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}` | POST | AdminPostGameRecordHandlerV1 | [AdminPostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameRecord/AdminPostGameRecordHandlerV1.cs) | [AdminPostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameRecord/AdminPostGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}` | DELETE | AdminDeleteGameRecordHandlerV1 | [AdminDeleteGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameRecord/AdminDeleteGameRecordHandlerV1.cs) | [AdminDeleteGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameRecord/AdminDeleteGameRecordHandlerV1.cs) |
 
-### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/Tags.cs)
+### AdminTags Wrapper:  [AdminTags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminTags.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/cloudsave/v1/admin/namespaces/{namespace}/tags` | GET | AdminListTagsHandlerV1 | [AdminListTagsHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/Tags/AdminListTagsHandlerV1.cs) | [AdminListTagsHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/Tags/AdminListTagsHandlerV1.cs) |
-| `/cloudsave/v1/admin/namespaces/{namespace}/tags` | POST | AdminPostTagHandlerV1 | [AdminPostTagHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/Tags/AdminPostTagHandlerV1.cs) | [AdminPostTagHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/Tags/AdminPostTagHandlerV1.cs) |
-| `/cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}` | DELETE | AdminDeleteTagHandlerV1 | [AdminDeleteTagHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/Tags/AdminDeleteTagHandlerV1.cs) | [AdminDeleteTagHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/Tags/AdminDeleteTagHandlerV1.cs) |
-| `/cloudsave/v1/namespaces/{namespace}/tags` | GET | PublicListTagsHandlerV1 | [PublicListTagsHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/Tags/PublicListTagsHandlerV1.cs) | [PublicListTagsHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/Tags/PublicListTagsHandlerV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/tags` | GET | AdminListTagsHandlerV1 | [AdminListTagsHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminTags/AdminListTagsHandlerV1.cs) | [AdminListTagsHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminTags/AdminListTagsHandlerV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/tags` | POST | AdminPostTagHandlerV1 | [AdminPostTagHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminTags/AdminPostTagHandlerV1.cs) | [AdminPostTagHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminTags/AdminPostTagHandlerV1.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}` | DELETE | AdminDeleteTagHandlerV1 | [AdminDeleteTagHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminTags/AdminDeleteTagHandlerV1.cs) | [AdminDeleteTagHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminTags/AdminDeleteTagHandlerV1.cs) |
 
 ### AdminPlayerRecord Wrapper:  [AdminPlayerRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminPlayerRecord.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -127,6 +126,11 @@
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | PUT | PutGameRecordHandlerV1 | [PutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PutGameRecordHandlerV1.cs) | [PutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | POST | PostGameRecordHandlerV1 | [PostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PostGameRecordHandlerV1.cs) | [PostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PostGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | DELETE | DeleteGameRecordHandlerV1 | [DeleteGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/DeleteGameRecordHandlerV1.cs) | [DeleteGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/DeleteGameRecordHandlerV1.cs) |
+
+### PublicTags Wrapper:  [PublicTags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicTags.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/namespaces/{namespace}/tags` | GET | PublicListTagsHandlerV1 | [PublicListTagsHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicTags/PublicListTagsHandlerV1.cs) | [PublicListTagsHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicTags/PublicListTagsHandlerV1.cs) |
 
 ### PublicPlayerBinaryRecord Wrapper:  [PublicPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerBinaryRecord.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -199,7 +203,7 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}` | PUT | AdminPutGameRecordHandlerV1 | [AdminPutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameRecord/AdminPutGameRecordHandlerV1.cs) | [AdminPutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameRecord/AdminPutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}` | POST | AdminPostGameRecordHandlerV1 | [AdminPostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameRecord/AdminPostGameRecordHandlerV1.cs) | [AdminPostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameRecord/AdminPostGameRecordHandlerV1.cs) |
 
-### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/Tags.cs)
+### AdminTags Wrapper:  [AdminTags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminTags.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -232,6 +236,10 @@
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | GET | GetGameRecordHandlerV1 | [GetGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/GetGameRecordHandlerV1.cs) | [GetGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/GetGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | PUT | PutGameRecordHandlerV1 | [PutGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PutGameRecordHandlerV1.cs) | [PutGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PutGameRecordHandlerV1.cs) |
 | `/cloudsave/v1/namespaces/{namespace}/records/{key}` | POST | PostGameRecordHandlerV1 | [PostGameRecordHandlerV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/PublicGameRecord/PostGameRecordHandlerV1.cs) | [PostGameRecordHandlerV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/PublicGameRecord/PostGameRecordHandlerV1.cs) |
+
+### PublicTags Wrapper:  [PublicTags](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicTags.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
 
 ### PublicPlayerBinaryRecord Wrapper:  [PublicPlayerBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/PublicPlayerBinaryRecord.cs)
 | Endpoint | Method | ID | Class | Example |

@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminUpdateClientPermissionV3
     ///
     /// **Note for Multi Tenant Mode:**
-    /// 1. The assigned permission(s) should be restricted in the Default Client permission collection.
+    /// This is for super admin only.
     /// action code: 10307
     /// </summary>
     public class AdminUpdateClientPermissionV3 : AccelByte.Sdk.Core.Operation

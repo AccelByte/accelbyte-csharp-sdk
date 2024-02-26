@@ -37,6 +37,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public long? Offset { get; set; }
 
+            public bool? SkipLoginQueue { get; set; }
+
 
 
 
@@ -74,6 +76,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
+            public AdminGetClientsByNamespaceV3Builder SetSkipLoginQueue(bool _skipLoginQueue)
+            {
+                SkipLoginQueue = _skipLoginQueue;
+                return this;
+            }
+
 
 
 
@@ -105,6 +113,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.ClientType is not null) QueryParams["clientType"] = builder.ClientType;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SkipLoginQueue != null) QueryParams["skipLoginQueue"] = Convert.ToString(builder.SkipLoginQueue)!;
 
 
 
@@ -121,7 +130,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? clientName,
             string? clientType,
             long? limit,
-            long? offset
+            long? offset,
+            bool? skipLoginQueue
         )
         {
             PathParams["namespace"] = namespace_;
@@ -131,6 +141,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (clientType is not null) QueryParams["clientType"] = clientType;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (skipLoginQueue != null) QueryParams["skipLoginQueue"] = Convert.ToString(skipLoginQueue)!;
 
 
 

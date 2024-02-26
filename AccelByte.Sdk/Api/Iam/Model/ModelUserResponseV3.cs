@@ -101,6 +101,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("roles")]
         public List<string>? Roles { get; set; }
 
+        [JsonPropertyName("skipLoginQueue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SkipLoginQueue { get; set; }
+
         [JsonPropertyName("testAccount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? TestAccount { get; set; }

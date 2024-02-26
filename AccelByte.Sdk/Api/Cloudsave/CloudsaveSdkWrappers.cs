@@ -79,16 +79,16 @@ namespace AccelByte.Sdk.Core
         }
         private AdminGameRecord? _AdminGameRecord = null;
 
-        public Tags Tags
+        public AdminTags AdminTags
         {
             get
             {
-                if (_Tags == null)
-                    _Tags = new Tags(_SdkObject);
-                return _Tags;
+                if (_AdminTags == null)
+                    _AdminTags = new AdminTags(_SdkObject);
+                return _AdminTags;
             }
         }
-        private Tags? _Tags = null;
+        private AdminTags? _AdminTags = null;
 
         public AdminPlayerRecord AdminPlayerRecord
         {
@@ -144,6 +144,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PublicGameRecord? _PublicGameRecord = null;
+
+        public PublicTags PublicTags
+        {
+            get
+            {
+                if (_PublicTags == null)
+                    _PublicTags = new PublicTags(_SdkObject);
+                return _PublicTags;
+            }
+        }
+        private PublicTags? _PublicTags = null;
 
         public PublicPlayerBinaryRecord PublicPlayerBinaryRecord
         {

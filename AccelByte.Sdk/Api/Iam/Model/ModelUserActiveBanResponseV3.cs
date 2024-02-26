@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("endDate")]
         public DateTime? EndDate { get; set; }
 
+        [JsonPropertyName("targetedNamespace")]
+        public string? TargetedNamespace { get; set; }
+
     }
 
 

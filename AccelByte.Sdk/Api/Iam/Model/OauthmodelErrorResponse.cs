@@ -40,6 +40,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LinkingToken { get; set; }
 
+        [JsonPropertyName("login_queue_ticket")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public OauthmodelLoginQueueTicketResponse? LoginQueueTicket { get; set; }
+
         [JsonPropertyName("messageVariables")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? MessageVariables { get; set; }

@@ -273,6 +273,14 @@
 | `/iam/v4/admin/roles/{roleId}/users` | POST | AdminAssignUserToRoleV4 | [AdminAssignUserToRoleV4](../../AccelByte.Sdk/Api/Iam/Operation/Roles/AdminAssignUserToRoleV4.cs) | [AdminAssignUserToRoleV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Roles/AdminAssignUserToRoleV4.cs) |
 | `/iam/v4/admin/roles/{roleId}/users` | DELETE | AdminRevokeUserFromRoleV4 | [AdminRevokeUserFromRoleV4](../../AccelByte.Sdk/Api/Iam/Operation/Roles/AdminRevokeUserFromRoleV4.cs) | [AdminRevokeUserFromRoleV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Roles/AdminRevokeUserFromRoleV4.cs) |
 
+### Clients Config V3 Wrapper:  [ClientsConfigV3](../../AccelByte.Sdk/Api/Iam/Wrapper/ClientsConfigV3.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/admin/clientConfig/permissions` | GET | AdminListClientAvailablePermissions | [AdminListClientAvailablePermissions](../../AccelByte.Sdk/Api/Iam/Operation/ClientsConfigV3/AdminListClientAvailablePermissions.cs) | [AdminListClientAvailablePermissions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ClientsConfigV3/AdminListClientAvailablePermissions.cs) |
+| `/iam/v3/admin/clientConfig/permissions` | PUT | AdminUpdateAvailablePermissionsByModule | [AdminUpdateAvailablePermissionsByModule](../../AccelByte.Sdk/Api/Iam/Operation/ClientsConfigV3/AdminUpdateAvailablePermissionsByModule.cs) | [AdminUpdateAvailablePermissionsByModule](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ClientsConfigV3/AdminUpdateAvailablePermissionsByModule.cs) |
+| `/iam/v3/admin/clientConfig/permissions` | DELETE | AdminDeleteConfigPermissionsByGroup | [AdminDeleteConfigPermissionsByGroup](../../AccelByte.Sdk/Api/Iam/Operation/ClientsConfigV3/AdminDeleteConfigPermissionsByGroup.cs) | [AdminDeleteConfigPermissionsByGroup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ClientsConfigV3/AdminDeleteConfigPermissionsByGroup.cs) |
+| `/iam/v3/admin/clientConfig/templates` | GET | AdminListClientTemplates | [AdminListClientTemplates](../../AccelByte.Sdk/Api/Iam/Operation/ClientsConfigV3/AdminListClientTemplates.cs) | [AdminListClientTemplates](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/ClientsConfigV3/AdminListClientTemplates.cs) |
+
 ### InputValidations Wrapper:  [InputValidations](../../AccelByte.Sdk/Api/Iam/Wrapper/InputValidations.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -334,7 +342,6 @@
 | `/iam/v3/platforms/{platformId}/authenticate` | GET | PlatformAuthenticationV3 | [PlatformAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformAuthenticationV3.cs) | [PlatformAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformAuthenticationV3.cs) |
 | `/iam/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
 | `/iam/v3/token/exchange` | POST | RequestTargetTokenResponseV3 | [RequestTargetTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestTargetTokenResponseV3.cs) | [RequestTargetTokenResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestTargetTokenResponseV3.cs) |
-| [DEPRECATED] `/iam/v3/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3Deprecate | [PlatformTokenRefreshV3Deprecate](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3Deprecate.cs) | [PlatformTokenRefreshV3Deprecate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3Deprecate.cs) |
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -443,6 +450,17 @@
 | `/iam/v4/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserPublicInfoByUserIdV4 | [PublicGetUserPublicInfoByUserIdV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) | [PublicGetUserPublicInfoByUserIdV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) |
 | `/iam/v4/public/users/invite` | POST | PublicInviteUserV4 | [PublicInviteUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicInviteUserV4.cs) | [PublicInviteUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicInviteUserV4.cs) |
 
+### OAuth2.0 V4 Wrapper:  [OAuth20V4](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20V4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v4/oauth/authenticateWithLink` | POST | AuthenticationWithPlatformLinkV4 | [AuthenticationWithPlatformLinkV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/AuthenticationWithPlatformLinkV4.cs) | [AuthenticationWithPlatformLinkV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/AuthenticationWithPlatformLinkV4.cs) |
+| `/iam/v4/oauth/headless/token` | POST | GenerateTokenByNewHeadlessAccountV4 | [GenerateTokenByNewHeadlessAccountV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/GenerateTokenByNewHeadlessAccountV4.cs) | [GenerateTokenByNewHeadlessAccountV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/GenerateTokenByNewHeadlessAccountV4.cs) |
+| `/iam/v4/oauth/mfa/verify` | POST | Verify2faCodeV4 | [Verify2faCodeV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/Verify2faCodeV4.cs) | [Verify2faCodeV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/Verify2faCodeV4.cs) |
+| `/iam/v4/oauth/platforms/{platformId}/token` | POST | PlatformTokenGrantV4 | [PlatformTokenGrantV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/PlatformTokenGrantV4.cs) | [PlatformTokenGrantV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/PlatformTokenGrantV4.cs) |
+| `/iam/v4/oauth/simultaneousLogin` | POST | SimultaneousLoginV4 | [SimultaneousLoginV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/SimultaneousLoginV4.cs) | [SimultaneousLoginV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/SimultaneousLoginV4.cs) |
+| `/iam/v4/oauth/token` | POST | TokenGrantV4 | [TokenGrantV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/TokenGrantV4.cs) | [TokenGrantV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/TokenGrantV4.cs) |
+| `/iam/v4/oauth/token/exchange` | POST | RequestTargetTokenResponseV4 | [RequestTargetTokenResponseV4](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20V4/RequestTargetTokenResponseV4.cs) | [RequestTargetTokenResponseV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20V4/RequestTargetTokenResponseV4.cs) |
+
 
 &nbsp;  
 
@@ -468,6 +486,10 @@
 |---|---|---|---|---|
 
 ### Roles Wrapper:  [Roles](../../AccelByte.Sdk/Api/Iam/Wrapper/Roles.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Clients Config V3 Wrapper:  [ClientsConfigV3](../../AccelByte.Sdk/Api/Iam/Wrapper/ClientsConfigV3.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -517,6 +539,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### OAuth2.0 V4 Wrapper:  [OAuth20V4](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20V4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -538,6 +564,7 @@
 | `account.createUserResponseV4` | [AccountCreateUserResponseV4](../../AccelByte.Sdk/Api/Iam/Model/AccountCreateUserResponseV4.cs) |
 | `account.upgradeHeadlessAccountRequestV4` | [AccountUpgradeHeadlessAccountRequestV4](../../AccelByte.Sdk/Api/Iam/Model/AccountUpgradeHeadlessAccountRequestV4.cs) |
 | `account.upgradeHeadlessAccountWithVerificationCodeRequestV4` | [AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4](../../AccelByte.Sdk/Api/Iam/Model/AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4.cs) |
+| `accountcommon.AllowedPermission` | [AccountcommonAllowedPermission](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonAllowedPermission.cs) |
 | `accountcommon.AvatarConfig` | [AccountcommonAvatarConfig](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonAvatarConfig.cs) |
 | `accountcommon.Ban` | [AccountcommonBan](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBan.cs) |
 | `accountcommon.BanReason` | [AccountcommonBanReason](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBanReason.cs) |
@@ -548,10 +575,13 @@
 | `accountcommon.BannedByV3` | [AccountcommonBannedByV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBannedByV3.cs) |
 | `accountcommon.Bans` | [AccountcommonBans](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBans.cs) |
 | `accountcommon.BansV3` | [AccountcommonBansV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonBansV3.cs) |
+| `accountcommon.ClientModulePermission` | [AccountcommonClientModulePermission](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientModulePermission.cs) |
 | `accountcommon.ClientPermission` | [AccountcommonClientPermission](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientPermission.cs) |
+| `accountcommon.ClientPermissionSet` | [AccountcommonClientPermissionSet](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientPermissionSet.cs) |
 | `accountcommon.ClientPermissionV3` | [AccountcommonClientPermissionV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientPermissionV3.cs) |
 | `accountcommon.ClientPermissions` | [AccountcommonClientPermissions](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientPermissions.cs) |
 | `accountcommon.ClientPermissionsV3` | [AccountcommonClientPermissionsV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientPermissionsV3.cs) |
+| `accountcommon.ClientSelectedGroup` | [AccountcommonClientSelectedGroup](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonClientSelectedGroup.cs) |
 | `accountcommon.ConflictedUserPlatformAccounts` | [AccountcommonConflictedUserPlatformAccounts](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonConflictedUserPlatformAccounts.cs) |
 | `accountcommon.Country` | [AccountcommonCountry](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonCountry.cs) |
 | `accountcommon.CountryAgeRestriction` | [AccountcommonCountryAgeRestriction](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonCountryAgeRestriction.cs) |
@@ -566,6 +596,7 @@
 | `accountcommon.Pagination` | [AccountcommonPagination](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPagination.cs) |
 | `accountcommon.PaginationV3` | [AccountcommonPaginationV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPaginationV3.cs) |
 | `accountcommon.Permission` | [AccountcommonPermission](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermission.cs) |
+| `accountcommon.PermissionGroup` | [AccountcommonPermissionGroup](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissionGroup.cs) |
 | `accountcommon.PermissionV3` | [AccountcommonPermissionV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissionV3.cs) |
 | `accountcommon.Permissions` | [AccountcommonPermissions](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissions.cs) |
 | `accountcommon.PermissionsV3` | [AccountcommonPermissionsV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonPermissionsV3.cs) |
@@ -595,11 +626,19 @@
 | `clientmodel.ClientCreationResponse` | [ClientmodelClientCreationResponse](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientCreationResponse.cs) |
 | `clientmodel.ClientCreationV3Request` | [ClientmodelClientCreationV3Request](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientCreationV3Request.cs) |
 | `clientmodel.ClientResponse` | [ClientmodelClientResponse](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientResponse.cs) |
+| `clientmodel.ClientTemplate` | [ClientmodelClientTemplate](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientTemplate.cs) |
 | `clientmodel.ClientUpdateRequest` | [ClientmodelClientUpdateRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientUpdateRequest.cs) |
 | `clientmodel.ClientUpdateSecretRequest` | [ClientmodelClientUpdateSecretRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientUpdateSecretRequest.cs) |
 | `clientmodel.ClientUpdateV3Request` | [ClientmodelClientUpdateV3Request](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientUpdateV3Request.cs) |
 | `clientmodel.ClientV3Response` | [ClientmodelClientV3Response](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientV3Response.cs) |
 | `clientmodel.ClientsV3Response` | [ClientmodelClientsV3Response](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelClientsV3Response.cs) |
+| `clientmodel.DefaultFieldValue` | [ClientmodelDefaultFieldValue](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelDefaultFieldValue.cs) |
+| `clientmodel.DefaultFieldValue.value` | [ClientmodelDefaultFieldValueValue](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelDefaultFieldValueValue.cs) |
+| `clientmodel.ListClientPermissionSet` | [ClientmodelListClientPermissionSet](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelListClientPermissionSet.cs) |
+| `clientmodel.ListTemplatesResponse` | [ClientmodelListTemplatesResponse](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelListTemplatesResponse.cs) |
+| `clientmodel.ListUpsertModulesRequest` | [ClientmodelListUpsertModulesRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelListUpsertModulesRequest.cs) |
+| `clientmodel.PermissionSetDeleteGroupRequest` | [ClientmodelPermissionSetDeleteGroupRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelPermissionSetDeleteGroupRequest.cs) |
+| `clientmodel.PermissionSetUpsertRequest` | [ClientmodelPermissionSetUpsertRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelPermissionSetUpsertRequest.cs) |
 | `clientmodel.V3ClientUpdateSecretRequest` | [ClientmodelV3ClientUpdateSecretRequest](../../AccelByte.Sdk/Api/Iam/Model/ClientmodelV3ClientUpdateSecretRequest.cs) |
 | `legal.AcceptedPoliciesRequest` | [LegalAcceptedPoliciesRequest](../../AccelByte.Sdk/Api/Iam/Model/LegalAcceptedPoliciesRequest.cs) |
 | `model.AccountProgressionInfo` | [ModelAccountProgressionInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelAccountProgressionInfo.cs) |
@@ -691,6 +730,7 @@
 | `model.PublicUserInformationV3` | [ModelPublicUserInformationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserInformationV3.cs) |
 | `model.PublicUserResponse` | [ModelPublicUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserResponse.cs) |
 | `model.PublicUserResponseV3` | [ModelPublicUserResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserResponseV3.cs) |
+| `model.PublicUserUpdateRequestV3` | [ModelPublicUserUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserUpdateRequestV3.cs) |
 | `model.PublicUsersResponse` | [ModelPublicUsersResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUsersResponse.cs) |
 | `model.RemoveUserRoleV4Request` | [ModelRemoveUserRoleV4Request](../../AccelByte.Sdk/Api/Iam/Model/ModelRemoveUserRoleV4Request.cs) |
 | `model.ResetPasswordRequest` | [ModelResetPasswordRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelResetPasswordRequest.cs) |
@@ -784,10 +824,12 @@
 | `oauthcommon.UserRevocationListRecord` | [OauthcommonUserRevocationListRecord](../../AccelByte.Sdk/Api/Iam/Model/OauthcommonUserRevocationListRecord.cs) |
 | `oauthmodel.CountryLocationResponse` | [OauthmodelCountryLocationResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelCountryLocationResponse.cs) |
 | `oauthmodel.ErrorResponse` | [OauthmodelErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelErrorResponse.cs) |
+| `oauthmodel.LoginQueueTicketResponse` | [OauthmodelLoginQueueTicketResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelLoginQueueTicketResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeResponse` | [OauthmodelOneTimeLinkingCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeResponse.cs) |
 | `oauthmodel.OneTimeLinkingCodeValidationResponse` | [OauthmodelOneTimeLinkingCodeValidationResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelOneTimeLinkingCodeValidationResponse.cs) |
 | `oauthmodel.PlatformTokenRefreshResponseV3` | [OauthmodelPlatformTokenRefreshResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelPlatformTokenRefreshResponseV3.cs) |
 | `oauthmodel.TargetTokenCodeResponse` | [OauthmodelTargetTokenCodeResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTargetTokenCodeResponse.cs) |
+| `oauthmodel.TicketEndpointAction` | [OauthmodelTicketEndpointAction](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTicketEndpointAction.cs) |
 | `oauthmodel.TokenIntrospectResponse` | [OauthmodelTokenIntrospectResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenIntrospectResponse.cs) |
 | `oauthmodel.TokenResponse` | [OauthmodelTokenResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponse.cs) |
 | `oauthmodel.TokenResponseV3` | [OauthmodelTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenResponseV3.cs) |

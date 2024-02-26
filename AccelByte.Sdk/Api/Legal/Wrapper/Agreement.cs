@@ -52,6 +52,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.IndirectBulkAcceptVersionedPolicyV2.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder IndirectBulkAcceptVersionedPolicy1Op
         {
             get { return Operation.IndirectBulkAcceptVersionedPolicy1.Builder.SetWrapperObject(this); }
@@ -133,6 +134,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.AcceptAgreementResponse? IndirectBulkAcceptVersionedPolicy1(IndirectBulkAcceptVersionedPolicy1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -142,5 +145,6 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

@@ -68,6 +68,17 @@ namespace AccelByte.Sdk.Core
         }
         private Roles? _Roles = null;
 
+        public ClientsConfigV3 ClientsConfigV3
+        {
+            get
+            {
+                if (_ClientsConfigV3 == null)
+                    _ClientsConfigV3 = new ClientsConfigV3(_SdkObject);
+                return _ClientsConfigV3;
+            }
+        }
+        private ClientsConfigV3? _ClientsConfigV3 = null;
+
         public InputValidations InputValidations
         {
             get
@@ -188,6 +199,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private UsersV4? _UsersV4 = null;
+
+        public OAuth20V4 OAuth20V4
+        {
+            get
+            {
+                if (_OAuth20V4 == null)
+                    _OAuth20V4 = new OAuth20V4(_SdkObject);
+                return _OAuth20V4;
+            }
+        }
+        private OAuth20V4? _OAuth20V4 = null;
 
         internal IamSdkWrappers(AccelByteSDK sdk)
         {

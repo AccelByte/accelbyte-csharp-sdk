@@ -19,39 +19,49 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "adminlisttagshandlerv1")]
-    public class AdminListTagsHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "publiclisttagshandlerv1")]
+    public class PublicListTagsHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "AdminListTagsHandlerV1"; } }
+        public string OperationName { get { return "PublicListTagsHandlerV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public AdminListTagsHandlerV1Command(AccelByteSDK sdk)
+        [SdkCommandArgument("limit")]
+        public long? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
+        public PublicListTagsHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Cloudsave.Wrapper.Tags wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.Tags(_SDK);
+            AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicTags wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.PublicTags(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Cloudsave.Operation.AdminListTagsHandlerV1.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Cloudsave.Operation.PublicListTagsHandlerV1.Builder;
+
+            if (Limit != null)
+                opBuilder.SetLimit((long)Limit);
+            if (Offset != null)
+                opBuilder.SetOffset((long)Offset);
 
 
 
 
-
-            AdminListTagsHandlerV1 operation = opBuilder.Build(
+            PublicListTagsHandlerV1 operation = opBuilder.Build(
                 Namespace
             );
 
 
-            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListTagsResponse? response = wrapper.AdminListTagsHandlerV1(operation);
+            AccelByte.Sdk.Api.Cloudsave.Model.ModelsListTagsResponse? response = wrapper.PublicListTagsHandlerV1(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -29,6 +29,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
+        [JsonPropertyName("skipLoginQueue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SkipLoginQueue { get; set; }
+
         [JsonPropertyName("uniqueDisplayName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UniqueDisplayName { get; set; }

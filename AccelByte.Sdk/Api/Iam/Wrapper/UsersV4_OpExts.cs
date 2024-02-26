@@ -394,7 +394,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicUpdateUserV4.PublicUpdateUserV4Builder builder,
-            ModelUserUpdateRequestV3 body,
+            ModelPublicUserUpdateRequestV3 body,
             string namespace_
         )
         {

@@ -46,6 +46,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("skipLoginQueue")]
+        public bool? SkipLoginQueue { get; set; }
+
         public AdminGetClientsByNamespaceV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -67,6 +70,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (SkipLoginQueue != null)
+                opBuilder.SetSkipLoginQueue((bool)SkipLoginQueue);
 
 
 

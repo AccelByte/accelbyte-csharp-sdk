@@ -10,7 +10,7 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api
 {
-    public static class CloudsaveTags_OpExts
+    public static class CloudsaveAdminTags_OpExts
     {
         public static Cloudsave.Model.ModelsListTagsResponse? Execute(
             this AdminListTagsHandlerV1.AdminListTagsHandlerV1Builder builder,
@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Cloudsave.Wrapper.Tags)builder.WrapperObject!).AdminListTagsHandlerV1(op);
+            return ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminListTagsHandlerV1(op);
         }
         public static void Execute(
             this AdminPostTagHandlerV1.AdminPostTagHandlerV1Builder builder,
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Cloudsave.Wrapper.Tags)builder.WrapperObject!).AdminPostTagHandlerV1(op);
+            ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminPostTagHandlerV1(op);
         }
         public static void Execute(
             this AdminDeleteTagHandlerV1.AdminDeleteTagHandlerV1Builder builder,
@@ -47,18 +47,7 @@ namespace AccelByte.Sdk.Api
                 tag
             );
 
-            ((Cloudsave.Wrapper.Tags)builder.WrapperObject!).AdminDeleteTagHandlerV1(op);
-        }
-        public static Cloudsave.Model.ModelsListTagsResponse? Execute(
-            this PublicListTagsHandlerV1.PublicListTagsHandlerV1Builder builder,
-            string namespace_
-        )
-        {
-            PublicListTagsHandlerV1 op = builder.Build(
-                namespace_
-            );
-
-            return ((Cloudsave.Wrapper.Tags)builder.WrapperObject!).PublicListTagsHandlerV1(op);
+            ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminDeleteTagHandlerV1(op);
         }
     }
 }

@@ -19,43 +19,43 @@ using AccelByte.Sdk.Api.Cloudsave.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 {
-    [SdkConsoleCommand("cloudsave", "adminposttaghandlerv1")]
-    public class AdminPostTagHandlerV1Command : ISdkConsoleCommand
+    [SdkConsoleCommand("cloudsave", "admindeletetaghandlerv1")]
+    public class AdminDeleteTagHandlerV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Cloudsave"; } }
 
-        public string OperationName { get { return "AdminPostTagHandlerV1"; } }
+        public string OperationName { get { return "AdminDeleteTagHandlerV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelsTagRequest Body { get; set; } = new ModelsTagRequest();
+        [SdkCommandArgument("tag")]
+        public string Tag { get; set; } = String.Empty;
 
-        public AdminPostTagHandlerV1Command(AccelByteSDK sdk)
+        public AdminDeleteTagHandlerV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Cloudsave.Wrapper.Tags wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.Tags(_SDK);
+            AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminTags wrapper = new AccelByte.Sdk.Api.Cloudsave.Wrapper.AdminTags(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Cloudsave.Operation.AdminPostTagHandlerV1.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Cloudsave.Operation.AdminDeleteTagHandlerV1.Builder;
 
 
 
-            AdminPostTagHandlerV1 operation = opBuilder.Build(
-                Body,
-                Namespace
+
+
+            AdminDeleteTagHandlerV1 operation = opBuilder.Build(
+                Namespace,
+                Tag
             );
 
 
-            wrapper.AdminPostTagHandlerV1(operation);
+            wrapper.AdminDeleteTagHandlerV1(operation);
             return String.Empty;
         }
     }

@@ -7,47 +7,43 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Cloudsave.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Cloudsave.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// adminDeleteTagHandlerV1
+    /// AdminUpdateAvailablePermissionsByModule
     ///
-    /// ## Description
-    /// 
-    /// Endpoint to delete a tag
+    /// Update Client available permissions, if module or group not exists, it will auto create.
     /// </summary>
-    public class AdminDeleteTagHandlerV1 : AccelByte.Sdk.Core.Operation
+    public class AdminUpdateAvailablePermissionsByModule : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminDeleteTagHandlerV1Builder Builder { get => new AdminDeleteTagHandlerV1Builder(); }
+        public static AdminUpdateAvailablePermissionsByModuleBuilder Builder { get => new AdminUpdateAvailablePermissionsByModuleBuilder(); }
 
-        public class AdminDeleteTagHandlerV1Builder
-            : OperationBuilder<AdminDeleteTagHandlerV1Builder>
+        public class AdminUpdateAvailablePermissionsByModuleBuilder
+            : OperationBuilder<AdminUpdateAvailablePermissionsByModuleBuilder>
         {
 
 
 
 
 
-            internal AdminDeleteTagHandlerV1Builder() { }
+            internal AdminUpdateAvailablePermissionsByModuleBuilder() { }
 
 
 
 
 
 
-            public AdminDeleteTagHandlerV1 Build(
-                string namespace_,
-                string tag
+            public AdminUpdateAvailablePermissionsByModule Build(
+                ClientmodelListUpsertModulesRequest body
             )
             {
-                AdminDeleteTagHandlerV1 op = new AdminDeleteTagHandlerV1(this,
-                    namespace_,
-                    tag
+                AdminUpdateAvailablePermissionsByModule op = new AdminUpdateAvailablePermissionsByModule(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -58,44 +54,40 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             }
         }
 
-        private AdminDeleteTagHandlerV1(AdminDeleteTagHandlerV1Builder builder,
-            string namespace_,
-            string tag
+        private AdminUpdateAvailablePermissionsByModule(AdminUpdateAvailablePermissionsByModuleBuilder builder,
+            ClientmodelListUpsertModulesRequest body
         )
         {
-            PathParams["namespace"] = namespace_;
-            PathParams["tag"] = tag;
 
 
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public AdminDeleteTagHandlerV1(
-            string namespace_,
-            string tag
+        public AdminUpdateAvailablePermissionsByModule(
+            Model.ClientmodelListUpsertModulesRequest body
         )
         {
-            PathParams["namespace"] = namespace_;
-            PathParams["tag"] = tag;
 
 
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}";
+        public override string Path => "/iam/v3/admin/clientConfig/permissions";
 
-        public override HttpMethod Method => HttpMethod.Delete;
+        public override HttpMethod Method => HttpMethod.Put;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -106,7 +98,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)201)
+            if (code == (HttpStatusCode)204)
             {
                 return;
             }

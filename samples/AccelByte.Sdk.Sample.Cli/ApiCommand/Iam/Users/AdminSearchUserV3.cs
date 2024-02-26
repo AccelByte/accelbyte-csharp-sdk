@@ -55,6 +55,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
+        [SdkCommandArgument("skipLoginQueue")]
+        public bool? SkipLoginQueue { get; set; }
+
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
 
@@ -88,6 +91,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetPlatformId((string)PlatformId);
             if (Query != null)
                 opBuilder.SetQuery((string)Query);
+            if (SkipLoginQueue != null)
+                opBuilder.SetSkipLoginQueue((bool)SkipLoginQueue);
             if (StartDate != null)
                 opBuilder.SetStartDate((string)StartDate);
             if (TestAccount != null)

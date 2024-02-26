@@ -158,19 +158,5 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTargetTokenResponseV3(op);
         }
-        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public static Iam.Model.OauthmodelPlatformTokenRefreshResponseV3? Execute(
-            this PlatformTokenRefreshV3Deprecate.PlatformTokenRefreshV3DeprecateBuilder builder,
-            string platformToken,
-            string platformId
-        )
-        {
-            PlatformTokenRefreshV3Deprecate op = builder.Build(
-                platformToken,
-                platformId
-            );
-
-            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformTokenRefreshV3Deprecate(op);
-        }
     }
 }

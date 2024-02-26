@@ -14,38 +14,40 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Cloudsave.Operation
 {
     /// <summary>
-    /// adminListTagsHandlerV1
+    /// adminDeleteTagHandlerV1
     ///
     /// ## Description
     /// 
-    /// Endpoint to list out available tags
+    /// This endpoint will delete tag by name
     /// </summary>
-    public class AdminListTagsHandlerV1 : AccelByte.Sdk.Core.Operation
+    public class AdminDeleteTagHandlerV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static AdminListTagsHandlerV1Builder Builder { get => new AdminListTagsHandlerV1Builder(); }
+        public static AdminDeleteTagHandlerV1Builder Builder { get => new AdminDeleteTagHandlerV1Builder(); }
 
-        public class AdminListTagsHandlerV1Builder
-            : OperationBuilder<AdminListTagsHandlerV1Builder>
+        public class AdminDeleteTagHandlerV1Builder
+            : OperationBuilder<AdminDeleteTagHandlerV1Builder>
         {
 
 
 
 
 
-            internal AdminListTagsHandlerV1Builder() { }
+            internal AdminDeleteTagHandlerV1Builder() { }
 
 
 
 
 
 
-            public AdminListTagsHandlerV1 Build(
-                string namespace_
+            public AdminDeleteTagHandlerV1 Build(
+                string namespace_,
+                string tag
             )
             {
-                AdminListTagsHandlerV1 op = new AdminListTagsHandlerV1(this,
-                    namespace_
+                AdminDeleteTagHandlerV1 op = new AdminDeleteTagHandlerV1(this,
+                    namespace_,
+                    tag
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -56,11 +58,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             }
         }
 
-        private AdminListTagsHandlerV1(AdminListTagsHandlerV1Builder builder,
-            string namespace_
+        private AdminDeleteTagHandlerV1(AdminDeleteTagHandlerV1Builder builder,
+            string namespace_,
+            string tag
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["tag"] = tag;
 
 
 
@@ -72,11 +76,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         }
         #endregion
 
-        public AdminListTagsHandlerV1(
-            string namespace_
+        public AdminDeleteTagHandlerV1(
+            string namespace_,
+            string tag
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["tag"] = tag;
 
 
 
@@ -87,9 +93,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/tags";
+        public override string Path => "/cloudsave/v1/admin/namespaces/{namespace}/tags/{tag}";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Delete;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -98,22 +104,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsListTagsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload, ResponseJsonOptions);
-                else
-                    return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload, ResponseJsonOptions);
+                return;
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

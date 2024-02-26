@@ -7,45 +7,41 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Cloudsave.Model;
+using AccelByte.Sdk.Api.Iam.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Cloudsave.Operation
+namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
-    /// publicListTagsHandlerV1
+    /// AdminListClientTemplates
     ///
-    /// ## Description
-    /// 
-    /// Endpoint to list out available tags
+    /// List client templates
     /// </summary>
-    public class PublicListTagsHandlerV1 : AccelByte.Sdk.Core.Operation
+    public class AdminListClientTemplates : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static PublicListTagsHandlerV1Builder Builder { get => new PublicListTagsHandlerV1Builder(); }
+        public static AdminListClientTemplatesBuilder Builder { get => new AdminListClientTemplatesBuilder(); }
 
-        public class PublicListTagsHandlerV1Builder
-            : OperationBuilder<PublicListTagsHandlerV1Builder>
+        public class AdminListClientTemplatesBuilder
+            : OperationBuilder<AdminListClientTemplatesBuilder>
         {
 
 
 
 
 
-            internal PublicListTagsHandlerV1Builder() { }
+            internal AdminListClientTemplatesBuilder() { }
 
 
 
 
 
 
-            public PublicListTagsHandlerV1 Build(
-                string namespace_
+            public AdminListClientTemplates Build(
             )
             {
-                PublicListTagsHandlerV1 op = new PublicListTagsHandlerV1(this,
-                    namespace_
+                AdminListClientTemplates op = new AdminListClientTemplates(this
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -56,11 +52,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             }
         }
 
-        private PublicListTagsHandlerV1(PublicListTagsHandlerV1Builder builder,
-            string namespace_
+        private AdminListClientTemplates(AdminListClientTemplatesBuilder builder
         )
         {
-            PathParams["namespace"] = namespace_;
 
 
 
@@ -72,11 +66,9 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         }
         #endregion
 
-        public PublicListTagsHandlerV1(
-            string namespace_
+        public AdminListClientTemplates(
         )
         {
-            PathParams["namespace"] = namespace_;
 
 
 
@@ -87,18 +79,18 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/cloudsave/v1/namespaces/{namespace}/tags";
+        public override string Path => "/iam/v3/admin/clientConfig/templates";
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsListTagsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ClientmodelListTemplatesResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -107,13 +99,13 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ClientmodelListTemplatesResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ClientmodelListTemplatesResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsListTagsResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ClientmodelListTemplatesResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

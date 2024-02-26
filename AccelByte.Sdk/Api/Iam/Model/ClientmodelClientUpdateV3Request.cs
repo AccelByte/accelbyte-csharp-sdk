@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("description")]
         public string? Description { get; set; }
 
+        [JsonPropertyName("modulePermissions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<AccountcommonClientModulePermission>? ModulePermissions { get; set; }
+
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
@@ -62,6 +66,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("scopes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Scopes { get; set; }
+
+        [JsonPropertyName("skipLoginQueue")]
+        public bool? SkipLoginQueue { get; set; }
 
         [JsonPropertyName("twoFactorEnabled")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

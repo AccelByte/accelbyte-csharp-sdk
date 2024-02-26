@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public UpdateUserV3 Build(
-                ModelUserUpdateRequestV3 body,
+                ModelPublicUserUpdateRequestV3 body,
                 string namespace_
             )
             {
@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private UpdateUserV3(UpdateUserV3Builder builder,
-            ModelUserUpdateRequestV3 body,
+            ModelPublicUserUpdateRequestV3 body,
             string namespace_
         )
         {
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public UpdateUserV3(
             string namespace_,
-            Model.ModelUserUpdateRequestV3 body
+            Model.ModelPublicUserUpdateRequestV3 body
         )
         {
             PathParams["namespace"] = namespace_;

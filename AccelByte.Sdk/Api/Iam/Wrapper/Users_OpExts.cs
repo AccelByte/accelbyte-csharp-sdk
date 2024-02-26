@@ -1922,7 +1922,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this UpdateUserV3.UpdateUserV3Builder builder,
-            ModelUserUpdateRequestV3 body,
+            ModelPublicUserUpdateRequestV3 body,
             string namespace_
         )
         {
@@ -1935,7 +1935,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicPartialUpdateUserV3.PublicPartialUpdateUserV3Builder builder,
-            ModelUserUpdateRequestV3 body,
+            ModelPublicUserUpdateRequestV3 body,
             string namespace_
         )
         {

@@ -103,6 +103,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicyV2(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.AcceptAgreementResponse? Execute(
             this IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder builder,
             string userId

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? ClientName { get; set; }
 
         [JsonPropertyName("clientPermissions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<AccountcommonPermissionV3>? ClientPermissions { get; set; }
 
         [JsonPropertyName("clientPlatform")]
@@ -33,6 +34,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("description")]
         public string? Description { get; set; }
+
+        [JsonPropertyName("modulePermissions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<AccountcommonClientModulePermission>? ModulePermissions { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
@@ -69,6 +74,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("secret")]
         public string? Secret { get; set; }
+
+        [JsonPropertyName("skipLoginQueue")]
+        public bool? SkipLoginQueue { get; set; }
 
         [JsonPropertyName("twoFactorEnabled")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

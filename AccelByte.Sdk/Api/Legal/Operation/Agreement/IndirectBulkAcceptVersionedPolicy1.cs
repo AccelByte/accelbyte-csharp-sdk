@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// 
     ///   * Required permission : login user
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class IndirectBulkAcceptVersionedPolicy1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

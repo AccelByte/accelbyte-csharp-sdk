@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// Other detail info:
     ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
     ///         *  Returns : updated stat
+    ///         *  Field globalAggregationMethod is not updatable when the stat status is TIED
     /// </summary>
     public class UpdateStat : AccelByte.Sdk.Core.Operation
     {

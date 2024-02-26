@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteClientPermissionV3
     ///
+    /// **Note for Multi Tenant Mode:**
+    /// This is for super admin only.
     /// action code : 10304
     /// </summary>
     public class AdminDeleteClientPermissionV3 : AccelByte.Sdk.Core.Operation

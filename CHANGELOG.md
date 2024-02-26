@@ -1,3 +1,20 @@
+<a name="v0.55.0"></a>
+## [v0.55.0]
+### chore
+- **sdk:** generated from openapi spec commit: 6a349250bfce7059426dd062035e36dd00033778
+- **:** revert version due to cherry-pick
+- **github:** update github creds
+### feat
+- **:** add dsartifact explicit integration test
+### docs
+- **:** remove new version entry in changelog due to cherry-pick
+- **common-use-case:** update
+### fix
+- **:** clean published store in platform and seasonpass tests
+### ci
+- **generate:** update comon use case doc
+
+
 <a name="v0.54.0"></a>
 ## [v0.54.0]
 ### docs

@@ -9,11 +9,11 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
 {
-    public class Tags
+    public class AdminTags
     {
         private readonly AccelByteSDK _sdk;
 
-        public Tags(AccelByteSDK sdk)
+        public AdminTags(AccelByteSDK sdk)
         {
             _sdk = sdk;
         }
@@ -30,10 +30,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public AdminDeleteTagHandlerV1.AdminDeleteTagHandlerV1Builder AdminDeleteTagHandlerV1Op
         {
             get { return Operation.AdminDeleteTagHandlerV1.Builder.SetWrapperObject(this); }
-        }
-        public PublicListTagsHandlerV1.PublicListTagsHandlerV1Builder PublicListTagsHandlerV1Op
-        {
-            get { return Operation.PublicListTagsHandlerV1.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -60,15 +56,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ModelsListTagsResponse? PublicListTagsHandlerV1(PublicListTagsHandlerV1 input)
-        {
-            var response = _sdk.RunRequest(input);
-
-            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -25,6 +25,11 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
+        [JsonPropertyName("globalAggregationMethod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public StatInfoGlobalAggregationMethod? GlobalAggregationMethod { get; set; }
+
         [JsonPropertyName("ignoreAdditionalDataOnValueRejected")]
         public bool? IgnoreAdditionalDataOnValueRejected { get; set; }
 
@@ -72,6 +77,33 @@ namespace AccelByte.Sdk.Api.Social.Model
     }
 
 
+
+    public class StatInfoGlobalAggregationMethod : StringEnum<StatInfoGlobalAggregationMethod>
+    {
+        public static readonly StatInfoGlobalAggregationMethod LAST
+            = new StatInfoGlobalAggregationMethod("LAST");
+
+        public static readonly StatInfoGlobalAggregationMethod MAX
+            = new StatInfoGlobalAggregationMethod("MAX");
+
+        public static readonly StatInfoGlobalAggregationMethod MIN
+            = new StatInfoGlobalAggregationMethod("MIN");
+
+        public static readonly StatInfoGlobalAggregationMethod TOTAL
+            = new StatInfoGlobalAggregationMethod("TOTAL");
+
+
+        public static implicit operator StatInfoGlobalAggregationMethod(string value)
+        {
+            return NewValue(value);
+        }
+
+        public StatInfoGlobalAggregationMethod(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class StatInfoSetBy : StringEnum<StatInfoSetBy>
     {
