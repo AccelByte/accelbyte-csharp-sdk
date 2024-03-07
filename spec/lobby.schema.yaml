@@ -1,6 +1,6 @@
 info:
   title: justice-lobby-ws-service
-  version: 0.1.0
+  version: 3.35.0
 swagger: "2.0"
 definitions:
   acceptFriendsNotif:
@@ -474,6 +474,23 @@ definitions:
     x-tag: Matchmaking
     x-type: notification
   messageNotif:
+    properties:
+      from:
+        type: string
+      id:
+        type: string
+      payload:
+        type: string
+      sentAt:
+        type: integer
+      to:
+        type: string
+      topic:
+        type: string
+    type: object
+    x-tag: Notification
+    x-type: notification
+  messageSessionNotif:
     properties:
       from:
         type: string
