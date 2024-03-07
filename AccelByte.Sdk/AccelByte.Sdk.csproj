@@ -7,10 +7,10 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.55.0</Version>
-    <AssemblyVersion>0.55.0</AssemblyVersion>
+    <Version>0.55.1</Version>
+    <AssemblyVersion>0.55.1</AssemblyVersion>
     <Company>AccelByte</Company>
-    <Copyright>Copyright(c) AccelByte 2022-2023</Copyright>
+    <Copyright>Copyright(c) AccelByte 2022-2024</Copyright>
     <Description>AccelByte .NET (C#) SDK
 A software development kit (SDK) for interacting with AccelByte services.</Description>
     <PackageProjectUrl>https://github.com/AccelByte/accelbyte-csharp-sdk</PackageProjectUrl>
