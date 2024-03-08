@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
 
         [AwesomeProperty("updatedAt")]
         [JsonPropertyName("updatedAt")]
-        public long? UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
     }
 }

@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
 
         [AwesomeProperty("lastSeenAt")]
         [JsonPropertyName("lastSeenAt")]
-        public string? LastSeenAt { get; set; }
+        public DateTime? LastSeenAt { get; set; }
 
         [AwesomeProperty("userId")]
         [JsonPropertyName("userId")]

@@ -138,6 +138,7 @@ definitions:
         type: string
       sentAt:
         type: string
+        format: date-time
     type: object
     x-tag: Channel Chat
     x-type: notification
@@ -265,6 +266,7 @@ definitions:
         type: array
         items:
           type: string
+          format: date-time
     type: object
     x-pair: friendsStatusRequest
     x-tag: Presence
@@ -482,7 +484,8 @@ definitions:
       payload:
         type: string
       sentAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
       topic:
@@ -499,7 +502,8 @@ definitions:
       payload:
         type: string
       sentAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
       topic:
@@ -548,7 +552,8 @@ definitions:
       payload:
         type: string
       receivedAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
     type: object
@@ -563,7 +568,8 @@ definitions:
       payload:
         type: string
       receivedAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
     required:
@@ -636,7 +642,8 @@ definitions:
       partyId:
         type: string
       updatedAt:
-        type: integer
+        type: string
+        format: date-time
     type: object
     x-tag: Party
     x-type: notification
@@ -933,7 +940,8 @@ definitions:
       payload:
         type: string
       receivedAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
     type: object
@@ -948,7 +956,8 @@ definitions:
       payload:
         type: string
       receivedAt:
-        type: integer
+        type: string
+        format: date-time
       to:
         type: string
     required:
@@ -1328,6 +1337,7 @@ definitions:
         type: integer
       lastSeenAt:
         type: string
+        format: date-time
       userId:
         type: string
     type: object

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
 
         [AwesomeProperty("receivedAt")]
         [JsonPropertyName("receivedAt")]
-        public long? ReceivedAt { get; set; }
+        public DateTime? ReceivedAt { get; set; }
 
         [AwesomeProperty("to")]
         [JsonPropertyName("to")]
