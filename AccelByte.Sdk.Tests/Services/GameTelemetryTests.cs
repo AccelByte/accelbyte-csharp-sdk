@@ -62,13 +62,12 @@ namespace AccelByte.Sdk.Tests.Services
             #endregion
 
             #region Get steam's playtime
-            Dictionary<string, object>? resGet = _Sdk.Gametelemetry.GametelemetryOperations
+            PlayTimeResponse? resGet = _Sdk.Gametelemetry.GametelemetryOperations
                 .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
                 .Execute(steamId);
             #endregion
             Assert.IsNotNull(resGet);
-            Assert.Contains("total_playtime", resGet);
-            Assert.Equals(playTime, resGet!["total_playtime"]);
+            Assert.Equals(playTime, resGet.TotalPlaytime!);
         }
     }
 }
