@@ -85,44 +85,10 @@ if (!login)
 
 > :warning: **Please use LoginClient() function with confidential OAuth client:** Using LoginClient() function with public OAuth client is not supported.
 
+
 ## Interacting with a Service Endpoint
 
 As an example, we will get current user profile info using [getMyProfileInfo](https://demo.accelbyte.io/basic/apidocs/#/UserProfile/getMyProfileInfo) endpoint available in [basic](https://demo.accelbyte.io/basic/apidocs) service.
-
-```csharp
-//Add basic service model namespace
-using AccelByte.Sdk.Api.Basic.Model;
-
-// Login using username and password
-
-bool login = sdk.LoginUser("myUsername", "myPassword");
-if (!login)
-{
-    Console.WriteLine("Login failed");
-}
-
-// Instantiate UserProfile wrapper class which is part of basic service
-
-UserProfile userProfile = new UserProfile(sdk);
-
-try
-{
-    // Make a call to getMyProfileInfo endpoint
-    UserProfilePrivateInfo? response = userProfile.GetMyProfileInfo(
-        GetMyProfileInfo.Builder
-        .Build(sdk.Namespace));
-
-    Console.WriteLine(response.UserId); // Success response
-}
-catch (HttpResponseException e)
-{
-    Console.WriteLine(e.Message);
-}
-```
-
-## Interacting with a Service Endpoint (alternative)
-
-As an example, we will get current user profile info using [getMyProfileInfo](https://demo.accelbyte.io/basic/apidocs/#/UserProfile/getMyProfileInfo) endpoint available in [basic](https://demo.accelbyte.io/basic/apidocs) service with fluent interface.
 
 ```csharp
 //Add api namespace
