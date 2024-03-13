@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateOfficialContentV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// Update existing official content
     /// </summary>
     public class AdminUpdateOfficialContentV2 : AccelByte.Sdk.Core.Operation
     {

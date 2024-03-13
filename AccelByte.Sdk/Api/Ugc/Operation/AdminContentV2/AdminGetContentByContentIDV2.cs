@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetContentByContentIDV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
+    /// Get content by content ID
     /// </summary>
     public class AdminGetContentByContentIDV2 : AccelByte.Sdk.Core.Operation
     {

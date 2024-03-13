@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminDeleteContentByShareCodeV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+    /// Delete content by share code
     /// </summary>
     public class AdminDeleteContentByShareCodeV2 : AccelByte.Sdk.Core.Operation
     {

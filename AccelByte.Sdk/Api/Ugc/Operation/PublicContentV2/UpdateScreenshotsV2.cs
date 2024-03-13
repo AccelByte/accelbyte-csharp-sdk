@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// UpdateScreenshotsV2
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
-    /// Maximum description length: 1024.
+    /// Maximum description length: 1024
     /// </summary>
     public class UpdateScreenshotsV2 : AccelByte.Sdk.Core.Operation
     {

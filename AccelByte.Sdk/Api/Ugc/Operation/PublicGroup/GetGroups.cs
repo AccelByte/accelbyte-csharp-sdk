@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// GetGroups
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ].
+    /// Get user groups paginated
     /// </summary>
     public class GetGroups : AccelByte.Sdk.Core.Operation
     {

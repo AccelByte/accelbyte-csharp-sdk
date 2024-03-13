@@ -62,13 +62,16 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// CLIENT: record can be modified by client and server.
     /// 2. is_public (default: false, type: bool)
     /// Indicate whether the player record is a public record or not.
+    /// 3. tags (default: *empty array*, type: array of string)
+    /// Indicate the tagging for the game record.
     /// 
     /// **Request Body Example:**
     /// ```
     /// {
     /// "__META": {
     /// "set_by": "SERVER",
-    /// "is_public": true
+    /// "is_public": true,
+    /// "tags": ["tag1", "tag2"]
     /// }
     /// ...
     /// }

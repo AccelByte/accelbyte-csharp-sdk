@@ -37,8 +37,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("before")]
         public string? Before { get; set; }
 
+        [SdkCommandArgument("endDate")]
+        public string? EndDate { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
+
+        [SdkCommandArgument("query")]
+        public string? Query { get; set; }
+
+        [SdkCommandArgument("roleId")]
+        public string? RoleId { get; set; }
+
+        [SdkCommandArgument("startDate")]
+        public string? StartDate { get; set; }
 
         public ListAdminsV3Command(AccelByteSDK sdk)
         {
@@ -55,8 +67,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetAfter((string)After);
             if (Before != null)
                 opBuilder.SetBefore((string)Before);
+            if (EndDate != null)
+                opBuilder.SetEndDate((string)EndDate);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
+            if (Query != null)
+                opBuilder.SetQuery((string)Query);
+            if (RoleId != null)
+                opBuilder.SetRoleId((string)RoleId);
+            if (StartDate != null)
+                opBuilder.SetStartDate((string)StartDate);
 
 
 

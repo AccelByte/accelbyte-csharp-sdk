@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Get rankings in today leaderboard.
     /// </summary>
     public class GetTodayLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation

@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// UpdateContentShareCodeV2
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT:SHARECODE [UPDATE].
-    /// 
     /// This endpoint is used to modify the shareCode of a content. However, this operation is restricted by default and requires the above permission to be granted to the User role.
     /// 
     /// `shareCode` format should follows:

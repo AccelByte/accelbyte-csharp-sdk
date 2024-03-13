@@ -23,11 +23,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// 
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [DELETE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint will delete user ranking by leaderboard code
     /// 
     /// 

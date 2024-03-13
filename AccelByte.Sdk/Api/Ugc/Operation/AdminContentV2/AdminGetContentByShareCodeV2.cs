@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetContentByShareCodeV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
+    /// Get content by share code
     /// </summary>
     public class AdminGetContentByShareCodeV2 : AccelByte.Sdk.Core.Operation
     {

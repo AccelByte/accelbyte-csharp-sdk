@@ -15,11 +15,20 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public EntitlementHistoryInfoAction? Action { get; set; }
 
+        [JsonPropertyName("clazz")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementHistoryInfoClazz? Clazz { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("entitlementId")]
         public string? EntitlementId { get; set; }
+
+        [JsonPropertyName("itemId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ItemId { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
@@ -35,6 +44,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("reason")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
+
+        [JsonPropertyName("sku")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Sku { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
@@ -84,6 +97,42 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public EntitlementHistoryInfoAction(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class EntitlementHistoryInfoClazz : StringEnum<EntitlementHistoryInfoClazz>
+    {
+        public static readonly EntitlementHistoryInfoClazz APP
+            = new EntitlementHistoryInfoClazz("APP");
+
+        public static readonly EntitlementHistoryInfoClazz CODE
+            = new EntitlementHistoryInfoClazz("CODE");
+
+        public static readonly EntitlementHistoryInfoClazz ENTITLEMENT
+            = new EntitlementHistoryInfoClazz("ENTITLEMENT");
+
+        public static readonly EntitlementHistoryInfoClazz LOOTBOX
+            = new EntitlementHistoryInfoClazz("LOOTBOX");
+
+        public static readonly EntitlementHistoryInfoClazz MEDIA
+            = new EntitlementHistoryInfoClazz("MEDIA");
+
+        public static readonly EntitlementHistoryInfoClazz OPTIONBOX
+            = new EntitlementHistoryInfoClazz("OPTIONBOX");
+
+        public static readonly EntitlementHistoryInfoClazz SUBSCRIPTION
+            = new EntitlementHistoryInfoClazz("SUBSCRIPTION");
+
+
+        public static implicit operator EntitlementHistoryInfoClazz(string value)
+        {
+            return NewValue(value);
+        }
+
+        public EntitlementHistoryInfoClazz(string enumValue)
             : base(enumValue)
         {
 

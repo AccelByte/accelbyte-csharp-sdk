@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Get user ranking in leaderboard
     /// </summary>
     public class GetUserRankingAdminV1 : AccelByte.Sdk.Core.Operation

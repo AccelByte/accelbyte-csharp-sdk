@@ -19,6 +19,18 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
+        public AdminListInvitationHistoriesV4.AdminListInvitationHistoriesV4Builder AdminListInvitationHistoriesV4Op
+        {
+            get { return Operation.AdminListInvitationHistoriesV4.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetNamespaceInvitationHistoryV4.AdminGetNamespaceInvitationHistoryV4Builder AdminGetNamespaceInvitationHistoryV4Op
+        {
+            get { return Operation.AdminGetNamespaceInvitationHistoryV4.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetNamespaceUserInvitationHistoryV4.AdminGetNamespaceUserInvitationHistoryV4Builder AdminGetNamespaceUserInvitationHistoryV4Op
+        {
+            get { return Operation.AdminGetNamespaceUserInvitationHistoryV4.Builder.SetWrapperObject(this); }
+        }
         public AdminCreateTestUsersV4.AdminCreateTestUsersV4Builder AdminCreateTestUsersV4Op
         {
             get { return Operation.AdminCreateTestUsersV4.Builder.SetWrapperObject(this); }
@@ -254,6 +266,33 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
 
+        public Model.ModelListInvitationHistoriesV4Response? AdminListInvitationHistoriesV4(AdminListInvitationHistoriesV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelInvitationHistoryResponse? AdminGetNamespaceInvitationHistoryV4(AdminGetNamespaceInvitationHistoryV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelNamespaceInvitationHistoryUserV4Response? AdminGetNamespaceUserInvitationHistoryV4(AdminGetNamespaceUserInvitationHistoryV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.AccountCreateTestUsersResponseV4? AdminCreateTestUsersV4(AdminCreateTestUsersV4 input)
         {
             var response = _sdk.RunRequest(input);

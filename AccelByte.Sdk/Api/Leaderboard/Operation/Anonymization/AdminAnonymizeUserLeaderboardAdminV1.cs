@@ -19,12 +19,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// 
     /// 
     /// This API will delete specified user leaderboard
-    /// 
-    /// 
-    /// 
-    /// 
-    /// Required permission
-    /// `ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION [DELETE]`
     /// </summary>
     public class AdminAnonymizeUserLeaderboardAdminV1 : AccelByte.Sdk.Core.Operation
     {

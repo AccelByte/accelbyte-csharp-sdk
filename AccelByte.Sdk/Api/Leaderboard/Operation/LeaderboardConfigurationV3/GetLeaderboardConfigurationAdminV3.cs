@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint returns a leaderboard configuration
     /// </summary>
     public class GetLeaderboardConfigurationAdminV3 : AccelByte.Sdk.Core.Operation

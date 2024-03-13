@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminDeleteContentScreenshot
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+    /// Delete existing screenshot from a content
     /// </summary>
     public class AdminDeleteContentScreenshot : AccelByte.Sdk.Core.Operation
     {

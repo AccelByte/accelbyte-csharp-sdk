@@ -61,11 +61,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// Time format style: RFC3339
     /// 2. value
     /// Json
+    /// 3. tags (default: *empty array*, type: array of string)
+    /// Indicate the tagging for the admin record.
     /// **Request Body Example:**
     /// ```
     /// {
     /// "value": {},
-    /// "updatedAt": "2022-03-17T10:42:15.444Z"
+    /// "updatedAt": "2022-03-17T10:42:15.444Z",
+    /// "tags": ["tag1", "tag2"]
     /// }
     /// ```
     /// ## Optimistic Concurrency Control

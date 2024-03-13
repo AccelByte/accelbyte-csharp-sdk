@@ -65,12 +65,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// Time format style: RFC3339
     /// 3. value
     /// Json
+    /// 4. tags (default: *empty array*, type: array of string)
+    /// Indicate the tagging for the game record.
     /// **Request Body Example:**
     /// ```
     /// {
     /// "set_by": "SERVER",
     /// "value": {},
-    /// "updatedAt": "2022-03-17T10:42:15.444Z"
+    /// "updatedAt": "2022-03-17T10:42:15.444Z",
+    /// "tags": ["tag1", "tag2"]
     /// }
     /// ```
     /// 

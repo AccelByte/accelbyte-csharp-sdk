@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// DeleteGroup
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [DELETE]
+    /// Delete user group by group ID
     /// </summary>
     public class DeleteGroup : AccelByte.Sdk.Core.Operation
     {

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class XblIAPConfigInfo : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("businessPartnerCertExpiredTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? BusinessPartnerCertExpiredTime { get; set; }
+
         [JsonPropertyName("businessPartnerCertFileName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BusinessPartnerCertFileName { get; set; }

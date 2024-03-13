@@ -1,3 +1,9 @@
+<a name="v0.56.0"></a>
+## [v0.56.0]
+### ci
+- **:** switch to extend-builder-ci
+
+
 <a name="v0.55.0"></a>
 ## [v0.55.0]
 ### chore

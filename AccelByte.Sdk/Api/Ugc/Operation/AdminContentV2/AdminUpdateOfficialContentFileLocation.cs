@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateOfficialContentFileLocation
     ///
-    /// This endpoint should be used after calling generate official content upload url endpoint to commit the changes.
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// This endpoint should be used after calling generate official content upload url endpoint to commit the changes
     /// </summary>
     public class AdminUpdateOfficialContentFileLocation : AccelByte.Sdk.Core.Operation
     {

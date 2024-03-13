@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// PublicDeleteContentV2
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+    /// Delete existing content
     /// </summary>
     public class PublicDeleteContentV2 : AccelByte.Sdk.Core.Operation
     {

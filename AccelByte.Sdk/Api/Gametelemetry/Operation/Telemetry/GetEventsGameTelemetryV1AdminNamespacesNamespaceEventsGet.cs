@@ -198,11 +198,22 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.PagedResponseGetNamespaceEventResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
-            if (code == (HttpStatusCode)200)
+            if (code == (HttpStatusCode)204)
             {
-                return;
+                return null;
+            }
+            else if (code == (HttpStatusCode)201)
+            {
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.PagedResponseGetNamespaceEventResponse>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.PagedResponseGetNamespaceEventResponse>(payload);
+            }
+            else if (code == (HttpStatusCode)200)
+            {
+                return JsonSerializer.Deserialize<Model.PagedResponseGetNamespaceEventResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

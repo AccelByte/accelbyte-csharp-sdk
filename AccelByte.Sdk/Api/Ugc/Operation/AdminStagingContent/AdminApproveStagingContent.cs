@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminApproveStagingContent
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:CONTENT:APPROVAL [CREATE].
+    /// Approved content will shown to public player. Rejected content stays in staging area and couldn't be seen by other player
     /// </summary>
     public class AdminApproveStagingContent : AccelByte.Sdk.Core.Operation
     {

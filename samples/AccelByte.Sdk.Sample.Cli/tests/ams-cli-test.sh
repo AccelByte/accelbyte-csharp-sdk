@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..37"
+echo "1..38"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -311,92 +311,101 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 27 'FleetServerInfo' test.out
 
-#- 28 ServerHistory
+#- 28 FleetServerConnectionInfo
+$CLI_EXE \
+    --sn ams \
+    --op FleetServerConnectionInfo \
+    --namespace $AB_NAMESPACE \
+    --serverID '8jBjK81t2V9TVauF' \
+    > test.out 2>&1
+eval_tap $? 28 'FleetServerConnectionInfo' test.out
+
+#- 29 ServerHistory
 $CLI_EXE \
     --sn ams \
     --op ServerHistory \
     --namespace $AB_NAMESPACE \
-    --serverID '8jBjK81t2V9TVauF' \
+    --serverID 'cGkPgQ0hb2tLrsMe' \
     > test.out 2>&1
-eval_tap $? 28 'ServerHistory' test.out
+eval_tap $? 29 'ServerHistory' test.out
 
-#- 29 InfoSupportedInstances
+#- 30 InfoSupportedInstances
 $CLI_EXE \
     --sn ams \
     --op InfoSupportedInstances \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 29 'InfoSupportedInstances' test.out
+eval_tap $? 30 'InfoSupportedInstances' test.out
 
-#- 30 AccountGet
+#- 31 AccountGet
 $CLI_EXE \
     --sn ams \
     --op AccountGet \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 30 'AccountGet' test.out
+eval_tap $? 31 'AccountGet' test.out
 
-#- 31 FleetClaimByID
+#- 32 FleetClaimByID
 # body param: body
-echo '{"region": "cGkPgQ0hb2tLrsMe", "sessionId": "oZiRYkbhEM1zTNY3"}' > $TEMP_JSON_INPUT
+echo '{"region": "oZiRYkbhEM1zTNY3", "sessionId": "lpincuf5d5saQvKf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByID \
-    --fleetID 'lpincuf5d5saQvKf' \
+    --fleetID 'FRqBam8jPtKHTmzo' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 31 'FleetClaimByID' test.out
+eval_tap $? 32 'FleetClaimByID' test.out
 
-#- 32 LocalWatchdogConnect
+#- 33 LocalWatchdogConnect
 $CLI_EXE \
     --sn ams \
     --op LocalWatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'FRqBam8jPtKHTmzo' \
+    --watchdogID '0JmcQmnsUigVynjG' \
     > test.out 2>&1
-eval_tap $? 32 'LocalWatchdogConnect' test.out
+eval_tap $? 33 'LocalWatchdogConnect' test.out
 
-#- 33 FleetClaimByKeys
+#- 34 FleetClaimByKeys
 # body param: body
-echo '{"claimKeys": ["0JmcQmnsUigVynjG", "FyVicGQAVv32ftRA", "smC0RuRA8j1AJ3hN"], "regions": ["WWhADRqJvaZrf2qX", "QFCzRV1paELj5dw3", "LK0gPYhPPG5sAIfY"], "sessionId": "tYozA2OntGCwQSHH"}' > $TEMP_JSON_INPUT
+echo '{"claimKeys": ["FyVicGQAVv32ftRA", "smC0RuRA8j1AJ3hN", "WWhADRqJvaZrf2qX"], "regions": ["QFCzRV1paELj5dw3", "LK0gPYhPPG5sAIfY", "tYozA2OntGCwQSHH"], "sessionId": "dPLwjTngrvb2E1X9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByKeys \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 33 'FleetClaimByKeys' test.out
+eval_tap $? 34 'FleetClaimByKeys' test.out
 
-#- 34 WatchdogConnect
+#- 35 WatchdogConnect
 $CLI_EXE \
     --sn ams \
     --op WatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'dPLwjTngrvb2E1X9' \
+    --watchdogID 'ecBBhRAYjR7c4x5b' \
     > test.out 2>&1
-eval_tap $? 34 'WatchdogConnect' test.out
+eval_tap $? 35 'WatchdogConnect' test.out
 
-#- 35 UploadURLGet
+#- 36 UploadURLGet
 $CLI_EXE \
     --sn ams \
     --op UploadURLGet \
     > test.out 2>&1
-eval_tap $? 35 'UploadURLGet' test.out
+eval_tap $? 36 'UploadURLGet' test.out
 
-#- 36 Func1
+#- 37 Func1
 $CLI_EXE \
     --sn ams \
     --op Func1 \
     > test.out 2>&1
-eval_tap $? 36 'Func1' test.out
+eval_tap $? 37 'Func1' test.out
 
-#- 37 BasicHealthCheck
+#- 38 BasicHealthCheck
 $CLI_EXE \
     --sn ams \
     --op BasicHealthCheck \
     > test.out 2>&1
-eval_tap $? 37 'BasicHealthCheck' test.out
+eval_tap $? 38 'BasicHealthCheck' test.out
 
 
 # remove artifacts

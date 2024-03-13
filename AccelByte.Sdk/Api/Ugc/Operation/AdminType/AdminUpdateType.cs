@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateType
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [UPDATE]
-    /// updates a type and subtype
+    /// Updates a type and subtype
     /// </summary>
     public class AdminUpdateType : AccelByte.Sdk.Core.Operation
     {

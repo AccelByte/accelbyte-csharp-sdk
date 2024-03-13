@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Get rankings in cycle leaderboard.
     /// </summary>
     public class GetCurrentCycleLeaderboardRankingAdminV3 : AccelByte.Sdk.Core.Operation

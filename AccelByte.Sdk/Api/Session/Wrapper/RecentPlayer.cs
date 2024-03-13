@@ -19,12 +19,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetRecentPlayer.AdminGetRecentPlayerBuilder AdminGetRecentPlayerOp
+        {
+            get { return Operation.AdminGetRecentPlayer.Builder.SetWrapperObject(this); }
+        }
         public PublicGetRecentPlayer.PublicGetRecentPlayerBuilder PublicGetRecentPlayerOp
         {
             get { return Operation.PublicGetRecentPlayer.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+        public Model.ModelsRecentPlayerQueryResponse? AdminGetRecentPlayer(AdminGetRecentPlayer input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsRecentPlayerQueryResponse? PublicGetRecentPlayer(PublicGetRecentPlayer input)
         {
             var response = _sdk.RunRequest(input);

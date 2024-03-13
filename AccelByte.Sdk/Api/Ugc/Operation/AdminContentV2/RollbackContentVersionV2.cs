@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// RollbackContentVersionV2
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE]
-    /// Rollback content's payload to specified version.
+    /// Rollback content's payload to specified version
     /// </summary>
     public class RollbackContentVersionV2 : AccelByte.Sdk.Core.Operation
     {

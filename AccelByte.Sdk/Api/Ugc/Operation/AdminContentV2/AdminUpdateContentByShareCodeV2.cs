@@ -16,12 +16,10 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateContentByShareCodeV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// *shareCode* format should follows:
     /// 
-    /// `shareCode` format should follows:
-    /// 
-    /// Max length: 7
-    /// Available characters: abcdefhkpqrstuxyz
+    /// "Max length: 7
+    /// "Available characters: abcdefhkpqrstuxyz
     /// </summary>
     public class AdminUpdateContentByShareCodeV2 : AccelByte.Sdk.Core.Operation
     {

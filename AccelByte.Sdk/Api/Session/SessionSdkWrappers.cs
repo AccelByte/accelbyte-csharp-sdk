@@ -134,6 +134,17 @@ namespace AccelByte.Sdk.Core
         }
         private PlatformCredential? _PlatformCredential = null;
 
+        public RecentPlayer RecentPlayer
+        {
+            get
+            {
+                if (_RecentPlayer == null)
+                    _RecentPlayer = new RecentPlayer(_SdkObject);
+                return _RecentPlayer;
+            }
+        }
+        private RecentPlayer? _RecentPlayer = null;
+
         public SessionStorage SessionStorage
         {
             get
@@ -155,17 +166,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Player? _Player = null;
-
-        public RecentPlayer RecentPlayer
-        {
-            get
-            {
-                if (_RecentPlayer == null)
-                    _RecentPlayer = new RecentPlayer(_SdkObject);
-                return _RecentPlayer;
-            }
-        }
-        private RecentPlayer? _RecentPlayer = null;
 
         internal SessionSdkWrappers(AccelByteSDK sdk)
         {

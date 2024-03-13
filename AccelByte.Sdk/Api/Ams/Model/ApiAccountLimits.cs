@@ -9,6 +9,14 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiAccountLimits : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("allowedNodeClasses")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? AllowedNodeClasses { get; set; }
+
+        [JsonPropertyName("allowedRegions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? AllowedRegions { get; set; }
+
         [JsonPropertyName("fleetCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? FleetCount { get; set; }
@@ -16,6 +24,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("fleetVmCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? FleetVmCount { get; set; }
+
+        [JsonPropertyName("imageStorageQuotaBytes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? ImageStorageQuotaBytes { get; set; }
 
     }
 

@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Api
     public static class SessionRecentPlayer_OpExts
     {
         public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
+            this AdminGetRecentPlayer.AdminGetRecentPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetRecentPlayer op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentPlayer(op);
+        }
+        public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
             this PublicGetRecentPlayer.PublicGetRecentPlayerBuilder builder,
             string namespace_
         )

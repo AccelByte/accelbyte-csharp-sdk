@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// DeleteUserStagingContentByID
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [DELETE].
+    /// Delete user staging content by ID
     /// </summary>
     public class DeleteUserStagingContentByID : AccelByte.Sdk.Core.Operation
     {

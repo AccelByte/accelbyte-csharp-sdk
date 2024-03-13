@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonStringEnum]
         public ModelsGameRecordResponseSetBy? SetBy { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -48,6 +52,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ModelsGameRecordResponseSetBy? SetBy { get; set; }
+
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
 
         [JsonPropertyName("updated_at")]
         public DateTime? UpdatedAt { get; set; }

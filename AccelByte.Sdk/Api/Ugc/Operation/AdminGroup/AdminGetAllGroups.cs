@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetAllGroups
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ].
+    /// Get user group paginated
     /// </summary>
     public class AdminGetAllGroups : AccelByte.Sdk.Core.Operation
     {

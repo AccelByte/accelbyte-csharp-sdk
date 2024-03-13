@@ -12,6 +12,37 @@ namespace AccelByte.Sdk.Api
 {
     public static class IamUsersV4_OpExts
     {
+        public static Iam.Model.ModelListInvitationHistoriesV4Response? Execute(
+            this AdminListInvitationHistoriesV4.AdminListInvitationHistoriesV4Builder builder
+        )
+        {
+            AdminListInvitationHistoriesV4 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminListInvitationHistoriesV4(op);
+        }
+        public static Iam.Model.ModelInvitationHistoryResponse? Execute(
+            this AdminGetNamespaceInvitationHistoryV4.AdminGetNamespaceInvitationHistoryV4Builder builder,
+            string namespace_
+        )
+        {
+            AdminGetNamespaceInvitationHistoryV4 op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetNamespaceInvitationHistoryV4(op);
+        }
+        public static Iam.Model.ModelNamespaceInvitationHistoryUserV4Response? Execute(
+            this AdminGetNamespaceUserInvitationHistoryV4.AdminGetNamespaceUserInvitationHistoryV4Builder builder,
+            string namespace_
+        )
+        {
+            AdminGetNamespaceUserInvitationHistoryV4 op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetNamespaceUserInvitationHistoryV4(op);
+        }
         public static Iam.Model.AccountCreateTestUsersResponseV4? Execute(
             this AdminCreateTestUsersV4.AdminCreateTestUsersV4Builder builder,
             AccountCreateTestUsersRequestV4 body,

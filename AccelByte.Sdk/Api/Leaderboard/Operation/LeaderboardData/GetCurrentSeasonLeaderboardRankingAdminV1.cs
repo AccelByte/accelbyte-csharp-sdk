@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Get rankings in current season leaderboard.
     /// </summary>
     public class GetCurrentSeasonLeaderboardRankingAdminV1 : AccelByte.Sdk.Core.Operation

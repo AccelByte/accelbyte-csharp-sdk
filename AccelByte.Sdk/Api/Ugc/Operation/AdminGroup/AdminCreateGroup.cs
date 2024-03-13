@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminCreateGroup
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [CREATE]
+    /// Create group
     /// </summary>
     public class AdminCreateGroup : AccelByte.Sdk.Core.Operation
     {

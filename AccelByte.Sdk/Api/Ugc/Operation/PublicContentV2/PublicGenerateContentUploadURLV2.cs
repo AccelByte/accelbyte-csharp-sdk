@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// PublicGenerateContentUploadURLV2
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// Generate content upload URL
     /// </summary>
     public class PublicGenerateContentUploadURLV2 : AccelByte.Sdk.Core.Operation
     {

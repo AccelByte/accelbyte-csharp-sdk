@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetChannel
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CHANNEL [READ]
+    /// Get user channel paginated
     /// </summary>
     public class AdminGetChannel : AccelByte.Sdk.Core.Operation
     {

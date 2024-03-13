@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// GetTag
     ///
-    /// Publicly accessible
+    /// Get available tags paginated
     /// </summary>
     public class GetTag : AccelByte.Sdk.Core.Operation
     {

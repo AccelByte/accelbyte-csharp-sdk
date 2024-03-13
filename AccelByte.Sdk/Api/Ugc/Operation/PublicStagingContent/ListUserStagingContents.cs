@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// ListUserStagingContents
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ].
+    /// List user staging contents
     /// </summary>
     public class ListUserStagingContents : AccelByte.Sdk.Core.Operation
     {

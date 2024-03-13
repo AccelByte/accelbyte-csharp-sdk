@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// PublicCreateChannel
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [CREATE]
+    /// Create user channel
     /// </summary>
     public class PublicCreateChannel : AccelByte.Sdk.Core.Operation
     {

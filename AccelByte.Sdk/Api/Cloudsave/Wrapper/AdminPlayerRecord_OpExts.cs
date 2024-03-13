@@ -37,6 +37,52 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).ListPlayerRecordHandlerV1(op);
         }
+        public static List<Cloudsave.Model.ModelsBulkUpdatePlayerRecordByKeyResponse>? Execute(
+            this AdminBulkPutPlayerRecordsByKeyHandlerV1.AdminBulkPutPlayerRecordsByKeyHandlerV1Builder builder,
+            ModelsBulkUpdatePlayerRecordsByKeyRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminBulkPutPlayerRecordsByKeyHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminBulkPutPlayerRecordsByKeyHandlerV1(op);
+        }
+
+        public static List<Cloudsave.Model.ModelsBulkUpdatePlayerRecordByKeyResponse<T1>>? Execute<T1>(
+            this AdminBulkPutPlayerRecordsByKeyHandlerV1.AdminBulkPutPlayerRecordsByKeyHandlerV1Builder builder,
+            ModelsBulkUpdatePlayerRecordsByKeyRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminBulkPutPlayerRecordsByKeyHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminBulkPutPlayerRecordsByKeyHandlerV1<T1>(op);
+        }
+        public static Cloudsave.Model.ModelsBulkGetPlayerRecordResponse? Execute(
+            this AdminBulkGetPlayerRecordsByUserIDsHandlerV1.AdminBulkGetPlayerRecordsByUserIDsHandlerV1Builder builder,
+            ModelsBulkUserIDsRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminBulkGetPlayerRecordsByUserIDsHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return ((Cloudsave.Wrapper.AdminPlayerRecord)builder.WrapperObject!).AdminBulkGetPlayerRecordsByUserIDsHandlerV1(op);
+        }
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this AdminRetrievePlayerRecords.AdminRetrievePlayerRecordsBuilder builder,
             string namespace_,

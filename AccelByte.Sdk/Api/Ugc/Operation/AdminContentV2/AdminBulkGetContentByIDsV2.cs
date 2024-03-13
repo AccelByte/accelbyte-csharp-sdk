@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminBulkGetContentByIDsV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
     /// Maximum contentId per request 100
     /// </summary>
     public class AdminBulkGetContentByIDsV2 : AccelByte.Sdk.Core.Operation

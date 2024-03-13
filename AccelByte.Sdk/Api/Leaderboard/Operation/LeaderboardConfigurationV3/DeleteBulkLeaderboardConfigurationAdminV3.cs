@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [DELETE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint delete multiple leaderboards configuration in one request
     /// </summary>
     public class DeleteBulkLeaderboardConfigurationAdminV3 : AccelByte.Sdk.Core.Operation

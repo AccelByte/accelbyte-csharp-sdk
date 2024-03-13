@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// UpdateContentLikeStatusV2
     ///
-    /// Requires valid user token
+    /// This endpoint will update like/unlike state from a content
     /// </summary>
     public class UpdateContentLikeStatusV2 : AccelByte.Sdk.Core.Operation
     {

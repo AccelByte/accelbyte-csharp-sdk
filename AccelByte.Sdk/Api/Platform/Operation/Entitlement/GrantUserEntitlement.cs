@@ -17,8 +17,22 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// grantUserEntitlement
     ///
     /// Grant user entitlement.
-    /// Other detail info:
     /// 
+    /// Notes:
+    /// 
+    /// will skip un-supported item if input un-supported item types, please use /admin/namespaces/{namespace}/users/{userId}/fulfillment endpoint if want to fulfill other item type, like coin item
+    /// 
+    /// Support Item Types:
+    /// 
+    ///   *  APP
+    ///   *  INGAMEITEM
+    ///   *  CODE
+    ///   *  SUBSCRIPTION
+    ///   *  MEDIA
+    ///   *  OPTIONBOX
+    ///   *  LOOTBOX
+    /// 
+    /// Other detail info:
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (CREATE)
     ///   *  Returns : granted entitlement
     /// </summary>

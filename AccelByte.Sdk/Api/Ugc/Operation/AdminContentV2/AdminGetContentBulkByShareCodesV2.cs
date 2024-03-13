@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetContentBulkByShareCodesV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:*:CONTENT [READ].
     /// Maximum sharecodes per request 100
     /// </summary>
     public class AdminGetContentBulkByShareCodesV2 : AccelByte.Sdk.Core.Operation

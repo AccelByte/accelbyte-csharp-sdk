@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonStringEnum]
         public ModelsPlayerBinaryRecordMetadataRequestSetBy? SetBy { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
     }
 
 

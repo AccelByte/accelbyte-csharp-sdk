@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminCreateContentV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [CREATE].
+    /// Create official content
     /// </summary>
     public class AdminCreateContentV2 : AccelByte.Sdk.Core.Operation
     {

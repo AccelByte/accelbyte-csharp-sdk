@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonStringEnum]
         public ModelsGameBinaryRecordMetadataRequestSetBy? SetBy { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("ttl_config")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsTTLConfigDTO? TtlConfig { get; set; }

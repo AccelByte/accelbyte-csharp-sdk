@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetConfigs
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]
+    /// Get config paginated
     /// </summary>
     public class AdminGetConfigs : AccelByte.Sdk.Core.Operation
     {

@@ -59,8 +59,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             );
 
 
-            wrapper.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Gametelemetry.Model.PlayTimeResponse? response = wrapper.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

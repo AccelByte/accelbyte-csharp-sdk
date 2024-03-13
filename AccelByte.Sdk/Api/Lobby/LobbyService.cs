@@ -165,6 +165,9 @@ namespace AccelByte.Sdk.Api.Lobby
         [WebSocketEvent("messageNotif")]
         public Action<MessageNotif>? OnMessageNotif { get; set; } = null;
 
+        [WebSocketEvent("messageSessionNotif")]
+        public Action<MessageSessionNotif>? OnMessageSessionNotif { get; set; } = null;
+
         public async Task SendOfflineNotificationRequest(OfflineNotificationRequest payload, int errorCode)
         {
             await Send(payload, errorCode);

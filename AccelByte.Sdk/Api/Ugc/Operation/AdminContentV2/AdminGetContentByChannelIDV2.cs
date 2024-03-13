@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetContentByChannelIDV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ].
+    /// List content specific to a channel
     /// </summary>
     public class AdminGetContentByChannelIDV2 : AccelByte.Sdk.Core.Operation
     {

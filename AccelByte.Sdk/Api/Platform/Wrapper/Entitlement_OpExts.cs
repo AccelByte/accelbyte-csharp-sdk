@@ -647,6 +647,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementBySku(op);
         }
+        public static List<Platform.Model.UserEntitlementHistoryPagingSlicedResult>? Execute(
+            this PublicUserEntitlementHistory.PublicUserEntitlementHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicUserEntitlementHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicUserEntitlementHistory(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this PublicExistsAnyUserActiveEntitlement.PublicExistsAnyUserActiveEntitlementBuilder builder,
             string namespace_,

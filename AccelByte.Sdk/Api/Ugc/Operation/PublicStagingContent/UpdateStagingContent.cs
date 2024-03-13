@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// UpdateStagingContent
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// Update staging content
     /// </summary>
     public class UpdateStagingContent : AccelByte.Sdk.Core.Operation
     {

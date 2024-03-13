@@ -52,6 +52,7 @@
 |---|---|---|---|---|
 | `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/servers/history` | GET | FleetServerHistory | [FleetServerHistory](../../AccelByte.Sdk/Api/Ams/Operation/Servers/FleetServerHistory.cs) | [FleetServerHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/FleetServerHistory.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/servers/{serverID}` | GET | FleetServerInfo | [FleetServerInfo](../../AccelByte.Sdk/Api/Ams/Operation/Servers/FleetServerInfo.cs) | [FleetServerInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/FleetServerInfo.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/servers/{serverID}/connectioninfo` | GET | FleetServerConnectionInfo | [FleetServerConnectionInfo](../../AccelByte.Sdk/Api/Ams/Operation/Servers/FleetServerConnectionInfo.cs) | [FleetServerConnectionInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/FleetServerConnectionInfo.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/servers/{serverID}/history` | GET | ServerHistory | [ServerHistory](../../AccelByte.Sdk/Api/Ams/Operation/Servers/ServerHistory.cs) | [ServerHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Servers/ServerHistory.cs) |
 
 ### Images Wrapper:  [Images](../../AccelByte.Sdk/Api/Ams/Wrapper/Images.cs)
@@ -160,6 +161,7 @@
 | `api.FleetListResponse` | [ApiFleetListResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetListResponse.cs) |
 | `api.FleetParameters` | [ApiFleetParameters](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetParameters.cs) |
 | `api.FleetRegionalServerCounts` | [ApiFleetRegionalServerCounts](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetRegionalServerCounts.cs) |
+| `api.FleetServerConnectionInfoResponse` | [ApiFleetServerConnectionInfoResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetServerConnectionInfoResponse.cs) |
 | `api.FleetServerHistoryEventResponse` | [ApiFleetServerHistoryEventResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetServerHistoryEventResponse.cs) |
 | `api.FleetServerHistoryResponse` | [ApiFleetServerHistoryResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetServerHistoryResponse.cs) |
 | `api.FleetServerInfoResponse` | [ApiFleetServerInfoResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetServerInfoResponse.cs) |
@@ -176,6 +178,10 @@
 | `api.QoSServer` | [ApiQoSServer](../../AccelByte.Sdk/Api/Ams/Model/ApiQoSServer.cs) |
 | `api.ReferencingFleet` | [ApiReferencingFleet](../../AccelByte.Sdk/Api/Ams/Model/ApiReferencingFleet.cs) |
 | `api.RegionConfig` | [ApiRegionConfig](../../AccelByte.Sdk/Api/Ams/Model/ApiRegionConfig.cs) |
+| `api.Time` | [ApiTime](../../AccelByte.Sdk/Api/Ams/Model/ApiTime.cs) |
 | `api.Timeout` | [ApiTimeout](../../AccelByte.Sdk/Api/Ams/Model/ApiTimeout.cs) |
 | `api.UpdateServerRequest` | [ApiUpdateServerRequest](../../AccelByte.Sdk/Api/Ams/Model/ApiUpdateServerRequest.cs) |
 | `response.ErrorResponse` | [ResponseErrorResponse](../../AccelByte.Sdk/Api/Ams/Model/ResponseErrorResponse.cs) |
+| `time.Location` | [TimeLocation](../../AccelByte.Sdk/Api/Ams/Model/TimeLocation.cs) |
+| `time.zone` | [TimeZone](../../AccelByte.Sdk/Api/Ams/Model/TimeZone.cs) |
+| `time.zoneTrans` | [TimeZoneTrans](../../AccelByte.Sdk/Api/Ams/Model/TimeZoneTrans.cs) |

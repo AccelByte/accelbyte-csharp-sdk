@@ -20,11 +20,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// 
     /// 
     /// 
-    /// Required permission 'NAMESPACE:{namespace}:LEADERBOARD [CREATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     ///  Fields :
     /// 
     /// 

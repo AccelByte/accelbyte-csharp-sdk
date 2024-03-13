@@ -17,8 +17,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// grantEntitlements
     ///
     /// Grant entitlements to multiple users, skipped granting will be treated as fail.
-    /// Other detail info:
     /// 
+    /// Notes:
+    /// 
+    /// Support Item Types:
+    /// 
+    ///   *  APP
+    ///   *  INGAMEITEM
+    ///   *  CODE
+    ///   *  SUBSCRIPTION
+    ///   *  MEDIA
+    ///   *  OPTIONBOX
+    ///   *  LOOTBOX
+    /// 
+    /// Other detail info:
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
     ///   *  Returns : bulk grant entitlements result
     /// </summary>

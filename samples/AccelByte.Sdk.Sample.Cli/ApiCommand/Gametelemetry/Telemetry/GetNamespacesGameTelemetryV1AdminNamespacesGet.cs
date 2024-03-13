@@ -47,8 +47,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
             );
 
 
-            wrapper.GetNamespacesGameTelemetryV1AdminNamespacesGet(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Gametelemetry.Model.ListBaseResponseStr? response = wrapper.GetNamespacesGameTelemetryV1AdminNamespacesGet(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

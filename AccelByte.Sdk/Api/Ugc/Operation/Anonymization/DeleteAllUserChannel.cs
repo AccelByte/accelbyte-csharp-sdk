@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// DeleteAllUserChannel
     ///
-    /// Required permission NAMESPACE:{namespace}:USER:{userId}:CHANNEL [DELETE]
+    /// Delete all user channel
     /// </summary>
     public class DeleteAllUserChannel : AccelByte.Sdk.Core.Operation
     {

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
 {
     public class ModelsAdminGameConcurrentRecordRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 
@@ -19,6 +23,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
 
     public class ModelsAdminGameConcurrentRecordRequest<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 

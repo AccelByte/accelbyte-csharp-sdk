@@ -12,16 +12,16 @@ namespace AccelByte.Sdk.Api
 {
     public static class GametelemetryTelemetry_OpExts
     {
-        public static void Execute(
+        public static Gametelemetry.Model.ListBaseResponseStr? Execute(
             this GetNamespacesGameTelemetryV1AdminNamespacesGet.GetNamespacesGameTelemetryV1AdminNamespacesGetBuilder builder
         )
         {
             GetNamespacesGameTelemetryV1AdminNamespacesGet op = builder.Build(
             );
 
-            ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetNamespacesGameTelemetryV1AdminNamespacesGet(op);
+            return ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetNamespacesGameTelemetryV1AdminNamespacesGet(op);
         }
-        public static void Execute(
+        public static Gametelemetry.Model.PagedResponseGetNamespaceEventResponse? Execute(
             this GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder builder,
             string namespace_
         )
@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
+            return ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
         }
     }
 }

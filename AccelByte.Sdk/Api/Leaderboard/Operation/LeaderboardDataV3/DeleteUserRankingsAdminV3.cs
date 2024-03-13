@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// deleteUserRankingsAdminV3
     ///
     /// Delete user ranking across leaderboard
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
     /// 
     /// Remove entry with provided userId from leaderboard.
     /// </summary>

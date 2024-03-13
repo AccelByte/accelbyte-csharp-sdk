@@ -34,9 +34,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
-        [SdkCommandArgument("userId")]
-        public string? UserId { get; set; }
-
         public PublicGetRecentPlayerCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -50,8 +47,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
-            if (UserId != null)
-                opBuilder.SetUserId((string)UserId);
 
 
 

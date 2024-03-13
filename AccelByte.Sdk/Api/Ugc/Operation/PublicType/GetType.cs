@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// GetType
     ///
-    /// Requires valid user token
+    /// Get available types paginated
     /// </summary>
     public class GetType : AccelByte.Sdk.Core.Operation
     {

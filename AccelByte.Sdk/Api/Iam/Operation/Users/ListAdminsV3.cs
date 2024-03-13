@@ -17,6 +17,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// ListAdminsV3
     ///
     /// List all users that has admin role (role that has admin_role attribute set to true).
+    /// Endpoint behavior :
+    /// - if query parameter is defined, endpoint will search users whose email address and display name match with the query
+    /// - if roleId parameter is defined, endpoint will search users that have the defined roleId
+    /// - if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
+    /// - if startDate parameter is defined, endpoint will search users that created start from the defined date
+    /// - if endDate parameter is defined, endpoint will search users that created until the defined date
+    /// 
+    /// In multi tenant mode :
+    /// - if super admin search in super admin namespace, the result will be all admin users
+    /// - if super admin search in game studio namespace, the result will be all admin users under the game studio namespace
+    /// - if studio admin search in their studio namespace, the result will be all admin user in the game studio namespace
     /// 
     /// The endpoint will return all admin from all namespace when called from publisher namespace.
     /// When not called from publisher namespace, the endpoint will return all admin from the path namespace.
@@ -34,7 +45,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? Before { get; set; }
 
+            public string? EndDate { get; set; }
+
             public long? Limit { get; set; }
+
+            public string? Query { get; set; }
+
+            public string? RoleId { get; set; }
+
+            public string? StartDate { get; set; }
 
 
 
@@ -55,9 +74,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
+            public ListAdminsV3Builder SetEndDate(string _endDate)
+            {
+                EndDate = _endDate;
+                return this;
+            }
+
             public ListAdminsV3Builder SetLimit(long _limit)
             {
                 Limit = _limit;
+                return this;
+            }
+
+            public ListAdminsV3Builder SetQuery(string _query)
+            {
+                Query = _query;
+                return this;
+            }
+
+            public ListAdminsV3Builder SetRoleId(string _roleId)
+            {
+                RoleId = _roleId;
+                return this;
+            }
+
+            public ListAdminsV3Builder SetStartDate(string _startDate)
+            {
+                StartDate = _startDate;
                 return this;
             }
 
@@ -89,7 +132,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             if (builder.After is not null) QueryParams["after"] = builder.After;
             if (builder.Before is not null) QueryParams["before"] = builder.Before;
+            if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
+            if (builder.RoleId is not null) QueryParams["roleId"] = builder.RoleId;
+            if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
 
 
 
@@ -104,14 +151,22 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string namespace_,
             string? after,
             string? before,
-            long? limit
+            string? endDate,
+            long? limit,
+            string? query,
+            string? roleId,
+            string? startDate
         )
         {
             PathParams["namespace"] = namespace_;
 
             if (after is not null) QueryParams["after"] = after;
             if (before is not null) QueryParams["before"] = before;
+            if (endDate is not null) QueryParams["endDate"] = endDate;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (query is not null) QueryParams["query"] = query;
+            if (roleId is not null) QueryParams["roleId"] = roleId;
+            if (startDate is not null) QueryParams["startDate"] = startDate;
 
 
 

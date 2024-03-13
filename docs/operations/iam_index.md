@@ -374,25 +374,12 @@
 | `/iam/v3/sso/{platformId}` | GET | LoginSSOClient | [LoginSSOClient](../../AccelByte.Sdk/Api/Iam/Operation/SSO/LoginSSOClient.cs) | [LoginSSOClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/SSO/LoginSSOClient.cs) |
 | `/iam/v3/sso/{platformId}/logout` | POST | LogoutSSOClient | [LogoutSSOClient](../../AccelByte.Sdk/Api/Iam/Operation/SSO/LogoutSSOClient.cs) | [LogoutSSOClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/SSO/LogoutSSOClient.cs) |
 
-### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/iam/v4/admin/namespaces/{namespace}/devices` | GET | AdminGetDevicesByUserV4 | [AdminGetDevicesByUserV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDevicesByUserV4.cs) | [AdminGetDevicesByUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDevicesByUserV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/banned` | GET | AdminGetBannedDevicesV4 | [AdminGetBannedDevicesV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetBannedDevicesV4.cs) | [AdminGetBannedDevicesV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetBannedDevicesV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/bans` | GET | AdminGetUserDeviceBansV4 | [AdminGetUserDeviceBansV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetUserDeviceBansV4.cs) | [AdminGetUserDeviceBansV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetUserDeviceBansV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/bans` | POST | AdminBanDeviceV4 | [AdminBanDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminBanDeviceV4.cs) | [AdminBanDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminBanDeviceV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}` | GET | AdminGetDeviceBanV4 | [AdminGetDeviceBanV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceBanV4.cs) | [AdminGetDeviceBanV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceBanV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}` | PUT | AdminUpdateDeviceBanV4 | [AdminUpdateDeviceBanV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminUpdateDeviceBanV4.cs) | [AdminUpdateDeviceBanV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminUpdateDeviceBanV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/report` | GET | AdminGenerateReportV4 | [AdminGenerateReportV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGenerateReportV4.cs) | [AdminGenerateReportV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGenerateReportV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/types` | GET | AdminGetDeviceTypesV4 | [AdminGetDeviceTypesV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceTypesV4.cs) | [AdminGetDeviceTypesV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceTypesV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans` | GET | AdminGetDeviceBansV4 | [AdminGetDeviceBansV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceBansV4.cs) | [AdminGetDeviceBansV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceBansV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/decrypt` | GET | AdminDecryptDeviceV4 | [AdminDecryptDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminDecryptDeviceV4.cs) | [AdminDecryptDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminDecryptDeviceV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/unban` | PUT | AdminUnbanDeviceV4 | [AdminUnbanDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminUnbanDeviceV4.cs) | [AdminUnbanDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminUnbanDeviceV4.cs) |
-| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/users` | GET | AdminGetUsersByDeviceV4 | [AdminGetUsersByDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetUsersByDeviceV4.cs) | [AdminGetUsersByDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetUsersByDeviceV4.cs) |
-
 ### Users V4 Wrapper:  [UsersV4](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersV4.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/iam/v4/admin/invitationHistories` | GET | AdminListInvitationHistoriesV4 | [AdminListInvitationHistoriesV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminListInvitationHistoriesV4.cs) | [AdminListInvitationHistoriesV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminListInvitationHistoriesV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/invitationHistories` | GET | AdminGetNamespaceInvitationHistoryV4 | [AdminGetNamespaceInvitationHistoryV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminGetNamespaceInvitationHistoryV4.cs) | [AdminGetNamespaceInvitationHistoryV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminGetNamespaceInvitationHistoryV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/invitationHistories/users` | GET | AdminGetNamespaceUserInvitationHistoryV4 | [AdminGetNamespaceUserInvitationHistoryV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminGetNamespaceUserInvitationHistoryV4.cs) | [AdminGetNamespaceUserInvitationHistoryV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminGetNamespaceUserInvitationHistoryV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/test_users` | POST | AdminCreateTestUsersV4 | [AdminCreateTestUsersV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminCreateTestUsersV4.cs) | [AdminCreateTestUsersV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminCreateTestUsersV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users` | POST | AdminCreateUserV4 | [AdminCreateUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminCreateUserV4.cs) | [AdminCreateUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminCreateUserV4.cs) |
 | `/iam/v4/admin/namespaces/{namespace}/users/bulk/accountType` | PATCH | AdminBulkUpdateUserAccountTypeV4 | [AdminBulkUpdateUserAccountTypeV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminBulkUpdateUserAccountTypeV4.cs) | [AdminBulkUpdateUserAccountTypeV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/AdminBulkUpdateUserAccountTypeV4.cs) |
@@ -449,6 +436,22 @@
 | `/iam/v4/public/namespaces/{namespace}/users/me/mfa/factor` | POST | PublicMakeFactorMyDefaultV4 | [PublicMakeFactorMyDefaultV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicMakeFactorMyDefaultV4.cs) | [PublicMakeFactorMyDefaultV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicMakeFactorMyDefaultV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserPublicInfoByUserIdV4 | [PublicGetUserPublicInfoByUserIdV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) | [PublicGetUserPublicInfoByUserIdV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) |
 | `/iam/v4/public/users/invite` | POST | PublicInviteUserV4 | [PublicInviteUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicInviteUserV4.cs) | [PublicInviteUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicInviteUserV4.cs) |
+
+### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v4/admin/namespaces/{namespace}/devices` | GET | AdminGetDevicesByUserV4 | [AdminGetDevicesByUserV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDevicesByUserV4.cs) | [AdminGetDevicesByUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDevicesByUserV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/banned` | GET | AdminGetBannedDevicesV4 | [AdminGetBannedDevicesV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetBannedDevicesV4.cs) | [AdminGetBannedDevicesV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetBannedDevicesV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/bans` | GET | AdminGetUserDeviceBansV4 | [AdminGetUserDeviceBansV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetUserDeviceBansV4.cs) | [AdminGetUserDeviceBansV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetUserDeviceBansV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/bans` | POST | AdminBanDeviceV4 | [AdminBanDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminBanDeviceV4.cs) | [AdminBanDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminBanDeviceV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}` | GET | AdminGetDeviceBanV4 | [AdminGetDeviceBanV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceBanV4.cs) | [AdminGetDeviceBanV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceBanV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/bans/{banId}` | PUT | AdminUpdateDeviceBanV4 | [AdminUpdateDeviceBanV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminUpdateDeviceBanV4.cs) | [AdminUpdateDeviceBanV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminUpdateDeviceBanV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/report` | GET | AdminGenerateReportV4 | [AdminGenerateReportV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGenerateReportV4.cs) | [AdminGenerateReportV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGenerateReportV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/types` | GET | AdminGetDeviceTypesV4 | [AdminGetDeviceTypesV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceTypesV4.cs) | [AdminGetDeviceTypesV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceTypesV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/bans` | GET | AdminGetDeviceBansV4 | [AdminGetDeviceBansV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetDeviceBansV4.cs) | [AdminGetDeviceBansV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetDeviceBansV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/decrypt` | GET | AdminDecryptDeviceV4 | [AdminDecryptDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminDecryptDeviceV4.cs) | [AdminDecryptDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminDecryptDeviceV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/unban` | PUT | AdminUnbanDeviceV4 | [AdminUnbanDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminUnbanDeviceV4.cs) | [AdminUnbanDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminUnbanDeviceV4.cs) |
+| `/iam/v4/admin/namespaces/{namespace}/devices/{deviceId}/users` | GET | AdminGetUsersByDeviceV4 | [AdminGetUsersByDeviceV4](../../AccelByte.Sdk/Api/Iam/Operation/DevicesV4/AdminGetUsersByDeviceV4.cs) | [AdminGetUsersByDeviceV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/DevicesV4/AdminGetUsersByDeviceV4.cs) |
 
 ### OAuth2.0 V4 Wrapper:  [OAuth20V4](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20V4.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -531,11 +534,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
+### Users V4 Wrapper:  [UsersV4](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersV4.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Users V4 Wrapper:  [UsersV4](../../AccelByte.Sdk/Api/Iam/Wrapper/UsersV4.cs)
+### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -698,6 +701,7 @@
 | `model.InputValidationUpdatePayload` | [ModelInputValidationUpdatePayload](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationUpdatePayload.cs) |
 | `model.InputValidationsPublicResponse` | [ModelInputValidationsPublicResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationsPublicResponse.cs) |
 | `model.InputValidationsResponse` | [ModelInputValidationsResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelInputValidationsResponse.cs) |
+| `model.InvitationHistoryResponse` | [ModelInvitationHistoryResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelInvitationHistoryResponse.cs) |
 | `model.InviteUserRequestV3` | [ModelInviteUserRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelInviteUserRequestV3.cs) |
 | `model.InviteUserRequestV4` | [ModelInviteUserRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelInviteUserRequestV4.cs) |
 | `model.InviteUserResponseV3` | [ModelInviteUserResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelInviteUserResponseV3.cs) |
@@ -711,12 +715,14 @@
 | `model.ListBulkUserPlatformsResponse` | [ModelListBulkUserPlatformsResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserPlatformsResponse.cs) |
 | `model.ListBulkUserResponse` | [ModelListBulkUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelListBulkUserResponse.cs) |
 | `model.ListEmailAddressRequest` | [ModelListEmailAddressRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelListEmailAddressRequest.cs) |
+| `model.ListInvitationHistoriesV4Response` | [ModelListInvitationHistoriesV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListInvitationHistoriesV4Response.cs) |
 | `model.ListRoleV4Response` | [ModelListRoleV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListRoleV4Response.cs) |
 | `model.ListUserInformationResult` | [ModelListUserInformationResult](../../AccelByte.Sdk/Api/Iam/Model/ModelListUserInformationResult.cs) |
 | `model.ListUserResponseV3` | [ModelListUserResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelListUserResponseV3.cs) |
 | `model.ListUserRolesV4Response` | [ModelListUserRolesV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelListUserRolesV4Response.cs) |
 | `model.ListValidUserIDResponseV4` | [ModelListValidUserIDResponseV4](../../AccelByte.Sdk/Api/Iam/Model/ModelListValidUserIDResponseV4.cs) |
 | `model.LoginHistoriesResponse` | [ModelLoginHistoriesResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelLoginHistoriesResponse.cs) |
+| `model.NamespaceInvitationHistoryUserV4Response` | [ModelNamespaceInvitationHistoryUserV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelNamespaceInvitationHistoryUserV4Response.cs) |
 | `model.NamespaceRoleRequest` | [ModelNamespaceRoleRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelNamespaceRoleRequest.cs) |
 | `model.PermissionDeleteRequest` | [ModelPermissionDeleteRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPermissionDeleteRequest.cs) |
 | `model.PlatformDomainDeleteRequest` | [ModelPlatformDomainDeleteRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformDomainDeleteRequest.cs) |
@@ -792,6 +798,7 @@
 | `model.UserIdentityUpdateRequestV3` | [ModelUserIdentityUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserIdentityUpdateRequestV3.cs) |
 | `model.UserInfoResponse` | [ModelUserInfoResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInfoResponse.cs) |
 | `model.UserInformation` | [ModelUserInformation](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInformation.cs) |
+| `model.UserInvitationHistory` | [ModelUserInvitationHistory](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInvitationHistory.cs) |
 | `model.UserInvitationV3` | [ModelUserInvitationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserInvitationV3.cs) |
 | `model.UserLoginHistoryResponse` | [ModelUserLoginHistoryResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserLoginHistoryResponse.cs) |
 | `model.UserPasswordUpdateRequest` | [ModelUserPasswordUpdateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserPasswordUpdateRequest.cs) |

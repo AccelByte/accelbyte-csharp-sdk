@@ -18,11 +18,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// Get rankings in an all time leaderboard.
     /// </summary>
     public class GetAllTimeLeaderboardRankingAdminV3 : AccelByte.Sdk.Core.Operation

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateContentHideStatusV2
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [UPDATE].
+    /// Hide/Unhide user's generated contents
     /// </summary>
     public class AdminUpdateContentHideStatusV2 : AccelByte.Sdk.Core.Operation
     {

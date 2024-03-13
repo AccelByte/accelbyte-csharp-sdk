@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api.Ugc.Model
     public class ModelsCreateScreenshotRequestItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("contentType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ContentType { get; set; }
 
         [JsonPropertyName("description")]

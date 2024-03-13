@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
 
         [AwesomeProperty("sentAt")]
         [JsonPropertyName("sentAt")]
-        public string? SentAt { get; set; }
+        public DateTime? SentAt { get; set; }
 
     }
 }

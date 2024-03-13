@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetType
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [READ]
+    /// Get available types paginated
     /// </summary>
     public class AdminGetType : AccelByte.Sdk.Core.Operation
     {

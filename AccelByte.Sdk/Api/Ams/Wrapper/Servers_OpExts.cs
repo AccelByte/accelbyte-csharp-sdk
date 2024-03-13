@@ -38,6 +38,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerInfo(op);
         }
+        public static Ams.Model.ApiFleetServerConnectionInfoResponse? Execute(
+            this FleetServerConnectionInfo.FleetServerConnectionInfoBuilder builder,
+            string namespace_,
+            string serverID
+        )
+        {
+            FleetServerConnectionInfo op = builder.Build(
+                namespace_,
+                serverID
+            );
+
+            return ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerConnectionInfo(op);
+        }
         public static Ams.Model.ApiFleetServerHistoryResponse? Execute(
             this ServerHistory.ServerHistoryBuilder builder,
             string namespace_,

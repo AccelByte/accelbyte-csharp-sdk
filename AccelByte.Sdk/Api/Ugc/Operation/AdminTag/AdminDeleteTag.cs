@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminDeleteTag
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [DELETE]
+    /// Delete existing tag
     /// </summary>
     public class AdminDeleteTag : AccelByte.Sdk.Core.Operation
     {

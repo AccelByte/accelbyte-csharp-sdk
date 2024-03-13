@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// SingleAdminGetGroup
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENTGROUP [READ].
+    /// Get user group by group ID
     /// </summary>
     public class SingleAdminGetGroup : AccelByte.Sdk.Core.Operation
     {

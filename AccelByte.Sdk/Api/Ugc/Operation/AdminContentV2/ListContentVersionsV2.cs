@@ -16,7 +16,6 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// ListContentVersionsV2
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ]
     /// Content's payload versions created when UGC is created or updated with `updateContentFile` set to true. Only list up to 10 latest versions.
     /// </summary>
     public class ListContentVersionsV2 : AccelByte.Sdk.Core.Operation

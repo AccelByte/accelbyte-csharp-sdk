@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminUpdateConfig
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:UGCCONFIG [UPDATE].
-    /// It will create a new config if the key doesn't exist.
+    /// This endpoint will create a new config if the *key* doesn't exist.
+    /// 
     /// Allowed key value:
-    /// - contentReview : enabled , disabled
+    /// - *contentReview*: *enabled*,*disabled*
     /// </summary>
     public class AdminUpdateConfig : AccelByte.Sdk.Core.Operation
     {

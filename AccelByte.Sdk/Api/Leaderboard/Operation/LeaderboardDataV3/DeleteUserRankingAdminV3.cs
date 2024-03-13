@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// deleteUserRankingAdminV3
     ///
     /// Delete user ranking
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:LEADERBOARD:USER [DELETE]
     /// 
     /// Remove entry with provided userId from leaderboard.
     /// If leaderboard with given leaderboard code not found, it will return http status not found (404).

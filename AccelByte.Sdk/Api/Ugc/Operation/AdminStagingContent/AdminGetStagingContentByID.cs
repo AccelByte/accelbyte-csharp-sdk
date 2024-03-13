@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
     /// <summary>
     /// AdminGetStagingContentByID
     ///
-    /// Required permission ADMIN:NAMESPACE:{namespace}:USER:{userId}:CONTENT [READ].
+    /// Get staging content by ID
     /// </summary>
     public class AdminGetStagingContentByID : AccelByte.Sdk.Core.Operation
     {
