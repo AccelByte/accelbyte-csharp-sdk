@@ -304,6 +304,13 @@ namespace AccelByte.Sdk.Core
 
             Configuration.TokenRepository.UpdateToken(token);
             onTokenReceived?.Invoke(token);
+
+            if (Configuration.TokenRepository is IObservableTokenRepository)
+            {
+                var oTokenRepo = (IObservableTokenRepository)Configuration.TokenRepository;
+                _ = oTokenRepo.UpdateObserversWithNewToken();
+            }
+
             return true;
         }
 

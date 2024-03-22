@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -26,7 +26,6 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         private Action? _OnTokenRefreshed = null;
 
-
         public bool RefreshTokenEnabled { get; set; } = false;
 
         public string RefreshToken { get => _RefreshToken; }
@@ -46,7 +45,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         public float RefreshThreshold { get => _RefreshThreshold; }
 
         public bool IsRefreshOnProgress { get; set; } = false;
-
+        
         private void _TimerCallback(object? state)
         {
             if (_Sdk == null)
@@ -69,11 +68,16 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                     });
                 }
                 else
+                {
                     _Sdk.LoginUser(true, _RefreshThreshold);
+                    _ = UpdateObserversWithNewToken();
+                }
+                    
             }
             else if (this.LoginType == LoginType.Client)
             {
                 _Sdk.LoginClient(true, _RefreshThreshold);
+                _ = UpdateObserversWithNewToken();
             }
         }
 

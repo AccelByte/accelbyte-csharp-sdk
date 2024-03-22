@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -9,7 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace AccelByte.Sdk.Core.Repository
 {
-    public class DefaultTokenRepository : ITokenRepository
+    public class DefaultTokenRepository : ITokenRepository, IObservableTokenRepository
     {
         private object _TokenLock = new object();
 
@@ -80,6 +80,8 @@ namespace AccelByte.Sdk.Core.Repository
         }
 
         public TokenData? TokenData { get; protected set; } = null;
+
+        private List<ITokenRepositoryObserver> _Observers = new List<ITokenRepositoryObserver>();
 
         // Deprecated(2023-02-13): Please use `Token` property instead.
         [Obsolete("# Deprecated(2023-02-13): Please use `Token` property instead.", DiagnosticId = "AB_TOKEN_REPO_DEPRECATED_METHOD")]
@@ -201,6 +203,23 @@ namespace AccelByte.Sdk.Core.Repository
         public void SetTokenExpiry(int value)
         {
             _TokenExpiryIn = value;
+        }
+
+        public void RegisterObserver(ITokenRepositoryObserver observer)
+        {
+            _Observers.Add(observer);
+        }
+
+        public void UnregisterObserver(ITokenRepositoryObserver observer)
+        {
+            _Observers.Remove(observer);
+        }
+
+        public async Task UpdateObserversWithNewToken()
+        {
+            string newToken = Token;
+            foreach (var observer in _Observers)
+                await observer.OnAccessTokenChanged(newToken);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -16,6 +16,8 @@ using AccelByte.Sdk.Api.Legal.Model;
 using AccelByte.Sdk.Api.Legal.Operation;
 using AccelByte.Sdk.Api.Legal.Wrapper;
 using AccelByte.Sdk.Api.Achievement.Model;
+using AccelByte.Sdk.Api.Lobby;
+using System.Threading.Tasks;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
@@ -95,6 +97,76 @@ namespace AccelByte.Sdk.Tests.Integration
             ModelsPublicAchievementsResponse? achResp2 = sdk.Achievement.Achievements.PublicListAchievementsOp
                 .Execute(sdk.Namespace, "en");
             Assert.IsNotNull(achResp2);
+
+            sdk.Logout();
+        }
+
+        [Test]
+        public void AutoRefreshTokenForWebSocket()
+        {
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultCredentialRepository()
+                .UseAutoTokenRefresh()
+                .EnableLog()
+                .SetOnAfterLoginAction((loginType, authType, tokenData, fSdk) =>
+                {
+                    if (fSdk.Configuration.TokenRepository is RefreshableTokenRepository)
+                    {
+                        RefreshableTokenRepository tokenRepo = (RefreshableTokenRepository)fSdk.Configuration.TokenRepository;
+                        tokenRepo.SetTokenExpiry(5); // expiry in 5 seconds
+                    }
+                })
+                .Build();
+
+            sdk.LoginUser(true);
+
+            bool isRefreshTokenResponseReceived = false;
+
+            CancellationTokenSource lobbyListenCt = new CancellationTokenSource();
+            Thread wsThread = new Thread(new ThreadStart(() =>
+            {
+                LobbyService lobby = new LobbyService(sdk.Configuration);
+                lobby.RedirectAllReceivedMessagesToMessageReceivedEvent = true;
+                lobby.OnMessageReceived = (aMsg) =>
+                {
+                    if (aMsg.MessageType == "refreshTokenResponse")
+                        isRefreshTokenResponseReceived = true;
+                };
+
+                Task connectTask = lobby.Connect(false);
+                connectTask.Wait();
+
+                Task listenTask = lobby.Listen(lobbyListenCt.Token);
+                listenTask.Wait();
+
+                Task disconnectTask = lobby.Disconnect();
+                disconnectTask.Wait();
+            }));
+
+            //start lobby ws thread
+            wsThread.Start();
+
+            //sleep for 5s to make sure the token is expired
+            Thread.Sleep(5000);
+
+            //force token to be refreshed by calling any op
+            ModelsPublicAchievementsResponse? achResp = sdk.Achievement.Achievements.PublicListAchievementsOp
+                .Execute(sdk.Namespace, "en");
+            Assert.IsNotNull(achResp);
+
+            //wait for any ws response
+            Thread.Sleep(2000);
+
+            Assert.IsTrue(isRefreshTokenResponseReceived);
+            
+            //cancel ws listen
+            lobbyListenCt.Cancel();
+
+            //wait until lobby ws thread is stopped
+            while (wsThread.IsAlive)
+                Thread.Sleep(100);
 
             sdk.Logout();
         }

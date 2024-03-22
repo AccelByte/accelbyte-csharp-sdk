@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -13,10 +13,12 @@ using System.Reflection;
 
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Awesome;
+using AccelByte.Sdk.Core.Repository;
+using AccelByte.Sdk.Api.Lobby.WSModel;
 
 namespace AccelByte.Sdk.Core
 {
-    public abstract class WebSocketService
+    public abstract class WebSocketService : ITokenRepositoryObserver
     {
         public const int ERROR_PROCESS_MESSAGE = 1;
 
@@ -54,8 +56,12 @@ namespace AccelByte.Sdk.Core
             _BaseUrl = abConfig.ConfigRepository.BaseUrl.Replace("http://", "ws://").Replace("https://", "wss://");
             _Socket = new ClientWebSocket();
             _MapEventActions();
+
+            if (abConfig.TokenRepository is IObservableTokenRepository)
+                ((IObservableTokenRepository)abConfig.TokenRepository).RegisterObserver(this);
         }
 
+        [Obsolete("Use the one with AccelByteConfig parameter to automatically register OnAccessTokenChanged event.")]
         public WebSocketService(string baseUrl)
         {
             _BaseUrl = baseUrl;
@@ -183,6 +189,11 @@ namespace AccelByte.Sdk.Core
             await _ReceiveWebSocket(_ListenCts.Token);
         }
 
+        public async Task Listen(CancellationToken cancelToken)
+        {
+            await _ReceiveWebSocket(cancelToken);
+        }
+
         public void StopListen()
         {
             _ListenCts.Cancel();
@@ -212,6 +223,22 @@ namespace AccelByte.Sdk.Core
         {
             ArraySegment<byte> dataSegment = Encoding.UTF8.GetBytes(data);
             await _Socket.SendAsync(dataSegment, WebSocketMessageType.Text, true, CancellationToken.None);
+        }
+
+        public async Task OnAccessTokenChanged(string accessToken)
+        {
+            if (_Socket.State == WebSocketState.Open)
+            {
+                RefreshTokenRequest request = new RefreshTokenRequest()
+                {
+                    Id = Helper.GenerateRandomId(16),
+                    Token = accessToken
+                };
+
+                await Send(request);
+            }
+            else
+                await Task.CompletedTask;
         }
     }
 }

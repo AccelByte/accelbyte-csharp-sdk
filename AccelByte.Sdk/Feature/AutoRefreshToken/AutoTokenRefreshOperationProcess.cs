@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -42,11 +42,23 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                         });
                                     }
                                     else
+                                    {
                                         sdk.LoginUser(true, refreshTokenRepo.RefreshThreshold);
+                                        if (config.TokenRepository is IObservableTokenRepository)
+                                        {
+                                            var oTokenRepo = (IObservableTokenRepository)config.TokenRepository;
+                                            _ = oTokenRepo.UpdateObserversWithNewToken();
+                                        }
+                                    }   
                                 }
                                 else if (tokenRepo.LoginType == LoginType.Client)
                                 {
                                     sdk.LoginClient(true, refreshTokenRepo.RefreshThreshold);
+                                    if (config.TokenRepository is IObservableTokenRepository)
+                                    {
+                                        var oTokenRepo = (IObservableTokenRepository)config.TokenRepository;
+                                        _ = oTokenRepo.UpdateObserversWithNewToken();
+                                    }
                                 }
                             }
                         }
