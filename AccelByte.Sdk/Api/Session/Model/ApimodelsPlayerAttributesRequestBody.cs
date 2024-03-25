@@ -25,6 +25,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Roles { get; set; }
 
+        [JsonPropertyName("simultaneousPlatform")]
+        public string? SimultaneousPlatform { get; set; }
+
     }
 
     public class ApimodelsPlayerAttributesRequestBody<T1> : AccelByte.Sdk.Core.Model
@@ -44,6 +47,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("roles")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Roles { get; set; }
+
+        [JsonPropertyName("simultaneousPlatform")]
+        public string? SimultaneousPlatform { get; set; }
 
     }
 

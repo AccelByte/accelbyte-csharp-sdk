@@ -64,7 +64,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
             if (SimultaneousPlatform != null)
-                opBuilder.SetSimultaneousPlatform(SimultaneousLoginV4SimultaneousPlatform.NewValue(SimultaneousPlatform));
+                opBuilder.SetSimultaneousPlatform((string)SimultaneousPlatform);
             if (SimultaneousTicket != null)
                 opBuilder.SetSimultaneousTicket((string)SimultaneousTicket);
 

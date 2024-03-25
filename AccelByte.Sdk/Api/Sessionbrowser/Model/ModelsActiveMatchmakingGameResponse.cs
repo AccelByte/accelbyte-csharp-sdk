@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public ModelsPagingCursor? Pagination { get; set; }
 
         [JsonPropertyName("sessions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsGameSession>? Sessions { get; set; }
 
     }

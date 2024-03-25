@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).GetChallenges(op);
         }
-        public static List<Challenge.Model.ModelGoalResponse>? Execute(
+        public static Challenge.Model.ModelGetGoalsResponse? Execute(
             this PublicGetScheduledGoals.PublicGetScheduledGoalsBuilder builder,
             string challengeCode,
             string namespace_

@@ -10,12 +10,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     public class ModelsCustomGameResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("all_players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AllPlayers { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("game_session_setting")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsGameSessionSetting? GameSessionSetting { get; set; }
 
         [JsonPropertyName("joinable")]
@@ -25,9 +27,11 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Players { get; set; }
 
         [JsonPropertyName("server")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsServer? Server { get; set; }
 
         [JsonPropertyName("session_id")]
@@ -37,6 +41,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? SessionType { get; set; }
 
         [JsonPropertyName("spectators")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Spectators { get; set; }
 
     }

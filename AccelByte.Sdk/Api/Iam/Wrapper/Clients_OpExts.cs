@@ -183,6 +183,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminGetClientsByNamespaceV3(op);
         }
+        public static void Execute(
+            this AdminBulkUpdateClientsV3.AdminBulkUpdateClientsV3Builder builder,
+            ClientmodelClientsUpdateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminBulkUpdateClientsV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.Clients)builder.WrapperObject!).AdminBulkUpdateClientsV3(op);
+        }
         public static Iam.Model.ClientmodelClientV3Response? Execute(
             this AdminCreateClientV3.AdminCreateClientV3Builder builder,
             ClientmodelClientCreationV3Request body,

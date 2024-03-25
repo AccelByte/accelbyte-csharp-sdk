@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("linkedAt")]
         public string? LinkedAt { get; set; }
 
+        [JsonPropertyName("platformGroup")]
+        public string? PlatformGroup { get; set; }
+
         [JsonPropertyName("platformName")]
         public string? PlatformName { get; set; }
 

@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ModelGoalResponse>? PublicGetScheduledGoals(PublicGetScheduledGoals input)
+        public Model.ModelGetGoalsResponse? PublicGetScheduledGoals(PublicGetScheduledGoals input)
         {
             var response = _sdk.RunRequest(input);
 

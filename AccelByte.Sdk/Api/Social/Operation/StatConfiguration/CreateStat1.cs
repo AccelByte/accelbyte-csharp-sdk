@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///             *  Returns : created stat template
     ///             * default minimum value is 0
     ///             * default maximum value is 1.7976931348623157e+308
+    ///             * Field globalAggregationMethod will be ignored when setAsGlobal field is false
     /// </summary>
     public class CreateStat1 : AccelByte.Sdk.Core.Operation
     {

@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "AdminUpdateAvailablePermissionsByModule"; } }
 
+        [SdkCommandArgument("forceDelete")]
+        public bool? ForceDelete { get; set; }
+
         [SdkCommandData("body")]
         public ClientmodelListUpsertModulesRequest Body { get; set; } = new ClientmodelListUpsertModulesRequest();
 
@@ -42,6 +45,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminUpdateAvailablePermissionsByModule.Builder;
 
+            if (ForceDelete != null)
+                opBuilder.SetForceDelete((bool)ForceDelete);
 
 
 

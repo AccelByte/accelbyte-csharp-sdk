@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// GetChallenges
     ///
     /// 
-    ///   * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    ///     * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
     /// </summary>
     public class GetChallenges : AccelByte.Sdk.Core.Operation
     {

@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public long? ExpiresIn { get; set; }
 
         [JsonPropertyName("hook")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsCategoryHook? Hook { get; set; }
 
         [JsonPropertyName("jsonSchema")]
@@ -42,6 +43,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public long? ExpiresIn { get; set; }
 
         [JsonPropertyName("hook")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsCategoryHook? Hook { get; set; }
 
         [JsonPropertyName("jsonSchema")]

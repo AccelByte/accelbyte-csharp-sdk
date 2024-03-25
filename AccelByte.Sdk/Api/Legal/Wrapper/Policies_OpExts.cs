@@ -45,6 +45,15 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy2(op);
         }
+        public static List<string>? Execute(
+            this RetrieveCountryListWithPolicies.RetrieveCountryListWithPoliciesBuilder builder
+        )
+        {
+            RetrieveCountryListWithPolicies op = builder.Build(
+            );
+
+            return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveCountryListWithPolicies(op);
+        }
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
             this RetrieveLatestPolicies.RetrieveLatestPoliciesBuilder builder,
             string countryCode

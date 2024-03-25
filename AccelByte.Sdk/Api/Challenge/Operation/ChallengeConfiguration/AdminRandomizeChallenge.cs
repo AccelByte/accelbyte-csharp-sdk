@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// adminRandomizeChallenge
     ///
     /// 
-    ///   * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
-    /// 
+    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
     /// This is a utility endpoint to execute randomize goals schedule on challenge that the assignmentRule is RANDOMIZED.
     /// </summary>
     public class AdminRandomizeChallenge : AccelByte.Sdk.Core.Operation

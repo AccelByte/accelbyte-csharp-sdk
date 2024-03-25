@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<AdminUpdateAvailablePermissionsByModuleBuilder>
         {
 
+            public bool? ForceDelete { get; set; }
+
 
 
 
 
             internal AdminUpdateAvailablePermissionsByModuleBuilder() { }
 
+
+            public AdminUpdateAvailablePermissionsByModuleBuilder SetForceDelete(bool _forceDelete)
+            {
+                ForceDelete = _forceDelete;
+                return this;
+            }
 
 
 
@@ -59,6 +67,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
 
+            if (builder.ForceDelete != null) QueryParams["forceDelete"] = Convert.ToString(builder.ForceDelete)!;
 
 
 
@@ -71,10 +80,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AdminUpdateAvailablePermissionsByModule(
+            bool? forceDelete,
             Model.ClientmodelListUpsertModulesRequest body
         )
         {
 
+            if (forceDelete != null) QueryParams["forceDelete"] = Convert.ToString(forceDelete)!;
 
 
 

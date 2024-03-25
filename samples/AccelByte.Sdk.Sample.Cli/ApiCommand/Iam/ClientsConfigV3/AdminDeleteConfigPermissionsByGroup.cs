@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "AdminDeleteConfigPermissionsByGroup"; } }
 
+        [SdkCommandArgument("forceDelete")]
+        public bool? ForceDelete { get; set; }
+
         [SdkCommandData("body")]
         public ClientmodelPermissionSetDeleteGroupRequest Body { get; set; } = new ClientmodelPermissionSetDeleteGroupRequest();
 
@@ -42,6 +45,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminDeleteConfigPermissionsByGroup.Builder;
 
+            if (ForceDelete != null)
+                opBuilder.SetForceDelete((bool)ForceDelete);
 
 
 

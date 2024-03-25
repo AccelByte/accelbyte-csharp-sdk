@@ -17,7 +17,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminReadSessionStorage
     ///
     /// 
-    /// Read Session Storage.
+    /// Read Session Storage by sessionID
+    /// Session Storage feature only available for Gamesession
     /// </summary>
     public class AdminReadSessionStorage : AccelByte.Sdk.Core.Operation
     {

@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? AllocationId { get; set; }
 
         [JsonPropertyName("alternate_ips")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AlternateIps { get; set; }
 
         [JsonPropertyName("cpu_limit")]
@@ -58,6 +59,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public int? Port { get; set; }
 
         [JsonPropertyName("ports")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, long>? Ports { get; set; }
 
         [JsonPropertyName("provider")]
@@ -73,6 +75,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? Status { get; set; }
 
         [JsonPropertyName("status_history")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsStatusHistory>? StatusHistory { get; set; }
 
     }

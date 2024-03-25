@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
             );
 
 
-            List<AccelByte.Sdk.Api.Challenge.Model.ModelGoalResponse>? response = wrapper.PublicGetScheduledGoals(operation);
+            AccelByte.Sdk.Api.Challenge.Model.ModelGetGoalsResponse? response = wrapper.PublicGetScheduledGoals(operation);
             if (response == null)
                 return "No response from server.";
 

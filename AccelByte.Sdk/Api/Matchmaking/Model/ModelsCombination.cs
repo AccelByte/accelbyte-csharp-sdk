@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
     public class ModelsCombination : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("alliances")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<object>? Alliances { get; set; }
 
         [JsonPropertyName("has_combination")]

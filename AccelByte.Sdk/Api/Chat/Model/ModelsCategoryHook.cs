@@ -12,14 +12,28 @@ namespace AccelByte.Sdk.Api.Chat.Model
     public class ModelsCategoryHook : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("driver")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public ModelsCategoryHookDriver? Driver { get; set; }
 
         [JsonPropertyName("params")]
-        public string? Params { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Params { get; set; }
 
     }
 
+    public class ModelsCategoryHook<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("driver")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public ModelsCategoryHookDriver? Driver { get; set; }
+
+        [JsonPropertyName("params")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Params { get; set; }
+
+    }
 
 
     public class ModelsCategoryHookDriver : StringEnum<ModelsCategoryHookDriver>

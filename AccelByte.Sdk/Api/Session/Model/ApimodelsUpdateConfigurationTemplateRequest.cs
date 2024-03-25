@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoJoin { get; set; }
 
+        [JsonPropertyName("autoLeaveSession")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoLeaveSession { get; set; }
+
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }
 
@@ -124,6 +128,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("autoJoin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoJoin { get; set; }
+
+        [JsonPropertyName("autoLeaveSession")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoLeaveSession { get; set; }
 
         [JsonPropertyName("clientVersion")]
         public string? ClientVersion { get; set; }

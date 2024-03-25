@@ -10,12 +10,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     public class ModelsGameSession : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("all_players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? AllPlayers { get; set; }
 
         [JsonPropertyName("created_at")]
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("game_session_setting")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsGameSessionSetting? GameSessionSetting { get; set; }
 
         [JsonPropertyName("game_version")]
@@ -25,12 +27,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public bool? Joinable { get; set; }
 
         [JsonPropertyName("match")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsMatchMaking? Match { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
         [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Players { get; set; }
 
         [JsonPropertyName("server")]
@@ -43,6 +47,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? SessionType { get; set; }
 
         [JsonPropertyName("spectators")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Spectators { get; set; }
 
         [JsonPropertyName("user_id")]

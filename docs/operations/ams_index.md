@@ -35,6 +35,14 @@
 | `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules` | GET | FleetArtifactSamplingRulesGet | [FleetArtifactSamplingRulesGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/FleetArtifactSamplingRulesGet.cs) | [FleetArtifactSamplingRulesGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/FleetArtifactSamplingRulesGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/fleets/{fleetID}/artifacts-sampling-rules` | PUT | FleetArtifactSamplingRulesSet | [FleetArtifactSamplingRulesSet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/FleetArtifactSamplingRulesSet.cs) | [FleetArtifactSamplingRulesSet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/FleetArtifactSamplingRulesSet.cs) |
 
+### Development Wrapper:  [Development](../../AccelByte.Sdk/Api/Ams/Wrapper/Development.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/ams/v1/admin/namespaces/{namespace}/development/server-configurations` | GET | DevelopmentServerConfigurationList | [DevelopmentServerConfigurationList](../../AccelByte.Sdk/Api/Ams/Operation/Development/DevelopmentServerConfigurationList.cs) | [DevelopmentServerConfigurationList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Development/DevelopmentServerConfigurationList.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/development/server-configurations` | POST | DevelopmentServerConfigurationCreate | [DevelopmentServerConfigurationCreate](../../AccelByte.Sdk/Api/Ams/Operation/Development/DevelopmentServerConfigurationCreate.cs) | [DevelopmentServerConfigurationCreate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Development/DevelopmentServerConfigurationCreate.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/development/server-configurations/{developmentServerConfigID}` | GET | DevelopmentServerConfigurationGet | [DevelopmentServerConfigurationGet](../../AccelByte.Sdk/Api/Ams/Operation/Development/DevelopmentServerConfigurationGet.cs) | [DevelopmentServerConfigurationGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Development/DevelopmentServerConfigurationGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/development/server-configurations/{developmentServerConfigID}` | DELETE | DevelopmentServerConfigurationDelete | [DevelopmentServerConfigurationDelete](../../AccelByte.Sdk/Api/Ams/Operation/Development/DevelopmentServerConfigurationDelete.cs) | [DevelopmentServerConfigurationDelete](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Development/DevelopmentServerConfigurationDelete.cs) |
+
 ### Fleets Wrapper:  [Fleets](../../AccelByte.Sdk/Api/Ams/Wrapper/Fleets.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -102,6 +110,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Development Wrapper:  [Development](../../AccelByte.Sdk/Api/Ams/Wrapper/Development.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Fleets Wrapper:  [Fleets](../../AccelByte.Sdk/Api/Ams/Wrapper/Fleets.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -151,6 +163,9 @@
 | `api.DSHistoryEvent` | [ApiDSHistoryEvent](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryEvent.cs) |
 | `api.DSHistoryList` | [ApiDSHistoryList](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryList.cs) |
 | `api.DSHostConfiguration` | [ApiDSHostConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHostConfiguration.cs) |
+| `api.DevelopmentServerConfigurationCreateRequest` | [ApiDevelopmentServerConfigurationCreateRequest](../../AccelByte.Sdk/Api/Ams/Model/ApiDevelopmentServerConfigurationCreateRequest.cs) |
+| `api.DevelopmentServerConfigurationCreateResponse` | [ApiDevelopmentServerConfigurationCreateResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiDevelopmentServerConfigurationCreateResponse.cs) |
+| `api.DevelopmentServerConfigurationGetResponse` | [ApiDevelopmentServerConfigurationGetResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiDevelopmentServerConfigurationGetResponse.cs) |
 | `api.FleetArtifactsSampleRules` | [ApiFleetArtifactsSampleRules](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetArtifactsSampleRules.cs) |
 | `api.FleetClaimByKeysReq` | [ApiFleetClaimByKeysReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimByKeysReq.cs) |
 | `api.FleetClaimReq` | [ApiFleetClaimReq](../../AccelByte.Sdk/Api/Ams/Model/ApiFleetClaimReq.cs) |

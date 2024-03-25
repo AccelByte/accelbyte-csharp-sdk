@@ -23,6 +23,11 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     /// 
     /// 
     /// 
+    /// Required permission 'ADMIN:NAMESPACE:{namespace}:LEADERBOARD:HARDDELETE [DELETE]'
+    /// 
+    /// 
+    /// 
+    /// 
     /// This endpoint will delete leaderboard configuration and its data
     /// 
     /// 

@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<ModelsPartyMember>? PartyMembers { get; set; }
 
         [JsonPropertyName("ticket_created_at")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TicketCreatedAt { get; set; }
 
         [JsonPropertyName("ticket_id")]
@@ -44,6 +45,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public List<ModelsPartyMember>? PartyMembers { get; set; }
 
         [JsonPropertyName("ticket_created_at")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? TicketCreatedAt { get; set; }
 
         [JsonPropertyName("ticket_id")]

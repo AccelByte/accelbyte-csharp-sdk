@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("platformUserID")]
         public string? PlatformUserID { get; set; }
 
+        [JsonPropertyName("previousStatus")]
+        public string? PreviousStatus { get; set; }
+
         [JsonPropertyName("status")]
         public string? Status { get; set; }
 

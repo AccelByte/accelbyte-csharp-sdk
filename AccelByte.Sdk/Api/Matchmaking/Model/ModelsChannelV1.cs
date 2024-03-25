@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Model
         public int? RegionLatencyMaxMs { get; set; }
 
         [JsonPropertyName("ruleSet")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsRuleSetV1? RuleSet { get; set; }
 
         [JsonPropertyName("sessionQueueTimeoutSeconds")]

@@ -17,7 +17,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminDeleteUserSessionStorage
     ///
     /// 
-    /// Delete Session Storage.
+    /// Delete Session Storage By sessionID
+    /// Session Storage feature only available for Gamesession
     /// </summary>
     public class AdminDeleteUserSessionStorage : AccelByte.Sdk.Core.Operation
     {

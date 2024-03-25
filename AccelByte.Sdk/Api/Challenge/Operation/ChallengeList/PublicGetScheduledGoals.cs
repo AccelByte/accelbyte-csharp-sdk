@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// publicGetScheduledGoals
     ///
     /// 
-    ///   * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    ///     * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
     /// </summary>
     public class PublicGetScheduledGoals : AccelByte.Sdk.Core.Operation
     {
@@ -138,7 +138,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ModelGoalResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelGetGoalsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -147,13 +147,13 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<List<Model.ModelGoalResponse>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelGetGoalsResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<List<Model.ModelGoalResponse>>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelGetGoalsResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelGoalResponse>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelGetGoalsResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -160,7 +160,7 @@ namespace AccelByte.Sdk.Tests.Integration
             Thread.Sleep(2000);
 
             Assert.IsTrue(isRefreshTokenResponseReceived);
-            
+
             //cancel ws listen
             lobbyListenCt.Cancel();
 

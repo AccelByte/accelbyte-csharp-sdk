@@ -1,3 +1,9 @@
+<a name="v0.57.0"></a>
+## [v0.57.0]
+### feat
+- **:** add websocket token refresh
+
+
 <a name="v0.56.0"></a>
 ## [v0.56.0]
 ### ci

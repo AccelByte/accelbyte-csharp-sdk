@@ -16,6 +16,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public string? Namespace { get; set; }
 
         [JsonPropertyName("parentId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ParentId { get; set; }
 
         [JsonPropertyName("word")]

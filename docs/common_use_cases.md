@@ -248,7 +248,7 @@ catch (HttpResponseException e)
 ### Get steam's playtime
 
 ```csharp
-Dictionary<string, object>? resGet = _Sdk.Gametelemetry.GametelemetryOperations
+PlayTimeResponse? resGet = _Sdk.Gametelemetry.GametelemetryOperations
     .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
     .Execute(steamId);
 ```

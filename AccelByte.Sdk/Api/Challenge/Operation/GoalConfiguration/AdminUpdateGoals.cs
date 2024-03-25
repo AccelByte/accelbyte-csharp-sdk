@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// adminUpdateGoals
     ///
     /// 
-    ///   * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
+    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
     /// </summary>
     public class AdminUpdateGoals : AccelByte.Sdk.Core.Operation
     {

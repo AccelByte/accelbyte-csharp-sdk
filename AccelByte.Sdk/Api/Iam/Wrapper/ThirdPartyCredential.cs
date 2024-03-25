@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.DeleteThirdPartyLoginPlatformDomainV3.Builder.SetWrapperObject(this); }
         }
+        public AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder AdminCheckThirdPartyLoginPlatformAvailabilityV3Op
+        {
+            get { return Operation.AdminCheckThirdPartyLoginPlatformAvailabilityV3.Builder.SetWrapperObject(this); }
+        }
         public RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Op
         {
             get { return Operation.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.Builder.SetWrapperObject(this); }
@@ -129,6 +133,15 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
             var response = _sdk.RunRequest(input);
 
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelCheckAvailabilityResponse? AdminCheckThirdPartyLoginPlatformAvailabilityV3(AdminCheckThirdPartyLoginPlatformAvailabilityV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("PartyID")]
         public string? PartyID { get; set; }
 
+        [JsonPropertyName("PlatformID")]
+        public string? PlatformID { get; set; }
+
         [JsonPropertyName("PlayerID")]
         public string? PlayerID { get; set; }
 
@@ -27,6 +30,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
 
         [JsonPropertyName("PartyID")]
         public string? PartyID { get; set; }
+
+        [JsonPropertyName("PlatformID")]
+        public string? PlatformID { get; set; }
 
         [JsonPropertyName("PlayerID")]
         public string? PlayerID { get; set; }

@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<AdminDeleteConfigPermissionsByGroupBuilder>
         {
 
+            public bool? ForceDelete { get; set; }
+
 
 
 
 
             internal AdminDeleteConfigPermissionsByGroupBuilder() { }
 
+
+            public AdminDeleteConfigPermissionsByGroupBuilder SetForceDelete(bool _forceDelete)
+            {
+                ForceDelete = _forceDelete;
+                return this;
+            }
 
 
 
@@ -59,6 +67,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
 
+            if (builder.ForceDelete != null) QueryParams["forceDelete"] = Convert.ToString(builder.ForceDelete)!;
 
 
 
@@ -71,10 +80,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AdminDeleteConfigPermissionsByGroup(
+            bool? forceDelete,
             Model.ClientmodelPermissionSetDeleteGroupRequest body
         )
         {
 
+            if (forceDelete != null) QueryParams["forceDelete"] = Convert.ToString(forceDelete)!;
 
 
 

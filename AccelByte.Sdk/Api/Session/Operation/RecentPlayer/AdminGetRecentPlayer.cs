@@ -17,6 +17,10 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// adminGetRecentPlayer
     ///
     /// Query recent player with given user id.
+    /// 
+    /// If user id parameter is empty:
+    /// 1. Using User Token : It will get the user id from the token
+    /// 2. Using client token : it will throw an error
     /// </summary>
     public class AdminGetRecentPlayer : AccelByte.Sdk.Core.Operation
     {

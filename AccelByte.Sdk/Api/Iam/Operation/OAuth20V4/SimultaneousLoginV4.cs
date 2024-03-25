@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SimultaneousLoginV4
     ///
+    /// # This endpoint is in ALPHA, avoid using this endpoint fow now, reach out to AB support for inquiries
+    /// 
     /// Simultaneous login flow.
     /// 
     /// The primary goals of this project are to entitle players to authenticate on a native PC platform(Steam/Epic) and the PlayStation platform,
@@ -56,7 +58,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            public SimultaneousLoginV4SimultaneousPlatform? SimultaneousPlatform { get; set; }
+            public string? SimultaneousPlatform { get; set; }
 
             public string? SimultaneousTicket { get; set; }
 
@@ -79,7 +81,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            public SimultaneousLoginV4Builder SetSimultaneousPlatform(SimultaneousLoginV4SimultaneousPlatform _simultaneousPlatform)
+            public SimultaneousLoginV4Builder SetSimultaneousPlatform(string _simultaneousPlatform)
             {
                 SimultaneousPlatform = _simultaneousPlatform;
                 return this;
@@ -120,7 +122,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.CodeChallenge is not null) QueryParams["code_challenge"] = builder.CodeChallenge;
             if (builder.CodeChallengeMethod is not null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod.Value;
 
-            if (builder.SimultaneousPlatform is not null) FormParams["simultaneousPlatform"] = builder.SimultaneousPlatform.Value;
+            if (builder.SimultaneousPlatform is not null) FormParams["simultaneousPlatform"] = builder.SimultaneousPlatform;
             if (builder.SimultaneousTicket is not null) FormParams["simultaneousTicket"] = builder.SimultaneousTicket;
             if (nativePlatform is not null) FormParams["nativePlatform"] = nativePlatform.Value;
             if (nativePlatformTicket is not null) FormParams["nativePlatformTicket"] = nativePlatformTicket;
@@ -136,7 +138,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public SimultaneousLoginV4(
             string? codeChallenge,
             SimultaneousLoginV4CodeChallengeMethod? codeChallengeMethod,
-            SimultaneousLoginV4SimultaneousPlatform? simultaneousPlatform,
+            string? simultaneousPlatform,
             string? simultaneousTicket,
             SimultaneousLoginV4NativePlatform nativePlatform,
             string nativePlatformTicket
@@ -146,7 +148,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (codeChallenge is not null) QueryParams["code_challenge"] = codeChallenge;
             if (codeChallengeMethod is not null) QueryParams["code_challenge_method"] = codeChallengeMethod.Value;
 
-            if (simultaneousPlatform is not null) FormParams["simultaneousPlatform"] = simultaneousPlatform.Value;
+            if (simultaneousPlatform is not null) FormParams["simultaneousPlatform"] = simultaneousPlatform;
             if (simultaneousTicket is not null) FormParams["simultaneousTicket"] = simultaneousTicket;
             if (nativePlatform is not null) FormParams["nativePlatform"] = nativePlatform.Value;
             if (nativePlatformTicket is not null) FormParams["nativePlatformTicket"] = nativePlatformTicket;
@@ -190,24 +192,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
-        }
-    }
-
-    public class SimultaneousLoginV4SimultaneousPlatform : StringEnum<SimultaneousLoginV4SimultaneousPlatform>
-    {
-        public static readonly SimultaneousLoginV4SimultaneousPlatform Pspc
-            = new SimultaneousLoginV4SimultaneousPlatform("pspc");
-
-
-        public static implicit operator SimultaneousLoginV4SimultaneousPlatform(string value)
-        {
-            return NewValue(value);
-        }
-
-        public SimultaneousLoginV4SimultaneousPlatform(string enumValue)
-            : base(enumValue)
-        {
-
         }
     }
 

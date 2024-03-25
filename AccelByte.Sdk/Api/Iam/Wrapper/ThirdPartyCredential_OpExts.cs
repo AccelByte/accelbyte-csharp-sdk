@@ -120,6 +120,17 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformDomainV3(op);
         }
+        public static Iam.Model.ModelCheckAvailabilityResponse? Execute(
+            this AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder builder,
+            string platformId
+        )
+        {
+            AdminCheckThirdPartyLoginPlatformAvailabilityV3 op = builder.Build(
+                platformId
+            );
+
+            return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AdminCheckThirdPartyLoginPlatformAvailabilityV3(op);
+        }
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
             string namespace_

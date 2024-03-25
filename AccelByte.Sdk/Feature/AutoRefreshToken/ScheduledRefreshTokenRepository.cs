@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         public float RefreshThreshold { get => _RefreshThreshold; }
 
         public bool IsRefreshOnProgress { get; set; } = false;
-        
+
         private void _TimerCallback(object? state)
         {
             if (_Sdk == null)
@@ -72,7 +72,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                     _Sdk.LoginUser(true, _RefreshThreshold);
                     _ = UpdateObserversWithNewToken();
                 }
-                    
+
             }
             else if (this.LoginType == LoginType.Client)
             {

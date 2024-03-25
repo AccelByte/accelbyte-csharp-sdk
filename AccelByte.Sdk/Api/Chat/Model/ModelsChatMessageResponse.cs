@@ -19,9 +19,11 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public string? Message { get; set; }
 
         [JsonPropertyName("readAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? ReadAt { get; set; }
 
         [JsonPropertyName("receivedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? ReceivedAt { get; set; }
 
         [JsonPropertyName("topicId")]

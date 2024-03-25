@@ -1089,6 +1089,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserByEmailAddressV3(op);
         }
+        public static void Execute(
+            this AdminBulkUpdateUsersV3.AdminBulkUpdateUsersV3Builder builder,
+            ModelUsersUpdateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminBulkUpdateUsersV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBulkUpdateUsersV3(op);
+        }
         public static Iam.Model.ModelGetUserBanV3Response? Execute(
             this AdminGetBulkUserBanV3.AdminGetBulkUserBanV3Builder builder,
             ModelGetBulkUserBansRequest body,
@@ -1333,6 +1346,19 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminUpdateUserDeletionStatusV3(op);
         }
+        public static Iam.Model.AccountcommonDistinctPlatformResponseV3? Execute(
+            this AdminListUserAllPlatformAccountsDistinctV3.AdminListUserAllPlatformAccountsDistinctV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUserAllPlatformAccountsDistinctV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListUserAllPlatformAccountsDistinctV3(op);
+        }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this AdminUpgradeHeadlessAccountV3.AdminUpgradeHeadlessAccountV3Builder builder,
             ModelUpgradeHeadlessAccountWithVerificationCodeRequestV3 body,
@@ -1538,6 +1564,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformUnlinkV3(op);
+        }
+        public static void Execute(
+            this AdminPlatformUnlinkAllV3.AdminPlatformUnlinkAllV3Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminPlatformUnlinkAllV3 op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformUnlinkAllV3(op);
         }
         public static void Execute(
             this AdminPlatformLinkV3.AdminPlatformLinkV3Builder builder,

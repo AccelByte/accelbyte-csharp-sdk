@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..32"
+echo "1..35"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -65,296 +65,322 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 3 'GetHealthcheckInfoV1' test.out
 
-#- 4 EnvironmentVariableList
+#- 4 AdminGetAllConfigV1
+$CLI_EXE \
+    --sn match2 \
+    --op AdminGetAllConfigV1 \
+    > test.out 2>&1
+eval_tap $? 4 'AdminGetAllConfigV1' test.out
+
+#- 5 AdminGetConfigV1
+$CLI_EXE \
+    --sn match2 \
+    --op AdminGetConfigV1 \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 5 'AdminGetConfigV1' test.out
+
+#- 6 AdminPatchConfigV1
+# body param: body
+echo '{"platformGroup": {"bBuz5zkoaUEzGS3q": ["Zf0PbemSBELbZ0VB", "UGA7nkDeev2Oj060", "HnOf5S8X1LxkZs42"], "33oQWoXFeqeuI2oM": ["J0cgAoGfXepE3r5A", "QUBqS8KtTYZLJ58Q", "qcV3IcuNs9MF5BT2"], "KD18yrWorpC65VJh": ["4q1z1KJmKedBfbWv", "Ka5Ou124TsbQsxYF", "xGGHrfQkgXkiA5IZ"]}}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn match2 \
+    --op AdminPatchConfigV1 \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 6 'AdminPatchConfigV1' test.out
+
+#- 7 EnvironmentVariableList
 $CLI_EXE \
     --sn match2 \
     --op EnvironmentVariableList \
     > test.out 2>&1
-eval_tap $? 4 'EnvironmentVariableList' test.out
+eval_tap $? 7 'EnvironmentVariableList' test.out
 
-#- 5 CreateBackfill
+#- 8 CreateBackfill
 # body param: body
-echo '{"matchPool": "bBuz5zkoaUEzGS3q", "sessionId": "Zf0PbemSBELbZ0VB"}' > $TEMP_JSON_INPUT
+echo '{"matchPool": "PqCqp9vcyt67WAfW", "sessionId": "XfUfwGB03tz8qIH4"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateBackfill \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 5 'CreateBackfill' test.out
+eval_tap $? 8 'CreateBackfill' test.out
 
-#- 6 GetBackfillProposal
+#- 9 GetBackfillProposal
 $CLI_EXE \
     --sn match2 \
     --op GetBackfillProposal \
     --namespace $AB_NAMESPACE \
-    --sessionID 'UGA7nkDeev2Oj060' \
+    --sessionID 'uRdNO08HN6s9p8Y5' \
     > test.out 2>&1
-eval_tap $? 6 'GetBackfillProposal' test.out
+eval_tap $? 9 'GetBackfillProposal' test.out
 
-#- 7 GetBackfill
+#- 10 GetBackfill
 $CLI_EXE \
     --sn match2 \
     --op GetBackfill \
-    --backfillID 'HnOf5S8X1LxkZs42' \
+    --backfillID 'c9eItJtiNmY3y3n2' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 7 'GetBackfill' test.out
+eval_tap $? 10 'GetBackfill' test.out
 
-#- 8 DeleteBackfill
+#- 11 DeleteBackfill
 $CLI_EXE \
     --sn match2 \
     --op DeleteBackfill \
-    --backfillID '33oQWoXFeqeuI2oM' \
+    --backfillID 'Rim4NBqhuNtj8FOv' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 8 'DeleteBackfill' test.out
+eval_tap $? 11 'DeleteBackfill' test.out
 
-#- 9 AcceptBackfill
+#- 12 AcceptBackfill
 # body param: body
-echo '{"proposalId": "J0cgAoGfXepE3r5A", "stop": true}' > $TEMP_JSON_INPUT
+echo '{"proposalId": "KZjs1tLpERf77LzP", "stop": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op AcceptBackfill \
-    --backfillID 'BqS8KtTYZLJ58Qqc' \
+    --backfillID 'isP0MrSdaFy0pJYC' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 9 'AcceptBackfill' test.out
+eval_tap $? 12 'AcceptBackfill' test.out
 
-#- 10 RejectBackfill
+#- 13 RejectBackfill
 # body param: body
-echo '{"proposalId": "V3IcuNs9MF5BT2KD", "stop": true}' > $TEMP_JSON_INPUT
+echo '{"proposalId": "dfkfyt09ro5fHdWq", "stop": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op RejectBackfill \
-    --backfillID 'yrWorpC65VJh4q1z' \
+    --backfillID 'c5BsdSSVaAzzn4Gb' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 10 'RejectBackfill' test.out
+eval_tap $? 13 'RejectBackfill' test.out
 
-#- 11 MatchFunctionList
+#- 14 MatchFunctionList
 $CLI_EXE \
     --sn match2 \
     --op MatchFunctionList \
     --namespace $AB_NAMESPACE \
-    --limit '95' \
-    --offset '75' \
+    --limit '13' \
+    --offset '97' \
     > test.out 2>&1
-eval_tap $? 11 'MatchFunctionList' test.out
+eval_tap $? 14 'MatchFunctionList' test.out
 
-#- 12 CreateMatchFunction
+#- 15 CreateMatchFunction
 # body param: body
-echo '{"match_function": "1MO8XnVaEyjmifJD", "serviceAppName": "Ya1TJPUszmFGEkJV", "url": "vqDSU3PDyIAGfGq1"}' > $TEMP_JSON_INPUT
+echo '{"match_function": "kKeCaS6qyUCscHXs", "serviceAppName": "8PlOBlfUOqv7WmCu", "url": "qcsNM7YAnbq4DjmY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateMatchFunction \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 12 'CreateMatchFunction' test.out
+eval_tap $? 15 'CreateMatchFunction' test.out
 
-#- 13 UpdateMatchFunction
+#- 16 UpdateMatchFunction
 # body param: body
-echo '{"match_function": "FNmRWvUvDPnKoECj", "serviceAppName": "GUg867xodwuG14ID", "url": "5l5wj6K2wEMnckjl"}' > $TEMP_JSON_INPUT
+echo '{"match_function": "UMhD9qU89D356pVs", "serviceAppName": "UtNanddzgwxYdQc5", "url": "hEfefdopcEM0JHfo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op UpdateMatchFunction \
-    --name 'W6BywsSSZTGlubsm' \
+    --name 'f2Hwi7vg3osbh0fL' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 13 'UpdateMatchFunction' test.out
+eval_tap $? 16 'UpdateMatchFunction' test.out
 
-#- 14 DeleteMatchFunction
+#- 17 DeleteMatchFunction
 $CLI_EXE \
     --sn match2 \
     --op DeleteMatchFunction \
-    --name 'hjXcScOUvrjJBO7t' \
+    --name '2h7eJvAS2W4uqkhw' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 14 'DeleteMatchFunction' test.out
+eval_tap $? 17 'DeleteMatchFunction' test.out
 
-#- 15 MatchPoolList
+#- 18 MatchPoolList
 $CLI_EXE \
     --sn match2 \
     --op MatchPoolList \
     --namespace $AB_NAMESPACE \
-    --limit '2' \
-    --name 'LpERf77LzPoORBkR' \
-    --offset '25' \
+    --limit '91' \
+    --name '5jPqzhN0YdGSrA9L' \
+    --offset '35' \
     > test.out 2>&1
-eval_tap $? 15 'MatchPoolList' test.out
+eval_tap $? 18 'MatchPoolList' test.out
 
-#- 16 CreateMatchPool
+#- 19 CreateMatchPool
 # body param: body
-echo '{"auto_accept_backfill_proposal": false, "backfill_proposal_expiration_seconds": 0, "backfill_ticket_expiration_seconds": 55, "match_function": "Fy0pJYCdfkfyt09r", "match_function_override": {"backfill_matches": "o5fHdWqJTNjrmpnn", "enrichment": ["EckHH8kT9oXVande", "rcf1nq4Hf32SL5Pj", "aYEDxaYN8w9KUW0p"], "make_matches": "y8KrcQfucSq2X8gF", "stat_codes": ["uJORk4j04YfnXTsQ", "UrA0WWyKl2K5mCSo", "GeQCahcox63cyDxA"], "validation": ["AYcRXJdoSTxNCK9A", "IjNmbfoW8bDq5jPq", "zhN0YdGSrA9LXRwU"]}, "name": "6WLgpQE9nXzhBC0u", "rule_set": "yMR4Xf2nfYvNvG8u", "session_template": "Q14AhsxaALiBwpNJ", "ticket_expiration_seconds": 30}' > $TEMP_JSON_INPUT
+echo '{"auto_accept_backfill_proposal": false, "backfill_proposal_expiration_seconds": 46, "backfill_ticket_expiration_seconds": 95, "crossplay_disabled": false, "match_function": "LgpQE9nXzhBC0uyM", "match_function_override": {"backfill_matches": "R4Xf2nfYvNvG8uQ1", "enrichment": ["4AhsxaALiBwpNJor", "nrCQpMJj5igqat8x", "nPoWTdHAkcyAy4dr"], "make_matches": "HlPcXGGl0Xw3veBf", "stat_codes": ["rpCrnbaxhEvn3SGq", "cH91fC3aJEoqWaFA", "GD6PRg95m07l03vt"], "validation": ["lMFzeiMRkcOr1L0T", "MIczbYilOziwG8CP", "LOzSZm9K3cMY617H"]}, "name": "SCYZaL46I3PgCcQ0", "platfrom_group_enabled": false, "rule_set": "DmbC9UqYdYrdxNnu", "session_template": "McAwrSzYnrcetxOb", "ticket_expiration_seconds": 8}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateMatchPool \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 16 'CreateMatchPool' test.out
+eval_tap $? 19 'CreateMatchPool' test.out
 
-#- 17 MatchPoolDetails
+#- 20 MatchPoolDetails
 $CLI_EXE \
     --sn match2 \
     --op MatchPoolDetails \
     --namespace $AB_NAMESPACE \
-    --pool 'dq0m7NjUZ95Z5XDL' \
+    --pool 'wQQPYwmYFbxRvHYD' \
     > test.out 2>&1
-eval_tap $? 17 'MatchPoolDetails' test.out
+eval_tap $? 20 'MatchPoolDetails' test.out
 
-#- 18 UpdateMatchPool
+#- 21 UpdateMatchPool
 # body param: body
-echo '{"auto_accept_backfill_proposal": true, "backfill_proposal_expiration_seconds": 48, "backfill_ticket_expiration_seconds": 82, "match_function": "nPoWTdHAkcyAy4dr", "match_function_override": {"backfill_matches": "HlPcXGGl0Xw3veBf", "enrichment": ["rpCrnbaxhEvn3SGq", "cH91fC3aJEoqWaFA", "GD6PRg95m07l03vt"], "make_matches": "lMFzeiMRkcOr1L0T", "stat_codes": ["MIczbYilOziwG8CP", "LOzSZm9K3cMY617H", "SCYZaL46I3PgCcQ0"], "validation": ["axTWnmyEYLZQTpvL", "H6QPEBP8kSSFjeuL", "3wQQPYwmYFbxRvHY"]}, "rule_set": "DCYwoGdmzXgf1ewU", "session_template": "Tvnu0ensa3MZF7DT", "ticket_expiration_seconds": 38}' > $TEMP_JSON_INPUT
+echo '{"auto_accept_backfill_proposal": true, "backfill_proposal_expiration_seconds": 77, "backfill_ticket_expiration_seconds": 47, "crossplay_disabled": false, "match_function": "4WxGWRH7fz4BdPhL", "match_function_override": {"backfill_matches": "tHRJOImSq37aeAaG", "enrichment": ["q0NIj53gXkmrayvc", "IYiWxIAxfvLzSpDF", "Y3lxe16KsSRzkf2H"], "make_matches": "zBcEio5UyvuFv5z6", "stat_codes": ["wosJGnUyCMEbHh1u", "E4DmJ4Suj6DjUw36", "GtZ83Jp2f9f1FCoI"], "validation": ["o3L24DKGwgZ85vyF", "JR8euQBLVu27iwpl", "LJdzYS9K0VvwE6MA"]}, "platfrom_group_enabled": true, "rule_set": "vknXO45AUtNXSTIt", "session_template": "t35OJTfJBZX62yI9", "ticket_expiration_seconds": 12}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op UpdateMatchPool \
     --namespace $AB_NAMESPACE \
-    --pool 'eAaGq0NIj53gXkmr' \
+    --pool 'mFrl3gYx6Xmv1DzP' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 18 'UpdateMatchPool' test.out
+eval_tap $? 21 'UpdateMatchPool' test.out
 
-#- 19 DeleteMatchPool
+#- 22 DeleteMatchPool
 $CLI_EXE \
     --sn match2 \
     --op DeleteMatchPool \
     --namespace $AB_NAMESPACE \
-    --pool 'ayvcIYiWxIAxfvLz' \
+    --pool 'Hux3k3skhn3mWZjT' \
     > test.out 2>&1
-eval_tap $? 19 'DeleteMatchPool' test.out
+eval_tap $? 22 'DeleteMatchPool' test.out
 
-#- 20 MatchPoolMetric
+#- 23 MatchPoolMetric
 $CLI_EXE \
     --sn match2 \
     --op MatchPoolMetric \
     --namespace $AB_NAMESPACE \
-    --pool 'SpDFY3lxe16KsSRz' \
+    --pool 'YM95e4aa8xOJu7rN' \
     > test.out 2>&1
-eval_tap $? 20 'MatchPoolMetric' test.out
+eval_tap $? 23 'MatchPoolMetric' test.out
 
-#- 21 GetPlayerMetric
+#- 24 GetPlayerMetric
 $CLI_EXE \
     --sn match2 \
     --op GetPlayerMetric \
     --namespace $AB_NAMESPACE \
-    --pool 'kf2HzBcEio5UyvuF' \
+    --pool 'RVdygfKmUkzj9mHF' \
     > test.out 2>&1
-eval_tap $? 21 'GetPlayerMetric' test.out
+eval_tap $? 24 'GetPlayerMetric' test.out
 
-#- 22 AdminGetMatchPoolTickets
+#- 25 AdminGetMatchPoolTickets
 $CLI_EXE \
     --sn match2 \
     --op AdminGetMatchPoolTickets \
     --namespace $AB_NAMESPACE \
-    --pool 'v5z6wosJGnUyCMEb' \
-    --limit '69' \
-    --offset '16' \
+    --pool 'pff2vDkz68zorEgc' \
+    --limit '62' \
+    --offset '49' \
     > test.out 2>&1
-eval_tap $? 22 'AdminGetMatchPoolTickets' test.out
+eval_tap $? 25 'AdminGetMatchPoolTickets' test.out
 
-#- 23 CreateMatchTicket
+#- 26 CreateMatchTicket
 # body param: body
-echo '{"attributes": {"YZT0yJJ0uCjjaNCR": {}, "V3hSIiTEoTCSxjAq": {}, "g9oGVEdC8mQir1Af": {}}, "latencies": {"0G6OrPH6ZsjpPgHK": 71, "plLJdzYS9K0VvwE6": 80, "R0vknXO45AUtNXST": 72}, "matchPool": "QIXVmrtRlq1jv60H", "sessionID": "TnmFrl3gYx6Xmv1D"}' > $TEMP_JSON_INPUT
+echo '{"attributes": {"L98WUoXvfU4qMIpf": {}, "gxw2ff5twRYbtdK2": {}, "r4wWs6IpYBxafo9b": {}}, "latencies": {"4xJyNnvHKrm8UuNl": 93, "JrpEBbVvBn8Lsf2q": 92, "o20e6POTjrinAVVo": 43}, "matchPool": "ZjuyFhvbxX2DNbkn", "sessionID": "fVv4nm70TCayYAkF"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateMatchTicket \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 23 'CreateMatchTicket' test.out
+eval_tap $? 26 'CreateMatchTicket' test.out
 
-#- 24 GetMyMatchTickets
+#- 27 GetMyMatchTickets
 $CLI_EXE \
     --sn match2 \
     --op GetMyMatchTickets \
     --namespace $AB_NAMESPACE \
-    --limit '51' \
-    --matchPool 'RxV0UTaiSzfi0FnB' \
-    --offset '63' \
+    --limit '94' \
+    --matchPool 'YBwRxcREyU5CwqGJ' \
+    --offset '64' \
     > test.out 2>&1
-eval_tap $? 24 'GetMyMatchTickets' test.out
+eval_tap $? 27 'GetMyMatchTickets' test.out
 
-#- 25 MatchTicketDetails
+#- 28 MatchTicketDetails
 $CLI_EXE \
     --sn match2 \
     --op MatchTicketDetails \
     --namespace $AB_NAMESPACE \
-    --ticketid 'TYM95e4aa8xOJu7r' \
+    --ticketid 'rsMeoZiRYkbhEM1z' \
     > test.out 2>&1
-eval_tap $? 25 'MatchTicketDetails' test.out
+eval_tap $? 28 'MatchTicketDetails' test.out
 
-#- 26 DeleteMatchTicket
+#- 29 DeleteMatchTicket
 $CLI_EXE \
     --sn match2 \
     --op DeleteMatchTicket \
     --namespace $AB_NAMESPACE \
-    --ticketid 'NRVdygfKmUkzj9mH' \
+    --ticketid 'TNY3lpincuf5d5sa' \
     > test.out 2>&1
-eval_tap $? 26 'DeleteMatchTicket' test.out
+eval_tap $? 29 'DeleteMatchTicket' test.out
 
-#- 27 RuleSetList
+#- 30 RuleSetList
 $CLI_EXE \
     --sn match2 \
     --op RuleSetList \
     --namespace $AB_NAMESPACE \
-    --limit '65' \
-    --name '1pZGMfPdGIOAZ86u' \
-    --offset '27' \
+    --limit '86' \
+    --name 'cktlx9zJZVVCc9bp' \
+    --offset '71' \
     > test.out 2>&1
-eval_tap $? 27 'RuleSetList' test.out
+eval_tap $? 30 'RuleSetList' test.out
 
-#- 28 CreateRuleSet
+#- 31 CreateRuleSet
 # body param: body
-echo '{"data": {"Exv9nKMOgO5W8SUa": {}, "ZjCpNtJSMm8kDi3R": {}, "wubq7wtRGdT447Oa": {}}, "enable_custom_match_function": false, "name": "1m6VLfjsw270pMmO"}' > $TEMP_JSON_INPUT
+echo '{"data": {"mzo0JmcQmnsUigVy": {}, "njGFyVicGQAVv32f": {}, "tRAsmC0RuRA8j1AJ": {}}, "enable_custom_match_function": false, "name": "VMtipTVxXAF8KhOK"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateRuleSet \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 28 'CreateRuleSet' test.out
+eval_tap $? 31 'CreateRuleSet' test.out
 
-#- 29 RuleSetDetails
+#- 32 RuleSetDetails
 $CLI_EXE \
     --sn match2 \
     --op RuleSetDetails \
     --namespace $AB_NAMESPACE \
-    --ruleset 'QJrpEBbVvBn8Lsf2' \
+    --ruleset 'qbrECijFxOpOzxeT' \
     > test.out 2>&1
-eval_tap $? 29 'RuleSetDetails' test.out
+eval_tap $? 32 'RuleSetDetails' test.out
 
-#- 30 UpdateRuleSet
+#- 33 UpdateRuleSet
 # body param: body
-echo '{"data": {"qSAtizV9hzsVbpJL": {}, "tEZjuyFhvbxX2DNb": {}, "knfVv4nm70TCayYA": {}}, "enable_custom_match_function": false, "name": "2V9TVauFcGkPgQ0h"}' > $TEMP_JSON_INPUT
+echo '{"data": {"LJQsZcTEzXaXUzps": {}, "AV6ct6XITL0QEkad": {}, "MSQluAoED9oYwS8o": {}}, "enable_custom_match_function": true, "name": "ecBBhRAYjR7c4x5b"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op UpdateRuleSet \
     --namespace $AB_NAMESPACE \
-    --ruleset 'b2tLrsMeoZiRYkbh' \
+    --ruleset 'Ik8pVpxdUWOPel3T' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 30 'UpdateRuleSet' test.out
+eval_tap $? 33 'UpdateRuleSet' test.out
 
-#- 31 DeleteRuleSet
+#- 34 DeleteRuleSet
 $CLI_EXE \
     --sn match2 \
     --op DeleteRuleSet \
     --namespace $AB_NAMESPACE \
-    --ruleset 'EM1zTNY3lpincuf5' \
+    --ruleset 'iwTycqpVdINXzvkS' \
     > test.out 2>&1
-eval_tap $? 31 'DeleteRuleSet' test.out
+eval_tap $? 34 'DeleteRuleSet' test.out
 
-#- 32 VersionCheckHandler
+#- 35 VersionCheckHandler
 $CLI_EXE \
     --sn match2 \
     --op VersionCheckHandler \
     > test.out 2>&1
-eval_tap $? 32 'VersionCheckHandler' test.out
+eval_tap $? 35 'VersionCheckHandler' test.out
 
 
 # remove artifacts

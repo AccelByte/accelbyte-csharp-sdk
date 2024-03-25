@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
     public class ModelsMatchingAlly : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("matching_parties")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsMatchingParty>? MatchingParties { get; set; }
 
     }

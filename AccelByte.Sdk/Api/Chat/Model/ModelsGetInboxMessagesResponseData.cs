@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("message")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Message { get; set; }
 
         [JsonPropertyName("scope")]
@@ -42,6 +43,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public long? UpdatedAt { get; set; }
 
         [JsonPropertyName("userIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIds { get; set; }
 
     }
@@ -62,6 +64,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public string? Id { get; set; }
 
         [JsonPropertyName("message")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Message { get; set; }
 
         [JsonPropertyName("scope")]
@@ -79,6 +82,7 @@ namespace AccelByte.Sdk.Api.Chat.Model
         public long? UpdatedAt { get; set; }
 
         [JsonPropertyName("userIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIds { get; set; }
 
     }

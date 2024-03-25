@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                             var oTokenRepo = (IObservableTokenRepository)config.TokenRepository;
                                             _ = oTokenRepo.UpdateObserversWithNewToken();
                                         }
-                                    }   
+                                    }
                                 }
                                 else if (tokenRepo.LoginType == LoginType.Client)
                                 {

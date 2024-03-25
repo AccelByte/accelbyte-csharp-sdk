@@ -34,12 +34,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public bool? Joinable { get; set; }
 
         [JsonPropertyName("joining")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsSessionPlayerJoining>? Joining { get; set; }
 
         [JsonPropertyName("match_id")]
         public string? MatchId { get; set; }
 
         [JsonPropertyName("matching_allies")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsMatchingAlly>? MatchingAllies { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -50,6 +52,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Model
         public string? PartyId { get; set; }
 
         [JsonPropertyName("players")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsSessionPlayerHistory>? Players { get; set; }
 
         [JsonPropertyName("region")]

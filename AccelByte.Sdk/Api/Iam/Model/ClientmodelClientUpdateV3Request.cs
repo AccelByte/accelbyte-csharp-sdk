@@ -68,6 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public List<string>? Scopes { get; set; }
 
         [JsonPropertyName("skipLoginQueue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SkipLoginQueue { get; set; }
 
         [JsonPropertyName("twoFactorEnabled")]

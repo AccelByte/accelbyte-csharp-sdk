@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// },
     /// "data": 123
     /// }
+    /// game Admin can update or insert session storage
+    /// Session Storage feature only available for Gamesession
     /// </summary>
     public class PublicUpdateInsertSessionStorage : AccelByte.Sdk.Core.Operation
     {

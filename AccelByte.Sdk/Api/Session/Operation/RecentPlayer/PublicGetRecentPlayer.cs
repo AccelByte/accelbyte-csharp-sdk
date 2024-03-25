@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// publicGetRecentPlayer
     ///
-    /// Query recent player with given user id.
+    /// Query user's recent player.
     /// </summary>
     public class PublicGetRecentPlayer : AccelByte.Sdk.Core.Operation
     {

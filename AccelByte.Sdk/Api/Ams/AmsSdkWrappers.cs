@@ -57,6 +57,17 @@ namespace AccelByte.Sdk.Core
         }
         private Artifacts? _Artifacts = null;
 
+        public Development Development
+        {
+            get
+            {
+                if (_Development == null)
+                    _Development = new Development(_SdkObject);
+                return _Development;
+            }
+        }
+        private Development? _Development = null;
+
         public Fleets Fleets
         {
             get

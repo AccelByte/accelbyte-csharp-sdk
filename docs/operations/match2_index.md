@@ -11,6 +11,13 @@
 | `/match2/healthz` | GET | GetHealthcheckInfoV1 | [GetHealthcheckInfoV1](../../AccelByte.Sdk/Api/Match2/Operation/Operations/GetHealthcheckInfoV1.cs) | [GetHealthcheckInfoV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Operations/GetHealthcheckInfoV1.cs) |
 | `/match2/version` | GET | VersionCheckHandler | [VersionCheckHandler](../../AccelByte.Sdk/Api/Match2/Operation/Operations/VersionCheckHandler.cs) | [VersionCheckHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Operations/VersionCheckHandler.cs) |
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Match2/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/match2/v1/config` | GET | AdminGetAllConfigV1 | [AdminGetAllConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetAllConfigV1.cs) | [AdminGetAllConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetAllConfigV1.cs) |
+| `/match2/v1/config/namespaces/{namespace}` | GET | AdminGetConfigV1 | [AdminGetConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetConfigV1.cs) | [AdminGetConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetConfigV1.cs) |
+| `/match2/v1/config/namespaces/{namespace}` | PATCH | AdminPatchConfigV1 | [AdminPatchConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminPatchConfigV1.cs) | [AdminPatchConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminPatchConfigV1.cs) |
+
 ### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -72,6 +79,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Match2/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -127,7 +138,9 @@
 | `api.MatchTicketResponse` | [ApiMatchTicketResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketResponse.cs) |
 | `api.MatchTicketStatus` | [ApiMatchTicketStatus](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketStatus.cs) |
 | `api.MatchTicketStatuses` | [ApiMatchTicketStatuses](../../AccelByte.Sdk/Api/Match2/Model/ApiMatchTicketStatuses.cs) |
+| `api.NamespaceConfigList` | [ApiNamespaceConfigList](../../AccelByte.Sdk/Api/Match2/Model/ApiNamespaceConfigList.cs) |
 | `api.Party` | [ApiParty](../../AccelByte.Sdk/Api/Match2/Model/ApiParty.cs) |
+| `api.PatchNamespaceConfigRequest` | [ApiPatchNamespaceConfigRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiPatchNamespaceConfigRequest.cs) |
 | `api.PlayerData` | [ApiPlayerData](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerData.cs) |
 | `api.PlayerMetricRecord` | [ApiPlayerMetricRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiPlayerMetricRecord.cs) |
 | `api.ProposedProposal` | [ApiProposedProposal](../../AccelByte.Sdk/Api/Match2/Model/ApiProposedProposal.cs) |
@@ -137,6 +150,7 @@
 | `api.TicketMetricResultRecord` | [ApiTicketMetricResultRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiTicketMetricResultRecord.cs) |
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |
 | `config.EnvironmentVariable` | [ConfigEnvironmentVariable](../../AccelByte.Sdk/Api/Match2/Model/ConfigEnvironmentVariable.cs) |
+| `configmodels.NamespaceConfig` | [ConfigmodelsNamespaceConfig](../../AccelByte.Sdk/Api/Match2/Model/ConfigmodelsNamespaceConfig.cs) |
 | `matchmaker.MatchTicketRecord` | [MatchmakerMatchTicketRecord](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerMatchTicketRecord.cs) |
 | `matchmaker.Party` | [MatchmakerParty](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerParty.cs) |
 | `matchmaker.ProposedProposal` | [MatchmakerProposedProposal](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerProposedProposal.cs) |

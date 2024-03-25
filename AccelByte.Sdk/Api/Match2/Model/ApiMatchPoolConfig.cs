@@ -18,11 +18,19 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("backfill_ticket_expiration_seconds")]
         public int? BackfillTicketExpirationSeconds { get; set; }
 
+        [JsonPropertyName("crossplay_disabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CrossplayDisabled { get; set; }
+
         [JsonPropertyName("match_function")]
         public string? MatchFunction { get; set; }
 
         [JsonPropertyName("match_function_override")]
         public ApiMatchFunctionOverride? MatchFunctionOverride { get; set; }
+
+        [JsonPropertyName("platfrom_group_enabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? PlatfromGroupEnabled { get; set; }
 
         [JsonPropertyName("rule_set")]
         public string? RuleSet { get; set; }

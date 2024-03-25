@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Match2.Model
     public class MatchmakerTeam : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("Parties")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<MatchmakerParty>? Parties { get; set; }
 
         [JsonPropertyName("UserIDs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIDs { get; set; }
 
     }

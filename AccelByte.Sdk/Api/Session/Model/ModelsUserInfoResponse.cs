@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? LastPlayedTime { get; set; }
 
+        [JsonPropertyName("matchPool")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MatchPool { get; set; }
+
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
@@ -20,6 +24,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("platformName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformName { get; set; }
+
+        [JsonPropertyName("sessionTemplate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SessionTemplate { get; set; }
 
         [JsonPropertyName("userID")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
