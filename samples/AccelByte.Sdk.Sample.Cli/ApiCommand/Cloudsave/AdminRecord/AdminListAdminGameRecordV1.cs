@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public AdminListAdminGameRecordV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -57,6 +60,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 opBuilder.SetOffset((long)Offset);
             if (Query != null)
                 opBuilder.SetQuery((string)Query);
+            if (Tags != null)
+                opBuilder.SetTags((List<string>)Tags);
 
 
 

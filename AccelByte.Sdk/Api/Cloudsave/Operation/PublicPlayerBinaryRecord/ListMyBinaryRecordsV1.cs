@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
             public string? Query { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -55,6 +57,12 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             public ListMyBinaryRecordsV1Builder SetQuery(string _query)
             {
                 Query = _query;
+                return this;
+            }
+
+            public ListMyBinaryRecordsV1Builder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -87,9 +95,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Query is not null) QueryParams["query"] = builder.Query;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 
@@ -101,7 +111,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             string namespace_,
             long? limit,
             long? offset,
-            string? query
+            string? query,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
@@ -109,9 +120,11 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (query is not null) QueryParams["query"] = query;
+            if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 

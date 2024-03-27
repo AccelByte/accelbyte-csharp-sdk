@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         [SdkCommandArgument("query")]
         public string? Query { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         [SdkCommandArgument("limit")]
         public long Limit { get; set; } = 0;
 
@@ -53,6 +56,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
 
             if (Query != null)
                 opBuilder.SetQuery((string)Query);
+            if (Tags != null)
+                opBuilder.SetTags((List<string>)Tags);
 
 
 

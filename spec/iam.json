@@ -8,7 +8,7 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "7.13.0"
+    "version": "7.13.1"
   },
   "schemes": [
     "https"
@@ -20490,7 +20490,7 @@
         "consumes": [
           "application/json"
         ],
-        "description": "Note: \n\t1. the max count of user ids in the request is 100\n\t2. if platform id is not empty, the result will only contain the corresponding platform infos\n\t3. if platform id is empty, the result will contain all the supported platform infos\n\n__Supported 3rd platforms:__\n\n* __PSN(ps4web, ps4, ps5)__\n  * display name\n  * avatar\n* __Xbox(live, xblweb)__\n  * display name\n* __Steam(steam, steamopenid)__\n  * display name\n  * avatar\n* __EpicGames(epicgames)__\n  * display name\n",
+        "description": "Note: \n\t1. the max count of user ids in the request is 100\n\t2. if platform id is not empty, the result will only contain the corresponding platform infos\n\t3. if platform id is empty, the result will contain all the supported platform infos\n\n__Supported 3rd platforms:__\n\n* __PSN(ps4web, ps4, ps5)__\n  * account id\n  * display name\n  * avatar\n* __Xbox(live, xblweb)__\n  * xuid or pxuid\n  * display name\n* __Steam(steam, steamopenid)__\n  * steam id\n  * display name\n  * avatar\n* __EpicGames(epicgames)__\n  * epic account id\n  * display name\n",
         "operationId": "PublicGetUsersPlatformInfosV3",
         "parameters": [
           {
@@ -21579,7 +21579,7 @@
     },
     "/iam/v3/public/users/me": {
       "get": {
-        "description": "Get my user data\n\n__Supported 3rd platforms:__\n\n* __PSN(ps4web, ps4, ps5)__\n  * display name\n  * avatar\n* __Xbox(live, xblweb)__\n  * display name\n* __Steam(steam, steamopenid)__\n  * display name\n  * avatar\n* __EpicGames(epicgames)__\n  * display name\n\naction code : 10147",
+        "description": "Get my user data\n\n__Supported 3rd platforms:__\n\n* __PSN(ps4web, ps4, ps5)__\n  * account id\n  * display name\n  * avatar\n* __Xbox(live, xblweb)__\n  * xuid or pxuid\n  * display name\n* __Steam(steam, steamopenid)__\n  * steam id\n  * display name\n  * avatar\n* __EpicGames(epicgames)__\n  * epic account id\n  * display name\n\naction code : 10147",
         "operationId": "PublicGetMyUserV3",
         "parameters": [
           {
@@ -36250,6 +36250,12 @@
         "scope": {
           "type": "string"
         },
+        "simultaneous_platform_id": {
+          "type": "string"
+        },
+        "simultaneous_platform_user_id": {
+          "type": "string"
+        },
         "token_type": {
           "type": "string"
         },
@@ -36365,6 +36371,12 @@
         "scope": {
           "type": "string"
         },
+        "simultaneous_platform_id": {
+          "type": "string"
+        },
+        "simultaneous_platform_user_id": {
+          "type": "string"
+        },
         "token_type": {
           "type": "string"
         },
@@ -36457,11 +36469,11 @@
     "path": "/iam/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2024-03-22T09:45:27+00:00",
-    "gitHash": "cbbed0136bcb2bf32c36324572311bcff39f9092",
+    "buildDate": "2024-03-27T03:43:15+00:00",
+    "gitHash": "69164c7f832195c6786a3c7ba532b308f0fcc917",
     "name": "justice-iam-service",
     "realm": "demo",
-    "version": "7.13.0",
+    "version": "7.13.1",
     "version-roles-seeding": "1.2.21"
   }
 }

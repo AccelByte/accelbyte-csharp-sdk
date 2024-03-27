@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public AdminRetrievePlayerRecordsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -55,6 +58,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (Tags != null)
+                opBuilder.SetTags((List<string>)Tags);
 
 
 

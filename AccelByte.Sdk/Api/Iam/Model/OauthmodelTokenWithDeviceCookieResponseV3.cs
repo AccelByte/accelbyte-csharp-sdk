@@ -68,6 +68,14 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("scope")]
         public string? Scope { get; set; }
 
+        [JsonPropertyName("simultaneous_platform_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SimultaneousPlatformId { get; set; }
+
+        [JsonPropertyName("simultaneous_platform_user_id")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SimultaneousPlatformUserId { get; set; }
+
         [JsonPropertyName("token_type")]
         public string? TokenType { get; set; }
 
