@@ -11,6 +11,8 @@ namespace AccelByte.Sdk.Core.Client
     {
         HttpResponse SendRequest(Operation operation, String baseUrl);
 
+        Task<HttpResponse> SendRequestAsync(Operation operation, String baseUrl);
+
         IHttpClient SetLogger(IHttpLogger logger);
     }
 }

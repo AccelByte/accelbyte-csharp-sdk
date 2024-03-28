@@ -298,12 +298,139 @@ namespace AccelByte.Sdk.Core.Client
                     if (policy.RetryLogicHandler != null)
                     {
                         if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, xSocket))
-                            throw xSocket;
+                            throw;
                         else
                             retryCount++;
                     }
                     else
-                        throw xSocket;
+                        throw;
+                }
+                catch (HttpRequestException xHttpReq)
+                {
+                    if (policy.RetryLogicHandler != null)
+                    {
+                        if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, xHttpReq))
+                            return xHttpReq.AsHttpResponse;
+                        else
+                            retryCount++;
+                    }
+                    else
+                        return xHttpReq.AsHttpResponse;
+                }
+                catch (TaskCanceledException xTask)
+                {
+                    if (policy.RetryLogicHandler != null)
+                    {
+                        HttpRequestTimeoutException toException = new HttpRequestTimeoutException(xTask);
+                        if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, toException))
+                            throw new HttpResponseException(HttpStatusCode.RequestTimeout, "");
+                        else
+                            retryCount++;
+                    }
+                    else
+                        throw new HttpResponseException(HttpStatusCode.RequestTimeout, "");
+                }
+                catch (AggregateException x)
+                {
+                    if (x.InnerException is TaskCanceledException)
+                    {
+                        if (policy.RetryLogicHandler != null)
+                        {
+                            HttpRequestTimeoutException toException = new HttpRequestTimeoutException(x.InnerException);
+                            if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, toException))
+                                throw new HttpResponseException(HttpStatusCode.RequestTimeout, "");
+                            else
+                                retryCount++;
+                        }
+                        else
+                            throw new HttpResponseException(HttpStatusCode.RequestTimeout, "");
+                    }
+                    else
+                        throw new Exception(x.Message, x);
+                }
+                catch (Exception x)
+                {
+                    throw new Exception(x.Message, x);
+                }
+            }
+        }
+
+        public async Task<HttpResponse> SendRequestAsync(Operation operation, string baseURL)
+        {
+            if (Http == null)
+                throw new Exception("HttpClient object is null.");
+
+            HttpClientPolicy policy = _Policy;
+            if (operation.HttpClientPolicy != null)
+                policy = _Policy.MergeWith(operation.HttpClientPolicy);
+
+            int retryCount = 0;
+            while (true)
+            {
+                try
+                {
+                    HttpRequestMessage request = CreateRequestMessage(operation, baseURL);
+                    if (policy.AddRetryCountToHeaders!.Value)
+                        request.Headers.TryAddWithoutValidation("X-Client-Retry-Count", retryCount.ToString());
+
+                    _BeforeSend?.Invoke(request, retryCount);
+
+                    HttpResponseMessage response;
+                    using (var cts = new CancellationTokenSource(policy.RequestTimeOut!.Value * 1000))
+                    {
+                        response = await Http.SendAsync(request, cts.Token);
+                    }
+
+                    string respContentType = String.Empty;
+                    IEnumerable<string>? ctValues = null;
+                    if (response.Headers.TryGetValues("Content-Type", out ctValues))
+                        respContentType = String.Join(",", ctValues).Trim();
+
+                    if (respContentType != String.Empty)
+                    {
+                        string[] ctSplits = respContentType.Split(';');
+                        if (ctSplits.Length > 0)
+                            respContentType = ctSplits[0].Trim();
+                    }
+
+                    int responseCode = (int)response.StatusCode;
+                    if (_RedirectCodes.Contains(responseCode))
+                    {
+                        var location = response.Headers.Location ??
+                                throw new Exception($"Location header is null (status code: {response.StatusCode})");
+
+                        Stream payload = new MemoryStream(Encoding.UTF8.GetBytes(location.OriginalString));
+                        return new HttpResponse(response.StatusCode, respContentType, payload);
+                    }
+                    else
+                    {
+                        Stream payload;
+                        if (response.Content != null)
+                            payload = response.Content.ReadAsStream();
+                        else
+                            payload = new MemoryStream();
+
+                        if ((responseCode >= 200) && (responseCode < 300))
+                        {
+                            return new HttpResponse(response.StatusCode, respContentType, payload);
+                        }
+                        else
+                        {
+                            throw new HttpRequestException(response.StatusCode, respContentType, payload);
+                        }
+                    }
+                }
+                catch (SocketException xSocket)
+                {
+                    if (policy.RetryLogicHandler != null)
+                    {
+                        if (!policy.RetryLogicHandler.ExecuteRetryLogic(policy, retryCount, xSocket))
+                            throw;
+                        else
+                            retryCount++;
+                    }
+                    else
+                        throw;
                 }
                 catch (HttpRequestException xHttpReq)
                 {

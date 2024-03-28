@@ -91,6 +91,14 @@ namespace AccelByte.Sdk.Core
             return Configuration.HttpClient.SendRequest(pOperation, baseUrl);
         }
 
+        public async Task<HttpResponse> RunRequestAsync(Operation operation)
+        {
+            Operation pOperation = _OpProcess.RunProcessPipeline(operation, this);
+
+            var baseUrl = Configuration.ConfigRepository.BaseUrl;
+            return await Configuration.HttpClient.SendRequestAsync(pOperation, baseUrl);
+        }
+
         public bool LoginUser()
         {
             if (Configuration.Credential == null)
