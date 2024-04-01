@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,7 +44,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TicketDynamicInfo? GetTicketDynamic(GetTicketDynamic input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TicketDynamicInfo?> GetTicketDynamicAsync(GetTicketDynamic input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -53,7 +60,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DecreaseTicketSale(DecreaseTicketSale input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DecreaseTicketSaleAsync(DecreaseTicketSale input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -62,7 +76,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TicketBoothID? GetTicketBoothID(GetTicketBoothID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TicketBoothID?> GetTicketBoothIDAsync(GetTicketBoothID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +92,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TicketSaleIncrementResult? IncreaseTicketSale(IncreaseTicketSale input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TicketSaleIncrementResult?> IncreaseTicketSaleAsync(IncreaseTicketSale input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +108,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TicketAcquireResult? AcquireUserTicket(AcquireUserTicket input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TicketAcquireResult?> AcquireUserTicketAsync(AcquireUserTicket input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

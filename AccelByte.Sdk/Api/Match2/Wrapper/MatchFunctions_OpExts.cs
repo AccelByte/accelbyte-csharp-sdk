@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).MatchFunctionList(op);
         }
+        public static async Task<Match2.Model.ApiListMatchFunctionsResponse?> ExecuteAsync(
+            this MatchFunctionList.MatchFunctionListBuilder builder,
+            string namespace_
+        )
+        {
+            MatchFunctionList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).MatchFunctionListAsync(op);
+        }
         public static void Execute(
             this CreateMatchFunction.CreateMatchFunctionBuilder builder,
             ApiMatchFunctionRequest body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).CreateMatchFunction(op);
+        }
+        public static async Task ExecuteAsync(
+            this CreateMatchFunction.CreateMatchFunctionBuilder builder,
+            ApiMatchFunctionRequest body,
+            string namespace_
+        )
+        {
+            CreateMatchFunction op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).CreateMatchFunctionAsync(op);
         }
         public static Match2.Model.ApiMatchFunctionConfig? Execute(
             this UpdateMatchFunction.UpdateMatchFunctionBuilder builder,
@@ -51,6 +75,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).UpdateMatchFunction(op);
         }
+        public static async Task<Match2.Model.ApiMatchFunctionConfig?> ExecuteAsync(
+            this UpdateMatchFunction.UpdateMatchFunctionBuilder builder,
+            ApiMatchFunctionRequest body,
+            string name,
+            string namespace_
+        )
+        {
+            UpdateMatchFunction op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).UpdateMatchFunctionAsync(op);
+        }
         public static void Execute(
             this DeleteMatchFunction.DeleteMatchFunctionBuilder builder,
             string name,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).DeleteMatchFunction(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteMatchFunction.DeleteMatchFunctionBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            DeleteMatchFunction op = builder.Build(
+                name,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).DeleteMatchFunctionAsync(op);
         }
     }
 }

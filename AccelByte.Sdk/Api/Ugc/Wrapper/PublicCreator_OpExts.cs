@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicSearchCreator(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedCreatorOverviewResponse?> ExecuteAsync(
+            this PublicSearchCreator.PublicSearchCreatorBuilder builder,
+            string namespace_
+        )
+        {
+            PublicSearchCreator op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicSearchCreatorAsync(op);
+        }
         public static Ugc.Model.ModelsCreatorResponse? Execute(
             this PublicGetCreator.PublicGetCreatorBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicGetCreator(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreatorResponse?> ExecuteAsync(
+            this PublicGetCreator.PublicGetCreatorBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetCreator op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicCreator)builder.WrapperObject!).PublicGetCreatorAsync(op);
         }
     }
 }

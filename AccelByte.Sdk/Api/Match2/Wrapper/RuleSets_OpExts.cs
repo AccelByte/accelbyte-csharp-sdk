@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetList(op);
         }
+        public static async Task<Match2.Model.ApiListRuleSetsResponse?> ExecuteAsync(
+            this RuleSetList.RuleSetListBuilder builder,
+            string namespace_
+        )
+        {
+            RuleSetList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetListAsync(op);
+        }
         public static void Execute(
             this CreateRuleSet.CreateRuleSetBuilder builder,
             ApiRuleSetPayload body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.RuleSets)builder.WrapperObject!).CreateRuleSet(op);
         }
+        public static async Task ExecuteAsync(
+            this CreateRuleSet.CreateRuleSetBuilder builder,
+            ApiRuleSetPayload body,
+            string namespace_
+        )
+        {
+            CreateRuleSet op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).CreateRuleSetAsync(op);
+        }
         public static Match2.Model.ApiRuleSetPayload? Execute(
             this RuleSetDetails.RuleSetDetailsBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetails(op);
+        }
+        public static async Task<Match2.Model.ApiRuleSetPayload?> ExecuteAsync(
+            this RuleSetDetails.RuleSetDetailsBuilder builder,
+            string namespace_,
+            string ruleset
+        )
+        {
+            RuleSetDetails op = builder.Build(
+                namespace_,
+                ruleset
+            );
+
+            return await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetailsAsync(op);
         }
 
         public static Match2.Model.ApiRuleSetPayload<T1>? Execute<T1>(
@@ -63,6 +100,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetails<T1>(op);
         }
+        public static async Task<Match2.Model.ApiRuleSetPayload<T1>?> ExecuteAsync<T1>(
+            this RuleSetDetails.RuleSetDetailsBuilder builder,
+            string namespace_,
+            string ruleset
+        )
+        {
+            RuleSetDetails op = builder.Build(
+                namespace_,
+                ruleset
+            );
+
+            return await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).RuleSetDetailsAsync<T1>(op);
+        }
         public static Match2.Model.ApiRuleSetPayload? Execute(
             this UpdateRuleSet.UpdateRuleSetBuilder builder,
             ApiRuleSetPayload body,
@@ -77,6 +127,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSet(op);
+        }
+        public static async Task<Match2.Model.ApiRuleSetPayload?> ExecuteAsync(
+            this UpdateRuleSet.UpdateRuleSetBuilder builder,
+            ApiRuleSetPayload body,
+            string namespace_,
+            string ruleset
+        )
+        {
+            UpdateRuleSet op = builder.Build(
+                body,
+                namespace_,
+                ruleset
+            );
+
+            return await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSetAsync(op);
         }
 
         public static Match2.Model.ApiRuleSetPayload<T1>? Execute<T1>(
@@ -94,6 +159,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSet<T1>(op);
         }
+        public static async Task<Match2.Model.ApiRuleSetPayload<T1>?> ExecuteAsync<T1>(
+            this UpdateRuleSet.UpdateRuleSetBuilder builder,
+            ApiRuleSetPayload body,
+            string namespace_,
+            string ruleset
+        )
+        {
+            UpdateRuleSet op = builder.Build(
+                body,
+                namespace_,
+                ruleset
+            );
+
+            return await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).UpdateRuleSetAsync<T1>(op);
+        }
         public static void Execute(
             this DeleteRuleSet.DeleteRuleSetBuilder builder,
             string namespace_,
@@ -106,6 +186,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.RuleSets)builder.WrapperObject!).DeleteRuleSet(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteRuleSet.DeleteRuleSetBuilder builder,
+            string namespace_,
+            string ruleset
+        )
+        {
+            DeleteRuleSet op = builder.Build(
+                namespace_,
+                ruleset
+            );
+
+            await ((Match2.Wrapper.RuleSets)builder.WrapperObject!).DeleteRuleSetAsync(op);
         }
     }
 }

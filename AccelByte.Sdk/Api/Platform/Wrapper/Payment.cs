@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -60,7 +60,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentNotificationPagingSlicedResult? QueryPaymentNotifications(QueryPaymentNotifications input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentNotificationPagingSlicedResult?> QueryPaymentNotificationsAsync(QueryPaymentNotifications input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -69,7 +76,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderPagingSlicedResult? QueryPaymentOrders(QueryPaymentOrders input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderPagingSlicedResult?> QueryPaymentOrdersAsync(QueryPaymentOrders input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -78,7 +92,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public List<string>? ListExtOrderNoByExtTxId(ListExtOrderNoByExtTxId input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<string>?> ListExtOrderNoByExtTxIdAsync(ListExtOrderNoByExtTxId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -87,7 +108,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderInfo? GetPaymentOrder(GetPaymentOrder input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderInfo?> GetPaymentOrderAsync(GetPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -103,10 +131,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.PaymentOrderInfo<T1>?> GetPaymentOrderAsync<T1>(GetPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.PaymentOrderInfo? ChargePaymentOrder(ChargePaymentOrder input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderInfo?> ChargePaymentOrderAsync(ChargePaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -122,10 +165,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.PaymentOrderInfo<T1>?> ChargePaymentOrderAsync<T1>(ChargePaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.NotificationProcessResult? SimulatePaymentOrderNotification(SimulatePaymentOrderNotification input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NotificationProcessResult?> SimulatePaymentOrderNotificationAsync(SimulatePaymentOrderNotification input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -141,10 +199,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.NotificationProcessResult<T1>?> SimulatePaymentOrderNotificationAsync<T1>(SimulatePaymentOrderNotification input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.PaymentOrderChargeStatus? GetPaymentOrderChargeStatus(GetPaymentOrderChargeStatus input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderChargeStatus?> GetPaymentOrderChargeStatusAsync(GetPaymentOrderChargeStatus input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -153,7 +226,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderInfo? CreateUserPaymentOrder(CreateUserPaymentOrder input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderInfo?> CreateUserPaymentOrderAsync(CreateUserPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -169,10 +249,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.PaymentOrderInfo<T1>?> CreateUserPaymentOrderAsync<T1>(CreateUserPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.PaymentOrderInfo? RefundUserPaymentOrder(RefundUserPaymentOrder input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderInfo?> RefundUserPaymentOrderAsync(RefundUserPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -183,6 +278,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = _sdk.RunRequest(input);
 
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderInfo<T1>?> RefundUserPaymentOrderAsync<T1>(RefundUserPaymentOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,

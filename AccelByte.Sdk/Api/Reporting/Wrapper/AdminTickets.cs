@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -48,7 +48,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiTicketListResponse? ListTickets(ListTickets input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiTicketListResponse?> ListTicketsAsync(ListTickets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -57,7 +64,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiTicketStatisticResponse? TicketStatistic(TicketStatistic input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiTicketStatisticResponse?> TicketStatisticAsync(TicketStatistic input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -66,7 +80,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiTicketResponse? GetTicketDetail(GetTicketDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiTicketResponse?> GetTicketDetailAsync(GetTicketDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -75,7 +96,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public void DeleteTicket(DeleteTicket input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteTicketAsync(DeleteTicket input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -84,7 +112,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiReportListResponse? GetReportsByTicket(GetReportsByTicket input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiReportListResponse?> GetReportsByTicketAsync(GetReportsByTicket input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -93,7 +128,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiTicketResponse? UpdateTicketResolutions(UpdateTicketResolutions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiTicketResponse?> UpdateTicketResolutionsAsync(UpdateTicketResolutions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

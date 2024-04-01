@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -72,7 +72,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDevicesResponseV4? AdminGetDevicesByUserV4(AdminGetDevicesByUserV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDevicesResponseV4?> AdminGetDevicesByUserV4Async(AdminGetDevicesByUserV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -81,7 +88,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceBannedResponseV4? AdminGetBannedDevicesV4(AdminGetBannedDevicesV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceBannedResponseV4?> AdminGetBannedDevicesV4Async(AdminGetBannedDevicesV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -90,7 +104,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceBansResponseV4? AdminGetUserDeviceBansV4(AdminGetUserDeviceBansV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceBansResponseV4?> AdminGetUserDeviceBansV4Async(AdminGetUserDeviceBansV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -99,7 +120,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminBanDeviceV4(AdminBanDeviceV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminBanDeviceV4Async(AdminBanDeviceV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -108,7 +136,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceBanResponseV4? AdminGetDeviceBanV4(AdminGetDeviceBanV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceBanResponseV4?> AdminGetDeviceBanV4Async(AdminGetDeviceBanV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -117,7 +152,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateDeviceBanV4(AdminUpdateDeviceBanV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateDeviceBanV4Async(AdminUpdateDeviceBanV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -126,7 +168,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminGenerateReportV4(AdminGenerateReportV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminGenerateReportV4Async(AdminGenerateReportV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -135,7 +184,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceTypesResponseV4? AdminGetDeviceTypesV4(AdminGetDeviceTypesV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceTypesResponseV4?> AdminGetDeviceTypesV4Async(AdminGetDeviceTypesV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -144,7 +200,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceBansResponseV4? AdminGetDeviceBansV4(AdminGetDeviceBansV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceBansResponseV4?> AdminGetDeviceBansV4Async(AdminGetDeviceBansV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -153,7 +216,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceIDDecryptResponseV4? AdminDecryptDeviceV4(AdminDecryptDeviceV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceIDDecryptResponseV4?> AdminDecryptDeviceV4Async(AdminDecryptDeviceV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -162,7 +232,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUnbanDeviceV4(AdminUnbanDeviceV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUnbanDeviceV4Async(AdminUnbanDeviceV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -171,7 +248,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelDeviceUsersResponseV4? AdminGetUsersByDeviceV4(AdminGetUsersByDeviceV4 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelDeviceUsersResponseV4?> AdminGetUsersByDeviceV4Async(AdminGetUsersByDeviceV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.UserInfo)builder.WrapperObject!).GetUserInfoStatus(op);
         }
+        public static async Task<List<Legal.Model.RetrieveUserInfoCacheStatusResponse>?> ExecuteAsync(
+            this GetUserInfoStatus.GetUserInfoStatusBuilder builder
+        )
+        {
+            GetUserInfoStatus op = builder.Build(
+            );
+
+            return await ((Legal.Wrapper.UserInfo)builder.WrapperObject!).GetUserInfoStatusAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SyncUserInfo.SyncUserInfoBuilder builder,
@@ -33,6 +42,17 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.UserInfo)builder.WrapperObject!).SyncUserInfo(op);
         }
+        public static async Task ExecuteAsync(
+            this SyncUserInfo.SyncUserInfoBuilder builder,
+            string namespace_
+        )
+        {
+            SyncUserInfo op = builder.Build(
+                namespace_
+            );
+
+            await ((Legal.Wrapper.UserInfo)builder.WrapperObject!).SyncUserInfoAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
@@ -42,6 +62,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Legal.Wrapper.UserInfo)builder.WrapperObject!).InvalidateUserInfoCache(op);
+        }
+        public static async Task ExecuteAsync(
+            this InvalidateUserInfoCache.InvalidateUserInfoCacheBuilder builder
+        )
+        {
+            InvalidateUserInfoCache op = builder.Build(
+            );
+
+            await ((Legal.Wrapper.UserInfo)builder.WrapperObject!).InvalidateUserInfoCacheAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).ListViews(op);
         }
+        public static async Task<List<Platform.Model.ListViewInfo>?> ExecuteAsync(
+            this ListViews.ListViewsBuilder builder,
+            string namespace_
+        )
+        {
+            ListViews op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).ListViewsAsync(op);
+        }
         public static Platform.Model.FullViewInfo? Execute(
             this CreateView.CreateViewBuilder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).CreateView(op);
         }
+        public static async Task<Platform.Model.FullViewInfo?> ExecuteAsync(
+            this CreateView.CreateViewBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            CreateView op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).CreateViewAsync(op);
+        }
         public static Platform.Model.FullViewInfo? Execute(
             this GetView.GetViewBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).GetView(op);
+        }
+        public static async Task<Platform.Model.FullViewInfo?> ExecuteAsync(
+            this GetView.GetViewBuilder builder,
+            string namespace_,
+            string viewId
+        )
+        {
+            GetView op = builder.Build(
+                namespace_,
+                viewId
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).GetViewAsync(op);
         }
         public static Platform.Model.FullViewInfo? Execute(
             this UpdateView.UpdateViewBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).UpdateView(op);
         }
+        public static async Task<Platform.Model.FullViewInfo?> ExecuteAsync(
+            this UpdateView.UpdateViewBuilder builder,
+            string namespace_,
+            string viewId,
+            string storeId
+        )
+        {
+            UpdateView op = builder.Build(
+                namespace_,
+                viewId,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).UpdateViewAsync(op);
+        }
         public static void Execute(
             this DeleteView.DeleteViewBuilder builder,
             string namespace_,
@@ -79,6 +131,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.View)builder.WrapperObject!).DeleteView(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteView.DeleteViewBuilder builder,
+            string namespace_,
+            string viewId,
+            string storeId
+        )
+        {
+            DeleteView op = builder.Build(
+                namespace_,
+                viewId,
+                storeId
+            );
+
+            await ((Platform.Wrapper.View)builder.WrapperObject!).DeleteViewAsync(op);
+        }
         public static List<Platform.Model.ViewInfo>? Execute(
             this PublicListViews.PublicListViewsBuilder builder,
             string namespace_,
@@ -91,6 +158,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViews(op);
+        }
+        public static async Task<List<Platform.Model.ViewInfo>?> ExecuteAsync(
+            this PublicListViews.PublicListViewsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListViews op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViewsAsync(op);
         }
 
         public static List<Platform.Model.ViewInfo<T1>>? Execute<T1>(
@@ -105,6 +185,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViews<T1>(op);
+        }
+        public static async Task<List<Platform.Model.ViewInfo<T1>>?> ExecuteAsync<T1>(
+            this PublicListViews.PublicListViewsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListViews op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.View)builder.WrapperObject!).PublicListViewsAsync<T1>(op);
         }
     }
 }

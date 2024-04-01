@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadSessionStorage(op);
         }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this AdminReadSessionStorage.AdminReadSessionStorageBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminReadSessionStorage op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadSessionStorageAsync(op);
+        }
         public static void Execute(
             this AdminDeleteUserSessionStorage.AdminDeleteUserSessionStorageBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminDeleteUserSessionStorage(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteUserSessionStorage.AdminDeleteUserSessionStorageBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminDeleteUserSessionStorage op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminDeleteUserSessionStorageAsync(op);
         }
         public static Dictionary<string, object>? Execute(
             this AdminReadUserSessionStorage.AdminReadUserSessionStorageBuilder builder,
@@ -53,6 +79,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadUserSessionStorage(op);
         }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this AdminReadUserSessionStorage.AdminReadUserSessionStorageBuilder builder,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            AdminReadUserSessionStorage op = builder.Build(
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadUserSessionStorageAsync(op);
+        }
         public static Dictionary<string, object>? Execute(
             this PublicUpdateInsertSessionStorageLeader.PublicUpdateInsertSessionStorageLeaderBuilder builder,
             Dictionary<string, object> body,
@@ -67,6 +108,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageLeader(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertSessionStorageLeader.PublicUpdateInsertSessionStorageLeaderBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicUpdateInsertSessionStorageLeader op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageLeaderAsync(op);
         }
         public static Dictionary<string, object>? Execute(
             this PublicUpdateInsertSessionStorage.PublicUpdateInsertSessionStorageBuilder builder,
@@ -84,6 +140,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorage(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertSessionStorage.PublicUpdateInsertSessionStorageBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicUpdateInsertSessionStorage op = builder.Build(
+                body,
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageAsync(op);
         }
     }
 }

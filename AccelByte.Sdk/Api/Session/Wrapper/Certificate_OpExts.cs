@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -28,6 +28,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Certificate)builder.WrapperObject!).HandleUploadXboxPFXCertificate(op);
+        }
+        public static async Task<Session.Model.ModelsPlatformCredentials?> ExecuteAsync(
+            this HandleUploadXboxPFXCertificate.HandleUploadXboxPFXCertificateBuilder builder,
+            string certname,
+            Stream file,
+            string password,
+            string namespace_
+        )
+        {
+            HandleUploadXboxPFXCertificate op = builder.Build(
+                certname,
+                file,
+                password,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Certificate)builder.WrapperObject!).HandleUploadXboxPFXCertificateAsync(op);
         }
     }
 }

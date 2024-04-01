@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Invoice)builder.WrapperObject!).DownloadInvoiceDetails(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this DownloadInvoiceDetails.DownloadInvoiceDetailsBuilder builder,
+            string namespace_,
+            string endTime,
+            string startTime
+        )
+        {
+            DownloadInvoiceDetails op = builder.Build(
+                namespace_,
+                endTime,
+                startTime
+            );
+
+            return await ((Platform.Wrapper.Invoice)builder.WrapperObject!).DownloadInvoiceDetailsAsync(op);
+        }
         public static Platform.Model.InvoiceSummary? Execute(
             this GenerateInvoiceSummary.GenerateInvoiceSummaryBuilder builder,
             string namespace_,
@@ -41,6 +56,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Invoice)builder.WrapperObject!).GenerateInvoiceSummary(op);
+        }
+        public static async Task<Platform.Model.InvoiceSummary?> ExecuteAsync(
+            this GenerateInvoiceSummary.GenerateInvoiceSummaryBuilder builder,
+            string namespace_,
+            string endTime,
+            string startTime
+        )
+        {
+            GenerateInvoiceSummary op = builder.Build(
+                namespace_,
+                endTime,
+                startTime
+            );
+
+            return await ((Platform.Wrapper.Invoice)builder.WrapperObject!).GenerateInvoiceSummaryAsync(op);
         }
     }
 }

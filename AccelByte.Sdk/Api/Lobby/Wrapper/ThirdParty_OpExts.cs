@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminGetThirdPartyConfig(op);
         }
+        public static async Task<Lobby.Model.ModelsGetConfigResponse?> ExecuteAsync(
+            this AdminGetThirdPartyConfig.AdminGetThirdPartyConfigBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetThirdPartyConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminGetThirdPartyConfigAsync(op);
+        }
         public static Lobby.Model.ModelsUpdateConfigResponse? Execute(
             this AdminUpdateThirdPartyConfig.AdminUpdateThirdPartyConfigBuilder builder,
             ModelsUpdateConfigRequest body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminUpdateThirdPartyConfig(op);
+        }
+        public static async Task<Lobby.Model.ModelsUpdateConfigResponse?> ExecuteAsync(
+            this AdminUpdateThirdPartyConfig.AdminUpdateThirdPartyConfigBuilder builder,
+            ModelsUpdateConfigRequest body,
+            string namespace_
+        )
+        {
+            AdminUpdateThirdPartyConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminUpdateThirdPartyConfigAsync(op);
         }
         public static Lobby.Model.ModelsCreateConfigResponse? Execute(
             this AdminCreateThirdPartyConfig.AdminCreateThirdPartyConfigBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminCreateThirdPartyConfig(op);
         }
+        public static async Task<Lobby.Model.ModelsCreateConfigResponse?> ExecuteAsync(
+            this AdminCreateThirdPartyConfig.AdminCreateThirdPartyConfigBuilder builder,
+            ModelsCreateConfigRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateThirdPartyConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminCreateThirdPartyConfigAsync(op);
+        }
         public static string? Execute(
             this AdminDeleteThirdPartyConfig.AdminDeleteThirdPartyConfigBuilder builder,
             string namespace_
@@ -59,6 +96,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminDeleteThirdPartyConfig(op);
+        }
+        public static async Task<string?> ExecuteAsync(
+            this AdminDeleteThirdPartyConfig.AdminDeleteThirdPartyConfigBuilder builder,
+            string namespace_
+        )
+        {
+            AdminDeleteThirdPartyConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminDeleteThirdPartyConfigAsync(op);
         }
     }
 }

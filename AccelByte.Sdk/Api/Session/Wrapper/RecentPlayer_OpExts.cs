@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentPlayer(op);
         }
+        public static async Task<Session.Model.ModelsRecentPlayerQueryResponse?> ExecuteAsync(
+            this AdminGetRecentPlayer.AdminGetRecentPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetRecentPlayer op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentPlayerAsync(op);
+        }
         public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
             this PublicGetRecentPlayer.PublicGetRecentPlayerBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentPlayer(op);
+        }
+        public static async Task<Session.Model.ModelsRecentPlayerQueryResponse?> ExecuteAsync(
+            this PublicGetRecentPlayer.PublicGetRecentPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetRecentPlayer op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentPlayerAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -28,7 +28,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public Model.HandlersGetUsersPresenceResponse? UsersPresenceHandlerV1(UsersPresenceHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.HandlersGetUsersPresenceResponse?> UsersPresenceHandlerV1Async(UsersPresenceHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

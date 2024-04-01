@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminGetGlobalConfig(op);
         }
+        public static async Task<Lobby.Model.ModelGlobalConfiguration?> ExecuteAsync(
+            this AdminGetGlobalConfig.AdminGetGlobalConfigBuilder builder
+        )
+        {
+            AdminGetGlobalConfig op = builder.Build(
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminGetGlobalConfigAsync(op);
+        }
         public static Lobby.Model.ModelGlobalConfiguration? Execute(
             this AdminUpdateGlobalConfig.AdminUpdateGlobalConfigBuilder builder,
             ModelPutGlobalConfigurationRequest body
@@ -32,6 +41,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminUpdateGlobalConfig(op);
         }
+        public static async Task<Lobby.Model.ModelGlobalConfiguration?> ExecuteAsync(
+            this AdminUpdateGlobalConfig.AdminUpdateGlobalConfigBuilder builder,
+            ModelPutGlobalConfigurationRequest body
+        )
+        {
+            AdminUpdateGlobalConfig op = builder.Build(
+                body
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminUpdateGlobalConfigAsync(op);
+        }
         public static string? Execute(
             this AdminDeleteGlobalConfig.AdminDeleteGlobalConfigBuilder builder
         )
@@ -40,6 +60,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminDeleteGlobalConfig(op);
+        }
+        public static async Task<string?> ExecuteAsync(
+            this AdminDeleteGlobalConfig.AdminDeleteGlobalConfigBuilder builder
+        )
+        {
+            AdminDeleteGlobalConfig op = builder.Build(
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminDeleteGlobalConfigAsync(op);
         }
         public static void Execute(
             this FreeFormNotification.FreeFormNotificationBuilder builder,
@@ -54,6 +83,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).FreeFormNotification(op);
         }
+        public static async Task ExecuteAsync(
+            this FreeFormNotification.FreeFormNotificationBuilder builder,
+            ModelFreeFormNotificationRequest body,
+            string namespace_
+        )
+        {
+            FreeFormNotification op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).FreeFormNotificationAsync(op);
+        }
         public static void Execute(
             this NotificationWithTemplate.NotificationWithTemplateBuilder builder,
             ModelNotificationWithTemplateRequest body,
@@ -67,6 +109,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).NotificationWithTemplate(op);
         }
+        public static async Task ExecuteAsync(
+            this NotificationWithTemplate.NotificationWithTemplateBuilder builder,
+            ModelNotificationWithTemplateRequest body,
+            string namespace_
+        )
+        {
+            NotificationWithTemplate op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).NotificationWithTemplateAsync(op);
+        }
         public static List<Lobby.Model.ModelTemplateResponse>? Execute(
             this GetGameTemplate.GetGameTemplateBuilder builder,
             string namespace_
@@ -77,6 +132,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetGameTemplate(op);
+        }
+        public static async Task<List<Lobby.Model.ModelTemplateResponse>?> ExecuteAsync(
+            this GetGameTemplate.GetGameTemplateBuilder builder,
+            string namespace_
+        )
+        {
+            GetGameTemplate op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetGameTemplateAsync(op);
         }
         public static void Execute(
             this CreateTemplate.CreateTemplateBuilder builder,
@@ -91,6 +157,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).CreateTemplate(op);
         }
+        public static async Task ExecuteAsync(
+            this CreateTemplate.CreateTemplateBuilder builder,
+            ModelCreateTemplateRequest body,
+            string namespace_
+        )
+        {
+            CreateTemplate op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).CreateTemplateAsync(op);
+        }
         public static Lobby.Model.ModelTemplateLocalizationResponse? Execute(
             this GetSlugTemplate.GetSlugTemplateBuilder builder,
             string namespace_,
@@ -104,6 +183,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetSlugTemplate(op);
         }
+        public static async Task<Lobby.Model.ModelTemplateLocalizationResponse?> ExecuteAsync(
+            this GetSlugTemplate.GetSlugTemplateBuilder builder,
+            string namespace_,
+            string templateSlug
+        )
+        {
+            GetSlugTemplate op = builder.Build(
+                namespace_,
+                templateSlug
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetSlugTemplateAsync(op);
+        }
         public static void Execute(
             this DeleteTemplateSlug.DeleteTemplateSlugBuilder builder,
             string namespace_,
@@ -116,6 +208,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).DeleteTemplateSlug(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteTemplateSlug.DeleteTemplateSlugBuilder builder,
+            string namespace_,
+            string templateSlug
+        )
+        {
+            DeleteTemplateSlug op = builder.Build(
+                namespace_,
+                templateSlug
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).DeleteTemplateSlugAsync(op);
         }
         public static Lobby.Model.ModelTemplateLocalization? Execute(
             this GetLocalizationTemplate.GetLocalizationTemplateBuilder builder,
@@ -131,6 +236,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetLocalizationTemplate(op);
+        }
+        public static async Task<Lobby.Model.ModelTemplateLocalization?> ExecuteAsync(
+            this GetLocalizationTemplate.GetLocalizationTemplateBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            GetLocalizationTemplate op = builder.Build(
+                namespace_,
+                templateLanguage,
+                templateSlug
+            );
+
+            return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).GetLocalizationTemplateAsync(op);
         }
         public static void Execute(
             this UpdateLocalizationTemplate.UpdateLocalizationTemplateBuilder builder,
@@ -149,6 +269,23 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).UpdateLocalizationTemplate(op);
         }
+        public static async Task ExecuteAsync(
+            this UpdateLocalizationTemplate.UpdateLocalizationTemplateBuilder builder,
+            ModelUpdateTemplateRequest body,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            UpdateLocalizationTemplate op = builder.Build(
+                body,
+                namespace_,
+                templateLanguage,
+                templateSlug
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).UpdateLocalizationTemplateAsync(op);
+        }
         public static void Execute(
             this DeleteTemplateLocalization.DeleteTemplateLocalizationBuilder builder,
             string namespace_,
@@ -164,6 +301,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).DeleteTemplateLocalization(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteTemplateLocalization.DeleteTemplateLocalizationBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            DeleteTemplateLocalization op = builder.Build(
+                namespace_,
+                templateLanguage,
+                templateSlug
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).DeleteTemplateLocalizationAsync(op);
+        }
         public static void Execute(
             this PublishTemplate.PublishTemplateBuilder builder,
             string namespace_,
@@ -178,6 +330,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Admin)builder.WrapperObject!).PublishTemplate(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublishTemplate.PublishTemplateBuilder builder,
+            string namespace_,
+            string templateLanguage,
+            string templateSlug
+        )
+        {
+            PublishTemplate op = builder.Build(
+                namespace_,
+                templateLanguage,
+                templateSlug
+            );
+
+            await ((Lobby.Wrapper.Admin)builder.WrapperObject!).PublishTemplateAsync(op);
         }
     }
 }

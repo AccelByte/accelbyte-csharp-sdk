@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -91,7 +91,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.LootBoxPluginConfigInfo? GetLootBoxPluginConfig(GetLootBoxPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.LootBoxPluginConfigInfo?> GetLootBoxPluginConfigAsync(GetLootBoxPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -100,7 +107,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.LootBoxPluginConfigInfo? UpdateLootBoxPluginConfig(UpdateLootBoxPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.LootBoxPluginConfigInfo?> UpdateLootBoxPluginConfigAsync(UpdateLootBoxPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -109,7 +123,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteLootBoxPluginConfig(DeleteLootBoxPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteLootBoxPluginConfigAsync(DeleteLootBoxPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -118,7 +139,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.LootBoxPluginConfigInfo? UplodLootBoxPluginConfigCert(UplodLootBoxPluginConfigCert input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.LootBoxPluginConfigInfo?> UplodLootBoxPluginConfigCertAsync(UplodLootBoxPluginConfigCert input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -127,7 +155,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.GrpcServerInfo? GetLootBoxGrpcInfo(GetLootBoxGrpcInfo input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.GrpcServerInfo?> GetLootBoxGrpcInfoAsync(GetLootBoxGrpcInfo input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -136,7 +171,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SectionPluginConfigInfo? GetSectionPluginConfig(GetSectionPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SectionPluginConfigInfo?> GetSectionPluginConfigAsync(GetSectionPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -145,7 +187,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SectionPluginConfigInfo? UpdateSectionPluginConfig(UpdateSectionPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SectionPluginConfigInfo?> UpdateSectionPluginConfigAsync(UpdateSectionPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -154,7 +203,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteSectionPluginConfig(DeleteSectionPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteSectionPluginConfigAsync(DeleteSectionPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -163,7 +219,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SectionPluginConfigInfo? UploadSectionPluginConfigCert(UploadSectionPluginConfigCert input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SectionPluginConfigInfo?> UploadSectionPluginConfigCertAsync(UploadSectionPluginConfigCert input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -174,7 +237,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.ServicePluginConfigInfo? GetServicePluginConfig(GetServicePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ServicePluginConfigInfo?> GetServicePluginConfigAsync(GetServicePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -186,7 +256,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.ServicePluginConfigInfo? UpdateServicePluginConfig(UpdateServicePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ServicePluginConfigInfo?> UpdateServicePluginConfigAsync(UpdateServicePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -198,7 +275,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteServicePluginConfig(DeleteServicePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteServicePluginConfigAsync(DeleteServicePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -208,7 +292,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RevocationPluginConfigInfo? GetRevocationPluginConfig(GetRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevocationPluginConfigInfo?> GetRevocationPluginConfigAsync(GetRevocationPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -217,7 +308,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RevocationPluginConfigInfo? UpdateRevocationPluginConfig(UpdateRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevocationPluginConfigInfo?> UpdateRevocationPluginConfigAsync(UpdateRevocationPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -226,7 +324,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteRevocationPluginConfig(DeleteRevocationPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteRevocationPluginConfigAsync(DeleteRevocationPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -235,7 +340,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RevocationPluginConfigInfo? UploadRevocationPluginConfigCert(UploadRevocationPluginConfigCert input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevocationPluginConfigInfo?> UploadRevocationPluginConfigCertAsync(UploadRevocationPluginConfigCert input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

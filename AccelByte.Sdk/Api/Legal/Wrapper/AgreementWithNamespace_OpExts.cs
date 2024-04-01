@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreementsForMultiUsers(op);
         }
+        public static async Task<List<Legal.Model.UserAgreementsResponse>?> ExecuteAsync(
+            this RetrieveAcceptedAgreementsForMultiUsers.RetrieveAcceptedAgreementsForMultiUsersBuilder builder,
+            string namespace_
+        )
+        {
+            RetrieveAcceptedAgreementsForMultiUsers op = builder.Build(
+                namespace_
+            );
+
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreementsForMultiUsersAsync(op);
+        }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
             this RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements1(op);
         }
+        public static async Task<List<Legal.Model.RetrieveAcceptedAgreementResponse>?> ExecuteAsync(
+            this RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            RetrieveAcceptedAgreements1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements1Async(op);
+        }
         public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
             this RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion1(op);
+        }
+        public static async Task<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse?> ExecuteAsync(
+            this RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            RetrieveAllUsersByPolicyVersion1 op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion1Async(op);
         }
     }
 }

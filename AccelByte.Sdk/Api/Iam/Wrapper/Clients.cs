@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -126,7 +126,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ClientmodelClientResponse>? GetClients(GetClients input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ClientmodelClientResponse>?> GetClientsAsync(GetClients input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -138,7 +145,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientCreationResponse? CreateClient(CreateClient input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientCreationResponse?> CreateClientAsync(CreateClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -150,7 +164,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientResponse? GetClient(GetClient input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientResponse?> GetClientAsync(GetClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -162,7 +183,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientResponse? UpdateClient(UpdateClient input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientResponse?> UpdateClientAsync(UpdateClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -174,7 +202,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteClient(DeleteClient input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteClientAsync(DeleteClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -186,7 +221,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void UpdateClientPermission(UpdateClientPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UpdateClientPermissionAsync(UpdateClientPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -198,7 +240,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AddClientPermission(AddClientPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AddClientPermissionAsync(AddClientPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -210,7 +259,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteClientPermission(DeleteClientPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteClientPermissionAsync(DeleteClientPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -222,7 +278,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void UpdateClientSecret(UpdateClientSecret input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UpdateClientSecretAsync(UpdateClientSecret input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -234,7 +297,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ClientmodelClientResponse>? GetClientsbyNamespace(GetClientsbyNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ClientmodelClientResponse>?> GetClientsbyNamespaceAsync(GetClientsbyNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -246,7 +316,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientCreationResponse? CreateClientByNamespace(CreateClientByNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientCreationResponse?> CreateClientByNamespaceAsync(CreateClientByNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -258,7 +335,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteClientByNamespace(DeleteClientByNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteClientByNamespaceAsync(DeleteClientByNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -268,7 +352,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientsV3Response? AdminGetClientsByNamespaceV3(AdminGetClientsByNamespaceV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientsV3Response?> AdminGetClientsByNamespaceV3Async(AdminGetClientsByNamespaceV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -277,7 +368,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminBulkUpdateClientsV3(AdminBulkUpdateClientsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminBulkUpdateClientsV3Async(AdminBulkUpdateClientsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -286,7 +384,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientV3Response? AdminCreateClientV3(AdminCreateClientV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientV3Response?> AdminCreateClientV3Async(AdminCreateClientV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -295,7 +400,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientV3Response? AdminGetClientsbyNamespacebyIDV3(AdminGetClientsbyNamespacebyIDV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientV3Response?> AdminGetClientsbyNamespacebyIDV3Async(AdminGetClientsbyNamespacebyIDV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -304,7 +416,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteClientV3(AdminDeleteClientV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteClientV3Async(AdminDeleteClientV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -313,7 +432,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelClientV3Response? AdminUpdateClientV3(AdminUpdateClientV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelClientV3Response?> AdminUpdateClientV3Async(AdminUpdateClientV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -322,7 +448,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateClientPermissionV3(AdminUpdateClientPermissionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateClientPermissionV3Async(AdminUpdateClientPermissionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -331,7 +464,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminAddClientPermissionsV3(AdminAddClientPermissionsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminAddClientPermissionsV3Async(AdminAddClientPermissionsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -340,7 +480,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteClientPermissionV3(AdminDeleteClientPermissionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteClientPermissionV3Async(AdminDeleteClientPermissionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -349,7 +496,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateClientSecretV3(AdminUpdateClientSecretV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateClientSecretV3Async(AdminUpdateClientSecretV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminEvaluateProgress(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminEvaluateProgress.AdminEvaluateProgressBuilder builder,
+            ModelEvaluatePlayerProgressionRequest body,
+            string namespace_
+        )
+        {
+            AdminEvaluateProgress op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminEvaluateProgressAsync(op);
+        }
         public static void Execute(
             this EvaluateMyProgress.EvaluateMyProgressBuilder builder,
             string namespace_
@@ -35,6 +48,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).EvaluateMyProgress(op);
+        }
+        public static async Task ExecuteAsync(
+            this EvaluateMyProgress.EvaluateMyProgressBuilder builder,
+            string namespace_
+        )
+        {
+            EvaluateMyProgress op = builder.Build(
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).EvaluateMyProgressAsync(op);
         }
         public static Challenge.Model.ModelUserProgressionResponse? Execute(
             this PublicGetUserProgression.PublicGetUserProgressionBuilder builder,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicGetUserProgression(op);
+        }
+        public static async Task<Challenge.Model.ModelUserProgressionResponse?> ExecuteAsync(
+            this PublicGetUserProgression.PublicGetUserProgressionBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            PublicGetUserProgression op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicGetUserProgressionAsync(op);
         }
     }
 }

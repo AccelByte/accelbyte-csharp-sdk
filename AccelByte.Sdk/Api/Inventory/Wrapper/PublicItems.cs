@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -48,7 +48,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsItemResp? PublicConsumeMyItem(PublicConsumeMyItem input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsItemResp?> PublicConsumeMyItemAsync(PublicConsumeMyItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -64,10 +71,25 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ApimodelsItemResp<T1, T2>?> PublicConsumeMyItemAsync<T1, T2>(PublicConsumeMyItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsListItemResp? PublicListItems(PublicListItems input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsListItemResp?> PublicListItemsAsync(PublicListItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -76,7 +98,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public List<Model.ApimodelsUpdateItemResp>? PublicBulkUpdateMyItems(PublicBulkUpdateMyItems input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsUpdateItemResp>?> PublicBulkUpdateMyItemsAsync(PublicBulkUpdateMyItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -85,7 +114,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public List<Model.ApimodelsUpdateItemResp>? PublicBulkRemoveMyItems(PublicBulkRemoveMyItems input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsUpdateItemResp>?> PublicBulkRemoveMyItemsAsync(PublicBulkRemoveMyItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -94,7 +130,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsMoveItemsResp? PublicMoveMyItems(PublicMoveMyItems input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMoveItemsResp?> PublicMoveMyItemsAsync(PublicMoveMyItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -103,7 +146,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsItemResp? PublicGetItem(PublicGetItem input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsItemResp?> PublicGetItemAsync(PublicGetItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -114,6 +164,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             var response = _sdk.RunRequest(input);
 
+            return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsItemResp<T1, T2>?> PublicGetItemAsync<T1, T2>(PublicGetItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1, T2>(
                     response.Code,
                     response.ContentType,

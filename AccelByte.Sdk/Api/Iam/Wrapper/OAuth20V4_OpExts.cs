@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -29,6 +29,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).AuthenticationWithPlatformLinkV4(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this AuthenticationWithPlatformLinkV4.AuthenticationWithPlatformLinkV4Builder builder,
+            string clientId,
+            string linkingToken,
+            string password,
+            string username
+        )
+        {
+            AuthenticationWithPlatformLinkV4 op = builder.Build(
+                clientId,
+                linkingToken,
+                password,
+                username
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).AuthenticationWithPlatformLinkV4Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this GenerateTokenByNewHeadlessAccountV4.GenerateTokenByNewHeadlessAccountV4Builder builder,
             string linkingToken
@@ -39,6 +56,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV4(op);
+        }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this GenerateTokenByNewHeadlessAccountV4.GenerateTokenByNewHeadlessAccountV4Builder builder,
+            string linkingToken
+        )
+        {
+            GenerateTokenByNewHeadlessAccountV4 op = builder.Build(
+                linkingToken
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV4Async(op);
         }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this Verify2faCodeV4.Verify2faCodeV4Builder builder,
@@ -57,6 +85,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).Verify2faCodeV4(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this Verify2faCodeV4.Verify2faCodeV4Builder builder,
+            string code,
+            string factor,
+            string mfaToken,
+            bool rememberDevice
+        )
+        {
+            Verify2faCodeV4 op = builder.Build(
+                code,
+                factor,
+                mfaToken,
+                rememberDevice
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).Verify2faCodeV4Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this PlatformTokenGrantV4.PlatformTokenGrantV4Builder builder,
             string platformId
@@ -67,6 +112,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).PlatformTokenGrantV4(op);
+        }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this PlatformTokenGrantV4.PlatformTokenGrantV4Builder builder,
+            string platformId
+        )
+        {
+            PlatformTokenGrantV4 op = builder.Build(
+                platformId
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).PlatformTokenGrantV4Async(op);
         }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this SimultaneousLoginV4.SimultaneousLoginV4Builder builder,
@@ -81,6 +137,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).SimultaneousLoginV4(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this SimultaneousLoginV4.SimultaneousLoginV4Builder builder,
+            string nativePlatform,
+            string nativePlatformTicket
+        )
+        {
+            SimultaneousLoginV4 op = builder.Build(
+                nativePlatform,
+                nativePlatformTicket
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).SimultaneousLoginV4Async(op);
+        }
         public static Iam.Model.OauthmodelTokenWithDeviceCookieResponseV3? Execute(
             this TokenGrantV4.TokenGrantV4Builder builder,
             string grantType
@@ -92,6 +161,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).TokenGrantV4(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenWithDeviceCookieResponseV3?> ExecuteAsync(
+            this TokenGrantV4.TokenGrantV4Builder builder,
+            string grantType
+        )
+        {
+            TokenGrantV4 op = builder.Build(
+                grantType
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).TokenGrantV4Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this RequestTargetTokenResponseV4.RequestTargetTokenResponseV4Builder builder,
             string code
@@ -102,6 +182,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).RequestTargetTokenResponseV4(op);
+        }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this RequestTargetTokenResponseV4.RequestTargetTokenResponseV4Builder builder,
+            string code
+        )
+        {
+            RequestTargetTokenResponseV4 op = builder.Build(
+                code
+            );
+
+            return await ((Iam.Wrapper.OAuth20V4)builder.WrapperObject!).RequestTargetTokenResponseV4Async(op);
         }
     }
 }

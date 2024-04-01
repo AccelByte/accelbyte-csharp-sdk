@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.PublicReasons)builder.WrapperObject!).PublicListReasonGroups(op);
         }
+        public static async Task<Reporting.Model.RestapiReasonGroupListResponse?> ExecuteAsync(
+            this PublicListReasonGroups.PublicListReasonGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListReasonGroups op = builder.Build(
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.PublicReasons)builder.WrapperObject!).PublicListReasonGroupsAsync(op);
+        }
         public static Reporting.Model.RestapiPublicReasonListResponse? Execute(
             this PublicGetReasons.PublicGetReasonsBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.PublicReasons)builder.WrapperObject!).PublicGetReasons(op);
+        }
+        public static async Task<Reporting.Model.RestapiPublicReasonListResponse?> ExecuteAsync(
+            this PublicGetReasons.PublicGetReasonsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetReasons op = builder.Build(
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.PublicReasons)builder.WrapperObject!).PublicGetReasonsAsync(op);
         }
     }
 }

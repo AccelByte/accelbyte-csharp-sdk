@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicy1(op);
         }
+        public static async Task ExecuteAsync(
+            this UpdatePolicy1.UpdatePolicy1Builder builder,
+            string namespace_,
+            string policyId
+        )
+        {
+            UpdatePolicy1 op = builder.Build(
+                namespace_,
+                policyId
+            );
+
+            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicy1Async(op);
+        }
         public static void Execute(
             this SetDefaultPolicy3.SetDefaultPolicy3Builder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicy3(op);
+        }
+        public static async Task ExecuteAsync(
+            this SetDefaultPolicy3.SetDefaultPolicy3Builder builder,
+            string namespace_,
+            string policyId
+        )
+        {
+            SetDefaultPolicy3 op = builder.Build(
+                namespace_,
+                policyId
+            );
+
+            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicy3Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).QueryTiers(op);
         }
+        public static async Task<Seasonpass.Model.TierPagingSlicedResult?> ExecuteAsync(
+            this QueryTiers.QueryTiersBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            QueryTiers op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).QueryTiersAsync(op);
+        }
         public static List<Seasonpass.Model.Tier>? Execute(
             this CreateTier.CreateTierBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).CreateTier(op);
+        }
+        public static async Task<List<Seasonpass.Model.Tier>?> ExecuteAsync(
+            this CreateTier.CreateTierBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            CreateTier op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).CreateTierAsync(op);
         }
         public static Seasonpass.Model.Tier? Execute(
             this UpdateTier.UpdateTierBuilder builder,
@@ -53,6 +79,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).UpdateTier(op);
         }
+        public static async Task<Seasonpass.Model.Tier?> ExecuteAsync(
+            this UpdateTier.UpdateTierBuilder builder,
+            string id,
+            string namespace_,
+            string seasonId
+        )
+        {
+            UpdateTier op = builder.Build(
+                id,
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).UpdateTierAsync(op);
+        }
         public static void Execute(
             this DeleteTier.DeleteTierBuilder builder,
             string id,
@@ -67,6 +108,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).DeleteTier(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteTier.DeleteTierBuilder builder,
+            string id,
+            string namespace_,
+            string seasonId
+        )
+        {
+            DeleteTier op = builder.Build(
+                id,
+                namespace_,
+                seasonId
+            );
+
+            await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).DeleteTierAsync(op);
         }
         public static Seasonpass.Model.Tier? Execute(
             this ReorderTier.ReorderTierBuilder builder,
@@ -83,6 +139,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).ReorderTier(op);
         }
+        public static async Task<Seasonpass.Model.Tier?> ExecuteAsync(
+            this ReorderTier.ReorderTierBuilder builder,
+            string id,
+            string namespace_,
+            string seasonId
+        )
+        {
+            ReorderTier op = builder.Build(
+                id,
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).ReorderTierAsync(op);
+        }
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserExp.GrantUserExpBuilder builder,
             string namespace_,
@@ -96,6 +167,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserExp(op);
         }
+        public static async Task<Seasonpass.Model.UserSeasonSummary?> ExecuteAsync(
+            this GrantUserExp.GrantUserExpBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GrantUserExp op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserExpAsync(op);
+        }
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserTier.GrantUserTierBuilder builder,
             string namespace_,
@@ -108,6 +192,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserTier(op);
+        }
+        public static async Task<Seasonpass.Model.UserSeasonSummary?> ExecuteAsync(
+            this GrantUserTier.GrantUserTierBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GrantUserTier op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Tier)builder.WrapperObject!).GrantUserTierAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -68,7 +68,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelThirdPartyLoginPlatformCredentialResponse>? RetrieveAllThirdPartyLoginPlatformCredentialV3(RetrieveAllThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelThirdPartyLoginPlatformCredentialResponse>?> RetrieveAllThirdPartyLoginPlatformCredentialV3Async(RetrieveAllThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -77,7 +84,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelThirdPartyLoginPlatformCredentialResponse>? RetrieveAllActiveThirdPartyLoginPlatformCredentialV3(RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelThirdPartyLoginPlatformCredentialResponse>?> RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Async(RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -86,7 +100,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelThirdPartyLoginPlatformCredentialResponse? RetrieveThirdPartyLoginPlatformCredentialV3(RetrieveThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelThirdPartyLoginPlatformCredentialResponse?> RetrieveThirdPartyLoginPlatformCredentialV3Async(RetrieveThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -95,7 +116,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelThirdPartyLoginPlatformCredentialResponse? AddThirdPartyLoginPlatformCredentialV3(AddThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelThirdPartyLoginPlatformCredentialResponse?> AddThirdPartyLoginPlatformCredentialV3Async(AddThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -104,7 +132,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteThirdPartyLoginPlatformCredentialV3(DeleteThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteThirdPartyLoginPlatformCredentialV3Async(DeleteThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -113,7 +148,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelThirdPartyLoginPlatformCredentialResponse? UpdateThirdPartyLoginPlatformCredentialV3(UpdateThirdPartyLoginPlatformCredentialV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelThirdPartyLoginPlatformCredentialResponse?> UpdateThirdPartyLoginPlatformCredentialV3Async(UpdateThirdPartyLoginPlatformCredentialV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -122,7 +164,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelPlatformDomainResponse? UpdateThirdPartyLoginPlatformDomainV3(UpdateThirdPartyLoginPlatformDomainV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPlatformDomainResponse?> UpdateThirdPartyLoginPlatformDomainV3Async(UpdateThirdPartyLoginPlatformDomainV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -131,7 +180,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteThirdPartyLoginPlatformDomainV3(DeleteThirdPartyLoginPlatformDomainV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteThirdPartyLoginPlatformDomainV3Async(DeleteThirdPartyLoginPlatformDomainV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -140,7 +196,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCheckAvailabilityResponse? AdminCheckThirdPartyLoginPlatformAvailabilityV3(AdminCheckThirdPartyLoginPlatformAvailabilityV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCheckAvailabilityResponse?> AdminCheckThirdPartyLoginPlatformAvailabilityV3Async(AdminCheckThirdPartyLoginPlatformAvailabilityV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -149,7 +212,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelPublicThirdPartyPlatformInfo>? RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelPublicThirdPartyPlatformInfo>?> RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Async(RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -158,7 +228,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelPublicThirdPartyPlatformInfo>? RetrieveActiveOIDCClientsPublicV3(RetrieveActiveOIDCClientsPublicV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelPublicThirdPartyPlatformInfo>?> RetrieveActiveOIDCClientsPublicV3Async(RetrieveActiveOIDCClientsPublicV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

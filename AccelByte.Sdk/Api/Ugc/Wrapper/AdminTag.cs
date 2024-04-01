@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedGetTagResponse? AdminGetTag(AdminGetTag input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedGetTagResponse?> AdminGetTagAsync(AdminGetTag input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateTagResponse? AdminCreateTag(AdminCreateTag input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateTagResponse?> AdminCreateTagAsync(AdminCreateTag input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateTagResponse? AdminUpdateTag(AdminUpdateTag input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateTagResponse?> AdminUpdateTagAsync(AdminUpdateTag input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public void AdminDeleteTag(AdminDeleteTag input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteTagAsync(AdminDeleteTag input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

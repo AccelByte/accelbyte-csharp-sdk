@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolList(op);
         }
+        public static async Task<Match2.Model.ApiListMatchPoolsResponse?> ExecuteAsync(
+            this MatchPoolList.MatchPoolListBuilder builder,
+            string namespace_
+        )
+        {
+            MatchPoolList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolListAsync(op);
+        }
         public static void Execute(
             this CreateMatchPool.CreateMatchPoolBuilder builder,
             ApiMatchPool body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.MatchPools)builder.WrapperObject!).CreateMatchPool(op);
         }
+        public static async Task ExecuteAsync(
+            this CreateMatchPool.CreateMatchPoolBuilder builder,
+            ApiMatchPool body,
+            string namespace_
+        )
+        {
+            CreateMatchPool op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).CreateMatchPoolAsync(op);
+        }
         public static Match2.Model.ApiMatchPool? Execute(
             this MatchPoolDetails.MatchPoolDetailsBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolDetails(op);
+        }
+        public static async Task<Match2.Model.ApiMatchPool?> ExecuteAsync(
+            this MatchPoolDetails.MatchPoolDetailsBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            MatchPoolDetails op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolDetailsAsync(op);
         }
         public static Match2.Model.ApiMatchPool? Execute(
             this UpdateMatchPool.UpdateMatchPoolBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).UpdateMatchPool(op);
         }
+        public static async Task<Match2.Model.ApiMatchPool?> ExecuteAsync(
+            this UpdateMatchPool.UpdateMatchPoolBuilder builder,
+            ApiMatchPoolConfig body,
+            string namespace_,
+            string pool
+        )
+        {
+            UpdateMatchPool op = builder.Build(
+                body,
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).UpdateMatchPoolAsync(op);
+        }
         public static void Execute(
             this DeleteMatchPool.DeleteMatchPoolBuilder builder,
             string namespace_,
@@ -76,6 +128,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.MatchPools)builder.WrapperObject!).DeleteMatchPool(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteMatchPool.DeleteMatchPoolBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            DeleteMatchPool op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).DeleteMatchPoolAsync(op);
         }
         public static Match2.Model.ApiTicketMetricResultRecord? Execute(
             this MatchPoolMetric.MatchPoolMetricBuilder builder,
@@ -90,6 +155,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolMetric(op);
         }
+        public static async Task<Match2.Model.ApiTicketMetricResultRecord?> ExecuteAsync(
+            this MatchPoolMetric.MatchPoolMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            MatchPoolMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolMetricAsync(op);
+        }
         public static Match2.Model.ApiPlayerMetricRecord? Execute(
             this GetPlayerMetric.GetPlayerMetricBuilder builder,
             string namespace_,
@@ -103,6 +181,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).GetPlayerMetric(op);
         }
+        public static async Task<Match2.Model.ApiPlayerMetricRecord?> ExecuteAsync(
+            this GetPlayerMetric.GetPlayerMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            GetPlayerMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).GetPlayerMetricAsync(op);
+        }
         public static Match2.Model.ApiListMatchPoolTicketsResponse? Execute(
             this AdminGetMatchPoolTickets.AdminGetMatchPoolTicketsBuilder builder,
             string namespace_,
@@ -115,6 +206,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).AdminGetMatchPoolTickets(op);
+        }
+        public static async Task<Match2.Model.ApiListMatchPoolTicketsResponse?> ExecuteAsync(
+            this AdminGetMatchPoolTickets.AdminGetMatchPoolTicketsBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            AdminGetMatchPoolTickets op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).AdminGetMatchPoolTicketsAsync(op);
         }
     }
 }

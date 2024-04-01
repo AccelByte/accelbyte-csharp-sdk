@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -71,7 +71,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public string Authorization(Authorization input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> AuthorizationAsync(Authorization input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -83,7 +90,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.OauthcommonJWKSet? GetJWKS(GetJWKS input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthcommonJWKSet?> GetJWKSAsync(GetJWKS input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -95,7 +109,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.OauthmodelTokenResponse? PlatformTokenRequestHandler(PlatformTokenRequestHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthmodelTokenResponse?> PlatformTokenRequestHandlerAsync(PlatformTokenRequestHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -107,7 +128,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void RevokeUser(RevokeUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task RevokeUserAsync(RevokeUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -119,7 +147,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.OauthapiRevocationList? GetRevocationList(GetRevocationList input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthapiRevocationList?> GetRevocationListAsync(GetRevocationList input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -131,7 +166,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void RevokeToken(RevokeToken input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task RevokeTokenAsync(RevokeToken input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -143,7 +185,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void RevokeAUser(RevokeAUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task RevokeAUserAsync(RevokeAUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -155,7 +204,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.OauthmodelTokenResponse? TokenGrant(TokenGrant input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthmodelTokenResponse?> TokenGrantAsync(TokenGrant input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -167,7 +223,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.OauthmodelTokenResponse? VerifyToken(VerifyToken input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthmodelTokenResponse?> VerifyTokenAsync(VerifyToken input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

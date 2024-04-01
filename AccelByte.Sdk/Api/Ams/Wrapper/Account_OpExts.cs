@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountGet(op);
         }
+        public static async Task<Ams.Model.ApiAccountResponse?> ExecuteAsync(
+            this AdminAccountGet.AdminAccountGetBuilder builder,
+            string namespace_
+        )
+        {
+            AdminAccountGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountGetAsync(op);
+        }
         public static Ams.Model.ApiAccountCreateResponse? Execute(
             this AdminAccountCreate.AdminAccountCreateBuilder builder,
             ApiAccountCreateRequest body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountCreate(op);
         }
+        public static async Task<Ams.Model.ApiAccountCreateResponse?> ExecuteAsync(
+            this AdminAccountCreate.AdminAccountCreateBuilder builder,
+            ApiAccountCreateRequest body,
+            string namespace_
+        )
+        {
+            AdminAccountCreate op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountCreateAsync(op);
+        }
         public static Ams.Model.ApiAccountLinkTokenResponse? Execute(
             this AdminAccountLinkTokenGet.AdminAccountLinkTokenGetBuilder builder,
             string namespace_
@@ -46,6 +70,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenGet(op);
+        }
+        public static async Task<Ams.Model.ApiAccountLinkTokenResponse?> ExecuteAsync(
+            this AdminAccountLinkTokenGet.AdminAccountLinkTokenGetBuilder builder,
+            string namespace_
+        )
+        {
+            AdminAccountLinkTokenGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenGetAsync(op);
         }
         public static Ams.Model.ApiAccountLinkResponse? Execute(
             this AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder builder,
@@ -60,6 +95,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenPost(op);
         }
+        public static async Task<Ams.Model.ApiAccountLinkResponse?> ExecuteAsync(
+            this AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder builder,
+            ApiAccountLinkRequest body,
+            string namespace_
+        )
+        {
+            AdminAccountLinkTokenPost op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenPostAsync(op);
+        }
         public static Ams.Model.ApiAccountResponse? Execute(
             this AccountGet.AccountGetBuilder builder,
             string namespace_
@@ -70,6 +118,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Account)builder.WrapperObject!).AccountGet(op);
+        }
+        public static async Task<Ams.Model.ApiAccountResponse?> ExecuteAsync(
+            this AccountGet.AccountGetBuilder builder,
+            string namespace_
+        )
+        {
+            AccountGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AccountGetAsync(op);
         }
     }
 }

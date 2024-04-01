@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievements(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedGlobalAchievementResponse?> ExecuteAsync(
+            this AdminListGlobalAchievements.AdminListGlobalAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListGlobalAchievements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievementsAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedContributorResponse? Execute(
             this AdminListGlobalAchievementContributors.AdminListGlobalAchievementContributorsBuilder builder,
             string achievementCode,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievementContributors(op);
+        }
+        public static async Task<Achievement.Model.ModelsPaginatedContributorResponse?> ExecuteAsync(
+            this AdminListGlobalAchievementContributors.AdminListGlobalAchievementContributorsBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminListGlobalAchievementContributors op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListGlobalAchievementContributorsAsync(op);
         }
         public static void Execute(
             this ResetGlobalAchievement.ResetGlobalAchievementBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ResetGlobalAchievement(op);
         }
+        public static async Task ExecuteAsync(
+            this ResetGlobalAchievement.ResetGlobalAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            ResetGlobalAchievement op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ResetGlobalAchievementAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedUserContributionResponse? Execute(
             this AdminListUserContributions.AdminListUserContributionsBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListUserContributions(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedUserContributionResponse?> ExecuteAsync(
+            this AdminListUserContributions.AdminListUserContributionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUserContributions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).AdminListUserContributionsAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedGlobalAchievementResponse? Execute(
             this PublicListGlobalAchievements.PublicListGlobalAchievementsBuilder builder,
             string namespace_
@@ -72,6 +122,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).PublicListGlobalAchievements(op);
+        }
+        public static async Task<Achievement.Model.ModelsPaginatedGlobalAchievementResponse?> ExecuteAsync(
+            this PublicListGlobalAchievements.PublicListGlobalAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListGlobalAchievements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).PublicListGlobalAchievementsAsync(op);
         }
         public static Achievement.Model.ModelsPaginatedContributorResponse? Execute(
             this ListGlobalAchievementContributors.ListGlobalAchievementContributorsBuilder builder,
@@ -86,6 +147,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListGlobalAchievementContributors(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedContributorResponse?> ExecuteAsync(
+            this ListGlobalAchievementContributors.ListGlobalAchievementContributorsBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            ListGlobalAchievementContributors op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListGlobalAchievementContributorsAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedUserContributionResponse? Execute(
             this ListUserContributions.ListUserContributionsBuilder builder,
             string namespace_,
@@ -98,6 +172,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListUserContributions(op);
+        }
+        public static async Task<Achievement.Model.ModelsPaginatedUserContributionResponse?> ExecuteAsync(
+            this ListUserContributions.ListUserContributionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ListUserContributions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ListUserContributionsAsync(op);
         }
         public static void Execute(
             this ClaimGlobalAchievementReward.ClaimGlobalAchievementRewardBuilder builder,
@@ -113,6 +200,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ClaimGlobalAchievementReward(op);
+        }
+        public static async Task ExecuteAsync(
+            this ClaimGlobalAchievementReward.ClaimGlobalAchievementRewardBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            ClaimGlobalAchievementReward op = builder.Build(
+                achievementCode,
+                namespace_,
+                userId
+            );
+
+            await ((Achievement.Wrapper.GlobalAchievements)builder.WrapperObject!).ClaimGlobalAchievementRewardAsync(op);
         }
     }
 }

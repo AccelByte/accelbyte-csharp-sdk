@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.SSO)builder.WrapperObject!).LoginSSOClient(op);
         }
+        public static async Task ExecuteAsync(
+            this LoginSSOClient.LoginSSOClientBuilder builder,
+            string platformId
+        )
+        {
+            LoginSSOClient op = builder.Build(
+                platformId
+            );
+
+            await ((Iam.Wrapper.SSO)builder.WrapperObject!).LoginSSOClientAsync(op);
+        }
         public static void Execute(
             this LogoutSSOClient.LogoutSSOClientBuilder builder,
             string platformId
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.SSO)builder.WrapperObject!).LogoutSSOClient(op);
+        }
+        public static async Task ExecuteAsync(
+            this LogoutSSOClient.LogoutSSOClientBuilder builder,
+            string platformId
+        )
+        {
+            LogoutSSOClient op = builder.Build(
+                platformId
+            );
+
+            await ((Iam.Wrapper.SSO)builder.WrapperObject!).LogoutSSOClientAsync(op);
         }
     }
 }

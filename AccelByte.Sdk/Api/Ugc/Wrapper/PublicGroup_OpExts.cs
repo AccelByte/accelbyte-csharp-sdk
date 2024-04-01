@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroups(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedGroupResponse?> ExecuteAsync(
+            this GetGroups.GetGroupsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetGroups op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupsAsync(op);
+        }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this CreateGroup.CreateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).CreateGroup(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this CreateGroup.CreateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateGroup op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).CreateGroupAsync(op);
+        }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this GetGroup.GetGroupBuilder builder,
             string groupId,
@@ -54,6 +82,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroup(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this GetGroup.GetGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetGroup op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupAsync(op);
         }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this UpdateGroup.UpdateGroupBuilder builder,
@@ -72,6 +115,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).UpdateGroup(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this UpdateGroup.UpdateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateGroup op = builder.Build(
+                body,
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).UpdateGroupAsync(op);
+        }
         public static void Execute(
             this DeleteGroup.DeleteGroupBuilder builder,
             string groupId,
@@ -86,6 +146,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).DeleteGroup(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGroup.DeleteGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteGroup op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).DeleteGroupAsync(op);
         }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this GetGroupContent.GetGroupContentBuilder builder,
@@ -102,6 +177,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupContent(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this GetGroupContent.GetGroupContentBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetGroupContent op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).GetGroupContentAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
             this PublicGetGroupContentsV2.PublicGetGroupContentsV2Builder builder,
             string groupId,
@@ -116,6 +206,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).PublicGetGroupContentsV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this PublicGetGroupContentsV2.PublicGetGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicGroup)builder.WrapperObject!).PublicGetGroupContentsV2Async(op);
         }
     }
 }

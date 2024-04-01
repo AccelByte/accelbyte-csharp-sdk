@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminGetType(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedGetTypeResponse?> ExecuteAsync(
+            this AdminGetType.AdminGetTypeBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetType op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminGetTypeAsync(op);
+        }
         public static Ugc.Model.ModelsCreateTypeResponse? Execute(
             this AdminCreateType.AdminCreateTypeBuilder builder,
             ModelsCreateTypeRequest body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminCreateType(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateTypeResponse?> ExecuteAsync(
+            this AdminCreateType.AdminCreateTypeBuilder builder,
+            ModelsCreateTypeRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateType op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminCreateTypeAsync(op);
         }
         public static Ugc.Model.ModelsCreateTypeResponse? Execute(
             this AdminUpdateType.AdminUpdateTypeBuilder builder,
@@ -51,6 +75,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminUpdateType(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateTypeResponse?> ExecuteAsync(
+            this AdminUpdateType.AdminUpdateTypeBuilder builder,
+            ModelsCreateTypeRequest body,
+            string namespace_,
+            string typeId
+        )
+        {
+            AdminUpdateType op = builder.Build(
+                body,
+                namespace_,
+                typeId
+            );
+
+            return await ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminUpdateTypeAsync(op);
+        }
         public static void Execute(
             this AdminDeleteType.AdminDeleteTypeBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminDeleteType(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteType.AdminDeleteTypeBuilder builder,
+            string namespace_,
+            string typeId
+        )
+        {
+            AdminDeleteType op = builder.Build(
+                namespace_,
+                typeId
+            );
+
+            await ((Ugc.Wrapper.AdminType)builder.WrapperObject!).AdminDeleteTypeAsync(op);
         }
     }
 }

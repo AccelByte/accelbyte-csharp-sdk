@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -60,7 +60,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CatalogChangePagingResult? QueryChanges(QueryChanges input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CatalogChangePagingResult?> QueryChangesAsync(QueryChanges input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -69,7 +76,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.StoreInfo? PublishAll(PublishAll input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.StoreInfo?> PublishAllAsync(PublishAll input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -78,7 +92,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.StoreInfo? PublishSelected(PublishSelected input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.StoreInfo?> PublishSelectedAsync(PublishSelected input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -87,7 +108,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void SelectAllRecords(SelectAllRecords input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SelectAllRecordsAsync(SelectAllRecords input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -96,7 +124,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void SelectAllRecordsByCriteria(SelectAllRecordsByCriteria input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SelectAllRecordsByCriteriaAsync(SelectAllRecordsByCriteria input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -105,7 +140,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CatalogChangeStatistics? GetStatistic(GetStatistic input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CatalogChangeStatistics?> GetStatisticAsync(GetStatistic input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -114,7 +156,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void UnselectAllRecords(UnselectAllRecords input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UnselectAllRecordsAsync(UnselectAllRecords input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -123,7 +172,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void SelectRecord(SelectRecord input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SelectRecordAsync(SelectRecord input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -132,7 +188,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void UnselectRecord(UnselectRecord input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UnselectRecordAsync(UnselectRecord input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).ListTickets(op);
         }
+        public static async Task<Reporting.Model.RestapiTicketListResponse?> ExecuteAsync(
+            this ListTickets.ListTicketsBuilder builder,
+            string namespace_
+        )
+        {
+            ListTickets op = builder.Build(
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).ListTicketsAsync(op);
+        }
         public static Reporting.Model.RestapiTicketStatisticResponse? Execute(
             this TicketStatistic.TicketStatisticBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).TicketStatistic(op);
+        }
+        public static async Task<Reporting.Model.RestapiTicketStatisticResponse?> ExecuteAsync(
+            this TicketStatistic.TicketStatisticBuilder builder,
+            string namespace_,
+            string category
+        )
+        {
+            TicketStatistic op = builder.Build(
+                namespace_,
+                category
+            );
+
+            return await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).TicketStatisticAsync(op);
         }
         public static Reporting.Model.RestapiTicketResponse? Execute(
             this GetTicketDetail.GetTicketDetailBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).GetTicketDetail(op);
         }
+        public static async Task<Reporting.Model.RestapiTicketResponse?> ExecuteAsync(
+            this GetTicketDetail.GetTicketDetailBuilder builder,
+            string namespace_,
+            string ticketId
+        )
+        {
+            GetTicketDetail op = builder.Build(
+                namespace_,
+                ticketId
+            );
+
+            return await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).GetTicketDetailAsync(op);
+        }
         public static void Execute(
             this DeleteTicket.DeleteTicketBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).DeleteTicket(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteTicket.DeleteTicketBuilder builder,
+            string namespace_,
+            string ticketId
+        )
+        {
+            DeleteTicket op = builder.Build(
+                namespace_,
+                ticketId
+            );
+
+            await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).DeleteTicketAsync(op);
+        }
         public static Reporting.Model.RestapiReportListResponse? Execute(
             this GetReportsByTicket.GetReportsByTicketBuilder builder,
             string namespace_,
@@ -74,6 +124,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).GetReportsByTicket(op);
+        }
+        public static async Task<Reporting.Model.RestapiReportListResponse?> ExecuteAsync(
+            this GetReportsByTicket.GetReportsByTicketBuilder builder,
+            string namespace_,
+            string ticketId
+        )
+        {
+            GetReportsByTicket op = builder.Build(
+                namespace_,
+                ticketId
+            );
+
+            return await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).GetReportsByTicketAsync(op);
         }
         public static Reporting.Model.RestapiTicketResponse? Execute(
             this UpdateTicketResolutions.UpdateTicketResolutionsBuilder builder,
@@ -89,6 +152,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).UpdateTicketResolutions(op);
+        }
+        public static async Task<Reporting.Model.RestapiTicketResponse?> ExecuteAsync(
+            this UpdateTicketResolutions.UpdateTicketResolutionsBuilder builder,
+            RestapiUpdateTicketResolutionsRequest body,
+            string namespace_,
+            string ticketId
+        )
+        {
+            UpdateTicketResolutions op = builder.Build(
+                body,
+                namespace_,
+                ticketId
+            );
+
+            return await ((Reporting.Wrapper.AdminTickets)builder.WrapperObject!).UpdateTicketResolutionsAsync(op);
         }
     }
 }

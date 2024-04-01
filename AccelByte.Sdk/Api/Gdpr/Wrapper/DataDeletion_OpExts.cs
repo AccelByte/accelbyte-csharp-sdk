@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminGetListDeletionDataRequest(op);
         }
+        public static async Task<Gdpr.Model.ModelsListDeletionDataResponse?> ExecuteAsync(
+            this AdminGetListDeletionDataRequest.AdminGetListDeletionDataRequestBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetListDeletionDataRequest op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminGetListDeletionDataRequestAsync(op);
+        }
         public static Gdpr.Model.ModelsDeletionData? Execute(
             this AdminGetUserAccountDeletionRequest.AdminGetUserAccountDeletionRequestBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminGetUserAccountDeletionRequest(op);
+        }
+        public static async Task<Gdpr.Model.ModelsDeletionData?> ExecuteAsync(
+            this AdminGetUserAccountDeletionRequest.AdminGetUserAccountDeletionRequestBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserAccountDeletionRequest op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminGetUserAccountDeletionRequestAsync(op);
         }
         public static Gdpr.Model.ModelsRequestDeleteResponse? Execute(
             this AdminSubmitUserAccountDeletionRequest.AdminSubmitUserAccountDeletionRequestBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminSubmitUserAccountDeletionRequest(op);
         }
+        public static async Task<Gdpr.Model.ModelsRequestDeleteResponse?> ExecuteAsync(
+            this AdminSubmitUserAccountDeletionRequest.AdminSubmitUserAccountDeletionRequestBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSubmitUserAccountDeletionRequest op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminSubmitUserAccountDeletionRequestAsync(op);
+        }
         public static void Execute(
             this AdminCancelUserAccountDeletionRequest.AdminCancelUserAccountDeletionRequestBuilder builder,
             string namespace_,
@@ -61,6 +98,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminCancelUserAccountDeletionRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminCancelUserAccountDeletionRequest.AdminCancelUserAccountDeletionRequestBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminCancelUserAccountDeletionRequest op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).AdminCancelUserAccountDeletionRequestAsync(op);
         }
         public static Gdpr.Model.ModelsRequestDeleteResponse? Execute(
             this PublicSubmitUserAccountDeletionRequest.PublicSubmitUserAccountDeletionRequestBuilder builder,
@@ -77,6 +127,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicSubmitUserAccountDeletionRequest(op);
         }
+        public static async Task<Gdpr.Model.ModelsRequestDeleteResponse?> ExecuteAsync(
+            this PublicSubmitUserAccountDeletionRequest.PublicSubmitUserAccountDeletionRequestBuilder builder,
+            string password,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSubmitUserAccountDeletionRequest op = builder.Build(
+                password,
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicSubmitUserAccountDeletionRequestAsync(op);
+        }
         public static void Execute(
             this PublicCancelUserAccountDeletionRequest.PublicCancelUserAccountDeletionRequestBuilder builder,
             string namespace_,
@@ -89,6 +154,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicCancelUserAccountDeletionRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicCancelUserAccountDeletionRequest.PublicCancelUserAccountDeletionRequestBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicCancelUserAccountDeletionRequest op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicCancelUserAccountDeletionRequestAsync(op);
         }
         public static Gdpr.Model.ModelsDeletionStatus? Execute(
             this PublicGetUserAccountDeletionStatus.PublicGetUserAccountDeletionStatusBuilder builder,
@@ -103,6 +181,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetUserAccountDeletionStatus(op);
         }
+        public static async Task<Gdpr.Model.ModelsDeletionStatus?> ExecuteAsync(
+            this PublicGetUserAccountDeletionStatus.PublicGetUserAccountDeletionStatusBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserAccountDeletionStatus op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetUserAccountDeletionStatusAsync(op);
+        }
         public static Gdpr.Model.ModelsRequestDeleteResponse? Execute(
             this PublicSubmitMyAccountDeletionRequest.PublicSubmitMyAccountDeletionRequestBuilder builder,
             string platformId,
@@ -116,6 +207,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicSubmitMyAccountDeletionRequest(op);
         }
+        public static async Task<Gdpr.Model.ModelsRequestDeleteResponse?> ExecuteAsync(
+            this PublicSubmitMyAccountDeletionRequest.PublicSubmitMyAccountDeletionRequestBuilder builder,
+            string platformId,
+            string platformToken
+        )
+        {
+            PublicSubmitMyAccountDeletionRequest op = builder.Build(
+                platformId,
+                platformToken
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicSubmitMyAccountDeletionRequestAsync(op);
+        }
         public static void Execute(
             this PublicCancelMyAccountDeletionRequest.PublicCancelMyAccountDeletionRequestBuilder builder
         )
@@ -125,6 +229,15 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicCancelMyAccountDeletionRequest(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicCancelMyAccountDeletionRequest.PublicCancelMyAccountDeletionRequestBuilder builder
+        )
+        {
+            PublicCancelMyAccountDeletionRequest op = builder.Build(
+            );
+
+            await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicCancelMyAccountDeletionRequestAsync(op);
+        }
         public static Gdpr.Model.ModelsDeletionStatus? Execute(
             this PublicGetMyAccountDeletionStatus.PublicGetMyAccountDeletionStatusBuilder builder
         )
@@ -133,6 +246,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetMyAccountDeletionStatus(op);
+        }
+        public static async Task<Gdpr.Model.ModelsDeletionStatus?> ExecuteAsync(
+            this PublicGetMyAccountDeletionStatus.PublicGetMyAccountDeletionStatusBuilder builder
+        )
+        {
+            PublicGetMyAccountDeletionStatus op = builder.Build(
+            );
+
+            return await ((Gdpr.Wrapper.DataDeletion)builder.WrapperObject!).PublicGetMyAccountDeletionStatusAsync(op);
         }
     }
 }

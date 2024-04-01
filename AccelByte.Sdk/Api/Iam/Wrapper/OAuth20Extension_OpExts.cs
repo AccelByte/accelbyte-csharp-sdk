@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UserAuthenticationV3(op);
         }
+        public static async Task<string> ExecuteAsync(
+            this UserAuthenticationV3.UserAuthenticationV3Builder builder,
+            string password,
+            string requestId,
+            string userName
+        )
+        {
+            UserAuthenticationV3 op = builder.Build(
+                password,
+                requestId,
+                userName
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UserAuthenticationV3Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this AuthenticationWithPlatformLinkV3.AuthenticationWithPlatformLinkV3Builder builder,
             string clientId,
@@ -44,6 +59,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticationWithPlatformLinkV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this AuthenticationWithPlatformLinkV3.AuthenticationWithPlatformLinkV3Builder builder,
+            string clientId,
+            string linkingToken,
+            string password,
+            string username
+        )
+        {
+            AuthenticationWithPlatformLinkV3 op = builder.Build(
+                clientId,
+                linkingToken,
+                password,
+                username
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticationWithPlatformLinkV3Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder builder,
             string linkingToken
@@ -54,6 +86,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV3(op);
+        }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder builder,
+            string linkingToken
+        )
+        {
+            GenerateTokenByNewHeadlessAccountV3 op = builder.Build(
+                linkingToken
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GenerateTokenByNewHeadlessAccountV3Async(op);
         }
         public static Iam.Model.OauthmodelOneTimeLinkingCodeResponse? Execute(
             this RequestOneTimeLinkingCodeV3.RequestOneTimeLinkingCodeV3Builder builder,
@@ -66,6 +109,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestOneTimeLinkingCodeV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelOneTimeLinkingCodeResponse?> ExecuteAsync(
+            this RequestOneTimeLinkingCodeV3.RequestOneTimeLinkingCodeV3Builder builder,
+            string platformId
+        )
+        {
+            RequestOneTimeLinkingCodeV3 op = builder.Build(
+                platformId
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestOneTimeLinkingCodeV3Async(op);
+        }
         public static Iam.Model.OauthmodelOneTimeLinkingCodeValidationResponse? Execute(
             this ValidateOneTimeLinkingCodeV3.ValidateOneTimeLinkingCodeV3Builder builder,
             string oneTimeLinkCode
@@ -76,6 +130,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).ValidateOneTimeLinkingCodeV3(op);
+        }
+        public static async Task<Iam.Model.OauthmodelOneTimeLinkingCodeValidationResponse?> ExecuteAsync(
+            this ValidateOneTimeLinkingCodeV3.ValidateOneTimeLinkingCodeV3Builder builder,
+            string oneTimeLinkCode
+        )
+        {
+            ValidateOneTimeLinkingCodeV3 op = builder.Build(
+                oneTimeLinkCode
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).ValidateOneTimeLinkingCodeV3Async(op);
         }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this RequestTokenByOneTimeLinkCodeResponseV3.RequestTokenByOneTimeLinkCodeResponseV3Builder builder,
@@ -90,6 +155,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenByOneTimeLinkCodeResponseV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this RequestTokenByOneTimeLinkCodeResponseV3.RequestTokenByOneTimeLinkCodeResponseV3Builder builder,
+            string clientId,
+            string oneTimeLinkCode
+        )
+        {
+            RequestTokenByOneTimeLinkCodeResponseV3 op = builder.Build(
+                clientId,
+                oneTimeLinkCode
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenByOneTimeLinkCodeResponseV3Async(op);
+        }
         public static Iam.Model.OauthmodelCountryLocationResponse? Execute(
             this GetCountryLocationV3.GetCountryLocationV3Builder builder
         )
@@ -99,6 +177,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GetCountryLocationV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelCountryLocationResponse?> ExecuteAsync(
+            this GetCountryLocationV3.GetCountryLocationV3Builder builder
+        )
+        {
+            GetCountryLocationV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).GetCountryLocationV3Async(op);
+        }
         public static void Execute(
             this Logout.LogoutBuilder builder
         )
@@ -107,6 +194,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).Logout(op);
+        }
+        public static async Task ExecuteAsync(
+            this Logout.LogoutBuilder builder
+        )
+        {
+            Logout op = builder.Build(
+            );
+
+            await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).LogoutAsync(op);
         }
         public static Iam.Model.OauthmodelTargetTokenCodeResponse? Execute(
             this RequestTokenExchangeCodeV3.RequestTokenExchangeCodeV3Builder builder,
@@ -121,6 +217,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenExchangeCodeV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelTargetTokenCodeResponse?> ExecuteAsync(
+            this RequestTokenExchangeCodeV3.RequestTokenExchangeCodeV3Builder builder,
+            string clientId,
+            string namespace_
+        )
+        {
+            RequestTokenExchangeCodeV3 op = builder.Build(
+                clientId,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTokenExchangeCodeV3Async(op);
+        }
         public static string Execute(
             this PlatformAuthenticationV3.PlatformAuthenticationV3Builder builder,
             string platformId,
@@ -133,6 +242,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformAuthenticationV3(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this PlatformAuthenticationV3.PlatformAuthenticationV3Builder builder,
+            string platformId,
+            string state
+        )
+        {
+            PlatformAuthenticationV3 op = builder.Build(
+                platformId,
+                state
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformAuthenticationV3Async(op);
         }
         public static Iam.Model.OauthmodelPlatformTokenRefreshResponseV3? Execute(
             this PlatformTokenRefreshV3.PlatformTokenRefreshV3Builder builder,
@@ -147,6 +269,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformTokenRefreshV3(op);
         }
+        public static async Task<Iam.Model.OauthmodelPlatformTokenRefreshResponseV3?> ExecuteAsync(
+            this PlatformTokenRefreshV3.PlatformTokenRefreshV3Builder builder,
+            string platformToken,
+            string platformId
+        )
+        {
+            PlatformTokenRefreshV3 op = builder.Build(
+                platformToken,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).PlatformTokenRefreshV3Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this RequestTargetTokenResponseV3.RequestTargetTokenResponseV3Builder builder,
             string code
@@ -157,6 +292,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTargetTokenResponseV3(op);
+        }
+        public static async Task<Iam.Model.OauthmodelTokenResponseV3?> ExecuteAsync(
+            this RequestTargetTokenResponseV3.RequestTargetTokenResponseV3Builder builder,
+            string code
+        )
+        {
+            RequestTargetTokenResponseV3 op = builder.Build(
+                code
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTargetTokenResponseV3Async(op);
         }
     }
 }

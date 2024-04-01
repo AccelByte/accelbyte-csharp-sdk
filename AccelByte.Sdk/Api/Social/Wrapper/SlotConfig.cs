@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -56,7 +56,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.NamespaceSlotConfigInfo? GetNamespaceSlotConfig(GetNamespaceSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceSlotConfigInfo?> GetNamespaceSlotConfigAsync(GetNamespaceSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -68,7 +75,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.NamespaceSlotConfigInfo? UpdateNamespaceSlotConfig(UpdateNamespaceSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceSlotConfigInfo?> UpdateNamespaceSlotConfigAsync(UpdateNamespaceSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +94,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public void DeleteNamespaceSlotConfig(DeleteNamespaceSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteNamespaceSlotConfigAsync(DeleteNamespaceSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -92,7 +113,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.UserSlotConfigInfo? GetUserSlotConfig(GetUserSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UserSlotConfigInfo?> GetUserSlotConfigAsync(GetUserSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -104,7 +132,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.UserSlotConfigInfo? UpdateUserSlotConfig(UpdateUserSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UserSlotConfigInfo?> UpdateUserSlotConfigAsync(UpdateUserSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -116,7 +151,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public void DeleteUserSlotConfig(DeleteUserSlotConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserSlotConfigAsync(DeleteUserSlotConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

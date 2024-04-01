@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -104,7 +104,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionQueryResponse? AdminQuerySession(AdminQuerySession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionQueryResponse?> AdminQuerySessionAsync(AdminQuerySession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -113,7 +120,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsCountActiveSessionResponse? GetTotalActiveSession(GetTotalActiveSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCountActiveSessionResponse?> GetTotalActiveSessionAsync(GetTotalActiveSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -122,7 +136,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsActiveCustomGameResponse? GetActiveCustomGameSessions(GetActiveCustomGameSessions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsActiveCustomGameResponse?> GetActiveCustomGameSessionsAsync(GetActiveCustomGameSessions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -131,7 +152,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsActiveMatchmakingGameResponse? GetActiveMatchmakingGameSessions(GetActiveMatchmakingGameSessions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsActiveMatchmakingGameResponse?> GetActiveMatchmakingGameSessionsAsync(GetActiveMatchmakingGameSessions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -140,7 +168,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsAdminSessionResponse? AdminGetSession(AdminGetSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsAdminSessionResponse?> AdminGetSessionAsync(AdminGetSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -149,7 +184,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsAdminSessionResponse? AdminDeleteSession(AdminDeleteSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsAdminSessionResponse?> AdminDeleteSessionAsync(AdminDeleteSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -158,7 +200,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsGetSessionHistorySearchResponseV2? AdminSearchSessionsV2(AdminSearchSessionsV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetSessionHistorySearchResponseV2?> AdminSearchSessionsV2Async(AdminSearchSessionsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -167,7 +216,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public List<Model.ModelsGetSessionHistoryDetailedResponseItem>? GetSessionHistoryDetailed(GetSessionHistoryDetailed input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsGetSessionHistoryDetailedResponseItem>?> GetSessionHistoryDetailedAsync(GetSessionHistoryDetailed input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -176,7 +232,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionQueryResponse? UserQuerySession(UserQuerySession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionQueryResponse?> UserQuerySessionAsync(UserQuerySession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -185,7 +248,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? CreateSession(CreateSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> CreateSessionAsync(CreateSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -194,7 +264,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionByUserIDsResponse? GetSessionByUserIDs(GetSessionByUserIDs input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionByUserIDsResponse?> GetSessionByUserIDsAsync(GetSessionByUserIDs input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -203,7 +280,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? GetSession(GetSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> GetSessionAsync(GetSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -212,7 +296,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? UpdateSession(UpdateSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> UpdateSessionAsync(UpdateSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -221,7 +312,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? DeleteSession(DeleteSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> DeleteSessionAsync(DeleteSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -230,7 +328,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? JoinSession(JoinSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> JoinSessionAsync(JoinSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -239,7 +344,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? DeleteSessionLocalDS(DeleteSessionLocalDS input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> DeleteSessionLocalDSAsync(DeleteSessionLocalDS input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -248,7 +360,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsAddPlayerResponse? AddPlayerToSession(AddPlayerToSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsAddPlayerResponse?> AddPlayerToSessionAsync(AddPlayerToSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -257,7 +376,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsAddPlayerResponse? RemovePlayerFromSession(RemovePlayerFromSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsAddPlayerResponse?> RemovePlayerFromSessionAsync(RemovePlayerFromSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -266,7 +392,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsSessionResponse? UpdateSettings(UpdateSettings input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsSessionResponse?> UpdateSettingsAsync(UpdateSettings input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -275,7 +408,14 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Wrapper
         public Model.ModelsRecentPlayerQueryResponse? GetRecentPlayer(GetRecentPlayer input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsRecentPlayerQueryResponse?> GetRecentPlayerAsync(GetRecentPlayer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

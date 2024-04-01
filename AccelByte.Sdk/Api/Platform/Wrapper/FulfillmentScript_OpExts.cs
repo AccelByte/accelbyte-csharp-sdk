@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).ListFulfillmentScripts(op);
         }
+        public static async Task<List<Platform.Model.FulfillmentScriptInfo>?> ExecuteAsync(
+            this ListFulfillmentScripts.ListFulfillmentScriptsBuilder builder
+        )
+        {
+            ListFulfillmentScripts op = builder.Build(
+            );
+
+            return await ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).ListFulfillmentScriptsAsync(op);
+        }
         public static Platform.Model.FulfillmentScriptInfo? Execute(
             this GetFulfillmentScript.GetFulfillmentScriptBuilder builder,
             string id
@@ -31,6 +40,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).GetFulfillmentScript(op);
+        }
+        public static async Task<Platform.Model.FulfillmentScriptInfo?> ExecuteAsync(
+            this GetFulfillmentScript.GetFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            GetFulfillmentScript op = builder.Build(
+                id
+            );
+
+            return await ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).GetFulfillmentScriptAsync(op);
         }
         public static Platform.Model.FulfillmentScriptInfo? Execute(
             this CreateFulfillmentScript.CreateFulfillmentScriptBuilder builder,
@@ -43,6 +63,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).CreateFulfillmentScript(op);
         }
+        public static async Task<Platform.Model.FulfillmentScriptInfo?> ExecuteAsync(
+            this CreateFulfillmentScript.CreateFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            CreateFulfillmentScript op = builder.Build(
+                id
+            );
+
+            return await ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).CreateFulfillmentScriptAsync(op);
+        }
         public static void Execute(
             this DeleteFulfillmentScript.DeleteFulfillmentScriptBuilder builder,
             string id
@@ -54,6 +85,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).DeleteFulfillmentScript(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteFulfillmentScript.DeleteFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            DeleteFulfillmentScript op = builder.Build(
+                id
+            );
+
+            await ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).DeleteFulfillmentScriptAsync(op);
+        }
         public static Platform.Model.FulfillmentScriptInfo? Execute(
             this UpdateFulfillmentScript.UpdateFulfillmentScriptBuilder builder,
             string id
@@ -64,6 +106,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).UpdateFulfillmentScript(op);
+        }
+        public static async Task<Platform.Model.FulfillmentScriptInfo?> ExecuteAsync(
+            this UpdateFulfillmentScript.UpdateFulfillmentScriptBuilder builder,
+            string id
+        )
+        {
+            UpdateFulfillmentScript op = builder.Build(
+                id
+            );
+
+            return await ((Platform.Wrapper.FulfillmentScript)builder.WrapperObject!).UpdateFulfillmentScriptAsync(op);
         }
     }
 }

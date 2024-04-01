@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,7 +44,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public Model.ModelGetGoalsResponse? AdminGetGoals(AdminGetGoals input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetGoalsResponse?> AdminGetGoalsAsync(AdminGetGoals input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -53,7 +60,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public Model.ModelGoalResponse? AdminCreateGoal(AdminCreateGoal input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGoalResponse?> AdminCreateGoalAsync(AdminCreateGoal input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -62,7 +76,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public Model.ModelGoalResponse? AdminGetGoal(AdminGetGoal input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGoalResponse?> AdminGetGoalAsync(AdminGetGoal input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +92,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public Model.ModelGoalResponse? AdminUpdateGoals(AdminUpdateGoals input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGoalResponse?> AdminUpdateGoalsAsync(AdminUpdateGoals input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +108,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public void AdminDeleteGoal(AdminDeleteGoal input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteGoalAsync(AdminDeleteGoal input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

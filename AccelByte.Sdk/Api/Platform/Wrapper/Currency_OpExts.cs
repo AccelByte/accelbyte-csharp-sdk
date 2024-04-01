@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).ListCurrencies(op);
         }
+        public static async Task<List<Platform.Model.CurrencyInfo>?> ExecuteAsync(
+            this ListCurrencies.ListCurrenciesBuilder builder,
+            string namespace_
+        )
+        {
+            ListCurrencies op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).ListCurrenciesAsync(op);
+        }
         public static Platform.Model.CurrencyInfo? Execute(
             this CreateCurrency.CreateCurrencyBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).CreateCurrency(op);
+        }
+        public static async Task<Platform.Model.CurrencyInfo?> ExecuteAsync(
+            this CreateCurrency.CreateCurrencyBuilder builder,
+            string namespace_
+        )
+        {
+            CreateCurrency op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).CreateCurrencyAsync(op);
         }
         public static Platform.Model.CurrencyInfo? Execute(
             this UpdateCurrency.UpdateCurrencyBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).UpdateCurrency(op);
         }
+        public static async Task<Platform.Model.CurrencyInfo?> ExecuteAsync(
+            this UpdateCurrency.UpdateCurrencyBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            UpdateCurrency op = builder.Build(
+                currencyCode,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).UpdateCurrencyAsync(op);
+        }
         public static Platform.Model.CurrencyInfo? Execute(
             this DeleteCurrency.DeleteCurrencyBuilder builder,
             string currencyCode,
@@ -59,6 +94,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).DeleteCurrency(op);
+        }
+        public static async Task<Platform.Model.CurrencyInfo?> ExecuteAsync(
+            this DeleteCurrency.DeleteCurrencyBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            DeleteCurrency op = builder.Build(
+                currencyCode,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).DeleteCurrencyAsync(op);
         }
         public static Platform.Model.CurrencyConfig? Execute(
             this GetCurrencyConfig.GetCurrencyConfigBuilder builder,
@@ -73,6 +121,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencyConfig(op);
         }
+        public static async Task<Platform.Model.CurrencyConfig?> ExecuteAsync(
+            this GetCurrencyConfig.GetCurrencyConfigBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            GetCurrencyConfig op = builder.Build(
+                currencyCode,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencyConfigAsync(op);
+        }
         public static Platform.Model.CurrencySummary? Execute(
             this GetCurrencySummary.GetCurrencySummaryBuilder builder,
             string currencyCode,
@@ -86,6 +147,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencySummary(op);
         }
+        public static async Task<Platform.Model.CurrencySummary?> ExecuteAsync(
+            this GetCurrencySummary.GetCurrencySummaryBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            GetCurrencySummary op = builder.Build(
+                currencyCode,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).GetCurrencySummaryAsync(op);
+        }
         public static List<Platform.Model.CurrencyInfo>? Execute(
             this PublicListCurrencies.PublicListCurrenciesBuilder builder,
             string namespace_
@@ -96,6 +170,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Currency)builder.WrapperObject!).PublicListCurrencies(op);
+        }
+        public static async Task<List<Platform.Model.CurrencyInfo>?> ExecuteAsync(
+            this PublicListCurrencies.PublicListCurrenciesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListCurrencies op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Currency)builder.WrapperObject!).PublicListCurrenciesAsync(op);
         }
     }
 }

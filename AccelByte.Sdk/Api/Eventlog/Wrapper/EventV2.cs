@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsEventResponseV2? QueryEventStreamHandler(QueryEventStreamHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsEventResponseV2?> QueryEventStreamHandlerAsync(QueryEventStreamHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsEventResponseV2? GetEventSpecificUserV2Handler(GetEventSpecificUserV2Handler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsEventResponseV2?> GetEventSpecificUserV2HandlerAsync(GetEventSpecificUserV2Handler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsEventResponseV2? GetPublicEditHistory(GetPublicEditHistory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsEventResponseV2?> GetPublicEditHistoryAsync(GetPublicEditHistory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsEventResponseV2? GetUserEventsV2Public(GetUserEventsV2Public input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsEventResponseV2?> GetUserEventsV2PublicAsync(GetUserEventsV2Public input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

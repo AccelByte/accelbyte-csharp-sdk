@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).QueryKeyGroups(op);
         }
+        public static async Task<Platform.Model.KeyGroupPagingSlicedResult?> ExecuteAsync(
+            this QueryKeyGroups.QueryKeyGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryKeyGroups op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).QueryKeyGroupsAsync(op);
+        }
         public static Platform.Model.KeyGroupInfo? Execute(
             this CreateKeyGroup.CreateKeyGroupBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).CreateKeyGroup(op);
+        }
+        public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
+            this CreateKeyGroup.CreateKeyGroupBuilder builder,
+            string namespace_
+        )
+        {
+            CreateKeyGroup op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).CreateKeyGroupAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.KeyGroupInfo? Execute(
@@ -48,6 +70,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupByBoothName(op);
         }
+        public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
+            this GetKeyGroupByBoothName.GetKeyGroupByBoothNameBuilder builder,
+            string namespace_,
+            string boothName
+        )
+        {
+            GetKeyGroupByBoothName op = builder.Build(
+                namespace_,
+                boothName
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupByBoothNameAsync(op);
+        }
         public static Platform.Model.KeyGroupInfo? Execute(
             this GetKeyGroup.GetKeyGroupBuilder builder,
             string keyGroupId,
@@ -60,6 +95,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroup(op);
+        }
+        public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
+            this GetKeyGroup.GetKeyGroupBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            GetKeyGroup op = builder.Build(
+                keyGroupId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupAsync(op);
         }
         public static Platform.Model.KeyGroupInfo? Execute(
             this UpdateKeyGroup.UpdateKeyGroupBuilder builder,
@@ -74,6 +122,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UpdateKeyGroup(op);
         }
+        public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
+            this UpdateKeyGroup.UpdateKeyGroupBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            UpdateKeyGroup op = builder.Build(
+                keyGroupId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UpdateKeyGroupAsync(op);
+        }
         public static Platform.Model.KeyGroupDynamicInfo? Execute(
             this GetKeyGroupDynamic.GetKeyGroupDynamicBuilder builder,
             string keyGroupId,
@@ -86,6 +147,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupDynamic(op);
+        }
+        public static async Task<Platform.Model.KeyGroupDynamicInfo?> ExecuteAsync(
+            this GetKeyGroupDynamic.GetKeyGroupDynamicBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            GetKeyGroupDynamic op = builder.Build(
+                keyGroupId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).GetKeyGroupDynamicAsync(op);
         }
         public static Platform.Model.KeyPagingSliceResult? Execute(
             this ListKeys.ListKeysBuilder builder,
@@ -100,6 +174,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).ListKeys(op);
         }
+        public static async Task<Platform.Model.KeyPagingSliceResult?> ExecuteAsync(
+            this ListKeys.ListKeysBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            ListKeys op = builder.Build(
+                keyGroupId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).ListKeysAsync(op);
+        }
         public static Platform.Model.BulkOperationResult? Execute(
             this UploadKeys.UploadKeysBuilder builder,
             string keyGroupId,
@@ -112,6 +199,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UploadKeys(op);
+        }
+        public static async Task<Platform.Model.BulkOperationResult?> ExecuteAsync(
+            this UploadKeys.UploadKeysBuilder builder,
+            string keyGroupId,
+            string namespace_
+        )
+        {
+            UploadKeys op = builder.Build(
+                keyGroupId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.KeyGroup)builder.WrapperObject!).UploadKeysAsync(op);
         }
     }
 }

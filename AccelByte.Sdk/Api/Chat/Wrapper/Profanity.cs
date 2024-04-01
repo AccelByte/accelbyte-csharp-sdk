@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -56,7 +56,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionaryQueryResult? AdminProfanityQuery(AdminProfanityQuery input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionaryQueryResult?> AdminProfanityQueryAsync(AdminProfanityQuery input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -65,7 +72,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionary? AdminProfanityCreate(AdminProfanityCreate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionary?> AdminProfanityCreateAsync(AdminProfanityCreate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -74,7 +88,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionary? AdminProfanityCreateBulk(AdminProfanityCreateBulk input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionary?> AdminProfanityCreateBulkAsync(AdminProfanityCreateBulk input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -83,7 +104,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionaryExport? AdminProfanityExport(AdminProfanityExport input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionaryExport?> AdminProfanityExportAsync(AdminProfanityExport input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -92,7 +120,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public List<Model.ModelsDictionaryGroup>? AdminProfanityGroup(AdminProfanityGroup input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsDictionaryGroup>?> AdminProfanityGroupAsync(AdminProfanityGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -101,7 +136,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionaryImportResult? AdminProfanityImport(AdminProfanityImport input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionaryImportResult?> AdminProfanityImportAsync(AdminProfanityImport input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -110,7 +152,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsDictionary? AdminProfanityUpdate(AdminProfanityUpdate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDictionary?> AdminProfanityUpdateAsync(AdminProfanityUpdate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -119,7 +168,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public void AdminProfanityDelete(AdminProfanityDelete input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminProfanityDeleteAsync(AdminProfanityDelete input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

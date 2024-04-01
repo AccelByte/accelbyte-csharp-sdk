@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminListGlobalConfiguration(op);
         }
+        public static async Task<Session.Model.ApimodelsGlobalConfigurationResponse?> ExecuteAsync(
+            this AdminListGlobalConfiguration.AdminListGlobalConfigurationBuilder builder
+        )
+        {
+            AdminListGlobalConfiguration op = builder.Build(
+            );
+
+            return await ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminListGlobalConfigurationAsync(op);
+        }
         public static Session.Model.ApimodelsGlobalConfigurationResponse? Execute(
             this AdminUpdateGlobalConfiguration.AdminUpdateGlobalConfigurationBuilder builder,
             ApimodelsPutGlobalConfigurationRequest body
@@ -32,6 +41,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminUpdateGlobalConfiguration(op);
         }
+        public static async Task<Session.Model.ApimodelsGlobalConfigurationResponse?> ExecuteAsync(
+            this AdminUpdateGlobalConfiguration.AdminUpdateGlobalConfigurationBuilder builder,
+            ApimodelsPutGlobalConfigurationRequest body
+        )
+        {
+            AdminUpdateGlobalConfiguration op = builder.Build(
+                body
+            );
+
+            return await ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminUpdateGlobalConfigurationAsync(op);
+        }
         public static string? Execute(
             this AdminDeleteGlobalConfiguration.AdminDeleteGlobalConfigurationBuilder builder
         )
@@ -40,6 +60,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminDeleteGlobalConfiguration(op);
+        }
+        public static async Task<string?> ExecuteAsync(
+            this AdminDeleteGlobalConfiguration.AdminDeleteGlobalConfigurationBuilder builder
+        )
+        {
+            AdminDeleteGlobalConfiguration op = builder.Build(
+            );
+
+            return await ((Session.Wrapper.GlobalConfiguration)builder.WrapperObject!).AdminDeleteGlobalConfigurationAsync(op);
         }
     }
 }

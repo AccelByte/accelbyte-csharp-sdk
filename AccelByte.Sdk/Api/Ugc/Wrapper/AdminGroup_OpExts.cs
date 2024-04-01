@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetAllGroups(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedGroupResponse?> ExecuteAsync(
+            this SingleAdminGetAllGroups.SingleAdminGetAllGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            SingleAdminGetAllGroups op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetAllGroupsAsync(op);
+        }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminCreateGroup.AdminCreateGroupBuilder builder,
             ModelsCreateGroupRequest body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminCreateGroup(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this AdminCreateGroup.AdminCreateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateGroup op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminCreateGroupAsync(op);
+        }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this SingleAdminGetGroup.SingleAdminGetGroupBuilder builder,
             string groupId,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroup(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this SingleAdminGetGroup.SingleAdminGetGroupBuilder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            SingleAdminGetGroup op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroupAsync(op);
         }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this SingleAdminUpdateGroup.SingleAdminUpdateGroupBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminUpdateGroup(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this SingleAdminUpdateGroup.SingleAdminUpdateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string groupId,
+            string namespace_
+        )
+        {
+            SingleAdminUpdateGroup op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminUpdateGroupAsync(op);
+        }
         public static void Execute(
             this SingleAdminDeleteGroup.SingleAdminDeleteGroupBuilder builder,
             string groupId,
@@ -76,6 +128,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminDeleteGroup(op);
+        }
+        public static async Task ExecuteAsync(
+            this SingleAdminDeleteGroup.SingleAdminDeleteGroupBuilder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            SingleAdminDeleteGroup op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminDeleteGroupAsync(op);
         }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this SingleAdminGetGroupContents.SingleAdminGetGroupContentsBuilder builder,
@@ -90,6 +155,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroupContents(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this SingleAdminGetGroupContents.SingleAdminGetGroupContentsBuilder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            SingleAdminGetGroupContents op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).SingleAdminGetGroupContentsAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedGroupResponse? Execute(
             this AdminGetAllGroups.AdminGetAllGroupsBuilder builder,
             string namespace_,
@@ -102,6 +180,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetAllGroups(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedGroupResponse?> ExecuteAsync(
+            this AdminGetAllGroups.AdminGetAllGroupsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetAllGroups op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetAllGroupsAsync(op);
         }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminGetGroup.AdminGetGroupBuilder builder,
@@ -117,6 +208,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroup(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this AdminGetGroup.AdminGetGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetGroup op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroupAsync(op);
         }
         public static Ugc.Model.ModelsCreateGroupResponse? Execute(
             this AdminUpdateGroup.AdminUpdateGroupBuilder builder,
@@ -135,6 +241,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminUpdateGroup(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateGroupResponse?> ExecuteAsync(
+            this AdminUpdateGroup.AdminUpdateGroupBuilder builder,
+            ModelsCreateGroupRequest body,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateGroup op = builder.Build(
+                body,
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminUpdateGroupAsync(op);
+        }
         public static void Execute(
             this AdminDeleteGroup.AdminDeleteGroupBuilder builder,
             string groupId,
@@ -149,6 +272,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminDeleteGroup(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteGroup.AdminDeleteGroupBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteGroup op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminDeleteGroupAsync(op);
         }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this AdminGetGroupContents.AdminGetGroupContentsBuilder builder,
@@ -165,6 +303,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroupContents(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this AdminGetGroupContents.AdminGetGroupContentsBuilder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetGroupContents op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetGroupContentsAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
             this AdminGetOfficialGroupContentsV2.AdminGetOfficialGroupContentsV2Builder builder,
             string groupId,
@@ -177,6 +330,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetOfficialGroupContentsV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetOfficialGroupContentsV2.AdminGetOfficialGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            AdminGetOfficialGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetOfficialGroupContentsV2Async(op);
         }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
             this AdminGetUserGroupContentsV2.AdminGetUserGroupContentsV2Builder builder,
@@ -192,6 +358,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetUserGroupContentsV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetUserGroupContentsV2.AdminGetUserGroupContentsV2Builder builder,
+            string groupId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserGroupContentsV2 op = builder.Build(
+                groupId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminGroup)builder.WrapperObject!).AdminGetUserGroupContentsV2Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).GetBansType(op);
         }
+        public static async Task<Iam.Model.AccountcommonBans?> ExecuteAsync(
+            this GetBansType.GetBansTypeBuilder builder
+        )
+        {
+            GetBansType op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).GetBansTypeAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonBanReasons? Execute(
             this GetListBanReason.GetListBanReasonBuilder builder
@@ -32,6 +41,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).GetListBanReason(op);
         }
+        public static async Task<Iam.Model.AccountcommonBanReasons?> ExecuteAsync(
+            this GetListBanReason.GetListBanReasonBuilder builder
+        )
+        {
+            GetListBanReason op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).GetListBanReasonAsync(op);
+        }
         public static Iam.Model.AccountcommonBansV3? Execute(
             this AdminGetBansTypeV3.AdminGetBansTypeV3Builder builder
         )
@@ -41,6 +59,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBansTypeV3(op);
         }
+        public static async Task<Iam.Model.AccountcommonBansV3?> ExecuteAsync(
+            this AdminGetBansTypeV3.AdminGetBansTypeV3Builder builder
+        )
+        {
+            AdminGetBansTypeV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBansTypeV3Async(op);
+        }
         public static Iam.Model.AccountcommonBanReasonsV3? Execute(
             this AdminGetListBanReasonV3.AdminGetListBanReasonV3Builder builder
         )
@@ -49,6 +76,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetListBanReasonV3(op);
+        }
+        public static async Task<Iam.Model.AccountcommonBanReasonsV3?> ExecuteAsync(
+            this AdminGetListBanReasonV3.AdminGetListBanReasonV3Builder builder
+        )
+        {
+            AdminGetListBanReasonV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetListBanReasonV3Async(op);
         }
         public static Iam.Model.ModelGetUserBanV3Response? Execute(
             this AdminGetBannedUsersV3.AdminGetBannedUsersV3Builder builder,
@@ -60,6 +96,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBannedUsersV3(op);
+        }
+        public static async Task<Iam.Model.ModelGetUserBanV3Response?> ExecuteAsync(
+            this AdminGetBannedUsersV3.AdminGetBannedUsersV3Builder builder,
+            string namespace_
+        )
+        {
+            AdminGetBannedUsersV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBannedUsersV3Async(op);
         }
         public static Iam.Model.ModelListBulkUserBanResponseV3? Execute(
             this AdminBanUserBulkV3.AdminBanUserBulkV3Builder builder,
@@ -74,6 +121,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminBanUserBulkV3(op);
         }
+        public static async Task<Iam.Model.ModelListBulkUserBanResponseV3?> ExecuteAsync(
+            this AdminBanUserBulkV3.AdminBanUserBulkV3Builder builder,
+            ModelBulkBanCreateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminBanUserBulkV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminBanUserBulkV3Async(op);
+        }
         public static Iam.Model.ModelListBulkUserBanResponseV3? Execute(
             this AdminUnbanUserBulkV3.AdminUnbanUserBulkV3Builder builder,
             ModelBulkUnbanCreateRequestV3 body,
@@ -87,6 +147,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminUnbanUserBulkV3(op);
         }
+        public static async Task<Iam.Model.ModelListBulkUserBanResponseV3?> ExecuteAsync(
+            this AdminUnbanUserBulkV3.AdminUnbanUserBulkV3Builder builder,
+            ModelBulkUnbanCreateRequestV3 body,
+            string namespace_
+        )
+        {
+            AdminUnbanUserBulkV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminUnbanUserBulkV3Async(op);
+        }
         public static Iam.Model.AccountcommonBansV3? Execute(
             this AdminGetBansTypeWithNamespaceV3.AdminGetBansTypeWithNamespaceV3Builder builder,
             string namespace_
@@ -97,6 +170,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBansTypeWithNamespaceV3(op);
+        }
+        public static async Task<Iam.Model.AccountcommonBansV3?> ExecuteAsync(
+            this AdminGetBansTypeWithNamespaceV3.AdminGetBansTypeWithNamespaceV3Builder builder,
+            string namespace_
+        )
+        {
+            AdminGetBansTypeWithNamespaceV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Bans)builder.WrapperObject!).AdminGetBansTypeWithNamespaceV3Async(op);
         }
     }
 }

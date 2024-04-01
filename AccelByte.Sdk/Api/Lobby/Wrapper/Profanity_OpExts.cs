@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDebugProfanityFilters(op);
         }
+        public static async Task<List<Lobby.Model.ModelsProfanityFilter>?> ExecuteAsync(
+            this AdminDebugProfanityFilters.AdminDebugProfanityFiltersBuilder builder,
+            ModelsDebugProfanityFilterRequest body,
+            string namespace_
+        )
+        {
+            AdminDebugProfanityFilters op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDebugProfanityFiltersAsync(op);
+        }
         public static Lobby.Model.ModelsAdminGetProfanityListFiltersV1Response? Execute(
             this AdminGetProfanityListFiltersV1.AdminGetProfanityListFiltersV1Builder builder,
             string list,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListFiltersV1(op);
+        }
+        public static async Task<Lobby.Model.ModelsAdminGetProfanityListFiltersV1Response?> ExecuteAsync(
+            this AdminGetProfanityListFiltersV1.AdminGetProfanityListFiltersV1Builder builder,
+            string list,
+            string namespace_
+        )
+        {
+            AdminGetProfanityListFiltersV1 op = builder.Build(
+                list,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListFiltersV1Async(op);
         }
         public static void Execute(
             this AdminAddProfanityFilterIntoList.AdminAddProfanityFilterIntoListBuilder builder,
@@ -53,6 +79,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilterIntoList(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminAddProfanityFilterIntoList.AdminAddProfanityFilterIntoListBuilder builder,
+            ModelsAdminAddProfanityFilterIntoListRequest body,
+            string list,
+            string namespace_
+        )
+        {
+            AdminAddProfanityFilterIntoList op = builder.Build(
+                body,
+                list,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilterIntoListAsync(op);
+        }
         public static void Execute(
             this AdminAddProfanityFilters.AdminAddProfanityFiltersBuilder builder,
             ModelsAdminAddProfanityFiltersRequest body,
@@ -67,6 +108,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilters(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminAddProfanityFilters.AdminAddProfanityFiltersBuilder builder,
+            ModelsAdminAddProfanityFiltersRequest body,
+            string list,
+            string namespace_
+        )
+        {
+            AdminAddProfanityFilters op = builder.Build(
+                body,
+                list,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFiltersAsync(op);
         }
         public static void Execute(
             this AdminImportProfanityFiltersFromFile.AdminImportProfanityFiltersFromFileBuilder builder,
@@ -83,6 +139,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminImportProfanityFiltersFromFile(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminImportProfanityFiltersFromFile.AdminImportProfanityFiltersFromFileBuilder builder,
+            List<long> body,
+            string list,
+            string namespace_
+        )
+        {
+            AdminImportProfanityFiltersFromFile op = builder.Build(
+                body,
+                list,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminImportProfanityFiltersFromFileAsync(op);
+        }
         public static List<Lobby.Model.ModelsProfanityFilter>? Execute(
             this AdminDeleteProfanityFilter.AdminDeleteProfanityFilterBuilder builder,
             ModelsAdminDeleteProfanityFilterRequest body,
@@ -98,6 +169,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityFilter(op);
         }
+        public static async Task<List<Lobby.Model.ModelsProfanityFilter>?> ExecuteAsync(
+            this AdminDeleteProfanityFilter.AdminDeleteProfanityFilterBuilder builder,
+            ModelsAdminDeleteProfanityFilterRequest body,
+            string list,
+            string namespace_
+        )
+        {
+            AdminDeleteProfanityFilter op = builder.Build(
+                body,
+                list,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityFilterAsync(op);
+        }
         public static List<Lobby.Model.ModelsAdminGetProfanityListsListResponse>? Execute(
             this AdminGetProfanityLists.AdminGetProfanityListsBuilder builder,
             string namespace_
@@ -108,6 +194,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityLists(op);
+        }
+        public static async Task<List<Lobby.Model.ModelsAdminGetProfanityListsListResponse>?> ExecuteAsync(
+            this AdminGetProfanityLists.AdminGetProfanityListsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetProfanityLists op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListsAsync(op);
         }
         public static void Execute(
             this AdminCreateProfanityList.AdminCreateProfanityListBuilder builder,
@@ -121,6 +218,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminCreateProfanityList(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminCreateProfanityList.AdminCreateProfanityListBuilder builder,
+            ModelsAdminCreateProfanityListRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateProfanityList op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminCreateProfanityListAsync(op);
         }
         public static void Execute(
             this AdminUpdateProfanityList.AdminUpdateProfanityListBuilder builder,
@@ -137,6 +247,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminUpdateProfanityList(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminUpdateProfanityList.AdminUpdateProfanityListBuilder builder,
+            ModelsAdminUpdateProfanityList body,
+            string list,
+            string namespace_
+        )
+        {
+            AdminUpdateProfanityList op = builder.Build(
+                body,
+                list,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminUpdateProfanityListAsync(op);
+        }
         public static void Execute(
             this AdminDeleteProfanityList.AdminDeleteProfanityListBuilder builder,
             string list,
@@ -150,6 +275,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityList(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteProfanityList.AdminDeleteProfanityListBuilder builder,
+            string list,
+            string namespace_
+        )
+        {
+            AdminDeleteProfanityList op = builder.Build(
+                list,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityListAsync(op);
+        }
         public static Lobby.Model.ModelsProfanityRule? Execute(
             this AdminGetProfanityRule.AdminGetProfanityRuleBuilder builder,
             string namespace_
@@ -160,6 +298,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityRule(op);
+        }
+        public static async Task<Lobby.Model.ModelsProfanityRule?> ExecuteAsync(
+            this AdminGetProfanityRule.AdminGetProfanityRuleBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetProfanityRule op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityRuleAsync(op);
         }
         public static void Execute(
             this AdminSetProfanityRuleForNamespace.AdminSetProfanityRuleForNamespaceBuilder builder,
@@ -174,6 +323,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminSetProfanityRuleForNamespace(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminSetProfanityRuleForNamespace.AdminSetProfanityRuleForNamespaceBuilder builder,
+            ModelsAdminSetProfanityRuleForNamespaceRequest body,
+            string namespace_
+        )
+        {
+            AdminSetProfanityRuleForNamespace op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminSetProfanityRuleForNamespaceAsync(op);
+        }
         public static Lobby.Model.ModelsAdminVerifyMessageProfanityResponse? Execute(
             this AdminVerifyMessageProfanityResponse.AdminVerifyMessageProfanityResponseBuilder builder,
             ModelsAdminVerifyMessageProfanityRequest body,
@@ -186,6 +348,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminVerifyMessageProfanityResponse(op);
+        }
+        public static async Task<Lobby.Model.ModelsAdminVerifyMessageProfanityResponse?> ExecuteAsync(
+            this AdminVerifyMessageProfanityResponse.AdminVerifyMessageProfanityResponseBuilder builder,
+            ModelsAdminVerifyMessageProfanityRequest body,
+            string namespace_
+        )
+        {
+            AdminVerifyMessageProfanityResponse op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminVerifyMessageProfanityResponseAsync(op);
         }
     }
 }

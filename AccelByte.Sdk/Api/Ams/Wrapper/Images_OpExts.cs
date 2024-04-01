@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Images)builder.WrapperObject!).ImageList(op);
         }
+        public static async Task<Ams.Model.ApiImageList?> ExecuteAsync(
+            this ImageList.ImageListBuilder builder,
+            string namespace_
+        )
+        {
+            ImageList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageListAsync(op);
+        }
         public static Ams.Model.ApiImageDetails? Execute(
             this ImageGet.ImageGetBuilder builder,
             string imageID,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Images)builder.WrapperObject!).ImageGet(op);
+        }
+        public static async Task<Ams.Model.ApiImageDetails?> ExecuteAsync(
+            this ImageGet.ImageGetBuilder builder,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImageGet op = builder.Build(
+                imageID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageGetAsync(op);
         }
         public static Ams.Model.ApiImageDetails? Execute(
             this ImagePatch.ImagePatchBuilder builder,
@@ -50,6 +74,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Images)builder.WrapperObject!).ImagePatch(op);
+        }
+        public static async Task<Ams.Model.ApiImageDetails?> ExecuteAsync(
+            this ImagePatch.ImagePatchBuilder builder,
+            ApiImageUpdate body,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImagePatch op = builder.Build(
+                body,
+                imageID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImagePatchAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByChannelIDV2(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetContentByChannelIDV2.AdminGetContentByChannelIDV2Builder builder,
+            string channelId,
+            string namespace_
+        )
+        {
+            AdminGetContentByChannelIDV2 op = builder.Build(
+                channelId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByChannelIDV2Async(op);
+        }
         public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
             this AdminCreateContentV2.AdminCreateContentV2Builder builder,
             ModelsAdminContentRequestV2 body,
@@ -39,6 +52,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCreateContentV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2?> ExecuteAsync(
+            this AdminCreateContentV2.AdminCreateContentV2Builder builder,
+            ModelsAdminContentRequestV2 body,
+            string channelId,
+            string namespace_
+        )
+        {
+            AdminCreateContentV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCreateContentV2Async(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
@@ -56,6 +84,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCreateContentV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminCreateContentV2.AdminCreateContentV2Builder builder,
+            ModelsAdminContentRequestV2 body,
+            string channelId,
+            string namespace_
+        )
+        {
+            AdminCreateContentV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCreateContentV2Async<T1>(op);
+        }
         public static void Execute(
             this AdminDeleteOfficialContentV2.AdminDeleteOfficialContentV2Builder builder,
             string channelId,
@@ -70,6 +113,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteOfficialContentV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteOfficialContentV2.AdminDeleteOfficialContentV2Builder builder,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminDeleteOfficialContentV2 op = builder.Build(
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteOfficialContentV2Async(op);
         }
         public static Ugc.Model.ModelsUpdateContentResponseV2? Execute(
             this AdminUpdateOfficialContentV2.AdminUpdateOfficialContentV2Builder builder,
@@ -87,6 +145,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateOfficialContentV2.AdminUpdateOfficialContentV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUpdateOfficialContentV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentV2Async(op);
         }
 
         public static Ugc.Model.ModelsUpdateContentResponseV2<T1>? Execute<T1>(
@@ -106,6 +181,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateOfficialContentV2.AdminUpdateOfficialContentV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUpdateOfficialContentV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateContentResponseV2? Execute(
             this AdminUpdateOfficialContentFileLocation.AdminUpdateOfficialContentFileLocationBuilder builder,
             ModelsUpdateFileLocationRequest body,
@@ -122,6 +214,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentFileLocation(op);
+        }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateOfficialContentFileLocation.AdminUpdateOfficialContentFileLocationBuilder builder,
+            ModelsUpdateFileLocationRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUpdateOfficialContentFileLocation op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentFileLocationAsync(op);
         }
 
         public static Ugc.Model.ModelsUpdateContentResponseV2<T1>? Execute<T1>(
@@ -141,6 +250,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentFileLocation<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateOfficialContentFileLocation.AdminUpdateOfficialContentFileLocationBuilder builder,
+            ModelsUpdateFileLocationRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUpdateOfficialContentFileLocation op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentFileLocationAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsGenerateContentUploadURLResponse? Execute(
             this AdminGenerateOfficialContentUploadURLV2.AdminGenerateOfficialContentUploadURLV2Builder builder,
             ModelsGenerateContentUploadURLRequest body,
@@ -158,6 +284,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGenerateOfficialContentUploadURLV2(op);
         }
+        public static async Task<Ugc.Model.ModelsGenerateContentUploadURLResponse?> ExecuteAsync(
+            this AdminGenerateOfficialContentUploadURLV2.AdminGenerateOfficialContentUploadURLV2Builder builder,
+            ModelsGenerateContentUploadURLRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminGenerateOfficialContentUploadURLV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGenerateOfficialContentUploadURLV2Async(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
             this AdminListContentV2.AdminListContentV2Builder builder,
             string namespace_
@@ -168,6 +311,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminListContentV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this AdminListContentV2.AdminListContentV2Builder builder,
+            string namespace_
+        )
+        {
+            AdminListContentV2 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminListContentV2Async(op);
         }
         public static List<Ugc.Model.ModelsContentDownloadResponseV2>? Execute(
             this AdminBulkGetContentByIDsV2.AdminBulkGetContentByIDsV2Builder builder,
@@ -181,6 +335,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminBulkGetContentByIDsV2(op);
+        }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponseV2>?> ExecuteAsync(
+            this AdminBulkGetContentByIDsV2.AdminBulkGetContentByIDsV2Builder builder,
+            ModelsAdminGetContentBulkRequest body,
+            string namespace_
+        )
+        {
+            AdminBulkGetContentByIDsV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminBulkGetContentByIDsV2Async(op);
         }
 
         public static List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>? Execute<T1>(
@@ -196,6 +363,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminBulkGetContentByIDsV2<T1>(op);
         }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>?> ExecuteAsync<T1>(
+            this AdminBulkGetContentByIDsV2.AdminBulkGetContentByIDsV2Builder builder,
+            ModelsAdminGetContentBulkRequest body,
+            string namespace_
+        )
+        {
+            AdminBulkGetContentByIDsV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminBulkGetContentByIDsV2Async<T1>(op);
+        }
         public static List<Ugc.Model.ModelsContentDownloadResponseV2>? Execute(
             this AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder builder,
             ModelsGetContentBulkByShareCodesRequest body,
@@ -208,6 +388,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2(op);
+        }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponseV2>?> ExecuteAsync(
+            this AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2Async(op);
         }
 
         public static List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>? Execute<T1>(
@@ -223,6 +416,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2<T1>(op);
         }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponseV2<T1>>?> ExecuteAsync<T1>(
+            this AdminGetContentBulkByShareCodesV2.AdminGetContentBulkByShareCodesV2Builder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            AdminGetContentBulkByShareCodesV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentBulkByShareCodesV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponseV2? Execute(
             this AdminGetContentByShareCodeV2.AdminGetContentByShareCodeV2Builder builder,
             string namespace_,
@@ -235,6 +441,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByShareCodeV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetContentByShareCodeV2.AdminGetContentByShareCodeV2Builder builder,
+            string namespace_,
+            string shareCode
+        )
+        {
+            AdminGetContentByShareCodeV2 op = builder.Build(
+                namespace_,
+                shareCode
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByShareCodeV2Async(op);
         }
 
         public static Ugc.Model.ModelsContentDownloadResponseV2<T1>? Execute<T1>(
@@ -250,6 +469,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByShareCodeV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminGetContentByShareCodeV2.AdminGetContentByShareCodeV2Builder builder,
+            string namespace_,
+            string shareCode
+        )
+        {
+            AdminGetContentByShareCodeV2 op = builder.Build(
+                namespace_,
+                shareCode
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByShareCodeV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponseV2? Execute(
             this AdminGetContentByContentIDV2.AdminGetContentByContentIDV2Builder builder,
             string contentId,
@@ -262,6 +494,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByContentIDV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetContentByContentIDV2.AdminGetContentByContentIDV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminGetContentByContentIDV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByContentIDV2Async(op);
         }
 
         public static Ugc.Model.ModelsContentDownloadResponseV2<T1>? Execute<T1>(
@@ -277,6 +522,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByContentIDV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminGetContentByContentIDV2.AdminGetContentByContentIDV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminGetContentByContentIDV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByContentIDV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponse? Execute(
             this RollbackContentVersionV2.RollbackContentVersionV2Builder builder,
             string contentId,
@@ -291,6 +549,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse?> ExecuteAsync(
+            this RollbackContentVersionV2.RollbackContentVersionV2Builder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersionV2 op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2Async(op);
         }
 
         public static Ugc.Model.ModelsContentDownloadResponse<T1>? Execute<T1>(
@@ -308,6 +581,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse<T1>?> ExecuteAsync<T1>(
+            this RollbackContentVersionV2.RollbackContentVersionV2Builder builder,
+            string contentId,
+            string namespace_,
+            string versionId
+        )
+        {
+            RollbackContentVersionV2 op = builder.Build(
+                contentId,
+                namespace_,
+                versionId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).RollbackContentVersionV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateScreenshotResponse? Execute(
             this AdminUpdateScreenshotsV2.AdminUpdateScreenshotsV2Builder builder,
             ModelsUpdateScreenshotRequest body,
@@ -322,6 +610,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateScreenshotsV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsUpdateScreenshotResponse?> ExecuteAsync(
+            this AdminUpdateScreenshotsV2.AdminUpdateScreenshotsV2Builder builder,
+            ModelsUpdateScreenshotRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUpdateScreenshotsV2 op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateScreenshotsV2Async(op);
         }
         public static Ugc.Model.ModelsCreateScreenshotResponse? Execute(
             this AdminUploadContentScreenshotV2.AdminUploadContentScreenshotV2Builder builder,
@@ -338,6 +641,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUploadContentScreenshotV2(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateScreenshotResponse?> ExecuteAsync(
+            this AdminUploadContentScreenshotV2.AdminUploadContentScreenshotV2Builder builder,
+            ModelsCreateScreenshotRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminUploadContentScreenshotV2 op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUploadContentScreenshotV2Async(op);
+        }
         public static void Execute(
             this AdminDeleteContentScreenshotV2.AdminDeleteContentScreenshotV2Builder builder,
             string contentId,
@@ -353,6 +671,21 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentScreenshotV2(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteContentScreenshotV2.AdminDeleteContentScreenshotV2Builder builder,
+            string contentId,
+            string namespace_,
+            string screenshotId
+        )
+        {
+            AdminDeleteContentScreenshotV2 op = builder.Build(
+                contentId,
+                namespace_,
+                screenshotId
+            );
+
+            await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentScreenshotV2Async(op);
+        }
         public static Ugc.Model.ModelsListContentVersionsResponse? Execute(
             this ListContentVersionsV2.ListContentVersionsV2Builder builder,
             string contentId,
@@ -365,6 +698,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).ListContentVersionsV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsListContentVersionsResponse?> ExecuteAsync(
+            this ListContentVersionsV2.ListContentVersionsV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            ListContentVersionsV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).ListContentVersionsV2Async(op);
         }
         public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
             this AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder builder,
@@ -384,6 +730,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2Async(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
@@ -405,6 +770,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateContentByShareCodeV2.AdminUpdateContentByShareCodeV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminUpdateContentByShareCodeV2 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentByShareCodeV2Async<T1>(op);
+        }
         public static void Execute(
             this AdminDeleteContentByShareCodeV2.AdminDeleteContentByShareCodeV2Builder builder,
             string channelId,
@@ -422,6 +806,23 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentByShareCodeV2(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteContentByShareCodeV2.AdminDeleteContentByShareCodeV2Builder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            AdminDeleteContentByShareCodeV2 op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteContentByShareCodeV2Async(op);
+        }
         public static void Execute(
             this AdminDeleteUserContentV2.AdminDeleteUserContentV2Builder builder,
             string channelId,
@@ -438,6 +839,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteUserContentV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteUserContentV2.AdminDeleteUserContentV2Builder builder,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteUserContentV2 op = builder.Build(
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminDeleteUserContentV2Async(op);
         }
         public static Ugc.Model.ModelsUpdateContentResponseV2? Execute(
             this AdminUpdateUserContentV2.AdminUpdateUserContentV2Builder builder,
@@ -457,6 +875,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateUserContentV2.AdminUpdateUserContentV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserContentV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentV2Async(op);
         }
 
         public static Ugc.Model.ModelsUpdateContentResponseV2<T1>? Execute<T1>(
@@ -478,6 +915,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentV2<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateUserContentV2.AdminUpdateUserContentV2Builder builder,
+            ModelsAdminUpdateContentRequestV2 body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserContentV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentV2Async<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateContentResponseV2? Execute(
             this AdminUpdateUserContentFileLocation.AdminUpdateUserContentFileLocationBuilder builder,
             ModelsUpdateFileLocationRequest body,
@@ -496,6 +952,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentFileLocation(op);
+        }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateUserContentFileLocation.AdminUpdateUserContentFileLocationBuilder builder,
+            ModelsUpdateFileLocationRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserContentFileLocation op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentFileLocationAsync(op);
         }
 
         public static Ugc.Model.ModelsUpdateContentResponseV2<T1>? Execute<T1>(
@@ -517,6 +992,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentFileLocation<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsUpdateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateUserContentFileLocation.AdminUpdateUserContentFileLocationBuilder builder,
+            ModelsUpdateFileLocationRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserContentFileLocation op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateUserContentFileLocationAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsGenerateContentUploadURLResponse? Execute(
             this AdminGenerateUserContentUploadURLV2.AdminGenerateUserContentUploadURLV2Builder builder,
             ModelsGenerateContentUploadURLRequest body,
@@ -536,6 +1030,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGenerateUserContentUploadURLV2(op);
         }
+        public static async Task<Ugc.Model.ModelsGenerateContentUploadURLResponse?> ExecuteAsync(
+            this AdminGenerateUserContentUploadURLV2.AdminGenerateUserContentUploadURLV2Builder builder,
+            ModelsGenerateContentUploadURLRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGenerateUserContentUploadURLV2 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGenerateUserContentUploadURLV2Async(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponseV2? Execute(
             this AdminGetContentByUserIDV2.AdminGetContentByUserIDV2Builder builder,
             string namespace_,
@@ -548,6 +1061,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByUserIDV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponseV2?> ExecuteAsync(
+            this AdminGetContentByUserIDV2.AdminGetContentByUserIDV2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetContentByUserIDV2 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminGetContentByUserIDV2Async(op);
         }
         public static Ugc.Model.ModelsCreateContentResponseV2? Execute(
             this AdminUpdateContentHideStatusV2.AdminUpdateContentHideStatusV2Builder builder,
@@ -566,6 +1092,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentHideStatusV2(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2?> ExecuteAsync(
+            this AdminUpdateContentHideStatusV2.AdminUpdateContentHideStatusV2Builder builder,
+            ModelsHideContentRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateContentHideStatusV2 op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentHideStatusV2Async(op);
+        }
 
         public static Ugc.Model.ModelsCreateContentResponseV2<T1>? Execute<T1>(
             this AdminUpdateContentHideStatusV2.AdminUpdateContentHideStatusV2Builder builder,
@@ -583,6 +1126,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentHideStatusV2<T1>(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateContentHideStatusV2.AdminUpdateContentHideStatusV2Builder builder,
+            ModelsHideContentRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateContentHideStatusV2 op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateContentHideStatusV2Async<T1>(op);
         }
     }
 }

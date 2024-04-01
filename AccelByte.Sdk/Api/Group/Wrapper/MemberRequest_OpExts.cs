@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV1(op);
         }
+        public static async Task<Group.Model.ModelsGetMemberRequestsListResponseV1?> ExecuteAsync(
+            this GetGroupJoinRequestPublicV1.GetGroupJoinRequestPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetGroupJoinRequestPublicV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV1Async(op);
+        }
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupInvitationRequestPublicV1.GetGroupInvitationRequestPublicV1Builder builder,
             string namespace_
@@ -35,6 +48,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInvitationRequestPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGetMemberRequestsListResponseV1?> ExecuteAsync(
+            this GetGroupInvitationRequestPublicV1.GetGroupInvitationRequestPublicV1Builder builder,
+            string namespace_
+        )
+        {
+            GetGroupInvitationRequestPublicV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInvitationRequestPublicV1Async(op);
         }
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupInviteRequestPublicV2.GetGroupInviteRequestPublicV2Builder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInviteRequestPublicV2(op);
         }
+        public static async Task<Group.Model.ModelsGetMemberRequestsListResponseV1?> ExecuteAsync(
+            this GetGroupInviteRequestPublicV2.GetGroupInviteRequestPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetGroupInviteRequestPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupInviteRequestPublicV2Async(op);
+        }
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetGroupJoinRequestPublicV2.GetGroupJoinRequestPublicV2Builder builder,
             string groupId,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV2(op);
         }
+        public static async Task<Group.Model.ModelsGetMemberRequestsListResponseV1?> ExecuteAsync(
+            this GetGroupJoinRequestPublicV2.GetGroupJoinRequestPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetGroupJoinRequestPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetGroupJoinRequestPublicV2Async(op);
+        }
         public static Group.Model.ModelsGetMemberRequestsListResponseV1? Execute(
             this GetMyGroupJoinRequestV2.GetMyGroupJoinRequestV2Builder builder,
             string namespace_
@@ -72,6 +122,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetMyGroupJoinRequestV2(op);
+        }
+        public static async Task<Group.Model.ModelsGetMemberRequestsListResponseV1?> ExecuteAsync(
+            this GetMyGroupJoinRequestV2.GetMyGroupJoinRequestV2Builder builder,
+            string namespace_
+        )
+        {
+            GetMyGroupJoinRequestV2 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.MemberRequest)builder.WrapperObject!).GetMyGroupJoinRequestV2Async(op);
         }
     }
 }

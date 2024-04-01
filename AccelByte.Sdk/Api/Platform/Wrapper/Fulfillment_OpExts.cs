@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentHistories(op);
         }
+        public static async Task<Platform.Model.FulfillmentHistoryPagingSlicedResult?> ExecuteAsync(
+            this QueryFulfillmentHistories.QueryFulfillmentHistoriesBuilder builder,
+            string namespace_
+        )
+        {
+            QueryFulfillmentHistories op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentHistoriesAsync(op);
+        }
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillItem.FulfillItemBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItem(op);
+        }
+        public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
+            this FulfillItem.FulfillItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            FulfillItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemAsync(op);
         }
         public static Platform.Model.FulfillmentResult? Execute(
             this RedeemCode.RedeemCodeBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RedeemCode(op);
         }
+        public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
+            this RedeemCode.RedeemCodeBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            RedeemCode op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RedeemCodeAsync(op);
+        }
         public static List<Platform.Model.FulfillmentItem>? Execute(
             this PreCheckFulfillItem.PreCheckFulfillItemBuilder builder,
             string namespace_,
@@ -61,6 +98,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PreCheckFulfillItem(op);
+        }
+        public static async Task<List<Platform.Model.FulfillmentItem>?> ExecuteAsync(
+            this PreCheckFulfillItem.PreCheckFulfillItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PreCheckFulfillItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PreCheckFulfillItemAsync(op);
         }
         public static void Execute(
             this FulfillRewards.FulfillRewardsBuilder builder,
@@ -75,6 +125,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewards(op);
         }
+        public static async Task ExecuteAsync(
+            this FulfillRewards.FulfillRewardsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            FulfillRewards op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsAsync(op);
+        }
         public static Platform.Model.FulfillmentResult? Execute(
             this PublicRedeemCode.PublicRedeemCodeBuilder builder,
             string namespace_,
@@ -88,6 +151,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCode(op);
         }
+        public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
+            this PublicRedeemCode.PublicRedeemCodeBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicRedeemCode op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCodeAsync(op);
+        }
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillRewardsV2.FulfillRewardsV2Builder builder,
             string namespace_,
@@ -100,6 +176,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsV2(op);
+        }
+        public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
+            this FulfillRewardsV2.FulfillRewardsV2Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            FulfillRewardsV2 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsV2Async(op);
         }
     }
 }

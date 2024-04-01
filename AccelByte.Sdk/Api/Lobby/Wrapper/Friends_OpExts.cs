@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsUpdated(op);
         }
+        public static async Task<List<Lobby.Model.ModelGetUserFriendsResponse>?> ExecuteAsync(
+            this GetUserFriendsUpdated.GetUserFriendsUpdatedBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserFriendsUpdated op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsUpdatedAsync(op);
+        }
         public static List<Lobby.Model.ModelGetUserIncomingFriendsResponse>? Execute(
             this GetUserIncomingFriends.GetUserIncomingFriendsBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriends(op);
+        }
+        public static async Task<List<Lobby.Model.ModelGetUserIncomingFriendsResponse>?> ExecuteAsync(
+            this GetUserIncomingFriends.GetUserIncomingFriendsBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserIncomingFriends op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriendsAsync(op);
         }
         public static List<Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse>? Execute(
             this GetUserIncomingFriendsWithTime.GetUserIncomingFriendsWithTimeBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriendsWithTime(op);
         }
+        public static async Task<List<Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse>?> ExecuteAsync(
+            this GetUserIncomingFriendsWithTime.GetUserIncomingFriendsWithTimeBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserIncomingFriendsWithTime op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserIncomingFriendsWithTimeAsync(op);
+        }
         public static List<Lobby.Model.ModelGetUserOutgoingFriendsResponse>? Execute(
             this GetUserOutgoingFriends.GetUserOutgoingFriendsBuilder builder,
             string namespace_
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriends(op);
+        }
+        public static async Task<List<Lobby.Model.ModelGetUserOutgoingFriendsResponse>?> ExecuteAsync(
+            this GetUserOutgoingFriends.GetUserOutgoingFriendsBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserOutgoingFriends op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriendsAsync(op);
         }
         public static List<Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse>? Execute(
             this GetUserOutgoingFriendsWithTime.GetUserOutgoingFriendsWithTimeBuilder builder,
@@ -67,6 +111,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriendsWithTime(op);
         }
+        public static async Task<List<Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse>?> ExecuteAsync(
+            this GetUserOutgoingFriendsWithTime.GetUserOutgoingFriendsWithTimeBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserOutgoingFriendsWithTime op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserOutgoingFriendsWithTimeAsync(op);
+        }
         public static Lobby.Model.ModelListBulkUserPlatformsResponse? Execute(
             this GetUserFriendsWithPlatform.GetUserFriendsWithPlatformBuilder builder,
             string namespace_
@@ -77,6 +132,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsWithPlatform(op);
+        }
+        public static async Task<Lobby.Model.ModelListBulkUserPlatformsResponse?> ExecuteAsync(
+            this GetUserFriendsWithPlatform.GetUserFriendsWithPlatformBuilder builder,
+            string namespace_
+        )
+        {
+            GetUserFriendsWithPlatform op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetUserFriendsWithPlatformAsync(op);
         }
         public static void Execute(
             this UserRequestFriend.UserRequestFriendBuilder builder,
@@ -91,6 +157,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRequestFriend(op);
         }
+        public static async Task ExecuteAsync(
+            this UserRequestFriend.UserRequestFriendBuilder builder,
+            ModelUserRequestFriendRequest body,
+            string namespace_
+        )
+        {
+            UserRequestFriend op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRequestFriendAsync(op);
+        }
         public static void Execute(
             this UserAcceptFriendRequest.UserAcceptFriendRequestBuilder builder,
             ModelUserAcceptFriendRequest body,
@@ -103,6 +182,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserAcceptFriendRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this UserAcceptFriendRequest.UserAcceptFriendRequestBuilder builder,
+            ModelUserAcceptFriendRequest body,
+            string namespace_
+        )
+        {
+            UserAcceptFriendRequest op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserAcceptFriendRequestAsync(op);
         }
         public static void Execute(
             this UserCancelFriendRequest.UserCancelFriendRequestBuilder builder,
@@ -117,6 +209,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserCancelFriendRequest(op);
         }
+        public static async Task ExecuteAsync(
+            this UserCancelFriendRequest.UserCancelFriendRequestBuilder builder,
+            ModelUserCancelFriendRequest body,
+            string namespace_
+        )
+        {
+            UserCancelFriendRequest op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserCancelFriendRequestAsync(op);
+        }
         public static void Execute(
             this UserRejectFriendRequest.UserRejectFriendRequestBuilder builder,
             ModelUserRejectFriendRequest body,
@@ -129,6 +234,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRejectFriendRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this UserRejectFriendRequest.UserRejectFriendRequestBuilder builder,
+            ModelUserRejectFriendRequest body,
+            string namespace_
+        )
+        {
+            UserRejectFriendRequest op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserRejectFriendRequestAsync(op);
         }
         public static Lobby.Model.ModelUserGetFriendshipStatusResponse? Execute(
             this UserGetFriendshipStatus.UserGetFriendshipStatusBuilder builder,
@@ -143,6 +261,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserGetFriendshipStatus(op);
         }
+        public static async Task<Lobby.Model.ModelUserGetFriendshipStatusResponse?> ExecuteAsync(
+            this UserGetFriendshipStatus.UserGetFriendshipStatusBuilder builder,
+            string friendId,
+            string namespace_
+        )
+        {
+            UserGetFriendshipStatus op = builder.Build(
+                friendId,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserGetFriendshipStatusAsync(op);
+        }
         public static void Execute(
             this UserUnfriendRequest.UserUnfriendRequestBuilder builder,
             ModelUserUnfriendRequest body,
@@ -155,6 +286,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserUnfriendRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this UserUnfriendRequest.UserUnfriendRequestBuilder builder,
+            ModelUserUnfriendRequest body,
+            string namespace_
+        )
+        {
+            UserUnfriendRequest op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).UserUnfriendRequestAsync(op);
         }
         public static void Execute(
             this AddFriendsWithoutConfirmation.AddFriendsWithoutConfirmationBuilder builder,
@@ -171,6 +315,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Friends)builder.WrapperObject!).AddFriendsWithoutConfirmation(op);
         }
+        public static async Task ExecuteAsync(
+            this AddFriendsWithoutConfirmation.AddFriendsWithoutConfirmationBuilder builder,
+            ModelBulkFriendsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AddFriendsWithoutConfirmation op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Lobby.Wrapper.Friends)builder.WrapperObject!).AddFriendsWithoutConfirmationAsync(op);
+        }
         public static Lobby.Model.ModelBulkFriendsResponse? Execute(
             this BulkDeleteFriends.BulkDeleteFriendsBuilder builder,
             ModelBulkFriendsRequest body,
@@ -186,6 +345,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).BulkDeleteFriends(op);
         }
+        public static async Task<Lobby.Model.ModelBulkFriendsResponse?> ExecuteAsync(
+            this BulkDeleteFriends.BulkDeleteFriendsBuilder builder,
+            ModelBulkFriendsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkDeleteFriends op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).BulkDeleteFriendsAsync(op);
+        }
         public static List<Lobby.Model.ModelNativeFriendSyncResponse>? Execute(
             this SyncNativeFriends.SyncNativeFriendsBuilder builder,
             List<ModelNativeFriendRequest> body,
@@ -198,6 +372,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).SyncNativeFriends(op);
+        }
+        public static async Task<List<Lobby.Model.ModelNativeFriendSyncResponse>?> ExecuteAsync(
+            this SyncNativeFriends.SyncNativeFriendsBuilder builder,
+            List<ModelNativeFriendRequest> body,
+            string namespace_
+        )
+        {
+            SyncNativeFriends op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).SyncNativeFriendsAsync(op);
         }
         public static Lobby.Model.ModelGetFriendsResponse? Execute(
             this GetListOfFriends.GetListOfFriendsBuilder builder,
@@ -212,6 +399,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetListOfFriends(op);
         }
+        public static async Task<Lobby.Model.ModelGetFriendsResponse?> ExecuteAsync(
+            this GetListOfFriends.GetListOfFriendsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetListOfFriends op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetListOfFriendsAsync(op);
+        }
         public static Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse? Execute(
             this GetIncomingFriendRequests.GetIncomingFriendRequestsBuilder builder,
             string namespace_,
@@ -224,6 +424,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetIncomingFriendRequests(op);
+        }
+        public static async Task<Lobby.Model.ModelLoadIncomingFriendsWithTimeResponse?> ExecuteAsync(
+            this GetIncomingFriendRequests.GetIncomingFriendRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetIncomingFriendRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetIncomingFriendRequestsAsync(op);
         }
         public static Lobby.Model.ModelFriendshipConnectionResponse? Execute(
             this AdminListFriendsOfFriends.AdminListFriendsOfFriendsBuilder builder,
@@ -238,6 +451,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).AdminListFriendsOfFriends(op);
         }
+        public static async Task<Lobby.Model.ModelFriendshipConnectionResponse?> ExecuteAsync(
+            this AdminListFriendsOfFriends.AdminListFriendsOfFriendsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListFriendsOfFriends op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).AdminListFriendsOfFriendsAsync(op);
+        }
         public static Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse? Execute(
             this GetOutgoingFriendRequests.GetOutgoingFriendRequestsBuilder builder,
             string namespace_,
@@ -250,6 +476,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetOutgoingFriendRequests(op);
+        }
+        public static async Task<Lobby.Model.ModelLoadOutgoingFriendsWithTimeResponse?> ExecuteAsync(
+            this GetOutgoingFriendRequests.GetOutgoingFriendRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetOutgoingFriendRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Friends)builder.WrapperObject!).GetOutgoingFriendRequestsAsync(op);
         }
     }
 }

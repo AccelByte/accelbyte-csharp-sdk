@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPluginResponse? GetPluginConfig(GetPluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPluginResponse?> GetPluginConfigAsync(GetPluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPluginResponse? CreatePluginConfig(CreatePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPluginResponse?> CreatePluginConfigAsync(CreatePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public void DeletePluginConfig(DeletePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeletePluginConfigAsync(DeletePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPluginResponse? UpdatePluginConfig(UpdatePluginConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPluginResponse?> UpdatePluginConfigAsync(UpdatePluginConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

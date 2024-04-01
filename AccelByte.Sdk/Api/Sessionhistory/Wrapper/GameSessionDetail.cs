@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -60,7 +60,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsGameSessionDetailQueryResponse? AdminQueryGameSessionDetail(AdminQueryGameSessionDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsGameSessionDetailQueryResponse?> AdminQueryGameSessionDetailAsync(AdminQueryGameSessionDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -69,7 +76,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsGameSessionDetail? GetGameSessionDetail(GetGameSessionDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsGameSessionDetail?> GetGameSessionDetailAsync(GetGameSessionDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -78,7 +92,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsMatchmakingDetailQueryResponse? AdminQueryMatchmakingDetail(AdminQueryMatchmakingDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMatchmakingDetailQueryResponse?> AdminQueryMatchmakingDetailAsync(AdminQueryMatchmakingDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -87,7 +108,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsMatchmakingDetail? AdminGetMatchmakingDetailBySessionID(AdminGetMatchmakingDetailBySessionID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMatchmakingDetail?> AdminGetMatchmakingDetailBySessionIDAsync(AdminGetMatchmakingDetailBySessionID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -96,7 +124,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsMatchmakingDetail? AdminGetMatchmakingDetailByTicketID(AdminGetMatchmakingDetailByTicketID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMatchmakingDetail?> AdminGetMatchmakingDetailByTicketIDAsync(AdminGetMatchmakingDetailByTicketID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -105,7 +140,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsPartyDetailQueryResponse? AdminQueryPartyDetail(AdminQueryPartyDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPartyDetailQueryResponse?> AdminQueryPartyDetailAsync(AdminQueryPartyDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -114,7 +156,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsPartyDetail? GetPartyDetail(GetPartyDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPartyDetail?> GetPartyDetailAsync(GetPartyDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -123,7 +172,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsTicketDetailQueryResponse? AdminQueryTicketDetail(AdminQueryTicketDetail input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsTicketDetailQueryResponse?> AdminQueryTicketDetailAsync(AdminQueryTicketDetail input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -132,7 +188,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         public Model.ApimodelsTicketObservabilityDetail? AdminTicketDetailGetByTicketID(AdminTicketDetailGetByTicketID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsTicketObservabilityDetail?> AdminTicketDetailGetByTicketIDAsync(AdminTicketDetailGetByTicketID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

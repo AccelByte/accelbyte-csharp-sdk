@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).GetConfig(op);
         }
+        public static async Task<Basic.Model.Equ8Config?> ExecuteAsync(
+            this GetConfig.GetConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).GetConfigAsync(op);
+        }
         public static void Execute(
             this DeleteConfig.DeleteConfigBuilder builder,
             string namespace_
@@ -34,6 +45,17 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).DeleteConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteConfig.DeleteConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).DeleteConfigAsync(op);
+        }
         public static Basic.Model.Equ8Config? Execute(
             this UpdateConfig.UpdateConfigBuilder builder,
             string namespace_
@@ -44,6 +66,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).UpdateConfig(op);
+        }
+        public static async Task<Basic.Model.Equ8Config?> ExecuteAsync(
+            this UpdateConfig.UpdateConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.EQU8Config)builder.WrapperObject!).UpdateConfigAsync(op);
         }
     }
 }

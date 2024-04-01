@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminFindActionList(op);
         }
+        public static async Task<Reporting.Model.RestapiActionListApiResponse?> ExecuteAsync(
+            this AdminFindActionList.AdminFindActionListBuilder builder
+        )
+        {
+            AdminFindActionList op = builder.Build(
+            );
+
+            return await ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminFindActionListAsync(op);
+        }
         public static Reporting.Model.RestapiActionApiResponse? Execute(
             this AdminCreateModAction.AdminCreateModActionBuilder builder,
             RestapiActionApiRequest body
@@ -32,6 +41,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminCreateModAction(op);
         }
+        public static async Task<Reporting.Model.RestapiActionApiResponse?> ExecuteAsync(
+            this AdminCreateModAction.AdminCreateModActionBuilder builder,
+            RestapiActionApiRequest body
+        )
+        {
+            AdminCreateModAction op = builder.Build(
+                body
+            );
+
+            return await ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminCreateModActionAsync(op);
+        }
         public static Reporting.Model.RestapiExtensionCategoryListApiResponse? Execute(
             this AdminFindExtensionCategoryList.AdminFindExtensionCategoryListBuilder builder
         )
@@ -40,6 +60,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminFindExtensionCategoryList(op);
+        }
+        public static async Task<Reporting.Model.RestapiExtensionCategoryListApiResponse?> ExecuteAsync(
+            this AdminFindExtensionCategoryList.AdminFindExtensionCategoryListBuilder builder
+        )
+        {
+            AdminFindExtensionCategoryList op = builder.Build(
+            );
+
+            return await ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminFindExtensionCategoryListAsync(op);
         }
         public static Reporting.Model.RestapiExtensionCategoryApiResponse? Execute(
             this AdminCreateExtensionCategory.AdminCreateExtensionCategoryBuilder builder,
@@ -51,6 +80,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminCreateExtensionCategory(op);
+        }
+        public static async Task<Reporting.Model.RestapiExtensionCategoryApiResponse?> ExecuteAsync(
+            this AdminCreateExtensionCategory.AdminCreateExtensionCategoryBuilder builder,
+            RestapiExtensionCategoryApiRequest body
+        )
+        {
+            AdminCreateExtensionCategory op = builder.Build(
+                body
+            );
+
+            return await ((Reporting.Wrapper.AdminExtensionCategoriesAndAutoModerationActions)builder.WrapperObject!).AdminCreateExtensionCategoryAsync(op);
         }
     }
 }

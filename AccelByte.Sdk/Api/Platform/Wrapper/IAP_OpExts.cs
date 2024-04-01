@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetAppleIAPConfig(op);
         }
+        public static async Task<Platform.Model.AppleIAPConfigInfo?> ExecuteAsync(
+            this GetAppleIAPConfig.GetAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetAppleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetAppleIAPConfigAsync(op);
+        }
         public static Platform.Model.AppleIAPConfigInfo? Execute(
             this UpdateAppleIAPConfig.UpdateAppleIAPConfigBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateAppleIAPConfig(op);
+        }
+        public static async Task<Platform.Model.AppleIAPConfigInfo?> ExecuteAsync(
+            this UpdateAppleIAPConfig.UpdateAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateAppleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateAppleIAPConfigAsync(op);
         }
         public static void Execute(
             this DeleteAppleIAPConfig.DeleteAppleIAPConfigBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteAppleIAPConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteAppleIAPConfig.DeleteAppleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteAppleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteAppleIAPConfigAsync(op);
+        }
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this GetEpicGamesIAPConfig.GetEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetEpicGamesIAPConfig(op);
+        }
+        public static async Task<Platform.Model.EpicGamesIAPConfigInfo?> ExecuteAsync(
+            this GetEpicGamesIAPConfig.GetEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetEpicGamesIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetEpicGamesIAPConfigAsync(op);
         }
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this UpdateEpicGamesIAPConfig.UpdateEpicGamesIAPConfigBuilder builder,
@@ -67,6 +111,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateEpicGamesIAPConfig(op);
         }
+        public static async Task<Platform.Model.EpicGamesIAPConfigInfo?> ExecuteAsync(
+            this UpdateEpicGamesIAPConfig.UpdateEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateEpicGamesIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateEpicGamesIAPConfigAsync(op);
+        }
         public static void Execute(
             this DeleteEpicGamesIAPConfig.DeleteEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -77,6 +132,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteEpicGamesIAPConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteEpicGamesIAPConfig.DeleteEpicGamesIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteEpicGamesIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteEpicGamesIAPConfigAsync(op);
         }
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this GetGoogleIAPConfig.GetGoogleIAPConfigBuilder builder,
@@ -89,6 +155,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetGoogleIAPConfig(op);
         }
+        public static async Task<Platform.Model.GoogleIAPConfigInfo?> ExecuteAsync(
+            this GetGoogleIAPConfig.GetGoogleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetGoogleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetGoogleIAPConfigAsync(op);
+        }
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this UpdateGoogleIAPConfig.UpdateGoogleIAPConfigBuilder builder,
             string namespace_
@@ -99,6 +176,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleIAPConfig(op);
+        }
+        public static async Task<Platform.Model.GoogleIAPConfigInfo?> ExecuteAsync(
+            this UpdateGoogleIAPConfig.UpdateGoogleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateGoogleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleIAPConfigAsync(op);
         }
         public static void Execute(
             this DeleteGoogleIAPConfig.DeleteGoogleIAPConfigBuilder builder,
@@ -111,6 +199,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteGoogleIAPConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteGoogleIAPConfig.DeleteGoogleIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteGoogleIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteGoogleIAPConfigAsync(op);
+        }
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this UpdateGoogleP12File.UpdateGoogleP12FileBuilder builder,
             string namespace_
@@ -121,6 +220,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleP12File(op);
+        }
+        public static async Task<Platform.Model.GoogleIAPConfigInfo?> ExecuteAsync(
+            this UpdateGoogleP12File.UpdateGoogleP12FileBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateGoogleP12File op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateGoogleP12FileAsync(op);
         }
         public static Platform.Model.IAPItemConfigInfo? Execute(
             this GetIAPItemConfig.GetIAPItemConfigBuilder builder,
@@ -133,6 +243,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemConfig(op);
         }
+        public static async Task<Platform.Model.IAPItemConfigInfo?> ExecuteAsync(
+            this GetIAPItemConfig.GetIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetIAPItemConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemConfigAsync(op);
+        }
         public static Platform.Model.IAPItemConfigInfo? Execute(
             this UpdateIAPItemConfig.UpdateIAPItemConfigBuilder builder,
             string namespace_
@@ -143,6 +264,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateIAPItemConfig(op);
+        }
+        public static async Task<Platform.Model.IAPItemConfigInfo?> ExecuteAsync(
+            this UpdateIAPItemConfig.UpdateIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateIAPItemConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateIAPItemConfigAsync(op);
         }
         public static void Execute(
             this DeleteIAPItemConfig.DeleteIAPItemConfigBuilder builder,
@@ -155,6 +287,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteIAPItemConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteIAPItemConfig.DeleteIAPItemConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteIAPItemConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteIAPItemConfigAsync(op);
+        }
         public static Platform.Model.OculusIAPConfigInfo? Execute(
             this GetOculusIAPConfig.GetOculusIAPConfigBuilder builder,
             string namespace_
@@ -165,6 +308,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetOculusIAPConfig(op);
+        }
+        public static async Task<Platform.Model.OculusIAPConfigInfo?> ExecuteAsync(
+            this GetOculusIAPConfig.GetOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetOculusIAPConfigAsync(op);
         }
         public static Platform.Model.OculusIAPConfigInfo? Execute(
             this UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder builder,
@@ -177,6 +331,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateOculusIAPConfig(op);
         }
+        public static async Task<Platform.Model.OculusIAPConfigInfo?> ExecuteAsync(
+            this UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateOculusIAPConfigAsync(op);
+        }
         public static void Execute(
             this DeleteOculusIAPConfig.DeleteOculusIAPConfigBuilder builder,
             string namespace_
@@ -187,6 +352,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteOculusIAPConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteOculusIAPConfig.DeleteOculusIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteOculusIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteOculusIAPConfigAsync(op);
         }
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this GetPlayStationIAPConfig.GetPlayStationIAPConfigBuilder builder,
@@ -199,6 +375,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetPlayStationIAPConfig(op);
         }
+        public static async Task<Platform.Model.PlayStationIAPConfigInfo?> ExecuteAsync(
+            this GetPlayStationIAPConfig.GetPlayStationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetPlayStationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetPlayStationIAPConfigAsync(op);
+        }
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this UpdatePlaystationIAPConfig.UpdatePlaystationIAPConfigBuilder builder,
             string namespace_
@@ -209,6 +396,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdatePlaystationIAPConfig(op);
+        }
+        public static async Task<Platform.Model.PlayStationIAPConfigInfo?> ExecuteAsync(
+            this UpdatePlaystationIAPConfig.UpdatePlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdatePlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdatePlaystationIAPConfigAsync(op);
         }
         public static void Execute(
             this DeletePlaystationIAPConfig.DeletePlaystationIAPConfigBuilder builder,
@@ -221,6 +419,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeletePlaystationIAPConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeletePlaystationIAPConfig.DeletePlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeletePlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeletePlaystationIAPConfigAsync(op);
+        }
         public static Platform.Model.TestResult? Execute(
             this ValidateExistedPlaystationIAPConfig.ValidateExistedPlaystationIAPConfigBuilder builder,
             string namespace_
@@ -231,6 +440,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidateExistedPlaystationIAPConfig(op);
+        }
+        public static async Task<Platform.Model.TestResult?> ExecuteAsync(
+            this ValidateExistedPlaystationIAPConfig.ValidateExistedPlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            ValidateExistedPlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidateExistedPlaystationIAPConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
             this ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder builder,
@@ -243,6 +463,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidatePlaystationIAPConfig(op);
         }
+        public static async Task<Platform.Model.TestResult?> ExecuteAsync(
+            this ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            ValidatePlaystationIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).ValidatePlaystationIAPConfigAsync(op);
+        }
         public static Platform.Model.SteamIAPConfig? Execute(
             this GetSteamIAPConfig.GetSteamIAPConfigBuilder builder,
             string namespace_
@@ -253,6 +484,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetSteamIAPConfig(op);
+        }
+        public static async Task<Platform.Model.SteamIAPConfig?> ExecuteAsync(
+            this GetSteamIAPConfig.GetSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetSteamIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetSteamIAPConfigAsync(op);
         }
         public static Platform.Model.SteamIAPConfigInfo? Execute(
             this UpdateSteamIAPConfig.UpdateSteamIAPConfigBuilder builder,
@@ -265,6 +507,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateSteamIAPConfig(op);
         }
+        public static async Task<Platform.Model.SteamIAPConfigInfo?> ExecuteAsync(
+            this UpdateSteamIAPConfig.UpdateSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateSteamIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateSteamIAPConfigAsync(op);
+        }
         public static void Execute(
             this DeleteSteamIAPConfig.DeleteSteamIAPConfigBuilder builder,
             string namespace_
@@ -275,6 +528,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteSteamIAPConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteSteamIAPConfig.DeleteSteamIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteSteamIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteSteamIAPConfigAsync(op);
         }
         public static Platform.Model.TwitchIAPConfigInfo? Execute(
             this GetTwitchIAPConfig.GetTwitchIAPConfigBuilder builder,
@@ -287,6 +551,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetTwitchIAPConfig(op);
         }
+        public static async Task<Platform.Model.TwitchIAPConfigInfo?> ExecuteAsync(
+            this GetTwitchIAPConfig.GetTwitchIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetTwitchIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetTwitchIAPConfigAsync(op);
+        }
         public static Platform.Model.TwitchIAPConfigInfo? Execute(
             this UpdateTwitchIAPConfig.UpdateTwitchIAPConfigBuilder builder,
             string namespace_
@@ -297,6 +572,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateTwitchIAPConfig(op);
+        }
+        public static async Task<Platform.Model.TwitchIAPConfigInfo?> ExecuteAsync(
+            this UpdateTwitchIAPConfig.UpdateTwitchIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateTwitchIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateTwitchIAPConfigAsync(op);
         }
         public static void Execute(
             this DeleteTwitchIAPConfig.DeleteTwitchIAPConfigBuilder builder,
@@ -309,6 +595,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteTwitchIAPConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteTwitchIAPConfig.DeleteTwitchIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteTwitchIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteTwitchIAPConfigAsync(op);
+        }
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this GetXblIAPConfig.GetXblIAPConfigBuilder builder,
             string namespace_
@@ -319,6 +616,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetXblIAPConfig(op);
+        }
+        public static async Task<Platform.Model.XblIAPConfigInfo?> ExecuteAsync(
+            this GetXblIAPConfig.GetXblIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetXblIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetXblIAPConfigAsync(op);
         }
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this UpdateXblIAPConfig.UpdateXblIAPConfigBuilder builder,
@@ -331,6 +639,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblIAPConfig(op);
         }
+        public static async Task<Platform.Model.XblIAPConfigInfo?> ExecuteAsync(
+            this UpdateXblIAPConfig.UpdateXblIAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateXblIAPConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblIAPConfigAsync(op);
+        }
         public static void Execute(
             this DeleteXblAPConfig.DeleteXblAPConfigBuilder builder,
             string namespace_
@@ -342,6 +661,17 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteXblAPConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteXblAPConfig.DeleteXblAPConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteXblAPConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteXblAPConfigAsync(op);
+        }
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this UpdateXblBPCertFile.UpdateXblBPCertFileBuilder builder,
             string namespace_
@@ -352,6 +682,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFile(op);
+        }
+        public static async Task<Platform.Model.XblIAPConfigInfo?> ExecuteAsync(
+            this UpdateXblBPCertFile.UpdateXblBPCertFileBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateXblBPCertFile op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFileAsync(op);
         }
         public static Platform.Model.IAPOrderPagingSlicedResult? Execute(
             this QueryUserIAPOrders.QueryUserIAPOrdersBuilder builder,
@@ -366,6 +707,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPOrders(op);
         }
+        public static async Task<Platform.Model.IAPOrderPagingSlicedResult?> ExecuteAsync(
+            this QueryUserIAPOrders.QueryUserIAPOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserIAPOrders op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPOrdersAsync(op);
+        }
         public static Platform.Model.IAPOrderPagingSlicedResult? Execute(
             this QueryAllUserIAPOrders.QueryAllUserIAPOrdersBuilder builder,
             string namespace_,
@@ -378,6 +732,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAllUserIAPOrders(op);
+        }
+        public static async Task<Platform.Model.IAPOrderPagingSlicedResult?> ExecuteAsync(
+            this QueryAllUserIAPOrders.QueryAllUserIAPOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryAllUserIAPOrders op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAllUserIAPOrdersAsync(op);
         }
         public static Platform.Model.IAPConsumeHistoryPagingSlicedResult? Execute(
             this QueryUserIAPConsumeHistory.QueryUserIAPConsumeHistoryBuilder builder,
@@ -392,6 +759,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPConsumeHistory(op);
         }
+        public static async Task<Platform.Model.IAPConsumeHistoryPagingSlicedResult?> ExecuteAsync(
+            this QueryUserIAPConsumeHistory.QueryUserIAPConsumeHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserIAPConsumeHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryUserIAPConsumeHistoryAsync(op);
+        }
         public static void Execute(
             this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
             string namespace_,
@@ -405,6 +785,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItem(op);
         }
+        public static async Task ExecuteAsync(
+            this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            MockFulfillIAPItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItemAsync(op);
+        }
         public static Platform.Model.IAPItemMappingInfo? Execute(
             this GetIAPItemMapping.GetIAPItemMappingBuilder builder,
             string namespace_
@@ -416,6 +809,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemMapping(op);
         }
+        public static async Task<Platform.Model.IAPItemMappingInfo?> ExecuteAsync(
+            this GetIAPItemMapping.GetIAPItemMappingBuilder builder,
+            string namespace_
+        )
+        {
+            GetIAPItemMapping op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPItemMappingAsync(op);
+        }
         public static List<Platform.Model.TwitchSyncResult>? Execute(
             this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
             string namespace_
@@ -426,6 +830,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement(op);
+        }
+        public static async Task<List<Platform.Model.TwitchSyncResult>?> ExecuteAsync(
+            this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
+            string namespace_
+        )
+        {
+            SyncTwitchDropsEntitlement op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlementAsync(op);
         }
         public static void Execute(
             this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
@@ -440,6 +855,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillAppleIAPItem(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicFulfillAppleIAPItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillAppleIAPItemAsync(op);
+        }
         public static List<Platform.Model.EpicGamesReconcileResult>? Execute(
             this SyncEpicGamesInventory.SyncEpicGamesInventoryBuilder builder,
             string namespace_,
@@ -452,6 +880,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncEpicGamesInventory(op);
+        }
+        public static async Task<List<Platform.Model.EpicGamesReconcileResult>?> ExecuteAsync(
+            this SyncEpicGamesInventory.SyncEpicGamesInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncEpicGamesInventory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncEpicGamesInventoryAsync(op);
         }
         public static Platform.Model.GoogleReceiptResolveResult? Execute(
             this PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder builder,
@@ -466,6 +907,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItem(op);
         }
+        public static async Task<Platform.Model.GoogleReceiptResolveResult?> ExecuteAsync(
+            this PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicFulfillGoogleIAPItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItemAsync(op);
+        }
         public static List<Platform.Model.OculusReconcileResult>? Execute(
             this SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder builder,
             string namespace_,
@@ -478,6 +932,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncOculusConsumableEntitlements(op);
+        }
+        public static async Task<List<Platform.Model.OculusReconcileResult>?> ExecuteAsync(
+            this SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncOculusConsumableEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncOculusConsumableEntitlementsAsync(op);
         }
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder builder,
@@ -492,6 +959,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStore(op);
         }
+        public static async Task<List<Platform.Model.PlayStationReconcileResult>?> ExecuteAsync(
+            this PublicReconcilePlayStationStore.PublicReconcilePlayStationStoreBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicReconcilePlayStationStore op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreAsync(op);
+        }
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
             string namespace_,
@@ -504,6 +984,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreWithMultipleServiceLabels(op);
+        }
+        public static async Task<List<Platform.Model.PlayStationReconcileResult>?> ExecuteAsync(
+            this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicReconcilePlayStationStoreWithMultipleServiceLabels op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicReconcilePlayStationStoreWithMultipleServiceLabelsAsync(op);
         }
         public static void Execute(
             this SyncSteamInventory.SyncSteamInventoryBuilder builder,
@@ -518,6 +1011,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamInventory(op);
         }
+        public static async Task ExecuteAsync(
+            this SyncSteamInventory.SyncSteamInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncSteamInventory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamInventoryAsync(op);
+        }
         public static void Execute(
             this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,
             string namespace_,
@@ -531,6 +1037,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement1(op);
         }
+        public static async Task ExecuteAsync(
+            this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncTwitchDropsEntitlement1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncTwitchDropsEntitlement1Async(op);
+        }
         public static List<Platform.Model.XblReconcileResult>? Execute(
             this SyncXboxInventory.SyncXboxInventoryBuilder builder,
             string namespace_,
@@ -543,6 +1062,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncXboxInventory(op);
+        }
+        public static async Task<List<Platform.Model.XblReconcileResult>?> ExecuteAsync(
+            this SyncXboxInventory.SyncXboxInventoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncXboxInventory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncXboxInventoryAsync(op);
         }
     }
 }

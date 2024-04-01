@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -755,7 +755,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserCreateResponse? CreateUser(CreateUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserCreateResponse?> CreateUserAsync(CreateUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -767,7 +774,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetAdminUsersResponse? GetAdminUsersByRoleID(GetAdminUsersByRoleID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetAdminUsersResponse?> GetAdminUsersByRoleIDAsync(GetAdminUsersByRoleID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -779,7 +793,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelPublicUserResponse? GetUserByLoginID(GetUserByLoginID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicUserResponse?> GetUserByLoginIDAsync(GetUserByLoginID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -791,7 +812,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelPublicUserResponse? GetUserByPlatformUserID(GetUserByPlatformUserID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicUserResponse?> GetUserByPlatformUserIDAsync(GetUserByPlatformUserID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -803,7 +831,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void ForgotPassword(ForgotPassword input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ForgotPasswordAsync(ForgotPassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -815,7 +850,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelPublicUsersResponse? GetUsersByLoginIds(GetUsersByLoginIds input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicUsersResponse?> GetUsersByLoginIdsAsync(GetUsersByLoginIds input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -827,7 +869,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void ResetPassword(ResetPassword input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ResetPasswordAsync(ResetPassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -839,7 +888,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelSearchUsersResponse? SearchUser(SearchUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelSearchUsersResponse?> SearchUserAsync(SearchUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -851,7 +907,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? GetUserByUserID(GetUserByUserID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> GetUserByUserIDAsync(GetUserByUserID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -863,7 +926,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? UpdateUser(UpdateUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> UpdateUserAsync(UpdateUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -875,7 +945,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteUser(DeleteUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserAsync(DeleteUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -887,7 +964,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponse? BanUser(BanUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponse?> BanUserAsync(BanUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -899,7 +983,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelUserBanResponse>? GetUserBanHistory(GetUserBanHistory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserBanResponse>?> GetUserBanHistoryAsync(GetUserBanHistory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -911,7 +1002,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponse? DisableUserBan(DisableUserBan input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponse?> DisableUserBanAsync(DisableUserBan input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -923,7 +1021,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponse? EnableUserBan(EnableUserBan input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponse?> EnableUserBanAsync(EnableUserBan input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -935,7 +1040,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void ListCrossNamespaceAccountLink(ListCrossNamespaceAccountLink input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ListCrossNamespaceAccountLinkAsync(ListCrossNamespaceAccountLink input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -947,7 +1059,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DisableUser(DisableUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DisableUserAsync(DisableUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -959,7 +1078,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void EnableUser(EnableUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task EnableUserAsync(EnableUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -971,7 +1097,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserInformation? GetUserInformation(GetUserInformation input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserInformation?> GetUserInformationAsync(GetUserInformation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -983,7 +1116,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteUserInformation(DeleteUserInformation input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserInformationAsync(DeleteUserInformation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -995,7 +1135,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLoginHistoriesResponse? GetUserLoginHistories(GetUserLoginHistories input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLoginHistoriesResponse?> GetUserLoginHistoriesAsync(GetUserLoginHistories input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1007,7 +1154,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void UpdatePassword(UpdatePassword input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UpdatePasswordAsync(UpdatePassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1019,7 +1173,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void SaveUserPermission(SaveUserPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SaveUserPermissionAsync(SaveUserPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1031,7 +1192,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AddUserPermission(AddUserPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AddUserPermissionAsync(AddUserPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1043,7 +1211,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteUserPermission(DeleteUserPermission input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserPermissionAsync(DeleteUserPermission input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1055,7 +1230,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.AccountcommonUserLinkedPlatform>? GetUserPlatformAccounts(GetUserPlatformAccounts input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.AccountcommonUserLinkedPlatform>?> GetUserPlatformAccountsAsync(GetUserPlatformAccounts input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1067,7 +1249,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserMapping? GetUserMapping(GetUserMapping input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserMapping?> GetUserMappingAsync(GetUserMapping input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1079,7 +1268,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserJusticePlatformAccountResponse? GetUserJusticePlatformAccount(GetUserJusticePlatformAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserJusticePlatformAccountResponse?> GetUserJusticePlatformAccountAsync(GetUserJusticePlatformAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1091,7 +1287,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PlatformLink(PlatformLink input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PlatformLinkAsync(PlatformLink input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1103,7 +1306,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PlatformUnlink(PlatformUnlink input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PlatformUnlinkAsync(PlatformUnlink input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1115,7 +1325,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetPublisherUserResponse? GetPublisherUser(GetPublisherUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetPublisherUserResponse?> GetPublisherUserAsync(GetPublisherUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1127,7 +1344,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void SaveUserRoles(SaveUserRoles input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SaveUserRolesAsync(SaveUserRoles input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1139,7 +1363,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AddUserRole(AddUserRole input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AddUserRoleAsync(AddUserRole input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1151,7 +1382,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void DeleteUserRole(DeleteUserRole input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserRoleAsync(DeleteUserRole input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1163,7 +1401,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? UpgradeHeadlessAccount(UpgradeHeadlessAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> UpgradeHeadlessAccountAsync(UpgradeHeadlessAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1175,7 +1420,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? UpgradeHeadlessAccountWithVerificationCode(UpgradeHeadlessAccountWithVerificationCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> UpgradeHeadlessAccountWithVerificationCodeAsync(UpgradeHeadlessAccountWithVerificationCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1187,7 +1439,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void UserVerification(UserVerification input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UserVerificationAsync(UserVerification input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1199,7 +1458,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void SendVerificationCode(SendVerificationCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SendVerificationCodeAsync(SendVerificationCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1211,7 +1477,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelAgeRestrictionResponse? AdminGetAgeRestrictionStatusV2(AdminGetAgeRestrictionStatusV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelAgeRestrictionResponse?> AdminGetAgeRestrictionStatusV2Async(AdminGetAgeRestrictionStatusV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1223,7 +1496,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelAgeRestrictionResponse? AdminUpdateAgeRestrictionConfigV2(AdminUpdateAgeRestrictionConfigV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelAgeRestrictionResponse?> AdminUpdateAgeRestrictionConfigV2Async(AdminUpdateAgeRestrictionConfigV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1235,7 +1515,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.AccountcommonCountryAgeRestriction>? GetListCountryAgeRestriction(GetListCountryAgeRestriction input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.AccountcommonCountryAgeRestriction>?> GetListCountryAgeRestrictionAsync(GetListCountryAgeRestriction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1247,7 +1534,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCountry? UpdateCountryAgeRestriction(UpdateCountryAgeRestriction input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCountry?> UpdateCountryAgeRestrictionAsync(UpdateCountryAgeRestriction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1259,7 +1553,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelSearchUsersByPlatformIDResponse? AdminSearchUsersV2(AdminSearchUsersV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelSearchUsersByPlatformIDResponse?> AdminSearchUsersV2Async(AdminSearchUsersV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1271,7 +1572,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? AdminGetUserByUserIdV2(AdminGetUserByUserIdV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> AdminGetUserByUserIdV2Async(AdminGetUserByUserIdV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1283,7 +1591,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? AdminUpdateUserV2(AdminUpdateUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> AdminUpdateUserV2Async(AdminUpdateUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1295,7 +1610,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponse? AdminBanUserV2(AdminBanUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponse?> AdminBanUserV2Async(AdminBanUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1307,7 +1629,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelUserBanResponse>? AdminGetUserBanV2(AdminGetUserBanV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserBanResponse>?> AdminGetUserBanV2Async(AdminGetUserBanV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1319,7 +1648,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDisableUserV2(AdminDisableUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDisableUserV2Async(AdminDisableUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1331,7 +1667,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminEnableUserV2(AdminEnableUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminEnableUserV2Async(AdminEnableUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1343,7 +1686,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminResetPasswordV2(AdminResetPasswordV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminResetPasswordV2Async(AdminResetPasswordV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1355,7 +1705,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeletePlatformLinkV2(AdminDeletePlatformLinkV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeletePlatformLinkV2Async(AdminDeletePlatformLinkV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1367,7 +1724,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminPutUserRolesV2(AdminPutUserRolesV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPutUserRolesV2Async(AdminPutUserRolesV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1379,7 +1743,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminCreateUserRolesV2(AdminCreateUserRolesV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminCreateUserRolesV2Async(AdminCreateUserRolesV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1391,7 +1762,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonCountry? PublicGetCountryAgeRestriction(PublicGetCountryAgeRestriction input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonCountry?> PublicGetCountryAgeRestrictionAsync(PublicGetCountryAgeRestriction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1403,7 +1781,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserCreateResponse? PublicCreateUserV2(PublicCreateUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserCreateResponse?> PublicCreateUserV2Async(PublicCreateUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1415,7 +1800,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicForgotPasswordV2(PublicForgotPasswordV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicForgotPasswordV2Async(PublicForgotPasswordV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1427,7 +1819,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicResetPasswordV2(PublicResetPasswordV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicResetPasswordV2Async(PublicResetPasswordV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1439,7 +1838,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponse? PublicGetUserByUserIDV2(PublicGetUserByUserIDV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponse?> PublicGetUserByUserIDV2Async(PublicGetUserByUserIDV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1451,7 +1857,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelUserResponse>? PublicUpdateUserV2(PublicUpdateUserV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserResponse>?> PublicUpdateUserV2Async(PublicUpdateUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1463,7 +1876,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelUserBanResponse>? PublicGetUserBan(PublicGetUserBan input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserBanResponse>?> PublicGetUserBanAsync(PublicGetUserBan input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1475,7 +1895,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicUpdatePasswordV2(PublicUpdatePasswordV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicUpdatePasswordV2Async(PublicUpdatePasswordV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1487,7 +1914,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelGetUserMapping>? GetListJusticePlatformAccounts(GetListJusticePlatformAccounts input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelGetUserMapping>?> GetListJusticePlatformAccountsAsync(GetListJusticePlatformAccounts input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1499,7 +1933,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicPlatformLinkV2(PublicPlatformLinkV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicPlatformLinkV2Async(PublicPlatformLinkV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1511,7 +1952,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicDeletePlatformLinkV2(PublicDeletePlatformLinkV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicDeletePlatformLinkV2Async(PublicDeletePlatformLinkV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1521,7 +1969,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUsersResponseWithPaginationV3? ListAdminsV3(ListAdminsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUsersResponseWithPaginationV3?> ListAdminsV3Async(ListAdminsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1530,7 +1985,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelAgeRestrictionResponseV3? AdminGetAgeRestrictionStatusV3(AdminGetAgeRestrictionStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelAgeRestrictionResponseV3?> AdminGetAgeRestrictionStatusV3Async(AdminGetAgeRestrictionStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1539,7 +2001,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelAgeRestrictionResponseV3? AdminUpdateAgeRestrictionConfigV3(AdminUpdateAgeRestrictionConfigV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelAgeRestrictionResponseV3?> AdminUpdateAgeRestrictionConfigV3Async(AdminUpdateAgeRestrictionConfigV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1548,7 +2017,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelCountryV3Response>? AdminGetListCountryAgeRestrictionV3(AdminGetListCountryAgeRestrictionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelCountryV3Response>?> AdminGetListCountryAgeRestrictionV3Async(AdminGetListCountryAgeRestrictionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1557,7 +2033,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCountryV3Response? AdminUpdateCountryAgeRestrictionV3(AdminUpdateCountryAgeRestrictionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCountryV3Response?> AdminUpdateCountryAgeRestrictionV3Async(AdminUpdateCountryAgeRestrictionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1566,7 +2049,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonUserPlatforms? AdminListUserIDByPlatformUserIDsV3(AdminListUserIDByPlatformUserIDsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonUserPlatforms?> AdminListUserIDByPlatformUserIDsV3Async(AdminListUserIDByPlatformUserIDsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1575,7 +2065,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminGetUserByPlatformUserIDV3(AdminGetUserByPlatformUserIDV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminGetUserByPlatformUserIDV3Async(AdminGetUserByPlatformUserIDV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1584,7 +2081,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUsersResponseWithPaginationV3? GetAdminUsersByRoleIdV3(GetAdminUsersByRoleIdV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUsersResponseWithPaginationV3?> GetAdminUsersByRoleIdV3Async(GetAdminUsersByRoleIdV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1593,7 +2097,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminGetUserByEmailAddressV3(AdminGetUserByEmailAddressV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminGetUserByEmailAddressV3Async(AdminGetUserByEmailAddressV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1602,7 +2113,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminBulkUpdateUsersV3(AdminBulkUpdateUsersV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminBulkUpdateUsersV3Async(AdminBulkUpdateUsersV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1611,7 +2129,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserBanV3Response? AdminGetBulkUserBanV3(AdminGetBulkUserBanV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserBanV3Response?> AdminGetBulkUserBanV3Async(AdminGetBulkUserBanV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1620,7 +2145,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelListUserInformationResult? AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelListUserInformationResult?> AdminListUserIDByUserIDsV3Async(AdminListUserIDByUserIDsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1629,7 +2161,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelListBulkUserPlatformsResponse? AdminBulkGetUsersPlatform(AdminBulkGetUsersPlatform input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelListBulkUserPlatformsResponse?> AdminBulkGetUsersPlatformAsync(AdminBulkGetUsersPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1638,7 +2177,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelInviteUserResponseV3? AdminInviteUserV3(AdminInviteUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelInviteUserResponseV3?> AdminInviteUserV3Async(AdminInviteUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1647,7 +2193,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLinkingHistoryResponseWithPaginationV3? AdminQueryThirdPlatformLinkHistoryV3(AdminQueryThirdPlatformLinkHistoryV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLinkingHistoryResponseWithPaginationV3?> AdminQueryThirdPlatformLinkHistoryV3Async(AdminQueryThirdPlatformLinkHistoryV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1656,7 +2209,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonListUsersWithPlatformAccountsResponse? AdminListUsersV3(AdminListUsersV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonListUsersWithPlatformAccountsResponse?> AdminListUsersV3Async(AdminListUsersV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1665,7 +2225,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelSearchUsersResponseWithPaginationV3? AdminSearchUserV3(AdminSearchUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelSearchUsersResponseWithPaginationV3?> AdminSearchUserV3Async(AdminSearchUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1674,7 +2241,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelListUserResponseV3? AdminGetBulkUserByEmailAddressV3(AdminGetBulkUserByEmailAddressV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelListUserResponseV3?> AdminGetBulkUserByEmailAddressV3Async(AdminGetBulkUserByEmailAddressV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1683,7 +2257,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminGetUserByUserIdV3(AdminGetUserByUserIdV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminGetUserByUserIdV3Async(AdminGetUserByUserIdV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1692,7 +2273,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminUpdateUserV3(AdminUpdateUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminUpdateUserV3Async(AdminUpdateUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1701,7 +2289,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserBanV3Response? AdminGetUserBanV3(AdminGetUserBanV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserBanV3Response?> AdminGetUserBanV3Async(AdminGetUserBanV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1710,7 +2305,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponseV3? AdminBanUserV3(AdminBanUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponseV3?> AdminBanUserV3Async(AdminBanUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1719,7 +2321,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserBanResponseV3? AdminUpdateUserBanV3(AdminUpdateUserBanV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserBanResponseV3?> AdminUpdateUserBanV3Async(AdminUpdateUserBanV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1728,7 +2337,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminSendVerificationCodeV3(AdminSendVerificationCodeV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminSendVerificationCodeV3Async(AdminSendVerificationCodeV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1737,7 +2353,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminVerifyAccountV3(AdminVerifyAccountV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminVerifyAccountV3Async(AdminVerifyAccountV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1746,7 +2369,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelVerificationCodeResponse? GetUserVerificationCode(GetUserVerificationCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelVerificationCodeResponse?> GetUserVerificationCodeAsync(GetUserVerificationCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1755,7 +2385,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserDeletionStatusResponse? AdminGetUserDeletionStatusV3(AdminGetUserDeletionStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserDeletionStatusResponse?> AdminGetUserDeletionStatusV3Async(AdminGetUserDeletionStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1764,7 +2401,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateUserDeletionStatusV3(AdminUpdateUserDeletionStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateUserDeletionStatusV3Async(AdminUpdateUserDeletionStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1773,7 +2417,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonDistinctPlatformResponseV3? AdminListUserAllPlatformAccountsDistinctV3(AdminListUserAllPlatformAccountsDistinctV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonDistinctPlatformResponseV3?> AdminListUserAllPlatformAccountsDistinctV3Async(AdminListUserAllPlatformAccountsDistinctV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1782,7 +2433,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminUpgradeHeadlessAccountV3(AdminUpgradeHeadlessAccountV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminUpgradeHeadlessAccountV3Async(AdminUpgradeHeadlessAccountV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1791,7 +2449,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteUserInformationV3(AdminDeleteUserInformationV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserInformationV3Async(AdminDeleteUserInformationV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1800,7 +2465,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLoginHistoriesResponse? AdminGetUserLoginHistoriesV3(AdminGetUserLoginHistoriesV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLoginHistoriesResponse?> AdminGetUserLoginHistoriesV3Async(AdminGetUserLoginHistoriesV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1809,7 +2481,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminResetPasswordV3(AdminResetPasswordV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminResetPasswordV3Async(AdminResetPasswordV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1818,7 +2497,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateUserPermissionV3(AdminUpdateUserPermissionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateUserPermissionV3Async(AdminUpdateUserPermissionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1827,7 +2513,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminAddUserPermissionsV3(AdminAddUserPermissionsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminAddUserPermissionsV3Async(AdminAddUserPermissionsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1836,7 +2529,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteUserPermissionBulkV3(AdminDeleteUserPermissionBulkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserPermissionBulkV3Async(AdminDeleteUserPermissionBulkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1845,7 +2545,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteUserPermissionV3(AdminDeleteUserPermissionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserPermissionV3Async(AdminDeleteUserPermissionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1854,7 +2561,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonUserLinkedPlatformsResponseV3? AdminGetUserPlatformAccountsV3(AdminGetUserPlatformAccountsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonUserLinkedPlatformsResponseV3?> AdminGetUserPlatformAccountsV3Async(AdminGetUserPlatformAccountsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1863,7 +2577,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelGetUserMapping>? AdminGetListJusticePlatformAccounts(AdminGetListJusticePlatformAccounts input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelGetUserMapping>?> AdminGetListJusticePlatformAccountsAsync(AdminGetListJusticePlatformAccounts input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1872,7 +2593,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserMappingV3? AdminGetUserMapping(AdminGetUserMapping input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserMappingV3?> AdminGetUserMappingAsync(AdminGetUserMapping input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1881,7 +2609,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCreateJusticeUserResponse? AdminCreateJusticeUser(AdminCreateJusticeUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCreateJusticeUserResponse?> AdminCreateJusticeUserAsync(AdminCreateJusticeUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1890,7 +2625,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminLinkPlatformAccount(AdminLinkPlatformAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminLinkPlatformAccountAsync(AdminLinkPlatformAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1899,7 +2641,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminPlatformUnlinkV3(AdminPlatformUnlinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPlatformUnlinkV3Async(AdminPlatformUnlinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1908,7 +2657,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminPlatformUnlinkAllV3(AdminPlatformUnlinkAllV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPlatformUnlinkAllV3Async(AdminPlatformUnlinkAllV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1917,7 +2673,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminPlatformLinkV3(AdminPlatformLinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPlatformLinkV3Async(AdminPlatformLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1926,7 +2689,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteUserLinkingHistoryByPlatformIDV3(AdminDeleteUserLinkingHistoryByPlatformIDV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserLinkingHistoryByPlatformIDV3Async(AdminDeleteUserLinkingHistoryByPlatformIDV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1935,7 +2705,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelTokenThirdPartyLinkStatusResponse? AdminGetThirdPartyPlatformTokenLinkStatusV3(AdminGetThirdPartyPlatformTokenLinkStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelTokenThirdPartyLinkStatusResponse?> AdminGetThirdPartyPlatformTokenLinkStatusV3Async(AdminGetThirdPartyPlatformTokenLinkStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1944,7 +2721,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserPlatformMetadata? AdminGetUserSinglePlatformAccount(AdminGetUserSinglePlatformAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserPlatformMetadata?> AdminGetUserSinglePlatformAccountAsync(AdminGetUserSinglePlatformAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1960,10 +2744,25 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelUserPlatformMetadata<T1>?> AdminGetUserSinglePlatformAccountAsync<T1>(AdminGetUserSinglePlatformAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void AdminDeleteUserRolesV3(AdminDeleteUserRolesV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserRolesV3Async(AdminDeleteUserRolesV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1972,7 +2771,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminSaveUserRoleV3(AdminSaveUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminSaveUserRoleV3Async(AdminSaveUserRoleV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1981,7 +2787,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminAddUserRoleV3(AdminAddUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminAddUserRoleV3Async(AdminAddUserRoleV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1990,7 +2803,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteUserRoleV3(AdminDeleteUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserRoleV3Async(AdminDeleteUserRoleV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -1999,7 +2819,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateUserStatusV3(AdminUpdateUserStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateUserStatusV3Async(AdminUpdateUserStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2008,7 +2835,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminTrustlyUpdateUserIdentity(AdminTrustlyUpdateUserIdentity input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminTrustlyUpdateUserIdentityAsync(AdminTrustlyUpdateUserIdentity input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2017,7 +2851,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminVerifyUserWithoutVerificationCodeV3(AdminVerifyUserWithoutVerificationCodeV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminVerifyUserWithoutVerificationCodeV3Async(AdminVerifyUserWithoutVerificationCodeV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2026,7 +2867,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? AdminGetMyUserV3(AdminGetMyUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> AdminGetMyUserV3Async(AdminGetMyUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2035,7 +2883,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCountryV3Response? PublicGetCountryAgeRestrictionV3(PublicGetCountryAgeRestrictionV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCountryV3Response?> PublicGetCountryAgeRestrictionV3Async(PublicGetCountryAgeRestrictionV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2044,7 +2899,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonUserPlatforms? PublicListUserIDByPlatformUserIDsV3(PublicListUserIDByPlatformUserIDsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonUserPlatforms?> PublicListUserIDByPlatformUserIDsV3Async(PublicListUserIDByPlatformUserIDsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2053,7 +2915,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV3(PublicGetUserByPlatformUserIDV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicGetUserByPlatformUserIDV3Async(PublicGetUserByPlatformUserIDV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2062,7 +2931,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLinkRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLinkRequest?> PublicGetAsyncStatusAsync(PublicGetAsyncStatus input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2078,10 +2954,25 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelLinkRequest<T1>?> PublicGetAsyncStatusAsync<T1>(PublicGetAsyncStatus input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelPublicUserInformationResponseV3? PublicSearchUserV3(PublicSearchUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicUserInformationResponseV3?> PublicSearchUserV3Async(PublicSearchUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2090,7 +2981,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserCreateResponseV3? PublicCreateUserV3(PublicCreateUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserCreateResponseV3?> PublicCreateUserV3Async(PublicCreateUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2099,7 +2997,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void CheckUserAvailability(CheckUserAvailability input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CheckUserAvailabilityAsync(CheckUserAvailability input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2108,7 +3013,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelListBulkUserResponse? PublicBulkGetUsers(PublicBulkGetUsers input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelListBulkUserResponse?> PublicBulkGetUsersAsync(PublicBulkGetUsers input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2117,7 +3029,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicSendRegistrationCode(PublicSendRegistrationCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicSendRegistrationCodeAsync(PublicSendRegistrationCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2126,7 +3045,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicVerifyRegistrationCode(PublicVerifyRegistrationCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicVerifyRegistrationCodeAsync(PublicVerifyRegistrationCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2135,7 +3061,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicForgotPasswordV3(PublicForgotPasswordV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicForgotPasswordV3Async(PublicForgotPasswordV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2144,7 +3077,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserInvitationV3? GetAdminInvitationV3(GetAdminInvitationV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserInvitationV3?> GetAdminInvitationV3Async(GetAdminInvitationV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2153,7 +3093,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserCreateResponseV3? CreateUserFromInvitationV3(CreateUserFromInvitationV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserCreateResponseV3?> CreateUserFromInvitationV3Async(CreateUserFromInvitationV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2162,7 +3109,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? UpdateUserV3(UpdateUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> UpdateUserV3Async(UpdateUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2171,7 +3125,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? PublicPartialUpdateUserV3(PublicPartialUpdateUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicPartialUpdateUserV3Async(PublicPartialUpdateUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2180,7 +3141,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicSendVerificationCodeV3(PublicSendVerificationCodeV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicSendVerificationCodeV3Async(PublicSendVerificationCodeV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2189,7 +3157,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicUserVerificationV3(PublicUserVerificationV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicUserVerificationV3Async(PublicUserVerificationV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2198,7 +3173,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? PublicUpgradeHeadlessAccountV3(PublicUpgradeHeadlessAccountV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicUpgradeHeadlessAccountV3Async(PublicUpgradeHeadlessAccountV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2207,7 +3189,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? PublicVerifyHeadlessAccountV3(PublicVerifyHeadlessAccountV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicVerifyHeadlessAccountV3Async(PublicVerifyHeadlessAccountV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2216,7 +3205,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicUpdatePasswordV3(PublicUpdatePasswordV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicUpdatePasswordV3Async(PublicUpdatePasswordV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2225,7 +3221,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelCreateJusticeUserResponse? PublicCreateJusticeUser(PublicCreateJusticeUser input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCreateJusticeUserResponse?> PublicCreateJusticeUserAsync(PublicCreateJusticeUser input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2234,7 +3237,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicPlatformLinkV3(PublicPlatformLinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicPlatformLinkV3Async(PublicPlatformLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2243,7 +3253,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicPlatformUnlinkV3(PublicPlatformUnlinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicPlatformUnlinkV3Async(PublicPlatformUnlinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2252,7 +3269,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicPlatformUnlinkAllV3(PublicPlatformUnlinkAllV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicPlatformUnlinkAllV3Async(PublicPlatformUnlinkAllV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2261,7 +3285,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicForcePlatformLinkV3(PublicForcePlatformLinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicForcePlatformLinkV3Async(PublicForcePlatformLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2270,7 +3301,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelWebLinkingResponse? PublicWebLinkPlatform(PublicWebLinkPlatform input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelWebLinkingResponse?> PublicWebLinkPlatformAsync(PublicWebLinkPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2279,7 +3317,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public string PublicWebLinkPlatformEstablish(PublicWebLinkPlatformEstablish input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> PublicWebLinkPlatformEstablishAsync(PublicWebLinkPlatformEstablish input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2288,7 +3333,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLinkRequest? PublicProcessWebLinkPlatformV3(PublicProcessWebLinkPlatformV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLinkRequest?> PublicProcessWebLinkPlatformV3Async(PublicProcessWebLinkPlatformV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2304,10 +3356,25 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelLinkRequest<T1>?> PublicProcessWebLinkPlatformV3Async<T1>(PublicProcessWebLinkPlatformV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelUsersPlatformInfosResponse? PublicGetUsersPlatformInfosV3(PublicGetUsersPlatformInfosV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUsersPlatformInfosResponse?> PublicGetUsersPlatformInfosV3Async(PublicGetUsersPlatformInfosV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2316,7 +3383,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void ResetPasswordV3(ResetPasswordV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ResetPasswordV3Async(ResetPasswordV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2327,7 +3401,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelPublicUserResponseV3? PublicGetUserByUserIdV3(PublicGetUserByUserIdV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicUserResponseV3?> PublicGetUserByUserIdV3Async(PublicGetUserByUserIdV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2337,7 +3418,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetUserBanV3Response? PublicGetUserBanHistoryV3(PublicGetUserBanHistoryV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserBanV3Response?> PublicGetUserBanHistoryV3Async(PublicGetUserBanHistoryV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2346,7 +3434,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonDistinctPlatformResponseV3? PublicListUserAllPlatformAccountsDistinctV3(PublicListUserAllPlatformAccountsDistinctV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonDistinctPlatformResponseV3?> PublicListUserAllPlatformAccountsDistinctV3Async(PublicListUserAllPlatformAccountsDistinctV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2355,7 +3450,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonUserInformationV3? PublicGetUserInformationV3(PublicGetUserInformationV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonUserInformationV3?> PublicGetUserInformationV3Async(PublicGetUserInformationV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2364,7 +3466,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelLoginHistoriesResponse? PublicGetUserLoginHistoriesV3(PublicGetUserLoginHistoriesV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelLoginHistoriesResponse?> PublicGetUserLoginHistoriesV3Async(PublicGetUserLoginHistoriesV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2373,7 +3482,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.AccountcommonUserLinkedPlatformsResponseV3? PublicGetUserPlatformAccountsV3(PublicGetUserPlatformAccountsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonUserLinkedPlatformsResponseV3?> PublicGetUserPlatformAccountsV3Async(PublicGetUserPlatformAccountsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2382,7 +3498,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public List<Model.ModelGetUserMappingV3>? PublicListJusticePlatformAccountsV3(PublicListJusticePlatformAccountsV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelGetUserMappingV3>?> PublicListJusticePlatformAccountsV3Async(PublicListJusticePlatformAccountsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2391,7 +3514,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicLinkPlatformAccount(PublicLinkPlatformAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicLinkPlatformAccountAsync(PublicLinkPlatformAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2400,7 +3530,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicForceLinkPlatformWithProgression(PublicForceLinkPlatformWithProgression input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicForceLinkPlatformWithProgressionAsync(PublicForceLinkPlatformWithProgression input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2409,7 +3546,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetPublisherUserResponse? PublicGetPublisherUserV3(PublicGetPublisherUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetPublisherUserResponse?> PublicGetPublisherUserV3Async(PublicGetPublisherUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2418,7 +3562,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicValidateUserByUserIDAndPasswordV3(PublicValidateUserByUserIDAndPasswordV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicValidateUserByUserIDAndPasswordV3Async(PublicValidateUserByUserIDAndPasswordV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2427,7 +3578,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelUserResponseV3? PublicGetMyUserV3(PublicGetMyUserV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicGetMyUserV3Async(PublicGetMyUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2436,7 +3594,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ModelGetLinkHeadlessAccountConflictResponse? PublicGetLinkHeadlessAccountToMyAccountConflictV3(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetLinkHeadlessAccountConflictResponse?> PublicGetLinkHeadlessAccountToMyAccountConflictV3Async(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2445,7 +3610,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void LinkHeadlessAccountToMyAccountV3(LinkHeadlessAccountToMyAccountV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task LinkHeadlessAccountToMyAccountV3Async(LinkHeadlessAccountToMyAccountV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2454,7 +3626,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void PublicSendVerificationLinkV3(PublicSendVerificationLinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicSendVerificationLinkV3Async(PublicSendVerificationLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -2463,7 +3642,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public string PublicVerifyUserByLinkV3(PublicVerifyUserByLinkV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> PublicVerifyUserByLinkV3Async(PublicVerifyUserByLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

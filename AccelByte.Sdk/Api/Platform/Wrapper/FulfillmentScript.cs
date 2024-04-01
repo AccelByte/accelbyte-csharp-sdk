@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,7 +44,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public List<Model.FulfillmentScriptInfo>? ListFulfillmentScripts(ListFulfillmentScripts input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.FulfillmentScriptInfo>?> ListFulfillmentScriptsAsync(ListFulfillmentScripts input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -53,7 +60,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.FulfillmentScriptInfo? GetFulfillmentScript(GetFulfillmentScript input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentScriptInfo?> GetFulfillmentScriptAsync(GetFulfillmentScript input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -62,7 +76,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.FulfillmentScriptInfo? CreateFulfillmentScript(CreateFulfillmentScript input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentScriptInfo?> CreateFulfillmentScriptAsync(CreateFulfillmentScript input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +92,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteFulfillmentScript(DeleteFulfillmentScript input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteFulfillmentScriptAsync(DeleteFulfillmentScript input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +108,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.FulfillmentScriptInfo? UpdateFulfillmentScript(UpdateFulfillmentScript input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentScriptInfo?> UpdateFulfillmentScriptAsync(UpdateFulfillmentScript input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

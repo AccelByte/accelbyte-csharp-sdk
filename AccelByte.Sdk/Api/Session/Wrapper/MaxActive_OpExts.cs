@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.MaxActive)builder.WrapperObject!).AdminGetMemberActiveSession(op);
         }
+        public static async Task<Session.Model.ModelsMemberActiveSession?> ExecuteAsync(
+            this AdminGetMemberActiveSession.AdminGetMemberActiveSessionBuilder builder,
+            string name,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetMemberActiveSession op = builder.Build(
+                name,
+                namespace_,
+                userId
+            );
+
+            return await ((Session.Wrapper.MaxActive)builder.WrapperObject!).AdminGetMemberActiveSessionAsync(op);
+        }
         public static void Execute(
             this AdminReconcileMaxActiveSession.AdminReconcileMaxActiveSessionBuilder builder,
             ModelsRequestReconcileMaxActiveSession body,
@@ -41,6 +56,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Session.Wrapper.MaxActive)builder.WrapperObject!).AdminReconcileMaxActiveSession(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminReconcileMaxActiveSession.AdminReconcileMaxActiveSessionBuilder builder,
+            ModelsRequestReconcileMaxActiveSession body,
+            string name,
+            string namespace_
+        )
+        {
+            AdminReconcileMaxActiveSession op = builder.Build(
+                body,
+                name,
+                namespace_
+            );
+
+            await ((Session.Wrapper.MaxActive)builder.WrapperObject!).AdminReconcileMaxActiveSessionAsync(op);
         }
     }
 }

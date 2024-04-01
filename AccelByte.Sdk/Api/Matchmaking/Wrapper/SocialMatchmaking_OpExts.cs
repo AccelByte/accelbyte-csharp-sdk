@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Matchmaking.Wrapper.SocialMatchmaking)builder.WrapperObject!).UpdatePlayTimeWeight(op);
+        }
+        public static async Task<Matchmaking.Model.ModelsUpdatePlayerPlaytimeWeightResponse?> ExecuteAsync(
+            this UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder builder,
+            ModelsUpdatePlayTimeWeightRequest body,
+            string namespace_
+        )
+        {
+            UpdatePlayTimeWeight op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Matchmaking.Wrapper.SocialMatchmaking)builder.WrapperObject!).UpdatePlayTimeWeightAsync(op);
         }
     }
 }

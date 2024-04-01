@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -66,7 +66,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public List<Model.SlotInfo>? GetUserNamespaceSlots(GetUserNamespaceSlots input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.SlotInfo>?> GetUserNamespaceSlotsAsync(GetUserNamespaceSlots input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -78,7 +85,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public byte[]? GetSlotData(GetSlotData input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<byte[]?> GetSlotDataAsync(GetSlotData input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -90,7 +104,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public List<Model.SlotInfo>? PublicGetUserNamespaceSlots(PublicGetUserNamespaceSlots input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.SlotInfo>?> PublicGetUserNamespaceSlotsAsync(PublicGetUserNamespaceSlots input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -102,7 +123,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public void PublicCreateUserNamespaceSlot(PublicCreateUserNamespaceSlot input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicCreateUserNamespaceSlotAsync(PublicCreateUserNamespaceSlot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -114,7 +142,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public byte[]? PublicGetSlotData(PublicGetSlotData input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<byte[]?> PublicGetSlotDataAsync(PublicGetSlotData input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -126,7 +161,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.SlotInfo? PublicUpdateUserNamespaceSlot(PublicUpdateUserNamespaceSlot input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SlotInfo?> PublicUpdateUserNamespaceSlotAsync(PublicUpdateUserNamespaceSlot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -138,7 +180,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public void PublicDeleteUserNamespaceSlot(PublicDeleteUserNamespaceSlot input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicDeleteUserNamespaceSlotAsync(PublicDeleteUserNamespaceSlot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -150,7 +199,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.SlotInfo? PublicUpdateUserNamespaceSlotMetadata(PublicUpdateUserNamespaceSlotMetadata input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SlotInfo?> PublicUpdateUserNamespaceSlotMetadataAsync(PublicUpdateUserNamespaceSlotMetadata input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

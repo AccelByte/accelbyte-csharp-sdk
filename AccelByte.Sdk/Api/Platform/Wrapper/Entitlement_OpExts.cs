@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements(op);
         }
+        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
+            this QueryEntitlements.QueryEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryEntitlements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlementsAsync(op);
+        }
         public static Platform.Model.EntitlementPagingSlicedResult? Execute(
             this QueryEntitlements1.QueryEntitlements1Builder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1(op);
+        }
+        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
+            this QueryEntitlements1.QueryEntitlements1Builder builder,
+            string namespace_
+        )
+        {
+            QueryEntitlements1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1Async(op);
         }
         public static Platform.Model.EntitlementConfigInfo? Execute(
             this EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).EnableEntitlementOriginFeature(op);
         }
+        public static async Task<Platform.Model.EntitlementConfigInfo?> ExecuteAsync(
+            this EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder builder,
+            string namespace_
+        )
+        {
+            EnableEntitlementOriginFeature op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).EnableEntitlementOriginFeatureAsync(op);
+        }
         public static Platform.Model.EntitlementConfigInfo? Execute(
             this GetEntitlementConfigInfo.GetEntitlementConfigInfoBuilder builder,
             string namespace_
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlementConfigInfo(op);
+        }
+        public static async Task<Platform.Model.EntitlementConfigInfo?> ExecuteAsync(
+            this GetEntitlementConfigInfo.GetEntitlementConfigInfoBuilder builder,
+            string namespace_
+        )
+        {
+            GetEntitlementConfigInfo op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlementConfigInfoAsync(op);
         }
         public static Platform.Model.BulkEntitlementGrantResult? Execute(
             this GrantEntitlements.GrantEntitlementsBuilder builder,
@@ -67,6 +111,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GrantEntitlements(op);
         }
+        public static async Task<Platform.Model.BulkEntitlementGrantResult?> ExecuteAsync(
+            this GrantEntitlements.GrantEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            GrantEntitlements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GrantEntitlementsAsync(op);
+        }
         public static Platform.Model.BulkEntitlementRevokeResult? Execute(
             this RevokeEntitlements.RevokeEntitlementsBuilder builder,
             string namespace_
@@ -77,6 +132,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeEntitlements(op);
+        }
+        public static async Task<Platform.Model.BulkEntitlementRevokeResult?> ExecuteAsync(
+            this RevokeEntitlements.RevokeEntitlementsBuilder builder,
+            string namespace_
+        )
+        {
+            RevokeEntitlements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeEntitlementsAsync(op);
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetEntitlement.GetEntitlementBuilder builder,
@@ -91,6 +157,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this GetEntitlement.GetEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_
+        )
+        {
+            GetEntitlement op = builder.Build(
+                entitlementId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementPlatformConfigInfo? Execute(
             this GetPlatformEntitlementConfig.GetPlatformEntitlementConfigBuilder builder,
             string namespace_,
@@ -103,6 +182,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetPlatformEntitlementConfig(op);
+        }
+        public static async Task<Platform.Model.EntitlementPlatformConfigInfo?> ExecuteAsync(
+            this GetPlatformEntitlementConfig.GetPlatformEntitlementConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            GetPlatformEntitlementConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetPlatformEntitlementConfigAsync(op);
         }
         public static Platform.Model.EntitlementPlatformConfigInfo? Execute(
             this UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder builder,
@@ -117,6 +209,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdatePlatformEntitlementConfig(op);
         }
+        public static async Task<Platform.Model.EntitlementPlatformConfigInfo?> ExecuteAsync(
+            this UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            UpdatePlatformEntitlementConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdatePlatformEntitlementConfigAsync(op);
+        }
         public static Platform.Model.EntitlementPagingSlicedResult? Execute(
             this QueryUserEntitlements.QueryUserEntitlementsBuilder builder,
             string namespace_,
@@ -130,6 +235,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryUserEntitlements(op);
         }
+        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
+            this QueryUserEntitlements.QueryUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryUserEntitlementsAsync(op);
+        }
         public static List<Platform.Model.StackableEntitlementInfo>? Execute(
             this GrantUserEntitlement.GrantUserEntitlementBuilder builder,
             string namespace_,
@@ -142,6 +260,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GrantUserEntitlement(op);
+        }
+        public static async Task<List<Platform.Model.StackableEntitlementInfo>?> ExecuteAsync(
+            this GrantUserEntitlement.GrantUserEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GrantUserEntitlement op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GrantUserEntitlementAsync(op);
         }
         public static Platform.Model.AppEntitlementInfo? Execute(
             this GetUserAppEntitlementByAppId.GetUserAppEntitlementByAppIdBuilder builder,
@@ -158,6 +289,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserAppEntitlementByAppId(op);
         }
+        public static async Task<Platform.Model.AppEntitlementInfo?> ExecuteAsync(
+            this GetUserAppEntitlementByAppId.GetUserAppEntitlementByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            GetUserAppEntitlementByAppId op = builder.Build(
+                namespace_,
+                userId,
+                appId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserAppEntitlementByAppIdAsync(op);
+        }
         public static Platform.Model.AppEntitlementPagingSlicedResult? Execute(
             this QueryUserEntitlementsByAppType.QueryUserEntitlementsByAppTypeBuilder builder,
             string namespace_,
@@ -172,6 +318,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryUserEntitlementsByAppType(op);
+        }
+        public static async Task<Platform.Model.AppEntitlementPagingSlicedResult?> ExecuteAsync(
+            this QueryUserEntitlementsByAppType.QueryUserEntitlementsByAppTypeBuilder builder,
+            string namespace_,
+            string userId,
+            string appType
+        )
+        {
+            QueryUserEntitlementsByAppType op = builder.Build(
+                namespace_,
+                userId,
+                appType
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryUserEntitlementsByAppTypeAsync(op);
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetUserEntitlementByItemId.GetUserEntitlementByItemIdBuilder builder,
@@ -188,6 +349,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementByItemId(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this GetUserEntitlementByItemId.GetUserEntitlementByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            GetUserEntitlementByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementByItemIdAsync(op);
+        }
         public static List<Platform.Model.EntitlementInfo>? Execute(
             this GetUserActiveEntitlementsByItemIds.GetUserActiveEntitlementsByItemIdsBuilder builder,
             string namespace_,
@@ -200,6 +376,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserActiveEntitlementsByItemIds(op);
+        }
+        public static async Task<List<Platform.Model.EntitlementInfo>?> ExecuteAsync(
+            this GetUserActiveEntitlementsByItemIds.GetUserActiveEntitlementsByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserActiveEntitlementsByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserActiveEntitlementsByItemIdsAsync(op);
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetUserEntitlementBySku.GetUserEntitlementBySkuBuilder builder,
@@ -216,6 +405,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementBySku(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this GetUserEntitlementBySku.GetUserEntitlementBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            GetUserEntitlementBySku op = builder.Build(
+                namespace_,
+                userId,
+                sku
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementBySkuAsync(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this ExistsAnyUserActiveEntitlement.ExistsAnyUserActiveEntitlementBuilder builder,
             string namespace_,
@@ -228,6 +432,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ExistsAnyUserActiveEntitlement(op);
+        }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this ExistsAnyUserActiveEntitlement.ExistsAnyUserActiveEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ExistsAnyUserActiveEntitlement op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ExistsAnyUserActiveEntitlementAsync(op);
         }
         public static Platform.Model.Ownership? Execute(
             this ExistsAnyUserActiveEntitlementByItemIds.ExistsAnyUserActiveEntitlementByItemIdsBuilder builder,
@@ -244,6 +461,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ExistsAnyUserActiveEntitlementByItemIds(op);
         }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this ExistsAnyUserActiveEntitlementByItemIds.ExistsAnyUserActiveEntitlementByItemIdsBuilder builder,
+            string namespace_,
+            string userId,
+            List<string> itemIds
+        )
+        {
+            ExistsAnyUserActiveEntitlementByItemIds op = builder.Build(
+                namespace_,
+                userId,
+                itemIds
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ExistsAnyUserActiveEntitlementByItemIdsAsync(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this GetUserAppEntitlementOwnershipByAppId.GetUserAppEntitlementOwnershipByAppIdBuilder builder,
             string namespace_,
@@ -258,6 +490,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserAppEntitlementOwnershipByAppId(op);
+        }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this GetUserAppEntitlementOwnershipByAppId.GetUserAppEntitlementOwnershipByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            GetUserAppEntitlementOwnershipByAppId op = builder.Build(
+                namespace_,
+                userId,
+                appId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserAppEntitlementOwnershipByAppIdAsync(op);
         }
         public static Platform.Model.TimedOwnership? Execute(
             this GetUserEntitlementOwnershipByItemId.GetUserEntitlementOwnershipByItemIdBuilder builder,
@@ -274,6 +521,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemId(op);
         }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this GetUserEntitlementOwnershipByItemId.GetUserEntitlementOwnershipByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            GetUserEntitlementOwnershipByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemIdAsync(op);
+        }
         public static List<Platform.Model.EntitlementOwnership>? Execute(
             this GetUserEntitlementOwnershipByItemIds.GetUserEntitlementOwnershipByItemIdsBuilder builder,
             string namespace_,
@@ -286,6 +548,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemIds(op);
+        }
+        public static async Task<List<Platform.Model.EntitlementOwnership>?> ExecuteAsync(
+            this GetUserEntitlementOwnershipByItemIds.GetUserEntitlementOwnershipByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlementOwnershipByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipByItemIdsAsync(op);
         }
         public static Platform.Model.TimedOwnership? Execute(
             this GetUserEntitlementOwnershipBySku.GetUserEntitlementOwnershipBySkuBuilder builder,
@@ -302,6 +577,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipBySku(op);
         }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this GetUserEntitlementOwnershipBySku.GetUserEntitlementOwnershipBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            GetUserEntitlementOwnershipBySku op = builder.Build(
+                namespace_,
+                userId,
+                sku
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementOwnershipBySkuAsync(op);
+        }
         public static Platform.Model.BulkOperationResult? Execute(
             this RevokeAllEntitlements.RevokeAllEntitlementsBuilder builder,
             string namespace_,
@@ -314,6 +604,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeAllEntitlements(op);
+        }
+        public static async Task<Platform.Model.BulkOperationResult?> ExecuteAsync(
+            this RevokeAllEntitlements.RevokeAllEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeAllEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeAllEntitlementsAsync(op);
         }
         public static Platform.Model.BulkOperationResult? Execute(
             this RevokeUserEntitlements.RevokeUserEntitlementsBuilder builder,
@@ -330,6 +633,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlements(op);
         }
+        public static async Task<Platform.Model.BulkOperationResult?> ExecuteAsync(
+            this RevokeUserEntitlements.RevokeUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId,
+            string entitlementIds
+        )
+        {
+            RevokeUserEntitlements op = builder.Build(
+                namespace_,
+                userId,
+                entitlementIds
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlementsAsync(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetUserEntitlement.GetUserEntitlementBuilder builder,
             string entitlementId,
@@ -344,6 +662,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this GetUserEntitlement.GetUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementAsync(op);
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this UpdateUserEntitlement.UpdateUserEntitlementBuilder builder,
@@ -360,6 +693,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdateUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this UpdateUserEntitlement.UpdateUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).UpdateUserEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementDecrementResult? Execute(
             this ConsumeUserEntitlement.ConsumeUserEntitlementBuilder builder,
             string entitlementId,
@@ -374,6 +722,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ConsumeUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementDecrementResult?> ExecuteAsync(
+            this ConsumeUserEntitlement.ConsumeUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            ConsumeUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).ConsumeUserEntitlementAsync(op);
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this DisableUserEntitlement.DisableUserEntitlementBuilder builder,
@@ -390,6 +753,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).DisableUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this DisableUserEntitlement.DisableUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            DisableUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).DisableUserEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this EnableUserEntitlement.EnableUserEntitlementBuilder builder,
             string entitlementId,
@@ -404,6 +782,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).EnableUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this EnableUserEntitlement.EnableUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            EnableUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).EnableUserEntitlementAsync(op);
         }
         public static List<Platform.Model.EntitlementHistoryInfo>? Execute(
             this GetUserEntitlementHistories.GetUserEntitlementHistoriesBuilder builder,
@@ -420,6 +813,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementHistories(op);
         }
+        public static async Task<List<Platform.Model.EntitlementHistoryInfo>?> ExecuteAsync(
+            this GetUserEntitlementHistories.GetUserEntitlementHistoriesBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlementHistories op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementHistoriesAsync(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this RevokeUserEntitlement.RevokeUserEntitlementBuilder builder,
             string entitlementId,
@@ -435,6 +843,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this RevokeUserEntitlement.RevokeUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementIfc? Execute(
             this RevokeUserEntitlementByUseCount.RevokeUserEntitlementByUseCountBuilder builder,
             string entitlementId,
@@ -449,6 +872,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlementByUseCount(op);
+        }
+        public static async Task<Platform.Model.EntitlementIfc?> ExecuteAsync(
+            this RevokeUserEntitlementByUseCount.RevokeUserEntitlementByUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeUserEntitlementByUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUserEntitlementByUseCountAsync(op);
         }
         public static Platform.Model.EntitlementPrechekResult? Execute(
             this PreCheckRevokeUserEntitlementByUseCount.PreCheckRevokeUserEntitlementByUseCountBuilder builder,
@@ -467,6 +905,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PreCheckRevokeUserEntitlementByUseCount(op);
         }
+        public static async Task<Platform.Model.EntitlementPrechekResult?> ExecuteAsync(
+            this PreCheckRevokeUserEntitlementByUseCount.PreCheckRevokeUserEntitlementByUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId,
+            int quantity
+        )
+        {
+            PreCheckRevokeUserEntitlementByUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId,
+                quantity
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PreCheckRevokeUserEntitlementByUseCountAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this RevokeUseCount.RevokeUseCountBuilder builder,
@@ -483,6 +938,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUseCount(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this RevokeUseCount.RevokeUseCountBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            RevokeUseCount op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).RevokeUseCountAsync(op);
+        }
         public static Platform.Model.EntitlementSoldResult? Execute(
             this SellUserEntitlement.SellUserEntitlementBuilder builder,
             string entitlementId,
@@ -498,6 +968,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).SellUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementSoldResult?> ExecuteAsync(
+            this SellUserEntitlement.SellUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            SellUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).SellUserEntitlementAsync(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this PublicExistsAnyMyActiveEntitlement.PublicExistsAnyMyActiveEntitlementBuilder builder,
             string namespace_
@@ -508,6 +993,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicExistsAnyMyActiveEntitlement(op);
+        }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this PublicExistsAnyMyActiveEntitlement.PublicExistsAnyMyActiveEntitlementBuilder builder,
+            string namespace_
+        )
+        {
+            PublicExistsAnyMyActiveEntitlement op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicExistsAnyMyActiveEntitlementAsync(op);
         }
         public static Platform.Model.Ownership? Execute(
             this PublicGetMyAppEntitlementOwnershipByAppId.PublicGetMyAppEntitlementOwnershipByAppIdBuilder builder,
@@ -522,6 +1018,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyAppEntitlementOwnershipByAppId(op);
         }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this PublicGetMyAppEntitlementOwnershipByAppId.PublicGetMyAppEntitlementOwnershipByAppIdBuilder builder,
+            string namespace_,
+            string appId
+        )
+        {
+            PublicGetMyAppEntitlementOwnershipByAppId op = builder.Build(
+                namespace_,
+                appId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyAppEntitlementOwnershipByAppIdAsync(op);
+        }
         public static Platform.Model.TimedOwnership? Execute(
             this PublicGetMyEntitlementOwnershipByItemId.PublicGetMyEntitlementOwnershipByItemIdBuilder builder,
             string namespace_,
@@ -534,6 +1043,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyEntitlementOwnershipByItemId(op);
+        }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this PublicGetMyEntitlementOwnershipByItemId.PublicGetMyEntitlementOwnershipByItemIdBuilder builder,
+            string namespace_,
+            string itemId
+        )
+        {
+            PublicGetMyEntitlementOwnershipByItemId op = builder.Build(
+                namespace_,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyEntitlementOwnershipByItemIdAsync(op);
         }
         public static Platform.Model.TimedOwnership? Execute(
             this PublicGetMyEntitlementOwnershipBySku.PublicGetMyEntitlementOwnershipBySkuBuilder builder,
@@ -548,6 +1070,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyEntitlementOwnershipBySku(op);
         }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this PublicGetMyEntitlementOwnershipBySku.PublicGetMyEntitlementOwnershipBySkuBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            PublicGetMyEntitlementOwnershipBySku op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetMyEntitlementOwnershipBySkuAsync(op);
+        }
         public static Platform.Model.OwnershipToken? Execute(
             this PublicGetEntitlementOwnershipToken.PublicGetEntitlementOwnershipTokenBuilder builder,
             string namespace_
@@ -558,6 +1093,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetEntitlementOwnershipToken(op);
+        }
+        public static async Task<Platform.Model.OwnershipToken?> ExecuteAsync(
+            this PublicGetEntitlementOwnershipToken.PublicGetEntitlementOwnershipTokenBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetEntitlementOwnershipToken op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetEntitlementOwnershipTokenAsync(op);
         }
         public static Platform.Model.EntitlementPagingSlicedResult? Execute(
             this PublicQueryUserEntitlements.PublicQueryUserEntitlementsBuilder builder,
@@ -571,6 +1117,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlements(op);
+        }
+        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
+            this PublicQueryUserEntitlements.PublicQueryUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicQueryUserEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlementsAsync(op);
         }
         public static Platform.Model.AppEntitlementInfo? Execute(
             this PublicGetUserAppEntitlementByAppId.PublicGetUserAppEntitlementByAppIdBuilder builder,
@@ -587,6 +1146,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserAppEntitlementByAppId(op);
         }
+        public static async Task<Platform.Model.AppEntitlementInfo?> ExecuteAsync(
+            this PublicGetUserAppEntitlementByAppId.PublicGetUserAppEntitlementByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            PublicGetUserAppEntitlementByAppId op = builder.Build(
+                namespace_,
+                userId,
+                appId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserAppEntitlementByAppIdAsync(op);
+        }
         public static Platform.Model.AppEntitlementPagingSlicedResult? Execute(
             this PublicQueryUserEntitlementsByAppType.PublicQueryUserEntitlementsByAppTypeBuilder builder,
             string namespace_,
@@ -602,6 +1176,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlementsByAppType(op);
         }
+        public static async Task<Platform.Model.AppEntitlementPagingSlicedResult?> ExecuteAsync(
+            this PublicQueryUserEntitlementsByAppType.PublicQueryUserEntitlementsByAppTypeBuilder builder,
+            string namespace_,
+            string userId,
+            string appType
+        )
+        {
+            PublicQueryUserEntitlementsByAppType op = builder.Build(
+                namespace_,
+                userId,
+                appType
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicQueryUserEntitlementsByAppTypeAsync(op);
+        }
         public static List<Platform.Model.EntitlementInfo>? Execute(
             this PublicGetUserEntitlementsByIds.PublicGetUserEntitlementsByIdsBuilder builder,
             string namespace_,
@@ -614,6 +1203,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementsByIds(op);
+        }
+        public static async Task<List<Platform.Model.EntitlementInfo>?> ExecuteAsync(
+            this PublicGetUserEntitlementsByIds.PublicGetUserEntitlementsByIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserEntitlementsByIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementsByIdsAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
@@ -631,6 +1233,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementByItemId(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this PublicGetUserEntitlementByItemId.PublicGetUserEntitlementByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PublicGetUserEntitlementByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementByItemIdAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this PublicGetUserEntitlementBySku.PublicGetUserEntitlementBySkuBuilder builder,
@@ -647,6 +1264,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementBySku(op);
         }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this PublicGetUserEntitlementBySku.PublicGetUserEntitlementBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            PublicGetUserEntitlementBySku op = builder.Build(
+                namespace_,
+                userId,
+                sku
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementBySkuAsync(op);
+        }
         public static List<Platform.Model.UserEntitlementHistoryPagingSlicedResult>? Execute(
             this PublicUserEntitlementHistory.PublicUserEntitlementHistoryBuilder builder,
             string namespace_,
@@ -660,6 +1292,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicUserEntitlementHistory(op);
         }
+        public static async Task<List<Platform.Model.UserEntitlementHistoryPagingSlicedResult>?> ExecuteAsync(
+            this PublicUserEntitlementHistory.PublicUserEntitlementHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicUserEntitlementHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicUserEntitlementHistoryAsync(op);
+        }
         public static Platform.Model.Ownership? Execute(
             this PublicExistsAnyUserActiveEntitlement.PublicExistsAnyUserActiveEntitlementBuilder builder,
             string namespace_,
@@ -672,6 +1317,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicExistsAnyUserActiveEntitlement(op);
+        }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this PublicExistsAnyUserActiveEntitlement.PublicExistsAnyUserActiveEntitlementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicExistsAnyUserActiveEntitlement op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicExistsAnyUserActiveEntitlementAsync(op);
         }
         public static Platform.Model.Ownership? Execute(
             this PublicGetUserAppEntitlementOwnershipByAppId.PublicGetUserAppEntitlementOwnershipByAppIdBuilder builder,
@@ -688,6 +1346,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserAppEntitlementOwnershipByAppId(op);
         }
+        public static async Task<Platform.Model.Ownership?> ExecuteAsync(
+            this PublicGetUserAppEntitlementOwnershipByAppId.PublicGetUserAppEntitlementOwnershipByAppIdBuilder builder,
+            string namespace_,
+            string userId,
+            string appId
+        )
+        {
+            PublicGetUserAppEntitlementOwnershipByAppId op = builder.Build(
+                namespace_,
+                userId,
+                appId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserAppEntitlementOwnershipByAppIdAsync(op);
+        }
         public static Platform.Model.TimedOwnership? Execute(
             this PublicGetUserEntitlementOwnershipByItemId.PublicGetUserEntitlementOwnershipByItemIdBuilder builder,
             string namespace_,
@@ -703,6 +1376,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemId(op);
         }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this PublicGetUserEntitlementOwnershipByItemId.PublicGetUserEntitlementOwnershipByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PublicGetUserEntitlementOwnershipByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemIdAsync(op);
+        }
         public static List<Platform.Model.EntitlementOwnership>? Execute(
             this PublicGetUserEntitlementOwnershipByItemIds.PublicGetUserEntitlementOwnershipByItemIdsBuilder builder,
             string namespace_,
@@ -715,6 +1403,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemIds(op);
+        }
+        public static async Task<List<Platform.Model.EntitlementOwnership>?> ExecuteAsync(
+            this PublicGetUserEntitlementOwnershipByItemIds.PublicGetUserEntitlementOwnershipByItemIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserEntitlementOwnershipByItemIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipByItemIdsAsync(op);
         }
         public static Platform.Model.TimedOwnership? Execute(
             this PublicGetUserEntitlementOwnershipBySku.PublicGetUserEntitlementOwnershipBySkuBuilder builder,
@@ -731,6 +1432,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipBySku(op);
         }
+        public static async Task<Platform.Model.TimedOwnership?> ExecuteAsync(
+            this PublicGetUserEntitlementOwnershipBySku.PublicGetUserEntitlementOwnershipBySkuBuilder builder,
+            string namespace_,
+            string userId,
+            string sku
+        )
+        {
+            PublicGetUserEntitlementOwnershipBySku op = builder.Build(
+                namespace_,
+                userId,
+                sku
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementOwnershipBySkuAsync(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this PublicGetUserEntitlement.PublicGetUserEntitlementBuilder builder,
             string entitlementId,
@@ -745,6 +1461,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
+            this PublicGetUserEntitlement.PublicGetUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicGetUserEntitlementAsync(op);
         }
         public static Platform.Model.EntitlementDecrementResult? Execute(
             this PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder builder,
@@ -761,6 +1492,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicConsumeUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementDecrementResult?> ExecuteAsync(
+            this PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicConsumeUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicConsumeUserEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementSoldResult? Execute(
             this PublicSellUserEntitlement.PublicSellUserEntitlementBuilder builder,
             string entitlementId,
@@ -775,6 +1521,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSellUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementSoldResult?> ExecuteAsync(
+            this PublicSellUserEntitlement.PublicSellUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSellUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSellUserEntitlementAsync(op);
         }
         public static Platform.Model.EntitlementSplitResult? Execute(
             this PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder builder,
@@ -791,6 +1552,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSplitUserEntitlement(op);
         }
+        public static async Task<Platform.Model.EntitlementSplitResult?> ExecuteAsync(
+            this PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSplitUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicSplitUserEntitlementAsync(op);
+        }
         public static Platform.Model.EntitlementTransferResult? Execute(
             this PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder builder,
             string entitlementId,
@@ -805,6 +1581,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicTransferUserEntitlement(op);
+        }
+        public static async Task<Platform.Model.EntitlementTransferResult?> ExecuteAsync(
+            this PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder builder,
+            string entitlementId,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicTransferUserEntitlement op = builder.Build(
+                entitlementId,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).PublicTransferUserEntitlementAsync(op);
         }
     }
 }

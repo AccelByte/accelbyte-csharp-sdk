@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.Watchdogs)builder.WrapperObject!).LocalWatchdogConnect(op);
         }
+        public static async Task ExecuteAsync(
+            this LocalWatchdogConnect.LocalWatchdogConnectBuilder builder,
+            string namespace_,
+            string watchdogID
+        )
+        {
+            LocalWatchdogConnect op = builder.Build(
+                namespace_,
+                watchdogID
+            );
+
+            await ((Ams.Wrapper.Watchdogs)builder.WrapperObject!).LocalWatchdogConnectAsync(op);
+        }
         public static void Execute(
             this WatchdogConnect.WatchdogConnectBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.Watchdogs)builder.WrapperObject!).WatchdogConnect(op);
+        }
+        public static async Task ExecuteAsync(
+            this WatchdogConnect.WatchdogConnectBuilder builder,
+            string namespace_,
+            string watchdogID
+        )
+        {
+            WatchdogConnect op = builder.Build(
+                namespace_,
+                watchdogID
+            );
+
+            await ((Ams.Wrapper.Watchdogs)builder.WrapperObject!).WatchdogConnectAsync(op);
         }
     }
 }

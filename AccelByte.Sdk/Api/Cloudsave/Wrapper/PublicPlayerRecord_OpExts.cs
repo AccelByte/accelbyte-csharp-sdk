@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).BulkGetPlayerPublicRecordHandlerV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsBulkGetPlayerRecordResponse?> ExecuteAsync(
+            this BulkGetPlayerPublicRecordHandlerV1.BulkGetPlayerPublicRecordHandlerV1Builder builder,
+            ModelsBulkUserIDsRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            BulkGetPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).BulkGetPlayerPublicRecordHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this RetrievePlayerRecords.RetrievePlayerRecordsBuilder builder,
             string namespace_
@@ -37,6 +52,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).RetrievePlayerRecords(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsListPlayerRecordKeysResponse?> ExecuteAsync(
+            this RetrievePlayerRecords.RetrievePlayerRecordsBuilder builder,
+            string namespace_
+        )
+        {
+            RetrievePlayerRecords op = builder.Build(
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).RetrievePlayerRecordsAsync(op);
         }
         public static Cloudsave.Model.ModelsBulkGetPlayerRecordResponse? Execute(
             this GetPlayerRecordsBulkHandlerV1.GetPlayerRecordsBulkHandlerV1Builder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordsBulkHandlerV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsBulkGetPlayerRecordResponse?> ExecuteAsync(
+            this GetPlayerRecordsBulkHandlerV1.GetPlayerRecordsBulkHandlerV1Builder builder,
+            ModelsBulkGetPlayerRecordsRequest body,
+            string namespace_
+        )
+        {
+            GetPlayerRecordsBulkHandlerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordsBulkHandlerV1Async(op);
+        }
         public static void Execute(
             this PublicDeletePlayerPublicRecordHandlerV1.PublicDeletePlayerPublicRecordHandlerV1Builder builder,
             string key,
@@ -64,6 +103,19 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PublicDeletePlayerPublicRecordHandlerV1(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicDeletePlayerPublicRecordHandlerV1.PublicDeletePlayerPublicRecordHandlerV1Builder builder,
+            string key,
+            string namespace_
+        )
+        {
+            PublicDeletePlayerPublicRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PublicDeletePlayerPublicRecordHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsListPlayerRecordKeysResponse? Execute(
             this GetOtherPlayerPublicRecordKeyHandlerV1.GetOtherPlayerPublicRecordKeyHandlerV1Builder builder,
             string namespace_,
@@ -76,6 +128,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetOtherPlayerPublicRecordKeyHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsListPlayerRecordKeysResponse?> ExecuteAsync(
+            this GetOtherPlayerPublicRecordKeyHandlerV1.GetOtherPlayerPublicRecordKeyHandlerV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetOtherPlayerPublicRecordKeyHandlerV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetOtherPlayerPublicRecordKeyHandlerV1Async(op);
         }
         public static Cloudsave.Model.ModelsBulkGetPlayerRecordResponse? Execute(
             this GetOtherPlayerPublicRecordHandlerV1.GetOtherPlayerPublicRecordHandlerV1Builder builder,
@@ -92,6 +157,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetOtherPlayerPublicRecordHandlerV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsBulkGetPlayerRecordResponse?> ExecuteAsync(
+            this GetOtherPlayerPublicRecordHandlerV1.GetOtherPlayerPublicRecordHandlerV1Builder builder,
+            ModelsBulkGetPlayerRecordsRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            GetOtherPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetOtherPlayerPublicRecordHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this GetPlayerRecordHandlerV1.GetPlayerRecordHandlerV1Builder builder,
             string key,
@@ -106,6 +186,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this GetPlayerRecordHandlerV1.GetPlayerRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPlayerRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -123,6 +218,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordHandlerV1<T1>(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this GetPlayerRecordHandlerV1.GetPlayerRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPlayerRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerRecordHandlerV1Async<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -139,6 +249,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -158,6 +285,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerRecordHandlerV1<T1>(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerRecordHandlerV1Async<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -174,6 +318,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PostPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -193,6 +354,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerRecordHandlerV1<T1>(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PostPlayerRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerRecordHandlerV1Async<T1>(op);
+        }
         public static void Execute(
             this DeletePlayerRecordHandlerV1.DeletePlayerRecordHandlerV1Builder builder,
             string key,
@@ -208,6 +386,21 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).DeletePlayerRecordHandlerV1(op);
         }
+        public static async Task ExecuteAsync(
+            this DeletePlayerRecordHandlerV1.DeletePlayerRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            DeletePlayerRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).DeletePlayerRecordHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this GetPlayerPublicRecordHandlerV1.GetPlayerPublicRecordHandlerV1Builder builder,
             string key,
@@ -222,6 +415,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerPublicRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this GetPlayerPublicRecordHandlerV1.GetPlayerPublicRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPlayerPublicRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerPublicRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -239,6 +447,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerPublicRecordHandlerV1<T1>(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this GetPlayerPublicRecordHandlerV1.GetPlayerPublicRecordHandlerV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPlayerPublicRecordHandlerV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).GetPlayerPublicRecordHandlerV1Async<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -255,6 +478,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerPublicRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerPublicRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -274,6 +514,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerPublicRecordHandlerV1<T1>(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PutPlayerPublicRecordHandlerV1Async<T1>(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
             ModelsPlayerRecordRequest body,
@@ -290,6 +547,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerPublicRecordHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
+            this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PostPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerPublicRecordHandlerV1Async(op);
         }
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
@@ -308,6 +582,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerPublicRecordHandlerV1<T1>(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
+            this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
+            ModelsPlayerRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PostPlayerPublicRecordHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.PublicPlayerRecord)builder.WrapperObject!).PostPlayerPublicRecordHandlerV1Async<T1>(op);
         }
     }
 }

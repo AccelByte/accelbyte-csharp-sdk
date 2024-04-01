@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -84,7 +84,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CampaignPagingSlicedResult? QueryCampaigns(QueryCampaigns input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CampaignPagingSlicedResult?> QueryCampaignsAsync(QueryCampaigns input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -93,7 +100,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CampaignInfo? CreateCampaign(CreateCampaign input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CampaignInfo?> CreateCampaignAsync(CreateCampaign input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -102,7 +116,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CampaignInfo? GetCampaign(GetCampaign input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CampaignInfo?> GetCampaignAsync(GetCampaign input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -111,7 +132,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CampaignInfo? UpdateCampaign(UpdateCampaign input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CampaignInfo?> UpdateCampaignAsync(UpdateCampaign input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -120,7 +148,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CampaignDynamicInfo? GetCampaignDynamic(GetCampaignDynamic input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CampaignDynamicInfo?> GetCampaignDynamicAsync(GetCampaignDynamic input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -129,7 +164,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CodeInfoPagingSlicedResult? QueryCodes(QueryCodes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CodeInfoPagingSlicedResult?> QueryCodesAsync(QueryCodes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -138,7 +180,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CodeCreateResult? CreateCodes(CreateCodes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CodeCreateResult?> CreateCodesAsync(CreateCodes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -147,7 +196,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Stream? Download(Download input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Stream?> DownloadAsync(Download input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -156,7 +212,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BulkOperationResult? BulkDisableCodes(BulkDisableCodes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BulkOperationResult?> BulkDisableCodesAsync(BulkDisableCodes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -165,7 +228,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BulkOperationResult? BulkEnableCodes(BulkEnableCodes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BulkOperationResult?> BulkEnableCodesAsync(BulkEnableCodes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -174,7 +244,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RedeemHistoryPagingSlicedResult? QueryRedeemHistory(QueryRedeemHistory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RedeemHistoryPagingSlicedResult?> QueryRedeemHistoryAsync(QueryRedeemHistory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -183,7 +260,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CodeInfo? GetCode(GetCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CodeInfo?> GetCodeAsync(GetCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -192,7 +276,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CodeInfo? DisableCode(DisableCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CodeInfo?> DisableCodeAsync(DisableCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -201,7 +292,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.CodeInfo? EnableCode(EnableCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CodeInfo?> EnableCodeAsync(EnableCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -210,7 +308,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RedeemResult? ApplyUserRedemption(ApplyUserRedemption input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RedeemResult?> ApplyUserRedemptionAsync(ApplyUserRedemption input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

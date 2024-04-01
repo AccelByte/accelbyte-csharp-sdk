@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -52,7 +52,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.TierPagingSlicedResult? QueryTiers(QueryTiers input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TierPagingSlicedResult?> QueryTiersAsync(QueryTiers input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -61,7 +68,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public List<Model.Tier>? CreateTier(CreateTier input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.Tier>?> CreateTierAsync(CreateTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -70,7 +84,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.Tier? UpdateTier(UpdateTier input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.Tier?> UpdateTierAsync(UpdateTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -79,7 +100,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public void DeleteTier(DeleteTier input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteTierAsync(DeleteTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -88,7 +116,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.Tier? ReorderTier(ReorderTier input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.Tier?> ReorderTierAsync(ReorderTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -97,7 +132,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.UserSeasonSummary? GrantUserExp(GrantUserExp input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UserSeasonSummary?> GrantUserExpAsync(GrantUserExp input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -106,7 +148,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.UserSeasonSummary? GrantUserTier(GrantUserTier input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UserSeasonSummary?> GrantUserTierAsync(GrantUserTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

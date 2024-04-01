@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetGoals(op);
         }
+        public static async Task<Challenge.Model.ModelGetGoalsResponse?> ExecuteAsync(
+            this AdminGetGoals.AdminGetGoalsBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminGetGoals op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetGoalsAsync(op);
+        }
         public static Challenge.Model.ModelGoalResponse? Execute(
             this AdminCreateGoal.AdminCreateGoalBuilder builder,
             ModelCreateGoalRequest body,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminCreateGoal(op);
         }
+        public static async Task<Challenge.Model.ModelGoalResponse?> ExecuteAsync(
+            this AdminCreateGoal.AdminCreateGoalBuilder builder,
+            ModelCreateGoalRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminCreateGoal op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminCreateGoalAsync(op);
+        }
         public static Challenge.Model.ModelGoalResponse? Execute(
             this AdminGetGoal.AdminGetGoalBuilder builder,
             string challengeCode,
@@ -54,6 +82,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetGoal(op);
+        }
+        public static async Task<Challenge.Model.ModelGoalResponse?> ExecuteAsync(
+            this AdminGetGoal.AdminGetGoalBuilder builder,
+            string challengeCode,
+            string code,
+            string namespace_
+        )
+        {
+            AdminGetGoal op = builder.Build(
+                challengeCode,
+                code,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminGetGoalAsync(op);
         }
         public static Challenge.Model.ModelGoalResponse? Execute(
             this AdminUpdateGoals.AdminUpdateGoalsBuilder builder,
@@ -72,6 +115,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminUpdateGoals(op);
         }
+        public static async Task<Challenge.Model.ModelGoalResponse?> ExecuteAsync(
+            this AdminUpdateGoals.AdminUpdateGoalsBuilder builder,
+            ModelUpdateGoalRequest body,
+            string challengeCode,
+            string code,
+            string namespace_
+        )
+        {
+            AdminUpdateGoals op = builder.Build(
+                body,
+                challengeCode,
+                code,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminUpdateGoalsAsync(op);
+        }
         public static void Execute(
             this AdminDeleteGoal.AdminDeleteGoalBuilder builder,
             string challengeCode,
@@ -86,6 +146,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminDeleteGoal(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteGoal.AdminDeleteGoalBuilder builder,
+            string challengeCode,
+            string code,
+            string namespace_
+        )
+        {
+            AdminDeleteGoal op = builder.Build(
+                challengeCode,
+                code,
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.GoalConfiguration)builder.WrapperObject!).AdminDeleteGoalAsync(op);
         }
     }
 }

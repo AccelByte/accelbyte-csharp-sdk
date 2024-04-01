@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,6 +20,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsartifact.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListTerminatedServers(op);
+        }
+        public static async Task<Dsartifact.Model.ModelsListTerminatedServersResponse?> ExecuteAsync(
+            this ListTerminatedServers.ListTerminatedServersBuilder builder
+        )
+        {
+            ListTerminatedServers op = builder.Build(
+            );
+
+            return await ((Dsartifact.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListTerminatedServersAsync(op);
         }
     }
 }

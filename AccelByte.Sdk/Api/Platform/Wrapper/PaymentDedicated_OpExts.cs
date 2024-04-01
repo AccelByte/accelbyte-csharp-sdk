@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).CreatePaymentOrderByDedicated(op);
         }
+        public static async Task<Platform.Model.PaymentOrderCreateResult?> ExecuteAsync(
+            this CreatePaymentOrderByDedicated.CreatePaymentOrderByDedicatedBuilder builder,
+            string namespace_
+        )
+        {
+            CreatePaymentOrderByDedicated op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).CreatePaymentOrderByDedicatedAsync(op);
+        }
         public static Platform.Model.PaymentOrderRefundResult? Execute(
             this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).RefundPaymentOrderByDedicated(op);
         }
+        public static async Task<Platform.Model.PaymentOrderRefundResult?> ExecuteAsync(
+            this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
+            string namespace_,
+            string paymentOrderNo
+        )
+        {
+            RefundPaymentOrderByDedicated op = builder.Build(
+                namespace_,
+                paymentOrderNo
+            );
+
+            return await ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).RefundPaymentOrderByDedicatedAsync(op);
+        }
         public static Platform.Model.PaymentOrderSyncResult? Execute(
             this SyncPaymentOrders.SyncPaymentOrdersBuilder builder,
             string end,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).SyncPaymentOrders(op);
+        }
+        public static async Task<Platform.Model.PaymentOrderSyncResult?> ExecuteAsync(
+            this SyncPaymentOrders.SyncPaymentOrdersBuilder builder,
+            string end,
+            string start
+        )
+        {
+            SyncPaymentOrders op = builder.Build(
+                end,
+                start
+            );
+
+            return await ((Platform.Wrapper.PaymentDedicated)builder.WrapperObject!).SyncPaymentOrdersAsync(op);
         }
     }
 }

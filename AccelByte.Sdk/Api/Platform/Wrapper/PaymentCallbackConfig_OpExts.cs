@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).GetPaymentCallbackConfig(op);
         }
+        public static async Task<Platform.Model.PaymentCallbackConfigInfo?> ExecuteAsync(
+            this GetPaymentCallbackConfig.GetPaymentCallbackConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetPaymentCallbackConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).GetPaymentCallbackConfigAsync(op);
+        }
         public static Platform.Model.PaymentCallbackConfigInfo? Execute(
             this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).UpdatePaymentCallbackConfig(op);
+        }
+        public static async Task<Platform.Model.PaymentCallbackConfigInfo?> ExecuteAsync(
+            this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdatePaymentCallbackConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).UpdatePaymentCallbackConfigAsync(op);
         }
     }
 }

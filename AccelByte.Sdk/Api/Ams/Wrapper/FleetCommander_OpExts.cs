@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).PortalHealthCheck(op);
         }
+        public static async Task ExecuteAsync(
+            this PortalHealthCheck.PortalHealthCheckBuilder builder
+        )
+        {
+            PortalHealthCheck op = builder.Build(
+            );
+
+            await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).PortalHealthCheckAsync(op);
+        }
         public static void Execute(
             this Func1.Func1Builder builder
         )
@@ -30,6 +39,15 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1(op);
         }
+        public static async Task ExecuteAsync(
+            this Func1.Func1Builder builder
+        )
+        {
+            Func1 op = builder.Build(
+            );
+
+            await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).Func1Async(op);
+        }
         public static void Execute(
             this BasicHealthCheck.BasicHealthCheckBuilder builder
         )
@@ -38,6 +56,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).BasicHealthCheck(op);
+        }
+        public static async Task ExecuteAsync(
+            this BasicHealthCheck.BasicHealthCheckBuilder builder
+        )
+        {
+            BasicHealthCheck op = builder.Build(
+            );
+
+            await ((Ams.Wrapper.FleetCommander)builder.WrapperObject!).BasicHealthCheckAsync(op);
         }
     }
 }

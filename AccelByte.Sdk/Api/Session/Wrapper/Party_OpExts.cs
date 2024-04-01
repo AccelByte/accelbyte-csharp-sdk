@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).AdminQueryParties(op);
         }
+        public static async Task<Session.Model.ApimodelsPartyQueryResponse?> ExecuteAsync(
+            this AdminQueryParties.AdminQueryPartiesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryParties op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).AdminQueryPartiesAsync(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPartyJoinCode.PublicPartyJoinCodeBuilder builder,
             ApimodelsJoinByCodeRequest body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCode(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicPartyJoinCode.PublicPartyJoinCodeBuilder builder,
+            ApimodelsJoinByCodeRequest body,
+            string namespace_
+        )
+        {
+            PublicPartyJoinCode op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCodeAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -50,6 +74,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCode<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicPartyJoinCode.PublicPartyJoinCodeBuilder builder,
+            ApimodelsJoinByCodeRequest body,
+            string namespace_
+        )
+        {
+            PublicPartyJoinCode op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinCodeAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicGetParty.PublicGetPartyBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetParty(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicGetParty.PublicGetPartyBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGetParty op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetPartyAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -77,6 +127,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetParty<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicGetParty.PublicGetPartyBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGetParty op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetPartyAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicUpdateParty.PublicUpdatePartyBuilder builder,
             ApimodelsUpdatePartyRequest body,
@@ -91,6 +154,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdateParty(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicUpdateParty.PublicUpdatePartyBuilder builder,
+            ApimodelsUpdatePartyRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicUpdateParty op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -108,6 +186,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdateParty<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicUpdateParty.PublicUpdatePartyBuilder builder,
+            ApimodelsUpdatePartyRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicUpdateParty op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPatchUpdateParty.PublicPatchUpdatePartyBuilder builder,
             ApimodelsUpdatePartyRequest body,
@@ -122,6 +215,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdateParty(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicPatchUpdateParty.PublicPatchUpdatePartyBuilder builder,
+            ApimodelsUpdatePartyRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPatchUpdateParty op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdatePartyAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -139,6 +247,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdateParty<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicPatchUpdateParty.PublicPatchUpdatePartyBuilder builder,
+            ApimodelsUpdatePartyRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPatchUpdateParty op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPatchUpdatePartyAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicGeneratePartyCode.PublicGeneratePartyCodeBuilder builder,
             string namespace_,
@@ -151,6 +274,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCode(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicGeneratePartyCode.PublicGeneratePartyCodeBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGeneratePartyCode op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCodeAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -166,6 +302,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCode<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicGeneratePartyCode.PublicGeneratePartyCodeBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGeneratePartyCode op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicGeneratePartyCodeAsync<T1, T2>(op);
+        }
         public static void Execute(
             this PublicRevokePartyCode.PublicRevokePartyCodeBuilder builder,
             string namespace_,
@@ -178,6 +327,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCode(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicRevokePartyCode.PublicRevokePartyCodeBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicRevokePartyCode op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).PublicRevokePartyCodeAsync(op);
         }
         public static Session.Model.ApimodelsSessionInviteResponse? Execute(
             this PublicPartyInvite.PublicPartyInviteBuilder builder,
@@ -194,6 +356,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyInvite(op);
         }
+        public static async Task<Session.Model.ApimodelsSessionInviteResponse?> ExecuteAsync(
+            this PublicPartyInvite.PublicPartyInviteBuilder builder,
+            ApimodelsSessionInviteRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPartyInvite op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyInviteAsync(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPromotePartyLeader.PublicPromotePartyLeaderBuilder builder,
             ApimodelsPromoteLeaderRequest body,
@@ -208,6 +385,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeader(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicPromotePartyLeader.PublicPromotePartyLeaderBuilder builder,
+            ApimodelsPromoteLeaderRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPromotePartyLeader op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeaderAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -225,6 +417,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeader<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicPromotePartyLeader.PublicPromotePartyLeaderBuilder builder,
+            ApimodelsPromoteLeaderRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPromotePartyLeader op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeaderAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
             string namespace_,
@@ -237,6 +444,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoin(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPartyJoin op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -252,6 +472,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoin<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPartyJoin op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyJoinAsync<T1, T2>(op);
+        }
         public static void Execute(
             this PublicPartyLeave.PublicPartyLeaveBuilder builder,
             string namespace_,
@@ -265,6 +498,19 @@ namespace AccelByte.Sdk.Api
 
             ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyLeave(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicPartyLeave.PublicPartyLeaveBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPartyLeave op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyLeaveAsync(op);
+        }
         public static void Execute(
             this PublicPartyReject.PublicPartyRejectBuilder builder,
             string namespace_,
@@ -277,6 +523,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyReject(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicPartyReject.PublicPartyRejectBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicPartyReject op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyRejectAsync(op);
         }
         public static Session.Model.ApimodelsKickResponse? Execute(
             this PublicPartyKick.PublicPartyKickBuilder builder,
@@ -293,6 +552,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyKick(op);
         }
+        public static async Task<Session.Model.ApimodelsKickResponse?> ExecuteAsync(
+            this PublicPartyKick.PublicPartyKickBuilder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicPartyKick op = builder.Build(
+                namespace_,
+                partyId,
+                userId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyKickAsync(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicCreateParty.PublicCreatePartyBuilder builder,
             ApimodelsCreatePartyRequest body,
@@ -305,6 +579,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
+            this PublicCreateParty.PublicCreatePartyBuilder builder,
+            ApimodelsCreatePartyRequest body,
+            string namespace_
+        )
+        {
+            PublicCreateParty op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreatePartyAsync(op);
         }
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
@@ -320,6 +607,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreateParty<T1, T2>(op);
         }
+        public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicCreateParty.PublicCreatePartyBuilder builder,
+            ApimodelsCreatePartyRequest body,
+            string namespace_
+        )
+        {
+            PublicCreateParty op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicCreatePartyAsync<T1, T2>(op);
+        }
         public static Session.Model.ApimodelsPartyQueryResponse? Execute(
             this PublicQueryMyParties.PublicQueryMyPartiesBuilder builder,
             string namespace_
@@ -330,6 +630,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Party)builder.WrapperObject!).PublicQueryMyParties(op);
+        }
+        public static async Task<Session.Model.ApimodelsPartyQueryResponse?> ExecuteAsync(
+            this PublicQueryMyParties.PublicQueryMyPartiesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicQueryMyParties op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicQueryMyPartiesAsync(op);
         }
     }
 }

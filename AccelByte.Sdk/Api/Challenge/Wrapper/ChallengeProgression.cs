@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public void AdminEvaluateProgress(AdminEvaluateProgress input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminEvaluateProgressAsync(AdminEvaluateProgress input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -45,7 +52,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public void EvaluateMyProgress(EvaluateMyProgress input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task EvaluateMyProgressAsync(EvaluateMyProgress input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -54,7 +68,14 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public Model.ModelUserProgressionResponse? PublicGetUserProgression(PublicGetUserProgression input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserProgressionResponse?> PublicGetUserProgressionAsync(PublicGetUserProgression input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

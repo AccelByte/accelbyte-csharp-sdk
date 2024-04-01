@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStats(op);
         }
+        public static async Task<Social.Model.StatPagingSlicedResult?> ExecuteAsync(
+            this GetStats.GetStatsBuilder builder,
+            string namespace_
+        )
+        {
+            GetStats op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStatsAsync(op);
+        }
         public static Social.Model.StatInfo? Execute(
             this CreateStat.CreateStatBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat(op);
+        }
+        public static async Task<Social.Model.StatInfo?> ExecuteAsync(
+            this CreateStat.CreateStatBuilder builder,
+            string namespace_
+        )
+        {
+            CreateStat op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStatAsync(op);
         }
         public static Stream? Execute(
             this ExportStats.ExportStatsBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ExportStats(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportStats.ExportStatsBuilder builder,
+            string namespace_
+        )
+        {
+            ExportStats op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ExportStatsAsync(op);
+        }
         public static Social.Model.StatImportInfo? Execute(
             this ImportStats.ImportStatsBuilder builder,
             string namespace_
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ImportStats(op);
+        }
+        public static async Task<Social.Model.StatImportInfo?> ExecuteAsync(
+            this ImportStats.ImportStatsBuilder builder,
+            string namespace_
+        )
+        {
+            ImportStats op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).ImportStatsAsync(op);
         }
         public static Social.Model.StatPagingSlicedResult? Execute(
             this QueryStats.QueryStatsBuilder builder,
@@ -69,6 +113,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).QueryStats(op);
         }
+        public static async Task<Social.Model.StatPagingSlicedResult?> ExecuteAsync(
+            this QueryStats.QueryStatsBuilder builder,
+            string namespace_,
+            string keyword
+        )
+        {
+            QueryStats op = builder.Build(
+                namespace_,
+                keyword
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).QueryStatsAsync(op);
+        }
         public static Social.Model.StatInfo? Execute(
             this GetStat.GetStatBuilder builder,
             string namespace_,
@@ -81,6 +138,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStat(op);
+        }
+        public static async Task<Social.Model.StatInfo?> ExecuteAsync(
+            this GetStat.GetStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetStat op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).GetStatAsync(op);
         }
         public static void Execute(
             this DeleteStat.DeleteStatBuilder builder,
@@ -95,6 +165,19 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteStat(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteStat.DeleteStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            DeleteStat op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteStatAsync(op);
+        }
         public static Social.Model.StatInfo? Execute(
             this UpdateStat.UpdateStatBuilder builder,
             string namespace_,
@@ -107,6 +190,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).UpdateStat(op);
+        }
+        public static async Task<Social.Model.StatInfo?> ExecuteAsync(
+            this UpdateStat.UpdateStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            UpdateStat op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).UpdateStatAsync(op);
         }
         public static void Execute(
             this DeleteTiedStat.DeleteTiedStatBuilder builder,
@@ -121,6 +217,19 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteTiedStat(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteTiedStat.DeleteTiedStatBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            DeleteTiedStat op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).DeleteTiedStatAsync(op);
+        }
         public static Social.Model.StatInfo? Execute(
             this CreateStat1.CreateStat1Builder builder,
             string namespace_
@@ -131,6 +240,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat1(op);
+        }
+        public static async Task<Social.Model.StatInfo?> ExecuteAsync(
+            this CreateStat1.CreateStat1Builder builder,
+            string namespace_
+        )
+        {
+            CreateStat1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatConfiguration)builder.WrapperObject!).CreateStat1Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,7 +44,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsListInventoryResp? AdminListInventories(AdminListInventories input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsListInventoryResp?> AdminListInventoriesAsync(AdminListInventories input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -53,7 +60,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsInventoryResp? AdminCreateInventory(AdminCreateInventory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsInventoryResp?> AdminCreateInventoryAsync(AdminCreateInventory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -62,7 +76,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsInventoryResp? AdminGetInventory(AdminGetInventory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsInventoryResp?> AdminGetInventoryAsync(AdminGetInventory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +92,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public Model.ApimodelsInventoryResp? AdminUpdateInventory(AdminUpdateInventory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsInventoryResp?> AdminUpdateInventoryAsync(AdminUpdateInventory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +108,14 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         public void DeleteInventory(DeleteInventory input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteInventoryAsync(DeleteInventory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

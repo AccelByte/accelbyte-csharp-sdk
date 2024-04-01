@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Tags)builder.WrapperObject!).AdminListTags(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedTagResponse?> ExecuteAsync(
+            this AdminListTags.AdminListTagsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListTags op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Tags)builder.WrapperObject!).AdminListTagsAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedTagResponse? Execute(
             this PublicListTags.PublicListTagsBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Tags)builder.WrapperObject!).PublicListTags(op);
+        }
+        public static async Task<Achievement.Model.ModelsPaginatedTagResponse?> ExecuteAsync(
+            this PublicListTags.PublicListTagsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListTags op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Tags)builder.WrapperObject!).PublicListTagsAsync(op);
         }
     }
 }

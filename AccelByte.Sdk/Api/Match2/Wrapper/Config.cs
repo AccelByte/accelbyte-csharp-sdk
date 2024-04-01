@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,14 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         public Model.ApiNamespaceConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiNamespaceConfigList?> AdminGetAllConfigV1Async(AdminGetAllConfigV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -45,7 +52,14 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         public Model.ConfigmodelsNamespaceConfig? AdminGetConfigV1(AdminGetConfigV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ConfigmodelsNamespaceConfig?> AdminGetConfigV1Async(AdminGetConfigV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -54,7 +68,14 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         public Model.ConfigmodelsNamespaceConfig? AdminPatchConfigV1(AdminPatchConfigV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ConfigmodelsNamespaceConfig?> AdminPatchConfigV1Async(AdminPatchConfigV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

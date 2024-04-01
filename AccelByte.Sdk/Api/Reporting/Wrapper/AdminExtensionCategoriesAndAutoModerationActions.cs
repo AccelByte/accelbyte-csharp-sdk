@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiActionListApiResponse? AdminFindActionList(AdminFindActionList input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiActionListApiResponse?> AdminFindActionListAsync(AdminFindActionList input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiActionApiResponse? AdminCreateModAction(AdminCreateModAction input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiActionApiResponse?> AdminCreateModActionAsync(AdminCreateModAction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiExtensionCategoryListApiResponse? AdminFindExtensionCategoryList(AdminFindExtensionCategoryList input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiExtensionCategoryListApiResponse?> AdminFindExtensionCategoryListAsync(AdminFindExtensionCategoryList input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiExtensionCategoryApiResponse? AdminCreateExtensionCategory(AdminCreateExtensionCategory input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiExtensionCategoryApiResponse?> AdminCreateExtensionCategoryAsync(AdminCreateExtensionCategory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

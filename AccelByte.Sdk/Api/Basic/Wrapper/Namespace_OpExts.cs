@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespaces(op);
         }
+        public static async Task<List<Basic.Model.NamespaceInfo>?> ExecuteAsync(
+            this GetNamespaces.GetNamespacesBuilder builder
+        )
+        {
+            GetNamespaces op = builder.Build(
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespacesAsync(op);
+        }
         public static Basic.Model.NamespaceInfo? Execute(
             this CreateNamespace.CreateNamespaceBuilder builder
         )
@@ -29,6 +38,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).CreateNamespace(op);
+        }
+        public static async Task<Basic.Model.NamespaceInfo?> ExecuteAsync(
+            this CreateNamespace.CreateNamespaceBuilder builder
+        )
+        {
+            CreateNamespace op = builder.Build(
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).CreateNamespaceAsync(op);
         }
         public static Basic.Model.NamespaceInfo? Execute(
             this GetNamespace.GetNamespaceBuilder builder,
@@ -41,6 +59,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespace(op);
         }
+        public static async Task<Basic.Model.NamespaceInfo?> ExecuteAsync(
+            this GetNamespace.GetNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespace op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespaceAsync(op);
+        }
         public static Basic.Model.NamespaceInfo? Execute(
             this DeleteNamespace.DeleteNamespaceBuilder builder,
             string namespace_
@@ -51,6 +80,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).DeleteNamespace(op);
+        }
+        public static async Task<Basic.Model.NamespaceInfo?> ExecuteAsync(
+            this DeleteNamespace.DeleteNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteNamespace op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).DeleteNamespaceAsync(op);
         }
         public static Basic.Model.NamespaceInfo? Execute(
             this UpdateNamespace.UpdateNamespaceBuilder builder,
@@ -63,6 +103,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).UpdateNamespace(op);
         }
+        public static async Task<Basic.Model.NamespaceInfo?> ExecuteAsync(
+            this UpdateNamespace.UpdateNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateNamespace op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).UpdateNamespaceAsync(op);
+        }
         public static List<Basic.Model.NamespaceInfo>? Execute(
             this GetChildNamespaces.GetChildNamespacesBuilder builder,
             string namespace_
@@ -73,6 +124,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetChildNamespaces(op);
+        }
+        public static async Task<List<Basic.Model.NamespaceInfo>?> ExecuteAsync(
+            this GetChildNamespaces.GetChildNamespacesBuilder builder,
+            string namespace_
+        )
+        {
+            GetChildNamespaces op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetChildNamespacesAsync(op);
         }
         public static Basic.Model.NamespaceContext? Execute(
             this GetNamespaceContext.GetNamespaceContextBuilder builder,
@@ -85,6 +147,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespaceContext(op);
         }
+        public static async Task<Basic.Model.NamespaceContext?> ExecuteAsync(
+            this GetNamespaceContext.GetNamespaceContextBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespaceContext op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespaceContextAsync(op);
+        }
         public static List<Basic.Model.NamespaceInfo>? Execute(
             this GetGameNamespaces.GetGameNamespacesBuilder builder,
             string namespace_
@@ -95,6 +168,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetGameNamespaces(op);
+        }
+        public static async Task<List<Basic.Model.NamespaceInfo>?> ExecuteAsync(
+            this GetGameNamespaces.GetGameNamespacesBuilder builder,
+            string namespace_
+        )
+        {
+            GetGameNamespaces op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetGameNamespacesAsync(op);
         }
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this GetNamespacePublisher.GetNamespacePublisherBuilder builder,
@@ -107,6 +191,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespacePublisher(op);
         }
+        public static async Task<Basic.Model.NamespacePublisherInfo?> ExecuteAsync(
+            this GetNamespacePublisher.GetNamespacePublisherBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespacePublisher op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespacePublisherAsync(op);
+        }
         public static Basic.Model.NamespaceInfo? Execute(
             this ChangeNamespaceStatus.ChangeNamespaceStatusBuilder builder,
             string namespace_
@@ -118,6 +213,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).ChangeNamespaceStatus(op);
         }
+        public static async Task<Basic.Model.NamespaceInfo?> ExecuteAsync(
+            this ChangeNamespaceStatus.ChangeNamespaceStatusBuilder builder,
+            string namespace_
+        )
+        {
+            ChangeNamespaceStatus op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).ChangeNamespaceStatusAsync(op);
+        }
         public static List<Basic.Model.NamespaceInfo>? Execute(
             this PublicGetNamespaces.PublicGetNamespacesBuilder builder
         )
@@ -126,6 +232,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespaces(op);
+        }
+        public static async Task<List<Basic.Model.NamespaceInfo>?> ExecuteAsync(
+            this PublicGetNamespaces.PublicGetNamespacesBuilder builder
+        )
+        {
+            PublicGetNamespaces op = builder.Build(
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespacesAsync(op);
         }
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder builder,
@@ -137,6 +252,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespacePublisher(op);
+        }
+        public static async Task<Basic.Model.NamespacePublisherInfo?> ExecuteAsync(
+            this PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetNamespacePublisher op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespacePublisherAsync(op);
         }
     }
 }

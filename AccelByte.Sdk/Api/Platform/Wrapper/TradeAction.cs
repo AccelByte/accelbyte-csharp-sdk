@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TradeChainActionHistoryInfo? Commit(Commit input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TradeChainActionHistoryInfo?> CommitAsync(Commit input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -52,10 +59,25 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.TradeChainActionHistoryInfo<T1>?> CommitAsync<T1>(Commit input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.TradeActionPagingSlicedResult? GetTradeHistoryByCriteria(GetTradeHistoryByCriteria input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TradeActionPagingSlicedResult?> GetTradeHistoryByCriteriaAsync(GetTradeHistoryByCriteria input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -64,7 +86,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.TradeChainActionHistoryInfo? GetTradeHistoryByTransactionId(GetTradeHistoryByTransactionId input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TradeChainActionHistoryInfo?> GetTradeHistoryByTransactionIdAsync(GetTradeHistoryByTransactionId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -75,6 +104,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = _sdk.RunRequest(input);
 
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TradeChainActionHistoryInfo<T1>?> GetTradeHistoryByTransactionIdAsync<T1>(GetTradeHistoryByTransactionId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,

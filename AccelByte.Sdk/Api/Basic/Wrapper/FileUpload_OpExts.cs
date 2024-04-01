@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUploadUrl(op);
         }
+        public static async Task<Basic.Model.FileUploadUrlInfo?> ExecuteAsync(
+            this GeneratedUploadUrl.GeneratedUploadUrlBuilder builder,
+            string folder,
+            string namespace_,
+            string fileType
+        )
+        {
+            GeneratedUploadUrl op = builder.Build(
+                folder,
+                namespace_,
+                fileType
+            );
+
+            return await ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUploadUrlAsync(op);
+        }
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this GeneratedUserUploadContentUrl.GeneratedUserUploadContentUrlBuilder builder,
             string namespace_,
@@ -41,6 +56,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUserUploadContentUrl(op);
+        }
+        public static async Task<Basic.Model.FileUploadUrlInfo?> ExecuteAsync(
+            this GeneratedUserUploadContentUrl.GeneratedUserUploadContentUrlBuilder builder,
+            string namespace_,
+            string userId,
+            string fileType
+        )
+        {
+            GeneratedUserUploadContentUrl op = builder.Build(
+                namespace_,
+                userId,
+                fileType
+            );
+
+            return await ((Basic.Wrapper.FileUpload)builder.WrapperObject!).GeneratedUserUploadContentUrlAsync(op);
         }
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this PublicGeneratedUploadUrl.PublicGeneratedUploadUrlBuilder builder,
@@ -57,6 +87,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUploadUrl(op);
         }
+        public static async Task<Basic.Model.FileUploadUrlInfo?> ExecuteAsync(
+            this PublicGeneratedUploadUrl.PublicGeneratedUploadUrlBuilder builder,
+            string folder,
+            string namespace_,
+            string fileType
+        )
+        {
+            PublicGeneratedUploadUrl op = builder.Build(
+                folder,
+                namespace_,
+                fileType
+            );
+
+            return await ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUploadUrlAsync(op);
+        }
         public static Basic.Model.FileUploadUrlInfo? Execute(
             this PublicGeneratedUserUploadContentUrl.PublicGeneratedUserUploadContentUrlBuilder builder,
             string namespace_,
@@ -71,6 +116,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUserUploadContentUrl(op);
+        }
+        public static async Task<Basic.Model.FileUploadUrlInfo?> ExecuteAsync(
+            this PublicGeneratedUserUploadContentUrl.PublicGeneratedUserUploadContentUrlBuilder builder,
+            string namespace_,
+            string userId,
+            string fileType
+        )
+        {
+            PublicGeneratedUserUploadContentUrl op = builder.Build(
+                namespace_,
+                userId,
+                fileType
+            );
+
+            return await ((Basic.Wrapper.FileUpload)builder.WrapperObject!).PublicGeneratedUserUploadContentUrlAsync(op);
         }
     }
 }

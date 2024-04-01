@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -52,7 +52,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public List<Model.RetrieveLocalizedPolicyVersionResponse>? RetrieveLocalizedPolicyVersions(RetrieveLocalizedPolicyVersions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.RetrieveLocalizedPolicyVersionResponse>?> RetrieveLocalizedPolicyVersionsAsync(RetrieveLocalizedPolicyVersions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -61,7 +68,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.CreateLocalizedPolicyVersionResponse? CreateLocalizedPolicyVersion(CreateLocalizedPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CreateLocalizedPolicyVersionResponse?> CreateLocalizedPolicyVersionAsync(CreateLocalizedPolicyVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -70,7 +84,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.RetrieveLocalizedPolicyVersionResponse? RetrieveSingleLocalizedPolicyVersion(RetrieveSingleLocalizedPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RetrieveLocalizedPolicyVersionResponse?> RetrieveSingleLocalizedPolicyVersionAsync(RetrieveSingleLocalizedPolicyVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -79,7 +100,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.UpdateLocalizedPolicyVersionResponse? UpdateLocalizedPolicyVersion(UpdateLocalizedPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UpdateLocalizedPolicyVersionResponse?> UpdateLocalizedPolicyVersionAsync(UpdateLocalizedPolicyVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -88,7 +116,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.UploadLocalizedPolicyVersionAttachmentResponse? RequestPresignedURL(RequestPresignedURL input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UploadLocalizedPolicyVersionAttachmentResponse?> RequestPresignedURLAsync(RequestPresignedURL input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -97,7 +132,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public void SetDefaultPolicy(SetDefaultPolicy input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SetDefaultPolicyAsync(SetDefaultPolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -106,7 +148,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.RetrieveLocalizedPolicyVersionPublicResponse? RetrieveSingleLocalizedPolicyVersion2(RetrieveSingleLocalizedPolicyVersion2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RetrieveLocalizedPolicyVersionPublicResponse?> RetrieveSingleLocalizedPolicyVersion2Async(RetrieveSingleLocalizedPolicyVersion2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

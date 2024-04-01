@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxCategories(op);
         }
+        public static async Task<List<Chat.Model.ModelsGetInboxCategoriesResponseItem>?> ExecuteAsync(
+            this AdminGetInboxCategories.AdminGetInboxCategoriesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetInboxCategories op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxCategoriesAsync(op);
+        }
 
         public static List<Chat.Model.ModelsGetInboxCategoriesResponseItem<T1>>? Execute<T1>(
             this AdminGetInboxCategories.AdminGetInboxCategoriesBuilder builder,
@@ -34,6 +45,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxCategories<T1>(op);
+        }
+        public static async Task<List<Chat.Model.ModelsGetInboxCategoriesResponseItem<T1>>?> ExecuteAsync<T1>(
+            this AdminGetInboxCategories.AdminGetInboxCategoriesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetInboxCategories op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxCategoriesAsync<T1>(op);
         }
         public static Chat.Model.ModelsAddInboxCategoryResponse? Execute(
             this AdminAddInboxCategory.AdminAddInboxCategoryBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminAddInboxCategory(op);
+        }
+        public static async Task<Chat.Model.ModelsAddInboxCategoryResponse?> ExecuteAsync(
+            this AdminAddInboxCategory.AdminAddInboxCategoryBuilder builder,
+            ModelsAddInboxCategoryRequest body,
+            string namespace_
+        )
+        {
+            AdminAddInboxCategory op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminAddInboxCategoryAsync(op);
         }
 
         public static Chat.Model.ModelsAddInboxCategoryResponse<T1>? Execute<T1>(
@@ -62,6 +97,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminAddInboxCategory<T1>(op);
         }
+        public static async Task<Chat.Model.ModelsAddInboxCategoryResponse<T1>?> ExecuteAsync<T1>(
+            this AdminAddInboxCategory.AdminAddInboxCategoryBuilder builder,
+            ModelsAddInboxCategoryRequest body,
+            string namespace_
+        )
+        {
+            AdminAddInboxCategory op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminAddInboxCategoryAsync<T1>(op);
+        }
         public static void Execute(
             this AdminDeleteInboxCategory.AdminDeleteInboxCategoryBuilder builder,
             string category,
@@ -74,6 +122,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminDeleteInboxCategory(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteInboxCategory.AdminDeleteInboxCategoryBuilder builder,
+            string category,
+            string namespace_
+        )
+        {
+            AdminDeleteInboxCategory op = builder.Build(
+                category,
+                namespace_
+            );
+
+            await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminDeleteInboxCategoryAsync(op);
         }
         public static void Execute(
             this AdminUpdateInboxCategory.AdminUpdateInboxCategoryBuilder builder,
@@ -90,6 +151,21 @@ namespace AccelByte.Sdk.Api
 
             ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxCategory(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminUpdateInboxCategory.AdminUpdateInboxCategoryBuilder builder,
+            ModelsUpdateInboxCategoryRequest body,
+            string category,
+            string namespace_
+        )
+        {
+            AdminUpdateInboxCategory op = builder.Build(
+                body,
+                category,
+                namespace_
+            );
+
+            await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxCategoryAsync(op);
+        }
         public static Chat.Model.ModelsJSONSchemaType? Execute(
             this AdminGetCategorySchema.AdminGetCategorySchemaBuilder builder,
             string category,
@@ -102,6 +178,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetCategorySchema(op);
+        }
+        public static async Task<Chat.Model.ModelsJSONSchemaType?> ExecuteAsync(
+            this AdminGetCategorySchema.AdminGetCategorySchemaBuilder builder,
+            string category,
+            string namespace_
+        )
+        {
+            AdminGetCategorySchema op = builder.Build(
+                category,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetCategorySchemaAsync(op);
         }
         public static void Execute(
             this AdminDeleteInboxMessage.AdminDeleteInboxMessageBuilder builder,
@@ -116,6 +205,19 @@ namespace AccelByte.Sdk.Api
 
             ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminDeleteInboxMessage(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteInboxMessage.AdminDeleteInboxMessageBuilder builder,
+            string messageId,
+            string namespace_
+        )
+        {
+            AdminDeleteInboxMessage op = builder.Build(
+                messageId,
+                namespace_
+            );
+
+            await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminDeleteInboxMessageAsync(op);
+        }
         public static Chat.Model.ModelsGetInboxMessagesResponse? Execute(
             this AdminGetInboxMessages.AdminGetInboxMessagesBuilder builder,
             string namespace_
@@ -126,6 +228,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxMessages(op);
+        }
+        public static async Task<Chat.Model.ModelsGetInboxMessagesResponse?> ExecuteAsync(
+            this AdminGetInboxMessages.AdminGetInboxMessagesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetInboxMessages op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxMessagesAsync(op);
         }
         public static Chat.Model.ModelsSaveInboxMessageResponse? Execute(
             this AdminSaveInboxMessage.AdminSaveInboxMessageBuilder builder,
@@ -140,6 +253,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSaveInboxMessage(op);
         }
+        public static async Task<Chat.Model.ModelsSaveInboxMessageResponse?> ExecuteAsync(
+            this AdminSaveInboxMessage.AdminSaveInboxMessageBuilder builder,
+            ModelsSaveInboxMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminSaveInboxMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSaveInboxMessageAsync(op);
+        }
 
         public static Chat.Model.ModelsSaveInboxMessageResponse<T1>? Execute<T1>(
             this AdminSaveInboxMessage.AdminSaveInboxMessageBuilder builder,
@@ -153,6 +279,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSaveInboxMessage<T1>(op);
+        }
+        public static async Task<Chat.Model.ModelsSaveInboxMessageResponse<T1>?> ExecuteAsync<T1>(
+            this AdminSaveInboxMessage.AdminSaveInboxMessageBuilder builder,
+            ModelsSaveInboxMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminSaveInboxMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSaveInboxMessageAsync<T1>(op);
         }
         public static Chat.Model.ModelsUnsendInboxMessageResponse? Execute(
             this AdminUnsendInboxMessage.AdminUnsendInboxMessageBuilder builder,
@@ -169,6 +308,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUnsendInboxMessage(op);
         }
+        public static async Task<Chat.Model.ModelsUnsendInboxMessageResponse?> ExecuteAsync(
+            this AdminUnsendInboxMessage.AdminUnsendInboxMessageBuilder builder,
+            ModelsUnsendInboxMessageRequest body,
+            string inbox,
+            string namespace_
+        )
+        {
+            AdminUnsendInboxMessage op = builder.Build(
+                body,
+                inbox,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUnsendInboxMessageAsync(op);
+        }
         public static Chat.Model.ModelsGetInboxUsersResponse? Execute(
             this AdminGetInboxUsers.AdminGetInboxUsersBuilder builder,
             string inbox,
@@ -181,6 +335,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxUsers(op);
+        }
+        public static async Task<Chat.Model.ModelsGetInboxUsersResponse?> ExecuteAsync(
+            this AdminGetInboxUsers.AdminGetInboxUsersBuilder builder,
+            string inbox,
+            string namespace_
+        )
+        {
+            AdminGetInboxUsers op = builder.Build(
+                inbox,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxUsersAsync(op);
         }
         public static void Execute(
             this AdminUpdateInboxMessage.AdminUpdateInboxMessageBuilder builder,
@@ -197,6 +364,21 @@ namespace AccelByte.Sdk.Api
 
             ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxMessage(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminUpdateInboxMessage.AdminUpdateInboxMessageBuilder builder,
+            ModelsUpdateInboxMessageRequest body,
+            string messageId,
+            string namespace_
+        )
+        {
+            AdminUpdateInboxMessage op = builder.Build(
+                body,
+                messageId,
+                namespace_
+            );
+
+            await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxMessageAsync(op);
+        }
         public static Chat.Model.ModelsSendInboxMessageResponse? Execute(
             this AdminSendInboxMessage.AdminSendInboxMessageBuilder builder,
             ModelsSendInboxMessageRequest body,
@@ -212,6 +394,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSendInboxMessage(op);
         }
+        public static async Task<Chat.Model.ModelsSendInboxMessageResponse?> ExecuteAsync(
+            this AdminSendInboxMessage.AdminSendInboxMessageBuilder builder,
+            ModelsSendInboxMessageRequest body,
+            string messageId,
+            string namespace_
+        )
+        {
+            AdminSendInboxMessage op = builder.Build(
+                body,
+                messageId,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSendInboxMessageAsync(op);
+        }
         public static Chat.Model.ModelsGetInboxStatsResponse? Execute(
             this AdminGetInboxStats.AdminGetInboxStatsBuilder builder,
             string namespace_
@@ -222,6 +419,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxStats(op);
+        }
+        public static async Task<Chat.Model.ModelsGetInboxStatsResponse?> ExecuteAsync(
+            this AdminGetInboxStats.AdminGetInboxStatsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetInboxStats op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetInboxStatsAsync(op);
         }
     }
 }

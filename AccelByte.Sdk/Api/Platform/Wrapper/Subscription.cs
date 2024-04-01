@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -100,7 +100,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionPagingSlicedResult? QuerySubscriptions(QuerySubscriptions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionPagingSlicedResult?> QuerySubscriptionsAsync(QuerySubscriptions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -109,7 +116,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.RecurringChargeResult? RecurringChargeSubscription(RecurringChargeSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RecurringChargeResult?> RecurringChargeSubscriptionAsync(RecurringChargeSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -118,7 +132,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionPagingSlicedResult? QueryUserSubscriptions(QueryUserSubscriptions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionPagingSlicedResult?> QueryUserSubscriptionsAsync(QueryUserSubscriptions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -127,7 +148,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionActivityPagingSlicedResult? GetUserSubscriptionActivities(GetUserSubscriptionActivities input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionActivityPagingSlicedResult?> GetUserSubscriptionActivitiesAsync(GetUserSubscriptionActivities input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -136,7 +164,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? PlatformSubscribeSubscription(PlatformSubscribeSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> PlatformSubscribeSubscriptionAsync(PlatformSubscribeSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -145,7 +180,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.Subscribable? CheckUserSubscriptionSubscribableByItemId(CheckUserSubscriptionSubscribableByItemId input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.Subscribable?> CheckUserSubscriptionSubscribableByItemIdAsync(CheckUserSubscriptionSubscribableByItemId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -154,7 +196,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? GetUserSubscription(GetUserSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> GetUserSubscriptionAsync(GetUserSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -163,7 +212,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DeleteUserSubscription(DeleteUserSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserSubscriptionAsync(DeleteUserSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -172,7 +228,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? CancelSubscription(CancelSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> CancelSubscriptionAsync(CancelSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -181,7 +244,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? GrantDaysToSubscription(GrantDaysToSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> GrantDaysToSubscriptionAsync(GrantDaysToSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -190,7 +260,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BillingHistoryPagingSlicedResult? GetUserSubscriptionBillingHistories(GetUserSubscriptionBillingHistories input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BillingHistoryPagingSlicedResult?> GetUserSubscriptionBillingHistoriesAsync(GetUserSubscriptionBillingHistories input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -199,7 +276,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void ProcessUserSubscriptionNotification(ProcessUserSubscriptionNotification input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ProcessUserSubscriptionNotificationAsync(ProcessUserSubscriptionNotification input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -208,7 +292,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionPagingSlicedResult? PublicQueryUserSubscriptions(PublicQueryUserSubscriptions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionPagingSlicedResult?> PublicQueryUserSubscriptionsAsync(PublicQueryUserSubscriptions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -217,7 +308,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void PublicSubscribeSubscription(PublicSubscribeSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicSubscribeSubscriptionAsync(PublicSubscribeSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -226,7 +324,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.Subscribable? PublicCheckUserSubscriptionSubscribableByItemId(PublicCheckUserSubscriptionSubscribableByItemId input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.Subscribable?> PublicCheckUserSubscriptionSubscribableByItemIdAsync(PublicCheckUserSubscriptionSubscribableByItemId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -235,7 +340,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? PublicGetUserSubscription(PublicGetUserSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> PublicGetUserSubscriptionAsync(PublicGetUserSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -244,7 +356,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? PublicChangeSubscriptionBillingAccount(PublicChangeSubscriptionBillingAccount input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> PublicChangeSubscriptionBillingAccountAsync(PublicChangeSubscriptionBillingAccount input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -253,7 +372,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.SubscriptionInfo? PublicCancelSubscription(PublicCancelSubscription input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SubscriptionInfo?> PublicCancelSubscriptionAsync(PublicCancelSubscription input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -262,7 +388,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BillingHistoryPagingSlicedResult? PublicGetUserSubscriptionBillingHistories(PublicGetUserSubscriptionBillingHistories input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BillingHistoryPagingSlicedResult?> PublicGetUserSubscriptionBillingHistoriesAsync(PublicGetUserSubscriptionBillingHistories input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

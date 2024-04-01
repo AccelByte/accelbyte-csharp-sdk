@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetPlatformWalletConfig(op);
         }
+        public static async Task<Platform.Model.PlatformWalletConfigInfo?> ExecuteAsync(
+            this GetPlatformWalletConfig.GetPlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            GetPlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetPlatformWalletConfigAsync(op);
+        }
         public static Platform.Model.PlatformWalletConfigInfo? Execute(
             this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdatePlatformWalletConfig(op);
+        }
+        public static async Task<Platform.Model.PlatformWalletConfigInfo?> ExecuteAsync(
+            this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            UpdatePlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdatePlatformWalletConfigAsync(op);
         }
         public static Platform.Model.PlatformWalletConfigInfo? Execute(
             this ResetPlatformWalletConfig.ResetPlatformWalletConfigBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ResetPlatformWalletConfig(op);
         }
+        public static async Task<Platform.Model.PlatformWalletConfigInfo?> ExecuteAsync(
+            this ResetPlatformWalletConfig.ResetPlatformWalletConfigBuilder builder,
+            string namespace_,
+            string platform
+        )
+        {
+            ResetPlatformWalletConfig op = builder.Build(
+                namespace_,
+                platform
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).ResetPlatformWalletConfigAsync(op);
+        }
         public static List<Platform.Model.CurrencyWallet>? Execute(
             this QueryUserCurrencyWallets.QueryUserCurrencyWalletsBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryUserCurrencyWallets(op);
+        }
+        public static async Task<List<Platform.Model.CurrencyWallet>?> ExecuteAsync(
+            this QueryUserCurrencyWallets.QueryUserCurrencyWalletsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserCurrencyWallets op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryUserCurrencyWalletsAsync(op);
         }
         public static Platform.Model.WalletInfo? Execute(
             this DebitUserWalletByCurrencyCode.DebitUserWalletByCurrencyCodeBuilder builder,
@@ -79,6 +131,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWalletByCurrencyCode(op);
         }
+        public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
+            this DebitUserWalletByCurrencyCode.DebitUserWalletByCurrencyCodeBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            DebitUserWalletByCurrencyCode op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWalletByCurrencyCodeAsync(op);
+        }
         public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
             this ListUserCurrencyTransactions.ListUserCurrencyTransactionsBuilder builder,
             string currencyCode,
@@ -93,6 +160,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactions(op);
+        }
+        public static async Task<Platform.Model.WalletTransactionPagingSlicedResult?> ExecuteAsync(
+            this ListUserCurrencyTransactions.ListUserCurrencyTransactionsBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            ListUserCurrencyTransactions op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactionsAsync(op);
         }
         public static void Execute(
             this CheckBalance.CheckBalanceBuilder builder,
@@ -110,6 +192,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalance(op);
+        }
+        public static async Task ExecuteAsync(
+            this CheckBalance.CheckBalanceBuilder builder,
+            DebitByWalletPlatformRequest request,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            CheckBalance op = builder.Build(
+                request,
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalanceAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
@@ -129,6 +228,23 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckWallet(op);
         }
+        public static async Task ExecuteAsync(
+            this CheckWallet.CheckWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId,
+            string origin
+        )
+        {
+            CheckWallet op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId,
+                origin
+            );
+
+            await ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckWalletAsync(op);
+        }
         public static Platform.Model.WalletInfo? Execute(
             this CreditUserWallet.CreditUserWalletBuilder builder,
             string currencyCode,
@@ -143,6 +259,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).CreditUserWallet(op);
+        }
+        public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
+            this CreditUserWallet.CreditUserWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            CreditUserWallet op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).CreditUserWalletAsync(op);
         }
         public static Platform.Model.PlatformWallet? Execute(
             this DebitByWalletPlatform.DebitByWalletPlatformBuilder builder,
@@ -161,6 +292,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitByWalletPlatform(op);
         }
+        public static async Task<Platform.Model.PlatformWallet?> ExecuteAsync(
+            this DebitByWalletPlatform.DebitByWalletPlatformBuilder builder,
+            DebitByWalletPlatformRequest request,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            DebitByWalletPlatform op = builder.Build(
+                request,
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitByWalletPlatformAsync(op);
+        }
         public static Platform.Model.PlatformWallet? Execute(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
             string currencyCode,
@@ -175,6 +323,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PayWithUserWallet(op);
+        }
+        public static async Task<Platform.Model.PlatformWallet?> ExecuteAsync(
+            this PayWithUserWallet.PayWithUserWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PayWithUserWallet op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).PayWithUserWalletAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
@@ -192,6 +355,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetUserWallet(op);
         }
+        public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
+            this GetUserWallet.GetUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            GetUserWallet op = builder.Build(
+                namespace_,
+                userId,
+                walletId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetUserWalletAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this DebitUserWallet.DebitUserWalletBuilder builder,
@@ -207,6 +385,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWallet(op);
+        }
+        public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
+            this DebitUserWallet.DebitUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            DebitUserWallet op = builder.Build(
+                namespace_,
+                userId,
+                walletId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).DebitUserWalletAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
@@ -224,6 +417,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).DisableUserWallet(op);
         }
+        public static async Task ExecuteAsync(
+            this DisableUserWallet.DisableUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            DisableUserWallet op = builder.Build(
+                namespace_,
+                userId,
+                walletId
+            );
+
+            await ((Platform.Wrapper.Wallet)builder.WrapperObject!).DisableUserWalletAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this EnableUserWallet.EnableUserWalletBuilder builder,
@@ -239,6 +447,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.Wallet)builder.WrapperObject!).EnableUserWallet(op);
+        }
+        public static async Task ExecuteAsync(
+            this EnableUserWallet.EnableUserWalletBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            EnableUserWallet op = builder.Build(
+                namespace_,
+                userId,
+                walletId
+            );
+
+            await ((Platform.Wrapper.Wallet)builder.WrapperObject!).EnableUserWalletAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.DetailedWalletTransactionPagingSlicedResult? Execute(
@@ -256,6 +479,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserWalletTransactions(op);
         }
+        public static async Task<Platform.Model.DetailedWalletTransactionPagingSlicedResult?> ExecuteAsync(
+            this ListUserWalletTransactions.ListUserWalletTransactionsBuilder builder,
+            string namespace_,
+            string userId,
+            string walletId
+        )
+        {
+            ListUserWalletTransactions op = builder.Build(
+                namespace_,
+                userId,
+                walletId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserWalletTransactionsAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletPagingSlicedResult? Execute(
             this QueryWallets.QueryWalletsBuilder builder,
@@ -268,6 +506,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryWallets(op);
         }
+        public static async Task<Platform.Model.WalletPagingSlicedResult?> ExecuteAsync(
+            this QueryWallets.QueryWalletsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryWallets op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).QueryWalletsAsync(op);
+        }
         public static Platform.Model.BulkCreditResult? Execute(
             this BulkCredit.BulkCreditBuilder builder,
             string namespace_
@@ -279,6 +528,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkCredit(op);
         }
+        public static async Task<Platform.Model.BulkCreditResult?> ExecuteAsync(
+            this BulkCredit.BulkCreditBuilder builder,
+            string namespace_
+        )
+        {
+            BulkCredit op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkCreditAsync(op);
+        }
         public static Platform.Model.BulkDebitResult? Execute(
             this BulkDebit.BulkDebitBuilder builder,
             string namespace_
@@ -289,6 +549,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkDebit(op);
+        }
+        public static async Task<Platform.Model.BulkDebitResult?> ExecuteAsync(
+            this BulkDebit.BulkDebitBuilder builder,
+            string namespace_
+        )
+        {
+            BulkDebit op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).BulkDebitAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
@@ -304,6 +575,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWallet(op);
         }
+        public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
+            this GetWallet.GetWalletBuilder builder,
+            string namespace_,
+            string walletId
+        )
+        {
+            GetWallet op = builder.Build(
+                namespace_,
+                walletId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWalletAsync(op);
+        }
         public static Platform.Model.PlatformWallet? Execute(
             this PublicGetMyWallet.PublicGetMyWalletBuilder builder,
             string currencyCode,
@@ -316,6 +600,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetMyWallet(op);
+        }
+        public static async Task<Platform.Model.PlatformWallet?> ExecuteAsync(
+            this PublicGetMyWallet.PublicGetMyWalletBuilder builder,
+            string currencyCode,
+            string namespace_
+        )
+        {
+            PublicGetMyWallet op = builder.Build(
+                currencyCode,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetMyWalletAsync(op);
         }
         public static Platform.Model.PlatformWallet? Execute(
             this PublicGetWallet.PublicGetWalletBuilder builder,
@@ -332,6 +629,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetWallet(op);
         }
+        public static async Task<Platform.Model.PlatformWallet?> ExecuteAsync(
+            this PublicGetWallet.PublicGetWalletBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetWallet op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicGetWalletAsync(op);
+        }
         public static Platform.Model.WalletTransactionPagingSlicedResult? Execute(
             this PublicListUserWalletTransactions.PublicListUserWalletTransactionsBuilder builder,
             string currencyCode,
@@ -346,6 +658,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicListUserWalletTransactions(op);
+        }
+        public static async Task<Platform.Model.WalletTransactionPagingSlicedResult?> ExecuteAsync(
+            this PublicListUserWalletTransactions.PublicListUserWalletTransactionsBuilder builder,
+            string currencyCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListUserWalletTransactions op = builder.Build(
+                currencyCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).PublicListUserWalletTransactionsAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.PublicTags)builder.WrapperObject!).PublicListTagsHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsListTagsResponse?> ExecuteAsync(
+            this PublicListTagsHandlerV1.PublicListTagsHandlerV1Builder builder,
+            string namespace_
+        )
+        {
+            PublicListTagsHandlerV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.PublicTags)builder.WrapperObject!).PublicListTagsHandlerV1Async(op);
         }
     }
 }

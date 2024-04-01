@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedContent(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this GetFollowedContent.GetFollowedContentBuilder builder,
+            string namespace_
+        )
+        {
+            GetFollowedContent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedContentAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetFollowedUsers.GetFollowedUsersBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedUsers(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedCreatorOverviewResponse?> ExecuteAsync(
+            this GetFollowedUsers.GetFollowedUsersBuilder builder,
+            string namespace_
+        )
+        {
+            GetFollowedUsers op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetFollowedUsersAsync(op);
         }
         public static Ugc.Model.ModelsUserFollowResponse? Execute(
             this UpdateUserFollowStatus.UpdateUserFollowStatusBuilder builder,
@@ -49,6 +71,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).UpdateUserFollowStatus(op);
         }
+        public static async Task<Ugc.Model.ModelsUserFollowResponse?> ExecuteAsync(
+            this UpdateUserFollowStatus.UpdateUserFollowStatusBuilder builder,
+            ModelsUserFollowRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateUserFollowStatus op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).UpdateUserFollowStatusAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetPublicFollowers.GetPublicFollowersBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowers(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedCreatorOverviewResponse?> ExecuteAsync(
+            this GetPublicFollowers.GetPublicFollowersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPublicFollowers op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowersAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedCreatorOverviewResponse? Execute(
             this GetPublicFollowing.GetPublicFollowingBuilder builder,
             string namespace_,
@@ -74,6 +124,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowing(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedCreatorOverviewResponse?> ExecuteAsync(
+            this GetPublicFollowing.GetPublicFollowingBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPublicFollowing op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicFollow)builder.WrapperObject!).GetPublicFollowingAsync(op);
         }
     }
 }

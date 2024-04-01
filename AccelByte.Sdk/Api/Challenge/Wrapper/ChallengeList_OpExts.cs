@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).GetChallenges(op);
         }
+        public static async Task<Challenge.Model.ModelListChallengeResponse?> ExecuteAsync(
+            this GetChallenges.GetChallengesBuilder builder,
+            string namespace_
+        )
+        {
+            GetChallenges op = builder.Build(
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).GetChallengesAsync(op);
+        }
         public static Challenge.Model.ModelGetGoalsResponse? Execute(
             this PublicGetScheduledGoals.PublicGetScheduledGoalsBuilder builder,
             string challengeCode,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).PublicGetScheduledGoals(op);
+        }
+        public static async Task<Challenge.Model.ModelGetGoalsResponse?> ExecuteAsync(
+            this PublicGetScheduledGoals.PublicGetScheduledGoalsBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            PublicGetScheduledGoals op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeList)builder.WrapperObject!).PublicGetScheduledGoalsAsync(op);
         }
     }
 }

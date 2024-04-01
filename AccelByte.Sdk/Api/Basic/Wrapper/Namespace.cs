@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -72,7 +72,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public List<Model.NamespaceInfo>? GetNamespaces(GetNamespaces input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.NamespaceInfo>?> GetNamespacesAsync(GetNamespaces input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -81,7 +88,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceInfo? CreateNamespace(CreateNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceInfo?> CreateNamespaceAsync(CreateNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -90,7 +104,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceInfo? GetNamespace(GetNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceInfo?> GetNamespaceAsync(GetNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -99,7 +120,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceInfo? DeleteNamespace(DeleteNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceInfo?> DeleteNamespaceAsync(DeleteNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -108,7 +136,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceInfo? UpdateNamespace(UpdateNamespace input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceInfo?> UpdateNamespaceAsync(UpdateNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -117,7 +152,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public List<Model.NamespaceInfo>? GetChildNamespaces(GetChildNamespaces input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.NamespaceInfo>?> GetChildNamespacesAsync(GetChildNamespaces input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -126,7 +168,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceContext? GetNamespaceContext(GetNamespaceContext input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceContext?> GetNamespaceContextAsync(GetNamespaceContext input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -135,7 +184,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public List<Model.NamespaceInfo>? GetGameNamespaces(GetGameNamespaces input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.NamespaceInfo>?> GetGameNamespacesAsync(GetGameNamespaces input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -144,7 +200,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespacePublisherInfo? GetNamespacePublisher(GetNamespacePublisher input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespacePublisherInfo?> GetNamespacePublisherAsync(GetNamespacePublisher input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -153,7 +216,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespaceInfo? ChangeNamespaceStatus(ChangeNamespaceStatus input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespaceInfo?> ChangeNamespaceStatusAsync(ChangeNamespaceStatus input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -162,7 +232,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public List<Model.NamespaceInfo>? PublicGetNamespaces(PublicGetNamespaces input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.NamespaceInfo>?> PublicGetNamespacesAsync(PublicGetNamespaces input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -171,7 +248,14 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         public Model.NamespacePublisherInfo? PublicGetNamespacePublisher(PublicGetNamespacePublisher input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.NamespacePublisherInfo?> PublicGetNamespacePublisherAsync(PublicGetNamespacePublisher input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

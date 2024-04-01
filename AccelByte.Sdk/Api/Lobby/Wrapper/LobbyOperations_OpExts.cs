@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1(op);
         }
+        public static async Task<Lobby.Model.ModelsPartyData?> ExecuteAsync(
+            this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
+            ModelsPartyPUTCustomAttributesRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminUpdatePartyAttributesV1 op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1Async(op);
+        }
 
         public static Lobby.Model.ModelsPartyData<T1>? Execute<T1>(
             this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
@@ -43,6 +58,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1<T1>(op);
         }
+        public static async Task<Lobby.Model.ModelsPartyData<T1>?> ExecuteAsync<T1>(
+            this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
+            ModelsPartyPUTCustomAttributesRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminUpdatePartyAttributesV1 op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            return await ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1Async<T1>(op);
+        }
         public static void Execute(
             this AdminJoinPartyV1.AdminJoinPartyV1Builder builder,
             string namespace_,
@@ -58,6 +88,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminJoinPartyV1(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminJoinPartyV1.AdminJoinPartyV1Builder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            AdminJoinPartyV1 op = builder.Build(
+                namespace_,
+                partyId,
+                userId
+            );
+
+            await ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminJoinPartyV1Async(op);
+        }
         public static List<Lobby.Model.LogAppMessageDeclaration>? Execute(
             this PublicGetMessages.PublicGetMessagesBuilder builder
         )
@@ -66,6 +111,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).PublicGetMessages(op);
+        }
+        public static async Task<List<Lobby.Model.LogAppMessageDeclaration>?> ExecuteAsync(
+            this PublicGetMessages.PublicGetMessagesBuilder builder
+        )
+        {
+            PublicGetMessages op = builder.Build(
+            );
+
+            return await ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).PublicGetMessagesAsync(op);
         }
     }
 }

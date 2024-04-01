@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminListItemTypes(op);
         }
+        public static async Task<Inventory.Model.ApimodelsListItemTypesResp?> ExecuteAsync(
+            this AdminListItemTypes.AdminListItemTypesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListItemTypes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminListItemTypesAsync(op);
+        }
         public static Inventory.Model.ApimodelsCreateItemTypeResp? Execute(
             this AdminCreateItemType.AdminCreateItemTypeBuilder builder,
             ApimodelsCreateItemTypeReq body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminCreateItemType(op);
         }
+        public static async Task<Inventory.Model.ApimodelsCreateItemTypeResp?> ExecuteAsync(
+            this AdminCreateItemType.AdminCreateItemTypeBuilder builder,
+            ApimodelsCreateItemTypeReq body,
+            string namespace_
+        )
+        {
+            AdminCreateItemType op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminCreateItemTypeAsync(op);
+        }
         public static void Execute(
             this AdminDeleteItemType.AdminDeleteItemTypeBuilder builder,
             string itemTypeName,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminDeleteItemType(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteItemType.AdminDeleteItemTypeBuilder builder,
+            string itemTypeName,
+            string namespace_
+        )
+        {
+            AdminDeleteItemType op = builder.Build(
+                itemTypeName,
+                namespace_
+            );
+
+            await ((Inventory.Wrapper.AdminItemTypes)builder.WrapperObject!).AdminDeleteItemTypeAsync(op);
         }
     }
 }

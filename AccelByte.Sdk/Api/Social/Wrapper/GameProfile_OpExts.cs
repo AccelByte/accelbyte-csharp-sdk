@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetUserProfiles(op);
         }
+        public static async Task<List<Social.Model.GameProfileHeader>?> ExecuteAsync(
+            this GetUserProfiles.GetUserProfilesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserProfiles op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetUserProfilesAsync(op);
+        }
         public static Social.Model.GameProfileInfo? Execute(
             this GetProfile.GetProfileBuilder builder,
             string namespace_,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetProfile(op);
         }
+        public static async Task<Social.Model.GameProfileInfo?> ExecuteAsync(
+            this GetProfile.GetProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            GetProfile op = builder.Build(
+                namespace_,
+                profileId,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetProfileAsync(op);
+        }
         public static List<Social.Model.UserGameProfiles>? Execute(
             this PublicGetUserGameProfiles.PublicGetUserGameProfilesBuilder builder,
             string namespace_,
@@ -52,6 +80,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserGameProfiles(op);
+        }
+        public static async Task<List<Social.Model.UserGameProfiles>?> ExecuteAsync(
+            this PublicGetUserGameProfiles.PublicGetUserGameProfilesBuilder builder,
+            string namespace_,
+            List<string> userIds
+        )
+        {
+            PublicGetUserGameProfiles op = builder.Build(
+                namespace_,
+                userIds
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserGameProfilesAsync(op);
         }
         public static List<Social.Model.GameProfileHeader>? Execute(
             this PublicGetUserProfiles.PublicGetUserProfilesBuilder builder,
@@ -66,6 +107,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserProfiles(op);
         }
+        public static async Task<List<Social.Model.GameProfileHeader>?> ExecuteAsync(
+            this PublicGetUserProfiles.PublicGetUserProfilesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserProfiles op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserProfilesAsync(op);
+        }
         public static void Execute(
             this PublicCreateProfile.PublicCreateProfileBuilder builder,
             string namespace_,
@@ -78,6 +132,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicCreateProfile(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicCreateProfile.PublicCreateProfileBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicCreateProfile op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicCreateProfileAsync(op);
         }
         public static Social.Model.GameProfileInfo? Execute(
             this PublicGetProfile.PublicGetProfileBuilder builder,
@@ -94,6 +161,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfile(op);
         }
+        public static async Task<Social.Model.GameProfileInfo?> ExecuteAsync(
+            this PublicGetProfile.PublicGetProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PublicGetProfile op = builder.Build(
+                namespace_,
+                profileId,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAsync(op);
+        }
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateProfile.PublicUpdateProfileBuilder builder,
             string namespace_,
@@ -109,6 +191,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateProfile(op);
         }
+        public static async Task<Social.Model.GameProfileInfo?> ExecuteAsync(
+            this PublicUpdateProfile.PublicUpdateProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PublicUpdateProfile op = builder.Build(
+                namespace_,
+                profileId,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateProfileAsync(op);
+        }
         public static void Execute(
             this PublicDeleteProfile.PublicDeleteProfileBuilder builder,
             string namespace_,
@@ -123,6 +220,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicDeleteProfile(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicDeleteProfile.PublicDeleteProfileBuilder builder,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PublicDeleteProfile op = builder.Build(
+                namespace_,
+                profileId,
+                userId
+            );
+
+            await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicDeleteProfileAsync(op);
         }
         public static Social.Model.Attribute? Execute(
             this PublicGetProfileAttribute.PublicGetProfileAttributeBuilder builder,
@@ -141,6 +253,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAttribute(op);
         }
+        public static async Task<Social.Model.Attribute?> ExecuteAsync(
+            this PublicGetProfileAttribute.PublicGetProfileAttributeBuilder builder,
+            string attributeName,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PublicGetProfileAttribute op = builder.Build(
+                attributeName,
+                namespace_,
+                profileId,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAttributeAsync(op);
+        }
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateAttribute.PublicUpdateAttributeBuilder builder,
             string attributeName,
@@ -157,6 +286,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateAttribute(op);
+        }
+        public static async Task<Social.Model.GameProfileInfo?> ExecuteAsync(
+            this PublicUpdateAttribute.PublicUpdateAttributeBuilder builder,
+            string attributeName,
+            string namespace_,
+            string profileId,
+            string userId
+        )
+        {
+            PublicUpdateAttribute op = builder.Build(
+                attributeName,
+                namespace_,
+                profileId,
+                userId
+            );
+
+            return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateAttributeAsync(op);
         }
     }
 }

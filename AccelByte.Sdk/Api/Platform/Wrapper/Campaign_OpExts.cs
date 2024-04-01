@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCampaigns(op);
         }
+        public static async Task<Platform.Model.CampaignPagingSlicedResult?> ExecuteAsync(
+            this QueryCampaigns.QueryCampaignsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryCampaigns op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCampaignsAsync(op);
+        }
         public static Platform.Model.CampaignInfo? Execute(
             this CreateCampaign.CreateCampaignBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCampaign(op);
+        }
+        public static async Task<Platform.Model.CampaignInfo?> ExecuteAsync(
+            this CreateCampaign.CreateCampaignBuilder builder,
+            string namespace_
+        )
+        {
+            CreateCampaign op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCampaignAsync(op);
         }
         public static Platform.Model.CampaignInfo? Execute(
             this GetCampaign.GetCampaignBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaign(op);
         }
+        public static async Task<Platform.Model.CampaignInfo?> ExecuteAsync(
+            this GetCampaign.GetCampaignBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            GetCampaign op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaignAsync(op);
+        }
         public static Platform.Model.CampaignInfo? Execute(
             this UpdateCampaign.UpdateCampaignBuilder builder,
             string campaignId,
@@ -59,6 +94,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).UpdateCampaign(op);
+        }
+        public static async Task<Platform.Model.CampaignInfo?> ExecuteAsync(
+            this UpdateCampaign.UpdateCampaignBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            UpdateCampaign op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).UpdateCampaignAsync(op);
         }
         public static Platform.Model.CampaignDynamicInfo? Execute(
             this GetCampaignDynamic.GetCampaignDynamicBuilder builder,
@@ -73,6 +121,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaignDynamic(op);
         }
+        public static async Task<Platform.Model.CampaignDynamicInfo?> ExecuteAsync(
+            this GetCampaignDynamic.GetCampaignDynamicBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            GetCampaignDynamic op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCampaignDynamicAsync(op);
+        }
         public static Platform.Model.CodeInfoPagingSlicedResult? Execute(
             this QueryCodes.QueryCodesBuilder builder,
             string campaignId,
@@ -85,6 +146,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCodes(op);
+        }
+        public static async Task<Platform.Model.CodeInfoPagingSlicedResult?> ExecuteAsync(
+            this QueryCodes.QueryCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            QueryCodes op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCodesAsync(op);
         }
         public static Platform.Model.CodeCreateResult? Execute(
             this CreateCodes.CreateCodesBuilder builder,
@@ -99,6 +173,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCodes(op);
         }
+        public static async Task<Platform.Model.CodeCreateResult?> ExecuteAsync(
+            this CreateCodes.CreateCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            CreateCodes op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).CreateCodesAsync(op);
+        }
         public static Stream? Execute(
             this Download.DownloadBuilder builder,
             string campaignId,
@@ -111,6 +198,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).Download(op);
+        }
+        public static async Task<Stream?> ExecuteAsync(
+            this Download.DownloadBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            Download op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).DownloadAsync(op);
         }
         public static Platform.Model.BulkOperationResult? Execute(
             this BulkDisableCodes.BulkDisableCodesBuilder builder,
@@ -125,6 +225,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkDisableCodes(op);
         }
+        public static async Task<Platform.Model.BulkOperationResult?> ExecuteAsync(
+            this BulkDisableCodes.BulkDisableCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            BulkDisableCodes op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkDisableCodesAsync(op);
+        }
         public static Platform.Model.BulkOperationResult? Execute(
             this BulkEnableCodes.BulkEnableCodesBuilder builder,
             string campaignId,
@@ -137,6 +250,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkEnableCodes(op);
+        }
+        public static async Task<Platform.Model.BulkOperationResult?> ExecuteAsync(
+            this BulkEnableCodes.BulkEnableCodesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            BulkEnableCodes op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).BulkEnableCodesAsync(op);
         }
         public static Platform.Model.RedeemHistoryPagingSlicedResult? Execute(
             this QueryRedeemHistory.QueryRedeemHistoryBuilder builder,
@@ -151,6 +277,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryRedeemHistory(op);
         }
+        public static async Task<Platform.Model.RedeemHistoryPagingSlicedResult?> ExecuteAsync(
+            this QueryRedeemHistory.QueryRedeemHistoryBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            QueryRedeemHistory op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryRedeemHistoryAsync(op);
+        }
         public static Platform.Model.CodeInfo? Execute(
             this GetCode.GetCodeBuilder builder,
             string code,
@@ -163,6 +302,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCode(op);
+        }
+        public static async Task<Platform.Model.CodeInfo?> ExecuteAsync(
+            this GetCode.GetCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            GetCode op = builder.Build(
+                code,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).GetCodeAsync(op);
         }
         public static Platform.Model.CodeInfo? Execute(
             this DisableCode.DisableCodeBuilder builder,
@@ -177,6 +329,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).DisableCode(op);
         }
+        public static async Task<Platform.Model.CodeInfo?> ExecuteAsync(
+            this DisableCode.DisableCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            DisableCode op = builder.Build(
+                code,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).DisableCodeAsync(op);
+        }
         public static Platform.Model.CodeInfo? Execute(
             this EnableCode.EnableCodeBuilder builder,
             string code,
@@ -190,6 +355,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).EnableCode(op);
         }
+        public static async Task<Platform.Model.CodeInfo?> ExecuteAsync(
+            this EnableCode.EnableCodeBuilder builder,
+            string code,
+            string namespace_
+        )
+        {
+            EnableCode op = builder.Build(
+                code,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).EnableCodeAsync(op);
+        }
         public static Platform.Model.RedeemResult? Execute(
             this ApplyUserRedemption.ApplyUserRedemptionBuilder builder,
             string namespace_,
@@ -202,6 +380,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Campaign)builder.WrapperObject!).ApplyUserRedemption(op);
+        }
+        public static async Task<Platform.Model.RedeemResult?> ExecuteAsync(
+            this ApplyUserRedemption.ApplyUserRedemptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ApplyUserRedemption op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).ApplyUserRedemptionAsync(op);
         }
     }
 }

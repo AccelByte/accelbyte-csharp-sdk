@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicLikeLegacy)builder.WrapperObject!).GetLikedContent(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this GetLikedContent.GetLikedContentBuilder builder,
+            string namespace_
+        )
+        {
+            GetLikedContent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicLikeLegacy)builder.WrapperObject!).GetLikedContentAsync(op);
+        }
         public static Ugc.Model.ModelsContentLikeResponse? Execute(
             this UpdateContentLikeStatus.UpdateContentLikeStatusBuilder builder,
             ModelsContentLikeRequest body,
@@ -37,6 +48,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicLikeLegacy)builder.WrapperObject!).UpdateContentLikeStatus(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentLikeResponse?> ExecuteAsync(
+            this UpdateContentLikeStatus.UpdateContentLikeStatusBuilder builder,
+            ModelsContentLikeRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            UpdateContentLikeStatus op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicLikeLegacy)builder.WrapperObject!).UpdateContentLikeStatusAsync(op);
         }
     }
 }

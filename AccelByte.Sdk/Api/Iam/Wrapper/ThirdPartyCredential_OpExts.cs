@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllThirdPartyLoginPlatformCredentialV3(op);
         }
+        public static async Task<List<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse>?> ExecuteAsync(
+            this RetrieveAllThirdPartyLoginPlatformCredentialV3.RetrieveAllThirdPartyLoginPlatformCredentialV3Builder builder,
+            string namespace_
+        )
+        {
+            RetrieveAllThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllThirdPartyLoginPlatformCredentialV3Async(op);
+        }
         public static List<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialV3(op);
+        }
+        public static async Task<List<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse>?> ExecuteAsync(
+            this RetrieveAllActiveThirdPartyLoginPlatformCredentialV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Builder builder,
+            string namespace_
+        )
+        {
+            RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialV3Async(op);
         }
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this RetrieveThirdPartyLoginPlatformCredentialV3.RetrieveThirdPartyLoginPlatformCredentialV3Builder builder,
@@ -46,6 +68,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveThirdPartyLoginPlatformCredentialV3(op);
+        }
+        public static async Task<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse?> ExecuteAsync(
+            this RetrieveThirdPartyLoginPlatformCredentialV3.RetrieveThirdPartyLoginPlatformCredentialV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            RetrieveThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveThirdPartyLoginPlatformCredentialV3Async(op);
         }
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this AddThirdPartyLoginPlatformCredentialV3.AddThirdPartyLoginPlatformCredentialV3Builder builder,
@@ -62,6 +97,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AddThirdPartyLoginPlatformCredentialV3(op);
         }
+        public static async Task<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse?> ExecuteAsync(
+            this AddThirdPartyLoginPlatformCredentialV3.AddThirdPartyLoginPlatformCredentialV3Builder builder,
+            ModelThirdPartyLoginPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            AddThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AddThirdPartyLoginPlatformCredentialV3Async(op);
+        }
         public static void Execute(
             this DeleteThirdPartyLoginPlatformCredentialV3.DeleteThirdPartyLoginPlatformCredentialV3Builder builder,
             string namespace_,
@@ -74,6 +124,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformCredentialV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteThirdPartyLoginPlatformCredentialV3.DeleteThirdPartyLoginPlatformCredentialV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            DeleteThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformCredentialV3Async(op);
         }
         public static Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse? Execute(
             this UpdateThirdPartyLoginPlatformCredentialV3.UpdateThirdPartyLoginPlatformCredentialV3Builder builder,
@@ -90,6 +153,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformCredentialV3(op);
         }
+        public static async Task<Iam.Model.ModelThirdPartyLoginPlatformCredentialResponse?> ExecuteAsync(
+            this UpdateThirdPartyLoginPlatformCredentialV3.UpdateThirdPartyLoginPlatformCredentialV3Builder builder,
+            ModelThirdPartyLoginPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            UpdateThirdPartyLoginPlatformCredentialV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformCredentialV3Async(op);
+        }
         public static Iam.Model.ModelPlatformDomainResponse? Execute(
             this UpdateThirdPartyLoginPlatformDomainV3.UpdateThirdPartyLoginPlatformDomainV3Builder builder,
             ModelPlatformDomainUpdateRequest body,
@@ -104,6 +182,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformDomainV3(op);
+        }
+        public static async Task<Iam.Model.ModelPlatformDomainResponse?> ExecuteAsync(
+            this UpdateThirdPartyLoginPlatformDomainV3.UpdateThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainUpdateRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            UpdateThirdPartyLoginPlatformDomainV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).UpdateThirdPartyLoginPlatformDomainV3Async(op);
         }
         public static void Execute(
             this DeleteThirdPartyLoginPlatformDomainV3.DeleteThirdPartyLoginPlatformDomainV3Builder builder,
@@ -120,6 +213,21 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformDomainV3(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteThirdPartyLoginPlatformDomainV3.DeleteThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainDeleteRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            DeleteThirdPartyLoginPlatformDomainV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformDomainV3Async(op);
+        }
         public static Iam.Model.ModelCheckAvailabilityResponse? Execute(
             this AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder builder,
             string platformId
@@ -131,6 +239,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AdminCheckThirdPartyLoginPlatformAvailabilityV3(op);
         }
+        public static async Task<Iam.Model.ModelCheckAvailabilityResponse?> ExecuteAsync(
+            this AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder builder,
+            string platformId
+        )
+        {
+            AdminCheckThirdPartyLoginPlatformAvailabilityV3 op = builder.Build(
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AdminCheckThirdPartyLoginPlatformAvailabilityV3Async(op);
+        }
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
             string namespace_
@@ -141,6 +260,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3(op);
+        }
+        public static async Task<List<Iam.Model.ModelPublicThirdPartyPlatformInfo>?> ExecuteAsync(
+            this RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
+            string namespace_
+        )
+        {
+            RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Async(op);
         }
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveActiveOIDCClientsPublicV3.RetrieveActiveOIDCClientsPublicV3Builder builder,
@@ -154,6 +284,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveActiveOIDCClientsPublicV3(op);
+        }
+        public static async Task<List<Iam.Model.ModelPublicThirdPartyPlatformInfo>?> ExecuteAsync(
+            this RetrieveActiveOIDCClientsPublicV3.RetrieveActiveOIDCClientsPublicV3Builder builder,
+            string namespace_,
+            string clientId
+        )
+        {
+            RetrieveActiveOIDCClientsPublicV3 op = builder.Build(
+                namespace_,
+                clientId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).RetrieveActiveOIDCClientsPublicV3Async(op);
         }
     }
 }

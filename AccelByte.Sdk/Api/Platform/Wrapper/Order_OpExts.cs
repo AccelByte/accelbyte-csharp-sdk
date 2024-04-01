@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).QueryOrders(op);
         }
+        public static async Task<Platform.Model.OrderPagingResult?> ExecuteAsync(
+            this QueryOrders.QueryOrdersBuilder builder,
+            string namespace_
+        )
+        {
+            QueryOrders op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).QueryOrdersAsync(op);
+        }
         public static Platform.Model.OrderStatistics? Execute(
             this GetOrderStatistics.GetOrderStatisticsBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrderStatistics(op);
+        }
+        public static async Task<Platform.Model.OrderStatistics?> ExecuteAsync(
+            this GetOrderStatistics.GetOrderStatisticsBuilder builder,
+            string namespace_
+        )
+        {
+            GetOrderStatistics op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrderStatisticsAsync(op);
         }
         public static Platform.Model.OrderInfo? Execute(
             this GetOrder.GetOrderBuilder builder,
@@ -46,6 +68,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this GetOrder.GetOrderBuilder builder,
+            string namespace_,
+            string orderNo
+        )
+        {
+            GetOrder op = builder.Build(
+                namespace_,
+                orderNo
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -61,6 +96,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this GetOrder.GetOrderBuilder builder,
+            string namespace_,
+            string orderNo
+        )
+        {
+            GetOrder op = builder.Build(
+                namespace_,
+                orderNo
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this RefundOrder.RefundOrderBuilder builder,
             string namespace_,
@@ -73,6 +121,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).RefundOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this RefundOrder.RefundOrderBuilder builder,
+            string namespace_,
+            string orderNo
+        )
+        {
+            RefundOrder op = builder.Build(
+                namespace_,
+                orderNo
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).RefundOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -88,6 +149,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).RefundOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this RefundOrder.RefundOrderBuilder builder,
+            string namespace_,
+            string orderNo
+        )
+        {
+            RefundOrder op = builder.Build(
+                namespace_,
+                orderNo
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).RefundOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderPagingSlicedResult? Execute(
             this QueryUserOrders.QueryUserOrdersBuilder builder,
             string namespace_,
@@ -100,6 +174,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).QueryUserOrders(op);
+        }
+        public static async Task<Platform.Model.OrderPagingSlicedResult?> ExecuteAsync(
+            this QueryUserOrders.QueryUserOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserOrders op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).QueryUserOrdersAsync(op);
         }
         public static Platform.Model.OrderInfo? Execute(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
@@ -114,6 +201,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).AdminCreateUserOrder(op);
         }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminCreateUserOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).AdminCreateUserOrderAsync(op);
+        }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
@@ -127,6 +227,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).AdminCreateUserOrder<T1>(op);
+        }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminCreateUserOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).AdminCreateUserOrderAsync<T1>(op);
         }
         public static Platform.Model.PurchasedItemCount? Execute(
             this CountOfPurchasedItem.CountOfPurchasedItemBuilder builder,
@@ -143,6 +256,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).CountOfPurchasedItem(op);
         }
+        public static async Task<Platform.Model.PurchasedItemCount?> ExecuteAsync(
+            this CountOfPurchasedItem.CountOfPurchasedItemBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            CountOfPurchasedItem op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).CountOfPurchasedItemAsync(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this GetUserOrder.GetUserOrderBuilder builder,
             string namespace_,
@@ -157,6 +285,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this GetUserOrder.GetUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            GetUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -174,6 +317,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this GetUserOrder.GetUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            GetUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
             string namespace_,
@@ -188,6 +346,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).UpdateUserOrderStatus(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            UpdateUserOrderStatus op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).UpdateUserOrderStatusAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -205,6 +378,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).UpdateUserOrderStatus<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            UpdateUserOrderStatus op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).UpdateUserOrderStatusAsync<T1>(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this FulfillUserOrder.FulfillUserOrderBuilder builder,
             string namespace_,
@@ -219,6 +407,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).FulfillUserOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this FulfillUserOrder.FulfillUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            FulfillUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).FulfillUserOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -236,6 +439,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).FulfillUserOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this FulfillUserOrder.FulfillUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            FulfillUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).FulfillUserOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderGrantInfo? Execute(
             this GetUserOrderGrant.GetUserOrderGrantBuilder builder,
             string namespace_,
@@ -250,6 +468,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderGrant(op);
+        }
+        public static async Task<Platform.Model.OrderGrantInfo?> ExecuteAsync(
+            this GetUserOrderGrant.GetUserOrderGrantBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            GetUserOrderGrant op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderGrantAsync(op);
         }
         public static List<Platform.Model.OrderHistoryInfo>? Execute(
             this GetUserOrderHistories.GetUserOrderHistoriesBuilder builder,
@@ -266,6 +499,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderHistories(op);
         }
+        public static async Task<List<Platform.Model.OrderHistoryInfo>?> ExecuteAsync(
+            this GetUserOrderHistories.GetUserOrderHistoriesBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            GetUserOrderHistories op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).GetUserOrderHistoriesAsync(op);
+        }
         public static void Execute(
             this ProcessUserOrderNotification.ProcessUserOrderNotificationBuilder builder,
             string namespace_,
@@ -280,6 +528,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.Order)builder.WrapperObject!).ProcessUserOrderNotification(op);
+        }
+        public static async Task ExecuteAsync(
+            this ProcessUserOrderNotification.ProcessUserOrderNotificationBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            ProcessUserOrderNotification op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            await ((Platform.Wrapper.Order)builder.WrapperObject!).ProcessUserOrderNotificationAsync(op);
         }
         public static Stream? Execute(
             this DownloadUserOrderReceipt.DownloadUserOrderReceiptBuilder builder,
@@ -296,6 +559,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).DownloadUserOrderReceipt(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this DownloadUserOrderReceipt.DownloadUserOrderReceiptBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            DownloadUserOrderReceipt op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).DownloadUserOrderReceiptAsync(op);
+        }
         public static Platform.Model.OrderPagingSlicedResult? Execute(
             this PublicQueryUserOrders.PublicQueryUserOrdersBuilder builder,
             string namespace_,
@@ -309,6 +587,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicQueryUserOrders(op);
         }
+        public static async Task<Platform.Model.OrderPagingSlicedResult?> ExecuteAsync(
+            this PublicQueryUserOrders.PublicQueryUserOrdersBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicQueryUserOrders op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicQueryUserOrdersAsync(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
             string namespace_,
@@ -321,6 +612,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCreateUserOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicCreateUserOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCreateUserOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -336,6 +640,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCreateUserOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicCreateUserOrder op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCreateUserOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this PublicGetUserOrder.PublicGetUserOrderBuilder builder,
             string namespace_,
@@ -350,6 +667,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this PublicGetUserOrder.PublicGetUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicGetUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -367,6 +699,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this PublicGetUserOrder.PublicGetUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicGetUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrderAsync<T1>(op);
+        }
         public static Platform.Model.OrderInfo? Execute(
             this PublicCancelUserOrder.PublicCancelUserOrderBuilder builder,
             string namespace_,
@@ -381,6 +728,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCancelUserOrder(op);
+        }
+        public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
+            this PublicCancelUserOrder.PublicCancelUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicCancelUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCancelUserOrderAsync(op);
         }
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
@@ -398,6 +760,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCancelUserOrder<T1>(op);
         }
+        public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
+            this PublicCancelUserOrder.PublicCancelUserOrderBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicCancelUserOrder op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCancelUserOrderAsync<T1>(op);
+        }
         public static List<Platform.Model.OrderHistoryInfo>? Execute(
             this PublicGetUserOrderHistories.PublicGetUserOrderHistoriesBuilder builder,
             string namespace_,
@@ -413,6 +790,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrderHistories(op);
         }
+        public static async Task<List<Platform.Model.OrderHistoryInfo>?> ExecuteAsync(
+            this PublicGetUserOrderHistories.PublicGetUserOrderHistoriesBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicGetUserOrderHistories op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicGetUserOrderHistoriesAsync(op);
+        }
         public static Stream? Execute(
             this PublicDownloadUserOrderReceipt.PublicDownloadUserOrderReceiptBuilder builder,
             string namespace_,
@@ -427,6 +819,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicDownloadUserOrderReceipt(op);
+        }
+        public static async Task<Stream?> ExecuteAsync(
+            this PublicDownloadUserOrderReceipt.PublicDownloadUserOrderReceiptBuilder builder,
+            string namespace_,
+            string orderNo,
+            string userId
+        )
+        {
+            PublicDownloadUserOrderReceipt op = builder.Build(
+                namespace_,
+                orderNo,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicDownloadUserOrderReceiptAsync(op);
         }
     }
 }

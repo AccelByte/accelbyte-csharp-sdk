@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoRegions(op);
         }
+        public static async Task<Ams.Model.ApiAMSRegionsResponse?> ExecuteAsync(
+            this InfoRegions.InfoRegionsBuilder builder,
+            string namespace_
+        )
+        {
+            InfoRegions op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoRegionsAsync(op);
+        }
         public static Ams.Model.ApiAvailableInstanceTypesResponse? Execute(
             this InfoSupportedInstances.InfoSupportedInstancesBuilder builder,
             string namespace_
@@ -34,6 +45,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoSupportedInstances(op);
         }
+        public static async Task<Ams.Model.ApiAvailableInstanceTypesResponse?> ExecuteAsync(
+            this InfoSupportedInstances.InfoSupportedInstancesBuilder builder,
+            string namespace_
+        )
+        {
+            InfoSupportedInstances op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoSupportedInstancesAsync(op);
+        }
         public static void Execute(
             this UploadURLGet.UploadURLGetBuilder builder
         )
@@ -42,6 +64,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).UploadURLGet(op);
+        }
+        public static async Task ExecuteAsync(
+            this UploadURLGet.UploadURLGetBuilder builder
+        )
+        {
+            UploadURLGet op = builder.Build(
+            );
+
+            await ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).UploadURLGetAsync(op);
         }
     }
 }

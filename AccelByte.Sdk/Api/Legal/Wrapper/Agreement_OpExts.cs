@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsent(op);
         }
+        public static async Task ExecuteAsync(
+            this ChangePreferenceConsent.ChangePreferenceConsentBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ChangePreferenceConsent op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsentAsync(op);
+        }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
             this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
             string userId
@@ -35,6 +48,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAcceptedAgreements(op);
+        }
+        public static async Task<List<Legal.Model.RetrieveAcceptedAgreementResponse>?> ExecuteAsync(
+            this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
+            string userId
+        )
+        {
+            RetrieveAcceptedAgreements op = builder.Build(
+                userId
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAcceptedAgreementsAsync(op);
         }
         public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
             this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
@@ -47,6 +71,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion(op);
         }
+        public static async Task<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse?> ExecuteAsync(
+            this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            RetrieveAllUsersByPolicyVersion op = builder.Build(
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAllUsersByPolicyVersionAsync(op);
+        }
         public static void Execute(
             this ChangePreferenceConsent1.ChangePreferenceConsent1Builder builder
         )
@@ -55,6 +90,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsent1(op);
+        }
+        public static async Task ExecuteAsync(
+            this ChangePreferenceConsent1.ChangePreferenceConsent1Builder builder
+        )
+        {
+            ChangePreferenceConsent1 op = builder.Build(
+            );
+
+            await ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsent1Async(op);
         }
         public static void Execute(
             this AcceptVersionedPolicy.AcceptVersionedPolicyBuilder builder,
@@ -67,6 +111,17 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.Agreement)builder.WrapperObject!).AcceptVersionedPolicy(op);
         }
+        public static async Task ExecuteAsync(
+            this AcceptVersionedPolicy.AcceptVersionedPolicyBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            AcceptVersionedPolicy op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            await ((Legal.Wrapper.Agreement)builder.WrapperObject!).AcceptVersionedPolicyAsync(op);
+        }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
             this RetrieveAgreementsPublic.RetrieveAgreementsPublicBuilder builder
         )
@@ -76,6 +131,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAgreementsPublic(op);
         }
+        public static async Task<List<Legal.Model.RetrieveAcceptedAgreementResponse>?> ExecuteAsync(
+            this RetrieveAgreementsPublic.RetrieveAgreementsPublicBuilder builder
+        )
+        {
+            RetrieveAgreementsPublic op = builder.Build(
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAgreementsPublicAsync(op);
+        }
         public static Legal.Model.AcceptAgreementResponse? Execute(
             this BulkAcceptVersionedPolicy.BulkAcceptVersionedPolicyBuilder builder
         )
@@ -84,6 +148,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).BulkAcceptVersionedPolicy(op);
+        }
+        public static async Task<Legal.Model.AcceptAgreementResponse?> ExecuteAsync(
+            this BulkAcceptVersionedPolicy.BulkAcceptVersionedPolicyBuilder builder
+        )
+        {
+            BulkAcceptVersionedPolicy op = builder.Build(
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).BulkAcceptVersionedPolicyAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.AcceptAgreementResponse? Execute(
@@ -103,6 +176,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicyV2(op);
         }
+        public static async Task<Legal.Model.AcceptAgreementResponse?> ExecuteAsync(
+            this IndirectBulkAcceptVersionedPolicyV2.IndirectBulkAcceptVersionedPolicyV2Builder builder,
+            string clientId,
+            string countryCode,
+            string namespace_,
+            string userId
+        )
+        {
+            IndirectBulkAcceptVersionedPolicyV2 op = builder.Build(
+                clientId,
+                countryCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicyV2Async(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.AcceptAgreementResponse? Execute(
             this IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder builder,
@@ -114,6 +204,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy1(op);
+        }
+        public static async Task<Legal.Model.AcceptAgreementResponse?> ExecuteAsync(
+            this IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder builder,
+            string userId
+        )
+        {
+            IndirectBulkAcceptVersionedPolicy1 op = builder.Build(
+                userId
+            );
+
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy1Async(op);
         }
     }
 }

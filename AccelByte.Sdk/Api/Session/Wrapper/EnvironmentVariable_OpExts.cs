@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,6 +20,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.EnvironmentVariable)builder.WrapperObject!).AdminListEnvironmentVariables(op);
+        }
+        public static async Task<Session.Model.ApimodelsEnvironmentVariableListResponse?> ExecuteAsync(
+            this AdminListEnvironmentVariables.AdminListEnvironmentVariablesBuilder builder
+        )
+        {
+            AdminListEnvironmentVariables op = builder.Build(
+            );
+
+            return await ((Session.Wrapper.EnvironmentVariable)builder.WrapperObject!).AdminListEnvironmentVariablesAsync(op);
         }
     }
 }

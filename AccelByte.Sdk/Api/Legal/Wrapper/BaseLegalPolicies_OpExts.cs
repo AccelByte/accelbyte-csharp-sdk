@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllLegalPolicies(op);
         }
+        public static async Task<List<Legal.Model.RetrieveBasePolicyResponse>?> ExecuteAsync(
+            this RetrieveAllLegalPolicies.RetrieveAllLegalPoliciesBuilder builder
+        )
+        {
+            RetrieveAllLegalPolicies op = builder.Build(
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllLegalPoliciesAsync(op);
+        }
         public static Legal.Model.CreateBasePolicyResponse? Execute(
             this CreatePolicy.CreatePolicyBuilder builder
         )
@@ -29,6 +38,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).CreatePolicy(op);
+        }
+        public static async Task<Legal.Model.CreateBasePolicyResponse?> ExecuteAsync(
+            this CreatePolicy.CreatePolicyBuilder builder
+        )
+        {
+            CreatePolicy op = builder.Build(
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).CreatePolicyAsync(op);
         }
         public static Legal.Model.RetrieveBasePolicyResponse? Execute(
             this RetrieveSinglePolicy.RetrieveSinglePolicyBuilder builder,
@@ -41,6 +59,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveSinglePolicy(op);
         }
+        public static async Task<Legal.Model.RetrieveBasePolicyResponse?> ExecuteAsync(
+            this RetrieveSinglePolicy.RetrieveSinglePolicyBuilder builder,
+            string basePolicyId
+        )
+        {
+            RetrieveSinglePolicy op = builder.Build(
+                basePolicyId
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveSinglePolicyAsync(op);
+        }
         public static Legal.Model.UpdateBasePolicyResponse? Execute(
             this PartialUpdatePolicy.PartialUpdatePolicyBuilder builder,
             string basePolicyId
@@ -51,6 +80,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).PartialUpdatePolicy(op);
+        }
+        public static async Task<Legal.Model.UpdateBasePolicyResponse?> ExecuteAsync(
+            this PartialUpdatePolicy.PartialUpdatePolicyBuilder builder,
+            string basePolicyId
+        )
+        {
+            PartialUpdatePolicy op = builder.Build(
+                basePolicyId
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).PartialUpdatePolicyAsync(op);
         }
         public static Legal.Model.RetrievePolicyResponse? Execute(
             this RetrievePolicyCountry.RetrievePolicyCountryBuilder builder,
@@ -65,6 +105,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrievePolicyCountry(op);
         }
+        public static async Task<Legal.Model.RetrievePolicyResponse?> ExecuteAsync(
+            this RetrievePolicyCountry.RetrievePolicyCountryBuilder builder,
+            string basePolicyId,
+            string countryCode
+        )
+        {
+            RetrievePolicyCountry op = builder.Build(
+                basePolicyId,
+                countryCode
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrievePolicyCountryAsync(op);
+        }
         public static List<Legal.Model.RetrievePolicyTypeResponse>? Execute(
             this RetrieveAllPolicyTypes.RetrieveAllPolicyTypesBuilder builder,
             int limit
@@ -75,6 +128,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllPolicyTypes(op);
+        }
+        public static async Task<List<Legal.Model.RetrievePolicyTypeResponse>?> ExecuteAsync(
+            this RetrieveAllPolicyTypes.RetrieveAllPolicyTypesBuilder builder,
+            int limit
+        )
+        {
+            RetrieveAllPolicyTypes op = builder.Build(
+                limit
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllPolicyTypesAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactGet(op);
         }
+        public static async Task<Ams.Model.ApiArtifactListResponse?> ExecuteAsync(
+            this ArtifactGet.ArtifactGetBuilder builder,
+            string namespace_
+        )
+        {
+            ArtifactGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactGetAsync(op);
+        }
         public static Ams.Model.ApiArtifactUsageResponse? Execute(
             this ArtifactUsageGet.ArtifactUsageGetBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactUsageGet(op);
+        }
+        public static async Task<Ams.Model.ApiArtifactUsageResponse?> ExecuteAsync(
+            this ArtifactUsageGet.ArtifactUsageGetBuilder builder,
+            string namespace_
+        )
+        {
+            ArtifactUsageGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactUsageGetAsync(op);
         }
         public static void Execute(
             this ArtifactDelete.ArtifactDeleteBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactDelete(op);
         }
+        public static async Task ExecuteAsync(
+            this ArtifactDelete.ArtifactDeleteBuilder builder,
+            string artifactID,
+            string namespace_
+        )
+        {
+            ArtifactDelete op = builder.Build(
+                artifactID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactDeleteAsync(op);
+        }
         public static Ams.Model.ApiArtifactURLResponse? Execute(
             this ArtifactGetURL.ArtifactGetURLBuilder builder,
             string artifactID,
@@ -60,6 +95,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactGetURL(op);
         }
+        public static async Task<Ams.Model.ApiArtifactURLResponse?> ExecuteAsync(
+            this ArtifactGetURL.ArtifactGetURLBuilder builder,
+            string artifactID,
+            string namespace_
+        )
+        {
+            ArtifactGetURL op = builder.Build(
+                artifactID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactGetURLAsync(op);
+        }
         public static Ams.Model.ApiFleetArtifactsSampleRules? Execute(
             this FleetArtifactSamplingRulesGet.FleetArtifactSamplingRulesGetBuilder builder,
             string fleetID,
@@ -72,6 +120,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Artifacts)builder.WrapperObject!).FleetArtifactSamplingRulesGet(op);
+        }
+        public static async Task<Ams.Model.ApiFleetArtifactsSampleRules?> ExecuteAsync(
+            this FleetArtifactSamplingRulesGet.FleetArtifactSamplingRulesGetBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetArtifactSamplingRulesGet op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).FleetArtifactSamplingRulesGetAsync(op);
         }
         public static Ams.Model.ApiFleetArtifactsSampleRules? Execute(
             this FleetArtifactSamplingRulesSet.FleetArtifactSamplingRulesSetBuilder builder,
@@ -87,6 +148,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Artifacts)builder.WrapperObject!).FleetArtifactSamplingRulesSet(op);
+        }
+        public static async Task<Ams.Model.ApiFleetArtifactsSampleRules?> ExecuteAsync(
+            this FleetArtifactSamplingRulesSet.FleetArtifactSamplingRulesSetBuilder builder,
+            ApiFleetArtifactsSampleRules body,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetArtifactSamplingRulesSet op = builder.Build(
+                body,
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).FleetArtifactSamplingRulesSetAsync(op);
         }
     }
 }

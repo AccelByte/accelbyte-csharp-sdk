@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminListClientAvailablePermissions(op);
         }
+        public static async Task<Iam.Model.ClientmodelListClientPermissionSet?> ExecuteAsync(
+            this AdminListClientAvailablePermissions.AdminListClientAvailablePermissionsBuilder builder
+        )
+        {
+            AdminListClientAvailablePermissions op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminListClientAvailablePermissionsAsync(op);
+        }
         public static void Execute(
             this AdminUpdateAvailablePermissionsByModule.AdminUpdateAvailablePermissionsByModuleBuilder builder,
             ClientmodelListUpsertModulesRequest body
@@ -31,6 +40,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminUpdateAvailablePermissionsByModule(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateAvailablePermissionsByModule.AdminUpdateAvailablePermissionsByModuleBuilder builder,
+            ClientmodelListUpsertModulesRequest body
+        )
+        {
+            AdminUpdateAvailablePermissionsByModule op = builder.Build(
+                body
+            );
+
+            await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminUpdateAvailablePermissionsByModuleAsync(op);
         }
         public static void Execute(
             this AdminDeleteConfigPermissionsByGroup.AdminDeleteConfigPermissionsByGroupBuilder builder,
@@ -43,6 +63,17 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminDeleteConfigPermissionsByGroup(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteConfigPermissionsByGroup.AdminDeleteConfigPermissionsByGroupBuilder builder,
+            ClientmodelPermissionSetDeleteGroupRequest body
+        )
+        {
+            AdminDeleteConfigPermissionsByGroup op = builder.Build(
+                body
+            );
+
+            await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminDeleteConfigPermissionsByGroupAsync(op);
+        }
         public static Iam.Model.ClientmodelListTemplatesResponse? Execute(
             this AdminListClientTemplates.AdminListClientTemplatesBuilder builder
         )
@@ -51,6 +82,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminListClientTemplates(op);
+        }
+        public static async Task<Iam.Model.ClientmodelListTemplatesResponse?> ExecuteAsync(
+            this AdminListClientTemplates.AdminListClientTemplatesBuilder builder
+        )
+        {
+            AdminListClientTemplates op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminListClientTemplatesAsync(op);
         }
     }
 }

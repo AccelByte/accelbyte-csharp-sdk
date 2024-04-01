@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).QuerySections(op);
         }
+        public static async Task<Platform.Model.SectionPagingSlicedResult?> ExecuteAsync(
+            this QuerySections.QuerySectionsBuilder builder,
+            string namespace_
+        )
+        {
+            QuerySections op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).QuerySectionsAsync(op);
+        }
         public static Platform.Model.FullSectionInfo? Execute(
             this CreateSection.CreateSectionBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).CreateSection(op);
+        }
+        public static async Task<Platform.Model.FullSectionInfo?> ExecuteAsync(
+            this CreateSection.CreateSectionBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            CreateSection op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).CreateSectionAsync(op);
         }
 
         public static Platform.Model.FullSectionInfo<T1>? Execute<T1>(
@@ -50,6 +74,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).CreateSection<T1>(op);
         }
+        public static async Task<Platform.Model.FullSectionInfo<T1>?> ExecuteAsync<T1>(
+            this CreateSection.CreateSectionBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            CreateSection op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).CreateSectionAsync<T1>(op);
+        }
         public static void Execute(
             this PurgeExpiredSection.PurgeExpiredSectionBuilder builder,
             string namespace_,
@@ -63,6 +100,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Section)builder.WrapperObject!).PurgeExpiredSection(op);
         }
+        public static async Task ExecuteAsync(
+            this PurgeExpiredSection.PurgeExpiredSectionBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PurgeExpiredSection op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.Section)builder.WrapperObject!).PurgeExpiredSectionAsync(op);
+        }
         public static Platform.Model.FullSectionInfo? Execute(
             this GetSection.GetSectionBuilder builder,
             string namespace_,
@@ -75,6 +125,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).GetSection(op);
+        }
+        public static async Task<Platform.Model.FullSectionInfo?> ExecuteAsync(
+            this GetSection.GetSectionBuilder builder,
+            string namespace_,
+            string sectionId
+        )
+        {
+            GetSection op = builder.Build(
+                namespace_,
+                sectionId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).GetSectionAsync(op);
         }
 
         public static Platform.Model.FullSectionInfo<T1>? Execute<T1>(
@@ -90,6 +153,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).GetSection<T1>(op);
         }
+        public static async Task<Platform.Model.FullSectionInfo<T1>?> ExecuteAsync<T1>(
+            this GetSection.GetSectionBuilder builder,
+            string namespace_,
+            string sectionId
+        )
+        {
+            GetSection op = builder.Build(
+                namespace_,
+                sectionId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).GetSectionAsync<T1>(op);
+        }
         public static Platform.Model.FullSectionInfo? Execute(
             this UpdateSection.UpdateSectionBuilder builder,
             string namespace_,
@@ -104,6 +180,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).UpdateSection(op);
+        }
+        public static async Task<Platform.Model.FullSectionInfo?> ExecuteAsync(
+            this UpdateSection.UpdateSectionBuilder builder,
+            string namespace_,
+            string sectionId,
+            string storeId
+        )
+        {
+            UpdateSection op = builder.Build(
+                namespace_,
+                sectionId,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).UpdateSectionAsync(op);
         }
 
         public static Platform.Model.FullSectionInfo<T1>? Execute<T1>(
@@ -121,6 +212,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).UpdateSection<T1>(op);
         }
+        public static async Task<Platform.Model.FullSectionInfo<T1>?> ExecuteAsync<T1>(
+            this UpdateSection.UpdateSectionBuilder builder,
+            string namespace_,
+            string sectionId,
+            string storeId
+        )
+        {
+            UpdateSection op = builder.Build(
+                namespace_,
+                sectionId,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).UpdateSectionAsync<T1>(op);
+        }
         public static void Execute(
             this DeleteSection.DeleteSectionBuilder builder,
             string namespace_,
@@ -136,6 +242,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Section)builder.WrapperObject!).DeleteSection(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteSection.DeleteSectionBuilder builder,
+            string namespace_,
+            string sectionId,
+            string storeId
+        )
+        {
+            DeleteSection op = builder.Build(
+                namespace_,
+                sectionId,
+                storeId
+            );
+
+            await ((Platform.Wrapper.Section)builder.WrapperObject!).DeleteSectionAsync(op);
+        }
         public static List<Platform.Model.SectionInfo>? Execute(
             this PublicListActiveSections.PublicListActiveSectionsBuilder builder,
             string namespace_,
@@ -148,6 +269,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).PublicListActiveSections(op);
+        }
+        public static async Task<List<Platform.Model.SectionInfo>?> ExecuteAsync(
+            this PublicListActiveSections.PublicListActiveSectionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListActiveSections op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).PublicListActiveSectionsAsync(op);
         }
 
         public static List<Platform.Model.SectionInfo<T1, T2>>? Execute<T1, T2>(
@@ -162,6 +296,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Section)builder.WrapperObject!).PublicListActiveSections<T1, T2>(op);
+        }
+        public static async Task<List<Platform.Model.SectionInfo<T1, T2>>?> ExecuteAsync<T1, T2>(
+            this PublicListActiveSections.PublicListActiveSectionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListActiveSections op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Section)builder.WrapperObject!).PublicListActiveSectionsAsync<T1, T2>(op);
         }
     }
 }

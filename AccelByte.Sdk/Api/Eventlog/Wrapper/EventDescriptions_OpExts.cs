@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).AgentTypeDescriptionHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsMultipleAgentType?> ExecuteAsync(
+            this AgentTypeDescriptionHandler.AgentTypeDescriptionHandlerBuilder builder
+        )
+        {
+            AgentTypeDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).AgentTypeDescriptionHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleAgentType? Execute(
             this SpecificAgentTypeDescriptionHandler.SpecificAgentTypeDescriptionHandlerBuilder builder
@@ -31,6 +40,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificAgentTypeDescriptionHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsMultipleAgentType?> ExecuteAsync(
+            this SpecificAgentTypeDescriptionHandler.SpecificAgentTypeDescriptionHandlerBuilder builder
+        )
+        {
+            SpecificAgentTypeDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificAgentTypeDescriptionHandlerAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventID? Execute(
@@ -42,6 +60,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventIDDescriptionHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsMultipleEventID?> ExecuteAsync(
+            this EventIDDescriptionHandler.EventIDDescriptionHandlerBuilder builder
+        )
+        {
+            EventIDDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventIDDescriptionHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventID? Execute(
             this SpecificEventIDDescriptionHandler.SpecificEventIDDescriptionHandlerBuilder builder
@@ -51,6 +78,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventIDDescriptionHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsMultipleEventID?> ExecuteAsync(
+            this SpecificEventIDDescriptionHandler.SpecificEventIDDescriptionHandlerBuilder builder
+        )
+        {
+            SpecificEventIDDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventIDDescriptionHandlerAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventLevel? Execute(
@@ -62,6 +98,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventLevelDescriptionHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsMultipleEventLevel?> ExecuteAsync(
+            this EventLevelDescriptionHandler.EventLevelDescriptionHandlerBuilder builder
+        )
+        {
+            EventLevelDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventLevelDescriptionHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventLevel? Execute(
             this SpecificEventLevelDescriptionHandler.SpecificEventLevelDescriptionHandlerBuilder builder
@@ -71,6 +116,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventLevelDescriptionHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsMultipleEventLevel?> ExecuteAsync(
+            this SpecificEventLevelDescriptionHandler.SpecificEventLevelDescriptionHandlerBuilder builder
+        )
+        {
+            SpecificEventLevelDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventLevelDescriptionHandlerAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventType? Execute(
@@ -82,6 +136,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventTypeDescriptionHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsMultipleEventType?> ExecuteAsync(
+            this EventTypeDescriptionHandler.EventTypeDescriptionHandlerBuilder builder
+        )
+        {
+            EventTypeDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).EventTypeDescriptionHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleEventType? Execute(
             this SpecificEventTypeDescriptionHandler.SpecificEventTypeDescriptionHandlerBuilder builder
@@ -91,6 +154,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventTypeDescriptionHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsMultipleEventType?> ExecuteAsync(
+            this SpecificEventTypeDescriptionHandler.SpecificEventTypeDescriptionHandlerBuilder builder
+        )
+        {
+            SpecificEventTypeDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificEventTypeDescriptionHandlerAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleUX? Execute(
@@ -102,6 +174,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).UXNameDescriptionHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsMultipleUX?> ExecuteAsync(
+            this UXNameDescriptionHandler.UXNameDescriptionHandlerBuilder builder
+        )
+        {
+            UXNameDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).UXNameDescriptionHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsMultipleUX? Execute(
             this SpecificUXDescriptionHandler.SpecificUXDescriptionHandlerBuilder builder
@@ -111,6 +192,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificUXDescriptionHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsMultipleUX?> ExecuteAsync(
+            this SpecificUXDescriptionHandler.SpecificUXDescriptionHandlerBuilder builder
+        )
+        {
+            SpecificUXDescriptionHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventDescriptions)builder.WrapperObject!).SpecificUXDescriptionHandlerAsync(op);
         }
     }
 }

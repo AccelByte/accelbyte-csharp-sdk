@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetNamespacesGameTelemetryV1AdminNamespacesGet(op);
         }
+        public static async Task<Gametelemetry.Model.ListBaseResponseStr?> ExecuteAsync(
+            this GetNamespacesGameTelemetryV1AdminNamespacesGet.GetNamespacesGameTelemetryV1AdminNamespacesGetBuilder builder
+        )
+        {
+            GetNamespacesGameTelemetryV1AdminNamespacesGet op = builder.Build(
+            );
+
+            return await ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetNamespacesGameTelemetryV1AdminNamespacesGetAsync(op);
+        }
         public static Gametelemetry.Model.PagedResponseGetNamespaceEventResponse? Execute(
             this GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder builder,
             string namespace_
@@ -31,6 +40,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet(op);
+        }
+        public static async Task<Gametelemetry.Model.PagedResponseGetNamespaceEventResponse?> ExecuteAsync(
+            this GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetBuilder builder,
+            string namespace_
+        )
+        {
+            GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gametelemetry.Wrapper.Telemetry)builder.WrapperObject!).GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGetAsync(op);
         }
     }
 }

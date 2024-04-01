@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,6 +20,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.Auth)builder.WrapperObject!).AuthCheck(op);
+        }
+        public static async Task ExecuteAsync(
+            this AuthCheck.AuthCheckBuilder builder
+        )
+        {
+            AuthCheck op = builder.Build(
+            );
+
+            await ((Ams.Wrapper.Auth)builder.WrapperObject!).AuthCheckAsync(op);
         }
     }
 }

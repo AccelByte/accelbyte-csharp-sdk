@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -48,7 +48,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         public List<Model.ApimodelsPlayerAttributesResponseBody>? AdminQueryPlayerAttributes(AdminQueryPlayerAttributes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsPlayerAttributesResponseBody>?> AdminQueryPlayerAttributesAsync(AdminQueryPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -64,10 +71,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<List<Model.ApimodelsPlayerAttributesResponseBody<T1>>?> AdminQueryPlayerAttributesAsync<T1>(AdminQueryPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsPlayerAttributesResponseBody? AdminGetPlayerAttributes(AdminGetPlayerAttributes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody?> AdminGetPlayerAttributesAsync(AdminGetPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -83,10 +105,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody<T1>?> AdminGetPlayerAttributesAsync<T1>(AdminGetPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsPlayersCurrentPlatformResponse? PublicGetBulkPlayerCurrentPlatform(PublicGetBulkPlayerCurrentPlatform input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPlayersCurrentPlatformResponse?> PublicGetBulkPlayerCurrentPlatformAsync(PublicGetBulkPlayerCurrentPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -95,7 +132,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         public Model.ApimodelsPlayerAttributesResponseBody? PublicGetPlayerAttributes(PublicGetPlayerAttributes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody?> PublicGetPlayerAttributesAsync(PublicGetPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -111,10 +155,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody<T1>?> PublicGetPlayerAttributesAsync<T1>(PublicGetPlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsPlayerAttributesResponseBody? PublicStorePlayerAttributes(PublicStorePlayerAttributes input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody?> PublicStorePlayerAttributesAsync(PublicStorePlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -130,10 +189,25 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ApimodelsPlayerAttributesResponseBody<T1>?> PublicStorePlayerAttributesAsync<T1>(PublicStorePlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void PublicDeletePlayerAttributes(PublicDeletePlayerAttributes input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicDeletePlayerAttributesAsync(PublicDeletePlayerAttributes input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

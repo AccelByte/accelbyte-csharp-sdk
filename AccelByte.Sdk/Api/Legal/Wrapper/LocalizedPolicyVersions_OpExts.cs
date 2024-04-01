@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveLocalizedPolicyVersions(op);
         }
+        public static async Task<List<Legal.Model.RetrieveLocalizedPolicyVersionResponse>?> ExecuteAsync(
+            this RetrieveLocalizedPolicyVersions.RetrieveLocalizedPolicyVersionsBuilder builder,
+            string policyVersionId
+        )
+        {
+            RetrieveLocalizedPolicyVersions op = builder.Build(
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveLocalizedPolicyVersionsAsync(op);
+        }
         public static Legal.Model.CreateLocalizedPolicyVersionResponse? Execute(
             this CreateLocalizedPolicyVersion.CreateLocalizedPolicyVersionBuilder builder,
             string policyVersionId
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersion(op);
+        }
+        public static async Task<Legal.Model.CreateLocalizedPolicyVersionResponse?> ExecuteAsync(
+            this CreateLocalizedPolicyVersion.CreateLocalizedPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            CreateLocalizedPolicyVersion op = builder.Build(
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersionAsync(op);
         }
         public static Legal.Model.RetrieveLocalizedPolicyVersionResponse? Execute(
             this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion(op);
         }
+        public static async Task<Legal.Model.RetrieveLocalizedPolicyVersionResponse?> ExecuteAsync(
+            this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            RetrieveSingleLocalizedPolicyVersion op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersionAsync(op);
+        }
         public static Legal.Model.UpdateLocalizedPolicyVersionResponse? Execute(
             this UpdateLocalizedPolicyVersion.UpdateLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).UpdateLocalizedPolicyVersion(op);
+        }
+        public static async Task<Legal.Model.UpdateLocalizedPolicyVersionResponse?> ExecuteAsync(
+            this UpdateLocalizedPolicyVersion.UpdateLocalizedPolicyVersionBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            UpdateLocalizedPolicyVersion op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).UpdateLocalizedPolicyVersionAsync(op);
         }
         public static Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse? Execute(
             this RequestPresignedURL.RequestPresignedURLBuilder builder,
@@ -67,6 +111,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RequestPresignedURL(op);
         }
+        public static async Task<Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse?> ExecuteAsync(
+            this RequestPresignedURL.RequestPresignedURLBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            RequestPresignedURL op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RequestPresignedURLAsync(op);
+        }
         public static void Execute(
             this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
             string localizedPolicyVersionId
@@ -78,6 +133,17 @@ namespace AccelByte.Sdk.Api
 
             ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicy(op);
         }
+        public static async Task ExecuteAsync(
+            this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            SetDefaultPolicy op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicyAsync(op);
+        }
         public static Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse? Execute(
             this RetrieveSingleLocalizedPolicyVersion2.RetrieveSingleLocalizedPolicyVersion2Builder builder,
             string localizedPolicyVersionId
@@ -88,6 +154,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion2(op);
+        }
+        public static async Task<Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse?> ExecuteAsync(
+            this RetrieveSingleLocalizedPolicyVersion2.RetrieveSingleLocalizedPolicyVersion2Builder builder,
+            string localizedPolicyVersionId
+        )
+        {
+            RetrieveSingleLocalizedPolicyVersion2 op = builder.Build(
+                localizedPolicyVersionId
+            );
+
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion2Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,7 +44,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public void AdminPutAdminGameRecordConcurrentHandlerV1(AdminPutAdminGameRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPutAdminGameRecordConcurrentHandlerV1Async(AdminPutAdminGameRecordConcurrentHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -53,7 +60,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public void AdminPutGameRecordConcurrentHandlerV1(AdminPutGameRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminPutGameRecordConcurrentHandlerV1Async(AdminPutGameRecordConcurrentHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -62,7 +76,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPlayerRecordConcurrentUpdateResponse? AdminPutAdminPlayerRecordConcurrentHandlerV1(AdminPutAdminPlayerRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPlayerRecordConcurrentUpdateResponse?> AdminPutAdminPlayerRecordConcurrentHandlerV1Async(AdminPutAdminPlayerRecordConcurrentHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +92,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPlayerRecordConcurrentUpdateResponse? AdminPutPlayerRecordConcurrentHandlerV1(AdminPutPlayerRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPlayerRecordConcurrentUpdateResponse?> AdminPutPlayerRecordConcurrentHandlerV1Async(AdminPutPlayerRecordConcurrentHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +108,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public Model.ModelsPlayerRecordConcurrentUpdateResponse? AdminPutPlayerPublicRecordConcurrentHandlerV1(AdminPutPlayerPublicRecordConcurrentHandlerV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPlayerRecordConcurrentUpdateResponse?> AdminPutPlayerPublicRecordConcurrentHandlerV1Async(AdminPutPlayerPublicRecordConcurrentHandlerV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

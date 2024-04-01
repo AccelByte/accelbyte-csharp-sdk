@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -76,7 +76,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public Model.ModelGlobalConfiguration? AdminGetGlobalConfig(AdminGetGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGlobalConfiguration?> AdminGetGlobalConfigAsync(AdminGetGlobalConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -85,7 +92,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public Model.ModelGlobalConfiguration? AdminUpdateGlobalConfig(AdminUpdateGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGlobalConfiguration?> AdminUpdateGlobalConfigAsync(AdminUpdateGlobalConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -94,7 +108,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public string? AdminDeleteGlobalConfig(AdminDeleteGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string?> AdminDeleteGlobalConfigAsync(AdminDeleteGlobalConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -103,7 +124,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void FreeFormNotification(FreeFormNotification input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task FreeFormNotificationAsync(FreeFormNotification input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -112,7 +140,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void NotificationWithTemplate(NotificationWithTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task NotificationWithTemplateAsync(NotificationWithTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -121,7 +156,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public List<Model.ModelTemplateResponse>? GetGameTemplate(GetGameTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelTemplateResponse>?> GetGameTemplateAsync(GetGameTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -130,7 +172,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void CreateTemplate(CreateTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CreateTemplateAsync(CreateTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -139,7 +188,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public Model.ModelTemplateLocalizationResponse? GetSlugTemplate(GetSlugTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelTemplateLocalizationResponse?> GetSlugTemplateAsync(GetSlugTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -148,7 +204,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void DeleteTemplateSlug(DeleteTemplateSlug input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteTemplateSlugAsync(DeleteTemplateSlug input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -157,7 +220,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public Model.ModelTemplateLocalization? GetLocalizationTemplate(GetLocalizationTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelTemplateLocalization?> GetLocalizationTemplateAsync(GetLocalizationTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -166,7 +236,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void UpdateLocalizationTemplate(UpdateLocalizationTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UpdateLocalizationTemplateAsync(UpdateLocalizationTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -175,7 +252,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void DeleteTemplateLocalization(DeleteTemplateLocalization input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteTemplateLocalizationAsync(DeleteTemplateLocalization input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -184,7 +268,14 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         public void PublishTemplate(PublishTemplate input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublishTemplateAsync(PublishTemplate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

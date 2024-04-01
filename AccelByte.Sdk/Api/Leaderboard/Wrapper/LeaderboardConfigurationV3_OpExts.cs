@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationsAdminV3(op);
         }
+        public static async Task<Leaderboard.Model.ModelsGetAllLeaderboardConfigsRespV3?> ExecuteAsync(
+            this GetLeaderboardConfigurationsAdminV3.GetLeaderboardConfigurationsAdminV3Builder builder,
+            string namespace_
+        )
+        {
+            GetLeaderboardConfigurationsAdminV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationsAdminV3Async(op);
+        }
         public static Leaderboard.Model.ModelsGetLeaderboardConfigRespV3? Execute(
             this CreateLeaderboardConfigurationAdminV3.CreateLeaderboardConfigurationAdminV3Builder builder,
             ModelsLeaderboardConfigReqV3 body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).CreateLeaderboardConfigurationAdminV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetLeaderboardConfigRespV3?> ExecuteAsync(
+            this CreateLeaderboardConfigurationAdminV3.CreateLeaderboardConfigurationAdminV3Builder builder,
+            ModelsLeaderboardConfigReqV3 body,
+            string namespace_
+        )
+        {
+            CreateLeaderboardConfigurationAdminV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).CreateLeaderboardConfigurationAdminV3Async(op);
         }
         public static Leaderboard.Model.ModelsDeleteBulkLeaderboardsResp? Execute(
             this DeleteBulkLeaderboardConfigurationAdminV3.DeleteBulkLeaderboardConfigurationAdminV3Builder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).DeleteBulkLeaderboardConfigurationAdminV3(op);
         }
+        public static async Task<Leaderboard.Model.ModelsDeleteBulkLeaderboardsResp?> ExecuteAsync(
+            this DeleteBulkLeaderboardConfigurationAdminV3.DeleteBulkLeaderboardConfigurationAdminV3Builder builder,
+            ModelsDeleteBulkLeaderboardsReq body,
+            string namespace_
+        )
+        {
+            DeleteBulkLeaderboardConfigurationAdminV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).DeleteBulkLeaderboardConfigurationAdminV3Async(op);
+        }
         public static Leaderboard.Model.ModelsGetLeaderboardConfigRespV3? Execute(
             this GetLeaderboardConfigurationAdminV3.GetLeaderboardConfigurationAdminV3Builder builder,
             string leaderboardCode,
@@ -61,6 +98,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationAdminV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetLeaderboardConfigRespV3?> ExecuteAsync(
+            this GetLeaderboardConfigurationAdminV3.GetLeaderboardConfigurationAdminV3Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            GetLeaderboardConfigurationAdminV3 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationAdminV3Async(op);
         }
         public static Leaderboard.Model.ModelsGetLeaderboardConfigRespV3? Execute(
             this UpdateLeaderboardConfigurationAdminV3.UpdateLeaderboardConfigurationAdminV3Builder builder,
@@ -77,6 +127,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).UpdateLeaderboardConfigurationAdminV3(op);
         }
+        public static async Task<Leaderboard.Model.ModelsGetLeaderboardConfigRespV3?> ExecuteAsync(
+            this UpdateLeaderboardConfigurationAdminV3.UpdateLeaderboardConfigurationAdminV3Builder builder,
+            ModelsUpdateLeaderboardConfigReqV3 body,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            UpdateLeaderboardConfigurationAdminV3 op = builder.Build(
+                body,
+                leaderboardCode,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).UpdateLeaderboardConfigurationAdminV3Async(op);
+        }
         public static void Execute(
             this DeleteLeaderboardConfigurationAdminV3.DeleteLeaderboardConfigurationAdminV3Builder builder,
             string leaderboardCode,
@@ -89,6 +154,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).DeleteLeaderboardConfigurationAdminV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteLeaderboardConfigurationAdminV3.DeleteLeaderboardConfigurationAdminV3Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            DeleteLeaderboardConfigurationAdminV3 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).DeleteLeaderboardConfigurationAdminV3Async(op);
         }
         public static void Execute(
             this HardDeleteLeaderboardAdminV3.HardDeleteLeaderboardAdminV3Builder builder,
@@ -103,6 +181,19 @@ namespace AccelByte.Sdk.Api
 
             ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).HardDeleteLeaderboardAdminV3(op);
         }
+        public static async Task ExecuteAsync(
+            this HardDeleteLeaderboardAdminV3.HardDeleteLeaderboardAdminV3Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            HardDeleteLeaderboardAdminV3 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).HardDeleteLeaderboardAdminV3Async(op);
+        }
         public static Leaderboard.Model.ModelsGetAllLeaderboardConfigsPublicRespV3? Execute(
             this GetLeaderboardConfigurationsPublicV3.GetLeaderboardConfigurationsPublicV3Builder builder,
             string namespace_
@@ -113,6 +204,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationsPublicV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetAllLeaderboardConfigsPublicRespV3?> ExecuteAsync(
+            this GetLeaderboardConfigurationsPublicV3.GetLeaderboardConfigurationsPublicV3Builder builder,
+            string namespace_
+        )
+        {
+            GetLeaderboardConfigurationsPublicV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationsPublicV3Async(op);
         }
         public static Leaderboard.Model.ModelsGetLeaderboardConfigPublicRespV3? Execute(
             this GetLeaderboardConfigurationPublicV3.GetLeaderboardConfigurationPublicV3Builder builder,
@@ -126,6 +228,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationPublicV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetLeaderboardConfigPublicRespV3?> ExecuteAsync(
+            this GetLeaderboardConfigurationPublicV3.GetLeaderboardConfigurationPublicV3Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            GetLeaderboardConfigurationPublicV3 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.LeaderboardConfigurationV3)builder.WrapperObject!).GetLeaderboardConfigurationPublicV3Async(op);
         }
     }
 }

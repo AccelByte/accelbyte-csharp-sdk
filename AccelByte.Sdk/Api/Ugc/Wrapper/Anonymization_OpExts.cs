@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserChannels(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteAllUserChannels.AdminDeleteAllUserChannelsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteAllUserChannels op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserChannelsAsync(op);
+        }
         public static void Execute(
             this AdminDeleteAllUserContents.AdminDeleteAllUserContentsBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserContents(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteAllUserContents.AdminDeleteAllUserContentsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteAllUserContents op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserContentsAsync(op);
         }
         public static void Execute(
             this AdminDeleteAllUserGroup.AdminDeleteAllUserGroupBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserGroup(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteAllUserGroup.AdminDeleteAllUserGroupBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteAllUserGroup op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserGroupAsync(op);
+        }
         public static void Execute(
             this AdminDeleteAllUserStates.AdminDeleteAllUserStatesBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserStates(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteAllUserStates.AdminDeleteAllUserStatesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeleteAllUserStates op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).AdminDeleteAllUserStatesAsync(op);
         }
         public static void Execute(
             this DeleteAllUserChannel.DeleteAllUserChannelBuilder builder,
@@ -77,6 +129,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserChannel(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteAllUserChannel.DeleteAllUserChannelBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteAllUserChannel op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserChannelAsync(op);
+        }
         public static void Execute(
             this DeleteAllUserContents.DeleteAllUserContentsBuilder builder,
             string namespace_,
@@ -89,6 +154,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserContents(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteAllUserContents.DeleteAllUserContentsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteAllUserContents op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserContentsAsync(op);
         }
         public static void Execute(
             this DeleteAllUserGroup.DeleteAllUserGroupBuilder builder,
@@ -103,6 +181,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserGroup(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteAllUserGroup.DeleteAllUserGroupBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteAllUserGroup op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserGroupAsync(op);
+        }
         public static void Execute(
             this DeleteAllUserStates.DeleteAllUserStatesBuilder builder,
             string namespace_,
@@ -115,6 +206,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserStates(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteAllUserStates.DeleteAllUserStatesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteAllUserStates op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.Anonymization)builder.WrapperObject!).DeleteAllUserStatesAsync(op);
         }
     }
 }

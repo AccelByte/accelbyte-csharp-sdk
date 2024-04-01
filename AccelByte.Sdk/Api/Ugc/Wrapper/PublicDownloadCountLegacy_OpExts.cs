@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicDownloadCountLegacy)builder.WrapperObject!).AddDownloadCount(op);
+        }
+        public static async Task<Ugc.Model.ModelsAddDownloadCountResponse?> ExecuteAsync(
+            this AddDownloadCount.AddDownloadCountBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            AddDownloadCount op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicDownloadCountLegacy)builder.WrapperObject!).AddDownloadCountAsync(op);
         }
     }
 }

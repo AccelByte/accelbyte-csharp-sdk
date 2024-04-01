@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).GetDefaultProvider(op);
         }
+        public static async Task<Dsmc.Model.ModelsDefaultProvider?> ExecuteAsync(
+            this GetDefaultProvider.GetDefaultProviderBuilder builder
+        )
+        {
+            GetDefaultProvider op = builder.Build(
+            );
+
+            return await ((Dsmc.Wrapper.Public)builder.WrapperObject!).GetDefaultProviderAsync(op);
+        }
         public static List<string>? Execute(
             this ListProviders.ListProvidersBuilder builder
         )
@@ -29,6 +38,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProviders(op);
+        }
+        public static async Task<List<string>?> ExecuteAsync(
+            this ListProviders.ListProvidersBuilder builder
+        )
+        {
+            ListProviders op = builder.Build(
+            );
+
+            return await ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProvidersAsync(op);
         }
         public static List<string>? Execute(
             this ListProvidersByRegion.ListProvidersByRegionBuilder builder,
@@ -40,6 +58,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProvidersByRegion(op);
+        }
+        public static async Task<List<string>?> ExecuteAsync(
+            this ListProvidersByRegion.ListProvidersByRegionBuilder builder,
+            string region
+        )
+        {
+            ListProvidersByRegion op = builder.Build(
+                region
+            );
+
+            return await ((Dsmc.Wrapper.Public)builder.WrapperObject!).ListProvidersByRegionAsync(op);
         }
     }
 }

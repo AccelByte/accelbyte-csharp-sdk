@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelListClientPermissionSet? AdminListClientAvailablePermissions(AdminListClientAvailablePermissions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelListClientPermissionSet?> AdminListClientAvailablePermissionsAsync(AdminListClientAvailablePermissions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminUpdateAvailablePermissionsByModule(AdminUpdateAvailablePermissionsByModule input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateAvailablePermissionsByModuleAsync(AdminUpdateAvailablePermissionsByModule input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public void AdminDeleteConfigPermissionsByGroup(AdminDeleteConfigPermissionsByGroup input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteConfigPermissionsByGroupAsync(AdminDeleteConfigPermissionsByGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public Model.ClientmodelListTemplatesResponse? AdminListClientTemplates(AdminListClientTemplates input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ClientmodelListTemplatesResponse?> AdminListClientTemplatesAsync(AdminListClientTemplates input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

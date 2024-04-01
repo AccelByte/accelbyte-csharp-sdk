@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ListStores(op);
         }
+        public static async Task<List<Platform.Model.StoreInfo>?> ExecuteAsync(
+            this ListStores.ListStoresBuilder builder,
+            string namespace_
+        )
+        {
+            ListStores op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ListStoresAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this CreateStore.CreateStoreBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStore(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this CreateStore.CreateStoreBuilder builder,
+            string namespace_
+        )
+        {
+            CreateStore op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).CreateStoreAsync(op);
         }
         public static List<Platform.Model.CatalogDefinitionInfo>? Execute(
             this GetCatalogDefinition.GetCatalogDefinitionBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetCatalogDefinition(op);
         }
+        public static async Task<List<Platform.Model.CatalogDefinitionInfo>?> ExecuteAsync(
+            this GetCatalogDefinition.GetCatalogDefinitionBuilder builder,
+            string namespace_,
+            string catalogType
+        )
+        {
+            GetCatalogDefinition op = builder.Build(
+                namespace_,
+                catalogType
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).GetCatalogDefinitionAsync(op);
+        }
         public static Stream? Execute(
             this DownloadCSVTemplates.DownloadCSVTemplatesBuilder builder,
             string namespace_
@@ -58,6 +93,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).DownloadCSVTemplates(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this DownloadCSVTemplates.DownloadCSVTemplatesBuilder builder,
+            string namespace_
+        )
+        {
+            DownloadCSVTemplates op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).DownloadCSVTemplatesAsync(op);
+        }
         public static Stream? Execute(
             this ExportStoreByCSV.ExportStoreByCSVBuilder builder,
             string namespace_
@@ -68,6 +114,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStoreByCSV(op);
+        }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportStoreByCSV.ExportStoreByCSVBuilder builder,
+            string namespace_
+        )
+        {
+            ExportStoreByCSV op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStoreByCSVAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.StoreInfo? Execute(
@@ -81,6 +138,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore(op);
         }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this ImportStore.ImportStoreBuilder builder,
+            string namespace_
+        )
+        {
+            ImportStore op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStoreAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this GetPublishedStore.GetPublishedStoreBuilder builder,
             string namespace_
@@ -91,6 +159,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStore(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this GetPublishedStore.GetPublishedStoreBuilder builder,
+            string namespace_
+        )
+        {
+            GetPublishedStore op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStoreAsync(op);
         }
         public static Platform.Model.StoreInfo? Execute(
             this DeletePublishedStore.DeletePublishedStoreBuilder builder,
@@ -103,6 +182,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).DeletePublishedStore(op);
         }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this DeletePublishedStore.DeletePublishedStoreBuilder builder,
+            string namespace_
+        )
+        {
+            DeletePublishedStore op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).DeletePublishedStoreAsync(op);
+        }
         public static Platform.Model.StoreBackupInfo? Execute(
             this GetPublishedStoreBackup.GetPublishedStoreBackupBuilder builder,
             string namespace_
@@ -114,6 +204,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStoreBackup(op);
         }
+        public static async Task<Platform.Model.StoreBackupInfo?> ExecuteAsync(
+            this GetPublishedStoreBackup.GetPublishedStoreBackupBuilder builder,
+            string namespace_
+        )
+        {
+            GetPublishedStoreBackup op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).GetPublishedStoreBackupAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this RollbackPublishedStore.RollbackPublishedStoreBuilder builder,
             string namespace_
@@ -124,6 +225,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).RollbackPublishedStore(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this RollbackPublishedStore.RollbackPublishedStoreBuilder builder,
+            string namespace_
+        )
+        {
+            RollbackPublishedStore op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).RollbackPublishedStoreAsync(op);
         }
         public static Platform.Model.StoreInfo? Execute(
             this GetStore.GetStoreBuilder builder,
@@ -138,6 +250,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).GetStore(op);
         }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this GetStore.GetStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            GetStore op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).GetStoreAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this UpdateStore.UpdateStoreBuilder builder,
             string namespace_,
@@ -150,6 +275,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).UpdateStore(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this UpdateStore.UpdateStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            UpdateStore op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).UpdateStoreAsync(op);
         }
         public static Platform.Model.StoreInfo? Execute(
             this DeleteStore.DeleteStoreBuilder builder,
@@ -164,6 +302,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).DeleteStore(op);
         }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this DeleteStore.DeleteStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            DeleteStore op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).DeleteStoreAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this CloneStore.CloneStoreBuilder builder,
             string namespace_,
@@ -176,6 +327,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).CloneStore(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this CloneStore.CloneStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            CloneStore op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).CloneStoreAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
@@ -191,6 +355,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportStore.ExportStoreBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            ExportStore op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStoreAsync(op);
+        }
         public static Platform.Model.ImportStoreHistoryPagingResult? Execute(
             this QueryImportHistory.QueryImportHistoryBuilder builder,
             string namespace_,
@@ -203,6 +380,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).QueryImportHistory(op);
+        }
+        public static async Task<Platform.Model.ImportStoreHistoryPagingResult?> ExecuteAsync(
+            this QueryImportHistory.QueryImportHistoryBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            QueryImportHistory op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).QueryImportHistoryAsync(op);
         }
         public static Platform.Model.ImportStoreResult? Execute(
             this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
@@ -217,6 +407,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStoreByCSV(op);
         }
+        public static async Task<Platform.Model.ImportStoreResult?> ExecuteAsync(
+            this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            ImportStoreByCSV op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStoreByCSVAsync(op);
+        }
         public static List<Platform.Model.StoreInfo>? Execute(
             this PublicListStores.PublicListStoresBuilder builder,
             string namespace_
@@ -228,6 +431,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).PublicListStores(op);
         }
+        public static async Task<List<Platform.Model.StoreInfo>?> ExecuteAsync(
+            this PublicListStores.PublicListStoresBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListStores op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).PublicListStoresAsync(op);
+        }
         public static Platform.Model.ImportStoreResult? Execute(
             this ImportStore1.ImportStore1Builder builder,
             string namespace_
@@ -238,6 +452,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore1(op);
+        }
+        public static async Task<Platform.Model.ImportStoreResult?> ExecuteAsync(
+            this ImportStore1.ImportStore1Builder builder,
+            string namespace_
+        )
+        {
+            ImportStore1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ImportStore1Async(op);
         }
         public static Stream? Execute(
             this ExportStore1.ExportStore1Builder builder,
@@ -251,6 +476,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1(op);
+        }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportStore1.ExportStore1Builder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            ExportStore1 op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).ExportStore1Async(op);
         }
     }
 }

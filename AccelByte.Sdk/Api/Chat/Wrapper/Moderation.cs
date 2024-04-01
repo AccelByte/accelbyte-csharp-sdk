@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsChatSnapshots? AdminGetChatSnapshot(AdminGetChatSnapshot input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsChatSnapshots?> AdminGetChatSnapshotAsync(AdminGetChatSnapshot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -45,7 +52,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public void AdminDeleteChatSnapshot(AdminDeleteChatSnapshot input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteChatSnapshotAsync(AdminDeleteChatSnapshot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -54,7 +68,14 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         public Model.ModelsChatSnapshots? PublicGetChatSnapshot(PublicGetChatSnapshot input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsChatSnapshots?> PublicGetChatSnapshotAsync(PublicGetChatSnapshot input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

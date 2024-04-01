@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -28,6 +28,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.AdminUserEligibilities)builder.WrapperObject!).AdminRetrieveEligibilities(op);
+        }
+        public static async Task<Legal.Model.RetrieveUserEligibilitiesIndirectResponse?> ExecuteAsync(
+            this AdminRetrieveEligibilities.AdminRetrieveEligibilitiesBuilder builder,
+            string namespace_,
+            string userId,
+            string clientId,
+            string countryCode
+        )
+        {
+            AdminRetrieveEligibilities op = builder.Build(
+                namespace_,
+                userId,
+                clientId,
+                countryCode
+            );
+
+            return await ((Legal.Wrapper.AdminUserEligibilities)builder.WrapperObject!).AdminRetrieveEligibilitiesAsync(op);
         }
     }
 }

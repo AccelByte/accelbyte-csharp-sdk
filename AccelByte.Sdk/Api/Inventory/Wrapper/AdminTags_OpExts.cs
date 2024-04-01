@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminListTags(op);
         }
+        public static async Task<Inventory.Model.ApimodelsListTagsResp?> ExecuteAsync(
+            this AdminListTags.AdminListTagsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListTags op = builder.Build(
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminListTagsAsync(op);
+        }
         public static Inventory.Model.ApimodelsCreateTagResp? Execute(
             this AdminCreateTag.AdminCreateTagBuilder builder,
             ApimodelsCreateTagReq body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminCreateTag(op);
         }
+        public static async Task<Inventory.Model.ApimodelsCreateTagResp?> ExecuteAsync(
+            this AdminCreateTag.AdminCreateTagBuilder builder,
+            ApimodelsCreateTagReq body,
+            string namespace_
+        )
+        {
+            AdminCreateTag op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminCreateTagAsync(op);
+        }
         public static void Execute(
             this AdminDeleteTag.AdminDeleteTagBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminDeleteTag(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteTag.AdminDeleteTagBuilder builder,
+            string namespace_,
+            string tagName
+        )
+        {
+            AdminDeleteTag op = builder.Build(
+                namespace_,
+                tagName
+            );
+
+            await ((Inventory.Wrapper.AdminTags)builder.WrapperObject!).AdminDeleteTagAsync(op);
         }
     }
 }

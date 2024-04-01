@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV1(op);
+        }
+        public static async Task<Lobby.Model.HandlersGetUsersPresenceResponse?> ExecuteAsync(
+            this UsersPresenceHandlerV1.UsersPresenceHandlerV1Builder builder,
+            string namespace_,
+            string userIds
+        )
+        {
+            UsersPresenceHandlerV1 op = builder.Build(
+                namespace_,
+                userIds
+            );
+
+            return await ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV1Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetInputValidations(op);
         }
+        public static async Task<Iam.Model.ModelInputValidationsResponse?> ExecuteAsync(
+            this AdminGetInputValidations.AdminGetInputValidationsBuilder builder
+        )
+        {
+            AdminGetInputValidations op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetInputValidationsAsync(op);
+        }
         public static void Execute(
             this AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder builder,
             List<ModelInputValidationUpdatePayload> body
@@ -31,6 +40,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateInputValidations(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder builder,
+            List<ModelInputValidationUpdatePayload> body
+        )
+        {
+            AdminUpdateInputValidations op = builder.Build(
+                body
+            );
+
+            await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateInputValidationsAsync(op);
         }
         public static void Execute(
             this AdminResetInputValidations.AdminResetInputValidationsBuilder builder,
@@ -43,6 +63,17 @@ namespace AccelByte.Sdk.Api
 
             ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetInputValidations(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminResetInputValidations.AdminResetInputValidationsBuilder builder,
+            string field
+        )
+        {
+            AdminResetInputValidations op = builder.Build(
+                field
+            );
+
+            await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetInputValidationsAsync(op);
+        }
         public static Iam.Model.ModelInputValidationsPublicResponse? Execute(
             this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
         )
@@ -51,6 +82,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidations(op);
+        }
+        public static async Task<Iam.Model.ModelInputValidationsPublicResponse?> ExecuteAsync(
+            this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
+        )
+        {
+            PublicGetInputValidations op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationsAsync(op);
         }
         public static Iam.Model.ModelInputValidationConfigVersion? Execute(
             this PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder builder,
@@ -62,6 +102,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationByField(op);
+        }
+        public static async Task<Iam.Model.ModelInputValidationConfigVersion?> ExecuteAsync(
+            this PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder builder,
+            string field
+        )
+        {
+            PublicGetInputValidationByField op = builder.Build(
+                field
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationByFieldAsync(op);
         }
     }
 }

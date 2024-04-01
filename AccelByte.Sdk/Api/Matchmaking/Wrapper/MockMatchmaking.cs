@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -52,7 +52,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public void CleanAllMocks(CleanAllMocks input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CleanAllMocksAsync(CleanAllMocks input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -61,7 +68,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public Model.ModelsGetMockMatchesResponse? GetAllMockMatches(GetAllMockMatches input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMockMatchesResponse?> GetAllMockMatchesAsync(GetAllMockMatches input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -70,7 +84,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public Model.ModelsGetMockMatchesResponse? GetMockMatchesByTimestamp(GetMockMatchesByTimestamp input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMockMatchesResponse?> GetMockMatchesByTimestampAsync(GetMockMatchesByTimestamp input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -79,7 +100,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public Model.ModelsGetMockTicketsResponse? GetAllMockTickets(GetAllMockTickets input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMockTicketsResponse?> GetAllMockTicketsAsync(GetAllMockTickets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -88,7 +116,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public List<Model.ModelsMockTicket>? CreateMockTickets(CreateMockTickets input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsMockTicket>?> CreateMockTicketsAsync(CreateMockTickets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -104,10 +139,25 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<List<Model.ModelsMockTicket<T1, T2>>?> CreateMockTicketsAsync<T1, T2>(CreateMockTickets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void BulkCreateMockTickets(BulkCreateMockTickets input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task BulkCreateMockTicketsAsync(BulkCreateMockTickets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -116,7 +166,14 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         public Model.ModelsGetMockTicketsResponse? GetMockTicketsByTimestamp(GetMockTicketsByTimestamp input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMockTicketsResponse?> GetMockTicketsByTimestampAsync(GetMockTicketsByTimestamp input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

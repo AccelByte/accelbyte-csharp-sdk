@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UnlockSteamUserAchievement(op);
         }
+        public static async Task ExecuteAsync(
+            this UnlockSteamUserAchievement.UnlockSteamUserAchievementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            UnlockSteamUserAchievement op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UnlockSteamUserAchievementAsync(op);
+        }
         public static Platform.Model.XblUserAchievements? Execute(
             this GetXblUserAchievements.GetXblUserAchievementsBuilder builder,
             string namespace_,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).GetXblUserAchievements(op);
         }
+        public static async Task<Platform.Model.XblUserAchievements?> ExecuteAsync(
+            this GetXblUserAchievements.GetXblUserAchievementsBuilder builder,
+            string namespace_,
+            string userId,
+            string xboxUserId
+        )
+        {
+            GetXblUserAchievements op = builder.Build(
+                namespace_,
+                userId,
+                xboxUserId
+            );
+
+            return await ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).GetXblUserAchievementsAsync(op);
+        }
         public static void Execute(
             this UpdateXblUserAchievement.UpdateXblUserAchievementBuilder builder,
             string namespace_,
@@ -52,6 +80,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UpdateXblUserAchievement(op);
+        }
+        public static async Task ExecuteAsync(
+            this UpdateXblUserAchievement.UpdateXblUserAchievementBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateXblUserAchievement op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.AchievementPlatform)builder.WrapperObject!).UpdateXblUserAchievementAsync(op);
         }
     }
 }

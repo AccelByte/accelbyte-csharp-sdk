@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Moderation)builder.WrapperObject!).AdminGetChatSnapshot(op);
         }
+        public static async Task<Chat.Model.ModelsChatSnapshots?> ExecuteAsync(
+            this AdminGetChatSnapshot.AdminGetChatSnapshotBuilder builder,
+            string chatId,
+            string namespace_
+        )
+        {
+            AdminGetChatSnapshot op = builder.Build(
+                chatId,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Moderation)builder.WrapperObject!).AdminGetChatSnapshotAsync(op);
+        }
         public static void Execute(
             this AdminDeleteChatSnapshot.AdminDeleteChatSnapshotBuilder builder,
             string chatId,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Chat.Wrapper.Moderation)builder.WrapperObject!).AdminDeleteChatSnapshot(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteChatSnapshot.AdminDeleteChatSnapshotBuilder builder,
+            string chatId,
+            string namespace_
+        )
+        {
+            AdminDeleteChatSnapshot op = builder.Build(
+                chatId,
+                namespace_
+            );
+
+            await ((Chat.Wrapper.Moderation)builder.WrapperObject!).AdminDeleteChatSnapshotAsync(op);
         }
         public static Chat.Model.ModelsChatSnapshots? Execute(
             this PublicGetChatSnapshot.PublicGetChatSnapshotBuilder builder,
@@ -52,6 +78,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Moderation)builder.WrapperObject!).PublicGetChatSnapshot(op);
+        }
+        public static async Task<Chat.Model.ModelsChatSnapshots?> ExecuteAsync(
+            this PublicGetChatSnapshot.PublicGetChatSnapshotBuilder builder,
+            string chatId,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicGetChatSnapshot op = builder.Build(
+                chatId,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Moderation)builder.WrapperObject!).PublicGetChatSnapshotAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).ListUserStagingContents(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedListStagingContentResponse?> ExecuteAsync(
+            this ListUserStagingContents.ListUserStagingContentsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ListUserStagingContents op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).ListUserStagingContentsAsync(op);
+        }
         public static Ugc.Model.ModelsStagingContentResponse? Execute(
             this GetUserStagingContentByID.GetUserStagingContentByIDBuilder builder,
             string contentId,
@@ -39,6 +52,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).GetUserStagingContentByID(op);
+        }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse?> ExecuteAsync(
+            this GetUserStagingContentByID.GetUserStagingContentByIDBuilder builder,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserStagingContentByID op = builder.Build(
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).GetUserStagingContentByIDAsync(op);
         }
 
         public static Ugc.Model.ModelsStagingContentResponse<T1>? Execute<T1>(
@@ -56,6 +84,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).GetUserStagingContentByID<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse<T1>?> ExecuteAsync<T1>(
+            this GetUserStagingContentByID.GetUserStagingContentByIDBuilder builder,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserStagingContentByID op = builder.Build(
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).GetUserStagingContentByIDAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsStagingContentResponse? Execute(
             this UpdateStagingContent.UpdateStagingContentBuilder builder,
             ModelsUpdateStagingContentRequest body,
@@ -72,6 +115,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).UpdateStagingContent(op);
+        }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse?> ExecuteAsync(
+            this UpdateStagingContent.UpdateStagingContentBuilder builder,
+            ModelsUpdateStagingContentRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateStagingContent op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).UpdateStagingContentAsync(op);
         }
 
         public static Ugc.Model.ModelsStagingContentResponse<T1>? Execute<T1>(
@@ -91,6 +151,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).UpdateStagingContent<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse<T1>?> ExecuteAsync<T1>(
+            this UpdateStagingContent.UpdateStagingContentBuilder builder,
+            ModelsUpdateStagingContentRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateStagingContent op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).UpdateStagingContentAsync<T1>(op);
+        }
         public static void Execute(
             this DeleteUserStagingContentByID.DeleteUserStagingContentByIDBuilder builder,
             string contentId,
@@ -105,6 +182,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).DeleteUserStagingContentByID(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteUserStagingContentByID.DeleteUserStagingContentByIDBuilder builder,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteUserStagingContentByID op = builder.Build(
+                contentId,
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.PublicStagingContent)builder.WrapperObject!).DeleteUserStagingContentByIDAsync(op);
         }
     }
 }

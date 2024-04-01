@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminListInventories(op);
         }
+        public static async Task<Inventory.Model.ApimodelsListInventoryResp?> ExecuteAsync(
+            this AdminListInventories.AdminListInventoriesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListInventories op = builder.Build(
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminListInventoriesAsync(op);
+        }
         public static Inventory.Model.ApimodelsInventoryResp? Execute(
             this AdminCreateInventory.AdminCreateInventoryBuilder builder,
             ApimodelsCreateInventoryReq body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminCreateInventory(op);
         }
+        public static async Task<Inventory.Model.ApimodelsInventoryResp?> ExecuteAsync(
+            this AdminCreateInventory.AdminCreateInventoryBuilder builder,
+            ApimodelsCreateInventoryReq body,
+            string namespace_
+        )
+        {
+            AdminCreateInventory op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminCreateInventoryAsync(op);
+        }
         public static Inventory.Model.ApimodelsInventoryResp? Execute(
             this AdminGetInventory.AdminGetInventoryBuilder builder,
             string inventoryId,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminGetInventory(op);
+        }
+        public static async Task<Inventory.Model.ApimodelsInventoryResp?> ExecuteAsync(
+            this AdminGetInventory.AdminGetInventoryBuilder builder,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            AdminGetInventory op = builder.Build(
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminGetInventoryAsync(op);
         }
         public static Inventory.Model.ApimodelsInventoryResp? Execute(
             this AdminUpdateInventory.AdminUpdateInventoryBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminUpdateInventory(op);
         }
+        public static async Task<Inventory.Model.ApimodelsInventoryResp?> ExecuteAsync(
+            this AdminUpdateInventory.AdminUpdateInventoryBuilder builder,
+            ApimodelsUpdateInventoryReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            AdminUpdateInventory op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminUpdateInventoryAsync(op);
+        }
         public static void Execute(
             this DeleteInventory.DeleteInventoryBuilder builder,
             ApimodelsDeleteInventoryReq body,
@@ -78,6 +130,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).DeleteInventory(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteInventory.DeleteInventoryBuilder builder,
+            ApimodelsDeleteInventoryReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            DeleteInventory op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).DeleteInventoryAsync(op);
         }
     }
 }

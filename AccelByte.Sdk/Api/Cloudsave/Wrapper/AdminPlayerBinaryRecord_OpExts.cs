@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminListPlayerBinaryRecordsV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsListPlayerBinaryRecordsResponse?> ExecuteAsync(
+            this AdminListPlayerBinaryRecordsV1.AdminListPlayerBinaryRecordsV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListPlayerBinaryRecordsV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminListPlayerBinaryRecordsV1Async(op);
+        }
         public static Cloudsave.Model.ModelsUploadBinaryRecordResponse? Execute(
             this AdminPostPlayerBinaryRecordV1.AdminPostPlayerBinaryRecordV1Builder builder,
             ModelsPlayerBinaryRecordCreate body,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPostPlayerBinaryRecordV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsUploadBinaryRecordResponse?> ExecuteAsync(
+            this AdminPostPlayerBinaryRecordV1.AdminPostPlayerBinaryRecordV1Builder builder,
+            ModelsPlayerBinaryRecordCreate body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPostPlayerBinaryRecordV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPostPlayerBinaryRecordV1Async(op);
+        }
         public static Cloudsave.Model.ModelsPlayerBinaryRecordResponse? Execute(
             this AdminGetPlayerBinaryRecordV1.AdminGetPlayerBinaryRecordV1Builder builder,
             string key,
@@ -54,6 +82,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminGetPlayerBinaryRecordV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerBinaryRecordResponse?> ExecuteAsync(
+            this AdminGetPlayerBinaryRecordV1.AdminGetPlayerBinaryRecordV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerBinaryRecordV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminGetPlayerBinaryRecordV1Async(op);
         }
         public static Cloudsave.Model.ModelsPlayerBinaryRecordResponse? Execute(
             this AdminPutPlayerBinaryRecordV1.AdminPutPlayerBinaryRecordV1Builder builder,
@@ -72,6 +115,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPutPlayerBinaryRecordV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerBinaryRecordResponse?> ExecuteAsync(
+            this AdminPutPlayerBinaryRecordV1.AdminPutPlayerBinaryRecordV1Builder builder,
+            ModelsBinaryRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutPlayerBinaryRecordV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPutPlayerBinaryRecordV1Async(op);
+        }
         public static void Execute(
             this AdminDeletePlayerBinaryRecordV1.AdminDeletePlayerBinaryRecordV1Builder builder,
             string key,
@@ -86,6 +146,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminDeletePlayerBinaryRecordV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeletePlayerBinaryRecordV1.AdminDeletePlayerBinaryRecordV1Builder builder,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminDeletePlayerBinaryRecordV1 op = builder.Build(
+                key,
+                namespace_,
+                userId
+            );
+
+            await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminDeletePlayerBinaryRecordV1Async(op);
         }
         public static Cloudsave.Model.ModelsPlayerBinaryRecordResponse? Execute(
             this AdminPutPlayerBinaryRecorMetadataV1.AdminPutPlayerBinaryRecorMetadataV1Builder builder,
@@ -104,6 +179,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPutPlayerBinaryRecorMetadataV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerBinaryRecordResponse?> ExecuteAsync(
+            this AdminPutPlayerBinaryRecorMetadataV1.AdminPutPlayerBinaryRecorMetadataV1Builder builder,
+            ModelsPlayerBinaryRecordMetadataRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPutPlayerBinaryRecorMetadataV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPutPlayerBinaryRecorMetadataV1Async(op);
+        }
         public static Cloudsave.Model.ModelsUploadBinaryRecordResponse? Execute(
             this AdminPostPlayerBinaryPresignedURLV1.AdminPostPlayerBinaryPresignedURLV1Builder builder,
             ModelsUploadBinaryRecordRequest body,
@@ -120,6 +212,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPostPlayerBinaryPresignedURLV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsUploadBinaryRecordResponse?> ExecuteAsync(
+            this AdminPostPlayerBinaryPresignedURLV1.AdminPostPlayerBinaryPresignedURLV1Builder builder,
+            ModelsUploadBinaryRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPostPlayerBinaryPresignedURLV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.AdminPlayerBinaryRecord)builder.WrapperObject!).AdminPostPlayerBinaryPresignedURLV1Async(op);
         }
     }
 }

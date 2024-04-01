@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -32,7 +32,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsAddDownloadCountResponse? PublicAddDownloadCountV2(PublicAddDownloadCountV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsAddDownloadCountResponse?> PublicAddDownloadCountV2Async(PublicAddDownloadCountV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -41,7 +48,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedContentDownloaderResponse? PublicListContentDownloaderV2(PublicListContentDownloaderV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedContentDownloaderResponse?> PublicListContentDownloaderV2Async(PublicListContentDownloaderV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).QueryChanges(op);
         }
+        public static async Task<Platform.Model.CatalogChangePagingResult?> ExecuteAsync(
+            this QueryChanges.QueryChangesBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            QueryChanges op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).QueryChangesAsync(op);
+        }
         public static Platform.Model.StoreInfo? Execute(
             this PublishAll.PublishAllBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishAll(op);
+        }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this PublishAll.PublishAllBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PublishAll op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishAllAsync(op);
         }
         public static Platform.Model.StoreInfo? Execute(
             this PublishSelected.PublishSelectedBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishSelected(op);
         }
+        public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
+            this PublishSelected.PublishSelectedBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            PublishSelected op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).PublishSelectedAsync(op);
+        }
         public static void Execute(
             this SelectAllRecords.SelectAllRecordsBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecords(op);
+        }
+        public static async Task ExecuteAsync(
+            this SelectAllRecords.SelectAllRecordsBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectAllRecords op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecordsAsync(op);
         }
         public static void Execute(
             this SelectAllRecordsByCriteria.SelectAllRecordsByCriteriaBuilder builder,
@@ -77,6 +129,19 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecordsByCriteria(op);
         }
+        public static async Task ExecuteAsync(
+            this SelectAllRecordsByCriteria.SelectAllRecordsByCriteriaBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectAllRecordsByCriteria op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectAllRecordsByCriteriaAsync(op);
+        }
         public static Platform.Model.CatalogChangeStatistics? Execute(
             this GetStatistic.GetStatisticBuilder builder,
             string namespace_,
@@ -90,6 +155,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).GetStatistic(op);
         }
+        public static async Task<Platform.Model.CatalogChangeStatistics?> ExecuteAsync(
+            this GetStatistic.GetStatisticBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            GetStatistic op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            return await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).GetStatisticAsync(op);
+        }
         public static void Execute(
             this UnselectAllRecords.UnselectAllRecordsBuilder builder,
             string namespace_,
@@ -102,6 +180,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectAllRecords(op);
+        }
+        public static async Task ExecuteAsync(
+            this UnselectAllRecords.UnselectAllRecordsBuilder builder,
+            string namespace_,
+            string storeId
+        )
+        {
+            UnselectAllRecords op = builder.Build(
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectAllRecordsAsync(op);
         }
         public static void Execute(
             this SelectRecord.SelectRecordBuilder builder,
@@ -118,6 +209,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectRecord(op);
         }
+        public static async Task ExecuteAsync(
+            this SelectRecord.SelectRecordBuilder builder,
+            string changeId,
+            string namespace_,
+            string storeId
+        )
+        {
+            SelectRecord op = builder.Build(
+                changeId,
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).SelectRecordAsync(op);
+        }
         public static void Execute(
             this UnselectRecord.UnselectRecordBuilder builder,
             string changeId,
@@ -132,6 +238,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectRecord(op);
+        }
+        public static async Task ExecuteAsync(
+            this UnselectRecord.UnselectRecordBuilder builder,
+            string changeId,
+            string namespace_,
+            string storeId
+        )
+        {
+            UnselectRecord op = builder.Build(
+                changeId,
+                namespace_,
+                storeId
+            );
+
+            await ((Platform.Wrapper.CatalogChanges)builder.WrapperObject!).UnselectRecordAsync(op);
         }
     }
 }

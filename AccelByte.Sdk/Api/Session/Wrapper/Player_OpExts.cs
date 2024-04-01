@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributes(op);
         }
+        public static async Task<List<Session.Model.ApimodelsPlayerAttributesResponseBody>?> ExecuteAsync(
+            this AdminQueryPlayerAttributes.AdminQueryPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributesAsync(op);
+        }
 
         public static List<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>>? Execute<T1>(
             this AdminQueryPlayerAttributes.AdminQueryPlayerAttributesBuilder builder,
@@ -34,6 +45,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributes<T1>(op);
+        }
+        public static async Task<List<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>>?> ExecuteAsync<T1>(
+            this AdminQueryPlayerAttributes.AdminQueryPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).AdminQueryPlayerAttributesAsync<T1>(op);
         }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this AdminGetPlayerAttributes.AdminGetPlayerAttributesBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributes(op);
+        }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody?> ExecuteAsync(
+            this AdminGetPlayerAttributes.AdminGetPlayerAttributesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerAttributes op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributesAsync(op);
         }
 
         public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
@@ -62,6 +97,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributes<T1>(op);
         }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>?> ExecuteAsync<T1>(
+            this AdminGetPlayerAttributes.AdminGetPlayerAttributesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerAttributes op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerAttributesAsync<T1>(op);
+        }
         public static Session.Model.ApimodelsPlayersCurrentPlatformResponse? Execute(
             this PublicGetBulkPlayerCurrentPlatform.PublicGetBulkPlayerCurrentPlatformBuilder builder,
             ApimodelsPlayersCurrentPlatformRequest body,
@@ -75,6 +123,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetBulkPlayerCurrentPlatform(op);
         }
+        public static async Task<Session.Model.ApimodelsPlayersCurrentPlatformResponse?> ExecuteAsync(
+            this PublicGetBulkPlayerCurrentPlatform.PublicGetBulkPlayerCurrentPlatformBuilder builder,
+            ApimodelsPlayersCurrentPlatformRequest body,
+            string namespace_
+        )
+        {
+            PublicGetBulkPlayerCurrentPlatform op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetBulkPlayerCurrentPlatformAsync(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
             string namespace_
@@ -85,6 +146,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributes(op);
+        }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody?> ExecuteAsync(
+            this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributesAsync(op);
         }
 
         public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
@@ -98,6 +170,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributes<T1>(op);
         }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>?> ExecuteAsync<T1>(
+            this PublicGetPlayerAttributes.PublicGetPlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetPlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerAttributesAsync<T1>(op);
+        }
         public static Session.Model.ApimodelsPlayerAttributesResponseBody? Execute(
             this PublicStorePlayerAttributes.PublicStorePlayerAttributesBuilder builder,
             ApimodelsPlayerAttributesRequestBody body,
@@ -110,6 +193,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributes(op);
+        }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody?> ExecuteAsync(
+            this PublicStorePlayerAttributes.PublicStorePlayerAttributesBuilder builder,
+            ApimodelsPlayerAttributesRequestBody body,
+            string namespace_
+        )
+        {
+            PublicStorePlayerAttributes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributesAsync(op);
         }
 
         public static Session.Model.ApimodelsPlayerAttributesResponseBody<T1>? Execute<T1>(
@@ -125,6 +221,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributes<T1>(op);
         }
+        public static async Task<Session.Model.ApimodelsPlayerAttributesResponseBody<T1>?> ExecuteAsync<T1>(
+            this PublicStorePlayerAttributes.PublicStorePlayerAttributesBuilder builder,
+            ApimodelsPlayerAttributesRequestBody body,
+            string namespace_
+        )
+        {
+            PublicStorePlayerAttributes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Player)builder.WrapperObject!).PublicStorePlayerAttributesAsync<T1>(op);
+        }
         public static void Execute(
             this PublicDeletePlayerAttributes.PublicDeletePlayerAttributesBuilder builder,
             string namespace_
@@ -135,6 +244,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Session.Wrapper.Player)builder.WrapperObject!).PublicDeletePlayerAttributes(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicDeletePlayerAttributes.PublicDeletePlayerAttributesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicDeletePlayerAttributes op = builder.Build(
+                namespace_
+            );
+
+            await ((Session.Wrapper.Player)builder.WrapperObject!).PublicDeletePlayerAttributesAsync(op);
         }
     }
 }

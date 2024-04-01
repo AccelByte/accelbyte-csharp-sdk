@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).QueryPasses(op);
         }
+        public static async Task<List<Seasonpass.Model.PassInfo>?> ExecuteAsync(
+            this QueryPasses.QueryPassesBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            QueryPasses op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).QueryPassesAsync(op);
+        }
         public static Seasonpass.Model.PassInfo? Execute(
             this CreatePass.CreatePassBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).CreatePass(op);
+        }
+        public static async Task<Seasonpass.Model.PassInfo?> ExecuteAsync(
+            this CreatePass.CreatePassBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            CreatePass op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).CreatePassAsync(op);
         }
         public static Seasonpass.Model.PassInfo? Execute(
             this GetPass.GetPassBuilder builder,
@@ -53,6 +79,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GetPass(op);
         }
+        public static async Task<Seasonpass.Model.PassInfo?> ExecuteAsync(
+            this GetPass.GetPassBuilder builder,
+            string code,
+            string namespace_,
+            string seasonId
+        )
+        {
+            GetPass op = builder.Build(
+                code,
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GetPassAsync(op);
+        }
         public static void Execute(
             this DeletePass.DeletePassBuilder builder,
             string code,
@@ -67,6 +108,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).DeletePass(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeletePass.DeletePassBuilder builder,
+            string code,
+            string namespace_,
+            string seasonId
+        )
+        {
+            DeletePass op = builder.Build(
+                code,
+                namespace_,
+                seasonId
+            );
+
+            await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).DeletePassAsync(op);
         }
         public static Seasonpass.Model.PassInfo? Execute(
             this UpdatePass.UpdatePassBuilder builder,
@@ -83,6 +139,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).UpdatePass(op);
         }
+        public static async Task<Seasonpass.Model.PassInfo?> ExecuteAsync(
+            this UpdatePass.UpdatePassBuilder builder,
+            string code,
+            string namespace_,
+            string seasonId
+        )
+        {
+            UpdatePass op = builder.Build(
+                code,
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).UpdatePassAsync(op);
+        }
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GrantUserPass.GrantUserPassBuilder builder,
             string namespace_,
@@ -95,6 +166,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GrantUserPass(op);
+        }
+        public static async Task<Seasonpass.Model.UserSeasonSummary?> ExecuteAsync(
+            this GrantUserPass.GrantUserPassBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GrantUserPass op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Pass)builder.WrapperObject!).GrantUserPassAsync(op);
         }
     }
 }

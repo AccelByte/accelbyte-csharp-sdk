@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteGameBinaryRecordTTLConfig(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteGameBinaryRecordTTLConfig.DeleteGameBinaryRecordTTLConfigBuilder builder,
+            string key,
+            string namespace_
+        )
+        {
+            DeleteGameBinaryRecordTTLConfig op = builder.Build(
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteGameBinaryRecordTTLConfigAsync(op);
+        }
         public static void Execute(
             this DeleteGameRecordTTLConfig.DeleteGameRecordTTLConfigBuilder builder,
             string key,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteGameRecordTTLConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGameRecordTTLConfig.DeleteGameRecordTTLConfigBuilder builder,
+            string key,
+            string namespace_
+        )
+        {
+            DeleteGameRecordTTLConfig op = builder.Build(
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteGameRecordTTLConfigAsync(op);
         }
     }
 }

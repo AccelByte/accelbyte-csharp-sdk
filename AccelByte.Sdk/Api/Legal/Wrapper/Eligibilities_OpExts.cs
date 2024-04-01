@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublic(op);
         }
+        public static async Task<List<Legal.Model.RetrieveUserEligibilitiesResponse>?> ExecuteAsync(
+            this RetrieveEligibilitiesPublic.RetrieveEligibilitiesPublicBuilder builder,
+            string namespace_
+        )
+        {
+            RetrieveEligibilitiesPublic op = builder.Build(
+                namespace_
+            );
+
+            return await ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublicAsync(op);
+        }
         public static Legal.Model.RetrieveUserEligibilitiesIndirectResponse? Execute(
             this RetrieveEligibilitiesPublicIndirect.RetrieveEligibilitiesPublicIndirectBuilder builder,
             string clientId,
@@ -39,6 +50,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublicIndirect(op);
+        }
+        public static async Task<Legal.Model.RetrieveUserEligibilitiesIndirectResponse?> ExecuteAsync(
+            this RetrieveEligibilitiesPublicIndirect.RetrieveEligibilitiesPublicIndirectBuilder builder,
+            string clientId,
+            string countryCode,
+            string namespace_,
+            string userId
+        )
+        {
+            RetrieveEligibilitiesPublicIndirect op = builder.Build(
+                clientId,
+                countryCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Legal.Wrapper.Eligibilities)builder.WrapperObject!).RetrieveEligibilitiesPublicIndirectAsync(op);
         }
     }
 }

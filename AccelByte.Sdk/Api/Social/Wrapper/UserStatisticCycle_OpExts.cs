@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).GetUserStatCycleItems(op);
         }
+        public static async Task<Social.Model.UserStatCycleItemPagingSlicedResult?> ExecuteAsync(
+            this GetUserStatCycleItems.GetUserStatCycleItemsBuilder builder,
+            string cycleId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserStatCycleItems op = builder.Build(
+                cycleId,
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).GetUserStatCycleItemsAsync(op);
+        }
         public static Social.Model.UserStatCycleItemPagingSlicedResult? Execute(
             this PublicListMyStatCycleItems.PublicListMyStatCycleItemsBuilder builder,
             string cycleId,
@@ -39,6 +54,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).PublicListMyStatCycleItems(op);
+        }
+        public static async Task<Social.Model.UserStatCycleItemPagingSlicedResult?> ExecuteAsync(
+            this PublicListMyStatCycleItems.PublicListMyStatCycleItemsBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            PublicListMyStatCycleItems op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).PublicListMyStatCycleItemsAsync(op);
         }
         public static Social.Model.UserStatCycleItemPagingSlicedResult? Execute(
             this GetUserStatCycleItems1.GetUserStatCycleItems1Builder builder,
@@ -54,6 +82,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).GetUserStatCycleItems1(op);
+        }
+        public static async Task<Social.Model.UserStatCycleItemPagingSlicedResult?> ExecuteAsync(
+            this GetUserStatCycleItems1.GetUserStatCycleItems1Builder builder,
+            string cycleId,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserStatCycleItems1 op = builder.Build(
+                cycleId,
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.UserStatisticCycle)builder.WrapperObject!).GetUserStatCycleItems1Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).GetAdminEmailConfiguration(op);
         }
+        public static async Task<List<string>?> ExecuteAsync(
+            this GetAdminEmailConfiguration.GetAdminEmailConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            GetAdminEmailConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).GetAdminEmailConfigurationAsync(op);
+        }
         public static void Execute(
             this UpdateAdminEmailConfiguration.UpdateAdminEmailConfigurationBuilder builder,
             List<string> body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).UpdateAdminEmailConfiguration(op);
+        }
+        public static async Task ExecuteAsync(
+            this UpdateAdminEmailConfiguration.UpdateAdminEmailConfigurationBuilder builder,
+            List<string> body,
+            string namespace_
+        )
+        {
+            UpdateAdminEmailConfiguration op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).UpdateAdminEmailConfigurationAsync(op);
         }
         public static void Execute(
             this SaveAdminEmailConfiguration.SaveAdminEmailConfigurationBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).SaveAdminEmailConfiguration(op);
         }
+        public static async Task ExecuteAsync(
+            this SaveAdminEmailConfiguration.SaveAdminEmailConfigurationBuilder builder,
+            List<string> body,
+            string namespace_
+        )
+        {
+            SaveAdminEmailConfiguration op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).SaveAdminEmailConfigurationAsync(op);
+        }
         public static void Execute(
             this DeleteAdminEmailConfiguration.DeleteAdminEmailConfigurationBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).DeleteAdminEmailConfiguration(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteAdminEmailConfiguration.DeleteAdminEmailConfigurationBuilder builder,
+            string namespace_,
+            List<string> emails
+        )
+        {
+            DeleteAdminEmailConfiguration op = builder.Build(
+                namespace_,
+                emails
+            );
+
+            await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).DeleteAdminEmailConfigurationAsync(op);
+        }
         public static Gdpr.Model.DtoServicesConfigurationResponse? Execute(
             this AdminGetServicesConfiguration.AdminGetServicesConfigurationBuilder builder,
             string namespace_
@@ -72,6 +122,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminGetServicesConfiguration(op);
+        }
+        public static async Task<Gdpr.Model.DtoServicesConfigurationResponse?> ExecuteAsync(
+            this AdminGetServicesConfiguration.AdminGetServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminGetServicesConfigurationAsync(op);
         }
         public static Gdpr.Model.DtoServiceConfigurationUpdateRequest? Execute(
             this AdminUpdateServicesConfiguration.AdminUpdateServicesConfigurationBuilder builder,
@@ -86,6 +147,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminUpdateServicesConfiguration(op);
         }
+        public static async Task<Gdpr.Model.DtoServiceConfigurationUpdateRequest?> ExecuteAsync(
+            this AdminUpdateServicesConfiguration.AdminUpdateServicesConfigurationBuilder builder,
+            DtoServiceConfigurationUpdateRequest body,
+            string namespace_
+        )
+        {
+            AdminUpdateServicesConfiguration op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminUpdateServicesConfigurationAsync(op);
+        }
         public static void Execute(
             this AdminResetServicesConfiguration.AdminResetServicesConfigurationBuilder builder,
             string namespace_
@@ -96,6 +170,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminResetServicesConfiguration(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminResetServicesConfiguration.AdminResetServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminResetServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminResetServicesConfigurationAsync(op);
         }
     }
 }

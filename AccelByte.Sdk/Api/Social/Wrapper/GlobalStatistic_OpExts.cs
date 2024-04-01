@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems(op);
         }
+        public static async Task<Social.Model.GlobalStatItemPagingSlicedResult?> ExecuteAsync(
+            this GetGlobalStatItems.GetGlobalStatItemsBuilder builder,
+            string namespace_
+        )
+        {
+            GetGlobalStatItems op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemsAsync(op);
+        }
         public static Social.Model.GlobalStatItemInfo? Execute(
             this GetGlobalStatItemByStatCode.GetGlobalStatItemByStatCodeBuilder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCode(op);
         }
+        public static async Task<Social.Model.GlobalStatItemInfo?> ExecuteAsync(
+            this GetGlobalStatItemByStatCode.GetGlobalStatItemByStatCodeBuilder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetGlobalStatItemByStatCode op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return await ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCodeAsync(op);
+        }
         public static Social.Model.GlobalStatItemPagingSlicedResult? Execute(
             this GetGlobalStatItems1.GetGlobalStatItems1Builder builder,
             string namespace_
@@ -46,6 +70,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems1(op);
+        }
+        public static async Task<Social.Model.GlobalStatItemPagingSlicedResult?> ExecuteAsync(
+            this GetGlobalStatItems1.GetGlobalStatItems1Builder builder,
+            string namespace_
+        )
+        {
+            GetGlobalStatItems1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItems1Async(op);
         }
         public static Social.Model.GlobalStatItemInfo? Execute(
             this GetGlobalStatItemByStatCode1.GetGlobalStatItemByStatCode1Builder builder,
@@ -59,6 +94,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCode1(op);
+        }
+        public static async Task<Social.Model.GlobalStatItemInfo?> ExecuteAsync(
+            this GetGlobalStatItemByStatCode1.GetGlobalStatItemByStatCode1Builder builder,
+            string namespace_,
+            string statCode
+        )
+        {
+            GetGlobalStatItemByStatCode1 op = builder.Build(
+                namespace_,
+                statCode
+            );
+
+            return await ((Social.Wrapper.GlobalStatistic)builder.WrapperObject!).GetGlobalStatItemByStatCode1Async(op);
         }
     }
 }

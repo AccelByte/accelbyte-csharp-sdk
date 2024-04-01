@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -32,7 +32,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public void DeleteGameBinaryRecordTTLConfig(DeleteGameBinaryRecordTTLConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteGameBinaryRecordTTLConfigAsync(DeleteGameBinaryRecordTTLConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -41,7 +48,14 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         public void DeleteGameRecordTTLConfig(DeleteGameRecordTTLConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteGameRecordTTLConfigAsync(DeleteGameRecordTTLConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

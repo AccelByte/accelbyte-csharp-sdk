@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Clawback)builder.WrapperObject!).QueryIAPClawbackHistory(op);
         }
+        public static async Task<Platform.Model.IAPClawbackPagingSlicedResult?> ExecuteAsync(
+            this QueryIAPClawbackHistory.QueryIAPClawbackHistoryBuilder builder,
+            string namespace_
+        )
+        {
+            QueryIAPClawbackHistory op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).QueryIAPClawbackHistoryAsync(op);
+        }
         public static Platform.Model.ClawbackInfo? Execute(
             this MockPlayStationStreamEvent.MockPlayStationStreamEventBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEvent(op);
+        }
+        public static async Task<Platform.Model.ClawbackInfo?> ExecuteAsync(
+            this MockPlayStationStreamEvent.MockPlayStationStreamEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockPlayStationStreamEvent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEventAsync(op);
         }
 
         public static Platform.Model.ClawbackInfo<T1, T2>? Execute<T1, T2>(
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEvent<T1, T2>(op);
+        }
+        public static async Task<Platform.Model.ClawbackInfo<T1, T2>?> ExecuteAsync<T1, T2>(
+            this MockPlayStationStreamEvent.MockPlayStationStreamEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockPlayStationStreamEvent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEventAsync<T1, T2>(op);
         }
     }
 }

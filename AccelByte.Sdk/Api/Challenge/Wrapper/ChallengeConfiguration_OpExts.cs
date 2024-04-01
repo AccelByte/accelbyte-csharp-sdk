@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetChallenges(op);
         }
+        public static async Task<Challenge.Model.ModelListChallengeResponse?> ExecuteAsync(
+            this AdminGetChallenges.AdminGetChallengesBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetChallenges op = builder.Build(
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetChallengesAsync(op);
+        }
         public static Challenge.Model.ModelChallengeResponse? Execute(
             this AdminCreateChallenge.AdminCreateChallengeBuilder builder,
             ModelCreateChallengeRequest body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminCreateChallenge(op);
         }
+        public static async Task<Challenge.Model.ModelChallengeResponse?> ExecuteAsync(
+            this AdminCreateChallenge.AdminCreateChallengeBuilder builder,
+            ModelCreateChallengeRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateChallenge op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminCreateChallengeAsync(op);
+        }
         public static Challenge.Model.ModelChallengeResponse? Execute(
             this AdminGetChallenge.AdminGetChallengeBuilder builder,
             string challengeCode,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetChallenge(op);
+        }
+        public static async Task<Challenge.Model.ModelChallengeResponse?> ExecuteAsync(
+            this AdminGetChallenge.AdminGetChallengeBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminGetChallenge op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetChallengeAsync(op);
         }
         public static Challenge.Model.ModelChallengeResponse? Execute(
             this AdminUpdateChallenge.AdminUpdateChallengeBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminUpdateChallenge(op);
         }
+        public static async Task<Challenge.Model.ModelChallengeResponse?> ExecuteAsync(
+            this AdminUpdateChallenge.AdminUpdateChallengeBuilder builder,
+            ModelsUpdateChallengeRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminUpdateChallenge op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminUpdateChallengeAsync(op);
+        }
         public static void Execute(
             this AdminDeleteChallenge.AdminDeleteChallengeBuilder builder,
             string challengeCode,
@@ -76,6 +128,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminDeleteChallenge(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteChallenge.AdminDeleteChallengeBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminDeleteChallenge op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminDeleteChallengeAsync(op);
         }
         public static Challenge.Model.ModelListPeriodsResponse? Execute(
             this AdminGetPeriods.AdminGetPeriodsBuilder builder,
@@ -90,6 +155,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetPeriods(op);
         }
+        public static async Task<Challenge.Model.ModelListPeriodsResponse?> ExecuteAsync(
+            this AdminGetPeriods.AdminGetPeriodsBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminGetPeriods op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetPeriodsAsync(op);
+        }
         public static List<Challenge.Model.ModelSchedule>? Execute(
             this AdminRandomizeChallenge.AdminRandomizeChallengeBuilder builder,
             string challengeCode,
@@ -103,6 +181,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminRandomizeChallenge(op);
         }
+        public static async Task<List<Challenge.Model.ModelSchedule>?> ExecuteAsync(
+            this AdminRandomizeChallenge.AdminRandomizeChallengeBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminRandomizeChallenge op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminRandomizeChallengeAsync(op);
+        }
         public static void Execute(
             this AdminDeleteTiedChallenge.AdminDeleteTiedChallengeBuilder builder,
             string challengeCode,
@@ -115,6 +206,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminDeleteTiedChallenge(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteTiedChallenge.AdminDeleteTiedChallengeBuilder builder,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminDeleteTiedChallenge op = builder.Build(
+                challengeCode,
+                namespace_
+            );
+
+            await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminDeleteTiedChallengeAsync(op);
         }
     }
 }

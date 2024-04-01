@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Config)builder.WrapperObject!).CreateConfig(op);
         }
+        public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
+            this CreateConfig.CreateConfigBuilder builder,
+            string namespace_
+        )
+        {
+            CreateConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).CreateConfigAsync(op);
+        }
         public static Basic.Model.ConfigInfo? Execute(
             this GetConfig1.GetConfig1Builder builder,
             string configKey,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfig1(op);
+        }
+        public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
+            this GetConfig1.GetConfig1Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            GetConfig1 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfig1Async(op);
         }
         public static void Execute(
             this DeleteConfig1.DeleteConfig1Builder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfig1(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteConfig1.DeleteConfig1Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            DeleteConfig1 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            await ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfig1Async(op);
+        }
         public static Basic.Model.ConfigInfo? Execute(
             this UpdateConfig1.UpdateConfig1Builder builder,
             string configKey,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig1(op);
         }
+        public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
+            this UpdateConfig1.UpdateConfig1Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            UpdateConfig1 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig1Async(op);
+        }
         public static Basic.Model.ConfigInfo? Execute(
             this GetPublisherConfig.GetPublisherConfigBuilder builder,
             string configKey,
@@ -74,6 +124,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Basic.Wrapper.Config)builder.WrapperObject!).GetPublisherConfig(op);
+        }
+        public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
+            this GetPublisherConfig.GetPublisherConfigBuilder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            GetPublisherConfig op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).GetPublisherConfigAsync(op);
         }
     }
 }

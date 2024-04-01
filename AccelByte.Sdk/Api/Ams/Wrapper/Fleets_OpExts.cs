@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetList(op);
         }
+        public static async Task<Ams.Model.ApiFleetListResponse?> ExecuteAsync(
+            this FleetList.FleetListBuilder builder,
+            string namespace_
+        )
+        {
+            FleetList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetListAsync(op);
+        }
         public static Ams.Model.ApiFleetCreateResponse? Execute(
             this FleetCreate.FleetCreateBuilder builder,
             ApiFleetParameters body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetCreate(op);
         }
+        public static async Task<Ams.Model.ApiFleetCreateResponse?> ExecuteAsync(
+            this FleetCreate.FleetCreateBuilder builder,
+            ApiFleetParameters body,
+            string namespace_
+        )
+        {
+            FleetCreate op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetCreateAsync(op);
+        }
         public static Ams.Model.ApiFleetGetResponse? Execute(
             this FleetGet.FleetGetBuilder builder,
             string fleetID,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetGet(op);
+        }
+        public static async Task<Ams.Model.ApiFleetGetResponse?> ExecuteAsync(
+            this FleetGet.FleetGetBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetGet op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetGetAsync(op);
         }
         public static void Execute(
             this FleetUpdate.FleetUpdateBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetUpdate(op);
         }
+        public static async Task ExecuteAsync(
+            this FleetUpdate.FleetUpdateBuilder builder,
+            ApiFleetParameters body,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetUpdate op = builder.Build(
+                body,
+                fleetID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetUpdateAsync(op);
+        }
         public static void Execute(
             this FleetDelete.FleetDeleteBuilder builder,
             string fleetID,
@@ -77,6 +129,19 @@ namespace AccelByte.Sdk.Api
 
             ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetDelete(op);
         }
+        public static async Task ExecuteAsync(
+            this FleetDelete.FleetDeleteBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetDelete op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetDeleteAsync(op);
+        }
         public static Ams.Model.ApiFleetServersResponse? Execute(
             this FleetServers.FleetServersBuilder builder,
             string fleetID,
@@ -89,6 +154,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetServers(op);
+        }
+        public static async Task<Ams.Model.ApiFleetServersResponse?> ExecuteAsync(
+            this FleetServers.FleetServersBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetServers op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetServersAsync(op);
         }
         public static Ams.Model.ApiFleetClaimResponse? Execute(
             this FleetClaimByID.FleetClaimByIDBuilder builder,
@@ -105,6 +183,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetClaimByID(op);
         }
+        public static async Task<Ams.Model.ApiFleetClaimResponse?> ExecuteAsync(
+            this FleetClaimByID.FleetClaimByIDBuilder builder,
+            ApiFleetClaimReq body,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetClaimByID op = builder.Build(
+                body,
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetClaimByIDAsync(op);
+        }
         public static Ams.Model.ApiFleetClaimResponse? Execute(
             this FleetClaimByKeys.FleetClaimByKeysBuilder builder,
             ApiFleetClaimByKeysReq body,
@@ -117,6 +210,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetClaimByKeys(op);
+        }
+        public static async Task<Ams.Model.ApiFleetClaimResponse?> ExecuteAsync(
+            this FleetClaimByKeys.FleetClaimByKeysBuilder builder,
+            ApiFleetClaimByKeysReq body,
+            string namespace_
+        )
+        {
+            FleetClaimByKeys op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetClaimByKeysAsync(op);
         }
     }
 }

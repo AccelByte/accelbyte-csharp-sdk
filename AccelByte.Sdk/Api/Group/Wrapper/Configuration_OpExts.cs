@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).ListGroupConfigurationAdminV1(op);
         }
+        public static async Task<Group.Model.ModelsListConfigurationResponseV1?> ExecuteAsync(
+            this ListGroupConfigurationAdminV1.ListGroupConfigurationAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            ListGroupConfigurationAdminV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).ListGroupConfigurationAdminV1Async(op);
+        }
         public static Group.Model.ModelsCreateGroupConfigurationResponseV1? Execute(
             this CreateGroupConfigurationAdminV1.CreateGroupConfigurationAdminV1Builder builder,
             ModelsCreateGroupConfigurationRequestV1 body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).CreateGroupConfigurationAdminV1(op);
         }
+        public static async Task<Group.Model.ModelsCreateGroupConfigurationResponseV1?> ExecuteAsync(
+            this CreateGroupConfigurationAdminV1.CreateGroupConfigurationAdminV1Builder builder,
+            ModelsCreateGroupConfigurationRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateGroupConfigurationAdminV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).CreateGroupConfigurationAdminV1Async(op);
+        }
         public static Group.Model.ModelsCreateGroupConfigurationResponseV1? Execute(
             this InitiateGroupConfigurationAdminV1.InitiateGroupConfigurationAdminV1Builder builder,
             string namespace_
@@ -46,6 +70,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).InitiateGroupConfigurationAdminV1(op);
+        }
+        public static async Task<Group.Model.ModelsCreateGroupConfigurationResponseV1?> ExecuteAsync(
+            this InitiateGroupConfigurationAdminV1.InitiateGroupConfigurationAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            InitiateGroupConfigurationAdminV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).InitiateGroupConfigurationAdminV1Async(op);
         }
         public static Group.Model.ModelsGetGroupConfigurationResponseV1? Execute(
             this GetGroupConfigurationAdminV1.GetGroupConfigurationAdminV1Builder builder,
@@ -60,6 +95,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).GetGroupConfigurationAdminV1(op);
         }
+        public static async Task<Group.Model.ModelsGetGroupConfigurationResponseV1?> ExecuteAsync(
+            this GetGroupConfigurationAdminV1.GetGroupConfigurationAdminV1Builder builder,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            GetGroupConfigurationAdminV1 op = builder.Build(
+                configurationCode,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).GetGroupConfigurationAdminV1Async(op);
+        }
         public static void Execute(
             this DeleteGroupConfigurationV1.DeleteGroupConfigurationV1Builder builder,
             string configurationCode,
@@ -72,6 +120,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGroupConfigurationV1.DeleteGroupConfigurationV1Builder builder,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            DeleteGroupConfigurationV1 op = builder.Build(
+                configurationCode,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationV1Async(op);
         }
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this UpdateGroupConfigurationAdminV1.UpdateGroupConfigurationAdminV1Builder builder,
@@ -87,6 +148,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationAdminV1(op);
+        }
+        public static async Task<Group.Model.ModelsUpdateGroupConfigurationResponseV1?> ExecuteAsync(
+            this UpdateGroupConfigurationAdminV1.UpdateGroupConfigurationAdminV1Builder builder,
+            ModelsUpdateGroupConfigurationRequestV1 body,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            UpdateGroupConfigurationAdminV1 op = builder.Build(
+                body,
+                configurationCode,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationAdminV1Async(op);
         }
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this UpdateGroupConfigurationGlobalRuleAdminV1.UpdateGroupConfigurationGlobalRuleAdminV1Builder builder,
@@ -105,6 +181,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationGlobalRuleAdminV1(op);
         }
+        public static async Task<Group.Model.ModelsUpdateGroupConfigurationResponseV1?> ExecuteAsync(
+            this UpdateGroupConfigurationGlobalRuleAdminV1.UpdateGroupConfigurationGlobalRuleAdminV1Builder builder,
+            ModelsUpdateGroupConfigurationGlobalRulesRequestV1 body,
+            string allowedAction,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            UpdateGroupConfigurationGlobalRuleAdminV1 op = builder.Build(
+                body,
+                allowedAction,
+                configurationCode,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).UpdateGroupConfigurationGlobalRuleAdminV1Async(op);
+        }
         public static Group.Model.ModelsUpdateGroupConfigurationResponseV1? Execute(
             this DeleteGroupConfigurationGlobalRuleAdminV1.DeleteGroupConfigurationGlobalRuleAdminV1Builder builder,
             string allowedAction,
@@ -119,6 +212,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationGlobalRuleAdminV1(op);
+        }
+        public static async Task<Group.Model.ModelsUpdateGroupConfigurationResponseV1?> ExecuteAsync(
+            this DeleteGroupConfigurationGlobalRuleAdminV1.DeleteGroupConfigurationGlobalRuleAdminV1Builder builder,
+            string allowedAction,
+            string configurationCode,
+            string namespace_
+        )
+        {
+            DeleteGroupConfigurationGlobalRuleAdminV1 op = builder.Build(
+                allowedAction,
+                configurationCode,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Configuration)builder.WrapperObject!).DeleteGroupConfigurationGlobalRuleAdminV1Async(op);
         }
     }
 }

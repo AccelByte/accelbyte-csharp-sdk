@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Config)builder.WrapperObject!).AdminGetConfigValueV3(op);
         }
+        public static async Task<Iam.Model.ModelConfigValueResponseV3?> ExecuteAsync(
+            this AdminGetConfigValueV3.AdminGetConfigValueV3Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            AdminGetConfigValueV3 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Config)builder.WrapperObject!).AdminGetConfigValueV3Async(op);
+        }
 
         public static Iam.Model.ModelConfigValueResponseV3<T1>? Execute<T1>(
             this AdminGetConfigValueV3.AdminGetConfigValueV3Builder builder,
@@ -39,6 +52,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.Config)builder.WrapperObject!).AdminGetConfigValueV3<T1>(op);
         }
+        public static async Task<Iam.Model.ModelConfigValueResponseV3<T1>?> ExecuteAsync<T1>(
+            this AdminGetConfigValueV3.AdminGetConfigValueV3Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            AdminGetConfigValueV3 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Config)builder.WrapperObject!).AdminGetConfigValueV3Async<T1>(op);
+        }
         public static Iam.Model.ModelConfigValueResponseV3? Execute(
             this PublicGetConfigValueV3.PublicGetConfigValueV3Builder builder,
             string configKey,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetConfigValueV3(op);
+        }
+        public static async Task<Iam.Model.ModelConfigValueResponseV3?> ExecuteAsync(
+            this PublicGetConfigValueV3.PublicGetConfigValueV3Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            PublicGetConfigValueV3 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetConfigValueV3Async(op);
         }
 
         public static Iam.Model.ModelConfigValueResponseV3<T1>? Execute<T1>(
@@ -65,6 +104,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetConfigValueV3<T1>(op);
+        }
+        public static async Task<Iam.Model.ModelConfigValueResponseV3<T1>?> ExecuteAsync<T1>(
+            this PublicGetConfigValueV3.PublicGetConfigValueV3Builder builder,
+            string configKey,
+            string namespace_
+        )
+        {
+            PublicGetConfigValueV3 op = builder.Build(
+                configKey,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetConfigValueV3Async<T1>(op);
         }
     }
 }

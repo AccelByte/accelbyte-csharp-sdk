@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QuerySeasons(op);
         }
+        public static async Task<Seasonpass.Model.ListSeasonInfoPagingSlicedResult?> ExecuteAsync(
+            this QuerySeasons.QuerySeasonsBuilder builder,
+            string namespace_
+        )
+        {
+            QuerySeasons op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QuerySeasonsAsync(op);
+        }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this CreateSeason.CreateSeasonBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CreateSeason(op);
+        }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this CreateSeason.CreateSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            CreateSeason op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CreateSeasonAsync(op);
         }
         public static Seasonpass.Model.SeasonSummary? Execute(
             this GetCurrentSeason.GetCurrentSeasonBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentSeason(op);
         }
+        public static async Task<Seasonpass.Model.SeasonSummary?> ExecuteAsync(
+            this GetCurrentSeason.GetCurrentSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            GetCurrentSeason op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentSeasonAsync(op);
+        }
         public static List<Seasonpass.Model.UserSeasonSummary>? Execute(
             this BulkGetUserSeasonProgression.BulkGetUserSeasonProgressionBuilder builder,
             string namespace_
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).BulkGetUserSeasonProgression(op);
+        }
+        public static async Task<List<Seasonpass.Model.UserSeasonSummary>?> ExecuteAsync(
+            this BulkGetUserSeasonProgression.BulkGetUserSeasonProgressionBuilder builder,
+            string namespace_
+        )
+        {
+            BulkGetUserSeasonProgression op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).BulkGetUserSeasonProgressionAsync(op);
         }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this GetSeason.GetSeasonBuilder builder,
@@ -69,6 +113,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetSeason(op);
         }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this GetSeason.GetSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            GetSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetSeasonAsync(op);
+        }
         public static void Execute(
             this DeleteSeason.DeleteSeasonBuilder builder,
             string namespace_,
@@ -81,6 +138,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).DeleteSeason(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteSeason.DeleteSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            DeleteSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).DeleteSeasonAsync(op);
         }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this UpdateSeason.UpdateSeasonBuilder builder,
@@ -95,6 +165,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UpdateSeason(op);
         }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this UpdateSeason.UpdateSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            UpdateSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UpdateSeasonAsync(op);
+        }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this CloneSeason.CloneSeasonBuilder builder,
             string namespace_,
@@ -107,6 +190,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CloneSeason(op);
+        }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this CloneSeason.CloneSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            CloneSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CloneSeasonAsync(op);
         }
         public static Seasonpass.Model.FullSeasonInfo? Execute(
             this GetFullSeason.GetFullSeasonBuilder builder,
@@ -121,6 +217,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetFullSeason(op);
         }
+        public static async Task<Seasonpass.Model.FullSeasonInfo?> ExecuteAsync(
+            this GetFullSeason.GetFullSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            GetFullSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetFullSeasonAsync(op);
+        }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this PublishSeason.PublishSeasonBuilder builder,
             string namespace_,
@@ -133,6 +242,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublishSeason(op);
+        }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this PublishSeason.PublishSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            PublishSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublishSeasonAsync(op);
         }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this RetireSeason.RetireSeasonBuilder builder,
@@ -147,6 +269,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).RetireSeason(op);
         }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this RetireSeason.RetireSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            RetireSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).RetireSeasonAsync(op);
+        }
         public static Seasonpass.Model.SeasonInfo? Execute(
             this UnpublishSeason.UnpublishSeasonBuilder builder,
             string namespace_,
@@ -159,6 +294,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UnpublishSeason(op);
+        }
+        public static async Task<Seasonpass.Model.SeasonInfo?> ExecuteAsync(
+            this UnpublishSeason.UnpublishSeasonBuilder builder,
+            string namespace_,
+            string seasonId
+        )
+        {
+            UnpublishSeason op = builder.Build(
+                namespace_,
+                seasonId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).UnpublishSeasonAsync(op);
         }
         public static Seasonpass.Model.ListUserSeasonInfoPagingSlicedResult? Execute(
             this GetUserParticipatedSeasons.GetUserParticipatedSeasonsBuilder builder,
@@ -173,6 +321,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserParticipatedSeasons(op);
         }
+        public static async Task<Seasonpass.Model.ListUserSeasonInfoPagingSlicedResult?> ExecuteAsync(
+            this GetUserParticipatedSeasons.GetUserParticipatedSeasonsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserParticipatedSeasons op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserParticipatedSeasonsAsync(op);
+        }
         public static Seasonpass.Model.Ownership? Execute(
             this ExistsAnyPassByPassCodes.ExistsAnyPassByPassCodesBuilder builder,
             string namespace_,
@@ -185,6 +346,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ExistsAnyPassByPassCodes(op);
+        }
+        public static async Task<Seasonpass.Model.Ownership?> ExecuteAsync(
+            this ExistsAnyPassByPassCodes.ExistsAnyPassByPassCodesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ExistsAnyPassByPassCodes op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ExistsAnyPassByPassCodesAsync(op);
         }
         public static Seasonpass.Model.UserSeasonSummary? Execute(
             this GetCurrentUserSeasonProgression.GetCurrentUserSeasonProgressionBuilder builder,
@@ -199,6 +373,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentUserSeasonProgression(op);
         }
+        public static async Task<Seasonpass.Model.UserSeasonSummary?> ExecuteAsync(
+            this GetCurrentUserSeasonProgression.GetCurrentUserSeasonProgressionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetCurrentUserSeasonProgression op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetCurrentUserSeasonProgressionAsync(op);
+        }
         public static void Execute(
             this CheckSeasonPurchasable.CheckSeasonPurchasableBuilder builder,
             string namespace_,
@@ -211,6 +398,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CheckSeasonPurchasable(op);
+        }
+        public static async Task ExecuteAsync(
+            this CheckSeasonPurchasable.CheckSeasonPurchasableBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            CheckSeasonPurchasable op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).CheckSeasonPurchasableAsync(op);
         }
         public static void Execute(
             this ResetUserSeason.ResetUserSeasonBuilder builder,
@@ -225,6 +425,19 @@ namespace AccelByte.Sdk.Api
 
             ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ResetUserSeason(op);
         }
+        public static async Task ExecuteAsync(
+            this ResetUserSeason.ResetUserSeasonBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            ResetUserSeason op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).ResetUserSeasonAsync(op);
+        }
         public static Seasonpass.Model.ExpGrantHistoryPagingSlicedResult? Execute(
             this QueryUserExpGrantHistory.QueryUserExpGrantHistoryBuilder builder,
             string namespace_,
@@ -238,6 +451,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistory(op);
         }
+        public static async Task<Seasonpass.Model.ExpGrantHistoryPagingSlicedResult?> ExecuteAsync(
+            this QueryUserExpGrantHistory.QueryUserExpGrantHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserExpGrantHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistoryAsync(op);
+        }
         public static Seasonpass.Model.ReasonTagsResult? Execute(
             this QueryUserExpGrantHistoryTag.QueryUserExpGrantHistoryTagBuilder builder,
             string namespace_,
@@ -250,6 +476,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistoryTag(op);
+        }
+        public static async Task<Seasonpass.Model.ReasonTagsResult?> ExecuteAsync(
+            this QueryUserExpGrantHistoryTag.QueryUserExpGrantHistoryTagBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserExpGrantHistoryTag op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).QueryUserExpGrantHistoryTagAsync(op);
         }
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this GetUserSeason.GetUserSeasonBuilder builder,
@@ -265,6 +504,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeason(op);
+        }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo?> ExecuteAsync(
+            this GetUserSeason.GetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            GetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeasonAsync(op);
         }
 
         public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
@@ -282,6 +536,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeason<T1, T2>(op);
         }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>?> ExecuteAsync<T1, T2>(
+            this GetUserSeason.GetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            GetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).GetUserSeasonAsync<T1, T2>(op);
+        }
         public static Seasonpass.Model.LocalizedSeasonInfo? Execute(
             this PublicGetCurrentSeason.PublicGetCurrentSeasonBuilder builder,
             string namespace_
@@ -292,6 +561,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentSeason(op);
+        }
+        public static async Task<Seasonpass.Model.LocalizedSeasonInfo?> ExecuteAsync(
+            this PublicGetCurrentSeason.PublicGetCurrentSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetCurrentSeason op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentSeasonAsync(op);
         }
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
@@ -306,6 +586,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeason(op);
         }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo?> ExecuteAsync(
+            this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetCurrentUserSeason op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeasonAsync(op);
+        }
 
         public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
             this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
@@ -319,6 +612,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeason<T1, T2>(op);
+        }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicGetCurrentUserSeason.PublicGetCurrentUserSeasonBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetCurrentUserSeason op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetCurrentUserSeasonAsync<T1, T2>(op);
         }
         public static Seasonpass.Model.ClaimableUserSeasonInfo? Execute(
             this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
@@ -335,6 +641,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeason(op);
         }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo?> ExecuteAsync(
+            this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            PublicGetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeasonAsync(op);
+        }
 
         public static Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>? Execute<T1, T2>(
             this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
@@ -350,6 +671,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeason<T1, T2>(op);
+        }
+        public static async Task<Seasonpass.Model.ClaimableUserSeasonInfo<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicGetUserSeason.PublicGetUserSeasonBuilder builder,
+            string namespace_,
+            string seasonId,
+            string userId
+        )
+        {
+            PublicGetUserSeason op = builder.Build(
+                namespace_,
+                seasonId,
+                userId
+            );
+
+            return await ((Seasonpass.Wrapper.Season)builder.WrapperObject!).PublicGetUserSeasonAsync<T1, T2>(op);
         }
     }
 }

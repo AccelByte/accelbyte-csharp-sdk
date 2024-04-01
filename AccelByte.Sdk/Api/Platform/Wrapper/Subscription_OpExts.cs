@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).QuerySubscriptions(op);
         }
+        public static async Task<Platform.Model.SubscriptionPagingSlicedResult?> ExecuteAsync(
+            this QuerySubscriptions.QuerySubscriptionsBuilder builder,
+            string namespace_
+        )
+        {
+            QuerySubscriptions op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).QuerySubscriptionsAsync(op);
+        }
         public static Platform.Model.RecurringChargeResult? Execute(
             this RecurringChargeSubscription.RecurringChargeSubscriptionBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).RecurringChargeSubscription(op);
+        }
+        public static async Task<Platform.Model.RecurringChargeResult?> ExecuteAsync(
+            this RecurringChargeSubscription.RecurringChargeSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId
+        )
+        {
+            RecurringChargeSubscription op = builder.Build(
+                namespace_,
+                subscriptionId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).RecurringChargeSubscriptionAsync(op);
         }
         public static Platform.Model.SubscriptionPagingSlicedResult? Execute(
             this QueryUserSubscriptions.QueryUserSubscriptionsBuilder builder,
@@ -49,6 +73,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).QueryUserSubscriptions(op);
         }
+        public static async Task<Platform.Model.SubscriptionPagingSlicedResult?> ExecuteAsync(
+            this QueryUserSubscriptions.QueryUserSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            QueryUserSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).QueryUserSubscriptionsAsync(op);
+        }
         public static Platform.Model.SubscriptionActivityPagingSlicedResult? Execute(
             this GetUserSubscriptionActivities.GetUserSubscriptionActivitiesBuilder builder,
             string namespace_,
@@ -62,6 +99,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscriptionActivities(op);
         }
+        public static async Task<Platform.Model.SubscriptionActivityPagingSlicedResult?> ExecuteAsync(
+            this GetUserSubscriptionActivities.GetUserSubscriptionActivitiesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserSubscriptionActivities op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscriptionActivitiesAsync(op);
+        }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PlatformSubscribeSubscription.PlatformSubscribeSubscriptionBuilder builder,
             string namespace_,
@@ -74,6 +124,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PlatformSubscribeSubscription(op);
+        }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this PlatformSubscribeSubscription.PlatformSubscribeSubscriptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PlatformSubscribeSubscription op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PlatformSubscribeSubscriptionAsync(op);
         }
         public static Platform.Model.Subscribable? Execute(
             this CheckUserSubscriptionSubscribableByItemId.CheckUserSubscriptionSubscribableByItemIdBuilder builder,
@@ -90,6 +153,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).CheckUserSubscriptionSubscribableByItemId(op);
         }
+        public static async Task<Platform.Model.Subscribable?> ExecuteAsync(
+            this CheckUserSubscriptionSubscribableByItemId.CheckUserSubscriptionSubscribableByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            CheckUserSubscriptionSubscribableByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).CheckUserSubscriptionSubscribableByItemIdAsync(op);
+        }
         public static Platform.Model.SubscriptionInfo? Execute(
             this GetUserSubscription.GetUserSubscriptionBuilder builder,
             string namespace_,
@@ -104,6 +182,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscription(op);
+        }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this GetUserSubscription.GetUserSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            GetUserSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscriptionAsync(op);
         }
         public static void Execute(
             this DeleteUserSubscription.DeleteUserSubscriptionBuilder builder,
@@ -120,6 +213,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Subscription)builder.WrapperObject!).DeleteUserSubscription(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteUserSubscription.DeleteUserSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            DeleteUserSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            await ((Platform.Wrapper.Subscription)builder.WrapperObject!).DeleteUserSubscriptionAsync(op);
+        }
         public static Platform.Model.SubscriptionInfo? Execute(
             this CancelSubscription.CancelSubscriptionBuilder builder,
             string namespace_,
@@ -134,6 +242,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).CancelSubscription(op);
+        }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this CancelSubscription.CancelSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            CancelSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).CancelSubscriptionAsync(op);
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this GrantDaysToSubscription.GrantDaysToSubscriptionBuilder builder,
@@ -150,6 +273,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).GrantDaysToSubscription(op);
         }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this GrantDaysToSubscription.GrantDaysToSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            GrantDaysToSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).GrantDaysToSubscriptionAsync(op);
+        }
         public static Platform.Model.BillingHistoryPagingSlicedResult? Execute(
             this GetUserSubscriptionBillingHistories.GetUserSubscriptionBillingHistoriesBuilder builder,
             string namespace_,
@@ -164,6 +302,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscriptionBillingHistories(op);
+        }
+        public static async Task<Platform.Model.BillingHistoryPagingSlicedResult?> ExecuteAsync(
+            this GetUserSubscriptionBillingHistories.GetUserSubscriptionBillingHistoriesBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            GetUserSubscriptionBillingHistories op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).GetUserSubscriptionBillingHistoriesAsync(op);
         }
         public static void Execute(
             this ProcessUserSubscriptionNotification.ProcessUserSubscriptionNotificationBuilder builder,
@@ -180,6 +333,21 @@ namespace AccelByte.Sdk.Api
 
             ((Platform.Wrapper.Subscription)builder.WrapperObject!).ProcessUserSubscriptionNotification(op);
         }
+        public static async Task ExecuteAsync(
+            this ProcessUserSubscriptionNotification.ProcessUserSubscriptionNotificationBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            ProcessUserSubscriptionNotification op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            await ((Platform.Wrapper.Subscription)builder.WrapperObject!).ProcessUserSubscriptionNotificationAsync(op);
+        }
         public static Platform.Model.SubscriptionPagingSlicedResult? Execute(
             this PublicQueryUserSubscriptions.PublicQueryUserSubscriptionsBuilder builder,
             string namespace_,
@@ -193,6 +361,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicQueryUserSubscriptions(op);
         }
+        public static async Task<Platform.Model.SubscriptionPagingSlicedResult?> ExecuteAsync(
+            this PublicQueryUserSubscriptions.PublicQueryUserSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicQueryUserSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicQueryUserSubscriptionsAsync(op);
+        }
         public static void Execute(
             this PublicSubscribeSubscription.PublicSubscribeSubscriptionBuilder builder,
             string namespace_,
@@ -205,6 +386,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicSubscribeSubscription(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicSubscribeSubscription.PublicSubscribeSubscriptionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicSubscribeSubscription op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicSubscribeSubscriptionAsync(op);
         }
         public static Platform.Model.Subscribable? Execute(
             this PublicCheckUserSubscriptionSubscribableByItemId.PublicCheckUserSubscriptionSubscribableByItemIdBuilder builder,
@@ -221,6 +415,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicCheckUserSubscriptionSubscribableByItemId(op);
         }
+        public static async Task<Platform.Model.Subscribable?> ExecuteAsync(
+            this PublicCheckUserSubscriptionSubscribableByItemId.PublicCheckUserSubscriptionSubscribableByItemIdBuilder builder,
+            string namespace_,
+            string userId,
+            string itemId
+        )
+        {
+            PublicCheckUserSubscriptionSubscribableByItemId op = builder.Build(
+                namespace_,
+                userId,
+                itemId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicCheckUserSubscriptionSubscribableByItemIdAsync(op);
+        }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PublicGetUserSubscription.PublicGetUserSubscriptionBuilder builder,
             string namespace_,
@@ -235,6 +444,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicGetUserSubscription(op);
+        }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this PublicGetUserSubscription.PublicGetUserSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PublicGetUserSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicGetUserSubscriptionAsync(op);
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PublicChangeSubscriptionBillingAccount.PublicChangeSubscriptionBillingAccountBuilder builder,
@@ -251,6 +475,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicChangeSubscriptionBillingAccount(op);
         }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this PublicChangeSubscriptionBillingAccount.PublicChangeSubscriptionBillingAccountBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PublicChangeSubscriptionBillingAccount op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicChangeSubscriptionBillingAccountAsync(op);
+        }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PublicCancelSubscription.PublicCancelSubscriptionBuilder builder,
             string namespace_,
@@ -266,6 +505,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicCancelSubscription(op);
         }
+        public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
+            this PublicCancelSubscription.PublicCancelSubscriptionBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PublicCancelSubscription op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicCancelSubscriptionAsync(op);
+        }
         public static Platform.Model.BillingHistoryPagingSlicedResult? Execute(
             this PublicGetUserSubscriptionBillingHistories.PublicGetUserSubscriptionBillingHistoriesBuilder builder,
             string namespace_,
@@ -280,6 +534,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicGetUserSubscriptionBillingHistories(op);
+        }
+        public static async Task<Platform.Model.BillingHistoryPagingSlicedResult?> ExecuteAsync(
+            this PublicGetUserSubscriptionBillingHistories.PublicGetUserSubscriptionBillingHistoriesBuilder builder,
+            string namespace_,
+            string subscriptionId,
+            string userId
+        )
+        {
+            PublicGetUserSubscriptionBillingHistories op = builder.Build(
+                namespace_,
+                subscriptionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Subscription)builder.WrapperObject!).PublicGetUserSubscriptionBillingHistoriesAsync(op);
         }
     }
 }

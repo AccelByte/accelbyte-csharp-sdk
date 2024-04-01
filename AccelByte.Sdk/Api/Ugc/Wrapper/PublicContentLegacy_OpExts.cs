@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).SearchChannelSpecificContent(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this SearchChannelSpecificContent.SearchChannelSpecificContentBuilder builder,
+            string channelId,
+            string namespace_
+        )
+        {
+            SearchChannelSpecificContent op = builder.Build(
+                channelId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).SearchChannelSpecificContentAsync(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this PublicSearchContent.PublicSearchContentBuilder builder,
             string namespace_
@@ -35,6 +48,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicSearchContent(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this PublicSearchContent.PublicSearchContentBuilder builder,
+            string namespace_
+        )
+        {
+            PublicSearchContent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicSearchContentAsync(op);
         }
         public static List<Ugc.Model.ModelsContentDownloadResponse>? Execute(
             this PublicGetContentBulk.PublicGetContentBulkBuilder builder,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulk(op);
+        }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponse>?> ExecuteAsync(
+            this PublicGetContentBulk.PublicGetContentBulkBuilder builder,
+            ModelsPublicGetContentBulkRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulk op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkAsync(op);
         }
 
         public static List<Ugc.Model.ModelsContentDownloadResponse<T1>>? Execute<T1>(
@@ -63,6 +100,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulk<T1>(op);
         }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponse<T1>>?> ExecuteAsync<T1>(
+            this PublicGetContentBulk.PublicGetContentBulkBuilder builder,
+            ModelsPublicGetContentBulkRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulk op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkAsync<T1>(op);
+        }
         public static List<Ugc.Model.ModelsContentDownloadResponse>? Execute(
             this PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder builder,
             ModelsGetContentBulkByShareCodesRequest body,
@@ -75,6 +125,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodes(op);
+        }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponse>?> ExecuteAsync(
+            this PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodesAsync(op);
         }
 
         public static List<Ugc.Model.ModelsContentDownloadResponse<T1>>? Execute<T1>(
@@ -90,6 +153,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodes<T1>(op);
         }
+        public static async Task<List<Ugc.Model.ModelsContentDownloadResponse<T1>>?> ExecuteAsync<T1>(
+            this PublicGetContentBulkByShareCodes.PublicGetContentBulkByShareCodesBuilder builder,
+            ModelsGetContentBulkByShareCodesRequest body,
+            string namespace_
+        )
+        {
+            PublicGetContentBulkByShareCodes op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetContentBulkByShareCodesAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponse? Execute(
             this PublicDownloadContentByShareCode.PublicDownloadContentByShareCodeBuilder builder,
             string namespace_,
@@ -102,6 +178,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByShareCode(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse?> ExecuteAsync(
+            this PublicDownloadContentByShareCode.PublicDownloadContentByShareCodeBuilder builder,
+            string namespace_,
+            string shareCode
+        )
+        {
+            PublicDownloadContentByShareCode op = builder.Build(
+                namespace_,
+                shareCode
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByShareCodeAsync(op);
         }
 
         public static Ugc.Model.ModelsContentDownloadResponse<T1>? Execute<T1>(
@@ -117,6 +206,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByShareCode<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse<T1>?> ExecuteAsync<T1>(
+            this PublicDownloadContentByShareCode.PublicDownloadContentByShareCodeBuilder builder,
+            string namespace_,
+            string shareCode
+        )
+        {
+            PublicDownloadContentByShareCode op = builder.Build(
+                namespace_,
+                shareCode
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByShareCodeAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsContentDownloadResponse? Execute(
             this PublicDownloadContentByContentID.PublicDownloadContentByContentIDBuilder builder,
             string contentId,
@@ -129,6 +231,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByContentID(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse?> ExecuteAsync(
+            this PublicDownloadContentByContentID.PublicDownloadContentByContentIDBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PublicDownloadContentByContentID op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByContentIDAsync(op);
         }
 
         public static Ugc.Model.ModelsContentDownloadResponse<T1>? Execute<T1>(
@@ -144,6 +259,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByContentID<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponse<T1>?> ExecuteAsync<T1>(
+            this PublicDownloadContentByContentID.PublicDownloadContentByContentIDBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PublicDownloadContentByContentID op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentByContentIDAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsGetContentPreviewResponse? Execute(
             this PublicDownloadContentPreview.PublicDownloadContentPreviewBuilder builder,
             string contentId,
@@ -156,6 +284,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentPreview(op);
+        }
+        public static async Task<Ugc.Model.ModelsGetContentPreviewResponse?> ExecuteAsync(
+            this PublicDownloadContentPreview.PublicDownloadContentPreviewBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PublicDownloadContentPreview op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDownloadContentPreviewAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
@@ -175,6 +316,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentDirect(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this CreateContentDirect.CreateContentDirectBuilder builder,
+            ModelsCreateContentRequest body,
+            string channelId,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateContentDirect op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentDirectAsync(op);
+        }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this CreateContentDirect.CreateContentDirectBuilder builder,
@@ -193,6 +351,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentDirect<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this CreateContentDirect.CreateContentDirectBuilder builder,
+            ModelsCreateContentRequest body,
+            string channelId,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateContentDirect op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentDirectAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this CreateContentS3.CreateContentS3Builder builder,
             ModelsPublicCreateContentRequestS3 body,
@@ -209,6 +384,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentS3(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this CreateContentS3.CreateContentS3Builder builder,
+            ModelsPublicCreateContentRequestS3 body,
+            string channelId,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateContentS3 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentS3Async(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
@@ -228,6 +420,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentS3<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this CreateContentS3.CreateContentS3Builder builder,
+            ModelsPublicCreateContentRequestS3 body,
+            string channelId,
+            string namespace_,
+            string userId
+        )
+        {
+            CreateContentS3 op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).CreateContentS3Async<T1>(op);
+        }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this PublicUpdateContentByShareCode.PublicUpdateContentByShareCodeBuilder builder,
             ModelsUpdateContentRequest body,
@@ -246,6 +455,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCode(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this PublicUpdateContentByShareCode.PublicUpdateContentByShareCodeBuilder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCodeAsync(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
@@ -267,6 +495,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCode<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this PublicUpdateContentByShareCode.PublicUpdateContentByShareCodeBuilder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicUpdateContentByShareCode op = builder.Build(
+                body,
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicUpdateContentByShareCodeAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentS3.UpdateContentS3Builder builder,
             ModelsUpdateContentRequest body,
@@ -285,6 +532,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentS3(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this UpdateContentS3.UpdateContentS3Builder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentS3 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentS3Async(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
@@ -306,6 +572,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentS3<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this UpdateContentS3.UpdateContentS3Builder builder,
+            ModelsUpdateContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentS3 op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentS3Async<T1>(op);
+        }
         public static void Execute(
             this PublicDeleteContentByShareCode.PublicDeleteContentByShareCodeBuilder builder,
             string channelId,
@@ -322,6 +607,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDeleteContentByShareCode(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicDeleteContentByShareCode.PublicDeleteContentByShareCodeBuilder builder,
+            string channelId,
+            string namespace_,
+            string shareCode,
+            string userId
+        )
+        {
+            PublicDeleteContentByShareCode op = builder.Build(
+                channelId,
+                namespace_,
+                shareCode,
+                userId
+            );
+
+            await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicDeleteContentByShareCodeAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
@@ -343,6 +645,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentDirect(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this UpdateContentDirect.UpdateContentDirectBuilder builder,
+            ModelsCreateContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentDirect op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentDirectAsync(op);
+        }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
             this UpdateContentDirect.UpdateContentDirectBuilder builder,
@@ -363,6 +684,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentDirect<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this UpdateContentDirect.UpdateContentDirectBuilder builder,
+            ModelsCreateContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentDirect op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentDirectAsync<T1>(op);
+        }
         public static void Execute(
             this DeleteContent.DeleteContentBuilder builder,
             string channelId,
@@ -379,6 +719,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).DeleteContent(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteContent.DeleteContentBuilder builder,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteContent op = builder.Build(
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).DeleteContentAsync(op);
         }
         public static Ugc.Model.ModelsCreateContentResponse? Execute(
             this UpdateContentShareCode.UpdateContentShareCodeBuilder builder,
@@ -398,6 +755,25 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCode(op);
+        }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse?> ExecuteAsync(
+            this UpdateContentShareCode.UpdateContentShareCodeBuilder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCode op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCodeAsync(op);
         }
 
         public static Ugc.Model.ModelsCreateContentResponse<T1>? Execute<T1>(
@@ -419,6 +795,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCode<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateContentResponse<T1>?> ExecuteAsync<T1>(
+            this UpdateContentShareCode.UpdateContentShareCodeBuilder builder,
+            ModelsUpdateContentShareCodeRequest body,
+            string channelId,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateContentShareCode op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateContentShareCodeAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloadResponse? Execute(
             this PublicGetUserContent.PublicGetUserContentBuilder builder,
             string namespace_,
@@ -431,6 +826,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetUserContent(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloadResponse?> ExecuteAsync(
+            this PublicGetUserContent.PublicGetUserContentBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserContent op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).PublicGetUserContentAsync(op);
         }
         public static Ugc.Model.ModelsUpdateScreenshotResponse? Execute(
             this UpdateScreenshots.UpdateScreenshotsBuilder builder,
@@ -449,6 +857,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateScreenshots(op);
         }
+        public static async Task<Ugc.Model.ModelsUpdateScreenshotResponse?> ExecuteAsync(
+            this UpdateScreenshots.UpdateScreenshotsBuilder builder,
+            ModelsUpdateScreenshotRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateScreenshots op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UpdateScreenshotsAsync(op);
+        }
         public static Ugc.Model.ModelsCreateScreenshotResponse? Execute(
             this UploadContentScreenshot.UploadContentScreenshotBuilder builder,
             ModelsCreateScreenshotRequest body,
@@ -466,6 +891,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UploadContentScreenshot(op);
         }
+        public static async Task<Ugc.Model.ModelsCreateScreenshotResponse?> ExecuteAsync(
+            this UploadContentScreenshot.UploadContentScreenshotBuilder builder,
+            ModelsCreateScreenshotRequest body,
+            string contentId,
+            string namespace_,
+            string userId
+        )
+        {
+            UploadContentScreenshot op = builder.Build(
+                body,
+                contentId,
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).UploadContentScreenshotAsync(op);
+        }
         public static void Execute(
             this DeleteContentScreenshot.DeleteContentScreenshotBuilder builder,
             string contentId,
@@ -482,6 +924,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).DeleteContentScreenshot(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteContentScreenshot.DeleteContentScreenshotBuilder builder,
+            string contentId,
+            string namespace_,
+            string screenshotId,
+            string userId
+        )
+        {
+            DeleteContentScreenshot op = builder.Build(
+                contentId,
+                namespace_,
+                screenshotId,
+                userId
+            );
+
+            await ((Ugc.Wrapper.PublicContentLegacy)builder.WrapperObject!).DeleteContentScreenshotAsync(op);
         }
     }
 }

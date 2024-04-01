@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.SSOSAML20)builder.WrapperObject!).PlatformAuthenticateSAMLV3Handler(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this PlatformAuthenticateSAMLV3Handler.PlatformAuthenticateSAMLV3HandlerBuilder builder,
+            string platformId,
+            string state
+        )
+        {
+            PlatformAuthenticateSAMLV3Handler op = builder.Build(
+                platformId,
+                state
+            );
+
+            return await ((Iam.Wrapper.SSOSAML20)builder.WrapperObject!).PlatformAuthenticateSAMLV3HandlerAsync(op);
         }
     }
 }

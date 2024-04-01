@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycles(op);
         }
+        public static async Task<Social.Model.StatCyclePagingSlicedResult?> ExecuteAsync(
+            this GetStatCycles.GetStatCyclesBuilder builder,
+            string namespace_
+        )
+        {
+            GetStatCycles op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCyclesAsync(op);
+        }
         public static Social.Model.StatCycleInfo? Execute(
             this CreateStatCycle.CreateStatCycleBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).CreateStatCycle(op);
+        }
+        public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
+            this CreateStatCycle.CreateStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            CreateStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).CreateStatCycleAsync(op);
         }
         public static Social.Model.BulkStatCycleResult? Execute(
             this BulkGetStatCycle.BulkGetStatCycleBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycle(op);
         }
+        public static async Task<Social.Model.BulkStatCycleResult?> ExecuteAsync(
+            this BulkGetStatCycle.BulkGetStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            BulkGetStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycleAsync(op);
+        }
         public static Stream? Execute(
             this ExportStatCycle.ExportStatCycleBuilder builder,
             string namespace_
@@ -56,6 +89,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ExportStatCycle(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportStatCycle.ExportStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            ExportStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ExportStatCycleAsync(op);
+        }
         public static Social.Model.StatImportInfo? Execute(
             this ImportStatCycle.ImportStatCycleBuilder builder,
             string namespace_
@@ -66,6 +110,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ImportStatCycle(op);
+        }
+        public static async Task<Social.Model.StatImportInfo?> ExecuteAsync(
+            this ImportStatCycle.ImportStatCycleBuilder builder,
+            string namespace_
+        )
+        {
+            ImportStatCycle op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ImportStatCycleAsync(op);
         }
         public static Social.Model.StatCycleInfo? Execute(
             this GetStatCycle.GetStatCycleBuilder builder,
@@ -80,6 +135,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycle(op);
         }
+        public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
+            this GetStatCycle.GetStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            GetStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycleAsync(op);
+        }
         public static Social.Model.StatCycleInfo? Execute(
             this UpdateStatCycle.UpdateStatCycleBuilder builder,
             string cycleId,
@@ -92,6 +160,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).UpdateStatCycle(op);
+        }
+        public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
+            this UpdateStatCycle.UpdateStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            UpdateStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).UpdateStatCycleAsync(op);
         }
         public static void Execute(
             this DeleteStatCycle.DeleteStatCycleBuilder builder,
@@ -106,6 +187,19 @@ namespace AccelByte.Sdk.Api
 
             ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).DeleteStatCycle(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteStatCycle.DeleteStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            DeleteStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).DeleteStatCycleAsync(op);
+        }
         public static List<Social.Model.BulkStatCycleOperationResult>? Execute(
             this BulkAddStats.BulkAddStatsBuilder builder,
             string cycleId,
@@ -118,6 +212,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStats(op);
+        }
+        public static async Task<List<Social.Model.BulkStatCycleOperationResult>?> ExecuteAsync(
+            this BulkAddStats.BulkAddStatsBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            BulkAddStats op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStatsAsync(op);
         }
 
         public static List<Social.Model.BulkStatCycleOperationResult<T1>>? Execute<T1>(
@@ -133,6 +240,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStats<T1>(op);
         }
+        public static async Task<List<Social.Model.BulkStatCycleOperationResult<T1>>?> ExecuteAsync<T1>(
+            this BulkAddStats.BulkAddStatsBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            BulkAddStats op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkAddStatsAsync<T1>(op);
+        }
         public static Social.Model.StatCycleInfo? Execute(
             this StopStatCycle.StopStatCycleBuilder builder,
             string cycleId,
@@ -146,6 +266,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).StopStatCycle(op);
         }
+        public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
+            this StopStatCycle.StopStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            StopStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).StopStatCycleAsync(op);
+        }
         public static Social.Model.StatCyclePagingSlicedResult? Execute(
             this GetStatCycles1.GetStatCycles1Builder builder,
             string namespace_
@@ -157,6 +290,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycles1(op);
         }
+        public static async Task<Social.Model.StatCyclePagingSlicedResult?> ExecuteAsync(
+            this GetStatCycles1.GetStatCycles1Builder builder,
+            string namespace_
+        )
+        {
+            GetStatCycles1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycles1Async(op);
+        }
         public static Social.Model.BulkStatCycleResult? Execute(
             this BulkGetStatCycle1.BulkGetStatCycle1Builder builder,
             string namespace_
@@ -167,6 +311,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycle1(op);
+        }
+        public static async Task<Social.Model.BulkStatCycleResult?> ExecuteAsync(
+            this BulkGetStatCycle1.BulkGetStatCycle1Builder builder,
+            string namespace_
+        )
+        {
+            BulkGetStatCycle1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).BulkGetStatCycle1Async(op);
         }
         public static Social.Model.StatCycleInfo? Execute(
             this GetStatCycle1.GetStatCycle1Builder builder,
@@ -180,6 +335,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycle1(op);
+        }
+        public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
+            this GetStatCycle1.GetStatCycle1Builder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            GetStatCycle1 op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            return await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).GetStatCycle1Async(op);
         }
     }
 }

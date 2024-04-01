@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem(op);
         }
+        public static async Task<Inventory.Model.ApimodelsItemResp?> ExecuteAsync(
+            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicConsumeMyItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItemAsync(op);
+        }
 
         public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
             this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
@@ -43,6 +58,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem<T1, T2>(op);
         }
+        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
+            ApimodelsConsumeItemReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicConsumeMyItem op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItemAsync<T1, T2>(op);
+        }
         public static Inventory.Model.ApimodelsListItemResp? Execute(
             this PublicListItems.PublicListItemsBuilder builder,
             string inventoryId,
@@ -55,6 +85,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicListItems(op);
+        }
+        public static async Task<Inventory.Model.ApimodelsListItemResp?> ExecuteAsync(
+            this PublicListItems.PublicListItemsBuilder builder,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicListItems op = builder.Build(
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicListItemsAsync(op);
         }
         public static List<Inventory.Model.ApimodelsUpdateItemResp>? Execute(
             this PublicBulkUpdateMyItems.PublicBulkUpdateMyItemsBuilder builder,
@@ -71,6 +114,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicBulkUpdateMyItems(op);
         }
+        public static async Task<List<Inventory.Model.ApimodelsUpdateItemResp>?> ExecuteAsync(
+            this PublicBulkUpdateMyItems.PublicBulkUpdateMyItemsBuilder builder,
+            List<ApimodelsUpdateItemReq> body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicBulkUpdateMyItems op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicBulkUpdateMyItemsAsync(op);
+        }
         public static List<Inventory.Model.ApimodelsUpdateItemResp>? Execute(
             this PublicBulkRemoveMyItems.PublicBulkRemoveMyItemsBuilder builder,
             List<ApimodelsRemoveInventoryItemReq> body,
@@ -86,6 +144,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicBulkRemoveMyItems(op);
         }
+        public static async Task<List<Inventory.Model.ApimodelsUpdateItemResp>?> ExecuteAsync(
+            this PublicBulkRemoveMyItems.PublicBulkRemoveMyItemsBuilder builder,
+            List<ApimodelsRemoveInventoryItemReq> body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicBulkRemoveMyItems op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicBulkRemoveMyItemsAsync(op);
+        }
         public static Inventory.Model.ApimodelsMoveItemsResp? Execute(
             this PublicMoveMyItems.PublicMoveMyItemsBuilder builder,
             ApimodelsMoveItemsReq body,
@@ -100,6 +173,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicMoveMyItems(op);
+        }
+        public static async Task<Inventory.Model.ApimodelsMoveItemsResp?> ExecuteAsync(
+            this PublicMoveMyItems.PublicMoveMyItemsBuilder builder,
+            ApimodelsMoveItemsReq body,
+            string inventoryId,
+            string namespace_
+        )
+        {
+            PublicMoveMyItems op = builder.Build(
+                body,
+                inventoryId,
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicMoveMyItemsAsync(op);
         }
         public static Inventory.Model.ApimodelsItemResp? Execute(
             this PublicGetItem.PublicGetItemBuilder builder,
@@ -118,6 +206,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem(op);
         }
+        public static async Task<Inventory.Model.ApimodelsItemResp?> ExecuteAsync(
+            this PublicGetItem.PublicGetItemBuilder builder,
+            string inventoryId,
+            string namespace_,
+            string slotId,
+            string sourceItemId
+        )
+        {
+            PublicGetItem op = builder.Build(
+                inventoryId,
+                namespace_,
+                slotId,
+                sourceItemId
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItemAsync(op);
+        }
 
         public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
             this PublicGetItem.PublicGetItemBuilder builder,
@@ -135,6 +240,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem<T1, T2>(op);
+        }
+        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2>?> ExecuteAsync<T1, T2>(
+            this PublicGetItem.PublicGetItemBuilder builder,
+            string inventoryId,
+            string namespace_,
+            string slotId,
+            string sourceItemId
+        )
+        {
+            PublicGetItem op = builder.Build(
+                inventoryId,
+                namespace_,
+                slotId,
+                sourceItemId
+            );
+
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItemAsync<T1, T2>(op);
         }
     }
 }

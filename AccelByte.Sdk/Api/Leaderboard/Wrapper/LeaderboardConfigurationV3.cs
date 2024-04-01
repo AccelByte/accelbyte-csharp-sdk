@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -60,7 +60,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetAllLeaderboardConfigsRespV3? GetLeaderboardConfigurationsAdminV3(GetLeaderboardConfigurationsAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetAllLeaderboardConfigsRespV3?> GetLeaderboardConfigurationsAdminV3Async(GetLeaderboardConfigurationsAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -69,7 +76,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetLeaderboardConfigRespV3? CreateLeaderboardConfigurationAdminV3(CreateLeaderboardConfigurationAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetLeaderboardConfigRespV3?> CreateLeaderboardConfigurationAdminV3Async(CreateLeaderboardConfigurationAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -78,7 +92,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsDeleteBulkLeaderboardsResp? DeleteBulkLeaderboardConfigurationAdminV3(DeleteBulkLeaderboardConfigurationAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDeleteBulkLeaderboardsResp?> DeleteBulkLeaderboardConfigurationAdminV3Async(DeleteBulkLeaderboardConfigurationAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -87,7 +108,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetLeaderboardConfigRespV3? GetLeaderboardConfigurationAdminV3(GetLeaderboardConfigurationAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetLeaderboardConfigRespV3?> GetLeaderboardConfigurationAdminV3Async(GetLeaderboardConfigurationAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -96,7 +124,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetLeaderboardConfigRespV3? UpdateLeaderboardConfigurationAdminV3(UpdateLeaderboardConfigurationAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetLeaderboardConfigRespV3?> UpdateLeaderboardConfigurationAdminV3Async(UpdateLeaderboardConfigurationAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -105,7 +140,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public void DeleteLeaderboardConfigurationAdminV3(DeleteLeaderboardConfigurationAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteLeaderboardConfigurationAdminV3Async(DeleteLeaderboardConfigurationAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -114,7 +156,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public void HardDeleteLeaderboardAdminV3(HardDeleteLeaderboardAdminV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task HardDeleteLeaderboardAdminV3Async(HardDeleteLeaderboardAdminV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -123,7 +172,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetAllLeaderboardConfigsPublicRespV3? GetLeaderboardConfigurationsPublicV3(GetLeaderboardConfigurationsPublicV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetAllLeaderboardConfigsPublicRespV3?> GetLeaderboardConfigurationsPublicV3Async(GetLeaderboardConfigurationsPublicV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -132,7 +188,14 @@ namespace AccelByte.Sdk.Api.Leaderboard.Wrapper
         public Model.ModelsGetLeaderboardConfigPublicRespV3? GetLeaderboardConfigurationPublicV3(GetLeaderboardConfigurationPublicV3 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetLeaderboardConfigPublicRespV3?> GetLeaderboardConfigurationPublicV3Async(GetLeaderboardConfigurationPublicV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

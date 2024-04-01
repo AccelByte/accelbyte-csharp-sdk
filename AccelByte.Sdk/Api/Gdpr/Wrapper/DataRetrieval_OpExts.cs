@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetListPersonalDataRequest(op);
         }
+        public static async Task<Gdpr.Model.ModelsListPersonalDataResponse?> ExecuteAsync(
+            this AdminGetListPersonalDataRequest.AdminGetListPersonalDataRequestBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetListPersonalDataRequest op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetListPersonalDataRequestAsync(op);
+        }
         public static Gdpr.Model.ModelsUserPersonalDataResponse? Execute(
             this AdminGetUserPersonalDataRequests.AdminGetUserPersonalDataRequestsBuilder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetUserPersonalDataRequests(op);
         }
+        public static async Task<Gdpr.Model.ModelsUserPersonalDataResponse?> ExecuteAsync(
+            this AdminGetUserPersonalDataRequests.AdminGetUserPersonalDataRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserPersonalDataRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGetUserPersonalDataRequestsAsync(op);
+        }
         public static Gdpr.Model.ModelsDataRetrievalResponse? Execute(
             this AdminRequestDataRetrieval.AdminRequestDataRetrievalBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminRequestDataRetrieval(op);
+        }
+        public static async Task<Gdpr.Model.ModelsDataRetrievalResponse?> ExecuteAsync(
+            this AdminRequestDataRetrieval.AdminRequestDataRetrievalBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminRequestDataRetrieval op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminRequestDataRetrievalAsync(op);
         }
         public static void Execute(
             this AdminCancelUserPersonalDataRequest.AdminCancelUserPersonalDataRequestBuilder builder,
@@ -63,6 +100,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminCancelUserPersonalDataRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminCancelUserPersonalDataRequest.AdminCancelUserPersonalDataRequestBuilder builder,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            AdminCancelUserPersonalDataRequest op = builder.Build(
+                namespace_,
+                requestDate,
+                userId
+            );
+
+            await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminCancelUserPersonalDataRequestAsync(op);
         }
         public static Gdpr.Model.ModelsUserDataURL? Execute(
             this AdminGeneratePersonalDataURL.AdminGeneratePersonalDataURLBuilder builder,
@@ -81,6 +133,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGeneratePersonalDataURL(op);
         }
+        public static async Task<Gdpr.Model.ModelsUserDataURL?> ExecuteAsync(
+            this AdminGeneratePersonalDataURL.AdminGeneratePersonalDataURLBuilder builder,
+            string password,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            AdminGeneratePersonalDataURL op = builder.Build(
+                password,
+                namespace_,
+                requestDate,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).AdminGeneratePersonalDataURLAsync(op);
+        }
         public static Gdpr.Model.ModelsUserPersonalDataResponse? Execute(
             this PublicGetUserPersonalDataRequests.PublicGetUserPersonalDataRequestsBuilder builder,
             string namespace_,
@@ -93,6 +162,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGetUserPersonalDataRequests(op);
+        }
+        public static async Task<Gdpr.Model.ModelsUserPersonalDataResponse?> ExecuteAsync(
+            this PublicGetUserPersonalDataRequests.PublicGetUserPersonalDataRequestsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetUserPersonalDataRequests op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGetUserPersonalDataRequestsAsync(op);
         }
         public static Gdpr.Model.ModelsDataRetrievalResponse? Execute(
             this PublicRequestDataRetrieval.PublicRequestDataRetrievalBuilder builder,
@@ -109,6 +191,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicRequestDataRetrieval(op);
         }
+        public static async Task<Gdpr.Model.ModelsDataRetrievalResponse?> ExecuteAsync(
+            this PublicRequestDataRetrieval.PublicRequestDataRetrievalBuilder builder,
+            string password,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicRequestDataRetrieval op = builder.Build(
+                password,
+                namespace_,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicRequestDataRetrievalAsync(op);
+        }
         public static void Execute(
             this PublicCancelUserPersonalDataRequest.PublicCancelUserPersonalDataRequestBuilder builder,
             string namespace_,
@@ -123,6 +220,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicCancelUserPersonalDataRequest(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicCancelUserPersonalDataRequest.PublicCancelUserPersonalDataRequestBuilder builder,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            PublicCancelUserPersonalDataRequest op = builder.Build(
+                namespace_,
+                requestDate,
+                userId
+            );
+
+            await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicCancelUserPersonalDataRequestAsync(op);
         }
         public static Gdpr.Model.ModelsUserDataURL? Execute(
             this PublicGeneratePersonalDataURL.PublicGeneratePersonalDataURLBuilder builder,
@@ -140,6 +252,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGeneratePersonalDataURL(op);
+        }
+        public static async Task<Gdpr.Model.ModelsUserDataURL?> ExecuteAsync(
+            this PublicGeneratePersonalDataURL.PublicGeneratePersonalDataURLBuilder builder,
+            string password,
+            string namespace_,
+            string requestDate,
+            string userId
+        )
+        {
+            PublicGeneratePersonalDataURL op = builder.Build(
+                password,
+                namespace_,
+                requestDate,
+                userId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrieval)builder.WrapperObject!).PublicGeneratePersonalDataURLAsync(op);
         }
     }
 }

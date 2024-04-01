@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetNamespaceSlotConfig(op);
         }
+        public static async Task<Social.Model.NamespaceSlotConfigInfo?> ExecuteAsync(
+            this GetNamespaceSlotConfig.GetNamespaceSlotConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetNamespaceSlotConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetNamespaceSlotConfigAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.NamespaceSlotConfigInfo? Execute(
             this UpdateNamespaceSlotConfig.UpdateNamespaceSlotConfigBuilder builder,
@@ -36,6 +47,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateNamespaceSlotConfig(op);
         }
+        public static async Task<Social.Model.NamespaceSlotConfigInfo?> ExecuteAsync(
+            this UpdateNamespaceSlotConfig.UpdateNamespaceSlotConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateNamespaceSlotConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateNamespaceSlotConfigAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteNamespaceSlotConfig.DeleteNamespaceSlotConfigBuilder builder,
@@ -47,6 +69,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteNamespaceSlotConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteNamespaceSlotConfig.DeleteNamespaceSlotConfigBuilder builder,
+            string namespace_
+        )
+        {
+            DeleteNamespaceSlotConfig op = builder.Build(
+                namespace_
+            );
+
+            await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteNamespaceSlotConfigAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.UserSlotConfigInfo? Execute(
@@ -62,6 +95,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetUserSlotConfig(op);
         }
+        public static async Task<Social.Model.UserSlotConfigInfo?> ExecuteAsync(
+            this GetUserSlotConfig.GetUserSlotConfigBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserSlotConfig op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).GetUserSlotConfigAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.UserSlotConfigInfo? Execute(
             this UpdateUserSlotConfig.UpdateUserSlotConfigBuilder builder,
@@ -76,6 +122,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateUserSlotConfig(op);
         }
+        public static async Task<Social.Model.UserSlotConfigInfo?> ExecuteAsync(
+            this UpdateUserSlotConfig.UpdateUserSlotConfigBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            UpdateUserSlotConfig op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).UpdateUserSlotConfigAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserSlotConfig.DeleteUserSlotConfigBuilder builder,
@@ -89,6 +148,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteUserSlotConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteUserSlotConfig.DeleteUserSlotConfigBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteUserSlotConfig op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Social.Wrapper.SlotConfig)builder.WrapperObject!).DeleteUserSlotConfigAsync(op);
         }
     }
 }

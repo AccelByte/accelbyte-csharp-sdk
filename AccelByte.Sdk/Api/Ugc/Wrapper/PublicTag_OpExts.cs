@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicTag)builder.WrapperObject!).GetTag(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedGetTagResponse?> ExecuteAsync(
+            this GetTag.GetTagBuilder builder,
+            string namespace_
+        )
+        {
+            GetTag op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicTag)builder.WrapperObject!).GetTagAsync(op);
         }
     }
 }

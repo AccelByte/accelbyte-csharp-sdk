@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminListAchievements(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedAchievementResponse?> ExecuteAsync(
+            this AdminListAchievements.AdminListAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListAchievements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminListAchievementsAsync(op);
+        }
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminCreateNewAchievement.AdminCreateNewAchievementBuilder builder,
             ModelsAchievementRequest body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievement(op);
+        }
+        public static async Task<Achievement.Model.ModelsAchievementResponse?> ExecuteAsync(
+            this AdminCreateNewAchievement.AdminCreateNewAchievementBuilder builder,
+            ModelsAchievementRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateNewAchievement op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievementAsync(op);
         }
 
         public static Achievement.Model.ModelsAchievementResponse<T1>? Execute<T1>(
@@ -50,6 +74,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievement<T1>(op);
         }
+        public static async Task<Achievement.Model.ModelsAchievementResponse<T1>?> ExecuteAsync<T1>(
+            this AdminCreateNewAchievement.AdminCreateNewAchievementBuilder builder,
+            ModelsAchievementRequest body,
+            string namespace_
+        )
+        {
+            AdminCreateNewAchievement op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminCreateNewAchievementAsync<T1>(op);
+        }
         public static Stream? Execute(
             this ExportAchievements.ExportAchievementsBuilder builder,
             string namespace_
@@ -61,6 +98,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ExportAchievements(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportAchievements.ExportAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            ExportAchievements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ExportAchievementsAsync(op);
+        }
         public static Achievement.Model.ServiceImportConfigResponse? Execute(
             this ImportAchievements.ImportAchievementsBuilder builder,
             string namespace_
@@ -71,6 +119,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ImportAchievements(op);
+        }
+        public static async Task<Achievement.Model.ServiceImportConfigResponse?> ExecuteAsync(
+            this ImportAchievements.ImportAchievementsBuilder builder,
+            string namespace_
+        )
+        {
+            ImportAchievements op = builder.Build(
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).ImportAchievementsAsync(op);
         }
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminGetAchievement.AdminGetAchievementBuilder builder,
@@ -84,6 +143,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminGetAchievement(op);
+        }
+        public static async Task<Achievement.Model.ModelsAchievementResponse?> ExecuteAsync(
+            this AdminGetAchievement.AdminGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminGetAchievement op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminGetAchievementAsync(op);
         }
 
         public static Achievement.Model.ModelsAchievementResponse<T1>? Execute<T1>(
@@ -99,6 +171,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminGetAchievement<T1>(op);
         }
+        public static async Task<Achievement.Model.ModelsAchievementResponse<T1>?> ExecuteAsync<T1>(
+            this AdminGetAchievement.AdminGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminGetAchievement op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminGetAchievementAsync<T1>(op);
+        }
         public static Achievement.Model.ModelsAchievementResponse? Execute(
             this AdminUpdateAchievement.AdminUpdateAchievementBuilder builder,
             ModelsAchievementUpdateRequest body,
@@ -113,6 +198,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievement(op);
+        }
+        public static async Task<Achievement.Model.ModelsAchievementResponse?> ExecuteAsync(
+            this AdminUpdateAchievement.AdminUpdateAchievementBuilder builder,
+            ModelsAchievementUpdateRequest body,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminUpdateAchievement op = builder.Build(
+                body,
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementAsync(op);
         }
 
         public static Achievement.Model.ModelsAchievementResponse<T1>? Execute<T1>(
@@ -130,6 +230,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievement<T1>(op);
         }
+        public static async Task<Achievement.Model.ModelsAchievementResponse<T1>?> ExecuteAsync<T1>(
+            this AdminUpdateAchievement.AdminUpdateAchievementBuilder builder,
+            ModelsAchievementUpdateRequest body,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminUpdateAchievement op = builder.Build(
+                body,
+                achievementCode,
+                namespace_
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementAsync<T1>(op);
+        }
         public static void Execute(
             this AdminDeleteAchievement.AdminDeleteAchievementBuilder builder,
             string achievementCode,
@@ -142,6 +257,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminDeleteAchievement(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteAchievement.AdminDeleteAchievementBuilder builder,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminDeleteAchievement op = builder.Build(
+                achievementCode,
+                namespace_
+            );
+
+            await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminDeleteAchievementAsync(op);
         }
         public static void Execute(
             this AdminUpdateAchievementListOrder.AdminUpdateAchievementListOrderBuilder builder,
@@ -158,6 +286,21 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementListOrder(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminUpdateAchievementListOrder.AdminUpdateAchievementListOrderBuilder builder,
+            ModelsAchievementOrderUpdateRequest body,
+            string achievementCode,
+            string namespace_
+        )
+        {
+            AdminUpdateAchievementListOrder op = builder.Build(
+                body,
+                achievementCode,
+                namespace_
+            );
+
+            await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).AdminUpdateAchievementListOrderAsync(op);
+        }
         public static Achievement.Model.ModelsPublicAchievementsResponse? Execute(
             this PublicListAchievements.PublicListAchievementsBuilder builder,
             string namespace_,
@@ -170,6 +313,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicListAchievements(op);
+        }
+        public static async Task<Achievement.Model.ModelsPublicAchievementsResponse?> ExecuteAsync(
+            this PublicListAchievements.PublicListAchievementsBuilder builder,
+            string namespace_,
+            string language
+        )
+        {
+            PublicListAchievements op = builder.Build(
+                namespace_,
+                language
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicListAchievementsAsync(op);
         }
         public static Achievement.Model.ModelsPublicAchievementResponse? Execute(
             this PublicGetAchievement.PublicGetAchievementBuilder builder,
@@ -186,6 +342,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievement(op);
         }
+        public static async Task<Achievement.Model.ModelsPublicAchievementResponse?> ExecuteAsync(
+            this PublicGetAchievement.PublicGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string language
+        )
+        {
+            PublicGetAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                language
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievementAsync(op);
+        }
 
         public static Achievement.Model.ModelsPublicAchievementResponse<T1>? Execute<T1>(
             this PublicGetAchievement.PublicGetAchievementBuilder builder,
@@ -201,6 +372,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievement<T1>(op);
+        }
+        public static async Task<Achievement.Model.ModelsPublicAchievementResponse<T1>?> ExecuteAsync<T1>(
+            this PublicGetAchievement.PublicGetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string language
+        )
+        {
+            PublicGetAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                language
+            );
+
+            return await ((Achievement.Wrapper.Achievements)builder.WrapperObject!).PublicGetAchievementAsync<T1>(op);
         }
     }
 }

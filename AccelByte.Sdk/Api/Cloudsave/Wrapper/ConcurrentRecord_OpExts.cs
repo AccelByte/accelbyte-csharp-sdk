@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutGameRecordConcurrentHandlerV1(op);
         }
+        public static async Task ExecuteAsync(
+            this PutGameRecordConcurrentHandlerV1.PutGameRecordConcurrentHandlerV1Builder builder,
+            ModelsConcurrentRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            PutGameRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutGameRecordConcurrentHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
@@ -44,6 +59,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse?> ExecuteAsync(
+            this PutPlayerRecordConcurrentHandlerV1.PutPlayerRecordConcurrentHandlerV1Builder builder,
+            ModelsConcurrentRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerRecordConcurrentHandlerV1Async(op);
+        }
         public static Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse? Execute(
             this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
             ModelsConcurrentRecordRequest body,
@@ -60,6 +92,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsPlayerRecordConcurrentUpdateResponse?> ExecuteAsync(
+            this PutPlayerPublicRecordConcurrentHandlerV1.PutPlayerPublicRecordConcurrentHandlerV1Builder builder,
+            ModelsConcurrentRecordRequest body,
+            string key,
+            string namespace_,
+            string userId
+        )
+        {
+            PutPlayerPublicRecordConcurrentHandlerV1 op = builder.Build(
+                body,
+                key,
+                namespace_,
+                userId
+            );
+
+            return await ((Cloudsave.Wrapper.ConcurrentRecord)builder.WrapperObject!).PutPlayerPublicRecordConcurrentHandlerV1Async(op);
         }
     }
 }

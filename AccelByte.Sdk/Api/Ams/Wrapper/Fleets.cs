@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -56,7 +56,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetListResponse? FleetList(FleetList input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetListResponse?> FleetListAsync(FleetList input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -65,7 +72,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetCreateResponse? FleetCreate(FleetCreate input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetCreateResponse?> FleetCreateAsync(FleetCreate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -74,7 +88,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetGetResponse? FleetGet(FleetGet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetGetResponse?> FleetGetAsync(FleetGet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -83,7 +104,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public void FleetUpdate(FleetUpdate input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task FleetUpdateAsync(FleetUpdate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -92,7 +120,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public void FleetDelete(FleetDelete input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task FleetDeleteAsync(FleetDelete input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -101,7 +136,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetServersResponse? FleetServers(FleetServers input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetServersResponse?> FleetServersAsync(FleetServers input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -110,7 +152,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetClaimResponse? FleetClaimByID(FleetClaimByID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetClaimResponse?> FleetClaimByIDAsync(FleetClaimByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -119,7 +168,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetClaimResponse? FleetClaimByKeys(FleetClaimByKeys input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetClaimResponse?> FleetClaimByKeysAsync(FleetClaimByKeys input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

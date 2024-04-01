@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -72,7 +72,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsGetMemberRolesListResponseV1? GetMemberRolesListAdminV1(GetMemberRolesListAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMemberRolesListResponseV1?> GetMemberRolesListAdminV1Async(GetMemberRolesListAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -81,7 +88,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsMemberRoleResponseV1? CreateMemberRoleAdminV1(CreateMemberRoleAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMemberRoleResponseV1?> CreateMemberRoleAdminV1Async(CreateMemberRoleAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -90,7 +104,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsMemberRoleResponseV1? GetSingleMemberRoleAdminV1(GetSingleMemberRoleAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMemberRoleResponseV1?> GetSingleMemberRoleAdminV1Async(GetSingleMemberRoleAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -99,7 +120,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public void DeleteMemberRoleAdminV1(DeleteMemberRoleAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteMemberRoleAdminV1Async(DeleteMemberRoleAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -108,7 +136,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsMemberRoleResponseV1? UpdateMemberRoleAdminV1(UpdateMemberRoleAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMemberRoleResponseV1?> UpdateMemberRoleAdminV1Async(UpdateMemberRoleAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -117,7 +152,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsMemberRoleResponseV1? UpdateMemberRolePermissionAdminV1(UpdateMemberRolePermissionAdminV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMemberRoleResponseV1?> UpdateMemberRolePermissionAdminV1Async(UpdateMemberRolePermissionAdminV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -126,7 +168,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsGetMemberRolesListResponseV1? GetMemberRolesListPublicV1(GetMemberRolesListPublicV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMemberRolesListResponseV1?> GetMemberRolesListPublicV1Async(GetMemberRolesListPublicV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -135,7 +184,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsGetUserGroupInformationResponseV1? UpdateMemberRolePublicV1(UpdateMemberRolePublicV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetUserGroupInformationResponseV1?> UpdateMemberRolePublicV1Async(UpdateMemberRolePublicV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -144,7 +200,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public void DeleteMemberRolePublicV1(DeleteMemberRolePublicV1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteMemberRolePublicV1Async(DeleteMemberRolePublicV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -153,7 +216,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsGetMemberRolesListResponseV1? GetMemberRolesListPublicV2(GetMemberRolesListPublicV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetMemberRolesListResponseV1?> GetMemberRolesListPublicV2Async(GetMemberRolesListPublicV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -162,7 +232,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public Model.ModelsGetUserGroupInformationResponseV1? UpdateMemberRolePublicV2(UpdateMemberRolePublicV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetUserGroupInformationResponseV1?> UpdateMemberRolePublicV2Async(UpdateMemberRolePublicV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -171,7 +248,14 @@ namespace AccelByte.Sdk.Api.Group.Wrapper
         public void DeleteMemberRolePublicV2(DeleteMemberRolePublicV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteMemberRolePublicV2Async(DeleteMemberRolePublicV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

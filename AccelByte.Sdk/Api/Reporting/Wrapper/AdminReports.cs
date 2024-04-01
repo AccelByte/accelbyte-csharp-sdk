@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -32,7 +32,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiReportListResponse? ListReports(ListReports input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiReportListResponse?> ListReportsAsync(ListReports input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -41,7 +48,14 @@ namespace AccelByte.Sdk.Api.Reporting.Wrapper
         public Model.RestapiSubmitReportResponse? AdminSubmitReport(AdminSubmitReport input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RestapiSubmitReportResponse?> AdminSubmitReportAsync(AdminSubmitReport input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Session)builder.WrapperObject!).CreateSession(op);
         }
+        public static async Task<Dsmc.Model.ModelsSessionResponse?> ExecuteAsync(
+            this CreateSession.CreateSessionBuilder builder,
+            ModelsCreateSessionRequest body,
+            string namespace_
+        )
+        {
+            CreateSession op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Session)builder.WrapperObject!).CreateSessionAsync(op);
+        }
         public static void Execute(
             this ClaimServer.ClaimServerBuilder builder,
             ModelsClaimSessionRequest body,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.Session)builder.WrapperObject!).ClaimServer(op);
+        }
+        public static async Task ExecuteAsync(
+            this ClaimServer.ClaimServerBuilder builder,
+            ModelsClaimSessionRequest body,
+            string namespace_
+        )
+        {
+            ClaimServer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Session)builder.WrapperObject!).ClaimServerAsync(op);
         }
         public static Dsmc.Model.ModelsSessionResponse? Execute(
             this GetSession.GetSessionBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Session)builder.WrapperObject!).GetSession(op);
         }
+        public static async Task<Dsmc.Model.ModelsSessionResponse?> ExecuteAsync(
+            this GetSession.GetSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            GetSession op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            return await ((Dsmc.Wrapper.Session)builder.WrapperObject!).GetSessionAsync(op);
+        }
         public static void Execute(
             this CancelSession.CancelSessionBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.Session)builder.WrapperObject!).CancelSession(op);
+        }
+        public static async Task ExecuteAsync(
+            this CancelSession.CancelSessionBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            CancelSession op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            await ((Dsmc.Wrapper.Session)builder.WrapperObject!).CancelSessionAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminConfigurations)builder.WrapperObject!).Get(op);
         }
+        public static async Task<Reporting.Model.RestapiConfigResponse?> ExecuteAsync(
+            this Get.GetBuilder builder,
+            string namespace_
+        )
+        {
+            Get op = builder.Build(
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.AdminConfigurations)builder.WrapperObject!).GetAsync(op);
+        }
         public static Reporting.Model.RestapiConfigResponse? Execute(
             this Upsert.UpsertBuilder builder,
             RestapiReportingLimit body,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminConfigurations)builder.WrapperObject!).Upsert(op);
+        }
+        public static async Task<Reporting.Model.RestapiConfigResponse?> ExecuteAsync(
+            this Upsert.UpsertBuilder builder,
+            RestapiReportingLimit body,
+            string namespace_
+        )
+        {
+            Upsert op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.AdminConfigurations)builder.WrapperObject!).UpsertAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderCreateResult? CreatePaymentOrderByDedicated(CreatePaymentOrderByDedicated input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderCreateResult?> CreatePaymentOrderByDedicatedAsync(CreatePaymentOrderByDedicated input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -45,7 +52,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderRefundResult? RefundPaymentOrderByDedicated(RefundPaymentOrderByDedicated input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderRefundResult?> RefundPaymentOrderByDedicatedAsync(RefundPaymentOrderByDedicated input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -54,7 +68,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PaymentOrderSyncResult? SyncPaymentOrders(SyncPaymentOrders input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentOrderSyncResult?> SyncPaymentOrdersAsync(SyncPaymentOrders input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

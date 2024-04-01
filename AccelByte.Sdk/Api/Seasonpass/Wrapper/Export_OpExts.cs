@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Seasonpass.Wrapper.Export)builder.WrapperObject!).ExportSeason(op);
+        }
+        public static async Task<Stream?> ExecuteAsync(
+            this ExportSeason.ExportSeasonBuilder builder,
+            string namespace_
+        )
+        {
+            ExportSeason op = builder.Build(
+                namespace_
+            );
+
+            return await ((Seasonpass.Wrapper.Export)builder.WrapperObject!).ExportSeasonAsync(op);
         }
     }
 }

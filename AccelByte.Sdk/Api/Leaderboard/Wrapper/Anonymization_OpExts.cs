@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Leaderboard.Wrapper.Anonymization)builder.WrapperObject!).AdminAnonymizeUserLeaderboardAdminV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminAnonymizeUserLeaderboardAdminV1.AdminAnonymizeUserLeaderboardAdminV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminAnonymizeUserLeaderboardAdminV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Leaderboard.Wrapper.Anonymization)builder.WrapperObject!).AdminAnonymizeUserLeaderboardAdminV1Async(op);
         }
     }
 }

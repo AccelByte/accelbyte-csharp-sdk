@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.Backfill)builder.WrapperObject!).CreateBackfill(op);
         }
+        public static async Task<Match2.Model.ApiBackfillCreateResponse?> ExecuteAsync(
+            this CreateBackfill.CreateBackfillBuilder builder,
+            ApiBackFillCreateRequest body,
+            string namespace_
+        )
+        {
+            CreateBackfill op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).CreateBackfillAsync(op);
+        }
         public static Match2.Model.ApiBackfillProposalResponse? Execute(
             this GetBackfillProposal.GetBackfillProposalBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfillProposal(op);
+        }
+        public static async Task<Match2.Model.ApiBackfillProposalResponse?> ExecuteAsync(
+            this GetBackfillProposal.GetBackfillProposalBuilder builder,
+            string namespace_,
+            string sessionID
+        )
+        {
+            GetBackfillProposal op = builder.Build(
+                namespace_,
+                sessionID
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfillProposalAsync(op);
         }
         public static Match2.Model.ApiBackfillGetResponse? Execute(
             this GetBackfill.GetBackfillBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfill(op);
         }
+        public static async Task<Match2.Model.ApiBackfillGetResponse?> ExecuteAsync(
+            this GetBackfill.GetBackfillBuilder builder,
+            string backfillID,
+            string namespace_
+        )
+        {
+            GetBackfill op = builder.Build(
+                backfillID,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).GetBackfillAsync(op);
+        }
         public static void Execute(
             this DeleteBackfill.DeleteBackfillBuilder builder,
             string backfillID,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.Backfill)builder.WrapperObject!).DeleteBackfill(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteBackfill.DeleteBackfillBuilder builder,
+            string backfillID,
+            string namespace_
+        )
+        {
+            DeleteBackfill op = builder.Build(
+                backfillID,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.Backfill)builder.WrapperObject!).DeleteBackfillAsync(op);
         }
         public static Match2.Model.ModelsGameSession? Execute(
             this AcceptBackfill.AcceptBackfillBuilder builder,
@@ -78,6 +130,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Match2.Wrapper.Backfill)builder.WrapperObject!).AcceptBackfill(op);
+        }
+        public static async Task<Match2.Model.ModelsGameSession?> ExecuteAsync(
+            this AcceptBackfill.AcceptBackfillBuilder builder,
+            ApiBackFillAcceptRequest body,
+            string backfillID,
+            string namespace_
+        )
+        {
+            AcceptBackfill op = builder.Build(
+                body,
+                backfillID,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).AcceptBackfillAsync(op);
         }
 
         public static Match2.Model.ModelsGameSession<T1>? Execute<T1>(
@@ -95,6 +162,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Match2.Wrapper.Backfill)builder.WrapperObject!).AcceptBackfill<T1>(op);
         }
+        public static async Task<Match2.Model.ModelsGameSession<T1>?> ExecuteAsync<T1>(
+            this AcceptBackfill.AcceptBackfillBuilder builder,
+            ApiBackFillAcceptRequest body,
+            string backfillID,
+            string namespace_
+        )
+        {
+            AcceptBackfill op = builder.Build(
+                body,
+                backfillID,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).AcceptBackfillAsync<T1>(op);
+        }
         public static void Execute(
             this RejectBackfill.RejectBackfillBuilder builder,
             ApiBackFillRejectRequest body,
@@ -109,6 +191,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.Backfill)builder.WrapperObject!).RejectBackfill(op);
+        }
+        public static async Task ExecuteAsync(
+            this RejectBackfill.RejectBackfillBuilder builder,
+            ApiBackFillRejectRequest body,
+            string backfillID,
+            string namespace_
+        )
+        {
+            RejectBackfill op = builder.Build(
+                body,
+                backfillID,
+                namespace_
+            );
+
+            await ((Match2.Wrapper.Backfill)builder.WrapperObject!).RejectBackfillAsync(op);
         }
     }
 }

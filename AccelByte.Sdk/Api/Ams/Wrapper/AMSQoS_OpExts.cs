@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsGet(op);
         }
+        public static async Task<Ams.Model.ApiQoSEndpointResponse?> ExecuteAsync(
+            this QoSRegionsGet.QoSRegionsGetBuilder builder,
+            string namespace_
+        )
+        {
+            QoSRegionsGet op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsGetAsync(op);
+        }
         public static void Execute(
             this QoSRegionsUpdate.QoSRegionsUpdateBuilder builder,
             ApiUpdateServerRequest body,
@@ -37,6 +48,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsUpdate(op);
+        }
+        public static async Task ExecuteAsync(
+            this QoSRegionsUpdate.QoSRegionsUpdateBuilder builder,
+            ApiUpdateServerRequest body,
+            string namespace_,
+            string region
+        )
+        {
+            QoSRegionsUpdate op = builder.Build(
+                body,
+                namespace_,
+                region
+            );
+
+            await ((Ams.Wrapper.AMSQoS)builder.WrapperObject!).QoSRegionsUpdateAsync(op);
         }
     }
 }

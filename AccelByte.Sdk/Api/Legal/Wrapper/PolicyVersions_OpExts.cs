@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).UpdatePolicyVersion(op);
         }
+        public static async Task<Legal.Model.UpdatePolicyVersionResponse?> ExecuteAsync(
+            this UpdatePolicyVersion.UpdatePolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            UpdatePolicyVersion op = builder.Build(
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).UpdatePolicyVersionAsync(op);
+        }
         public static void Execute(
             this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
             string policyVersionId
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).PublishPolicyVersion(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
+            string policyVersionId
+        )
+        {
+            PublishPolicyVersion op = builder.Build(
+                policyVersionId
+            );
+
+            await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).PublishPolicyVersionAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
             this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
@@ -45,6 +67,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).RetrieveSinglePolicyVersion(op);
         }
+        public static async Task<List<Legal.Model.RetrievePolicyVersionResponse>?> ExecuteAsync(
+            this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
+            string policyId
+        )
+        {
+            RetrieveSinglePolicyVersion op = builder.Build(
+                policyId
+            );
+
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).RetrieveSinglePolicyVersionAsync(op);
+        }
         public static Legal.Model.CreatePolicyVersionResponse? Execute(
             this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
             string policyId
@@ -55,6 +88,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersion(op);
+        }
+        public static async Task<Legal.Model.CreatePolicyVersionResponse?> ExecuteAsync(
+            this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
+            string policyId
+        )
+        {
+            CreatePolicyVersion op = builder.Build(
+                policyId
+            );
+
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersionAsync(op);
         }
     }
 }

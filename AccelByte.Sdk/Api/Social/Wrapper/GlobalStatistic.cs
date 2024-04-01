@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems(GetGlobalStatItems input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.GlobalStatItemPagingSlicedResult?> GetGlobalStatItemsAsync(GetGlobalStatItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode(GetGlobalStatItemByStatCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.GlobalStatItemInfo?> GetGlobalStatItemByStatCodeAsync(GetGlobalStatItemByStatCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -58,7 +72,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.GlobalStatItemPagingSlicedResult? GetGlobalStatItems1(GetGlobalStatItems1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.GlobalStatItemPagingSlicedResult?> GetGlobalStatItems1Async(GetGlobalStatItems1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -67,7 +88,14 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         public Model.GlobalStatItemInfo? GetGlobalStatItemByStatCode1(GetGlobalStatItemByStatCode1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.GlobalStatItemInfo?> GetGlobalStatItemByStatCode1Async(GetGlobalStatItemByStatCode1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

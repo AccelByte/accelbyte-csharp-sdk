@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveAllSSOLoginPlatformCredentialV3(op);
         }
+        public static async Task<List<Iam.Model.ModelSSOPlatformCredentialResponse>?> ExecuteAsync(
+            this RetrieveAllSSOLoginPlatformCredentialV3.RetrieveAllSSOLoginPlatformCredentialV3Builder builder,
+            string namespace_
+        )
+        {
+            RetrieveAllSSOLoginPlatformCredentialV3 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveAllSSOLoginPlatformCredentialV3Async(op);
+        }
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this RetrieveSSOLoginPlatformCredential.RetrieveSSOLoginPlatformCredentialBuilder builder,
             string namespace_,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveSSOLoginPlatformCredential(op);
+        }
+        public static async Task<Iam.Model.ModelSSOPlatformCredentialResponse?> ExecuteAsync(
+            this RetrieveSSOLoginPlatformCredential.RetrieveSSOLoginPlatformCredentialBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            RetrieveSSOLoginPlatformCredential op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).RetrieveSSOLoginPlatformCredentialAsync(op);
         }
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this AddSSOLoginPlatformCredential.AddSSOLoginPlatformCredentialBuilder builder,
@@ -51,6 +75,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).AddSSOLoginPlatformCredential(op);
         }
+        public static async Task<Iam.Model.ModelSSOPlatformCredentialResponse?> ExecuteAsync(
+            this AddSSOLoginPlatformCredential.AddSSOLoginPlatformCredentialBuilder builder,
+            ModelSSOPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            AddSSOLoginPlatformCredential op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).AddSSOLoginPlatformCredentialAsync(op);
+        }
         public static void Execute(
             this DeleteSSOLoginPlatformCredentialV3.DeleteSSOLoginPlatformCredentialV3Builder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).DeleteSSOLoginPlatformCredentialV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteSSOLoginPlatformCredentialV3.DeleteSSOLoginPlatformCredentialV3Builder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            DeleteSSOLoginPlatformCredentialV3 op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            await ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).DeleteSSOLoginPlatformCredentialV3Async(op);
         }
         public static Iam.Model.ModelSSOPlatformCredentialResponse? Execute(
             this UpdateSSOPlatformCredential.UpdateSSOPlatformCredentialBuilder builder,
@@ -78,6 +130,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).UpdateSSOPlatformCredential(op);
+        }
+        public static async Task<Iam.Model.ModelSSOPlatformCredentialResponse?> ExecuteAsync(
+            this UpdateSSOPlatformCredential.UpdateSSOPlatformCredentialBuilder builder,
+            ModelSSOPlatformCredentialRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            UpdateSSOPlatformCredential op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.SSOCredential)builder.WrapperObject!).UpdateSSOPlatformCredentialAsync(op);
         }
     }
 }

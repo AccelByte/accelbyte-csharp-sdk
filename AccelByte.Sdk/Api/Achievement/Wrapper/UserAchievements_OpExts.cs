@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminListUserAchievements(op);
         }
+        public static async Task<Achievement.Model.ModelsPaginatedUserAchievementResponse?> ExecuteAsync(
+            this AdminListUserAchievements.AdminListUserAchievementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUserAchievements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminListUserAchievementsAsync(op);
+        }
         public static void Execute(
             this AdminResetAchievement.AdminResetAchievementBuilder builder,
             string achievementCode,
@@ -39,6 +52,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminResetAchievement(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminResetAchievement.AdminResetAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminResetAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                userId
+            );
+
+            await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminResetAchievementAsync(op);
         }
         public static void Execute(
             this AdminUnlockAchievement.AdminUnlockAchievementBuilder builder,
@@ -55,6 +83,21 @@ namespace AccelByte.Sdk.Api
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminUnlockAchievement(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminUnlockAchievement.AdminUnlockAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUnlockAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                userId
+            );
+
+            await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminUnlockAchievementAsync(op);
+        }
         public static Achievement.Model.ModelsPaginatedUserAchievementResponse? Execute(
             this PublicListUserAchievements.PublicListUserAchievementsBuilder builder,
             string namespace_,
@@ -67,6 +110,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicListUserAchievements(op);
+        }
+        public static async Task<Achievement.Model.ModelsPaginatedUserAchievementResponse?> ExecuteAsync(
+            this PublicListUserAchievements.PublicListUserAchievementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicListUserAchievements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicListUserAchievementsAsync(op);
         }
         public static void Execute(
             this PublicUnlockAchievement.PublicUnlockAchievementBuilder builder,
@@ -82,6 +138,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicUnlockAchievement(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicUnlockAchievement.PublicUnlockAchievementBuilder builder,
+            string achievementCode,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicUnlockAchievement op = builder.Build(
+                achievementCode,
+                namespace_,
+                userId
+            );
+
+            await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicUnlockAchievementAsync(op);
         }
     }
 }

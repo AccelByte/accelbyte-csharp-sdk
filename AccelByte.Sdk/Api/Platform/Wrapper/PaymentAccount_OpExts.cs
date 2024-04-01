@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicGetPaymentAccounts(op);
         }
+        public static async Task<List<Platform.Model.PaymentAccount>?> ExecuteAsync(
+            this PublicGetPaymentAccounts.PublicGetPaymentAccountsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicGetPaymentAccounts op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicGetPaymentAccountsAsync(op);
+        }
         public static void Execute(
             this PublicDeletePaymentAccount.PublicDeletePaymentAccountBuilder builder,
             string id,
@@ -41,6 +54,23 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicDeletePaymentAccount(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicDeletePaymentAccount.PublicDeletePaymentAccountBuilder builder,
+            string id,
+            string namespace_,
+            string type,
+            string userId
+        )
+        {
+            PublicDeletePaymentAccount op = builder.Build(
+                id,
+                namespace_,
+                type,
+                userId
+            );
+
+            await ((Platform.Wrapper.PaymentAccount)builder.WrapperObject!).PublicDeletePaymentAccountAsync(op);
         }
     }
 }

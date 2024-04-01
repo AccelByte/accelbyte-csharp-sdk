@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetActions(op);
         }
+        public static async Task<List<Basic.Model.Action>?> ExecuteAsync(
+            this GetActions.GetActionsBuilder builder,
+            string namespace_
+        )
+        {
+            GetActions op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetActionsAsync(op);
+        }
         public static void Execute(
             this BanUsers.BanUsersBuilder builder,
             string namespace_
@@ -33,6 +44,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).BanUsers(op);
+        }
+        public static async Task ExecuteAsync(
+            this BanUsers.BanUsersBuilder builder,
+            string namespace_
+        )
+        {
+            BanUsers op = builder.Build(
+                namespace_
+            );
+
+            await ((Basic.Wrapper.UserAction)builder.WrapperObject!).BanUsersAsync(op);
         }
         public static List<Basic.Model.ADTOObjectForEqu8UserBanStatus>? Execute(
             this GetBannedUsers.GetBannedUsersBuilder builder,
@@ -47,6 +69,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetBannedUsers(op);
         }
+        public static async Task<List<Basic.Model.ADTOObjectForEqu8UserBanStatus>?> ExecuteAsync(
+            this GetBannedUsers.GetBannedUsersBuilder builder,
+            string namespace_,
+            List<string> userIds
+        )
+        {
+            GetBannedUsers op = builder.Build(
+                namespace_,
+                userIds
+            );
+
+            return await ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetBannedUsersAsync(op);
+        }
         public static void Execute(
             this ReportUser.ReportUserBuilder builder,
             string namespace_
@@ -57,6 +92,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).ReportUser(op);
+        }
+        public static async Task ExecuteAsync(
+            this ReportUser.ReportUserBuilder builder,
+            string namespace_
+        )
+        {
+            ReportUser op = builder.Build(
+                namespace_
+            );
+
+            await ((Basic.Wrapper.UserAction)builder.WrapperObject!).ReportUserAsync(op);
         }
         public static Basic.Model.ADTOObjectForEqu8UserStatus? Execute(
             this GetUserStatus.GetUserStatusBuilder builder,
@@ -71,6 +117,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetUserStatus(op);
         }
+        public static async Task<Basic.Model.ADTOObjectForEqu8UserStatus?> ExecuteAsync(
+            this GetUserStatus.GetUserStatusBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserStatus op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Basic.Wrapper.UserAction)builder.WrapperObject!).GetUserStatusAsync(op);
+        }
         public static void Execute(
             this UnBanUsers.UnBanUsersBuilder builder,
             string namespace_
@@ -81,6 +140,17 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).UnBanUsers(op);
+        }
+        public static async Task ExecuteAsync(
+            this UnBanUsers.UnBanUsersBuilder builder,
+            string namespace_
+        )
+        {
+            UnBanUsers op = builder.Build(
+                namespace_
+            );
+
+            await ((Basic.Wrapper.UserAction)builder.WrapperObject!).UnBanUsersAsync(op);
         }
         public static void Execute(
             this PublicReportUser.PublicReportUserBuilder builder,
@@ -94,6 +164,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Basic.Wrapper.UserAction)builder.WrapperObject!).PublicReportUser(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicReportUser.PublicReportUserBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicReportUser op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Basic.Wrapper.UserAction)builder.WrapperObject!).PublicReportUserAsync(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -48,7 +48,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public List<Model.PassInfo>? QueryPasses(QueryPasses input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.PassInfo>?> QueryPassesAsync(QueryPasses input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -57,7 +64,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.PassInfo? CreatePass(CreatePass input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PassInfo?> CreatePassAsync(CreatePass input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -66,7 +80,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.PassInfo? GetPass(GetPass input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PassInfo?> GetPassAsync(GetPass input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -75,7 +96,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public void DeletePass(DeletePass input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeletePassAsync(DeletePass input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -84,7 +112,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.PassInfo? UpdatePass(UpdatePass input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PassInfo?> UpdatePassAsync(UpdatePass input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -93,7 +128,14 @@ namespace AccelByte.Sdk.Api.Seasonpass.Wrapper
         public Model.UserSeasonSummary? GrantUserPass(GrantUserPass input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.UserSeasonSummary?> GrantUserPassAsync(GrantUserPass input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

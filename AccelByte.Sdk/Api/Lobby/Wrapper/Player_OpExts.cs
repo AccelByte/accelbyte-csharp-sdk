@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetLobbyCCU(op);
         }
+        public static async Task<Lobby.Model.ModelsGetLobbyCcuResponse?> ExecuteAsync(
+            this AdminGetLobbyCCU.AdminGetLobbyCCUBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetLobbyCCU op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetLobbyCCUAsync(op);
+        }
         public static Lobby.Model.ModelsGetBulkAllPlayerBlockedUsersResponse? Execute(
             this AdminGetBulkPlayerBlockedPlayersV1.AdminGetBulkPlayerBlockedPlayersV1Builder builder,
             ModelsGetBulkAllPlayerBlockedUsersRequest body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetBulkPlayerBlockedPlayersV1(op);
         }
+        public static async Task<Lobby.Model.ModelsGetBulkAllPlayerBlockedUsersResponse?> ExecuteAsync(
+            this AdminGetBulkPlayerBlockedPlayersV1.AdminGetBulkPlayerBlockedPlayersV1Builder builder,
+            ModelsGetBulkAllPlayerBlockedUsersRequest body,
+            string namespace_
+        )
+        {
+            AdminGetBulkPlayerBlockedPlayersV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetBulkPlayerBlockedPlayersV1Async(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerSessionAttributeResponse? Execute(
             this AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetAllPlayerSessionAttribute(op);
+        }
+        public static async Task<Lobby.Model.ModelsGetAllPlayerSessionAttributeResponse?> ExecuteAsync(
+            this AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetAllPlayerSessionAttribute op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetAllPlayerSessionAttributeAsync(op);
         }
         public static void Execute(
             this AdminSetPlayerSessionAttribute.AdminSetPlayerSessionAttributeBuilder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminSetPlayerSessionAttribute(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminSetPlayerSessionAttribute.AdminSetPlayerSessionAttributeBuilder builder,
+            ModelsSetPlayerSessionAttributeRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSetPlayerSessionAttribute op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminSetPlayerSessionAttributeAsync(op);
+        }
         public static Lobby.Model.ModelsGetPlayerSessionAttributeResponse? Execute(
             this AdminGetPlayerSessionAttribute.AdminGetPlayerSessionAttributeBuilder builder,
             string attribute,
@@ -79,6 +131,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerSessionAttribute(op);
         }
+        public static async Task<Lobby.Model.ModelsGetPlayerSessionAttributeResponse?> ExecuteAsync(
+            this AdminGetPlayerSessionAttribute.AdminGetPlayerSessionAttributeBuilder builder,
+            string attribute,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerSessionAttribute op = builder.Build(
+                attribute,
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerSessionAttributeAsync(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerBlockedUsersResponse? Execute(
             this AdminGetPlayerBlockedPlayersV1.AdminGetPlayerBlockedPlayersV1Builder builder,
             string namespace_,
@@ -92,6 +159,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerBlockedPlayersV1(op);
         }
+        public static async Task<Lobby.Model.ModelsGetAllPlayerBlockedUsersResponse?> ExecuteAsync(
+            this AdminGetPlayerBlockedPlayersV1.AdminGetPlayerBlockedPlayersV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerBlockedPlayersV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerBlockedPlayersV1Async(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse? Execute(
             this AdminGetPlayerBlockedByPlayersV1.AdminGetPlayerBlockedByPlayersV1Builder builder,
             string namespace_,
@@ -104,6 +184,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerBlockedByPlayersV1(op);
+        }
+        public static async Task<Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse?> ExecuteAsync(
+            this AdminGetPlayerBlockedByPlayersV1.AdminGetPlayerBlockedByPlayersV1Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetPlayerBlockedByPlayersV1 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetPlayerBlockedByPlayersV1Async(op);
         }
         public static void Execute(
             this AdminBulkBlockPlayersV1.AdminBulkBlockPlayersV1Builder builder,
@@ -120,6 +213,21 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkBlockPlayersV1(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminBulkBlockPlayersV1.AdminBulkBlockPlayersV1Builder builder,
+            ModelsListBlockedPlayerRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkBlockPlayersV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkBlockPlayersV1Async(op);
+        }
         public static void Execute(
             this PublicPlayerBlockPlayersV1.PublicPlayerBlockPlayersV1Builder builder,
             ModelsBlockPlayerRequest body,
@@ -133,6 +241,19 @@ namespace AccelByte.Sdk.Api
 
             ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicPlayerBlockPlayersV1(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicPlayerBlockPlayersV1.PublicPlayerBlockPlayersV1Builder builder,
+            ModelsBlockPlayerRequest body,
+            string namespace_
+        )
+        {
+            PublicPlayerBlockPlayersV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicPlayerBlockPlayersV1Async(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerBlockedUsersResponse? Execute(
             this PublicGetPlayerBlockedPlayersV1.PublicGetPlayerBlockedPlayersV1Builder builder,
             string namespace_
@@ -144,6 +265,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerBlockedPlayersV1(op);
         }
+        public static async Task<Lobby.Model.ModelsGetAllPlayerBlockedUsersResponse?> ExecuteAsync(
+            this PublicGetPlayerBlockedPlayersV1.PublicGetPlayerBlockedPlayersV1Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetPlayerBlockedPlayersV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerBlockedPlayersV1Async(op);
+        }
         public static Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse? Execute(
             this PublicGetPlayerBlockedByPlayersV1.PublicGetPlayerBlockedByPlayersV1Builder builder,
             string namespace_
@@ -154,6 +286,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerBlockedByPlayersV1(op);
+        }
+        public static async Task<Lobby.Model.ModelsGetAllPlayerBlockedByUsersResponse?> ExecuteAsync(
+            this PublicGetPlayerBlockedByPlayersV1.PublicGetPlayerBlockedByPlayersV1Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetPlayerBlockedByPlayersV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicGetPlayerBlockedByPlayersV1Async(op);
         }
         public static void Execute(
             this PublicUnblockPlayerV1.PublicUnblockPlayerV1Builder builder,
@@ -167,6 +310,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicUnblockPlayerV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicUnblockPlayerV1.PublicUnblockPlayerV1Builder builder,
+            ModelsUnblockPlayerRequest body,
+            string namespace_
+        )
+        {
+            PublicUnblockPlayerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Lobby.Wrapper.Player)builder.WrapperObject!).PublicUnblockPlayerV1Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -48,7 +48,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiArtifactListResponse? ArtifactGet(ArtifactGet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiArtifactListResponse?> ArtifactGetAsync(ArtifactGet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -57,7 +64,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiArtifactUsageResponse? ArtifactUsageGet(ArtifactUsageGet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiArtifactUsageResponse?> ArtifactUsageGetAsync(ArtifactUsageGet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -66,7 +80,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public void ArtifactDelete(ArtifactDelete input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ArtifactDeleteAsync(ArtifactDelete input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -75,7 +96,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiArtifactURLResponse? ArtifactGetURL(ArtifactGetURL input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiArtifactURLResponse?> ArtifactGetURLAsync(ArtifactGetURL input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -84,7 +112,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetArtifactsSampleRules? FleetArtifactSamplingRulesGet(FleetArtifactSamplingRulesGet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetArtifactsSampleRules?> FleetArtifactSamplingRulesGetAsync(FleetArtifactSamplingRulesGet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -93,7 +128,14 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         public Model.ApiFleetArtifactsSampleRules? FleetArtifactSamplingRulesSet(FleetArtifactSamplingRulesSet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetArtifactsSampleRules?> FleetArtifactSamplingRulesSetAsync(FleetArtifactSamplingRulesSet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

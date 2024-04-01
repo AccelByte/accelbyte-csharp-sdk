@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedListStagingContentResponse? AdminListStagingContents(AdminListStagingContents input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedListStagingContentResponse?> AdminListStagingContentsAsync(AdminListStagingContents input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsStagingContentResponse? AdminGetStagingContentByID(AdminGetStagingContentByID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsStagingContentResponse?> AdminGetStagingContentByIDAsync(AdminGetStagingContentByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -65,10 +79,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsStagingContentResponse<T1>?> AdminGetStagingContentByIDAsync<T1>(AdminGetStagingContentByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsStagingContentResponse? AdminApproveStagingContent(AdminApproveStagingContent input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsStagingContentResponse?> AdminApproveStagingContentAsync(AdminApproveStagingContent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -84,10 +113,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsStagingContentResponse<T1>?> AdminApproveStagingContentAsync<T1>(AdminApproveStagingContent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsPaginatedListStagingContentResponse? AdminListUserStagingContents(AdminListUserStagingContents input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedListStagingContentResponse?> AdminListUserStagingContentsAsync(AdminListUserStagingContents input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

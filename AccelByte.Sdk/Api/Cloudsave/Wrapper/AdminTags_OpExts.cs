@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminListTagsHandlerV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsListTagsResponse?> ExecuteAsync(
+            this AdminListTagsHandlerV1.AdminListTagsHandlerV1Builder builder,
+            string namespace_
+        )
+        {
+            AdminListTagsHandlerV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminListTagsHandlerV1Async(op);
+        }
         public static void Execute(
             this AdminPostTagHandlerV1.AdminPostTagHandlerV1Builder builder,
             ModelsTagRequest body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminPostTagHandlerV1(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminPostTagHandlerV1.AdminPostTagHandlerV1Builder builder,
+            ModelsTagRequest body,
+            string namespace_
+        )
+        {
+            AdminPostTagHandlerV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminPostTagHandlerV1Async(op);
+        }
         public static void Execute(
             this AdminDeleteTagHandlerV1.AdminDeleteTagHandlerV1Builder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminDeleteTagHandlerV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteTagHandlerV1.AdminDeleteTagHandlerV1Builder builder,
+            string namespace_,
+            string tag
+        )
+        {
+            AdminDeleteTagHandlerV1 op = builder.Build(
+                namespace_,
+                tag
+            );
+
+            await ((Cloudsave.Wrapper.AdminTags)builder.WrapperObject!).AdminDeleteTagHandlerV1Async(op);
         }
     }
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).CreateModerationRule(op);
         }
+        public static async Task ExecuteAsync(
+            this CreateModerationRule.CreateModerationRuleBuilder builder,
+            RestapiModerationRuleRequest body,
+            string namespace_
+        )
+        {
+            CreateModerationRule op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).CreateModerationRuleAsync(op);
+        }
         public static Reporting.Model.RestapiModerationRuleResponse? Execute(
             this UpdateModerationRule.UpdateModerationRuleBuilder builder,
             RestapiModerationRuleRequest body,
@@ -40,6 +53,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).UpdateModerationRule(op);
         }
+        public static async Task<Reporting.Model.RestapiModerationRuleResponse?> ExecuteAsync(
+            this UpdateModerationRule.UpdateModerationRuleBuilder builder,
+            RestapiModerationRuleRequest body,
+            string namespace_,
+            string ruleId
+        )
+        {
+            UpdateModerationRule op = builder.Build(
+                body,
+                namespace_,
+                ruleId
+            );
+
+            return await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).UpdateModerationRuleAsync(op);
+        }
         public static void Execute(
             this DeleteModerationRule.DeleteModerationRuleBuilder builder,
             string namespace_,
@@ -52,6 +80,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).DeleteModerationRule(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteModerationRule.DeleteModerationRuleBuilder builder,
+            string namespace_,
+            string ruleId
+        )
+        {
+            DeleteModerationRule op = builder.Build(
+                namespace_,
+                ruleId
+            );
+
+            await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).DeleteModerationRuleAsync(op);
         }
         public static void Execute(
             this UpdateModerationRuleStatus.UpdateModerationRuleStatusBuilder builder,
@@ -68,6 +109,21 @@ namespace AccelByte.Sdk.Api
 
             ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).UpdateModerationRuleStatus(op);
         }
+        public static async Task ExecuteAsync(
+            this UpdateModerationRuleStatus.UpdateModerationRuleStatusBuilder builder,
+            RestapiModerationRuleActiveRequest body,
+            string namespace_,
+            string ruleId
+        )
+        {
+            UpdateModerationRuleStatus op = builder.Build(
+                body,
+                namespace_,
+                ruleId
+            );
+
+            await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).UpdateModerationRuleStatusAsync(op);
+        }
         public static Reporting.Model.RestapiModerationRulesList? Execute(
             this GetModerationRules.GetModerationRulesBuilder builder,
             string namespace_
@@ -78,6 +134,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).GetModerationRules(op);
+        }
+        public static async Task<Reporting.Model.RestapiModerationRulesList?> ExecuteAsync(
+            this GetModerationRules.GetModerationRulesBuilder builder,
+            string namespace_
+        )
+        {
+            GetModerationRules op = builder.Build(
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).GetModerationRulesAsync(op);
         }
         public static Reporting.Model.RestapiModerationRuleResponse? Execute(
             this GetModerationRuleDetails.GetModerationRuleDetailsBuilder builder,
@@ -91,6 +158,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).GetModerationRuleDetails(op);
+        }
+        public static async Task<Reporting.Model.RestapiModerationRuleResponse?> ExecuteAsync(
+            this GetModerationRuleDetails.GetModerationRuleDetailsBuilder builder,
+            string namespace_,
+            string ruleId
+        )
+        {
+            GetModerationRuleDetails op = builder.Build(
+                namespace_,
+                ruleId
+            );
+
+            return await ((Reporting.Wrapper.AdminModerationRule)builder.WrapperObject!).GetModerationRuleDetailsAsync(op);
         }
     }
 }

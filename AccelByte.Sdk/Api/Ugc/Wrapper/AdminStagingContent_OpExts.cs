@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminListStagingContents(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedListStagingContentResponse?> ExecuteAsync(
+            this AdminListStagingContents.AdminListStagingContentsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListStagingContents op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminListStagingContentsAsync(op);
+        }
         public static Ugc.Model.ModelsStagingContentResponse? Execute(
             this AdminGetStagingContentByID.AdminGetStagingContentByIDBuilder builder,
             string contentId,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminGetStagingContentByID(op);
+        }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse?> ExecuteAsync(
+            this AdminGetStagingContentByID.AdminGetStagingContentByIDBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminGetStagingContentByID op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminGetStagingContentByIDAsync(op);
         }
 
         public static Ugc.Model.ModelsStagingContentResponse<T1>? Execute<T1>(
@@ -50,6 +74,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminGetStagingContentByID<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse<T1>?> ExecuteAsync<T1>(
+            this AdminGetStagingContentByID.AdminGetStagingContentByIDBuilder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminGetStagingContentByID op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminGetStagingContentByIDAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsStagingContentResponse? Execute(
             this AdminApproveStagingContent.AdminApproveStagingContentBuilder builder,
             ModelsApproveStagingContentRequest body,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminApproveStagingContent(op);
+        }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse?> ExecuteAsync(
+            this AdminApproveStagingContent.AdminApproveStagingContentBuilder builder,
+            ModelsApproveStagingContentRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminApproveStagingContent op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminApproveStagingContentAsync(op);
         }
 
         public static Ugc.Model.ModelsStagingContentResponse<T1>? Execute<T1>(
@@ -81,6 +133,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminApproveStagingContent<T1>(op);
         }
+        public static async Task<Ugc.Model.ModelsStagingContentResponse<T1>?> ExecuteAsync<T1>(
+            this AdminApproveStagingContent.AdminApproveStagingContentBuilder builder,
+            ModelsApproveStagingContentRequest body,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminApproveStagingContent op = builder.Build(
+                body,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminApproveStagingContentAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsPaginatedListStagingContentResponse? Execute(
             this AdminListUserStagingContents.AdminListUserStagingContentsBuilder builder,
             string namespace_,
@@ -93,6 +160,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminListUserStagingContents(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedListStagingContentResponse?> ExecuteAsync(
+            this AdminListUserStagingContents.AdminListUserStagingContentsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListUserStagingContents op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Ugc.Wrapper.AdminStagingContent)builder.WrapperObject!).AdminListUserStagingContentsAsync(op);
         }
     }
 }

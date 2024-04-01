@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -124,7 +124,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWalletConfigInfo? GetPlatformWalletConfig(GetPlatformWalletConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWalletConfigInfo?> GetPlatformWalletConfigAsync(GetPlatformWalletConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -133,7 +140,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWalletConfigInfo? UpdatePlatformWalletConfig(UpdatePlatformWalletConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWalletConfigInfo?> UpdatePlatformWalletConfigAsync(UpdatePlatformWalletConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -142,7 +156,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWalletConfigInfo? ResetPlatformWalletConfig(ResetPlatformWalletConfig input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWalletConfigInfo?> ResetPlatformWalletConfigAsync(ResetPlatformWalletConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -151,7 +172,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public List<Model.CurrencyWallet>? QueryUserCurrencyWallets(QueryUserCurrencyWallets input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.CurrencyWallet>?> QueryUserCurrencyWalletsAsync(QueryUserCurrencyWallets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -160,7 +188,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletInfo? DebitUserWalletByCurrencyCode(DebitUserWalletByCurrencyCode input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletInfo?> DebitUserWalletByCurrencyCodeAsync(DebitUserWalletByCurrencyCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -169,7 +204,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletTransactionPagingSlicedResult? ListUserCurrencyTransactions(ListUserCurrencyTransactions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletTransactionPagingSlicedResult?> ListUserCurrencyTransactionsAsync(ListUserCurrencyTransactions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -178,7 +220,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void CheckBalance(CheckBalance input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CheckBalanceAsync(CheckBalance input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -189,7 +238,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void CheckWallet(CheckWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CheckWalletAsync(CheckWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -199,7 +255,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletInfo? CreditUserWallet(CreditUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletInfo?> CreditUserWalletAsync(CreditUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -208,7 +271,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWallet? DebitByWalletPlatform(DebitByWalletPlatform input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWallet?> DebitByWalletPlatformAsync(DebitByWalletPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -217,7 +287,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWallet? PayWithUserWallet(PayWithUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWallet?> PayWithUserWalletAsync(PayWithUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -228,7 +305,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletInfo? GetUserWallet(GetUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletInfo?> GetUserWalletAsync(GetUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -240,7 +324,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletInfo? DebitUserWallet(DebitUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletInfo?> DebitUserWalletAsync(DebitUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -252,7 +343,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void DisableUserWallet(DisableUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DisableUserWalletAsync(DisableUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -264,7 +362,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public void EnableUserWallet(EnableUserWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task EnableUserWalletAsync(EnableUserWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -276,7 +381,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.DetailedWalletTransactionPagingSlicedResult? ListUserWalletTransactions(ListUserWalletTransactions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DetailedWalletTransactionPagingSlicedResult?> ListUserWalletTransactionsAsync(ListUserWalletTransactions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -288,7 +400,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletPagingSlicedResult? QueryWallets(QueryWallets input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletPagingSlicedResult?> QueryWalletsAsync(QueryWallets input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -298,7 +417,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BulkCreditResult? BulkCredit(BulkCredit input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BulkCreditResult?> BulkCreditAsync(BulkCredit input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -307,7 +433,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.BulkDebitResult? BulkDebit(BulkDebit input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.BulkDebitResult?> BulkDebitAsync(BulkDebit input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -318,7 +451,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletInfo? GetWallet(GetWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletInfo?> GetWalletAsync(GetWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -328,7 +468,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWallet? PublicGetMyWallet(PublicGetMyWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWallet?> PublicGetMyWalletAsync(PublicGetMyWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -337,7 +484,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.PlatformWallet? PublicGetWallet(PublicGetWallet input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PlatformWallet?> PublicGetWalletAsync(PublicGetWallet input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -346,7 +500,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public Model.WalletTransactionPagingSlicedResult? PublicListUserWalletTransactions(PublicListUserWalletTransactions input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletTransactionPagingSlicedResult?> PublicListUserWalletTransactionsAsync(PublicListUserWalletTransactions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

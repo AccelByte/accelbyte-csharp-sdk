@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -40,7 +40,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedListStagingContentResponse? ListUserStagingContents(ListUserStagingContents input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedListStagingContentResponse?> ListUserStagingContentsAsync(ListUserStagingContents input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -49,7 +56,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsStagingContentResponse? GetUserStagingContentByID(GetUserStagingContentByID input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsStagingContentResponse?> GetUserStagingContentByIDAsync(GetUserStagingContentByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -65,10 +79,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsStagingContentResponse<T1>?> GetUserStagingContentByIDAsync<T1>(GetUserStagingContentByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsStagingContentResponse? UpdateStagingContent(UpdateStagingContent input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsStagingContentResponse?> UpdateStagingContentAsync(UpdateStagingContent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -84,10 +113,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsStagingContentResponse<T1>?> UpdateStagingContentAsync<T1>(UpdateStagingContent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void DeleteUserStagingContentByID(DeleteUserStagingContentByID input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteUserStagingContentByIDAsync(DeleteUserStagingContentByID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Inventory.Wrapper.PublicItemTypes)builder.WrapperObject!).PublicListItemTypes(op);
+        }
+        public static async Task<Inventory.Model.ApimodelsListItemTypesResp?> ExecuteAsync(
+            this PublicListItemTypes.PublicListItemTypesBuilder builder,
+            string namespace_
+        )
+        {
+            PublicListItemTypes op = builder.Build(
+                namespace_
+            );
+
+            return await ((Inventory.Wrapper.PublicItemTypes)builder.WrapperObject!).PublicListItemTypesAsync(op);
         }
     }
 }

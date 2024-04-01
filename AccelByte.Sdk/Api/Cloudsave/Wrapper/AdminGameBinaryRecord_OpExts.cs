@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminListGameBinaryRecordsV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsListGameBinaryRecordsAdminResponse?> ExecuteAsync(
+            this AdminListGameBinaryRecordsV1.AdminListGameBinaryRecordsV1Builder builder,
+            string namespace_
+        )
+        {
+            AdminListGameBinaryRecordsV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminListGameBinaryRecordsV1Async(op);
+        }
         public static Cloudsave.Model.ModelsUploadBinaryRecordResponse? Execute(
             this AdminPostGameBinaryRecordV1.AdminPostGameBinaryRecordV1Builder builder,
             ModelsGameBinaryRecordCreate body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPostGameBinaryRecordV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsUploadBinaryRecordResponse?> ExecuteAsync(
+            this AdminPostGameBinaryRecordV1.AdminPostGameBinaryRecordV1Builder builder,
+            ModelsGameBinaryRecordCreate body,
+            string namespace_
+        )
+        {
+            AdminPostGameBinaryRecordV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPostGameBinaryRecordV1Async(op);
+        }
         public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminGetGameBinaryRecordV1.AdminGetGameBinaryRecordV1Builder builder,
             string key,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminGetGameBinaryRecordV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsGameBinaryRecordAdminResponse?> ExecuteAsync(
+            this AdminGetGameBinaryRecordV1.AdminGetGameBinaryRecordV1Builder builder,
+            string key,
+            string namespace_
+        )
+        {
+            AdminGetGameBinaryRecordV1 op = builder.Build(
+                key,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminGetGameBinaryRecordV1Async(op);
         }
         public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminPutGameBinaryRecordV1.AdminPutGameBinaryRecordV1Builder builder,
@@ -64,6 +101,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPutGameBinaryRecordV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsGameBinaryRecordAdminResponse?> ExecuteAsync(
+            this AdminPutGameBinaryRecordV1.AdminPutGameBinaryRecordV1Builder builder,
+            ModelsBinaryRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminPutGameBinaryRecordV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPutGameBinaryRecordV1Async(op);
+        }
         public static void Execute(
             this AdminDeleteGameBinaryRecordV1.AdminDeleteGameBinaryRecordV1Builder builder,
             string key,
@@ -76,6 +128,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminDeleteGameBinaryRecordV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteGameBinaryRecordV1.AdminDeleteGameBinaryRecordV1Builder builder,
+            string key,
+            string namespace_
+        )
+        {
+            AdminDeleteGameBinaryRecordV1 op = builder.Build(
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminDeleteGameBinaryRecordV1Async(op);
         }
         public static Cloudsave.Model.ModelsGameBinaryRecordAdminResponse? Execute(
             this AdminPutGameBinaryRecorMetadataV1.AdminPutGameBinaryRecorMetadataV1Builder builder,
@@ -92,6 +157,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPutGameBinaryRecorMetadataV1(op);
         }
+        public static async Task<Cloudsave.Model.ModelsGameBinaryRecordAdminResponse?> ExecuteAsync(
+            this AdminPutGameBinaryRecorMetadataV1.AdminPutGameBinaryRecorMetadataV1Builder builder,
+            ModelsGameBinaryRecordMetadataRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminPutGameBinaryRecorMetadataV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPutGameBinaryRecorMetadataV1Async(op);
+        }
         public static Cloudsave.Model.ModelsUploadBinaryRecordResponse? Execute(
             this AdminPostGameBinaryPresignedURLV1.AdminPostGameBinaryPresignedURLV1Builder builder,
             ModelsUploadBinaryRecordRequest body,
@@ -106,6 +186,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPostGameBinaryPresignedURLV1(op);
+        }
+        public static async Task<Cloudsave.Model.ModelsUploadBinaryRecordResponse?> ExecuteAsync(
+            this AdminPostGameBinaryPresignedURLV1.AdminPostGameBinaryPresignedURLV1Builder builder,
+            ModelsUploadBinaryRecordRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminPostGameBinaryPresignedURLV1 op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            return await ((Cloudsave.Wrapper.AdminGameBinaryRecord)builder.WrapperObject!).AdminPostGameBinaryPresignedURLV1Async(op);
         }
     }
 }

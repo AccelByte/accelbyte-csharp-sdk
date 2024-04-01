@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -76,7 +76,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleAgentType? AgentTypeDescriptionHandler(AgentTypeDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleAgentType?> AgentTypeDescriptionHandlerAsync(AgentTypeDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -88,7 +95,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleAgentType? SpecificAgentTypeDescriptionHandler(SpecificAgentTypeDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleAgentType?> SpecificAgentTypeDescriptionHandlerAsync(SpecificAgentTypeDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -100,7 +114,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventID? EventIDDescriptionHandler(EventIDDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventID?> EventIDDescriptionHandlerAsync(EventIDDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -112,7 +133,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventID? SpecificEventIDDescriptionHandler(SpecificEventIDDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventID?> SpecificEventIDDescriptionHandlerAsync(SpecificEventIDDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -124,7 +152,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventLevel? EventLevelDescriptionHandler(EventLevelDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventLevel?> EventLevelDescriptionHandlerAsync(EventLevelDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -136,7 +171,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventLevel? SpecificEventLevelDescriptionHandler(SpecificEventLevelDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventLevel?> SpecificEventLevelDescriptionHandlerAsync(SpecificEventLevelDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -148,7 +190,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventType? EventTypeDescriptionHandler(EventTypeDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventType?> EventTypeDescriptionHandlerAsync(EventTypeDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -160,7 +209,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleEventType? SpecificEventTypeDescriptionHandler(SpecificEventTypeDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleEventType?> SpecificEventTypeDescriptionHandlerAsync(SpecificEventTypeDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -172,7 +228,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleUX? UXNameDescriptionHandler(UXNameDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleUX?> UXNameDescriptionHandlerAsync(UXNameDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -184,7 +247,14 @@ namespace AccelByte.Sdk.Api.Eventlog.Wrapper
         public Model.ModelsMultipleUX? SpecificUXDescriptionHandler(SpecificUXDescriptionHandler input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMultipleUX?> SpecificUXDescriptionHandlerAsync(SpecificUXDescriptionHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

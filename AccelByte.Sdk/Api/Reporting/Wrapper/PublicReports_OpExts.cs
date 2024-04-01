@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,6 +24,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Reporting.Wrapper.PublicReports)builder.WrapperObject!).SubmitReport(op);
+        }
+        public static async Task<Reporting.Model.RestapiSubmitReportResponse?> ExecuteAsync(
+            this SubmitReport.SubmitReportBuilder builder,
+            RestapiSubmitReportRequest body,
+            string namespace_
+        )
+        {
+            SubmitReport op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Reporting.Wrapper.PublicReports)builder.WrapperObject!).SubmitReportAsync(op);
         }
     }
 }

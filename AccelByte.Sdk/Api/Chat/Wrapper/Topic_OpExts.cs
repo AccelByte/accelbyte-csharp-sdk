@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChatHistory(op);
         }
+        public static async Task<Chat.Model.ModelsChatMessageWithPaginationResponse?> ExecuteAsync(
+            this AdminChatHistory.AdminChatHistoryBuilder builder,
+            string namespace_
+        )
+        {
+            AdminChatHistory op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChatHistoryAsync(op);
+        }
         public static Chat.Model.ApiCreateTopicResponse? Execute(
             this AdminCreateNamespaceTopic.AdminCreateNamespaceTopicBuilder builder,
             ApiCreateNamespaceTopicParams body,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminCreateNamespaceTopic(op);
         }
+        public static async Task<Chat.Model.ApiCreateTopicResponse?> ExecuteAsync(
+            this AdminCreateNamespaceTopic.AdminCreateNamespaceTopicBuilder builder,
+            ApiCreateNamespaceTopicParams body,
+            string namespace_
+        )
+        {
+            AdminCreateNamespaceTopic op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminCreateNamespaceTopicAsync(op);
+        }
         public static List<Chat.Model.ModelsTopicResponse>? Execute(
             this AdminTopicList.AdminTopicListBuilder builder,
             string namespace_
@@ -46,6 +70,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicList(op);
+        }
+        public static async Task<List<Chat.Model.ModelsTopicResponse>?> ExecuteAsync(
+            this AdminTopicList.AdminTopicListBuilder builder,
+            string namespace_
+        )
+        {
+            AdminTopicList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicListAsync(op);
         }
         public static Chat.Model.ApiCreateTopicResponse? Execute(
             this AdminCreateTopic.AdminCreateTopicBuilder builder,
@@ -60,6 +95,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminCreateTopic(op);
         }
+        public static async Task<Chat.Model.ApiCreateTopicResponse?> ExecuteAsync(
+            this AdminCreateTopic.AdminCreateTopicBuilder builder,
+            ApiCreateTopicParams body,
+            string namespace_
+        )
+        {
+            AdminCreateTopic op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminCreateTopicAsync(op);
+        }
         public static Chat.Model.ModelsChannelTopicWithPaginationResponse? Execute(
             this AdminChannelTopicList.AdminChannelTopicListBuilder builder,
             string namespace_
@@ -70,6 +118,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicList(op);
+        }
+        public static async Task<Chat.Model.ModelsChannelTopicWithPaginationResponse?> ExecuteAsync(
+            this AdminChannelTopicList.AdminChannelTopicListBuilder builder,
+            string namespace_
+        )
+        {
+            AdminChannelTopicList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicListAsync(op);
         }
         public static Chat.Model.ModelsChannelTopicSummaryResponse? Execute(
             this AdminChannelTopicSummary.AdminChannelTopicSummaryBuilder builder,
@@ -82,6 +141,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicSummary(op);
         }
+        public static async Task<Chat.Model.ModelsChannelTopicSummaryResponse?> ExecuteAsync(
+            this AdminChannelTopicSummary.AdminChannelTopicSummaryBuilder builder,
+            string namespace_
+        )
+        {
+            AdminChannelTopicSummary op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicSummaryAsync(op);
+        }
         public static Chat.Model.ModelsTopicLogWithPaginationResponse? Execute(
             this AdminQueryTopicLog.AdminQueryTopicLogBuilder builder,
             string namespace_
@@ -92,6 +162,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryTopicLog(op);
+        }
+        public static async Task<Chat.Model.ModelsTopicLogWithPaginationResponse?> ExecuteAsync(
+            this AdminQueryTopicLog.AdminQueryTopicLogBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryTopicLog op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryTopicLogAsync(op);
         }
         public static Chat.Model.ApiCreateTopicResponse? Execute(
             this AdminUpdateTopic.AdminUpdateTopicBuilder builder,
@@ -108,6 +189,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminUpdateTopic(op);
         }
+        public static async Task<Chat.Model.ApiCreateTopicResponse?> ExecuteAsync(
+            this AdminUpdateTopic.AdminUpdateTopicBuilder builder,
+            ApiUpdateTopicParams body,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminUpdateTopic op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminUpdateTopicAsync(op);
+        }
         public static Chat.Model.MessageActionDeleteTopicResult? Execute(
             this AdminDeleteTopic.AdminDeleteTopicBuilder builder,
             string namespace_,
@@ -120,6 +216,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminDeleteTopic(op);
+        }
+        public static async Task<Chat.Model.MessageActionDeleteTopicResult?> ExecuteAsync(
+            this AdminDeleteTopic.AdminDeleteTopicBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminDeleteTopic op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminDeleteTopicAsync(op);
         }
         public static Chat.Model.ModelsBanTopicMemberResult? Execute(
             this AdminBanTopicMembers.AdminBanTopicMembersBuilder builder,
@@ -136,6 +245,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminBanTopicMembers(op);
         }
+        public static async Task<Chat.Model.ModelsBanTopicMemberResult?> ExecuteAsync(
+            this AdminBanTopicMembers.AdminBanTopicMembersBuilder builder,
+            ModelsBanTopicMemberParam body,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminBanTopicMembers op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminBanTopicMembersAsync(op);
+        }
         public static Chat.Model.ModelsChannelTopicResponse? Execute(
             this AdminChannelTopicInfo.AdminChannelTopicInfoBuilder builder,
             string namespace_,
@@ -148,6 +272,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicInfo(op);
+        }
+        public static async Task<Chat.Model.ModelsChannelTopicResponse?> ExecuteAsync(
+            this AdminChannelTopicInfo.AdminChannelTopicInfoBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminChannelTopicInfo op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminChannelTopicInfoAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Chat.Model.ModelsChatMessageWithPaginationResponse? Execute(
@@ -162,6 +299,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicChatHistory(op);
+        }
+        public static async Task<Chat.Model.ModelsChatMessageWithPaginationResponse?> ExecuteAsync(
+            this AdminTopicChatHistory.AdminTopicChatHistoryBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminTopicChatHistory op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicChatHistoryAsync(op);
         }
         public static List<Chat.Model.ModelsChatMessageResponse>? Execute(
             this AdminSendChat.AdminSendChatBuilder builder,
@@ -178,6 +328,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminSendChat(op);
         }
+        public static async Task<List<Chat.Model.ModelsChatMessageResponse>?> ExecuteAsync(
+            this AdminSendChat.AdminSendChatBuilder builder,
+            ApiSendChatParams body,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminSendChat op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminSendChatAsync(op);
+        }
         public static void Execute(
             this AdminDeleteChat.AdminDeleteChatBuilder builder,
             string chatId,
@@ -193,6 +358,21 @@ namespace AccelByte.Sdk.Api
 
             ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminDeleteChat(op);
         }
+        public static async Task ExecuteAsync(
+            this AdminDeleteChat.AdminDeleteChatBuilder builder,
+            string chatId,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminDeleteChat op = builder.Build(
+                chatId,
+                namespace_,
+                topic
+            );
+
+            await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminDeleteChatAsync(op);
+        }
         public static Chat.Model.ModelsTopicMemberWithPaginationResponse? Execute(
             this AdminTopicMembers.AdminTopicMembersBuilder builder,
             string namespace_,
@@ -206,6 +386,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicMembers(op);
         }
+        public static async Task<Chat.Model.ModelsTopicMemberWithPaginationResponse?> ExecuteAsync(
+            this AdminTopicMembers.AdminTopicMembersBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminTopicMembers op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicMembersAsync(op);
+        }
         public static List<string>? Execute(
             this AdminTopicShards.AdminTopicShardsBuilder builder,
             string namespace_,
@@ -218,6 +411,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicShards(op);
+        }
+        public static async Task<List<string>?> ExecuteAsync(
+            this AdminTopicShards.AdminTopicShardsBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminTopicShards op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminTopicShardsAsync(op);
         }
         public static Chat.Model.ModelsUnbanTopicMemberResult? Execute(
             this AdminUnbanTopicMembers.AdminUnbanTopicMembersBuilder builder,
@@ -233,6 +439,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminUnbanTopicMembers(op);
+        }
+        public static async Task<Chat.Model.ModelsUnbanTopicMemberResult?> ExecuteAsync(
+            this AdminUnbanTopicMembers.AdminUnbanTopicMembersBuilder builder,
+            ModelsUnbanTopicMemberParam body,
+            string namespace_,
+            string topic
+        )
+        {
+            AdminUnbanTopicMembers op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminUnbanTopicMembersAsync(op);
         }
         public static Chat.Model.MessageActionAddUserToTopicResult? Execute(
             this AdminAddTopicMember.AdminAddTopicMemberBuilder builder,
@@ -251,6 +472,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminAddTopicMember(op);
         }
+        public static async Task<Chat.Model.MessageActionAddUserToTopicResult?> ExecuteAsync(
+            this AdminAddTopicMember.AdminAddTopicMemberBuilder builder,
+            ApiAddMemberParams body,
+            string namespace_,
+            string topic,
+            string userId
+        )
+        {
+            AdminAddTopicMember op = builder.Build(
+                body,
+                namespace_,
+                topic,
+                userId
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminAddTopicMemberAsync(op);
+        }
         public static Chat.Model.MessageActionAddUserToTopicResult? Execute(
             this AdminRemoveTopicMember.AdminRemoveTopicMemberBuilder builder,
             string namespace_,
@@ -266,6 +504,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminRemoveTopicMember(op);
         }
+        public static async Task<Chat.Model.MessageActionAddUserToTopicResult?> ExecuteAsync(
+            this AdminRemoveTopicMember.AdminRemoveTopicMemberBuilder builder,
+            string namespace_,
+            string topic,
+            string userId
+        )
+        {
+            AdminRemoveTopicMember op = builder.Build(
+                namespace_,
+                topic,
+                userId
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminRemoveTopicMemberAsync(op);
+        }
         public static List<Chat.Model.ModelsTopicInfo>? Execute(
             this AdminQueryTopic.AdminQueryTopicBuilder builder,
             string namespace_
@@ -276,6 +529,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryTopic(op);
+        }
+        public static async Task<List<Chat.Model.ModelsTopicInfo>?> ExecuteAsync(
+            this AdminQueryTopic.AdminQueryTopicBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryTopic op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryTopicAsync(op);
         }
         public static Chat.Model.ModelsTopicLogWithPaginationResponse? Execute(
             this AdminQueryUsersTopic.AdminQueryUsersTopicBuilder builder,
@@ -290,6 +554,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryUsersTopic(op);
         }
+        public static async Task<Chat.Model.ModelsTopicLogWithPaginationResponse?> ExecuteAsync(
+            this AdminQueryUsersTopic.AdminQueryUsersTopicBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminQueryUsersTopic op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminQueryUsersTopicAsync(op);
+        }
         public static List<Chat.Model.ApiMutedTopicResponse>? Execute(
             this PublicGetMutedTopics.PublicGetMutedTopicsBuilder builder,
             string namespace_
@@ -301,6 +578,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicGetMutedTopics(op);
         }
+        public static async Task<List<Chat.Model.ApiMutedTopicResponse>?> ExecuteAsync(
+            this PublicGetMutedTopics.PublicGetMutedTopicsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetMutedTopics op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicGetMutedTopicsAsync(op);
+        }
         public static List<Chat.Model.ModelsChatMessageResponse>? Execute(
             this PublicTopicList.PublicTopicListBuilder builder,
             string namespace_
@@ -311,6 +599,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicTopicList(op);
+        }
+        public static async Task<List<Chat.Model.ModelsChatMessageResponse>?> ExecuteAsync(
+            this PublicTopicList.PublicTopicListBuilder builder,
+            string namespace_
+        )
+        {
+            PublicTopicList op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicTopicListAsync(op);
         }
         public static Chat.Model.ModelsPublicBanTopicMembersResponse? Execute(
             this PublicBanTopicMembers.PublicBanTopicMembersBuilder builder,
@@ -327,6 +626,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicBanTopicMembers(op);
         }
+        public static async Task<Chat.Model.ModelsPublicBanTopicMembersResponse?> ExecuteAsync(
+            this PublicBanTopicMembers.PublicBanTopicMembersBuilder builder,
+            ModelsPublicBanTopicMembersRequest body,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicBanTopicMembers op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicBanTopicMembersAsync(op);
+        }
         public static List<Chat.Model.ModelsChatMessageResponse>? Execute(
             this PublicChatHistory.PublicChatHistoryBuilder builder,
             string namespace_,
@@ -339,6 +653,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicChatHistory(op);
+        }
+        public static async Task<List<Chat.Model.ModelsChatMessageResponse>?> ExecuteAsync(
+            this PublicChatHistory.PublicChatHistoryBuilder builder,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicChatHistory op = builder.Build(
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicChatHistoryAsync(op);
         }
         public static void Execute(
             this PublicDeleteChat.PublicDeleteChatBuilder builder,
@@ -355,6 +682,21 @@ namespace AccelByte.Sdk.Api
 
             ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicDeleteChat(op);
         }
+        public static async Task ExecuteAsync(
+            this PublicDeleteChat.PublicDeleteChatBuilder builder,
+            string chatId,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicDeleteChat op = builder.Build(
+                chatId,
+                namespace_,
+                topic
+            );
+
+            await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicDeleteChatAsync(op);
+        }
         public static void Execute(
             this PublicMuteUser.PublicMuteUserBuilder builder,
             ApiMuteUserRequest body,
@@ -369,6 +711,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicMuteUser(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicMuteUser.PublicMuteUserBuilder builder,
+            ApiMuteUserRequest body,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicMuteUser op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicMuteUserAsync(op);
         }
         public static Chat.Model.ModelsPublicUnbanTopicMembersResponse? Execute(
             this PublicUnbanTopicMembers.PublicUnbanTopicMembersBuilder builder,
@@ -385,6 +742,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicUnbanTopicMembers(op);
         }
+        public static async Task<Chat.Model.ModelsPublicUnbanTopicMembersResponse?> ExecuteAsync(
+            this PublicUnbanTopicMembers.PublicUnbanTopicMembersBuilder builder,
+            ModelsPublicUnbanTopicMembersRequest body,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicUnbanTopicMembers op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicUnbanTopicMembersAsync(op);
+        }
         public static void Execute(
             this PublicUnmuteUser.PublicUnmuteUserBuilder builder,
             ApiUnmuteUserRequest body,
@@ -399,6 +771,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicUnmuteUser(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicUnmuteUser.PublicUnmuteUserBuilder builder,
+            ApiUnmuteUserRequest body,
+            string namespace_,
+            string topic
+        )
+        {
+            PublicUnmuteUser op = builder.Build(
+                body,
+                namespace_,
+                topic
+            );
+
+            await ((Chat.Wrapper.Topic)builder.WrapperObject!).PublicUnmuteUserAsync(op);
         }
     }
 }

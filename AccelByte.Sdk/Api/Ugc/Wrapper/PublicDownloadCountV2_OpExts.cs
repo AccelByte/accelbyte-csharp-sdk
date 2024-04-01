@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.PublicDownloadCountV2)builder.WrapperObject!).PublicAddDownloadCountV2(op);
         }
+        public static async Task<Ugc.Model.ModelsAddDownloadCountResponse?> ExecuteAsync(
+            this PublicAddDownloadCountV2.PublicAddDownloadCountV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PublicAddDownloadCountV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicDownloadCountV2)builder.WrapperObject!).PublicAddDownloadCountV2Async(op);
+        }
         public static Ugc.Model.ModelsPaginatedContentDownloaderResponse? Execute(
             this PublicListContentDownloaderV2.PublicListContentDownloaderV2Builder builder,
             string contentId,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ugc.Wrapper.PublicDownloadCountV2)builder.WrapperObject!).PublicListContentDownloaderV2(op);
+        }
+        public static async Task<Ugc.Model.ModelsPaginatedContentDownloaderResponse?> ExecuteAsync(
+            this PublicListContentDownloaderV2.PublicListContentDownloaderV2Builder builder,
+            string contentId,
+            string namespace_
+        )
+        {
+            PublicListContentDownloaderV2 op = builder.Build(
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.PublicDownloadCountV2)builder.WrapperObject!).PublicListContentDownloaderV2Async(op);
         }
     }
 }

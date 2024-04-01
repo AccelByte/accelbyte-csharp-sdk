@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -22,6 +22,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsEventRegistry?> ExecuteAsync(
+            this GetRegisteredEventsHandler.GetRegisteredEventsHandlerBuilder builder
+        )
+        {
+            GetRegisteredEventsHandler op = builder.Build(
+            );
+
+            return await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this RegisterEventHandler.RegisterEventHandlerBuilder builder,
@@ -34,6 +43,17 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).RegisterEventHandler(op);
         }
+        public static async Task ExecuteAsync(
+            this RegisterEventHandler.RegisterEventHandlerBuilder builder,
+            ModelsEventRegistry body
+        )
+        {
+            RegisterEventHandler op = builder.Build(
+                body
+            );
+
+            await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).RegisterEventHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventRegistry? Execute(
             this GetRegisteredEventIDHandler.GetRegisteredEventIDHandlerBuilder builder,
@@ -45,6 +65,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventIDHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsEventRegistry?> ExecuteAsync(
+            this GetRegisteredEventIDHandler.GetRegisteredEventIDHandlerBuilder builder,
+            string eventId
+        )
+        {
+            GetRegisteredEventIDHandler op = builder.Build(
+                eventId
+            );
+
+            return await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventIDHandlerAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
@@ -60,6 +91,19 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UpdateEventRegistryHandler(op);
         }
+        public static async Task ExecuteAsync(
+            this UpdateEventRegistryHandler.UpdateEventRegistryHandlerBuilder builder,
+            ModelsEventRegistry body,
+            string eventId
+        )
+        {
+            UpdateEventRegistryHandler op = builder.Build(
+                body,
+                eventId
+            );
+
+            await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UpdateEventRegistryHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UnregisterEventIDHandler.UnregisterEventIDHandlerBuilder builder,
@@ -72,6 +116,17 @@ namespace AccelByte.Sdk.Api
 
             ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UnregisterEventIDHandler(op);
         }
+        public static async Task ExecuteAsync(
+            this UnregisterEventIDHandler.UnregisterEventIDHandlerBuilder builder,
+            string eventId
+        )
+        {
+            UnregisterEventIDHandler op = builder.Build(
+                eventId
+            );
+
+            await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).UnregisterEventIDHandlerAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Eventlog.Model.ModelsEventRegistry? Execute(
             this GetRegisteredEventsByEventTypeHandler.GetRegisteredEventsByEventTypeHandlerBuilder builder,
@@ -83,6 +138,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsByEventTypeHandler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsEventRegistry?> ExecuteAsync(
+            this GetRegisteredEventsByEventTypeHandler.GetRegisteredEventsByEventTypeHandlerBuilder builder,
+            string eventType
+        )
+        {
+            GetRegisteredEventsByEventTypeHandler op = builder.Build(
+                eventType
+            );
+
+            return await ((Eventlog.Wrapper.EventRegistry)builder.WrapperObject!).GetRegisteredEventsByEventTypeHandlerAsync(op);
         }
     }
 }

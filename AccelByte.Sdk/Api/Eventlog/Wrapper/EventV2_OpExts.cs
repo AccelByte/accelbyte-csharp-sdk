@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).QueryEventStreamHandler(op);
         }
+        public static async Task<Eventlog.Model.ModelsEventResponseV2?> ExecuteAsync(
+            this QueryEventStreamHandler.QueryEventStreamHandlerBuilder builder,
+            ModelsGenericQueryPayload body,
+            string namespace_
+        )
+        {
+            QueryEventStreamHandler op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).QueryEventStreamHandlerAsync(op);
+        }
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetEventSpecificUserV2Handler.GetEventSpecificUserV2HandlerBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetEventSpecificUserV2Handler(op);
+        }
+        public static async Task<Eventlog.Model.ModelsEventResponseV2?> ExecuteAsync(
+            this GetEventSpecificUserV2Handler.GetEventSpecificUserV2HandlerBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetEventSpecificUserV2Handler op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetEventSpecificUserV2HandlerAsync(op);
         }
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetPublicEditHistory.GetPublicEditHistoryBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetPublicEditHistory(op);
         }
+        public static async Task<Eventlog.Model.ModelsEventResponseV2?> ExecuteAsync(
+            this GetPublicEditHistory.GetPublicEditHistoryBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetPublicEditHistory op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetPublicEditHistoryAsync(op);
+        }
         public static Eventlog.Model.ModelsEventResponseV2? Execute(
             this GetUserEventsV2Public.GetUserEventsV2PublicBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetUserEventsV2Public(op);
+        }
+        public static async Task<Eventlog.Model.ModelsEventResponseV2?> ExecuteAsync(
+            this GetUserEventsV2Public.GetUserEventsV2PublicBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEventsV2Public op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Eventlog.Wrapper.EventV2)builder.WrapperObject!).GetUserEventsV2PublicAsync(op);
         }
     }
 }

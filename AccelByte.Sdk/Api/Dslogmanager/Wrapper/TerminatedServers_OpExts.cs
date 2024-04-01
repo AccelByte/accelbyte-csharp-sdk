@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).ListTerminatedServers(op);
         }
+        public static async Task<Dslogmanager.Model.ModelsListTerminatedServersResponse?> ExecuteAsync(
+            this ListTerminatedServers.ListTerminatedServersBuilder builder,
+            string namespace_
+        )
+        {
+            ListTerminatedServers op = builder.Build(
+                namespace_
+            );
+
+            return await ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).ListTerminatedServersAsync(op);
+        }
         public static Stream? Execute(
             this DownloadServerLogs.DownloadServerLogsBuilder builder,
             string namespace_,
@@ -36,6 +47,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).DownloadServerLogs(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this DownloadServerLogs.DownloadServerLogsBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            DownloadServerLogs op = builder.Build(
+                namespace_,
+                podName
+            );
+
+            return await ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).DownloadServerLogsAsync(op);
+        }
         public static Dslogmanager.Model.ModelsLogFileStatus? Execute(
             this CheckServerLogs.CheckServerLogsBuilder builder,
             string namespace_,
@@ -48,6 +72,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).CheckServerLogs(op);
+        }
+        public static async Task<Dslogmanager.Model.ModelsLogFileStatus?> ExecuteAsync(
+            this CheckServerLogs.CheckServerLogsBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            CheckServerLogs op = builder.Build(
+                namespace_,
+                podName
+            );
+
+            return await ((Dslogmanager.Wrapper.TerminatedServers)builder.WrapperObject!).CheckServerLogsAsync(op);
         }
     }
 }

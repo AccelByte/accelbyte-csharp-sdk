@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogs(op);
         }
+        public static async Task<Stream?> ExecuteAsync(
+            this BatchDownloadServerLogs.BatchDownloadServerLogsBuilder builder,
+            ModelsBatchDownloadLogsRequest body
+        )
+        {
+            BatchDownloadServerLogs op = builder.Build(
+                body
+            );
+
+            return await ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogsAsync(op);
+        }
         public static Dslogmanager.Model.ModelsListTerminatedServersResponse? Execute(
             this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
         )
@@ -31,6 +42,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListAllTerminatedServers(op);
+        }
+        public static async Task<Dslogmanager.Model.ModelsListTerminatedServersResponse?> ExecuteAsync(
+            this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
+        )
+        {
+            ListAllTerminatedServers op = builder.Build(
+            );
+
+            return await ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListAllTerminatedServersAsync(op);
         }
     }
 }

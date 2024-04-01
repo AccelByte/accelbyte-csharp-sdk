@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -120,7 +120,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedContentDownloadResponseV2? AdminGetContentByChannelIDV2(AdminGetContentByChannelIDV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedContentDownloadResponseV2?> AdminGetContentByChannelIDV2Async(AdminGetContentByChannelIDV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -129,7 +136,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateContentResponseV2? AdminCreateContentV2(AdminCreateContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateContentResponseV2?> AdminCreateContentV2Async(AdminCreateContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -145,10 +159,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsCreateContentResponseV2<T1>?> AdminCreateContentV2Async<T1>(AdminCreateContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void AdminDeleteOfficialContentV2(AdminDeleteOfficialContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteOfficialContentV2Async(AdminDeleteOfficialContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -157,7 +186,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsUpdateContentResponseV2? AdminUpdateOfficialContentV2(AdminUpdateOfficialContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsUpdateContentResponseV2?> AdminUpdateOfficialContentV2Async(AdminUpdateOfficialContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -173,10 +209,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsUpdateContentResponseV2<T1>?> AdminUpdateOfficialContentV2Async<T1>(AdminUpdateOfficialContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsUpdateContentResponseV2? AdminUpdateOfficialContentFileLocation(AdminUpdateOfficialContentFileLocation input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsUpdateContentResponseV2?> AdminUpdateOfficialContentFileLocationAsync(AdminUpdateOfficialContentFileLocation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -192,10 +243,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsUpdateContentResponseV2<T1>?> AdminUpdateOfficialContentFileLocationAsync<T1>(AdminUpdateOfficialContentFileLocation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsGenerateContentUploadURLResponse? AdminGenerateOfficialContentUploadURLV2(AdminGenerateOfficialContentUploadURLV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGenerateContentUploadURLResponse?> AdminGenerateOfficialContentUploadURLV2Async(AdminGenerateOfficialContentUploadURLV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -204,7 +270,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedContentDownloadResponseV2? AdminListContentV2(AdminListContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedContentDownloadResponseV2?> AdminListContentV2Async(AdminListContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -213,7 +286,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public List<Model.ModelsContentDownloadResponseV2>? AdminBulkGetContentByIDsV2(AdminBulkGetContentByIDsV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsContentDownloadResponseV2>?> AdminBulkGetContentByIDsV2Async(AdminBulkGetContentByIDsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -229,10 +309,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<List<Model.ModelsContentDownloadResponseV2<T1>>?> AdminBulkGetContentByIDsV2Async<T1>(AdminBulkGetContentByIDsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.ModelsContentDownloadResponseV2>? AdminGetContentBulkByShareCodesV2(AdminGetContentBulkByShareCodesV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsContentDownloadResponseV2>?> AdminGetContentBulkByShareCodesV2Async(AdminGetContentBulkByShareCodesV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -248,10 +343,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<List<Model.ModelsContentDownloadResponseV2<T1>>?> AdminGetContentBulkByShareCodesV2Async<T1>(AdminGetContentBulkByShareCodesV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsContentDownloadResponseV2? AdminGetContentByShareCodeV2(AdminGetContentByShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsContentDownloadResponseV2?> AdminGetContentByShareCodeV2Async(AdminGetContentByShareCodeV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -267,10 +377,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsContentDownloadResponseV2<T1>?> AdminGetContentByShareCodeV2Async<T1>(AdminGetContentByShareCodeV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsContentDownloadResponseV2? AdminGetContentByContentIDV2(AdminGetContentByContentIDV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsContentDownloadResponseV2?> AdminGetContentByContentIDV2Async(AdminGetContentByContentIDV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -286,10 +411,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsContentDownloadResponseV2<T1>?> AdminGetContentByContentIDV2Async<T1>(AdminGetContentByContentIDV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsContentDownloadResponse? RollbackContentVersionV2(RollbackContentVersionV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsContentDownloadResponse?> RollbackContentVersionV2Async(RollbackContentVersionV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -305,10 +445,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsContentDownloadResponse<T1>?> RollbackContentVersionV2Async<T1>(RollbackContentVersionV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsUpdateScreenshotResponse? AdminUpdateScreenshotsV2(AdminUpdateScreenshotsV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsUpdateScreenshotResponse?> AdminUpdateScreenshotsV2Async(AdminUpdateScreenshotsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -317,7 +472,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateScreenshotResponse? AdminUploadContentScreenshotV2(AdminUploadContentScreenshotV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateScreenshotResponse?> AdminUploadContentScreenshotV2Async(AdminUploadContentScreenshotV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -326,7 +488,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public void AdminDeleteContentScreenshotV2(AdminDeleteContentScreenshotV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteContentScreenshotV2Async(AdminDeleteContentScreenshotV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -335,7 +504,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsListContentVersionsResponse? ListContentVersionsV2(ListContentVersionsV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsListContentVersionsResponse?> ListContentVersionsV2Async(ListContentVersionsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -344,7 +520,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateContentResponseV2? AdminUpdateContentByShareCodeV2(AdminUpdateContentByShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateContentResponseV2?> AdminUpdateContentByShareCodeV2Async(AdminUpdateContentByShareCodeV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -360,10 +543,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsCreateContentResponseV2<T1>?> AdminUpdateContentByShareCodeV2Async<T1>(AdminUpdateContentByShareCodeV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void AdminDeleteContentByShareCodeV2(AdminDeleteContentByShareCodeV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteContentByShareCodeV2Async(AdminDeleteContentByShareCodeV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -372,7 +570,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public void AdminDeleteUserContentV2(AdminDeleteUserContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserContentV2Async(AdminDeleteUserContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -381,7 +586,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsUpdateContentResponseV2? AdminUpdateUserContentV2(AdminUpdateUserContentV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsUpdateContentResponseV2?> AdminUpdateUserContentV2Async(AdminUpdateUserContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -397,10 +609,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsUpdateContentResponseV2<T1>?> AdminUpdateUserContentV2Async<T1>(AdminUpdateUserContentV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsUpdateContentResponseV2? AdminUpdateUserContentFileLocation(AdminUpdateUserContentFileLocation input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsUpdateContentResponseV2?> AdminUpdateUserContentFileLocationAsync(AdminUpdateUserContentFileLocation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -416,10 +643,25 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public async Task<Model.ModelsUpdateContentResponseV2<T1>?> AdminUpdateUserContentFileLocationAsync<T1>(AdminUpdateUserContentFileLocation input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsGenerateContentUploadURLResponse? AdminGenerateUserContentUploadURLV2(AdminGenerateUserContentUploadURLV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGenerateContentUploadURLResponse?> AdminGenerateUserContentUploadURLV2Async(AdminGenerateUserContentUploadURLV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -428,7 +670,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsPaginatedContentDownloadResponseV2? AdminGetContentByUserIDV2(AdminGetContentByUserIDV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPaginatedContentDownloadResponseV2?> AdminGetContentByUserIDV2Async(AdminGetContentByUserIDV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -437,7 +686,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         public Model.ModelsCreateContentResponseV2? AdminUpdateContentHideStatusV2(AdminUpdateContentHideStatusV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateContentResponseV2?> AdminUpdateContentHideStatusV2Async(AdminUpdateContentHideStatusV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -448,6 +704,14 @@ namespace AccelByte.Sdk.Api.Ugc.Wrapper
         {
             var response = _sdk.RunRequest(input);
 
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsCreateContentResponseV2<T1>?> AdminUpdateContentHideStatusV2Async<T1>(AdminUpdateContentHideStatusV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,

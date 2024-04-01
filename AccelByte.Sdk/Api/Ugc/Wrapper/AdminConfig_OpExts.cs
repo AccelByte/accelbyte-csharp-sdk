@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Ugc.Wrapper.AdminConfig)builder.WrapperObject!).AdminGetConfigs(op);
         }
+        public static async Task<Ugc.Model.ModelsPaginatedGetConfigsResponse?> ExecuteAsync(
+            this AdminGetConfigs.AdminGetConfigsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetConfigs op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminConfig)builder.WrapperObject!).AdminGetConfigsAsync(op);
+        }
         public static void Execute(
             this AdminUpdateConfig.AdminUpdateConfigBuilder builder,
             ModelsUpdateConfigRequest body,
@@ -37,6 +48,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Ugc.Wrapper.AdminConfig)builder.WrapperObject!).AdminUpdateConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateConfig.AdminUpdateConfigBuilder builder,
+            ModelsUpdateConfigRequest body,
+            string key,
+            string namespace_
+        )
+        {
+            AdminUpdateConfig op = builder.Build(
+                body,
+                key,
+                namespace_
+            );
+
+            await ((Ugc.Wrapper.AdminConfig)builder.WrapperObject!).AdminUpdateConfigAsync(op);
         }
     }
 }

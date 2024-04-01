@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).GetHealthcheckInfo(op);
         }
+        public static async Task ExecuteAsync(
+            this GetHealthcheckInfo.GetHealthcheckInfoBuilder builder
+        )
+        {
+            GetHealthcheckInfo op = builder.Build(
+            );
+
+            await ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).GetHealthcheckInfoAsync(op);
+        }
         public static void Execute(
             this HandlerV3Healthz.HandlerV3HealthzBuilder builder
         )
@@ -29,6 +38,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).HandlerV3Healthz(op);
+        }
+        public static async Task ExecuteAsync(
+            this HandlerV3Healthz.HandlerV3HealthzBuilder builder
+        )
+        {
+            HandlerV3Healthz op = builder.Build(
+            );
+
+            await ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).HandlerV3HealthzAsync(op);
         }
         public static List<Matchmaking.Model.LogAppMessageDeclaration>? Execute(
             this PublicGetMessages.PublicGetMessagesBuilder builder
@@ -39,6 +57,15 @@ namespace AccelByte.Sdk.Api
 
             return ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).PublicGetMessages(op);
         }
+        public static async Task<List<Matchmaking.Model.LogAppMessageDeclaration>?> ExecuteAsync(
+            this PublicGetMessages.PublicGetMessagesBuilder builder
+        )
+        {
+            PublicGetMessages op = builder.Build(
+            );
+
+            return await ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).PublicGetMessagesAsync(op);
+        }
         public static void Execute(
             this VersionCheckHandler.VersionCheckHandlerBuilder builder
         )
@@ -47,6 +74,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).VersionCheckHandler(op);
+        }
+        public static async Task ExecuteAsync(
+            this VersionCheckHandler.VersionCheckHandlerBuilder builder
+        )
+        {
+            VersionCheckHandler op = builder.Build(
+            );
+
+            await ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).VersionCheckHandlerAsync(op);
         }
     }
 }

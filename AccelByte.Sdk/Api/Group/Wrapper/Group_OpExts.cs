@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetGroupListAdminV1(op);
         }
+        public static async Task<Group.Model.ModelsGetGroupsListResponseV1?> ExecuteAsync(
+            this GetGroupListAdminV1.GetGroupListAdminV1Builder builder,
+            string namespace_
+        )
+        {
+            GetGroupListAdminV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetGroupListAdminV1Async(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this GetSingleGroupAdminV1.GetSingleGroupAdminV1Builder builder,
             string groupId,
@@ -35,6 +46,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupAdminV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this GetSingleGroupAdminV1.GetSingleGroupAdminV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetSingleGroupAdminV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupAdminV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -50,6 +74,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupAdminV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this GetSingleGroupAdminV1.GetSingleGroupAdminV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetSingleGroupAdminV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupAdminV1Async<T1>(op);
+        }
         public static void Execute(
             this DeleteGroupAdminV1.DeleteGroupAdminV1Builder builder,
             string groupId,
@@ -63,6 +100,19 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupAdminV1(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteGroupAdminV1.DeleteGroupAdminV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupAdminV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupAdminV1Async(op);
+        }
         public static Group.Model.ModelsGetGroupsListResponseV1? Execute(
             this GetGroupListPublicV1.GetGroupListPublicV1Builder builder,
             string namespace_
@@ -73,6 +123,17 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetGroupListPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGetGroupsListResponseV1?> ExecuteAsync(
+            this GetGroupListPublicV1.GetGroupListPublicV1Builder builder,
+            string namespace_
+        )
+        {
+            GetGroupListPublicV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetGroupListPublicV1Async(op);
         }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this CreateNewGroupPublicV1.CreateNewGroupPublicV1Builder builder,
@@ -86,6 +147,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this CreateNewGroupPublicV1.CreateNewGroupPublicV1Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateNewGroupPublicV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -101,6 +175,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this CreateNewGroupPublicV1.CreateNewGroupPublicV1Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateNewGroupPublicV1 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV1Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this GetSingleGroupPublicV1.GetSingleGroupPublicV1Builder builder,
             string groupId,
@@ -113,6 +200,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this GetSingleGroupPublicV1.GetSingleGroupPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetSingleGroupPublicV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupPublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -128,6 +228,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupPublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this GetSingleGroupPublicV1.GetSingleGroupPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            GetSingleGroupPublicV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetSingleGroupPublicV1Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateSingleGroupV1.UpdateSingleGroupV1Builder builder,
             ModelsUpdateGroupRequestV1 body,
@@ -142,6 +255,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateSingleGroupV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateSingleGroupV1.UpdateSingleGroupV1Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateSingleGroupV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateSingleGroupV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -159,6 +287,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateSingleGroupV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateSingleGroupV1.UpdateSingleGroupV1Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateSingleGroupV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateSingleGroupV1Async<T1>(op);
+        }
         public static void Execute(
             this DeleteGroupPublicV1.DeleteGroupPublicV1Builder builder,
             string groupId,
@@ -171,6 +314,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPublicV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGroupPublicV1.DeleteGroupPublicV1Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPublicV1 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPublicV1Async(op);
         }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdatePatchSingleGroupPublicV1.UpdatePatchSingleGroupPublicV1Builder builder,
@@ -186,6 +342,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdatePatchSingleGroupPublicV1.UpdatePatchSingleGroupPublicV1Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePatchSingleGroupPublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -203,6 +374,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdatePatchSingleGroupPublicV1.UpdatePatchSingleGroupPublicV1Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePatchSingleGroupPublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV1Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupCustomAttributesPublicV1.UpdateGroupCustomAttributesPublicV1Builder builder,
             ModelsUpdateGroupCustomAttributesRequestV1 body,
@@ -217,6 +403,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupCustomAttributesPublicV1.UpdateGroupCustomAttributesPublicV1Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomAttributesPublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -234,6 +435,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupCustomAttributesPublicV1.UpdateGroupCustomAttributesPublicV1Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomAttributesPublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV1Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupCustomRulePublicV1.UpdateGroupCustomRulePublicV1Builder builder,
             ModelsUpdateGroupCustomRuleRequestV1 body,
@@ -248,6 +464,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupCustomRulePublicV1.UpdateGroupCustomRulePublicV1Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomRulePublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -265,6 +496,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupCustomRulePublicV1.UpdateGroupCustomRulePublicV1Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomRulePublicV1 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV1Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupPredefinedRulePublicV1.UpdateGroupPredefinedRulePublicV1Builder builder,
             ModelsUpdateGroupPredefinedRuleRequestV1 body,
@@ -281,6 +527,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV1(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupPredefinedRulePublicV1.UpdateGroupPredefinedRulePublicV1Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupPredefinedRulePublicV1 op = builder.Build(
+                body,
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV1Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -300,6 +563,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV1<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupPredefinedRulePublicV1.UpdateGroupPredefinedRulePublicV1Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupPredefinedRulePublicV1 op = builder.Build(
+                body,
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV1Async<T1>(op);
+        }
         public static void Execute(
             this DeleteGroupPredefinedRulePublicV1.DeleteGroupPredefinedRulePublicV1Builder builder,
             string allowedAction,
@@ -315,6 +595,21 @@ namespace AccelByte.Sdk.Api
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV1(op);
         }
+        public static async Task ExecuteAsync(
+            this DeleteGroupPredefinedRulePublicV1.DeleteGroupPredefinedRulePublicV1Builder builder,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPredefinedRulePublicV1 op = builder.Build(
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV1Async(op);
+        }
         public static Group.Model.ModelsGetGroupsResponseV1? Execute(
             this GetListGroupByIDsAdminV2.GetListGroupByIDsAdminV2Builder builder,
             ModelsGetGroupListRequestV2 body,
@@ -328,6 +623,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsAdminV2(op);
         }
+        public static async Task<Group.Model.ModelsGetGroupsResponseV1?> ExecuteAsync(
+            this GetListGroupByIDsAdminV2.GetListGroupByIDsAdminV2Builder builder,
+            ModelsGetGroupListRequestV2 body,
+            string namespace_
+        )
+        {
+            GetListGroupByIDsAdminV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsAdminV2Async(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder builder,
             ModelsPublicCreateNewGroupRequestV1 body,
@@ -340,6 +648,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateNewGroupPublicV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -355,6 +676,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this CreateNewGroupPublicV2.CreateNewGroupPublicV2Builder builder,
+            ModelsPublicCreateNewGroupRequestV1 body,
+            string namespace_
+        )
+        {
+            CreateNewGroupPublicV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).CreateNewGroupPublicV2Async<T1>(op);
+        }
         public static Group.Model.ModelsGetGroupsResponseV1? Execute(
             this GetListGroupByIDsV2.GetListGroupByIDsV2Builder builder,
             ModelsGetGroupListRequestV2 body,
@@ -367,6 +701,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsV2(op);
+        }
+        public static async Task<Group.Model.ModelsGetGroupsResponseV1?> ExecuteAsync(
+            this GetListGroupByIDsV2.GetListGroupByIDsV2Builder builder,
+            ModelsGetGroupListRequestV2 body,
+            string namespace_
+        )
+        {
+            GetListGroupByIDsV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).GetListGroupByIDsV2Async(op);
         }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdatePutSingleGroupPublicV2.UpdatePutSingleGroupPublicV2Builder builder,
@@ -382,6 +729,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePutSingleGroupPublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdatePutSingleGroupPublicV2.UpdatePutSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePutSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePutSingleGroupPublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -399,6 +761,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePutSingleGroupPublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdatePutSingleGroupPublicV2.UpdatePutSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePutSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePutSingleGroupPublicV2Async<T1>(op);
+        }
         public static void Execute(
             this DeleteGroupPublicV2.DeleteGroupPublicV2Builder builder,
             string groupId,
@@ -411,6 +788,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPublicV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGroupPublicV2.DeleteGroupPublicV2Builder builder,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPublicV2 op = builder.Build(
+                groupId,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPublicV2Async(op);
         }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdatePatchSingleGroupPublicV2.UpdatePatchSingleGroupPublicV2Builder builder,
@@ -426,6 +816,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdatePatchSingleGroupPublicV2.UpdatePatchSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePatchSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -443,6 +848,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdatePatchSingleGroupPublicV2.UpdatePatchSingleGroupPublicV2Builder builder,
+            ModelsUpdateGroupRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdatePatchSingleGroupPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdatePatchSingleGroupPublicV2Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupCustomAttributesPublicV2.UpdateGroupCustomAttributesPublicV2Builder builder,
             ModelsUpdateGroupCustomAttributesRequestV1 body,
@@ -457,6 +877,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupCustomAttributesPublicV2.UpdateGroupCustomAttributesPublicV2Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomAttributesPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -474,6 +909,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupCustomAttributesPublicV2.UpdateGroupCustomAttributesPublicV2Builder builder,
+            ModelsUpdateGroupCustomAttributesRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomAttributesPublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomAttributesPublicV2Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupCustomRulePublicV2.UpdateGroupCustomRulePublicV2Builder builder,
             ModelsUpdateGroupCustomRuleRequestV1 body,
@@ -488,6 +938,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupCustomRulePublicV2.UpdateGroupCustomRulePublicV2Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomRulePublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -505,6 +970,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupCustomRulePublicV2.UpdateGroupCustomRulePublicV2Builder builder,
+            ModelsUpdateGroupCustomRuleRequestV1 body,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupCustomRulePublicV2 op = builder.Build(
+                body,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupCustomRulePublicV2Async<T1>(op);
+        }
         public static Group.Model.ModelsGroupResponseV1? Execute(
             this UpdateGroupPredefinedRulePublicV2.UpdateGroupPredefinedRulePublicV2Builder builder,
             ModelsUpdateGroupPredefinedRuleRequestV1 body,
@@ -521,6 +1001,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV2(op);
+        }
+        public static async Task<Group.Model.ModelsGroupResponseV1?> ExecuteAsync(
+            this UpdateGroupPredefinedRulePublicV2.UpdateGroupPredefinedRulePublicV2Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupPredefinedRulePublicV2 op = builder.Build(
+                body,
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV2Async(op);
         }
 
         public static Group.Model.ModelsGroupResponseV1<T1>? Execute<T1>(
@@ -540,6 +1037,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV2<T1>(op);
         }
+        public static async Task<Group.Model.ModelsGroupResponseV1<T1>?> ExecuteAsync<T1>(
+            this UpdateGroupPredefinedRulePublicV2.UpdateGroupPredefinedRulePublicV2Builder builder,
+            ModelsUpdateGroupPredefinedRuleRequestV1 body,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            UpdateGroupPredefinedRulePublicV2 op = builder.Build(
+                body,
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            return await ((Group.Wrapper.Group)builder.WrapperObject!).UpdateGroupPredefinedRulePublicV2Async<T1>(op);
+        }
         public static void Execute(
             this DeleteGroupPredefinedRulePublicV2.DeleteGroupPredefinedRulePublicV2Builder builder,
             string allowedAction,
@@ -554,6 +1068,21 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteGroupPredefinedRulePublicV2.DeleteGroupPredefinedRulePublicV2Builder builder,
+            string allowedAction,
+            string groupId,
+            string namespace_
+        )
+        {
+            DeleteGroupPredefinedRulePublicV2 op = builder.Build(
+                allowedAction,
+                groupId,
+                namespace_
+            );
+
+            await ((Group.Wrapper.Group)builder.WrapperObject!).DeleteGroupPredefinedRulePublicV2Async(op);
         }
     }
 }

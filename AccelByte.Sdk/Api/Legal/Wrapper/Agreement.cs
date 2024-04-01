@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -62,7 +62,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public void ChangePreferenceConsent(ChangePreferenceConsent input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ChangePreferenceConsentAsync(ChangePreferenceConsent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -71,7 +78,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements(RetrieveAcceptedAgreements input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> RetrieveAcceptedAgreementsAsync(RetrieveAcceptedAgreements input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -80,7 +94,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.PagedRetrieveUserAcceptedAgreementResponse? RetrieveAllUsersByPolicyVersion(RetrieveAllUsersByPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> RetrieveAllUsersByPolicyVersionAsync(RetrieveAllUsersByPolicyVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -89,7 +110,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public void ChangePreferenceConsent1(ChangePreferenceConsent1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ChangePreferenceConsent1Async(ChangePreferenceConsent1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -98,7 +126,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public void AcceptVersionedPolicy(AcceptVersionedPolicy input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AcceptVersionedPolicyAsync(AcceptVersionedPolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -107,7 +142,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAgreementsPublic(RetrieveAgreementsPublic input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> RetrieveAgreementsPublicAsync(RetrieveAgreementsPublic input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -116,7 +158,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.AcceptAgreementResponse? BulkAcceptVersionedPolicy(BulkAcceptVersionedPolicy input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AcceptAgreementResponse?> BulkAcceptVersionedPolicyAsync(BulkAcceptVersionedPolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -127,7 +176,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.AcceptAgreementResponse? IndirectBulkAcceptVersionedPolicyV2(IndirectBulkAcceptVersionedPolicyV2 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AcceptAgreementResponse?> IndirectBulkAcceptVersionedPolicyV2Async(IndirectBulkAcceptVersionedPolicyV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -139,7 +195,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public Model.AcceptAgreementResponse? IndirectBulkAcceptVersionedPolicy1(IndirectBulkAcceptVersionedPolicy1 input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AcceptAgreementResponse?> IndirectBulkAcceptVersionedPolicy1Async(IndirectBulkAcceptVersionedPolicy1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

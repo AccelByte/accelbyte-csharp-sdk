@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).ListServerClient(op);
         }
+        public static async Task<Dsmc.Model.ModelsListServerResponse?> ExecuteAsync(
+            this ListServerClient.ListServerClientBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            ListServerClient op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).ListServerClientAsync(op);
+        }
         public static void Execute(
             this ServerHeartbeat.ServerHeartbeatBuilder builder,
             ModelsDSHeartbeatRequest body,
@@ -39,6 +54,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).ServerHeartbeat(op);
+        }
+        public static async Task ExecuteAsync(
+            this ServerHeartbeat.ServerHeartbeatBuilder builder,
+            ModelsDSHeartbeatRequest body,
+            string namespace_
+        )
+        {
+            ServerHeartbeat op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Server)builder.WrapperObject!).ServerHeartbeatAsync(op);
         }
         public static void Execute(
             this DeregisterLocalServer.DeregisterLocalServerBuilder builder,
@@ -53,6 +81,19 @@ namespace AccelByte.Sdk.Api
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).DeregisterLocalServer(op);
         }
+        public static async Task ExecuteAsync(
+            this DeregisterLocalServer.DeregisterLocalServerBuilder builder,
+            ModelsDeregisterLocalServerRequest body,
+            string namespace_
+        )
+        {
+            DeregisterLocalServer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Server)builder.WrapperObject!).DeregisterLocalServerAsync(op);
+        }
         public static Dsmc.Model.ModelsServer? Execute(
             this RegisterLocalServer.RegisterLocalServerBuilder builder,
             ModelsRegisterLocalServerRequest body,
@@ -65,6 +106,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterLocalServer(op);
+        }
+        public static async Task<Dsmc.Model.ModelsServer?> ExecuteAsync(
+            this RegisterLocalServer.RegisterLocalServerBuilder builder,
+            ModelsRegisterLocalServerRequest body,
+            string namespace_
+        )
+        {
+            RegisterLocalServer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterLocalServerAsync(op);
         }
         public static Dsmc.Model.ModelsServer? Execute(
             this RegisterServer.RegisterServerBuilder builder,
@@ -79,6 +133,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterServer(op);
         }
+        public static async Task<Dsmc.Model.ModelsServer?> ExecuteAsync(
+            this RegisterServer.RegisterServerBuilder builder,
+            ModelsRegisterServerRequest body,
+            string namespace_
+        )
+        {
+            RegisterServer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).RegisterServerAsync(op);
+        }
         public static void Execute(
             this ShutdownServer.ShutdownServerBuilder builder,
             ModelsShutdownServerRequest body,
@@ -91,6 +158,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.Server)builder.WrapperObject!).ShutdownServer(op);
+        }
+        public static async Task ExecuteAsync(
+            this ShutdownServer.ShutdownServerBuilder builder,
+            ModelsShutdownServerRequest body,
+            string namespace_
+        )
+        {
+            ShutdownServer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Server)builder.WrapperObject!).ShutdownServerAsync(op);
         }
         public static Dsmc.Model.ModelsServerDeploymentConfigSessionTimeoutResponse? Execute(
             this GetServerSessionTimeout.GetServerSessionTimeoutBuilder builder,
@@ -105,6 +185,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSessionTimeout(op);
         }
+        public static async Task<Dsmc.Model.ModelsServerDeploymentConfigSessionTimeoutResponse?> ExecuteAsync(
+            this GetServerSessionTimeout.GetServerSessionTimeoutBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            GetServerSessionTimeout op = builder.Build(
+                namespace_,
+                podName
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSessionTimeoutAsync(op);
+        }
         public static Dsmc.Model.ModelsServerSessionResponse? Execute(
             this GetServerSession.GetServerSessionBuilder builder,
             string namespace_,
@@ -117,6 +210,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSession(op);
+        }
+        public static async Task<Dsmc.Model.ModelsServerSessionResponse?> ExecuteAsync(
+            this GetServerSession.GetServerSessionBuilder builder,
+            string namespace_,
+            string podName
+        )
+        {
+            GetServerSession op = builder.Build(
+                namespace_,
+                podName
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).GetServerSessionAsync(op);
         }
     }
 }

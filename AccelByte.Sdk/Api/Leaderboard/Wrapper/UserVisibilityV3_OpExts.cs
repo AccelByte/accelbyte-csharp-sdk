@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).GetHiddenUsersV3(op);
         }
+        public static async Task<Leaderboard.Model.ModelsGetHiddenUserResponse?> ExecuteAsync(
+            this GetHiddenUsersV3.GetHiddenUsersV3Builder builder,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            GetHiddenUsersV3 op = builder.Build(
+                leaderboardCode,
+                namespace_
+            );
+
+            return await ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).GetHiddenUsersV3Async(op);
+        }
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this GetUserVisibilityStatusV3.GetUserVisibilityStatusV3Builder builder,
             string leaderboardCode,
@@ -39,6 +52,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).GetUserVisibilityStatusV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetUserVisibilityResponse?> ExecuteAsync(
+            this GetUserVisibilityStatusV3.GetUserVisibilityStatusV3Builder builder,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserVisibilityStatusV3 op = builder.Build(
+                leaderboardCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).GetUserVisibilityStatusV3Async(op);
         }
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this SetUserLeaderboardVisibilityV3.SetUserLeaderboardVisibilityV3Builder builder,
@@ -57,6 +85,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).SetUserLeaderboardVisibilityV3(op);
         }
+        public static async Task<Leaderboard.Model.ModelsGetUserVisibilityResponse?> ExecuteAsync(
+            this SetUserLeaderboardVisibilityV3.SetUserLeaderboardVisibilityV3Builder builder,
+            ModelsSetUserVisibilityRequest body,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            SetUserLeaderboardVisibilityV3 op = builder.Build(
+                body,
+                leaderboardCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).SetUserLeaderboardVisibilityV3Async(op);
+        }
         public static Leaderboard.Model.ModelsGetUserVisibilityResponse? Execute(
             this SetUserVisibilityV3.SetUserVisibilityV3Builder builder,
             ModelsSetUserVisibilityRequest body,
@@ -71,6 +116,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).SetUserVisibilityV3(op);
+        }
+        public static async Task<Leaderboard.Model.ModelsGetUserVisibilityResponse?> ExecuteAsync(
+            this SetUserVisibilityV3.SetUserVisibilityV3Builder builder,
+            ModelsSetUserVisibilityRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            SetUserVisibilityV3 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Leaderboard.Wrapper.UserVisibilityV3)builder.WrapperObject!).SetUserVisibilityV3Async(op);
         }
     }
 }

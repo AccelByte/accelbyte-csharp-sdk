@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -27,6 +27,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeployment(op);
         }
+        public static async Task<Dsmc.Model.ModelsListDeploymentResponse?> ExecuteAsync(
+            this GetAllDeployment.GetAllDeploymentBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            GetAllDeployment op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeploymentAsync(op);
+        }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this GetDeployment.GetDeploymentBuilder builder,
             string deployment,
@@ -39,6 +54,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetDeployment(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this GetDeployment.GetDeploymentBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            GetDeployment op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetDeploymentAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateDeployment.CreateDeploymentBuilder builder,
@@ -55,6 +83,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeployment(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this CreateDeployment.CreateDeploymentBuilder builder,
+            ModelsCreateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            CreateDeployment op = builder.Build(
+                body,
+                deployment,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentAsync(op);
+        }
         public static void Execute(
             this DeleteDeployment.DeleteDeploymentBuilder builder,
             string deployment,
@@ -67,6 +110,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeployment(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteDeployment.DeleteDeploymentBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            DeleteDeployment op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this UpdateDeployment.UpdateDeploymentBuilder builder,
@@ -82,6 +138,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateDeployment(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this UpdateDeployment.UpdateDeploymentBuilder builder,
+            ModelsUpdateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            UpdateDeployment op = builder.Build(
+                body,
+                deployment,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateDeploymentAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateRootRegionOverride.CreateRootRegionOverrideBuilder builder,
@@ -100,6 +171,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateRootRegionOverride(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this CreateRootRegionOverride.CreateRootRegionOverrideBuilder builder,
+            ModelsCreateRegionOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string region
+        )
+        {
+            CreateRootRegionOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                region
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateRootRegionOverrideAsync(op);
+        }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this DeleteRootRegionOverride.DeleteRootRegionOverrideBuilder builder,
             string deployment,
@@ -114,6 +202,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteRootRegionOverride(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this DeleteRootRegionOverride.DeleteRootRegionOverrideBuilder builder,
+            string deployment,
+            string namespace_,
+            string region
+        )
+        {
+            DeleteRootRegionOverride op = builder.Build(
+                deployment,
+                namespace_,
+                region
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteRootRegionOverrideAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this UpdateRootRegionOverride.UpdateRootRegionOverrideBuilder builder,
@@ -132,6 +235,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateRootRegionOverride(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this UpdateRootRegionOverride.UpdateRootRegionOverrideBuilder builder,
+            ModelsUpdateRegionOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string region
+        )
+        {
+            UpdateRootRegionOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                region
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateRootRegionOverrideAsync(op);
+        }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateDeploymentOverride.CreateDeploymentOverrideBuilder builder,
             ModelsCreateDeploymentOverrideRequest body,
@@ -149,6 +269,23 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentOverride(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this CreateDeploymentOverride.CreateDeploymentOverrideBuilder builder,
+            ModelsCreateDeploymentOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            CreateDeploymentOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentOverrideAsync(op);
+        }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this DeleteDeploymentOverride.DeleteDeploymentOverrideBuilder builder,
             string deployment,
@@ -163,6 +300,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentOverride(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this DeleteDeploymentOverride.DeleteDeploymentOverrideBuilder builder,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            DeleteDeploymentOverride op = builder.Build(
+                deployment,
+                namespace_,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentOverrideAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this UpdateDeploymentOverride.UpdateDeploymentOverrideBuilder builder,
@@ -180,6 +332,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateDeploymentOverride(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this UpdateDeploymentOverride.UpdateDeploymentOverrideBuilder builder,
+            ModelsUpdateDeploymentOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            UpdateDeploymentOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateDeploymentOverrideAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateOverrideRegionOverride.CreateOverrideRegionOverrideBuilder builder,
@@ -200,6 +369,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateOverrideRegionOverride(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this CreateOverrideRegionOverride.CreateOverrideRegionOverrideBuilder builder,
+            ModelsCreateRegionOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string region,
+            string version
+        )
+        {
+            CreateOverrideRegionOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                region,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateOverrideRegionOverrideAsync(op);
+        }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this DeleteOverrideRegionOverride.DeleteOverrideRegionOverrideBuilder builder,
             string deployment,
@@ -216,6 +404,23 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteOverrideRegionOverride(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this DeleteOverrideRegionOverride.DeleteOverrideRegionOverrideBuilder builder,
+            string deployment,
+            string namespace_,
+            string region,
+            string version
+        )
+        {
+            DeleteOverrideRegionOverride op = builder.Build(
+                deployment,
+                namespace_,
+                region,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteOverrideRegionOverrideAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this UpdateOverrideRegionOverride.UpdateOverrideRegionOverrideBuilder builder,
@@ -236,6 +441,25 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateOverrideRegionOverride(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this UpdateOverrideRegionOverride.UpdateOverrideRegionOverrideBuilder builder,
+            ModelsUpdateRegionOverrideRequest body,
+            string deployment,
+            string namespace_,
+            string region,
+            string version
+        )
+        {
+            UpdateOverrideRegionOverride op = builder.Build(
+                body,
+                deployment,
+                namespace_,
+                region,
+                version
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateOverrideRegionOverrideAsync(op);
+        }
         public static Dsmc.Model.ModelsListDeploymentResponse? Execute(
             this GetAllDeploymentClient.GetAllDeploymentClientBuilder builder,
             string namespace_,
@@ -250,6 +474,21 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeploymentClient(op);
+        }
+        public static async Task<Dsmc.Model.ModelsListDeploymentResponse?> ExecuteAsync(
+            this GetAllDeploymentClient.GetAllDeploymentClientBuilder builder,
+            string namespace_,
+            long count,
+            long offset
+        )
+        {
+            GetAllDeploymentClient op = builder.Build(
+                namespace_,
+                count,
+                offset
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeploymentClientAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateDeploymentClient.CreateDeploymentClientBuilder builder,
@@ -266,6 +505,21 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentClient(op);
         }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this CreateDeploymentClient.CreateDeploymentClientBuilder builder,
+            ModelsCreateDeploymentRequest body,
+            string deployment,
+            string namespace_
+        )
+        {
+            CreateDeploymentClient op = builder.Build(
+                body,
+                deployment,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).CreateDeploymentClientAsync(op);
+        }
         public static void Execute(
             this DeleteDeploymentClient.DeleteDeploymentClientBuilder builder,
             string deployment,
@@ -278,6 +532,19 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentClient(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteDeploymentClient.DeleteDeploymentClientBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            DeleteDeploymentClient op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteDeploymentClientAsync(op);
         }
     }
 }

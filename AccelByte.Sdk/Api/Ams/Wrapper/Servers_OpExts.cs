@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -25,6 +25,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerHistory(op);
         }
+        public static async Task<Ams.Model.ApiDSHistoryList?> ExecuteAsync(
+            this FleetServerHistory.FleetServerHistoryBuilder builder,
+            string fleetID,
+            string namespace_
+        )
+        {
+            FleetServerHistory op = builder.Build(
+                fleetID,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerHistoryAsync(op);
+        }
         public static Ams.Model.ApiFleetServerInfoResponse? Execute(
             this FleetServerInfo.FleetServerInfoBuilder builder,
             string namespace_,
@@ -37,6 +50,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerInfo(op);
+        }
+        public static async Task<Ams.Model.ApiFleetServerInfoResponse?> ExecuteAsync(
+            this FleetServerInfo.FleetServerInfoBuilder builder,
+            string namespace_,
+            string serverID
+        )
+        {
+            FleetServerInfo op = builder.Build(
+                namespace_,
+                serverID
+            );
+
+            return await ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerInfoAsync(op);
         }
         public static Ams.Model.ApiFleetServerConnectionInfoResponse? Execute(
             this FleetServerConnectionInfo.FleetServerConnectionInfoBuilder builder,
@@ -51,6 +77,19 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerConnectionInfo(op);
         }
+        public static async Task<Ams.Model.ApiFleetServerConnectionInfoResponse?> ExecuteAsync(
+            this FleetServerConnectionInfo.FleetServerConnectionInfoBuilder builder,
+            string namespace_,
+            string serverID
+        )
+        {
+            FleetServerConnectionInfo op = builder.Build(
+                namespace_,
+                serverID
+            );
+
+            return await ((Ams.Wrapper.Servers)builder.WrapperObject!).FleetServerConnectionInfoAsync(op);
+        }
         public static Ams.Model.ApiFleetServerHistoryResponse? Execute(
             this ServerHistory.ServerHistoryBuilder builder,
             string namespace_,
@@ -63,6 +102,19 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Ams.Wrapper.Servers)builder.WrapperObject!).ServerHistory(op);
+        }
+        public static async Task<Ams.Model.ApiFleetServerHistoryResponse?> ExecuteAsync(
+            this ServerHistory.ServerHistoryBuilder builder,
+            string namespace_,
+            string serverID
+        )
+        {
+            ServerHistory op = builder.Build(
+                namespace_,
+                serverID
+            );
+
+            return await ((Ams.Wrapper.Servers)builder.WrapperObject!).ServerHistoryAsync(op);
         }
     }
 }

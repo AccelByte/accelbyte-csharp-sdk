@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -56,7 +56,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public Model.ModelsListServerResponse? ListServerClient(ListServerClient input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsListServerResponse?> ListServerClientAsync(ListServerClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -65,7 +72,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public void ServerHeartbeat(ServerHeartbeat input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ServerHeartbeatAsync(ServerHeartbeat input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -74,7 +88,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public void DeregisterLocalServer(DeregisterLocalServer input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeregisterLocalServerAsync(DeregisterLocalServer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -83,7 +104,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public Model.ModelsServer? RegisterLocalServer(RegisterLocalServer input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsServer?> RegisterLocalServerAsync(RegisterLocalServer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -92,7 +120,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public Model.ModelsServer? RegisterServer(RegisterServer input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsServer?> RegisterServerAsync(RegisterServer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -101,7 +136,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public void ShutdownServer(ShutdownServer input)
         {
             var response = _sdk.RunRequest(input);
-
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ShutdownServerAsync(ShutdownServer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -110,7 +152,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public Model.ModelsServerDeploymentConfigSessionTimeoutResponse? GetServerSessionTimeout(GetServerSessionTimeout input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsServerDeploymentConfigSessionTimeoutResponse?> GetServerSessionTimeoutAsync(GetServerSessionTimeout input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,
@@ -119,7 +168,14 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public Model.ModelsServerSessionResponse? GetServerSession(GetServerSession input)
         {
             var response = _sdk.RunRequest(input);
-
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsServerSessionResponse?> GetServerSessionAsync(GetServerSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
                     response.Code,
                     response.ContentType,

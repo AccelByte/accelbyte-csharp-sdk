@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,6 +23,17 @@ namespace AccelByte.Sdk.Api
 
             return ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServerPerNamespace(op);
         }
+        public static async Task<Qosm.Model.ModelsListServerResponse?> ExecuteAsync(
+            this ListServerPerNamespace.ListServerPerNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            ListServerPerNamespace op = builder.Build(
+                namespace_
+            );
+
+            return await ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServerPerNamespaceAsync(op);
+        }
         public static Qosm.Model.ModelsListServerResponse? Execute(
             this ListServer.ListServerBuilder builder
         )
@@ -31,6 +42,15 @@ namespace AccelByte.Sdk.Api
             );
 
             return ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServer(op);
+        }
+        public static async Task<Qosm.Model.ModelsListServerResponse?> ExecuteAsync(
+            this ListServer.ListServerBuilder builder
+        )
+        {
+            ListServer op = builder.Build(
+            );
+
+            return await ((Qosm.Wrapper.Public)builder.WrapperObject!).ListServerAsync(op);
         }
     }
 }

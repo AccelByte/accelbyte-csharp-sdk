@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,6 +21,15 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfo(op);
         }
+        public static async Task ExecuteAsync(
+            this GetHealthcheckInfo.GetHealthcheckInfoBuilder builder
+        )
+        {
+            GetHealthcheckInfo op = builder.Build(
+            );
+
+            await ((Match2.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfoAsync(op);
+        }
         public static void Execute(
             this GetHealthcheckInfoV1.GetHealthcheckInfoV1Builder builder
         )
@@ -30,6 +39,15 @@ namespace AccelByte.Sdk.Api
 
             ((Match2.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfoV1(op);
         }
+        public static async Task ExecuteAsync(
+            this GetHealthcheckInfoV1.GetHealthcheckInfoV1Builder builder
+        )
+        {
+            GetHealthcheckInfoV1 op = builder.Build(
+            );
+
+            await ((Match2.Wrapper.Operations)builder.WrapperObject!).GetHealthcheckInfoV1Async(op);
+        }
         public static void Execute(
             this VersionCheckHandler.VersionCheckHandlerBuilder builder
         )
@@ -38,6 +56,15 @@ namespace AccelByte.Sdk.Api
             );
 
             ((Match2.Wrapper.Operations)builder.WrapperObject!).VersionCheckHandler(op);
+        }
+        public static async Task ExecuteAsync(
+            this VersionCheckHandler.VersionCheckHandlerBuilder builder
+        )
+        {
+            VersionCheckHandler op = builder.Build(
+            );
+
+            await ((Match2.Wrapper.Operations)builder.WrapperObject!).VersionCheckHandlerAsync(op);
         }
     }
 }
