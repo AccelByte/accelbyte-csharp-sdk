@@ -74,6 +74,36 @@ namespace AccelByte.Sdk.Core
             }
         }
 
+        protected virtual async Task<List<LocalPermissionItem>> GetRolePermissionAsync(AccelByteSDK sdk, string roleId)
+        {
+            if (_PermissionCache.ContainsKey(roleId))
+                return _PermissionCache[roleId];
+
+            try
+            {
+                var response = await sdk.Iam.Roles.AdminGetRoleV4Op.ExecuteAsync(roleId);
+                if (response == null)
+                    throw new Exception("Null response from Iam::Roles::AdminGetRoleV4Op");
+
+                List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                foreach (var item in response.Permissions!)
+                {
+                    permissions.Add(new LocalPermissionItem()
+                    {
+                        Resource = item.Resource!,
+                        Action = item.Action!.Value
+                    });
+                }
+
+                _PermissionCache[roleId] = permissions;
+                return permissions;
+            }
+            catch
+            {
+                return new List<LocalPermissionItem>();
+            }
+        }
+
         protected virtual LocalNamespaceContext GetNamespaceContext(AccelByteSDK sdk, string aNamespace)
         {
             if (_NamespaceContextCache.ContainsKey(aNamespace))
@@ -82,6 +112,29 @@ namespace AccelByte.Sdk.Core
             try
             {
                 var response = sdk.Basic.Namespace.GetNamespaceContextOp.Execute(aNamespace);
+                if (response == null)
+                    throw new Exception("Null response from Basic::Namespace::GetNamespaceContextOp");
+
+                if (!_NamespaceContextCache.ContainsKey(aNamespace))
+                    _NamespaceContextCache.Add(aNamespace, new LocalNamespaceContext(response));
+                else
+                    _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
+                return _NamespaceContextCache[aNamespace];
+            }
+            catch
+            {
+                return new LocalNamespaceContext();
+            }
+        }
+
+        protected virtual async Task<LocalNamespaceContext> GetNamespaceContextAsync(AccelByteSDK sdk, string aNamespace)
+        {
+            if (_NamespaceContextCache.ContainsKey(aNamespace))
+                return _NamespaceContextCache[aNamespace];
+
+            try
+            {
+                var response = await sdk.Basic.Namespace.GetNamespaceContextOp.ExecuteAsync(aNamespace);
                 if (response == null)
                     throw new Exception("Null response from Basic::Namespace::GetNamespaceContextOp");
 

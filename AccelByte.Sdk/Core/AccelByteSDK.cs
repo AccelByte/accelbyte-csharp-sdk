@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Core
 
         public async Task<HttpResponse> RunRequestAsync(Operation operation)
         {
-            Operation pOperation = _OpProcess.RunProcessPipeline(operation, this);
+            Operation pOperation = await _OpProcess.RunProcessPipelineAsync(operation, this);
 
             var baseUrl = Configuration.ConfigRepository.BaseUrl;
             return await Configuration.HttpClient.SendRequestAsync(pOperation, baseUrl);
@@ -221,10 +221,130 @@ namespace AccelByte.Sdk.Core
             return true;
         }
 
-        public bool LoginClient()
+        public async Task<bool> LoginUserAsync()
         {
-            return LoginClient(null);
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return await LoginUserAsync(cred.Username, cred.Password, "", null);
         }
+
+        public async Task<bool> LoginUserAsync(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return await LoginUserAsync(cred.Username, cred.Password, "", onTokenReceived);
+        }
+
+        public async Task<bool> LoginUserAsync(string scopes)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return await LoginUserAsync(cred.Username, cred.Password, scopes, null);
+        }
+
+        public async Task<bool> LoginUserAsync(string scopes, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+        {
+            if (Configuration.Credential == null)
+                throw new Exception("Null credential repository");
+
+            ICredentialRepository cred = Configuration.Credential;
+            return await LoginUserAsync(cred.Username, cred.Password, scopes, onTokenReceived);
+        }
+
+        public async Task<bool> LoginUserAsync(string username, string password)
+            => await LoginUserAsync(username, password, "", null);
+
+        public async Task<bool> LoginUserAsync(string username, string password, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+            => await LoginUserAsync(username, password, "", onTokenReceived);
+
+        public async Task<bool> LoginUserAsync(string username, string password, string? scopes, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+        {
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (Configuration.TokenRepository.IsTokenExpired)
+                {
+                    bool b = await RefreshAccessTokenAsync(Configuration.TokenRepository.TokenData.RefreshToken!, onTokenReceived);
+                    Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                    return b;
+                }
+                else
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
+
+            var codeVerifier = Helper.GenerateCodeVerifier();
+            var codeChallenge = Helper.GenerateCodeChallenge(codeVerifier);
+            var clientId = Configuration.ConfigRepository.ClientId;
+
+            var oAuth20 = new OAuth20(this);
+            AuthorizeV3 authorizeV3;
+            if (scopes == null)
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .Build(clientId, "code");
+            }
+            else if (scopes == "")
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .SetScope("commerce account social publishing analytics")
+                    .Build(clientId, "code");
+            }
+            else
+            {
+                authorizeV3 = AuthorizeV3.Builder
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .SetScope(scopes)
+                    .Build(clientId, "code");
+            }
+
+            var authorizeV3Response = await oAuth20.AuthorizeV3Async(authorizeV3);
+
+            var authorizeV3Query = HttpUtility.ParseQueryString(new Uri(authorizeV3Response).Query);
+            var requestId = authorizeV3Query[authorizeV3.LocationQuery] ??
+                    throw new Exception($"Not getting the expected value from backend (key: {authorizeV3.LocationQuery})"); ;
+
+            var oAuth20Extension = new OAuth20Extension(this);
+            var userAuthenticationV3 = UserAuthenticationV3.Builder
+                .SetClientId(clientId)
+                .Build(password, requestId, username);
+            var userAuthenticationResponse = await oAuth20Extension.UserAuthenticationV3Async(userAuthenticationV3);
+
+            authorizeV3Query = HttpUtility.ParseQueryString(new Uri(userAuthenticationResponse).Query);
+            var code = authorizeV3Query[userAuthenticationV3.LocationQuery] ??
+                    throw new Exception($"Not getting the expected value from backend (key: {userAuthenticationV3.LocationQuery})"); ;
+
+            var tokenGrantV3 = TokenGrantV3.Builder
+                .SetClientId(clientId)
+                .SetCode(code)
+                .SetCodeVerifier(codeVerifier)
+                .Build("authorization_code");
+
+            var token = await oAuth20.TokenGrantV3Async(tokenGrantV3) ??
+                    throw new Exception($"TokenGrantV3 returned null");
+
+            Configuration.TokenRepository.StoreToken(LoginType.User, token);
+            if ((Configuration.Credential != null) && (token.UserId != null))
+                Configuration.Credential.UserId = token.UserId;
+
+            onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
+            return true;
+        }
+
+        public bool LoginClient()
+            => LoginClient(null);
 
         public bool LoginClient(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
@@ -249,10 +369,34 @@ namespace AccelByte.Sdk.Core
             return true;
         }
 
-        public bool LoginPlatform(string platformId, string platformToken)
+        public async Task<bool> LoginClientAsync()
+            => await LoginClientAsync(null);
+
+        public async Task<bool> LoginClientAsync(Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
-            return LoginPlatform(platformId, platformToken, null);
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (!Configuration.TokenRepository.IsTokenExpired)
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
+
+            var tokenGrantV3 = TokenGrantV3.Builder.Build("client_credentials");
+            var oAuth20 = new OAuth20(this);
+
+            var token = await oAuth20.TokenGrantV3Async(tokenGrantV3) ??
+                    throw new Exception($"TokenGrantV3 returned null");
+
+            Configuration.TokenRepository.StoreToken(LoginType.Client, token);
+
+            onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.Client, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
+            return true;
         }
+
+        public bool LoginPlatform(string platformId, string platformToken)
+            => LoginPlatform(platformId, platformToken, null);
 
         public bool LoginPlatform(string platformId, string platformToken, Action<OauthmodelTokenResponse>? onTokenReceived)
         {
@@ -295,10 +439,52 @@ namespace AccelByte.Sdk.Core
             return true;
         }
 
-        public bool RefreshAccessToken(string refreshToken)
+        public async Task<bool> LoginPlatformAsync(string platformId, string platformToken)
+            => await LoginPlatformAsync(platformId, platformToken, null);
+
+        public async Task<bool> LoginPlatformAsync(string platformId, string platformToken, Action<OauthmodelTokenResponse>? onTokenReceived)
         {
-            return RefreshAccessToken(refreshToken, null);
+            if ((Configuration.UseRefreshIfPossible) && (Configuration.TokenRepository.TokenData != null))
+            {
+                if (Configuration.TokenRepository.IsTokenExpired)
+                {
+                    if (onTokenReceived != null)
+                    {
+                        bool b = await RefreshAccessTokenAsync(Configuration.TokenRepository.TokenData.RefreshToken!,
+                            (oToken) => onTokenReceived.Invoke(TokenData.ConvertToOAuthModelTokenResponse(oToken)));
+                        Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                        return b;
+                    }
+                    else
+                    {
+                        bool b = await RefreshAccessTokenAsync(Configuration.TokenRepository.TokenData.RefreshToken!, null);
+                        Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.TokenRefresh, Configuration.TokenRepository.TokenData, this);
+                        return b;
+                    }
+                }
+                else
+                    return true;
+            }
+            else
+                Configuration.TokenRepository.RemoveToken();
+
+            var tokenGrantV3 = PlatformTokenGrantV3.Builder
+                .SetPlatformToken(platformToken)
+                .Build(platformId);
+
+            var oAuth20 = new OAuth20(this);
+            var token = await oAuth20.PlatformTokenGrantV3Async(tokenGrantV3) ??
+                throw new Exception($"PlatformTokenGrantV3 returned null");
+
+            Configuration.TokenRepository.StoreToken(LoginType.Platform, token);
+
+            onTokenReceived?.Invoke(token);
+            Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
+            return true;
         }
+
+        public bool RefreshAccessToken(string refreshToken)
+            => RefreshAccessToken(refreshToken, null);
 
         public bool RefreshAccessToken(string refreshToken, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
         {
@@ -322,6 +508,31 @@ namespace AccelByte.Sdk.Core
             return true;
         }
 
+        public async Task<bool> RefreshAccessTokenAsync(string refreshToken)
+            => await RefreshAccessTokenAsync(refreshToken, null);
+
+        public async Task<bool> RefreshAccessTokenAsync(string refreshToken, Action<OauthmodelTokenWithDeviceCookieResponseV3>? onTokenReceived)
+        {
+            TokenGrantV3 op = TokenGrantV3.Builder
+                .SetRefreshToken(refreshToken)
+                .Build(TokenGrantV3GrantType.RefreshToken);
+            var oAuth20 = new OAuth20(this);
+
+            var token = await oAuth20.TokenGrantV3Async(op) ??
+                throw new Exception("TokenGrantV3 for RefreshToken returned null");
+
+            Configuration.TokenRepository.UpdateToken(token);
+            onTokenReceived?.Invoke(token);
+
+            if (Configuration.TokenRepository is IObservableTokenRepository)
+            {
+                var oTokenRepo = (IObservableTokenRepository)Configuration.TokenRepository;
+                await oTokenRepo.UpdateObserversWithNewToken();
+            }
+
+            return true;
+        }
+
         public bool Logout()
         {
             Configuration.TokenRepository.RemoveToken();
@@ -334,7 +545,7 @@ namespace AccelByte.Sdk.Core
                 return Configuration.TokenValidator.Validate(this, accessToken);
             else
                 throw new Exception("Could not validate token. No token validator assigned.");
-        }
+        }        
 
         public bool ValidateToken(string accessToken, string permission, int action)
         {
@@ -348,6 +559,30 @@ namespace AccelByte.Sdk.Core
         {
             if (Configuration.TokenValidator != null)
                 return Configuration.TokenValidator.Validate(this, accessToken, permission, action, aNamespace, userId);
+            else
+                throw new Exception("Could not validate token. No token validator assigned.");
+        }
+
+        public async Task<bool> ValidateTokenAsync(string accessToken)
+        {
+            if ((Configuration.TokenValidator != null) && (Configuration.TokenValidator is IAsyncTokenValidator))
+                return await ((IAsyncTokenValidator)Configuration.TokenValidator).ValidateAsync(this, accessToken);
+            else
+                throw new Exception("Could not validate token. No token validator assigned or invalid token validator.");
+        }
+
+        public async Task<bool> ValidateTokenAsync(string accessToken, string permission, int action)
+        {
+            if ((Configuration.TokenValidator != null) && (Configuration.TokenValidator is IAsyncTokenValidator))
+                return await ((IAsyncTokenValidator)Configuration.TokenValidator).ValidateAsync(this, accessToken, permission, action);
+            else
+                throw new Exception("Could not validate token. No token validator assigned.");
+        }
+
+        public async Task<bool> ValidateTokenAsync(string accessToken, string permission, int action, string? aNamespace, string? userId)
+        {
+            if ((Configuration.TokenValidator != null) && (Configuration.TokenValidator is IAsyncTokenValidator))
+                return await ((IAsyncTokenValidator)Configuration.TokenValidator).ValidateAsync(this, accessToken, permission, action, aNamespace, userId);
             else
                 throw new Exception("Could not validate token. No token validator assigned.");
         }

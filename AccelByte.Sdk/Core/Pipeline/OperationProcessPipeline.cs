@@ -69,5 +69,31 @@ namespace AccelByte.Sdk.Core.Pipeline
 
             return resultOp;
         }
+
+        public async Task<Operation> RunProcessPipelineAsync(Operation op, AccelByteSDK sdk)
+        {
+            if (First == null)
+                throw new Exception("No operation process handler in chain.");
+
+            IOperationProcessPipeline handler = First;
+
+            Operation resultOp;
+            if (handler is IOperationProcessPipelineAsync)
+                resultOp = await ((IOperationProcessPipelineAsync)handler).HandleAsync(op, sdk);
+            else
+                resultOp = handler.Handle(op, sdk);
+
+            while (handler.Next != null)
+            {
+                handler = handler.Next;
+
+                if (handler is IOperationProcessPipelineAsync)
+                    resultOp = await ((IOperationProcessPipelineAsync)handler).HandleAsync(resultOp, sdk);
+                else
+                    resultOp = handler.Handle(resultOp, sdk);
+            }
+
+            return resultOp;
+        }
     }
 }
