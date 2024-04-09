@@ -1,6 +1,12 @@
 <a name="v0.58.0"></a>
 ## [v0.58.0]
-
+### feat
+- **:** add session history integration tests
+- **:** add async methods for http client
+- **:** add async support to auth and op process
+- **:** feat: add achievement async test
+### chore
+- **:** regenerate async wrappers
 
 <a name="v0.57.0"></a>
 ## [v0.57.0]
