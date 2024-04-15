@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// deleteGroupAdminV1
     ///
-    /// 
-    /// 
-    /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP:{groupId} [DELETE]"
-    /// 
-    /// 
-    /// 
-    /// 
     /// Delete existing group. It will check whether the groupID is exist before doing the process to delete the group.
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73302
     /// </summary>

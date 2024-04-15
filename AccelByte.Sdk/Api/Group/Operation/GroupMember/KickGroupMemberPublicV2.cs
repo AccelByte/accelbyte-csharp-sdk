@@ -16,27 +16,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// kickGroupMemberPublicV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// Required Member Role Permission: "GROUP:KICK [CREATE]"
     /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to kick group member.
     /// 
-    /// 
-    /// 
-    /// 
     /// Kick group member. This endpoint will check the member and group information, and also the role permission of the the user who accesses this endpoint
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73409
     /// </summary>

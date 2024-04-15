@@ -16,39 +16,17 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateMemberRolePermissionAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to update member role permission. It will replace the existing permission based on the request from this endpoint
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73205
     /// 
     /// 
     /// 
-    /// 
-    /// 
-    /// 
     /// memberRolePermissions example value :
-    /// 
-    /// 
-    /// 
     /// 
     /// "action": 2
     /// 
-    /// 
-    /// 
-    /// 
     /// "resourceName": "GROUP:ROLE"
-    /// 
-    /// 
-    /// 
     /// 
     /// The changes will update user role to be able to read a role of other member
     /// </summary>

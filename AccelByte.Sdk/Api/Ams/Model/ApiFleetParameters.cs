@@ -25,6 +25,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
+        [JsonPropertyName("onDemand")]
+        public bool? OnDemand { get; set; }
+
         [JsonPropertyName("regions")]
         public List<ApiRegionConfig>? Regions { get; set; }
 

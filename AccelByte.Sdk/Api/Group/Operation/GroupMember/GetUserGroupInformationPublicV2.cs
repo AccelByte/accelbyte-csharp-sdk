@@ -16,35 +16,15 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getUserGroupInformationPublicV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// This endpoint is used to get user joined group information.
     /// 
-    /// 
-    /// 
-    /// 
     /// Get user group joined information. If user does not belong to any group, it will return warning to give information about it
-    /// 
-    /// 
-    /// 
     /// 
     /// Group Member Status:
     /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    ///   * JOINED: status of user already joined to a group
-    /// 
-    /// 
-    /// 
-    /// 
+    /// * JOINED: status of user already joined to a group
     /// 
     /// Action Code: 73405
     /// </summary>

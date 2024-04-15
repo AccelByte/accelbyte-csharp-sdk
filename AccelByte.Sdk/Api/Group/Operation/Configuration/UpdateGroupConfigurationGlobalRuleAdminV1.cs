@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateGroupConfigurationGlobalRuleAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to update existing global rule configuration based on the allowed action. It will replace the permission with the request
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73106
     /// </summary>

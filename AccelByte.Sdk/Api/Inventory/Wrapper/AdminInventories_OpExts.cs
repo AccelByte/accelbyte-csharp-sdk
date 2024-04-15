@@ -146,5 +146,35 @@ namespace AccelByte.Sdk.Api
 
             await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).DeleteInventoryAsync(op);
         }
+        public static void Execute(
+            this AdminPurchasable.AdminPurchasableBuilder builder,
+            ApimodelsPurchaseValidationReq body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPurchasable op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminPurchasable(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminPurchasable.AdminPurchasableBuilder builder,
+            ApimodelsPurchaseValidationReq body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminPurchasable op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminPurchasableAsync(op);
+        }
     }
 }

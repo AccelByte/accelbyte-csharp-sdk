@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateMemberRoleAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [UPDATE]
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to update member role
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73204
     /// </summary>

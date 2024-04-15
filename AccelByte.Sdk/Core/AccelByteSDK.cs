@@ -545,7 +545,7 @@ namespace AccelByte.Sdk.Core
                 return Configuration.TokenValidator.Validate(this, accessToken);
             else
                 throw new Exception("Could not validate token. No token validator assigned.");
-        }        
+        }
 
         public bool ValidateToken(string accessToken, string permission, int action)
         {

@@ -127,7 +127,7 @@ namespace AccelByte.Sdk.Tests.Services
         [Test]
         public async Task AchievementAsyncServiceTests()
         {
-            var retryPolicy = HttpClientPolicy.Default;            
+            var retryPolicy = HttpClientPolicy.Default;
             retryPolicy.MaxRetryCount = 3;
             retryPolicy.RetryInterval = 500;
             retryPolicy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");

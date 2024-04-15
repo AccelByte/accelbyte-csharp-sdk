@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// deleteGroupConfigurationGlobalRuleAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to delete existing global rule configuration based on the allowed action. It will not give any error if the allowed action is not existed in the global rule
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73105
     /// </summary>

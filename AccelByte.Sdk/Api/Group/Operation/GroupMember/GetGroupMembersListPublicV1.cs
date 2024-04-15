@@ -16,17 +16,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getGroupMembersListPublicV1
     ///
-    /// 
-    /// 
     /// Required valid user authentication
     /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to get list of group members.
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73410
     /// </summary>

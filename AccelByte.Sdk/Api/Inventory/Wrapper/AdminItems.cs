@@ -47,6 +47,10 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             get { return Operation.AdminSaveItem.Builder.SetWrapperObject(this); }
         }
+        public AdminSyncUserEntitlements.AdminSyncUserEntitlementsBuilder AdminSyncUserEntitlementsOp
+        {
+            get { return Operation.AdminSyncUserEntitlements.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ApimodelsListItemResp? AdminListItems(AdminListItems input)
@@ -229,6 +233,22 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminSyncUserEntitlements(AdminSyncUserEntitlements input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminSyncUserEntitlementsAsync(AdminSyncUserEntitlements input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

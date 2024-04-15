@@ -86,5 +86,57 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion1Async(op);
         }
+        public static Legal.Model.DownloadExportedAgreementsInCSVResponse? Execute(
+            this DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            DownloadExportedAgreementsInCSV op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).DownloadExportedAgreementsInCSV(op);
+        }
+        public static async Task<Legal.Model.DownloadExportedAgreementsInCSVResponse?> ExecuteAsync(
+            this DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            DownloadExportedAgreementsInCSV op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).DownloadExportedAgreementsInCSVAsync(op);
+        }
+        public static Legal.Model.InitiateExportAgreementsToCSVResponse? Execute(
+            this InitiateExportAgreementsToCSV.InitiateExportAgreementsToCSVBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            InitiateExportAgreementsToCSV op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).InitiateExportAgreementsToCSV(op);
+        }
+        public static async Task<Legal.Model.InitiateExportAgreementsToCSVResponse?> ExecuteAsync(
+            this InitiateExportAgreementsToCSV.InitiateExportAgreementsToCSVBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            InitiateExportAgreementsToCSV op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).InitiateExportAgreementsToCSVAsync(op);
+        }
     }
 }

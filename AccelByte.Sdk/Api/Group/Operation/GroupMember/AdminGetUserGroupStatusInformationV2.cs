@@ -16,13 +16,6 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// AdminGetUserGroupStatusInformationV2
     ///
-    /// 
-    /// 
-    /// Required Permission: "ADMIN:NAMESPACE:{namespace}:GROUP:MEMBER [READ]"
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to get user group status information.
     /// </summary>
     public class AdminGetUserGroupStatusInformationV2 : AccelByte.Sdk.Core.Operation

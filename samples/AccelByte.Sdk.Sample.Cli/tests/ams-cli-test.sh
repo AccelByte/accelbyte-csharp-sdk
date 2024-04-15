@@ -154,12 +154,14 @@ $CLI_EXE \
     --sn ams \
     --op DevelopmentServerConfigurationList \
     --namespace $AB_NAMESPACE \
+    --count '276' \
+    --offset '33' \
     > test.out 2>&1
 eval_tap $? 12 'DevelopmentServerConfigurationList' test.out
 
 #- 13 DevelopmentServerConfigurationCreate
 # body param: body
-echo '{"commandLine": "Gq1FNmRWvUvDPnKo", "imageId": "ECjGUg867xodwuG1", "name": "4ID5l5wj6K2wEMnc"}' > $TEMP_JSON_INPUT
+echo '{"commandLineArguments": "q1FNmRWvUvDPnKoE", "imageId": "CjGUg867xodwuG14", "name": "ID5l5wj6K2wEMnck"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op DevelopmentServerConfigurationCreate \
@@ -172,7 +174,7 @@ eval_tap $? 13 'DevelopmentServerConfigurationCreate' test.out
 $CLI_EXE \
     --sn ams \
     --op DevelopmentServerConfigurationGet \
-    --developmentServerConfigID 'kjlW6BywsSSZTGlu' \
+    --developmentServerConfigID 'jlW6BywsSSZTGlub' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 14 'DevelopmentServerConfigurationGet' test.out
@@ -181,7 +183,7 @@ eval_tap $? 14 'DevelopmentServerConfigurationGet' test.out
 $CLI_EXE \
     --sn ams \
     --op DevelopmentServerConfigurationDelete \
-    --developmentServerConfigID 'bsmhjXcScOUvrjJB' \
+    --developmentServerConfigID 'smhjXcScOUvrjJBO' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 15 'DevelopmentServerConfigurationDelete' test.out
@@ -196,7 +198,7 @@ eval_tap $? 16 'FleetList' test.out
 
 #- 17 FleetCreate
 # body param: body
-echo '{"active": true, "claimKeys": ["7tbkTGYKqRMSTisP", "0MrSdaFy0pJYCdfk", "fyt09ro5fHdWqJTN"], "dsHostConfiguration": {"instanceId": "jrmpnnEckHH8kT9o", "instanceType": "XVandercf1nq4Hf3", "serversPerVm": 38}, "imageDeploymentProfile": {"commandLine": "SL5PjaYEDxaYN8w9", "imageId": "KUW0py8KrcQfucSq", "portConfigurations": [{"name": "2X8gFuJORk4j04Yf", "protocol": "nXTsQUrA0WWyKl2K"}, {"name": "5mCSoGeQCahcox63", "protocol": "cyDxAAYcRXJdoSTx"}, {"name": "NCK9AIjNmbfoW8bD", "protocol": "q5jPqzhN0YdGSrA9"}], "timeout": {"creation": 77, "drain": 46, "session": 35, "unresponsive": 89}}, "name": "f19Njm50xCDlPeNq", "regions": [{"bufferSize": 59, "maxServerCount": 42, "minServerCount": 43, "region": "yMR4Xf2nfYvNvG8u"}, {"bufferSize": 87, "maxServerCount": 94, "minServerCount": 47, "region": "AhsxaALiBwpNJorn"}, {"bufferSize": 36, "maxServerCount": 24, "minServerCount": 58, "region": "7NjUZ95Z5XDLBN9Y"}], "samplingRules": {"coredumps": {"crashed": {"collect": false, "percentage": 39}, "success": {"collect": false, "percentage": 53}}, "logs": {"crashed": {"collect": false, "percentage": 22}, "success": {"collect": true, "percentage": 6}}}}' > $TEMP_JSON_INPUT
+echo '{"active": true, "claimKeys": ["tLpERf77LzPoORBk", "RmZ0A2zyZsb4FvWF", "IHPIbOjpls9BZTYc"], "dsHostConfiguration": {"instanceId": "5BsdSSVaAzzn4Gbg", "instanceType": "kKeCaS6qyUCscHXs", "serversPerVm": 78}, "imageDeploymentProfile": {"commandLine": "PlOBlfUOqv7WmCuq", "imageId": "csNM7YAnbq4DjmYU", "portConfigurations": [{"name": "MhD9qU89D356pVsU", "protocol": "tNanddzgwxYdQc5h"}, {"name": "EfefdopcEM0JHfof", "protocol": "2Hwi7vg3osbh0fL2"}, {"name": "h7eJvAS2W4uqkhwS", "protocol": "C7EajwHO3LfvwPew"}], "timeout": {"creation": 35, "drain": 89, "session": 11, "unresponsive": 46}}, "name": "19Njm50xCDlPeNq0", "onDemand": true, "regions": [{"bufferSize": 42, "maxServerCount": 43, "minServerCount": 50, "region": "MXtyUWXrdZaFeacG"}, {"bufferSize": 94, "maxServerCount": 47, "minServerCount": 54, "region": "6o28Njxyw7RHldq0"}, {"bufferSize": 24, "maxServerCount": 58, "minServerCount": 87, "region": "NjUZ95Z5XDLBN9YG"}], "samplingRules": {"coredumps": {"crashed": {"collect": false, "percentage": 39}, "success": {"collect": false, "percentage": 53}}, "logs": {"crashed": {"collect": false, "percentage": 22}, "success": {"collect": true, "percentage": 6}}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetCreate \
@@ -216,7 +218,7 @@ eval_tap $? 18 'FleetGet' test.out
 
 #- 19 FleetUpdate
 # body param: body
-echo '{"active": false, "claimKeys": ["w3veBfrpCrnbaxhE", "vn3SGqcH91fC3aJE", "oqWaFAGD6PRg95m0"], "dsHostConfiguration": {"instanceId": "7l03vtlMFzeiMRkc", "instanceType": "Or1L0TMIczbYilOz", "serversPerVm": 18}, "imageDeploymentProfile": {"commandLine": "a3RxspSqwdbTR2sg", "imageId": "zfaQrUCW9fgo69uv", "portConfigurations": [{"name": "1bkFx8DmbC9UqYdY", "protocol": "rdxNnuMcAwrSzYnr"}, {"name": "cetxObeisZelKuD0", "protocol": "iJ6fs3zL9H4WxGWR"}, {"name": "H7fz4BdPhLtHRJOI", "protocol": "mSq37aeAaGq0NIj5"}], "timeout": {"creation": 76, "drain": 12, "session": 87, "unresponsive": 20}}, "name": "ORLEIAePvDO2xkVg", "regions": [{"bufferSize": 50, "maxServerCount": 77, "minServerCount": 90, "region": "zSpDFY3lxe16KsSR"}, {"bufferSize": 52, "maxServerCount": 8, "minServerCount": 20, "region": "rPYQ5yVcQuvDbGMq"}, {"bufferSize": 3, "maxServerCount": 63, "minServerCount": 52, "region": "HkCQwMBcQUNPHN8Y"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 94}, "success": {"collect": true, "percentage": 49}}, "logs": {"crashed": {"collect": true, "percentage": 73}, "success": {"collect": false, "percentage": 72}}}}' > $TEMP_JSON_INPUT
+echo '{"active": false, "claimKeys": ["w3veBfrpCrnbaxhE", "vn3SGqcH91fC3aJE", "oqWaFAGD6PRg95m0"], "dsHostConfiguration": {"instanceId": "7l03vtlMFzeiMRkc", "instanceType": "Or1L0TMIczbYilOz", "serversPerVm": 18}, "imageDeploymentProfile": {"commandLine": "a3RxspSqwdbTR2sg", "imageId": "zfaQrUCW9fgo69uv", "portConfigurations": [{"name": "1bkFx8DmbC9UqYdY", "protocol": "rdxNnuMcAwrSzYnr"}, {"name": "cetxObeisZelKuD0", "protocol": "iJ6fs3zL9H4WxGWR"}, {"name": "H7fz4BdPhLtHRJOI", "protocol": "mSq37aeAaGq0NIj5"}], "timeout": {"creation": 76, "drain": 12, "session": 87, "unresponsive": 20}}, "name": "ORLEIAePvDO2xkVg", "onDemand": true, "regions": [{"bufferSize": 77, "maxServerCount": 90, "minServerCount": 53, "region": "k10b27RdU8VceYQ9"}, {"bufferSize": 8, "maxServerCount": 20, "minServerCount": 35, "region": "f2HzBcEio5UyvuFv"}, {"bufferSize": 63, "maxServerCount": 52, "minServerCount": 68, "region": "6wosJGnUyCMEbHh1"}], "samplingRules": {"coredumps": {"crashed": {"collect": true, "percentage": 94}, "success": {"collect": true, "percentage": 49}}, "logs": {"crashed": {"collect": true, "percentage": 73}, "success": {"collect": false, "percentage": 72}}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetUpdate \

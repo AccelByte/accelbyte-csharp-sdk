@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveAcceptedAgreementsForMultiUsers
     ///
-    /// This API will return all accepted Legal Agreements for each user, including agreements of game users if publisher user has corresponding game accountOther detail info:
+    /// This API will return all accepted Legal Agreements for each user, including agreements of game users if publisher user has corresponding game account.
+    /// Other detail info:
+    /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrieveAcceptedAgreementsForMultiUsers : AccelByte.Sdk.Core.Operation

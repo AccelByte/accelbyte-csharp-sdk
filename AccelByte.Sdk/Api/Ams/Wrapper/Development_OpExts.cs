@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class AmsDevelopment_OpExts
     {
-        public static List<Ams.Model.ApiDevelopmentServerConfigurationGetResponse>? Execute(
+        public static Ams.Model.ApiDevelopmentServerConfigurationListResponse? Execute(
             this DevelopmentServerConfigurationList.DevelopmentServerConfigurationListBuilder builder,
             string namespace_
         )
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.Development)builder.WrapperObject!).DevelopmentServerConfigurationList(op);
         }
-        public static async Task<List<Ams.Model.ApiDevelopmentServerConfigurationGetResponse>?> ExecuteAsync(
+        public static async Task<Ams.Model.ApiDevelopmentServerConfigurationListResponse?> ExecuteAsync(
             this DevelopmentServerConfigurationList.DevelopmentServerConfigurationListBuilder builder,
             string namespace_
         )

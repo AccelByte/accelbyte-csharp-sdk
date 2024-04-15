@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// Tags will be auto-created.
     /// ItemType will be auto-created.
     /// 
+    /// For Ecommerce item, this fields will be override by ecommerce configuration
+    /// (slotUsed, serverCustomAttributes, customAttributes, type)
+    /// 
     /// Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]
     /// </summary>
     public class AdminSaveItem : AccelByte.Sdk.Core.Operation

@@ -374,5 +374,31 @@ namespace AccelByte.Sdk.Api
 
             return await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminSaveItemAsync<T1, T2>(op);
         }
+        public static void Execute(
+            this AdminSyncUserEntitlements.AdminSyncUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncUserEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminSyncUserEntitlements(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminSyncUserEntitlements.AdminSyncUserEntitlementsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncUserEntitlements op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminSyncUserEntitlementsAsync(op);
+        }
     }
 }

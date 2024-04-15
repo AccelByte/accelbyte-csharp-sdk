@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private AdminChainingOperations? _AdminChainingOperations = null;
 
+        public AdminIntegrationConfigurations AdminIntegrationConfigurations
+        {
+            get
+            {
+                if (_AdminIntegrationConfigurations == null)
+                    _AdminIntegrationConfigurations = new AdminIntegrationConfigurations(_SdkObject);
+                return _AdminIntegrationConfigurations;
+            }
+        }
+        private AdminIntegrationConfigurations? _AdminIntegrationConfigurations = null;
+
         public AdminInventories AdminInventories
         {
             get

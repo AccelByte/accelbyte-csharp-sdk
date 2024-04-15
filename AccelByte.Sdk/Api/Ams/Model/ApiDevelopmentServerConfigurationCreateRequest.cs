@@ -9,8 +9,8 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiDevelopmentServerConfigurationCreateRequest : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("commandLine")]
-        public string? CommandLine { get; set; }
+        [JsonPropertyName("commandLineArguments")]
+        public string? CommandLineArguments { get; set; }
 
         [JsonPropertyName("imageId")]
         public string? ImageId { get; set; }

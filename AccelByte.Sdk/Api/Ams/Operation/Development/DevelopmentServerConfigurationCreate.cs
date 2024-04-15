@@ -16,6 +16,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// DevelopmentServerConfigurationCreate
     ///
+    /// Configuration name can be up to 128 characters and must conform to ^[.a-zA-Z0-9_-]+$
+    /// 
     /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:FLEET [CREATE]
     /// </summary>
     public class DevelopmentServerConfigurationCreate : AccelByte.Sdk.Core.Operation

@@ -16,24 +16,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// deleteGroupPublicV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// Required Member Role Permission: "GROUP [DELETE]"
     /// 
-    /// 
-    /// 
-    /// 
-    /// Delete existing group. This endpoint will check the group ID of the user based on the access token
-    /// and compare it with the group ID in path parameter. It will also check the member role of the user based on
-    /// the access token
-    /// 
-    /// 
-    /// 
+    /// Delete existing group. This endpoint will check the group ID of the user based on the access token and compare it with the group ID in path parameter. It will also check the member role of the user based on the access token
     /// 
     /// Action Code: 73305
     /// </summary>

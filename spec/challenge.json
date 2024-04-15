@@ -2523,11 +2523,11 @@
     "path": "/challenge/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2024-03-27T09:25:10+00:00",
-    "gitHash": "d85327a61f0f31cdc6f52230fa6946bf216c9783",
+    "buildDate": "2024-04-05T06:48:09+00:00",
+    "gitHash": "040d82ff5fc075fe92822513a55d5887ead40fb6",
     "name": "justice-challenge-service",
     "realm": "staging",
-    "version": "1.2.5",
+    "version": "1.3.0",
     "version-roles-seeding": "1.2.16"
   }
 }

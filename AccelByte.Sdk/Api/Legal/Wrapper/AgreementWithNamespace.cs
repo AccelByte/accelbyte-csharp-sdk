@@ -31,6 +31,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.RetrieveAllUsersByPolicyVersion1.Builder.SetWrapperObject(this); }
         }
+        public DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder DownloadExportedAgreementsInCSVOp
+        {
+            get { return Operation.DownloadExportedAgreementsInCSV.Builder.SetWrapperObject(this); }
+        }
+        public InitiateExportAgreementsToCSV.InitiateExportAgreementsToCSVBuilder InitiateExportAgreementsToCSVOp
+        {
+            get { return Operation.InitiateExportAgreementsToCSV.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public List<Model.UserAgreementsResponse>? RetrieveAcceptedAgreementsForMultiUsers(RetrieveAcceptedAgreementsForMultiUsers input)
@@ -74,6 +82,38 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> RetrieveAllUsersByPolicyVersion1Async(RetrieveAllUsersByPolicyVersion1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.DownloadExportedAgreementsInCSVResponse? DownloadExportedAgreementsInCSV(DownloadExportedAgreementsInCSV input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DownloadExportedAgreementsInCSVResponse?> DownloadExportedAgreementsInCSVAsync(DownloadExportedAgreementsInCSV input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.InitiateExportAgreementsToCSVResponse? InitiateExportAgreementsToCSV(InitiateExportAgreementsToCSV input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.InitiateExportAgreementsToCSVResponse?> InitiateExportAgreementsToCSVAsync(InitiateExportAgreementsToCSV input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

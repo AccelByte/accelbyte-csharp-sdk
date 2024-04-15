@@ -16,22 +16,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getGroupInvitationRequestPublicV1
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// This endpoint is used to Get Group Invitation Request List
     /// 
-    /// 
-    /// 
-    /// 
     /// Get Group Invitation Request List for the user calling this endpoint. It will check any group invitation for this user
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73502
     /// </summary>

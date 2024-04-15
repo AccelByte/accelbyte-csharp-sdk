@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getSingleMemberRoleAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission ADMIN:NAMESPACE:{namespace}:GROUP:ROLE [READ]
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to get member role based on the role ID
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73203
     /// </summary>

@@ -16,27 +16,13 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// CancelInvitationGroupMemberV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// Required Member Role Permission: "GROUP:INVITE [DELETE]"
     /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to cancel invitation group member.
     /// 
-    /// 
-    /// 
-    /// 
     /// cancel invitation group member. This endpoint will cancel invitation to specific user, and also the role permission of the the user who accesses this endpoint
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73409
     /// </summary>

@@ -16,16 +16,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicSearchUserV3
     ///
-    /// This endpoint search all users on the specified namespace that match the query on these fields: display name, and username or by 3rd party display name.
-    /// The query length should greater than 2ï¼otherwise will not query the database. The default limit value is 100.
-    /// **Note: searching by 3rd party platform display name is exact query**
-    /// ---
-    /// When searching by 3rd party platform display name:
+    /// This endpoint search all users on the specified namespace that match the query on these fields: display name, unique display name, username or by 3rd party display name.
+    /// The query length should between 3-20, otherwise will not query the database.
+    /// The default limit value is 20.
+    /// 
+    /// ## Searching by 3rd party platform
+    /// 
+    /// **Note: searching by 3rd party platform display name will use exact query.**
+    /// 
+    /// Step when searching by 3rd party platform display name:
     /// 1. set __by__ to __thirdPartyPlatform__
     /// 2. set __platformId__ to the supported platform id
     /// 3. set __platformBy__ to __platformDisplayName__
-    /// ---
-    /// Supported platform id:
+    /// 
+    /// ### Supported platform id:
     /// 
     /// * steam
     /// * steamopenid

@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveAcceptedAgreements
     ///
-    /// This API will return all accepted Legal Agreements for specified user. Other detail info:
+    /// This API will return all accepted Legal Agreements for specified user.
+    /// Other detail info:
+    /// 
     ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrieveAcceptedAgreements : AccelByte.Sdk.Core.Operation

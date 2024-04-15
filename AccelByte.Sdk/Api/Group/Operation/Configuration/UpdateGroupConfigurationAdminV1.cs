@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// updateGroupConfigurationAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [UPDATE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to update existing configuration. groupAdminRoleId and groupMemberRoleId won't be able to be updated. User can try to change the member role permission instead for each of those member role
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73102
     /// </summary>

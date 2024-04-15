@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getGroupConfigurationAdminV1
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [READ]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to get existing configuration. This Configuration is used as the main rule of the service. Each namespace will have its own configuration
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73101
     /// </summary>

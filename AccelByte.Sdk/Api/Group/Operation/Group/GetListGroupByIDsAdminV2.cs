@@ -16,17 +16,9 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// getListGroupByIDsAdminV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
     /// 
-    /// 
-    /// 
-    /// 
     /// Get list of groups by group Ids.
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73303
     /// </summary>

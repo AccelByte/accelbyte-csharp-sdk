@@ -16,17 +16,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// deleteGroupConfigurationV1
     ///
-    /// 
-    /// 
-    /// Required permission 'ADMIN:NAMESPACE:{namespace}:GROUP:CONFIGURATION [DELETE]'
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint is used to delete group configuration. This Configuration is used as the main rule of the service. Each namespace will have its own configuration
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73101
     /// </summary>

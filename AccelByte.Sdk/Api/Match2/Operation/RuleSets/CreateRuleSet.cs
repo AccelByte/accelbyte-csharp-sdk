@@ -22,6 +22,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// The name is used for a match pool to select the ruleset data that should be sent to the match function when matchmaking in that pool.
     /// 
     /// To use custom rules set please set enable_custom_match_function=true. Default (false).
+    /// 
+    /// When custom enable_custom_match_function=true, the ruleset will only validate if the rule is valid json.
     /// </summary>
     public class CreateRuleSet : AccelByte.Sdk.Core.Operation
     {

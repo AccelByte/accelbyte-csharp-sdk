@@ -27,12 +27,28 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<DevelopmentServerConfigurationListBuilder>
         {
 
+            public long? Count { get; set; }
+
+            public long? Offset { get; set; }
+
 
 
 
 
             internal DevelopmentServerConfigurationListBuilder() { }
 
+
+            public DevelopmentServerConfigurationListBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public DevelopmentServerConfigurationListBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
 
 
 
@@ -60,6 +76,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
 
@@ -71,11 +89,15 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         #endregion
 
         public DevelopmentServerConfigurationList(
-            string namespace_
+            string namespace_,
+            long? count,
+            long? offset
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 
 
@@ -96,7 +118,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ApiDevelopmentServerConfigurationGetResponse>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApiDevelopmentServerConfigurationListResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -105,13 +127,13 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<List<Model.ApiDevelopmentServerConfigurationGetResponse>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ApiDevelopmentServerConfigurationListResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<List<Model.ApiDevelopmentServerConfigurationGetResponse>>(payload);
+                    return JsonSerializer.Deserialize<Model.ApiDevelopmentServerConfigurationListResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ApiDevelopmentServerConfigurationGetResponse>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApiDevelopmentServerConfigurationListResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

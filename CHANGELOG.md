@@ -1,3 +1,9 @@
+<a name="v0.59.0"></a>
+## [v0.59.0]
+### chore
+- **:** update 0.58 changelog
+
+
 <a name="v0.58.0"></a>
 ## [v0.58.0]
 ### feat

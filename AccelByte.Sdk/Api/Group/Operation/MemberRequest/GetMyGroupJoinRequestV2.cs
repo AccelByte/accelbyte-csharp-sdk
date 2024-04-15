@@ -16,22 +16,11 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// <summary>
     /// GetMyGroupJoinRequestV2
     ///
-    /// 
-    /// 
     /// Required valid user authentication
-    /// 
-    /// 
-    /// 
     /// 
     /// This endpoint is used to Get My Join Request To The Groups
     /// 
-    /// 
-    /// 
-    /// 
     /// Get My Join Request To The Groups for the user calling this endpoint. It will check any join request group for this user
-    /// 
-    /// 
-    /// 
     /// 
     /// Action Code: 73502
     /// </summary>
