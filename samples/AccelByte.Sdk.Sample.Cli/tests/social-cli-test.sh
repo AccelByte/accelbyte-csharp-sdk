@@ -247,7 +247,7 @@ eval_tap $? 29 'CreateStatCycle' test.out
 
 #- 30 BulkGetStatCycle
 # body param: body
-echo '{"cycleIds": ["70TCayYAkF18YBwR", "hzsVbpJLtEZjuyFh", "vbxX2DNbknfVv4nm"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["hzsVbpJLtEZjuyFh", "70TCayYAkF18YBwR", "vbxX2DNbknfVv4nm"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle \
@@ -457,7 +457,7 @@ eval_tap $? 49 'DeleteStat' test.out
 
 #- 50 UpdateStat
 # body param: body
-echo '{"cycleIds": ["QoydbYjXZyBpqhCJ", "BtFOm3iCpu0lhhgu", "tt3rQuKP1OEtKFBj"], "defaultValue": 0.6367246205689969, "description": "ihHU8GP8TRVypSvY", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "isPublic": true, "name": "RWFTyA9MDnKGXqq7", "tags": ["IF5tEsCwoAVcZCSj", "Zk705hOhenJi6dNV", "F7zwjXqlcD2LzaOw"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["BtFOm3iCpu0lhhgu", "QoydbYjXZyBpqhCJ", "tt3rQuKP1OEtKFBj"], "defaultValue": 0.6367246205689969, "description": "ihHU8GP8TRVypSvY", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "isPublic": true, "name": "RWFTyA9MDnKGXqq7", "tags": ["F7zwjXqlcD2LzaOw", "Zk705hOhenJi6dNV", "IF5tEsCwoAVcZCSj"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -649,7 +649,7 @@ eval_tap $? 65 'GetStatCycles1' test.out
 
 #- 66 BulkGetStatCycle1
 # body param: body
-echo '{"cycleIds": ["UyrKKulHUnompTrS", "e6T4pYH3BPyFurT4", "p8zoRYG8WKTaUyB0"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["p8zoRYG8WKTaUyB0", "e6T4pYH3BPyFurT4", "UyrKKulHUnompTrS"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle1 \
@@ -712,7 +712,7 @@ eval_tap $? 71 'BulkResetUserStatItem2' test.out
 
 #- 72 CreateStat1
 # body param: body
-echo '{"cycleIds": ["BU2g8Eo7uAb4Hndx", "D8SUZv2LFFZer6T3", "W7TE5WdocKzvgr3j"], "defaultValue": 0.26325876214387434, "description": "QYO14lFR2YtIb1fu", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.13446122178106323, "minimum": 0.23046809128060097, "name": "dJFjEbn1ASMAiedH", "setAsGlobal": false, "setBy": "CLIENT", "statCode": "v6WmW9mRXQwc5sfO", "tags": ["0koCGDPfbiGdBQ5D", "ZbgnCmULqltV5xjj", "rXKhZOekpygvRDCk"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["D8SUZv2LFFZer6T3", "BU2g8Eo7uAb4Hndx", "W7TE5WdocKzvgr3j"], "defaultValue": 0.26325876214387434, "description": "QYO14lFR2YtIb1fu", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.13446122178106323, "minimum": 0.23046809128060097, "name": "dJFjEbn1ASMAiedH", "setAsGlobal": false, "setBy": "CLIENT", "statCode": "v6WmW9mRXQwc5sfO", "tags": ["rXKhZOekpygvRDCk", "0koCGDPfbiGdBQ5D", "ZbgnCmULqltV5xjj"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat1 \

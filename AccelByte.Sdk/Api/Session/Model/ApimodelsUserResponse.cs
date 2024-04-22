@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Session.Model
         public string? PlatformUserID { get; set; }
 
         [JsonPropertyName("previousStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PreviousStatus { get; set; }
 
         [JsonPropertyName("status")]

@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private Friends? _Friends = null;
 
+        public Blocks Blocks
+        {
+            get
+            {
+                if (_Blocks == null)
+                    _Blocks = new Blocks(_SdkObject);
+                return _Blocks;
+            }
+        }
+        private Blocks? _Blocks = null;
+
         public Config Config
         {
             get

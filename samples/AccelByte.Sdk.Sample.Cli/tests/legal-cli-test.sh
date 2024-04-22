@@ -91,7 +91,7 @@ eval_tap $? 5 'RetrieveAllLegalPolicies' test.out
 
 #- 6 CreatePolicy
 # body param: body
-echo '{"affectedClientIds": ["ywsSSZTGlubsmhjX", "867xodwuG14ID5l5", "wj6K2wEMnckjlW6B"], "affectedCountries": ["cScOUvrjJBO7tbkT", "GYKqRMSTisP0MrSd", "aFy0pJYCdfkfyt09"], "basePolicyName": "ro5fHdWqJTNjrmpn", "description": "nEckHH8kT9oXVand", "namespace": "ercf1nq4Hf32SL5P", "tags": ["FuJORk4j04YfnXTs", "py8KrcQfucSq2X8g", "jaYEDxaYN8w9KUW0"], "typeId": "QUrA0WWyKl2K5mCS"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["867xodwuG14ID5l5", "ywsSSZTGlubsmhjX", "wj6K2wEMnckjlW6B"], "affectedCountries": ["cScOUvrjJBO7tbkT", "GYKqRMSTisP0MrSd", "aFy0pJYCdfkfyt09"], "basePolicyName": "ro5fHdWqJTNjrmpn", "description": "nEckHH8kT9oXVand", "namespace": "ercf1nq4Hf32SL5P", "tags": ["FuJORk4j04YfnXTs", "py8KrcQfucSq2X8g", "jaYEDxaYN8w9KUW0"], "typeId": "QUrA0WWyKl2K5mCS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreatePolicy \
@@ -109,7 +109,7 @@ eval_tap $? 7 'RetrieveSinglePolicy' test.out
 
 #- 8 PartialUpdatePolicy
 # body param: body
-echo '{"affectedClientIds": ["AAYcRXJdoSTxNCK9", "AIjNmbfoW8bDq5jP", "qzhN0YdGSrA9LXRw"], "affectedCountries": ["U6WLgpQE9nXzhBC0", "uyMR4Xf2nfYvNvG8", "uQ14AhsxaALiBwpN"], "basePolicyName": "JornrCQpMJj5igqa", "description": "t8xnPoWTdHAkcyAy", "namespace": "4drHlPcXGGl0Xw3v", "tags": ["SGqcH91fC3aJEoqW", "eBfrpCrnbaxhEvn3", "aFAGD6PRg95m07l0"]}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["qzhN0YdGSrA9LXRw", "AIjNmbfoW8bDq5jP", "AAYcRXJdoSTxNCK9"], "affectedCountries": ["U6WLgpQE9nXzhBC0", "uyMR4Xf2nfYvNvG8", "uQ14AhsxaALiBwpN"], "basePolicyName": "JornrCQpMJj5igqa", "description": "t8xnPoWTdHAkcyAy", "namespace": "4drHlPcXGGl0Xw3v", "tags": ["SGqcH91fC3aJEoqW", "aFAGD6PRg95m07l0", "eBfrpCrnbaxhEvn3"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op PartialUpdatePolicy \
@@ -186,7 +186,7 @@ eval_tap $? 15 'SetDefaultPolicy' test.out
 
 #- 16 RetrieveAcceptedAgreementsForMultiUsers
 # body param: body
-echo '{"currentPublishedOnly": true, "userIds": ["NXSTItt35OJTfJBZ", "c5HmR0vknXO45AUt", "X62yI9g5RDrlzPFQ"]}' > $TEMP_JSON_INPUT
+echo '{"currentPublishedOnly": true, "userIds": ["X62yI9g5RDrlzPFQ", "NXSTItt35OJTfJBZ", "c5HmR0vknXO45AUt"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op RetrieveAcceptedAgreementsForMultiUsers \
@@ -246,7 +246,7 @@ eval_tap $? 21 'RetrieveAllLegalPoliciesByNamespace' test.out
 
 #- 22 CreatePolicy1
 # body param: body
-echo '{"affectedClientIds": ["afo9b4xJyNnvHKrm", "btdK2r4wWs6IpYBx", "qMIpfgxw2ff5twRY"], "affectedCountries": ["6J5brVo20e6POTjr", "inAVVovpAAXNzcpb", "8UuNlT86N9yO0vyD"], "basePolicyName": "mX3lLFeXCiaXP8jB", "description": "jK81t2V9TVauFcGk", "tags": ["ncuf5d5saQvKfFRq", "RYkbhEM1zTNY3lpi", "PgQ0hb2tLrsMeoZi"], "typeId": "Bam8jPtKHTmzo0Jm"}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["afo9b4xJyNnvHKrm", "qMIpfgxw2ff5twRY", "btdK2r4wWs6IpYBx"], "affectedCountries": ["8UuNlT86N9yO0vyD", "6J5brVo20e6POTjr", "inAVVovpAAXNzcpb"], "basePolicyName": "mX3lLFeXCiaXP8jB", "description": "jK81t2V9TVauFcGk", "tags": ["PgQ0hb2tLrsMeoZi", "RYkbhEM1zTNY3lpi", "ncuf5d5saQvKfFRq"], "typeId": "Bam8jPtKHTmzo0Jm"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op CreatePolicy1 \
@@ -266,7 +266,7 @@ eval_tap $? 23 'RetrieveSinglePolicy1' test.out
 
 #- 24 PartialUpdatePolicy1
 # body param: body
-echo '{"affectedClientIds": ["icGQAVv32ftRAsmC", "ADRqJvaZrf2qXQFC", "0RuRA8j1AJ3hNWWh"], "affectedCountries": ["zRV1paELj5dw3LK0", "gPYhPPG5sAIfYtYo", "zA2OntGCwQSHHdPL"], "basePolicyName": "wjTngrvb2E1X9ecB", "description": "BhRAYjR7c4x5bIk8", "tags": ["pVpxdUWOPel3TiwT", "bvxQWI0QGCOx7eIC", "ycqpVdINXzvkSp0W"]}' > $TEMP_JSON_INPUT
+echo '{"affectedClientIds": ["0RuRA8j1AJ3hNWWh", "ADRqJvaZrf2qXQFC", "icGQAVv32ftRAsmC"], "affectedCountries": ["zA2OntGCwQSHHdPL", "zRV1paELj5dw3LK0", "gPYhPPG5sAIfYtYo"], "basePolicyName": "wjTngrvb2E1X9ecB", "description": "BhRAYjR7c4x5bIk8", "tags": ["pVpxdUWOPel3TiwT", "bvxQWI0QGCOx7eIC", "ycqpVdINXzvkSp0W"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn legal \
     --op PartialUpdatePolicy1 \

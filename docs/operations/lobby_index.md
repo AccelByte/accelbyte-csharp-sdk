@@ -27,6 +27,11 @@
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/of-friends` | GET | AdminListFriendsOfFriends | [AdminListFriendsOfFriends](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/AdminListFriendsOfFriends.cs) | [AdminListFriendsOfFriends](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/AdminListFriendsOfFriends.cs) |
 | `/lobby/v1/admin/friend/namespaces/{namespace}/users/{userId}/outgoing` | GET | GetOutgoingFriendRequests | [GetOutgoingFriendRequests](../../AccelByte.Sdk/Api/Lobby/Operation/Friends/GetOutgoingFriendRequests.cs) | [GetOutgoingFriendRequests](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Friends/GetOutgoingFriendRequests.cs) |
 
+### blocks Wrapper:  [Blocks](../../AccelByte.Sdk/Api/Lobby/Wrapper/Blocks.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/lobby/sync/namespaces/{namespace}/me/block` | PATCH | SyncNativeBlockedUser | [SyncNativeBlockedUser](../../AccelByte.Sdk/Api/Lobby/Operation/Blocks/SyncNativeBlockedUser.cs) | [SyncNativeBlockedUser](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Lobby/Blocks/SyncNativeBlockedUser.cs) |
+
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -155,6 +160,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### blocks Wrapper:  [Blocks](../../AccelByte.Sdk/Api/Lobby/Wrapper/Blocks.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Lobby/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -231,6 +240,8 @@
 | `model.Localization` | [ModelLocalization](../../AccelByte.Sdk/Api/Lobby/Model/ModelLocalization.cs) |
 | `model.NativeFriendRequest` | [ModelNativeFriendRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeFriendRequest.cs) |
 | `model.NativeFriendSyncResponse` | [ModelNativeFriendSyncResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeFriendSyncResponse.cs) |
+| `model.NativeUserBlockRequest` | [ModelNativeUserBlockRequest](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeUserBlockRequest.cs) |
+| `model.NativeUserBlockResponse` | [ModelNativeUserBlockResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNativeUserBlockResponse.cs) |
 | `model.NotificationTemplateResponse` | [ModelNotificationTemplateResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTemplateResponse.cs) |
 | `model.NotificationTopicResponse` | [ModelNotificationTopicResponse](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponse.cs) |
 | `model.NotificationTopicResponseV1` | [ModelNotificationTopicResponseV1](../../AccelByte.Sdk/Api/Lobby/Model/ModelNotificationTopicResponseV1.cs) |

@@ -1,3 +1,9 @@
+<a name="v0.60.0"></a>
+## [v0.60.0]
+### feat
+- **sample:** add async sample app
+
+
 <a name="v0.59.0"></a>
 ## [v0.59.0]
 ### chore

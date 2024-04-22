@@ -8,7 +8,7 @@
     },
     "description": "Justice IAM Service",
     "title": "justice-iam-service",
-    "version": "7.14.0"
+    "version": "7.14.2"
   },
   "schemes": [
     "https"
@@ -16929,7 +16929,7 @@
         "consumes": [
           "application/x-www-form-urlencoded"
         ],
-        "description": "Admin Retrieve User Third Party Platform Token\nThis endpoint used for retrieving third party platform token for user that login using third party,\nif user have not link requested platform in game namespace, will try to retrieving third party platform token from publisher namespace.\nPassing platform group name or it\u0026#39;s member will return same access token that can be used across the platform members.\n\nNotes:\nThe third party platform and platform group covered for this is:\n- (psn) ps4web\n- (psn) ps4\n- (psn) ps5\n- epicgames\n- twitch\n- awscognito\n- amazon\n- eaorigin\n- snapchat\n- twitch\n- live",
+        "description": "Admin Retrieve User Third Party Platform Token\nThis endpoint used for retrieving third party platform token for user that login using third party,\nif user have not link requested platform in game namespace, will try to retrieving third party platform token from publisher namespace.\nPassing platform group name or it\u0026#39;s member will return same access token that can be used across the platform members.\nIf platformUserId provided, IAM will prefer to get platform token by platform user id.\n\nNotes:\nThe third party platform and platform group covered for this is:\n- (psn) ps4web\n- (psn) ps4\n- (psn) ps5\n- epicgames\n- twitch\n- awscognito\n- amazon\n- eaorigin\n- snapchat\n- twitch\n- live",
         "operationId": "AdminRetrieveUserThirdPartyPlatformTokenV3",
         "parameters": [
           {
@@ -16951,6 +16951,12 @@
             "in": "path",
             "name": "userId",
             "required": true,
+            "type": "string"
+          },
+          {
+            "description": "Platform user id.",
+            "in": "query",
+            "name": "platformUserId",
             "type": "string"
           }
         ],
@@ -36495,11 +36501,11 @@
     "path": "/iam/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2024-04-05T09:57:34+00:00",
-    "gitHash": "0f1535c310b501dd5f434db660020de9fcd65b2d",
+    "buildDate": "2024-04-22T06:27:39+00:00",
+    "gitHash": "b85934fe1ef4a0970e4108294fbff7dee3eb2882",
     "name": "justice-iam-service",
     "realm": "demo",
-    "version": "7.14.0",
+    "version": "7.14.2",
     "version-roles-seeding": "1.2.21"
   }
 }
