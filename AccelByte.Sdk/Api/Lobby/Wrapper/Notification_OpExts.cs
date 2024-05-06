@@ -564,6 +564,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Notification)builder.WrapperObject!).SendSpecificUserTemplatedNotificationV1AdminAsync(op);
         }
+        public static Lobby.Model.ModelNotificationResponse? Execute(
+            this GetMyNotifications.GetMyNotificationsBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyNotifications op = builder.Build(
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Notification)builder.WrapperObject!).GetMyNotifications(op);
+        }
+        public static async Task<Lobby.Model.ModelNotificationResponse?> ExecuteAsync(
+            this GetMyNotifications.GetMyNotificationsBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyNotifications op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Notification)builder.WrapperObject!).GetMyNotificationsAsync(op);
+        }
         public static Lobby.Model.ModelTopicByNamespacesResponse? Execute(
             this GetTopicByNamespace.GetTopicByNamespaceBuilder builder,
             string namespace_

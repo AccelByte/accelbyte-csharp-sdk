@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     ///     * requirementGroups: list of conditions that conform with the goal progressions.
     ///     * rewards: list of rewards that will be claimable once a goal is complete
     ///     * tag: goal's labels
+    ///     * isActive: when goal is in a schedule, isActive determine whether goal is active to progress or not
     /// Goal describe set of requirements that need to be fulfilled by players in order to complete it and describe what is the rewards given to player when they complete the goal.The requirement will have target value and a operator that will evaluate that against an observable playerâs attribute (e.g. statistic, entitlement). Goal belongs to a challenge.
     /// </summary>
     public class AdminCreateGoal : AccelByte.Sdk.Core.Operation

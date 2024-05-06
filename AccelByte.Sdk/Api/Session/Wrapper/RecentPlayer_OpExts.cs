@@ -35,6 +35,28 @@ namespace AccelByte.Sdk.Api
             return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentPlayerAsync(op);
         }
         public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
+            this AdminGetRecentTeamPlayer.AdminGetRecentTeamPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetRecentTeamPlayer op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentTeamPlayer(op);
+        }
+        public static async Task<Session.Model.ModelsRecentPlayerQueryResponse?> ExecuteAsync(
+            this AdminGetRecentTeamPlayer.AdminGetRecentTeamPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetRecentTeamPlayer op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).AdminGetRecentTeamPlayerAsync(op);
+        }
+        public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
             this PublicGetRecentPlayer.PublicGetRecentPlayerBuilder builder,
             string namespace_
         )
@@ -55,6 +77,28 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentPlayerAsync(op);
+        }
+        public static Session.Model.ModelsRecentPlayerQueryResponse? Execute(
+            this PublicGetRecentTeamPlayer.PublicGetRecentTeamPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetRecentTeamPlayer op = builder.Build(
+                namespace_
+            );
+
+            return ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentTeamPlayer(op);
+        }
+        public static async Task<Session.Model.ModelsRecentPlayerQueryResponse?> ExecuteAsync(
+            this PublicGetRecentTeamPlayer.PublicGetRecentTeamPlayerBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetRecentTeamPlayer op = builder.Build(
+                namespace_
+            );
+
+            return await ((Session.Wrapper.RecentPlayer)builder.WrapperObject!).PublicGetRecentTeamPlayerAsync(op);
         }
     }
 }

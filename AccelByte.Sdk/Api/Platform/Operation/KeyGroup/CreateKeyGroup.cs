@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Create key group.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=1 (CREATE)
-    ///   *  Returns : created key group
+    ///   * Returns : created key group
     /// </summary>
     public class CreateKeyGroup : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get entitlement config info.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=2 (READ)
-    ///   *  Returns : entitlement info
+    ///   * Returns : entitlement info
     /// </summary>
     public class GetEntitlementConfigInfo : AccelByte.Sdk.Core.Operation
     {

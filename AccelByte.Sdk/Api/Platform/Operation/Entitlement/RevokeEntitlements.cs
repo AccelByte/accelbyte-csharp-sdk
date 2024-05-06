@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Revoke entitlements, skipped revocation will be treated as fail.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : bulk revoke entitlements result
+    ///   * Returns : bulk revoke entitlements result
     /// </summary>
     public class RevokeEntitlements : AccelByte.Sdk.Core.Operation
     {

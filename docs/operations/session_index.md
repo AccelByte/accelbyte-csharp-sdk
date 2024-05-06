@@ -116,7 +116,9 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/session/v1/admin/namespaces/{namespace}/recent-player` | GET | AdminGetRecentPlayer | [AdminGetRecentPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/AdminGetRecentPlayer.cs) | [AdminGetRecentPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/AdminGetRecentPlayer.cs) |
+| `/session/v1/admin/namespaces/{namespace}/recent-team-player` | GET | AdminGetRecentTeamPlayer | [AdminGetRecentTeamPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/AdminGetRecentTeamPlayer.cs) | [AdminGetRecentTeamPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/AdminGetRecentTeamPlayer.cs) |
 | `/session/v1/public/namespaces/{namespace}/recent-player` | GET | PublicGetRecentPlayer | [PublicGetRecentPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/PublicGetRecentPlayer.cs) | [PublicGetRecentPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/PublicGetRecentPlayer.cs) |
+| `/session/v1/public/namespaces/{namespace}/recent-team-player` | GET | PublicGetRecentTeamPlayer | [PublicGetRecentTeamPlayer](../../AccelByte.Sdk/Api/Session/Operation/RecentPlayer/PublicGetRecentTeamPlayer.cs) | [PublicGetRecentTeamPlayer](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/RecentPlayer/PublicGetRecentTeamPlayer.cs) |
 
 ### Session Storage Wrapper:  [SessionStorage](../../AccelByte.Sdk/Api/Session/Wrapper/SessionStorage.cs)
 | Endpoint | Method | ID | Class | Example |

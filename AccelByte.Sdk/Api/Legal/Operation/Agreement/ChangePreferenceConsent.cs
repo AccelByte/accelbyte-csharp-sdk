@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// changePreferenceConsent
     ///
-    /// This API will Update Preference Consent.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=4 (UPDATE)
+    /// This API will Update Preference Consent
     /// </summary>
     public class ChangePreferenceConsent : AccelByte.Sdk.Core.Operation
     {

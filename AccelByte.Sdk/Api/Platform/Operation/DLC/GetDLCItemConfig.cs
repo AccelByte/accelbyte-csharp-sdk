@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getDLCItemConfig
     ///
     /// Get DLC item config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:DLC:CONFIG" , action=2 (READ)
     /// </summary>
     public class GetDLCItemConfig : AccelByte.Sdk.Core.Operation
     {

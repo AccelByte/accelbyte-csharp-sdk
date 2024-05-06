@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Get payment global tax config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
-    ///   *  Returns : payment provider list
+    ///   * Returns : payment provider list
     /// </summary>
     public class GetPaymentTaxConfig : AccelByte.Sdk.Core.Operation
     {

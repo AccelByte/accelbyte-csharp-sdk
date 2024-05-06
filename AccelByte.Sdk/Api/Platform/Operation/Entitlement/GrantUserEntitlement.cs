@@ -33,8 +33,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   *  LOOTBOX
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (CREATE)
-    ///   *  Returns : granted entitlement
+    ///   * Returns : granted entitlement
     /// </summary>
     public class GrantUserEntitlement : AccelByte.Sdk.Core.Operation
     {

@@ -17,7 +17,31 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminGetUserSinglePlatformAccount
     ///
     /// This endpoint gets user single platform account metadata.
-    /// Supported platforms are same with the supported login platforms.
+    /// Supported Platform:
+    /// - Steam group(steamnetwork):
+    /// - steam
+    /// - steamopenid
+    /// - PSN group(psn)
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - XBOX group(xbox)
+    /// - live
+    /// - xblweb
+    /// - Oculus group(oculusgroup)
+    /// - oculus
+    /// - oculusweb
+    /// - epicgames
+    /// - nintendo
+    /// - aws cognito
+    /// - facebook
+    /// - google
+    /// - discord
+    /// - twitch
+    /// - snapchat
+    /// - amazon
+    /// 
+    /// Note: you can use either platform ID or platform group as platformId query parameter
     /// </summary>
     public class AdminGetUserSinglePlatformAccount : AccelByte.Sdk.Core.Operation
     {

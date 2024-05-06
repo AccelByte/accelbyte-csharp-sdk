@@ -16,9 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicGetUserPersonalDataRequests
     ///
-    /// 
-    /// 
+    /// Get user's personal data requests
     /// Requires valid user access token
+    /// Scope: account
     /// </summary>
     public class PublicGetUserPersonalDataRequests : AccelByte.Sdk.Core.Operation
     {

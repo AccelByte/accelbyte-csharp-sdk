@@ -33,8 +33,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : payment global tax config
+    ///   * Returns : payment global tax config
     /// </summary>
     public class UpdatePaymentTaxConfig : AccelByte.Sdk.Core.Operation
     {

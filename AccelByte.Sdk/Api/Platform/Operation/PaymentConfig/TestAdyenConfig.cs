@@ -36,8 +36,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * settings
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : test adyen config
+    ///   * Returns : test adyen config
     /// </summary>
     public class TestAdyenConfig : AccelByte.Sdk.Core.Operation
     {

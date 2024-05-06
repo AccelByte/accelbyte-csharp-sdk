@@ -31,8 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * webhookSecret
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : test adyen config
+    ///   * Returns : test adyen config
     /// </summary>
     public class TestStripeConfig : AccelByte.Sdk.Core.Operation
     {

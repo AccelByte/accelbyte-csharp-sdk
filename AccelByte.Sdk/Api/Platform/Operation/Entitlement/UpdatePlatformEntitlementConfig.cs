@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update platform entitlement config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : platform entitlement config
+    ///   * Returns : platform entitlement config
     /// </summary>
     public class UpdatePlatformEntitlementConfig : AccelByte.Sdk.Core.Operation
     {

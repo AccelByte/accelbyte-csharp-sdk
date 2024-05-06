@@ -30,6 +30,12 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             public string? GoalCode { get; set; }
 
+            public long? Limit { get; set; }
+
+            public long? Offset { get; set; }
+
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -40,6 +46,24 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             public PublicGetUserProgressionBuilder SetGoalCode(string _goalCode)
             {
                 GoalCode = _goalCode;
+                return this;
+            }
+
+            public PublicGetUserProgressionBuilder SetLimit(long _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public PublicGetUserProgressionBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public PublicGetUserProgressionBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -74,9 +98,13 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.GoalCode is not null) QueryParams["goalCode"] = builder.GoalCode;
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 
@@ -87,16 +115,23 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         public PublicGetUserProgression(
             string challengeCode,
             string namespace_,
-            string? goalCode
+            string? goalCode,
+            long? limit,
+            long? offset,
+            List<string>? tags
         )
         {
             PathParams["challengeCode"] = challengeCode;
             PathParams["namespace"] = namespace_;
 
             if (goalCode is not null) QueryParams["goalCode"] = goalCode;
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 

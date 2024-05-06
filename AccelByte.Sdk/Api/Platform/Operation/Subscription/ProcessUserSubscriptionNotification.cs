@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [SERVICE COMMUNICATION ONLY] This API is used as a web hook for payment notification from justice payment service.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
-    ///   *  Returns : Process result
+    ///   * Returns : Process result
     /// </summary>
     public class ProcessUserSubscriptionNotification : AccelByte.Sdk.Core.Operation
     {

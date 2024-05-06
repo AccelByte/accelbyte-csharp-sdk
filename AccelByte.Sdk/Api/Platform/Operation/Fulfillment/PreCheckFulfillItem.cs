@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Retrieve and check fulfillment items based on the provided request.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=READ
-    ///   *  Returns : list of fulfillment items
+    ///   * Returns : list of fulfillment items
     /// </summary>
     public class PreCheckFulfillItem : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// get a user wallet.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-    ///   *  Returns : wallet info
+    ///   * Returns : wallet info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserWallet : AccelByte.Sdk.Core.Operation

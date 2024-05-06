@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Delete a currency by currency code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=8 (DELETE)
-    ///   *  Returns :
+    ///   * Returns :
     /// </summary>
     public class DeleteCurrency : AccelByte.Sdk.Core.Operation
     {

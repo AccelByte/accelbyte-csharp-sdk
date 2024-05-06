@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateLootBoxPluginConfig
     ///
     /// Update lootbox plugin config. Other detail info:
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-    ///   *  Returns : updated service plugin config
+    ///   * Returns : updated service plugin config
     /// </summary>
     public class UpdateLootBoxPluginConfig : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// bulkUpdateRegionData
     ///
     /// This API is used to update region data of items in bulk
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
     /// </summary>
     public class BulkUpdateRegionData : AccelByte.Sdk.Core.Operation
     {

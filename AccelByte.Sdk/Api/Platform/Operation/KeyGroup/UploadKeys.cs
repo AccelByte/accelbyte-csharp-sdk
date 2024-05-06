@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-    ///   *  Returns : item data
+    ///   * Returns : item data
     /// </summary>
     public class UploadKeys : AccelByte.Sdk.Core.Operation
     {

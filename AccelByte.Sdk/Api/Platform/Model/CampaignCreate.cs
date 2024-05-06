@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
+        [JsonPropertyName("discountConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DiscountConfig? DiscountConfig { get; set; }
+
         [JsonPropertyName("items")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RedeemableItem>? Items { get; set; }
@@ -71,6 +75,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class CampaignCreateRedeemType : StringEnum<CampaignCreateRedeemType>
     {
+        public static readonly CampaignCreateRedeemType DISCOUNT
+            = new CampaignCreateRedeemType("DISCOUNT");
+
         public static readonly CampaignCreateRedeemType ITEM
             = new CampaignCreateRedeemType("ITEM");
 

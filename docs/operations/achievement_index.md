@@ -30,6 +30,11 @@
 | `/achievement/v1/public/namespaces/{namespace}/users/{userId}/global/achievements` | GET | ListUserContributions | [ListUserContributions](../../AccelByte.Sdk/Api/Achievement/Operation/GlobalAchievements/ListUserContributions.cs) | [ListUserContributions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/GlobalAchievements/ListUserContributions.cs) |
 | `/achievement/v1/public/namespaces/{namespace}/users/{userId}/global/achievements/{achievementCode}/claim` | POST | ClaimGlobalAchievementReward | [ClaimGlobalAchievementReward](../../AccelByte.Sdk/Api/Achievement/Operation/GlobalAchievements/ClaimGlobalAchievementReward.cs) | [ClaimGlobalAchievementReward](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/GlobalAchievements/ClaimGlobalAchievementReward.cs) |
 
+### Platform Achievement Wrapper:  [PlatformAchievement](../../AccelByte.Sdk/Api/Achievement/Wrapper/PlatformAchievement.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/achievement/v1/admin/namespaces/{namespace}/platforms/psn/bulk` | POST | BulkCreatePSNEvent | [BulkCreatePSNEvent](../../AccelByte.Sdk/Api/Achievement/Operation/PlatformAchievement/BulkCreatePSNEvent.cs) | [BulkCreatePSNEvent](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/PlatformAchievement/BulkCreatePSNEvent.cs) |
+
 ### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Achievement/Wrapper/Tags.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -67,6 +72,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Platform Achievement Wrapper:  [PlatformAchievement](../../AccelByte.Sdk/Api/Achievement/Wrapper/PlatformAchievement.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Tags Wrapper:  [Tags](../../AccelByte.Sdk/Api/Achievement/Wrapper/Tags.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -91,9 +100,16 @@
 | `models.AchievementResponse` | [ModelsAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementResponse.cs) |
 | `models.AchievementUpdateRequest` | [ModelsAchievementUpdateRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementUpdateRequest.cs) |
 | `models.AdditionalInfo` | [ModelsAdditionalInfo](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAdditionalInfo.cs) |
+| `models.BulkCreatePSNEventResponse` | [ModelsBulkCreatePSNEventResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEventResponse.cs) |
+| `models.BulkCreatePSNEvents` | [ModelsBulkCreatePSNEvents](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEvents.cs) |
 | `models.ContributorResponse` | [ModelsContributorResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsContributorResponse.cs) |
+| `models.CreatePSNEvent` | [ModelsCreatePSNEvent](../../AccelByte.Sdk/Api/Achievement/Model/ModelsCreatePSNEvent.cs) |
+| `models.ErrorDetails` | [ModelsErrorDetails](../../AccelByte.Sdk/Api/Achievement/Model/ModelsErrorDetails.cs) |
 | `models.GlobalAchievementResponse` | [ModelsGlobalAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsGlobalAchievementResponse.cs) |
 | `models.Icon` | [ModelsIcon](../../AccelByte.Sdk/Api/Achievement/Model/ModelsIcon.cs) |
+| `models.PSNEvent` | [ModelsPSNEvent](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPSNEvent.cs) |
+| `models.PSNEventData` | [ModelsPSNEventData](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPSNEventData.cs) |
+| `models.PSNEventResult` | [ModelsPSNEventResult](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPSNEventResult.cs) |
 | `models.PaginatedAchievementResponse` | [ModelsPaginatedAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedAchievementResponse.cs) |
 | `models.PaginatedContributorResponse` | [ModelsPaginatedContributorResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedContributorResponse.cs) |
 | `models.PaginatedGlobalAchievementResponse` | [ModelsPaginatedGlobalAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsPaginatedGlobalAchievementResponse.cs) |

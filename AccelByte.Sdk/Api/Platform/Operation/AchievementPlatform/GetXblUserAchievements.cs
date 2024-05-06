@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getXblUserAchievements
     ///
     /// This API is used to get xbox live user achievements(Only for test).
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT, action=2 (READ)
     /// </summary>
     public class GetXblUserAchievements : AccelByte.Sdk.Core.Operation
     {

@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:STORE, action=2 (READ)
-    ///   *  Returns : catalog definition
+    ///   * Returns : catalog definition
     /// </summary>
     public class GetCatalogDefinition : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get my private custom attributes.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=2 (READ)
-    ///   *  Returns : custom attributes
+    ///   * Returns : custom attributes
     ///   *  Action code : 11403
     /// </summary>
     public class GetMyPrivateCustomAttributesInfo : AccelByte.Sdk.Core.Operation

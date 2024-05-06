@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// publishPolicyVersion_1
     ///
     /// Manually publish a version of a particular country-specific policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
     /// </summary>
     public class PublishPolicyVersion1 : AccelByte.Sdk.Core.Operation
     {

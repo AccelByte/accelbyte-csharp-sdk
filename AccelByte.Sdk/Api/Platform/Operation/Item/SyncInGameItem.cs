@@ -22,8 +22,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-    ///   *  Returns : item data
+    ///   * Returns : item data
     /// </summary>
     public class SyncInGameItem : AccelByte.Sdk.Core.Operation
     {

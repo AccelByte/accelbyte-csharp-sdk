@@ -242,6 +242,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).PublicGetNamespacesAsync(op);
         }
+        public static Basic.Model.NamespaceSimpleInfo? Execute(
+            this GetNamespace1.GetNamespace1Builder builder,
+            string namespace_
+        )
+        {
+            GetNamespace1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespace1(op);
+        }
+        public static async Task<Basic.Model.NamespaceSimpleInfo?> ExecuteAsync(
+            this GetNamespace1.GetNamespace1Builder builder,
+            string namespace_
+        )
+        {
+            GetNamespace1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.Namespace)builder.WrapperObject!).GetNamespace1Async(op);
+        }
         public static Basic.Model.NamespacePublisherInfo? Execute(
             this PublicGetNamespacePublisher.PublicGetNamespacePublisherBuilder builder,
             string namespace_

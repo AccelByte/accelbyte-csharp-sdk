@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:TRADE, action=2 (REDA)
-    ///   *  Returns : trade history based on transaction ID
+    ///   * Returns : trade history based on transaction ID
     /// </summary>
     public class GetTradeHistoryByTransactionId : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizePayment
     ///
     /// Anonymize payment. At current it will only anonymize payment order, payment order history.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
     /// </summary>
     public class AnonymizePayment : AccelByte.Sdk.Core.Operation
     {

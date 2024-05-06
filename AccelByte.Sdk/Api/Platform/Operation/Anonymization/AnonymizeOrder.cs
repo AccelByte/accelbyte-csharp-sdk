@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizeOrder
     ///
     /// Anonymize order. At current it will only anonymize order, order history.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
     /// </summary>
     public class AnonymizeOrder : AccelByte.Sdk.Core.Operation
     {

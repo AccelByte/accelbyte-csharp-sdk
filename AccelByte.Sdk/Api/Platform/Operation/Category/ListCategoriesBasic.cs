@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=2 (READ)
-    ///   *  Returns : list of categories' paths
+    ///   * Returns : list of categories' paths
     /// </summary>
     public class ListCategoriesBasic : AccelByte.Sdk.Core.Operation
     {

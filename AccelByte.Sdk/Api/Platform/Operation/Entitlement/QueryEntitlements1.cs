@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=2 (READ)
-    ///   *  Returns : entitlement list
+    ///   * Returns : entitlement list
     /// </summary>
     public class QueryEntitlements1 : AccelByte.Sdk.Core.Operation
     {

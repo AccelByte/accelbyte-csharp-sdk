@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public GetCatalogConfig.GetCatalogConfigBuilder GetCatalogConfigOp
+        {
+            get { return Operation.GetCatalogConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdateCatalogConfig.UpdateCatalogConfigBuilder UpdateCatalogConfigOp
+        {
+            get { return Operation.UpdateCatalogConfig.Builder.SetWrapperObject(this); }
+        }
         public ListStores.ListStoresBuilder ListStoresOp
         {
             get { return Operation.ListStores.Builder.SetWrapperObject(this); }
@@ -103,6 +111,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
+        public Model.CatalogConfigInfo? GetCatalogConfig(GetCatalogConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CatalogConfigInfo?> GetCatalogConfigAsync(GetCatalogConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.CatalogConfigInfo? UpdateCatalogConfig(UpdateCatalogConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CatalogConfigInfo?> UpdateCatalogConfigAsync(UpdateCatalogConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.StoreInfo>? ListStores(ListStores input)
         {
             var response = _sdk.RunRequest(input);

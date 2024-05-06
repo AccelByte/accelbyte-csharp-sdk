@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// requestPresignedURL_1
     ///
     /// Request presigned URL for upload attachment for a particular localized version of base policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
     /// </summary>
     public class RequestPresignedURL1 : AccelByte.Sdk.Core.Operation
     {

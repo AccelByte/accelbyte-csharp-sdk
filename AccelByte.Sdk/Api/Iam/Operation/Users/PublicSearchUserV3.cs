@@ -22,21 +22,29 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// ## Searching by 3rd party platform
     /// 
-    /// **Note: searching by 3rd party platform display name will use exact query.**
+    /// **Note: searching by 3rd party platform display name will use exact query, not fuzzy query.**
     /// 
     /// Step when searching by 3rd party platform display name:
     /// 1. set __by__ to __thirdPartyPlatform__
-    /// 2. set __platformId__ to the supported platform id
+    /// 2. set __platformId__ to the _supported platform id_
     /// 3. set __platformBy__ to __platformDisplayName__
     /// 
     /// ### Supported platform id:
-    /// 
+    /// * Steam group(steamnetwork)
     /// * steam
     /// * steamopenid
-    /// * facebook
-    /// * google
+    /// * PSN group(psn)
+    /// * ps4web
+    /// * ps4
+    /// * ps5
+    /// * XBOX group(xbox)
+    /// * live
+    /// * xblweb
+    /// * Oculus group(oculusgroup)
     /// * oculus
     /// * oculusweb
+    /// * facebook
+    /// * google
     /// * twitch
     /// * discord
     /// * android
@@ -44,16 +52,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// * apple
     /// * device
     /// * epicgames
-    /// * ps4
-    /// * ps5
-    /// * ps4web
     /// * nintendo
     /// * awscognito
-    /// * live
-    /// * xblweb
     /// * netflix
     /// * snapchat
-    /// * oidc platform id
+    /// * _oidc platform id_
+    /// 
+    /// Note: you can use either platform ID or platform group as __platformId__ query parameter.
     /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {

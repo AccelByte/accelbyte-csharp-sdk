@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getLootBoxGrpcInfo
     ///
     /// Get lootbox plugin gRPC info.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource= ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG , action=2 (READ)
     /// </summary>
     public class GetLootBoxGrpcInfo : AccelByte.Sdk.Core.Operation
     {

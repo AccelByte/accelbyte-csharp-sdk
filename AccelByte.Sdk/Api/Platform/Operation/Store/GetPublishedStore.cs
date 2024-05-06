@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-    ///   *  Returns : store data
+    ///   * Returns : store data
     /// </summary>
     public class GetPublishedStore : AccelByte.Sdk.Core.Operation
     {

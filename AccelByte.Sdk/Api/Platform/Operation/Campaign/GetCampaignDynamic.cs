@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get campaign dynamic.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
-    ///   *  Returns : campaign dynamic
+    ///   * Returns : campaign dynamic
     /// </summary>
     public class GetCampaignDynamic : AccelByte.Sdk.Core.Operation
     {

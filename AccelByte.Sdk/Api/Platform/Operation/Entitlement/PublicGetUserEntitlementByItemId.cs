@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// publicGetUserEntitlementByItemId
     ///
     /// Get user entitlement by itemId.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetUserEntitlementByItemId : AccelByte.Sdk.Core.Operation

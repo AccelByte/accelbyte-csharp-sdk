@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Update stripe config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : updated payment merchant config
+    ///   * Returns : updated payment merchant config
     /// </summary>
     public class UpdateStripeConfig : AccelByte.Sdk.Core.Operation
     {

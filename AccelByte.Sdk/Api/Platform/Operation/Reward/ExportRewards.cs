@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// exportRewards
     ///
     /// Export reward configurations for a given namespace into file. At current, only JSON file is supported.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=2 (READ)
     /// </summary>
     public class ExportRewards : AccelByte.Sdk.Core.Operation
     {

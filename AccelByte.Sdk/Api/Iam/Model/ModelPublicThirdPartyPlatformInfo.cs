@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("PlatformName")]
         public string? PlatformName { get; set; }
 
+        [JsonPropertyName("TokenAuthenticationType")]
+        public string? TokenAuthenticationType { get; set; }
+
     }
 
 

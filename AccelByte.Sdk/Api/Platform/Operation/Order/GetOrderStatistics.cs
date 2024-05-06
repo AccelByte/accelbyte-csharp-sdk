@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get Order Statistics.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-    ///   *  Returns : order statistics
+    ///   * Returns : order statistics
     /// </summary>
     public class GetOrderStatistics : AccelByte.Sdk.Core.Operation
     {

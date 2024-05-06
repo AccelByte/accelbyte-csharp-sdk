@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query all user IAP orders.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
-    ///   *  Returns : list of iap orders
+    ///   * Returns : list of iap orders
     /// </summary>
     public class QueryAllUserIAPOrders : AccelByte.Sdk.Core.Operation
     {

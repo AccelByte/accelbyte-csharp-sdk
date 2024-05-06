@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Generate invoice summary.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-    ///   *  Returns : query orders
+    ///   * Returns : query orders
     /// </summary>
     public class GenerateInvoiceSummary : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to get reward by reward code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:REWARD", action=2 (READ)
-    ///   *  Returns : reward instance
+    ///   * Returns : reward instance
     /// </summary>
     public class GetRewardByCode : AccelByte.Sdk.Core.Operation
     {

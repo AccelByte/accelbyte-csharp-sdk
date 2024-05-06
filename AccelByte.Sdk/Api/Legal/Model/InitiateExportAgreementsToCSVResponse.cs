@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Legal.Model
 {
     public class InitiateExportAgreementsToCSVResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("exportId")]
+        public string? ExportId { get; set; }
+
         [JsonPropertyName("processing")]
         public bool? Processing { get; set; }
 

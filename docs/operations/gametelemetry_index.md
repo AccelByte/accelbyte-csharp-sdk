@@ -42,6 +42,7 @@
 | `HTTPValidationError` | [HTTPValidationError](../../AccelByte.Sdk/Api/Gametelemetry/Model/HTTPValidationError.cs) |
 | `ListBaseResponse_str_` | [ListBaseResponseStr](../../AccelByte.Sdk/Api/Gametelemetry/Model/ListBaseResponseStr.cs) |
 | `PagedResponse_GetNamespaceEventResponse_` | [PagedResponseGetNamespaceEventResponse](../../AccelByte.Sdk/Api/Gametelemetry/Model/PagedResponseGetNamespaceEventResponse.cs) |
+| `Paging` | [Paging](../../AccelByte.Sdk/Api/Gametelemetry/Model/Paging.cs) |
 | `PlayTimeResponse` | [PlayTimeResponse](../../AccelByte.Sdk/Api/Gametelemetry/Model/PlayTimeResponse.cs) |
 | `TelemetryBody` | [TelemetryBody](../../AccelByte.Sdk/Api/Gametelemetry/Model/TelemetryBody.cs) |
 | `ValidationError` | [ValidationError](../../AccelByte.Sdk/Api/Gametelemetry/Model/ValidationError.cs) |

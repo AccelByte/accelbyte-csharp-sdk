@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [SERVICE COMMUNICATION ONLY] Get ticket(code/key) dynamic based on booth name.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=2 (READ)
-    ///   *  Returns : ticket dynamic
+    ///   * Returns : ticket dynamic
     /// </summary>
     public class GetTicketDynamic : AccelByte.Sdk.Core.Operation
     {

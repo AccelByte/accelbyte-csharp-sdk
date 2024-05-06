@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// createLocalizedPolicyVersion_1
     ///
     /// Create a version of a particular country-specific policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
     /// </summary>
     public class CreateLocalizedPolicyVersion1 : AccelByte.Sdk.Core.Operation
     {

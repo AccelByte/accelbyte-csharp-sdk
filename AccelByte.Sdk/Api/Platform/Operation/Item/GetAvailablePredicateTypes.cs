@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get available predicate types.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:ITEM, action=2 (READ)
-    ///   *  Returns : available predicate types
+    ///   * Returns : available predicate types
     /// </summary>
     public class GetAvailablePredicateTypes : AccelByte.Sdk.Core.Operation
     {

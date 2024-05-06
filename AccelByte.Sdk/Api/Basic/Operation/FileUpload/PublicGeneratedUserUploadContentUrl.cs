@@ -21,8 +21,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// The threshold of those limitations is different between upload category that is used.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource = "NAMESPACE:{namespace}:USER:{userId}:FILEUPLOAD" , action=1 (CREATE)
-    ///   *  Action code : 11102
+    ///   * Action code : 11102
     ///   *  Default maximum file count per user : 10 files
     ///   *  Default maximum file size per user : 104857600 bytes
     ///   *  Returns : URL data

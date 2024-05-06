@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [SERVICE COMMUNICATION ONLY] Acquire ticket(code/key) based on booth name.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:TICKET", action=1 (CREATE)
-    ///   *  Returns : acquire result
+    ///   * Returns : acquire result
     /// </summary>
     public class AcquireUserTicket : AccelByte.Sdk.Core.Operation
     {

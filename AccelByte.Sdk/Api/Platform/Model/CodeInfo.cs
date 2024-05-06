@@ -22,11 +22,19 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("batchNo")]
         public int? BatchNo { get; set; }
 
+        [JsonPropertyName("campaign")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public CampaignIfc? Campaign { get; set; }
+
         [JsonPropertyName("campaignId")]
         public string? CampaignId { get; set; }
 
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("discountConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DiscountConfig? DiscountConfig { get; set; }
 
         [JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -85,6 +93,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class CodeInfoRedeemType : StringEnum<CodeInfoRedeemType>
     {
+        public static readonly CodeInfoRedeemType DISCOUNT
+            = new CodeInfoRedeemType("DISCOUNT");
+
         public static readonly CodeInfoRedeemType ITEM
             = new CodeInfoRedeemType("ITEM");
 

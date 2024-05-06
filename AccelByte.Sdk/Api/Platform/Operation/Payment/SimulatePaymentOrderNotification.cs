@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=4 (UPDATE)
-    ///   *  Returns : notification process result
+    ///   * Returns : notification process result
     /// </summary>
     public class SimulatePaymentOrderNotification : AccelByte.Sdk.Core.Operation
     {

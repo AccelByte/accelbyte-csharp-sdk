@@ -18,6 +18,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencyNamespace { get; set; }
 
+        [JsonPropertyName("discountCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? DiscountCodes { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
 
@@ -78,6 +82,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("currencyNamespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CurrencyNamespace { get; set; }
+
+        [JsonPropertyName("discountCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? DiscountCodes { get; set; }
 
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }

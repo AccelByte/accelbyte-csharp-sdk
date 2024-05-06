@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// bulkAcceptVersionedPolicy
     ///
     /// Accepts many legal policy versions all at once. Supply with localized version policy id to accept an agreement.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
     /// </summary>
     public class BulkAcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {

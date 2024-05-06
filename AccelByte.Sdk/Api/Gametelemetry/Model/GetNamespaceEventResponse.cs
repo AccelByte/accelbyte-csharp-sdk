@@ -18,10 +18,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         [JsonPropertyName("EventNamespace")]
         public string? EventNamespace { get; set; }
 
-        [JsonPropertyName("EventTimeStamp")]
-        public string? EventTimeStamp { get; set; }
+        [JsonPropertyName("EventTimestamp")]
+        public string? EventTimestamp { get; set; }
 
         [JsonPropertyName("FlightId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FlightId { get; set; }
 
         [JsonPropertyName("Payload")]
@@ -29,9 +30,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         public Dictionary<string, object>? Payload { get; set; }
 
         [JsonPropertyName("UserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
         [JsonPropertyName("UserNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserNamespace { get; set; }
 
     }
@@ -47,10 +50,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         [JsonPropertyName("EventNamespace")]
         public string? EventNamespace { get; set; }
 
-        [JsonPropertyName("EventTimeStamp")]
-        public string? EventTimeStamp { get; set; }
+        [JsonPropertyName("EventTimestamp")]
+        public string? EventTimestamp { get; set; }
 
         [JsonPropertyName("FlightId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FlightId { get; set; }
 
         [JsonPropertyName("Payload")]
@@ -58,9 +62,11 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         public T1? Payload { get; set; }
 
         [JsonPropertyName("UserId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
         [JsonPropertyName("UserNamespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserNamespace { get; set; }
 
     }

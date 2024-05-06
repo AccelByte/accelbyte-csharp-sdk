@@ -7,6 +7,7 @@
 ### topic Wrapper:  [Topic](../../AccelByte.Sdk/Api/Chat/Wrapper/Topic.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/chat/admin/namespaces/{namespace}/chat/filter` | POST | AdminFilterChatMessage | [AdminFilterChatMessage](../../AccelByte.Sdk/Api/Chat/Operation/Topic/AdminFilterChatMessage.cs) | [AdminFilterChatMessage](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Topic/AdminFilterChatMessage.cs) |
 | `/chat/admin/namespaces/{namespace}/chats` | GET | AdminChatHistory | [AdminChatHistory](../../AccelByte.Sdk/Api/Chat/Operation/Topic/AdminChatHistory.cs) | [AdminChatHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Topic/AdminChatHistory.cs) |
 | `/chat/admin/namespaces/{namespace}/namespace-topic` | POST | AdminCreateNamespaceTopic | [AdminCreateNamespaceTopic](../../AccelByte.Sdk/Api/Chat/Operation/Topic/AdminCreateNamespaceTopic.cs) | [AdminCreateNamespaceTopic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Topic/AdminCreateNamespaceTopic.cs) |
 | `/chat/admin/namespaces/{namespace}/topic` | GET | AdminTopicList | [AdminTopicList](../../AccelByte.Sdk/Api/Chat/Operation/Topic/AdminTopicList.cs) | [AdminTopicList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Topic/AdminTopicList.cs) |
@@ -45,6 +46,7 @@
 | `/chat/v1/admin/config/namespaces/{namespace}` | PUT | AdminUpdateConfigV1 | [AdminUpdateConfigV1](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminUpdateConfigV1.cs) | [AdminUpdateConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminUpdateConfigV1.cs) |
 | `/chat/v1/admin/config/namespaces/{namespace}/export` | GET | ExportConfig | [ExportConfig](../../AccelByte.Sdk/Api/Chat/Operation/Config/ExportConfig.cs) | [ExportConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/ExportConfig.cs) |
 | `/chat/v1/admin/config/namespaces/{namespace}/import` | POST | ImportConfig | [ImportConfig](../../AccelByte.Sdk/Api/Chat/Operation/Config/ImportConfig.cs) | [ImportConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/ImportConfig.cs) |
+| `/chat/v1/public/config/namespaces/{namespace}` | GET | PublicGetConfigV1 | [PublicGetConfigV1](../../AccelByte.Sdk/Api/Chat/Operation/Config/PublicGetConfigV1.cs) | [PublicGetConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/PublicGetConfigV1.cs) |
 
 ### inbox Wrapper:  [Inbox](../../AccelByte.Sdk/Api/Chat/Wrapper/Inbox.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -95,6 +97,7 @@
 ### topic Wrapper:  [Topic](../../AccelByte.Sdk/Api/Chat/Wrapper/Topic.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/chat/admin/namespaces/{namespace}/chat/filter` | POST | AdminFilterChatMessage | [AdminFilterChatMessage](../../AccelByte.Sdk/Api/Chat/Operation/Topic/AdminFilterChatMessage.cs) | [AdminFilterChatMessage](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Topic/AdminFilterChatMessage.cs) |
 
 ### config Wrapper:  [Config](../../AccelByte.Sdk/Api/Chat/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -173,10 +176,13 @@
 | `models.GetInboxUsersResponse` | [ModelsGetInboxUsersResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsGetInboxUsersResponse.cs) |
 | `models.ImportConfigResponse` | [ModelsImportConfigResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsImportConfigResponse.cs) |
 | `models.JSONSchemaType` | [ModelsJSONSchemaType](../../AccelByte.Sdk/Api/Chat/Model/ModelsJSONSchemaType.cs) |
+| `models.MessageRequest` | [ModelsMessageRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsMessageRequest.cs) |
+| `models.MessageResultWithAttributes` | [ModelsMessageResultWithAttributes](../../AccelByte.Sdk/Api/Chat/Model/ModelsMessageResultWithAttributes.cs) |
 | `models.MessageStats` | [ModelsMessageStats](../../AccelByte.Sdk/Api/Chat/Model/ModelsMessageStats.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Chat/Model/ModelsPagination.cs) |
 | `models.PublicBanTopicMembersRequest` | [ModelsPublicBanTopicMembersRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsPublicBanTopicMembersRequest.cs) |
 | `models.PublicBanTopicMembersResponse` | [ModelsPublicBanTopicMembersResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsPublicBanTopicMembersResponse.cs) |
+| `models.PublicConfigResponse` | [ModelsPublicConfigResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsPublicConfigResponse.cs) |
 | `models.PublicUnbanTopicMembersRequest` | [ModelsPublicUnbanTopicMembersRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsPublicUnbanTopicMembersRequest.cs) |
 | `models.PublicUnbanTopicMembersResponse` | [ModelsPublicUnbanTopicMembersResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsPublicUnbanTopicMembersResponse.cs) |
 | `models.SaveInboxMessageRequest` | [ModelsSaveInboxMessageRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsSaveInboxMessageRequest.cs) |

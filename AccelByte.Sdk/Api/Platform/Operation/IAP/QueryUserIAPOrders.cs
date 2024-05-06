@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query IAP orders.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
-    ///   *  Returns : paginated iap orders
+    ///   * Returns : paginated iap orders
     /// </summary>
     public class QueryUserIAPOrders : AccelByte.Sdk.Core.Operation
     {

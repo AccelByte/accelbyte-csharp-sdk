@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Generate an upload URL. It's valid for 10 minutes.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:FILEUPLOAD" , action=1 (CREATE)
-    ///   *  Action code : 11101
+    ///   * Action code : 11101
     ///   *  Returns : URL data
     /// </summary>
     public class GeneratedUploadUrl : AccelByte.Sdk.Core.Operation

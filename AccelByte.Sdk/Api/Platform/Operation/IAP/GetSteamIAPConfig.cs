@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get steam iap config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : steam iap config
+    ///   * Returns : steam iap config
     /// </summary>
     public class GetSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {

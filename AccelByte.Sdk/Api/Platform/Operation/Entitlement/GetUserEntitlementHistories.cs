@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
-    ///   *  Returns : list of entitlement history
+    ///   * Returns : list of entitlement history
     /// </summary>
     public class GetUserEntitlementHistories : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// createPolicyVersion_1
     ///
     /// Create a version of a particular country-specific policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=1 (CREATE)
     /// </summary>
     public class CreatePolicyVersion1 : AccelByte.Sdk.Core.Operation
     {

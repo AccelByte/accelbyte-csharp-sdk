@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// selectAllRecordsByCriteria
     ///
     /// Select all changes by criteria
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     /// </summary>
     public class SelectAllRecordsByCriteria : AccelByte.Sdk.Core.Operation
     {

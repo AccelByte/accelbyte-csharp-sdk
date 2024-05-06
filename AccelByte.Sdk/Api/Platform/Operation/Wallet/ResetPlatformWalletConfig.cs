@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Reset platform wallet config to default config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : platform wallet config
+    ///   * Returns : platform wallet config
     /// </summary>
     public class ResetPlatformWalletConfig : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query revocation histories in a namespace.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:REVOCATION, action=2 (READ)
-    ///   *  Returns : query revocation history
+    ///   * Returns : query revocation history
     /// </summary>
     public class QueryRevocationHistories : AccelByte.Sdk.Core.Operation
     {

@@ -21,6 +21,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// If user id parameter is empty:
     /// 1. Using User Token : It will get the user id from the token
     /// 2. Using client token : it will throw an error
+    /// 
+    /// Please ensure environment variable "RECENT_PLAYER_ENABLED" is set to "TRUE" to use this feature.
     /// </summary>
     public class AdminGetRecentPlayer : AccelByte.Sdk.Core.Operation
     {

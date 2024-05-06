@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Create a currency.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=1 (CREATE)
-    ///   *  Returns : created currency
+    ///   * Returns : created currency
     /// </summary>
     public class CreateCurrency : AccelByte.Sdk.Core.Operation
     {

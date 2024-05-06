@@ -16,14 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminRequestDataRetrieval
     ///
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [CREATE]` and scope `account`
-    /// 
-    /// 
-    /// 
-    /// 
+    /// Submit user personal data retrieval request
     /// If admin request data for themselves, password is need to be set
+    /// Scope: account
     /// </summary>
     public class AdminRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {

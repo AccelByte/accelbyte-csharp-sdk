@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get key group.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-    ///   *  Returns : key group info
+    ///   * Returns : key group info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetKeyGroupByBoothName : AccelByte.Sdk.Core.Operation

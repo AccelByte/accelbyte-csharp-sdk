@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Get payment order charge status.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
-    ///   *  Returns : payment order charge status
+    ///   * Returns : payment order charge status
     /// </summary>
     public class GetPaymentOrderChargeStatus : AccelByte.Sdk.Core.Operation
     {

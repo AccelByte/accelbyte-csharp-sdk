@@ -17,9 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// AdminGetServicesConfiguration
     ///
     /// Get Registered Services Configuration.
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [READ]` and scope `account`
+    /// Scope: account
     /// </summary>
     public class AdminGetServicesConfiguration : AccelByte.Sdk.Core.Operation
     {

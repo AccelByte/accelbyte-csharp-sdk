@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrievePolicyCountry_1
     ///
     /// Retrieve a Base Legal Policy based on a Particular Country.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrievePolicyCountry1 : AccelByte.Sdk.Core.Operation
     {

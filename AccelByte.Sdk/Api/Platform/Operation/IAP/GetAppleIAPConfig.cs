@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get apple iap config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : apple iap config
+    ///   * Returns : apple iap config
     /// </summary>
     public class GetAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {

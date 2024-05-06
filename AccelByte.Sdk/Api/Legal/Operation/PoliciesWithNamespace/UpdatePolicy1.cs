@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// updatePolicy_1
     ///
     /// Update country-specific policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=4 (UPDATE)
     /// </summary>
     public class UpdatePolicy1 : AccelByte.Sdk.Core.Operation
     {

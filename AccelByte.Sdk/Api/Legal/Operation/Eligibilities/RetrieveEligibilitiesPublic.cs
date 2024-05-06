@@ -18,10 +18,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Retrieve the active policies and its conformance status by user.
     /// This process supports cross-namespace checking, that means if the active policy already accepted by the same user in other namespace, then it will be considered as eligible.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
     /// </summary>
     public class RetrieveEligibilitiesPublic : AccelByte.Sdk.Core.Operation
     {

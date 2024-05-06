@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get user profile.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
-    ///   *  Action code : 11403
+    ///   * Action code : 11403
     ///   *  Returns : user profile
     /// </summary>
     public class PublicGetUserProfileInfo : AccelByte.Sdk.Core.Operation

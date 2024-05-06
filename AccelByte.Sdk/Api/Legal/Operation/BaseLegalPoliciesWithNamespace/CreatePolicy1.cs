@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// createPolicy_1
     ///
     /// Create a legal policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=1 (CREATE)
     /// </summary>
     public class CreatePolicy1 : AccelByte.Sdk.Core.Operation
     {

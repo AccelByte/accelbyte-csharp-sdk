@@ -20,6 +20,33 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// This endpoint intended to list game user ID from the given namespace
     /// This endpoint return list of user ID by given platform ID and list of platform user ID
     /// 
+    /// Supported platform:
+    /// - steam
+    /// - steamopenid
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - live
+    /// - xblweb
+    /// - oculus
+    /// - oculusweb
+    /// - facebook
+    /// - google
+    /// - twitch
+    /// - discord
+    /// - android
+    /// - ios
+    /// - apple
+    /// - device
+    /// - justice
+    /// - epicgames
+    /// - nintendo
+    /// - awscognito
+    /// - netflix
+    /// - snapchat
+    /// - oidc platform id
+    /// 
+    /// Note:
     /// **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
     /// </summary>
     public class AdminListUserIDByPlatformUserIDsV3 : AccelByte.Sdk.Core.Operation

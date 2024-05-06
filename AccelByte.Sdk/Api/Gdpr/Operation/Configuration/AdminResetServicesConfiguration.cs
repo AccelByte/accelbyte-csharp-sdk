@@ -16,11 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminResetServicesConfiguration
     ///
-    ///  [TEST FACILITY ONLY]
+    /// **[TEST FACILITY ONLY]**
     /// Reset Registered Services Configuration to use the default configuration.
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:GDPR:CONFIGURATION [DELETE]` and scope `account`
+    /// Scope: account
     /// </summary>
     public class AdminResetServicesConfiguration : AccelByte.Sdk.Core.Operation
     {

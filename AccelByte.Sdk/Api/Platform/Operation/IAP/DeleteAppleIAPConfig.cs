@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteAppleIAPConfig
     ///
     /// Delete apple iap config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
     /// </summary>
     public class DeleteAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {

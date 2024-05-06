@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// List user wallet transactions ordered by create time desc.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-    ///   *  Returns : wallet transaction info
+    ///   * Returns : wallet transaction info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class ListUserWalletTransactions : AccelByte.Sdk.Core.Operation

@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2
-    ///   *  Returns : app entitlement pagination
+    ///   * Returns : app entitlement pagination
     /// </summary>
     public class QueryUserEntitlementsByAppType : AccelByte.Sdk.Core.Operation
     {

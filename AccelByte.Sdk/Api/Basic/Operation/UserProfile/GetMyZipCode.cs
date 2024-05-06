@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get my zip code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=2 (READ)
-    ///   *  Action code : 11407
+    ///   * Action code : 11407
     ///   *  Returns : user zip code
     /// </summary>
     public class GetMyZipCode : AccelByte.Sdk.Core.Operation

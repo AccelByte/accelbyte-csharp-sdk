@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get platform wallet config list.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=2 (READ)
-    ///   *  Returns : wallet info
+    ///   * Returns : wallet info
     /// </summary>
     public class GetPlatformWalletConfig : AccelByte.Sdk.Core.Operation
     {

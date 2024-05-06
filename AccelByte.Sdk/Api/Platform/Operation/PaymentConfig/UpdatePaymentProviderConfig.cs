@@ -40,8 +40,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   4. namespace and region are *
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : payment provider config
+    ///   * Returns : payment provider config
     /// </summary>
     public class UpdatePaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {

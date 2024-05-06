@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query subscriptions.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SUBSCRIPTION", action=2 (READ)
-    ///   *  Returns : paginated subscriptions
+    ///   * Returns : paginated subscriptions
     /// </summary>
     public class QuerySubscriptions : AccelByte.Sdk.Core.Operation
     {

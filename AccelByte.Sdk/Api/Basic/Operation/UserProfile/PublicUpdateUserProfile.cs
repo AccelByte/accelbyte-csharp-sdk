@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Update user profile.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
-    ///   *  Action code : 11402
+    ///   * Action code : 11402
     ///   *  Language : allowed format: en, en-US
     ///   *  Timezone : IANA time zone, e.g. Asia/Shanghai
     ///   *  Returns : Updated user profile

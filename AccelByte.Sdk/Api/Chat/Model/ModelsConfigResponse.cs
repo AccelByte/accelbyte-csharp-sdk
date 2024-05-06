@@ -53,6 +53,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? GeneralRateLimitDuration { get; set; }
 
+        [JsonPropertyName("maxChatMessageLength")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? MaxChatMessageLength { get; set; }
+
         [JsonPropertyName("shardCapacityLimit")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? ShardCapacityLimit { get; set; }

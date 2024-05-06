@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncSteamDLC
     ///
-    /// Sync steam dlc.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
-    ///   *  Returns :
+    /// Sync steam dlc
     /// </summary>
     public class SyncSteamDLC : AccelByte.Sdk.Core.Operation
     {

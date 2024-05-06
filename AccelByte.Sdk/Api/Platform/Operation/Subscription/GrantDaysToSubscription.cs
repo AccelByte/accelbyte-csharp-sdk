@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// if the grantDays is negative or zero, it only apply to active/cancelled subscription, remove days will decrease current period end, and move the next billing date closer.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
-    ///   *  Returns : updated subscription
+    ///   * Returns : updated subscription
     /// </summary>
     public class GrantDaysToSubscription : AccelByte.Sdk.Core.Operation
     {

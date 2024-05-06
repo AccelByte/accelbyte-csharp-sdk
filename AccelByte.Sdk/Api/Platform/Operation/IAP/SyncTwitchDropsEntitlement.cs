@@ -17,11 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// syncTwitchDropsEntitlement
     ///
     /// Sync my game twitch drops entitlements.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=NAMESPACE:{namespace}:IAP, action=4 (UPDATE)
-    ///   *  Returns :
     /// </summary>
     public class SyncTwitchDropsEntitlement : AccelByte.Sdk.Core.Operation
     {

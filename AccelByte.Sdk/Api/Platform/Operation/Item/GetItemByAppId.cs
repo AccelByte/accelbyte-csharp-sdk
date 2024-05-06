@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : the item with that appId
+    ///   * Returns : the item with that appId
     /// </summary>
     public class GetItemByAppId : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteSteamIAPConfig
     ///
     /// Delete steam iap config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
     /// </summary>
     public class DeleteSteamIAPConfig : AccelByte.Sdk.Core.Operation
     {

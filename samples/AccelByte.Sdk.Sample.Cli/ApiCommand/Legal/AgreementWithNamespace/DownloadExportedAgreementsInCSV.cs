@@ -31,8 +31,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("policyVersionId")]
-        public string PolicyVersionId { get; set; } = String.Empty;
+        [SdkCommandArgument("exportId")]
+        public string ExportId { get; set; } = String.Empty;
 
         public DownloadExportedAgreementsInCSVCommand(AccelByteSDK sdk)
         {
@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
             DownloadExportedAgreementsInCSV operation = opBuilder.Build(
                 Namespace,
-                PolicyVersionId
+                ExportId
             );
 
 

@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-    ///   *  Returns : section data
+    ///   * Returns : section data
     /// </summary>
     public class GetSection : AccelByte.Sdk.Core.Operation
     {

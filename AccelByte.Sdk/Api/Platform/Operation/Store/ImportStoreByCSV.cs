@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// importStoreByCSV
     ///
     /// This API is used to import a store by CSV format.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     /// </summary>
     public class ImportStoreByCSV : AccelByte.Sdk.Core.Operation
     {

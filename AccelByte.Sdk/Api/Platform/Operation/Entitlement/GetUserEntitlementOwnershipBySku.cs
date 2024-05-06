@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getUserEntitlementOwnershipBySku
     ///
     /// Get user entitlement ownership by sku.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     public class GetUserEntitlementOwnershipBySku : AccelByte.Sdk.Core.Operation
     {

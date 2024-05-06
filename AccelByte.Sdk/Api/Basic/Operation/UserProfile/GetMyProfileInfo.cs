@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     ///  Client with user token can get user profile in target namespace
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=2 (READ)
-    ///   *  Action code : 11403
+    ///   * Action code : 11403
     ///   *  Returns : user profile
     ///   *  Path's namespace :
     ///     * can be filled with publisher namespace in order to get publisher user profile

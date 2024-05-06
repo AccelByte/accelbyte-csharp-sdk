@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicGetRecentPlayer
     ///
     /// Query user's recent player.
+    /// 
+    /// Please ensure environment variable "RECENT_PLAYER_ENABLED" is set to "TRUE" to use this feature.
     /// </summary>
     public class PublicGetRecentPlayer : AccelByte.Sdk.Core.Operation
     {

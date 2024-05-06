@@ -22,8 +22,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// - To update countries only, do not include countryGroupName key or just specify it with blank value.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=4 (UPDATE)
-    ///   *  Action code : 11202
+    ///   * Action code : 11202
     ///   *  Returns : updated country group
     /// </summary>
     public class UpdateCountryGroup : AccelByte.Sdk.Core.Operation

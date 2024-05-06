@@ -215,7 +215,7 @@ eval_tap $? 18 'MatchPoolList' test.out
 
 #- 19 CreateMatchPool
 # body param: body
-echo '{"auto_accept_backfill_proposal": false, "backfill_proposal_expiration_seconds": 46, "backfill_ticket_expiration_seconds": 95, "crossplay_disabled": false, "match_function": "LgpQE9nXzhBC0uyM", "match_function_override": {"backfill_matches": "R4Xf2nfYvNvG8uQ1", "enrichment": ["4AhsxaALiBwpNJor", "nrCQpMJj5igqat8x", "nPoWTdHAkcyAy4dr"], "make_matches": "HlPcXGGl0Xw3veBf", "stat_codes": ["rpCrnbaxhEvn3SGq", "cH91fC3aJEoqWaFA", "GD6PRg95m07l03vt"], "validation": ["lMFzeiMRkcOr1L0T", "MIczbYilOziwG8CP", "LOzSZm9K3cMY617H"]}, "name": "SCYZaL46I3PgCcQ0", "platfrom_group_enabled": false, "rule_set": "DmbC9UqYdYrdxNnu", "session_template": "McAwrSzYnrcetxOb", "ticket_expiration_seconds": 8}' > $TEMP_JSON_INPUT
+echo '{"auto_accept_backfill_proposal": false, "backfill_proposal_expiration_seconds": 46, "backfill_ticket_expiration_seconds": 95, "crossplay_disabled": false, "match_function": "LgpQE9nXzhBC0uyM", "match_function_override": {"backfill_matches": "R4Xf2nfYvNvG8uQ1", "enrichment": ["4AhsxaALiBwpNJor", "nrCQpMJj5igqat8x", "nPoWTdHAkcyAy4dr"], "make_matches": "HlPcXGGl0Xw3veBf", "stat_codes": ["rpCrnbaxhEvn3SGq", "cH91fC3aJEoqWaFA", "GD6PRg95m07l03vt"], "validation": ["lMFzeiMRkcOr1L0T", "MIczbYilOziwG8CP", "LOzSZm9K3cMY617H"]}, "name": "SCYZaL46I3PgCcQ0", "platform_group_enabled": false, "rule_set": "DmbC9UqYdYrdxNnu", "session_template": "McAwrSzYnrcetxOb", "ticket_expiration_seconds": 8}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op CreateMatchPool \
@@ -235,7 +235,7 @@ eval_tap $? 20 'MatchPoolDetails' test.out
 
 #- 21 UpdateMatchPool
 # body param: body
-echo '{"auto_accept_backfill_proposal": true, "backfill_proposal_expiration_seconds": 77, "backfill_ticket_expiration_seconds": 47, "crossplay_disabled": false, "match_function": "4WxGWRH7fz4BdPhL", "match_function_override": {"backfill_matches": "tHRJOImSq37aeAaG", "enrichment": ["q0NIj53gXkmrayvc", "IYiWxIAxfvLzSpDF", "Y3lxe16KsSRzkf2H"], "make_matches": "zBcEio5UyvuFv5z6", "stat_codes": ["wosJGnUyCMEbHh1u", "E4DmJ4Suj6DjUw36", "GtZ83Jp2f9f1FCoI"], "validation": ["o3L24DKGwgZ85vyF", "JR8euQBLVu27iwpl", "LJdzYS9K0VvwE6MA"]}, "platfrom_group_enabled": true, "rule_set": "vknXO45AUtNXSTIt", "session_template": "t35OJTfJBZX62yI9", "ticket_expiration_seconds": 12}' > $TEMP_JSON_INPUT
+echo '{"auto_accept_backfill_proposal": true, "backfill_proposal_expiration_seconds": 77, "backfill_ticket_expiration_seconds": 47, "crossplay_disabled": false, "match_function": "4WxGWRH7fz4BdPhL", "match_function_override": {"backfill_matches": "tHRJOImSq37aeAaG", "enrichment": ["q0NIj53gXkmrayvc", "IYiWxIAxfvLzSpDF", "Y3lxe16KsSRzkf2H"], "make_matches": "zBcEio5UyvuFv5z6", "stat_codes": ["wosJGnUyCMEbHh1u", "E4DmJ4Suj6DjUw36", "GtZ83Jp2f9f1FCoI"], "validation": ["o3L24DKGwgZ85vyF", "JR8euQBLVu27iwpl", "LJdzYS9K0VvwE6MA"]}, "platform_group_enabled": true, "rule_set": "vknXO45AUtNXSTIt", "session_template": "t35OJTfJBZX62yI9", "ticket_expiration_seconds": 12}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op UpdateMatchPool \

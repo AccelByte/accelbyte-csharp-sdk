@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// In multi tenant mode, a given super admin namespace will return all game namespaces of studio namespaces
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=2 (READ)
-    ///   *  Action code : 11308
+    ///   * Action code : 11308
     ///   *  Returns : list of namespaces
     /// </summary>
     public class GetGameNamespaces : AccelByte.Sdk.Core.Operation

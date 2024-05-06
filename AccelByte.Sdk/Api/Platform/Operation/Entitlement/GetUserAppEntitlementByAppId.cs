@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getUserAppEntitlementByAppId
     ///
     /// Get user app entitlement by appId.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     public class GetUserAppEntitlementByAppId : AccelByte.Sdk.Core.Operation
     {

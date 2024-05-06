@@ -19,7 +19,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Create fulfillment script.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=1 (CREATE)
     /// 
     /// Fulfillment scripts are used for adding custom fulfillment logic based on ITEM_TYPE : [MEDIA,INGAMEITEM] for now, and the custom scripts only cover grantDays.
     /// Example for grantDays:

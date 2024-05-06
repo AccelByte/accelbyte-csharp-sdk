@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// publicTransferUserEntitlement
     ///
     /// Transfer a specified use count from entitlement A to B..Other detail info:
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : entitlement
+    ///   * Returns : entitlement
     /// </summary>
     public class PublicTransferUserEntitlement : AccelByte.Sdk.Core.Operation
     {

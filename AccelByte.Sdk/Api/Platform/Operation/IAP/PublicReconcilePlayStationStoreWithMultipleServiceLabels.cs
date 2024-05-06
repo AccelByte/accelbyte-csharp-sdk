@@ -16,12 +16,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicReconcilePlayStationStoreWithMultipleServiceLabels
     ///
-    /// Synchronize with entitlements in PSN Store with multiple service labels.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-    ///   *  Returns : result of synchronization
+    /// Synchronize with entitlements in PSN Store with multiple service labels.Other detail info:
+    ///   * Returns : result of synchronization
     /// </summary>
     public class PublicReconcilePlayStationStoreWithMultipleServiceLabels : AccelByte.Sdk.Core.Operation
     {

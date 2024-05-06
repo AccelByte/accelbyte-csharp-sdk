@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query campaigns, if name is presented, it's fuzzy match.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ) (READ)
-    ///   *  Returns : slice of campaigns
+    ///   * Returns : slice of campaigns
     /// </summary>
     public class QueryCampaigns : AccelByte.Sdk.Core.Operation
     {

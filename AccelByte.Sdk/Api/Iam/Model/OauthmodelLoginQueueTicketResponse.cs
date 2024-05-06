@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("estimatedWaitingTimeInSeconds")]
         public int? EstimatedWaitingTimeInSeconds { get; set; }
 
+        [JsonPropertyName("playerPollingTimeInSeconds")]
+        public int? PlayerPollingTimeInSeconds { get; set; }
+
         [JsonPropertyName("position")]
         public int? Position { get; set; }
 

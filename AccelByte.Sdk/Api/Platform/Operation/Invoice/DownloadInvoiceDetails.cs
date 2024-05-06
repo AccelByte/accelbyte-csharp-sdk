@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Download invoice details as a csv file.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-    ///   *  Returns : invoice details csv file
+    ///   * Returns : invoice details csv file
     /// </summary>
     public class DownloadInvoiceDetails : AccelByte.Sdk.Core.Operation
     {

@@ -16,12 +16,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncSteamInventory
     ///
-    /// Sync steam inventory's items.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-    ///   *  Returns :
+    /// Sync steam inventory's items.Other detail info:
+    ///   * Returns :
     /// </summary>
     public class SyncSteamInventory : AccelByte.Sdk.Core.Operation
     {

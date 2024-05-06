@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizeRevocation
     ///
     /// Anonymize revocation. At current it will only anonymize revocation history.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION, action=8 (DELETE)
     /// </summary>
     public class AnonymizeRevocation : AccelByte.Sdk.Core.Operation
     {

@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-    ///   *  Returns : clone store info
+    ///   * Returns : clone store info
     /// </summary>
     public class CloneStore : AccelByte.Sdk.Core.Operation
     {

@@ -122,5 +122,27 @@ namespace AccelByte.Sdk.Api
 
             return await ((Chat.Wrapper.Config)builder.WrapperObject!).ImportConfigAsync(op);
         }
+        public static Chat.Model.ModelsPublicConfigResponse? Execute(
+            this PublicGetConfigV1.PublicGetConfigV1Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetConfigV1 op = builder.Build(
+                namespace_
+            );
+
+            return ((Chat.Wrapper.Config)builder.WrapperObject!).PublicGetConfigV1(op);
+        }
+        public static async Task<Chat.Model.ModelsPublicConfigResponse?> ExecuteAsync(
+            this PublicGetConfigV1.PublicGetConfigV1Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetConfigV1 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Config)builder.WrapperObject!).PublicGetConfigV1Async(op);
+        }
     }
 }

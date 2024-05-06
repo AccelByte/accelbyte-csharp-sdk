@@ -41,6 +41,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
+        [JsonPropertyName("repeatAfter")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RepeatAfter { get; set; }
+
         [JsonPropertyName("rotation")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]

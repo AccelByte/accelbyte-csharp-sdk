@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get order by orderNo.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=2 (READ)
-    ///   *  Returns : order instance
+    ///   * Returns : order instance
     /// </summary>
     public class GetOrder : AccelByte.Sdk.Core.Operation
     {

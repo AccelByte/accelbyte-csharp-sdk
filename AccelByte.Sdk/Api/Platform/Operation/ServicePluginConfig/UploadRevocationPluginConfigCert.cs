@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// uploadRevocationPluginConfigCert
     ///
     /// Upload revocation plugin custom config tls cert.Other detail info:
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=4 (UPDATE)
-    ///   *  Returns : updated service plugin config
+    ///   * Returns : updated service plugin config
     /// </summary>
     public class UploadRevocationPluginConfigCert : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Delete payment provider config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=8 (DELETE)
-    ///   *  Returns : payment provider config
+    ///   * Returns : payment provider config
     /// </summary>
     public class DeletePaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {

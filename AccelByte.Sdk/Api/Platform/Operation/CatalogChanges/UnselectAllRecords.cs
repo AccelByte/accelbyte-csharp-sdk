@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// unselectAllRecords
     ///
     /// Unselect all change.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     /// </summary>
     public class UnselectAllRecords : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// SaveAdminEmailConfiguration
     ///
     /// Add admin email address for receiving personal data request notification.
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [CREATE]` and scope `account`
+    /// Scope: account
     /// </summary>
     public class SaveAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

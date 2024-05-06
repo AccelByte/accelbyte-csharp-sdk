@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("discounted")]
+        public bool? Discounted { get; set; }
+
         [SdkCommandArgument("itemId")]
         public string? ItemId { get; set; }
 
@@ -57,6 +60,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.QueryUserOrders.Builder;
 
+            if (Discounted != null)
+                opBuilder.SetDiscounted((bool)Discounted);
             if (ItemId != null)
                 opBuilder.SetItemId((string)ItemId);
             if (Limit != null)

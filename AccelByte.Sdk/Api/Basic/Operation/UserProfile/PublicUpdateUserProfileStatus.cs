@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Update user profile status.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=4 (UPDATE)
-    ///   *  Action code : 11406
+    ///   * Action code : 11406
     ///   *  Returns : user profile
     /// </summary>
     public class PublicUpdateUserProfileStatus : AccelByte.Sdk.Core.Operation

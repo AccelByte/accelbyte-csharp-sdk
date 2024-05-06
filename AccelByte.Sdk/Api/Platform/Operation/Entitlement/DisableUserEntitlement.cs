@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  Like revoke, it will lose the entitlement ownership, except disabled entitlement can enable.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : disable entitlement
+    ///   * Returns : disable entitlement
     /// </summary>
     public class DisableUserEntitlement : AccelByte.Sdk.Core.Operation
     {

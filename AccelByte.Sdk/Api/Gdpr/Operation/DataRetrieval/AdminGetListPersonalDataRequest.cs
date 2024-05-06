@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminGetListPersonalDataRequest
     ///
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER [READ]` and scope `account`
+    /// Get list personal data requests
+    /// Scope: account
     /// </summary>
     public class AdminGetListPersonalDataRequest : AccelByte.Sdk.Core.Operation
     {

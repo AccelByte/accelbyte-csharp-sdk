@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-    ///   *  Returns : catalog changes statistics changes
+    ///   * Returns : catalog changes statistics changes
     /// </summary>
     public class GetStatistic : AccelByte.Sdk.Core.Operation
     {

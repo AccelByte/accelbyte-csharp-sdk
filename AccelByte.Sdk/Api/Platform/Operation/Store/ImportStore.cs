@@ -19,9 +19,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to import a store.
     /// 
     /// This api has been deprecated, pls use /v2/admin/namespaces/{namespace}/stores/import to import store.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class ImportStore : AccelByte.Sdk.Core.Operation

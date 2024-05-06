@@ -21,9 +21,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// force: the default value should be: false. When the value is:
     /// * false: only the items in the draft store that have never been published yet can be removed.
     /// *  true: the item in the draft store(even been published before) can be removed.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=8 (DELETE)
     /// </summary>
     public class DeleteItem : AccelByte.Sdk.Core.Operation
     {

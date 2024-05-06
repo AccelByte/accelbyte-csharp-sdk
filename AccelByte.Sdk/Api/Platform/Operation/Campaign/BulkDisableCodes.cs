@@ -21,8 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Bulk disable campaign codes, all matched codes will be disabled except those have already been redeemed.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
-    ///   *  Returns : the number of code actually disabled
+    ///   * Returns : the number of code actually disabled
     /// </summary>
     public class BulkDisableCodes : AccelByte.Sdk.Core.Operation
     {

@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         public List<GetNamespaceEventResponse>? Data { get; set; }
 
         [JsonPropertyName("paging")]
-        public long? Paging { get; set; }
+        public Paging? Paging { get; set; }
 
     }
 

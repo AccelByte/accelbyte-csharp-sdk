@@ -12,6 +12,59 @@ namespace AccelByte.Sdk.Api
 {
     public static class ChatTopic_OpExts
     {
+        public static Chat.Model.ModelsMessageResultWithAttributes? Execute(
+            this AdminFilterChatMessage.AdminFilterChatMessageBuilder builder,
+            ModelsMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminFilterChatMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminFilterChatMessage(op);
+        }
+        public static async Task<Chat.Model.ModelsMessageResultWithAttributes?> ExecuteAsync(
+            this AdminFilterChatMessage.AdminFilterChatMessageBuilder builder,
+            ModelsMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminFilterChatMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminFilterChatMessageAsync(op);
+        }
+
+        public static Chat.Model.ModelsMessageResultWithAttributes<T1>? Execute<T1>(
+            this AdminFilterChatMessage.AdminFilterChatMessageBuilder builder,
+            ModelsMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminFilterChatMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminFilterChatMessage<T1>(op);
+        }
+        public static async Task<Chat.Model.ModelsMessageResultWithAttributes<T1>?> ExecuteAsync<T1>(
+            this AdminFilterChatMessage.AdminFilterChatMessageBuilder builder,
+            ModelsMessageRequest body,
+            string namespace_
+        )
+        {
+            AdminFilterChatMessage op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Topic)builder.WrapperObject!).AdminFilterChatMessageAsync<T1>(op);
+        }
         public static Chat.Model.ModelsChatMessageWithPaginationResponse? Execute(
             this AdminChatHistory.AdminChatHistoryBuilder builder,
             string namespace_

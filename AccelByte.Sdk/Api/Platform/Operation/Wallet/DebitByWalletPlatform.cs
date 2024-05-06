@@ -19,7 +19,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Pay with user wallet by currency code and client platform.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
     /// 
     /// 
     /// 

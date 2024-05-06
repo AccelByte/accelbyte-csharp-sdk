@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// updatePolicyVersion_1
     ///
     /// Update a particular policy version.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
     /// </summary>
     public class UpdatePolicyVersion1 : AccelByte.Sdk.Core.Operation
     {

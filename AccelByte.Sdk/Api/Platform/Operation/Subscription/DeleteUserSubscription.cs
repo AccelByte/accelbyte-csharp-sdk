@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteUserSubscription
     ///
     ///  [TEST FACILITY ONLY] Forbidden in live environment. Delete user subscription.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=8 (DELETE)
     /// </summary>
     public class DeleteUserSubscription : AccelByte.Sdk.Core.Operation
     {

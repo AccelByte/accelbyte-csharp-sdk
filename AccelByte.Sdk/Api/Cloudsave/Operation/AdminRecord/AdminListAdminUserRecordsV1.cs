@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
             public long? Offset { get; set; }
 
+            public string? Query { get; set; }
+
             public List<string>? Tags { get; set; }
 
 
@@ -49,6 +51,12 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             public AdminListAdminUserRecordsV1Builder SetOffset(long _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public AdminListAdminUserRecordsV1Builder SetQuery(string _query)
+            {
+                Query = _query;
                 return this;
             }
 
@@ -90,6 +98,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Query is not null) QueryParams["query"] = builder.Query;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
@@ -107,6 +116,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             string userId,
             long? limit,
             long? offset,
+            string? query,
             List<string>? tags
         )
         {
@@ -115,6 +125,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (query is not null) QueryParams["query"] = query;
             if (tags is not null) QueryParams["tags"] = tags;
 
 

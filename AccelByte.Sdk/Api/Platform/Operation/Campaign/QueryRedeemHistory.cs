@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query redeem history.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
-    ///   *  Returns : slice of redeem history
+    ///   * Returns : slice of redeem history
     /// </summary>
     public class QueryRedeemHistory : AccelByte.Sdk.Core.Operation
     {

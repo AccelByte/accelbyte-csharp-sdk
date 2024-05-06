@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// disableUserWallet
     ///
     /// disable a user wallet.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DisableUserWallet : AccelByte.Sdk.Core.Operation

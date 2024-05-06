@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncEpicGameDLC
     ///
-    /// Sync epic games dlc items.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
-    ///   *  Returns :
+    /// Sync epic games dlc items
     /// </summary>
     public class SyncEpicGameDLC : AccelByte.Sdk.Core.Operation
     {

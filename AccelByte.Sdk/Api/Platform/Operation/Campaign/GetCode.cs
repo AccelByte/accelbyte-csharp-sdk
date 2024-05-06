@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get campaign code, it will check code whether available to redeem if redeemable true.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ) (READ)
-    ///   *  Returns : code info
+    ///   * Returns : code info
     /// </summary>
     public class GetCode : AccelByte.Sdk.Core.Operation
     {

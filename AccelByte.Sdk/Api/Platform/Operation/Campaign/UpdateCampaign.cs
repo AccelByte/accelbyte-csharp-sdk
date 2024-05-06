@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update campaign.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
-    ///   *  Returns : updated campaign
+    ///   * Returns : updated campaign
     /// </summary>
     public class UpdateCampaign : AccelByte.Sdk.Core.Operation
     {

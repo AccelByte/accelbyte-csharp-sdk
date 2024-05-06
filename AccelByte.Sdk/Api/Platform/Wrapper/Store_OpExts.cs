@@ -12,6 +12,50 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformStore_OpExts
     {
+        public static Platform.Model.CatalogConfigInfo? Execute(
+            this GetCatalogConfig.GetCatalogConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetCatalogConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).GetCatalogConfig(op);
+        }
+        public static async Task<Platform.Model.CatalogConfigInfo?> ExecuteAsync(
+            this GetCatalogConfig.GetCatalogConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetCatalogConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).GetCatalogConfigAsync(op);
+        }
+        public static Platform.Model.CatalogConfigInfo? Execute(
+            this UpdateCatalogConfig.UpdateCatalogConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateCatalogConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Store)builder.WrapperObject!).UpdateCatalogConfig(op);
+        }
+        public static async Task<Platform.Model.CatalogConfigInfo?> ExecuteAsync(
+            this UpdateCatalogConfig.UpdateCatalogConfigBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateCatalogConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Store)builder.WrapperObject!).UpdateCatalogConfigAsync(op);
+        }
         public static List<Platform.Model.StoreInfo>? Execute(
             this ListStores.ListStoresBuilder builder,
             string namespace_

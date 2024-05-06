@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get namespace info related publisher namespace.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=2 (READ)
-    ///   *  Action code : 11305
+    ///   * Action code : 11305
     ///   *  Returns : Namespace info related publisher namespace
     /// </summary>
     public class GetNamespacePublisher : AccelByte.Sdk.Core.Operation

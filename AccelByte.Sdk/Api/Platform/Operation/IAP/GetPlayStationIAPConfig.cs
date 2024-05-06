@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get playstation iap config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : playstation iap config
+    ///   * Returns : playstation iap config
     /// </summary>
     public class GetPlayStationIAPConfig : AccelByte.Sdk.Core.Operation
     {

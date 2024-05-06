@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicRequestDataRetrieval
     ///
-    /// 
-    /// 
-    /// Requires valid user access token
+    /// Submit personal data retrieval request.
+    /// Scope: account
     /// </summary>
     public class PublicRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {

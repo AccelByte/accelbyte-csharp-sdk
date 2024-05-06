@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// sellUserEntitlement
     ///
     /// Sell user entitlement. If the entitlement is consumable, useCount is 0, the status will be CONSUMED. If the entitlement is durable, the status will be SOLD. Other detail info:
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT, action=4 (UPDATE)
-    ///   *  Returns : entitlement
+    ///   * Returns : entitlement
     /// </summary>
     public class SellUserEntitlement : AccelByte.Sdk.Core.Operation
     {

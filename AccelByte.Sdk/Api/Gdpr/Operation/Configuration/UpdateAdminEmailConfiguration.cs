@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// UpdateAdminEmailConfiguration
     ///
     /// Update admin email address for receiving personal data request notification.
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [UPDATE]`
+    /// Scope: account
     /// </summary>
     public class UpdateAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

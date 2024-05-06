@@ -13,12 +13,20 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CompletedAt { get; set; }
 
-        [JsonPropertyName("currrentValue")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public double? CurrrentValue { get; set; }
+        [JsonPropertyName("currentValue")]
+        public double? CurrentValue { get; set; }
 
         [JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        [JsonPropertyName("matcher")]
+        public string? Matcher { get; set; }
+
+        [JsonPropertyName("parameterName")]
+        public string? ParameterName { get; set; }
+
+        [JsonPropertyName("parameterType")]
+        public string? ParameterType { get; set; }
 
         [JsonPropertyName("targetValue")]
         public double? TargetValue { get; set; }

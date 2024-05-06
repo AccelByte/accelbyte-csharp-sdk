@@ -30,8 +30,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   * webHookId
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : test result
+    ///   * Returns : test result
     /// </summary>
     public class TestPayPalConfig : AccelByte.Sdk.Core.Operation
     {

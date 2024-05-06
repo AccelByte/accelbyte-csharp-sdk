@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getUserEntitlementBySku
     ///
     /// Get user entitlement by sku.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     public class GetUserEntitlementBySku : AccelByte.Sdk.Core.Operation
     {

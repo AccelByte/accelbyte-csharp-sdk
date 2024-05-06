@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get twitch iap config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : twitch iap config
+    ///   * Returns : twitch iap config
     /// </summary>
     public class GetTwitchIAPConfig : AccelByte.Sdk.Core.Operation
     {

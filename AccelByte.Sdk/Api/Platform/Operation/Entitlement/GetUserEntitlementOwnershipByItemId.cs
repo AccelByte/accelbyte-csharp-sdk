@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getUserEntitlementOwnershipByItemId
     ///
     /// Get user entitlement ownership by itemId.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     public class GetUserEntitlementOwnershipByItemId : AccelByte.Sdk.Core.Operation
     {

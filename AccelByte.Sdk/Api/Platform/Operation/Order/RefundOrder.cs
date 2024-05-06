@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// refundOrder
     ///
     /// Refund order by orderNo.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ORDER", action=4 (UPDATE)
     /// </summary>
     public class RefundOrder : AccelByte.Sdk.Core.Operation
     {

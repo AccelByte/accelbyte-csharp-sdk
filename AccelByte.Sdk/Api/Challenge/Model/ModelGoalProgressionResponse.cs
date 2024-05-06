@@ -14,6 +14,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonPropertyName("challengeCode")]
         public string? ChallengeCode { get; set; }
 
+        [JsonPropertyName("goal")]
+        public ModelGoalMeta? Goal { get; set; }
+
         [JsonPropertyName("goalCode")]
         public string? GoalCode { get; set; }
 
@@ -38,6 +41,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 
         public static readonly ModelGoalProgressionResponseStatus COMPLETED
             = new ModelGoalProgressionResponseStatus("COMPLETED");
+
+        public static readonly ModelGoalProgressionResponseStatus NOTSTARTED
+            = new ModelGoalProgressionResponseStatus("NOT_STARTED");
 
         public static readonly ModelGoalProgressionResponseStatus RETIRED
             = new ModelGoalProgressionResponseStatus("RETIRED");

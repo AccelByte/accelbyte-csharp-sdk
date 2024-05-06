@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-    ///   *  Returns : paginated sections
+    ///   * Returns : paginated sections
     /// </summary>
     public class QuerySections : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query key groups, if name is presented, it's fuzzy match.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-    ///   *  Returns : slice of key group
+    ///   * Returns : slice of key group
     /// </summary>
     public class QueryKeyGroups : AccelByte.Sdk.Core.Operation
     {

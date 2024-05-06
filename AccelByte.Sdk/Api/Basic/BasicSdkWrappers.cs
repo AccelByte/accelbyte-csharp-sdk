@@ -24,17 +24,6 @@ namespace AccelByte.Sdk.Core
         }
         private Namespace? _Namespace = null;
 
-        public UserAction UserAction
-        {
-            get
-            {
-                if (_UserAction == null)
-                    _UserAction = new UserAction(_SdkObject);
-                return _UserAction;
-            }
-        }
-        private UserAction? _UserAction = null;
-
         public Config Config
         {
             get
@@ -45,17 +34,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Config? _Config = null;
-
-        public EQU8Config EQU8Config
-        {
-            get
-            {
-                if (_EQU8Config == null)
-                    _EQU8Config = new EQU8Config(_SdkObject);
-                return _EQU8Config;
-            }
-        }
-        private EQU8Config? _EQU8Config = null;
 
         public FileUpload FileUpload
         {

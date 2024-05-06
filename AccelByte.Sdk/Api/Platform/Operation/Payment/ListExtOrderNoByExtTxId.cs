@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] List external order No by external transaction id.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT", action=2 (READ)
-    ///   *  Returns : payment orders
+    ///   * Returns : payment orders
     /// </summary>
     public class ListExtOrderNoByExtTxId : AccelByte.Sdk.Core.Operation
     {

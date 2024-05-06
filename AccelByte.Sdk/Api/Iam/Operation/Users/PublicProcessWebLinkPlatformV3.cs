@@ -18,6 +18,19 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This endpoint is used to process third party account link, this endpoint will return the link status directly instead of redirecting to the original page.
     /// The param **state** comes from the response of `/users/me/platforms/{platformId}/web/link`
+    /// Supported platforms:
+    /// - ps4web
+    /// - xblweb
+    /// - steamopenid
+    /// - epicgames
+    /// - facebook
+    /// - twitch
+    /// - google
+    /// - apple
+    /// - snapchat
+    /// - discord
+    /// - amazon
+    /// - oculusweb
     /// </summary>
     public class PublicProcessWebLinkPlatformV3 : AccelByte.Sdk.Core.Operation
     {

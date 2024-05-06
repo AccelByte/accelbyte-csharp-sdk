@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getServicePluginConfig
     ///
-    /// Get service plugin config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource= ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN , action=2 (READ)
+    /// Get service plugin config
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetServicePluginConfig : AccelByte.Sdk.Core.Operation

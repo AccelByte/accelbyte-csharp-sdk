@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Enable code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
-    ///   *  Returns : enabled code
+    ///   * Returns : enabled code
     /// </summary>
     public class EnableCode : AccelByte.Sdk.Core.Operation
     {

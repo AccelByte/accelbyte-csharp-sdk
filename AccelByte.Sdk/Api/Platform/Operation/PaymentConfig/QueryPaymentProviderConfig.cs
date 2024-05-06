@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Query payment provider config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
-    ///   *  Returns : payment provider config list
+    ///   * Returns : payment provider config list
     /// </summary>
     public class QueryPaymentProviderConfig : AccelByte.Sdk.Core.Operation
     {

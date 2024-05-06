@@ -235,8 +235,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-    ///   *  Returns : updated item data
+    ///   * Returns : updated item data
     /// 
     /// 
     /// 

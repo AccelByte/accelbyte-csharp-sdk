@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// geDLCDurableRewardShortMap
     ///
-    /// Get dlc reward simple map, only return the sku of durable item reward
-    /// Other detail info:
-    /// 
-    ///   * Required permission : Authorized user
+    /// Get dlc reward simple map, only return the sku of durable item reward.
     /// </summary>
     public class GeDLCDurableRewardShortMap : AccelByte.Sdk.Core.Operation
     {

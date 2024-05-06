@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private GlobalAchievements? _GlobalAchievements = null;
 
+        public PlatformAchievement PlatformAchievement
+        {
+            get
+            {
+                if (_PlatformAchievement == null)
+                    _PlatformAchievement = new PlatformAchievement(_SdkObject);
+                return _PlatformAchievement;
+            }
+        }
+        private PlatformAchievement? _PlatformAchievement = null;
+
         public Tags Tags
         {
             get

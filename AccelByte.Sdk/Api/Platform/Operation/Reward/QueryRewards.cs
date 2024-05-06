@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=2 (READ)
-    ///   *  Returns : the list of rewards
+    ///   * Returns : the list of rewards
     /// </summary>
     public class QueryRewards : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Revoke specified use count of user entitlement. please use /{entitlementId}/revoke/byUseCount endpoint instead of this endpoint
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : revoke entitlement
+    ///   * Returns : revoke entitlement
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RevokeUseCount : AccelByte.Sdk.Core.Operation

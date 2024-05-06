@@ -23,9 +23,17 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminGetRecentPlayer.Builder.SetWrapperObject(this); }
         }
+        public AdminGetRecentTeamPlayer.AdminGetRecentTeamPlayerBuilder AdminGetRecentTeamPlayerOp
+        {
+            get { return Operation.AdminGetRecentTeamPlayer.Builder.SetWrapperObject(this); }
+        }
         public PublicGetRecentPlayer.PublicGetRecentPlayerBuilder PublicGetRecentPlayerOp
         {
             get { return Operation.PublicGetRecentPlayer.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetRecentTeamPlayer.PublicGetRecentTeamPlayerBuilder PublicGetRecentTeamPlayerOp
+        {
+            get { return Operation.PublicGetRecentTeamPlayer.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -45,6 +53,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelsRecentPlayerQueryResponse? AdminGetRecentTeamPlayer(AdminGetRecentTeamPlayer input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsRecentPlayerQueryResponse?> AdminGetRecentTeamPlayerAsync(AdminGetRecentTeamPlayer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsRecentPlayerQueryResponse? PublicGetRecentPlayer(PublicGetRecentPlayer input)
         {
             var response = _sdk.RunRequest(input);
@@ -54,6 +78,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsRecentPlayerQueryResponse?> PublicGetRecentPlayerAsync(PublicGetRecentPlayer input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsRecentPlayerQueryResponse? PublicGetRecentTeamPlayer(PublicGetRecentTeamPlayer input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsRecentPlayerQueryResponse?> PublicGetRecentTeamPlayerAsync(PublicGetRecentTeamPlayer input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

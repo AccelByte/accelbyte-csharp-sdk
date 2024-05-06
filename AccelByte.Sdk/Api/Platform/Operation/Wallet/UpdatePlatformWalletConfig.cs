@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update platform wallet config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : platform wallet config
+    ///   * Returns : platform wallet config
     /// </summary>
     public class UpdatePlatformWalletConfig : AccelByte.Sdk.Core.Operation
     {

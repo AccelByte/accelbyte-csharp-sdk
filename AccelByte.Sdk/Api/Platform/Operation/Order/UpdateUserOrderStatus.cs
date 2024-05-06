@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update order status.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=4 (UPDATE)
-    ///   *  Returns : updated order
+    ///   * Returns : updated order
     /// </summary>
     public class UpdateUserOrderStatus : AccelByte.Sdk.Core.Operation
     {

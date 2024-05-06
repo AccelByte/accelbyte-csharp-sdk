@@ -31,9 +31,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
-        [JsonPropertyName("platfrom_group_enabled")]
+        [JsonPropertyName("platform_group_enabled")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public bool? PlatfromGroupEnabled { get; set; }
+        public bool? PlatformGroupEnabled { get; set; }
 
         [JsonPropertyName("rule_set")]
         public string? RuleSet { get; set; }

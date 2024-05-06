@@ -1,3 +1,9 @@
+<a name="v0.61.0"></a>
+## [v0.61.0]
+### ci
+- **:** do not use jenkins master
+
+
 <a name="v0.60.0"></a>
 ## [v0.60.0]
 ### feat

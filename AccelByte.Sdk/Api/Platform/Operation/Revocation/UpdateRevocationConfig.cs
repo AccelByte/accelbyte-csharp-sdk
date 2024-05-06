@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update revocation configuration.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:REVOCATION, action=4 (UPDATE)
-    ///   *  Returns : Revocation config
+    ///   * Returns : Revocation config
     /// </summary>
     public class UpdateRevocationConfig : AccelByte.Sdk.Core.Operation
     {

@@ -16,9 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicCancelUserPersonalDataRequest
     ///
-    /// 
-    /// 
+    /// Cancel user's personal data requests
     /// Requires valid user access token
+    /// Scope: account
     /// </summary>
     public class PublicCancelUserPersonalDataRequest : AccelByte.Sdk.Core.Operation
     {

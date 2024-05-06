@@ -46,6 +46,17 @@ namespace AccelByte.Sdk.Core
         }
         private Campaign? _Campaign = null;
 
+        public Store Store
+        {
+            get
+            {
+                if (_Store == null)
+                    _Store = new Store(_SdkObject);
+                return _Store;
+            }
+        }
+        private Store? _Store = null;
+
         public ServicePluginConfig ServicePluginConfig
         {
             get
@@ -243,17 +254,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Section? _Section = null;
-
-        public Store Store
-        {
-            get
-            {
-                if (_Store == null)
-                    _Store = new Store(_SdkObject);
-                return _Store;
-            }
-        }
-        private Store? _Store = null;
 
         public CatalogChanges CatalogChanges
         {

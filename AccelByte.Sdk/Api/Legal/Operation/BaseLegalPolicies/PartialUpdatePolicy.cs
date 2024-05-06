@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// partialUpdatePolicy
     ///
     /// Update an existing base policy.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
     /// </summary>
     public class PartialUpdatePolicy : AccelByte.Sdk.Core.Operation
     {

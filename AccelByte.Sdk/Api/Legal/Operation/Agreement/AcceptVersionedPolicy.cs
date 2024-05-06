@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// acceptVersionedPolicy
     ///
-    /// Accepts a legal policy version. Supply with localized version policy id to accept an agreement.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
+    /// Accepts a legal policy version. Supply with localized version policy id to accept an agreement
     /// </summary>
     public class AcceptVersionedPolicy : AccelByte.Sdk.Core.Operation
     {

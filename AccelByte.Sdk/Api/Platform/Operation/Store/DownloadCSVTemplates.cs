@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// downloadCSVTemplates
     ///
     /// This API is used to download store csv templates for store importing by CSV feature
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
     public class DownloadCSVTemplates : AccelByte.Sdk.Core.Operation
     {

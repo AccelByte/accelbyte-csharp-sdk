@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Create campaign.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=1 (CREATE)
-    ///   *  Returns : created campaign
+    ///   * Returns : created campaign
     /// </summary>
     public class CreateCampaign : AccelByte.Sdk.Core.Operation
     {

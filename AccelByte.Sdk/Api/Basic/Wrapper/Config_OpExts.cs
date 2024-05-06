@@ -35,82 +35,82 @@ namespace AccelByte.Sdk.Api
             return await ((Basic.Wrapper.Config)builder.WrapperObject!).CreateConfigAsync(op);
         }
         public static Basic.Model.ConfigInfo? Execute(
-            this GetConfig1.GetConfig1Builder builder,
+            this GetConfig.GetConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            GetConfig1 op = builder.Build(
+            GetConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            return ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfig1(op);
+            return ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfig(op);
         }
         public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
-            this GetConfig1.GetConfig1Builder builder,
+            this GetConfig.GetConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            GetConfig1 op = builder.Build(
+            GetConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            return await ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfig1Async(op);
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).GetConfigAsync(op);
         }
         public static void Execute(
-            this DeleteConfig1.DeleteConfig1Builder builder,
+            this DeleteConfig.DeleteConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            DeleteConfig1 op = builder.Build(
+            DeleteConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfig1(op);
+            ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfig(op);
         }
         public static async Task ExecuteAsync(
-            this DeleteConfig1.DeleteConfig1Builder builder,
+            this DeleteConfig.DeleteConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            DeleteConfig1 op = builder.Build(
+            DeleteConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            await ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfig1Async(op);
+            await ((Basic.Wrapper.Config)builder.WrapperObject!).DeleteConfigAsync(op);
         }
         public static Basic.Model.ConfigInfo? Execute(
-            this UpdateConfig1.UpdateConfig1Builder builder,
+            this UpdateConfig.UpdateConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            UpdateConfig1 op = builder.Build(
+            UpdateConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            return ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig1(op);
+            return ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig(op);
         }
         public static async Task<Basic.Model.ConfigInfo?> ExecuteAsync(
-            this UpdateConfig1.UpdateConfig1Builder builder,
+            this UpdateConfig.UpdateConfigBuilder builder,
             string configKey,
             string namespace_
         )
         {
-            UpdateConfig1 op = builder.Build(
+            UpdateConfig op = builder.Build(
                 configKey,
                 namespace_
             );
 
-            return await ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfig1Async(op);
+            return await ((Basic.Wrapper.Config)builder.WrapperObject!).UpdateConfigAsync(op);
         }
         public static Basic.Model.ConfigInfo? Execute(
             this GetPublisherConfig.GetPublisherConfigBuilder builder,

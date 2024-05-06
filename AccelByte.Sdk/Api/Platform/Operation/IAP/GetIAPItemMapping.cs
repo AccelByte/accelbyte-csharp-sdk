@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getIAPItemMapping
     ///
     /// Get iap item mapping.
-    /// Other detail info:
     /// </summary>
     public class GetIAPItemMapping : AccelByte.Sdk.Core.Operation
     {

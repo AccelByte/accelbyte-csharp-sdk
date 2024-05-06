@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query fulfillment histories in a namespace.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:FULFILLMENT", action=2 (READ)
-    ///   *  Returns : query fulfillment history
+    ///   * Returns : query fulfillment history
     /// </summary>
     public class QueryFulfillmentHistories : AccelByte.Sdk.Core.Operation
     {

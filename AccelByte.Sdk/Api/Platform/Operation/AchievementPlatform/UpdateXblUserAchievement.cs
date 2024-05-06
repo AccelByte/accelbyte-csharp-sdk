@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateXblUserAchievement
     ///
     /// This API is used to update xbox live achievements.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT, action=4 (UPDATE)
     /// </summary>
     public class UpdateXblUserAchievement : AccelByte.Sdk.Core.Operation
     {

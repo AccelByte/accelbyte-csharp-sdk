@@ -20,10 +20,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// To check the export state after initialize it, use `GET /admin/namespaces/{namespace}/agreements/policy-versions/users/export-csv/download` API.
     /// 
     /// This Initiate API is not allow multiple export worker running for the same namespace, it will return 409 http error if so.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class InitiateExportAgreementsToCSV : AccelByte.Sdk.Core.Operation
     {
@@ -34,6 +30,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             : OperationBuilder<InitiateExportAgreementsToCSVBuilder>
         {
 
+            public string? End { get; set; }
+
 
 
 
@@ -41,18 +39,26 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             internal InitiateExportAgreementsToCSVBuilder() { }
 
 
+            public InitiateExportAgreementsToCSVBuilder SetEnd(string _end)
+            {
+                End = _end;
+                return this;
+            }
+
 
 
 
 
             public InitiateExportAgreementsToCSV Build(
                 string namespace_,
-                string policyVersionId
+                string policyVersionId,
+                string start
             )
             {
                 InitiateExportAgreementsToCSV op = new InitiateExportAgreementsToCSV(this,
                     namespace_,
-                    policyVersionId
+                    policyVersionId,
+                    start
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -65,12 +71,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         private InitiateExportAgreementsToCSV(InitiateExportAgreementsToCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string policyVersionId,
+            string start
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.End is not null) QueryParams["end"] = builder.End;
             if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
+            if (start is not null) QueryParams["start"] = start;
 
 
 
@@ -83,12 +92,16 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public InitiateExportAgreementsToCSV(
             string namespace_,
-            string policyVersionId
+            string? end,
+            string policyVersionId,
+            string start
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (end is not null) QueryParams["end"] = end;
             if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
+            if (start is not null) QueryParams["start"] = start;
 
 
 

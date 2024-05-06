@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Checks if specified use count of user entitlement can be revoked without actually revoking it.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=1 (READ)
-    ///   *  Returns : true if revokable, false otherwise
+    ///   * Returns : true if revokable, false otherwise
     /// </summary>
     public class PreCheckRevokeUserEntitlementByUseCount : AccelByte.Sdk.Core.Operation
     {

@@ -854,3 +854,4 @@
 | `oauthmodel.UserBan` | [OauthmodelUserBan](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelUserBan.cs) |
 | `rest.ErrorResponse` | [RestErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponse.cs) |
 | `rest.ErrorResponseWithConflictedUserPlatformAccounts` | [RestErrorResponseWithConflictedUserPlatformAccounts](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponseWithConflictedUserPlatformAccounts.cs) |
+| `rest.Permission` | [RestPermission](../../AccelByte.Sdk/Api/Iam/Model/RestPermission.cs) |

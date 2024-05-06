@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("currencyCode")]
         public string? CurrencyCode { get; set; }
 
+        [JsonPropertyName("discountCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? DiscountCodes { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
 
@@ -51,6 +55,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         [JsonPropertyName("currencyCode")]
         public string? CurrencyCode { get; set; }
+
+        [JsonPropertyName("discountCodes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? DiscountCodes { get; set; }
 
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }

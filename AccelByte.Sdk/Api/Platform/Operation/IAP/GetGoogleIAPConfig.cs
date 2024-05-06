@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get google iap config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : google iap config
+    ///   * Returns : google iap config
     /// </summary>
     public class GetGoogleIAPConfig : AccelByte.Sdk.Core.Operation
     {

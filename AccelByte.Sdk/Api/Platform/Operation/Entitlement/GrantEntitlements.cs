@@ -31,8 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///   *  LOOTBOX
     /// 
     /// Other detail info:
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : bulk grant entitlements result
+    ///   * Returns : bulk grant entitlements result
     /// </summary>
     public class GrantEntitlements : AccelByte.Sdk.Core.Operation
     {

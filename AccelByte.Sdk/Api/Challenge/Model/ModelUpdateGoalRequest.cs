@@ -13,6 +13,7 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         public string? Description { get; set; }
 
         [JsonPropertyName("isActive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsActive { get; set; }
 
         [JsonPropertyName("name")]

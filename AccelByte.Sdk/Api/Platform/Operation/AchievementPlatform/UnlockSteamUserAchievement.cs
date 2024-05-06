@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// unlockSteamUserAchievement
     ///
     /// This API is used to unlock steam achievement.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT, action=4 (UPDATE)
     /// </summary>
     public class UnlockSteamUserAchievement : AccelByte.Sdk.Core.Operation
     {

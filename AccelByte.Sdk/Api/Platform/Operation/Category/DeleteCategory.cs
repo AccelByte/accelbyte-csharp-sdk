@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=8 (DELETE)
-    ///   *  Returns : the deleted category data
+    ///   * Returns : the deleted category data
     /// </summary>
     public class DeleteCategory : AccelByte.Sdk.Core.Operation
     {

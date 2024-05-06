@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query wallets.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=2 (READ)
-    ///   *  Returns : paginated wallets info
+    ///   * Returns : paginated wallets info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class QueryWallets : AccelByte.Sdk.Core.Operation

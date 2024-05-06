@@ -16,12 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncOculusDLC
     ///
-    /// Sync oculus dlc.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=NAMESPACE:{namespace}:USER:{userId}:DLC, action=4 (UPDATE)
-    ///   *  Returns :
+    /// Sync oculus dlc
     /// </summary>
     public class SyncOculusDLC : AccelByte.Sdk.Core.Operation
     {

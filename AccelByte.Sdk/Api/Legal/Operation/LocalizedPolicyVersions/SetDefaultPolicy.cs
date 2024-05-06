@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// setDefaultPolicy
     ///
     /// Update a localized version policy to be the default.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
     /// </summary>
     public class SetDefaultPolicy : AccelByte.Sdk.Core.Operation
     {

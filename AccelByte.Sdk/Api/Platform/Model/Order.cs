@@ -55,6 +55,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CurrencySummary? Currency { get; set; }
 
+        [JsonPropertyName("deduction")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Deduction { get; set; }
+
+        [JsonPropertyName("deductionDetails")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<DeductionDetail>? DeductionDetails { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DiscountedPrice { get; set; }
@@ -66,6 +74,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("ext")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Ext { get; set; }
+
+        [JsonPropertyName("finalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? FinalPrice { get; set; }
 
         [JsonPropertyName("free")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -245,6 +257,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public CurrencySummary? Currency { get; set; }
 
+        [JsonPropertyName("deduction")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Deduction { get; set; }
+
+        [JsonPropertyName("deductionDetails")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<DeductionDetail>? DeductionDetails { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? DiscountedPrice { get; set; }
@@ -256,6 +276,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("ext")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Ext { get; set; }
+
+        [JsonPropertyName("finalPrice")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? FinalPrice { get; set; }
 
         [JsonPropertyName("free")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

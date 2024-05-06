@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteView
     ///
     /// This API is used to delete a view.It will also delete all the related sections
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
     /// </summary>
     public class DeleteView : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Fulfill item.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:FULFILLMENT", action=1 (CREATED)
-    ///   *  Returns : fulfillment result
+    ///   * Returns : fulfillment result
     /// </summary>
     public class FulfillItem : AccelByte.Sdk.Core.Operation
     {

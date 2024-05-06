@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Country code must follow ISO3166-1 alpha-2.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=1 (CREATE)
-    ///   *  Action code : 11201
+    ///   * Action code : 11201
     ///   *  Returns : newly created country group
     /// </summary>
     public class AddCountryGroup : AccelByte.Sdk.Core.Operation

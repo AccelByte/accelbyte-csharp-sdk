@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-    ///   *  Returns : created store data
+    ///   * Returns : created store data
     /// </summary>
     public class CreateStore : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Download all or a batch of campaign's codes as a csv file.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=2 (READ)
-    ///   *  Returns : codes csv file
+    ///   * Returns : codes csv file
     /// </summary>
     public class Download : AccelByte.Sdk.Core.Operation
     {

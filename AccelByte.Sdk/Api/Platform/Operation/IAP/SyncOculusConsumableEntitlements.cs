@@ -16,12 +16,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncOculusConsumableEntitlements
     ///
-    /// Sync Oculus entitlements.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-    ///   *  Returns :
+    /// Sync Oculus entitlements.Other detail info:
+    ///   * Returns :
     /// </summary>
     public class SyncOculusConsumableEntitlements : AccelByte.Sdk.Core.Operation
     {

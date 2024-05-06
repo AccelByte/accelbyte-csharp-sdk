@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? MessageVariables { get; set; }
 
+        [JsonPropertyName("requiredPermission")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public RestPermission? RequiredPermission { get; set; }
+
     }
 
 

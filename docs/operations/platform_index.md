@@ -84,6 +84,32 @@
 | `/platform/admin/namespaces/{namespace}/codes/{code}/enable` | PUT | EnableCode | [EnableCode](../../AccelByte.Sdk/Api/Platform/Operation/Campaign/EnableCode.cs) | [EnableCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Campaign/EnableCode.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/redemption` | POST | ApplyUserRedemption | [ApplyUserRedemption](../../AccelByte.Sdk/Api/Platform/Operation/Campaign/ApplyUserRedemption.cs) | [ApplyUserRedemption](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Campaign/ApplyUserRedemption.cs) |
 
+### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/catalog/configs` | GET | GetCatalogConfig | [GetCatalogConfig](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetCatalogConfig.cs) | [GetCatalogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetCatalogConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/catalog/configs` | PUT | UpdateCatalogConfig | [UpdateCatalogConfig](../../AccelByte.Sdk/Api/Platform/Operation/Store/UpdateCatalogConfig.cs) | [UpdateCatalogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/UpdateCatalogConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/stores` | GET | ListStores | [ListStores](../../AccelByte.Sdk/Api/Platform/Operation/Store/ListStores.cs) | [ListStores](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ListStores.cs) |
+| `/platform/admin/namespaces/{namespace}/stores` | POST | CreateStore | [CreateStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/CreateStore.cs) | [CreateStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/CreateStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/catalogDefinition` | GET | GetCatalogDefinition | [GetCatalogDefinition](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetCatalogDefinition.cs) | [GetCatalogDefinition](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetCatalogDefinition.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/downloadCSVTemplates` | GET | DownloadCSVTemplates | [DownloadCSVTemplates](../../AccelByte.Sdk/Api/Platform/Operation/Store/DownloadCSVTemplates.cs) | [DownloadCSVTemplates](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DownloadCSVTemplates.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/exportByCSV` | POST | ExportStoreByCSV | [ExportStoreByCSV](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStoreByCSV.cs) | [ExportStoreByCSV](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStoreByCSV.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/stores/import` | PUT | ImportStore | [ImportStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStore.cs) | [ImportStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/published` | GET | GetPublishedStore | [GetPublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetPublishedStore.cs) | [GetPublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetPublishedStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/published` | DELETE | DeletePublishedStore | [DeletePublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/DeletePublishedStore.cs) | [DeletePublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DeletePublishedStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/published/backup` | GET | GetPublishedStoreBackup | [GetPublishedStoreBackup](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetPublishedStoreBackup.cs) | [GetPublishedStoreBackup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetPublishedStoreBackup.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/published/rollback` | PUT | RollbackPublishedStore | [RollbackPublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/RollbackPublishedStore.cs) | [RollbackPublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/RollbackPublishedStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | GET | GetStore | [GetStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetStore.cs) | [GetStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | PUT | UpdateStore | [UpdateStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/UpdateStore.cs) | [UpdateStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/UpdateStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | DELETE | DeleteStore | [DeleteStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/DeleteStore.cs) | [DeleteStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DeleteStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/clone` | PUT | CloneStore | [CloneStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/CloneStore.cs) | [CloneStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/CloneStore.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/stores/{storeId}/export` | GET | ExportStore | [ExportStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore.cs) | [ExportStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/import/history` | GET | QueryImportHistory | [QueryImportHistory](../../AccelByte.Sdk/Api/Platform/Operation/Store/QueryImportHistory.cs) | [QueryImportHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/QueryImportHistory.cs) |
+| `/platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV` | POST | ImportStoreByCSV | [ImportStoreByCSV](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStoreByCSV.cs) | [ImportStoreByCSV](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStoreByCSV.cs) |
+| `/platform/public/namespaces/{namespace}/stores` | GET | PublicListStores | [PublicListStores](../../AccelByte.Sdk/Api/Platform/Operation/Store/PublicListStores.cs) | [PublicListStores](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/PublicListStores.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/stores/import` | PUT | ImportStore1 | [ImportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStore1.cs) | [ImportStore1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStore1.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export` | POST | ExportStore1 | [ExportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore1.cs) | [ExportStore1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore1.cs) |
+
 ### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -310,12 +336,13 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}` | GET | GetUserOrder | [GetUserOrder](../../AccelByte.Sdk/Api/Platform/Operation/Order/GetUserOrder.cs) | [GetUserOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetUserOrder.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}` | PUT | UpdateUserOrderStatus | [UpdateUserOrderStatus](../../AccelByte.Sdk/Api/Platform/Operation/Order/UpdateUserOrderStatus.cs) | [UpdateUserOrderStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/UpdateUserOrderStatus.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/fulfill` | PUT | FulfillUserOrder | [FulfillUserOrder](../../AccelByte.Sdk/Api/Platform/Operation/Order/FulfillUserOrder.cs) | [FulfillUserOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/FulfillUserOrder.cs) |
-| `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/grant` | GET | GetUserOrderGrant | [GetUserOrderGrant](../../AccelByte.Sdk/Api/Platform/Operation/Order/GetUserOrderGrant.cs) | [GetUserOrderGrant](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetUserOrderGrant.cs) |
+| [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/grant` | GET | GetUserOrderGrant | [GetUserOrderGrant](../../AccelByte.Sdk/Api/Platform/Operation/Order/GetUserOrderGrant.cs) | [GetUserOrderGrant](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetUserOrderGrant.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history` | GET | GetUserOrderHistories | [GetUserOrderHistories](../../AccelByte.Sdk/Api/Platform/Operation/Order/GetUserOrderHistories.cs) | [GetUserOrderHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/GetUserOrderHistories.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/notifications` | POST | ProcessUserOrderNotification | [ProcessUserOrderNotification](../../AccelByte.Sdk/Api/Platform/Operation/Order/ProcessUserOrderNotification.cs) | [ProcessUserOrderNotification](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/ProcessUserOrderNotification.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/orders/{orderNo}/receipt.pdf` | GET | DownloadUserOrderReceipt | [DownloadUserOrderReceipt](../../AccelByte.Sdk/Api/Platform/Operation/Order/DownloadUserOrderReceipt.cs) | [DownloadUserOrderReceipt](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/DownloadUserOrderReceipt.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/orders` | GET | PublicQueryUserOrders | [PublicQueryUserOrders](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicQueryUserOrders.cs) | [PublicQueryUserOrders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicQueryUserOrders.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/orders` | POST | PublicCreateUserOrder | [PublicCreateUserOrder](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicCreateUserOrder.cs) | [PublicCreateUserOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicCreateUserOrder.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/orders/discount/preview` | POST | PublicPreviewOrderPrice | [PublicPreviewOrderPrice](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicPreviewOrderPrice.cs) | [PublicPreviewOrderPrice](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicPreviewOrderPrice.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}` | GET | PublicGetUserOrder | [PublicGetUserOrder](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicGetUserOrder.cs) | [PublicGetUserOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicGetUserOrder.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/cancel` | PUT | PublicCancelUserOrder | [PublicCancelUserOrder](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicCancelUserOrder.cs) | [PublicCancelUserOrder](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicCancelUserOrder.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/orders/{orderNo}/history` | GET | PublicGetUserOrderHistories | [PublicGetUserOrderHistories](../../AccelByte.Sdk/Api/Platform/Operation/Order/PublicGetUserOrderHistories.cs) | [PublicGetUserOrderHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Order/PublicGetUserOrderHistories.cs) |
@@ -409,30 +436,6 @@
 | `/platform/admin/namespaces/{namespace}/sections/{sectionId}` | PUT | UpdateSection | [UpdateSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/UpdateSection.cs) | [UpdateSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/UpdateSection.cs) |
 | `/platform/admin/namespaces/{namespace}/sections/{sectionId}` | DELETE | DeleteSection | [DeleteSection](../../AccelByte.Sdk/Api/Platform/Operation/Section/DeleteSection.cs) | [DeleteSection](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/DeleteSection.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/sections` | GET | PublicListActiveSections | [PublicListActiveSections](../../AccelByte.Sdk/Api/Platform/Operation/Section/PublicListActiveSections.cs) | [PublicListActiveSections](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Section/PublicListActiveSections.cs) |
-
-### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/stores` | GET | ListStores | [ListStores](../../AccelByte.Sdk/Api/Platform/Operation/Store/ListStores.cs) | [ListStores](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ListStores.cs) |
-| `/platform/admin/namespaces/{namespace}/stores` | POST | CreateStore | [CreateStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/CreateStore.cs) | [CreateStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/CreateStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/catalogDefinition` | GET | GetCatalogDefinition | [GetCatalogDefinition](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetCatalogDefinition.cs) | [GetCatalogDefinition](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetCatalogDefinition.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/downloadCSVTemplates` | GET | DownloadCSVTemplates | [DownloadCSVTemplates](../../AccelByte.Sdk/Api/Platform/Operation/Store/DownloadCSVTemplates.cs) | [DownloadCSVTemplates](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DownloadCSVTemplates.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/exportByCSV` | POST | ExportStoreByCSV | [ExportStoreByCSV](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStoreByCSV.cs) | [ExportStoreByCSV](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStoreByCSV.cs) |
-| [DEPRECATED] `/platform/admin/namespaces/{namespace}/stores/import` | PUT | ImportStore | [ImportStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStore.cs) | [ImportStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/published` | GET | GetPublishedStore | [GetPublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetPublishedStore.cs) | [GetPublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetPublishedStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/published` | DELETE | DeletePublishedStore | [DeletePublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/DeletePublishedStore.cs) | [DeletePublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DeletePublishedStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/published/backup` | GET | GetPublishedStoreBackup | [GetPublishedStoreBackup](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetPublishedStoreBackup.cs) | [GetPublishedStoreBackup](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetPublishedStoreBackup.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/published/rollback` | PUT | RollbackPublishedStore | [RollbackPublishedStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/RollbackPublishedStore.cs) | [RollbackPublishedStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/RollbackPublishedStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | GET | GetStore | [GetStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/GetStore.cs) | [GetStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/GetStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | PUT | UpdateStore | [UpdateStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/UpdateStore.cs) | [UpdateStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/UpdateStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}` | DELETE | DeleteStore | [DeleteStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/DeleteStore.cs) | [DeleteStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/DeleteStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}/clone` | PUT | CloneStore | [CloneStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/CloneStore.cs) | [CloneStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/CloneStore.cs) |
-| [DEPRECATED] `/platform/admin/namespaces/{namespace}/stores/{storeId}/export` | GET | ExportStore | [ExportStore](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore.cs) | [ExportStore](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}/import/history` | GET | QueryImportHistory | [QueryImportHistory](../../AccelByte.Sdk/Api/Platform/Operation/Store/QueryImportHistory.cs) | [QueryImportHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/QueryImportHistory.cs) |
-| `/platform/admin/namespaces/{namespace}/stores/{storeId}/importByCSV` | POST | ImportStoreByCSV | [ImportStoreByCSV](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStoreByCSV.cs) | [ImportStoreByCSV](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStoreByCSV.cs) |
-| `/platform/public/namespaces/{namespace}/stores` | GET | PublicListStores | [PublicListStores](../../AccelByte.Sdk/Api/Platform/Operation/Store/PublicListStores.cs) | [PublicListStores](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/PublicListStores.cs) |
-| `/platform/v2/admin/namespaces/{namespace}/stores/import` | PUT | ImportStore1 | [ImportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ImportStore1.cs) | [ImportStore1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ImportStore1.cs) |
-| `/platform/v2/admin/namespaces/{namespace}/stores/{storeId}/export` | POST | ExportStore1 | [ExportStore1](../../AccelByte.Sdk/Api/Platform/Operation/Store/ExportStore1.cs) | [ExportStore1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Store/ExportStore1.cs) |
 
 ### CatalogChanges Wrapper:  [CatalogChanges](../../AccelByte.Sdk/Api/Platform/Wrapper/CatalogChanges.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -601,6 +604,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### ServicePluginConfig Wrapper:  [ServicePluginConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/ServicePluginConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -672,10 +679,6 @@
 |---|---|---|---|---|
 
 ### Section Wrapper:  [Section](../../AccelByte.Sdk/Api/Platform/Wrapper/Section.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
-### Store Wrapper:  [Store](../../AccelByte.Sdk/Api/Platform/Wrapper/Store.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -779,6 +782,7 @@
 | `BundledItemInfo` | [BundledItemInfo](../../AccelByte.Sdk/Api/Platform/Model/BundledItemInfo.cs) |
 | `CampaignCreate` | [CampaignCreate](../../AccelByte.Sdk/Api/Platform/Model/CampaignCreate.cs) |
 | `CampaignDynamicInfo` | [CampaignDynamicInfo](../../AccelByte.Sdk/Api/Platform/Model/CampaignDynamicInfo.cs) |
+| `CampaignIfc` | [CampaignIfc](../../AccelByte.Sdk/Api/Platform/Model/CampaignIfc.cs) |
 | `CampaignInfo` | [CampaignInfo](../../AccelByte.Sdk/Api/Platform/Model/CampaignInfo.cs) |
 | `CampaignPagingSlicedResult` | [CampaignPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/CampaignPagingSlicedResult.cs) |
 | `CampaignUpdate` | [CampaignUpdate](../../AccelByte.Sdk/Api/Platform/Model/CampaignUpdate.cs) |
@@ -786,6 +790,8 @@
 | `CatalogChangeInfo` | [CatalogChangeInfo](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangeInfo.cs) |
 | `CatalogChangePagingResult` | [CatalogChangePagingResult](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangePagingResult.cs) |
 | `CatalogChangeStatistics` | [CatalogChangeStatistics](../../AccelByte.Sdk/Api/Platform/Model/CatalogChangeStatistics.cs) |
+| `CatalogConfigInfo` | [CatalogConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/CatalogConfigInfo.cs) |
+| `CatalogConfigUpdate` | [CatalogConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/CatalogConfigUpdate.cs) |
 | `CatalogDefinitionInfo` | [CatalogDefinitionInfo](../../AccelByte.Sdk/Api/Platform/Model/CatalogDefinitionInfo.cs) |
 | `CategoryCreate` | [CategoryCreate](../../AccelByte.Sdk/Api/Platform/Model/CategoryCreate.cs) |
 | `CategoryInfo` | [CategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
@@ -825,9 +831,15 @@
 | `DebitPayload` | [DebitPayload](../../AccelByte.Sdk/Api/Platform/Model/DebitPayload.cs) |
 | `DebitRequest` | [DebitRequest](../../AccelByte.Sdk/Api/Platform/Model/DebitRequest.cs) |
 | `DebitResult` | [DebitResult](../../AccelByte.Sdk/Api/Platform/Model/DebitResult.cs) |
+| `DeductionDetail` | [DeductionDetail](../../AccelByte.Sdk/Api/Platform/Model/DeductionDetail.cs) |
 | `DeleteRewardConditionRequest` | [DeleteRewardConditionRequest](../../AccelByte.Sdk/Api/Platform/Model/DeleteRewardConditionRequest.cs) |
 | `DetailedWalletTransactionInfo` | [DetailedWalletTransactionInfo](../../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionInfo.cs) |
 | `DetailedWalletTransactionPagingSlicedResult` | [DetailedWalletTransactionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/DetailedWalletTransactionPagingSlicedResult.cs) |
+| `DiscountCategory` | [DiscountCategory](../../AccelByte.Sdk/Api/Platform/Model/DiscountCategory.cs) |
+| `DiscountCodeDeductionDetail` | [DiscountCodeDeductionDetail](../../AccelByte.Sdk/Api/Platform/Model/DiscountCodeDeductionDetail.cs) |
+| `DiscountCodeInfo` | [DiscountCodeInfo](../../AccelByte.Sdk/Api/Platform/Model/DiscountCodeInfo.cs) |
+| `DiscountConfig` | [DiscountConfig](../../AccelByte.Sdk/Api/Platform/Model/DiscountConfig.cs) |
+| `DiscountItem` | [DiscountItem](../../AccelByte.Sdk/Api/Platform/Model/DiscountItem.cs) |
 | `DurableEntitlementRevocationConfig` | [DurableEntitlementRevocationConfig](../../AccelByte.Sdk/Api/Platform/Model/DurableEntitlementRevocationConfig.cs) |
 | `EntitlementConfigInfo` | [EntitlementConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/EntitlementConfigInfo.cs) |
 | `EntitlementDecrement` | [EntitlementDecrement](../../AccelByte.Sdk/Api/Platform/Model/EntitlementDecrement.cs) |
@@ -962,6 +974,8 @@
 | `OrderBundleItemInfo` | [OrderBundleItemInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderBundleItemInfo.cs) |
 | `OrderCreate` | [OrderCreate](../../AccelByte.Sdk/Api/Platform/Model/OrderCreate.cs) |
 | `OrderCreationOptions` | [OrderCreationOptions](../../AccelByte.Sdk/Api/Platform/Model/OrderCreationOptions.cs) |
+| `OrderDiscountPreviewRequest` | [OrderDiscountPreviewRequest](../../AccelByte.Sdk/Api/Platform/Model/OrderDiscountPreviewRequest.cs) |
+| `OrderDiscountPreviewResponse` | [OrderDiscountPreviewResponse](../../AccelByte.Sdk/Api/Platform/Model/OrderDiscountPreviewResponse.cs) |
 | `OrderGrantInfo` | [OrderGrantInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderGrantInfo.cs) |
 | `OrderHistoryInfo` | [OrderHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderHistoryInfo.cs) |
 | `OrderInfo` | [OrderInfo](../../AccelByte.Sdk/Api/Platform/Model/OrderInfo.cs) |
@@ -1006,6 +1020,7 @@
 | `PaymentToken` | [PaymentToken](../../AccelByte.Sdk/Api/Platform/Model/PaymentToken.cs) |
 | `PaymentUrl` | [PaymentUrl](../../AccelByte.Sdk/Api/Platform/Model/PaymentUrl.cs) |
 | `PaymentUrlCreate` | [PaymentUrlCreate](../../AccelByte.Sdk/Api/Platform/Model/PaymentUrlCreate.cs) |
+| `Permission` | [Permission](../../AccelByte.Sdk/Api/Platform/Model/Permission.cs) |
 | `PlatformDLCConfigInfo` | [PlatformDLCConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PlatformDLCConfigInfo.cs) |
 | `PlatformDLCConfigUpdate` | [PlatformDLCConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/PlatformDLCConfigUpdate.cs) |
 | `PlatformDlcEntry` | [PlatformDlcEntry](../../AccelByte.Sdk/Api/Platform/Model/PlatformDlcEntry.cs) |

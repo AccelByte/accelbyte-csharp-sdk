@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Test AliPay configuration in payment merchant config. Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT:CONFIG", action=2 (READ)
-    ///   *  Returns : test alipay config
+    ///   * Returns : test alipay config
     /// </summary>
     public class TestAliPayConfigById : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to update a reward.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=4 (UPDATE)
-    ///   *  Returns : reward instance
+    ///   * Returns : reward instance
     ///   *  Acceptable values for rewardItem's identityType are : ITEM_ID or ITEM_SKU
     /// </summary>
     public class UpdateReward : AccelByte.Sdk.Core.Operation

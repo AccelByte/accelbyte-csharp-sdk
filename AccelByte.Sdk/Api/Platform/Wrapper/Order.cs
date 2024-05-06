@@ -59,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.FulfillUserOrder.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetUserOrderGrant.GetUserOrderGrantBuilder GetUserOrderGrantOp
         {
             get { return Operation.GetUserOrderGrant.Builder.SetWrapperObject(this); }
@@ -82,6 +83,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicCreateUserOrder.PublicCreateUserOrderBuilder PublicCreateUserOrderOp
         {
             get { return Operation.PublicCreateUserOrder.Builder.SetWrapperObject(this); }
+        }
+        public PublicPreviewOrderPrice.PublicPreviewOrderPriceBuilder PublicPreviewOrderPriceOp
+        {
+            get { return Operation.PublicPreviewOrderPrice.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserOrder.PublicGetUserOrderBuilder PublicGetUserOrderOp
         {
@@ -369,6 +374,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.OrderGrantInfo? GetUserOrderGrant(GetUserOrderGrant input)
         {
             var response = _sdk.RunRequest(input);
@@ -385,6 +392,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public List<Model.OrderHistoryInfo>? GetUserOrderHistories(GetUserOrderHistories input)
         {
             var response = _sdk.RunRequest(input);
@@ -479,6 +487,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OrderDiscountPreviewResponse? PublicPreviewOrderPrice(PublicPreviewOrderPrice input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OrderDiscountPreviewResponse?> PublicPreviewOrderPriceAsync(PublicPreviewOrderPrice input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

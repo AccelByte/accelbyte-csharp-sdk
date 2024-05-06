@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// uploadSectionPluginConfigCert
     ///
     /// Upload section plugin custom config tls cert.Other detail info:
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:CATALOG, action=4 (UPDATE)
-    ///   *  Returns : updated service plugin config
+    ///   * Returns : updated service plugin config
     /// </summary>
     public class UploadSectionPluginConfigCert : AccelByte.Sdk.Core.Operation
     {

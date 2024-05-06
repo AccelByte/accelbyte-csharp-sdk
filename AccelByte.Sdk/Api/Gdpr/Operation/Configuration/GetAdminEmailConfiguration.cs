@@ -17,9 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// GetAdminEmailConfiguration
     ///
     /// Get list of admin email address configuration.
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [READ]` and scope `account`
+    /// Scope: account
     /// </summary>
     public class GetAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

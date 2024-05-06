@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Disable an item.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-    ///   *  Returns : updated item
+    ///   * Returns : updated item
     /// </summary>
     public class DisableItem : AccelByte.Sdk.Core.Operation
     {

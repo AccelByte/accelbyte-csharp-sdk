@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Credit different users' wallets.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:WALLET", action=4 (UPDATE)
-    ///   *  Returns : bulk credit result
+    ///   * Returns : bulk credit result
     /// </summary>
     public class BulkCredit : AccelByte.Sdk.Core.Operation
     {

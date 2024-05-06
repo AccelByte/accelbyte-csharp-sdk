@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : the itemId with sku
+    ///   * Returns : the itemId with sku
     /// </summary>
     public class GetItemIdBySku : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteRevocationPluginConfig
     ///
     /// Delete service plugin config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:PLUGIN:REVOCATION, action=8 (DELETE)
     /// </summary>
     public class DeleteRevocationPluginConfig : AccelByte.Sdk.Core.Operation
     {

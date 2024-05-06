@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// validateExistedPlaystationIAPConfig
     ///
     /// Validate playstation iap config. Other detail info:
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=2 (READ)
-    ///   *  Returns : Test Results
+    ///   * Returns : Test Results
     /// </summary>
     public class ValidateExistedPlaystationIAPConfig : AccelByte.Sdk.Core.Operation
     {

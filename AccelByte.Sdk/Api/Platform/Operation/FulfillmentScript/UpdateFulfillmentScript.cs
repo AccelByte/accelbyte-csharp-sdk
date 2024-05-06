@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateFulfillmentScript
     ///
     ///  [Not Supported Yet In Starter] Update fulfillment script.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:FULFILLMENT", action=4 (UPDATE)
     /// </summary>
     public class UpdateFulfillmentScript : AccelByte.Sdk.Core.Operation
     {

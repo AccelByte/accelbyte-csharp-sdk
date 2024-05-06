@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get context of namespace.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:NAMESPACE" , action=2 (READ)
-    ///   *  Returns : context of namespace
+    ///   * Returns : context of namespace
     /// </summary>
     public class GetNamespaceContext : AccelByte.Sdk.Core.Operation
     {

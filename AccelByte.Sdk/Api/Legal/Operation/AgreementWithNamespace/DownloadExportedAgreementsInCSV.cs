@@ -18,10 +18,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// This API will check the status of export process.
     /// If the export process has been completed, the response body will include the download url.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class DownloadExportedAgreementsInCSV : AccelByte.Sdk.Core.Operation
     {
@@ -45,12 +41,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             public DownloadExportedAgreementsInCSV Build(
                 string namespace_,
-                string policyVersionId
+                string exportId
             )
             {
                 DownloadExportedAgreementsInCSV op = new DownloadExportedAgreementsInCSV(this,
                     namespace_,
-                    policyVersionId
+                    exportId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -63,12 +59,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         private DownloadExportedAgreementsInCSV(DownloadExportedAgreementsInCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string exportId
         )
         {
             PathParams["namespace"] = namespace_;
 
-            if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
+            if (exportId is not null) QueryParams["exportId"] = exportId;
 
 
 
@@ -81,12 +77,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public DownloadExportedAgreementsInCSV(
             string namespace_,
-            string policyVersionId
+            string exportId
         )
         {
             PathParams["namespace"] = namespace_;
 
-            if (policyVersionId is not null) QueryParams["policyVersionId"] = policyVersionId;
+            if (exportId is not null) QueryParams["exportId"] = exportId;
 
 
 

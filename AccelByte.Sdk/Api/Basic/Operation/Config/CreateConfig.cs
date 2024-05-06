@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Create a config.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:BASIC:CONFIG" , action=1 (CREATE)
-    ///   *  Returns : created config
+    ///   * Returns : created config
     /// </summary>
     public class CreateConfig : AccelByte.Sdk.Core.Operation
     {

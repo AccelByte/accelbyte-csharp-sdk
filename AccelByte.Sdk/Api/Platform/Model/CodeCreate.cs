@@ -9,7 +9,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class CodeCreate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("codeValue")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CodeValue { get; set; }
+
         [JsonPropertyName("quantity")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? Quantity { get; set; }
 
     }

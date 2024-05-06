@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// debitUserWalletByCurrencyCode
     ///
     /// Debit a user wallet by currency code, default is debit system wallet.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:WALLET", action=4 (UPDATE)
     /// </summary>
     public class DebitUserWalletByCurrencyCode : AccelByte.Sdk.Core.Operation
     {

@@ -107,8 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=4 (UPDATE)
-    ///   *  Returns : updated app data
+    ///   * Returns : updated app data
     /// </summary>
     public class UpdateApp : AccelByte.Sdk.Core.Operation
     {

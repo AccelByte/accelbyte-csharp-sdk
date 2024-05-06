@@ -17,9 +17,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// DeleteAdminEmailConfiguration
     ///
     /// Delete a list of admin email addresses to stop receiving personal data request notification.
-    /// 
-    /// 
-    /// Required permission `ADMIN:NAMESPACE:{namespace}:EMAIL:CONFIGURATION [DELETE]` and scope `account`
+    /// Scope: account
     /// </summary>
     public class DeleteAdminEmailConfiguration : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Sync payment orders. If response contains nextEvaluatedKey, please use it as query param in the next call to fetch the next batch, a batch has 1000 elements or less.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:PAYMENT", action=2 (READ)
-    ///   *  Returns : sync payment orders
+    ///   * Returns : sync payment orders
     /// </summary>
     public class SyncPaymentOrders : AccelByte.Sdk.Core.Operation
     {

@@ -3,7 +3,7 @@
   "info": {
     "description": "Justice Lobby Server",
     "title": "justice-lobby-server",
-    "version": "3.35.3"
+    "version": "3.35.5"
   },
   "schemes": [
     "https"
@@ -6939,6 +6939,108 @@
         ]
       }
     },
+    "/notification/namespaces/{namespace}/me": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "description": "Get list of notifications in a namespace.\nThe query parameters **startTime** and **endTime** can be filled with the **sequenceID** value in the notification, where the value is an epoch timestamp.\nExample **sequenceID** or epoch timestamp value: **1706595813**\n",
+        "operationId": "getMyNotifications",
+        "parameters": [
+          {
+            "description": "namespace",
+            "in": "path",
+            "name": "namespace",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "description": "filter data until a certain end time (sequenceID) value in the notification",
+            "in": "query",
+            "name": "endTime",
+            "type": "integer"
+          },
+          {
+            "default": 25,
+            "description": "data size for pagination",
+            "in": "query",
+            "name": "limit",
+            "type": "integer"
+          },
+          {
+            "default": 0,
+            "description": "data offset for pagination",
+            "in": "query",
+            "name": "offset",
+            "type": "integer"
+          },
+          {
+            "description": "filter data starting from a certain start time (sequenceID) value in the notification",
+            "in": "query",
+            "name": "startTime",
+            "type": "integer"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/model.NotificationResponse"
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "schema": {
+              "$ref": "#/definitions/restapi.ErrorResponseV1"
+            }
+          }
+        },
+        "security": [
+          {
+            "authorization": []
+          }
+        ],
+        "summary": "Get list of notifications",
+        "tags": [
+          "notification",
+          "public"
+        ],
+        "x-security": [
+          {
+            "userPermissions": [
+              "NAMESPACE:{namespace}:TOPIC [READ]"
+            ]
+          }
+        ]
+      }
+    },
     "/notification/namespaces/{namespace}/templated": {
       "post": {
         "consumes": [
@@ -8816,6 +8918,54 @@
         "status"
       ]
     },
+    "model.NotificationResponse": {
+      "properties": {
+        "from": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "lobbySessionID": {
+          "type": "string"
+        },
+        "loginType": {
+          "type": "string"
+        },
+        "payload": {
+          "type": "string"
+        },
+        "reconnectFromCode": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sentAt": {
+          "type": "string"
+        },
+        "sequenceID": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "sequenceNumber": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "to": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sequenceID",
+        "sequenceNumber",
+        "type"
+      ]
+    },
     "model.NotificationTemplateResponse": {
       "properties": {
         "templateLocalizations": {
@@ -10054,11 +10204,11 @@
     "path": "/lobby/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2024-04-18T07:33:30+00:00",
-    "gitHash": "7f6b5779984680f57c14c58201dc32f0b122bcdd",
+    "buildDate": "2024-04-24T13:28:50+00:00",
+    "gitHash": "6c2fe2ef70e6013f52a66a454d34f489dc99f804",
     "name": "justice-lobby-server",
-    "revisionID": "3.35.3",
-    "version": "3.35.3",
+    "revisionID": "3.35.5",
+    "version": "3.35.5",
     "version-justice": "3.45.0",
     "version-roles-seeding": "1.0.1"
   }

@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteSection
     ///
     /// This API is used to delete s section.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
     /// </summary>
     public class DeleteSection : AccelByte.Sdk.Core.Operation
     {

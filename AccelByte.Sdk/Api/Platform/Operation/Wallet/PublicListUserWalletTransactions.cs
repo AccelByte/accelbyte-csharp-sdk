@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// List wallet transactions by currency code ordered by create time desc.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:WALLET", action=2 (READ)
-    ///   *  Returns : currency transaction info
+    ///   * Returns : currency transaction info
     /// </summary>
     public class PublicListUserWalletTransactions : AccelByte.Sdk.Core.Operation
     {

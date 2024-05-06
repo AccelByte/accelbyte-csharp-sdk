@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// It will return a publisher namespace config of the given namespace and key.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:BASIC:CONFIG" , action=2 (READ)
-    ///   *  Returns : config
+    ///   * Returns : config
     /// </summary>
     public class GetPublisherConfig : AccelByte.Sdk.Core.Operation
     {

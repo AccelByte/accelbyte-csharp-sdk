@@ -16,9 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicGetUserAccountDeletionStatus
     ///
-    /// 
-    /// 
+    /// Retrieve specific user's account deletion status
     /// Requires valid user access token
+    /// Scope: account
     /// </summary>
     public class PublicGetUserAccountDeletionStatus : AccelByte.Sdk.Core.Operation
     {

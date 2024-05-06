@@ -233,8 +233,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=1 (CREATE)
-    ///   *  Returns : created item data
+    ///   * Returns : created item data
     /// 
     /// 
     /// 

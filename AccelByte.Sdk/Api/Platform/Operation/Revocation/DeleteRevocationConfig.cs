@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteRevocationConfig
     ///
     /// Delete revocation config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:REVOCATION, action=8 (DELETE)
     /// </summary>
     public class DeleteRevocationConfig : AccelByte.Sdk.Core.Operation
     {

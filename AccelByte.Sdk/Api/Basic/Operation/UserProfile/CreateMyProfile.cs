@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     ///  Client with user token can create user profile in target namespace
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=1 (CREATE)
-    ///   *  Action code : 11401
+    ///   * Action code : 11401
     ///   *  Returns : Created user profile
     ///   *  Path's namespace :
     ///     * can be filled with publisher namespace in order to create publisher user profile

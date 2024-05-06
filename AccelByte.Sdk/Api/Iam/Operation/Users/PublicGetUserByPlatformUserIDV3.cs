@@ -16,8 +16,42 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserByPlatformUserIDV3
     ///
-    /// Get User By Platform User ID
-    /// This endpoint return user information by given platform ID and platform user ID
+    /// Get User By Platform User ID.
+    /// This endpoint return user information by given platform ID and platform user ID.
+    /// Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    /// example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
+    /// 
+    /// Supported platform:
+    /// - Steam group(steamnetwork)
+    /// - steam
+    /// - steamopenid
+    /// - PSN group(psn)
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - XBOX group(xbox)
+    /// - live
+    /// - xblweb
+    /// - Oculus group(oculusgroup)
+    /// - oculus
+    /// - oculusweb
+    /// - facebook
+    /// - google
+    /// - twitch
+    /// - discord
+    /// - android
+    /// - ios
+    /// - apple
+    /// - device
+    /// - justice
+    /// - epicgames
+    /// - nintendo
+    /// - awscognito
+    /// - netflix
+    /// - snapchat
+    /// - oidc platform id
+    /// 
+    /// Note:
     /// **nintendo platform user ID**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
     /// </summary>
     public class PublicGetUserByPlatformUserIDV3 : AccelByte.Sdk.Core.Operation

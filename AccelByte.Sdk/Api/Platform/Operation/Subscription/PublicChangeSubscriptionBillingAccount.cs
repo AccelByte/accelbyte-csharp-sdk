@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Only ACTIVE USER subscription with real currency billing account can be changed.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
-    ///   *  Returns : updated subscription
+    ///   * Returns : updated subscription
     /// </summary>
     public class PublicChangeSubscriptionBillingAccount : AccelByte.Sdk.Core.Operation
     {

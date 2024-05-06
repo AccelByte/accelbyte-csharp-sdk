@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get user subscription.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=2 (READ)
-    ///   *  Returns : subscription
+    ///   * Returns : subscription
     /// </summary>
     public class GetUserSubscription : AccelByte.Sdk.Core.Operation
     {

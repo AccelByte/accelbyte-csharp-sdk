@@ -16,9 +16,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicGeneratePersonalDataURL
     ///
-    /// 
-    /// 
+    /// Generate personal data download url
     /// Requires valid user access token
+    /// Scope: account
     /// </summary>
     public class PublicGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {

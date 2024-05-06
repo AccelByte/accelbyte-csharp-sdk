@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicCancelMyAccountDeletionRequest
     ///
-    /// 
-    /// 
+    /// Cancel my account deletion request
     /// Requires valid user access token
     /// </summary>
     public class PublicCancelMyAccountDeletionRequest : AccelByte.Sdk.Core.Operation

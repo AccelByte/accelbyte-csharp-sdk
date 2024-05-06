@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get item dynamic data for published item.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : item dynamic data
+    ///   * Returns : item dynamic data
     /// </summary>
     public class GetItemDynamicData : AccelByte.Sdk.Core.Operation
     {

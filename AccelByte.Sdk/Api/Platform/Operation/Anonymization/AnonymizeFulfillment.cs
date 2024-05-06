@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizeFulfillment
     ///
     /// Anonymize fulfillment. At current it will only anonymize fulfillment history.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
     /// </summary>
     public class AnonymizeFulfillment : AccelByte.Sdk.Core.Operation
     {

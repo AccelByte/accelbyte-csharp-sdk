@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteOculusIAPConfig
     ///
     /// Delete oculus iap config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=8 (DELETE)
     /// </summary>
     public class DeleteOculusIAPConfig : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteIAPItemConfig
     ///
     /// delete a iap item config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:IAP:CONFIG" , action=8 (DELETE)
     /// </summary>
     public class DeleteIAPItemConfig : AccelByte.Sdk.Core.Operation
     {

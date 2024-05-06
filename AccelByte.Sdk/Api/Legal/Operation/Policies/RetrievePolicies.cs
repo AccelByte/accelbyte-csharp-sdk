@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrievePolicies
     ///
     /// Retrieve all active policies based on a country.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrievePolicies : AccelByte.Sdk.Core.Operation
     {

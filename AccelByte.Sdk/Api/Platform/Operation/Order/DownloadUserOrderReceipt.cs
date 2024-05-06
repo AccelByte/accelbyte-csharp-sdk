@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Download user order receipt by orderNo.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : order receipt pdf
+    ///   * Returns : order receipt pdf
     /// </summary>
     public class DownloadUserOrderReceipt : AccelByte.Sdk.Core.Operation
     {

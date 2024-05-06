@@ -16,12 +16,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// mockFulfillIAPItem
     ///
-    ///  [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.
+    ///  [TEST FACILITY ONLY] Forbidden in live environment. Mock fulfill iap item without validate receipt.Other detail info:
     /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=4 (UPDATE)
-    ///   *  Returns :
+    ///   * Returns :
     /// </summary>
     public class MockFulfillIAPItem : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to get the count of purchased item which is the order target.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : Item purchased count
+    ///   * Returns : Item purchased count
     /// </summary>
     public class CountOfPurchasedItem : AccelByte.Sdk.Core.Operation
     {

@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// registerXblSessions
     ///
     /// This API is used to register/update a session on xbox.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:USER:{userId}:INTEGRATION, action=4 (UPDATE)
     /// </summary>
     public class RegisterXblSessions : AccelByte.Sdk.Core.Operation
     {

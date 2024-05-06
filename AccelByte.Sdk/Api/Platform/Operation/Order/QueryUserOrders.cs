@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query user orders.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : get order
+    ///   * Returns : get order
     /// </summary>
     public class QueryUserOrders : AccelByte.Sdk.Core.Operation
     {
@@ -30,6 +29,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public class QueryUserOrdersBuilder
             : OperationBuilder<QueryUserOrdersBuilder>
         {
+
+            public bool? Discounted { get; set; }
 
             public string? ItemId { get; set; }
 
@@ -45,6 +46,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal QueryUserOrdersBuilder() { }
 
+
+            public QueryUserOrdersBuilder SetDiscounted(bool _discounted)
+            {
+                Discounted = _discounted;
+                return this;
+            }
 
             public QueryUserOrdersBuilder SetItemId(string _itemId)
             {
@@ -100,6 +107,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.Discounted != null) QueryParams["discounted"] = Convert.ToString(builder.Discounted)!;
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -117,6 +125,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public QueryUserOrders(
             string namespace_,
             string userId,
+            bool? discounted,
             string? itemId,
             int? limit,
             int? offset,
@@ -126,6 +135,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (discounted != null) QueryParams["discounted"] = Convert.ToString(discounted)!;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;

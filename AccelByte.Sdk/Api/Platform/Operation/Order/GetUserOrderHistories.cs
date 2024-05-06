@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get user order history.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : get order history
+    ///   * Returns : get order history
     /// </summary>
     public class GetUserOrderHistories : AccelByte.Sdk.Core.Operation
     {

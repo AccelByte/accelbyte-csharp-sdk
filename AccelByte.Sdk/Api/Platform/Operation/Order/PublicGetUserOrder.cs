@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get user order.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : get order
+    ///   * Returns : get order
     /// </summary>
     public class PublicGetUserOrder : AccelByte.Sdk.Core.Operation
     {

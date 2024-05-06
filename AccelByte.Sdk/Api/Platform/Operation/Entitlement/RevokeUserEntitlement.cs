@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Revoke user entitlement.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : revoke entitlement
+    ///   * Returns : revoke entitlement
     /// </summary>
     public class RevokeUserEntitlement : AccelByte.Sdk.Core.Operation
     {

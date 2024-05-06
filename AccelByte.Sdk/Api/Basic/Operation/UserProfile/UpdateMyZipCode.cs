@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Update my zip code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "NAMESPACE:{namespace}:PROFILE" , action=4 (UPDATE)
-    ///   *  Action code : 11408
+    ///   * Action code : 11408
     ///   *  Returns : user zip code
     /// </summary>
     public class UpdateMyZipCode : AccelByte.Sdk.Core.Operation

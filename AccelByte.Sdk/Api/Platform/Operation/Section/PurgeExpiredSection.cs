@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// purgeExpiredSection
     ///
     /// This API is used to purge expired section.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
     /// </summary>
     public class PurgeExpiredSection : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// List time zones.
     /// Other detail info:
     /// 
-    ///   * Required permission : login user
-    ///   *  Action code : 11205
+    ///   * Action code : 11205
     ///   *  Returns : time zones
     /// </summary>
     public class GetTimeZones : AccelByte.Sdk.Core.Operation

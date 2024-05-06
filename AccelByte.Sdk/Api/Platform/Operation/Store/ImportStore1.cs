@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// importStore_1
     ///
     /// This API is used to import a store.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
     /// </summary>
     public class ImportStore1 : AccelByte.Sdk.Core.Operation
     {

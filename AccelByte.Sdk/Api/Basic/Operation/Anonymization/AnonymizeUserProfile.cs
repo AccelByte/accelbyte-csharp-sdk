@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Anonymize user profile.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION" , action=8 (DELETE)
-    ///   *  Action code : 11501
+    ///   * Action code : 11501
     /// </summary>
     public class AnonymizeUserProfile : AccelByte.Sdk.Core.Operation
     {

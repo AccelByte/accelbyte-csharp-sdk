@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// List country groups. Will return all available country groups if the query param is not specified
     /// Other detail info:
     /// 
-    ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=2 (READ)
-    ///   *  Action code : 11203
+    ///   * Action code : 11203
     ///   *  Returns : list of country groups
     /// </summary>
     public class GetCountryGroups : AccelByte.Sdk.Core.Operation

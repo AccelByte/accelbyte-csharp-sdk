@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get currency summary by code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-    ///   *  Returns : simplified Currency
+    ///   * Returns : simplified Currency
     /// </summary>
     public class GetCurrencySummary : AccelByte.Sdk.Core.Operation
     {

@@ -17,10 +17,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminCheckThirdPartyLoginPlatformAvailabilityV3
     ///
     /// This is the API to check specific 3rd party platform availability.
-    /// supported platform:
-    /// - (psn) ps4web
-    /// - (psn) ps4
-    /// - (psn) ps5
+    /// Passing platform group name or it's member will return same platform availability data
+    /// Supported third party platform and platform group:
+    /// - PSN group(psn)
+    /// - ps4web
+    /// - ps4
+    /// - ps5
     /// </summary>
     public class AdminCheckThirdPartyLoginPlatformAvailabilityV3 : AccelByte.Sdk.Core.Operation
     {

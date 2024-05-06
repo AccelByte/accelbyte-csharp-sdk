@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to list keys of a key group.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=2 (READ)
-    ///   *  Returns : keys
+    ///   * Returns : keys
     /// </summary>
     public class ListKeys : AccelByte.Sdk.Core.Operation
     {

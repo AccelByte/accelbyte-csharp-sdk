@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// deleteCountryGroup
     ///
     /// Delete a country groups by its country group code. This endpoint usually used for testing purpose to cleanup test data.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource = "ADMIN:NAMESPACE:{namespace}:MISC" , action=8 (DELETE)
     /// </summary>
     public class DeleteCountryGroup : AccelByte.Sdk.Core.Operation
     {

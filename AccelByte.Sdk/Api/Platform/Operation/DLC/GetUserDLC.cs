@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get user dlc records.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
-    ///   *  Returns : user dlc
+    ///   * Returns : user dlc
     /// </summary>
     public class GetUserDLC : AccelByte.Sdk.Core.Operation
     {

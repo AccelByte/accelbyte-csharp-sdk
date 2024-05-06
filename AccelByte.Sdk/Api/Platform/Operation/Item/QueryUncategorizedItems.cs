@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : the list of uncategorized items
+    ///   * Returns : the list of uncategorized items
     /// </summary>
     public class QueryUncategorizedItems : AccelByte.Sdk.Core.Operation
     {

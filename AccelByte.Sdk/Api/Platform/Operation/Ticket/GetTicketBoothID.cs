@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get ticket(code/key) booth ID.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:TICKET", action=2 (READ)
-    ///   *  Returns : ticket booth id
+    ///   * Returns : ticket booth id
     /// </summary>
     public class GetTicketBoothID : AccelByte.Sdk.Core.Operation
     {

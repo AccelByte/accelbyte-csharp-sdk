@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrieveAllPolicyTypes_1
     ///
     /// Retrieve all supported policy types.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:LEGAL", action=2 (READ)
     /// </summary>
     public class RetrieveAllPolicyTypes1 : AccelByte.Sdk.Core.Operation
     {

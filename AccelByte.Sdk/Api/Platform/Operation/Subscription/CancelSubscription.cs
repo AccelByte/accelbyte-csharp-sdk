@@ -21,8 +21,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Set force true, will ignore the error if subscription is during recurring charging.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
-    ///   *  Returns : cancelled subscription
+    ///   * Returns : cancelled subscription
     /// </summary>
     public class CancelSubscription : AccelByte.Sdk.Core.Operation
     {

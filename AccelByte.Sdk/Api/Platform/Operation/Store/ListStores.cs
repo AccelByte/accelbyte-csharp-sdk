@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
-    ///   *  Returns : the list of stores
+    ///   * Returns : the list of stores
     /// </summary>
     public class ListStores : AccelByte.Sdk.Core.Operation
     {

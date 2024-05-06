@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Enable user entitlement.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=4 (UPDATE)
-    ///   *  Returns : enable entitlement
+    ///   * Returns : enable entitlement
     /// </summary>
     public class EnableUserEntitlement : AccelByte.Sdk.Core.Operation
     {

@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// mockPlayStationStreamEvent
     ///
     /// Mock Sync PlayStation Clawback event..
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:IAP:CLAWBACK, action=1(CREATE)
     /// </summary>
     public class MockPlayStationStreamEvent : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// retrieveAgreementsPublic
     ///
     /// Retrieve accepted Legal Agreements.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
     /// </summary>
     public class RetrieveAgreementsPublic : AccelByte.Sdk.Core.Operation
     {

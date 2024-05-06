@@ -89,12 +89,12 @@ namespace AccelByte.Sdk.Api
         public static Legal.Model.DownloadExportedAgreementsInCSVResponse? Execute(
             this DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string exportId
         )
         {
             DownloadExportedAgreementsInCSV op = builder.Build(
                 namespace_,
-                policyVersionId
+                exportId
             );
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).DownloadExportedAgreementsInCSV(op);
@@ -102,12 +102,12 @@ namespace AccelByte.Sdk.Api
         public static async Task<Legal.Model.DownloadExportedAgreementsInCSVResponse?> ExecuteAsync(
             this DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string exportId
         )
         {
             DownloadExportedAgreementsInCSV op = builder.Build(
                 namespace_,
-                policyVersionId
+                exportId
             );
 
             return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).DownloadExportedAgreementsInCSVAsync(op);
@@ -115,12 +115,14 @@ namespace AccelByte.Sdk.Api
         public static Legal.Model.InitiateExportAgreementsToCSVResponse? Execute(
             this InitiateExportAgreementsToCSV.InitiateExportAgreementsToCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string policyVersionId,
+            string start
         )
         {
             InitiateExportAgreementsToCSV op = builder.Build(
                 namespace_,
-                policyVersionId
+                policyVersionId,
+                start
             );
 
             return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).InitiateExportAgreementsToCSV(op);
@@ -128,12 +130,14 @@ namespace AccelByte.Sdk.Api
         public static async Task<Legal.Model.InitiateExportAgreementsToCSVResponse?> ExecuteAsync(
             this InitiateExportAgreementsToCSV.InitiateExportAgreementsToCSVBuilder builder,
             string namespace_,
-            string policyVersionId
+            string policyVersionId,
+            string start
         )
         {
             InitiateExportAgreementsToCSV op = builder.Build(
                 namespace_,
-                policyVersionId
+                policyVersionId,
+                start
             );
 
             return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).InitiateExportAgreementsToCSVAsync(op);

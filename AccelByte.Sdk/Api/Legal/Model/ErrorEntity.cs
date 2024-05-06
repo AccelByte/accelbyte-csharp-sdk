@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Legal.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? MessageVariables { get; set; }
 
+        [JsonPropertyName("requiredPermission")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Permission? RequiredPermission { get; set; }
+
     }
 
 

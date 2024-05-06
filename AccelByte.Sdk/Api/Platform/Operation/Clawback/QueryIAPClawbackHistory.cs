@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query clawback history.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:IAP:CLAWBACK, action=2 (READ)
-    ///   *  Returns : paginated clawback history
+    ///   * Returns : paginated clawback history
     /// </summary>
     public class QueryIAPClawbackHistory : AccelByte.Sdk.Core.Operation
     {

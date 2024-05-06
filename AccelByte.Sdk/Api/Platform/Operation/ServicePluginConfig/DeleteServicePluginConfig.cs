@@ -16,10 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// deleteServicePluginConfig
     ///
-    /// Delete service plugin config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource=ADMIN:NAMESPACE:{namespace}:CONFIG:SERVICEPLUGIN, action=8 (DELETE)
+    /// Delete service plugin config
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteServicePluginConfig : AccelByte.Sdk.Core.Operation

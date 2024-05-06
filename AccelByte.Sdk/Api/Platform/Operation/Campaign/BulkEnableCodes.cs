@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Bulk enable campaign codes.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CAMPAIGN", action=4 (UPDATE)
-    ///   *  Returns : the number of code actually enabled
+    ///   * Returns : the number of code actually enabled
     /// </summary>
     public class BulkEnableCodes : AccelByte.Sdk.Core.Operation
     {

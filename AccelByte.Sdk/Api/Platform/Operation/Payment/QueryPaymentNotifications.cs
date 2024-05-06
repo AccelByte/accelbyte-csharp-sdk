@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not Supported Yet In Starter] Query payment notifications.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:PAYMENT:NOTIFICATION", action=2 (READ)
-    ///   *  Returns : Payment notifications
+    ///   * Returns : Payment notifications
     /// </summary>
     public class QueryPaymentNotifications : AccelByte.Sdk.Core.Operation
     {

@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// [SERVICE COMMUNICATION ONLY] Get currency config by code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-    ///   *  Returns : simplified Currency
+    ///   * Returns : simplified Currency
     /// </summary>
     public class GetCurrencyConfig : AccelByte.Sdk.Core.Operation
     {

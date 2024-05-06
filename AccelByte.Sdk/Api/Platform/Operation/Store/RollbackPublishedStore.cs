@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=4 (UPDATE)
-    ///   *  Returns : updated store info
+    ///   * Returns : updated store info
     /// </summary>
     public class RollbackPublishedStore : AccelByte.Sdk.Core.Operation
     {

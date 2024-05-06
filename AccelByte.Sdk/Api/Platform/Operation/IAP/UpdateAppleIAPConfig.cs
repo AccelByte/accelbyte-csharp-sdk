@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// updateAppleIAPConfig
     ///
     /// Update apple iap config. Other detail info:
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:IAP:CONFIG", action=4 (UPDATE)
-    ///   *  Returns : updated apple iap config
+    ///   * Returns : updated apple iap config
     /// </summary>
     public class UpdateAppleIAPConfig : AccelByte.Sdk.Core.Operation
     {

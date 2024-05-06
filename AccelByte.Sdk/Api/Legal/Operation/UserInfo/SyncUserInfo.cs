@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// syncUserInfo
     ///
     /// Sync user info cache in agreement service with iam service.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:*:LEGAL", action=4 (UPDATE)
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SyncUserInfo : AccelByte.Sdk.Core.Operation

@@ -227,6 +227,7 @@
 | `LocalizedPolicyVersionObject` | [LocalizedPolicyVersionObject](../../AccelByte.Sdk/Api/Legal/Model/LocalizedPolicyVersionObject.cs) |
 | `PagedRetrieveUserAcceptedAgreementResponse` | [PagedRetrieveUserAcceptedAgreementResponse](../../AccelByte.Sdk/Api/Legal/Model/PagedRetrieveUserAcceptedAgreementResponse.cs) |
 | `Paging` | [Paging](../../AccelByte.Sdk/Api/Legal/Model/Paging.cs) |
+| `Permission` | [Permission](../../AccelByte.Sdk/Api/Legal/Model/Permission.cs) |
 | `PolicyObject` | [PolicyObject](../../AccelByte.Sdk/Api/Legal/Model/PolicyObject.cs) |
 | `PolicyVersionObject` | [PolicyVersionObject](../../AccelByte.Sdk/Api/Legal/Model/PolicyVersionObject.cs) |
 | `PolicyVersionWithLocalizedVersionObject` | [PolicyVersionWithLocalizedVersionObject](../../AccelByte.Sdk/Api/Legal/Model/PolicyVersionWithLocalizedVersionObject.cs) |

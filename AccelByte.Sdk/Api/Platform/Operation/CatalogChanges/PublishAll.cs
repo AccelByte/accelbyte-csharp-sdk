@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=1 (CREATE)
-    ///   *  Returns : no content
+    ///   * Returns : no content
     /// </summary>
     public class PublishAll : AccelByte.Sdk.Core.Operation
     {

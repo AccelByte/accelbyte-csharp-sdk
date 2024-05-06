@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// deleteDLCItemConfig
     ///
     /// delete a DLC item config.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:DLC:CONFIG" , action=8 (DELETE)
     /// </summary>
     public class DeleteDLCItemConfig : AccelByte.Sdk.Core.Operation
     {

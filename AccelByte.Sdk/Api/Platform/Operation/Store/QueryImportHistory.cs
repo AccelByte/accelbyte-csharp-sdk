@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// queryImportHistory
     ///
     /// This API is used to query import store history
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
     public class QueryImportHistory : AccelByte.Sdk.Core.Operation
     {

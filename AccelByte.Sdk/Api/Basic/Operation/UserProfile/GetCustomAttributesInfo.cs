@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Get user custom attributes.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=2 (READ)
-    ///   *  Returns : custom attributes
+    ///   * Returns : custom attributes
     ///   *  Action code : 11403
     /// </summary>
     public class GetCustomAttributesInfo : AccelByte.Sdk.Core.Operation

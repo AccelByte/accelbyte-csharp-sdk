@@ -17,14 +17,42 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminPlatformUnlinkAllV3
     ///
     /// Unlink user's account from third platform in all namespaces.
+    /// Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
+    /// example: to unlink steam third party account, you can use steamnetwork / steam / steamopenid as platformId path parameter
     /// 
-    /// This API support to handling platform group use case:
-    /// i.e.
-    /// 1. Steam group: steam, steamopenid
-    /// 2. PSN group: ps4, ps5, psnweb
-    /// 3. XBOX group: live, xblweb
+    /// Supported platform:
+    /// - Steam group(steamnetwork)
+    /// - steam
+    /// - steamopenid
+    /// - PSN group(psn)
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - XBOX group(xbox)
+    /// - live
+    /// - xblweb
+    /// - Oculus group(oculusgroup)
+    /// - oculus
+    /// - oculusweb
+    /// - facebook
+    /// - google
+    /// - twitch
+    /// - discord
+    /// - android
+    /// - ios
+    /// - apple
+    /// - device
+    /// - justice
+    /// - epicgames
+    /// - nintendo
+    /// - awscognito
+    /// - netflix
+    /// - snapchat
+    /// - oidc platform id
     /// 
-    /// Example: if user unlink from ps4, the API logic will unlink ps5 and psnweb as well.
+    /// Note:
+    /// if user unlink platform account that have group, the API logic will unlink all of platform account under that group as well.
+    /// example: if user unlink from ps4, the API logic will unlink ps5 and ps4web as well
     /// </summary>
     public class AdminPlatformUnlinkAllV3 : AccelByte.Sdk.Core.Operation
     {

@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizeWallet
     ///
     /// Anonymize wallet. At current it will only anonymize wallet, wallet transaction.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
     /// </summary>
     public class AnonymizeWallet : AccelByte.Sdk.Core.Operation
     {

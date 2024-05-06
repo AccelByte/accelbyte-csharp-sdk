@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Delete user profile.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource= "ADMIN:NAMESPACE:{namespace}:USER:{userId}:PROFILE" , action=8 (DELETE)
-    ///   *  Action code : 11407
+    ///   * Action code : 11407
     ///   *  Returns : Delete user profile
     /// </summary>
     public class DeleteUserProfile : AccelByte.Sdk.Core.Operation

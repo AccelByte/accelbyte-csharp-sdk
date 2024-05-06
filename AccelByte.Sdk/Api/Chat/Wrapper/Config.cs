@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         {
             get { return Operation.ImportConfig.Builder.SetWrapperObject(this); }
         }
+        public PublicGetConfigV1.PublicGetConfigV1Builder PublicGetConfigV1Op
+        {
+            get { return Operation.PublicGetConfigV1.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input)
@@ -114,6 +118,22 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsImportConfigResponse?> ImportConfigAsync(ImportConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsPublicConfigResponse? PublicGetConfigV1(PublicGetConfigV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsPublicConfigResponse?> PublicGetConfigV1Async(PublicGetConfigV1 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

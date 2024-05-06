@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update a currency by currency code.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=4 (UPDATE)
-    ///   *  Returns : updated currency
+    ///   * Returns : updated currency
     /// </summary>
     public class UpdateCurrency : AccelByte.Sdk.Core.Operation
     {

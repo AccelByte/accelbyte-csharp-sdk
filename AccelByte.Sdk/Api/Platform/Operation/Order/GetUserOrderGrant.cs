@@ -19,9 +19,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Get user order grant that fulfilled by this order.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ORDER", action=2 (READ)
-    ///   *  Returns : get order grant
+    ///   * Returns : get order grant
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserOrderGrant : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

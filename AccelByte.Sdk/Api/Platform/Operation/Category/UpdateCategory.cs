@@ -31,8 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=4 (UPDATE)
-    ///   *  Returns : the updated category data
+    ///   * Returns : the updated category data
     /// </summary>
     public class UpdateCategory : AccelByte.Sdk.Core.Operation
     {

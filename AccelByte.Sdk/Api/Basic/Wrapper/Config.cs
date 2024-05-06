@@ -23,17 +23,17 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         {
             get { return Operation.CreateConfig.Builder.SetWrapperObject(this); }
         }
-        public GetConfig1.GetConfig1Builder GetConfig1Op
+        public GetConfig.GetConfigBuilder GetConfigOp
         {
-            get { return Operation.GetConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.GetConfig.Builder.SetWrapperObject(this); }
         }
-        public DeleteConfig1.DeleteConfig1Builder DeleteConfig1Op
+        public DeleteConfig.DeleteConfigBuilder DeleteConfigOp
         {
-            get { return Operation.DeleteConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.DeleteConfig.Builder.SetWrapperObject(this); }
         }
-        public UpdateConfig1.UpdateConfig1Builder UpdateConfig1Op
+        public UpdateConfig.UpdateConfigBuilder UpdateConfigOp
         {
-            get { return Operation.UpdateConfig1.Builder.SetWrapperObject(this); }
+            get { return Operation.UpdateConfig.Builder.SetWrapperObject(this); }
         }
         public GetPublisherConfig.GetPublisherConfigBuilder GetPublisherConfigOp
         {
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ConfigInfo? GetConfig1(GetConfig1 input)
+        public Model.ConfigInfo? GetConfig(GetConfig input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ConfigInfo?> GetConfig1Async(GetConfig1 input)
+        public async Task<Model.ConfigInfo?> GetConfigAsync(GetConfig input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void DeleteConfig1(DeleteConfig1 input)
+        public void DeleteConfig(DeleteConfig input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task DeleteConfig1Async(DeleteConfig1 input)
+        public async Task DeleteConfigAsync(DeleteConfig input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ConfigInfo? UpdateConfig1(UpdateConfig1 input)
+        public Model.ConfigInfo? UpdateConfig(UpdateConfig input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ConfigInfo?> UpdateConfig1Async(UpdateConfig1 input)
+        public async Task<Model.ConfigInfo?> UpdateConfigAsync(UpdateConfig input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

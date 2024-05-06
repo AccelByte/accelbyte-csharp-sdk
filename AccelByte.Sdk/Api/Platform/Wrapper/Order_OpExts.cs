@@ -454,6 +454,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Order)builder.WrapperObject!).FulfillUserOrderAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.OrderGrantInfo? Execute(
             this GetUserOrderGrant.GetUserOrderGrantBuilder builder,
             string namespace_,
@@ -652,6 +653,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicCreateUserOrderAsync<T1>(op);
+        }
+        public static Platform.Model.OrderDiscountPreviewResponse? Execute(
+            this PublicPreviewOrderPrice.PublicPreviewOrderPriceBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicPreviewOrderPrice op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Order)builder.WrapperObject!).PublicPreviewOrderPrice(op);
+        }
+        public static async Task<Platform.Model.OrderDiscountPreviewResponse?> ExecuteAsync(
+            this PublicPreviewOrderPrice.PublicPreviewOrderPriceBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicPreviewOrderPrice op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Order)builder.WrapperObject!).PublicPreviewOrderPriceAsync(op);
         }
         public static Platform.Model.OrderInfo? Execute(
             this PublicGetUserOrder.PublicGetUserOrderBuilder builder,

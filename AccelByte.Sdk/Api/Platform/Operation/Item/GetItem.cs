@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : item data
+    ///   * Returns : item data
     /// </summary>
     public class GetItem : AccelByte.Sdk.Core.Operation
     {

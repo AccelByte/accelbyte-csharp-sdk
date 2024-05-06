@@ -37,6 +37,13 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("currency")]
         public CurrencySummary? Currency { get; set; }
 
+        [JsonPropertyName("deduction")]
+        public int? Deduction { get; set; }
+
+        [JsonPropertyName("deductionDetails")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<DeductionDetail>? DeductionDetails { get; set; }
+
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }
 
@@ -185,6 +192,13 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         [JsonPropertyName("currency")]
         public CurrencySummary? Currency { get; set; }
+
+        [JsonPropertyName("deduction")]
+        public int? Deduction { get; set; }
+
+        [JsonPropertyName("deductionDetails")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<DeductionDetail>? DeductionDetails { get; set; }
 
         [JsonPropertyName("discountedPrice")]
         public int? DiscountedPrice { get; set; }

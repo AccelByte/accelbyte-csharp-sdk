@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:REWARD", action=8 (DELETE)
-    ///   *  Returns : the deleted reward data
+    ///   * Returns : the deleted reward data
     /// </summary>
     public class DeleteReward : AccelByte.Sdk.Core.Operation
     {

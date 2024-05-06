@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Enable Entitlement origin feature.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ENTITLEMENT:CONFIG", action=4 (READ)
-    ///   *  Returns : entitlement info
+    ///   * Returns : entitlement info
     /// </summary>
     public class EnableEntitlementOriginFeature : AccelByte.Sdk.Core.Operation
     {

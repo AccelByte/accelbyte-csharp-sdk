@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         }
 
         #region Operation Builders
+        public AdminFilterChatMessage.AdminFilterChatMessageBuilder AdminFilterChatMessageOp
+        {
+            get { return Operation.AdminFilterChatMessage.Builder.SetWrapperObject(this); }
+        }
         public AdminChatHistory.AdminChatHistoryBuilder AdminChatHistoryOp
         {
             get { return Operation.AdminChatHistory.Builder.SetWrapperObject(this); }
@@ -138,6 +142,40 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         }
         #endregion
 
+        public Model.ModelsMessageResultWithAttributes? AdminFilterChatMessage(AdminFilterChatMessage input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMessageResultWithAttributes?> AdminFilterChatMessageAsync(AdminFilterChatMessage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ModelsMessageResultWithAttributes<T1>? AdminFilterChatMessage<T1>(AdminFilterChatMessage input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsMessageResultWithAttributes<T1>?> AdminFilterChatMessageAsync<T1>(AdminFilterChatMessage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsChatMessageWithPaginationResponse? AdminChatHistory(AdminChatHistory input)
         {
             var response = _sdk.RunRequest(input);

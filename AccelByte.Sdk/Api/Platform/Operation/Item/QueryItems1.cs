@@ -24,8 +24,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// * Not provided: show both ACTIVE and INACTIVE items
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:ITEM", action=2 (READ)
-    ///   *  Returns : the list of items
+    ///   * Returns : the list of items
     /// </summary>
     public class QueryItems1 : AccelByte.Sdk.Core.Operation
     {

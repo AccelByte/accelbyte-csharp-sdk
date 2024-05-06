@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Query IAP consume history.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:IAP", action=2 (READ)
-    ///   *  Returns : paginated iap consume history
+    ///   * Returns : paginated iap consume history
     /// </summary>
     public class QueryUserIAPConsumeHistory : AccelByte.Sdk.Core.Operation
     {

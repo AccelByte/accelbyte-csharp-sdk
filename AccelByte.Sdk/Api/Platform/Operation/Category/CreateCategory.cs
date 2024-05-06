@@ -31,8 +31,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=1 (CREATE)
-    ///   *  Returns : created category data
+    ///   * Returns : created category data
     /// </summary>
     public class CreateCategory : AccelByte.Sdk.Core.Operation
     {

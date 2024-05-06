@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// List currencies of a namespace.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CURRENCY", action=2 (READ)
-    ///   *  Returns : Currency List
+    ///   * Returns : Currency List
     /// </summary>
     public class ListCurrencies : AccelByte.Sdk.Core.Operation
     {

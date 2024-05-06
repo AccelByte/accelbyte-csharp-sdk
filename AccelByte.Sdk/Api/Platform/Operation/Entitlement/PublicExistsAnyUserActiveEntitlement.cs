@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// publicExistsAnyUserActiveEntitlement
     ///
     /// Exists any user active entitlement of specified itemIds, skus and appIds
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:ENTITLEMENT", action=2 (READ)
     /// </summary>
     public class PublicExistsAnyUserActiveEntitlement : AccelByte.Sdk.Core.Operation
     {

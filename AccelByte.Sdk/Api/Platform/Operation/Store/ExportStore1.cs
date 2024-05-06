@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// exportStore_1
     ///
     /// This API is used to export a whole or partial store.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
     public class ExportStore1 : AccelByte.Sdk.Core.Operation
     {

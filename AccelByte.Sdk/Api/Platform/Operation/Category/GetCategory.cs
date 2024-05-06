@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:CATEGORY", action=2 (READ)
-    ///   *  Returns : category data
+    ///   * Returns : category data
     /// </summary>
     public class GetCategory : AccelByte.Sdk.Core.Operation
     {

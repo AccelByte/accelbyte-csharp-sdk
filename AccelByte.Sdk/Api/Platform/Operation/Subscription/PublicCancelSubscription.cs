@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Set immediate true, the subscription will be terminated immediately, otherwise till the end of current billing cycle.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SUBSCRIPTION", action=4 (UPDATE)
-    ///   *  Returns : cancelled subscription
+    ///   * Returns : cancelled subscription
     /// </summary>
     public class PublicCancelSubscription : AccelByte.Sdk.Core.Operation
     {

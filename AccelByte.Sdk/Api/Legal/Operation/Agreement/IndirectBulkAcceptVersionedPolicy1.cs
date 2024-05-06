@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// indirectBulkAcceptVersionedPolicy_1
     ///
     /// Accepts many legal policy versions all at once. Supply with localized version policy id and userId to accept an agreement. This endpoint used by Authentication Service during new user registration.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : login user
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class IndirectBulkAcceptVersionedPolicy1 : AccelByte.Sdk.Core.Operation

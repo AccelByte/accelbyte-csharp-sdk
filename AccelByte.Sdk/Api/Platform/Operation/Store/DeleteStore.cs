@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// This API is used to delete a store. Only non published store can be deleted.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=8 (DELETE)
-    ///   *  Returns : store
+    ///   * Returns : store
     /// </summary>
     public class DeleteStore : AccelByte.Sdk.Core.Operation
     {

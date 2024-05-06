@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// anonymizeEntitlement
     ///
     /// Anonymize entitlement. At current it will only anonymize entitlement, entitlement history.
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:ANONYMIZATION", action=8 (DELETE)
     /// </summary>
     public class AnonymizeEntitlement : AccelByte.Sdk.Core.Operation
     {

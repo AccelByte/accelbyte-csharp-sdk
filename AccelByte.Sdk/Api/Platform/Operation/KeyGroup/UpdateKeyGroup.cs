@@ -19,8 +19,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// Update key group.
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:KEYGROUP", action=4 (UPDATE)
-    ///   *  Returns : updated key group
+    ///   * Returns : updated key group
     /// </summary>
     public class UpdateKeyGroup : AccelByte.Sdk.Core.Operation
     {

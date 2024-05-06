@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// exportStoreByCSV
     ///
     /// This API is used to export a store to CSV format
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:STORE", action=2 (READ)
     /// </summary>
     public class ExportStoreByCSV : AccelByte.Sdk.Core.Operation
     {
