@@ -125,7 +125,7 @@ pipeline {
     stage('Core Tests') {
       steps {
         dir(sdkRepoName) {
-          sh "make test SDK_MOCK_SERVER_PATH=${mockServerPath}"
+          sh "make test_core SDK_MOCK_SERVER_PATH=${mockServerPath}"
         }
       }
     }
