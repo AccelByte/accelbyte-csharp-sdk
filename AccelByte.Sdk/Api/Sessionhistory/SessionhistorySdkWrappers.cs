@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private Operations? _Operations = null;
 
+        public Config Config
+        {
+            get
+            {
+                if (_Config == null)
+                    _Config = new Config(_SdkObject);
+                return _Config;
+            }
+        }
+        private Config? _Config = null;
+
         public GameSessionDetail GameSessionDetail
         {
             get

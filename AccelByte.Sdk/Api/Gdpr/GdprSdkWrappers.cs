@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private Configuration? _Configuration = null;
 
+        public PlatformAccountClosureClient PlatformAccountClosureClient
+        {
+            get
+            {
+                if (_PlatformAccountClosureClient == null)
+                    _PlatformAccountClosureClient = new PlatformAccountClosureClient(_SdkObject);
+                return _PlatformAccountClosureClient;
+            }
+        }
+        private PlatformAccountClosureClient? _PlatformAccountClosureClient = null;
+
         public DataRetrieval DataRetrieval
         {
             get
@@ -45,6 +56,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private DataRetrieval? _DataRetrieval = null;
+
+        public PlatformAccountClosureHistory PlatformAccountClosureHistory
+        {
+            get
+            {
+                if (_PlatformAccountClosureHistory == null)
+                    _PlatformAccountClosureHistory = new PlatformAccountClosureHistory(_SdkObject);
+                return _PlatformAccountClosureHistory;
+            }
+        }
+        private PlatformAccountClosureHistory? _PlatformAccountClosureHistory = null;
 
         internal GdprSdkWrappers(AccelByteSDK sdk)
         {

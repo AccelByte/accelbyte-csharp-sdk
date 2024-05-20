@@ -47,6 +47,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             public string? Tags { get; set; }
 
+            public bool? VisibleOnly { get; set; }
+
 
 
 
@@ -75,6 +77,12 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetTags(string _tags)
             {
                 Tags = _tags;
+                return this;
+            }
+
+            public RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder SetVisibleOnly(bool _visibleOnly)
+            {
+                VisibleOnly = _visibleOnly;
                 return this;
             }
 
@@ -112,6 +120,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (builder.DefaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(builder.DefaultOnEmpty)!;
             if (builder.PolicyType is not null) QueryParams["policyType"] = builder.PolicyType.Value;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
+            if (builder.VisibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(builder.VisibleOnly)!;
 
 
 
@@ -127,7 +136,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             bool? alwaysIncludeDefault,
             bool? defaultOnEmpty,
             RetrieveLatestPoliciesByNamespaceAndCountryPublicPolicyType? policyType,
-            string? tags
+            string? tags,
+            bool? visibleOnly
         )
         {
             PathParams["countryCode"] = countryCode;
@@ -137,6 +147,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             if (defaultOnEmpty != null) QueryParams["defaultOnEmpty"] = Convert.ToString(defaultOnEmpty)!;
             if (policyType is not null) QueryParams["policyType"] = policyType.Value;
             if (tags is not null) QueryParams["tags"] = tags;
+            if (visibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(visibleOnly)!;
 
 
 

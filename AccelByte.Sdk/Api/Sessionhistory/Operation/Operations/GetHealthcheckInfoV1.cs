@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public override string[] Consumes => new string[] { };
 
-        public override string[] Produces => new string[] { };
+        public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";

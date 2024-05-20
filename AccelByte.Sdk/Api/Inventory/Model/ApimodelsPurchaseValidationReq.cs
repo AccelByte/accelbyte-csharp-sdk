@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("sku")]
         public string? Sku { get; set; }
 
+        [JsonPropertyName("stackable")]
+        public bool? Stackable { get; set; }
+
         [JsonPropertyName("useCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }

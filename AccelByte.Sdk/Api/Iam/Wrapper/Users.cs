@@ -427,6 +427,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminBanUserV3.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserBanSummaryV3.AdminGetUserBanSummaryV3Builder AdminGetUserBanSummaryV3Op
+        {
+            get { return Operation.AdminGetUserBanSummaryV3.Builder.SetWrapperObject(this); }
+        }
         public AdminUpdateUserBanV3.AdminUpdateUserBanV3Builder AdminUpdateUserBanV3Op
         {
             get { return Operation.AdminUpdateUserBanV3.Builder.SetWrapperObject(this); }
@@ -2311,6 +2315,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelUserBanResponseV3?> AdminBanUserV3Async(AdminBanUserV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelGetUserBanSummaryV3? AdminGetUserBanSummaryV3(AdminGetUserBanSummaryV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelGetUserBanSummaryV3?> AdminGetUserBanSummaryV3Async(AdminGetUserBanSummaryV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

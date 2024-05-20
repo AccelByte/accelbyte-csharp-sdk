@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveCountryListWithPolicies
     ///
-    /// Retrieve List of Countries that have Active Legal Policies.
+    /// Retrieve List of Countries that have Active and Visible Legal Policies.
     /// </summary>
     public class RetrieveCountryListWithPolicies : AccelByte.Sdk.Core.Operation
     {

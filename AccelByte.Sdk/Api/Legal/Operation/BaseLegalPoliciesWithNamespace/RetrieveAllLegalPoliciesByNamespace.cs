@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             : OperationBuilder<RetrieveAllLegalPoliciesByNamespaceBuilder>
         {
 
+            public bool? VisibleOnly { get; set; }
+
 
 
 
 
             internal RetrieveAllLegalPoliciesByNamespaceBuilder() { }
 
+
+            public RetrieveAllLegalPoliciesByNamespaceBuilder SetVisibleOnly(bool _visibleOnly)
+            {
+                VisibleOnly = _visibleOnly;
+                return this;
+            }
 
 
 
@@ -60,6 +68,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.VisibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(builder.VisibleOnly)!;
 
 
 
@@ -71,11 +80,13 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         #endregion
 
         public RetrieveAllLegalPoliciesByNamespace(
-            string namespace_
+            string namespace_,
+            bool? visibleOnly
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (visibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(visibleOnly)!;
 
 
 

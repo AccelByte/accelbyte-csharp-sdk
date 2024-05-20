@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonStringEnum]
         public DtoServiceConfigDTOProtocol? Protocol { get; set; }
 
+        [JsonPropertyName("skipAck")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SkipAck { get; set; }
+
         [JsonPropertyName("url")]
         public string? Url { get; set; }
 

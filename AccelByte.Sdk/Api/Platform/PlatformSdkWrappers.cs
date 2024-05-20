@@ -321,6 +321,17 @@ namespace AccelByte.Sdk.Core
         }
         private Anonymization? _Anonymization = null;
 
+        public PlatformAccountClosure PlatformAccountClosure
+        {
+            get
+            {
+                if (_PlatformAccountClosure == null)
+                    _PlatformAccountClosure = new PlatformAccountClosure(_SdkObject);
+                return _PlatformAccountClosure;
+            }
+        }
+        private PlatformAccountClosure? _PlatformAccountClosure = null;
+
         public SessionPlatform SessionPlatform
         {
             get

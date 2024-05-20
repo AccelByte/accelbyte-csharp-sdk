@@ -10,6 +10,12 @@
 | `/healthz` | GET | GetHealthcheckInfo | [GetHealthcheckInfo](../../AccelByte.Sdk/Api/Session/Operation/Operations/GetHealthcheckInfo.cs) | [GetHealthcheckInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Operations/GetHealthcheckInfo.cs) |
 | `/session/healthz` | GET | GetHealthcheckInfoV1 | [GetHealthcheckInfoV1](../../AccelByte.Sdk/Api/Session/Operation/Operations/GetHealthcheckInfoV1.cs) | [GetHealthcheckInfoV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Operations/GetHealthcheckInfoV1.cs) |
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Session/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/session/v1/admin/config/log` | GET | AdminGetLogConfig | [AdminGetLogConfig](../../AccelByte.Sdk/Api/Session/Operation/Config/AdminGetLogConfig.cs) | [AdminGetLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Config/AdminGetLogConfig.cs) |
+| `/session/v1/admin/config/log` | PATCH | AdminPatchUpdateLogConfig | [AdminPatchUpdateLogConfig](../../AccelByte.Sdk/Api/Session/Operation/Config/AdminPatchUpdateLogConfig.cs) | [AdminPatchUpdateLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Config/AdminPatchUpdateLogConfig.cs) |
+
 ### DSMC Default Configuration Wrapper:  [DSMCDefaultConfiguration](../../AccelByte.Sdk/Api/Session/Wrapper/DSMCDefaultConfiguration.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -148,6 +154,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Session/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### DSMC Default Configuration Wrapper:  [DSMCDefaultConfiguration](../../AccelByte.Sdk/Api/Session/Wrapper/DSMCDefaultConfiguration.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -276,6 +286,7 @@
 | `apimodels.UpdateGameSessionRequest` | [ApimodelsUpdateGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionRequest.cs) |
 | `apimodels.UpdatePartyRequest` | [ApimodelsUpdatePartyRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdatePartyRequest.cs) |
 | `apimodels.UserResponse` | [ApimodelsUserResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUserResponse.cs) |
+| `logconfig.Configuration` | [LogconfigConfiguration](../../AccelByte.Sdk/Api/Session/Model/LogconfigConfiguration.cs) |
 | `model.NativeSession` | [ModelNativeSession](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSession.cs) |
 | `model.NativeSessionMember` | [ModelNativeSessionMember](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSessionMember.cs) |
 | `models.DSMConfigRecord` | [ModelsDSMConfigRecord](../../AccelByte.Sdk/Api/Session/Model/ModelsDSMConfigRecord.cs) |

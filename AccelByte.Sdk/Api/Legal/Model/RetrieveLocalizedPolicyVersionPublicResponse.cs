@@ -44,6 +44,10 @@ namespace AccelByte.Sdk.Api.Legal.Model
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
+        [JsonPropertyName("isHidden")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsHidden { get; set; }
+
         [JsonPropertyName("localeCode")]
         public string? LocaleCode { get; set; }
 

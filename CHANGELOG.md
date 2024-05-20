@@ -1,3 +1,11 @@
+<a name="v0.62.0"></a>
+## [v0.62.0]
+### fix
+- **:** temporarily disable session browser test
+### ci
+- **makefile:** rename test target to test_core
+
+
 <a name="v0.61.0"></a>
 ## [v0.61.0]
 ### ci

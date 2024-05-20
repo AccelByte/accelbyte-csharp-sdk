@@ -382,12 +382,12 @@ eval_tap $? 30 'AdminSyncUserEntitlements' test.out
 
 #- 31 AdminPurchasable
 # body param: body
-echo '{"entitlementType": "EKNIlaq2KS5yUS26", "inventoryConfig": {"slotUsed": 84}, "itemId": "k6o7P49D2nLcCMvT", "itemType": "gskvERPzKX3k2xmr", "items": [{"bundledQty": 25, "entitlementType": "bB1ZGFmU24Z5anp1", "inventoryConfig": {"slotUsed": 65}, "itemId": "u2wN8c1Kpu4lqYfw", "itemType": "mcvvAUS6PzOOwSik", "sku": "7CwUa7LxQUNu0laN", "useCount": 72}, {"bundledQty": 61, "entitlementType": "x3VND1GqpkJeCMYV", "inventoryConfig": {"slotUsed": 66}, "itemId": "8WfGj2nDHeEHT96W", "itemType": "iKFqOEuv5vimn63C", "sku": "asxqy2jZLzE1twca", "useCount": 72}, {"bundledQty": 85, "entitlementType": "T8fi9jXsmtxDfayx", "inventoryConfig": {"slotUsed": 91}, "itemId": "u9Mf6Qeyu5D0XT5f", "itemType": "harkK0AIGdEbxsUw", "sku": "JLzvxAqxaBvYkRH7", "useCount": 46}], "quantity": 5, "sku": "ZbP6pG2cmQhEgLUg", "useCount": 52}' > $TEMP_JSON_INPUT
+echo '{"entitlementType": "EKNIlaq2KS5yUS26", "inventoryConfig": {"slotUsed": 84}, "itemId": "k6o7P49D2nLcCMvT", "itemType": "gskvERPzKX3k2xmr", "items": [{"bundledQty": 25, "entitlementType": "bB1ZGFmU24Z5anp1", "inventoryConfig": {"slotUsed": 65}, "itemId": "u2wN8c1Kpu4lqYfw", "itemType": "mcvvAUS6PzOOwSik", "sku": "7CwUa7LxQUNu0laN", "stackable": true, "useCount": 49}, {"bundledQty": 76, "entitlementType": "3VND1GqpkJeCMYVG", "inventoryConfig": {"slotUsed": 1}, "itemId": "WfGj2nDHeEHT96Wi", "itemType": "KFqOEuv5vimn63Ca", "sku": "sxqy2jZLzE1twcaI", "stackable": false, "useCount": 89}, {"bundledQty": 12, "entitlementType": "fkXyLS86H3ub7hu9", "inventoryConfig": {"slotUsed": 80}, "itemId": "89FR48VT5BKwgRAI", "itemType": "QHZN92VP4rbnVQ2w", "sku": "DVZFHDmlKMyosJXw", "stackable": false, "useCount": 86}], "quantity": 56, "sku": "6pG2cmQhEgLUgzcF", "stackable": true, "useCount": 83}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn inventory \
     --op AdminPurchasable \
     --namespace $AB_NAMESPACE \
-    --userId 'y9OOnuphq96OvBp2' \
+    --userId 'sZ7ws7IsSADlM888' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 31 'AdminPurchasable' test.out
@@ -397,10 +397,10 @@ $CLI_EXE \
     --sn inventory \
     --op PublicListInventoryConfigurations \
     --namespace $AB_NAMESPACE \
-    --code '8vxdZ0sUS14l56FK' \
-    --limit '11' \
-    --offset '19' \
-    --sortBy 'code:desc' \
+    --code 'Xt8E5iE51ruSZ153' \
+    --limit '9' \
+    --offset '56' \
+    --sortBy 'code:asc' \
     > test.out 2>&1
 eval_tap $? 32 'PublicListInventoryConfigurations' test.out
 
@@ -409,9 +409,9 @@ $CLI_EXE \
     --sn inventory \
     --op PublicListItemTypes \
     --namespace $AB_NAMESPACE \
-    --limit '4' \
-    --offset '9' \
-    --sortBy 'name' \
+    --limit '91' \
+    --offset '61' \
+    --sortBy 'createdAt:asc' \
     > test.out 2>&1
 eval_tap $? 33 'PublicListItemTypes' test.out
 
@@ -420,9 +420,9 @@ $CLI_EXE \
     --sn inventory \
     --op PublicListTags \
     --namespace $AB_NAMESPACE \
-    --limit '10' \
-    --offset '91' \
-    --sortBy 'name' \
+    --limit '3' \
+    --offset '64' \
+    --sortBy 'createdAt:desc' \
     > test.out 2>&1
 eval_tap $? 34 'PublicListTags' test.out
 
@@ -431,20 +431,20 @@ $CLI_EXE \
     --sn inventory \
     --op PublicListInventories \
     --namespace $AB_NAMESPACE \
-    --inventoryConfigurationCode 'iFscU2TIptCl7Mr5' \
-    --limit '15' \
-    --offset '91' \
-    --sortBy 'updatedAt:asc' \
+    --inventoryConfigurationCode 'M4vfe4FykMi3Y9S7' \
+    --limit '67' \
+    --offset '47' \
+    --sortBy 'createdAt' \
     > test.out 2>&1
 eval_tap $? 35 'PublicListInventories' test.out
 
 #- 36 PublicConsumeMyItem
 # body param: body
-echo '{"qty": 67, "slotId": "xe8Wk0MBFmL9yc68", "sourceItemId": "k3c9GJsynFlhTJoB"}' > $TEMP_JSON_INPUT
+echo '{"qty": 9, "slotId": "xcdbT8v3UhVtgg8k", "sourceItemId": "RaAVvE6mqqeoTT0u"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn inventory \
     --op PublicConsumeMyItem \
-    --inventoryId '9DVDzdKc96qCUqhM' \
+    --inventoryId 'NoVVn7ItFFSEoUy7' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -454,24 +454,24 @@ eval_tap $? 36 'PublicConsumeMyItem' test.out
 $CLI_EXE \
     --sn inventory \
     --op PublicListItems \
-    --inventoryId 'uZYAzHXsCOpjW3CT' \
+    --inventoryId 'DgmV5mD3u0JWhmI5' \
     --namespace $AB_NAMESPACE \
-    --limit '95' \
-    --offset '95' \
-    --qtyGte '5' \
-    --sortBy 'updatedAt:desc' \
-    --sourceItemId 'bJHxH87DGHTswv6V' \
-    --tags '7PYLXBxOdM9zl6FE' \
+    --limit '5' \
+    --offset '64' \
+    --qtyGte '3' \
+    --sortBy 'createdAt:asc' \
+    --sourceItemId 'JHxH87DGHTswv6V7' \
+    --tags 'PYLXBxOdM9zl6FEL' \
     > test.out 2>&1
 eval_tap $? 37 'PublicListItems' test.out
 
 #- 38 PublicBulkUpdateMyItems
 # body param: body
-echo '[{"customAttributes": {"LMoLSWz6oSQsOH1X": {}, "bs430fGmUXScgZSt": {}, "Ymu7rsmI2iz8iDqE": {}}, "slotId": "S2enp5QsuU2SzC5j", "sourceItemId": "PZ753VQLK9K4e0w5", "tags": ["qc4U4ZoFCFoWEdyI", "cgWEloqldQTXf1Rj", "wLWiMZtnXi3eLkvn"]}, {"customAttributes": {"j2FHRRu0umwsxpdZ": {}, "1WWgZKluL2AcsKLs": {}, "4xA7pgTnAOS7ZVDY": {}}, "slotId": "baZdRyWBXrjEfLoB", "sourceItemId": "c63d2CjPSt7u9HWK", "tags": ["Xy95GCrxrJkGMw7Z", "L0l1KamHkjtv5cJw", "GEcC7aGI9Staa4kc"]}, {"customAttributes": {"8IEXb91iFIok1kMM": {}, "49oWBLBOtyL1dHNm": {}, "owMhMKGNED5ygPVL": {}}, "slotId": "MM3usQQXneBGj9Aj", "sourceItemId": "npSvpMEa0Lvq2wnq", "tags": ["yklrvhee7EeSqy9k", "O3ZjWNov1zjWKMDh", "aV2fsQ3DlrWTmYVu"]}]' > $TEMP_JSON_INPUT
+echo '[{"customAttributes": {"MoLSWz6oSQsOH1Xb": {}, "s430fGmUXScgZStY": {}, "mu7rsmI2iz8iDqES": {}}, "slotId": "2enp5QsuU2SzC5jP", "sourceItemId": "Z753VQLK9K4e0w5q", "tags": ["c4U4ZoFCFoWEdyIc", "gWEloqldQTXf1Rjw", "LWiMZtnXi3eLkvnj"]}, {"customAttributes": {"2FHRRu0umwsxpdZ1": {}, "WWgZKluL2AcsKLs4": {}, "xA7pgTnAOS7ZVDYb": {}}, "slotId": "aZdRyWBXrjEfLoBc", "sourceItemId": "63d2CjPSt7u9HWKX", "tags": ["y95GCrxrJkGMw7ZL", "0l1KamHkjtv5cJwG", "EcC7aGI9Staa4kc8"]}, {"customAttributes": {"IEXb91iFIok1kMM4": {}, "9oWBLBOtyL1dHNmo": {}, "wMhMKGNED5ygPVLM": {}}, "slotId": "M3usQQXneBGj9Ajn", "sourceItemId": "pSvpMEa0Lvq2wnqy", "tags": ["klrvhee7EeSqy9kO", "3ZjWNov1zjWKMDha", "V2fsQ3DlrWTmYVuz"]}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn inventory \
     --op PublicBulkUpdateMyItems \
-    --inventoryId 'z6shya81WnWLIEMQ' \
+    --inventoryId '6shya81WnWLIEMQX' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -479,11 +479,11 @@ eval_tap $? 38 'PublicBulkUpdateMyItems' test.out
 
 #- 39 PublicBulkRemoveMyItems
 # body param: body
-echo '[{"slotId": "X6yIuvLV2SAA8KoD", "sourceItemId": "H2te6X3S3HwJUMVx"}, {"slotId": "EYAqoGebWDx1rIY7", "sourceItemId": "YgqLazmwaTdH4Cz8"}, {"slotId": "G7R8H7IL8v5O1r7P", "sourceItemId": "5inUTEQGSKH2wQE3"}]' > $TEMP_JSON_INPUT
+echo '[{"slotId": "6yIuvLV2SAA8KoDH", "sourceItemId": "2te6X3S3HwJUMVxE"}, {"slotId": "YAqoGebWDx1rIY7Y", "sourceItemId": "gqLazmwaTdH4Cz8G"}, {"slotId": "7R8H7IL8v5O1r7P5", "sourceItemId": "inUTEQGSKH2wQE3r"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn inventory \
     --op PublicBulkRemoveMyItems \
-    --inventoryId 'rMpBR96V4wCGhThb' \
+    --inventoryId 'MpBR96V4wCGhThbt' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -491,11 +491,11 @@ eval_tap $? 39 'PublicBulkRemoveMyItems' test.out
 
 #- 40 PublicMoveMyItems
 # body param: body
-echo '{"items": [{"qty": 39, "slotId": "5QSZtlA4KQeFg6EM", "sourceItemId": "ZQcwbAhRNgXXGYKI"}, {"qty": 43, "slotId": "tbNLX0aELOa6N75c", "sourceItemId": "ogVkZy2V8uOMXE5z"}, {"qty": 0, "slotId": "FO9EQt4SdrkfJD71", "sourceItemId": "OE4nmvUcjS4yL7G8"}], "srcInventoryId": "PAD8A91XiYV8om2l"}' > $TEMP_JSON_INPUT
+echo '{"items": [{"qty": 87, "slotId": "E3jI5UoWvqFZQoL3", "sourceItemId": "OUkQDJft6r5a3gpt"}, {"qty": 2, "slotId": "GriMXJaukjQprS6C", "sourceItemId": "mcUjDbwPW4iYqSZF"}, {"qty": 84, "slotId": "qfUuDbogZiwydwzf", "sourceItemId": "WPCVvLLFNSKl79V2"}], "srcInventoryId": "ucJ4eDQyH46uQbTH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn inventory \
     --op PublicMoveMyItems \
-    --inventoryId 'FtO185fesSBanCCZ' \
+    --inventoryId 'K5X3o94hUU3uq7jQ' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -505,10 +505,10 @@ eval_tap $? 40 'PublicMoveMyItems' test.out
 $CLI_EXE \
     --sn inventory \
     --op PublicGetItem \
-    --inventoryId 'XDbHiemt24RYVxvO' \
+    --inventoryId 'cfShtEtVr2SVT1Ni' \
     --namespace $AB_NAMESPACE \
-    --slotId 'izOsLuBOtvU0dysG' \
-    --sourceItemId 'Q752SjQQxTA0y5W0' \
+    --slotId 'SinLANULfgmYSJIz' \
+    --sourceItemId 'EBkXmc2FhrwrUKt0' \
     > test.out 2>&1
 eval_tap $? 41 'PublicGetItem' test.out
 

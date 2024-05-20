@@ -182,5 +182,75 @@ namespace AccelByte.Sdk.Api
 
             await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminResetServicesConfigurationAsync(op);
         }
+        public static Gdpr.Model.DtoServicesConfigurationResponse? Execute(
+            this AdminGetPlatformAccountClosureServicesConfiguration.AdminGetPlatformAccountClosureServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetPlatformAccountClosureServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminGetPlatformAccountClosureServicesConfiguration(op);
+        }
+        public static async Task<Gdpr.Model.DtoServicesConfigurationResponse?> ExecuteAsync(
+            this AdminGetPlatformAccountClosureServicesConfiguration.AdminGetPlatformAccountClosureServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetPlatformAccountClosureServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminGetPlatformAccountClosureServicesConfigurationAsync(op);
+        }
+        public static Gdpr.Model.DtoServiceConfigurationUpdateRequest? Execute(
+            this AdminUpdatePlatformAccountClosureServicesConfiguration.AdminUpdatePlatformAccountClosureServicesConfigurationBuilder builder,
+            DtoServiceConfigurationUpdateRequest body,
+            string namespace_
+        )
+        {
+            AdminUpdatePlatformAccountClosureServicesConfiguration op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminUpdatePlatformAccountClosureServicesConfiguration(op);
+        }
+        public static async Task<Gdpr.Model.DtoServiceConfigurationUpdateRequest?> ExecuteAsync(
+            this AdminUpdatePlatformAccountClosureServicesConfiguration.AdminUpdatePlatformAccountClosureServicesConfigurationBuilder builder,
+            DtoServiceConfigurationUpdateRequest body,
+            string namespace_
+        )
+        {
+            AdminUpdatePlatformAccountClosureServicesConfiguration op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminUpdatePlatformAccountClosureServicesConfigurationAsync(op);
+        }
+        public static void Execute(
+            this AdminResetPlatformAccountClosureServicesConfiguration.AdminResetPlatformAccountClosureServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminResetPlatformAccountClosureServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminResetPlatformAccountClosureServicesConfiguration(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminResetPlatformAccountClosureServicesConfiguration.AdminResetPlatformAccountClosureServicesConfigurationBuilder builder,
+            string namespace_
+        )
+        {
+            AdminResetPlatformAccountClosureServicesConfiguration op = builder.Build(
+                namespace_
+            );
+
+            await ((Gdpr.Wrapper.Configuration)builder.WrapperObject!).AdminResetPlatformAccountClosureServicesConfigurationAsync(op);
+        }
     }
 }

@@ -22,6 +22,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonStringEnum]
         public ModelPredicateParameterType? ParameterType { get; set; }
 
+        [JsonPropertyName("statCycleId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StatCycleId { get; set; }
+
         [JsonPropertyName("targetValue")]
         public double? TargetValue { get; set; }
 
@@ -66,6 +70,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 
         public static readonly ModelPredicateParameterType STATISTIC
             = new ModelPredicateParameterType("STATISTIC");
+
+        public static readonly ModelPredicateParameterType STATISTICCYCLE
+            = new ModelPredicateParameterType("STATISTIC_CYCLE");
 
         public static readonly ModelPredicateParameterType USERACCOUNT
             = new ModelPredicateParameterType("USERACCOUNT");

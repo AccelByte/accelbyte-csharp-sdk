@@ -53,6 +53,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("KeyID")]
         public string? KeyID { get; set; }
 
+        [JsonPropertyName("LogoURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LogoURL { get; set; }
+
         [JsonPropertyName("Namespace")]
         public string? Namespace { get; set; }
 

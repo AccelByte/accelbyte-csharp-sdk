@@ -47,6 +47,18 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         {
             get { return Operation.AdminResetServicesConfiguration.Builder.SetWrapperObject(this); }
         }
+        public AdminGetPlatformAccountClosureServicesConfiguration.AdminGetPlatformAccountClosureServicesConfigurationBuilder AdminGetPlatformAccountClosureServicesConfigurationOp
+        {
+            get { return Operation.AdminGetPlatformAccountClosureServicesConfiguration.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdatePlatformAccountClosureServicesConfiguration.AdminUpdatePlatformAccountClosureServicesConfigurationBuilder AdminUpdatePlatformAccountClosureServicesConfigurationOp
+        {
+            get { return Operation.AdminUpdatePlatformAccountClosureServicesConfiguration.Builder.SetWrapperObject(this); }
+        }
+        public AdminResetPlatformAccountClosureServicesConfiguration.AdminResetPlatformAccountClosureServicesConfigurationBuilder AdminResetPlatformAccountClosureServicesConfigurationOp
+        {
+            get { return Operation.AdminResetPlatformAccountClosureServicesConfiguration.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public List<string>? GetAdminEmailConfiguration(GetAdminEmailConfiguration input)
@@ -154,6 +166,54 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.Payload);
         }
         public async Task AdminResetServicesConfigurationAsync(AdminResetServicesConfiguration input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.DtoServicesConfigurationResponse? AdminGetPlatformAccountClosureServicesConfiguration(AdminGetPlatformAccountClosureServicesConfiguration input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DtoServicesConfigurationResponse?> AdminGetPlatformAccountClosureServicesConfigurationAsync(AdminGetPlatformAccountClosureServicesConfiguration input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.DtoServiceConfigurationUpdateRequest? AdminUpdatePlatformAccountClosureServicesConfiguration(AdminUpdatePlatformAccountClosureServicesConfiguration input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DtoServiceConfigurationUpdateRequest?> AdminUpdatePlatformAccountClosureServicesConfigurationAsync(AdminUpdatePlatformAccountClosureServicesConfiguration input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminResetPlatformAccountClosureServicesConfiguration(AdminResetPlatformAccountClosureServicesConfiguration input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminResetPlatformAccountClosureServicesConfigurationAsync(AdminResetPlatformAccountClosureServicesConfiguration input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

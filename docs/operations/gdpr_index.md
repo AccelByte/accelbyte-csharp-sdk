@@ -28,6 +28,16 @@
 | `/gdpr/admin/namespaces/{namespace}/services/configurations` | GET | AdminGetServicesConfiguration | [AdminGetServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminGetServicesConfiguration.cs) | [AdminGetServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminGetServicesConfiguration.cs) |
 | `/gdpr/admin/namespaces/{namespace}/services/configurations` | PUT | AdminUpdateServicesConfiguration | [AdminUpdateServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminUpdateServicesConfiguration.cs) | [AdminUpdateServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminUpdateServicesConfiguration.cs) |
 | `/gdpr/admin/namespaces/{namespace}/services/configurations/reset` | DELETE | AdminResetServicesConfiguration | [AdminResetServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminResetServicesConfiguration.cs) | [AdminResetServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminResetServicesConfiguration.cs) |
+| `/gdpr/admin/namespaces/{namespace}/services/platforms/closure/config` | GET | AdminGetPlatformAccountClosureServicesConfiguration | [AdminGetPlatformAccountClosureServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminGetPlatformAccountClosureServicesConfiguration.cs) | [AdminGetPlatformAccountClosureServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminGetPlatformAccountClosureServicesConfiguration.cs) |
+| `/gdpr/admin/namespaces/{namespace}/services/platforms/closure/config` | PUT | AdminUpdatePlatformAccountClosureServicesConfiguration | [AdminUpdatePlatformAccountClosureServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminUpdatePlatformAccountClosureServicesConfiguration.cs) | [AdminUpdatePlatformAccountClosureServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminUpdatePlatformAccountClosureServicesConfiguration.cs) |
+| `/gdpr/admin/namespaces/{namespace}/services/platforms/closure/config` | DELETE | AdminResetPlatformAccountClosureServicesConfiguration | [AdminResetPlatformAccountClosureServicesConfiguration](../../AccelByte.Sdk/Api/Gdpr/Operation/Configuration/AdminResetPlatformAccountClosureServicesConfiguration.cs) | [AdminResetPlatformAccountClosureServicesConfiguration](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/Configuration/AdminResetPlatformAccountClosureServicesConfiguration.cs) |
+
+### Platform Account Closure Client Wrapper:  [PlatformAccountClosureClient](../../AccelByte.Sdk/Api/Gdpr/Wrapper/PlatformAccountClosureClient.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/gdpr/admin/namespaces/{namespace}/platforms/{platform}/closure/client` | GET | AdminGetPlatformAccountClosureClient | [AdminGetPlatformAccountClosureClient](../../AccelByte.Sdk/Api/Gdpr/Operation/PlatformAccountClosureClient/AdminGetPlatformAccountClosureClient.cs) | [AdminGetPlatformAccountClosureClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/PlatformAccountClosureClient/AdminGetPlatformAccountClosureClient.cs) |
+| `/gdpr/admin/namespaces/{namespace}/platforms/{platform}/closure/client` | POST | AdminUpdatePlatformAccountClosureClient | [AdminUpdatePlatformAccountClosureClient](../../AccelByte.Sdk/Api/Gdpr/Operation/PlatformAccountClosureClient/AdminUpdatePlatformAccountClosureClient.cs) | [AdminUpdatePlatformAccountClosureClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/PlatformAccountClosureClient/AdminUpdatePlatformAccountClosureClient.cs) |
+| `/gdpr/admin/namespaces/{namespace}/platforms/{platform}/closure/client` | DELETE | AdminDeletePlatformAccountClosureClient | [AdminDeletePlatformAccountClosureClient](../../AccelByte.Sdk/Api/Gdpr/Operation/PlatformAccountClosureClient/AdminDeletePlatformAccountClosureClient.cs) | [AdminDeletePlatformAccountClosureClient](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/PlatformAccountClosureClient/AdminDeletePlatformAccountClosureClient.cs) |
 
 ### Data Retrieval Wrapper:  [DataRetrieval](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataRetrieval.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -42,6 +52,11 @@
 | `/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}` | DELETE | PublicCancelUserPersonalDataRequest | [PublicCancelUserPersonalDataRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrieval/PublicCancelUserPersonalDataRequest.cs) | [PublicCancelUserPersonalDataRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrieval/PublicCancelUserPersonalDataRequest.cs) |
 | `/gdpr/public/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate` | POST | PublicGeneratePersonalDataURL | [PublicGeneratePersonalDataURL](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrieval/PublicGeneratePersonalDataURL.cs) | [PublicGeneratePersonalDataURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrieval/PublicGeneratePersonalDataURL.cs) |
 
+### Platform Account Closure History Wrapper:  [PlatformAccountClosureHistory](../../AccelByte.Sdk/Api/Gdpr/Wrapper/PlatformAccountClosureHistory.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/gdpr/admin/namespaces/{namespace}/users/platforms/closure/histories` | GET | AdminGetUserPlatformAccountClosureHistories | [AdminGetUserPlatformAccountClosureHistories](../../AccelByte.Sdk/Api/Gdpr/Operation/PlatformAccountClosureHistory/AdminGetUserPlatformAccountClosureHistories.cs) | [AdminGetUserPlatformAccountClosureHistories](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/PlatformAccountClosureHistory/AdminGetUserPlatformAccountClosureHistories.cs) |
+
 
 &nbsp;  
 
@@ -55,7 +70,15 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Platform Account Closure Client Wrapper:  [PlatformAccountClosureClient](../../AccelByte.Sdk/Api/Gdpr/Wrapper/PlatformAccountClosureClient.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Data Retrieval Wrapper:  [DataRetrieval](../../AccelByte.Sdk/Api/Gdpr/Wrapper/DataRetrieval.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Platform Account Closure History Wrapper:  [PlatformAccountClosureHistory](../../AccelByte.Sdk/Api/Gdpr/Wrapper/PlatformAccountClosureHistory.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -67,10 +90,14 @@
 | Model | Class |
 |---|---|
 | `dto.ExtendConfigDTO` | [DtoExtendConfigDTO](../../AccelByte.Sdk/Api/Gdpr/Model/DtoExtendConfigDTO.cs) |
+| `dto.PlatformAccountClosureClientRequest` | [DtoPlatformAccountClosureClientRequest](../../AccelByte.Sdk/Api/Gdpr/Model/DtoPlatformAccountClosureClientRequest.cs) |
+| `dto.PlatformAccountClosureClientResponse` | [DtoPlatformAccountClosureClientResponse](../../AccelByte.Sdk/Api/Gdpr/Model/DtoPlatformAccountClosureClientResponse.cs) |
 | `dto.ServiceConfigDTO` | [DtoServiceConfigDTO](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigDTO.cs) |
 | `dto.ServiceConfigurationDTO` | [DtoServiceConfigurationDTO](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigurationDTO.cs) |
 | `dto.ServiceConfigurationUpdateRequest` | [DtoServiceConfigurationUpdateRequest](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigurationUpdateRequest.cs) |
 | `dto.ServicesConfigurationResponse` | [DtoServicesConfigurationResponse](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServicesConfigurationResponse.cs) |
+| `dto.UserPlatformAccountClosureHistoriesResponse` | [DtoUserPlatformAccountClosureHistoriesResponse](../../AccelByte.Sdk/Api/Gdpr/Model/DtoUserPlatformAccountClosureHistoriesResponse.cs) |
+| `dto.UserPlatformAccountClosureHistory` | [DtoUserPlatformAccountClosureHistory](../../AccelByte.Sdk/Api/Gdpr/Model/DtoUserPlatformAccountClosureHistory.cs) |
 | `models.DataRetrievalResponse` | [ModelsDataRetrievalResponse](../../AccelByte.Sdk/Api/Gdpr/Model/ModelsDataRetrievalResponse.cs) |
 | `models.DeletionData` | [ModelsDeletionData](../../AccelByte.Sdk/Api/Gdpr/Model/ModelsDeletionData.cs) |
 | `models.DeletionStatus` | [ModelsDeletionStatus](../../AccelByte.Sdk/Api/Gdpr/Model/ModelsDeletionStatus.cs) |

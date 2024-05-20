@@ -131,6 +131,7 @@
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}` | PATCH | AdminUpdateUserV3 | [AdminUpdateUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminUpdateUserV3.cs) | [AdminUpdateUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminUpdateUserV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans` | GET | AdminGetUserBanV3 | [AdminGetUserBanV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetUserBanV3.cs) | [AdminGetUserBanV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetUserBanV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans` | POST | AdminBanUserV3 | [AdminBanUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminBanUserV3.cs) | [AdminBanUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminBanUserV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/summary` | GET | AdminGetUserBanSummaryV3 | [AdminGetUserBanSummaryV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminGetUserBanSummaryV3.cs) | [AdminGetUserBanSummaryV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminGetUserBanSummaryV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/{banId}` | PATCH | AdminUpdateUserBanV3 | [AdminUpdateUserBanV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminUpdateUserBanV3.cs) | [AdminUpdateUserBanV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminUpdateUserBanV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/code/request` | POST | AdminSendVerificationCodeV3 | [AdminSendVerificationCodeV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminSendVerificationCodeV3.cs) | [AdminSendVerificationCodeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminSendVerificationCodeV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/users/{userId}/code/verify` | POST | AdminVerifyAccountV3 | [AdminVerifyAccountV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/AdminVerifyAccountV3.cs) | [AdminVerifyAccountV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/AdminVerifyAccountV3.cs) |
@@ -697,6 +698,7 @@
 | `model.GetBulkUserBansRequest` | [ModelGetBulkUserBansRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelGetBulkUserBansRequest.cs) |
 | `model.GetLinkHeadlessAccountConflictResponse` | [ModelGetLinkHeadlessAccountConflictResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelGetLinkHeadlessAccountConflictResponse.cs) |
 | `model.GetPublisherUserResponse` | [ModelGetPublisherUserResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelGetPublisherUserResponse.cs) |
+| `model.GetUserBanSummaryV3` | [ModelGetUserBanSummaryV3](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserBanSummaryV3.cs) |
 | `model.GetUserBanV3Response` | [ModelGetUserBanV3Response](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserBanV3Response.cs) |
 | `model.GetUserJusticePlatformAccountResponse` | [ModelGetUserJusticePlatformAccountResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserJusticePlatformAccountResponse.cs) |
 | `model.GetUserMapping` | [ModelGetUserMapping](../../AccelByte.Sdk/Api/Iam/Model/ModelGetUserMapping.cs) |
@@ -795,6 +797,7 @@
 | `model.UserActiveBanResponseV3` | [ModelUserActiveBanResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserActiveBanResponseV3.cs) |
 | `model.UserBanResponse` | [ModelUserBanResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelUserBanResponse.cs) |
 | `model.UserBanResponseV3` | [ModelUserBanResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserBanResponseV3.cs) |
+| `model.UserBanWithStatus` | [ModelUserBanWithStatus](../../AccelByte.Sdk/Api/Iam/Model/ModelUserBanWithStatus.cs) |
 | `model.UserBaseInfo` | [ModelUserBaseInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelUserBaseInfo.cs) |
 | `model.UserBulkUpdateRequestV3` | [ModelUserBulkUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelUserBulkUpdateRequestV3.cs) |
 | `model.UserCreateRequest` | [ModelUserCreateRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelUserCreateRequest.cs) |

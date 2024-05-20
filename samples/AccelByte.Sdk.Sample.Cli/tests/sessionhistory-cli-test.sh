@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..32"
+echo "1..34"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -65,30 +65,47 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 3 'GetHealthcheckInfoV1' test.out
 
-#- 4 AdminQueryGameSessionDetail
+#- 4 AdminGetLogConfig
+$CLI_EXE \
+    --sn sessionhistory \
+    --op AdminGetLogConfig \
+    > test.out 2>&1
+eval_tap $? 4 'AdminGetLogConfig' test.out
+
+#- 5 AdminPatchUpdateLogConfig
+# body param: body
+echo '{"logLevel": "debug"}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn sessionhistory \
+    --op AdminPatchUpdateLogConfig \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 5 'AdminPatchUpdateLogConfig' test.out
+
+#- 6 AdminQueryGameSessionDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminQueryGameSessionDetail \
     --namespace $AB_NAMESPACE \
-    --gameSessionID 'bBuz5zkoaUEzGS3q' \
+    --gameSessionID 'Yi3wMWnoZgIhwb8Y' \
     --limit '12' \
     --offset '79' \
     --order '0PbemSBELbZ0VBUG' \
     --orderBy 'A7nkDeev2Oj060Hn' \
     --userID 'Of5S8X1LxkZs4233' \
     > test.out 2>&1
-eval_tap $? 4 'AdminQueryGameSessionDetail' test.out
+eval_tap $? 6 'AdminQueryGameSessionDetail' test.out
 
-#- 5 GetGameSessionDetail
+#- 7 GetGameSessionDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op GetGameSessionDetail \
     --namespace $AB_NAMESPACE \
     --sessionId 'oQWoXFeqeuI2oMJ0' \
     > test.out 2>&1
-eval_tap $? 5 'GetGameSessionDetail' test.out
+eval_tap $? 7 'GetGameSessionDetail' test.out
 
-#- 6 AdminQueryMatchmakingDetail
+#- 8 AdminQueryMatchmakingDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminQueryMatchmakingDetail \
@@ -101,27 +118,27 @@ $CLI_EXE \
     --ticketID 'qlE9oLDPD0Lfle8E' \
     --userID 'SU1MO8XnVaEyjmif' \
     > test.out 2>&1
-eval_tap $? 6 'AdminQueryMatchmakingDetail' test.out
+eval_tap $? 8 'AdminQueryMatchmakingDetail' test.out
 
-#- 7 AdminGetMatchmakingDetailBySessionID
+#- 9 AdminGetMatchmakingDetailBySessionID
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminGetMatchmakingDetailBySessionID \
     --namespace $AB_NAMESPACE \
     --sessionId 'JDYa1TJPUszmFGEk' \
     > test.out 2>&1
-eval_tap $? 7 'AdminGetMatchmakingDetailBySessionID' test.out
+eval_tap $? 9 'AdminGetMatchmakingDetailBySessionID' test.out
 
-#- 8 AdminGetMatchmakingDetailByTicketID
+#- 10 AdminGetMatchmakingDetailByTicketID
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminGetMatchmakingDetailByTicketID \
     --namespace $AB_NAMESPACE \
     --ticketId 'JVvqDSU3PDyIAGfG' \
     > test.out 2>&1
-eval_tap $? 8 'AdminGetMatchmakingDetailByTicketID' test.out
+eval_tap $? 10 'AdminGetMatchmakingDetailByTicketID' test.out
 
-#- 9 AdminQueryPartyDetail
+#- 11 AdminQueryPartyDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminQueryPartyDetail \
@@ -133,18 +150,18 @@ $CLI_EXE \
     --partyID 'D5l5wj6K2wEMnckj' \
     --userID 'lW6BywsSSZTGlubs' \
     > test.out 2>&1
-eval_tap $? 9 'AdminQueryPartyDetail' test.out
+eval_tap $? 11 'AdminQueryPartyDetail' test.out
 
-#- 10 GetPartyDetail
+#- 12 GetPartyDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op GetPartyDetail \
     --namespace $AB_NAMESPACE \
     --sessionId 'mhjXcScOUvrjJBO7' \
     > test.out 2>&1
-eval_tap $? 10 'GetPartyDetail' test.out
+eval_tap $? 12 'GetPartyDetail' test.out
 
-#- 11 AdminQueryTicketDetail
+#- 13 AdminQueryTicketDetail
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminQueryTicketDetail \
@@ -159,18 +176,18 @@ $CLI_EXE \
     --startDate 'L5PjaYEDxaYN8w9K' \
     --userIDs 'UW0py8KrcQfucSq2' \
     > test.out 2>&1
-eval_tap $? 11 'AdminQueryTicketDetail' test.out
+eval_tap $? 13 'AdminQueryTicketDetail' test.out
 
-#- 12 AdminTicketDetailGetByTicketID
+#- 14 AdminTicketDetailGetByTicketID
 $CLI_EXE \
     --sn sessionhistory \
     --op AdminTicketDetailGetByTicketID \
     --namespace $AB_NAMESPACE \
     --ticketId 'X8gFuJORk4j04Yfn' \
     > test.out 2>&1
-eval_tap $? 12 'AdminTicketDetailGetByTicketID' test.out
+eval_tap $? 14 'AdminTicketDetailGetByTicketID' test.out
 
-#- 13 QueryXrayMatchPool
+#- 15 QueryXrayMatchPool
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayMatchPool \
@@ -179,9 +196,9 @@ $CLI_EXE \
     --endDate 'mCSoGeQCahcox63c' \
     --startDate 'yDxAAYcRXJdoSTxN' \
     > test.out 2>&1
-eval_tap $? 13 'QueryXrayMatchPool' test.out
+eval_tap $? 15 'QueryXrayMatchPool' test.out
 
-#- 14 QueryDetailTickMatchPool
+#- 16 QueryDetailTickMatchPool
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPool \
@@ -194,9 +211,9 @@ $CLI_EXE \
     --endDate 'wU6WLgpQE9nXzhBC' \
     --startDate '0uyMR4Xf2nfYvNvG' \
     > test.out 2>&1
-eval_tap $? 14 'QueryDetailTickMatchPool' test.out
+eval_tap $? 16 'QueryDetailTickMatchPool' test.out
 
-#- 15 QueryDetailTickMatchPoolMatches
+#- 17 QueryDetailTickMatchPoolMatches
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPoolMatches \
@@ -205,9 +222,9 @@ $CLI_EXE \
     --poolName 'NJornrCQpMJj5igq' \
     --tickId 'at8xnPoWTdHAkcyA' \
     > test.out 2>&1
-eval_tap $? 15 'QueryDetailTickMatchPoolMatches' test.out
+eval_tap $? 17 'QueryDetailTickMatchPoolMatches' test.out
 
-#- 16 QueryDetailTickMatchPoolTicket
+#- 18 QueryDetailTickMatchPoolTicket
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPoolTicket \
@@ -216,9 +233,9 @@ $CLI_EXE \
     --poolName 'veBfrpCrnbaxhEvn' \
     --tickId '3SGqcH91fC3aJEoq' \
     > test.out 2>&1
-eval_tap $? 16 'QueryDetailTickMatchPoolTicket' test.out
+eval_tap $? 18 'QueryDetailTickMatchPoolTicket' test.out
 
-#- 17 QueryMatchHistories
+#- 19 QueryMatchHistories
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchHistories \
@@ -227,27 +244,27 @@ $CLI_EXE \
     --limit '1' \
     --offset '44' \
     > test.out 2>&1
-eval_tap $? 17 'QueryMatchHistories' test.out
+eval_tap $? 19 'QueryMatchHistories' test.out
 
-#- 18 QueryMatchTicketHistories
+#- 20 QueryMatchTicketHistories
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchTicketHistories \
     --matchId 'u9b9QjhzDlnJmi4X' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 18 'QueryMatchTicketHistories' test.out
+eval_tap $? 20 'QueryMatchTicketHistories' test.out
 
-#- 19 QueryXrayMatch
+#- 21 QueryXrayMatch
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayMatch \
     --matchId 'aBTgoXjfdUQHa3Rx' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 19 'QueryXrayMatch' test.out
+eval_tap $? 21 'QueryXrayMatch' test.out
 
-#- 20 QueryAcquiringDS
+#- 22 QueryAcquiringDS
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryAcquiringDS \
@@ -255,9 +272,9 @@ $CLI_EXE \
     --endDate 'spSqwdbTR2sgzfaQ' \
     --startDate 'rUCW9fgo69uv1bkF' \
     > test.out 2>&1
-eval_tap $? 20 'QueryAcquiringDS' test.out
+eval_tap $? 22 'QueryAcquiringDS' test.out
 
-#- 21 QueryAcquiringDSWaitTimeAvg
+#- 23 QueryAcquiringDSWaitTimeAvg
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryAcquiringDSWaitTimeAvg \
@@ -265,9 +282,9 @@ $CLI_EXE \
     --endDate 'x8DmbC9UqYdYrdxN' \
     --startDate 'nuMcAwrSzYnrcetx' \
     > test.out 2>&1
-eval_tap $? 21 'QueryAcquiringDSWaitTimeAvg' test.out
+eval_tap $? 23 'QueryAcquiringDSWaitTimeAvg' test.out
 
-#- 22 QueryMatchLengthDurationpAvg
+#- 24 QueryMatchLengthDurationpAvg
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchLengthDurationpAvg \
@@ -275,9 +292,9 @@ $CLI_EXE \
     --endDate 'ObeisZelKuD0iJ6f' \
     --startDate 's3zL9H4WxGWRH7fz' \
     > test.out 2>&1
-eval_tap $? 22 'QueryMatchLengthDurationpAvg' test.out
+eval_tap $? 24 'QueryMatchLengthDurationpAvg' test.out
 
-#- 23 QueryMatchLengthDurationp99
+#- 25 QueryMatchLengthDurationp99
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchLengthDurationp99 \
@@ -285,9 +302,9 @@ $CLI_EXE \
     --endDate '4BdPhLtHRJOImSq3' \
     --startDate '7aeAaGq0NIj53gXk' \
     > test.out 2>&1
-eval_tap $? 23 'QueryMatchLengthDurationp99' test.out
+eval_tap $? 25 'QueryMatchLengthDurationp99' test.out
 
-#- 24 QueryTotalActiveSession
+#- 26 QueryTotalActiveSession
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalActiveSession \
@@ -296,9 +313,9 @@ $CLI_EXE \
     --endDate 'LzSpDFY3lxe16KsS' \
     --startDate 'Rzkf2HzBcEio5Uyv' \
     > test.out 2>&1
-eval_tap $? 24 'QueryTotalActiveSession' test.out
+eval_tap $? 26 'QueryTotalActiveSession' test.out
 
-#- 25 QueryTotalMatchmakingMatch
+#- 27 QueryTotalMatchmakingMatch
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingMatch \
@@ -307,9 +324,9 @@ $CLI_EXE \
     --endDate 'EbHh1uE4DmJ4Suj6' \
     --startDate 'DjUw36GtZ83Jp2f9' \
     > test.out 2>&1
-eval_tap $? 25 'QueryTotalMatchmakingMatch' test.out
+eval_tap $? 27 'QueryTotalMatchmakingMatch' test.out
 
-#- 26 QueryTotalPlayerPersession
+#- 28 QueryTotalPlayerPersession
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalPlayerPersession \
@@ -317,9 +334,9 @@ $CLI_EXE \
     --endDate 'f1FCoIo3L24DKGwg' \
     --startDate 'Z85vyFJR8euQBLVu' \
     > test.out 2>&1
-eval_tap $? 26 'QueryTotalPlayerPersession' test.out
+eval_tap $? 28 'QueryTotalPlayerPersession' test.out
 
-#- 27 QueryTotalMatchmakingCanceled
+#- 29 QueryTotalMatchmakingCanceled
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingCanceled \
@@ -328,9 +345,9 @@ $CLI_EXE \
     --endDate 'vwE6MAqPc8lGIYWT' \
     --startDate 'wxyqQQIXVmrtRlq1' \
     > test.out 2>&1
-eval_tap $? 27 'QueryTotalMatchmakingCanceled' test.out
+eval_tap $? 29 'QueryTotalMatchmakingCanceled' test.out
 
-#- 28 QueryTotalMatchmakingCreated
+#- 30 QueryTotalMatchmakingCreated
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingCreated \
@@ -339,9 +356,9 @@ $CLI_EXE \
     --endDate 'Xmv1DzPHux3k3skh' \
     --startDate 'n3mWZjTYM95e4aa8' \
     > test.out 2>&1
-eval_tap $? 28 'QueryTotalMatchmakingCreated' test.out
+eval_tap $? 30 'QueryTotalMatchmakingCreated' test.out
 
-#- 29 QueryTotalMatchmakingExpired
+#- 31 QueryTotalMatchmakingExpired
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingExpired \
@@ -350,9 +367,9 @@ $CLI_EXE \
     --endDate 'kzj9mHFpff2vDkz6' \
     --startDate '8zorEgcExv9nKMOg' \
     > test.out 2>&1
-eval_tap $? 29 'QueryTotalMatchmakingExpired' test.out
+eval_tap $? 31 'QueryTotalMatchmakingExpired' test.out
 
-#- 30 QueryTotalMatchmakingMatchTicket
+#- 32 QueryTotalMatchmakingMatchTicket
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingMatchTicket \
@@ -361,9 +378,9 @@ $CLI_EXE \
     --endDate 'm8kDi3Rwubq7wtRG' \
     --startDate 'dT447Oa51m6VLfjs' \
     > test.out 2>&1
-eval_tap $? 30 'QueryTotalMatchmakingMatchTicket' test.out
+eval_tap $? 32 'QueryTotalMatchmakingMatchTicket' test.out
 
-#- 31 QueryXrayTimelineByTicketID
+#- 33 QueryXrayTimelineByTicketID
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByTicketID \
@@ -374,9 +391,9 @@ $CLI_EXE \
     --endDate 'Bn8Lsf2qSAtizV9h' \
     --startDate 'zsVbpJLtEZjuyFhv' \
     > test.out 2>&1
-eval_tap $? 31 'QueryXrayTimelineByTicketID' test.out
+eval_tap $? 33 'QueryXrayTimelineByTicketID' test.out
 
-#- 32 QueryXrayTimelineByUserID
+#- 34 QueryXrayTimelineByUserID
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByUserID \
@@ -387,7 +404,7 @@ $CLI_EXE \
     --endDate 'BjK81t2V9TVauFcG' \
     --startDate 'kPgQ0hb2tLrsMeoZ' \
     > test.out 2>&1
-eval_tap $? 32 'QueryXrayTimelineByUserID' test.out
+eval_tap $? 34 'QueryXrayTimelineByUserID' test.out
 
 
 # remove artifacts

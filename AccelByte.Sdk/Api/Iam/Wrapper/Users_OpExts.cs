@@ -2440,6 +2440,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBanUserV3Async(op);
         }
+        public static Iam.Model.ModelGetUserBanSummaryV3? Execute(
+            this AdminGetUserBanSummaryV3.AdminGetUserBanSummaryV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserBanSummaryV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserBanSummaryV3(op);
+        }
+        public static async Task<Iam.Model.ModelGetUserBanSummaryV3?> ExecuteAsync(
+            this AdminGetUserBanSummaryV3.AdminGetUserBanSummaryV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserBanSummaryV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserBanSummaryV3Async(op);
+        }
         public static Iam.Model.ModelUserBanResponseV3? Execute(
             this AdminUpdateUserBanV3.AdminUpdateUserBanV3Builder builder,
             ModelBanUpdateRequest body,
