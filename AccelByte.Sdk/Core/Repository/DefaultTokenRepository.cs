@@ -42,11 +42,26 @@ namespace AccelByte.Sdk.Core.Repository
 
         private int _TokenExpiryIn = 0;
 
-        public int TokenExpiryIn { get => _TokenExpiryIn; }
+        public int TokenExpiryIn
+        {
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return _TokenExpiryIn;
+                }
+            }
+        }
 
         public int SecondsUntilExpiry
         {
-            get => (int)((IssuedTimestamp + _TokenExpiryIn) - CurrentTimestamp);
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return (int)((IssuedTimestamp + _TokenExpiryIn) - CurrentTimestamp);
+                }
+            }
         }
 
         public long IssuedTimestamp { get; set; } = 0;
@@ -64,7 +79,13 @@ namespace AccelByte.Sdk.Core.Repository
 
         public bool IsTokenExpired
         {
-            get => (CurrentTimestamp >= (IssuedTimestamp + _TokenExpiryIn));
+            get
+            {
+                lock (_TokenLock)
+                {
+                    return CurrentTimestamp >= (IssuedTimestamp + _TokenExpiryIn);
+                }
+            }
         }
 
         private LoginType _LoginType = LoginType.User;
@@ -202,7 +223,10 @@ namespace AccelByte.Sdk.Core.Repository
 
         public void SetTokenExpiry(int value)
         {
-            _TokenExpiryIn = value;
+            lock (_TokenLock)
+            {
+                _TokenExpiryIn = value;
+            }   
         }
 
         public void RegisterObserver(ITokenRepositoryObserver observer)

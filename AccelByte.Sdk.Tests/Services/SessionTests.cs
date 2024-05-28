@@ -47,15 +47,15 @@ namespace AccelByte.Sdk.Tests.Services
         [Test]
         public void ConfigurationTemplateTests()
         {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
             if (IsUsingAGSStarter())
             {
                 Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
                 return;
-            }
-
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
+            }            
 
             DisableRetry();
 
@@ -121,15 +121,15 @@ namespace AccelByte.Sdk.Tests.Services
         [Test]
         public void GameSessionTests()
         {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
             if (IsUsingAGSStarter())
             {
                 Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
                 return;
             }
-
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
 
             Assert.IsNotNull(_Player1);
             if (_Player1 == null)
@@ -237,15 +237,15 @@ namespace AccelByte.Sdk.Tests.Services
         [Test]
         public void PartyTests()
         {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
             if (IsUsingAGSStarter())
             {
                 Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
                 return;
-            }
-
-            Assert.IsNotNull(_Sdk);
-            if (_Sdk == null)
-                return;
+            }            
 
             Assert.IsNotNull(_Player1);
             if (_Player1 == null)
