@@ -62,19 +62,19 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
                     response.Payload);
         }
 
-        public Model.ApimodelsItemResp<T1, T2>? PublicConsumeMyItem<T1, T2>(PublicConsumeMyItem input)
+        public Model.ApimodelsItemResp<T1, T2, T3>? PublicConsumeMyItem<T1, T2, T3>(PublicConsumeMyItem input)
         {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse<T1, T2>(
+            return input.ParseResponse<T1, T2, T3>(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ApimodelsItemResp<T1, T2>?> PublicConsumeMyItemAsync<T1, T2>(PublicConsumeMyItem input)
+        public async Task<Model.ApimodelsItemResp<T1, T2, T3>?> PublicConsumeMyItemAsync<T1, T2, T3>(PublicConsumeMyItem input)
         {
             var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse<T1, T2>(
+            return input.ParseResponse<T1, T2, T3>(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -160,19 +160,19 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
                     response.Payload);
         }
 
-        public Model.ApimodelsItemResp<T1, T2>? PublicGetItem<T1, T2>(PublicGetItem input)
+        public Model.ApimodelsItemResp<T1, T2, T3>? PublicGetItem<T1, T2, T3>(PublicGetItem input)
         {
             var response = _sdk.RunRequest(input);
 
-            return input.ParseResponse<T1, T2>(
+            return input.ParseResponse<T1, T2, T3>(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ApimodelsItemResp<T1, T2>?> PublicGetItemAsync<T1, T2>(PublicGetItem input)
+        public async Task<Model.ApimodelsItemResp<T1, T2, T3>?> PublicGetItemAsync<T1, T2, T3>(PublicGetItem input)
         {
             var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse<T1, T2>(
+            return input.ParseResponse<T1, T2, T3>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

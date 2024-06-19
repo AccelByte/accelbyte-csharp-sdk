@@ -22,9 +22,13 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SessionID { get; set; }
 
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Storage { get; set; }
+
     }
 
-    public class ApiMatchTicketRequest<T1> : AccelByte.Sdk.Core.Model
+    public class ApiMatchTicketRequest<T1, T2> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("attributes")]
         public T1? Attributes { get; set; }
@@ -38,6 +42,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("sessionID")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? SessionID { get; set; }
+
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T2? Storage { get; set; }
 
     }
 

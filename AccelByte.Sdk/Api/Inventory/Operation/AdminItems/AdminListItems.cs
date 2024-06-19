@@ -35,8 +35,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             public long? Offset { get; set; }
 
-            public long? QtyGte { get; set; }
-
             public AdminListItemsSortBy? SortBy { get; set; }
 
             public string? SourceItemId { get; set; }
@@ -59,12 +57,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             public AdminListItemsBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
-                return this;
-            }
-
-            public AdminListItemsBuilder SetQtyGte(long _qtyGte)
-            {
-                QtyGte = _qtyGte;
                 return this;
             }
 
@@ -118,7 +110,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.QtyGte != null) QueryParams["qtyGte"] = Convert.ToString(builder.QtyGte)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.SourceItemId is not null) QueryParams["sourceItemId"] = builder.SourceItemId;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
@@ -137,7 +128,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             string namespace_,
             long? limit,
             long? offset,
-            long? qtyGte,
             AdminListItemsSortBy? sortBy,
             string? sourceItemId,
             string? tags
@@ -148,7 +138,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (qtyGte != null) QueryParams["qtyGte"] = Convert.ToString(qtyGte)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (sourceItemId is not null) QueryParams["sourceItemId"] = sourceItemId;
             if (tags is not null) QueryParams["tags"] = tags;
@@ -165,7 +154,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
@@ -206,15 +195,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public static readonly AdminListItemsSortBy CreatedAtdesc
             = new AdminListItemsSortBy("createdAt:desc");
-
-        public static readonly AdminListItemsSortBy Qty
-            = new AdminListItemsSortBy("qty");
-
-        public static readonly AdminListItemsSortBy Qtyasc
-            = new AdminListItemsSortBy("qty:asc");
-
-        public static readonly AdminListItemsSortBy Qtydesc
-            = new AdminListItemsSortBy("qty:desc");
 
         public static readonly AdminListItemsSortBy UpdatedAt
             = new AdminListItemsSortBy("updatedAt");

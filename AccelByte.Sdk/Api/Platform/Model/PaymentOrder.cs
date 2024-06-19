@@ -36,6 +36,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Charging { get; set; }
 
+        [JsonPropertyName("checkoutUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CheckoutUrl { get; set; }
+
+        [JsonPropertyName("checkoutUrlExpiredAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? CheckoutUrlExpiredAt { get; set; }
+
+        [JsonPropertyName("checkoutUrlValid")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CheckoutUrlValid { get; set; }
+
         [JsonPropertyName("createdAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
@@ -81,6 +93,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("neonPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentOrderNeonPayConfig? NeonPayConfig { get; set; }
+
         [JsonPropertyName("notifyUrl")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotifyUrl { get; set; }
@@ -88,6 +104,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("omitNotification")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? OmitNotification { get; set; }
+
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
 
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -248,6 +268,18 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Charging { get; set; }
 
+        [JsonPropertyName("checkoutUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CheckoutUrl { get; set; }
+
+        [JsonPropertyName("checkoutUrlExpiredAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? CheckoutUrlExpiredAt { get; set; }
+
+        [JsonPropertyName("checkoutUrlValid")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CheckoutUrlValid { get; set; }
+
         [JsonPropertyName("createdAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
@@ -293,6 +325,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("neonPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentOrderNeonPayConfig? NeonPayConfig { get; set; }
+
         [JsonPropertyName("notifyUrl")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? NotifyUrl { get; set; }
@@ -300,6 +336,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("omitNotification")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? OmitNotification { get; set; }
+
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
 
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -513,6 +553,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly PaymentOrderPaymentProvider CHECKOUT
             = new PaymentOrderPaymentProvider("CHECKOUT");
+
+        public static readonly PaymentOrderPaymentProvider NEONPAY
+            = new PaymentOrderPaymentProvider("NEONPAY");
 
         public static readonly PaymentOrderPaymentProvider PAYPAL
             = new PaymentOrderPaymentProvider("PAYPAL");

@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("createdAt")]
         public string? CreatedAt { get; set; }
 
+        [JsonPropertyName("customURLGRPC")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CustomURLGRPC { get; set; }
+
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }
 
@@ -147,6 +151,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("createdAt")]
         public string? CreatedAt { get; set; }
+
+        [JsonPropertyName("customURLGRPC")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CustomURLGRPC { get; set; }
 
         [JsonPropertyName("deployment")]
         public string? Deployment { get; set; }

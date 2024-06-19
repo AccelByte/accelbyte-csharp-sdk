@@ -16,8 +16,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminGeneratePersonalDataURL
     ///
-    /// Generate personal data download url
+    /// Generate personal data download url.
     /// Scope: account
+    /// 
+    /// ### Request Header:
+    /// - **Content-Type: application/x-www-form-urlencoded**
     /// </summary>
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {

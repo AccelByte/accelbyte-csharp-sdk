@@ -3519,6 +3519,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetCountryAgeRestrictionV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.AccountcommonUserPlatforms? Execute(
             this PublicListUserIDByPlatformUserIDsV3.PublicListUserIDByPlatformUserIDsV3Builder builder,
             ModelPlatformUserIDRequest body,
@@ -3813,6 +3814,32 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordV3Async(op);
+        }
+        public static Iam.Model.ModelUserInputValidationResponse? Execute(
+            this PublicValidateUserInput.PublicValidateUserInputBuilder builder,
+            ModelUserInputValidationRequest body,
+            string namespace_
+        )
+        {
+            PublicValidateUserInput op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicValidateUserInput(op);
+        }
+        public static async Task<Iam.Model.ModelUserInputValidationResponse?> ExecuteAsync(
+            this PublicValidateUserInput.PublicValidateUserInputBuilder builder,
+            ModelUserInputValidationRequest body,
+            string namespace_
+        )
+        {
+            PublicValidateUserInput op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicValidateUserInputAsync(op);
         }
         public static Iam.Model.ModelUserInvitationV3? Execute(
             this GetAdminInvitationV3.GetAdminInvitationV3Builder builder,

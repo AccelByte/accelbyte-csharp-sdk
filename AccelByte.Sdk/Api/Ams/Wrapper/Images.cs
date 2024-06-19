@@ -27,9 +27,17 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.ImageGet.Builder.SetWrapperObject(this); }
         }
+        public ImageMarkForDeletion.ImageMarkForDeletionBuilder ImageMarkForDeletionOp
+        {
+            get { return Operation.ImageMarkForDeletion.Builder.SetWrapperObject(this); }
+        }
         public ImagePatch.ImagePatchBuilder ImagePatchOp
         {
             get { return Operation.ImagePatch.Builder.SetWrapperObject(this); }
+        }
+        public ImageUnmarkForDeletion.ImageUnmarkForDeletionBuilder ImageUnmarkForDeletionOp
+        {
+            get { return Operation.ImageUnmarkForDeletion.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -65,6 +73,22 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void ImageMarkForDeletion(ImageMarkForDeletion input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ImageMarkForDeletionAsync(ImageMarkForDeletion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApiImageDetails? ImagePatch(ImagePatch input)
         {
             var response = _sdk.RunRequest(input);
@@ -77,6 +101,22 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ImageUnmarkForDeletion(ImageUnmarkForDeletion input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ImageUnmarkForDeletionAsync(ImageUnmarkForDeletion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

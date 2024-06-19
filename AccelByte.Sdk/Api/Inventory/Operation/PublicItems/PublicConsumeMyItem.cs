@@ -132,7 +132,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public Model.ApimodelsItemResp<T1, T2>? ParseResponse<T1, T2>(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApimodelsItemResp<T1, T2, T3>? ParseResponse<T1, T2, T3>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -140,11 +140,11 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2, T3>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2, T3>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

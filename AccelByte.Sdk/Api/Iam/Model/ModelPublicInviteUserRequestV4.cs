@@ -16,6 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("emailAddress")]
         public string? EmailAddress { get; set; }
 
+        [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LanguageTag { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

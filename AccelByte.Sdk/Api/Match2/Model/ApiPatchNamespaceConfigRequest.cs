@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
 {
     public class ApiPatchNamespaceConfigRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("extraPlatforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? ExtraPlatforms { get; set; }
+
         [JsonPropertyName("platformGroup")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? PlatformGroup { get; set; }

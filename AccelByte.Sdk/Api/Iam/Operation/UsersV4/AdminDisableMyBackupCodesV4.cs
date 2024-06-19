@@ -16,7 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableMyBackupCodesV4
     ///
-    /// This endpoint is used to enable 2FA backup codes.
+    /// This endpoint is used to disable 2FA backup codes.
+    /// ------
+    /// **Note**: **mfaToken** is required when all the following are enabled:
+    /// - The environment variable **SENSITIVE_MFA_AUTH_ENABLED** is true
+    /// - The **Two-Factor Authentication** is enabled in the IAM client where user logs in
+    /// - Users already enabled the MFA
     /// </summary>
     public class AdminDisableMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
@@ -39,9 +44,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public AdminDisableMyBackupCodesV4 Build(
+                ModelDisableMFARequest body
             )
             {
-                AdminDisableMyBackupCodesV4 op = new AdminDisableMyBackupCodesV4(this
+                AdminDisableMyBackupCodesV4 op = new AdminDisableMyBackupCodesV4(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -52,7 +59,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
         }
 
-        private AdminDisableMyBackupCodesV4(AdminDisableMyBackupCodesV4Builder builder
+        private AdminDisableMyBackupCodesV4(AdminDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
 
@@ -60,6 +68,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -67,6 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AdminDisableMyBackupCodesV4(
+            Model.ModelDisableMFARequest body
         )
         {
 
@@ -74,6 +84,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -83,7 +94,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

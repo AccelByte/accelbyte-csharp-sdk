@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
-    ///   *  Returns : ownership
+    ///   * Returns : ownership
     /// </summary>
     public class ExistsAnyPassByPassCodes : AccelByte.Sdk.Core.Operation
     {

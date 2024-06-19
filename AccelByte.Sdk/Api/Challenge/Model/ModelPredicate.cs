@@ -68,6 +68,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         public static readonly ModelPredicateParameterType ACHIEVEMENT
             = new ModelPredicateParameterType("ACHIEVEMENT");
 
+        public static readonly ModelPredicateParameterType ENTITLEMENT
+            = new ModelPredicateParameterType("ENTITLEMENT");
+
         public static readonly ModelPredicateParameterType STATISTIC
             = new ModelPredicateParameterType("STATISTIC");
 

@@ -92,6 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? ClientId { get; set; }
 
+            public string? ClientSecret { get; set; }
+
             public string? Code { get; set; }
 
             public string? CodeVerifier { get; set; }
@@ -138,6 +140,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public TokenGrantV4Builder SetClientId(string _clientId)
             {
                 ClientId = _clientId;
+                return this;
+            }
+
+            public TokenGrantV4Builder SetClientSecret(string _clientSecret)
+            {
+                ClientSecret = _clientSecret;
                 return this;
             }
 
@@ -223,6 +231,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             if (builder.AdditionalData is not null) FormParams["additionalData"] = builder.AdditionalData;
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
+            if (builder.ClientSecret is not null) FormParams["client_secret"] = builder.ClientSecret;
             if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
             if (builder.ExtendNamespace is not null) FormParams["extendNamespace"] = builder.ExtendNamespace;
@@ -238,7 +247,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
         #endregion
 
@@ -247,6 +256,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             TokenGrantV4CodeChallengeMethod? codeChallengeMethod,
             string? additionalData,
             string? clientId,
+            string? clientSecret,
             string? code,
             string? codeVerifier,
             string? extendNamespace,
@@ -265,6 +275,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             if (additionalData is not null) FormParams["additionalData"] = additionalData;
             if (clientId is not null) FormParams["client_id"] = clientId;
+            if (clientSecret is not null) FormParams["client_secret"] = clientSecret;
             if (code is not null) FormParams["code"] = code;
             if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;
             if (extendNamespace is not null) FormParams["extendNamespace"] = extendNamespace;
@@ -280,7 +291,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BASIC);
         }
 
         public override string Path => "/iam/v4/oauth/token";
@@ -292,7 +303,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
-        public override string? Security { get; set; } = "Bearer";
+        public override string? Security { get; set; } = "Basic";
 
         public Model.OauthmodelTokenWithDeviceCookieResponseV3? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {

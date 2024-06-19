@@ -50,6 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentUrlPaymentProvider CHECKOUT
             = new PaymentUrlPaymentProvider("CHECKOUT");
 
+        public static readonly PaymentUrlPaymentProvider NEONPAY
+            = new PaymentUrlPaymentProvider("NEONPAY");
+
         public static readonly PaymentUrlPaymentProvider PAYPAL
             = new PaymentUrlPaymentProvider("PAYPAL");
 

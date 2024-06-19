@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// exportStatCycle
     ///
     /// Export all stat cycle configurations for a given namespace into file At current, only JSON file is supported.
-    /// 
-    /// Other detail info:
-    ///         *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
     /// </summary>
     public class ExportStatCycle : AccelByte.Sdk.Core.Operation
     {

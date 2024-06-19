@@ -29,6 +29,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/ams/v1/admin/namespaces/{namespace}/artifacts` | GET | ArtifactGet | [ArtifactGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactGet.cs) | [ArtifactGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/artifacts` | DELETE | ArtifactBulkDelete | [ArtifactBulkDelete](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactBulkDelete.cs) | [ArtifactBulkDelete](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactBulkDelete.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/artifacts/usage` | GET | ArtifactUsageGet | [ArtifactUsageGet](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactUsageGet.cs) | [ArtifactUsageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactUsageGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}` | DELETE | ArtifactDelete | [ArtifactDelete](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactDelete.cs) | [ArtifactDelete](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactDelete.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/artifacts/{artifactID}/url` | GET | ArtifactGetURL | [ArtifactGetURL](../../AccelByte.Sdk/Api/Ams/Operation/Artifacts/ArtifactGetURL.cs) | [ArtifactGetURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Artifacts/ArtifactGetURL.cs) |
@@ -68,7 +69,9 @@
 |---|---|---|---|---|
 | `/ams/v1/admin/namespaces/{namespace}/images` | GET | ImageList | [ImageList](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageList.cs) | [ImageList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageList.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | GET | ImageGet | [ImageGet](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageGet.cs) | [ImageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageGet.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | DELETE | ImageMarkForDeletion | [ImageMarkForDeletion](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageMarkForDeletion.cs) | [ImageMarkForDeletion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageMarkForDeletion.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | PATCH | ImagePatch | [ImagePatch](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImagePatch.cs) | [ImagePatch](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImagePatch.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/images/{imageID}/restore` | POST | ImageUnmarkForDeletion | [ImageUnmarkForDeletion](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageUnmarkForDeletion.cs) | [ImageUnmarkForDeletion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageUnmarkForDeletion.cs) |
 
 ### AMS QoS Wrapper:  [AMSQoS](../../AccelByte.Sdk/Api/Ams/Wrapper/AMSQoS.cs)
 | Endpoint | Method | ID | Class | Example |

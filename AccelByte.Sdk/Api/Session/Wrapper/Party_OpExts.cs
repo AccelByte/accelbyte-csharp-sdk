@@ -34,6 +34,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.Party)builder.WrapperObject!).AdminQueryPartiesAsync(op);
         }
+        public static void Execute(
+            this AdminSyncNativeSession.AdminSyncNativeSessionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncNativeSession op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Session.Wrapper.Party)builder.WrapperObject!).AdminSyncNativeSession(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminSyncNativeSession.AdminSyncNativeSessionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncNativeSession op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).AdminSyncNativeSessionAsync(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPartyJoinCode.PublicPartyJoinCodeBuilder builder,
             ApimodelsJoinByCodeRequest body,

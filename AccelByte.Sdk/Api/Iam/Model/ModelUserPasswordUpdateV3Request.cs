@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("languageTag")]
         public string? LanguageTag { get; set; }
 
+        [JsonPropertyName("mfaToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MfaToken { get; set; }
+
         [JsonPropertyName("newPassword")]
         public string? NewPassword { get; set; }
 

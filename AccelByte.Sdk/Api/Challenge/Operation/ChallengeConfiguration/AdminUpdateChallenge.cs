@@ -29,6 +29,11 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     ///   * endDate: timestamp of when the challenge is ended (optional)
     ///   * endAfter: describe number of period challenge will be retired after (optional)
     /// To configure challenge that never end, leave the endDate and endAfter field null/empty.
+    ///   * repeatAfter: describe number of period challenge's goals will be repeated after. Leave it empty if you don't want to repeat the challenge.
+    ///   * rotation: describe how long goals in a challenge will be available for players to progress before rotated with another goals. (DAILY|WEEKLY|MONTHLY|NONE)
+    ///   * activeGoalsPerRotation: number of goals per rotation (currently only applicable for RANDOMIZE assignment)
+    ///   * assignmentRule: describe how the goals will be assigned and scheduled to users. (FIXED|RANDOMIZED|UNSCHEDULED)
+    ///   * goalsVisibility: describe whether users can see all goals under challenge, or only active goal in one rotation period only. (SHOWALL|PERIODONLY)
     /// </summary>
     public class AdminUpdateChallenge : AccelByte.Sdk.Core.Operation
     {
@@ -51,7 +56,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
 
             public AdminUpdateChallenge Build(
-                ModelsUpdateChallengeRequest body,
+                ModelUpdateChallengeRequest body,
                 string challengeCode,
                 string namespace_
             )
@@ -71,7 +76,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         }
 
         private AdminUpdateChallenge(AdminUpdateChallengeBuilder builder,
-            ModelsUpdateChallengeRequest body,
+            ModelUpdateChallengeRequest body,
             string challengeCode,
             string namespace_
         )
@@ -93,7 +98,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         public AdminUpdateChallenge(
             string challengeCode,
             string namespace_,
-            Model.ModelsUpdateChallengeRequest body
+            Model.ModelUpdateChallengeRequest body
         )
         {
             PathParams["challengeCode"] = challengeCode;

@@ -189,6 +189,17 @@ namespace AccelByte.Sdk.Core
         }
         private PaymentCallbackConfig? _PaymentCallbackConfig = null;
 
+        public PaymentConfig PaymentConfig
+        {
+            get
+            {
+                if (_PaymentConfig == null)
+                    _PaymentConfig = new PaymentConfig(_SdkObject);
+                return _PaymentConfig;
+            }
+        }
+        private PaymentConfig? _PaymentConfig = null;
+
         public Payment Payment
         {
             get
@@ -210,6 +221,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private PaymentDedicated? _PaymentDedicated = null;
+
+        public Platform Platform
+        {
+            get
+            {
+                if (_Platform == null)
+                    _Platform = new Platform(_SdkObject);
+                return _Platform;
+            }
+        }
+        private Platform? _Platform = null;
 
         public Wallet Wallet
         {
@@ -364,17 +386,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private OrderDedicated? _OrderDedicated = null;
-
-        public PaymentConfig PaymentConfig
-        {
-            get
-            {
-                if (_PaymentConfig == null)
-                    _PaymentConfig = new PaymentConfig(_SdkObject);
-                return _PaymentConfig;
-            }
-        }
-        private PaymentConfig? _PaymentConfig = null;
 
         public PaymentStation PaymentStation
         {

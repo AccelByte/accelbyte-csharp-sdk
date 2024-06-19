@@ -207,9 +207,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicGetItem.Builder.SetWrapperObject(this); }
         }
-        public QueryItems1.QueryItems1Builder QueryItems1Op
+        public QueryItemsV2.QueryItemsV2Builder QueryItemsV2Op
         {
-            get { return Operation.QueryItems1.Builder.SetWrapperObject(this); }
+            get { return Operation.QueryItemsV2.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -1307,7 +1307,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.FullItemPagingResult? QueryItems1(QueryItems1 input)
+        public Model.FullItemPagingResult? QueryItemsV2(QueryItemsV2 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -1315,7 +1315,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.FullItemPagingResult?> QueryItems1Async(QueryItems1 input)
+        public async Task<Model.FullItemPagingResult?> QueryItemsV2Async(QueryItemsV2 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

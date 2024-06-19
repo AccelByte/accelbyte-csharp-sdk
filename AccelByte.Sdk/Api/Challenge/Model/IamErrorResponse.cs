@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
 
+        [JsonPropertyName("requiredPermission")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public IamPermission? RequiredPermission { get; set; }
+
     }
 
 

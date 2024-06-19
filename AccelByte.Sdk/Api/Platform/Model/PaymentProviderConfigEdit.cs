@@ -52,6 +52,15 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentProviderConfigEditAggregate ADYEN
             = new PaymentProviderConfigEditAggregate("ADYEN");
 
+        public static readonly PaymentProviderConfigEditAggregate CHECKOUT
+            = new PaymentProviderConfigEditAggregate("CHECKOUT");
+
+        public static readonly PaymentProviderConfigEditAggregate NEONPAY
+            = new PaymentProviderConfigEditAggregate("NEONPAY");
+
+        public static readonly PaymentProviderConfigEditAggregate STRIPE
+            = new PaymentProviderConfigEditAggregate("STRIPE");
+
         public static readonly PaymentProviderConfigEditAggregate XSOLLA
             = new PaymentProviderConfigEditAggregate("XSOLLA");
 
@@ -78,6 +87,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly PaymentProviderConfigEditSpecials CHECKOUT
             = new PaymentProviderConfigEditSpecials("CHECKOUT");
+
+        public static readonly PaymentProviderConfigEditSpecials NEONPAY
+            = new PaymentProviderConfigEditSpecials("NEONPAY");
 
         public static readonly PaymentProviderConfigEditSpecials PAYPAL
             = new PaymentProviderConfigEditSpecials("PAYPAL");

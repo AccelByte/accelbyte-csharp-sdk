@@ -19,9 +19,17 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         }
 
         #region Operation Builders
+        public AdminClaimUsersRewards.AdminClaimUsersRewardsBuilder AdminClaimUsersRewardsOp
+        {
+            get { return Operation.AdminClaimUsersRewards.Builder.SetWrapperObject(this); }
+        }
         public AdminGetUserRewards.AdminGetUserRewardsBuilder AdminGetUserRewardsOp
         {
             get { return Operation.AdminGetUserRewards.Builder.SetWrapperObject(this); }
+        }
+        public AdminClaimUserRewards.AdminClaimUserRewardsBuilder AdminClaimUserRewardsOp
+        {
+            get { return Operation.AdminClaimUserRewards.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserRewards.PublicGetUserRewardsBuilder PublicGetUserRewardsOp
         {
@@ -33,6 +41,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         }
         #endregion
 
+        public List<Model.ModelClaimUsersRewardsResponse>? AdminClaimUsersRewards(AdminClaimUsersRewards input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelClaimUsersRewardsResponse>?> AdminClaimUsersRewardsAsync(AdminClaimUsersRewards input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelListUserRewardsResponse? AdminGetUserRewards(AdminGetUserRewards input)
         {
             var response = _sdk.RunRequest(input);
@@ -42,6 +66,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelListUserRewardsResponse?> AdminGetUserRewardsAsync(AdminGetUserRewards input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelUserReward>? AdminClaimUserRewards(AdminClaimUserRewards input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserReward>?> AdminClaimUserRewardsAsync(AdminClaimUserRewards input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

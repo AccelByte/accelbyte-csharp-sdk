@@ -17,6 +17,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicDisableMyAuthenticatorV4
     ///
     /// This endpoint is used to disable 2FA authenticator.
+    /// ------
+    /// **Note**: **mfaToken** is required when all the following are enabled:
+    /// - The environment variable **SENSITIVE_MFA_AUTH_ENABLED** is true
+    /// - The **Two-Factor Authentication** is enabled in the IAM client where user logs in
+    /// - Users already enabled the MFA
     /// </summary>
     public class PublicDisableMyAuthenticatorV4 : AccelByte.Sdk.Core.Operation
     {
@@ -39,10 +44,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public PublicDisableMyAuthenticatorV4 Build(
+                ModelDisableMFARequest body,
                 string namespace_
             )
             {
                 PublicDisableMyAuthenticatorV4 op = new PublicDisableMyAuthenticatorV4(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -55,6 +62,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private PublicDisableMyAuthenticatorV4(PublicDisableMyAuthenticatorV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
@@ -64,6 +72,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -71,7 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PublicDisableMyAuthenticatorV4(
-            string namespace_
+            string namespace_,
+            Model.ModelDisableMFARequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -80,6 +90,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -89,7 +100,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

@@ -40,9 +40,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
-        [SdkCommandArgument("qtyGte")]
-        public long? QtyGte { get; set; }
-
         [SdkCommandArgument("sortBy")]
         public string? SortBy { get; set; }
 
@@ -67,8 +64,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
-            if (QtyGte != null)
-                opBuilder.SetQtyGte((long)QtyGte);
             if (SortBy != null)
                 opBuilder.SetSortBy(PublicListItemsSortBy.NewValue(SortBy));
             if (SourceItemId != null)

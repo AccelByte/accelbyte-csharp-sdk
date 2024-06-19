@@ -226,7 +226,7 @@ namespace AccelByte.Sdk.Core.Repository
             lock (_TokenLock)
             {
                 _TokenExpiryIn = value;
-            }   
+            }
         }
 
         public void RegisterObserver(ITokenRepositoryObserver observer)

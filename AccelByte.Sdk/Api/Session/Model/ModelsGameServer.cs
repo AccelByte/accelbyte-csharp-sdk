@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Deployment { get; set; }
 
+        [JsonPropertyName("extend_region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ExtendRegion { get; set; }
+
         [JsonPropertyName("game_version")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? GameVersion { get; set; }

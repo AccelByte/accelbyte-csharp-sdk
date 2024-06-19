@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsUpdateChallengeRequest Body { get; set; } = new ModelsUpdateChallengeRequest();
+        public ModelUpdateChallengeRequest Body { get; set; } = new ModelUpdateChallengeRequest();
 
         public AdminUpdateChallengeCommand(AccelByteSDK sdk)
         {

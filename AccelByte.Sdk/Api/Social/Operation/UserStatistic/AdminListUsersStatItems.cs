@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// NOTE:
     ///           * If stat code does not exist, will ignore this stat code.
     ///           * If stat item does not exist, will return default value
-    /// Other detail info:+ *Required permission*: resource=ADMIN:NAMESPACE:{namespace}:STATITEM, action=2 (READ)
-    /// 
+    /// Other detail info:
     ///           *  Returns : stat items
     /// </summary>
     public class AdminListUsersStatItems : AccelByte.Sdk.Core.Operation

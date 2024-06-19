@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// List stats by pagination.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
     ///         *  Returns : stats
     /// </summary>
     public class GetStats : AccelByte.Sdk.Core.Operation

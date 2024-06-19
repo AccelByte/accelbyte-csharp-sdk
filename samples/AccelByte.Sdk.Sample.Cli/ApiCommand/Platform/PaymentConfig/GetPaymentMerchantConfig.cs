@@ -28,8 +28,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
         public string OperationName { get { return "GetPaymentMerchantConfig"; } }
 
-        [SdkCommandArgument("id")]
-        public string Id { get; set; } = String.Empty;
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
 
         public GetPaymentMerchantConfigCommand(AccelByteSDK sdk)
         {
@@ -47,11 +47,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
 
             GetPaymentMerchantConfig operation = opBuilder.Build(
-                Id
+                Namespace
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.PaymentMerchantConfigInfo? response = wrapper.GetPaymentMerchantConfig(operation);
+            AccelByte.Sdk.Api.Platform.Model.PaymentDomainWhitelistConfigInfo? response = wrapper.GetPaymentMerchantConfig(operation);
             if (response == null)
                 return "No response from server.";
 

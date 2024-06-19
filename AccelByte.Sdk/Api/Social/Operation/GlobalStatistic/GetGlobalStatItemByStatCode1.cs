@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Get global statItem by stat code.
     /// Other detail info:
-    ///             *  Required permission : resource="NAMESPACE:{namespace}:STATITEM", action=2 (READ)
     ///             *  Returns : global stat item
     /// </summary>
     public class GetGlobalStatItemByStatCode1 : AccelByte.Sdk.Core.Operation

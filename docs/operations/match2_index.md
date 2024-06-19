@@ -14,6 +14,8 @@
 ### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Match2/Wrapper/Config.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/match2/v1/admin/config/log` | GET | AdminGetLogConfig | [AdminGetLogConfig](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetLogConfig.cs) | [AdminGetLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetLogConfig.cs) |
+| `/match2/v1/admin/config/log` | PATCH | AdminPatchUpdateLogConfig | [AdminPatchUpdateLogConfig](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminPatchUpdateLogConfig.cs) | [AdminPatchUpdateLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminPatchUpdateLogConfig.cs) |
 | `/match2/v1/config` | GET | AdminGetAllConfigV1 | [AdminGetAllConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetAllConfigV1.cs) | [AdminGetAllConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetAllConfigV1.cs) |
 | `/match2/v1/config/namespaces/{namespace}` | GET | AdminGetConfigV1 | [AdminGetConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetConfigV1.cs) | [AdminGetConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetConfigV1.cs) |
 | `/match2/v1/config/namespaces/{namespace}` | PATCH | AdminPatchConfigV1 | [AdminPatchConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminPatchConfigV1.cs) | [AdminPatchConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminPatchConfigV1.cs) |
@@ -151,6 +153,7 @@
 | `api.backFillRejectRequest` | [ApiBackFillRejectRequest](../../AccelByte.Sdk/Api/Match2/Model/ApiBackFillRejectRequest.cs) |
 | `config.EnvironmentVariable` | [ConfigEnvironmentVariable](../../AccelByte.Sdk/Api/Match2/Model/ConfigEnvironmentVariable.cs) |
 | `configmodels.NamespaceConfig` | [ConfigmodelsNamespaceConfig](../../AccelByte.Sdk/Api/Match2/Model/ConfigmodelsNamespaceConfig.cs) |
+| `logconfig.Configuration` | [LogconfigConfiguration](../../AccelByte.Sdk/Api/Match2/Model/LogconfigConfiguration.cs) |
 | `matchmaker.MatchTicketRecord` | [MatchmakerMatchTicketRecord](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerMatchTicketRecord.cs) |
 | `matchmaker.Party` | [MatchmakerParty](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerParty.cs) |
 | `matchmaker.ProposedProposal` | [MatchmakerProposedProposal](../../AccelByte.Sdk/Api/Match2/Model/MatchmakerProposedProposal.cs) |

@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandData("body")]
+        public ModelDisableMFARequest Body { get; set; } = new ModelDisableMFARequest();
+
         public PublicDisableMyAuthenticatorV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -47,6 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
             PublicDisableMyAuthenticatorV4 operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

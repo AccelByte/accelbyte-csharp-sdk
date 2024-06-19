@@ -17,8 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// deleteStat
     ///
     /// Deletes stat template.
-    /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=8 (DELETE)
     /// </summary>
     public class DeleteStat : AccelByte.Sdk.Core.Operation
     {

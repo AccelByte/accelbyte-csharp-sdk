@@ -425,19 +425,23 @@ namespace AccelByte.Sdk.Api
             return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminUpdateMyUserV4Async(op);
         }
         public static void Execute(
-            this AdminDisableMyAuthenticatorV4.AdminDisableMyAuthenticatorV4Builder builder
+            this AdminDisableMyAuthenticatorV4.AdminDisableMyAuthenticatorV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyAuthenticatorV4 op = builder.Build(
+                body
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyAuthenticatorV4(op);
         }
         public static async Task ExecuteAsync(
-            this AdminDisableMyAuthenticatorV4.AdminDisableMyAuthenticatorV4Builder builder
+            this AdminDisableMyAuthenticatorV4.AdminDisableMyAuthenticatorV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyAuthenticatorV4 op = builder.Build(
+                body
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyAuthenticatorV4Async(op);
@@ -517,19 +521,23 @@ namespace AccelByte.Sdk.Api
             return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGenerateMyBackupCodesV4Async(op);
         }
         public static void Execute(
-            this AdminDisableMyBackupCodesV4.AdminDisableMyBackupCodesV4Builder builder
+            this AdminDisableMyBackupCodesV4.AdminDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyBackupCodesV4 op = builder.Build(
+                body
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyBackupCodesV4(op);
         }
         public static async Task ExecuteAsync(
-            this AdminDisableMyBackupCodesV4.AdminDisableMyBackupCodesV4Builder builder
+            this AdminDisableMyBackupCodesV4.AdminDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyBackupCodesV4 op = builder.Build(
+                body
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyBackupCodesV4Async(op);
@@ -626,6 +634,24 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableBackupCodesV4Async(op);
         }
+        public static Iam.Model.ModelUserMFATokenResponseV4? Execute(
+            this AdminChallengeMyMFAV4.AdminChallengeMyMFAV4Builder builder
+        )
+        {
+            AdminChallengeMyMFAV4 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminChallengeMyMFAV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFATokenResponseV4?> ExecuteAsync(
+            this AdminChallengeMyMFAV4.AdminChallengeMyMFAV4Builder builder
+        )
+        {
+            AdminChallengeMyMFAV4 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminChallengeMyMFAV4Async(op);
+        }
         public static void Execute(
             this AdminSendMyMFAEmailCodeV4.AdminSendMyMFAEmailCodeV4Builder builder
         )
@@ -645,19 +671,23 @@ namespace AccelByte.Sdk.Api
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminSendMyMFAEmailCodeV4Async(op);
         }
         public static void Execute(
-            this AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder builder
+            this AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyEmailV4 op = builder.Build(
+                body
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyEmailV4(op);
         }
         public static async Task ExecuteAsync(
-            this AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder builder
+            this AdminDisableMyEmailV4.AdminDisableMyEmailV4Builder builder,
+            ModelDisableMFARequest body
         )
         {
             AdminDisableMyEmailV4 op = builder.Build(
+                body
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyEmailV4Async(op);
@@ -724,6 +754,24 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminMakeFactorMyDefaultV4Async(op);
         }
+        public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
+            this AdminGetMyMFAStatusV4.AdminGetMyMFAStatusV4Builder builder
+        )
+        {
+            AdminGetMyMFAStatusV4 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetMyMFAStatusV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFAStatusResponseV4?> ExecuteAsync(
+            this AdminGetMyMFAStatusV4.AdminGetMyMFAStatusV4Builder builder
+        )
+        {
+            AdminGetMyMFAStatusV4 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetMyMFAStatusV4Async(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this AdminInviteUserV4.AdminInviteUserV4Builder builder,
@@ -746,6 +794,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminInviteUserV4Async(op);
+        }
+        public static Iam.Model.AccountcommonUserPlatforms? Execute(
+            this PublicListUserIDByPlatformUserIDsV4.PublicListUserIDByPlatformUserIDsV4Builder builder,
+            ModelPlatformUserIDRequestV4 body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicListUserIDByPlatformUserIDsV4 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicListUserIDByPlatformUserIDsV4(op);
+        }
+        public static async Task<Iam.Model.AccountcommonUserPlatforms?> ExecuteAsync(
+            this PublicListUserIDByPlatformUserIDsV4.PublicListUserIDByPlatformUserIDsV4Builder builder,
+            ModelPlatformUserIDRequestV4 body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PublicListUserIDByPlatformUserIDsV4 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicListUserIDByPlatformUserIDsV4Async(op);
         }
         public static Iam.Model.AccountCreateUserResponseV4? Execute(
             this PublicCreateTestUserV4.PublicCreateTestUserV4Builder builder,
@@ -935,10 +1013,12 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicDisableMyAuthenticatorV4.PublicDisableMyAuthenticatorV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyAuthenticatorV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -946,10 +1026,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicDisableMyAuthenticatorV4.PublicDisableMyAuthenticatorV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyAuthenticatorV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1047,10 +1129,12 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicDisableMyBackupCodesV4.PublicDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyBackupCodesV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1058,10 +1142,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicDisableMyBackupCodesV4.PublicDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyBackupCodesV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1179,6 +1265,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicEnableBackupCodesV4Async(op);
         }
+        public static Iam.Model.ModelUserMFATokenResponseV4? Execute(
+            this PublicChallengeMyMFAV4.PublicChallengeMyMFAV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicChallengeMyMFAV4 op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicChallengeMyMFAV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFATokenResponseV4?> ExecuteAsync(
+            this PublicChallengeMyMFAV4.PublicChallengeMyMFAV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicChallengeMyMFAV4 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicChallengeMyMFAV4Async(op);
+        }
         public static void Execute(
             this PublicRemoveTrustedDeviceV4.PublicRemoveTrustedDeviceV4Builder builder,
             string namespace_,
@@ -1229,10 +1337,12 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicDisableMyEmailV4.PublicDisableMyEmailV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyEmailV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1240,10 +1350,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicDisableMyEmailV4.PublicDisableMyEmailV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
             PublicDisableMyEmailV4 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1322,6 +1434,28 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicMakeFactorMyDefaultV4Async(op);
+        }
+        public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
+            this PublicGetMyMFAStatusV4.PublicGetMyMFAStatusV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetMyMFAStatusV4 op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetMyMFAStatusV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFAStatusResponseV4?> ExecuteAsync(
+            this PublicGetMyMFAStatusV4.PublicGetMyMFAStatusV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetMyMFAStatusV4 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetMyMFAStatusV4Async(op);
         }
         public static Iam.Model.ModelUserPublicInfoResponseV4? Execute(
             this PublicGetUserPublicInfoByUserIdV4.PublicGetUserPublicInfoByUserIdV4Builder builder,

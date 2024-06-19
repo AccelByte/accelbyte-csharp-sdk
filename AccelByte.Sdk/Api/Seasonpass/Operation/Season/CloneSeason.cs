@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
-    ///   *  Returns : cloned season info
+    ///   * Returns : cloned season info
     /// </summary>
     public class CloneSeason : AccelByte.Sdk.Core.Operation
     {

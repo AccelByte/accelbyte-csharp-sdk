@@ -68,6 +68,28 @@ namespace AccelByte.Sdk.Core
         }
         private PlatformAccountClosureHistory? _PlatformAccountClosureHistory = null;
 
+        public DataDeletionS2S DataDeletionS2S
+        {
+            get
+            {
+                if (_DataDeletionS2S == null)
+                    _DataDeletionS2S = new DataDeletionS2S(_SdkObject);
+                return _DataDeletionS2S;
+            }
+        }
+        private DataDeletionS2S? _DataDeletionS2S = null;
+
+        public DataRetrievalS2S DataRetrievalS2S
+        {
+            get
+            {
+                if (_DataRetrievalS2S == null)
+                    _DataRetrievalS2S = new DataRetrievalS2S(_SdkObject);
+                return _DataRetrievalS2S;
+            }
+        }
+        private DataRetrievalS2S? _DataRetrievalS2S = null;
+
         internal GdprSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

@@ -46,6 +46,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("platformId")]
         public string? PlatformId { get; set; }
 
+        [SdkCommandArgument("targetNamespace")]
+        public string? TargetNamespace { get; set; }
+
         public AdminGetUserPlatformAccountsV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -65,6 +68,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetLimit((long)Limit);
             if (PlatformId != null)
                 opBuilder.SetPlatformId((string)PlatformId);
+            if (TargetNamespace != null)
+                opBuilder.SetTargetNamespace((string)TargetNamespace);
 
 
 

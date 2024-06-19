@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("action")]
+        public string Action { get; set; } = String.Empty;
+
         public PublicSendMyMFAEmailCodeV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -44,6 +47,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (Action != null)
+                opBuilder.SetAction((string)Action);
 
 
             PublicSendMyMFAEmailCodeV4 operation = opBuilder.Build(

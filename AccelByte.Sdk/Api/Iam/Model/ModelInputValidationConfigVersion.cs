@@ -52,6 +52,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("minLength")]
         public int? MinLength { get; set; }
 
+        [JsonPropertyName("profanityFilter")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ProfanityFilter { get; set; }
+
         [JsonPropertyName("regex")]
         public string? Regex { get; set; }
 

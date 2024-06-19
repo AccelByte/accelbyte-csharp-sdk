@@ -197,7 +197,7 @@ eval_tap $? 14 'ClientResetRequest' test.out
 
 #- 15 ConnectNotif
 # echo "Testing 'ConnectNotif'"
-printf 'type: connectNotif\nlobbySessionId: MhD9qU89D356pVsU' > $TEMP_FILE_UPLOAD
+printf 'type: connectNotif\nlobbySessionID: MhD9qU89D356pVsU' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --ws \
     --sn $SERVICE_NAME \

@@ -30,6 +30,11 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// For Ecommerce item, this fields will be override by ecommerce configuration
     /// (slotUsed, serverCustomAttributes, customAttributes, type)
     /// 
+    /// For Ecommerce items, the quantity saved is dynamically adjusted based on an item's useCount configured in Store.
+    /// When saving items, the quantity specified for each item will be multiplied by the useCount.
+    /// i.e. If the store item is configured with a useCount of 5
+    /// and the quantity of a particular item is set to 2 during saving, it will be stored as 10.
+    /// 
     /// Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]
     /// </summary>
     public class AdminSaveItem : AccelByte.Sdk.Core.Operation
@@ -145,7 +150,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             throw new HttpResponseException(code, payloadString);
         }
 
-        public Model.ApimodelsItemResp<T1, T2>? ParseResponse<T1, T2>(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ApimodelsItemResp<T1, T2, T3>? ParseResponse<T1, T2, T3>(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -153,11 +158,11 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2, T3>>(payload, ResponseJsonOptions);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ApimodelsItemResp<T1, T2, T3>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

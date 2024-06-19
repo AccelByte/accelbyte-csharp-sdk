@@ -111,6 +111,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrderNo { get; set; }
 
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
+
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
@@ -313,6 +317,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OrderNo { get; set; }
 
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
+
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
@@ -424,6 +432,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly OrderPaymentProvider CHECKOUT
             = new OrderPaymentProvider("CHECKOUT");
+
+        public static readonly OrderPaymentProvider NEONPAY
+            = new OrderPaymentProvider("NEONPAY");
 
         public static readonly OrderPaymentProvider PAYPAL
             = new OrderPaymentProvider("PAYPAL");

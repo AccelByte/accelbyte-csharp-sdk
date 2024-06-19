@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Creates a slot.
     /// Other detail info:
-    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=1 (CREATE)
     ///         *  Returns : created slot info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

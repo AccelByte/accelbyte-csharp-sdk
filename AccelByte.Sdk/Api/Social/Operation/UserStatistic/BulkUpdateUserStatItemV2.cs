@@ -24,7 +24,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// + *MIN*: update user statitem with the specified value if it's lower than the existing value
     /// 
     /// Other detail info:
-    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
     /// + *Returns*: bulk updated result
     /// </summary>
     public class BulkUpdateUserStatItemV2 : AccelByte.Sdk.Core.Operation

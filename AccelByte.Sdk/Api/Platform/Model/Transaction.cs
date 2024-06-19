@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Notified { get; set; }
 
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
+
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
@@ -104,6 +108,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly TransactionProvider CHECKOUT
             = new TransactionProvider("CHECKOUT");
+
+        public static readonly TransactionProvider NEONPAY
+            = new TransactionProvider("NEONPAY");
 
         public static readonly TransactionProvider PAYPAL
             = new TransactionProvider("PAYPAL");

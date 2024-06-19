@@ -17,8 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// publicDeleteProfile
     ///
     /// Deletes game profile.
-    /// Other detail info:
-    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=8 (DELETE)
     /// </summary>
     public class PublicDeleteProfile : AccelByte.Sdk.Core.Operation
     {

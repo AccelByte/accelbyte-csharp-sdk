@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// getGlobalStatItems
     ///
     /// List global statItems by pagination.
-    /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=2 (READ)
-    ///         *  Returns : stat items
     /// </summary>
     public class GetGlobalStatItems : AccelByte.Sdk.Core.Operation
     {

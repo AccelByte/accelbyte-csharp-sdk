@@ -24,7 +24,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// Update a slot namespace configuration.
     /// Other detail info:
     /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=4 (UPDATE)
     ///   *  Returns : updated namespace slot config
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

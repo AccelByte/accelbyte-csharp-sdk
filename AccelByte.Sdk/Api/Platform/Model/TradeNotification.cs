@@ -66,6 +66,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("nonceStr")]
         public string? NonceStr { get; set; }
 
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
+
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
@@ -217,6 +221,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("nonceStr")]
         public string? NonceStr { get; set; }
 
+        [JsonPropertyName("paymentData")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentData? PaymentData { get; set; }
+
         [JsonPropertyName("paymentMethod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PaymentMethod { get; set; }
@@ -322,6 +330,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly TradeNotificationPaymentProvider CHECKOUT
             = new TradeNotificationPaymentProvider("CHECKOUT");
+
+        public static readonly TradeNotificationPaymentProvider NEONPAY
+            = new TradeNotificationPaymentProvider("NEONPAY");
 
         public static readonly TradeNotificationPaymentProvider PAYPAL
             = new TradeNotificationPaymentProvider("PAYPAL");

@@ -13,9 +13,9 @@ namespace AccelByte.Sdk.Api.Lobby.WSModel
     [AwesomeModel("connectNotif")]
     public class ConnectNotif : AccelByte.Sdk.Core.WSModel
     {
-        [AwesomeProperty("lobbySessionId")]
-        [JsonPropertyName("lobbySessionId")]
-        public string? LobbySessionId { get; set; }
+        [AwesomeProperty("lobbySessionID")]
+        [JsonPropertyName("lobbySessionID")]
+        public string? LobbySessionID { get; set; }
 
     }
 }

@@ -16,9 +16,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminRequestDataRetrieval
     ///
-    /// Submit user personal data retrieval request
-    /// If admin request data for themselves, password is need to be set
+    /// Submit user personal data retrieval request.
     /// Scope: account
+    /// 
+    /// ### Request Header:
+    /// - **Content-Type: application/x-www-form-urlencoded**
     /// </summary>
     public class AdminRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {

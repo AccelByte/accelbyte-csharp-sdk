@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Query stats by keyword.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
     ///         *  Returns : stats
     /// </summary>
     public class QueryStats : AccelByte.Sdk.Core.Operation

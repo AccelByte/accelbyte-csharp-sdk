@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "AdminDisableMyAuthenticatorV4"; } }
 
+        [SdkCommandData("body")]
+        public ModelDisableMFARequest Body { get; set; } = new ModelDisableMFARequest();
+
         public AdminDisableMyAuthenticatorV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -44,6 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
             AdminDisableMyAuthenticatorV4 operation = opBuilder.Build(
+                Body
             );
 
 

@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// deleteSeason
     ///
     /// This API is used to delete a season permanently, only draft season can be deleted.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=8 (DELETE)
     /// </summary>
     public class DeleteSeason : AccelByte.Sdk.Core.Operation
     {

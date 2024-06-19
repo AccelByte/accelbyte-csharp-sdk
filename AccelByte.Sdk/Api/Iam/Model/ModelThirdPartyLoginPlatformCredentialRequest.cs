@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("ClientId")]
         public string? ClientId { get; set; }
 
+        [JsonPropertyName("EmptyStrFieldList")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? EmptyStrFieldList { get; set; }
+
         [JsonPropertyName("Environment")]
         public string? Environment { get; set; }
 

@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///         * start: Start time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z. (required)
     ///         * end: End time must follow RFC3339 standard. e.g. 2023-02-24T05:10:24.865Z.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
     ///         *  Returns : created stat cycle
     /// </summary>
     public class CreateStatCycle : AccelByte.Sdk.Core.Operation

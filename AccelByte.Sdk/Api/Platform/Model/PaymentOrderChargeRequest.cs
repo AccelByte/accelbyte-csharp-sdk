@@ -38,6 +38,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentOrderChargeRequestPaymentProvider CHECKOUT
             = new PaymentOrderChargeRequestPaymentProvider("CHECKOUT");
 
+        public static readonly PaymentOrderChargeRequestPaymentProvider NEONPAY
+            = new PaymentOrderChargeRequestPaymentProvider("NEONPAY");
+
         public static readonly PaymentOrderChargeRequestPaymentProvider PAYPAL
             = new PaymentOrderChargeRequestPaymentProvider("PAYPAL");
 

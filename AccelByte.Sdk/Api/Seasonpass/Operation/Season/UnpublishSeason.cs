@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
-    ///   *  Returns : season info
+    ///   * Returns : season info
     /// </summary>
     public class UnpublishSeason : AccelByte.Sdk.Core.Operation
     {

@@ -86,6 +86,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? ClientId { get; set; }
 
+            public string? ClientSecret { get; set; }
+
             public string? Code { get; set; }
 
             public string? CodeVerifier { get; set; }
@@ -118,6 +120,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public TokenGrantV3Builder SetClientId(string _clientId)
             {
                 ClientId = _clientId;
+                return this;
+            }
+
+            public TokenGrantV3Builder SetClientSecret(string _clientSecret)
+            {
+                ClientSecret = _clientSecret;
                 return this;
             }
 
@@ -195,6 +203,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             if (builder.AdditionalData is not null) FormParams["additionalData"] = builder.AdditionalData;
             if (builder.ClientId is not null) FormParams["client_id"] = builder.ClientId;
+            if (builder.ClientSecret is not null) FormParams["client_secret"] = builder.ClientSecret;
             if (builder.Code is not null) FormParams["code"] = builder.Code;
             if (builder.CodeVerifier is not null) FormParams["code_verifier"] = builder.CodeVerifier;
             if (builder.ExtendNamespace is not null) FormParams["extendNamespace"] = builder.ExtendNamespace;
@@ -216,6 +225,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public TokenGrantV3(
             string? additionalData,
             string? clientId,
+            string? clientSecret,
             string? code,
             string? codeVerifier,
             string? extendNamespace,
@@ -231,6 +241,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             if (additionalData is not null) FormParams["additionalData"] = additionalData;
             if (clientId is not null) FormParams["client_id"] = clientId;
+            if (clientSecret is not null) FormParams["client_secret"] = clientSecret;
             if (code is not null) FormParams["code"] = code;
             if (codeVerifier is not null) FormParams["code_verifier"] = codeVerifier;
             if (extendNamespace is not null) FormParams["extendNamespace"] = extendNamespace;

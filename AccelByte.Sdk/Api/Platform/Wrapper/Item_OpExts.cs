@@ -1768,26 +1768,26 @@ namespace AccelByte.Sdk.Api
             return await ((Platform.Wrapper.Item)builder.WrapperObject!).PublicGetItemAsync<T1, T2>(op);
         }
         public static Platform.Model.FullItemPagingResult? Execute(
-            this QueryItems1.QueryItems1Builder builder,
+            this QueryItemsV2.QueryItemsV2Builder builder,
             string namespace_
         )
         {
-            QueryItems1 op = builder.Build(
+            QueryItemsV2 op = builder.Build(
                 namespace_
             );
 
-            return ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItems1(op);
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItemsV2(op);
         }
         public static async Task<Platform.Model.FullItemPagingResult?> ExecuteAsync(
-            this QueryItems1.QueryItems1Builder builder,
+            this QueryItemsV2.QueryItemsV2Builder builder,
             string namespace_
         )
         {
-            QueryItems1 op = builder.Build(
+            QueryItemsV2 op = builder.Build(
                 namespace_
             );
 
-            return await ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItems1Async(op);
+            return await ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItemsV2Async(op);
         }
     }
 }

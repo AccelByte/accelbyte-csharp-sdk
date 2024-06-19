@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Challenge.Model.ModelChallengeResponse? Execute(
             this AdminUpdateChallenge.AdminUpdateChallengeBuilder builder,
-            ModelsUpdateChallengeRequest body,
+            ModelUpdateChallengeRequest body,
             string challengeCode,
             string namespace_
         )
@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Challenge.Model.ModelChallengeResponse?> ExecuteAsync(
             this AdminUpdateChallenge.AdminUpdateChallengeBuilder builder,
-            ModelsUpdateChallengeRequest body,
+            ModelUpdateChallengeRequest body,
             string challengeCode,
             string namespace_
         )

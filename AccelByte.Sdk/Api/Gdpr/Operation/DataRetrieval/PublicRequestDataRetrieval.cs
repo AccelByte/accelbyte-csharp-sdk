@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     ///
     /// Submit personal data retrieval request.
     /// Scope: account
+    /// 
+    /// ### Request Header:
+    /// - **Content-Type: application/x-www-form-urlencoded**
     /// </summary>
     public class PublicRequestDataRetrieval : AccelByte.Sdk.Core.Operation
     {

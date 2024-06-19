@@ -571,6 +571,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicGetCountryAgeRestrictionV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicListUserIDByPlatformUserIDsV3.PublicListUserIDByPlatformUserIDsV3Builder PublicListUserIDByPlatformUserIDsV3Op
         {
             get { return Operation.PublicListUserIDByPlatformUserIDsV3.Builder.SetWrapperObject(this); }
@@ -610,6 +611,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicForgotPasswordV3.PublicForgotPasswordV3Builder PublicForgotPasswordV3Op
         {
             get { return Operation.PublicForgotPasswordV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicValidateUserInput.PublicValidateUserInputBuilder PublicValidateUserInputOp
+        {
+            get { return Operation.PublicValidateUserInput.Builder.SetWrapperObject(this); }
         }
         public GetAdminInvitationV3.GetAdminInvitationV3Builder GetAdminInvitationV3Op
         {
@@ -2916,6 +2921,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.AccountcommonUserPlatforms? PublicListUserIDByPlatformUserIDsV3(PublicListUserIDByPlatformUserIDsV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2932,6 +2939,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV3(PublicGetUserByPlatformUserIDV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3090,6 +3098,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserInputValidationResponse? PublicValidateUserInput(PublicValidateUserInput input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserInputValidationResponse?> PublicValidateUserInputAsync(PublicValidateUserInput input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Get stat cycle.
     /// Other detail info:
-    ///             *  Required permission : resource="NAMESPACE:{namespace}:STAT", action=2 (READ)
     ///             *  Returns : stat cycle info
     /// </summary>
     public class GetStatCycle1 : AccelByte.Sdk.Core.Operation

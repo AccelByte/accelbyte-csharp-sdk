@@ -103,6 +103,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentNotificationInfoNotificationSource CHECKOUT
             = new PaymentNotificationInfoNotificationSource("CHECKOUT");
 
+        public static readonly PaymentNotificationInfoNotificationSource NEONPAY
+            = new PaymentNotificationInfoNotificationSource("NEONPAY");
+
         public static readonly PaymentNotificationInfoNotificationSource PAYPAL
             = new PaymentNotificationInfoNotificationSource("PAYPAL");
 

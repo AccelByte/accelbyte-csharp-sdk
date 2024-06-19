@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// List user's statCycleItems by statCycle.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
     ///         *  Returns : stat cycle items
     /// </summary>
     public class GetUserStatCycleItems : AccelByte.Sdk.Core.Operation

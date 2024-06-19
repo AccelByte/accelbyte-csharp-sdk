@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Achievement.Model
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
 
+        [JsonPropertyName("thirdPartyReferenceId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ThirdPartyReferenceId { get; set; }
+
     }
 
 

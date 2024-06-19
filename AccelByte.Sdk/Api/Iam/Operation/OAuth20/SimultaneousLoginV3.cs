@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// ## Given a valid native ticket and empty simultaneous ticket, these cases will be failed
     /// - Native ticket's account is not linked AGS account yet
-    /// - Native ticket's account is linked AGS account, but ASG account is not linked simultaneous platform yet
+    /// - Native ticket's account is linked AGS account, but AGS account is not linked simultaneous platform yet
     /// - Native ticket's account is linked AGS account, AGS account is linked simultaneous platform but there is no available simultaneous token.(only if this platform is expected to store the platform token)
     /// 
     /// ## Given a valid native ticket and empty simultaneous ticket, this case will be success

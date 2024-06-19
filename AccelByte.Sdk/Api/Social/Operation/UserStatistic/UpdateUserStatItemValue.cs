@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// If provided, user's statitems will be saved with key: *userId_additionalKey*
     /// 
     /// Other detail info:
-    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
     /// + *Returns*: updated user's statItem
     /// </summary>
     public class UpdateUserStatItemValue : AccelByte.Sdk.Core.Operation

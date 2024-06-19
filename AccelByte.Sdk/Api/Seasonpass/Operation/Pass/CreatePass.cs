@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=1 (CREATE)
-    ///   *  Returns : created pass
+    ///   * Returns : created pass
     /// </summary>
     public class CreatePass : AccelByte.Sdk.Core.Operation
     {

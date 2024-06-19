@@ -39,6 +39,14 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
+        [JsonPropertyName("neonPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public NeonPayConfig? NeonPayConfig { get; set; }
+
+        [JsonPropertyName("neonPaySandboxConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public NeonPayConfig? NeonPaySandboxConfig { get; set; }
+
         [JsonPropertyName("payPalConfig")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public PayPalConfig? PayPalConfig { get; set; }

@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Returns profile for a user.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:GAMEPROFILE", action=2 (READ)
     ///         *  Returns : game profile info
     /// </summary>
     public class GetProfile : AccelByte.Sdk.Core.Operation

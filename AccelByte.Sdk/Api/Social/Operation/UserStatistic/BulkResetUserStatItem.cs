@@ -20,7 +20,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// User's statitem value will be reset to the default value defined in the statistic configuration.
     /// 
     /// Other detail info:
-    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STATITEM", action=4 (UPDATE)
     /// + *Returns*: bulk updated result
     /// </summary>
     public class BulkResetUserStatItem : AccelByte.Sdk.Core.Operation

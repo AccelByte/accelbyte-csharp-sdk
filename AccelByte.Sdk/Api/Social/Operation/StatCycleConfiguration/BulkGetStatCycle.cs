@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Bulk get stat cycle.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
     ///         *  Returns : list of stat cycles
     /// </summary>
     public class BulkGetStatCycle : AccelByte.Sdk.Core.Operation

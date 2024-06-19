@@ -35,7 +35,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - nintendo
     /// - aws cognito
     /// - facebook
+    /// - google group
     /// - google
+    /// - googleplaygames
     /// - discord
     /// - twitch
     /// - snapchat

@@ -27,7 +27,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// If provided, user's statitems will be saved with key: *userId_additionalKey*
     /// 
     /// Other detail info:
-    /// + *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
     /// + *Returns*: bulk updated result
     /// </summary>
     public class BulkUpdateUserStatItem : AccelByte.Sdk.Core.Operation

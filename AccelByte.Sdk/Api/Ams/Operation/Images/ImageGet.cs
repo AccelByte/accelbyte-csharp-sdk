@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     /// <summary>
     /// ImageGet
     ///
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:IMAGE [READ]
     /// </summary>
     public class ImageGet : AccelByte.Sdk.Core.Operation
     {

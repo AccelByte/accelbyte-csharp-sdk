@@ -63,7 +63,7 @@
 | `/platform/public/namespaces/{namespace}/items/{itemId}/app/locale` | GET | PublicGetApp | [PublicGetApp](../../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetApp.cs) | [PublicGetApp](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetApp.cs) |
 | `/platform/public/namespaces/{namespace}/items/{itemId}/dynamic` | GET | PublicGetItemDynamicData | [PublicGetItemDynamicData](../../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetItemDynamicData.cs) | [PublicGetItemDynamicData](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetItemDynamicData.cs) |
 | `/platform/public/namespaces/{namespace}/items/{itemId}/locale` | GET | PublicGetItem | [PublicGetItem](../../AccelByte.Sdk/Api/Platform/Operation/Item/PublicGetItem.cs) | [PublicGetItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/PublicGetItem.cs) |
-| `/platform/v2/admin/namespaces/{namespace}/items/byCriteria` | GET | QueryItems1 | [QueryItems1](../../AccelByte.Sdk/Api/Platform/Operation/Item/QueryItems1.cs) | [QueryItems1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/QueryItems1.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/items/byCriteria` | GET | QueryItemsV2 | [QueryItemsV2](../../AccelByte.Sdk/Api/Platform/Operation/Item/QueryItemsV2.cs) | [QueryItemsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Item/QueryItemsV2.cs) |
 
 ### Campaign Wrapper:  [Campaign](../../AccelByte.Sdk/Api/Platform/Wrapper/Campaign.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -354,6 +354,49 @@
 | `/platform/admin/namespaces/{namespace}/payment/config/callback` | GET | GetPaymentCallbackConfig | [GetPaymentCallbackConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentCallbackConfig/GetPaymentCallbackConfig.cs) | [GetPaymentCallbackConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentCallbackConfig/GetPaymentCallbackConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/payment/config/callback` | PUT | UpdatePaymentCallbackConfig | [UpdatePaymentCallbackConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentCallbackConfig/UpdatePaymentCallbackConfig.cs) | [UpdatePaymentCallbackConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentCallbackConfig/UpdatePaymentCallbackConfig.cs) |
 
+### PaymentConfig Wrapper:  [PaymentConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/payment/config/domains` | GET | GetPaymentMerchantConfig | [GetPaymentMerchantConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetPaymentMerchantConfig.cs) | [GetPaymentMerchantConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetPaymentMerchantConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/payment/config/domains` | PUT | UpdatePaymentDomainWhitelistConfig | [UpdatePaymentDomainWhitelistConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentDomainWhitelistConfig.cs) | [UpdatePaymentDomainWhitelistConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePaymentDomainWhitelistConfig.cs) |
+| `/platform/admin/payment/config/merchant/adyenconfig/test` | POST | TestAdyenConfig | [TestAdyenConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAdyenConfig.cs) | [TestAdyenConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAdyenConfig.cs) |
+| `/platform/admin/payment/config/merchant/alipayconfig/test` | POST | TestAliPayConfig | [TestAliPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAliPayConfig.cs) | [TestAliPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAliPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/checkoutconfig/test` | POST | TestCheckoutConfig | [TestCheckoutConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestCheckoutConfig.cs) | [TestCheckoutConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestCheckoutConfig.cs) |
+| `/platform/admin/payment/config/merchant/matched` | GET | DebugMatchedPaymentMerchantConfig | [DebugMatchedPaymentMerchantConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DebugMatchedPaymentMerchantConfig.cs) | [DebugMatchedPaymentMerchantConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DebugMatchedPaymentMerchantConfig.cs) |
+| `/platform/admin/payment/config/merchant/neonpayconfig/test` | POST | TestNeonPayConfig | [TestNeonPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestNeonPayConfig.cs) | [TestNeonPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestNeonPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/paypalconfig/test` | POST | TestPayPalConfig | [TestPayPalConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestPayPalConfig.cs) | [TestPayPalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestPayPalConfig.cs) |
+| `/platform/admin/payment/config/merchant/stripeconfig/test` | POST | TestStripeConfig | [TestStripeConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestStripeConfig.cs) | [TestStripeConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestStripeConfig.cs) |
+| `/platform/admin/payment/config/merchant/wxpayconfig/test` | POST | TestWxPayConfig | [TestWxPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestWxPayConfig.cs) | [TestWxPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestWxPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/xsollaconfig/test` | POST | TestXsollaConfig | [TestXsollaConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestXsollaConfig.cs) | [TestXsollaConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestXsollaConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}` | GET | GetPaymentMerchantConfig1 | [GetPaymentMerchantConfig1](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetPaymentMerchantConfig1.cs) | [GetPaymentMerchantConfig1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetPaymentMerchantConfig1.cs) |
+| `/platform/admin/payment/config/merchant/{id}/adyenconfig` | PUT | UpdateAdyenConfig | [UpdateAdyenConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAdyenConfig.cs) | [UpdateAdyenConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateAdyenConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/adyenconfig/test` | GET | TestAdyenConfigById | [TestAdyenConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAdyenConfigById.cs) | [TestAdyenConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAdyenConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/alipayconfig` | PUT | UpdateAliPayConfig | [UpdateAliPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAliPayConfig.cs) | [UpdateAliPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateAliPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/alipayconfig/test` | GET | TestAliPayConfigById | [TestAliPayConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAliPayConfigById.cs) | [TestAliPayConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAliPayConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/checkoutconfig` | PUT | UpdateCheckoutConfig | [UpdateCheckoutConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateCheckoutConfig.cs) | [UpdateCheckoutConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateCheckoutConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/checkoutconfig/test` | GET | TestCheckoutConfigById | [TestCheckoutConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestCheckoutConfigById.cs) | [TestCheckoutConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestCheckoutConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/neonpayconfig` | PUT | UpdateNeonPayConfig | [UpdateNeonPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateNeonPayConfig.cs) | [UpdateNeonPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateNeonPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/neonpayconfig/test` | GET | TestNeonPayConfigById | [TestNeonPayConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestNeonPayConfigById.cs) | [TestNeonPayConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestNeonPayConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/paypalconfig` | PUT | UpdatePayPalConfig | [UpdatePayPalConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePayPalConfig.cs) | [UpdatePayPalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePayPalConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/paypalconfig/test` | GET | TestPayPalConfigById | [TestPayPalConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestPayPalConfigById.cs) | [TestPayPalConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestPayPalConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/stripeconfig` | PUT | UpdateStripeConfig | [UpdateStripeConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateStripeConfig.cs) | [UpdateStripeConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateStripeConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/stripeconfig/test` | GET | TestStripeConfigById | [TestStripeConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestStripeConfigById.cs) | [TestStripeConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestStripeConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/wxpayconfig` | PUT | UpdateWxPayConfig | [UpdateWxPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateWxPayConfig.cs) | [UpdateWxPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateWxPayConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/wxpayconfig/cert` | PUT | UpdateWxPayConfigCert | [UpdateWxPayConfigCert](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateWxPayConfigCert.cs) | [UpdateWxPayConfigCert](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateWxPayConfigCert.cs) |
+| `/platform/admin/payment/config/merchant/{id}/wxpayconfig/test` | GET | TestWxPayConfigById | [TestWxPayConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestWxPayConfigById.cs) | [TestWxPayConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestWxPayConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/xsollaconfig` | PUT | UpdateXsollaConfig | [UpdateXsollaConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaConfig.cs) | [UpdateXsollaConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateXsollaConfig.cs) |
+| `/platform/admin/payment/config/merchant/{id}/xsollaconfig/test` | GET | TestXsollaConfigById | [TestXsollaConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestXsollaConfigById.cs) | [TestXsollaConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestXsollaConfigById.cs) |
+| `/platform/admin/payment/config/merchant/{id}/xsollauiconfig` | PUT | UpdateXsollaUIConfig | [UpdateXsollaUIConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaUIConfig.cs) | [UpdateXsollaUIConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateXsollaUIConfig.cs) |
+| `/platform/admin/payment/config/provider` | GET | QueryPaymentProviderConfig | [QueryPaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/QueryPaymentProviderConfig.cs) | [QueryPaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/QueryPaymentProviderConfig.cs) |
+| `/platform/admin/payment/config/provider` | POST | CreatePaymentProviderConfig | [CreatePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/CreatePaymentProviderConfig.cs) | [CreatePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/CreatePaymentProviderConfig.cs) |
+| `/platform/admin/payment/config/provider/aggregate` | GET | GetAggregatePaymentProviders | [GetAggregatePaymentProviders](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetAggregatePaymentProviders.cs) | [GetAggregatePaymentProviders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetAggregatePaymentProviders.cs) |
+| `/platform/admin/payment/config/provider/matched` | GET | DebugMatchedPaymentProviderConfig | [DebugMatchedPaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DebugMatchedPaymentProviderConfig.cs) | [DebugMatchedPaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DebugMatchedPaymentProviderConfig.cs) |
+| `/platform/admin/payment/config/provider/special` | GET | GetSpecialPaymentProviders | [GetSpecialPaymentProviders](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetSpecialPaymentProviders.cs) | [GetSpecialPaymentProviders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetSpecialPaymentProviders.cs) |
+| `/platform/admin/payment/config/provider/{id}` | PUT | UpdatePaymentProviderConfig | [UpdatePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentProviderConfig.cs) | [UpdatePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePaymentProviderConfig.cs) |
+| `/platform/admin/payment/config/provider/{id}` | DELETE | DeletePaymentProviderConfig | [DeletePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DeletePaymentProviderConfig.cs) | [DeletePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DeletePaymentProviderConfig.cs) |
+| `/platform/admin/payment/config/tax` | GET | GetPaymentTaxConfig | [GetPaymentTaxConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetPaymentTaxConfig.cs) | [GetPaymentTaxConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetPaymentTaxConfig.cs) |
+| `/platform/admin/payment/config/tax` | PUT | UpdatePaymentTaxConfig | [UpdatePaymentTaxConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentTaxConfig.cs) | [UpdatePaymentTaxConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePaymentTaxConfig.cs) |
+
 ### Payment Wrapper:  [Payment](../../AccelByte.Sdk/Api/Platform/Wrapper/Payment.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -373,6 +416,12 @@
 | `/platform/admin/namespaces/{namespace}/payment/orders` | POST | CreatePaymentOrderByDedicated | [CreatePaymentOrderByDedicated](../../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/CreatePaymentOrderByDedicated.cs) | [CreatePaymentOrderByDedicated](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/CreatePaymentOrderByDedicated.cs) |
 | `/platform/admin/namespaces/{namespace}/payment/orders/{paymentOrderNo}/refund` | PUT | RefundPaymentOrderByDedicated | [RefundPaymentOrderByDedicated](../../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/RefundPaymentOrderByDedicated.cs) | [RefundPaymentOrderByDedicated](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/RefundPaymentOrderByDedicated.cs) |
 | `/platform/admin/payment/orders` | GET | SyncPaymentOrders | [SyncPaymentOrders](../../AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/SyncPaymentOrders.cs) | [SyncPaymentOrders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentDedicated/SyncPaymentOrders.cs) |
+
+### Platform Wrapper:  [Platform](../../AccelByte.Sdk/Api/Platform/Wrapper/Platform.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/platforms/psn/entitlements/{entitlementLabel}/ownership` | POST | GetPsnEntitlementOwnership | [GetPsnEntitlementOwnership](../../AccelByte.Sdk/Api/Platform/Operation/Platform/GetPsnEntitlementOwnership.cs) | [GetPsnEntitlementOwnership](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Platform/GetPsnEntitlementOwnership.cs) |
+| `/platform/admin/namespaces/{namespace}/platforms/xbl/entitlements/{productSku}/ownership` | POST | GetXboxEntitlementOwnership | [GetXboxEntitlementOwnership](../../AccelByte.Sdk/Api/Platform/Operation/Platform/GetXboxEntitlementOwnership.cs) | [GetXboxEntitlementOwnership](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Platform/GetXboxEntitlementOwnership.cs) |
 
 ### Wallet Wrapper:  [Wallet](../../AccelByte.Sdk/Api/Platform/Wrapper/Wallet.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -534,44 +583,6 @@
 |---|---|---|---|---|
 | `/platform/admin/orders` | GET | SyncOrders | [SyncOrders](../../AccelByte.Sdk/Api/Platform/Operation/OrderDedicated/SyncOrders.cs) | [SyncOrders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/OrderDedicated/SyncOrders.cs) |
 
-### PaymentConfig Wrapper:  [PaymentConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentConfig.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/platform/admin/payment/config/merchant/adyenconfig/test` | POST | TestAdyenConfig | [TestAdyenConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAdyenConfig.cs) | [TestAdyenConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAdyenConfig.cs) |
-| `/platform/admin/payment/config/merchant/alipayconfig/test` | POST | TestAliPayConfig | [TestAliPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAliPayConfig.cs) | [TestAliPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAliPayConfig.cs) |
-| `/platform/admin/payment/config/merchant/checkoutconfig/test` | POST | TestCheckoutConfig | [TestCheckoutConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestCheckoutConfig.cs) | [TestCheckoutConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestCheckoutConfig.cs) |
-| `/platform/admin/payment/config/merchant/matched` | GET | DebugMatchedPaymentMerchantConfig | [DebugMatchedPaymentMerchantConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DebugMatchedPaymentMerchantConfig.cs) | [DebugMatchedPaymentMerchantConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DebugMatchedPaymentMerchantConfig.cs) |
-| `/platform/admin/payment/config/merchant/paypalconfig/test` | POST | TestPayPalConfig | [TestPayPalConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestPayPalConfig.cs) | [TestPayPalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestPayPalConfig.cs) |
-| `/platform/admin/payment/config/merchant/stripeconfig/test` | POST | TestStripeConfig | [TestStripeConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestStripeConfig.cs) | [TestStripeConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestStripeConfig.cs) |
-| `/platform/admin/payment/config/merchant/wxpayconfig/test` | POST | TestWxPayConfig | [TestWxPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestWxPayConfig.cs) | [TestWxPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestWxPayConfig.cs) |
-| `/platform/admin/payment/config/merchant/xsollaconfig/test` | POST | TestXsollaConfig | [TestXsollaConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestXsollaConfig.cs) | [TestXsollaConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestXsollaConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}` | GET | GetPaymentMerchantConfig | [GetPaymentMerchantConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetPaymentMerchantConfig.cs) | [GetPaymentMerchantConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetPaymentMerchantConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/adyenconfig` | PUT | UpdateAdyenConfig | [UpdateAdyenConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAdyenConfig.cs) | [UpdateAdyenConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateAdyenConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/adyenconfig/test` | GET | TestAdyenConfigById | [TestAdyenConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAdyenConfigById.cs) | [TestAdyenConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAdyenConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/alipayconfig` | PUT | UpdateAliPayConfig | [UpdateAliPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAliPayConfig.cs) | [UpdateAliPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateAliPayConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/alipayconfig/test` | GET | TestAliPayConfigById | [TestAliPayConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAliPayConfigById.cs) | [TestAliPayConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestAliPayConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/checkoutconfig` | PUT | UpdateCheckoutConfig | [UpdateCheckoutConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateCheckoutConfig.cs) | [UpdateCheckoutConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateCheckoutConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/checkoutconfig/test` | GET | TestCheckoutConfigById | [TestCheckoutConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestCheckoutConfigById.cs) | [TestCheckoutConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestCheckoutConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/paypalconfig` | PUT | UpdatePayPalConfig | [UpdatePayPalConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePayPalConfig.cs) | [UpdatePayPalConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePayPalConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/paypalconfig/test` | GET | TestPayPalConfigById | [TestPayPalConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestPayPalConfigById.cs) | [TestPayPalConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestPayPalConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/stripeconfig` | PUT | UpdateStripeConfig | [UpdateStripeConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateStripeConfig.cs) | [UpdateStripeConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateStripeConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/stripeconfig/test` | GET | TestStripeConfigById | [TestStripeConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestStripeConfigById.cs) | [TestStripeConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestStripeConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/wxpayconfig` | PUT | UpdateWxPayConfig | [UpdateWxPayConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateWxPayConfig.cs) | [UpdateWxPayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateWxPayConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/wxpayconfig/cert` | PUT | UpdateWxPayConfigCert | [UpdateWxPayConfigCert](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateWxPayConfigCert.cs) | [UpdateWxPayConfigCert](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateWxPayConfigCert.cs) |
-| `/platform/admin/payment/config/merchant/{id}/wxpayconfig/test` | GET | TestWxPayConfigById | [TestWxPayConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestWxPayConfigById.cs) | [TestWxPayConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestWxPayConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/xsollaconfig` | PUT | UpdateXsollaConfig | [UpdateXsollaConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaConfig.cs) | [UpdateXsollaConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateXsollaConfig.cs) |
-| `/platform/admin/payment/config/merchant/{id}/xsollaconfig/test` | GET | TestXsollaConfigById | [TestXsollaConfigById](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestXsollaConfigById.cs) | [TestXsollaConfigById](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/TestXsollaConfigById.cs) |
-| `/platform/admin/payment/config/merchant/{id}/xsollauiconfig` | PUT | UpdateXsollaUIConfig | [UpdateXsollaUIConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaUIConfig.cs) | [UpdateXsollaUIConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdateXsollaUIConfig.cs) |
-| `/platform/admin/payment/config/provider` | GET | QueryPaymentProviderConfig | [QueryPaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/QueryPaymentProviderConfig.cs) | [QueryPaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/QueryPaymentProviderConfig.cs) |
-| `/platform/admin/payment/config/provider` | POST | CreatePaymentProviderConfig | [CreatePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/CreatePaymentProviderConfig.cs) | [CreatePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/CreatePaymentProviderConfig.cs) |
-| `/platform/admin/payment/config/provider/aggregate` | GET | GetAggregatePaymentProviders | [GetAggregatePaymentProviders](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetAggregatePaymentProviders.cs) | [GetAggregatePaymentProviders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetAggregatePaymentProviders.cs) |
-| `/platform/admin/payment/config/provider/matched` | GET | DebugMatchedPaymentProviderConfig | [DebugMatchedPaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DebugMatchedPaymentProviderConfig.cs) | [DebugMatchedPaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DebugMatchedPaymentProviderConfig.cs) |
-| `/platform/admin/payment/config/provider/special` | GET | GetSpecialPaymentProviders | [GetSpecialPaymentProviders](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetSpecialPaymentProviders.cs) | [GetSpecialPaymentProviders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetSpecialPaymentProviders.cs) |
-| `/platform/admin/payment/config/provider/{id}` | PUT | UpdatePaymentProviderConfig | [UpdatePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentProviderConfig.cs) | [UpdatePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePaymentProviderConfig.cs) |
-| `/platform/admin/payment/config/provider/{id}` | DELETE | DeletePaymentProviderConfig | [DeletePaymentProviderConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/DeletePaymentProviderConfig.cs) | [DeletePaymentProviderConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/DeletePaymentProviderConfig.cs) |
-| `/platform/admin/payment/config/tax` | GET | GetPaymentTaxConfig | [GetPaymentTaxConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/GetPaymentTaxConfig.cs) | [GetPaymentTaxConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/GetPaymentTaxConfig.cs) |
-| `/platform/admin/payment/config/tax` | PUT | UpdatePaymentTaxConfig | [UpdatePaymentTaxConfig](../../AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentTaxConfig.cs) | [UpdatePaymentTaxConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/PaymentConfig/UpdatePaymentTaxConfig.cs) |
-
 ### PaymentStation Wrapper:  [PaymentStation](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentStation.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -663,11 +674,19 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### PaymentConfig Wrapper:  [PaymentConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Payment Wrapper:  [Payment](../../AccelByte.Sdk/Api/Platform/Wrapper/Payment.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
 ### Payment(Dedicated) Wrapper:  [PaymentDedicated](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentDedicated.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### Platform Wrapper:  [Platform](../../AccelByte.Sdk/Api/Platform/Wrapper/Platform.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -727,10 +746,6 @@
 | `/platform/public/namespaces/{namespace}/users/{userId}/views` | GET | PublicListViews | [PublicListViews](../../AccelByte.Sdk/Api/Platform/Operation/View/PublicListViews.cs) | [PublicListViews](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/View/PublicListViews.cs) |
 
 ### Order(Dedicated) Wrapper:  [OrderDedicated](../../AccelByte.Sdk/Api/Platform/Wrapper/OrderDedicated.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-
-### PaymentConfig Wrapper:  [PaymentConfig](../../AccelByte.Sdk/Api/Platform/Wrapper/PaymentConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -972,6 +987,7 @@
 | `LootBoxPluginConfigUpdate` | [LootBoxPluginConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/LootBoxPluginConfigUpdate.cs) |
 | `LootBoxReward` | [LootBoxReward](../../AccelByte.Sdk/Api/Platform/Model/LootBoxReward.cs) |
 | `MockIAPReceipt` | [MockIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/MockIAPReceipt.cs) |
+| `NeonPayConfig` | [NeonPayConfig](../../AccelByte.Sdk/Api/Platform/Model/NeonPayConfig.cs) |
 | `NotificationProcessResult` | [NotificationProcessResult](../../AccelByte.Sdk/Api/Platform/Model/NotificationProcessResult.cs) |
 | `OculusIAPConfigInfo` | [OculusIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigInfo.cs) |
 | `OculusIAPConfigRequest` | [OculusIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigRequest.cs) |
@@ -1002,6 +1018,9 @@
 | `PaymentAccount` | [PaymentAccount](../../AccelByte.Sdk/Api/Platform/Model/PaymentAccount.cs) |
 | `PaymentCallbackConfigInfo` | [PaymentCallbackConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PaymentCallbackConfigInfo.cs) |
 | `PaymentCallbackConfigUpdate` | [PaymentCallbackConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/PaymentCallbackConfigUpdate.cs) |
+| `PaymentData` | [PaymentData](../../AccelByte.Sdk/Api/Platform/Model/PaymentData.cs) |
+| `PaymentDomainWhitelistConfigEdit` | [PaymentDomainWhitelistConfigEdit](../../AccelByte.Sdk/Api/Platform/Model/PaymentDomainWhitelistConfigEdit.cs) |
+| `PaymentDomainWhitelistConfigInfo` | [PaymentDomainWhitelistConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PaymentDomainWhitelistConfigInfo.cs) |
 | `PaymentMerchantConfigInfo` | [PaymentMerchantConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PaymentMerchantConfigInfo.cs) |
 | `PaymentMethod` | [PaymentMethod](../../AccelByte.Sdk/Api/Platform/Model/PaymentMethod.cs) |
 | `PaymentNotificationInfo` | [PaymentNotificationInfo](../../AccelByte.Sdk/Api/Platform/Model/PaymentNotificationInfo.cs) |
@@ -1013,6 +1032,7 @@
 | `PaymentOrderCreateResult` | [PaymentOrderCreateResult](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderCreateResult.cs) |
 | `PaymentOrderDetails` | [PaymentOrderDetails](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderDetails.cs) |
 | `PaymentOrderInfo` | [PaymentOrderInfo](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderInfo.cs) |
+| `PaymentOrderNeonPayConfig` | [PaymentOrderNeonPayConfig](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderNeonPayConfig.cs) |
 | `PaymentOrderNotifySimulation` | [PaymentOrderNotifySimulation](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderNotifySimulation.cs) |
 | `PaymentOrderPagingSlicedResult` | [PaymentOrderPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderPagingSlicedResult.cs) |
 | `PaymentOrderPaidResult` | [PaymentOrderPaidResult](../../AccelByte.Sdk/Api/Platform/Model/PaymentOrderPaidResult.cs) |
@@ -1034,6 +1054,7 @@
 | `PlatformDLCConfigInfo` | [PlatformDLCConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PlatformDLCConfigInfo.cs) |
 | `PlatformDLCConfigUpdate` | [PlatformDLCConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/PlatformDLCConfigUpdate.cs) |
 | `PlatformDlcEntry` | [PlatformDlcEntry](../../AccelByte.Sdk/Api/Platform/Model/PlatformDlcEntry.cs) |
+| `PlatformOwnership` | [PlatformOwnership](../../AccelByte.Sdk/Api/Platform/Model/PlatformOwnership.cs) |
 | `PlatformReward` | [PlatformReward](../../AccelByte.Sdk/Api/Platform/Model/PlatformReward.cs) |
 | `PlatformRewardCurrency` | [PlatformRewardCurrency](../../AccelByte.Sdk/Api/Platform/Model/PlatformRewardCurrency.cs) |
 | `PlatformRewardItem` | [PlatformRewardItem](../../AccelByte.Sdk/Api/Platform/Model/PlatformRewardItem.cs) |
@@ -1052,6 +1073,7 @@
 | `PreCheckFulfillmentRequest` | [PreCheckFulfillmentRequest](../../AccelByte.Sdk/Api/Platform/Model/PreCheckFulfillmentRequest.cs) |
 | `Predicate` | [Predicate](../../AccelByte.Sdk/Api/Platform/Model/Predicate.cs) |
 | `PredicateValidateResult` | [PredicateValidateResult](../../AccelByte.Sdk/Api/Platform/Model/PredicateValidateResult.cs) |
+| `PsnEntitlementOwnershipRequest` | [PsnEntitlementOwnershipRequest](../../AccelByte.Sdk/Api/Platform/Model/PsnEntitlementOwnershipRequest.cs) |
 | `PublicCustomConfigInfo` | [PublicCustomConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/PublicCustomConfigInfo.cs) |
 | `PublicEntitlementHistoryInfo` | [PublicEntitlementHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/PublicEntitlementHistoryInfo.cs) |
 | `PurchaseCondition` | [PurchaseCondition](../../AccelByte.Sdk/Api/Platform/Model/PurchaseCondition.cs) |
@@ -1169,6 +1191,7 @@
 | `WxPayConfigRequest` | [WxPayConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/WxPayConfigRequest.cs) |
 | `XblAchievementUpdateRequest` | [XblAchievementUpdateRequest](../../AccelByte.Sdk/Api/Platform/Model/XblAchievementUpdateRequest.cs) |
 | `XblDLCSyncRequest` | [XblDLCSyncRequest](../../AccelByte.Sdk/Api/Platform/Model/XblDLCSyncRequest.cs) |
+| `XblEntitlementOwnershipRequest` | [XblEntitlementOwnershipRequest](../../AccelByte.Sdk/Api/Platform/Model/XblEntitlementOwnershipRequest.cs) |
 | `XblIAPConfigInfo` | [XblIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/XblIAPConfigInfo.cs) |
 | `XblIAPConfigRequest` | [XblIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/XblIAPConfigRequest.cs) |
 | `XblReconcileRequest` | [XblReconcileRequest](../../AccelByte.Sdk/Api/Platform/Model/XblReconcileRequest.cs) |

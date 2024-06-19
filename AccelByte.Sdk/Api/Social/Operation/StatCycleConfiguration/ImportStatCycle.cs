@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// importStatCycle
     ///
     /// Import stat cycle configurations for a given namespace from file. At current, only JSON file is supported.
-    /// 
-    /// Other detail info:
-    ///         *  *Required permission*: resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
     /// </summary>
     public class ImportStatCycle : AccelByte.Sdk.Core.Operation
     {

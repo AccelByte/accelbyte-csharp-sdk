@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PaymentMethodPaymentProvider CHECKOUT
             = new PaymentMethodPaymentProvider("CHECKOUT");
 
+        public static readonly PaymentMethodPaymentProvider NEONPAY
+            = new PaymentMethodPaymentProvider("NEONPAY");
+
         public static readonly PaymentMethodPaymentProvider PAYPAL
             = new PaymentMethodPaymentProvider("PAYPAL");
 

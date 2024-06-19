@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("inventoryId")]
         public string? InventoryId { get; set; }
 
+        [JsonPropertyName("itemInfo")]
+        public Dictionary<string, object>? ItemInfo { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
@@ -60,7 +63,7 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 
     }
 
-    public class ApimodelsItemResp<T1, T2> : AccelByte.Sdk.Core.Model
+    public class ApimodelsItemResp<T1, T2, T3> : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
@@ -74,6 +77,9 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("inventoryId")]
         public string? InventoryId { get; set; }
 
+        [JsonPropertyName("itemInfo")]
+        public T2? ItemInfo { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
@@ -85,7 +91,7 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         public int? Qty { get; set; }
 
         [JsonPropertyName("serverCustomAttributes")]
-        public T2? ServerCustomAttributes { get; set; }
+        public T3? ServerCustomAttributes { get; set; }
 
         [JsonPropertyName("slotId")]
         public string? SlotId { get; set; }

@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetLogConfig.AdminGetLogConfigBuilder AdminGetLogConfigOp
+        {
+            get { return Operation.AdminGetLogConfig.Builder.SetWrapperObject(this); }
+        }
+        public AdminPatchUpdateLogConfig.AdminPatchUpdateLogConfigBuilder AdminPatchUpdateLogConfigOp
+        {
+            get { return Operation.AdminPatchUpdateLogConfig.Builder.SetWrapperObject(this); }
+        }
         public AdminGetAllConfigV1.AdminGetAllConfigV1Builder AdminGetAllConfigV1Op
         {
             get { return Operation.AdminGetAllConfigV1.Builder.SetWrapperObject(this); }
@@ -33,6 +41,38 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         }
         #endregion
 
+        public Model.LogconfigConfiguration? AdminGetLogConfig(AdminGetLogConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.LogconfigConfiguration?> AdminGetLogConfigAsync(AdminGetLogConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.LogconfigConfiguration? AdminPatchUpdateLogConfig(AdminPatchUpdateLogConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.LogconfigConfiguration?> AdminPatchUpdateLogConfigAsync(AdminPatchUpdateLogConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApiNamespaceConfigList? AdminGetAllConfigV1(AdminGetAllConfigV1 input)
         {
             var response = _sdk.RunRequest(input);

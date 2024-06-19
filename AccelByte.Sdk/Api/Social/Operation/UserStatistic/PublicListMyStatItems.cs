@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Public list all statItems by pagination.
     /// Other detail info:
-    ///             *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=2 (READ)
     ///             *  Returns : stat items
     /// </summary>
     public class PublicListMyStatItems : AccelByte.Sdk.Core.Operation

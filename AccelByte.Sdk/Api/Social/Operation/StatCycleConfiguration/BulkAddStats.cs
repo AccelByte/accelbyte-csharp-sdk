@@ -17,8 +17,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// bulkAddStats
     ///
     /// Bulk add stat cycle to stats.
-    /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=1 (CREATE)
     /// </summary>
     public class BulkAddStats : AccelByte.Sdk.Core.Operation
     {

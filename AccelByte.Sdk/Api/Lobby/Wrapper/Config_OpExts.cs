@@ -30,6 +30,46 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminGetAllConfigV1Async(op);
         }
+        public static Lobby.Model.LogconfigConfiguration? Execute(
+            this AdminGetLogConfig.AdminGetLogConfigBuilder builder
+        )
+        {
+            AdminGetLogConfig op = builder.Build(
+            );
+
+            return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminGetLogConfig(op);
+        }
+        public static async Task<Lobby.Model.LogconfigConfiguration?> ExecuteAsync(
+            this AdminGetLogConfig.AdminGetLogConfigBuilder builder
+        )
+        {
+            AdminGetLogConfig op = builder.Build(
+            );
+
+            return await ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminGetLogConfigAsync(op);
+        }
+        public static Lobby.Model.LogconfigConfiguration? Execute(
+            this AdminPatchUpdateLogConfig.AdminPatchUpdateLogConfigBuilder builder,
+            LogconfigConfiguration body
+        )
+        {
+            AdminPatchUpdateLogConfig op = builder.Build(
+                body
+            );
+
+            return ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminPatchUpdateLogConfig(op);
+        }
+        public static async Task<Lobby.Model.LogconfigConfiguration?> ExecuteAsync(
+            this AdminPatchUpdateLogConfig.AdminPatchUpdateLogConfigBuilder builder,
+            LogconfigConfiguration body
+        )
+        {
+            AdminPatchUpdateLogConfig op = builder.Build(
+                body
+            );
+
+            return await ((Lobby.Wrapper.Config)builder.WrapperObject!).AdminPatchUpdateLogConfigAsync(op);
+        }
         public static Lobby.Model.ModelsConfigReq? Execute(
             this AdminGetConfigV1.AdminGetConfigV1Builder builder,
             string namespace_

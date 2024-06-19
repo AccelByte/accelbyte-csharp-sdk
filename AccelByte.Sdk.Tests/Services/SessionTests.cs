@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Tests.Services
             {
                 Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
                 return;
-            }            
+            }
 
             DisableRetry();
 
@@ -245,7 +245,7 @@ namespace AccelByte.Sdk.Tests.Services
             {
                 Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
                 return;
-            }            
+            }
 
             Assert.IsNotNull(_Player1);
             if (_Player1 == null)

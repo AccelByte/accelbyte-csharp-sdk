@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("client_id")]
         public string ClientId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("client_secret")]
+        public string ClientSecret { get; set; } = String.Empty;
+
         [SdkCommandArgument("code")]
         public string Code { get; set; } = String.Empty;
 
@@ -78,6 +81,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetAdditionalData((string)AdditionalData);
             if (ClientId != null)
                 opBuilder.SetClientId((string)ClientId);
+            if (ClientSecret != null)
+                opBuilder.SetClientSecret((string)ClientSecret);
             if (Code != null)
                 opBuilder.SetCode((string)Code);
             if (CodeVerifier != null)

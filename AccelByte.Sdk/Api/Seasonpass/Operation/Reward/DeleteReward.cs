@@ -19,8 +19,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// This API is used to delete a reward permanently, only draft season reward can be deleted.
     /// 
     /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=8 (DELETE)
     /// </summary>
     public class DeleteReward : AccelByte.Sdk.Core.Operation
     {

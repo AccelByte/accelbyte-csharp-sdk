@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Get list of slots for a given user in namespace.
     /// Other detail info:
-    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
     ///         *  Returns : list of slots
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

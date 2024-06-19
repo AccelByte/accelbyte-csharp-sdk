@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "AdminSendMyMFAEmailCodeV4"; } }
 
+        [SdkCommandArgument("action")]
+        public string Action { get; set; } = String.Empty;
+
         public AdminSendMyMFAEmailCodeV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -41,6 +44,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (Action != null)
+                opBuilder.SetAction((string)Action);
 
 
             AdminSendMyMFAEmailCodeV4 operation = opBuilder.Build(

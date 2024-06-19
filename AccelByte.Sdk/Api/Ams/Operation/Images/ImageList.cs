@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
     ///
     /// Returns images which exist (uploaded, uploading, or building) in the linked account. This route fails if no account is linked
     /// 
-    /// Required Permission: ADMIN:NAMESPACE:{namespace}:ARMADA:ACCOUNT [READ]
+    /// Required Permission: ADMIN:NAMESPACE:{namespace}:AMS:IMAGE [READ]
     /// </summary>
     public class ImageList : AccelByte.Sdk.Core.Operation
     {

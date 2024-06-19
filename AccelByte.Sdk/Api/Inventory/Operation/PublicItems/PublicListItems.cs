@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             public long? Offset { get; set; }
 
-            public long? QtyGte { get; set; }
-
             public PublicListItemsSortBy? SortBy { get; set; }
 
             public string? SourceItemId { get; set; }
@@ -57,12 +55,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             public PublicListItemsBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
-                return this;
-            }
-
-            public PublicListItemsBuilder SetQtyGte(long _qtyGte)
-            {
-                QtyGte = _qtyGte;
                 return this;
             }
 
@@ -116,7 +108,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.QtyGte != null) QueryParams["qtyGte"] = Convert.ToString(builder.QtyGte)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.SourceItemId is not null) QueryParams["sourceItemId"] = builder.SourceItemId;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
@@ -135,7 +126,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
             string namespace_,
             long? limit,
             long? offset,
-            long? qtyGte,
             PublicListItemsSortBy? sortBy,
             string? sourceItemId,
             string? tags
@@ -146,7 +136,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (qtyGte != null) QueryParams["qtyGte"] = Convert.ToString(qtyGte)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (sourceItemId is not null) QueryParams["sourceItemId"] = sourceItemId;
             if (tags is not null) QueryParams["tags"] = tags;
@@ -204,15 +193,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
 
         public static readonly PublicListItemsSortBy CreatedAtdesc
             = new PublicListItemsSortBy("createdAt:desc");
-
-        public static readonly PublicListItemsSortBy Qty
-            = new PublicListItemsSortBy("qty");
-
-        public static readonly PublicListItemsSortBy Qtyasc
-            = new PublicListItemsSortBy("qty:asc");
-
-        public static readonly PublicListItemsSortBy Qtydesc
-            = new PublicListItemsSortBy("qty:desc");
 
         public static readonly PublicListItemsSortBy UpdatedAt
             = new PublicListItemsSortBy("updatedAt");

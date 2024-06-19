@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..34"
+echo "1..39"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -154,7 +154,7 @@ eval_tap $? 11 'AdminGetServicesConfiguration' test.out
 
 #- 12 AdminUpdateServicesConfiguration
 # body param: body
-echo '{"services": [{"extendConfig": {"appName": "P0MrSdaFy0pJYCdf", "namespace": "kfyt09ro5fHdWqJT"}, "id": "NjrmpnnEckHH8kT9", "serviceConfig": {"protocol": "GRPC", "skipAck": false, "url": "XVandercf1nq4Hf3"}, "type": "SERVICE"}, {"extendConfig": {"appName": "SL5PjaYEDxaYN8w9", "namespace": "KUW0py8KrcQfucSq"}, "id": "2X8gFuJORk4j04Yf", "serviceConfig": {"protocol": "GRPC", "skipAck": true, "url": "TsQUrA0WWyKl2K5m"}, "type": "SERVICE"}, {"extendConfig": {"appName": "fefdopcEM0JHfof2", "namespace": "Hwi7vg3osbh0fL2h"}, "id": "7eJvAS2W4uqkhwSC", "serviceConfig": {"protocol": "GRPC", "skipAck": true, "url": "ajwHO3LfvwPewrf1"}, "type": "EXTEND"}]}' > $TEMP_JSON_INPUT
+echo '{"services": [{"extendConfig": {"appName": "P0MrSdaFy0pJYCdf", "namespace": "kfyt09ro5fHdWqJT"}, "id": "NjrmpnnEckHH8kT9", "serviceConfig": {"protocol": "EVENT", "skipAck": false, "url": "XVandercf1nq4Hf3"}, "type": "SERVICE"}, {"extendConfig": {"appName": "SL5PjaYEDxaYN8w9", "namespace": "KUW0py8KrcQfucSq"}, "id": "2X8gFuJORk4j04Yf", "serviceConfig": {"protocol": "EVENT", "skipAck": true, "url": "TsQUrA0WWyKl2K5m"}, "type": "SERVICE"}, {"extendConfig": {"appName": "fefdopcEM0JHfof2", "namespace": "Hwi7vg3osbh0fL2h"}, "id": "7eJvAS2W4uqkhwSC", "serviceConfig": {"protocol": "GRPC", "skipAck": true, "url": "ajwHO3LfvwPewrf1"}, "type": "EXTEND"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gdpr \
     --op AdminUpdateServicesConfiguration \
@@ -181,7 +181,7 @@ eval_tap $? 14 'AdminGetPlatformAccountClosureServicesConfiguration' test.out
 
 #- 15 AdminUpdatePlatformAccountClosureServicesConfiguration
 # body param: body
-echo '{"services": [{"extendConfig": {"appName": "LgpQE9nXzhBC0uyM", "namespace": "R4Xf2nfYvNvG8uQ1"}, "id": "4AhsxaALiBwpNJor", "serviceConfig": {"protocol": "GRPC", "skipAck": true, "url": "m7NjUZ95Z5XDLBN9"}, "type": "EXTEND"}, {"extendConfig": {"appName": "GVPtkjt0OyBlJi4R", "namespace": "bZ0Iy11mfOFjCzZV"}, "id": "cGomWF1oAqUNFDtX", "serviceConfig": {"protocol": "GRPC", "skipAck": false, "url": "LvOAsW8wYh4gq7pR"}, "type": "EXTEND"}, {"extendConfig": {"appName": "ZVLJiDx3au9b9Qjh", "namespace": "zDlnJmi4XaBTgoXj"}, "id": "fdUQHa3RxspSqwdb", "serviceConfig": {"protocol": "GRPC", "skipAck": false, "url": "gzfaQrUCW9fgo69u"}, "type": "SERVICE"}]}' > $TEMP_JSON_INPUT
+echo '{"services": [{"extendConfig": {"appName": "LgpQE9nXzhBC0uyM", "namespace": "R4Xf2nfYvNvG8uQ1"}, "id": "4AhsxaALiBwpNJor", "serviceConfig": {"protocol": "EVENT", "skipAck": true, "url": "m7NjUZ95Z5XDLBN9"}, "type": "EXTEND"}, {"extendConfig": {"appName": "GVPtkjt0OyBlJi4R", "namespace": "bZ0Iy11mfOFjCzZV"}, "id": "cGomWF1oAqUNFDtX", "serviceConfig": {"protocol": "EVENT", "skipAck": false, "url": "LvOAsW8wYh4gq7pR"}, "type": "EXTEND"}, {"extendConfig": {"appName": "ZVLJiDx3au9b9Qjh", "namespace": "zDlnJmi4XaBTgoXj"}, "id": "fdUQHa3RxspSqwdb", "serviceConfig": {"protocol": "GRPC", "skipAck": false, "url": "gzfaQrUCW9fgo69u"}, "type": "SERVICE"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gdpr \
     --op AdminUpdatePlatformAccountClosureServicesConfiguration \
@@ -371,6 +371,54 @@ $CLI_EXE \
     --op PublicGetMyAccountDeletionStatus \
     > test.out 2>&1
 eval_tap $? 34 'PublicGetMyAccountDeletionStatus' test.out
+
+#- 35 S2SGetListFinishedAccountDeletionRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SGetListFinishedAccountDeletionRequest \
+    --namespace $AB_NAMESPACE \
+    --end 'VvBn8Lsf2qSAtizV' \
+    --start '9hzsVbpJLtEZjuyF' \
+    > test.out 2>&1
+eval_tap $? 35 'S2SGetListFinishedAccountDeletionRequest' test.out
+
+#- 36 S2SGetListFinishedPersonalDataRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SGetListFinishedPersonalDataRequest \
+    --namespace $AB_NAMESPACE \
+    --end 'hvbxX2DNbknfVv4n' \
+    --start 'm70TCayYAkF18YBw' \
+    > test.out 2>&1
+eval_tap $? 36 'S2SGetListFinishedPersonalDataRequest' test.out
+
+#- 37 S2SSubmitUserAccountDeletionRequest
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SSubmitUserAccountDeletionRequest \
+    --namespace $AB_NAMESPACE \
+    --userId 'RxcREyU5CwqGJF6n' \
+    > test.out 2>&1
+eval_tap $? 37 'S2SSubmitUserAccountDeletionRequest' test.out
+
+#- 38 S2SRequestDataRetrieval
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SRequestDataRetrieval \
+    --namespace $AB_NAMESPACE \
+    --userId 'Di33Iztr2QcwlRrR' \
+    > test.out 2>&1
+eval_tap $? 38 'S2SRequestDataRetrieval' test.out
+
+#- 39 S2SGeneratePersonalDataURL
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SGeneratePersonalDataURL \
+    --namespace $AB_NAMESPACE \
+    --requestDate 'eRajlpk8lfuiJVck' \
+    --userId 'tlx9zJZVVCc9bpIH' \
+    > test.out 2>&1
+eval_tap $? 39 'S2SGeneratePersonalDataURL' test.out
 
 
 # remove artifacts

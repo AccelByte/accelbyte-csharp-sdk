@@ -35,7 +35,9 @@
 ### Player Reward Wrapper:  [PlayerReward](../../AccelByte.Sdk/Api/Challenge/Wrapper/PlayerReward.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/challenge/v1/admin/namespaces/{namespace}/users/rewards/claim` | POST | AdminClaimUsersRewards | [AdminClaimUsersRewards](../../AccelByte.Sdk/Api/Challenge/Operation/PlayerReward/AdminClaimUsersRewards.cs) | [AdminClaimUsersRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/PlayerReward/AdminClaimUsersRewards.cs) |
 | `/challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards` | GET | AdminGetUserRewards | [AdminGetUserRewards](../../AccelByte.Sdk/Api/Challenge/Operation/PlayerReward/AdminGetUserRewards.cs) | [AdminGetUserRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/PlayerReward/AdminGetUserRewards.cs) |
+| `/challenge/v1/admin/namespaces/{namespace}/users/{userId}/rewards/claim` | POST | AdminClaimUserRewards | [AdminClaimUserRewards](../../AccelByte.Sdk/Api/Challenge/Operation/PlayerReward/AdminClaimUserRewards.cs) | [AdminClaimUserRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/PlayerReward/AdminClaimUserRewards.cs) |
 | `/challenge/v1/public/namespaces/{namespace}/users/me/rewards` | GET | PublicGetUserRewards | [PublicGetUserRewards](../../AccelByte.Sdk/Api/Challenge/Operation/PlayerReward/PublicGetUserRewards.cs) | [PublicGetUserRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/PlayerReward/PublicGetUserRewards.cs) |
 | `/challenge/v1/public/namespaces/{namespace}/users/me/rewards/claim` | POST | PublicClaimUserRewards | [PublicClaimUserRewards](../../AccelByte.Sdk/Api/Challenge/Operation/PlayerReward/PublicClaimUserRewards.cs) | [PublicClaimUserRewards](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/PlayerReward/PublicClaimUserRewards.cs) |
 
@@ -78,8 +80,11 @@
 | Model | Class |
 |---|---|
 | `iam.ErrorResponse` | [IamErrorResponse](../../AccelByte.Sdk/Api/Challenge/Model/IamErrorResponse.cs) |
+| `iam.Permission` | [IamPermission](../../AccelByte.Sdk/Api/Challenge/Model/IamPermission.cs) |
 | `model.ChallengeResponse` | [ModelChallengeResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelChallengeResponse.cs) |
 | `model.ClaimUserRewardsReq` | [ModelClaimUserRewardsReq](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUserRewardsReq.cs) |
+| `model.ClaimUsersRewardsRequest` | [ModelClaimUsersRewardsRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUsersRewardsRequest.cs) |
+| `model.ClaimUsersRewardsResponse` | [ModelClaimUsersRewardsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelClaimUsersRewardsResponse.cs) |
 | `model.CreateChallengeRequest` | [ModelCreateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelCreateChallengeRequest.cs) |
 | `model.CreateGoalRequest` | [ModelCreateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelCreateGoalRequest.cs) |
 | `model.EvaluatePlayerProgressionRequest` | [ModelEvaluatePlayerProgressionRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelEvaluatePlayerProgressionRequest.cs) |
@@ -96,12 +101,13 @@
 | `model.Predicate` | [ModelPredicate](../../AccelByte.Sdk/Api/Challenge/Model/ModelPredicate.cs) |
 | `model.Requirement` | [ModelRequirement](../../AccelByte.Sdk/Api/Challenge/Model/ModelRequirement.cs) |
 | `model.RequirementProgressionResponse` | [ModelRequirementProgressionResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelRequirementProgressionResponse.cs) |
+| `model.ResetConfig` | [ModelResetConfig](../../AccelByte.Sdk/Api/Challenge/Model/ModelResetConfig.cs) |
 | `model.Reward` | [ModelReward](../../AccelByte.Sdk/Api/Challenge/Model/ModelReward.cs) |
 | `model.Schedule` | [ModelSchedule](../../AccelByte.Sdk/Api/Challenge/Model/ModelSchedule.cs) |
+| `model.UpdateChallengeRequest` | [ModelUpdateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateChallengeRequest.cs) |
 | `model.UpdateGoalRequest` | [ModelUpdateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateGoalRequest.cs) |
 | `model.UserProgressionResponse` | [ModelUserProgressionResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelUserProgressionResponse.cs) |
 | `model.UserProgressionResponseMeta` | [ModelUserProgressionResponseMeta](../../AccelByte.Sdk/Api/Challenge/Model/ModelUserProgressionResponseMeta.cs) |
 | `model.UserReward` | [ModelUserReward](../../AccelByte.Sdk/Api/Challenge/Model/ModelUserReward.cs) |
 | `models.Period` | [ModelsPeriod](../../AccelByte.Sdk/Api/Challenge/Model/ModelsPeriod.cs) |
-| `models.UpdateChallengeRequest` | [ModelsUpdateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelsUpdateChallengeRequest.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Challenge/Model/ResponseError.cs) |

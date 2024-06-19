@@ -39,6 +39,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly BillingAccountPaymentProvider CHECKOUT
             = new BillingAccountPaymentProvider("CHECKOUT");
 
+        public static readonly BillingAccountPaymentProvider NEONPAY
+            = new BillingAccountPaymentProvider("NEONPAY");
+
         public static readonly BillingAccountPaymentProvider PAYPAL
             = new BillingAccountPaymentProvider("PAYPAL");
 

@@ -29,12 +29,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<PublicGetBackupCodesV4Builder>
         {
 
+            public string? LanguageTag { get; set; }
+
 
 
 
 
             internal PublicGetBackupCodesV4Builder() { }
 
+
+            public PublicGetBackupCodesV4Builder SetLanguageTag(string _languageTag)
+            {
+                LanguageTag = _languageTag;
+                return this;
+            }
 
 
 
@@ -62,6 +70,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.LanguageTag is not null) QueryParams["languageTag"] = builder.LanguageTag;
 
 
 
@@ -73,11 +82,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PublicGetBackupCodesV4(
-            string namespace_
+            string namespace_,
+            string? languageTag
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (languageTag is not null) QueryParams["languageTag"] = languageTag;
 
 
 

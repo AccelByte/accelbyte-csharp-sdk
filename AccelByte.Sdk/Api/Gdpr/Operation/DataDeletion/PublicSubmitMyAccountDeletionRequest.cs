@@ -19,6 +19,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// Submit my account deletion requests.
     /// Requires valid user access token
     /// This is for in-game only and require a valid platformId and platform token. If a full account is not logged by 3rd platform, then please use [/gdpr/public/namespaces/{namespace}/users/{userId}/deletions](#operations-Data_Deletion-PublicSubmitUserAccountDeletionRequest)
+    /// 
+    /// ### Request Header:
+    /// - **Content-Type: application/x-www-form-urlencoded**
     /// </summary>
     public class PublicSubmitMyAccountDeletionRequest : AccelByte.Sdk.Core.Operation
     {

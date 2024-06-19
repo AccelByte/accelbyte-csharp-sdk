@@ -30,7 +30,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - lowercase
     /// - uppercase
     /// - mixed: uppercase and lowercase
-    /// - mixed: uppercase and/or lowercase
+    /// - any: uppercase and/or lowercase
     /// 
     /// flexible special character non words with `allowAllSpecialCharacters`
     /// if `allowAllSpecialCharacters` is set to true `specialCharacters` will forced to empty.

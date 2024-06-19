@@ -34,6 +34,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactGetAsync(op);
         }
+        public static void Execute(
+            this ArtifactBulkDelete.ArtifactBulkDeleteBuilder builder,
+            string namespace_
+        )
+        {
+            ArtifactBulkDelete op = builder.Build(
+                namespace_
+            );
+
+            ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactBulkDelete(op);
+        }
+        public static async Task ExecuteAsync(
+            this ArtifactBulkDelete.ArtifactBulkDeleteBuilder builder,
+            string namespace_
+        )
+        {
+            ArtifactBulkDelete op = builder.Build(
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Artifacts)builder.WrapperObject!).ArtifactBulkDeleteAsync(op);
+        }
         public static Ams.Model.ApiArtifactUsageResponse? Execute(
             this ArtifactUsageGet.ArtifactUsageGetBuilder builder,
             string namespace_

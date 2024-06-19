@@ -16,9 +16,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// PublicSubmitUserAccountDeletionRequest
     ///
-    /// Submit user's account deletion requests
+    /// Submit user's account deletion request.
     /// Requires valid user access token and password
     /// Scope: account
+    /// 
+    /// ### Request Header:
+    /// - **Content-Type: application/x-www-form-urlencoded**
     /// </summary>
     public class PublicSubmitUserAccountDeletionRequest : AccelByte.Sdk.Core.Operation
     {

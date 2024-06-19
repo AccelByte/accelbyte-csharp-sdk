@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.ArtifactGet.Builder.SetWrapperObject(this); }
         }
+        public ArtifactBulkDelete.ArtifactBulkDeleteBuilder ArtifactBulkDeleteOp
+        {
+            get { return Operation.ArtifactBulkDelete.Builder.SetWrapperObject(this); }
+        }
         public ArtifactUsageGet.ArtifactUsageGetBuilder ArtifactUsageGetOp
         {
             get { return Operation.ArtifactUsageGet.Builder.SetWrapperObject(this); }
@@ -57,6 +61,22 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ArtifactBulkDelete(ArtifactBulkDelete input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ArtifactBulkDeleteAsync(ArtifactBulkDelete input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

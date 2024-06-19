@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// List stat cycles by pagination.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=2 (READ)
     ///         *  Returns : stat cycles
     /// </summary>
     public class GetStatCycles : AccelByte.Sdk.Core.Operation

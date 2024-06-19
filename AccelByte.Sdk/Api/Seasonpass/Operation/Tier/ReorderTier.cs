@@ -17,10 +17,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// reorderTier
     ///
     /// This API is used to reorder a tier. Only draft season pass can be updated.
-    /// 
-    /// Other detail info:
-    /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=4 (UPDATE)
     /// </summary>
     public class ReorderTier : AccelByte.Sdk.Core.Operation
     {

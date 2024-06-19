@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class PaymentUrlCreate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("neonPayConfig")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PaymentOrderNeonPayConfig? NeonPayConfig { get; set; }
+
         [JsonPropertyName("paymentOrderNo")]
         public string? PaymentOrderNo { get; set; }
 
@@ -44,6 +48,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
         public static readonly PaymentUrlCreatePaymentProvider CHECKOUT
             = new PaymentUrlCreatePaymentProvider("CHECKOUT");
+
+        public static readonly PaymentUrlCreatePaymentProvider NEONPAY
+            = new PaymentUrlCreatePaymentProvider("NEONPAY");
 
         public static readonly PaymentUrlCreatePaymentProvider PAYPAL
             = new PaymentUrlCreatePaymentProvider("PAYPAL");

@@ -1,3 +1,10 @@
+<a name="v0.63.0"></a>
+## [v0.63.0]
+### fix
+- **:** resolve latest coverity issues
+- **docs:** update create namespace doc link in sample app
+
+
 <a name="v0.62.0"></a>
 ## [v0.62.0]
 ### fix

@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Get slot data.
     /// Other detail info:
-    ///         *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:SLOTDATA", action=2 (READ)
     ///         *  Returns : slot data
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

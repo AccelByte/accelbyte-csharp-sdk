@@ -23,7 +23,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Deletes a user slot configuration in given namespace, the namespace slot configuration will be returned after delete.
     /// Other detail info:
-    ///       *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SLOTCONFIG", action=8 (DELETE)
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteUserSlotConfig : AccelByte.Sdk.Core.Operation

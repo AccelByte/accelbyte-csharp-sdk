@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api
             return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItemAsync(op);
         }
 
-        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
+        public static Inventory.Model.ApimodelsItemResp<T1, T2, T3>? Execute<T1, T2, T3>(
             this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
             ApimodelsConsumeItemReq body,
             string inventoryId,
@@ -56,9 +56,9 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem<T1, T2>(op);
+            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItem<T1, T2, T3>(op);
         }
-        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2>?> ExecuteAsync<T1, T2>(
+        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2, T3>?> ExecuteAsync<T1, T2, T3>(
             this PublicConsumeMyItem.PublicConsumeMyItemBuilder builder,
             ApimodelsConsumeItemReq body,
             string inventoryId,
@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItemAsync<T1, T2>(op);
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicConsumeMyItemAsync<T1, T2, T3>(op);
         }
         public static Inventory.Model.ApimodelsListItemResp? Execute(
             this PublicListItems.PublicListItemsBuilder builder,
@@ -224,7 +224,7 @@ namespace AccelByte.Sdk.Api
             return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItemAsync(op);
         }
 
-        public static Inventory.Model.ApimodelsItemResp<T1, T2>? Execute<T1, T2>(
+        public static Inventory.Model.ApimodelsItemResp<T1, T2, T3>? Execute<T1, T2, T3>(
             this PublicGetItem.PublicGetItemBuilder builder,
             string inventoryId,
             string namespace_,
@@ -239,9 +239,9 @@ namespace AccelByte.Sdk.Api
                 sourceItemId
             );
 
-            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem<T1, T2>(op);
+            return ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItem<T1, T2, T3>(op);
         }
-        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2>?> ExecuteAsync<T1, T2>(
+        public static async Task<Inventory.Model.ApimodelsItemResp<T1, T2, T3>?> ExecuteAsync<T1, T2, T3>(
             this PublicGetItem.PublicGetItemBuilder builder,
             string inventoryId,
             string namespace_,
@@ -256,7 +256,7 @@ namespace AccelByte.Sdk.Api
                 sourceItemId
             );
 
-            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItemAsync<T1, T2>(op);
+            return await ((Inventory.Wrapper.PublicItems)builder.WrapperObject!).PublicGetItemAsync<T1, T2, T3>(op);
         }
     }
 }

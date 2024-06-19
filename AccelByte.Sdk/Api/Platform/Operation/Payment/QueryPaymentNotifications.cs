@@ -233,6 +233,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryPaymentNotificationsNotificationSource CHECKOUT
             = new QueryPaymentNotificationsNotificationSource("CHECKOUT");
 
+        public static readonly QueryPaymentNotificationsNotificationSource NEONPAY
+            = new QueryPaymentNotificationsNotificationSource("NEONPAY");
+
         public static readonly QueryPaymentNotificationsNotificationSource PAYPAL
             = new QueryPaymentNotificationsNotificationSource("PAYPAL");
 

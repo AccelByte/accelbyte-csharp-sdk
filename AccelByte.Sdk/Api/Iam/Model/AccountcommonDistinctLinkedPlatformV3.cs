@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("linkedAt")]
         public string? LinkedAt { get; set; }
 
+        [JsonPropertyName("logoURL")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LogoURL { get; set; }
+
         [JsonPropertyName("platformGroup")]
         public string? PlatformGroup { get; set; }
 

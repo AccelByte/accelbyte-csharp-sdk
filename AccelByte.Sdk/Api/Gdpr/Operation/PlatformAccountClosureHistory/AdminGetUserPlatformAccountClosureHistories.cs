@@ -17,11 +17,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// AdminGetUserPlatformAccountClosureHistories
     ///
     /// Get user's platform account closure histories.
+    /// Scope: account
+    /// 
     /// ------
     /// Supported platforms:
     /// * psn
-    /// 
-    /// Scope: account
     /// </summary>
     public class AdminGetUserPlatformAccountClosureHistories : AccelByte.Sdk.Core.Operation
     {

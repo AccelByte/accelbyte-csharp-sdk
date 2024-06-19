@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Delete user's statItems given stat code.
     /// Other detail info:
-    ///           *  Required permission : resource="NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=8 (DELETE)
     ///           *  Returns : no content
     /// </summary>
     public class DeleteUserStatItems1 : AccelByte.Sdk.Core.Operation

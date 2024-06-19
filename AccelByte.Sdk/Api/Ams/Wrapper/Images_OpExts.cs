@@ -60,6 +60,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageGetAsync(op);
         }
+        public static void Execute(
+            this ImageMarkForDeletion.ImageMarkForDeletionBuilder builder,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImageMarkForDeletion op = builder.Build(
+                imageID,
+                namespace_
+            );
+
+            ((Ams.Wrapper.Images)builder.WrapperObject!).ImageMarkForDeletion(op);
+        }
+        public static async Task ExecuteAsync(
+            this ImageMarkForDeletion.ImageMarkForDeletionBuilder builder,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImageMarkForDeletion op = builder.Build(
+                imageID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageMarkForDeletionAsync(op);
+        }
         public static Ams.Model.ApiImageDetails? Execute(
             this ImagePatch.ImagePatchBuilder builder,
             ApiImageUpdate body,
@@ -89,6 +115,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImagePatchAsync(op);
+        }
+        public static void Execute(
+            this ImageUnmarkForDeletion.ImageUnmarkForDeletionBuilder builder,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImageUnmarkForDeletion op = builder.Build(
+                imageID,
+                namespace_
+            );
+
+            ((Ams.Wrapper.Images)builder.WrapperObject!).ImageUnmarkForDeletion(op);
+        }
+        public static async Task ExecuteAsync(
+            this ImageUnmarkForDeletion.ImageUnmarkForDeletionBuilder builder,
+            string imageID,
+            string namespace_
+        )
+        {
+            ImageUnmarkForDeletion op = builder.Build(
+                imageID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageUnmarkForDeletionAsync(op);
         }
     }
 }

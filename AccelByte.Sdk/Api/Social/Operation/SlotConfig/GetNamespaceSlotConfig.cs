@@ -22,7 +22,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// Get slot configuration for a given namespace. In case slot configuration is not set, the default will be returned.
     /// Other detail info:
     /// 
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:SLOTCONFIG", action=2 (READ)
     ///   *  Returns : namespace slot config info
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

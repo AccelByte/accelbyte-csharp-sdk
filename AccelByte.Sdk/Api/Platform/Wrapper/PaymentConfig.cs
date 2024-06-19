@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public GetPaymentMerchantConfig.GetPaymentMerchantConfigBuilder GetPaymentMerchantConfigOp
+        {
+            get { return Operation.GetPaymentMerchantConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdatePaymentDomainWhitelistConfig.UpdatePaymentDomainWhitelistConfigBuilder UpdatePaymentDomainWhitelistConfigOp
+        {
+            get { return Operation.UpdatePaymentDomainWhitelistConfig.Builder.SetWrapperObject(this); }
+        }
         public TestAdyenConfig.TestAdyenConfigBuilder TestAdyenConfigOp
         {
             get { return Operation.TestAdyenConfig.Builder.SetWrapperObject(this); }
@@ -34,6 +42,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public DebugMatchedPaymentMerchantConfig.DebugMatchedPaymentMerchantConfigBuilder DebugMatchedPaymentMerchantConfigOp
         {
             get { return Operation.DebugMatchedPaymentMerchantConfig.Builder.SetWrapperObject(this); }
+        }
+        public TestNeonPayConfig.TestNeonPayConfigBuilder TestNeonPayConfigOp
+        {
+            get { return Operation.TestNeonPayConfig.Builder.SetWrapperObject(this); }
         }
         public TestPayPalConfig.TestPayPalConfigBuilder TestPayPalConfigOp
         {
@@ -51,9 +63,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.TestXsollaConfig.Builder.SetWrapperObject(this); }
         }
-        public GetPaymentMerchantConfig.GetPaymentMerchantConfigBuilder GetPaymentMerchantConfigOp
+        public GetPaymentMerchantConfig1.GetPaymentMerchantConfig1Builder GetPaymentMerchantConfig1Op
         {
-            get { return Operation.GetPaymentMerchantConfig.Builder.SetWrapperObject(this); }
+            get { return Operation.GetPaymentMerchantConfig1.Builder.SetWrapperObject(this); }
         }
         public UpdateAdyenConfig.UpdateAdyenConfigBuilder UpdateAdyenConfigOp
         {
@@ -78,6 +90,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public TestCheckoutConfigById.TestCheckoutConfigByIdBuilder TestCheckoutConfigByIdOp
         {
             get { return Operation.TestCheckoutConfigById.Builder.SetWrapperObject(this); }
+        }
+        public UpdateNeonPayConfig.UpdateNeonPayConfigBuilder UpdateNeonPayConfigOp
+        {
+            get { return Operation.UpdateNeonPayConfig.Builder.SetWrapperObject(this); }
+        }
+        public TestNeonPayConfigById.TestNeonPayConfigByIdBuilder TestNeonPayConfigByIdOp
+        {
+            get { return Operation.TestNeonPayConfigById.Builder.SetWrapperObject(this); }
         }
         public UpdatePayPalConfig.UpdatePayPalConfigBuilder UpdatePayPalConfigOp
         {
@@ -157,6 +177,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
+        public Model.PaymentDomainWhitelistConfigInfo? GetPaymentMerchantConfig(GetPaymentMerchantConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentDomainWhitelistConfigInfo?> GetPaymentMerchantConfigAsync(GetPaymentMerchantConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PaymentDomainWhitelistConfigInfo? UpdatePaymentDomainWhitelistConfig(UpdatePaymentDomainWhitelistConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentDomainWhitelistConfigInfo?> UpdatePaymentDomainWhitelistConfigAsync(UpdatePaymentDomainWhitelistConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.TestResult? TestAdyenConfig(TestAdyenConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -214,6 +266,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.PaymentMerchantConfigInfo?> DebugMatchedPaymentMerchantConfigAsync(DebugMatchedPaymentMerchantConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.TestResult? TestNeonPayConfig(TestNeonPayConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TestResult?> TestNeonPayConfigAsync(TestNeonPayConfig input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -285,7 +353,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PaymentMerchantConfigInfo? GetPaymentMerchantConfig(GetPaymentMerchantConfig input)
+        public Model.PaymentMerchantConfigInfo? GetPaymentMerchantConfig1(GetPaymentMerchantConfig1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -293,7 +361,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.PaymentMerchantConfigInfo?> GetPaymentMerchantConfigAsync(GetPaymentMerchantConfig input)
+        public async Task<Model.PaymentMerchantConfigInfo?> GetPaymentMerchantConfig1Async(GetPaymentMerchantConfig1 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -390,6 +458,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.TestResult?> TestCheckoutConfigByIdAsync(TestCheckoutConfigById input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.PaymentMerchantConfigInfo? UpdateNeonPayConfig(UpdateNeonPayConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.PaymentMerchantConfigInfo?> UpdateNeonPayConfigAsync(UpdateNeonPayConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.TestResult? TestNeonPayConfigById(TestNeonPayConfigById input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.TestResult?> TestNeonPayConfigByIdAsync(TestNeonPayConfigById input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

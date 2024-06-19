@@ -333,6 +333,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly OrderInfoPaymentProvider CHECKOUT
             = new OrderInfoPaymentProvider("CHECKOUT");
 
+        public static readonly OrderInfoPaymentProvider NEONPAY
+            = new OrderInfoPaymentProvider("NEONPAY");
+
         public static readonly OrderInfoPaymentProvider PAYPAL
             = new OrderInfoPaymentProvider("PAYPAL");
 

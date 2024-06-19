@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:SEASONPASS", action=2 (READ)
-    ///   *  Returns : the list of passes
+    ///   * Returns : the list of passes
     /// </summary>
     public class QueryPasses : AccelByte.Sdk.Core.Operation
     {

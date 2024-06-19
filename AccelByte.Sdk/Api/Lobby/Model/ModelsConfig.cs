@@ -45,6 +45,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? DisableInvitationOnJoinParty { get; set; }
 
+        [JsonPropertyName("disableRemoveSocketOldConnection")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DisableRemoveSocketOldConnection { get; set; }
+
         [JsonPropertyName("enableChat")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableChat { get; set; }

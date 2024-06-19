@@ -20,8 +20,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// 
     /// Other detail info:
     /// 
-    ///   * Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
-    ///   *  Returns : user season data
+    ///   * Returns : user season data
     /// </summary>
     public class GetUserSeason : AccelByte.Sdk.Core.Operation
     {

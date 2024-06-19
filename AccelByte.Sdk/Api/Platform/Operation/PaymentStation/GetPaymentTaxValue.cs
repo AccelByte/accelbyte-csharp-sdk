@@ -155,6 +155,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetPaymentTaxValuePaymentProvider CHECKOUT
             = new GetPaymentTaxValuePaymentProvider("CHECKOUT");
 
+        public static readonly GetPaymentTaxValuePaymentProvider NEONPAY
+            = new GetPaymentTaxValuePaymentProvider("NEONPAY");
+
         public static readonly GetPaymentTaxValuePaymentProvider PAYPAL
             = new GetPaymentTaxValuePaymentProvider("PAYPAL");
 

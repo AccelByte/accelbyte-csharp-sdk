@@ -171,6 +171,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly PayPaymentProvider CHECKOUT
             = new PayPaymentProvider("CHECKOUT");
 
+        public static readonly PayPaymentProvider NEONPAY
+            = new PayPaymentProvider("NEONPAY");
+
         public static readonly PayPaymentProvider PAYPAL
             = new PayPaymentProvider("PAYPAL");
 

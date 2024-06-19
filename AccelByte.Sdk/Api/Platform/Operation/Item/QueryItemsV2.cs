@@ -14,7 +14,7 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// queryItems_1
+    /// queryItemsV2
     ///
     /// This API is used to query items by criteria within a store.
     /// 
@@ -26,16 +26,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///   * Returns : the list of items
     /// </summary>
-    public class QueryItems1 : AccelByte.Sdk.Core.Operation
+    public class QueryItemsV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static QueryItems1Builder Builder { get => new QueryItems1Builder(); }
+        public static QueryItemsV2Builder Builder { get => new QueryItemsV2Builder(); }
 
-        public class QueryItems1Builder
-            : OperationBuilder<QueryItems1Builder>
+        public class QueryItemsV2Builder
+            : OperationBuilder<QueryItemsV2Builder>
         {
 
-            public QueryItems1AppType? AppType { get; set; }
+            public QueryItemsV2AppType? AppType { get; set; }
 
             public string? AvailableDate { get; set; }
 
@@ -49,9 +49,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? ItemName { get; set; }
 
-            public QueryItems1ItemStatus? ItemStatus { get; set; }
+            public QueryItemsV2ItemStatus? ItemStatus { get; set; }
 
-            public QueryItems1ItemType? ItemType { get; set; }
+            public List<QueryItemsV2ItemType>? ItemType { get; set; }
 
             public int? Limit { get; set; }
 
@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? SectionExclusive { get; set; }
 
-            public List<QueryItems1SortBy>? SortBy { get; set; }
+            public List<QueryItemsV2SortBy>? SortBy { get; set; }
 
             public string? StoreId { get; set; }
 
@@ -75,112 +75,112 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            internal QueryItems1Builder() { }
+            internal QueryItemsV2Builder() { }
 
 
-            public QueryItems1Builder SetAppType(QueryItems1AppType _appType)
+            public QueryItemsV2Builder SetAppType(QueryItemsV2AppType _appType)
             {
                 AppType = _appType;
                 return this;
             }
 
-            public QueryItems1Builder SetAvailableDate(string _availableDate)
+            public QueryItemsV2Builder SetAvailableDate(string _availableDate)
             {
                 AvailableDate = _availableDate;
                 return this;
             }
 
-            public QueryItems1Builder SetBaseAppId(string _baseAppId)
+            public QueryItemsV2Builder SetBaseAppId(string _baseAppId)
             {
                 BaseAppId = _baseAppId;
                 return this;
             }
 
-            public QueryItems1Builder SetCategoryPath(string _categoryPath)
+            public QueryItemsV2Builder SetCategoryPath(string _categoryPath)
             {
                 CategoryPath = _categoryPath;
                 return this;
             }
 
-            public QueryItems1Builder SetFeatures(string _features)
+            public QueryItemsV2Builder SetFeatures(string _features)
             {
                 Features = _features;
                 return this;
             }
 
-            public QueryItems1Builder SetIncludeSubCategoryItem(bool _includeSubCategoryItem)
+            public QueryItemsV2Builder SetIncludeSubCategoryItem(bool _includeSubCategoryItem)
             {
                 IncludeSubCategoryItem = _includeSubCategoryItem;
                 return this;
             }
 
-            public QueryItems1Builder SetItemName(string _itemName)
+            public QueryItemsV2Builder SetItemName(string _itemName)
             {
                 ItemName = _itemName;
                 return this;
             }
 
-            public QueryItems1Builder SetItemStatus(QueryItems1ItemStatus _itemStatus)
+            public QueryItemsV2Builder SetItemStatus(QueryItemsV2ItemStatus _itemStatus)
             {
                 ItemStatus = _itemStatus;
                 return this;
             }
 
-            public QueryItems1Builder SetItemType(QueryItems1ItemType _itemType)
+            public QueryItemsV2Builder SetItemType(List<QueryItemsV2ItemType> _itemType)
             {
                 ItemType = _itemType;
                 return this;
             }
 
-            public QueryItems1Builder SetLimit(int _limit)
+            public QueryItemsV2Builder SetLimit(int _limit)
             {
                 Limit = _limit;
                 return this;
             }
 
-            public QueryItems1Builder SetOffset(int _offset)
+            public QueryItemsV2Builder SetOffset(int _offset)
             {
                 Offset = _offset;
                 return this;
             }
 
-            public QueryItems1Builder SetRegion(string _region)
+            public QueryItemsV2Builder SetRegion(string _region)
             {
                 Region = _region;
                 return this;
             }
 
-            public QueryItems1Builder SetSectionExclusive(bool _sectionExclusive)
+            public QueryItemsV2Builder SetSectionExclusive(bool _sectionExclusive)
             {
                 SectionExclusive = _sectionExclusive;
                 return this;
             }
 
-            public QueryItems1Builder SetSortBy(List<QueryItems1SortBy> _sortBy)
+            public QueryItemsV2Builder SetSortBy(List<QueryItemsV2SortBy> _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
             }
 
-            public QueryItems1Builder SetStoreId(string _storeId)
+            public QueryItemsV2Builder SetStoreId(string _storeId)
             {
                 StoreId = _storeId;
                 return this;
             }
 
-            public QueryItems1Builder SetTags(string _tags)
+            public QueryItemsV2Builder SetTags(string _tags)
             {
                 Tags = _tags;
                 return this;
             }
 
-            public QueryItems1Builder SetTargetNamespace(string _targetNamespace)
+            public QueryItemsV2Builder SetTargetNamespace(string _targetNamespace)
             {
                 TargetNamespace = _targetNamespace;
                 return this;
             }
 
-            public QueryItems1Builder SetWithTotal(bool _withTotal)
+            public QueryItemsV2Builder SetWithTotal(bool _withTotal)
             {
                 WithTotal = _withTotal;
                 return this;
@@ -190,11 +190,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public QueryItems1 Build(
+            public QueryItemsV2 Build(
                 string namespace_
             )
             {
-                QueryItems1 op = new QueryItems1(this,
+                QueryItemsV2 op = new QueryItemsV2(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -206,7 +206,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private QueryItems1(QueryItems1Builder builder,
+        private QueryItemsV2(QueryItemsV2Builder builder,
             string namespace_
         )
         {
@@ -220,7 +220,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.IncludeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(builder.IncludeSubCategoryItem)!;
             if (builder.ItemName is not null) QueryParams["itemName"] = builder.ItemName;
             if (builder.ItemStatus is not null) QueryParams["itemStatus"] = builder.ItemStatus.Value;
-            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
+            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
@@ -233,6 +233,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            CollectionFormatMap["itemType"] = "multi";
             CollectionFormatMap["sortBy"] = "csv";
 
 
@@ -241,22 +242,22 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public QueryItems1(
+        public QueryItemsV2(
             string namespace_,
-            QueryItems1AppType? appType,
+            QueryItemsV2AppType? appType,
             string? availableDate,
             string? baseAppId,
             string? categoryPath,
             string? features,
             bool? includeSubCategoryItem,
             string? itemName,
-            QueryItems1ItemStatus? itemStatus,
-            QueryItems1ItemType? itemType,
+            QueryItemsV2ItemStatus? itemStatus,
+            List<QueryItemsV2ItemType>? itemType,
             int? limit,
             int? offset,
             string? region,
             bool? sectionExclusive,
-            List<QueryItems1SortBy>? sortBy,
+            List<QueryItemsV2SortBy>? sortBy,
             string? storeId,
             string? tags,
             string? targetNamespace,
@@ -273,7 +274,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (includeSubCategoryItem != null) QueryParams["includeSubCategoryItem"] = Convert.ToString(includeSubCategoryItem)!;
             if (itemName is not null) QueryParams["itemName"] = itemName;
             if (itemStatus is not null) QueryParams["itemStatus"] = itemStatus.Value;
-            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
+            if (itemType is not null) QueryParams["itemType"] = itemType;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
@@ -286,6 +287,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            CollectionFormatMap["itemType"] = "multi";
             CollectionFormatMap["sortBy"] = "csv";
 
 
@@ -328,147 +330,147 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
     }
 
-    public class QueryItems1AppType : StringEnum<QueryItems1AppType>
+    public class QueryItemsV2AppType : StringEnum<QueryItemsV2AppType>
     {
-        public static readonly QueryItems1AppType DEMO
-            = new QueryItems1AppType("DEMO");
+        public static readonly QueryItemsV2AppType DEMO
+            = new QueryItemsV2AppType("DEMO");
 
-        public static readonly QueryItems1AppType DLC
-            = new QueryItems1AppType("DLC");
+        public static readonly QueryItemsV2AppType DLC
+            = new QueryItemsV2AppType("DLC");
 
-        public static readonly QueryItems1AppType GAME
-            = new QueryItems1AppType("GAME");
+        public static readonly QueryItemsV2AppType GAME
+            = new QueryItemsV2AppType("GAME");
 
-        public static readonly QueryItems1AppType SOFTWARE
-            = new QueryItems1AppType("SOFTWARE");
+        public static readonly QueryItemsV2AppType SOFTWARE
+            = new QueryItemsV2AppType("SOFTWARE");
 
 
-        public static implicit operator QueryItems1AppType(string value)
+        public static implicit operator QueryItemsV2AppType(string value)
         {
             return NewValue(value);
         }
 
-        public QueryItems1AppType(string enumValue)
+        public QueryItemsV2AppType(string enumValue)
             : base(enumValue)
         {
 
         }
     }
 
-    public class QueryItems1ItemStatus : StringEnum<QueryItems1ItemStatus>
+    public class QueryItemsV2ItemStatus : StringEnum<QueryItemsV2ItemStatus>
     {
-        public static readonly QueryItems1ItemStatus ACTIVE
-            = new QueryItems1ItemStatus("ACTIVE");
+        public static readonly QueryItemsV2ItemStatus ACTIVE
+            = new QueryItemsV2ItemStatus("ACTIVE");
 
-        public static readonly QueryItems1ItemStatus INACTIVE
-            = new QueryItems1ItemStatus("INACTIVE");
+        public static readonly QueryItemsV2ItemStatus INACTIVE
+            = new QueryItemsV2ItemStatus("INACTIVE");
 
 
-        public static implicit operator QueryItems1ItemStatus(string value)
+        public static implicit operator QueryItemsV2ItemStatus(string value)
         {
             return NewValue(value);
         }
 
-        public QueryItems1ItemStatus(string enumValue)
+        public QueryItemsV2ItemStatus(string enumValue)
             : base(enumValue)
         {
 
         }
     }
 
-    public class QueryItems1ItemType : StringEnum<QueryItems1ItemType>
+    public class QueryItemsV2ItemType : StringEnum<QueryItemsV2ItemType>
     {
-        public static readonly QueryItems1ItemType APP
-            = new QueryItems1ItemType("APP");
+        public static readonly QueryItemsV2ItemType APP
+            = new QueryItemsV2ItemType("APP");
 
-        public static readonly QueryItems1ItemType BUNDLE
-            = new QueryItems1ItemType("BUNDLE");
+        public static readonly QueryItemsV2ItemType BUNDLE
+            = new QueryItemsV2ItemType("BUNDLE");
 
-        public static readonly QueryItems1ItemType CODE
-            = new QueryItems1ItemType("CODE");
+        public static readonly QueryItemsV2ItemType CODE
+            = new QueryItemsV2ItemType("CODE");
 
-        public static readonly QueryItems1ItemType COINS
-            = new QueryItems1ItemType("COINS");
+        public static readonly QueryItemsV2ItemType COINS
+            = new QueryItemsV2ItemType("COINS");
 
-        public static readonly QueryItems1ItemType EXTENSION
-            = new QueryItems1ItemType("EXTENSION");
+        public static readonly QueryItemsV2ItemType EXTENSION
+            = new QueryItemsV2ItemType("EXTENSION");
 
-        public static readonly QueryItems1ItemType INGAMEITEM
-            = new QueryItems1ItemType("INGAMEITEM");
+        public static readonly QueryItemsV2ItemType INGAMEITEM
+            = new QueryItemsV2ItemType("INGAMEITEM");
 
-        public static readonly QueryItems1ItemType LOOTBOX
-            = new QueryItems1ItemType("LOOTBOX");
+        public static readonly QueryItemsV2ItemType LOOTBOX
+            = new QueryItemsV2ItemType("LOOTBOX");
 
-        public static readonly QueryItems1ItemType MEDIA
-            = new QueryItems1ItemType("MEDIA");
+        public static readonly QueryItemsV2ItemType MEDIA
+            = new QueryItemsV2ItemType("MEDIA");
 
-        public static readonly QueryItems1ItemType OPTIONBOX
-            = new QueryItems1ItemType("OPTIONBOX");
+        public static readonly QueryItemsV2ItemType OPTIONBOX
+            = new QueryItemsV2ItemType("OPTIONBOX");
 
-        public static readonly QueryItems1ItemType SEASON
-            = new QueryItems1ItemType("SEASON");
+        public static readonly QueryItemsV2ItemType SEASON
+            = new QueryItemsV2ItemType("SEASON");
 
-        public static readonly QueryItems1ItemType SUBSCRIPTION
-            = new QueryItems1ItemType("SUBSCRIPTION");
+        public static readonly QueryItemsV2ItemType SUBSCRIPTION
+            = new QueryItemsV2ItemType("SUBSCRIPTION");
 
 
-        public static implicit operator QueryItems1ItemType(string value)
+        public static implicit operator QueryItemsV2ItemType(string value)
         {
             return NewValue(value);
         }
 
-        public QueryItems1ItemType(string enumValue)
+        public QueryItemsV2ItemType(string enumValue)
             : base(enumValue)
         {
 
         }
     }
 
-    public class QueryItems1SortBy : StringEnum<QueryItems1SortBy>
+    public class QueryItemsV2SortBy : StringEnum<QueryItemsV2SortBy>
     {
-        public static readonly QueryItems1SortBy Name
-            = new QueryItems1SortBy("name");
+        public static readonly QueryItemsV2SortBy Name
+            = new QueryItemsV2SortBy("name");
 
-        public static readonly QueryItems1SortBy Nameasc
-            = new QueryItems1SortBy("name:asc");
+        public static readonly QueryItemsV2SortBy Nameasc
+            = new QueryItemsV2SortBy("name:asc");
 
-        public static readonly QueryItems1SortBy Namedesc
-            = new QueryItems1SortBy("name:desc");
+        public static readonly QueryItemsV2SortBy Namedesc
+            = new QueryItemsV2SortBy("name:desc");
 
-        public static readonly QueryItems1SortBy CreatedAt
-            = new QueryItems1SortBy("createdAt");
+        public static readonly QueryItemsV2SortBy CreatedAt
+            = new QueryItemsV2SortBy("createdAt");
 
-        public static readonly QueryItems1SortBy CreatedAtasc
-            = new QueryItems1SortBy("createdAt:asc");
+        public static readonly QueryItemsV2SortBy CreatedAtasc
+            = new QueryItemsV2SortBy("createdAt:asc");
 
-        public static readonly QueryItems1SortBy CreatedAtdesc
-            = new QueryItems1SortBy("createdAt:desc");
+        public static readonly QueryItemsV2SortBy CreatedAtdesc
+            = new QueryItemsV2SortBy("createdAt:desc");
 
-        public static readonly QueryItems1SortBy UpdatedAt
-            = new QueryItems1SortBy("updatedAt");
+        public static readonly QueryItemsV2SortBy UpdatedAt
+            = new QueryItemsV2SortBy("updatedAt");
 
-        public static readonly QueryItems1SortBy UpdatedAtasc
-            = new QueryItems1SortBy("updatedAt:asc");
+        public static readonly QueryItemsV2SortBy UpdatedAtasc
+            = new QueryItemsV2SortBy("updatedAt:asc");
 
-        public static readonly QueryItems1SortBy UpdatedAtdesc
-            = new QueryItems1SortBy("updatedAt:desc");
+        public static readonly QueryItemsV2SortBy UpdatedAtdesc
+            = new QueryItemsV2SortBy("updatedAt:desc");
 
-        public static readonly QueryItems1SortBy DisplayOrder
-            = new QueryItems1SortBy("displayOrder");
+        public static readonly QueryItemsV2SortBy DisplayOrder
+            = new QueryItemsV2SortBy("displayOrder");
 
-        public static readonly QueryItems1SortBy DisplayOrderasc
-            = new QueryItems1SortBy("displayOrder:asc");
+        public static readonly QueryItemsV2SortBy DisplayOrderasc
+            = new QueryItemsV2SortBy("displayOrder:asc");
 
-        public static readonly QueryItems1SortBy DisplayOrderdesc
-            = new QueryItems1SortBy("displayOrder:desc");
+        public static readonly QueryItemsV2SortBy DisplayOrderdesc
+            = new QueryItemsV2SortBy("displayOrder:desc");
 
 
-        public static implicit operator QueryItems1SortBy(string value)
+        public static implicit operator QueryItemsV2SortBy(string value)
         {
             return NewValue(value);
         }
 
-        public QueryItems1SortBy(string enumValue)
+        public QueryItemsV2SortBy(string enumValue)
             : base(enumValue)
         {
 

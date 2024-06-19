@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
     /// Other detail info:
     /// 
     ///   * default will query from current active season
-    ///   *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:SEASONPASS", action=2 (READ)
     ///   *  Returns : paginated grant history
     /// </summary>
     public class QueryUserExpGrantHistory : AccelByte.Sdk.Core.Operation

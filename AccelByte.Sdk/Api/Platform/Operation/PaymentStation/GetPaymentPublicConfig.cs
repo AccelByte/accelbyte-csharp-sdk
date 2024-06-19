@@ -155,6 +155,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly GetPaymentPublicConfigPaymentProvider CHECKOUT
             = new GetPaymentPublicConfigPaymentProvider("CHECKOUT");
 
+        public static readonly GetPaymentPublicConfigPaymentProvider NEONPAY
+            = new GetPaymentPublicConfigPaymentProvider("NEONPAY");
+
         public static readonly GetPaymentPublicConfigPaymentProvider PAYPAL
             = new GetPaymentPublicConfigPaymentProvider("PAYPAL");
 

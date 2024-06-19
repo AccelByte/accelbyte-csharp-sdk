@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Get users' stat item values for a given namespace and statCode.
     /// Other info:
-    /// + *Required permission*: resource=ADMIN:NAMESPACE:{namespace}:STATITEM, action=2 (READ)
     /// + *Returns*: list of users' stat item values
     /// </summary>
     public class GetStatItems : AccelByte.Sdk.Core.Operation

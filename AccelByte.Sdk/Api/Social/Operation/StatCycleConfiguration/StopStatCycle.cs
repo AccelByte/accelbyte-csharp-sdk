@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Stop stat cycle.
     /// Other detail info:
-    ///         *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:STAT", action=4 (UPDATE)
     ///         *  Returns : updated stat cycle
     /// </summary>
     public class StopStatCycle : AccelByte.Sdk.Core.Operation

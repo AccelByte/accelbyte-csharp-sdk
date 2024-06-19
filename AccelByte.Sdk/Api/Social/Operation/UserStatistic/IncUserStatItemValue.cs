@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///
     /// Update user's statitem value.
     /// Other detail info:
-    ///             *  Required permission : resource="ADMIN:NAMESPACE:{namespace}:USER:{userId}:STATITEM", action=4 (UPDATE)
     ///             *  Returns : updated user's statItem
     /// </summary>
     public class IncUserStatItemValue : AccelByte.Sdk.Core.Operation

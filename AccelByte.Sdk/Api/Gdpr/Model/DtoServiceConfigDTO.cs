@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         public bool? SkipAck { get; set; }
 
         [JsonPropertyName("url")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Url { get; set; }
 
     }
@@ -28,6 +29,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
 
     public class DtoServiceConfigDTOProtocol : StringEnum<DtoServiceConfigDTOProtocol>
     {
+        public static readonly DtoServiceConfigDTOProtocol EVENT
+            = new DtoServiceConfigDTOProtocol("EVENT");
+
         public static readonly DtoServiceConfigDTOProtocol GRPC
             = new DtoServiceConfigDTOProtocol("GRPC");
 

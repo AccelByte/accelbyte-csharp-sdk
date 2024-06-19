@@ -17,6 +17,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicDisableMyBackupCodesV4
     ///
     /// This endpoint is used to disable 2FA backup codes.
+    /// ------
+    /// **Note**: **mfaToken** is required when all the following are enabled:
+    /// - The environment variable **SENSITIVE_MFA_AUTH_ENABLED** is true
+    /// - The **Two-Factor Authentication** is enabled in the IAM client where user logs in
+    /// - Users already enabled the MFA
     /// </summary>
     public class PublicDisableMyBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {
@@ -39,10 +44,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public PublicDisableMyBackupCodesV4 Build(
+                ModelDisableMFARequest body,
                 string namespace_
             )
             {
                 PublicDisableMyBackupCodesV4 op = new PublicDisableMyBackupCodesV4(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -55,6 +62,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private PublicDisableMyBackupCodesV4(PublicDisableMyBackupCodesV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_
         )
         {
@@ -64,6 +72,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -71,7 +80,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public PublicDisableMyBackupCodesV4(
-            string namespace_
+            string namespace_,
+            Model.ModelDisableMFARequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -80,6 +90,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -89,7 +100,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 
