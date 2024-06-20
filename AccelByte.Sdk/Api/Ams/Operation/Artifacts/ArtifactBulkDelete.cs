@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             )
             {
                 ArtifactBulkDelete op = new ArtifactBulkDelete(this,
-                    namespace_
+                    namespace_                    
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -83,37 +83,39 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (builder.ArtifactType is not null) QueryParams["artifactType"] = builder.ArtifactType;
             if (builder.FleetId is not null) QueryParams["fleetId"] = builder.FleetId;
-            if (builder.UploadedBefore != null) QueryParams["uploadedBefore"] = Convert.ToString(builder.UploadedBefore)!;
+            if (builder.UploadedBefore != null)
+                QueryParams["uploadedBefore"] = builder.UploadedBefore.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ArtifactBulkDelete(
-            string namespace_,
-            string? artifactType,
-            string? fleetId,
-            DateTime? uploadedBefore
+            string namespace_,            
+            string? artifactType,            
+            string? fleetId,            
+            DateTime? uploadedBefore            
         )
         {
             PathParams["namespace"] = namespace_;
-
+            
             if (artifactType is not null) QueryParams["artifactType"] = artifactType;
             if (fleetId is not null) QueryParams["fleetId"] = fleetId;
-            if (uploadedBefore != null) QueryParams["uploadedBefore"] = Convert.ToString(uploadedBefore)!;
+            if (uploadedBefore != null)
+                QueryParams["uploadedBefore"] = uploadedBefore.Value.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
+            
 
-
-
-
-
+            
+            
+            
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -128,16 +130,16 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-
+        
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)202)
             {
                 return;
             }
-
+            
             var payloadString = Helper.ConvertInputStreamToString(payload);
-
+            
             throw new HttpResponseException(code, payloadString);
         }
     }
