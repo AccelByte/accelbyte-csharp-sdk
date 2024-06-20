@@ -109,6 +109,15 @@ namespace AccelByte.Sdk.Sample.Cli
                 string bValue = srcValue.ToLower();
                 pi.SetValue(obj, (bValue == "true"));
             }
+            else if ((pi.PropertyType == typeof(DateTime)) || (pi.PropertyType == typeof(DateTime?)))
+            {
+                string bValue = srcValue.Trim();
+
+                if (DateTime.TryParse(bValue, out DateTime output))
+                    pi.SetValue(obj, output);
+                else
+                    throw new Exception($"Could not parse datetime string to datetime object for [{pi.Name}].");
+            }
             else
                 pi.SetValue(obj, Convert.ChangeType(srcValue, pi.PropertyType));
         }
