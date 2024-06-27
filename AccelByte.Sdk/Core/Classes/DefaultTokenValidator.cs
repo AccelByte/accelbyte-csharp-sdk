@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Api.Iam.Model;
-using static AccelByte.Sdk.Feature.LocalTokenValidation.AccessTokenPayload.Types;
 
 namespace AccelByte.Sdk.Core
 {
@@ -57,31 +56,35 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                else if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
-                {
-                    foreach (var r in response.NamespaceRoles)
-                    {
-                        if (r.RoleId == null)
-                            continue;
 
-                        var permissions = GetRolePermission(sdk, r.RoleId);
-                        foreach (var p in permissions)
+                if (!foundMatchingPermission)
+                {
+                    if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
+                    {
+                        foreach (var r in response.NamespaceRoles)
                         {
-                            if (IsResourceAllowed(p.Resource, permission))
+                            if (r.RoleId == null)
+                                continue;
+
+                            var permissions = GetRolePermission(sdk, r.RoleId);
+                            foreach (var p in permissions)
                             {
-                                if (PermissionAction.Has(p.Action, action))
+                                if (IsResourceAllowed(p.Resource, permission))
                                 {
-                                    foundMatchingPermission = true;
-                                    break;
+                                    if (PermissionAction.Has(p.Action, action))
+                                    {
+                                        foundMatchingPermission = true;
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        if (foundMatchingPermission)
-                            break;
+                            if (foundMatchingPermission)
+                                break;
+                        }
                     }
                 }
-
+                
                 return foundMatchingPermission;
             }
             catch
@@ -129,32 +132,36 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                else if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
+
+                if (!foundMatchingPermission)
                 {
-                    foreach (var r in response.NamespaceRoles)
+                    if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
                     {
-                        if (r.RoleId == null)
-                            continue;
-
-                        var permissions = GetRolePermission(sdk, r.RoleId);
-                        foreach (var p in permissions)
+                        foreach (var r in response.NamespaceRoles)
                         {
-                            string aPermission = p.Resource;
-                            if (pParams.Count > 0)
-                                aPermission = ReplacePlaceholder(p.Resource, pParams);
+                            if (r.RoleId == null)
+                                continue;
 
-                            if (IsResourceAllowed(aPermission, permission))
+                            var permissions = GetRolePermission(sdk, r.RoleId);
+                            foreach (var p in permissions)
                             {
-                                if (PermissionAction.Has(p.Action, action))
+                                string aPermission = p.Resource;
+                                if (pParams.Count > 0)
+                                    aPermission = ReplacePlaceholder(p.Resource, pParams);
+
+                                if (IsResourceAllowed(aPermission, permission))
                                 {
-                                    foundMatchingPermission = true;
-                                    break;
+                                    if (PermissionAction.Has(p.Action, action))
+                                    {
+                                        foundMatchingPermission = true;
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        if (foundMatchingPermission)
-                            break;
+                            if (foundMatchingPermission)
+                                break;
+                        }
                     }
                 }
 
@@ -207,28 +214,31 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                else if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
+                if (!foundMatchingPermission)
                 {
-                    foreach (var r in response.NamespaceRoles)
+                    if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
                     {
-                        if (r.RoleId == null)
-                            continue;
-
-                        var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
-                        foreach (var p in permissions)
+                        foreach (var r in response.NamespaceRoles)
                         {
-                            if (IsResourceAllowed(p.Resource, permission))
+                            if (r.RoleId == null)
+                                continue;
+
+                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
+                            foreach (var p in permissions)
                             {
-                                if (PermissionAction.Has(p.Action, action))
+                                if (IsResourceAllowed(p.Resource, permission))
                                 {
-                                    foundMatchingPermission = true;
-                                    break;
+                                    if (PermissionAction.Has(p.Action, action))
+                                    {
+                                        foundMatchingPermission = true;
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        if (foundMatchingPermission)
-                            break;
+                            if (foundMatchingPermission)
+                                break;
+                        }
                     }
                 }
 
@@ -279,32 +289,36 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                else if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
+                
+                if (!foundMatchingPermission)
                 {
-                    foreach (var r in response.NamespaceRoles)
+                    if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))
                     {
-                        if (r.RoleId == null)
-                            continue;
-
-                        var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
-                        foreach (var p in permissions)
+                        foreach (var r in response.NamespaceRoles)
                         {
-                            string aPermission = p.Resource;
-                            if (pParams.Count > 0)
-                                aPermission = ReplacePlaceholder(p.Resource, pParams);
+                            if (r.RoleId == null)
+                                continue;
 
-                            if (IsResourceAllowed(aPermission, permission))
+                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
+                            foreach (var p in permissions)
                             {
-                                if (PermissionAction.Has(p.Action, action))
+                                string aPermission = p.Resource;
+                                if (pParams.Count > 0)
+                                    aPermission = ReplacePlaceholder(p.Resource, pParams);
+
+                                if (IsResourceAllowed(aPermission, permission))
                                 {
-                                    foundMatchingPermission = true;
-                                    break;
+                                    if (PermissionAction.Has(p.Action, action))
+                                    {
+                                        foundMatchingPermission = true;
+                                        break;
+                                    }
                                 }
                             }
-                        }
 
-                        if (foundMatchingPermission)
-                            break;
+                            if (foundMatchingPermission)
+                                break;
+                        }
                     }
                 }
 
