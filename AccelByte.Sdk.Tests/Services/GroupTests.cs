@@ -12,6 +12,7 @@ using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Api.Group.Model;
 
 using AccelByte.Sdk.Tests.Model;
+using AccelByte.Sdk.Core.Util;
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -28,14 +29,16 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            DisableRetry();
+
             string initialConfigCode = "initialConfigurationCode";
-            string configuration_code = "csharpServerSdkConfigCode";
+            string configuration_code = $"csExtendSdkConfigCode";
+            string groupName = "CSharp Extend SDK Test Group";
             string defaultAdminRoleId = String.Empty;
             string defaultMemberRoleId = String.Empty;
 
             try
             {
-                DisableRetry();
                 ModelsGetGroupConfigurationResponseV1? gConfigCheck = _Sdk.Group.Configuration.GetGroupConfigurationAdminV1Op
                     .Execute(initialConfigCode, _Sdk.Namespace);
                 if (gConfigCheck != null)
@@ -69,7 +72,6 @@ namespace AccelByte.Sdk.Tests.Services
 
             try
             {
-                DisableRetry();
                 #region Create group configuration
                 ModelsCreateGroupConfigurationRequestV1 gcRequest = new ModelsCreateGroupConfigurationRequestV1()
                 {
@@ -95,67 +97,102 @@ namespace AccelByte.Sdk.Tests.Services
                     throw new Exception(mer.ErrorMessage, x);
             }
 
-            #region Create a group
-            ModelsPublicCreateNewGroupRequestV1 createGroup = new ModelsPublicCreateNewGroupRequestV1()
-            {
-                GroupName = "CSharp SDK Test Group",
-                GroupType = "PUBLIC",
-                GroupDescription = "Yeah, anything is welcome here.",
-                GroupMaxMember = 100,
-                GroupRegion = "us",
-                ConfigurationCode = configuration_code
-            };
+            string group_id = "";
+            try
+            {                
+                try
+                {
+                    //Look if current user is joined in any group
+                    //this is for fallback routine in case user is belong to any group before this test is executed.
 
-            ModelsGroupResponseV1? cGroup = _Sdk.Group.Group.CreateNewGroupPublicV1Op
-                .Execute(createGroup, _Sdk.Namespace);
-            #endregion
-            Assert.IsNotNull(cGroup);
+                    var groupInfoResponse = _Sdk.Group.GroupMember.GetUserGroupInformationPublicV2Op
+                       .SetOffset(0)
+                       .SetLimit(10)
+                       .Execute(_Sdk.Namespace);
+                    if (groupInfoResponse != null && groupInfoResponse.Data != null)
+                    {
+                        foreach (var info in groupInfoResponse.Data)
+                        {
+                            _Sdk.Group.GroupMember.LeaveGroupPublicV2Op
+                                .Execute(info.GroupId!, _Sdk.Namespace);
+                        }
+                    }
+                }
+                catch (Exception x)
+                {
+                    ModelErrorResponse? mer = System.Text.Json.JsonSerializer.Deserialize<ModelErrorResponse>(x.Message);
+                    if (mer == null)
+                        throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
+                    if (mer.ErrorCode != 73034) //skip user does not belong to any group
+                        throw new Exception(mer.ErrorMessage, x);
+                }                
 
-            string group_id = String.Empty;
-            if (cGroup != null)
-            {
-                Assert.AreEqual("CSharp SDK Test Group", cGroup.GroupName);
-                group_id = cGroup.GroupId!;
-            }
+                #region Create a group
+                ModelsPublicCreateNewGroupRequestV1 createGroup = new ModelsPublicCreateNewGroupRequestV1()
+                {
+                    GroupName = groupName,
+                    GroupType = "PUBLIC",
+                    GroupDescription = "Yeah, anyone is welcome here.",
+                    GroupMaxMember = 100,
+                    GroupRegion = "us",
+                    ConfigurationCode = configuration_code
+                };
 
-            #region Get single group
-            ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
-                .Execute(group_id, _Sdk.Namespace);
-            #endregion
-            Assert.IsNotNull(gGroup);
-            if (gGroup != null)
-                Assert.AreEqual("CSharp SDK Test Group", gGroup.GroupName);
+                ModelsGroupResponseV1? cGroup = _Sdk.Group.Group.CreateNewGroupPublicV1Op
+                    .Execute(createGroup, _Sdk.Namespace);
+                #endregion
+                Assert.IsNotNull(cGroup);
 
-            #region Update a group
-            ModelsUpdateGroupRequestV1 updateGroup = new ModelsUpdateGroupRequestV1()
-            {
-                GroupDescription = "Updated description."
-            };
+                if (cGroup != null)
+                {
+                    Assert.AreEqual(groupName, cGroup.GroupName);
+                    group_id = cGroup.GroupId!;
+                }
 
-            ModelsGroupResponseV1? uGroup = _Sdk.Group.Group.UpdateSingleGroupV1Op
-                .Execute(updateGroup, group_id, _Sdk.Namespace);
-            #endregion
-            Assert.IsNotNull(uGroup);
-            if (uGroup != null)
-                Assert.AreEqual("Updated description.", uGroup.GroupDescription);
-
-            #region Delete a group
-            _Sdk.Group.Group.DeleteGroupPublicV1Op
-                .Execute(group_id, _Sdk.Namespace);
-            #endregion
-
-            //Finally, recheck if the data is truly deleted.
-            HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
-            {
-                DisableRetry();
+                #region Get single group
                 ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
                     .Execute(group_id, _Sdk.Namespace);
-            });
+                #endregion
+                Assert.IsNotNull(gGroup);
+                if (gGroup != null)
+                    Assert.AreEqual(groupName, gGroup.GroupName);
 
-            #region Delete group configuration
-            _Sdk.Group.Configuration.DeleteGroupConfigurationV1Op
-                .Execute(configuration_code, _Sdk.Namespace);
-            #endregion
+                #region Update a group
+                ModelsUpdateGroupRequestV1 updateGroup = new ModelsUpdateGroupRequestV1()
+                {
+                    GroupDescription = "Updated description."
+                };
+
+                ModelsGroupResponseV1? uGroup = _Sdk.Group.Group.UpdateSingleGroupV1Op
+                    .Execute(updateGroup, group_id, _Sdk.Namespace);
+                #endregion
+                Assert.IsNotNull(uGroup);
+                if (uGroup != null)
+                    Assert.AreEqual("Updated description.", uGroup.GroupDescription);                
+            }
+            finally
+            {
+                if (group_id != "")
+                {
+                    #region Delete a group
+                    _Sdk.Group.Group.DeleteGroupPublicV1Op
+                        .Execute(group_id, _Sdk.Namespace);
+                    #endregion
+
+                    //Finally, recheck if the data is truly deleted.
+                    HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
+                    {
+                        DisableRetry();
+                        ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
+                            .Execute(group_id, _Sdk.Namespace);
+                    });                    
+                }
+
+                #region Delete group configuration
+                _Sdk.Group.Configuration.DeleteGroupConfigurationV1Op
+                    .Execute(configuration_code, _Sdk.Namespace);
+                #endregion
+            }
         }
     }
 }
