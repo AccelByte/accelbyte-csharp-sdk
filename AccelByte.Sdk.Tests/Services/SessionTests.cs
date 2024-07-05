@@ -188,6 +188,8 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.IsNotNull(p2GsJoin);
             });
 
+            Wait();
+
             ApimodelsGameSessionResponse? gsCheck = _Sdk.Session.GameSession.GetGameSessionOp
                 .Execute(_Sdk.Namespace, gameSessionId);
             if (gsCheck != null)
@@ -322,6 +324,8 @@ namespace AccelByte.Sdk.Tests.Services
                 #endregion
                 Assert.IsNotNull(joinResponse);
             });
+
+            Wait();
 
             #region Get party detail
             ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp

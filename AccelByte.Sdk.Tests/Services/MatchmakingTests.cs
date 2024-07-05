@@ -70,6 +70,8 @@ namespace AccelByte.Sdk.Tests.Services
             if (cResp != null)
                 Assert.AreEqual(channel_name, cResp.GameMode);
 
+            Wait();
+
             #region Get a channel
             ModelsChannelV1? gResp = _Sdk.Matchmaking.Matchmaking.GetSingleMatchmakingChannelOp
                 .Execute(channel_name, _Sdk.Namespace);
@@ -105,6 +107,8 @@ namespace AccelByte.Sdk.Tests.Services
             _Sdk.Matchmaking.Matchmaking.DeleteChannelHandlerOp
                 .Execute(channel_name, _Sdk.Namespace);
             #endregion
+
+            Wait();
 
             //Finally, recheck if the data is truly deleted.
             HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>

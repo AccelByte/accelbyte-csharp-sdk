@@ -149,6 +149,8 @@ namespace AccelByte.Sdk.Tests.Services
                     group_id = cGroup.GroupId!;
                 }
 
+                Wait();
+
                 #region Get single group
                 ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
                     .Execute(group_id, _Sdk.Namespace);
@@ -178,6 +180,8 @@ namespace AccelByte.Sdk.Tests.Services
                     _Sdk.Group.Group.DeleteGroupPublicV1Op
                         .Execute(group_id, _Sdk.Namespace);
                     #endregion
+
+                    Wait();
 
                     //Finally, recheck if the data is truly deleted.
                     HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
