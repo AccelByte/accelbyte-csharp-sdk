@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -179,6 +179,8 @@ namespace AccelByte.Sdk.Tests.Services
             if (gameSessionId == String.Empty)
                 Assert.Fail("No game session id");
 
+            Wait();
+
             _Player2.Run((sdk, player) =>
             {
                 #region Join a game session
@@ -280,6 +282,8 @@ namespace AccelByte.Sdk.Tests.Services
             string partyId = String.Empty;
             string joinCode = String.Empty;
 
+            Wait();
+
             _Player1.Run((sdk, player) =>
             {
                 #region User create a party
@@ -310,6 +314,8 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.Fail("No party id");
             if (joinCode == String.Empty)
                 Assert.Fail("No join code");
+
+            Wait();
 
             _Player2.Run((sdk, player) =>
             {
