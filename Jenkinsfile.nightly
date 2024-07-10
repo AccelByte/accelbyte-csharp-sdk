@@ -66,8 +66,7 @@ pipeline {
           }
           post {
             always {
-              sh 'sudo tc qdisc del dev $DEFAULT_IFACE root netem delay 100ms'
-              junit 'build/test-results/testIntegration/*.xml'
+              sh 'sudo tc qdisc del dev $DEFAULT_IFACE root netem delay 100ms'              
             }
           }
         }
