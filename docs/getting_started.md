@@ -5,7 +5,7 @@ This guide will show you how to create a project which uses C# (.NET) Extend SDK
 
 ## Prerequisites
 * AccelByte Gaming Services (demo environment):
-	* Use https://demo.accelbyte.io for `AB_BASE_URL` environment variable.
+	* Use your environment base URL for `AB_BASE_URL` environment variable e.g. https://test.accelbyte.io
 	* [Create an OAuth Client](https://docs.accelbyte.io/gaming-services/services/access/authorization/manage-access-control-for-applications/#create-an-iam-client) with client type `Confidential`.
 		* Use `Client ID` value for `AB_CLIENT_ID` environment variable.
 		* Use `Client Secret` value for `AB_CLIENT_SECRET` environment variable.
@@ -107,7 +107,7 @@ namespace AccelByteExample
 Set the required environment variables and run the code using `dotnet run`.
 
 ```bash
-$ export AB_BASE_URL="https://demo.accelbyte.io"              # AccelByte Gaming Services Base URL e.g. demo environment
+$ export AB_BASE_URL="https://test.accelbyte.io"              # AccelByte Gaming Services Base URL
 $ export AB_CLIENT_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"      # AccelByte Gaming Services OAuth Client ID
 $ export AB_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"  # AccelByte Gaming Services OAuth Client Secret
 $ cd /path/to/mysolution/myproject

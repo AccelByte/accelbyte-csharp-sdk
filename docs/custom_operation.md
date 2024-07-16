@@ -457,7 +457,7 @@ If you are using Visual Studio, you can create `.runsettings` file. Here is the 
 <RunSettings>
     <RunConfiguration>
         <EnvironmentVariables>
-            <AB_BASE_URL>https://demo.accelbyte.io</AB_BASE_URL>
+            <AB_BASE_URL>https://test.accelbyte.io</AB_BASE_URL>
             <AB_CLIENT_ID>abcdef0123456789abcdef0123456789</AB_CLIENT_ID>
             <AB_CLIENT_SECRET>ab#c,d)ef(ab#c,d)ef(ab#c,d)ef(ab</AB_CLIENT_SECRET>
             <AB_NAMESPACE>accelbyte</AB_NAMESPACE>

@@ -38,7 +38,7 @@ Globals:
   Function:
     Environment:
       Variables:
-        AB_BASE_URL: 'https://demo.accelbyte.io'
+        AB_BASE_URL: 'https://test.accelbyte.io'
         AB_CLIENT_ID: 'xxxxxxxxxxxx'
         AB_CLIENT_SECRET: 'xxxxxxxxxxxx'
         AB_APP_NAME: 'xxxxxxxxxxxx'
