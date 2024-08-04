@@ -81,7 +81,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
+
             QueryParams["count"] = Convert.ToString(count)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 
@@ -103,7 +105,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             PathParams["namespace"] = namespace_;
 
             if (name is not null) QueryParams["name"] = name;
+
             QueryParams["count"] = Convert.ToString(count)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 

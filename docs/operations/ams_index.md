@@ -68,6 +68,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/ams/v1/admin/namespaces/{namespace}/images` | GET | ImageList | [ImageList](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageList.cs) | [ImageList](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageList.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/images-storage` | GET | ImagesStorage | [ImagesStorage](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImagesStorage.cs) | [ImagesStorage](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImagesStorage.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | GET | ImageGet | [ImageGet](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageGet.cs) | [ImageGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | DELETE | ImageMarkForDeletion | [ImageMarkForDeletion](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImageMarkForDeletion.cs) | [ImageMarkForDeletion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImageMarkForDeletion.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/images/{imageID}` | PATCH | ImagePatch | [ImagePatch](../../AccelByte.Sdk/Api/Ams/Operation/Images/ImagePatch.cs) | [ImagePatch](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Images/ImagePatch.cs) |
@@ -189,6 +190,7 @@
 | `api.ImageDetails` | [ApiImageDetails](../../AccelByte.Sdk/Api/Ams/Model/ApiImageDetails.cs) |
 | `api.ImageList` | [ApiImageList](../../AccelByte.Sdk/Api/Ams/Model/ApiImageList.cs) |
 | `api.ImageListItem` | [ApiImageListItem](../../AccelByte.Sdk/Api/Ams/Model/ApiImageListItem.cs) |
+| `api.ImageStorage` | [ApiImageStorage](../../AccelByte.Sdk/Api/Ams/Model/ApiImageStorage.cs) |
 | `api.ImageUpdate` | [ApiImageUpdate](../../AccelByte.Sdk/Api/Ams/Model/ApiImageUpdate.cs) |
 | `api.InstanceTypeDescriptionResponse` | [ApiInstanceTypeDescriptionResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypeDescriptionResponse.cs) |
 | `api.PagingInfo` | [ApiPagingInfo](../../AccelByte.Sdk/Api/Ams/Model/ApiPagingInfo.cs) |

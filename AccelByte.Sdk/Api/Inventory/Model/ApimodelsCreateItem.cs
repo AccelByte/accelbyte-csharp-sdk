@@ -32,6 +32,10 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("slotUsed")]
         public int? SlotUsed { get; set; }
 
+        [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Source { get; set; }
+
         [JsonPropertyName("sourceItemId")]
         public string? SourceItemId { get; set; }
 
@@ -70,6 +74,10 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 
         [JsonPropertyName("slotUsed")]
         public int? SlotUsed { get; set; }
+
+        [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Source { get; set; }
 
         [JsonPropertyName("sourceItemId")]
         public string? SourceItemId { get; set; }

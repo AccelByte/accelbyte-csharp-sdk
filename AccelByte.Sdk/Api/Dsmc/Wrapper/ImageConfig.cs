@@ -27,10 +27,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.CreateImage.Builder.SetWrapperObject(this); }
         }
-        public ImportImages.ImportImagesBuilder ImportImagesOp
-        {
-            get { return Operation.ImportImages.Builder.SetWrapperObject(this); }
-        }
         public CreateImagePatch.CreateImagePatchBuilder CreateImagePatchOp
         {
             get { return Operation.CreateImagePatch.Builder.SetWrapperObject(this); }
@@ -42,10 +38,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         public DeleteImage.DeleteImageBuilder DeleteImageOp
         {
             get { return Operation.DeleteImage.Builder.SetWrapperObject(this); }
-        }
-        public ExportImages.ExportImagesBuilder ExportImagesOp
-        {
-            get { return Operation.ExportImages.Builder.SetWrapperObject(this); }
         }
         public GetImageLimit.GetImageLimitBuilder GetImageLimitOp
         {
@@ -121,22 +113,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsImportResponse? ImportImages(ImportImages input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<Model.ModelsImportResponse?> ImportImagesAsync(ImportImages input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public void CreateImagePatch(CreateImagePatch input)
         {
             var response = _sdk.RunRequest(input);
@@ -181,22 +157,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public List<Model.ModelsImageRecord>? ExportImages(ExportImages input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<List<Model.ModelsImageRecord>?> ExportImagesAsync(ExportImages input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

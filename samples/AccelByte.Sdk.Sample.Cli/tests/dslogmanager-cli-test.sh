@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..8"
+echo "1..9"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -114,34 +114,44 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 6 'BatchDownloadServerLogs' test.out
 
-#- 7 ListAllTerminatedServers
+#- 7 ListMetadataServers
+# body param: body
+echo '{"pod_names": ["STxNCK9AIjNmbfoW", "8bDq5jPqzhN0YdGS", "rA9LXRwU6WLgpQE9"]}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn dslogmanager \
+    --op ListMetadataServers \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 7 'ListMetadataServers' test.out
+
+#- 8 ListAllTerminatedServers
 $CLI_EXE \
     --sn dslogmanager \
     --op ListAllTerminatedServers \
-    --deployment 'STxNCK9AIjNmbfoW' \
-    --endDate '8bDq5jPqzhN0YdGS' \
-    --gameMode 'rA9LXRwU6WLgpQE9' \
-    --limit '27' \
-    --namespace_ 'lPeNq0CvMXtyUWXr' \
-    --next 'dZaFeacGT2x6o28N' \
-    --partyId 'jxyw7RHldq0m7NjU' \
-    --podName 'Z95Z5XDLBN9YGVPt' \
-    --previous 'kjt0OyBlJi4RbZ0I' \
-    --provider 'y11mfOFjCzZVcGom' \
-    --region 'WF1oAqUNFDtXnXLv' \
-    --sessionId 'OAsW8wYh4gq7pRVZ' \
-    --startDate 'VLJiDx3au9b9Qjhz' \
-    --status 'DlnJmi4XaBTgoXjf' \
-    --userId 'dUQHa3RxspSqwdbT' \
+    --deployment 'nXzhBC0uyMR4Xf2n' \
+    --endDate 'fYvNvG8uQ14Ahsxa' \
+    --gameMode 'ALiBwpNJornrCQpM' \
+    --limit '72' \
+    --namespace_ 'Z95Z5XDLBN9YGVPt' \
+    --next 'kjt0OyBlJi4RbZ0I' \
+    --partyId 'y11mfOFjCzZVcGom' \
+    --podName 'WF1oAqUNFDtXnXLv' \
+    --previous 'OAsW8wYh4gq7pRVZ' \
+    --provider 'VLJiDx3au9b9Qjhz' \
+    --region 'DlnJmi4XaBTgoXjf' \
+    --sessionId 'dUQHa3RxspSqwdbT' \
+    --startDate 'R2sgzfaQrUCW9fgo' \
+    --status '69uv1bkFx8DmbC9U' \
+    --userId 'qYdYrdxNnuMcAwrS' \
     > test.out 2>&1
-eval_tap $? 7 'ListAllTerminatedServers' test.out
+eval_tap $? 8 'ListAllTerminatedServers' test.out
 
-#- 8 PublicGetMessages
+#- 9 PublicGetMessages
 $CLI_EXE \
     --sn dslogmanager \
     --op PublicGetMessages \
     > test.out 2>&1
-eval_tap $? 8 'PublicGetMessages' test.out
+eval_tap $? 9 'PublicGetMessages' test.out
 
 
 # remove artifacts

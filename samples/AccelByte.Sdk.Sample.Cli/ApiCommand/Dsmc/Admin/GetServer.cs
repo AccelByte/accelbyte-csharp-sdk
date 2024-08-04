@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
             );
 
 
-            AccelByte.Sdk.Api.Dsmc.Model.ModelsServer? response = wrapper.GetServer(operation);
+            AccelByte.Sdk.Api.Dsmc.Model.ModelsServerDetailsResponse? response = wrapper.GetServer(operation);
             if (response == null)
                 return "No response from server.";
 

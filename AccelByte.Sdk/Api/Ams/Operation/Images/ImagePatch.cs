@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             )
             {
                 ImagePatch op = new ImagePatch(this,
-                    body,                    
-                    imageID,                    
-                    namespace_                    
+                    body,
+                    imageID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -68,33 +68,33 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["imageID"] = imageID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ImagePatch(
-            string imageID,            
-            string namespace_,            
-            Model.ApiImageUpdate body            
+            string imageID,
+            string namespace_,
+            Model.ApiImageUpdate body
         )
         {
             PathParams["imageID"] = imageID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,9 +109,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApiImageDetails? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApiImageDetails>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

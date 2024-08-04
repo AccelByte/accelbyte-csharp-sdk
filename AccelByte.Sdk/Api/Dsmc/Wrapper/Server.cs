@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.ListServerClient.Builder.SetWrapperObject(this); }
         }
+        public CountServerDetailedClient.CountServerDetailedClientBuilder CountServerDetailedClientOp
+        {
+            get { return Operation.CountServerDetailedClient.Builder.SetWrapperObject(this); }
+        }
         public ServerHeartbeat.ServerHeartbeatBuilder ServerHeartbeatOp
         {
             get { return Operation.ServerHeartbeat.Builder.SetWrapperObject(this); }
@@ -62,6 +66,22 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsListServerResponse?> ListServerClientAsync(ListServerClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsDetailedCountServerResponse? CountServerDetailedClient(CountServerDetailedClient input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDetailedCountServerResponse?> CountServerDetailedClientAsync(CountServerDetailedClient input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

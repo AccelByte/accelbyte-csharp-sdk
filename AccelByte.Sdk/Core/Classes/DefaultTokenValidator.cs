@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                
+
                 return foundMatchingPermission;
             }
             catch
@@ -289,7 +289,7 @@ namespace AccelByte.Sdk.Core
                         }
                     }
                 }
-                
+
                 if (!foundMatchingPermission)
                 {
                     if ((response.NamespaceRoles != null) && (response.NamespaceRoles.Count > 0))

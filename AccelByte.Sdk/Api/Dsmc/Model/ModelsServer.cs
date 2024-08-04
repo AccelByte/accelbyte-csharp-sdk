@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
         public List<string>? AlternateIps { get; set; }
 
         [JsonPropertyName("artifact_path")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ArtifactPath { get; set; }
 
         [JsonPropertyName("cpu_limit")]
@@ -56,6 +55,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 
         [JsonPropertyName("is_override_game_version")]
         public bool? IsOverrideGameVersion { get; set; }
+
+        [JsonPropertyName("is_override_region")]
+        public bool? IsOverrideRegion { get; set; }
 
         [JsonPropertyName("job_id")]
         public string? JobId { get; set; }
@@ -103,6 +105,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 
         [JsonPropertyName("termination_reason")]
         public string? TerminationReason { get; set; }
+
+        [JsonPropertyName("ulimit_file_size")]
+        public int? UlimitFileSize { get; set; }
 
     }
 

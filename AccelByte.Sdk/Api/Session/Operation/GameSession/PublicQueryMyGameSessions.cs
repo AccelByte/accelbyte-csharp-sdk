@@ -19,11 +19,18 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// Query user's game sessions.
     /// By default, API will return a list of user's active game sessions (INVITED,JOINED,CONNECTED).
     /// 
-    /// Session service has several DSInformation status to track DS request to DSMC:
+    /// Session service has several DSInformation status to track DS request to DS providers:
     /// - NEED_TO_REQUEST: number of active players hasn't reached session's minPlayers therefore DS has not yet requested.
     /// - REQUESTED: DS is being requested to DSMC.
+    /// - PREPARING: DS needs to call manual set ready for the game session
     /// - AVAILABLE: DS is ready to use. The DSMC status for this DS is either READY/BUSY.
-    /// - FAILED_TO_REQUEST: DSMC fails to create the DS.
+    /// - FAILED_TO_REQUEST: DSMC fails to spin up a DS for session.
+    /// - DS_ERROR: DS provider fails to spin up the DS or the DS itself becomes unreachable
+    /// - DS_CANCELLED: when DSMC is preparing the DS, DSMC will give a temporary DS. In this phase, if you delete the game session, the DS request will be canceled.
+    /// - ENDED: when a game session (match) has finished and DS has done its job, it will terminate itself.
+    /// - UNKNOWN: if any unknown DS status is detected.
+    /// DSInformation has 2 fields for DS status: "status" and "statusV2". The "status" is there for backward-compatibility, therefore we encourage to just rely on "statusV2" for the more updated statuses.
+    /// DS Source can be DSMC, AMS or custom. In DSMC, a DS request will be put in queue if they dont have available buffers, and DSMC will let the service knows when they finished spinning it up. While AMS doesn't have a concept of queue. Therefore some "DSInformation.statusV2" only applicable for DSMC.
     /// </summary>
     public class PublicQueryMyGameSessions : AccelByte.Sdk.Core.Operation
     {

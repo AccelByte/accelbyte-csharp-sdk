@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
         {
             get { return Operation.BatchDownloadServerLogs.Builder.SetWrapperObject(this); }
         }
+        public ListMetadataServers.ListMetadataServersBuilder ListMetadataServersOp
+        {
+            get { return Operation.ListMetadataServers.Builder.SetWrapperObject(this); }
+        }
         public ListAllTerminatedServers.ListAllTerminatedServersBuilder ListAllTerminatedServersOp
         {
             get { return Operation.ListAllTerminatedServers.Builder.SetWrapperObject(this); }
@@ -38,6 +42,22 @@ namespace AccelByte.Sdk.Api.Dslogmanager.Wrapper
                     response.Payload);
         }
         public async Task<Stream?> BatchDownloadServerLogsAsync(BatchDownloadServerLogs input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsListTerminatedServersResponse? ListMetadataServers(ListMetadataServers input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsListTerminatedServersResponse?> ListMetadataServersAsync(ListMetadataServers input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

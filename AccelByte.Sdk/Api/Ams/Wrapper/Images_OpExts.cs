@@ -34,6 +34,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImageListAsync(op);
         }
+        public static Ams.Model.ApiImageStorage? Execute(
+            this ImagesStorage.ImagesStorageBuilder builder,
+            string namespace_
+        )
+        {
+            ImagesStorage op = builder.Build(
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Images)builder.WrapperObject!).ImagesStorage(op);
+        }
+        public static async Task<Ams.Model.ApiImageStorage?> ExecuteAsync(
+            this ImagesStorage.ImagesStorageBuilder builder,
+            string namespace_
+        )
+        {
+            ImagesStorage op = builder.Build(
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Images)builder.WrapperObject!).ImagesStorageAsync(op);
+        }
         public static Ams.Model.ApiImageDetails? Execute(
             this ImageGet.ImageGetBuilder builder,
             string imageID,

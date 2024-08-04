@@ -495,6 +495,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetUserPlatformAccountsV3.Builder.SetWrapperObject(this); }
         }
+        public AdminListAllDistinctPlatformAccountsV3.AdminListAllDistinctPlatformAccountsV3Builder AdminListAllDistinctPlatformAccountsV3Op
+        {
+            get { return Operation.AdminListAllDistinctPlatformAccountsV3.Builder.SetWrapperObject(this); }
+        }
         public AdminGetListJusticePlatformAccounts.AdminGetListJusticePlatformAccountsBuilder AdminGetListJusticePlatformAccountsOp
         {
             get { return Operation.AdminGetListJusticePlatformAccounts.Builder.SetWrapperObject(this); }
@@ -511,6 +515,11 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminLinkPlatformAccount.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserLinkHistoriesV3.AdminGetUserLinkHistoriesV3Builder AdminGetUserLinkHistoriesV3Op
+        {
+            get { return Operation.AdminGetUserLinkHistoriesV3.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminPlatformUnlinkV3.AdminPlatformUnlinkV3Builder AdminPlatformUnlinkV3Op
         {
             get { return Operation.AdminPlatformUnlinkV3.Builder.SetWrapperObject(this); }
@@ -523,9 +532,14 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminPlatformLinkV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteUserLinkingHistoryByPlatformIDV3.AdminDeleteUserLinkingHistoryByPlatformIDV3Builder AdminDeleteUserLinkingHistoryByPlatformIDV3Op
         {
             get { return Operation.AdminDeleteUserLinkingHistoryByPlatformIDV3.Builder.SetWrapperObject(this); }
+        }
+        public AdminDeleteUserLinkingRestrictionByPlatformIDV3.AdminDeleteUserLinkingRestrictionByPlatformIDV3Builder AdminDeleteUserLinkingRestrictionByPlatformIDV3Op
+        {
+            get { return Operation.AdminDeleteUserLinkingRestrictionByPlatformIDV3.Builder.SetWrapperObject(this); }
         }
         public AdminGetThirdPartyPlatformTokenLinkStatusV3.AdminGetThirdPartyPlatformTokenLinkStatusV3Builder AdminGetThirdPartyPlatformTokenLinkStatusV3Op
         {
@@ -660,6 +674,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicPlatformLinkV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicPlatformUnlinkV3.PublicPlatformUnlinkV3Builder PublicPlatformUnlinkV3Op
         {
             get { return Operation.PublicPlatformUnlinkV3.Builder.SetWrapperObject(this); }
@@ -2599,6 +2614,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.AccountcommonDistinctPlatformResponseV3? AdminListAllDistinctPlatformAccountsV3(AdminListAllDistinctPlatformAccountsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AccountcommonDistinctPlatformResponseV3?> AdminListAllDistinctPlatformAccountsV3Async(AdminListAllDistinctPlatformAccountsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.ModelGetUserMapping>? AdminGetListJusticePlatformAccounts(AdminGetListJusticePlatformAccounts input)
         {
             var response = _sdk.RunRequest(input);
@@ -2663,6 +2694,24 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelUserPlatformLinkHistories? AdminGetUserLinkHistoriesV3(AdminGetUserLinkHistoriesV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserPlatformLinkHistories?> AdminGetUserLinkHistoriesV3Async(AdminGetUserLinkHistoriesV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminPlatformUnlinkV3(AdminPlatformUnlinkV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2679,6 +2728,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void AdminPlatformUnlinkAllV3(AdminPlatformUnlinkAllV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2711,6 +2761,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminDeleteUserLinkingHistoryByPlatformIDV3(AdminDeleteUserLinkingHistoryByPlatformIDV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2720,6 +2772,23 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task AdminDeleteUserLinkingHistoryByPlatformIDV3Async(AdminDeleteUserLinkingHistoryByPlatformIDV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning restore ab_deprecated_operation
+        public void AdminDeleteUserLinkingRestrictionByPlatformIDV3(AdminDeleteUserLinkingRestrictionByPlatformIDV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeleteUserLinkingRestrictionByPlatformIDV3Async(AdminDeleteUserLinkingRestrictionByPlatformIDV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -3294,6 +3363,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void PublicPlatformUnlinkV3(PublicPlatformUnlinkV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3310,6 +3381,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void PublicPlatformUnlinkAllV3(PublicPlatformUnlinkAllV3 input)
         {
             var response = _sdk.RunRequest(input);

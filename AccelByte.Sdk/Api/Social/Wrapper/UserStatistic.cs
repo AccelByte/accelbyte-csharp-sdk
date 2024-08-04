@@ -163,6 +163,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.BulkUpdateUserStatItem.Builder.SetWrapperObject(this); }
         }
+        public BulkGetOrDefaultByUserId.BulkGetOrDefaultByUserIdBuilder BulkGetOrDefaultByUserIdOp
+        {
+            get { return Operation.BulkGetOrDefaultByUserId.Builder.SetWrapperObject(this); }
+        }
         public BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder BulkResetUserStatItemValuesOp
         {
             get { return Operation.BulkResetUserStatItemValues.Builder.SetWrapperObject(this); }
@@ -1089,6 +1093,22 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ADTOObjectForUserStatItemValue>? BulkGetOrDefaultByUserId(BulkGetOrDefaultByUserId input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ADTOObjectForUserStatItemValue>?> BulkGetOrDefaultByUserIdAsync(BulkGetOrDefaultByUserId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

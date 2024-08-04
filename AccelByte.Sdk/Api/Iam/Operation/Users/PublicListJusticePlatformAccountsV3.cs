@@ -16,7 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicListJusticePlatformAccountsV3
     ///
-    /// This endpoint gets list justice platform account by providing publisher namespace and publisher userID
+    /// This endpoint gets list justice platform account by providing publisher namespace and publisher userID.
+    /// 
+    /// 
+    /// **Authentication:**
+    /// The _**userId**_ parameter should match the one in the access token.
     /// </summary>
     public class PublicListJusticePlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {

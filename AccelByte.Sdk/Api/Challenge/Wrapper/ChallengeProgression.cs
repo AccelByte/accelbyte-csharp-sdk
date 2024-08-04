@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             get { return Operation.PublicGetUserProgression.Builder.SetWrapperObject(this); }
         }
+        public PublicGetPastUserProgression.PublicGetPastUserProgressionBuilder PublicGetPastUserProgressionOp
+        {
+            get { return Operation.PublicGetPastUserProgression.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public void AdminEvaluateProgress(AdminEvaluateProgress input)
@@ -74,6 +78,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelUserProgressionResponse?> PublicGetUserProgressionAsync(PublicGetUserProgression input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserProgressionResponse? PublicGetPastUserProgression(PublicGetPastUserProgression input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserProgressionResponse?> PublicGetPastUserProgressionAsync(PublicGetPastUserProgression input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

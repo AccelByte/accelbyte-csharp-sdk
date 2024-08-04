@@ -1,3 +1,32 @@
+<a name="v0.64.1"></a>
+## [v0.64.1]
+### fix
+- **:** fix access token validation condition
+- **:** disable session history xray metric test
+- **test:** improve group integration test
+- **test:** add more wait for session tests
+- **test:** add missing wait in session party test
+- **:** add tc cmd to nightly integration test script
+- **:** remove junit in post step for integration test
+### chore
+- **:** bump up hotfix version 0.63.1
+- **:** sync from master
+### ci
+- **:** use extend-builder-batch
+- **:** update commitlint
+- **generate:** use stage_extend-sdk
+- **:** use extend-builder-ci for all stages
+- **generate:** integration test - add tc delay
+- **:** configurable slack channel env var
+### feat
+- **:** add wait for some integration tests
+- **:** add integration test only jenkinsfile
+### test
+- **integration:** session history - remove xray
+### docs
+- **:** update links
+
+
 <a name="v0.63.0"></a>
 ## [v0.63.0]
 ### fix

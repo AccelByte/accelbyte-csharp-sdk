@@ -560,6 +560,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).QueryTotalMatchmakingMatchTicketAsync(op);
         }
+        public static Sessionhistory.Model.ApimodelsXRayTicketObservabilityResponse? Execute(
+            this CreateXrayTicketObservability.CreateXrayTicketObservabilityBuilder builder,
+            ApimodelsXRayTicketObservabilityRequest body,
+            string namespace_
+        )
+        {
+            CreateXrayTicketObservability op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).CreateXrayTicketObservability(op);
+        }
+        public static async Task<Sessionhistory.Model.ApimodelsXRayTicketObservabilityResponse?> ExecuteAsync(
+            this CreateXrayTicketObservability.CreateXrayTicketObservabilityBuilder builder,
+            ApimodelsXRayTicketObservabilityRequest body,
+            string namespace_
+        )
+        {
+            CreateXrayTicketObservability op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).CreateXrayTicketObservabilityAsync(op);
+        }
         public static Sessionhistory.Model.ApimodelsXRayTicketQueryResponse? Execute(
             this QueryXrayTimelineByTicketID.QueryXrayTimelineByTicketIDBuilder builder,
             string namespace_,

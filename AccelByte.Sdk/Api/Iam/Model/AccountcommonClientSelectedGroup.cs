@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? GroupId { get; set; }
 
         [JsonPropertyName("selectedActions")]
-        public List<long>? SelectedActions { get; set; }
+        public List<int>? SelectedActions { get; set; }
 
     }
 

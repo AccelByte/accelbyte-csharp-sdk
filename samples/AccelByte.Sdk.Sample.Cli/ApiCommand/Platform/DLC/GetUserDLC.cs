@@ -34,6 +34,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("includeAllNamespaces")]
+        public bool? IncludeAllNamespaces { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
         [SdkCommandArgument("type")]
         public string? Type { get; set; }
 
@@ -48,6 +54,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GetUserDLC.Builder;
 
+            if (IncludeAllNamespaces != null)
+                opBuilder.SetIncludeAllNamespaces((bool)IncludeAllNamespaces);
+            if (Status != null)
+                opBuilder.SetStatus(GetUserDLCStatus.NewValue(Status));
             if (Type != null)
                 opBuilder.SetType(GetUserDLCType.NewValue(Type));
 

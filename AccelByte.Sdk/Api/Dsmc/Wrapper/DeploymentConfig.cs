@@ -75,9 +75,17 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
         {
             get { return Operation.UpdateOverrideRegionOverride.Builder.SetWrapperObject(this); }
         }
+        public DeleteCreatingServerCountQueue.DeleteCreatingServerCountQueueBuilder DeleteCreatingServerCountQueueOp
+        {
+            get { return Operation.DeleteCreatingServerCountQueue.Builder.SetWrapperObject(this); }
+        }
         public GetAllDeploymentClient.GetAllDeploymentClientBuilder GetAllDeploymentClientOp
         {
             get { return Operation.GetAllDeploymentClient.Builder.SetWrapperObject(this); }
+        }
+        public GetDeploymentClient.GetDeploymentClientBuilder GetDeploymentClientOp
+        {
+            get { return Operation.GetDeploymentClient.Builder.SetWrapperObject(this); }
         }
         public CreateDeploymentClient.CreateDeploymentClientBuilder CreateDeploymentClientOp
         {
@@ -313,6 +321,22 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void DeleteCreatingServerCountQueue(DeleteCreatingServerCountQueue input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteCreatingServerCountQueueAsync(DeleteCreatingServerCountQueue input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelsListDeploymentResponse? GetAllDeploymentClient(GetAllDeploymentClient input)
         {
             var response = _sdk.RunRequest(input);
@@ -322,6 +346,22 @@ namespace AccelByte.Sdk.Api.Dsmc.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsListDeploymentResponse?> GetAllDeploymentClientAsync(GetAllDeploymentClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsDeploymentWithOverride? GetDeploymentClient(GetDeploymentClient input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsDeploymentWithOverride?> GetDeploymentClientAsync(GetDeploymentClient input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

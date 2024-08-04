@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
 {
     public class ApiMatchTicketStatus : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("isActive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsActive { get; set; }
+
         [JsonPropertyName("matchFound")]
         public bool? MatchFound { get; set; }
 

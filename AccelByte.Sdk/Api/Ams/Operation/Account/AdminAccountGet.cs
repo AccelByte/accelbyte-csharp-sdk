@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             )
             {
                 AdminAccountGet op = new AdminAccountGet(this,
-                    namespace_                    
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -59,28 +59,28 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public AdminAccountGet(
-            string namespace_            
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -95,9 +95,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApiAccountResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -113,9 +113,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApiAccountResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

@@ -19,39 +19,39 @@ using AccelByte.Sdk.Api.Dsmc.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
 {
-    [SdkConsoleCommand("dsmc", "importimages")]
-    public class ImportImagesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("dsmc", "getworkerconfig")]
+    public class GetWorkerConfigCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Dsmc"; } }
 
-        public string OperationName { get { return "ImportImages"; } }
+        public string OperationName { get { return "GetWorkerConfig"; } }
 
-        [SdkCommandFile("file")]
-        public Stream File { get; set; } = new MemoryStream();
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
 
-        public ImportImagesCommand(AccelByteSDK sdk)
+        public GetWorkerConfigCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
+            AccelByte.Sdk.Api.Dsmc.Wrapper.Admin wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.Admin(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Dsmc.Operation.ImportImages.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Dsmc.Operation.GetWorkerConfig.Builder;
 
 
 
-            ImportImages operation = opBuilder.Build(
-                File
+
+
+            GetWorkerConfig operation = opBuilder.Build(
+                Namespace
             );
 
 
-            AccelByte.Sdk.Api.Dsmc.Model.ModelsImportResponse? response = wrapper.ImportImages(operation);
+            AccelByte.Sdk.Api.Dsmc.Model.ModelsWorkerConfig? response = wrapper.GetWorkerConfig(operation);
             if (response == null)
                 return "No response from server.";
 

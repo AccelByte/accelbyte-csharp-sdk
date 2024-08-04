@@ -44,6 +44,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly AvailablePredicatePredicateType SeasonTierPredicate
             = new AvailablePredicatePredicateType("SeasonTierPredicate");
 
+        public static readonly AvailablePredicatePredicateType StatisticCodePredicate
+            = new AvailablePredicatePredicateType("StatisticCodePredicate");
+
 
         public static implicit operator AvailablePredicatePredicateType(string value)
         {

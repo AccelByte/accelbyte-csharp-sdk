@@ -46,8 +46,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             )
             {
                 ImageUnmarkForDeletion op = new ImageUnmarkForDeletion(this,
-                    imageID,                    
-                    namespace_                    
+                    imageID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -65,30 +65,30 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["imageID"] = imageID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ImageUnmarkForDeletion(
-            string imageID,            
-            string namespace_            
+            string imageID,
+            string namespace_
         )
         {
             PathParams["imageID"] = imageID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -97,22 +97,22 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] {  };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)202)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

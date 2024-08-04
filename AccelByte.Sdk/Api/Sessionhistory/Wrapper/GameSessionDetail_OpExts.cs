@@ -230,5 +230,27 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminTicketDetailGetByTicketIDAsync(op);
         }
+        public static Sessionhistory.Model.ApimodelsGameSessionDetailQueryResponse? Execute(
+            this PublicQueryGameSessionMe.PublicQueryGameSessionMeBuilder builder,
+            string namespace_
+        )
+        {
+            PublicQueryGameSessionMe op = builder.Build(
+                namespace_
+            );
+
+            return ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).PublicQueryGameSessionMe(op);
+        }
+        public static async Task<Sessionhistory.Model.ApimodelsGameSessionDetailQueryResponse?> ExecuteAsync(
+            this PublicQueryGameSessionMe.PublicQueryGameSessionMeBuilder builder,
+            string namespace_
+        )
+        {
+            PublicQueryGameSessionMe op = builder.Build(
+                namespace_
+            );
+
+            return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).PublicQueryGameSessionMeAsync(op);
+        }
     }
 }

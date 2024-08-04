@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
     public class ModelsListImagePatchesResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("images")]
-        public List<ModelsPatchImageRecord>? Images { get; set; }
+        public List<ModelsPatchImageRecordResponse>? Images { get; set; }
 
     }
 

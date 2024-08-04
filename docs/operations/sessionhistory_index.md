@@ -28,6 +28,7 @@
 | `/sessionhistory/v1/admin/namespaces/{namespace}/parties/{sessionId}` | GET | GetPartyDetail | [GetPartyDetail](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/GetPartyDetail.cs) | [GetPartyDetail](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/GetPartyDetail.cs) |
 | `/sessionhistory/v1/admin/namespaces/{namespace}/tickets` | GET | AdminQueryTicketDetail | [AdminQueryTicketDetail](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/AdminQueryTicketDetail.cs) | [AdminQueryTicketDetail](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/AdminQueryTicketDetail.cs) |
 | `/sessionhistory/v1/admin/namespaces/{namespace}/tickets/{ticketId}` | GET | AdminTicketDetailGetByTicketID | [AdminTicketDetailGetByTicketID](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/AdminTicketDetailGetByTicketID.cs) | [AdminTicketDetailGetByTicketID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/AdminTicketDetailGetByTicketID.cs) |
+| `/sessionhistory/v1/public/namespaces/{namespace}/users/me/gamesessions` | GET | PublicQueryGameSessionMe | [PublicQueryGameSessionMe](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/PublicQueryGameSessionMe.cs) | [PublicQueryGameSessionMe](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/PublicQueryGameSessionMe.cs) |
 
 ### XRay Wrapper:  [XRay](../../AccelByte.Sdk/Api/Sessionhistory/Wrapper/XRay.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -50,6 +51,7 @@
 | `/sessionhistory/v2/admin/namespaces/{namespace}/xray/metrics/total-ticket-created` | GET | QueryTotalMatchmakingCreated | [QueryTotalMatchmakingCreated](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingCreated.cs) | [QueryTotalMatchmakingCreated](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/QueryTotalMatchmakingCreated.cs) |
 | `/sessionhistory/v2/admin/namespaces/{namespace}/xray/metrics/total-ticket-expired` | GET | QueryTotalMatchmakingExpired | [QueryTotalMatchmakingExpired](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingExpired.cs) | [QueryTotalMatchmakingExpired](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/QueryTotalMatchmakingExpired.cs) |
 | `/sessionhistory/v2/admin/namespaces/{namespace}/xray/metrics/total-ticket-match` | GET | QueryTotalMatchmakingMatchTicket | [QueryTotalMatchmakingMatchTicket](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingMatchTicket.cs) | [QueryTotalMatchmakingMatchTicket](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/QueryTotalMatchmakingMatchTicket.cs) |
+| `/sessionhistory/v2/admin/namespaces/{namespace}/xray/tickets` | POST | CreateXrayTicketObservability | [CreateXrayTicketObservability](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/CreateXrayTicketObservability.cs) | [CreateXrayTicketObservability](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/CreateXrayTicketObservability.cs) |
 | `/sessionhistory/v2/admin/namespaces/{namespace}/xray/tickets/{ticketId}` | GET | QueryXrayTimelineByTicketID | [QueryXrayTimelineByTicketID](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryXrayTimelineByTicketID.cs) | [QueryXrayTimelineByTicketID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/QueryXrayTimelineByTicketID.cs) |
 | `/sessionhistory/v2/admin/namespaces/{namespace}/xray/users/{userId}/tickets` | GET | QueryXrayTimelineByUserID | [QueryXrayTimelineByUserID](../../AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryXrayTimelineByUserID.cs) | [QueryXrayTimelineByUserID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/XRay/QueryXrayTimelineByUserID.cs) |
 
@@ -124,6 +126,8 @@
 | `apimodels.XRayMatchTicketHistoryQueryResponse` | [ApimodelsXRayMatchTicketHistoryQueryResponse](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayMatchTicketHistoryQueryResponse.cs) |
 | `apimodels.XRayMatchesQueryResponse` | [ApimodelsXRayMatchesQueryResponse](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayMatchesQueryResponse.cs) |
 | `apimodels.XRayTicketMatchesResult` | [ApimodelsXRayTicketMatchesResult](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTicketMatchesResult.cs) |
+| `apimodels.XRayTicketObservabilityRequest` | [ApimodelsXRayTicketObservabilityRequest](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTicketObservabilityRequest.cs) |
+| `apimodels.XRayTicketObservabilityResponse` | [ApimodelsXRayTicketObservabilityResponse](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTicketObservabilityResponse.cs) |
 | `apimodels.XRayTicketQueryResponse` | [ApimodelsXRayTicketQueryResponse](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTicketQueryResponse.cs) |
 | `apimodels.XRayTicketResult` | [ApimodelsXRayTicketResult](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTicketResult.cs) |
 | `apimodels.XRayTotalActiveSessionQueryResponse` | [ApimodelsXRayTotalActiveSessionQueryResponse](../../AccelByte.Sdk/Api/Sessionhistory/Model/ApimodelsXRayTotalActiveSessionQueryResponse.cs) |
@@ -137,6 +141,7 @@
 | `models.GameSession` | [ModelsGameSession](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsGameSession.cs) |
 | `models.GameSessionTeam` | [ModelsGameSessionTeam](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsGameSessionTeam.cs) |
 | `models.Match` | [ModelsMatch](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsMatch.cs) |
+| `models.MatchTicket` | [ModelsMatchTicket](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsMatchTicket.cs) |
 | `models.MatchingAlly` | [ModelsMatchingAlly](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsMatchingAlly.cs) |
 | `models.MatchingParty` | [ModelsMatchingParty](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsMatchingParty.cs) |
 | `models.MatchingRule` | [ModelsMatchingRule](../../AccelByte.Sdk/Api/Sessionhistory/Model/ModelsMatchingRule.cs) |

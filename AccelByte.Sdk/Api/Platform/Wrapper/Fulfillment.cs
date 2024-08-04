@@ -43,9 +43,21 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.PublicRedeemCode.Builder.SetWrapperObject(this); }
         }
+        public QueryFulfillments.QueryFulfillmentsBuilder QueryFulfillmentsOp
+        {
+            get { return Operation.QueryFulfillments.Builder.SetWrapperObject(this); }
+        }
         public FulfillRewardsV2.FulfillRewardsV2Builder FulfillRewardsV2Op
         {
             get { return Operation.FulfillRewardsV2.Builder.SetWrapperObject(this); }
+        }
+        public FulfillItems.FulfillItemsBuilder FulfillItemsOp
+        {
+            get { return Operation.FulfillItems.Builder.SetWrapperObject(this); }
+        }
+        public RevokeItems.RevokeItemsBuilder RevokeItemsOp
+        {
+            get { return Operation.RevokeItems.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -145,6 +157,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.FulfillmentHistoryPagingSlicedResult? QueryFulfillments(QueryFulfillments input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentHistoryPagingSlicedResult?> QueryFulfillmentsAsync(QueryFulfillments input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.FulfillmentResult? FulfillRewardsV2(FulfillRewardsV2 input)
         {
             var response = _sdk.RunRequest(input);
@@ -154,6 +182,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.FulfillmentResult?> FulfillRewardsV2Async(FulfillRewardsV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FulfillmentV2Result? FulfillItems(FulfillItems input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentV2Result?> FulfillItemsAsync(FulfillItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.RevokeFulfillmentV2Result? RevokeItems(RevokeItems input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevokeFulfillmentV2Result?> RevokeItemsAsync(RevokeItems input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

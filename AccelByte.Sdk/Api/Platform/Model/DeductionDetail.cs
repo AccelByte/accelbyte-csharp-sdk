@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DiscountCodeDeductionDetail? DiscountCodeDeductionDetail { get; set; }
 
+        [JsonPropertyName("discountProviderName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DiscountProviderName { get; set; }
+
     }
 
 
@@ -28,6 +32,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
     {
         public static readonly DeductionDetailDeductionType DISCOUNTCODE
             = new DeductionDetailDeductionType("DISCOUNT_CODE");
+
+        public static readonly DeductionDetailDeductionType PAYMENTDISCOUNTCODE
+            = new DeductionDetailDeductionType("PAYMENT_DISCOUNT_CODE");
 
 
         public static implicit operator DeductionDetailDeductionType(string value)

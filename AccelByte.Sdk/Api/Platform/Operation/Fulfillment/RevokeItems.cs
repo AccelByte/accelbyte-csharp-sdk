@@ -7,47 +7,50 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Dsmc.Model;
+using AccelByte.Sdk.Api.Platform.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Dsmc.Operation
+namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// ExportImages
+    /// revokeItems
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [READ]
+    ///  [Not Supported Yet In Starter] Revoke items by transactionId.
+    /// Other detail info:
     /// 
-    /// Required scope: social
-    /// 
-    /// This endpoint export a dedicated servers images in a namespace.
+    ///   * Returns : revoke fulfillment v2 result
     /// </summary>
-    public class ExportImages : AccelByte.Sdk.Core.Operation
+    public class RevokeItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ExportImagesBuilder Builder { get => new ExportImagesBuilder(); }
+        public static RevokeItemsBuilder Builder { get => new RevokeItemsBuilder(); }
 
-        public class ExportImagesBuilder
-            : OperationBuilder<ExportImagesBuilder>
+        public class RevokeItemsBuilder
+            : OperationBuilder<RevokeItemsBuilder>
         {
 
 
 
 
 
-            internal ExportImagesBuilder() { }
+            internal RevokeItemsBuilder() { }
 
 
 
 
 
 
-            public ExportImages Build(
-                string namespace_
+            public RevokeItems Build(
+                string namespace_,
+                string transactionId,
+                string userId
             )
             {
-                ExportImages op = new ExportImages(this,
-                    namespace_
+                RevokeItems op = new RevokeItems(this,
+                    namespace_,
+                    transactionId,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -58,11 +61,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             }
         }
 
-        private ExportImages(ExportImagesBuilder builder,
-            string namespace_
+        private RevokeItems(RevokeItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["transactionId"] = transactionId;
+            PathParams["userId"] = userId;
 
 
 
@@ -74,11 +81,15 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         }
         #endregion
 
-        public ExportImages(
-            string namespace_
+        public RevokeItems(
+            string namespace_,
+            string transactionId,
+            string userId
         )
         {
             PathParams["namespace"] = namespace_;
+            PathParams["transactionId"] = transactionId;
+            PathParams["userId"] = userId;
 
 
 
@@ -89,9 +100,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/dsmcontroller/admin/namespaces/{namespace}/images/export";
+        public override string Path => "/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke";
 
-        public override HttpMethod Method => HttpMethod.Get;
+        public override HttpMethod Method => HttpMethod.Put;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -100,7 +111,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public List<Model.ModelsImageRecord>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.RevokeFulfillmentV2Result? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -109,13 +120,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<List<Model.ModelsImageRecord>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.RevokeFulfillmentV2Result>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<List<Model.ModelsImageRecord>>(payload);
+                    return JsonSerializer.Deserialize<Model.RevokeFulfillmentV2Result>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<List<Model.ModelsImageRecord>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.RevokeFulfillmentV2Result>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

@@ -63,6 +63,10 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
         {
             get { return Operation.PublicGetUserProfilePublicInfoByIds.Builder.SetWrapperObject(this); }
         }
+        public PublicBulkGetUserProfilePublicInfo.PublicBulkGetUserProfilePublicInfoBuilder PublicBulkGetUserProfilePublicInfoOp
+        {
+            get { return Operation.PublicBulkGetUserProfilePublicInfo.Builder.SetWrapperObject(this); }
+        }
         public PublicGetUserProfileInfoByPublicId.PublicGetUserProfileInfoByPublicIdBuilder PublicGetUserProfileInfoByPublicIdOp
         {
             get { return Operation.PublicGetUserProfileInfoByPublicId.Builder.SetWrapperObject(this); }
@@ -420,6 +424,40 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.Payload);
         }
         public async Task<List<Model.UserProfilePublicInfo<T1>>?> PublicGetUserProfilePublicInfoByIdsAsync<T1>(PublicGetUserProfilePublicInfoByIds input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.UserProfilePublicInfo>? PublicBulkGetUserProfilePublicInfo(PublicBulkGetUserProfilePublicInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.UserProfilePublicInfo>?> PublicBulkGetUserProfilePublicInfoAsync(PublicBulkGetUserProfilePublicInfo input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public List<Model.UserProfilePublicInfo<T1>>? PublicBulkGetUserProfilePublicInfo<T1>(PublicBulkGetUserProfilePublicInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.UserProfilePublicInfo<T1>>?> PublicBulkGetUserProfilePublicInfoAsync<T1>(PublicBulkGetUserProfilePublicInfo input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(

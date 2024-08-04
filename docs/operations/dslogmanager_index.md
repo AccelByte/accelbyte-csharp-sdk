@@ -20,6 +20,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/dslogmanager/servers/logs/download` | POST | BatchDownloadServerLogs | [BatchDownloadServerLogs](../../AccelByte.Sdk/Api/Dslogmanager/Operation/AllTerminatedServers/BatchDownloadServerLogs.cs) | [BatchDownloadServerLogs](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dslogmanager/AllTerminatedServers/BatchDownloadServerLogs.cs) |
+| `/dslogmanager/servers/metadata` | POST | ListMetadataServers | [ListMetadataServers](../../AccelByte.Sdk/Api/Dslogmanager/Operation/AllTerminatedServers/ListMetadataServers.cs) | [ListMetadataServers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dslogmanager/AllTerminatedServers/ListMetadataServers.cs) |
 | `/dslogmanager/servers/search` | GET | ListAllTerminatedServers | [ListAllTerminatedServers](../../AccelByte.Sdk/Api/Dslogmanager/Operation/AllTerminatedServers/ListAllTerminatedServers.cs) | [ListAllTerminatedServers](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Dslogmanager/AllTerminatedServers/ListAllTerminatedServers.cs) |
 
 ### Dslogmanager Operations Wrapper:  [DslogmanagerOperations](../../AccelByte.Sdk/Api/Dslogmanager/Wrapper/DslogmanagerOperations.cs)
@@ -62,12 +63,13 @@
 | `models.ListTerminatedServersResponse` | [ModelsListTerminatedServersResponse](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsListTerminatedServersResponse.cs) |
 | `models.LogFileStatus` | [ModelsLogFileStatus](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsLogFileStatus.cs) |
 | `models.MatchResult` | [ModelsMatchResult](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsMatchResult.cs) |
-| `models.NotifPayloadServerStatusChange` | [ModelsNotifPayloadServerStatusChange](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsNotifPayloadServerStatusChange.cs) |
+| `models.MetadataServersRequest` | [ModelsMetadataServersRequest](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsMetadataServersRequest.cs) |
+| `models.NotifPayloadServerStatusChangeResponse` | [ModelsNotifPayloadServerStatusChangeResponse](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsNotifPayloadServerStatusChangeResponse.cs) |
 | `models.PagingCursor` | [ModelsPagingCursor](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsPagingCursor.cs) |
 | `models.RequestMatchMember` | [ModelsRequestMatchMember](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsRequestMatchMember.cs) |
 | `models.RequestMatchParty` | [ModelsRequestMatchParty](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsRequestMatchParty.cs) |
 | `models.RequestMatchingAlly` | [ModelsRequestMatchingAlly](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsRequestMatchingAlly.cs) |
-| `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsServer.cs) |
 | `models.ServerLogs` | [ModelsServerLogs](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsServerLogs.cs) |
+| `models.ServerResponse` | [ModelsServerResponse](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsServerResponse.cs) |
 | `models.StatusHistory` | [ModelsStatusHistory](../../AccelByte.Sdk/Api/Dslogmanager/Model/ModelsStatusHistory.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Dslogmanager/Model/ResponseError.cs) |

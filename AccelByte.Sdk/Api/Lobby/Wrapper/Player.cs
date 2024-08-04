@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.AdminBulkBlockPlayersV1.Builder.SetWrapperObject(this); }
         }
+        public AdminBulkUnblockPlayersV1.AdminBulkUnblockPlayersV1Builder AdminBulkUnblockPlayersV1Op
+        {
+            get { return Operation.AdminBulkUnblockPlayersV1.Builder.SetWrapperObject(this); }
+        }
         public PublicPlayerBlockPlayersV1.PublicPlayerBlockPlayersV1Builder PublicPlayerBlockPlayersV1Op
         {
             get { return Operation.PublicPlayerBlockPlayersV1.Builder.SetWrapperObject(this); }
@@ -190,6 +194,22 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.Payload);
         }
         public async Task AdminBulkBlockPlayersV1Async(AdminBulkBlockPlayersV1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminBulkUnblockPlayersV1(AdminBulkUnblockPlayersV1 input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminBulkUnblockPlayersV1Async(AdminBulkUnblockPlayersV1 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

@@ -16,11 +16,48 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserPlatformAccountsV3
     ///
+    /// Gets platform accounts that are already linked with user account.
+    /// Action code : 10128
+    /// 
+    /// 
+    /// **Supported Platforms:**
+    /// - Steam group (steamnetwork):
+    /// - steam
+    /// - steamopenid
+    /// - PSN group (psn):
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - XBOX group(xbox):
+    /// - live
+    /// - xblweb
+    /// - Oculus group (oculusgroup):
+    /// - oculus
+    /// - oculusweb
+    /// - Google group (google):
+    /// - google
+    /// - googleplaygames:
+    /// - epicgames
+    /// - facebook
+    /// - twitch
+    /// - discord
+    /// - android
+    /// - ios
+    /// - apple
+    /// - device
+    /// - nintendo
+    /// - awscognito
+    /// - amazon
+    /// - netflix
+    /// - snapchat
+    /// - _oidc platform id_
+    /// 
+    /// Note:
+    /// - You can use either platform id or platform group as **platformId** parameter.
+    /// - **Nintendo platform user id**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
+    /// 
     /// ## Justice Platform Account
-    /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ]
-    /// is required in order to read the UserID who linked with the user.
-    /// Gets platform accounts that are already linked with user account
-    /// action code : 10128
+    /// The permission âADMIN:NAMESPACE:{namespace}:JUSTICE:USER:{userId}â [READ] is required in order to read the UserID who linked with the user.
     /// </summary>
     public class AdminGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {

@@ -38,5 +38,31 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV1Async(op);
         }
+        public static Lobby.Model.HandlersGetUsersPresenceResponse? Execute(
+            this UsersPresenceHandlerV2.UsersPresenceHandlerV2Builder builder,
+            ModelRequestUserPresence body,
+            string namespace_
+        )
+        {
+            UsersPresenceHandlerV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV2(op);
+        }
+        public static async Task<Lobby.Model.HandlersGetUsersPresenceResponse?> ExecuteAsync(
+            this UsersPresenceHandlerV2.UsersPresenceHandlerV2Builder builder,
+            ModelRequestUserPresence body,
+            string namespace_
+        )
+        {
+            UsersPresenceHandlerV2 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Presence)builder.WrapperObject!).UsersPresenceHandlerV2Async(op);
+        }
     }
 }

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsCreateGameSessionRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("appName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AppName { get; set; }
+
         [JsonPropertyName("attributes")]
         public Dictionary<string, object>? Attributes { get; set; }
 
@@ -68,6 +72,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("serverName")]
         public string? ServerName { get; set; }
 
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ApimodelsSessionStorageRequest? Storage { get; set; }
+
         [JsonPropertyName("teams")]
         public List<ModelsTeam>? Teams { get; set; }
 
@@ -88,6 +96,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
     public class ApimodelsCreateGameSessionRequest<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("appName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AppName { get; set; }
+
         [JsonPropertyName("attributes")]
         public T1? Attributes { get; set; }
 
@@ -146,6 +158,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("serverName")]
         public string? ServerName { get; set; }
+
+        [JsonPropertyName("storage")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ApimodelsSessionStorageRequest? Storage { get; set; }
 
         [JsonPropertyName("teams")]
         public List<ModelsTeam>? Teams { get; set; }

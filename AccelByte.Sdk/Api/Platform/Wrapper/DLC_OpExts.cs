@@ -409,5 +409,27 @@ namespace AccelByte.Sdk.Api
 
             await ((Platform.Wrapper.DLC)builder.WrapperObject!).SyncXboxDLCAsync(op);
         }
+        public static Platform.Model.SimpleUserDLCRewardContentsResponse? Execute(
+            this PublicGetMyDLCContent.PublicGetMyDLCContentBuilder builder,
+            string type
+        )
+        {
+            PublicGetMyDLCContent op = builder.Build(
+                type
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).PublicGetMyDLCContent(op);
+        }
+        public static async Task<Platform.Model.SimpleUserDLCRewardContentsResponse?> ExecuteAsync(
+            this PublicGetMyDLCContent.PublicGetMyDLCContentBuilder builder,
+            string type
+        )
+        {
+            PublicGetMyDLCContent op = builder.Build(
+                type
+            );
+
+            return await ((Platform.Wrapper.DLC)builder.WrapperObject!).PublicGetMyDLCContentAsync(op);
+        }
     }
 }

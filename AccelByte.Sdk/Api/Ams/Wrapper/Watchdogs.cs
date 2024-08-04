@@ -28,12 +28,12 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
             get { return Operation.WatchdogConnect.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public void LocalWatchdogConnect(LocalWatchdogConnect input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

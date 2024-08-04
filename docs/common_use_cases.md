@@ -312,9 +312,9 @@ ModelsCreateGroupConfigurationResponseV1? gcResp = _Sdk.Group.Configuration.Crea
 ```csharp
 ModelsPublicCreateNewGroupRequestV1 createGroup = new ModelsPublicCreateNewGroupRequestV1()
 {
-    GroupName = "CSharp SDK Test Group",
+    GroupName = groupName,
     GroupType = "PUBLIC",
-    GroupDescription = "Yeah, anything is welcome here.",
+    GroupDescription = "Yeah, anyone is welcome here.",
     GroupMaxMember = 100,
     GroupRegion = "us",
     ConfigurationCode = configuration_code

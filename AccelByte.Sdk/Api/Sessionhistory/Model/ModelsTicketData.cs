@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsMatchingRule>? ActiveMatchingRule { get; set; }
 
+        [JsonPropertyName("elapsedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? ElapsedTime { get; set; }
+
         [JsonPropertyName("function")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Function { get; set; }
@@ -29,6 +33,9 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
         [JsonPropertyName("isBackfillMatch")]
         public bool? IsBackfillMatch { get; set; }
+
+        [JsonPropertyName("isPivot")]
+        public bool? IsPivot { get; set; }
 
         [JsonPropertyName("isRuleSetFlexed")]
         public bool? IsRuleSetFlexed { get; set; }
@@ -40,6 +47,12 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("matchID")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? MatchID { get; set; }
+
+        [JsonPropertyName("matchedRegion")]
+        public string? MatchedRegion { get; set; }
+
+        [JsonPropertyName("memberAttributes")]
+        public Dictionary<string, object>? MemberAttributes { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
@@ -75,6 +88,9 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("timestamp")]
         public DateTime? Timestamp { get; set; }
 
+        [JsonPropertyName("totalPlayers")]
+        public int? TotalPlayers { get; set; }
+
         [JsonPropertyName("unbackfillReason")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UnbackfillReason { get; set; }
@@ -85,5 +101,98 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
     }
 
+    public class ModelsTicketData<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("action")]
+        public string? Action { get; set; }
+
+        [JsonPropertyName("activeAllianceRule")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsAllianceRule? ActiveAllianceRule { get; set; }
+
+        [JsonPropertyName("activeMatchingRule")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelsMatchingRule>? ActiveMatchingRule { get; set; }
+
+        [JsonPropertyName("elapsedTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? ElapsedTime { get; set; }
+
+        [JsonPropertyName("function")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Function { get; set; }
+
+        [JsonPropertyName("gameMode")]
+        public string? GameMode { get; set; }
+
+        [JsonPropertyName("isBackfillMatch")]
+        public bool? IsBackfillMatch { get; set; }
+
+        [JsonPropertyName("isPivot")]
+        public bool? IsPivot { get; set; }
+
+        [JsonPropertyName("isRuleSetFlexed")]
+        public bool? IsRuleSetFlexed { get; set; }
+
+        [JsonPropertyName("iteration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Iteration { get; set; }
+
+        [JsonPropertyName("matchID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MatchID { get; set; }
+
+        [JsonPropertyName("matchedRegion")]
+        public string? MatchedRegion { get; set; }
+
+        [JsonPropertyName("memberAttributes")]
+        public T1? MemberAttributes { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("partyID")]
+        public string? PartyID { get; set; }
+
+        [JsonPropertyName("podName")]
+        public string? PodName { get; set; }
+
+        [JsonPropertyName("remainingPlayersPerTicket")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<int>? RemainingPlayersPerTicket { get; set; }
+
+        [JsonPropertyName("remainingTickets")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RemainingTickets { get; set; }
+
+        [JsonPropertyName("session")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsMatchmakingResult? Session { get; set; }
+
+        [JsonPropertyName("sessionTickID")]
+        public string? SessionTickID { get; set; }
+
+        [JsonPropertyName("tickID")]
+        public long? TickID { get; set; }
+
+        [JsonPropertyName("timeToMatchSec")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? TimeToMatchSec { get; set; }
+
+        [JsonPropertyName("timestamp")]
+        public DateTime? Timestamp { get; set; }
+
+        [JsonPropertyName("totalPlayers")]
+        public int? TotalPlayers { get; set; }
+
+        [JsonPropertyName("unbackfillReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UnbackfillReason { get; set; }
+
+        [JsonPropertyName("unmatchReason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UnmatchReason { get; set; }
+
+    }
 
 }

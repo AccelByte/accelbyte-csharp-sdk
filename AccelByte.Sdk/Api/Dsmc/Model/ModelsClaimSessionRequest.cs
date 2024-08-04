@@ -9,6 +9,19 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 {
     public class ModelsClaimSessionRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("game_mode")]
+        public string? GameMode { get; set; }
+
+        [JsonPropertyName("matching_allies")]
+        public List<ModelsRequestMatchingAlly>? MatchingAllies { get; set; }
+
+        [JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("notification_payload")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsMatchResultNotificationPayload? NotificationPayload { get; set; }
+
         [JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
 

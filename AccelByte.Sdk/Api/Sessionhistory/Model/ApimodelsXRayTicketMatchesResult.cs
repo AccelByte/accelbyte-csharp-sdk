@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("IsPivot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsPivot { get; set; }
+
         [JsonPropertyName("Latencies")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, long>? Latencies { get; set; }
@@ -36,6 +40,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("ProposedProposal")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsProposedProposal? ProposedProposal { get; set; }
+
+        [JsonPropertyName("RegionPreference")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? RegionPreference { get; set; }
 
         [JsonPropertyName("TicketAttributes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -45,6 +53,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TicketID { get; set; }
 
+        [JsonPropertyName("TimeToMatch")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? TimeToMatch { get; set; }
+
     }
 
     public class ApimodelsXRayTicketMatchesResult<T1> : AccelByte.Sdk.Core.Model
@@ -52,6 +64,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("CreatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("IsPivot")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsPivot { get; set; }
 
         [JsonPropertyName("Latencies")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -77,6 +93,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ModelsProposedProposal? ProposedProposal { get; set; }
 
+        [JsonPropertyName("RegionPreference")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? RegionPreference { get; set; }
+
         [JsonPropertyName("TicketAttributes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? TicketAttributes { get; set; }
@@ -84,6 +104,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("TicketID")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TicketID { get; set; }
+
+        [JsonPropertyName("TimeToMatch")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? TimeToMatch { get; set; }
 
     }
 

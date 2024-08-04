@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsGlobalConfigurationResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("metricExcludedNamespaces")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? MetricExcludedNamespaces { get; set; }
+
         [JsonPropertyName("regionRetryMapping")]
         public Dictionary<string, object>? RegionRetryMapping { get; set; }
 

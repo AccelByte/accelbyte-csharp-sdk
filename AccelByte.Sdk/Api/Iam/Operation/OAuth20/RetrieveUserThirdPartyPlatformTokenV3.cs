@@ -33,6 +33,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - snapchat
     /// - twitch
     /// - live
+    /// 
+    /// 
+    /// **Authentication:**
+    /// The _**userId**_ parameter should match the one in the access token.
     /// </summary>
     public class RetrieveUserThirdPartyPlatformTokenV3 : AccelByte.Sdk.Core.Operation
     {

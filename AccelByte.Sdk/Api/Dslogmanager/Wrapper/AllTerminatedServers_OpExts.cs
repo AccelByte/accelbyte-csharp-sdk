@@ -35,6 +35,28 @@ namespace AccelByte.Sdk.Api
             return await ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).BatchDownloadServerLogsAsync(op);
         }
         public static Dslogmanager.Model.ModelsListTerminatedServersResponse? Execute(
+            this ListMetadataServers.ListMetadataServersBuilder builder,
+            ModelsMetadataServersRequest body
+        )
+        {
+            ListMetadataServers op = builder.Build(
+                body
+            );
+
+            return ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListMetadataServers(op);
+        }
+        public static async Task<Dslogmanager.Model.ModelsListTerminatedServersResponse?> ExecuteAsync(
+            this ListMetadataServers.ListMetadataServersBuilder builder,
+            ModelsMetadataServersRequest body
+        )
+        {
+            ListMetadataServers op = builder.Build(
+                body
+            );
+
+            return await ((Dslogmanager.Wrapper.AllTerminatedServers)builder.WrapperObject!).ListMetadataServersAsync(op);
+        }
+        public static Dslogmanager.Model.ModelsListTerminatedServersResponse? Execute(
             this ListAllTerminatedServers.ListAllTerminatedServersBuilder builder
         )
         {

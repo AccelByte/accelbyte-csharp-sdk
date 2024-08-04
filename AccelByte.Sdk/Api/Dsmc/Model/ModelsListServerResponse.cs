@@ -14,7 +14,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Model
 
         [JsonPropertyName("servers")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<ModelsServer>? Servers { get; set; }
+        public List<ModelsServerDetailsResponse>? Servers { get; set; }
 
     }
 

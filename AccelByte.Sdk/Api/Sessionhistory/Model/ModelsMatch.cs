@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? MatchAttributes { get; set; }
 
+        [JsonPropertyName("PivotID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PivotID { get; set; }
+
         [JsonPropertyName("RegionPreference")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? RegionPreference { get; set; }
@@ -35,7 +39,11 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
         [JsonPropertyName("Tickets")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<ModelsTicket>? Tickets { get; set; }
+        public List<ModelsMatchTicket>? Tickets { get; set; }
+
+        [JsonPropertyName("Timestamp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? Timestamp { get; set; }
 
     }
 
@@ -53,6 +61,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? MatchAttributes { get; set; }
 
+        [JsonPropertyName("PivotID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PivotID { get; set; }
+
         [JsonPropertyName("RegionPreference")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? RegionPreference { get; set; }
@@ -67,7 +79,11 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
         [JsonPropertyName("Tickets")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<ModelsTicket>? Tickets { get; set; }
+        public List<ModelsMatchTicket>? Tickets { get; set; }
+
+        [JsonPropertyName("Timestamp")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? Timestamp { get; set; }
 
     }
 

@@ -563,6 +563,36 @@ namespace AccelByte.Sdk.Api
 
             await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyRejectAsync(op);
         }
+        public static void Execute(
+            this PublicPartyCancel.PublicPartyCancelBuilder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicPartyCancel op = builder.Build(
+                namespace_,
+                partyId,
+                userId
+            );
+
+            ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyCancel(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicPartyCancel.PublicPartyCancelBuilder builder,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicPartyCancel op = builder.Build(
+                namespace_,
+                partyId,
+                userId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPartyCancelAsync(op);
+        }
         public static Session.Model.ApimodelsKickResponse? Execute(
             this PublicPartyKick.PublicPartyKickBuilder builder,
             string namespace_,

@@ -84,6 +84,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (endDate is not null) QueryParams["endDate"] = endDate;
+
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
@@ -110,6 +111,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
 
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (endDate is not null) QueryParams["endDate"] = endDate;
+
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 

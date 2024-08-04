@@ -71,6 +71,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicPartyReject.Builder.SetWrapperObject(this); }
         }
+        public PublicPartyCancel.PublicPartyCancelBuilder PublicPartyCancelOp
+        {
+            get { return Operation.PublicPartyCancel.Builder.SetWrapperObject(this); }
+        }
         public PublicPartyKick.PublicPartyKickBuilder PublicPartyKickOp
         {
             get { return Operation.PublicPartyKick.Builder.SetWrapperObject(this); }
@@ -412,6 +416,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task PublicPartyRejectAsync(PublicPartyReject input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicPartyCancel(PublicPartyCancel input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicPartyCancelAsync(PublicPartyCancel input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

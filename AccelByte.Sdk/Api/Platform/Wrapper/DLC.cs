@@ -79,6 +79,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.SyncXboxDLC.Builder.SetWrapperObject(this); }
         }
+        public PublicGetMyDLCContent.PublicGetMyDLCContentBuilder PublicGetMyDLCContentOp
+        {
+            get { return Operation.PublicGetMyDLCContent.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.DLCItemConfigInfo? GetDLCItemConfig(GetDLCItemConfig input)
@@ -335,6 +339,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.SimpleUserDLCRewardContentsResponse? PublicGetMyDLCContent(PublicGetMyDLCContent input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SimpleUserDLCRewardContentsResponse?> PublicGetMyDLCContentAsync(PublicGetMyDLCContent input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

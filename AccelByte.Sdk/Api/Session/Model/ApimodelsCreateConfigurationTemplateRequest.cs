@@ -17,6 +17,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PSNBaseUrl { get; set; }
 
+        [JsonPropertyName("appName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AppName { get; set; }
+
         [JsonPropertyName("attributes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? Attributes { get; set; }
@@ -42,6 +46,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("disableCodeGeneration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? DisableCodeGeneration { get; set; }
+
+        [JsonPropertyName("disableResendInvite")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DisableResendInvite { get; set; }
 
         [JsonPropertyName("dsManualSetReady")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -125,6 +133,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PSNBaseUrl { get; set; }
 
+        [JsonPropertyName("appName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AppName { get; set; }
+
         [JsonPropertyName("attributes")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? Attributes { get; set; }
@@ -150,6 +162,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("disableCodeGeneration")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? DisableCodeGeneration { get; set; }
+
+        [JsonPropertyName("disableResendInvite")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DisableResendInvite { get; set; }
 
         [JsonPropertyName("dsManualSetReady")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

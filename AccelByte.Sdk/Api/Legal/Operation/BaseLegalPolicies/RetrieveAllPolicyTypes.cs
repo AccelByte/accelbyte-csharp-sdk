@@ -68,6 +68,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
 
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+
             QueryParams["limit"] = Convert.ToString(limit)!;
 
 
@@ -86,6 +87,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
 
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+
             QueryParams["limit"] = Convert.ToString(limit)!;
 
 

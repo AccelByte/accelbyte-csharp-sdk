@@ -1430,6 +1430,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkUpdateUserStatItemAsync<T1>(op);
         }
+        public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
+            this BulkGetOrDefaultByUserId.BulkGetOrDefaultByUserIdBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkGetOrDefaultByUserId op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkGetOrDefaultByUserId(op);
+        }
+        public static async Task<List<Social.Model.ADTOObjectForUserStatItemValue>?> ExecuteAsync(
+            this BulkGetOrDefaultByUserId.BulkGetOrDefaultByUserIdBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkGetOrDefaultByUserId op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).BulkGetOrDefaultByUserIdAsync(op);
+        }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder builder,
             string namespace_,

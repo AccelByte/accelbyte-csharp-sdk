@@ -29,38 +29,42 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 2. set __platformId__ to the _supported platform id_
     /// 3. set __platformBy__ to __platformDisplayName__
     /// 
-    /// ### Supported platform id:
-    /// * Steam group(steamnetwork)
-    /// * steam
-    /// * steamopenid
-    /// * PSN group(psn)
-    /// * ps4web
-    /// * ps4
-    /// * ps5
-    /// * XBOX group(xbox)
-    /// * live
-    /// * xblweb
-    /// * Oculus group(oculusgroup)
-    /// * oculus
-    /// * oculusweb
-    /// * facebook
-    /// * google group
-    /// * google
-    /// * googleplaygames
-    /// * twitch
-    /// * discord
-    /// * android
-    /// * ios
-    /// * apple
-    /// * device
-    /// * epicgames
-    /// * nintendo
-    /// * awscognito
-    /// * netflix
-    /// * snapchat
-    /// * _oidc platform id_
     /// 
-    /// Note: you can use either platform ID or platform group as __platformId__ query parameter.
+    /// **Supported Platforms:**
+    /// - Steam group (steamnetwork):
+    /// - steam
+    /// - steamopenid
+    /// - PSN group (psn):
+    /// - ps4web
+    /// - ps4
+    /// - ps5
+    /// - XBOX group(xbox):
+    /// - live
+    /// - xblweb
+    /// - Oculus group (oculusgroup):
+    /// - oculus
+    /// - oculusweb
+    /// - Google group (google):
+    /// - google
+    /// - googleplaygames:
+    /// - epicgames
+    /// - facebook
+    /// - twitch
+    /// - discord
+    /// - android
+    /// - ios
+    /// - apple
+    /// - device
+    /// - nintendo
+    /// - awscognito
+    /// - amazon
+    /// - netflix
+    /// - snapchat
+    /// - _oidc platform id_
+    /// 
+    /// Note:
+    /// - You can use either platform id or platform group as **platformId** parameter.
+    /// - **Nintendo platform user id**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
     /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {

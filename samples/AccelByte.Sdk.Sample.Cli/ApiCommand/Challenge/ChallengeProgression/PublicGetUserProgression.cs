@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("dateTime")]
+        public DateTime? DateTime { get; set; }
+
         [SdkCommandArgument("goalCode")]
         public string? GoalCode { get; set; }
 
@@ -57,6 +60,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
 
             var opBuilder = AccelByte.Sdk.Api.Challenge.Operation.PublicGetUserProgression.Builder;
 
+            if (DateTime != null)
+                opBuilder.SetDateTime((DateTime)DateTime);
             if (GoalCode != null)
                 opBuilder.SetGoalCode((string)GoalCode);
             if (Limit != null)

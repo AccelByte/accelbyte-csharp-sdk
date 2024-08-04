@@ -12,6 +12,106 @@ namespace AccelByte.Sdk.Api
 {
     public static class DsmcAdmin_OpExts
     {
+        public static Dsmc.Model.ModelsWorkerConfig? Execute(
+            this GetWorkerConfig.GetWorkerConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetWorkerConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).GetWorkerConfig(op);
+        }
+        public static async Task<Dsmc.Model.ModelsWorkerConfig?> ExecuteAsync(
+            this GetWorkerConfig.GetWorkerConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetWorkerConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).GetWorkerConfigAsync(op);
+        }
+        public static void Execute(
+            this UpdateWorkerConfig.UpdateWorkerConfigBuilder builder,
+            ModelsWorkerConfigRequest body,
+            string namespace_
+        )
+        {
+            UpdateWorkerConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.Admin)builder.WrapperObject!).UpdateWorkerConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this UpdateWorkerConfig.UpdateWorkerConfigBuilder builder,
+            ModelsWorkerConfigRequest body,
+            string namespace_
+        )
+        {
+            UpdateWorkerConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).UpdateWorkerConfigAsync(op);
+        }
+        public static Dsmc.Model.ModelsWorkerConfig? Execute(
+            this CreateWorkerConfig.CreateWorkerConfigBuilder builder,
+            ModelsWorkerConfigRequest body,
+            string namespace_
+        )
+        {
+            CreateWorkerConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).CreateWorkerConfig(op);
+        }
+        public static async Task<Dsmc.Model.ModelsWorkerConfig?> ExecuteAsync(
+            this CreateWorkerConfig.CreateWorkerConfigBuilder builder,
+            ModelsWorkerConfigRequest body,
+            string namespace_
+        )
+        {
+            CreateWorkerConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).CreateWorkerConfigAsync(op);
+        }
+        public static Dsmc.Model.ModelsAddBufferResponse? Execute(
+            this AddBuffer.AddBufferBuilder builder,
+            ModelsAddBufferRequest body,
+            string namespace_
+        )
+        {
+            AddBuffer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).AddBuffer(op);
+        }
+        public static async Task<Dsmc.Model.ModelsAddBufferResponse?> ExecuteAsync(
+            this AddBuffer.AddBufferBuilder builder,
+            ModelsAddBufferRequest body,
+            string namespace_
+        )
+        {
+            AddBuffer op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).AddBufferAsync(op);
+        }
         public static Dsmc.Model.ModelsListServerResponse? Execute(
             this ListServer.ListServerBuilder builder,
             string namespace_,
@@ -134,7 +234,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteLocalServerAsync(op);
         }
-        public static Dsmc.Model.ModelsServer? Execute(
+        public static Dsmc.Model.ModelsServerDetailsResponse? Execute(
             this GetServer.GetServerBuilder builder,
             string namespace_,
             string podName
@@ -147,7 +247,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Dsmc.Wrapper.Admin)builder.WrapperObject!).GetServer(op);
         }
-        public static async Task<Dsmc.Model.ModelsServer?> ExecuteAsync(
+        public static async Task<Dsmc.Model.ModelsServerDetailsResponse?> ExecuteAsync(
             this GetServer.GetServerBuilder builder,
             string namespace_,
             string podName
@@ -263,6 +363,54 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).DeleteSessionAsync(op);
+        }
+        public static void Execute(
+            this RunGhostCleanerRequestHandler.RunGhostCleanerRequestHandlerBuilder builder,
+            string namespace_
+        )
+        {
+            RunGhostCleanerRequestHandler op = builder.Build(
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.Admin)builder.WrapperObject!).RunGhostCleanerRequestHandler(op);
+        }
+        public static async Task ExecuteAsync(
+            this RunGhostCleanerRequestHandler.RunGhostCleanerRequestHandlerBuilder builder,
+            string namespace_
+        )
+        {
+            RunGhostCleanerRequestHandler op = builder.Build(
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).RunGhostCleanerRequestHandlerAsync(op);
+        }
+        public static void Execute(
+            this RunZombieCleanerRequestHandler.RunZombieCleanerRequestHandlerBuilder builder,
+            ModelsDeleteZombieRequest body,
+            string namespace_
+        )
+        {
+            RunZombieCleanerRequestHandler op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Dsmc.Wrapper.Admin)builder.WrapperObject!).RunZombieCleanerRequestHandler(op);
+        }
+        public static async Task ExecuteAsync(
+            this RunZombieCleanerRequestHandler.RunZombieCleanerRequestHandlerBuilder builder,
+            ModelsDeleteZombieRequest body,
+            string namespace_
+        )
+        {
+            RunZombieCleanerRequestHandler op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Dsmc.Wrapper.Admin)builder.WrapperObject!).RunZombieCleanerRequestHandlerAsync(op);
         }
     }
 }

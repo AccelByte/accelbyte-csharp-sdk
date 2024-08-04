@@ -2930,6 +2930,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserPlatformAccountsV3Async(op);
         }
+        public static Iam.Model.AccountcommonDistinctPlatformResponseV3? Execute(
+            this AdminListAllDistinctPlatformAccountsV3.AdminListAllDistinctPlatformAccountsV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListAllDistinctPlatformAccountsV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListAllDistinctPlatformAccountsV3(op);
+        }
+        public static async Task<Iam.Model.AccountcommonDistinctPlatformResponseV3?> ExecuteAsync(
+            this AdminListAllDistinctPlatformAccountsV3.AdminListAllDistinctPlatformAccountsV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminListAllDistinctPlatformAccountsV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminListAllDistinctPlatformAccountsV3Async(op);
+        }
         public static List<Iam.Model.ModelGetUserMapping>? Execute(
             this AdminGetListJusticePlatformAccounts.AdminGetListJusticePlatformAccountsBuilder builder,
             string namespace_,
@@ -3046,6 +3072,37 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminLinkPlatformAccountAsync(op);
         }
+        public static Iam.Model.ModelUserPlatformLinkHistories? Execute(
+            this AdminGetUserLinkHistoriesV3.AdminGetUserLinkHistoriesV3Builder builder,
+            string namespace_,
+            string userId,
+            string platformId
+        )
+        {
+            AdminGetUserLinkHistoriesV3 op = builder.Build(
+                namespace_,
+                userId,
+                platformId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserLinkHistoriesV3(op);
+        }
+        public static async Task<Iam.Model.ModelUserPlatformLinkHistories?> ExecuteAsync(
+            this AdminGetUserLinkHistoriesV3.AdminGetUserLinkHistoriesV3Builder builder,
+            string namespace_,
+            string userId,
+            string platformId
+        )
+        {
+            AdminGetUserLinkHistoriesV3 op = builder.Build(
+                namespace_,
+                userId,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserLinkHistoriesV3Async(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminPlatformUnlinkV3.AdminPlatformUnlinkV3Builder builder,
             ModelUnlinkUserPlatformRequest body,
@@ -3144,6 +3201,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminPlatformLinkV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeleteUserLinkingHistoryByPlatformIDV3.AdminDeleteUserLinkingHistoryByPlatformIDV3Builder builder,
             string namespace_,
@@ -3173,6 +3231,36 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserLinkingHistoryByPlatformIDV3Async(op);
+        }
+        public static void Execute(
+            this AdminDeleteUserLinkingRestrictionByPlatformIDV3.AdminDeleteUserLinkingRestrictionByPlatformIDV3Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminDeleteUserLinkingRestrictionByPlatformIDV3 op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserLinkingRestrictionByPlatformIDV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeleteUserLinkingRestrictionByPlatformIDV3.AdminDeleteUserLinkingRestrictionByPlatformIDV3Builder builder,
+            string namespace_,
+            string platformId,
+            string userId
+        )
+        {
+            AdminDeleteUserLinkingRestrictionByPlatformIDV3 op = builder.Build(
+                namespace_,
+                platformId,
+                userId
+            );
+
+            await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserLinkingRestrictionByPlatformIDV3Async(op);
         }
         public static Iam.Model.ModelTokenThirdPartyLinkStatusResponse? Execute(
             this AdminGetThirdPartyPlatformTokenLinkStatusV3.AdminGetThirdPartyPlatformTokenLinkStatusV3Builder builder,
@@ -4135,6 +4223,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicPlatformLinkV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicPlatformUnlinkV3.PublicPlatformUnlinkV3Builder builder,
             ModelUnlinkUserPlatformRequest body,

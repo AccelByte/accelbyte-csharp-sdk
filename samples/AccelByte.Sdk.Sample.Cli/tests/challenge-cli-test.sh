@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..24"
+echo "1..25"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -65,7 +65,7 @@ eval_tap $? 2 'AdminGetChallenges' test.out
 
 #- 3 AdminCreateChallenge
 # body param: body
-echo '{"activeGoalsPerRotation": 76, "assignmentRule": "UNSCHEDULED", "code": "qpQwkRRHkaiKsmIi", "description": "RLR3IlNJKxhPfWV6", "endAfter": 7, "endDate": "1988-01-01T00:00:00Z", "goalsVisibility": "PERIODONLY", "name": "X1LxkZs4233oQWoX", "repeatAfter": 65, "resetConfig": {"resetDate": 13, "resetDay": 8, "resetTime": "wKvzESbhpxlDdEs4"}, "rotation": "MONTHLY", "startDate": "1973-02-25T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"activeGoalsPerRotation": 76, "assignmentRule": "UNSCHEDULED", "code": "qpQwkRRHkaiKsmIi", "description": "RLR3IlNJKxhPfWV6", "endAfter": 7, "endDate": "1988-01-01T00:00:00Z", "goalsVisibility": "PERIODONLY", "name": "X1LxkZs4233oQWoX", "randomizedPerRotation": false, "repeatAfter": 8, "resetConfig": {"resetDate": 45, "resetDay": 34, "resetTime": "KvzESbhpxlDdEs4i"}, "rotation": "DAILY", "startDate": "1979-01-26T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn challenge \
     --op AdminCreateChallenge \
@@ -78,14 +78,14 @@ eval_tap $? 3 'AdminCreateChallenge' test.out
 $CLI_EXE \
     --sn challenge \
     --op AdminGetChallenge \
-    --challengeCode 'pE3r5AQUBqS8KtTY' \
+    --challengeCode 'E3r5AQUBqS8KtTYZ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 4 'AdminGetChallenge' test.out
 
 #- 5 AdminUpdateChallenge
 # body param: body
-echo '{"activeGoalsPerRotation": 77, "assignmentRule": "FIXED", "description": "J58QqcV3IcuNs9MF", "endAfter": 57, "endDate": "1975-01-05T00:00:00Z", "goalsVisibility": "SHOWALL", "name": "KD18yrWorpC65VJh", "repeatAfter": 8, "resetConfig": {"resetDate": 33, "resetDay": 63, "resetTime": "z1KJmKedBfbWvKa5"}, "rotation": "NONE", "startDate": "1986-01-02T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"activeGoalsPerRotation": 77, "assignmentRule": "FIXED", "description": "J58QqcV3IcuNs9MF", "endAfter": 57, "endDate": "1975-01-05T00:00:00Z", "goalsVisibility": "SHOWALL", "name": "KD18yrWorpC65VJh", "randomizedPerRotation": false, "repeatAfter": 33, "resetConfig": {"resetDate": 63, "resetDay": 51, "resetTime": "SU1MO8XnVaEyjmif"}, "rotation": "NONE", "startDate": "1986-01-02T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn challenge \
     --op AdminUpdateChallenge \
@@ -275,35 +275,50 @@ $CLI_EXE \
     --op PublicGetUserProgression \
     --challengeCode 'As8ThMpAGIapYftY' \
     --namespace $AB_NAMESPACE \
-    --goalCode 'ZkBXiEhdiS41VBAE' \
-    --limit '95' \
-    --offset '58' \
-    --tags '["voBlbH02bobxtljI", "fHBgjP9onbxFcxS2", "OZZfXO3HkJTOPscP"]' \
+    --dateTime '1997-03-29T00:00:00Z' \
+    --goalCode 'kBXiEhdiS41VBAEU' \
+    --limit '44' \
+    --offset '14' \
+    --tags '["oBlbH02bobxtljIf", "HBgjP9onbxFcxS2O", "ZZfXO3HkJTOPscPA"]' \
     > test.out 2>&1
 eval_tap $? 22 'PublicGetUserProgression' test.out
 
-#- 23 PublicGetUserRewards
+#- 23 PublicGetPastUserProgression
+$CLI_EXE \
+    --sn challenge \
+    --op PublicGetPastUserProgression \
+    --challengeCode '2n25C1zEnAMGmFy7' \
+    --index '46' \
+    --namespace $AB_NAMESPACE \
+    --goalCode 'ivgC4mJ5OHuNEVQK' \
+    --limit '49' \
+    --offset '79' \
+    --tags '["m68w7s9RMx2hc45Q", "X234xnqlbRAPFQsc", "a6n9vGZTCCXQ2Lf7"]' \
+    > test.out 2>&1
+eval_tap $? 23 'PublicGetPastUserProgression' test.out
+
+#- 24 PublicGetUserRewards
 $CLI_EXE \
     --sn challenge \
     --op PublicGetUserRewards \
     --namespace $AB_NAMESPACE \
-    --limit '54' \
-    --offset '31' \
-    --sortBy '2n25C1zEnAMGmFy7' \
-    --status 'UNCLAIMED' \
+    --limit '19' \
+    --offset '32' \
+    --sortBy 'texB613cbiJEUePV' \
+    --status 'CLAIMED' \
     > test.out 2>&1
-eval_tap $? 23 'PublicGetUserRewards' test.out
+eval_tap $? 24 'PublicGetUserRewards' test.out
 
-#- 24 PublicClaimUserRewards
+#- 25 PublicClaimUserRewards
 # body param: body
-echo '{"rewardIDs": ["ivgC4mJ5OHuNEVQK", "4Mvk00I9GqAhhjNI", "ivdIcaEQfNETQCBP"]}' > $TEMP_JSON_INPUT
+echo '{"rewardIDs": ["QaoEY2zrpLuvrx96", "OOz45vMiR3QYZJKV", "NlK8PTaIXRWFTyA9"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn challenge \
     --op PublicClaimUserRewards \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 24 'PublicClaimUserRewards' test.out
+eval_tap $? 25 'PublicClaimUserRewards' test.out
 
 
 # remove artifacts

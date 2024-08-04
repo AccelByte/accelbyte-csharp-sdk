@@ -134,7 +134,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             if (builder.MatchID is not null) QueryParams["matchID"] = builder.MatchID;
             if (builder.PartyID is not null) QueryParams["partyID"] = builder.PartyID;
             if (builder.UserID is not null) QueryParams["userID"] = builder.UserID;
+
             QueryParams["limit"] = Convert.ToString(limit)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 
@@ -164,7 +166,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
             if (matchID is not null) QueryParams["matchID"] = matchID;
             if (partyID is not null) QueryParams["partyID"] = partyID;
             if (userID is not null) QueryParams["userID"] = userID;
+
             QueryParams["limit"] = Convert.ToString(limit)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 

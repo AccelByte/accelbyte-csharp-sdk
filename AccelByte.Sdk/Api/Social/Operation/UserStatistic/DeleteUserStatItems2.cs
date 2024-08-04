@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Delete user's statItems given stat code.
     /// Other detail info:
-    ///           *  Returns : no content
+    ///             *  Returns : no content
     /// </summary>
     public class DeleteUserStatItems2 : AccelByte.Sdk.Core.Operation
     {

@@ -164,6 +164,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCodeAsync(op);
         }
+        public static Platform.Model.FulfillmentHistoryPagingSlicedResult? Execute(
+            this QueryFulfillments.QueryFulfillmentsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryFulfillments op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillments(op);
+        }
+        public static async Task<Platform.Model.FulfillmentHistoryPagingSlicedResult?> ExecuteAsync(
+            this QueryFulfillments.QueryFulfillmentsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryFulfillments op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillmentsAsync(op);
+        }
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillRewardsV2.FulfillRewardsV2Builder builder,
             string namespace_,
@@ -189,6 +211,66 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsV2Async(op);
+        }
+        public static Platform.Model.FulfillmentV2Result? Execute(
+            this FulfillItems.FulfillItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            FulfillItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItems(op);
+        }
+        public static async Task<Platform.Model.FulfillmentV2Result?> ExecuteAsync(
+            this FulfillItems.FulfillItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            FulfillItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemsAsync(op);
+        }
+        public static Platform.Model.RevokeFulfillmentV2Result? Execute(
+            this RevokeItems.RevokeItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RevokeItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItems(op);
+        }
+        public static async Task<Platform.Model.RevokeFulfillmentV2Result?> ExecuteAsync(
+            this RevokeItems.RevokeItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RevokeItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItemsAsync(op);
         }
     }
 }

@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             string group_id = "";
             try
-            {                
+            {
                 try
                 {
                     //Look if current user is joined in any group
@@ -125,7 +125,7 @@ namespace AccelByte.Sdk.Tests.Services
                         throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
                     if (mer.ErrorCode != 73034) //skip user does not belong to any group
                         throw new Exception(mer.ErrorMessage, x);
-                }                
+                }
 
                 #region Create a group
                 ModelsPublicCreateNewGroupRequestV1 createGroup = new ModelsPublicCreateNewGroupRequestV1()
@@ -170,7 +170,7 @@ namespace AccelByte.Sdk.Tests.Services
                 #endregion
                 Assert.IsNotNull(uGroup);
                 if (uGroup != null)
-                    Assert.AreEqual("Updated description.", uGroup.GroupDescription);                
+                    Assert.AreEqual("Updated description.", uGroup.GroupDescription);
             }
             finally
             {
@@ -189,7 +189,7 @@ namespace AccelByte.Sdk.Tests.Services
                         DisableRetry();
                         ModelsGroupResponseV1? gGroup = _Sdk.Group.Group.GetSingleGroupPublicV1Op
                             .Execute(group_id, _Sdk.Namespace);
-                    });                    
+                    });
                 }
 
                 #region Delete group configuration

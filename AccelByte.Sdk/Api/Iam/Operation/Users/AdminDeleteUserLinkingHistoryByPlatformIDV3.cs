@@ -17,36 +17,47 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminDeleteUserLinkingHistoryByPlatformIDV3
     ///
     /// This API is for admin to delete user's linking history with target platform id.
-    /// Supported platform:
-    /// - Steam group(steamnetwork)
+    /// 
+    /// **Supported Platforms:**
+    /// - Steam group (steamnetwork):
     /// - steam
     /// - steamopenid
-    /// - PSN group(psn)
+    /// - PSN group (psn):
     /// - ps4web
     /// - ps4
     /// - ps5
-    /// - XBOX group(xbox)
+    /// - XBOX group(xbox):
     /// - live
     /// - xblweb
-    /// - Oculus group(oculusgroup)
+    /// - Oculus group (oculusgroup):
     /// - oculus
     /// - oculusweb
-    /// - facebook
-    /// - google group
+    /// - Google group (google):
     /// - google
-    /// - googleplaygames
+    /// - googleplaygames:
+    /// - epicgames
+    /// - facebook
     /// - twitch
     /// - discord
+    /// - android
+    /// - ios
     /// - apple
-    /// - epicgames
+    /// - device
     /// - nintendo
     /// - awscognito
+    /// - amazon
     /// - netflix
     /// - snapchat
-    /// - oidc platform id
+    /// - _oidc platform id_
     /// 
-    /// Note: you can use either platform ID or platform group as platformId query parameter
+    /// Note:
+    /// - You can use either platform id or platform group as **platformId** parameter.
+    /// - **Nintendo platform user id**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
+    /// 
+    /// ----
+    /// **Substitute endpoint**: /v3/admin/namespaces/{namespace}/users/{userId}/platforms/{platformId}/link/restrictions
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDeleteUserLinkingHistoryByPlatformIDV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

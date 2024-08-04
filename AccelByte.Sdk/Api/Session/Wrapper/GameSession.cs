@@ -111,6 +111,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AppendTeamGameSession.Builder.SetWrapperObject(this); }
         }
+        public PublicGameSessionCancel.PublicGameSessionCancelBuilder PublicGameSessionCancelOp
+        {
+            get { return Operation.PublicGameSessionCancel.Builder.SetWrapperObject(this); }
+        }
         public PublicQueryMyGameSessions.PublicQueryMyGameSessionsBuilder PublicQueryMyGameSessionsOp
         {
             get { return Operation.PublicQueryMyGameSessions.Builder.SetWrapperObject(this); }
@@ -679,6 +683,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicGameSessionCancel(PublicGameSessionCancel input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicGameSessionCancelAsync(PublicGameSessionCancel input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

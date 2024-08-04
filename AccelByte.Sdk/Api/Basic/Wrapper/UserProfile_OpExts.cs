@@ -479,6 +479,51 @@ namespace AccelByte.Sdk.Api
 
             return await ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicGetUserProfilePublicInfoByIdsAsync<T1>(op);
         }
+        public static List<Basic.Model.UserProfilePublicInfo>? Execute(
+            this PublicBulkGetUserProfilePublicInfo.PublicBulkGetUserProfilePublicInfoBuilder builder,
+            string namespace_
+        )
+        {
+            PublicBulkGetUserProfilePublicInfo op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicBulkGetUserProfilePublicInfo(op);
+        }
+        public static async Task<List<Basic.Model.UserProfilePublicInfo>?> ExecuteAsync(
+            this PublicBulkGetUserProfilePublicInfo.PublicBulkGetUserProfilePublicInfoBuilder builder,
+            string namespace_
+        )
+        {
+            PublicBulkGetUserProfilePublicInfo op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicBulkGetUserProfilePublicInfoAsync(op);
+        }
+
+        public static List<Basic.Model.UserProfilePublicInfo<T1>>? Execute<T1>(
+            this PublicBulkGetUserProfilePublicInfo.PublicBulkGetUserProfilePublicInfoBuilder builder,
+            string namespace_
+        )
+        {
+            PublicBulkGetUserProfilePublicInfo op = builder.Build(
+                namespace_
+            );
+
+            return ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicBulkGetUserProfilePublicInfo<T1>(op);
+        }
+        public static async Task<List<Basic.Model.UserProfilePublicInfo<T1>>?> ExecuteAsync<T1>(
+            this PublicBulkGetUserProfilePublicInfo.PublicBulkGetUserProfilePublicInfoBuilder builder,
+            string namespace_
+        )
+        {
+            PublicBulkGetUserProfilePublicInfo op = builder.Build(
+                namespace_
+            );
+
+            return await ((Basic.Wrapper.UserProfile)builder.WrapperObject!).PublicBulkGetUserProfilePublicInfoAsync<T1>(op);
+        }
         public static Basic.Model.UserProfilePublicInfo? Execute(
             this PublicGetUserProfileInfoByPublicId.PublicGetUserProfileInfoByPublicIdBuilder builder,
             string namespace_,

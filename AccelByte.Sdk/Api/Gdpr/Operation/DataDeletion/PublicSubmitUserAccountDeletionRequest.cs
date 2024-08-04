@@ -34,12 +34,20 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+            public string? LanguageTag { get; set; }
+
 
 
             internal PublicSubmitUserAccountDeletionRequestBuilder() { }
 
 
 
+
+            public PublicSubmitUserAccountDeletionRequestBuilder SetLanguageTag(string _languageTag)
+            {
+                LanguageTag = _languageTag;
+                return this;
+            }
 
 
 
@@ -73,6 +81,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
 
 
+            if (builder.LanguageTag is not null) FormParams["languageTag"] = builder.LanguageTag;
             if (password is not null) FormParams["password"] = password;
 
 
@@ -86,6 +95,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         public PublicSubmitUserAccountDeletionRequest(
             string namespace_,
             string userId,
+            string? languageTag,
             string password
         )
         {
@@ -93,6 +103,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
 
 
+            if (languageTag is not null) FormParams["languageTag"] = languageTag;
             if (password is not null) FormParams["password"] = password;
 
 

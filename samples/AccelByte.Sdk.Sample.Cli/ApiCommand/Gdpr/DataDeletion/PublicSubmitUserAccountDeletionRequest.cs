@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("languageTag")]
+        public string LanguageTag { get; set; } = String.Empty;
+
         [SdkCommandArgument("password")]
         public string Password { get; set; } = String.Empty;
 
@@ -50,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 
 
 
+            if (LanguageTag != null)
+                opBuilder.SetLanguageTag((string)LanguageTag);
 
 
             PublicSubmitUserAccountDeletionRequest operation = opBuilder.Build(

@@ -56,28 +56,6 @@ namespace AccelByte.Sdk.Api
 
             await ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).CreateImageAsync(op);
         }
-        public static Dsmc.Model.ModelsImportResponse? Execute(
-            this ImportImages.ImportImagesBuilder builder,
-            Stream file
-        )
-        {
-            ImportImages op = builder.Build(
-                file
-            );
-
-            return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImportImages(op);
-        }
-        public static async Task<Dsmc.Model.ModelsImportResponse?> ExecuteAsync(
-            this ImportImages.ImportImagesBuilder builder,
-            Stream file
-        )
-        {
-            ImportImages op = builder.Build(
-                file
-            );
-
-            return await ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ImportImagesAsync(op);
-        }
         public static void Execute(
             this CreateImagePatch.CreateImagePatchBuilder builder,
             ModelsCreateImagePatchRequest body
@@ -159,28 +137,6 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).DeleteImageAsync(op);
-        }
-        public static List<Dsmc.Model.ModelsImageRecord>? Execute(
-            this ExportImages.ExportImagesBuilder builder,
-            string namespace_
-        )
-        {
-            ExportImages op = builder.Build(
-                namespace_
-            );
-
-            return ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ExportImages(op);
-        }
-        public static async Task<List<Dsmc.Model.ModelsImageRecord>?> ExecuteAsync(
-            this ExportImages.ExportImagesBuilder builder,
-            string namespace_
-        )
-        {
-            ExportImages op = builder.Build(
-                namespace_
-            );
-
-            return await ((Dsmc.Wrapper.ImageConfig)builder.WrapperObject!).ExportImagesAsync(op);
         }
         public static Dsmc.Model.ModelsGetImageLimitResponse? Execute(
             this GetImageLimit.GetImageLimitBuilder builder,

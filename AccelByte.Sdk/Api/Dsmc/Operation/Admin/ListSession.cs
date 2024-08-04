@@ -90,7 +90,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.WithServer != null) QueryParams["withServer"] = Convert.ToString(builder.WithServer)!;
+
             QueryParams["count"] = Convert.ToString(count)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 
@@ -114,7 +116,9 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
 
             if (region is not null) QueryParams["region"] = region;
             if (withServer != null) QueryParams["withServer"] = Convert.ToString(withServer)!;
+
             QueryParams["count"] = Convert.ToString(count)!;
+
             QueryParams["offset"] = Convert.ToString(offset)!;
 
 

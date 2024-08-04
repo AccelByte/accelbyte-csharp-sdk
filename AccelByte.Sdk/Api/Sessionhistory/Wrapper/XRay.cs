@@ -91,6 +91,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         {
             get { return Operation.QueryTotalMatchmakingMatchTicket.Builder.SetWrapperObject(this); }
         }
+        public CreateXrayTicketObservability.CreateXrayTicketObservabilityBuilder CreateXrayTicketObservabilityOp
+        {
+            get { return Operation.CreateXrayTicketObservability.Builder.SetWrapperObject(this); }
+        }
         public QueryXrayTimelineByTicketID.QueryXrayTimelineByTicketIDBuilder QueryXrayTimelineByTicketIDOp
         {
             get { return Operation.QueryXrayTimelineByTicketID.Builder.SetWrapperObject(this); }
@@ -382,6 +386,22 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApimodelsXRayMatchMatchmakingTicketQueryResponse?> QueryTotalMatchmakingMatchTicketAsync(QueryTotalMatchmakingMatchTicket input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsXRayTicketObservabilityResponse? CreateXrayTicketObservability(CreateXrayTicketObservability input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsXRayTicketObservabilityResponse?> CreateXrayTicketObservabilityAsync(CreateXrayTicketObservability input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

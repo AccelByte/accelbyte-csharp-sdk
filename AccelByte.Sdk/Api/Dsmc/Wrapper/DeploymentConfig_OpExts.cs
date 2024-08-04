@@ -460,6 +460,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).UpdateOverrideRegionOverrideAsync(op);
         }
+        public static void Execute(
+            this DeleteCreatingServerCountQueue.DeleteCreatingServerCountQueueBuilder builder,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            DeleteCreatingServerCountQueue op = builder.Build(
+                deployment,
+                namespace_,
+                version
+            );
+
+            ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteCreatingServerCountQueue(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteCreatingServerCountQueue.DeleteCreatingServerCountQueueBuilder builder,
+            string deployment,
+            string namespace_,
+            string version
+        )
+        {
+            DeleteCreatingServerCountQueue op = builder.Build(
+                deployment,
+                namespace_,
+                version
+            );
+
+            await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).DeleteCreatingServerCountQueueAsync(op);
+        }
         public static Dsmc.Model.ModelsListDeploymentResponse? Execute(
             this GetAllDeploymentClient.GetAllDeploymentClientBuilder builder,
             string namespace_,
@@ -489,6 +519,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetAllDeploymentClientAsync(op);
+        }
+        public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
+            this GetDeploymentClient.GetDeploymentClientBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            GetDeploymentClient op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetDeploymentClient(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDeploymentWithOverride?> ExecuteAsync(
+            this GetDeploymentClient.GetDeploymentClientBuilder builder,
+            string deployment,
+            string namespace_
+        )
+        {
+            GetDeploymentClient op = builder.Build(
+                deployment,
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.DeploymentConfig)builder.WrapperObject!).GetDeploymentClientAsync(op);
         }
         public static Dsmc.Model.ModelsDeploymentWithOverride? Execute(
             this CreateDeploymentClient.CreateDeploymentClientBuilder builder,

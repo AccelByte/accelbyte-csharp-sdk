@@ -14,52 +14,42 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Dsmc.Operation
 {
     /// <summary>
-    /// ImportImages
+    /// createWorkerConfig
     ///
-    /// Required permission: ADMIN:NAMESPACE:{namespace}:DSM:CONFIG [CREATE]
+    /// Required permission: ADMIN:NAMESPACE:{namespace}:WORKER:CONFIG [CREATE]
     /// 
     /// Required scope: social
     /// 
-    /// This endpoint import a dedicated servers images in a namespace.
-    /// 
-    /// The image will be upsert. Existing version will be replaced with imported image, will create new one if not found.
-    /// 
-    /// Example data inside imported file
-    /// [
-    /// {
-    /// "namespace": "dewa",
-    /// "image": "123456789.dkr.ecr.us-west-2.amazonaws.com/ds-dewa:0.0.1-alpha",
-    /// "version": "0.0.1",
-    /// "persistent": true
-    /// }
-    /// ]
+    /// This endpoint creates a worker configuration to control the worker in the DSMC.
     /// </summary>
-    public class ImportImages : AccelByte.Sdk.Core.Operation
+    public class CreateWorkerConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static ImportImagesBuilder Builder { get => new ImportImagesBuilder(); }
+        public static CreateWorkerConfigBuilder Builder { get => new CreateWorkerConfigBuilder(); }
 
-        public class ImportImagesBuilder
-            : OperationBuilder<ImportImagesBuilder>
+        public class CreateWorkerConfigBuilder
+            : OperationBuilder<CreateWorkerConfigBuilder>
         {
 
 
 
 
 
-            internal ImportImagesBuilder() { }
+            internal CreateWorkerConfigBuilder() { }
 
 
 
 
 
 
-            public ImportImages Build(
-                Stream file
+            public CreateWorkerConfig Build(
+                ModelsWorkerConfigRequest body,
+                string namespace_
             )
             {
-                ImportImages op = new ImportImages(this,
-                    file
+                CreateWorkerConfig op = new CreateWorkerConfig(this,
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -70,49 +60,53 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             }
         }
 
-        private ImportImages(ImportImagesBuilder builder,
-            Stream file
+        private CreateWorkerConfig(CreateWorkerConfigBuilder builder,
+            ModelsWorkerConfigRequest body,
+            string namespace_
         )
         {
+            PathParams["namespace"] = namespace_;
 
 
-            if (file is not null) FormParams["file"] = file;
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public ImportImages(
-            Stream file
+        public CreateWorkerConfig(
+            string namespace_,
+            Model.ModelsWorkerConfigRequest body
         )
         {
+            PathParams["namespace"] = namespace_;
 
 
-            if (file is not null) FormParams["file"] = file;
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/dsmcontroller/admin/images/import";
+        public override string Path => "/dsmcontroller/admin/namespace/{namespace}/workers";
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] { "multipart/form-data" };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsImportResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsWorkerConfig? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -121,13 +115,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsImportResponse>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsWorkerConfig>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelsImportResponse>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsWorkerConfig>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsImportResponse>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsWorkerConfig>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

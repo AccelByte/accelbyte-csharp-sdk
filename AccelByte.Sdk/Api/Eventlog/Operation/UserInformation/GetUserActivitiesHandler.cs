@@ -77,6 +77,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
 
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
 
 
@@ -99,6 +100,7 @@ namespace AccelByte.Sdk.Api.Eventlog.Operation
             PathParams["userId"] = userId;
 
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+
             QueryParams["pageSize"] = Convert.ToString(pageSize)!;
 
 

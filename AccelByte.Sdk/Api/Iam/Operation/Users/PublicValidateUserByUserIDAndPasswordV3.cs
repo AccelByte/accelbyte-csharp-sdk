@@ -16,10 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicValidateUserByUserIDAndPasswordV3
     ///
-    /// This endpoint is used to validate the user password. Require valid user ID.
+    /// This endpoint is used to validate the user password.
+    /// This endpoint validate the user password by specifying the userId and password.
     /// 
-    /// Notes:
-    /// - This endpoint validate the user password by specifying the userId and password
+    /// 
+    /// **Authentication:**
+    /// The _**userId**_ parameter should match the one in the access token.
     /// </summary>
     public class PublicValidateUserByUserIDAndPasswordV3 : AccelByte.Sdk.Core.Operation
     {

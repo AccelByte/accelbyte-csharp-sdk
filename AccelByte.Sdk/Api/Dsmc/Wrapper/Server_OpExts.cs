@@ -42,6 +42,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).ListServerClientAsync(op);
         }
+        public static Dsmc.Model.ModelsDetailedCountServerResponse? Execute(
+            this CountServerDetailedClient.CountServerDetailedClientBuilder builder,
+            string namespace_
+        )
+        {
+            CountServerDetailedClient op = builder.Build(
+                namespace_
+            );
+
+            return ((Dsmc.Wrapper.Server)builder.WrapperObject!).CountServerDetailedClient(op);
+        }
+        public static async Task<Dsmc.Model.ModelsDetailedCountServerResponse?> ExecuteAsync(
+            this CountServerDetailedClient.CountServerDetailedClientBuilder builder,
+            string namespace_
+        )
+        {
+            CountServerDetailedClient op = builder.Build(
+                namespace_
+            );
+
+            return await ((Dsmc.Wrapper.Server)builder.WrapperObject!).CountServerDetailedClientAsync(op);
+        }
         public static void Execute(
             this ServerHeartbeat.ServerHeartbeatBuilder builder,
             ModelsDSHeartbeatRequest body,

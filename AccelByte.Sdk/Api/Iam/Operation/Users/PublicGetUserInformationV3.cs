@@ -16,7 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserInformationV3
     ///
-    /// This endpoint retrieves user info and linked platform accounts
+    /// This endpoint retrieves user info and linked platform accounts.
+    /// 
+    /// 
+    /// **Authentication:**
+    /// The _**userId**_ parameter should match the one in the access token.
     /// </summary>
     public class PublicGetUserInformationV3 : AccelByte.Sdk.Core.Operation
     {

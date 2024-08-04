@@ -44,8 +44,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             )
             {
                 ArtifactGetURL op = new ArtifactGetURL(this,
-                    artifactID,                    
-                    namespace_                    
+                    artifactID,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -63,30 +63,30 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["artifactID"] = artifactID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public ArtifactGetURL(
-            string artifactID,            
-            string namespace_            
+            string artifactID,
+            string namespace_
         )
         {
             PathParams["artifactID"] = artifactID;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -101,9 +101,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApiArtifactURLResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApiArtifactURLResponse>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

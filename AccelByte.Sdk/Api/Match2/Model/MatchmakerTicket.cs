@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("IsActive")]
         public bool? IsActive { get; set; }
 
+        [JsonPropertyName("IsPivot")]
+        public bool? IsPivot { get; set; }
+
         [JsonPropertyName("Latencies")]
         public Dictionary<string, long>? Latencies { get; set; }
 
@@ -51,6 +54,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
 
         [JsonPropertyName("IsActive")]
         public bool? IsActive { get; set; }
+
+        [JsonPropertyName("IsPivot")]
+        public bool? IsPivot { get; set; }
 
         [JsonPropertyName("Latencies")]
         public Dictionary<string, long>? Latencies { get; set; }

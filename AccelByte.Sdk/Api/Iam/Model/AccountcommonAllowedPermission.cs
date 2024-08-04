@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
     public class AccountcommonAllowedPermission : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("allowedActions")]
-        public List<long>? AllowedActions { get; set; }
+        public List<int>? AllowedActions { get; set; }
 
         [JsonPropertyName("resource")]
         public string? Resource { get; set; }

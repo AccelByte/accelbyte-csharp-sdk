@@ -86,5 +86,35 @@ namespace AccelByte.Sdk.Api
 
             return await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicGetUserProgressionAsync(op);
         }
+        public static Challenge.Model.ModelUserProgressionResponse? Execute(
+            this PublicGetPastUserProgression.PublicGetPastUserProgressionBuilder builder,
+            string challengeCode,
+            long index,
+            string namespace_
+        )
+        {
+            PublicGetPastUserProgression op = builder.Build(
+                challengeCode,
+                index,
+                namespace_
+            );
+
+            return ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicGetPastUserProgression(op);
+        }
+        public static async Task<Challenge.Model.ModelUserProgressionResponse?> ExecuteAsync(
+            this PublicGetPastUserProgression.PublicGetPastUserProgressionBuilder builder,
+            string challengeCode,
+            long index,
+            string namespace_
+        )
+        {
+            PublicGetPastUserProgression op = builder.Build(
+                challengeCode,
+                index,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).PublicGetPastUserProgressionAsync(op);
+        }
     }
 }

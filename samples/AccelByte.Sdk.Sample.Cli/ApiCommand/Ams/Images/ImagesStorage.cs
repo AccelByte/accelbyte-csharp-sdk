@@ -13,45 +13,45 @@ using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Sample.Cli.Command;
 
-using AccelByte.Sdk.Api.Dsmc.Wrapper;
-using AccelByte.Sdk.Api.Dsmc.Model;
-using AccelByte.Sdk.Api.Dsmc.Operation;
+using AccelByte.Sdk.Api.Ams.Wrapper;
+using AccelByte.Sdk.Api.Ams.Model;
+using AccelByte.Sdk.Api.Ams.Operation;
 
-namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Dsmc
+namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 {
-    [SdkConsoleCommand("dsmc", "exportimages")]
-    public class ExportImagesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("ams", "imagesstorage")]
+    public class ImagesStorageCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName { get { return "Dsmc"; } }
+        public string ServiceName { get { return "Ams"; } }
 
-        public string OperationName { get { return "ExportImages"; } }
+        public string OperationName { get { return "ImagesStorage"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        public ExportImagesCommand(AccelByteSDK sdk)
+        public ImagesStorageCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig wrapper = new AccelByte.Sdk.Api.Dsmc.Wrapper.ImageConfig(_SDK);
+            AccelByte.Sdk.Api.Ams.Wrapper.Images wrapper = new AccelByte.Sdk.Api.Ams.Wrapper.Images(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Dsmc.Operation.ExportImages.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Ams.Operation.ImagesStorage.Builder;
 
 
 
-            ExportImages operation = opBuilder.Build(
+
+
+            ImagesStorage operation = opBuilder.Build(
                 Namespace
             );
 
 
-            List<AccelByte.Sdk.Api.Dsmc.Model.ModelsImageRecord>? response = wrapper.ExportImages(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiImageStorage? response = wrapper.ImagesStorage(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -42,6 +42,8 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/chat/v1/admin/config` | GET | AdminGetAllConfigV1 | [AdminGetAllConfigV1](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminGetAllConfigV1.cs) | [AdminGetAllConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminGetAllConfigV1.cs) |
+| `/chat/v1/admin/config/log` | GET | AdminGetLogConfig | [AdminGetLogConfig](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminGetLogConfig.cs) | [AdminGetLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminGetLogConfig.cs) |
+| `/chat/v1/admin/config/log` | PATCH | AdminPatchUpdateLogConfig | [AdminPatchUpdateLogConfig](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminPatchUpdateLogConfig.cs) | [AdminPatchUpdateLogConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminPatchUpdateLogConfig.cs) |
 | `/chat/v1/admin/config/namespaces/{namespace}` | GET | AdminGetConfigV1 | [AdminGetConfigV1](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminGetConfigV1.cs) | [AdminGetConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminGetConfigV1.cs) |
 | `/chat/v1/admin/config/namespaces/{namespace}` | PUT | AdminUpdateConfigV1 | [AdminUpdateConfigV1](../../AccelByte.Sdk/Api/Chat/Operation/Config/AdminUpdateConfigV1.cs) | [AdminUpdateConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/AdminUpdateConfigV1.cs) |
 | `/chat/v1/admin/config/namespaces/{namespace}/export` | GET | ExportConfig | [ExportConfig](../../AccelByte.Sdk/Api/Chat/Operation/Config/ExportConfig.cs) | [ExportConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Config/ExportConfig.cs) |
@@ -139,6 +141,7 @@
 | `api.UnmuteUserRequest` | [ApiUnmuteUserRequest](../../AccelByte.Sdk/Api/Chat/Model/ApiUnmuteUserRequest.cs) |
 | `api.UpdateTopicParams` | [ApiUpdateTopicParams](../../AccelByte.Sdk/Api/Chat/Model/ApiUpdateTopicParams.cs) |
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Chat/Model/LogAppMessageDeclaration.cs) |
+| `logconfig.Configuration` | [LogconfigConfiguration](../../AccelByte.Sdk/Api/Chat/Model/LogconfigConfiguration.cs) |
 | `message.ActionAddUserToTopicResult` | [MessageActionAddUserToTopicResult](../../AccelByte.Sdk/Api/Chat/Model/MessageActionAddUserToTopicResult.cs) |
 | `message.ActionDeleteTopicResult` | [MessageActionDeleteTopicResult](../../AccelByte.Sdk/Api/Chat/Model/MessageActionDeleteTopicResult.cs) |
 | `models.AddInboxCategoryRequest` | [ModelsAddInboxCategoryRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsAddInboxCategoryRequest.cs) |

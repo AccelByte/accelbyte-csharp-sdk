@@ -959,6 +959,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.GameSession)builder.WrapperObject!).AppendTeamGameSessionAsync<T1, T2>(op);
         }
+        public static void Execute(
+            this PublicGameSessionCancel.PublicGameSessionCancelBuilder builder,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicGameSessionCancel op = builder.Build(
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGameSessionCancel(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicGameSessionCancel.PublicGameSessionCancelBuilder builder,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicGameSessionCancel op = builder.Build(
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            await ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGameSessionCancelAsync(op);
+        }
         public static Session.Model.ApimodelsGameSessionQueryResponse? Execute(
             this PublicQueryMyGameSessions.PublicQueryMyGameSessionsBuilder builder,
             string namespace_

@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("endDate")]
+        public string? EndDate { get; set; }
+
         [SdkCommandArgument("gameSessionID")]
         public string? GameSessionID { get; set; }
 
@@ -46,6 +49,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         [SdkCommandArgument("orderBy")]
         public string? OrderBy { get; set; }
 
+        [SdkCommandArgument("startDate")]
+        public string? StartDate { get; set; }
+
         [SdkCommandArgument("userID")]
         public string? UserID { get; set; }
 
@@ -60,6 +66,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
 
             var opBuilder = AccelByte.Sdk.Api.Sessionhistory.Operation.AdminQueryGameSessionDetail.Builder;
 
+            if (EndDate != null)
+                opBuilder.SetEndDate((string)EndDate);
             if (GameSessionID != null)
                 opBuilder.SetGameSessionID((string)GameSessionID);
             if (Limit != null)
@@ -70,6 +78,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
                 opBuilder.SetOrder((string)Order);
             if (OrderBy != null)
                 opBuilder.SetOrderBy((string)OrderBy);
+            if (StartDate != null)
+                opBuilder.SetStartDate((string)StartDate);
             if (UserID != null)
                 opBuilder.SetUserID((string)UserID);
 

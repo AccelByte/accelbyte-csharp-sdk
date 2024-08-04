@@ -229,6 +229,36 @@ namespace AccelByte.Sdk.Api
             await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkBlockPlayersV1Async(op);
         }
         public static void Execute(
+            this AdminBulkUnblockPlayersV1.AdminBulkUnblockPlayersV1Builder builder,
+            ModelsListUnblockPlayerRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkUnblockPlayersV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkUnblockPlayersV1(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminBulkUnblockPlayersV1.AdminBulkUnblockPlayersV1Builder builder,
+            ModelsListUnblockPlayerRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkUnblockPlayersV1 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminBulkUnblockPlayersV1Async(op);
+        }
+        public static void Execute(
             this PublicPlayerBlockPlayersV1.PublicPlayerBlockPlayersV1Builder builder,
             ModelsBlockPlayerRequest body,
             string namespace_

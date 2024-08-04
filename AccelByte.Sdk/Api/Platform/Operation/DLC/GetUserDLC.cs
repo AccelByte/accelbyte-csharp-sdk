@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// getUserDLC
     ///
     /// Get user dlc records.
+    /// Note: includeAllNamespaces means this endpoint will return user dlcs from all namespace, example scenario isadmin may need to check the user dlcs before unlink a 3rd party account, so the user dlcs should be from all namespaces because unlinking is a platform level action
     /// Other detail info:
     /// 
     ///   * Returns : user dlc
@@ -30,6 +31,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<GetUserDLCBuilder>
         {
 
+            public bool? IncludeAllNamespaces { get; set; }
+
+            public GetUserDLCStatus? Status { get; set; }
+
             public GetUserDLCType? Type { get; set; }
 
 
@@ -38,6 +43,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal GetUserDLCBuilder() { }
 
+
+            public GetUserDLCBuilder SetIncludeAllNamespaces(bool _includeAllNamespaces)
+            {
+                IncludeAllNamespaces = _includeAllNamespaces;
+                return this;
+            }
+
+            public GetUserDLCBuilder SetStatus(GetUserDLCStatus _status)
+            {
+                Status = _status;
+                return this;
+            }
 
             public GetUserDLCBuilder SetType(GetUserDLCType _type)
             {
@@ -75,6 +92,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (builder.IncludeAllNamespaces != null) QueryParams["includeAllNamespaces"] = Convert.ToString(builder.IncludeAllNamespaces)!;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
             if (builder.Type is not null) QueryParams["type"] = builder.Type.Value;
 
 
@@ -89,12 +108,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public GetUserDLC(
             string namespace_,
             string userId,
+            bool? includeAllNamespaces,
+            GetUserDLCStatus? status,
             GetUserDLCType? type
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
+            if (includeAllNamespaces != null) QueryParams["includeAllNamespaces"] = Convert.ToString(includeAllNamespaces)!;
+            if (status is not null) QueryParams["status"] = status.Value;
             if (type is not null) QueryParams["type"] = type.Value;
 
 
@@ -156,6 +179,30 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class GetUserDLCStatus : StringEnum<GetUserDLCStatus>
+    {
+        public static readonly GetUserDLCStatus FULFILLED
+            = new GetUserDLCStatus("FULFILLED");
+
+        public static readonly GetUserDLCStatus REVOKED
+            = new GetUserDLCStatus("REVOKED");
+
+        public static readonly GetUserDLCStatus REVOKEFAILED
+            = new GetUserDLCStatus("REVOKE_FAILED");
+
+
+        public static implicit operator GetUserDLCStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public GetUserDLCStatus(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

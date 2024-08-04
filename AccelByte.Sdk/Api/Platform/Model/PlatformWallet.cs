@@ -32,6 +32,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public PlatformWalletStatus? Status { get; set; }
 
+        [JsonPropertyName("transactionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TransactionId { get; set; }
+
         [JsonPropertyName("userId")]
         public string? UserId { get; set; }
 

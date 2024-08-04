@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsServer? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsServerDetailsResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -115,13 +115,13 @@ namespace AccelByte.Sdk.Api.Dsmc.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsServer>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsServerDetailsResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.ModelsServer>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsServerDetailsResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.ModelsServer>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsServerDetailsResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);
