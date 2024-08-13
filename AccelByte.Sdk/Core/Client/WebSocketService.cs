@@ -93,7 +93,14 @@ namespace AccelByte.Sdk.Core
 
         private ClientWebSocket _CreateSocket()
         {
-            return new ClientWebSocket();
+            var wsClient = new ClientWebSocket();
+            wsClient.Options.DangerousDeflateOptions = new WebSocketDeflateOptions()
+            {
+                ServerContextTakeover = false,
+                ClientMaxWindowBits = 15                
+            };
+
+            return wsClient;
         }
 
         private void _MapEventActions()
