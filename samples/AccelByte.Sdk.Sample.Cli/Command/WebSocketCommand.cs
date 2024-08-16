@@ -120,8 +120,14 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                 Task connectTak = wsObj.Connect(false);
                 connectTak.Wait();
 
-                Task listenTask = Task.Run(() => wsObj.Listen());
+                //Add delay before sending the message to avoid collision when testing ws schema with mock server
+                //
+                //When connecting to mock server, mock server will send `connectNotif` immediately and
+                //probably colliding with ClientWebSocket trying to open the socket for listening resulting with partial/invalid ws message.
+                Thread.Sleep(500);
 
+                Task listenTask = Task.Run(() => wsObj.Listen());
+                
                 Task sendTask = wsObj.Send(payload);
                 sendTask.Wait();
 
