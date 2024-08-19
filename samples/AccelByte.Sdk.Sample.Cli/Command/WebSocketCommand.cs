@@ -117,16 +117,15 @@ namespace AccelByte.Sdk.Sample.Cli.Command
                     _ReceivedMessage = null;
                 }
 
-                //merge connect and listen task into one async to minimize ws startup time.
-                //Then add delay to make sure ws client is ready before sending in first message
-                Task connectAndListenTask = Task.Run( async () =>
-                {
-                    await wsObj.Connect(true);
-                });
+                Task connectTak = wsObj.Connect(false);
+                connectTak.Wait();
 
-                Thread.Sleep(500);
+                Task listenTask = Task.Run(() => wsObj.Listen());
 
                 Task sendTask = wsObj.Send(payload);
+
+                //Add delay before sending first message after start the message listener to give time for mock server.
+                Thread.Sleep(100);
                 sendTask.Wait();
 
                 //Now wait for the response message...
