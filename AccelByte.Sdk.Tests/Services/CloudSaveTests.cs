@@ -189,5 +189,71 @@ namespace AccelByte.Sdk.Tests.Services
 
             ResetPolicy();
         }
+
+        [Test]
+        public void UploadAndDownloadTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            DisableRetry();
+            
+            byte[] sBinary = new byte[32];
+            (new Random()).NextBytes(sBinary);
+
+            string dataKey = $"csharksdk-test-{Helper.GenerateRandomId(8)}";
+
+            //create binary record request
+            var cResponse = _Sdk.Cloudsave.AdminGameBinaryRecord.AdminPostGameBinaryRecordV1Op
+                .Execute(new ModelsGameBinaryRecordCreate()
+                {
+                    Key = dataKey,
+                    FileType = "bin",
+                    SetBy = ModelsGameBinaryRecordCreateSetBy.CLIENT
+                }, _Sdk.Namespace);
+            Assert.IsNotNull(cResponse);
+            if (cResponse != null && cResponse.Url != null)
+            {
+                string contentType = "application/octet-stream";
+                if (cResponse.ContentType != null)
+                    contentType = cResponse.ContentType;
+
+                //upload the binary
+                var isSuccess = _Sdk.UploadBinaryData(cResponse.Url, sBinary, contentType);
+                Assert.IsTrue(isSuccess);
+
+                if (isSuccess)
+                {
+                    //update binary record
+                    var uResponse = _Sdk.Cloudsave.AdminGameBinaryRecord.AdminPutGameBinaryRecordV1Op
+                        .Execute(new ModelsBinaryRecordRequest()
+                        {
+                            ContentType = contentType,
+                            FileLocation = cResponse.FileLocation
+                        }, dataKey, _Sdk.Namespace);
+                    Assert.IsNotNull(uResponse);
+                }
+            }
+
+            //get binary record
+            var sResponse = _Sdk.Cloudsave.AdminGameBinaryRecord.AdminGetGameBinaryRecordV1Op
+                .Execute(dataKey, _Sdk.Namespace);
+            Assert.IsNotNull(sResponse);
+            if (sResponse != null && sResponse.BinaryInfo != null && sResponse.BinaryInfo.Url != null)
+            {
+                //download binary
+                string binaryUrl = sResponse.BinaryInfo.Url;
+                byte[] downloadedData = _Sdk.DownloadBinaryData(binaryUrl);
+
+                Assert.AreEqual(sBinary, downloadedData);
+            }
+
+            //download binary record
+            _Sdk.Cloudsave.AdminGameBinaryRecord.AdminDeleteGameBinaryRecordV1Op
+                .Execute(dataKey, _Sdk.Namespace);
+
+            ResetPolicy();
+        }
     }
 }
