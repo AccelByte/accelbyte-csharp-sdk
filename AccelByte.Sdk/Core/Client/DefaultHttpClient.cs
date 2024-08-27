@@ -231,5 +231,80 @@ namespace AccelByte.Sdk.Core.Client
         {
             return (new[] { 308, 307, 300, 301, 302, 303 }).Contains((int)code);
         }
+
+        public bool UploadBinaryData(string url, byte[] dataToUpload, string contentType)
+        {
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.Method = HttpMethod.Put;
+            request.RequestUri = new Uri(url);
+            request.Content = new StreamContent(new MemoryStream(dataToUpload));
+            request.Content.Headers.Add("Content-Type", contentType);
+
+            var response = Http!.Send(request);
+            if (!response.IsSuccessStatusCode)
+            {
+                var responseStr = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
+                throw new Exception(responseStr);
+            }
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> UploadBinaryDataAsync(string url, byte[] dataToUpload, string contentType)
+        {
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.Method = HttpMethod.Put;
+            request.RequestUri = new Uri(url);
+            request.Content = new StreamContent(new MemoryStream(dataToUpload));
+            request.Content.Headers.Add("Content-Type", contentType);
+
+            var response = await Http!.SendAsync(request);
+            if (!response.IsSuccessStatusCode)
+            {
+                var responseStr = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
+                throw new Exception(responseStr);
+            }
+
+            return response.IsSuccessStatusCode;
+        }
+
+        public byte[] DownloadBinaryData(string url)
+        {
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.Method = HttpMethod.Get;
+            request.RequestUri = new Uri(url);
+
+            var response = Http!.Send(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var stream = response.Content.ReadAsStream();
+                using MemoryStream ms = new MemoryStream();
+                stream.CopyTo(ms);
+                return ms.ToArray();
+            }
+            else
+            {
+                var responseStr = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
+                throw new Exception(responseStr);
+            }
+        }
+
+        public async Task<byte[]> DownloadBinaryDataAsync(string url)
+        {
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.Method = HttpMethod.Get;
+            request.RequestUri = new Uri(url);
+
+            var response = await Http!.SendAsync(request);
+            if (response.IsSuccessStatusCode)
+            {
+                var stream = await response.Content.ReadAsStreamAsync();
+                using MemoryStream ms = new MemoryStream();
+                await stream.CopyToAsync(ms);
+                return ms.ToArray();
+            }
+            else
+                throw new Exception($"Failed to download from [{url}].");
+        }
     }
 }
