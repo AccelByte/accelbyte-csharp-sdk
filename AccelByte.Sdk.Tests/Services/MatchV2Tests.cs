@@ -5,6 +5,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using NUnit.Framework;
 
@@ -15,6 +16,7 @@ using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Api.Match2.Model;
 using AccelByte.Sdk.Api.Session.Model;
 using AccelByte.Sdk.Tests.Integration;
+
 namespace AccelByte.Sdk.Tests.Services
 {
     [TestFixture(Category = "FluentIntegration")]
@@ -65,11 +67,48 @@ namespace AccelByte.Sdk.Tests.Services
             ApiRuleSetPayload cRuleSetBody = new ApiRuleSetPayload()
             {
                 Name = rulesetName,
-                Data = new Dictionary<string, object>()
-                {
-                    {"param_1", 40},
-                    {"param_2", "A"}
-                }
+                Data = JsonSerializer.Deserialize<Dictionary<string, object>>(@"
+                    {
+                        ""alliance"": {
+                            ""min_number"": 2,
+                            ""max_number"": 10,
+                            ""player_min_number"": 2,
+                            ""player_max_number"": 4
+                        },
+                        ""matchingRules"": [
+                            {
+                            ""attribute"": """",
+                            ""criteria"": ""distance"",
+                            ""reference"": """"
+                            }
+                        ],
+                        ""flexingRules"": [
+                            {
+                            ""duration"": 600,
+                            ""attribute"": """",
+                            ""criteria"": ""distance"",
+                            ""reference"": """"
+                            }
+                        ],
+                        ""match_options"": {
+                            ""options"": [
+                            {
+                                ""name"": """",
+                                ""type"": ""any""
+                            }
+                            ]
+                        },
+                        ""alliance_flexing_rule"": [
+                            {
+                            ""duration"": 600,
+                            ""min_number"": 1,
+                            ""max_number"": 2,
+                            ""player_min_number"": 1,
+                            ""player_max_number"": 2
+                            }
+                        ]
+                    }
+                ")
             };
 
             _Sdk.Match2.RuleSets.CreateRuleSetOp
