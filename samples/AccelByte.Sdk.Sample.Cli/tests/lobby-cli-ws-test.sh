@@ -33,7 +33,6 @@ eval_tap() {
 }
 
 CLI_EXE="AccelByte.Sdk.Sample.Cli"
-CLI_TOKEN_FILE="$(dirname "$(which $CLI_EXE)")/token.txt"
 TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 SERVICE_NAME="lobby"
@@ -50,7 +49,7 @@ if [ $EXIT_CODE -ne 0 ]; then
   exit $EXIT_CODE
 fi
 
-echo "foo" > "$CLI_TOKEN_FILE"
+export AB_BASE_URL="http://127.0.0.1:8000"      # Switch to mock websocket server
 
 #- 2 AcceptFriendsNotif
 # echo "Testing 'AcceptFriendsNotif'"
