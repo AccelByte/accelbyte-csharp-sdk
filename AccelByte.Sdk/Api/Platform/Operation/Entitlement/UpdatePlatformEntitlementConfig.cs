@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EntitlementPlatformConfigUpdate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePlatformEntitlementConfigBuilder SetBody(Model.EntitlementPlatformConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePlatformEntitlementConfig Build(
+                EntitlementPlatformConfigUpdate body,
                 string namespace_,
                 UpdatePlatformEntitlementConfigPlatform platform
             )
             {
                 UpdatePlatformEntitlementConfig op = new UpdatePlatformEntitlementConfig(this,
+                    body,
                     namespace_,
                     platform
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePlatformEntitlementConfig(UpdatePlatformEntitlementConfigBuilder builder,
+            EntitlementPlatformConfigUpdate body,
             string namespace_,
             UpdatePlatformEntitlementConfigPlatform platform
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

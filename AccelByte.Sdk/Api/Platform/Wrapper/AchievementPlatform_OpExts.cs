@@ -14,11 +14,13 @@ namespace AccelByte.Sdk.Api
     {
         public static void Execute(
             this UnlockSteamUserAchievement.UnlockSteamUserAchievementBuilder builder,
+            SteamAchievementUpdateRequest body,
             string namespace_,
             string userId
         )
         {
             UnlockSteamUserAchievement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -27,11 +29,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this UnlockSteamUserAchievement.UnlockSteamUserAchievementBuilder builder,
+            SteamAchievementUpdateRequest body,
             string namespace_,
             string userId
         )
         {
             UnlockSteamUserAchievement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -70,11 +74,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this UpdateXblUserAchievement.UpdateXblUserAchievementBuilder builder,
+            XblAchievementUpdateRequest body,
             string namespace_,
             string userId
         )
         {
             UpdateXblUserAchievement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -83,11 +89,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this UpdateXblUserAchievement.UpdateXblUserAchievementBuilder builder,
+            XblAchievementUpdateRequest body,
             string namespace_,
             string userId
         )
         {
             UpdateXblUserAchievement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

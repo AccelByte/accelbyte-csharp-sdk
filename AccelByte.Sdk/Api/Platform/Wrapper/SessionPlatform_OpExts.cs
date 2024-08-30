@@ -14,11 +14,13 @@ namespace AccelByte.Sdk.Api
     {
         public static Dictionary<string, object>? Execute(
             this RegisterXblSessions.RegisterXblSessionsBuilder builder,
+            XblUserSessionRequest body,
             string namespace_,
             string userId
         )
         {
             RegisterXblSessions op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -27,11 +29,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Dictionary<string, object>?> ExecuteAsync(
             this RegisterXblSessions.RegisterXblSessionsBuilder builder,
+            XblUserSessionRequest body,
             string namespace_,
             string userId
         )
         {
             RegisterXblSessions op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

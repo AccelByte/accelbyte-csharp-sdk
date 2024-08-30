@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateCheckoutConfig
     ///
-    ///  [Not Supported Yet In Starter] Update checkout.com config.
+    ///  [Not supported yet in AGS Shared Cloud] Update checkout.com config.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? Validate { get; set; }
 
-
-            public Model.CheckoutConfig? Body { get; set; }
 
 
 
@@ -56,20 +54,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdateCheckoutConfigBuilder SetBody(Model.CheckoutConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateCheckoutConfig Build(
+                CheckoutConfig body,
                 string id
             )
             {
                 UpdateCheckoutConfig op = new UpdateCheckoutConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateCheckoutConfig(UpdateCheckoutConfigBuilder builder,
+            CheckoutConfig body,
             string id
         )
         {
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.DLCItemConfigInfo? Execute(
             this UpdateDLCItemConfig.UpdateDLCItemConfigBuilder builder,
+            DLCItemConfigUpdate body,
             string namespace_
         )
         {
             UpdateDLCItemConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.DLCItemConfigInfo?> ExecuteAsync(
             this UpdateDLCItemConfig.UpdateDLCItemConfigBuilder builder,
+            DLCItemConfigUpdate body,
             string namespace_
         )
         {
             UpdateDLCItemConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -102,10 +106,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlatformDLCConfigInfo? Execute(
             this UpdatePlatformDLCConfig.UpdatePlatformDLCConfigBuilder builder,
+            PlatformDLCConfigUpdate body,
             string namespace_
         )
         {
             UpdatePlatformDLCConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -113,10 +119,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PlatformDLCConfigInfo?> ExecuteAsync(
             this UpdatePlatformDLCConfig.UpdatePlatformDLCConfigBuilder builder,
+            PlatformDLCConfigUpdate body,
             string namespace_
         )
         {
             UpdatePlatformDLCConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -359,11 +367,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this SyncSteamDLC.SyncSteamDLCBuilder builder,
+            SteamDLCSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncSteamDLC op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -372,11 +382,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this SyncSteamDLC.SyncSteamDLCBuilder builder,
+            SteamDLCSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncSteamDLC op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

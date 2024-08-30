@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentRequest? Body { get; set; }
-
 
 
 
@@ -37,22 +35,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PayWithUserWalletBuilder SetBody(Model.PaymentRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PayWithUserWallet Build(
+                PaymentRequest body,
                 string currencyCode,
                 string namespace_,
                 string userId
             )
             {
                 PayWithUserWallet op = new PayWithUserWallet(this,
+                    body,
                     currencyCode,
                     namespace_,
                     userId
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PayWithUserWallet(PayWithUserWalletBuilder builder,
+            PaymentRequest body,
             string currencyCode,
             string namespace_,
             string userId
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

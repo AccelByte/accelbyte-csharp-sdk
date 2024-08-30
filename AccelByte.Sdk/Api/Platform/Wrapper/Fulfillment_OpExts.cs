@@ -36,11 +36,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillItem.FulfillItemBuilder builder,
+            FulfillmentRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -49,11 +51,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
             this FulfillItem.FulfillItemBuilder builder,
+            FulfillmentRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -62,11 +66,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FulfillmentResult? Execute(
             this RedeemCode.RedeemCodeBuilder builder,
+            FulfillCodeRequest body,
             string namespace_,
             string userId
         )
         {
             RedeemCode op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -75,11 +81,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
             this RedeemCode.RedeemCodeBuilder builder,
+            FulfillCodeRequest body,
             string namespace_,
             string userId
         )
         {
             RedeemCode op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -88,11 +96,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.FulfillmentItem>? Execute(
             this PreCheckFulfillItem.PreCheckFulfillItemBuilder builder,
+            PreCheckFulfillmentRequest body,
             string namespace_,
             string userId
         )
         {
             PreCheckFulfillItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -101,11 +111,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.FulfillmentItem>?> ExecuteAsync(
             this PreCheckFulfillItem.PreCheckFulfillItemBuilder builder,
+            PreCheckFulfillmentRequest body,
             string namespace_,
             string userId
         )
         {
             PreCheckFulfillItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -114,11 +126,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this FulfillRewards.FulfillRewardsBuilder builder,
+            RewardsRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillRewards op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -127,11 +141,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this FulfillRewards.FulfillRewardsBuilder builder,
+            RewardsRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillRewards op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -140,11 +156,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FulfillmentResult? Execute(
             this PublicRedeemCode.PublicRedeemCodeBuilder builder,
+            FulfillCodeRequest body,
             string namespace_,
             string userId
         )
         {
             PublicRedeemCode op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -153,11 +171,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
             this PublicRedeemCode.PublicRedeemCodeBuilder builder,
+            FulfillCodeRequest body,
             string namespace_,
             string userId
         )
         {
             PublicRedeemCode op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -188,11 +208,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FulfillmentResult? Execute(
             this FulfillRewardsV2.FulfillRewardsV2Builder builder,
+            RewardsRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillRewardsV2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -201,11 +223,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FulfillmentResult?> ExecuteAsync(
             this FulfillRewardsV2.FulfillRewardsV2Builder builder,
+            RewardsRequest body,
             string namespace_,
             string userId
         )
         {
             FulfillRewardsV2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -214,12 +238,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FulfillmentV2Result? Execute(
             this FulfillItems.FulfillItemsBuilder builder,
+            FulfillmentV2Request body,
             string namespace_,
             string transactionId,
             string userId
         )
         {
             FulfillItems op = builder.Build(
+                body,
                 namespace_,
                 transactionId,
                 userId
@@ -229,12 +255,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FulfillmentV2Result?> ExecuteAsync(
             this FulfillItems.FulfillItemsBuilder builder,
+            FulfillmentV2Request body,
             string namespace_,
             string transactionId,
             string userId
         )
         {
             FulfillItems op = builder.Build(
+                body,
                 namespace_,
                 transactionId,
                 userId

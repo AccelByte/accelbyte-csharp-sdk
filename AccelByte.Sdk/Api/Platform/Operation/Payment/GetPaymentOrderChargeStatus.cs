@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentOrderChargeStatus
     ///
-    ///  [Not Supported Yet In Starter] Get payment order charge status.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment order charge status.
     /// Other detail info:
     /// 
     ///   * Returns : payment order charge status

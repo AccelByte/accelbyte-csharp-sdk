@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ExportStoreToCSVRequest? Body { get; set; }
-
 
 
 
@@ -37,20 +35,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ExportStoreByCSVBuilder SetBody(Model.ExportStoreToCSVRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ExportStoreByCSV Build(
+                ExportStoreToCSVRequest body,
                 string namespace_
             )
             {
                 ExportStoreByCSV op = new ExportStoreByCSV(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -63,6 +57,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ExportStoreByCSV(ExportStoreByCSVBuilder builder,
+            ExportStoreToCSVRequest body,
             string namespace_
         )
         {
@@ -72,7 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePaymentDomainWhitelistConfig
     ///
-    ///  [Not Supported Yet In Starter] Update payment provider config by namespace.
+    ///  [Not supported yet in AGS Shared Cloud] Update payment provider config by namespace.
     /// 
     /// 
     /// 
@@ -44,8 +44,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentDomainWhitelistConfigEdit? Body { get; set; }
-
 
 
 
@@ -53,20 +51,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePaymentDomainWhitelistConfigBuilder SetBody(Model.PaymentDomainWhitelistConfigEdit _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePaymentDomainWhitelistConfig Build(
+                PaymentDomainWhitelistConfigEdit body,
                 string namespace_
             )
             {
                 UpdatePaymentDomainWhitelistConfig op = new UpdatePaymentDomainWhitelistConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -79,6 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePaymentDomainWhitelistConfig(UpdatePaymentDomainWhitelistConfigBuilder builder,
+            PaymentDomainWhitelistConfigEdit body,
             string namespace_
         )
         {
@@ -88,7 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

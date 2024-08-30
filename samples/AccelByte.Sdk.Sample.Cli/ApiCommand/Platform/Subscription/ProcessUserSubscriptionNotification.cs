@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.ProcessUserSubscriptionNotification.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.TradeNotification)Body);
 
 
 
             ProcessUserSubscriptionNotification operation = opBuilder.Build(
+                Body,
                 Namespace,
                 SubscriptionId,
                 UserId

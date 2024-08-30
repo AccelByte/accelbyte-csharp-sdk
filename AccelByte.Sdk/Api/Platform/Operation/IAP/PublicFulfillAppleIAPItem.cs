@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.AppleIAPReceipt? Body { get; set; }
-
 
 
 
@@ -38,21 +36,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicFulfillAppleIAPItemBuilder SetBody(Model.AppleIAPReceipt _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicFulfillAppleIAPItem Build(
+                AppleIAPReceipt body,
                 string namespace_,
                 string userId
             )
             {
                 PublicFulfillAppleIAPItem op = new PublicFulfillAppleIAPItem(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicFulfillAppleIAPItem(PublicFulfillAppleIAPItemBuilder builder,
+            AppleIAPReceipt body,
             string namespace_,
             string userId
         )
@@ -77,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

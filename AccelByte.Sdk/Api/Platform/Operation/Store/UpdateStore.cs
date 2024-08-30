@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.StoreUpdate? Body { get; set; }
-
 
 
 
@@ -41,21 +39,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateStoreBuilder SetBody(Model.StoreUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateStore Build(
+                StoreUpdate body,
                 string namespace_,
                 string storeId
             )
             {
                 UpdateStore op = new UpdateStore(this,
+                    body,
                     namespace_,
                     storeId
                 );
@@ -69,6 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateStore(UpdateStoreBuilder builder,
+            StoreUpdate body,
             string namespace_,
             string storeId
         )
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

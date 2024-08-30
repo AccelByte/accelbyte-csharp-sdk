@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.OrderRefundCreate? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public RefundOrderBuilder SetBody(Model.OrderRefundCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public RefundOrder Build(
+                OrderRefundCreate body,
                 string namespace_,
                 string orderNo
             )
             {
                 RefundOrder op = new RefundOrder(this,
+                    body,
                     namespace_,
                     orderNo
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private RefundOrder(RefundOrderBuilder builder,
+            OrderRefundCreate body,
             string namespace_,
             string orderNo
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

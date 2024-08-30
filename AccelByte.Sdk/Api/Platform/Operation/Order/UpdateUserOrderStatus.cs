@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.OrderUpdate? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateUserOrderStatusBuilder SetBody(Model.OrderUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateUserOrderStatus Build(
+                OrderUpdate body,
                 string namespace_,
                 string orderNo,
                 string userId
             )
             {
                 UpdateUserOrderStatus op = new UpdateUserOrderStatus(this,
+                    body,
                     namespace_,
                     orderNo,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateUserOrderStatus(UpdateUserOrderStatusBuilder builder,
+            OrderUpdate body,
             string namespace_,
             string orderNo,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

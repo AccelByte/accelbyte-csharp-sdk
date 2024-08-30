@@ -48,12 +48,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (Sandbox != null)
                 opBuilder.SetSandbox((bool)Sandbox);
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.AdyenConfig)Body);
 
 
 
             TestAdyenConfig operation = opBuilder.Build(
+                Body
             );
 
 

@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentCallbackConfigInfo? Execute(
             this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
+            PaymentCallbackConfigUpdate body,
             string namespace_
         )
         {
             UpdatePaymentCallbackConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentCallbackConfigInfo?> ExecuteAsync(
             this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
+            PaymentCallbackConfigUpdate body,
             string namespace_
         )
         {
             UpdatePaymentCallbackConfig op = builder.Build(
+                body,
                 namespace_
             );
 

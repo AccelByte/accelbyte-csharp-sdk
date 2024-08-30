@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testCheckoutConfig
     ///
-    ///  [Not Supported Yet In Starter] Test checkout.com configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Test checkout.com configuration.
     /// 
     /// #### Check List:
     /// 
@@ -38,8 +38,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.CheckoutConfig? Body { get; set; }
-
 
 
 
@@ -53,19 +51,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestCheckoutConfigBuilder SetBody(Model.CheckoutConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestCheckoutConfig Build(
+                CheckoutConfig body
             )
             {
-                TestCheckoutConfig op = new TestCheckoutConfig(this
+                TestCheckoutConfig op = new TestCheckoutConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -76,7 +70,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestCheckoutConfig(TestCheckoutConfigBuilder builder
+        private TestCheckoutConfig(TestCheckoutConfigBuilder builder,
+            CheckoutConfig body
         )
         {
 
@@ -85,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

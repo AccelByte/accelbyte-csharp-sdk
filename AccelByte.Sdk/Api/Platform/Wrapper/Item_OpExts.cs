@@ -31,19 +31,23 @@ namespace AccelByte.Sdk.Api
             return await ((Platform.Wrapper.Item)builder.WrapperObject!).ListItemTypeConfigsAsync(op);
         }
         public static void Execute(
-            this CreateItemTypeConfig.CreateItemTypeConfigBuilder builder
+            this CreateItemTypeConfig.CreateItemTypeConfigBuilder builder,
+            ItemTypeConfigCreate body
         )
         {
             CreateItemTypeConfig op = builder.Build(
+                body
             );
 
             ((Platform.Wrapper.Item)builder.WrapperObject!).CreateItemTypeConfig(op);
         }
         public static async Task ExecuteAsync(
-            this CreateItemTypeConfig.CreateItemTypeConfigBuilder builder
+            this CreateItemTypeConfig.CreateItemTypeConfigBuilder builder,
+            ItemTypeConfigCreate body
         )
         {
             CreateItemTypeConfig op = builder.Build(
+                body
             );
 
             await ((Platform.Wrapper.Item)builder.WrapperObject!).CreateItemTypeConfigAsync(op);
@@ -94,10 +98,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.ItemTypeConfigInfo? Execute(
             this UpdateItemTypeConfig.UpdateItemTypeConfigBuilder builder,
+            ItemTypeConfigUpdate body,
             string id
         )
         {
             UpdateItemTypeConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -105,10 +111,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.ItemTypeConfigInfo?> ExecuteAsync(
             this UpdateItemTypeConfig.UpdateItemTypeConfigBuilder builder,
+            ItemTypeConfigUpdate body,
             string id
         )
         {
             UpdateItemTypeConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -138,11 +146,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullItemInfo? Execute(
             this SyncInGameItem.SyncInGameItemBuilder builder,
+            InGameItemSync body,
             string namespace_,
             string storeId
         )
         {
             SyncInGameItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -151,11 +161,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo?> ExecuteAsync(
             this SyncInGameItem.SyncInGameItemBuilder builder,
+            InGameItemSync body,
             string namespace_,
             string storeId
         )
         {
             SyncInGameItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -165,11 +177,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullItemInfo<T1>? Execute<T1>(
             this SyncInGameItem.SyncInGameItemBuilder builder,
+            InGameItemSync body,
             string namespace_,
             string storeId
         )
         {
             SyncInGameItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -178,11 +192,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo<T1>?> ExecuteAsync<T1>(
             this SyncInGameItem.SyncInGameItemBuilder builder,
+            InGameItemSync body,
             string namespace_,
             string storeId
         )
         {
             SyncInGameItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -191,11 +207,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullItemInfo? Execute(
             this CreateItem.CreateItemBuilder builder,
+            ItemCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -204,11 +222,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo?> ExecuteAsync(
             this CreateItem.CreateItemBuilder builder,
+            ItemCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -218,11 +238,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullItemInfo<T1>? Execute<T1>(
             this CreateItem.CreateItemBuilder builder,
+            ItemCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -231,11 +253,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo<T1>?> ExecuteAsync<T1>(
             this CreateItem.CreateItemBuilder builder,
+            ItemCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateItem op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -653,11 +677,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.ItemPurchaseConditionValidateResult>? Execute(
             this ValidateItemPurchaseCondition.ValidateItemPurchaseConditionBuilder builder,
+            ItemPurchaseConditionValidateRequest body,
             string namespace_,
             string userId
         )
         {
             ValidateItemPurchaseCondition op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -666,11 +692,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.ItemPurchaseConditionValidateResult>?> ExecuteAsync(
             this ValidateItemPurchaseCondition.ValidateItemPurchaseConditionBuilder builder,
+            ItemPurchaseConditionValidateRequest body,
             string namespace_,
             string userId
         )
         {
             ValidateItemPurchaseCondition op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -810,12 +838,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullItemInfo? Execute(
             this UpdateItem.UpdateItemBuilder builder,
+            ItemUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItem op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -825,12 +855,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo?> ExecuteAsync(
             this UpdateItem.UpdateItemBuilder builder,
+            ItemUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItem op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -841,12 +873,14 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullItemInfo<T1>? Execute<T1>(
             this UpdateItem.UpdateItemBuilder builder,
+            ItemUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItem op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -856,12 +890,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo<T1>?> ExecuteAsync<T1>(
             this UpdateItem.UpdateItemBuilder builder,
+            ItemUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItem op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -897,11 +933,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.ItemAcquireResult? Execute(
             this AcquireItem.AcquireItemBuilder builder,
+            ItemAcquireRequest body,
             string itemId,
             string namespace_
         )
         {
             AcquireItem op = builder.Build(
+                body,
                 itemId,
                 namespace_
             );
@@ -910,11 +948,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.ItemAcquireResult?> ExecuteAsync(
             this AcquireItem.AcquireItemBuilder builder,
+            ItemAcquireRequest body,
             string itemId,
             string namespace_
         )
         {
             AcquireItem op = builder.Build(
+                body,
                 itemId,
                 namespace_
             );
@@ -949,12 +989,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullAppInfo? Execute(
             this UpdateApp.UpdateAppBuilder builder,
+            AppUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateApp op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -964,12 +1006,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullAppInfo?> ExecuteAsync(
             this UpdateApp.UpdateAppBuilder builder,
+            AppUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateApp op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -1318,12 +1362,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullItemInfo? Execute(
             this UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder builder,
+            PurchaseConditionUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItemPurchaseCondition op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -1333,12 +1379,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo?> ExecuteAsync(
             this UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder builder,
+            PurchaseConditionUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItemPurchaseCondition op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -1349,12 +1397,14 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullItemInfo<T1>? Execute<T1>(
             this UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder builder,
+            PurchaseConditionUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItemPurchaseCondition op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -1364,12 +1414,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullItemInfo<T1>?> ExecuteAsync<T1>(
             this UpdateItemPurchaseCondition.UpdateItemPurchaseConditionBuilder builder,
+            PurchaseConditionUpdate body,
             string itemId,
             string namespace_,
             string storeId
         )
         {
             UpdateItemPurchaseCondition op = builder.Build(
+                body,
                 itemId,
                 namespace_,
                 storeId
@@ -1379,11 +1431,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this ReturnItem.ReturnItemBuilder builder,
+            ItemReturnRequest body,
             string itemId,
             string namespace_
         )
         {
             ReturnItem op = builder.Build(
+                body,
                 itemId,
                 namespace_
             );
@@ -1392,11 +1446,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this ReturnItem.ReturnItemBuilder builder,
+            ItemReturnRequest body,
             string itemId,
             string namespace_
         )
         {
             ReturnItem op = builder.Build(
+                body,
                 itemId,
                 namespace_
             );
@@ -1612,10 +1668,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.ItemPurchaseConditionValidateResult>? Execute(
             this PublicValidateItemPurchaseCondition.PublicValidateItemPurchaseConditionBuilder builder,
+            ItemPurchaseConditionValidateRequest body,
             string namespace_
         )
         {
             PublicValidateItemPurchaseCondition op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1623,10 +1681,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.ItemPurchaseConditionValidateResult>?> ExecuteAsync(
             this PublicValidateItemPurchaseCondition.PublicValidateItemPurchaseConditionBuilder builder,
+            ItemPurchaseConditionValidateRequest body,
             string namespace_
         )
         {
             PublicValidateItemPurchaseCondition op = builder.Build(
+                body,
                 namespace_
             );
 

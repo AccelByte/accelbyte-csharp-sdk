@@ -47,8 +47,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PlatformDLCConfigUpdate? Body { get; set; }
-
 
 
 
@@ -56,20 +54,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePlatformDLCConfigBuilder SetBody(Model.PlatformDLCConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePlatformDLCConfig Build(
+                PlatformDLCConfigUpdate body,
                 string namespace_
             )
             {
                 UpdatePlatformDLCConfig op = new UpdatePlatformDLCConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePlatformDLCConfig(UpdatePlatformDLCConfigBuilder builder,
+            PlatformDLCConfigUpdate body,
             string namespace_
         )
         {
@@ -91,7 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

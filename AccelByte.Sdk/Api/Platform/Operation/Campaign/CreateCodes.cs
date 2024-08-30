@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CodeCreate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateCodesBuilder SetBody(Model.CodeCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateCodes Build(
+                CodeCreate body,
                 string campaignId,
                 string namespace_
             )
             {
                 CreateCodes op = new CreateCodes(this,
+                    body,
                     campaignId,
                     namespace_
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateCodes(CreateCodesBuilder builder,
+            CodeCreate body,
             string campaignId,
             string namespace_
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

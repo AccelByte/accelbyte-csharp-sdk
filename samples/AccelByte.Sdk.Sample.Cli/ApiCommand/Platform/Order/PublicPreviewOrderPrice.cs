@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicPreviewOrderPrice.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.OrderDiscountPreviewRequest)Body);
 
 
 
             PublicPreviewOrderPrice operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

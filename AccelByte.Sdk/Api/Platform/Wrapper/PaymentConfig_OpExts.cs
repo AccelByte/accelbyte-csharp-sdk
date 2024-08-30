@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentDomainWhitelistConfigInfo? Execute(
             this UpdatePaymentDomainWhitelistConfig.UpdatePaymentDomainWhitelistConfigBuilder builder,
+            PaymentDomainWhitelistConfigEdit body,
             string namespace_
         )
         {
             UpdatePaymentDomainWhitelistConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,65 +49,79 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentDomainWhitelistConfigInfo?> ExecuteAsync(
             this UpdatePaymentDomainWhitelistConfig.UpdatePaymentDomainWhitelistConfigBuilder builder,
+            PaymentDomainWhitelistConfigEdit body,
             string namespace_
         )
         {
             UpdatePaymentDomainWhitelistConfig op = builder.Build(
+                body,
                 namespace_
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePaymentDomainWhitelistConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestAdyenConfig.TestAdyenConfigBuilder builder
+            this TestAdyenConfig.TestAdyenConfigBuilder builder,
+            AdyenConfig body
         )
         {
             TestAdyenConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAdyenConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestAdyenConfig.TestAdyenConfigBuilder builder
+            this TestAdyenConfig.TestAdyenConfigBuilder builder,
+            AdyenConfig body
         )
         {
             TestAdyenConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAdyenConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestAliPayConfig.TestAliPayConfigBuilder builder
+            this TestAliPayConfig.TestAliPayConfigBuilder builder,
+            AliPayConfig body
         )
         {
             TestAliPayConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAliPayConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestAliPayConfig.TestAliPayConfigBuilder builder
+            this TestAliPayConfig.TestAliPayConfigBuilder builder,
+            AliPayConfig body
         )
         {
             TestAliPayConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestAliPayConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestCheckoutConfig.TestCheckoutConfigBuilder builder
+            this TestCheckoutConfig.TestCheckoutConfigBuilder builder,
+            CheckoutConfig body
         )
         {
             TestCheckoutConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestCheckoutConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestCheckoutConfig.TestCheckoutConfigBuilder builder
+            this TestCheckoutConfig.TestCheckoutConfigBuilder builder,
+            CheckoutConfig body
         )
         {
             TestCheckoutConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestCheckoutConfigAsync(op);
@@ -129,91 +145,111 @@ namespace AccelByte.Sdk.Api
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).DebugMatchedPaymentMerchantConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestNeonPayConfig.TestNeonPayConfigBuilder builder
+            this TestNeonPayConfig.TestNeonPayConfigBuilder builder,
+            NeonPayConfig body
         )
         {
             TestNeonPayConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestNeonPayConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestNeonPayConfig.TestNeonPayConfigBuilder builder
+            this TestNeonPayConfig.TestNeonPayConfigBuilder builder,
+            NeonPayConfig body
         )
         {
             TestNeonPayConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestNeonPayConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestPayPalConfig.TestPayPalConfigBuilder builder
+            this TestPayPalConfig.TestPayPalConfigBuilder builder,
+            PayPalConfig body
         )
         {
             TestPayPalConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestPayPalConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestPayPalConfig.TestPayPalConfigBuilder builder
+            this TestPayPalConfig.TestPayPalConfigBuilder builder,
+            PayPalConfig body
         )
         {
             TestPayPalConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestPayPalConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestStripeConfig.TestStripeConfigBuilder builder
+            this TestStripeConfig.TestStripeConfigBuilder builder,
+            StripeConfig body
         )
         {
             TestStripeConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestStripeConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestStripeConfig.TestStripeConfigBuilder builder
+            this TestStripeConfig.TestStripeConfigBuilder builder,
+            StripeConfig body
         )
         {
             TestStripeConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestStripeConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestWxPayConfig.TestWxPayConfigBuilder builder
+            this TestWxPayConfig.TestWxPayConfigBuilder builder,
+            WxPayConfigRequest body
         )
         {
             TestWxPayConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestWxPayConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestWxPayConfig.TestWxPayConfigBuilder builder
+            this TestWxPayConfig.TestWxPayConfigBuilder builder,
+            WxPayConfigRequest body
         )
         {
             TestWxPayConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestWxPayConfigAsync(op);
         }
         public static Platform.Model.TestResult? Execute(
-            this TestXsollaConfig.TestXsollaConfigBuilder builder
+            this TestXsollaConfig.TestXsollaConfigBuilder builder,
+            XsollaConfig body
         )
         {
             TestXsollaConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestXsollaConfig(op);
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
-            this TestXsollaConfig.TestXsollaConfigBuilder builder
+            this TestXsollaConfig.TestXsollaConfigBuilder builder,
+            XsollaConfig body
         )
         {
             TestXsollaConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).TestXsollaConfigAsync(op);
@@ -242,10 +278,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateAdyenConfig.UpdateAdyenConfigBuilder builder,
+            AdyenConfig body,
             string id
         )
         {
             UpdateAdyenConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -253,10 +291,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateAdyenConfig.UpdateAdyenConfigBuilder builder,
+            AdyenConfig body,
             string id
         )
         {
             UpdateAdyenConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -286,10 +326,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateAliPayConfig.UpdateAliPayConfigBuilder builder,
+            AliPayConfig body,
             string id
         )
         {
             UpdateAliPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -297,10 +339,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateAliPayConfig.UpdateAliPayConfigBuilder builder,
+            AliPayConfig body,
             string id
         )
         {
             UpdateAliPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -330,10 +374,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateCheckoutConfig.UpdateCheckoutConfigBuilder builder,
+            CheckoutConfig body,
             string id
         )
         {
             UpdateCheckoutConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -341,10 +387,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateCheckoutConfig.UpdateCheckoutConfigBuilder builder,
+            CheckoutConfig body,
             string id
         )
         {
             UpdateCheckoutConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -374,10 +422,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateNeonPayConfig.UpdateNeonPayConfigBuilder builder,
+            NeonPayConfig body,
             string id
         )
         {
             UpdateNeonPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -385,10 +435,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateNeonPayConfig.UpdateNeonPayConfigBuilder builder,
+            NeonPayConfig body,
             string id
         )
         {
             UpdateNeonPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -418,10 +470,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdatePayPalConfig.UpdatePayPalConfigBuilder builder,
+            PayPalConfig body,
             string id
         )
         {
             UpdatePayPalConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -429,10 +483,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdatePayPalConfig.UpdatePayPalConfigBuilder builder,
+            PayPalConfig body,
             string id
         )
         {
             UpdatePayPalConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -462,10 +518,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateStripeConfig.UpdateStripeConfigBuilder builder,
+            StripeConfig body,
             string id
         )
         {
             UpdateStripeConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -473,10 +531,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateStripeConfig.UpdateStripeConfigBuilder builder,
+            StripeConfig body,
             string id
         )
         {
             UpdateStripeConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -506,10 +566,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateWxPayConfig.UpdateWxPayConfigBuilder builder,
+            WxPayConfigRequest body,
             string id
         )
         {
             UpdateWxPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -517,10 +579,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateWxPayConfig.UpdateWxPayConfigBuilder builder,
+            WxPayConfigRequest body,
             string id
         )
         {
             UpdateWxPayConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -572,10 +636,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateXsollaConfig.UpdateXsollaConfigBuilder builder,
+            XsollaConfig body,
             string id
         )
         {
             UpdateXsollaConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -583,10 +649,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateXsollaConfig.UpdateXsollaConfigBuilder builder,
+            XsollaConfig body,
             string id
         )
         {
             UpdateXsollaConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -616,10 +684,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentMerchantConfigInfo? Execute(
             this UpdateXsollaUIConfig.UpdateXsollaUIConfigBuilder builder,
+            XsollaPaywallConfigRequest body,
             string id
         )
         {
             UpdateXsollaUIConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -627,10 +697,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentMerchantConfigInfo?> ExecuteAsync(
             this UpdateXsollaUIConfig.UpdateXsollaUIConfigBuilder builder,
+            XsollaPaywallConfigRequest body,
             string id
         )
         {
             UpdateXsollaUIConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -655,19 +727,23 @@ namespace AccelByte.Sdk.Api
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).QueryPaymentProviderConfigAsync(op);
         }
         public static Platform.Model.PaymentProviderConfigInfo? Execute(
-            this CreatePaymentProviderConfig.CreatePaymentProviderConfigBuilder builder
+            this CreatePaymentProviderConfig.CreatePaymentProviderConfigBuilder builder,
+            PaymentProviderConfigEdit body
         )
         {
             CreatePaymentProviderConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).CreatePaymentProviderConfig(op);
         }
         public static async Task<Platform.Model.PaymentProviderConfigInfo?> ExecuteAsync(
-            this CreatePaymentProviderConfig.CreatePaymentProviderConfigBuilder builder
+            this CreatePaymentProviderConfig.CreatePaymentProviderConfigBuilder builder,
+            PaymentProviderConfigEdit body
         )
         {
             CreatePaymentProviderConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).CreatePaymentProviderConfigAsync(op);
@@ -728,10 +804,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentProviderConfigInfo? Execute(
             this UpdatePaymentProviderConfig.UpdatePaymentProviderConfigBuilder builder,
+            PaymentProviderConfigEdit body,
             string id
         )
         {
             UpdatePaymentProviderConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -739,10 +817,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentProviderConfigInfo?> ExecuteAsync(
             this UpdatePaymentProviderConfig.UpdatePaymentProviderConfigBuilder builder,
+            PaymentProviderConfigEdit body,
             string id
         )
         {
             UpdatePaymentProviderConfig op = builder.Build(
+                body,
                 id
             );
 
@@ -789,19 +869,23 @@ namespace AccelByte.Sdk.Api
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).GetPaymentTaxConfigAsync(op);
         }
         public static Platform.Model.PaymentTaxConfigInfo? Execute(
-            this UpdatePaymentTaxConfig.UpdatePaymentTaxConfigBuilder builder
+            this UpdatePaymentTaxConfig.UpdatePaymentTaxConfigBuilder builder,
+            PaymentTaxConfigEdit body
         )
         {
             UpdatePaymentTaxConfig op = builder.Build(
+                body
             );
 
             return ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePaymentTaxConfig(op);
         }
         public static async Task<Platform.Model.PaymentTaxConfigInfo?> ExecuteAsync(
-            this UpdatePaymentTaxConfig.UpdatePaymentTaxConfigBuilder builder
+            this UpdatePaymentTaxConfig.UpdatePaymentTaxConfigBuilder builder,
+            PaymentTaxConfigEdit body
         )
         {
             UpdatePaymentTaxConfig op = builder.Build(
+                body
             );
 
             return await ((Platform.Wrapper.PaymentConfig)builder.WrapperObject!).UpdatePaymentTaxConfigAsync(op);

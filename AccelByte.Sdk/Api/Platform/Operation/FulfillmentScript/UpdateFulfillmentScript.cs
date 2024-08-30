@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateFulfillmentScript
     ///
-    ///  [Not Supported Yet In Starter] Update fulfillment script.
+    ///  [Not supported yet in AGS Shared Cloud] Update fulfillment script.
     /// </summary>
     public class UpdateFulfillmentScript : AccelByte.Sdk.Core.Operation
     {

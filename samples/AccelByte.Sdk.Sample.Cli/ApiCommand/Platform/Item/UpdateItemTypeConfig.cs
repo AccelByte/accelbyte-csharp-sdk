@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateItemTypeConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemTypeConfigUpdate)Body);
 
 
 
             UpdateItemTypeConfig operation = opBuilder.Build(
+                Body,
                 Id
             );
 

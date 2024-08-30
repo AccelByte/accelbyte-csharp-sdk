@@ -43,12 +43,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.CreateItemTypeConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemTypeConfigCreate)Body);
 
 
 
             CreateItemTypeConfig operation = opBuilder.Build(
+                Body
             );
 
 

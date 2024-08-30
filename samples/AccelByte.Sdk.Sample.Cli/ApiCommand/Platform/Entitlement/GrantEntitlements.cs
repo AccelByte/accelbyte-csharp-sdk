@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GrantEntitlements.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.BulkEntitlementGrantRequest)Body);
 
 
 
             GrantEntitlements operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

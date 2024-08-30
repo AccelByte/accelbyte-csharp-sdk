@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.Commit.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.TradeChainedActionCommitRequest)Body);
 
 
 
             Commit operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

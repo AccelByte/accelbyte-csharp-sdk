@@ -31,12 +31,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
+            public Model.EntitlementRevokeRequest? Body { get; set; }
+
 
 
 
             internal RevokeUserEntitlementBuilder() { }
 
 
+
+            public RevokeUserEntitlementBuilder SetBody(Model.EntitlementRevokeRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
 
 
 
@@ -75,6 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            BodyParams = builder.Body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -84,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public RevokeUserEntitlement(
             string entitlementId,
             string namespace_,
-            string userId
+            string userId,
+            Model.EntitlementRevokeRequest body
         )
         {
             PathParams["entitlementId"] = entitlementId;
@@ -95,6 +105,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -104,7 +115,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public override HttpMethod Method => HttpMethod.Put;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

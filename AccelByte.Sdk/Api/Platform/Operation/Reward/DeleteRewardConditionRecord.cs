@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.DeleteRewardConditionRequest? Body { get; set; }
-
 
 
 
@@ -41,21 +39,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public DeleteRewardConditionRecordBuilder SetBody(Model.DeleteRewardConditionRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public DeleteRewardConditionRecord Build(
+                DeleteRewardConditionRequest body,
                 string namespace_,
                 string rewardId
             )
             {
                 DeleteRewardConditionRecord op = new DeleteRewardConditionRecord(this,
+                    body,
                     namespace_,
                     rewardId
                 );
@@ -69,6 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private DeleteRewardConditionRecord(DeleteRewardConditionRecordBuilder builder,
+            DeleteRewardConditionRequest body,
             string namespace_,
             string rewardId
         )
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

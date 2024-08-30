@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.RedeemCode.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.FulfillCodeRequest)Body);
 
 
 
             RedeemCode operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

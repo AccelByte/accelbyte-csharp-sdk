@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// queryPaymentNotifications
     ///
-    ///  [Not Supported Yet In Starter] Query payment notifications.
+    ///  [Not supported yet in AGS Shared Cloud] Query payment notifications.
     /// Other detail info:
     /// 
     ///   * Returns : Payment notifications

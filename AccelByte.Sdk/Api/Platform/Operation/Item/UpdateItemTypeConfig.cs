@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateItemTypeConfig
     ///
-    ///  [Not Supported Yet In Starter] This API is used to update an item type config.
+    ///  [Not supported yet in AGS Shared Cloud] This API is used to update an item type config.
     /// 
     /// *  Returns : item type config data
     /// </summary>
@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ItemTypeConfigUpdate? Body { get; set; }
-
 
 
 
@@ -39,20 +37,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateItemTypeConfigBuilder SetBody(Model.ItemTypeConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateItemTypeConfig Build(
+                ItemTypeConfigUpdate body,
                 string id
             )
             {
                 UpdateItemTypeConfig op = new UpdateItemTypeConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateItemTypeConfig(UpdateItemTypeConfigBuilder builder,
+            ItemTypeConfigUpdate body,
             string id
         )
         {
@@ -74,7 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

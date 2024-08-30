@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.CreateSection.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.SectionCreate)Body);
 
 
 
             CreateSection operation = opBuilder.Build(
+                Body,
                 Namespace,
                 StoreId
             );

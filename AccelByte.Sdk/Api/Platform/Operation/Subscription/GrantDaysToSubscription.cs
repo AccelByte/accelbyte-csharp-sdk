@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.GrantSubscriptionDaysRequest? Body { get; set; }
-
 
 
 
@@ -41,22 +39,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public GrantDaysToSubscriptionBuilder SetBody(Model.GrantSubscriptionDaysRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public GrantDaysToSubscription Build(
+                GrantSubscriptionDaysRequest body,
                 string namespace_,
                 string subscriptionId,
                 string userId
             )
             {
                 GrantDaysToSubscription op = new GrantDaysToSubscription(this,
+                    body,
                     namespace_,
                     subscriptionId,
                     userId
@@ -71,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private GrantDaysToSubscription(GrantDaysToSubscriptionBuilder builder,
+            GrantSubscriptionDaysRequest body,
             string namespace_,
             string subscriptionId,
             string userId
@@ -84,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

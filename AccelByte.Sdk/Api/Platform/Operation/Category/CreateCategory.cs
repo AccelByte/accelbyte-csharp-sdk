@@ -43,8 +43,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CategoryCreate? Body { get; set; }
-
 
 
 
@@ -52,21 +50,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateCategoryBuilder SetBody(Model.CategoryCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateCategory Build(
+                CategoryCreate body,
                 string namespace_,
                 string storeId
             )
             {
                 CreateCategory op = new CreateCategory(this,
+                    body,
                     namespace_,
                     storeId
                 );
@@ -80,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateCategory(CreateCategoryBuilder builder,
+            CategoryCreate body,
             string namespace_,
             string storeId
         )
@@ -91,7 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

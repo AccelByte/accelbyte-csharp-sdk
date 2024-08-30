@@ -198,7 +198,7 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             DisableRetry();
-            
+
             byte[] sBinary = new byte[32];
             (new Random()).NextBytes(sBinary);
 

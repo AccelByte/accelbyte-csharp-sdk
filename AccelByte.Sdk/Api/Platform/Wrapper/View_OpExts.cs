@@ -36,11 +36,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullViewInfo? Execute(
             this CreateView.CreateViewBuilder builder,
+            ViewCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateView op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -49,11 +51,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullViewInfo?> ExecuteAsync(
             this CreateView.CreateViewBuilder builder,
+            ViewCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateView op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -88,12 +92,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullViewInfo? Execute(
             this UpdateView.UpdateViewBuilder builder,
+            ViewUpdate body,
             string namespace_,
             string viewId,
             string storeId
         )
         {
             UpdateView op = builder.Build(
+                body,
                 namespace_,
                 viewId,
                 storeId
@@ -103,12 +109,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullViewInfo?> ExecuteAsync(
             this UpdateView.UpdateViewBuilder builder,
+            ViewUpdate body,
             string namespace_,
             string viewId,
             string storeId
         )
         {
             UpdateView op = builder.Build(
+                body,
                 namespace_,
                 viewId,
                 storeId

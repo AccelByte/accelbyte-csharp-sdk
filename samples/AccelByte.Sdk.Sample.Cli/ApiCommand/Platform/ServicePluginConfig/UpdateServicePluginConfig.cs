@@ -47,12 +47,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateServicePluginConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ServicePluginConfigUpdate)Body);
 
 
 
             UpdateServicePluginConfig operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

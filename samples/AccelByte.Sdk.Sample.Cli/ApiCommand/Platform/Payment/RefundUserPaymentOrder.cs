@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.RefundUserPaymentOrder.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.PaymentOrderRefund)Body);
 
 
 
             RefundUserPaymentOrder operation = opBuilder.Build(
+                Body,
                 Namespace,
                 PaymentOrderNo,
                 UserId

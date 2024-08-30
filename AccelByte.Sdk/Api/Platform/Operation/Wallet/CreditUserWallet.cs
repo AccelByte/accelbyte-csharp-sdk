@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CreditRequest? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreditUserWalletBuilder SetBody(Model.CreditRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreditUserWallet Build(
+                CreditRequest body,
                 string currencyCode,
                 string namespace_,
                 string userId
             )
             {
                 CreditUserWallet op = new CreditUserWallet(this,
+                    body,
                     currencyCode,
                     namespace_,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreditUserWallet(CreditUserWalletBuilder builder,
+            CreditRequest body,
             string currencyCode,
             string namespace_,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

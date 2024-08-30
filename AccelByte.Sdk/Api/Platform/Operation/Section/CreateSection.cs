@@ -50,8 +50,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.SectionCreate? Body { get; set; }
-
 
 
 
@@ -59,21 +57,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateSectionBuilder SetBody(Model.SectionCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateSection Build(
+                SectionCreate body,
                 string namespace_,
                 string storeId
             )
             {
                 CreateSection op = new CreateSection(this,
+                    body,
                     namespace_,
                     storeId
                 );
@@ -87,6 +81,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateSection(CreateSectionBuilder builder,
+            SectionCreate body,
             string namespace_,
             string storeId
         )
@@ -98,7 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

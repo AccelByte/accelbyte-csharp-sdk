@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePaymentTaxConfig
     ///
-    ///  [Not Supported Yet In Starter] Update payment tax config.
+    ///  [Not supported yet in AGS Shared Cloud] Update payment tax config.
     /// 
     /// 
     /// 
@@ -45,8 +45,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentTaxConfigEdit? Body { get; set; }
-
 
 
 
@@ -54,19 +52,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePaymentTaxConfigBuilder SetBody(Model.PaymentTaxConfigEdit _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePaymentTaxConfig Build(
+                PaymentTaxConfigEdit body
             )
             {
-                UpdatePaymentTaxConfig op = new UpdatePaymentTaxConfig(this
+                UpdatePaymentTaxConfig op = new UpdatePaymentTaxConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -77,7 +71,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private UpdatePaymentTaxConfig(UpdatePaymentTaxConfigBuilder builder
+        private UpdatePaymentTaxConfig(UpdatePaymentTaxConfigBuilder builder,
+            PaymentTaxConfigEdit body
         )
         {
 
@@ -85,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

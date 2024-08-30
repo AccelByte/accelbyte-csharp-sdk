@@ -50,8 +50,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.SectionUpdate? Body { get; set; }
-
 
 
 
@@ -59,22 +57,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateSectionBuilder SetBody(Model.SectionUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateSection Build(
+                SectionUpdate body,
                 string namespace_,
                 string sectionId,
                 string storeId
             )
             {
                 UpdateSection op = new UpdateSection(this,
+                    body,
                     namespace_,
                     sectionId,
                     storeId
@@ -89,6 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateSection(UpdateSectionBuilder builder,
+            SectionUpdate body,
             string namespace_,
             string sectionId,
             string storeId
@@ -102,7 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

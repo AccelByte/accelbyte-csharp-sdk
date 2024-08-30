@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.RefundOrder.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.OrderRefundCreate)Body);
 
 
 
             RefundOrder operation = opBuilder.Build(
+                Body,
                 Namespace,
                 OrderNo
             );

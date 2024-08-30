@@ -33,6 +33,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
 
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Metadata { get; set; }
+
         [JsonPropertyName("origin")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
@@ -60,6 +64,60 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class EntitlementGrant<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("collectionId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CollectionId { get; set; }
+
+        [JsonPropertyName("endDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? EndDate { get; set; }
+
+        [JsonPropertyName("grantedCode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? GrantedCode { get; set; }
+
+        [JsonPropertyName("itemId")]
+        public string? ItemId { get; set; }
+
+        [JsonPropertyName("itemNamespace")]
+        public string? ItemNamespace { get; set; }
+
+        [JsonPropertyName("language")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Language { get; set; }
+
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+        [JsonPropertyName("origin")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementGrantOrigin? Origin { get; set; }
+
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get; set; }
+
+        [JsonPropertyName("region")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Region { get; set; }
+
+        [JsonPropertyName("source")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public EntitlementGrantSource? Source { get; set; }
+
+        [JsonPropertyName("startDate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? StartDate { get; set; }
+
+        [JsonPropertyName("storeId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? StoreId { get; set; }
+
+    }
 
 
     public class EntitlementGrantOrigin : StringEnum<EntitlementGrantOrigin>

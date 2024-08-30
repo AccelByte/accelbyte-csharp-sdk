@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentCallbackConfig
     ///
-    ///  [Not Supported Yet In Starter] Get payment callback configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment callback configuration.
     /// Other detail info:
     /// 
     ///   * Returns : Payment callback config

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePaymentCallbackConfig
     ///
-    ///  [Not Supported Yet In Starter] Update payment callback configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Update payment callback configuration.
     /// Other detail info:
     /// 
     ///   * Returns : Payment callback config
@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentCallbackConfigUpdate? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePaymentCallbackConfigBuilder SetBody(Model.PaymentCallbackConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePaymentCallbackConfig Build(
+                PaymentCallbackConfigUpdate body,
                 string namespace_
             )
             {
                 UpdatePaymentCallbackConfig op = new UpdatePaymentCallbackConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePaymentCallbackConfig(UpdatePaymentCallbackConfigBuilder builder,
+            PaymentCallbackConfigUpdate body,
             string namespace_
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

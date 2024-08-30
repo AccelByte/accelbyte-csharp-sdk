@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TicketSaleDecrementRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public DecreaseTicketSaleBuilder SetBody(Model.TicketSaleDecrementRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public DecreaseTicketSale Build(
+                TicketSaleDecrementRequest body,
                 string boothName,
                 string namespace_
             )
             {
                 DecreaseTicketSale op = new DecreaseTicketSale(this,
+                    body,
                     boothName,
                     namespace_
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private DecreaseTicketSale(DecreaseTicketSaleBuilder builder,
+            TicketSaleDecrementRequest body,
             string boothName,
             string namespace_
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

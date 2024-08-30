@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.RevocationConfigUpdate? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateRevocationConfigBuilder SetBody(Model.RevocationConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateRevocationConfig Build(
+                RevocationConfigUpdate body,
                 string namespace_
             )
             {
                 UpdateRevocationConfig op = new UpdateRevocationConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateRevocationConfig(UpdateRevocationConfigBuilder builder,
+            RevocationConfigUpdate body,
             string namespace_
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

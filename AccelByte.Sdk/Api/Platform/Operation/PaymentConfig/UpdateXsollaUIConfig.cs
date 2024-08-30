@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateXsollaUIConfig
     ///
-    ///  [Not Supported Yet In Starter] Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
+    ///  [Not supported yet in AGS Shared Cloud] Update xsolla UI configuration.Reference: [Xsolla Document](https://developers.xsolla.com/api.html#ui-integrations).
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.XsollaPaywallConfigRequest? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateXsollaUIConfigBuilder SetBody(Model.XsollaPaywallConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateXsollaUIConfig Build(
+                XsollaPaywallConfigRequest body,
                 string id
             )
             {
                 UpdateXsollaUIConfig op = new UpdateXsollaUIConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateXsollaUIConfig(UpdateXsollaUIConfigBuilder builder,
+            XsollaPaywallConfigRequest body,
             string id
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CurrencyCreate? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateCurrencyBuilder SetBody(Model.CurrencyCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateCurrency Build(
+                CurrencyCreate body,
                 string namespace_
             )
             {
                 CreateCurrency op = new CreateCurrency(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateCurrency(CreateCurrencyBuilder builder,
+            CurrencyCreate body,
             string namespace_
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

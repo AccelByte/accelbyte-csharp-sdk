@@ -114,11 +114,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PlatformSubscribeSubscription.PlatformSubscribeSubscriptionBuilder builder,
+            PlatformSubscribeRequest body,
             string namespace_,
             string userId
         )
         {
             PlatformSubscribeSubscription op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -127,11 +129,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
             this PlatformSubscribeSubscription.PlatformSubscribeSubscriptionBuilder builder,
+            PlatformSubscribeRequest body,
             string namespace_,
             string userId
         )
         {
             PlatformSubscribeSubscription op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -230,12 +234,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this CancelSubscription.CancelSubscriptionBuilder builder,
+            CancelRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             CancelSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -245,12 +251,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
             this CancelSubscription.CancelSubscriptionBuilder builder,
+            CancelRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             CancelSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -260,12 +268,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this GrantDaysToSubscription.GrantDaysToSubscriptionBuilder builder,
+            GrantSubscriptionDaysRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             GrantDaysToSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -275,12 +285,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
             this GrantDaysToSubscription.GrantDaysToSubscriptionBuilder builder,
+            GrantSubscriptionDaysRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             GrantDaysToSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -320,12 +332,14 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this ProcessUserSubscriptionNotification.ProcessUserSubscriptionNotificationBuilder builder,
+            TradeNotification body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             ProcessUserSubscriptionNotification op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -335,12 +349,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this ProcessUserSubscriptionNotification.ProcessUserSubscriptionNotificationBuilder builder,
+            TradeNotification body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             ProcessUserSubscriptionNotification op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -376,11 +392,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicSubscribeSubscription.PublicSubscribeSubscriptionBuilder builder,
+            SubscribeRequest body,
             string namespace_,
             string userId
         )
         {
             PublicSubscribeSubscription op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -389,11 +407,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicSubscribeSubscription.PublicSubscribeSubscriptionBuilder builder,
+            SubscribeRequest body,
             string namespace_,
             string userId
         )
         {
             PublicSubscribeSubscription op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -492,12 +512,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SubscriptionInfo? Execute(
             this PublicCancelSubscription.PublicCancelSubscriptionBuilder builder,
+            CancelRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             PublicCancelSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId
@@ -507,12 +529,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SubscriptionInfo?> ExecuteAsync(
             this PublicCancelSubscription.PublicCancelSubscriptionBuilder builder,
+            CancelRequest body,
             string namespace_,
             string subscriptionId,
             string userId
         )
         {
             PublicCancelSubscription op = builder.Build(
+                body,
                 namespace_,
                 subscriptionId,
                 userId

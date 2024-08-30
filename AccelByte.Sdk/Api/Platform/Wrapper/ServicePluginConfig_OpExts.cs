@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.LootBoxPluginConfigInfo? Execute(
             this UpdateLootBoxPluginConfig.UpdateLootBoxPluginConfigBuilder builder,
+            LootBoxPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateLootBoxPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.LootBoxPluginConfigInfo?> ExecuteAsync(
             this UpdateLootBoxPluginConfig.UpdateLootBoxPluginConfigBuilder builder,
+            LootBoxPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateLootBoxPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -146,10 +150,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SectionPluginConfigInfo? Execute(
             this UpdateSectionPluginConfig.UpdateSectionPluginConfigBuilder builder,
+            SectionPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateSectionPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -157,10 +163,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SectionPluginConfigInfo?> ExecuteAsync(
             this UpdateSectionPluginConfig.UpdateSectionPluginConfigBuilder builder,
+            SectionPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateSectionPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -236,10 +244,12 @@ namespace AccelByte.Sdk.Api
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.ServicePluginConfigInfo? Execute(
             this UpdateServicePluginConfig.UpdateServicePluginConfigBuilder builder,
+            ServicePluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateServicePluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -247,10 +257,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.ServicePluginConfigInfo?> ExecuteAsync(
             this UpdateServicePluginConfig.UpdateServicePluginConfigBuilder builder,
+            ServicePluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateServicePluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -303,10 +315,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
             this UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder builder,
+            RevocationPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateRevocationPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -314,10 +328,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RevocationPluginConfigInfo?> ExecuteAsync(
             this UpdateRevocationPluginConfig.UpdateRevocationPluginConfigBuilder builder,
+            RevocationPluginConfigUpdate body,
             string namespace_
         )
         {
             UpdateRevocationPluginConfig op = builder.Build(
+                body,
                 namespace_
             );
 

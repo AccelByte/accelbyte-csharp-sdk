@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.AppleIAPConfigRequest? Body { get; set; }
-
 
 
 
@@ -38,20 +36,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateAppleIAPConfigBuilder SetBody(Model.AppleIAPConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateAppleIAPConfig Build(
+                AppleIAPConfigRequest body,
                 string namespace_
             )
             {
                 UpdateAppleIAPConfig op = new UpdateAppleIAPConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -64,6 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateAppleIAPConfig(UpdateAppleIAPConfigBuilder builder,
+            AppleIAPConfigRequest body,
             string namespace_
         )
         {
@@ -73,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

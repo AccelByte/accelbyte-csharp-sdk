@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// queryFulfillments
     ///
-    ///  [Not Supported Yet In Starter] Query fulfillments in a namespace.
+    ///  [Not supported yet in AGS Shared Cloud] Query fulfillments in a namespace.
     /// Other detail info:
     /// 
-    ///   * Returns : query fulfillments
+    ///   * Returns : list of fulfillment info, storeId field can be ignored.
     /// </summary>
     public class QueryFulfillments : AccelByte.Sdk.Core.Operation
     {

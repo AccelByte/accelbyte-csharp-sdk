@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.MockIAPReceipt? Body { get; set; }
-
 
 
 
@@ -39,21 +37,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public MockFulfillIAPItemBuilder SetBody(Model.MockIAPReceipt _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public MockFulfillIAPItem Build(
+                MockIAPReceipt body,
                 string namespace_,
                 string userId
             )
             {
                 MockFulfillIAPItem op = new MockFulfillIAPItem(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private MockFulfillIAPItem(MockFulfillIAPItemBuilder builder,
+            MockIAPReceipt body,
             string namespace_,
             string userId
         )
@@ -78,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

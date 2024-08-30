@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// simulatePaymentOrderNotification
     ///
-    ///  [Not Supported Yet In Starter] [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
+    ///  [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Simulate payment notification on sandbox payment order, usually for test usage to simulate real currency payment notification.
     /// Other detail info:
     /// 
     ///   * Returns : notification process result
@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentOrderNotifySimulation? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SimulatePaymentOrderNotificationBuilder SetBody(Model.PaymentOrderNotifySimulation _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public SimulatePaymentOrderNotification Build(
+                PaymentOrderNotifySimulation body,
                 string namespace_,
                 string paymentOrderNo
             )
             {
                 SimulatePaymentOrderNotification op = new SimulatePaymentOrderNotification(this,
+                    body,
                     namespace_,
                     paymentOrderNo
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SimulatePaymentOrderNotification(SimulatePaymentOrderNotificationBuilder builder,
+            PaymentOrderNotifySimulation body,
             string namespace_,
             string paymentOrderNo
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

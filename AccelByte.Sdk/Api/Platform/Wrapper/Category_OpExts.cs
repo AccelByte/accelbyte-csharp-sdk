@@ -36,11 +36,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullCategoryInfo? Execute(
             this CreateCategory.CreateCategoryBuilder builder,
+            CategoryCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateCategory op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -49,11 +51,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullCategoryInfo?> ExecuteAsync(
             this CreateCategory.CreateCategoryBuilder builder,
+            CategoryCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateCategory op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -110,12 +114,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullCategoryInfo? Execute(
             this UpdateCategory.UpdateCategoryBuilder builder,
+            CategoryUpdate body,
             string categoryPath,
             string namespace_,
             string storeId
         )
         {
             UpdateCategory op = builder.Build(
+                body,
                 categoryPath,
                 namespace_,
                 storeId
@@ -125,12 +131,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullCategoryInfo?> ExecuteAsync(
             this UpdateCategory.UpdateCategoryBuilder builder,
+            CategoryUpdate body,
             string categoryPath,
             string namespace_,
             string storeId
         )
         {
             UpdateCategory op = builder.Build(
+                body,
                 categoryPath,
                 namespace_,
                 storeId

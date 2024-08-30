@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.AcquireItem.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemAcquireRequest)Body);
 
 
 
             AcquireItem operation = opBuilder.Build(
+                Body,
                 ItemId,
                 Namespace
             );

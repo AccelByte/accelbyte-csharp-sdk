@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PlayStationMultiServiceLabelsReconcileRequest? Body { get; set; }
-
 
 
 
@@ -38,21 +36,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder SetBody(Model.PlayStationMultiServiceLabelsReconcileRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicReconcilePlayStationStoreWithMultipleServiceLabels Build(
+                PlayStationMultiServiceLabelsReconcileRequest body,
                 string namespace_,
                 string userId
             )
             {
                 PublicReconcilePlayStationStoreWithMultipleServiceLabels op = new PublicReconcilePlayStationStoreWithMultipleServiceLabels(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicReconcilePlayStationStoreWithMultipleServiceLabels(PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+            PlayStationMultiServiceLabelsReconcileRequest body,
             string namespace_,
             string userId
         )
@@ -77,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

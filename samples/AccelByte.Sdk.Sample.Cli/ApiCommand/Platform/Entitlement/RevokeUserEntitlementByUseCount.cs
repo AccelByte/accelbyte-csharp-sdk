@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.RevokeUserEntitlementByUseCount.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.RevokeUseCountRequest)Body);
 
 
 
             RevokeUserEntitlementByUseCount operation = opBuilder.Build(
+                Body,
                 EntitlementId,
                 Namespace,
                 UserId

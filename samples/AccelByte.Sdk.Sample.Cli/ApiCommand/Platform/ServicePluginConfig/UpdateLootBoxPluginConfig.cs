@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateLootBoxPluginConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.LootBoxPluginConfigUpdate)Body);
 
 
 
             UpdateLootBoxPluginConfig operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

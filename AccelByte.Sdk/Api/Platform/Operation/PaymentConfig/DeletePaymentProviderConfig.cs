@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// deletePaymentProviderConfig
     ///
-    ///  [Not Supported Yet In Starter] Delete payment provider config.
+    ///  [Not supported yet in AGS Shared Cloud] Delete payment provider config.
     /// Other detail info:
     /// 
     ///   * Returns : payment provider config

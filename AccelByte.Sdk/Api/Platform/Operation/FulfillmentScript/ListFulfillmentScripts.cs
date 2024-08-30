@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// listFulfillmentScripts
     ///
-    /// [Not Supported Yet In Starter] List all fulfillment scripts.
+    /// [Not supported yet in AGS Shared Cloud] List all fulfillment scripts.
     /// </summary>
     public class ListFulfillmentScripts : AccelByte.Sdk.Core.Operation
     {

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class CodeCreate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("batchName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? BatchName { get; set; }
+
         [JsonPropertyName("codeValue")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CodeValue { get; set; }

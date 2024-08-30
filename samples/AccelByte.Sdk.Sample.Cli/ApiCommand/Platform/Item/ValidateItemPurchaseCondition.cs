@@ -54,12 +54,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (Platform != null)
                 opBuilder.SetPlatform((string)Platform);
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemPurchaseConditionValidateRequest)Body);
 
 
 
             ValidateItemPurchaseCondition operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

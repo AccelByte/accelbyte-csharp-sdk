@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testAliPayConfig
     ///
-    ///  [Not Supported Yet In Starter] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
+    ///  [Not supported yet in AGS Shared Cloud] Test AliPay configuration.Reference: [Alipay Document](https://docs.open.alipay.com/270/alipay.trade.page.pay).
     /// Other detail info:
     /// 
     ///   * Returns : test result
@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.AliPayConfig? Body { get; set; }
-
 
 
 
@@ -48,19 +46,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestAliPayConfigBuilder SetBody(Model.AliPayConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestAliPayConfig Build(
+                AliPayConfig body
             )
             {
-                TestAliPayConfig op = new TestAliPayConfig(this
+                TestAliPayConfig op = new TestAliPayConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -71,7 +65,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestAliPayConfig(TestAliPayConfigBuilder builder
+        private TestAliPayConfig(TestAliPayConfigBuilder builder,
+            AliPayConfig body
         )
         {
 
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

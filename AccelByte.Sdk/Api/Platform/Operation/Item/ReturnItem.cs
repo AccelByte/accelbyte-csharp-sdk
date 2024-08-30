@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ItemReturnRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ReturnItemBuilder SetBody(Model.ItemReturnRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ReturnItem Build(
+                ItemReturnRequest body,
                 string itemId,
                 string namespace_
             )
             {
                 ReturnItem op = new ReturnItem(this,
+                    body,
                     itemId,
                     namespace_
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ReturnItem(ReturnItemBuilder builder,
+            ItemReturnRequest body,
             string itemId,
             string namespace_
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

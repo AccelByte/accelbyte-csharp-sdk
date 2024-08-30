@@ -36,11 +36,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullSectionInfo? Execute(
             this CreateSection.CreateSectionBuilder builder,
+            SectionCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateSection op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -49,11 +51,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullSectionInfo?> ExecuteAsync(
             this CreateSection.CreateSectionBuilder builder,
+            SectionCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateSection op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -63,11 +67,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullSectionInfo<T1>? Execute<T1>(
             this CreateSection.CreateSectionBuilder builder,
+            SectionCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateSection op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -76,11 +82,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullSectionInfo<T1>?> ExecuteAsync<T1>(
             this CreateSection.CreateSectionBuilder builder,
+            SectionCreate body,
             string namespace_,
             string storeId
         )
         {
             CreateSection op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -168,12 +176,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.FullSectionInfo? Execute(
             this UpdateSection.UpdateSectionBuilder builder,
+            SectionUpdate body,
             string namespace_,
             string sectionId,
             string storeId
         )
         {
             UpdateSection op = builder.Build(
+                body,
                 namespace_,
                 sectionId,
                 storeId
@@ -183,12 +193,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullSectionInfo?> ExecuteAsync(
             this UpdateSection.UpdateSectionBuilder builder,
+            SectionUpdate body,
             string namespace_,
             string sectionId,
             string storeId
         )
         {
             UpdateSection op = builder.Build(
+                body,
                 namespace_,
                 sectionId,
                 storeId
@@ -199,12 +211,14 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.FullSectionInfo<T1>? Execute<T1>(
             this UpdateSection.UpdateSectionBuilder builder,
+            SectionUpdate body,
             string namespace_,
             string sectionId,
             string storeId
         )
         {
             UpdateSection op = builder.Build(
+                body,
                 namespace_,
                 sectionId,
                 storeId
@@ -214,12 +228,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.FullSectionInfo<T1>?> ExecuteAsync<T1>(
             this UpdateSection.UpdateSectionBuilder builder,
+            SectionUpdate body,
             string namespace_,
             string sectionId,
             string storeId
         )
         {
             UpdateSection op = builder.Build(
+                body,
                 namespace_,
                 sectionId,
                 storeId

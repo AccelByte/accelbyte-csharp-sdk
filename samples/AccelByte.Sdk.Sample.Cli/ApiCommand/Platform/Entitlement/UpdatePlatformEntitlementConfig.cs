@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdatePlatformEntitlementConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.EntitlementPlatformConfigUpdate)Body);
 
 
 
             UpdatePlatformEntitlementConfig operation = opBuilder.Build(
+                Body,
                 Namespace,
                 Platform
             );

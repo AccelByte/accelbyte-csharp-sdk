@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testPayPalConfig
     ///
-    ///  [Not Supported Yet In Starter] Test PayPal configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Test PayPal configuration.
     /// 
     /// #### Check List:
     /// 
@@ -44,8 +44,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.PayPalConfig? Body { get; set; }
-
 
 
 
@@ -59,19 +57,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestPayPalConfigBuilder SetBody(Model.PayPalConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestPayPalConfig Build(
+                PayPalConfig body
             )
             {
-                TestPayPalConfig op = new TestPayPalConfig(this
+                TestPayPalConfig op = new TestPayPalConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -82,7 +76,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestPayPalConfig(TestPayPalConfigBuilder builder
+        private TestPayPalConfig(TestPayPalConfigBuilder builder,
+            PayPalConfig body
         )
         {
 
@@ -91,7 +86,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

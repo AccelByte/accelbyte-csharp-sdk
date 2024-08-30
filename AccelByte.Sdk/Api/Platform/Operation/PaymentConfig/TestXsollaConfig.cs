@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testXsollaConfig
     ///
-    ///  [Not Supported Yet In Starter] Check xsolla configuration, Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
+    ///  [Not supported yet in AGS Shared Cloud] Check xsolla configuration, Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     /// 
     /// #### Check List:
     /// 
@@ -43,8 +43,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.XsollaConfig? Body { get; set; }
-
 
 
 
@@ -52,19 +50,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public TestXsollaConfigBuilder SetBody(Model.XsollaConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestXsollaConfig Build(
+                XsollaConfig body
             )
             {
-                TestXsollaConfig op = new TestXsollaConfig(this
+                TestXsollaConfig op = new TestXsollaConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -75,7 +69,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestXsollaConfig(TestXsollaConfigBuilder builder
+        private TestXsollaConfig(TestXsollaConfigBuilder builder,
+            XsollaConfig body
         )
         {
 
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

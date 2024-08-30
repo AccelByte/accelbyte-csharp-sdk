@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testStripeConfig
     ///
-    ///  [Not Supported Yet In Starter] Test stripe configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Test stripe configuration.
     /// 
     /// #### Check List:
     /// 
@@ -45,8 +45,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.StripeConfig? Body { get; set; }
-
 
 
 
@@ -60,19 +58,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestStripeConfigBuilder SetBody(Model.StripeConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestStripeConfig Build(
+                StripeConfig body
             )
             {
-                TestStripeConfig op = new TestStripeConfig(this
+                TestStripeConfig op = new TestStripeConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -83,7 +77,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestStripeConfig(TestStripeConfigBuilder builder
+        private TestStripeConfig(TestStripeConfigBuilder builder,
+            StripeConfig body
         )
         {
 
@@ -92,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

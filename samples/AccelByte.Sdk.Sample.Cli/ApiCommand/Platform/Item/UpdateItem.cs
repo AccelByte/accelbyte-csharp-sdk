@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateItem.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ItemUpdate)Body);
 
 
 
             UpdateItem operation = opBuilder.Build(
+                Body,
                 ItemId,
                 Namespace,
                 StoreId

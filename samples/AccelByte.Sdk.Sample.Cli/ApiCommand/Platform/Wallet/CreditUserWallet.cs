@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.CreditUserWallet.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.CreditRequest)Body);
 
 
 
             CreditUserWallet operation = opBuilder.Build(
+                Body,
                 CurrencyCode,
                 Namespace,
                 UserId

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createPaymentOrderByDedicated
     ///
-    ///  [Not Supported Yet In Starter]
+    ///  [Not supported yet in AGS Shared Cloud]
     /// 
     /// This API is used to create payment order from non justice service. e.g. from dedicated server, the result contains the payment station url.
     /// 
@@ -195,8 +195,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ExternalPaymentOrderCreate? Body { get; set; }
-
 
 
 
@@ -204,20 +202,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreatePaymentOrderByDedicatedBuilder SetBody(Model.ExternalPaymentOrderCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreatePaymentOrderByDedicated Build(
+                ExternalPaymentOrderCreate body,
                 string namespace_
             )
             {
                 CreatePaymentOrderByDedicated op = new CreatePaymentOrderByDedicated(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -230,6 +224,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreatePaymentOrderByDedicated(CreatePaymentOrderByDedicatedBuilder builder,
+            ExternalPaymentOrderCreate body,
             string namespace_
         )
         {
@@ -239,7 +234,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

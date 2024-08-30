@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ServicePluginConfigUpdate? Body { get; set; }
-
 
 
 
@@ -39,20 +37,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateServicePluginConfigBuilder SetBody(Model.ServicePluginConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateServicePluginConfig Build(
+                ServicePluginConfigUpdate body,
                 string namespace_
             )
             {
                 UpdateServicePluginConfig op = new UpdateServicePluginConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateServicePluginConfig(UpdateServicePluginConfigBuilder builder,
+            ServicePluginConfigUpdate body,
             string namespace_
         )
         {
@@ -74,7 +69,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.FulfillCodeRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public RedeemCodeBuilder SetBody(Model.FulfillCodeRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public RedeemCode Build(
+                FulfillCodeRequest body,
                 string namespace_,
                 string userId
             )
             {
                 RedeemCode op = new RedeemCode(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private RedeemCode(RedeemCodeBuilder builder,
+            FulfillCodeRequest body,
             string namespace_,
             string userId
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

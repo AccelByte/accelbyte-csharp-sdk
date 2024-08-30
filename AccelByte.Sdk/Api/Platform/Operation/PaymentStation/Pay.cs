@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// pay
     ///
-    ///  [Not Supported Yet In Starter] Do payment(For now, this only support checkout.com).
+    ///  [Not supported yet in AGS Shared Cloud] Do payment(For now, this only support checkout.com).
     /// Other detail info:
     /// 
     ///   * Returns : Payment process result
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public string? ZipCode { get; set; }
 
-
-            public Model.PaymentToken? Body { get; set; }
 
 
 
@@ -56,21 +54,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public PayBuilder SetBody(Model.PaymentToken _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public Pay Build(
+                PaymentToken body,
                 string namespace_,
                 string paymentOrderNo
             )
             {
                 Pay op = new Pay(this,
+                    body,
                     namespace_,
                     paymentOrderNo
                 );
@@ -84,6 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private Pay(PayBuilder builder,
+            PaymentToken body,
             string namespace_,
             string paymentOrderNo
         )
@@ -97,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
         }

@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.XblUserSessionRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public RegisterXblSessionsBuilder SetBody(Model.XblUserSessionRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public RegisterXblSessions Build(
+                XblUserSessionRequest body,
                 string namespace_,
                 string userId
             )
             {
                 RegisterXblSessions op = new RegisterXblSessions(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private RegisterXblSessions(RegisterXblSessionsBuilder builder,
+            XblUserSessionRequest body,
             string namespace_,
             string userId
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

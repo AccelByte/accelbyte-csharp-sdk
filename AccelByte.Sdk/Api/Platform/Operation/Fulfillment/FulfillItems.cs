@@ -16,10 +16,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// fulfillItems
     ///
-    ///  [Not Supported Yet In Starter] Fulfill items by transactionId.
+    ///  [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
     /// Other detail info:
     /// 
-    ///   * Returns : fulfillment v2 result
+    ///   * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
+    ///   *  Returns : fulfillment v2 result, storeId field can be ignored.
     /// </summary>
     public class FulfillItems : AccelByte.Sdk.Core.Operation
     {
@@ -31,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.FulfillmentV2Request? Body { get; set; }
-
 
 
 
@@ -40,22 +39,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public FulfillItemsBuilder SetBody(Model.FulfillmentV2Request _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public FulfillItems Build(
+                FulfillmentV2Request body,
                 string namespace_,
                 string transactionId,
                 string userId
             )
             {
                 FulfillItems op = new FulfillItems(this,
+                    body,
                     namespace_,
                     transactionId,
                     userId
@@ -70,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private FulfillItems(FulfillItemsBuilder builder,
+            FulfillmentV2Request body,
             string namespace_,
             string transactionId,
             string userId
@@ -83,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

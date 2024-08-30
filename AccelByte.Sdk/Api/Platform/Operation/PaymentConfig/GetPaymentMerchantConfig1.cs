@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getPaymentMerchantConfig_1
     ///
-    ///  [Not Supported Yet In Starter] Get payment merchant config by id.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment merchant config by id.
     /// Other detail info:
     /// 
     ///   * Returns : payment merchant config info

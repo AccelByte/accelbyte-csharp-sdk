@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.AdminEntitlementSoldRequest? Body { get; set; }
-
 
 
 
@@ -38,22 +36,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SellUserEntitlementBuilder SetBody(Model.AdminEntitlementSoldRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public SellUserEntitlement Build(
+                AdminEntitlementSoldRequest body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 SellUserEntitlement op = new SellUserEntitlement(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SellUserEntitlement(SellUserEntitlementBuilder builder,
+            AdminEntitlementSoldRequest body,
             string entitlementId,
             string namespace_,
             string userId
@@ -81,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -44,7 +44,7 @@ namespace AccelByte.Sdk.Core
 
         public Action? OnConnected { get; set; } = null;
 
-        public Action<int, bool>? OnClosed { get; set; } = null;            
+        public Action<int, bool>? OnClosed { get; set; } = null;
 
         public Action<string>? OnRawMessageReceived { get; set; } = null;
 
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Core
             wsClient.Options.DangerousDeflateOptions = new WebSocketDeflateOptions()
             {
                 ServerContextTakeover = false,
-                ClientMaxWindowBits = 15                
+                ClientMaxWindowBits = 15
             };
 
             return wsClient;

@@ -137,11 +137,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentOrderInfo? Execute(
             this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
+            PaymentOrderChargeRequest body,
             string namespace_,
             string paymentOrderNo
         )
         {
             ChargePaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -150,11 +152,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo?> ExecuteAsync(
             this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
+            PaymentOrderChargeRequest body,
             string namespace_,
             string paymentOrderNo
         )
         {
             ChargePaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -164,11 +168,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
             this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
+            PaymentOrderChargeRequest body,
             string namespace_,
             string paymentOrderNo
         )
         {
             ChargePaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -177,11 +183,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo<T1>?> ExecuteAsync<T1>(
             this ChargePaymentOrder.ChargePaymentOrderBuilder builder,
+            PaymentOrderChargeRequest body,
             string namespace_,
             string paymentOrderNo
         )
         {
             ChargePaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -190,11 +198,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.NotificationProcessResult? Execute(
             this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
+            PaymentOrderNotifySimulation body,
             string namespace_,
             string paymentOrderNo
         )
         {
             SimulatePaymentOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -203,11 +213,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.NotificationProcessResult?> ExecuteAsync(
             this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
+            PaymentOrderNotifySimulation body,
             string namespace_,
             string paymentOrderNo
         )
         {
             SimulatePaymentOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -217,11 +229,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.NotificationProcessResult<T1>? Execute<T1>(
             this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
+            PaymentOrderNotifySimulation body,
             string namespace_,
             string paymentOrderNo
         )
         {
             SimulatePaymentOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -230,11 +244,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.NotificationProcessResult<T1>?> ExecuteAsync<T1>(
             this SimulatePaymentOrderNotification.SimulatePaymentOrderNotificationBuilder builder,
+            PaymentOrderNotifySimulation body,
             string namespace_,
             string paymentOrderNo
         )
         {
             SimulatePaymentOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -269,11 +285,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentOrderInfo? Execute(
             this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
+            PaymentOrderCreate body,
             string namespace_,
             string userId
         )
         {
             CreateUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -282,11 +300,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo?> ExecuteAsync(
             this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
+            PaymentOrderCreate body,
             string namespace_,
             string userId
         )
         {
             CreateUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -296,11 +316,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
             this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
+            PaymentOrderCreate body,
             string namespace_,
             string userId
         )
         {
             CreateUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -309,11 +331,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo<T1>?> ExecuteAsync<T1>(
             this CreateUserPaymentOrder.CreateUserPaymentOrderBuilder builder,
+            PaymentOrderCreate body,
             string namespace_,
             string userId
         )
         {
             CreateUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -322,12 +346,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentOrderInfo? Execute(
             this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo,
             string userId
         )
         {
             RefundUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo,
                 userId
@@ -337,12 +363,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo?> ExecuteAsync(
             this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo,
             string userId
         )
         {
             RefundUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo,
                 userId
@@ -353,12 +381,14 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.PaymentOrderInfo<T1>? Execute<T1>(
             this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo,
             string userId
         )
         {
             RefundUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo,
                 userId
@@ -368,12 +398,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderInfo<T1>?> ExecuteAsync<T1>(
             this RefundUserPaymentOrder.RefundUserPaymentOrderBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo,
             string userId
         )
         {
             RefundUserPaymentOrder op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo,
                 userId

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetPaymentAccounts
     ///
-    ///  [Not Supported Yet In Starter] Get payment accounts.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment accounts.
     /// Other detail info:
     /// 
     ///   * Returns : Payment account list

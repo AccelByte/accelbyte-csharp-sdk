@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testWxPayConfig
     ///
-    ///  [Not Supported Yet In Starter] Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
+    ///  [Not supported yet in AGS Shared Cloud] Test WxPay configuration. Reference: [WxPay Document](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1).
     /// Other detail info:
     /// 
     ///   * Returns : test WxPay config
@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.WxPayConfigRequest? Body { get; set; }
-
 
 
 
@@ -40,19 +38,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public TestWxPayConfigBuilder SetBody(Model.WxPayConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestWxPayConfig Build(
+                WxPayConfigRequest body
             )
             {
-                TestWxPayConfig op = new TestWxPayConfig(this
+                TestWxPayConfig op = new TestWxPayConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -63,7 +57,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestWxPayConfig(TestWxPayConfigBuilder builder
+        private TestWxPayConfig(TestWxPayConfigBuilder builder,
+            WxPayConfigRequest body
         )
         {
 
@@ -71,7 +66,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

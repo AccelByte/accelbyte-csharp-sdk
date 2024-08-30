@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createPaymentProviderConfig
     ///
-    ///  [Not Supported Yet In Starter] Create payment provider config.
+    ///  [Not supported yet in AGS Shared Cloud] Create payment provider config.
     /// 
     /// 
     /// 
@@ -52,8 +52,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentProviderConfigEdit? Body { get; set; }
-
 
 
 
@@ -61,19 +59,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreatePaymentProviderConfigBuilder SetBody(Model.PaymentProviderConfigEdit _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreatePaymentProviderConfig Build(
+                PaymentProviderConfigEdit body
             )
             {
-                CreatePaymentProviderConfig op = new CreatePaymentProviderConfig(this
+                CreatePaymentProviderConfig op = new CreatePaymentProviderConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -84,7 +78,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private CreatePaymentProviderConfig(CreatePaymentProviderConfigBuilder builder
+        private CreatePaymentProviderConfig(CreatePaymentProviderConfigBuilder builder,
+            PaymentProviderConfigEdit body
         )
         {
 
@@ -92,7 +87,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

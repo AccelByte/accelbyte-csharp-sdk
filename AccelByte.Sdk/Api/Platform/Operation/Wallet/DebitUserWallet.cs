@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.DebitRequest? Body { get; set; }
-
 
 
 
@@ -38,22 +36,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public DebitUserWalletBuilder SetBody(Model.DebitRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public DebitUserWallet Build(
+                DebitRequest body,
                 string namespace_,
                 string userId,
                 string walletId
             )
             {
                 DebitUserWallet op = new DebitUserWallet(this,
+                    body,
                     namespace_,
                     userId,
                     walletId
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private DebitUserWallet(DebitUserWalletBuilder builder,
+            DebitRequest body,
             string namespace_,
             string userId,
             string walletId
@@ -81,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

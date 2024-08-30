@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EntitlementDecrement? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicConsumeUserEntitlementBuilder SetBody(Model.EntitlementDecrement _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicConsumeUserEntitlement Build(
+                PublicEntitlementDecrement body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 PublicConsumeUserEntitlement op = new PublicConsumeUserEntitlement(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicConsumeUserEntitlement(PublicConsumeUserEntitlementBuilder builder,
+            PublicEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -94,7 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string entitlementId,
             string namespace_,
             string userId,
-            Model.EntitlementDecrement body
+            Model.PublicEntitlementDecrement body
         )
         {
             PathParams["entitlementId"] = entitlementId;

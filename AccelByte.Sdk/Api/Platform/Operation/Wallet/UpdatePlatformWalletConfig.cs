@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PlatformWalletConfigUpdate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdatePlatformWalletConfigBuilder SetBody(Model.PlatformWalletConfigUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePlatformWalletConfig Build(
+                PlatformWalletConfigUpdate body,
                 string namespace_,
                 UpdatePlatformWalletConfigPlatform platform
             )
             {
                 UpdatePlatformWalletConfig op = new UpdatePlatformWalletConfig(this,
+                    body,
                     namespace_,
                     platform
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePlatformWalletConfig(UpdatePlatformWalletConfigBuilder builder,
+            PlatformWalletConfigUpdate body,
             string namespace_,
             UpdatePlatformWalletConfigPlatform platform
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

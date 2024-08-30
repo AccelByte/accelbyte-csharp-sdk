@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.XblEntitlementOwnershipRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public GetXboxEntitlementOwnershipBuilder SetBody(Model.XblEntitlementOwnershipRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public GetXboxEntitlementOwnership Build(
+                XblEntitlementOwnershipRequest body,
                 string namespace_,
                 string productSku
             )
             {
                 GetXboxEntitlementOwnership op = new GetXboxEntitlementOwnership(this,
+                    body,
                     namespace_,
                     productSku
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private GetXboxEntitlementOwnership(GetXboxEntitlementOwnershipBuilder builder,
+            XblEntitlementOwnershipRequest body,
             string namespace_,
             string productSku
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

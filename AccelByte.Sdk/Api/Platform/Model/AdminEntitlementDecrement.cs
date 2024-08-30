@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class AdminEntitlementDecrement : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? Metadata { get; set; }
+
         [JsonPropertyName("options")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Options { get; set; }
@@ -27,5 +31,28 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     }
 
+    public class AdminEntitlementDecrement<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+        [JsonPropertyName("options")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Options { get; set; }
+
+        [JsonPropertyName("platform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Platform { get; set; }
+
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
+
+        [JsonPropertyName("useCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? UseCount { get; set; }
+
+    }
 
 }

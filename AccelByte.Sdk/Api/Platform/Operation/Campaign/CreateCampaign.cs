@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CampaignCreate? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateCampaignBuilder SetBody(Model.CampaignCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateCampaign Build(
+                CampaignCreate body,
                 string namespace_
             )
             {
                 CreateCampaign op = new CreateCampaign(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateCampaign(CreateCampaignBuilder builder,
+            CampaignCreate body,
             string namespace_
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

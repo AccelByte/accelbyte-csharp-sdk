@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DoRevocation.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.RevocationRequest)Body);
 
 
 
             DoRevocation operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

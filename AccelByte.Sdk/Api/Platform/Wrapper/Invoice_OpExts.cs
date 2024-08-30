@@ -16,12 +16,18 @@ namespace AccelByte.Sdk.Api
             this DownloadInvoiceDetails.DownloadInvoiceDetailsBuilder builder,
             string namespace_,
             string endTime,
+            string feature,
+            string itemId,
+            string itemType,
             string startTime
         )
         {
             DownloadInvoiceDetails op = builder.Build(
                 namespace_,
                 endTime,
+                feature,
+                itemId,
+                itemType,
                 startTime
             );
 
@@ -31,12 +37,18 @@ namespace AccelByte.Sdk.Api
             this DownloadInvoiceDetails.DownloadInvoiceDetailsBuilder builder,
             string namespace_,
             string endTime,
+            string feature,
+            string itemId,
+            string itemType,
             string startTime
         )
         {
             DownloadInvoiceDetails op = builder.Build(
                 namespace_,
                 endTime,
+                feature,
+                itemId,
+                itemType,
                 startTime
             );
 
@@ -46,12 +58,18 @@ namespace AccelByte.Sdk.Api
             this GenerateInvoiceSummary.GenerateInvoiceSummaryBuilder builder,
             string namespace_,
             string endTime,
+            string feature,
+            string itemId,
+            string itemType,
             string startTime
         )
         {
             GenerateInvoiceSummary op = builder.Build(
                 namespace_,
                 endTime,
+                feature,
+                itemId,
+                itemType,
                 startTime
             );
 
@@ -61,12 +79,18 @@ namespace AccelByte.Sdk.Api
             this GenerateInvoiceSummary.GenerateInvoiceSummaryBuilder builder,
             string namespace_,
             string endTime,
+            string feature,
+            string itemId,
+            string itemType,
             string startTime
         )
         {
             GenerateInvoiceSummary op = builder.Build(
                 namespace_,
                 endTime,
+                feature,
+                itemId,
+                itemType,
                 startTime
             );
 

@@ -43,8 +43,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CategoryUpdate? Body { get; set; }
-
 
 
 
@@ -52,22 +50,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateCategoryBuilder SetBody(Model.CategoryUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateCategory Build(
+                CategoryUpdate body,
                 string categoryPath,
                 string namespace_,
                 string storeId
             )
             {
                 UpdateCategory op = new UpdateCategory(this,
+                    body,
                     categoryPath,
                     namespace_,
                     storeId
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateCategory(UpdateCategoryBuilder builder,
+            CategoryUpdate body,
             string categoryPath,
             string namespace_,
             string storeId
@@ -95,7 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

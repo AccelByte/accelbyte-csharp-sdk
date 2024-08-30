@@ -40,11 +40,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this DecreaseTicketSale.DecreaseTicketSaleBuilder builder,
+            TicketSaleDecrementRequest body,
             string boothName,
             string namespace_
         )
         {
             DecreaseTicketSale op = builder.Build(
+                body,
                 boothName,
                 namespace_
             );
@@ -53,11 +55,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this DecreaseTicketSale.DecreaseTicketSaleBuilder builder,
+            TicketSaleDecrementRequest body,
             string boothName,
             string namespace_
         )
         {
             DecreaseTicketSale op = builder.Build(
+                body,
                 boothName,
                 namespace_
             );
@@ -92,11 +96,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.TicketSaleIncrementResult? Execute(
             this IncreaseTicketSale.IncreaseTicketSaleBuilder builder,
+            TicketSaleIncrementRequest body,
             string boothName,
             string namespace_
         )
         {
             IncreaseTicketSale op = builder.Build(
+                body,
                 boothName,
                 namespace_
             );
@@ -105,11 +111,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TicketSaleIncrementResult?> ExecuteAsync(
             this IncreaseTicketSale.IncreaseTicketSaleBuilder builder,
+            TicketSaleIncrementRequest body,
             string boothName,
             string namespace_
         )
         {
             IncreaseTicketSale op = builder.Build(
+                body,
                 boothName,
                 namespace_
             );
@@ -118,12 +126,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.TicketAcquireResult? Execute(
             this AcquireUserTicket.AcquireUserTicketBuilder builder,
+            TicketAcquireRequest body,
             string boothName,
             string namespace_,
             string userId
         )
         {
             AcquireUserTicket op = builder.Build(
+                body,
                 boothName,
                 namespace_,
                 userId
@@ -133,12 +143,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TicketAcquireResult?> ExecuteAsync(
             this AcquireUserTicket.AcquireUserTicketBuilder builder,
+            TicketAcquireRequest body,
             string boothName,
             string namespace_,
             string userId
         )
         {
             AcquireUserTicket op = builder.Build(
+                body,
                 boothName,
                 namespace_,
                 userId

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// listExtOrderNoByExtTxId
     ///
-    ///  [Not Supported Yet In Starter] List external order No by external transaction id.
+    ///  [Not supported yet in AGS Shared Cloud] List external order No by external transaction id.
     /// Other detail info:
     /// 
     ///   * Returns : payment orders

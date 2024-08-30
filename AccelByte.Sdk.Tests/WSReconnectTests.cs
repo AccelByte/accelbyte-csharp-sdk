@@ -126,7 +126,7 @@ namespace AccelByte.Sdk.Tests
             //every connect/reconnect will store session id in above logic
             //this assertion is to make sure that all stored ids are same.
             var isSameId = sessionIds.All(x => x == sessionIds.First());
-            Assert.IsTrue(isSameId, "Session id is different between connect session(s).");            
+            Assert.IsTrue(isSameId, "Session id is different between connect session(s).");
         }
 
         [Test]
@@ -189,7 +189,7 @@ namespace AccelByte.Sdk.Tests
             await lobbyWs.Listen();
 
             //should be normally closed, assert connect and disconnect count
-            Assert.AreEqual(1, connectCount,"Unexpected connect count. WS issue?");
+            Assert.AreEqual(1, connectCount, "Unexpected connect count. WS issue?");
             Assert.AreEqual(1, disconnectCount, "Unexpected disconnect count. WS issue?");
 
             //reset

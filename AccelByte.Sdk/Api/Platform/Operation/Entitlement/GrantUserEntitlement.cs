@@ -45,8 +45,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public List<Model.EntitlementGrant>? Body { get; set; }
-
 
 
 
@@ -54,21 +52,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public GrantUserEntitlementBuilder SetBody(List<Model.EntitlementGrant> _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public GrantUserEntitlement Build(
+                List<EntitlementGrant> body,
                 string namespace_,
                 string userId
             )
             {
                 GrantUserEntitlement op = new GrantUserEntitlement(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private GrantUserEntitlement(GrantUserEntitlementBuilder builder,
+            List<EntitlementGrant> body,
             string namespace_,
             string userId
         )
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

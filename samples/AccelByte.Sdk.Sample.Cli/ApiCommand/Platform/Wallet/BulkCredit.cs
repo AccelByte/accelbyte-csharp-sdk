@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.BulkCredit.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((List<AccelByte.Sdk.Api.Platform.Model.BulkCreditRequest>)Body);
 
 
 
             BulkCredit operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

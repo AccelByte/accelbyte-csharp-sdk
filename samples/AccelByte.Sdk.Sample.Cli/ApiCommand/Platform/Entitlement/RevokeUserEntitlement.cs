@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandData("body")]
+        public EntitlementRevokeRequest Body { get; set; } = new EntitlementRevokeRequest();
+
         public RevokeUserEntitlementCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,6 +52,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.RevokeUserEntitlement.Builder;
 
 
+            if (Body != null)
+                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.EntitlementRevokeRequest)Body);
 
 
 

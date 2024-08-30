@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.KeyGroupUpdate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateKeyGroupBuilder SetBody(Model.KeyGroupUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateKeyGroup Build(
+                KeyGroupUpdate body,
                 string keyGroupId,
                 string namespace_
             )
             {
                 UpdateKeyGroup op = new UpdateKeyGroup(this,
+                    body,
                     keyGroupId,
                     namespace_
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateKeyGroup(UpdateKeyGroupBuilder builder,
+            KeyGroupUpdate body,
             string keyGroupId,
             string namespace_
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

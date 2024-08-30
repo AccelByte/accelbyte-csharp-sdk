@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateStripeConfig
     ///
-    ///  [Not Supported Yet In Starter] Update stripe config.
+    ///  [Not supported yet in AGS Shared Cloud] Update stripe config.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? Validate { get; set; }
 
-
-            public Model.StripeConfig? Body { get; set; }
 
 
 
@@ -56,20 +54,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdateStripeConfigBuilder SetBody(Model.StripeConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateStripeConfig Build(
+                StripeConfig body,
                 string id
             )
             {
                 UpdateStripeConfig op = new UpdateStripeConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateStripeConfig(UpdateStripeConfigBuilder builder,
+            StripeConfig body,
             string id
         )
         {
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

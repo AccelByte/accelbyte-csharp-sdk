@@ -30,36 +30,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<DownloadInvoiceDetailsBuilder>
         {
 
-            public string? Feature { get; set; }
-
-            public string? ItemId { get; set; }
-
-            public DownloadInvoiceDetailsItemType? ItemType { get; set; }
-
 
 
 
 
             internal DownloadInvoiceDetailsBuilder() { }
 
-
-            public DownloadInvoiceDetailsBuilder SetFeature(string _feature)
-            {
-                Feature = _feature;
-                return this;
-            }
-
-            public DownloadInvoiceDetailsBuilder SetItemId(string _itemId)
-            {
-                ItemId = _itemId;
-                return this;
-            }
-
-            public DownloadInvoiceDetailsBuilder SetItemType(DownloadInvoiceDetailsItemType _itemType)
-            {
-                ItemType = _itemType;
-                return this;
-            }
 
 
 
@@ -68,12 +44,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public DownloadInvoiceDetails Build(
                 string namespace_,
                 string endTime,
+                string feature,
+                string itemId,
+                DownloadInvoiceDetailsItemType itemType,
                 string startTime
             )
             {
                 DownloadInvoiceDetails op = new DownloadInvoiceDetails(this,
                     namespace_,
                     endTime,
+                    feature,
+                    itemId,
+                    itemType,
                     startTime
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -88,15 +70,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         private DownloadInvoiceDetails(DownloadInvoiceDetailsBuilder builder,
             string namespace_,
             string endTime,
+            string feature,
+            string itemId,
+            DownloadInvoiceDetailsItemType itemType,
             string startTime
         )
         {
             PathParams["namespace"] = namespace_;
 
-            if (builder.Feature is not null) QueryParams["feature"] = builder.Feature;
-            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
-            if (builder.ItemType is not null) QueryParams["itemType"] = builder.ItemType.Value;
             if (endTime is not null) QueryParams["endTime"] = endTime;
+            if (feature is not null) QueryParams["feature"] = feature;
+            if (itemId is not null) QueryParams["itemId"] = itemId;
+            if (itemType is not null) QueryParams["itemType"] = itemType.Value;
             if (startTime is not null) QueryParams["startTime"] = startTime;
 
 
@@ -110,19 +95,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
         public DownloadInvoiceDetails(
             string namespace_,
-            string? feature,
-            string? itemId,
-            DownloadInvoiceDetailsItemType? itemType,
             string endTime,
+            string feature,
+            string itemId,
+            DownloadInvoiceDetailsItemType itemType,
             string startTime
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (endTime is not null) QueryParams["endTime"] = endTime;
             if (feature is not null) QueryParams["feature"] = feature;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (itemType is not null) QueryParams["itemType"] = itemType.Value;
-            if (endTime is not null) QueryParams["endTime"] = endTime;
             if (startTime is not null) QueryParams["startTime"] = startTime;
 
 

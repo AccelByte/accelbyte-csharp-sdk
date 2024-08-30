@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TwitchIAPConfigRequest? Body { get; set; }
-
 
 
 
@@ -38,20 +36,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateTwitchIAPConfigBuilder SetBody(Model.TwitchIAPConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateTwitchIAPConfig Build(
+                TwitchIAPConfigRequest body,
                 string namespace_
             )
             {
                 UpdateTwitchIAPConfig op = new UpdateTwitchIAPConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -64,6 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateTwitchIAPConfig(UpdateTwitchIAPConfigBuilder builder,
+            TwitchIAPConfigRequest body,
             string namespace_
         )
         {
@@ -73,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

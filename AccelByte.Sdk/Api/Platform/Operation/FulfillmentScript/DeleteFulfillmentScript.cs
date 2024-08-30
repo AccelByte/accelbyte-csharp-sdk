@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// deleteFulfillmentScript
     ///
-    ///  [Not Supported Yet In Starter] Delete fulfillment script.
+    ///  [Not supported yet in AGS Shared Cloud] Delete fulfillment script.
     /// </summary>
     public class DeleteFulfillmentScript : AccelByte.Sdk.Core.Operation
     {

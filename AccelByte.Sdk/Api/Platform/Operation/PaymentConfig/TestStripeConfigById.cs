@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testStripeConfigById
     ///
-    ///  [Not Supported Yet In Starter] Test stripe configuration in payment merchant config. Other detail info:
+    ///  [Not supported yet in AGS Shared Cloud] Test stripe configuration in payment merchant config. Other detail info:
     /// 
     ///   * Returns : test adyen config
     /// </summary>

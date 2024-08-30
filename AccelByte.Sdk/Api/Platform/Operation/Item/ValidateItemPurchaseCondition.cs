@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public string? Platform { get; set; }
 
 
-            public Model.ItemPurchaseConditionValidateRequest? Body { get; set; }
-
 
 
 
@@ -45,21 +43,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public ValidateItemPurchaseConditionBuilder SetBody(Model.ItemPurchaseConditionValidateRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ValidateItemPurchaseCondition Build(
+                ItemPurchaseConditionValidateRequest body,
                 string namespace_,
                 string userId
             )
             {
                 ValidateItemPurchaseCondition op = new ValidateItemPurchaseCondition(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -73,6 +67,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ValidateItemPurchaseCondition(ValidateItemPurchaseConditionBuilder builder,
+            ItemPurchaseConditionValidateRequest body,
             string namespace_,
             string userId
         )
@@ -85,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -7,21 +7,20 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Platform.Model
 {
-    public class EntitlementDecrement : AccelByte.Sdk.Core.Model
+    public class EntitlementRevokeRequest : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("options")]
+        [JsonPropertyName("metadata")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<string>? Options { get; set; }
-
-        [JsonPropertyName("requestId")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? RequestId { get; set; }
-
-        [JsonPropertyName("useCount")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public int? UseCount { get; set; }
+        public Dictionary<string, object>? Metadata { get; set; }
 
     }
 
+    public class EntitlementRevokeRequest<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? Metadata { get; set; }
+
+    }
 
 }

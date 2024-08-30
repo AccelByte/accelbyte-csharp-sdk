@@ -40,11 +40,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlatformWalletConfigInfo? Execute(
             this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
+            PlatformWalletConfigUpdate body,
             string namespace_,
             string platform
         )
         {
             UpdatePlatformWalletConfig op = builder.Build(
+                body,
                 namespace_,
                 platform
             );
@@ -53,11 +55,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PlatformWalletConfigInfo?> ExecuteAsync(
             this UpdatePlatformWalletConfig.UpdatePlatformWalletConfigBuilder builder,
+            PlatformWalletConfigUpdate body,
             string namespace_,
             string platform
         )
         {
             UpdatePlatformWalletConfig op = builder.Build(
+                body,
                 namespace_,
                 platform
             );
@@ -118,12 +122,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.WalletInfo? Execute(
             this DebitUserWalletByCurrencyCode.DebitUserWalletByCurrencyCodeBuilder builder,
+            DebitByCurrencyCodeRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             DebitUserWalletByCurrencyCode op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -133,12 +139,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
             this DebitUserWalletByCurrencyCode.DebitUserWalletByCurrencyCodeBuilder builder,
+            DebitByCurrencyCodeRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             DebitUserWalletByCurrencyCode op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -247,12 +255,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.WalletInfo? Execute(
             this CreditUserWallet.CreditUserWalletBuilder builder,
+            CreditRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             CreditUserWallet op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -262,12 +272,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
             this CreditUserWallet.CreditUserWalletBuilder builder,
+            CreditRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             CreditUserWallet op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -311,12 +323,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlatformWallet? Execute(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
+            PaymentRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             PayWithUserWallet op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -326,12 +340,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PlatformWallet?> ExecuteAsync(
             this PayWithUserWallet.PayWithUserWalletBuilder builder,
+            PaymentRequest body,
             string currencyCode,
             string namespace_,
             string userId
         )
         {
             PayWithUserWallet op = builder.Build(
+                body,
                 currencyCode,
                 namespace_,
                 userId
@@ -373,12 +389,14 @@ namespace AccelByte.Sdk.Api
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletInfo? Execute(
             this DebitUserWallet.DebitUserWalletBuilder builder,
+            DebitRequest body,
             string namespace_,
             string userId,
             string walletId
         )
         {
             DebitUserWallet op = builder.Build(
+                body,
                 namespace_,
                 userId,
                 walletId
@@ -388,12 +406,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.WalletInfo?> ExecuteAsync(
             this DebitUserWallet.DebitUserWalletBuilder builder,
+            DebitRequest body,
             string namespace_,
             string userId,
             string walletId
         )
         {
             DebitUserWallet op = builder.Build(
+                body,
                 namespace_,
                 userId,
                 walletId
@@ -519,10 +539,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.BulkCreditResult? Execute(
             this BulkCredit.BulkCreditBuilder builder,
+            List<BulkCreditRequest> body,
             string namespace_
         )
         {
             BulkCredit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -530,10 +552,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.BulkCreditResult?> ExecuteAsync(
             this BulkCredit.BulkCreditBuilder builder,
+            List<BulkCreditRequest> body,
             string namespace_
         )
         {
             BulkCredit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -541,10 +565,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.BulkDebitResult? Execute(
             this BulkDebit.BulkDebitBuilder builder,
+            List<BulkDebitRequest> body,
             string namespace_
         )
         {
             BulkDebit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -552,10 +578,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.BulkDebitResult?> ExecuteAsync(
             this BulkDebit.BulkDebitBuilder builder,
+            List<BulkDebitRequest> body,
             string namespace_
         )
         {
             BulkDebit op = builder.Build(
+                body,
                 namespace_
             );
 

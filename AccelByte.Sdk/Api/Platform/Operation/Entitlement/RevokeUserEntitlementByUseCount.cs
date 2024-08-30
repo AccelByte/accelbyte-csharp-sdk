@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.RevokeUseCountRequest? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public RevokeUserEntitlementByUseCountBuilder SetBody(Model.RevokeUseCountRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public RevokeUserEntitlementByUseCount Build(
+                RevokeUseCountRequest body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 RevokeUserEntitlementByUseCount op = new RevokeUserEntitlementByUseCount(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private RevokeUserEntitlementByUseCount(RevokeUserEntitlementByUseCountBuilder builder,
+            RevokeUseCountRequest body,
             string entitlementId,
             string namespace_,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

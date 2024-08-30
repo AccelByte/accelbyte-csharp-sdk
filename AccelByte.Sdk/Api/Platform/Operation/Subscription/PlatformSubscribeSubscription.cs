@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PlatformSubscribeRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PlatformSubscribeSubscriptionBuilder SetBody(Model.PlatformSubscribeRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PlatformSubscribeSubscription Build(
+                PlatformSubscribeRequest body,
                 string namespace_,
                 string userId
             )
             {
                 PlatformSubscribeSubscription op = new PlatformSubscribeSubscription(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PlatformSubscribeSubscription(PlatformSubscribeSubscriptionBuilder builder,
+            PlatformSubscribeRequest body,
             string namespace_,
             string userId
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

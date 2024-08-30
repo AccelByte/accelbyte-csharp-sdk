@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createUserPaymentOrder
     ///
-    ///  [Not Supported Yet In Starter] [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
+    ///  [Not supported yet in AGS Shared Cloud] [SERVICE COMMUNICATION ONLY] This API is used to create payment order from justice service. The result contains the payment station url.
     /// Other detail info:
     /// 
     ///   * It will be forbidden while the user is banned: PAYMENT_INITIATE or ORDER_AND_PAYMENT
@@ -50,8 +50,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentOrderCreate? Body { get; set; }
-
 
 
 
@@ -59,21 +57,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateUserPaymentOrderBuilder SetBody(Model.PaymentOrderCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateUserPaymentOrder Build(
+                PaymentOrderCreate body,
                 string namespace_,
                 string userId
             )
             {
                 CreateUserPaymentOrder op = new CreateUserPaymentOrder(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -87,6 +81,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateUserPaymentOrder(CreateUserPaymentOrderBuilder builder,
+            PaymentOrderCreate body,
             string namespace_,
             string userId
         )
@@ -98,7 +93,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

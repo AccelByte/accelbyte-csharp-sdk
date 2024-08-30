@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.SimulatePaymentOrderNotification.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.PaymentOrderNotifySimulation)Body);
 
 
 
             SimulatePaymentOrderNotification operation = opBuilder.Build(
+                Body,
                 Namespace,
                 PaymentOrderNo
             );

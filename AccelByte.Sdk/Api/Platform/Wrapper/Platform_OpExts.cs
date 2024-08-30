@@ -14,11 +14,13 @@ namespace AccelByte.Sdk.Api
     {
         public static Platform.Model.Ownership? Execute(
             this GetPsnEntitlementOwnership.GetPsnEntitlementOwnershipBuilder builder,
+            PsnEntitlementOwnershipRequest body,
             string entitlementLabel,
             string namespace_
         )
         {
             GetPsnEntitlementOwnership op = builder.Build(
+                body,
                 entitlementLabel,
                 namespace_
             );
@@ -27,11 +29,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.Ownership?> ExecuteAsync(
             this GetPsnEntitlementOwnership.GetPsnEntitlementOwnershipBuilder builder,
+            PsnEntitlementOwnershipRequest body,
             string entitlementLabel,
             string namespace_
         )
         {
             GetPsnEntitlementOwnership op = builder.Build(
+                body,
                 entitlementLabel,
                 namespace_
             );
@@ -40,11 +44,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlatformOwnership? Execute(
             this GetXboxEntitlementOwnership.GetXboxEntitlementOwnershipBuilder builder,
+            XblEntitlementOwnershipRequest body,
             string namespace_,
             string productSku
         )
         {
             GetXboxEntitlementOwnership op = builder.Build(
+                body,
                 namespace_,
                 productSku
             );
@@ -53,11 +59,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PlatformOwnership?> ExecuteAsync(
             this GetXboxEntitlementOwnership.GetXboxEntitlementOwnershipBuilder builder,
+            XblEntitlementOwnershipRequest body,
             string namespace_,
             string productSku
         )
         {
             GetXboxEntitlementOwnership op = builder.Build(
+                body,
                 namespace_,
                 productSku
             );

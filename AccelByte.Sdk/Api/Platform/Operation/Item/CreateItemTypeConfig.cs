@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createItemTypeConfig
     ///
-    ///  [Not Supported Yet In Starter] This API is used to create an item type config.
+    ///  [Not supported yet in AGS Shared Cloud] This API is used to create an item type config.
     /// 
     /// *  Returns : item type config data
     /// </summary>
@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.ItemTypeConfigCreate? Body { get; set; }
-
 
 
 
@@ -39,19 +37,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateItemTypeConfigBuilder SetBody(Model.ItemTypeConfigCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateItemTypeConfig Build(
+                ItemTypeConfigCreate body
             )
             {
-                CreateItemTypeConfig op = new CreateItemTypeConfig(this
+                CreateItemTypeConfig op = new CreateItemTypeConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -62,7 +56,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private CreateItemTypeConfig(CreateItemTypeConfigBuilder builder
+        private CreateItemTypeConfig(CreateItemTypeConfigBuilder builder,
+            ItemTypeConfigCreate body
         )
         {
 
@@ -70,7 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

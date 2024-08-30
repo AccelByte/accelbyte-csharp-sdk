@@ -32,6 +32,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? Redeemable { get; set; }
 
+            public bool? WithBatchName { get; set; }
+
 
 
 
@@ -42,6 +44,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public GetCodeBuilder SetRedeemable(bool _redeemable)
             {
                 Redeemable = _redeemable;
+                return this;
+            }
+
+            public GetCodeBuilder SetWithBatchName(bool _withBatchName)
+            {
+                WithBatchName = _withBatchName;
                 return this;
             }
 
@@ -76,6 +84,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.Redeemable != null) QueryParams["redeemable"] = Convert.ToString(builder.Redeemable)!;
+            if (builder.WithBatchName != null) QueryParams["withBatchName"] = Convert.ToString(builder.WithBatchName)!;
 
 
 
@@ -89,13 +98,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public GetCode(
             string code,
             string namespace_,
-            bool? redeemable
+            bool? redeemable,
+            bool? withBatchName
         )
         {
             PathParams["code"] = code;
             PathParams["namespace"] = namespace_;
 
             if (redeemable != null) QueryParams["redeemable"] = Convert.ToString(redeemable)!;
+            if (withBatchName != null) QueryParams["withBatchName"] = Convert.ToString(withBatchName)!;
 
 
 

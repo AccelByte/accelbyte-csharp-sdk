@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicCheckPaymentOrderPaidStatus
     ///
-    ///  [Not Supported Yet In Starter] Check payment order paid status.
+    ///  [Not supported yet in AGS Shared Cloud] Check payment order paid status.
     /// Other detail info:
     /// 
     ///   * Returns : Payment order paid result

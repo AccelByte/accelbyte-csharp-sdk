@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.KeyGroupInfo? Execute(
             this CreateKeyGroup.CreateKeyGroupBuilder builder,
+            KeyGroupCreate body,
             string namespace_
         )
         {
             CreateKeyGroup op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
             this CreateKeyGroup.CreateKeyGroupBuilder builder,
+            KeyGroupCreate body,
             string namespace_
         )
         {
             CreateKeyGroup op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -111,11 +115,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.KeyGroupInfo? Execute(
             this UpdateKeyGroup.UpdateKeyGroupBuilder builder,
+            KeyGroupUpdate body,
             string keyGroupId,
             string namespace_
         )
         {
             UpdateKeyGroup op = builder.Build(
+                body,
                 keyGroupId,
                 namespace_
             );
@@ -124,11 +130,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.KeyGroupInfo?> ExecuteAsync(
             this UpdateKeyGroup.UpdateKeyGroupBuilder builder,
+            KeyGroupUpdate body,
             string keyGroupId,
             string namespace_
         )
         {
             UpdateKeyGroup op = builder.Build(
+                body,
                 keyGroupId,
                 namespace_
             );

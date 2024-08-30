@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// getFulfillmentScript
     ///
-    ///  [Not Supported Yet In Starter] Get fulfillment script by id.
+    ///  [Not supported yet in AGS Shared Cloud] Get fulfillment script by id.
     /// Other detail info:
     /// 
     ///   * Returns : get fulfillment script

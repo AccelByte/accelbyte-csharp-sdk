@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.SteamDLCSyncRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SyncSteamDLCBuilder SetBody(Model.SteamDLCSyncRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public SyncSteamDLC Build(
+                SteamDLCSyncRequest body,
                 string namespace_,
                 string userId
             )
             {
                 SyncSteamDLC op = new SyncSteamDLC(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SyncSteamDLC(SyncSteamDLCBuilder builder,
+            SteamDLCSyncRequest body,
             string namespace_,
             string userId
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

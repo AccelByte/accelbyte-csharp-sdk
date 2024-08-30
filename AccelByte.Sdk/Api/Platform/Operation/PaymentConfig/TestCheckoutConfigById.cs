@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testCheckoutConfigById
     ///
-    ///  [Not Supported Yet In Starter] Test checkout.com configuration in payment merchant config. Other detail info:
+    ///  [Not supported yet in AGS Shared Cloud] Test checkout.com configuration in payment merchant config. Other detail info:
     /// 
     ///   * Returns : test result
     /// </summary>

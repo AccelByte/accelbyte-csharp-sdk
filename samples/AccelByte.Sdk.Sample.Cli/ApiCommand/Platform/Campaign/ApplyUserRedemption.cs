@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.ApplyUserRedemption.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.RedeemRequest)Body);
 
 
 
             ApplyUserRedemption operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

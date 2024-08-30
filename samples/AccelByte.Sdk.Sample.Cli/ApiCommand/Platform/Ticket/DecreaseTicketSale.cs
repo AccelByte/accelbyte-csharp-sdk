@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DecreaseTicketSale.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.TicketSaleDecrementRequest)Body);
 
 
 
             DecreaseTicketSale operation = opBuilder.Build(
+                Body,
                 BoothName,
                 Namespace
             );

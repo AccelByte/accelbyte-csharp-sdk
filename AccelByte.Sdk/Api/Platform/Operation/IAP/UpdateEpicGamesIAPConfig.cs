@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EpicGamesIAPConfigRequest? Body { get; set; }
-
 
 
 
@@ -38,20 +36,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateEpicGamesIAPConfigBuilder SetBody(Model.EpicGamesIAPConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateEpicGamesIAPConfig Build(
+                EpicGamesIAPConfigRequest body,
                 string namespace_
             )
             {
                 UpdateEpicGamesIAPConfig op = new UpdateEpicGamesIAPConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -64,6 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateEpicGamesIAPConfig(UpdateEpicGamesIAPConfigBuilder builder,
+            EpicGamesIAPConfigRequest body,
             string namespace_
         )
         {
@@ -73,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

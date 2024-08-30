@@ -14,10 +14,12 @@ namespace AccelByte.Sdk.Api
     {
         public static Platform.Model.TradeChainActionHistoryInfo? Execute(
             this Commit.CommitBuilder builder,
+            TradeChainedActionCommitRequest body,
             string namespace_
         )
         {
             Commit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -25,10 +27,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TradeChainActionHistoryInfo?> ExecuteAsync(
             this Commit.CommitBuilder builder,
+            TradeChainedActionCommitRequest body,
             string namespace_
         )
         {
             Commit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -37,10 +41,12 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.TradeChainActionHistoryInfo<T1>? Execute<T1>(
             this Commit.CommitBuilder builder,
+            TradeChainedActionCommitRequest body,
             string namespace_
         )
         {
             Commit op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -48,10 +54,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TradeChainActionHistoryInfo<T1>?> ExecuteAsync<T1>(
             this Commit.CommitBuilder builder,
+            TradeChainedActionCommitRequest body,
             string namespace_
         )
         {
             Commit op = builder.Build(
+                body,
                 namespace_
             );
 

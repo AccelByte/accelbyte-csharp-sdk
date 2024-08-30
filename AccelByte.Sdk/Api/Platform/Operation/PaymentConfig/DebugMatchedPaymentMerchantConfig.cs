@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// debugMatchedPaymentMerchantConfig
     ///
-    ///  [Not Supported Yet In Starter] Debug matched payment merchant config.
+    ///  [Not supported yet in AGS Shared Cloud] Debug matched payment merchant config.
     /// Other detail info:
     /// 
     ///   * Returns : payment merchant config info

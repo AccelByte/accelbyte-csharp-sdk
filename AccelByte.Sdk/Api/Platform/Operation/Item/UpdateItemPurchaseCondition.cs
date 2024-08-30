@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PurchaseConditionUpdate? Body { get; set; }
-
 
 
 
@@ -37,22 +35,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateItemPurchaseConditionBuilder SetBody(Model.PurchaseConditionUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateItemPurchaseCondition Build(
+                PurchaseConditionUpdate body,
                 string itemId,
                 string namespace_,
                 string storeId
             )
             {
                 UpdateItemPurchaseCondition op = new UpdateItemPurchaseCondition(this,
+                    body,
                     itemId,
                     namespace_,
                     storeId
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateItemPurchaseCondition(UpdateItemPurchaseConditionBuilder builder,
+            PurchaseConditionUpdate body,
             string itemId,
             string namespace_,
             string storeId
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CampaignInfo? Execute(
             this CreateCampaign.CreateCampaignBuilder builder,
+            CampaignCreate body,
             string namespace_
         )
         {
             CreateCampaign op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CampaignInfo?> ExecuteAsync(
             this CreateCampaign.CreateCampaignBuilder builder,
+            CampaignCreate body,
             string namespace_
         )
         {
             CreateCampaign op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -84,11 +88,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CampaignInfo? Execute(
             this UpdateCampaign.UpdateCampaignBuilder builder,
+            CampaignUpdate body,
             string campaignId,
             string namespace_
         )
         {
             UpdateCampaign op = builder.Build(
+                body,
                 campaignId,
                 namespace_
             );
@@ -97,16 +103,74 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CampaignInfo?> ExecuteAsync(
             this UpdateCampaign.UpdateCampaignBuilder builder,
+            CampaignUpdate body,
             string campaignId,
             string namespace_
         )
         {
             UpdateCampaign op = builder.Build(
+                body,
                 campaignId,
                 namespace_
             );
 
             return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).UpdateCampaignAsync(op);
+        }
+        public static void Execute(
+            this RenameBatch.RenameBatchBuilder builder,
+            CampaignBatchNameChange body,
+            string campaignId,
+            string namespace_
+        )
+        {
+            RenameBatch op = builder.Build(
+                body,
+                campaignId,
+                namespace_
+            );
+
+            ((Platform.Wrapper.Campaign)builder.WrapperObject!).RenameBatch(op);
+        }
+        public static async Task ExecuteAsync(
+            this RenameBatch.RenameBatchBuilder builder,
+            CampaignBatchNameChange body,
+            string campaignId,
+            string namespace_
+        )
+        {
+            RenameBatch op = builder.Build(
+                body,
+                campaignId,
+                namespace_
+            );
+
+            await ((Platform.Wrapper.Campaign)builder.WrapperObject!).RenameBatchAsync(op);
+        }
+        public static List<Platform.Model.CampaignBatchNameInfo>? Execute(
+            this QueryCampaignBatchNames.QueryCampaignBatchNamesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            QueryCampaignBatchNames op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCampaignBatchNames(op);
+        }
+        public static async Task<List<Platform.Model.CampaignBatchNameInfo>?> ExecuteAsync(
+            this QueryCampaignBatchNames.QueryCampaignBatchNamesBuilder builder,
+            string campaignId,
+            string namespace_
+        )
+        {
+            QueryCampaignBatchNames op = builder.Build(
+                campaignId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Campaign)builder.WrapperObject!).QueryCampaignBatchNamesAsync(op);
         }
         public static Platform.Model.CampaignDynamicInfo? Execute(
             this GetCampaignDynamic.GetCampaignDynamicBuilder builder,
@@ -162,11 +226,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CodeCreateResult? Execute(
             this CreateCodes.CreateCodesBuilder builder,
+            CodeCreate body,
             string campaignId,
             string namespace_
         )
         {
             CreateCodes op = builder.Build(
+                body,
                 campaignId,
                 namespace_
             );
@@ -175,11 +241,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CodeCreateResult?> ExecuteAsync(
             this CreateCodes.CreateCodesBuilder builder,
+            CodeCreate body,
             string campaignId,
             string namespace_
         )
         {
             CreateCodes op = builder.Build(
+                body,
                 campaignId,
                 namespace_
             );
@@ -370,11 +438,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.RedeemResult? Execute(
             this ApplyUserRedemption.ApplyUserRedemptionBuilder builder,
+            RedeemRequest body,
             string namespace_,
             string userId
         )
         {
             ApplyUserRedemption op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -383,11 +453,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RedeemResult?> ExecuteAsync(
             this ApplyUserRedemption.ApplyUserRedemptionBuilder builder,
+            RedeemRequest body,
             string namespace_,
             string userId
         )
         {
             ApplyUserRedemption op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

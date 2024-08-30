@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetUnpaidPaymentOrder
     ///
-    ///  [Not Supported Yet In Starter] Get payment order info.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment order info.
     /// Other detail info:
     /// 
     ///   * Returns : Payment order details

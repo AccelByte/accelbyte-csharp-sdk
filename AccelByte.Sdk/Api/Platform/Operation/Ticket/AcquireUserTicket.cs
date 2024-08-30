@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TicketAcquireRequest? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public AcquireUserTicketBuilder SetBody(Model.TicketAcquireRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public AcquireUserTicket Build(
+                TicketAcquireRequest body,
                 string boothName,
                 string namespace_,
                 string userId
             )
             {
                 AcquireUserTicket op = new AcquireUserTicket(this,
+                    body,
                     boothName,
                     namespace_,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private AcquireUserTicket(AcquireUserTicketBuilder builder,
+            TicketAcquireRequest body,
             string boothName,
             string namespace_,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

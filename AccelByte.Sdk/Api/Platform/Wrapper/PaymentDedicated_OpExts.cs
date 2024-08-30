@@ -14,10 +14,12 @@ namespace AccelByte.Sdk.Api
     {
         public static Platform.Model.PaymentOrderCreateResult? Execute(
             this CreatePaymentOrderByDedicated.CreatePaymentOrderByDedicatedBuilder builder,
+            ExternalPaymentOrderCreate body,
             string namespace_
         )
         {
             CreatePaymentOrderByDedicated op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -25,10 +27,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderCreateResult?> ExecuteAsync(
             this CreatePaymentOrderByDedicated.CreatePaymentOrderByDedicatedBuilder builder,
+            ExternalPaymentOrderCreate body,
             string namespace_
         )
         {
             CreatePaymentOrderByDedicated op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -36,11 +40,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentOrderRefundResult? Execute(
             this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo
         )
         {
             RefundPaymentOrderByDedicated op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -49,11 +55,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentOrderRefundResult?> ExecuteAsync(
             this RefundPaymentOrderByDedicated.RefundPaymentOrderByDedicatedBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo
         )
         {
             RefundPaymentOrderByDedicated op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );

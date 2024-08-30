@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.OrderDiscountPreviewRequest? Body { get; set; }
-
 
 
 
@@ -39,21 +37,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicPreviewOrderPriceBuilder SetBody(Model.OrderDiscountPreviewRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicPreviewOrderPrice Build(
+                OrderDiscountPreviewRequest body,
                 string namespace_,
                 string userId
             )
             {
                 PublicPreviewOrderPrice op = new PublicPreviewOrderPrice(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicPreviewOrderPrice(PublicPreviewOrderPriceBuilder builder,
+            OrderDiscountPreviewRequest body,
             string namespace_,
             string userId
         )
@@ -78,7 +73,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

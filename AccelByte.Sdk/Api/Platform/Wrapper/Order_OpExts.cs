@@ -111,11 +111,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OrderInfo? Execute(
             this RefundOrder.RefundOrderBuilder builder,
+            OrderRefundCreate body,
             string namespace_,
             string orderNo
         )
         {
             RefundOrder op = builder.Build(
+                body,
                 namespace_,
                 orderNo
             );
@@ -124,11 +126,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
             this RefundOrder.RefundOrderBuilder builder,
+            OrderRefundCreate body,
             string namespace_,
             string orderNo
         )
         {
             RefundOrder op = builder.Build(
+                body,
                 namespace_,
                 orderNo
             );
@@ -138,11 +142,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
             this RefundOrder.RefundOrderBuilder builder,
+            OrderRefundCreate body,
             string namespace_,
             string orderNo
         )
         {
             RefundOrder op = builder.Build(
+                body,
                 namespace_,
                 orderNo
             );
@@ -151,11 +157,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
             this RefundOrder.RefundOrderBuilder builder,
+            OrderRefundCreate body,
             string namespace_,
             string orderNo
         )
         {
             RefundOrder op = builder.Build(
+                body,
                 namespace_,
                 orderNo
             );
@@ -190,11 +198,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OrderInfo? Execute(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            AdminOrderCreate body,
             string namespace_,
             string userId
         )
         {
             AdminCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -203,11 +213,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            AdminOrderCreate body,
             string namespace_,
             string userId
         )
         {
             AdminCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -217,11 +229,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            AdminOrderCreate body,
             string namespace_,
             string userId
         )
         {
             AdminCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -230,11 +244,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
             this AdminCreateUserOrder.AdminCreateUserOrderBuilder builder,
+            AdminOrderCreate body,
             string namespace_,
             string userId
         )
         {
             AdminCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -334,12 +350,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OrderInfo? Execute(
             this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            OrderUpdate body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             UpdateUserOrderStatus op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -349,12 +367,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
             this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            OrderUpdate body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             UpdateUserOrderStatus op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -365,12 +385,14 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
             this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            OrderUpdate body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             UpdateUserOrderStatus op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -380,12 +402,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
             this UpdateUserOrderStatus.UpdateUserOrderStatusBuilder builder,
+            OrderUpdate body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             UpdateUserOrderStatus op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -517,12 +541,14 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this ProcessUserOrderNotification.ProcessUserOrderNotificationBuilder builder,
+            TradeNotification body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             ProcessUserOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -532,12 +558,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this ProcessUserOrderNotification.ProcessUserOrderNotificationBuilder builder,
+            TradeNotification body,
             string namespace_,
             string orderNo,
             string userId
         )
         {
             ProcessUserOrderNotification op = builder.Build(
+                body,
                 namespace_,
                 orderNo,
                 userId
@@ -603,11 +631,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OrderInfo? Execute(
             this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            OrderCreate body,
             string namespace_,
             string userId
         )
         {
             PublicCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -616,11 +646,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo?> ExecuteAsync(
             this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            OrderCreate body,
             string namespace_,
             string userId
         )
         {
             PublicCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -630,11 +662,13 @@ namespace AccelByte.Sdk.Api
 
         public static Platform.Model.OrderInfo<T1>? Execute<T1>(
             this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            OrderCreate body,
             string namespace_,
             string userId
         )
         {
             PublicCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -643,11 +677,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderInfo<T1>?> ExecuteAsync<T1>(
             this PublicCreateUserOrder.PublicCreateUserOrderBuilder builder,
+            OrderCreate body,
             string namespace_,
             string userId
         )
         {
             PublicCreateUserOrder op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -656,11 +692,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OrderDiscountPreviewResponse? Execute(
             this PublicPreviewOrderPrice.PublicPreviewOrderPriceBuilder builder,
+            OrderDiscountPreviewRequest body,
             string namespace_,
             string userId
         )
         {
             PublicPreviewOrderPrice op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -669,11 +707,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OrderDiscountPreviewResponse?> ExecuteAsync(
             this PublicPreviewOrderPrice.PublicPreviewOrderPriceBuilder builder,
+            OrderDiscountPreviewRequest body,
             string namespace_,
             string userId
         )
         {
             PublicPreviewOrderPrice op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

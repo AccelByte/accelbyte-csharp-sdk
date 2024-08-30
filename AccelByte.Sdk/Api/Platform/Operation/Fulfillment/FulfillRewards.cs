@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.RewardsRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public FulfillRewardsBuilder SetBody(Model.RewardsRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public FulfillRewards Build(
+                RewardsRequest body,
                 string namespace_,
                 string userId
             )
             {
                 FulfillRewards op = new FulfillRewards(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private FulfillRewards(FulfillRewardsBuilder builder,
+            RewardsRequest body,
             string namespace_,
             string userId
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

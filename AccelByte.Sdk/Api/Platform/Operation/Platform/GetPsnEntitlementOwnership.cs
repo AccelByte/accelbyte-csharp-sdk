@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PsnEntitlementOwnershipRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public GetPsnEntitlementOwnershipBuilder SetBody(Model.PsnEntitlementOwnershipRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public GetPsnEntitlementOwnership Build(
+                PsnEntitlementOwnershipRequest body,
                 string entitlementLabel,
                 string namespace_
             )
             {
                 GetPsnEntitlementOwnership op = new GetPsnEntitlementOwnership(this,
+                    body,
                     entitlementLabel,
                     namespace_
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private GetPsnEntitlementOwnership(GetPsnEntitlementOwnershipBuilder builder,
+            PsnEntitlementOwnershipRequest body,
             string entitlementLabel,
             string namespace_
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

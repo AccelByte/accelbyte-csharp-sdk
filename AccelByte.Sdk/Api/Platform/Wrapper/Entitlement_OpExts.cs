@@ -102,10 +102,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.BulkEntitlementGrantResult? Execute(
             this GrantEntitlements.GrantEntitlementsBuilder builder,
+            BulkEntitlementGrantRequest body,
             string namespace_
         )
         {
             GrantEntitlements op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -113,10 +115,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.BulkEntitlementGrantResult?> ExecuteAsync(
             this GrantEntitlements.GrantEntitlementsBuilder builder,
+            BulkEntitlementGrantRequest body,
             string namespace_
         )
         {
             GrantEntitlements op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -198,11 +202,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementPlatformConfigInfo? Execute(
             this UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder builder,
+            EntitlementPlatformConfigUpdate body,
             string namespace_,
             string platform
         )
         {
             UpdatePlatformEntitlementConfig op = builder.Build(
+                body,
                 namespace_,
                 platform
             );
@@ -211,11 +217,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementPlatformConfigInfo?> ExecuteAsync(
             this UpdatePlatformEntitlementConfig.UpdatePlatformEntitlementConfigBuilder builder,
+            EntitlementPlatformConfigUpdate body,
             string namespace_,
             string platform
         )
         {
             UpdatePlatformEntitlementConfig op = builder.Build(
+                body,
                 namespace_,
                 platform
             );
@@ -250,11 +258,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.StackableEntitlementInfo>? Execute(
             this GrantUserEntitlement.GrantUserEntitlementBuilder builder,
+            List<EntitlementGrant> body,
             string namespace_,
             string userId
         )
         {
             GrantUserEntitlement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -263,11 +273,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.StackableEntitlementInfo>?> ExecuteAsync(
             this GrantUserEntitlement.GrantUserEntitlementBuilder builder,
+            List<EntitlementGrant> body,
             string namespace_,
             string userId
         )
         {
             GrantUserEntitlement op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -680,12 +692,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementInfo? Execute(
             this UpdateUserEntitlement.UpdateUserEntitlementBuilder builder,
+            EntitlementUpdate body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             UpdateUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -695,12 +709,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
             this UpdateUserEntitlement.UpdateUserEntitlementBuilder builder,
+            EntitlementUpdate body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             UpdateUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -710,12 +726,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementDecrementResult? Execute(
             this ConsumeUserEntitlement.ConsumeUserEntitlementBuilder builder,
+            AdminEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             ConsumeUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -725,12 +743,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementDecrementResult?> ExecuteAsync(
             this ConsumeUserEntitlement.ConsumeUserEntitlementBuilder builder,
+            AdminEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             ConsumeUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -860,12 +880,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementIfc? Execute(
             this RevokeUserEntitlementByUseCount.RevokeUserEntitlementByUseCountBuilder builder,
+            RevokeUseCountRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             RevokeUserEntitlementByUseCount op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -875,12 +897,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementIfc?> ExecuteAsync(
             this RevokeUserEntitlementByUseCount.RevokeUserEntitlementByUseCountBuilder builder,
+            RevokeUseCountRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             RevokeUserEntitlementByUseCount op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -925,12 +949,14 @@ namespace AccelByte.Sdk.Api
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.EntitlementInfo? Execute(
             this RevokeUseCount.RevokeUseCountBuilder builder,
+            RevokeUseCountRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             RevokeUseCount op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -940,12 +966,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementInfo?> ExecuteAsync(
             this RevokeUseCount.RevokeUseCountBuilder builder,
+            RevokeUseCountRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             RevokeUseCount op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -955,12 +983,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementSoldResult? Execute(
             this SellUserEntitlement.SellUserEntitlementBuilder builder,
+            AdminEntitlementSoldRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             SellUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -970,12 +1000,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementSoldResult?> ExecuteAsync(
             this SellUserEntitlement.SellUserEntitlementBuilder builder,
+            AdminEntitlementSoldRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             SellUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1479,12 +1511,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementDecrementResult? Execute(
             this PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder builder,
+            PublicEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicConsumeUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1494,12 +1528,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementDecrementResult?> ExecuteAsync(
             this PublicConsumeUserEntitlement.PublicConsumeUserEntitlementBuilder builder,
+            PublicEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicConsumeUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1509,12 +1545,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementSoldResult? Execute(
             this PublicSellUserEntitlement.PublicSellUserEntitlementBuilder builder,
+            EntitlementSoldRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicSellUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1524,12 +1562,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementSoldResult?> ExecuteAsync(
             this PublicSellUserEntitlement.PublicSellUserEntitlementBuilder builder,
+            EntitlementSoldRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicSellUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1539,12 +1579,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementSplitResult? Execute(
             this PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder builder,
+            EntitlementSplitRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicSplitUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1554,12 +1596,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementSplitResult?> ExecuteAsync(
             this PublicSplitUserEntitlement.PublicSplitUserEntitlementBuilder builder,
+            EntitlementSplitRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicSplitUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1569,12 +1613,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EntitlementTransferResult? Execute(
             this PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder builder,
+            EntitlementTransferRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicTransferUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId
@@ -1584,12 +1630,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EntitlementTransferResult?> ExecuteAsync(
             this PublicTransferUserEntitlement.PublicTransferUserEntitlementBuilder builder,
+            EntitlementTransferRequest body,
             string entitlementId,
             string namespace_,
             string userId
         )
         {
             PublicTransferUserEntitlement op = builder.Build(
+                body,
                 entitlementId,
                 namespace_,
                 userId

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateWxPayConfigCert
     ///
-    ///  [Not Supported Yet In Starter] Upload wxpay cert file.
+    ///  [Not supported yet in AGS Shared Cloud] Upload wxpay cert file.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config

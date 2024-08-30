@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.AcquireUserTicket.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.TicketAcquireRequest)Body);
 
 
 
             AcquireUserTicket operation = opBuilder.Build(
+                Body,
                 BoothName,
                 Namespace,
                 UserId

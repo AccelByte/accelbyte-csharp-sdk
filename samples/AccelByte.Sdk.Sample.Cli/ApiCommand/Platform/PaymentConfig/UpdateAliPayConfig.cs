@@ -56,12 +56,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (Validate != null)
                 opBuilder.SetValidate((bool)Validate);
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.AliPayConfig)Body);
 
 
 
             UpdateAliPayConfig operation = opBuilder.Build(
+                Body,
                 Id
             );
 

@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateKeyGroup.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.KeyGroupUpdate)Body);
 
 
 
             UpdateKeyGroup operation = opBuilder.Build(
+                Body,
                 KeyGroupId,
                 Namespace
             );

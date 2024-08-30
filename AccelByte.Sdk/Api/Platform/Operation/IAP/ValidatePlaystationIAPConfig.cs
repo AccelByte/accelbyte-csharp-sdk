@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PlaystationIAPConfigRequest? Body { get; set; }
-
 
 
 
@@ -38,20 +36,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ValidatePlaystationIAPConfigBuilder SetBody(Model.PlaystationIAPConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ValidatePlaystationIAPConfig Build(
+                PlaystationIAPConfigRequest body,
                 string namespace_
             )
             {
                 ValidatePlaystationIAPConfig op = new ValidatePlaystationIAPConfig(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -64,6 +58,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ValidatePlaystationIAPConfig(ValidatePlaystationIAPConfigBuilder builder,
+            PlaystationIAPConfigRequest body,
             string namespace_
         )
         {
@@ -73,7 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

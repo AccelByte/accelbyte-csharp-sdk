@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testPayPalConfigById
     ///
-    ///  [Not Supported Yet In Starter] Test PayPal configuration in payment merchant config. Other detail info:
+    ///  [Not supported yet in AGS Shared Cloud] Test PayPal configuration in payment merchant config. Other detail info:
     /// 
     ///   * Returns : test result
     /// </summary>

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// createFulfillmentScript
     ///
-    ///  [Not Supported Yet In Starter] Create fulfillment script.
+    ///  [Not supported yet in AGS Shared Cloud] Create fulfillment script.
     /// Other detail info:
     /// 
     /// 

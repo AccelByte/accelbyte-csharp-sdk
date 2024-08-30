@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class EntitlementSplitRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public PublicEntitlementMetadata? Metadata { get; set; }
+
         [JsonPropertyName("useCount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? UseCount { get; set; }

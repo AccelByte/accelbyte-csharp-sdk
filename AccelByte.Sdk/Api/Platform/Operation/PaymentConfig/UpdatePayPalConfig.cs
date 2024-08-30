@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updatePayPalConfig
     ///
-    ///  [Not Supported Yet In Starter] Update PayPal config.
+    ///  [Not supported yet in AGS Shared Cloud] Update PayPal config.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? Validate { get; set; }
 
-
-            public Model.PayPalConfig? Body { get; set; }
 
 
 
@@ -56,20 +54,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdatePayPalConfigBuilder SetBody(Model.PayPalConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdatePayPalConfig Build(
+                PayPalConfig body,
                 string id
             )
             {
                 UpdatePayPalConfig op = new UpdatePayPalConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdatePayPalConfig(UpdatePayPalConfigBuilder builder,
+            PayPalConfig body,
             string id
         )
         {
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

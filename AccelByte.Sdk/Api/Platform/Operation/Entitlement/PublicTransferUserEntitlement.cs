@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EntitlementTransferRequest? Body { get; set; }
-
 
 
 
@@ -38,22 +36,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicTransferUserEntitlementBuilder SetBody(Model.EntitlementTransferRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicTransferUserEntitlement Build(
+                EntitlementTransferRequest body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 PublicTransferUserEntitlement op = new PublicTransferUserEntitlement(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicTransferUserEntitlement(PublicTransferUserEntitlementBuilder builder,
+            EntitlementTransferRequest body,
             string entitlementId,
             string namespace_,
             string userId
@@ -81,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

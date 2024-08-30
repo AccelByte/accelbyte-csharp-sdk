@@ -28,8 +28,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.XblAchievementUpdateRequest? Body { get; set; }
-
 
 
 
@@ -37,21 +35,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateXblUserAchievementBuilder SetBody(Model.XblAchievementUpdateRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateXblUserAchievement Build(
+                XblAchievementUpdateRequest body,
                 string namespace_,
                 string userId
             )
             {
                 UpdateXblUserAchievement op = new UpdateXblUserAchievement(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateXblUserAchievement(UpdateXblUserAchievementBuilder builder,
+            XblAchievementUpdateRequest body,
             string namespace_,
             string userId
         )
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

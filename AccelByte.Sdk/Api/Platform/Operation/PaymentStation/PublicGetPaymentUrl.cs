@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetPaymentUrl
     ///
-    ///  [Not Supported Yet In Starter] Get payment url.
+    ///  [Not supported yet in AGS Shared Cloud] Get payment url.
     /// Other detail info:
     /// 
     ///   * For Neon Pay payment provider, the 'neonPayConfig' field can be used to provide success and cancel URL. If 'neonPayConfig' field is not present, the 'returnUrl' will be used for both success and cancel URL.
@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentUrlCreate? Body { get; set; }
-
 
 
 
@@ -41,20 +39,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicGetPaymentUrlBuilder SetBody(Model.PaymentUrlCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicGetPaymentUrl Build(
+                PaymentUrlCreate body,
                 string namespace_
             )
             {
                 PublicGetPaymentUrl op = new PublicGetPaymentUrl(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicGetPaymentUrl(PublicGetPaymentUrlBuilder builder,
+            PaymentUrlCreate body,
             string namespace_
         )
         {
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
         }

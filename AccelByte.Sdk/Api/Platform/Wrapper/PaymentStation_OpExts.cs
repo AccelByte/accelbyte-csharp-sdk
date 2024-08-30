@@ -45,10 +45,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentUrl? Execute(
             this PublicGetPaymentUrl.PublicGetPaymentUrlBuilder builder,
+            PaymentUrlCreate body,
             string namespace_
         )
         {
             PublicGetPaymentUrl op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -56,10 +58,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentUrl?> ExecuteAsync(
             this PublicGetPaymentUrl.PublicGetPaymentUrlBuilder builder,
+            PaymentUrlCreate body,
             string namespace_
         )
         {
             PublicGetPaymentUrl op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -119,11 +123,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PaymentProcessResult? Execute(
             this Pay.PayBuilder builder,
+            PaymentToken body,
             string namespace_,
             string paymentOrderNo
         )
         {
             Pay op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );
@@ -132,11 +138,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PaymentProcessResult?> ExecuteAsync(
             this Pay.PayBuilder builder,
+            PaymentToken body,
             string namespace_,
             string paymentOrderNo
         )
         {
             Pay op = builder.Build(
+                body,
                 namespace_,
                 paymentOrderNo
             );

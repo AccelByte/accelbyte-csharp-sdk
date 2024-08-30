@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testNeonPayConfigById
     ///
-    ///  [Not Supported Yet In Starter] Test Neon Pay configuration in payment merchant config. Other detail info:
+    ///  [Not supported yet in AGS Shared Cloud] Test Neon Pay configuration in payment merchant config. Other detail info:
     /// 
     ///   * Returns : test result
     /// </summary>

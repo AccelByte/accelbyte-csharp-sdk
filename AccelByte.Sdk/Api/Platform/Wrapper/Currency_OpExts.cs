@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CurrencyInfo? Execute(
             this CreateCurrency.CreateCurrencyBuilder builder,
+            CurrencyCreate body,
             string namespace_
         )
         {
             CreateCurrency op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CurrencyInfo?> ExecuteAsync(
             this CreateCurrency.CreateCurrencyBuilder builder,
+            CurrencyCreate body,
             string namespace_
         )
         {
             CreateCurrency op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -58,11 +62,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CurrencyInfo? Execute(
             this UpdateCurrency.UpdateCurrencyBuilder builder,
+            CurrencyUpdate body,
             string currencyCode,
             string namespace_
         )
         {
             UpdateCurrency op = builder.Build(
+                body,
                 currencyCode,
                 namespace_
             );
@@ -71,11 +77,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CurrencyInfo?> ExecuteAsync(
             this UpdateCurrency.UpdateCurrencyBuilder builder,
+            CurrencyUpdate body,
             string currencyCode,
             string namespace_
         )
         {
             UpdateCurrency op = builder.Build(
+                body,
                 currencyCode,
                 namespace_
             );

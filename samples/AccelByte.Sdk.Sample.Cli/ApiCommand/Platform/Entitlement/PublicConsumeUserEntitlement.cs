@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public EntitlementDecrement Body { get; set; } = new EntitlementDecrement();
+        public PublicEntitlementDecrement Body { get; set; } = new PublicEntitlementDecrement();
 
         public PublicConsumeUserEntitlementCommand(AccelByteSDK sdk)
         {
@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicConsumeUserEntitlement.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.EntitlementDecrement)Body);
 
 
 
             PublicConsumeUserEntitlement operation = opBuilder.Build(
+                Body,
                 EntitlementId,
                 Namespace,
                 UserId

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// refundPaymentOrderByDedicated
     ///
-    ///  [Not Supported Yet In Starter]
+    ///  [Not supported yet in AGS Shared Cloud]
     /// 
     /// This API is used to refund payment order by paymentOrderNo from non justice service. e.g. dedicated server.
     /// 
@@ -171,8 +171,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentOrderRefund? Body { get; set; }
-
 
 
 
@@ -180,21 +178,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public RefundPaymentOrderByDedicatedBuilder SetBody(Model.PaymentOrderRefund _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public RefundPaymentOrderByDedicated Build(
+                PaymentOrderRefund body,
                 string namespace_,
                 string paymentOrderNo
             )
             {
                 RefundPaymentOrderByDedicated op = new RefundPaymentOrderByDedicated(this,
+                    body,
                     namespace_,
                     paymentOrderNo
                 );
@@ -208,6 +202,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private RefundPaymentOrderByDedicated(RefundPaymentOrderByDedicatedBuilder builder,
+            PaymentOrderRefund body,
             string namespace_,
             string paymentOrderNo
         )
@@ -219,7 +214,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

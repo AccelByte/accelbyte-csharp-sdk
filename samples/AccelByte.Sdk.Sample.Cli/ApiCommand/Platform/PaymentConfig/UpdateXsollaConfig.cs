@@ -51,12 +51,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (Validate != null)
                 opBuilder.SetValidate((bool)Validate);
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.XsollaConfig)Body);
 
 
 
             UpdateXsollaConfig operation = opBuilder.Build(
+                Body,
                 Id
             );
 

@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// revokeItems
     ///
-    ///  [Not Supported Yet In Starter] Revoke items by transactionId.
+    ///  [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
     /// Other detail info:
     /// 
-    ///   * Returns : revoke fulfillment v2 result
+    ///   * Returns : revoke fulfillment v2 result, storeId field can be ignored.
     /// </summary>
     public class RevokeItems : AccelByte.Sdk.Core.Operation
     {

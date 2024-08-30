@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateCampaign.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.CampaignUpdate)Body);
 
 
 
             UpdateCampaign operation = opBuilder.Build(
+                Body,
                 CampaignId,
                 Namespace
             );

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateWxPayConfig
     ///
-    ///  [Not Supported Yet In Starter] Update wxpay configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Update wxpay configuration.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Validate { get; set; }
 
 
-            public Model.WxPayConfigRequest? Body { get; set; }
-
 
 
 
@@ -48,20 +46,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdateWxPayConfigBuilder SetBody(Model.WxPayConfigRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateWxPayConfig Build(
+                WxPayConfigRequest body,
                 string id
             )
             {
                 UpdateWxPayConfig op = new UpdateWxPayConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -74,6 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateWxPayConfig(UpdateWxPayConfigBuilder builder,
+            WxPayConfigRequest body,
             string id
         )
         {
@@ -84,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

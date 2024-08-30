@@ -51,8 +51,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TradeChainedActionCommitRequest? Body { get; set; }
-
 
 
 
@@ -60,20 +58,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CommitBuilder SetBody(Model.TradeChainedActionCommitRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public Commit Build(
+                TradeChainedActionCommitRequest body,
                 string namespace_
             )
             {
                 Commit op = new Commit(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -86,6 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private Commit(CommitBuilder builder,
+            TradeChainedActionCommitRequest body,
             string namespace_
         )
         {
@@ -95,7 +90,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateXblIAPConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.XblIAPConfigRequest)Body);
 
 
 
             UpdateXblIAPConfig operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

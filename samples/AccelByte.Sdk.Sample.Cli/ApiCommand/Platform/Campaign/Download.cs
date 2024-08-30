@@ -34,8 +34,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("batchName")]
+        public string? BatchName { get; set; }
+
         [SdkCommandArgument("batchNo")]
-        public int? BatchNo { get; set; }
+        public List<int>? BatchNo { get; set; }
+
+        [SdkCommandArgument("withBatchName")]
+        public bool? WithBatchName { get; set; }
 
         public DownloadCommand(AccelByteSDK sdk)
         {
@@ -48,8 +54,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.Download.Builder;
 
+            if (BatchName != null)
+                opBuilder.SetBatchName((string)BatchName);
             if (BatchNo != null)
-                opBuilder.SetBatchNo((int)BatchNo);
+                opBuilder.SetBatchNo((List<int>)BatchNo);
+            if (WithBatchName != null)
+                opBuilder.SetWithBatchName((bool)WithBatchName);
 
 
 

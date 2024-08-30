@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.PublicCancelSubscription.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.CancelRequest)Body);
 
 
 
             PublicCancelSubscription operation = opBuilder.Build(
+                Body,
                 Namespace,
                 SubscriptionId,
                 UserId

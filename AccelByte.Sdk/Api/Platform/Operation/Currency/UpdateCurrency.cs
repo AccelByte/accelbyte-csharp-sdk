@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CurrencyUpdate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateCurrencyBuilder SetBody(Model.CurrencyUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateCurrency Build(
+                CurrencyUpdate body,
                 string currencyCode,
                 string namespace_
             )
             {
                 UpdateCurrency op = new UpdateCurrency(this,
+                    body,
                     currencyCode,
                     namespace_
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateCurrency(UpdateCurrencyBuilder builder,
+            CurrencyUpdate body,
             string currencyCode,
             string namespace_
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

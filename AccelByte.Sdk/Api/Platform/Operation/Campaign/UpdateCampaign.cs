@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.CampaignUpdate? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UpdateCampaignBuilder SetBody(Model.CampaignUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateCampaign Build(
+                CampaignUpdate body,
                 string campaignId,
                 string namespace_
             )
             {
                 UpdateCampaign op = new UpdateCampaign(this,
+                    body,
                     campaignId,
                     namespace_
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateCampaign(UpdateCampaignBuilder builder,
+            CampaignUpdate body,
             string campaignId,
             string namespace_
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

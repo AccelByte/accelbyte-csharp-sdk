@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.AdminEntitlementDecrement? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ConsumeUserEntitlementBuilder SetBody(Model.AdminEntitlementDecrement _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ConsumeUserEntitlement Build(
+                AdminEntitlementDecrement body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 ConsumeUserEntitlement op = new ConsumeUserEntitlement(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ConsumeUserEntitlement(ConsumeUserEntitlementBuilder builder,
+            AdminEntitlementDecrement body,
             string entitlementId,
             string namespace_,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

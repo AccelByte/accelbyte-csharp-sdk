@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("redeemable")]
         public bool? Redeemable { get; set; }
 
+        [SdkCommandArgument("withBatchName")]
+        public bool? WithBatchName { get; set; }
+
         public GetCodeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -50,6 +53,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             if (Redeemable != null)
                 opBuilder.SetRedeemable((bool)Redeemable);
+            if (WithBatchName != null)
+                opBuilder.SetWithBatchName((bool)WithBatchName);
 
 
 

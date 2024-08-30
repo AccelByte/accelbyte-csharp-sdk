@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicDeletePaymentAccount
     ///
-    ///  [Not Supported Yet In Starter] Delete payment account.
+    ///  [Not supported yet in AGS Shared Cloud] Delete payment account.
     /// Other detail info:
     /// 
     ///   * Returns :

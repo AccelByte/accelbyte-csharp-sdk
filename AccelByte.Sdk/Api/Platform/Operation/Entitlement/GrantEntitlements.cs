@@ -43,8 +43,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.BulkEntitlementGrantRequest? Body { get; set; }
-
 
 
 
@@ -52,20 +50,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public GrantEntitlementsBuilder SetBody(Model.BulkEntitlementGrantRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public GrantEntitlements Build(
+                BulkEntitlementGrantRequest body,
                 string namespace_
             )
             {
                 GrantEntitlements op = new GrantEntitlements(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -78,6 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private GrantEntitlements(GrantEntitlementsBuilder builder,
+            BulkEntitlementGrantRequest body,
             string namespace_
         )
         {
@@ -87,7 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

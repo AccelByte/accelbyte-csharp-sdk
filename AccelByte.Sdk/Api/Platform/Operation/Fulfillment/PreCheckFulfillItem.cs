@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PreCheckFulfillmentRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PreCheckFulfillItemBuilder SetBody(Model.PreCheckFulfillmentRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PreCheckFulfillItem Build(
+                PreCheckFulfillmentRequest body,
                 string namespace_,
                 string userId
             )
             {
                 PreCheckFulfillItem op = new PreCheckFulfillItem(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PreCheckFulfillItem(PreCheckFulfillItemBuilder builder,
+            PreCheckFulfillmentRequest body,
             string namespace_,
             string userId
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

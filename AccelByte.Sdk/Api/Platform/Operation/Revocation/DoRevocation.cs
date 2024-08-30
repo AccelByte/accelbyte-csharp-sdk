@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.RevocationRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public DoRevocationBuilder SetBody(Model.RevocationRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public DoRevocation Build(
+                RevocationRequest body,
                 string namespace_,
                 string userId
             )
             {
                 DoRevocation op = new DoRevocation(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private DoRevocation(DoRevocationBuilder builder,
+            RevocationRequest body,
             string namespace_,
             string userId
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.AppleIAPConfigInfo? Execute(
             this UpdateAppleIAPConfig.UpdateAppleIAPConfigBuilder builder,
+            AppleIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateAppleIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.AppleIAPConfigInfo?> ExecuteAsync(
             this UpdateAppleIAPConfig.UpdateAppleIAPConfigBuilder builder,
+            AppleIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateAppleIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -102,10 +106,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this UpdateEpicGamesIAPConfig.UpdateEpicGamesIAPConfigBuilder builder,
+            EpicGamesIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateEpicGamesIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -113,10 +119,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.EpicGamesIAPConfigInfo?> ExecuteAsync(
             this UpdateEpicGamesIAPConfig.UpdateEpicGamesIAPConfigBuilder builder,
+            EpicGamesIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateEpicGamesIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -168,10 +176,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.GoogleIAPConfigInfo? Execute(
             this UpdateGoogleIAPConfig.UpdateGoogleIAPConfigBuilder builder,
+            GoogleIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateGoogleIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -179,10 +189,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.GoogleIAPConfigInfo?> ExecuteAsync(
             this UpdateGoogleIAPConfig.UpdateGoogleIAPConfigBuilder builder,
+            GoogleIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateGoogleIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -256,10 +268,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.IAPItemConfigInfo? Execute(
             this UpdateIAPItemConfig.UpdateIAPItemConfigBuilder builder,
+            IAPItemConfigUpdate body,
             string namespace_
         )
         {
             UpdateIAPItemConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -267,10 +281,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.IAPItemConfigInfo?> ExecuteAsync(
             this UpdateIAPItemConfig.UpdateIAPItemConfigBuilder builder,
+            IAPItemConfigUpdate body,
             string namespace_
         )
         {
             UpdateIAPItemConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -322,10 +338,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.OculusIAPConfigInfo? Execute(
             this UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder builder,
+            OculusIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateOculusIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -333,10 +351,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.OculusIAPConfigInfo?> ExecuteAsync(
             this UpdateOculusIAPConfig.UpdateOculusIAPConfigBuilder builder,
+            OculusIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateOculusIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -388,10 +408,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.PlayStationIAPConfigInfo? Execute(
             this UpdatePlaystationIAPConfig.UpdatePlaystationIAPConfigBuilder builder,
+            PlaystationIAPConfigRequest body,
             string namespace_
         )
         {
             UpdatePlaystationIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -399,10 +421,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.PlayStationIAPConfigInfo?> ExecuteAsync(
             this UpdatePlaystationIAPConfig.UpdatePlaystationIAPConfigBuilder builder,
+            PlaystationIAPConfigRequest body,
             string namespace_
         )
         {
             UpdatePlaystationIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -454,10 +478,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.TestResult? Execute(
             this ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder builder,
+            PlaystationIAPConfigRequest body,
             string namespace_
         )
         {
             ValidatePlaystationIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -465,10 +491,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TestResult?> ExecuteAsync(
             this ValidatePlaystationIAPConfig.ValidatePlaystationIAPConfigBuilder builder,
+            PlaystationIAPConfigRequest body,
             string namespace_
         )
         {
             ValidatePlaystationIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -498,10 +526,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.SteamIAPConfigInfo? Execute(
             this UpdateSteamIAPConfig.UpdateSteamIAPConfigBuilder builder,
+            SteamIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateSteamIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -509,10 +539,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.SteamIAPConfigInfo?> ExecuteAsync(
             this UpdateSteamIAPConfig.UpdateSteamIAPConfigBuilder builder,
+            SteamIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateSteamIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -564,10 +596,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.TwitchIAPConfigInfo? Execute(
             this UpdateTwitchIAPConfig.UpdateTwitchIAPConfigBuilder builder,
+            TwitchIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateTwitchIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -575,10 +609,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.TwitchIAPConfigInfo?> ExecuteAsync(
             this UpdateTwitchIAPConfig.UpdateTwitchIAPConfigBuilder builder,
+            TwitchIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateTwitchIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -630,10 +666,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.XblIAPConfigInfo? Execute(
             this UpdateXblIAPConfig.UpdateXblIAPConfigBuilder builder,
+            XblIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateXblIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -641,10 +679,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.XblIAPConfigInfo?> ExecuteAsync(
             this UpdateXblIAPConfig.UpdateXblIAPConfigBuilder builder,
+            XblIAPConfigRequest body,
             string namespace_
         )
         {
             UpdateXblIAPConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -774,11 +814,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
+            MockIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             MockFulfillIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -787,11 +829,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this MockFulfillIAPItem.MockFulfillIAPItemBuilder builder,
+            MockIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             MockFulfillIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -822,10 +866,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.TwitchSyncResult>? Execute(
             this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
+            TwitchSyncRequest body,
             string namespace_
         )
         {
             SyncTwitchDropsEntitlement op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -833,10 +879,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.TwitchSyncResult>?> ExecuteAsync(
             this SyncTwitchDropsEntitlement.SyncTwitchDropsEntitlementBuilder builder,
+            TwitchSyncRequest body,
             string namespace_
         )
         {
             SyncTwitchDropsEntitlement op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -844,11 +892,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
+            AppleIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             PublicFulfillAppleIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -857,11 +907,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicFulfillAppleIAPItem.PublicFulfillAppleIAPItemBuilder builder,
+            AppleIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             PublicFulfillAppleIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -896,11 +948,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.GoogleReceiptResolveResult? Execute(
             this PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder builder,
+            GoogleIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             PublicFulfillGoogleIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -909,11 +963,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.GoogleReceiptResolveResult?> ExecuteAsync(
             this PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder builder,
+            GoogleIAPReceipt body,
             string namespace_,
             string userId
         )
         {
             PublicFulfillGoogleIAPItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -974,11 +1030,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Platform.Model.PlayStationReconcileResult>? Execute(
             this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+            PlayStationMultiServiceLabelsReconcileRequest body,
             string namespace_,
             string userId
         )
         {
             PublicReconcilePlayStationStoreWithMultipleServiceLabels op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -987,11 +1045,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Platform.Model.PlayStationReconcileResult>?> ExecuteAsync(
             this PublicReconcilePlayStationStoreWithMultipleServiceLabels.PublicReconcilePlayStationStoreWithMultipleServiceLabelsBuilder builder,
+            PlayStationMultiServiceLabelsReconcileRequest body,
             string namespace_,
             string userId
         )
         {
             PublicReconcilePlayStationStoreWithMultipleServiceLabels op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1000,11 +1060,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this SyncSteamInventory.SyncSteamInventoryBuilder builder,
+            SteamSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncSteamInventory op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1013,11 +1075,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this SyncSteamInventory.SyncSteamInventoryBuilder builder,
+            SteamSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncSteamInventory op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1026,11 +1090,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,
+            TwitchSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncTwitchDropsEntitlement1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1039,11 +1105,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,
+            TwitchSyncRequest body,
             string namespace_,
             string userId
         )
         {
             SyncTwitchDropsEntitlement1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

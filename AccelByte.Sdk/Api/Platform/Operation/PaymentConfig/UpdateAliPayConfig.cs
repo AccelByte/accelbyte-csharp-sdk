@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateAliPayConfig
     ///
-    ///  [Not Supported Yet In Starter] Update alipay configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Update alipay configuration.
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? Validate { get; set; }
 
-
-            public Model.AliPayConfig? Body { get; set; }
 
 
 
@@ -56,20 +54,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdateAliPayConfigBuilder SetBody(Model.AliPayConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateAliPayConfig Build(
+                AliPayConfig body,
                 string id
             )
             {
                 UpdateAliPayConfig op = new UpdateAliPayConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -82,6 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateAliPayConfig(UpdateAliPayConfigBuilder builder,
+            AliPayConfig body,
             string id
         )
         {
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

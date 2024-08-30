@@ -59,12 +59,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             if (ZipCode != null)
                 opBuilder.SetZipCode((string)ZipCode);
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.PaymentToken)Body);
 
 
 
             Pay operation = opBuilder.Build(
+                Body,
                 Namespace,
                 PaymentOrderNo
             );

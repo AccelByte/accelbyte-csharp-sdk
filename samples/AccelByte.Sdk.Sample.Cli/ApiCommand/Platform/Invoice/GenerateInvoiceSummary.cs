@@ -31,17 +31,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("feature")]
-        public string? Feature { get; set; }
-
-        [SdkCommandArgument("itemId")]
-        public string? ItemId { get; set; }
-
-        [SdkCommandArgument("itemType")]
-        public string? ItemType { get; set; }
-
         [SdkCommandArgument("endTime")]
         public string EndTime { get; set; } = String.Empty;
+
+        [SdkCommandArgument("feature")]
+        public string Feature { get; set; } = String.Empty;
+
+        [SdkCommandArgument("itemId")]
+        public string ItemId { get; set; } = String.Empty;
+
+        [SdkCommandArgument("itemType")]
+        public string ItemType { get; set; } = String.Empty;
 
         [SdkCommandArgument("startTime")]
         public string StartTime { get; set; } = String.Empty;
@@ -57,12 +57,6 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GenerateInvoiceSummary.Builder;
 
-            if (Feature != null)
-                opBuilder.SetFeature((string)Feature);
-            if (ItemId != null)
-                opBuilder.SetItemId((string)ItemId);
-            if (ItemType != null)
-                opBuilder.SetItemType(GenerateInvoiceSummaryItemType.NewValue(ItemType));
 
 
 
@@ -70,6 +64,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             GenerateInvoiceSummary operation = opBuilder.Build(
                 Namespace,
                 EndTime,
+                Feature,
+                ItemId,
+                ItemType,
                 StartTime
             );
 

@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateSectionPluginConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.SectionPluginConfigUpdate)Body);
 
 
 
             UpdateSectionPluginConfig operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

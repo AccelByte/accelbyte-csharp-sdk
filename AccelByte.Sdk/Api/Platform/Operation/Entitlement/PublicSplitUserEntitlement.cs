@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.EntitlementSplitRequest? Body { get; set; }
-
 
 
 
@@ -38,22 +36,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicSplitUserEntitlementBuilder SetBody(Model.EntitlementSplitRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicSplitUserEntitlement Build(
+                EntitlementSplitRequest body,
                 string entitlementId,
                 string namespace_,
                 string userId
             )
             {
                 PublicSplitUserEntitlement op = new PublicSplitUserEntitlement(this,
+                    body,
                     entitlementId,
                     namespace_,
                     userId
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicSplitUserEntitlement(PublicSplitUserEntitlementBuilder builder,
+            EntitlementSplitRequest body,
             string entitlementId,
             string namespace_,
             string userId
@@ -81,7 +76,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

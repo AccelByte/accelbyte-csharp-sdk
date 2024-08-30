@@ -14,10 +14,12 @@ namespace AccelByte.Sdk.Api
     {
         public static Platform.Model.RewardInfo? Execute(
             this CreateReward.CreateRewardBuilder builder,
+            RewardCreate body,
             string namespace_
         )
         {
             CreateReward op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -25,10 +27,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RewardInfo?> ExecuteAsync(
             this CreateReward.CreateRewardBuilder builder,
+            RewardCreate body,
             string namespace_
         )
         {
             CreateReward op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -132,11 +136,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.RewardInfo? Execute(
             this UpdateReward.UpdateRewardBuilder builder,
+            RewardUpdate body,
             string namespace_,
             string rewardId
         )
         {
             UpdateReward op = builder.Build(
+                body,
                 namespace_,
                 rewardId
             );
@@ -145,11 +151,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RewardInfo?> ExecuteAsync(
             this UpdateReward.UpdateRewardBuilder builder,
+            RewardUpdate body,
             string namespace_,
             string rewardId
         )
         {
             UpdateReward op = builder.Build(
+                body,
                 namespace_,
                 rewardId
             );
@@ -210,11 +218,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this DeleteRewardConditionRecord.DeleteRewardConditionRecordBuilder builder,
+            DeleteRewardConditionRequest body,
             string namespace_,
             string rewardId
         )
         {
             DeleteRewardConditionRecord op = builder.Build(
+                body,
                 namespace_,
                 rewardId
             );
@@ -223,11 +233,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this DeleteRewardConditionRecord.DeleteRewardConditionRecordBuilder builder,
+            DeleteRewardConditionRequest body,
             string namespace_,
             string rewardId
         )
         {
             DeleteRewardConditionRecord op = builder.Build(
+                body,
                 namespace_,
                 rewardId
             );

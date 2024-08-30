@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateXsollaConfig
     ///
-    ///  [Not Supported Yet In Starter] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
+    ///  [Not supported yet in AGS Shared Cloud] Update xsolla configuration. Reference: [Xsolla Document](https://developers.xsolla.com/?#simple-checkout).
     /// Other detail info:
     /// 
     ///   * Returns : updated payment merchant config
@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Validate { get; set; }
 
 
-            public Model.XsollaConfig? Body { get; set; }
-
 
 
 
@@ -48,20 +46,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public UpdateXsollaConfigBuilder SetBody(Model.XsollaConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateXsollaConfig Build(
+                XsollaConfig body,
                 string id
             )
             {
                 UpdateXsollaConfig op = new UpdateXsollaConfig(this,
+                    body,
                     id
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -74,6 +68,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private UpdateXsollaConfig(UpdateXsollaConfigBuilder builder,
+            XsollaConfig body,
             string id
         )
         {
@@ -84,7 +79,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

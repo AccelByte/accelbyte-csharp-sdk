@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AcquireUserId { get; set; }
 
+        [JsonPropertyName("batchName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? BatchName { get; set; }
+
         [JsonPropertyName("batchNo")]
         public int? BatchNo { get; set; }
 

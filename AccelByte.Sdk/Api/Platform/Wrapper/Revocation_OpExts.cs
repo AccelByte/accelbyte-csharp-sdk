@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.RevocationConfigInfo? Execute(
             this UpdateRevocationConfig.UpdateRevocationConfigBuilder builder,
+            RevocationConfigUpdate body,
             string namespace_
         )
         {
             UpdateRevocationConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RevocationConfigInfo?> ExecuteAsync(
             this UpdateRevocationConfig.UpdateRevocationConfigBuilder builder,
+            RevocationConfigUpdate body,
             string namespace_
         )
         {
             UpdateRevocationConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -102,11 +106,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.RevocationResult? Execute(
             this DoRevocation.DoRevocationBuilder builder,
+            RevocationRequest body,
             string namespace_,
             string userId
         )
         {
             DoRevocation op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -115,11 +121,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.RevocationResult?> ExecuteAsync(
             this DoRevocation.DoRevocationBuilder builder,
+            RevocationRequest body,
             string namespace_,
             string userId
         )
         {
             DoRevocation op = builder.Build(
+                body,
                 namespace_,
                 userId
             );

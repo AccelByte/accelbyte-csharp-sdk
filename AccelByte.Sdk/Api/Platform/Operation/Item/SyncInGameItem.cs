@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// syncInGameItem
     ///
-    ///  [Not Supported Yet In Starter] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
+    ///  [Not supported yet in AGS Shared Cloud] This API is used to sync an in game item in game namespace to publisher namespace, only INGAMEITEM, CODE, COINS and SEASON are supported
     /// 
     /// The synced item has an additional field targetItemId besides targetNamespace, mostly this item should not modified manually again.
     /// 
@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.InGameItemSync? Body { get; set; }
-
 
 
 
@@ -43,21 +41,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SyncInGameItemBuilder SetBody(Model.InGameItemSync _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public SyncInGameItem Build(
+                InGameItemSync body,
                 string namespace_,
                 string storeId
             )
             {
                 SyncInGameItem op = new SyncInGameItem(this,
+                    body,
                     namespace_,
                     storeId
                 );
@@ -71,6 +65,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SyncInGameItem(SyncInGameItemBuilder builder,
+            InGameItemSync body,
             string namespace_,
             string storeId
         )
@@ -82,7 +77,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

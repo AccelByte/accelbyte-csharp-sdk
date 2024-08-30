@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testAdyenConfig
     ///
-    ///  [Not Supported Yet In Starter] Test adyen configuration.
+    ///  [Not supported yet in AGS Shared Cloud] Test adyen configuration.
     /// 
     /// #### Check List:
     /// 
@@ -50,8 +50,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.AdyenConfig? Body { get; set; }
-
 
 
 
@@ -65,19 +63,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestAdyenConfigBuilder SetBody(Model.AdyenConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestAdyenConfig Build(
+                AdyenConfig body
             )
             {
-                TestAdyenConfig op = new TestAdyenConfig(this
+                TestAdyenConfig op = new TestAdyenConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -88,7 +82,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestAdyenConfig(TestAdyenConfigBuilder builder
+        private TestAdyenConfig(TestAdyenConfigBuilder builder,
+            AdyenConfig body
         )
         {
 
@@ -97,7 +92,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

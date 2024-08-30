@@ -51,8 +51,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.OrderCreate? Body { get; set; }
-
 
 
 
@@ -60,21 +58,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicCreateUserOrderBuilder SetBody(Model.OrderCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicCreateUserOrder Build(
+                OrderCreate body,
                 string namespace_,
                 string userId
             )
             {
                 PublicCreateUserOrder op = new PublicCreateUserOrder(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -88,6 +82,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicCreateUserOrder(PublicCreateUserOrderBuilder builder,
+            OrderCreate body,
             string namespace_,
             string userId
         )
@@ -99,7 +94,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.GoogleIAPReceipt? Body { get; set; }
-
 
 
 
@@ -38,21 +36,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public PublicFulfillGoogleIAPItemBuilder SetBody(Model.GoogleIAPReceipt _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicFulfillGoogleIAPItem Build(
+                GoogleIAPReceipt body,
                 string namespace_,
                 string userId
             )
             {
                 PublicFulfillGoogleIAPItem op = new PublicFulfillGoogleIAPItem(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private PublicFulfillGoogleIAPItem(PublicFulfillGoogleIAPItemBuilder builder,
+            GoogleIAPReceipt body,
             string namespace_,
             string userId
         )
@@ -77,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

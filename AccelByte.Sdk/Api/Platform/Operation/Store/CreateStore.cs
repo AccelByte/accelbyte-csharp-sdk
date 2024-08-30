@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.StoreCreate? Body { get; set; }
-
 
 
 
@@ -41,20 +39,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateStoreBuilder SetBody(Model.StoreCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateStore Build(
+                StoreCreate body,
                 string namespace_
             )
             {
                 CreateStore op = new CreateStore(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -67,6 +61,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateStore(CreateStoreBuilder builder,
+            StoreCreate body,
             string namespace_
         )
         {
@@ -76,7 +71,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

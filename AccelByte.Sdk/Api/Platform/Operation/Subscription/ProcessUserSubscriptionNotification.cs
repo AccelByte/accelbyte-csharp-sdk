@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TradeNotification? Body { get; set; }
-
 
 
 
@@ -40,22 +38,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ProcessUserSubscriptionNotificationBuilder SetBody(Model.TradeNotification _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ProcessUserSubscriptionNotification Build(
+                TradeNotification body,
                 string namespace_,
                 string subscriptionId,
                 string userId
             )
             {
                 ProcessUserSubscriptionNotification op = new ProcessUserSubscriptionNotification(this,
+                    body,
                     namespace_,
                     subscriptionId,
                     userId
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ProcessUserSubscriptionNotification(ProcessUserSubscriptionNotificationBuilder builder,
+            TradeNotification body,
             string namespace_,
             string subscriptionId,
             string userId
@@ -83,7 +78,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -546,12 +546,12 @@ namespace AccelByte.Sdk.Core.Client
                 using MemoryStream ms = new MemoryStream();
                 stream.CopyTo(ms);
                 return ms.ToArray();
-            }            
+            }
             else
             {
                 var responseStr = Helper.ConvertInputStreamToString(response.Content.ReadAsStream());
                 throw new Exception(responseStr);
-            }   
+            }
         }
 
         public async Task<byte[]> DownloadBinaryDataAsync(string url)

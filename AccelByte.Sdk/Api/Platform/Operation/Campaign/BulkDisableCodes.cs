@@ -32,7 +32,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<BulkDisableCodesBuilder>
         {
 
-            public int? BatchNo { get; set; }
+            public string? BatchName { get; set; }
+
+            public List<int>? BatchNo { get; set; }
 
 
 
@@ -41,7 +43,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             internal BulkDisableCodesBuilder() { }
 
 
-            public BulkDisableCodesBuilder SetBatchNo(int _batchNo)
+            public BulkDisableCodesBuilder SetBatchName(string _batchName)
+            {
+                BatchName = _batchName;
+                return this;
+            }
+
+            public BulkDisableCodesBuilder SetBatchNo(List<int> _batchNo)
             {
                 BatchNo = _batchNo;
                 return this;
@@ -77,10 +85,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["campaignId"] = campaignId;
             PathParams["namespace"] = namespace_;
 
-            if (builder.BatchNo != null) QueryParams["batchNo"] = Convert.ToString(builder.BatchNo)!;
+            if (builder.BatchName is not null) QueryParams["batchName"] = builder.BatchName;
+            if (builder.BatchNo is not null) QueryParams["batchNo"] = builder.BatchNo;
 
 
 
+            CollectionFormatMap["batchNo"] = "multi";
 
 
 
@@ -91,16 +101,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public BulkDisableCodes(
             string campaignId,
             string namespace_,
-            int? batchNo
+            string? batchName,
+            List<int>? batchNo
         )
         {
             PathParams["campaignId"] = campaignId;
             PathParams["namespace"] = namespace_;
 
-            if (batchNo != null) QueryParams["batchNo"] = Convert.ToString(batchNo)!;
+            if (batchName is not null) QueryParams["batchName"] = batchName;
+            if (batchNo is not null) QueryParams["batchNo"] = batchNo;
 
 
 
+            CollectionFormatMap["batchNo"] = "multi";
 
 
 

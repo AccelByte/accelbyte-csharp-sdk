@@ -29,8 +29,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.TwitchSyncRequest? Body { get; set; }
-
 
 
 
@@ -38,21 +36,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public SyncTwitchDropsEntitlement1Builder SetBody(Model.TwitchSyncRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public SyncTwitchDropsEntitlement1 Build(
+                TwitchSyncRequest body,
                 string namespace_,
                 string userId
             )
             {
                 SyncTwitchDropsEntitlement1 op = new SyncTwitchDropsEntitlement1(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private SyncTwitchDropsEntitlement1(SyncTwitchDropsEntitlement1Builder builder,
+            TwitchSyncRequest body,
             string namespace_,
             string userId
         )
@@ -77,7 +72,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

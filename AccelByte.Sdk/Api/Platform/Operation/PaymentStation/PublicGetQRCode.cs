@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// publicGetQRCode
     ///
-    ///  [Not Supported Yet In Starter] Get qrcode.
+    ///  [Not supported yet in AGS Shared Cloud] Get qrcode.
     /// Other detail info:
     /// 
     ///   * Returns : QRCode image stream

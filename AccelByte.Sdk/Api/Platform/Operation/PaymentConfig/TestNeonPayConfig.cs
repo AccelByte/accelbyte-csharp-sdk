@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// testNeonPayConfig
     ///
-    ///  [Not Supported Yet In Starter] Check Neon Pay configuration, Reference: [Neon Pay Document](https://docs.neonpay.com/docs/checkout).
+    ///  [Not supported yet in AGS Shared Cloud] Check Neon Pay configuration, Reference: [Neon Pay Document](https://docs.neonpay.com/docs/checkout).
     /// 
     /// #### Check List:
     /// 
@@ -38,8 +38,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Sandbox { get; set; }
 
 
-            public Model.NeonPayConfig? Body { get; set; }
-
 
 
 
@@ -53,19 +51,15 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public TestNeonPayConfigBuilder SetBody(Model.NeonPayConfig _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public TestNeonPayConfig Build(
+                NeonPayConfig body
             )
             {
-                TestNeonPayConfig op = new TestNeonPayConfig(this
+                TestNeonPayConfig op = new TestNeonPayConfig(this,
+                    body
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -76,7 +70,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private TestNeonPayConfig(TestNeonPayConfigBuilder builder
+        private TestNeonPayConfig(TestNeonPayConfigBuilder builder,
+            NeonPayConfig body
         )
         {
 
@@ -85,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

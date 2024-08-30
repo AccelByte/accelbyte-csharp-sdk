@@ -35,8 +35,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public bool? Force { get; set; }
 
 
-            public Model.CancelRequest? Body { get; set; }
-
 
 
 
@@ -50,22 +48,18 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
 
 
-            public CancelSubscriptionBuilder SetBody(Model.CancelRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CancelSubscription Build(
+                CancelRequest body,
                 string namespace_,
                 string subscriptionId,
                 string userId
             )
             {
                 CancelSubscription op = new CancelSubscription(this,
+                    body,
                     namespace_,
                     subscriptionId,
                     userId
@@ -80,6 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CancelSubscription(CancelSubscriptionBuilder builder,
+            CancelRequest body,
             string namespace_,
             string subscriptionId,
             string userId
@@ -94,7 +89,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

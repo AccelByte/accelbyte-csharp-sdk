@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.CatalogConfigInfo? Execute(
             this UpdateCatalogConfig.UpdateCatalogConfigBuilder builder,
+            CatalogConfigUpdate body,
             string namespace_
         )
         {
             UpdateCatalogConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.CatalogConfigInfo?> ExecuteAsync(
             this UpdateCatalogConfig.UpdateCatalogConfigBuilder builder,
+            CatalogConfigUpdate body,
             string namespace_
         )
         {
             UpdateCatalogConfig op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -80,10 +84,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.StoreInfo? Execute(
             this CreateStore.CreateStoreBuilder builder,
+            StoreCreate body,
             string namespace_
         )
         {
             CreateStore op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -91,10 +97,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
             this CreateStore.CreateStoreBuilder builder,
+            StoreCreate body,
             string namespace_
         )
         {
             CreateStore op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -150,10 +158,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Stream? Execute(
             this ExportStoreByCSV.ExportStoreByCSVBuilder builder,
+            ExportStoreToCSVRequest body,
             string namespace_
         )
         {
             ExportStoreByCSV op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -161,10 +171,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Stream?> ExecuteAsync(
             this ExportStoreByCSV.ExportStoreByCSVBuilder builder,
+            ExportStoreToCSVRequest body,
             string namespace_
         )
         {
             ExportStoreByCSV op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -309,11 +321,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.StoreInfo? Execute(
             this UpdateStore.UpdateStoreBuilder builder,
+            StoreUpdate body,
             string namespace_,
             string storeId
         )
         {
             UpdateStore op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -322,11 +336,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.StoreInfo?> ExecuteAsync(
             this UpdateStore.UpdateStoreBuilder builder,
+            StoreUpdate body,
             string namespace_,
             string storeId
         )
         {
             UpdateStore op = builder.Build(
+                body,
                 namespace_,
                 storeId
             );
@@ -440,11 +456,21 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.ImportStoreResult? Execute(
             this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
+            Stream category,
+            Stream display,
+            Stream item,
+            string notes,
+            Stream section,
             string namespace_,
             string storeId
         )
         {
             ImportStoreByCSV op = builder.Build(
+                category,
+                display,
+                item,
+                notes,
+                section,
                 namespace_,
                 storeId
             );
@@ -453,11 +479,21 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.ImportStoreResult?> ExecuteAsync(
             this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
+            Stream category,
+            Stream display,
+            Stream item,
+            string notes,
+            Stream section,
             string namespace_,
             string storeId
         )
         {
             ImportStoreByCSV op = builder.Build(
+                category,
+                display,
+                item,
+                notes,
+                section,
                 namespace_,
                 storeId
             );

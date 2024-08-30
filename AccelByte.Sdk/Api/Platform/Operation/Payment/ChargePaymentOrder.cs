@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// chargePaymentOrder
     ///
-    ///  [Not Supported Yet In Starter] [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
+    ///  [Not supported yet in AGS Shared Cloud] [TEST FACILITY ONLY] Forbidden in live environment. Charge payment order without payment flow for unpaid payment order, usually for test usage to simulate real currency payment process.
     /// Other detail info:
     /// 
     ///   * Returns : payment order instance
@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.PaymentOrderChargeRequest? Body { get; set; }
-
 
 
 
@@ -40,21 +38,17 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public ChargePaymentOrderBuilder SetBody(Model.PaymentOrderChargeRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ChargePaymentOrder Build(
+                PaymentOrderChargeRequest body,
                 string namespace_,
                 string paymentOrderNo
             )
             {
                 ChargePaymentOrder op = new ChargePaymentOrder(this,
+                    body,
                     namespace_,
                     paymentOrderNo
                 );
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private ChargePaymentOrder(ChargePaymentOrderBuilder builder,
+            PaymentOrderChargeRequest body,
             string namespace_,
             string paymentOrderNo
         )
@@ -79,7 +74,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

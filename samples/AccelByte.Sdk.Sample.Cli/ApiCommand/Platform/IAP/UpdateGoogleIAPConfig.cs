@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UpdateGoogleIAPConfig.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.GoogleIAPConfigRequest)Body);
 
 
 
             UpdateGoogleIAPConfig operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

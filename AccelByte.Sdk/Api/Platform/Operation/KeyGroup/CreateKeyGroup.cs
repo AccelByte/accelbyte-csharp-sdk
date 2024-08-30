@@ -31,8 +31,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
-            public Model.KeyGroupCreate? Body { get; set; }
-
 
 
 
@@ -40,20 +38,16 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public CreateKeyGroupBuilder SetBody(Model.KeyGroupCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateKeyGroup Build(
+                KeyGroupCreate body,
                 string namespace_
             )
             {
                 CreateKeyGroup op = new CreateKeyGroup(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -66,6 +60,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
 
         private CreateKeyGroup(CreateKeyGroupBuilder builder,
+            KeyGroupCreate body,
             string namespace_
         )
         {
@@ -75,7 +70,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
