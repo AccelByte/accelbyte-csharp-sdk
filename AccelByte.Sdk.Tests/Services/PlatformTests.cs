@@ -68,8 +68,7 @@ namespace AccelByte.Sdk.Tests.Services
             };
 
             StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
-                .SetBody(createStore)
-                .Execute(_Sdk.Namespace);
+                .Execute(createStore, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(cStore);
             if (cStore != null)
@@ -92,8 +91,7 @@ namespace AccelByte.Sdk.Tests.Services
                 Description = "Updated description."
             };
             StoreInfo? cStoreUpdate = _Sdk.Platform.Store.UpdateStoreOp
-                .SetBody(updateStore)
-                .Execute(_Sdk.Namespace, store_id);
+                .Execute(updateStore, _Sdk.Namespace, store_id);
             #endregion
             Assert.IsNotNull(cStoreUpdate);
             if (cStoreUpdate != null)
@@ -129,8 +127,7 @@ namespace AccelByte.Sdk.Tests.Services
 
             DisableRetry();
             StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
-                .SetBody(createStore)
-                .Execute(_Sdk.Namespace);
+                .Execute(createStore, _Sdk.Namespace);
             Assert.IsNotNull(cStore);
             if (cStore != null)
             {
