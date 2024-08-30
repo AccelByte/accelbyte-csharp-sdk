@@ -1,0 +1,294 @@
+<a name="v0.65.0"></a>
+## [v0.65.0] - 2024-09-05 - DRAFT
+
+### BREAKING CHANGE
+
+### Platform
+
+The following operation(s) has been updated.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UnlockSteamUserAchievement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/AchievementPlatform/UpdateXblUserAchievement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Campaign/ApplyUserRedemption`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Campaign/CreateCampaign`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Campaign/CreateCodes`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Campaign/UpdateCampaign`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Category/CreateCategory`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Category/UpdateCategory`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Currency/CreateCurrency`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Currency/UpdateCurrency`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/DLC/SyncSteamDLC`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/DLC/UpdateDLCItemConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/DLC/UpdatePlatformDLCConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/ConsumeUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/GrantEntitlements`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/GrantUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicConsumeUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicSellUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicSplitUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/PublicTransferUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUseCount`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/RevokeUserEntitlementByUseCount`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/SellUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/UpdatePlatformEntitlementConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Entitlement/UpdateUserEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillItems`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewards`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewardsV2`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/PreCheckFulfillItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/PublicRedeemCode`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Fulfillment/RedeemCode`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/MockFulfillIAPItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillAppleIAPItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillGoogleIAPItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/PublicReconcilePlayStationStoreWithMultipleServiceLabels`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/SyncSteamInventory`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement1`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateAppleIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateEpicGamesIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateGoogleIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateIAPItemConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateOculusIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdatePlaystationIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateSteamIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateTwitchIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateXblIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/IAP/ValidatePlaystationIAPConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Invoice/DownloadInvoiceDetails`
+    - `feature` is now required.
+    - `itemId` is now required.
+    - `itemType` is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Invoice/GenerateInvoiceSummary`
+    - `feature` is now required.
+    - `itemId` is now required.
+    - `itemType` is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/AcquireItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/CreateItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/CreateItemTypeConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/PublicValidateItemPurchaseCondition`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/ReturnItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/SyncInGameItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/UpdateApp`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/UpdateItem`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/UpdateItemPurchaseCondition`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/UpdateItemTypeConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Item/ValidateItemPurchaseCondition`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/KeyGroup/CreateKeyGroup`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/KeyGroup/UpdateKeyGroup`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/AdminCreateUserOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/ProcessUserOrderNotification`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/PublicCreateUserOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/PublicPreviewOrderPrice`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/RefundOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Order/UpdateUserOrderStatus`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Payment/ChargePaymentOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Payment/CreateUserPaymentOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Payment/RefundUserPaymentOrder`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Payment/SimulatePaymentOrderNotification`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentCallbackConfig/UpdatePaymentCallbackConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/CreatePaymentProviderConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAdyenConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestAliPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestCheckoutConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestNeonPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestPayPalConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestStripeConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestWxPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/TestXsollaConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAdyenConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateAliPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateCheckoutConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateNeonPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePayPalConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentDomainWhitelistConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentProviderConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdatePaymentTaxConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateStripeConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateWxPayConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentConfig/UpdateXsollaUIConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/CreatePaymentOrderByDedicated`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentDedicated/RefundPaymentOrderByDedicated`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentStation/Pay`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/PaymentStation/PublicGetPaymentUrl`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Platform/GetPsnEntitlementOwnership`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Platform/GetXboxEntitlementOwnership`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Revocation/DoRevocation`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Revocation/UpdateRevocationConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Reward/CreateReward`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Reward/DeleteRewardConditionRecord`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Reward/UpdateReward`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Section/CreateSection`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Section/UpdateSection`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateLootBoxPluginConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateRevocationPluginConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateSectionPluginConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/ServicePluginConfig/UpdateServicePluginConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/SessionPlatform/RegisterXblSessions`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Store/CreateStore`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Store/ExportStoreByCSV`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Store/ImportStoreByCSV`
+    - `category` is now required.
+    - `display` is now required.
+    - `item` is now required.
+    - `notes` is now required.
+    - `section` is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Store/UpdateCatalogConfig`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Store/UpdateStore`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/CancelSubscription`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/GrantDaysToSubscription`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/PlatformSubscribeSubscription`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/ProcessUserSubscriptionNotification`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/PublicCancelSubscription`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Subscription/PublicSubscribeSubscription`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Ticket/AcquireUserTicket`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Ticket/DecreaseTicketSale`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Ticket/IncreaseTicketSale`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/TradeAction/Commit`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/View/CreateView`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/View/UpdateView`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/BulkCredit`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/BulkDebit`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/CreditUserWallet`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWallet`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/DebitUserWalletByCurrencyCode`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/PayWithUserWallet`
+    - request body is now required.
+- Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/UpdatePlatformWalletConfig`
+    - request body is now required.
