@@ -92,14 +92,22 @@ namespace AccelByte.Sdk.Sample.Cli
             else if (pi.PropertyType == typeof(List<int>))
             {
                 string aParamStr = srcValue.Trim();
-                var numberItems = aParamStr.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
-                if (numberItems.Length > 0)
+                if (aParamStr.Substring(0,1) == "[")
                 {
-                    List<int> numberList = new List<int>(numberItems.Select(str => int.Parse(str)));
+                    var numberList = JsonSerializer.Deserialize<List<int>>(aParamStr);
                     pi.SetValue(obj, numberList);
                 }
                 else
-                    pi.SetValue(obj, null);
+                {
+                    var numberItems = aParamStr.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                    if (numberItems.Length > 0)
+                    {
+                        List<int> numberList = new List<int>(numberItems.Select(str => int.Parse(str)));
+                        pi.SetValue(obj, numberList);
+                    }
+                    else
+                        pi.SetValue(obj, null);
+                }
             }
             else if ((pi.PropertyType == typeof(int)) || (pi.PropertyType == typeof(int?)))
             {
