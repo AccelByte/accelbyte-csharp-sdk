@@ -27,12 +27,20 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             : OperationBuilder<QueryTotalPlayerPersessionBuilder>
         {
 
+            public List<string>? MatchPool { get; set; }
+
 
 
 
 
             internal QueryTotalPlayerPersessionBuilder() { }
 
+
+            public QueryTotalPlayerPersessionBuilder SetMatchPool(List<string> _matchPool)
+            {
+                MatchPool = _matchPool;
+                return this;
+            }
 
 
 
@@ -66,11 +74,13 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.MatchPool is not null) QueryParams["matchPool"] = builder.MatchPool;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 
@@ -80,17 +90,20 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public QueryTotalPlayerPersession(
             string namespace_,
+            List<string>? matchPool,
             string endDate,
             string startDate
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (matchPool is not null) QueryParams["matchPool"] = matchPool;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 

@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Sample.Cli
             else if (pi.PropertyType == typeof(List<int>))
             {
                 string aParamStr = srcValue.Trim();
-                if (aParamStr.Substring(0,1) == "[")
+                if (aParamStr.Substring(0, 1) == "[")
                 {
                     var numberList = JsonSerializer.Deserialize<List<int>>(aParamStr);
                     pi.SetValue(obj, numberList);

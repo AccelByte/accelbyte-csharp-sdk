@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ClientTimestamp { get; set; }
 
+        [JsonPropertyName("DeviceType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DeviceType { get; set; }
+
         [JsonPropertyName("EventId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EventId { get; set; }
@@ -37,6 +41,10 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Model
         [JsonPropertyName("ClientTimestamp")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? ClientTimestamp { get; set; }
+
+        [JsonPropertyName("DeviceType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DeviceType { get; set; }
 
         [JsonPropertyName("EventId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

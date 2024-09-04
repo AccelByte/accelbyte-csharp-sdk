@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("IsPivot")]
         public bool? IsPivot { get; set; }
 
+        [JsonPropertyName("IsSinglePlay")]
+        public bool? IsSinglePlay { get; set; }
+
         [JsonPropertyName("Latencies")]
         public Dictionary<string, long>? Latencies { get; set; }
 
@@ -57,6 +60,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
 
         [JsonPropertyName("IsPivot")]
         public bool? IsPivot { get; set; }
+
+        [JsonPropertyName("IsSinglePlay")]
+        public bool? IsSinglePlay { get; set; }
 
         [JsonPropertyName("Latencies")]
         public Dictionary<string, long>? Latencies { get; set; }

@@ -9,9 +9,17 @@ namespace AccelByte.Sdk.Api.Match2.Model
 {
     public class ConfigmodelsNamespaceConfig : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("crossPlatformNoCurrentPlatform")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CrossPlatformNoCurrentPlatform { get; set; }
+
         [JsonPropertyName("extraPlatforms")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? ExtraPlatforms { get; set; }
+
+        [JsonPropertyName("matchAnyCommon")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? MatchAnyCommon { get; set; }
 
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }

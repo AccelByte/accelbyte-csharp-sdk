@@ -134,6 +134,17 @@ namespace AccelByte.Sdk.Core
         }
         private SSOCredential? _SSOCredential = null;
 
+        public OverrideRoleConfigV3 OverrideRoleConfigV3
+        {
+            get
+            {
+                if (_OverrideRoleConfigV3 == null)
+                    _OverrideRoleConfigV3 = new OverrideRoleConfigV3(_SdkObject);
+                return _OverrideRoleConfigV3;
+            }
+        }
+        private OverrideRoleConfigV3? _OverrideRoleConfigV3 = null;
+
         public OAuth20Extension OAuth20Extension
         {
             get

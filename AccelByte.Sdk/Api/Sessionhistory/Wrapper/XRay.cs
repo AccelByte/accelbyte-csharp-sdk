@@ -95,6 +95,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         {
             get { return Operation.CreateXrayTicketObservability.Builder.SetWrapperObject(this); }
         }
+        public CreateXrayBulkTicketObservability.CreateXrayBulkTicketObservabilityBuilder CreateXrayBulkTicketObservabilityOp
+        {
+            get { return Operation.CreateXrayBulkTicketObservability.Builder.SetWrapperObject(this); }
+        }
         public QueryXrayTimelineByTicketID.QueryXrayTimelineByTicketIDBuilder QueryXrayTimelineByTicketIDOp
         {
             get { return Operation.QueryXrayTimelineByTicketID.Builder.SetWrapperObject(this); }
@@ -402,6 +406,22 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApimodelsXRayTicketObservabilityResponse?> CreateXrayTicketObservabilityAsync(CreateXrayTicketObservability input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsXRayBulkTicketObservabilityResponse? CreateXrayBulkTicketObservability(CreateXrayBulkTicketObservability input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsXRayBulkTicketObservabilityResponse?> CreateXrayBulkTicketObservabilityAsync(CreateXrayBulkTicketObservability input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

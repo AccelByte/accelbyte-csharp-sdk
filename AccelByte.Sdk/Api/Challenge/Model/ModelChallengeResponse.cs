@@ -72,6 +72,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 
     public class ModelChallengeResponseAssignmentRule : StringEnum<ModelChallengeResponseAssignmentRule>
     {
+        public static readonly ModelChallengeResponseAssignmentRule CUSTOM
+            = new ModelChallengeResponseAssignmentRule("CUSTOM");
+
         public static readonly ModelChallengeResponseAssignmentRule FIXED
             = new ModelChallengeResponseAssignmentRule("FIXED");
 

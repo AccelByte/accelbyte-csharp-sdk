@@ -116,6 +116,36 @@ namespace AccelByte.Sdk.Api
 
             await ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminSetDSReadyAsync(op);
         }
+        public static void Execute(
+            this AdminKickGameSessionMember.AdminKickGameSessionMemberBuilder builder,
+            string memberId,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminKickGameSessionMember op = builder.Build(
+                memberId,
+                namespace_,
+                sessionId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminKickGameSessionMember(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminKickGameSessionMember.AdminKickGameSessionMemberBuilder builder,
+            string memberId,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminKickGameSessionMember op = builder.Build(
+                memberId,
+                namespace_,
+                sessionId
+            );
+
+            await ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminKickGameSessionMemberAsync(op);
+        }
         public static Session.Model.ApimodelsUpdateGameSessionMemberStatusResponse? Execute(
             this AdminUpdateGameSessionMember.AdminUpdateGameSessionMemberBuilder builder,
             string memberId,
@@ -845,6 +875,36 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Session.Wrapper.GameSession)builder.WrapperObject!).LeaveGameSessionAsync(op);
+        }
+        public static void Execute(
+            this PublicKickGameSessionMember.PublicKickGameSessionMemberBuilder builder,
+            string memberId,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicKickGameSessionMember op = builder.Build(
+                memberId,
+                namespace_,
+                sessionId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicKickGameSessionMember(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicKickGameSessionMember.PublicKickGameSessionMemberBuilder builder,
+            string memberId,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicKickGameSessionMember op = builder.Build(
+                memberId,
+                namespace_,
+                sessionId
+            );
+
+            await ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicKickGameSessionMemberAsync(op);
         }
         public static void Execute(
             this PublicGameSessionReject.PublicGameSessionRejectBuilder builder,

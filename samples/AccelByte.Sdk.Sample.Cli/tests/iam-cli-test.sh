@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..404"
+echo "1..411"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -831,1321 +831,1365 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 151 'AdminGetUserByPlatformUserIDV3' test.out
 
-#- 152 GetAdminUsersByRoleIdV3
+#- 152 AdminGetRoleOverrideConfigV3
+$CLI_EXE \
+    --sn iam \
+    --op AdminGetRoleOverrideConfigV3 \
+    --namespace $AB_NAMESPACE \
+    --identity 'GAME_ADMIN' \
+    > test.out 2>&1
+eval_tap $? 152 'AdminGetRoleOverrideConfigV3' test.out
+
+#- 153 AdminUpdateRoleOverrideConfigV3
+# body param: body
+echo '{"additions": [{"actions": [62, 41, 40], "resource": "24RYVxvOizOsLuBO"}, {"actions": [40, 78, 44], "resource": "fgmYSJIzEBkXmc2F"}, {"actions": [16, 55, 36], "resource": "0y5W0iCFQFClD4St"}], "exclusions": [{"actions": [11, 3, 32], "resource": "Pz4B3LcomgS0Mvgf"}, {"actions": [54, 96, 74], "resource": "1pdEtrpKrbVk9u7G"}, {"actions": [77, 14, 26], "resource": "ME7wGiU2biCXBTng"}], "overrides": [{"actions": [10, 91, 73], "resource": "YEcJvLPLmCDp2m56"}, {"actions": [70, 31, 36], "resource": "CW1LZjascU9sDwKv"}, {"actions": [30, 16, 46], "resource": "kyihhJm1tA5U3YHE"}], "replacements": [{"replacement": {"actions": [54, 88, 28], "resource": "NEKqmY3Qc7Gush1J"}, "target": "Ybd03QSrNZ2SbLcx"}, {"replacement": {"actions": [30, 23, 63], "resource": "i30FlwghwRVPRlUR"}, "target": "fpBbB4nFHrMfRpBH"}, {"replacement": {"actions": [83, 68, 0], "resource": "1o81DNVWftg4eXbI"}, "target": "1TK5tf2OW6O9zv4L"}]}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn iam \
+    --op AdminUpdateRoleOverrideConfigV3 \
+    --namespace $AB_NAMESPACE \
+    --identity 'USER' \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 153 'AdminUpdateRoleOverrideConfigV3' test.out
+
+#- 154 AdminGetRoleSourceV3
+$CLI_EXE \
+    --sn iam \
+    --op AdminGetRoleSourceV3 \
+    --namespace $AB_NAMESPACE \
+    --identity 'GAME_ADMIN' \
+    > test.out 2>&1
+eval_tap $? 154 'AdminGetRoleSourceV3' test.out
+
+#- 155 AdminChangeRoleOverrideConfigStatusV3
+# body param: body
+echo '{"active": false}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn iam \
+    --op AdminChangeRoleOverrideConfigStatusV3 \
+    --namespace $AB_NAMESPACE \
+    --identity 'VIEW_ONLY' \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 155 'AdminChangeRoleOverrideConfigStatusV3' test.out
+
+#- 156 AdminGetRoleNamespacePermissionV3
+$CLI_EXE \
+    --sn iam \
+    --op AdminGetRoleNamespacePermissionV3 \
+    --namespace $AB_NAMESPACE \
+    --roleId 'JMuVALb1k6C0bGXP' \
+    > test.out 2>&1
+eval_tap $? 156 'AdminGetRoleNamespacePermissionV3' test.out
+
+#- 157 GetAdminUsersByRoleIdV3
 $CLI_EXE \
     --sn iam \
     --op GetAdminUsersByRoleIdV3 \
     --namespace $AB_NAMESPACE \
-    --roleId 'mt24RYVxvOizOsLu' \
-    --after '56' \
-    --before '82' \
+    --roleId 'huWzOj8rGsEOgAyI' \
+    --after '92' \
+    --before '16' \
     --limit '83' \
     > test.out 2>&1
-eval_tap $? 152 'GetAdminUsersByRoleIdV3' test.out
+eval_tap $? 157 'GetAdminUsersByRoleIdV3' test.out
 
-#- 153 AdminGetUserByEmailAddressV3
+#- 158 AdminGetUserByEmailAddressV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserByEmailAddressV3 \
     --namespace $AB_NAMESPACE \
-    --emailAddress 'ULfgmYSJIzEBkXmc' \
+    --emailAddress 'fMWqAlHrdUBriyIr' \
     > test.out 2>&1
-eval_tap $? 153 'AdminGetUserByEmailAddressV3' test.out
+eval_tap $? 158 'AdminGetUserByEmailAddressV3' test.out
 
-#- 154 AdminBulkUpdateUsersV3
+#- 159 AdminBulkUpdateUsersV3
 # body param: body
-echo '{"updateRequest": {"skipLoginQueue": true}, "userIds": ["FhrwrUKt0S1mnKCB", "DLO5p7AU8haiJAyC", "ejYVpU1pdEtrpKrb"]}' > $TEMP_JSON_INPUT
+echo '{"updateRequest": {"skipLoginQueue": false}, "userIds": ["fx3OGuC3ijRNXXUR", "Q3ZzgpA1SdFF4nsy", "a3UXahzCQJ1WdbN8"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBulkUpdateUsersV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 154 'AdminBulkUpdateUsersV3' test.out
+eval_tap $? 159 'AdminBulkUpdateUsersV3' test.out
 
-#- 155 AdminGetBulkUserBanV3
+#- 160 AdminGetBulkUserBanV3
 # body param: body
-echo '{"bulkUserId": ["Vk9u7GLgME7wGiU2", "biCXBTngfX2J8Yqv", "fwThZ7F6KgWP0pCW"]}' > $TEMP_JSON_INPUT
+echo '{"bulkUserId": ["PkJy1ez6rJd8RYLZ", "hBzMFVvnbGszjKvF", "IRVDVtPCh4eQZdo9"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminGetBulkUserBanV3 \
     --namespace $AB_NAMESPACE \
     --activeOnly 'false' \
-    --banType 'LZjascU9sDwKvowv' \
+    --banType 'J6MzJyO3qDmtY3fC' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 155 'AdminGetBulkUserBanV3' test.out
+eval_tap $? 160 'AdminGetBulkUserBanV3' test.out
 
-#- 156 AdminListUserIDByUserIDsV3
+#- 161 AdminListUserIDByUserIDsV3
 # body param: body
-echo '{"userIds": ["GWWtzd8NYVjEQMiQ", "NEKqmY3Qc7Gush1J", "Ybd03QSrNZ2SbLcx"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["WcnjvSFQknkXxhNo", "W5mCsWgJYsuRmy56", "HZgI5RRTsXQnMWiR"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminListUserIDByUserIDsV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 156 'AdminListUserIDByUserIDsV3' test.out
+eval_tap $? 161 'AdminListUserIDByUserIDsV3' test.out
 
-#- 157 AdminBulkGetUsersPlatform
+#- 162 AdminBulkGetUsersPlatform
 # body param: body
-echo '{"userIds": ["oEq2iYdEtbYSFJ0D", "hVUMO4DrPdmXHPzN", "fJH1o81DNVWftg4e"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["JCR1RHyZbcfk8YG7", "nYGowF23P0WHgh0p", "Chv4BAqsdhbbnkYP"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBulkGetUsersPlatform \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 157 'AdminBulkGetUsersPlatform' test.out
+eval_tap $? 162 'AdminBulkGetUsersPlatform' test.out
 
-#- 158 AdminInviteUserV3
+#- 163 AdminInviteUserV3
 # body param: body
-echo '{"emailAddresses": ["XbI1TK5tf2OW6O9z", "v4LwcYHUKZcfngNW", "Zwjfs9dyJGDob1c5"], "isAdmin": true, "languageTag": "EOgAyIS0fMWqAlHr", "namespace": "dUBriyIrHLfx3OGu", "roles": ["C3ijRNXXURQ3Zzgp", "A1SdFF4nsya3UXah", "zCQJ1WdbN8PkJy1e"]}' > $TEMP_JSON_INPUT
+echo '{"emailAddresses": ["p9i7jjBIxJ14Hmr0", "ApsK8SHyhula1Q38", "F5Rpl7trQdm2EdQl"], "isAdmin": false, "languageTag": "0OD4NuF1ALr0GCUj", "namespace": "tdTgD8swTLL8aCMo", "roles": ["5By5GEOeZEFaSvKA", "TkfxrqTKloycgLrj", "GXXeGSNb6AefzMWk"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminInviteUserV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 158 'AdminInviteUserV3' test.out
+eval_tap $? 163 'AdminInviteUserV3' test.out
 
-#- 159 AdminQueryThirdPlatformLinkHistoryV3
+#- 164 AdminQueryThirdPlatformLinkHistoryV3
 $CLI_EXE \
     --sn iam \
     --op AdminQueryThirdPlatformLinkHistoryV3 \
     --namespace $AB_NAMESPACE \
-    --limit '52' \
-    --offset '82' \
-    --platformUserId '6rJd8RYLZhBzMFVv' \
-    --platformId 'nbGszjKvFIRVDVtP' \
+    --limit '82' \
+    --offset '49' \
+    --platformUserId 'PHFIBiTkVcH6FKyr' \
+    --platformId 'UfHIA3iZu1gWbFNx' \
     > test.out 2>&1
-eval_tap $? 159 'AdminQueryThirdPlatformLinkHistoryV3' test.out
+eval_tap $? 164 'AdminQueryThirdPlatformLinkHistoryV3' test.out
 
-#- 160 AdminListUsersV3
+#- 165 AdminListUsersV3
 $CLI_EXE \
     --sn iam \
     --op AdminListUsersV3 \
     --namespace $AB_NAMESPACE \
-    --limit '59' \
-    --offset '34' \
+    --limit '28' \
+    --offset '95' \
     > test.out 2>&1
-eval_tap $? 160 'AdminListUsersV3' test.out
+eval_tap $? 165 'AdminListUsersV3' test.out
 
-#- 161 AdminSearchUserV3
+#- 166 AdminSearchUserV3
 $CLI_EXE \
     --sn iam \
     --op AdminSearchUserV3 \
     --namespace $AB_NAMESPACE \
-    --by 'h4eQZdo9XVntzEIw' \
-    --endDate 'BXzY9HlZPJGKTkhg' \
+    --by 'tBK6SBoElIIIpwn6' \
+    --endDate 'hgBTwxKcx0X8Lcx6' \
     --includeTotal 'true' \
-    --limit '87' \
-    --offset '45' \
-    --platformBy 'knkXxhNoW5mCsWgJ' \
-    --platformId 'YsuRmy56HZgI5RRT' \
-    --query 'sXQnMWiRJCR1RHyZ' \
-    --roleIds 'bcfk8YG7nYGowF23' \
+    --limit '15' \
+    --offset '68' \
+    --platformBy 'MffZlEJvDSyHWn9S' \
+    --platformId 'tf2pkUQ1nUubDHgN' \
+    --query 'RiTeWO4xhfJRgna2' \
+    --roleIds 'c5LazHjgsmiSUuvV' \
     --skipLoginQueue 'false' \
-    --startDate 'dc1byTwd9znJzmly' \
-    --testAccount 'true' \
+    --startDate 'HUbJ82Q45DSj87AN' \
+    --testAccount 'false' \
     > test.out 2>&1
-eval_tap $? 161 'AdminSearchUserV3' test.out
+eval_tap $? 166 'AdminSearchUserV3' test.out
 
-#- 162 AdminGetBulkUserByEmailAddressV3
+#- 167 AdminGetBulkUserByEmailAddressV3
 # body param: body
-echo '{"listEmailAddressRequest": ["kYPp9i7jjBIxJ14H", "mr0ApsK8SHyhula1", "Q38F5Rpl7trQdm2E"]}' > $TEMP_JSON_INPUT
+echo '{"listEmailAddressRequest": ["4JK55udjMzU9XQyM", "tQxXu8g8XRizeC4a", "FMOJPWMKzmgjS9Na"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminGetBulkUserByEmailAddressV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 162 'AdminGetBulkUserByEmailAddressV3' test.out
+eval_tap $? 167 'AdminGetBulkUserByEmailAddressV3' test.out
 
-#- 163 AdminGetUserByUserIdV3
+#- 168 AdminGetUserByUserIdV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserByUserIdV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'dQlGL0OD4NuF1ALr' \
+    --userId '47MaohKS9844bPvp' \
     > test.out 2>&1
-eval_tap $? 163 'AdminGetUserByUserIdV3' test.out
+eval_tap $? 168 'AdminGetUserByUserIdV3' test.out
 
-#- 164 AdminUpdateUserV3
+#- 169 AdminUpdateUserV3
 # body param: body
-echo '{"avatarUrl": "0GCUjtdTgD8swTLL", "country": "8aCMo5By5GEOeZEF", "dateOfBirth": "aSvKATkfxrqTKloy", "displayName": "cgLrjGXXeGSNb6Ae", "languageTag": "fzMWkNyXXrlu7ITM", "skipLoginQueue": false, "uniqueDisplayName": "KyrUfHIA3iZu1gWb", "userName": "FNxnUwTztyVNPlxu"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "4hH5n0dJ4Ua7HNkz", "country": "2cnn3fjNOnpJ8HpF", "dateOfBirth": "9kOl45sMektKP6oi", "displayName": "CgSzIx7SbauCZefN", "languageTag": "MyuAhwDOsKkI3E8e", "skipLoginQueue": false, "uniqueDisplayName": "OUCLYTf0LOYn0Ukv", "userName": "nUqIojwgPbmzRVxq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'UEbxhsIyovNQs0ie' \
+    --userId 'DG9JCw2G6n1nerWg' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 164 'AdminUpdateUserV3' test.out
+eval_tap $? 169 'AdminUpdateUserV3' test.out
 
-#- 165 AdminGetUserBanV3
+#- 170 AdminGetUserBanV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserBanV3 \
     --namespace $AB_NAMESPACE \
-    --userId '37grdsHorFkeFdLN' \
+    --userId 'r6k4wDG0ymKeZSC9' \
     --activeOnly 'true' \
-    --after 'afKTIxkLIpYhXRzV' \
-    --before 'lyArWQReW1cdHvZQ' \
-    --limit '58' \
+    --after '14KFGXT8T9eKzqt6' \
+    --before 'wDF2DSG6M78RsMxt' \
+    --limit '32' \
     > test.out 2>&1
-eval_tap $? 165 'AdminGetUserBanV3' test.out
+eval_tap $? 170 'AdminGetUserBanV3' test.out
 
-#- 166 AdminBanUserV3
+#- 171 AdminBanUserV3
 # body param: body
-echo '{"ban": "Rgna2c5LazHjgsmi", "comment": "SUuvVSZmlYtF1QW1", "endDate": "xZX5Lxeh4JK55udj", "reason": "MzU9XQyMtQxXu8g8", "skipNotif": false}' > $TEMP_JSON_INPUT
+echo '{"ban": "QfqT56tevT7Qtbff", "comment": "u9Gqn1jMt8Lp9XO6", "endDate": "cKOOKCrRKqZf9ADd", "reason": "0awqpEHlzNOTTzEE", "skipNotif": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBanUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'RizeC4aFMOJPWMKz' \
+    --userId 'PjJkNQ2aMo0m3G0a' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 166 'AdminBanUserV3' test.out
+eval_tap $? 171 'AdminBanUserV3' test.out
 
-#- 167 AdminGetUserBanSummaryV3
+#- 172 AdminGetUserBanSummaryV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserBanSummaryV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'mgjS9Na47MaohKS9' \
+    --userId 'e844CwOhIn2FeDyk' \
     > test.out 2>&1
-eval_tap $? 167 'AdminGetUserBanSummaryV3' test.out
+eval_tap $? 172 'AdminGetUserBanSummaryV3' test.out
 
-#- 168 AdminUpdateUserBanV3
+#- 173 AdminUpdateUserBanV3
 # body param: body
 echo '{"enabled": true, "skipNotif": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserBanV3 \
-    --banId '4bPvp4hH5n0dJ4Ua' \
+    --banId 'QZRomk9pX8dYDs6V' \
     --namespace $AB_NAMESPACE \
-    --userId '7HNkz2cnn3fjNOnp' \
+    --userId '8OIXfDyo6SYUFcEV' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 168 'AdminUpdateUserBanV3' test.out
+eval_tap $? 173 'AdminUpdateUserBanV3' test.out
 
-#- 169 AdminSendVerificationCodeV3
+#- 174 AdminSendVerificationCodeV3
 # body param: body
-echo '{"context": "J8HpF9kOl45sMekt", "emailAddress": "KP6oiCgSzIx7Sbau", "languageTag": "CZefNMyuAhwDOsKk"}' > $TEMP_JSON_INPUT
+echo '{"context": "lxvddimzsBogUNRD", "emailAddress": "q18ciOM3y2gycjSe", "languageTag": "YWOithHSkznxjwDq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminSendVerificationCodeV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'I3E8e8YOUCLYTf0L' \
+    --userId 'HFxeriURZvDUdPdF' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 169 'AdminSendVerificationCodeV3' test.out
+eval_tap $? 174 'AdminSendVerificationCodeV3' test.out
 
-#- 170 AdminVerifyAccountV3
+#- 175 AdminVerifyAccountV3
 # body param: body
-echo '{"Code": "OYn0UkvnUqIojwgP", "ContactType": "bmzRVxqDG9JCw2G6", "LanguageTag": "n1nerWgr6k4wDG0y", "validateOnly": false}' > $TEMP_JSON_INPUT
+echo '{"Code": "YZJdshhU7xiomI7w", "ContactType": "qk6ujWS8bfcCW62q", "LanguageTag": "IhoGhn50bAqk5LxB", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminVerifyAccountV3 \
     --namespace $AB_NAMESPACE \
-    --userId '694d03l14KFGXT8T' \
+    --userId 'JcLp0COqnMH0w05J' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 170 'AdminVerifyAccountV3' test.out
+eval_tap $? 175 'AdminVerifyAccountV3' test.out
 
-#- 171 GetUserVerificationCode
+#- 176 GetUserVerificationCode
 $CLI_EXE \
     --sn iam \
     --op GetUserVerificationCode \
     --namespace $AB_NAMESPACE \
-    --userId '9eKzqt6wDF2DSG6M' \
+    --userId 'psXYLfFfzBrygw1W' \
     > test.out 2>&1
-eval_tap $? 171 'GetUserVerificationCode' test.out
+eval_tap $? 176 'GetUserVerificationCode' test.out
 
-#- 172 AdminGetUserDeletionStatusV3
+#- 177 AdminGetUserDeletionStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserDeletionStatusV3 \
     --namespace $AB_NAMESPACE \
-    --userId '78RsMxt6QfqT56te' \
+    --userId 'QdEUr72DYSCZW3cz' \
     > test.out 2>&1
-eval_tap $? 172 'AdminGetUserDeletionStatusV3' test.out
+eval_tap $? 177 'AdminGetUserDeletionStatusV3' test.out
 
-#- 173 AdminUpdateUserDeletionStatusV3
+#- 178 AdminUpdateUserDeletionStatusV3
 # body param: body
-echo '{"deletionDate": 44, "enabled": true}' > $TEMP_JSON_INPUT
+echo '{"deletionDate": 58, "enabled": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserDeletionStatusV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'T7Qtbffu9Gqn1jMt' \
+    --userId 'vHQZ7JOBiF3LOGIw' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 173 'AdminUpdateUserDeletionStatusV3' test.out
+eval_tap $? 178 'AdminUpdateUserDeletionStatusV3' test.out
 
-#- 174 AdminListUserAllPlatformAccountsDistinctV3
+#- 179 AdminListUserAllPlatformAccountsDistinctV3
 $CLI_EXE \
     --sn iam \
     --op AdminListUserAllPlatformAccountsDistinctV3 \
     --namespace $AB_NAMESPACE \
-    --userId '8Lp9XO6cKOOKCrRK' \
+    --userId 'fn631nZdLIV7BPQu' \
     > test.out 2>&1
-eval_tap $? 174 'AdminListUserAllPlatformAccountsDistinctV3' test.out
+eval_tap $? 179 'AdminListUserAllPlatformAccountsDistinctV3' test.out
 
-#- 175 AdminUpgradeHeadlessAccountV3
+#- 180 AdminUpgradeHeadlessAccountV3
 # body param: body
-echo '{"code": "qZf9ADd0awqpEHlz", "country": "NOTTzEEW9PjJkNQ2", "dateOfBirth": "aMo0m3G0ae844CwO", "displayName": "hIn2FeDyk9FI6QZR", "emailAddress": "omk9pX8dYDs6V8OI", "password": "XfDyo6SYUFcEVlxv", "uniqueDisplayName": "ddimzsBogUNRDq18", "validateOnly": false}' > $TEMP_JSON_INPUT
+echo '{"code": "CkqQwTmoynrjtqBY", "country": "CChCSfIAULNBIbqC", "dateOfBirth": "1ggQC35AbqteFftx", "displayName": "AcOPPVffJFw1GBWa", "emailAddress": "y6riMSIDXaLiQ0t7", "password": "EgSFw6YWTZpca78D", "uniqueDisplayName": "31y7uuuW6freYvPW", "validateOnly": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpgradeHeadlessAccountV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'b8GDfPed4WXyEv9d' \
+    --userId 'HWYecwcjhWemhBW3' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 175 'AdminUpgradeHeadlessAccountV3' test.out
+eval_tap $? 180 'AdminUpgradeHeadlessAccountV3' test.out
 
-#- 176 AdminDeleteUserInformationV3
+#- 181 AdminDeleteUserInformationV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserInformationV3 \
     --namespace $AB_NAMESPACE \
-    --userId '7nKCHoZoRhxaZfS3' \
+    --userId 'qqYq3kuKpr8jEXhH' \
     > test.out 2>&1
-eval_tap $? 176 'AdminDeleteUserInformationV3' test.out
+eval_tap $? 181 'AdminDeleteUserInformationV3' test.out
 
-#- 177 AdminGetUserLoginHistoriesV3
+#- 182 AdminGetUserLoginHistoriesV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserLoginHistoriesV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'FTKod2Rtew3h16g7' \
-    --after '0.5135956652603106' \
-    --before '0.45126564145165504' \
-    --limit '31' \
+    --userId 'Zs4BkIxo0XPFAFUs' \
+    --after '0.9012661013658314' \
+    --before '0.2627366183427773' \
+    --limit '77' \
     > test.out 2>&1
-eval_tap $? 177 'AdminGetUserLoginHistoriesV3' test.out
+eval_tap $? 182 'AdminGetUserLoginHistoriesV3' test.out
 
-#- 178 AdminResetPasswordV3
+#- 183 AdminResetPasswordV3
 # body param: body
-echo '{"languageTag": "hU7xiomI7wqk6ujW", "mfaToken": "S8bfcCW62qIhoGhn", "newPassword": "50bAqk5LxBIGBHkX", "oldPassword": "DIvHwPBu7NrTNiVq"}' > $TEMP_JSON_INPUT
+echo '{"languageTag": "TF6IEDjLLEPXwsuq", "mfaToken": "KtHq72wGQM4nhrJW", "newPassword": "vhMeXHev6dyGLVpe", "oldPassword": "OtNaFyZDMp99yPw9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminResetPasswordV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'OOa2ZRBfbd2E9vQf' \
+    --userId 'KuaOcKQADcbZw9CW' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 178 'AdminResetPasswordV3' test.out
+eval_tap $? 183 'AdminResetPasswordV3' test.out
 
-#- 179 AdminUpdateUserPermissionV3
+#- 184 AdminUpdateUserPermissionV3
 # body param: body
-echo '{"Permissions": [{"Action": 14, "Resource": "r72DYSCZW3czX8Cv", "SchedAction": 69, "SchedCron": "5ySSO0KvLAXVKQip", "SchedRange": ["sG2iIpCwuvQ0uspx", "KHWOccE4HOaTFU34", "yyeOCSVxO3N0UkJa"]}, {"Action": 28, "Resource": "gQC35AbqteFftxAc", "SchedAction": 83, "SchedCron": "BSlZ4sGQrcq4l41b", "SchedRange": ["QTzoLlY5uT2tgEeE", "5HfZjxEwX2ks2x1C", "njAXdLVzER6fMHuQ"]}, {"Action": 10, "Resource": "mYN57gHfbSnc1s1D", "SchedAction": 74, "SchedCron": "3kuKpr8jEXhHZs4B", "SchedRange": ["kIxo0XPFAFUs3qLr", "GKFJ7cUw0ADHKp1J", "eoNcCMEncNbUbiWq"]}]}' > $TEMP_JSON_INPUT
+echo '{"Permissions": [{"Action": 61, "Resource": "IVi042RAadk8pSFu", "SchedAction": 11, "SchedCron": "3pHQCG6W4m7LJuFT", "SchedRange": ["yrt93n0doSq6P5fI", "QP2n3gWu5JxRDC6i", "kgF0xS3aW0uIOk5I"]}, {"Action": 59, "Resource": "Sv6IEDQIgDa753Hc", "SchedAction": 45, "SchedCron": "1jnOiTAgsViarCWg", "SchedRange": ["8roRCRlf26FgILY9", "AQCTADiRC9UzQSeQ", "aGUWhW9XAJFXvfV0"]}, {"Action": 63, "Resource": "xwY7k8qq8Owqil0H", "SchedAction": 76, "SchedCron": "hW2SxjARrVunPYAM", "SchedRange": ["lPS1l1agviE0ViBp", "ieoqmZUnQezhr8Y6", "yq6kixGedxA4DZJ8"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserPermissionV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'yr5j636DZ4NEiTRO' \
+    --userId 'YBOVA5CN8JbXzvLl' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 179 'AdminUpdateUserPermissionV3' test.out
+eval_tap $? 184 'AdminUpdateUserPermissionV3' test.out
 
-#- 180 AdminAddUserPermissionsV3
+#- 185 AdminAddUserPermissionsV3
 # body param: body
-echo '{"Permissions": [{"Action": 67, "Resource": "NaFyZDMp99yPw9Ku", "SchedAction": 0, "SchedCron": "RC05lD36WoctSSIV", "SchedRange": ["i042RAadk8pSFufz", "4eHb1QgbsPax3ToN", "EEcOmbPIllsWtlGQ"]}, {"Action": 87, "Resource": "2n3gWu5JxRDC6ikg", "SchedAction": 64, "SchedCron": "xcovGdLchA21pnSv", "SchedRange": ["6IEDQIgDa753Hc61", "jnOiTAgsViarCWg8", "roRCRlf26FgILY9A"]}, {"Action": 88, "Resource": "x03QF3bqIdCHTmOF", "SchedAction": 20, "SchedCron": "UWhW9XAJFXvfV0Eq", "SchedRange": ["jXBf1QTuKXeMAqOh", "W2SxjARrVunPYAMl", "PS1l1agviE0ViBpi"]}]}' > $TEMP_JSON_INPUT
+echo '{"Permissions": [{"Action": 16, "Resource": "QvL5vyVkSOD9ySZC", "SchedAction": 89, "SchedCron": "OdThrN2lXYb7iiBc", "SchedRange": ["WcLuk71f96tGD7MU", "wPTmgmk4Spx3x705", "SZyI1AJfaR8ILlmh"]}, {"Action": 0, "Resource": "sl74SRTmBQB5VrOj", "SchedAction": 49, "SchedCron": "jPhbaXjD3OADLTmD", "SchedRange": ["2BbxTOyZ4mBzc3gl", "evH68u3emrFEDUOZ", "XaaWzfo42JGnZc01"]}, {"Action": 75, "Resource": "g4xIv2XLzgxR2NsX", "SchedAction": 57, "SchedCron": "L6vLNUrcVkKuYm7Z", "SchedRange": ["ufvKLsudrJOK8ewZ", "9XUE09s8UFMwCQ9U", "sL7zsi4UH9iCt4bj"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserPermissionsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'eoqmZUnQezhr8Y6y' \
+    --userId 'rbqvJUWI3EQ06TDn' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 180 'AdminAddUserPermissionsV3' test.out
+eval_tap $? 185 'AdminAddUserPermissionsV3' test.out
 
-#- 181 AdminDeleteUserPermissionBulkV3
+#- 186 AdminDeleteUserPermissionBulkV3
 # body param: body
-echo '[{"Action": 33, "Resource": "Ma3m49POekyXjwKU"}, {"Action": 13, "Resource": "OVA5CN8JbXzvLl0Q"}, {"Action": 44, "Resource": "mk4Vo9xxZzFrpyGO"}]' > $TEMP_JSON_INPUT
+echo '[{"Action": 24, "Resource": "wj3t9RBlUZIr2xhM"}, {"Action": 80, "Resource": "cKUUm0phVHBtST2b"}, {"Action": 92, "Resource": "5JnGkWjspGouXQKV"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserPermissionBulkV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'dThrN2lXYb7iiBcW' \
+    --userId 'WTRm38xcNMLj2DLc' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 181 'AdminDeleteUserPermissionBulkV3' test.out
+eval_tap $? 186 'AdminDeleteUserPermissionBulkV3' test.out
 
-#- 182 AdminDeleteUserPermissionV3
+#- 187 AdminDeleteUserPermissionV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserPermissionV3 \
-    --action '4' \
+    --action '87' \
     --namespace $AB_NAMESPACE \
-    --resource 'Sg874fcdPiYjNR6J' \
-    --userId '9wrIzjOqBn7EEL6d' \
+    --resource 'oZXy70kDwNb92RKH' \
+    --userId 'rBABl51ieHewHynt' \
     > test.out 2>&1
-eval_tap $? 182 'AdminDeleteUserPermissionV3' test.out
+eval_tap $? 187 'AdminDeleteUserPermissionV3' test.out
 
-#- 183 AdminGetUserPlatformAccountsV3
+#- 188 AdminGetUserPlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserPlatformAccountsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'OGAG9xMyKB6xSsga' \
-    --after 'wZBDbvc4evCKxs06' \
-    --before 'yFXaZF2UDSPNCIuA' \
-    --limit '34' \
-    --platformId '2BbxTOyZ4mBzc3gl' \
-    --targetNamespace 'evH68u3emrFEDUOZ' \
+    --userId 'wdomC7EW9HCoXYbY' \
+    --after 'ag8TRPC81Cf4kP3o' \
+    --before 'TfjZTpFCTcXoHR4c' \
+    --limit '32' \
+    --platformId 'APgw8F9Cs00OafLC' \
+    --targetNamespace 'vuz6jMNBuqGO3YQi' \
     > test.out 2>&1
-eval_tap $? 183 'AdminGetUserPlatformAccountsV3' test.out
+eval_tap $? 188 'AdminGetUserPlatformAccountsV3' test.out
 
-#- 184 AdminListAllDistinctPlatformAccountsV3
+#- 189 AdminListAllDistinctPlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op AdminListAllDistinctPlatformAccountsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'XaaWzfo42JGnZc01' \
-    --status 'KcqFIzTPRY43KoNV' \
+    --userId 'MLnWRdP4fTydTrkd' \
+    --status 'la6LrFuKQ3Rtclho' \
     > test.out 2>&1
-eval_tap $? 184 'AdminListAllDistinctPlatformAccountsV3' test.out
+eval_tap $? 189 'AdminListAllDistinctPlatformAccountsV3' test.out
 
-#- 185 AdminGetListJusticePlatformAccounts
+#- 190 AdminGetListJusticePlatformAccounts
 $CLI_EXE \
     --sn iam \
     --op AdminGetListJusticePlatformAccounts \
     --namespace $AB_NAMESPACE \
-    --userId 'nBdo06HqJPkDnUmh' \
+    --userId 'Wjj2YmqDSPWPpFau' \
     > test.out 2>&1
-eval_tap $? 185 'AdminGetListJusticePlatformAccounts' test.out
+eval_tap $? 190 'AdminGetListJusticePlatformAccounts' test.out
 
-#- 186 AdminGetUserMapping
+#- 191 AdminGetUserMapping
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserMapping \
     --namespace $AB_NAMESPACE \
-    --targetNamespace 'R93WC797ieouD04K' \
-    --userId 'NoB6GZPeuofNtHT9' \
+    --targetNamespace 'CRiRzcrIhTZVEl13' \
+    --userId 'giNlnnOof9tQ3FFk' \
     > test.out 2>&1
-eval_tap $? 186 'AdminGetUserMapping' test.out
+eval_tap $? 191 'AdminGetUserMapping' test.out
 
-#- 187 AdminCreateJusticeUser
+#- 192 AdminCreateJusticeUser
 $CLI_EXE \
     --sn iam \
     --op AdminCreateJusticeUser \
     --namespace $AB_NAMESPACE \
-    --targetNamespace 'ynQ6xbzAAcptHncR' \
-    --userId 'NhZgiLtMTotDe8u5' \
+    --targetNamespace 'iQ4WmZZZotLiUKp8' \
+    --userId 'OSgjFJIZ2XxEWeeo' \
     > test.out 2>&1
-eval_tap $? 187 'AdminCreateJusticeUser' test.out
+eval_tap $? 192 'AdminCreateJusticeUser' test.out
 
-#- 188 AdminLinkPlatformAccount
+#- 193 AdminLinkPlatformAccount
 # body param: body
-echo '{"platformId": "R8wj3t9RBlUZIr2x", "platformUserId": "hMN43pUeXpZUkwma"}' > $TEMP_JSON_INPUT
+echo '{"platformId": "3avj65c1CIW0Vwh6", "platformUserId": "hxHnX05KDdo9Nyqu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminLinkPlatformAccount \
     --namespace $AB_NAMESPACE \
-    --userId 'eYD5JnGkWjspGouX' \
-    --skipConflict 'true' \
+    --userId 'qieQVxrSEjmkFsfC' \
+    --skipConflict 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 188 'AdminLinkPlatformAccount' test.out
+eval_tap $? 193 'AdminLinkPlatformAccount' test.out
 
-#- 189 AdminGetUserLinkHistoriesV3
+#- 194 AdminGetUserLinkHistoriesV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserLinkHistoriesV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'KVWTRm38xcNMLj2D' \
-    --platformId 'LcQmCzQbjNUmNRZM' \
+    --userId 'kwqPy0fDraYgNAmz' \
+    --platformId '0ZAyWBrpW2iXwnef' \
     > test.out 2>&1
-eval_tap $? 189 'AdminGetUserLinkHistoriesV3' test.out
+eval_tap $? 194 'AdminGetUserLinkHistoriesV3' test.out
 
-#- 190 AdminPlatformUnlinkV3
-eval_tap 0 190 'AdminPlatformUnlinkV3 # SKIP deprecated' test.out
+#- 195 AdminPlatformUnlinkV3
+eval_tap 0 195 'AdminPlatformUnlinkV3 # SKIP deprecated' test.out
 
-#- 191 AdminPlatformUnlinkAllV3
+#- 196 AdminPlatformUnlinkAllV3
 $CLI_EXE \
     --sn iam \
     --op AdminPlatformUnlinkAllV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'TXK2DtbCe6QWxnxZ' \
-    --userId 'tTupsQfU6ftlIydC' \
+    --platformId 'AQdj8v0AcLCKZzIH' \
+    --userId 'BcbRr1LBxPTK2xRt' \
     > test.out 2>&1
-eval_tap $? 191 'AdminPlatformUnlinkAllV3' test.out
+eval_tap $? 196 'AdminPlatformUnlinkAllV3' test.out
 
-#- 192 AdminPlatformLinkV3
+#- 197 AdminPlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op AdminPlatformLinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'JXOKVTAiPU6Z5yK6' \
-    --userId 'Imd8xONUKTaALIcj' \
-    --ticket 'HJNAPgw8F9Cs00Oa' \
+    --platformId '5CjVsHx73e7JuWfB' \
+    --userId '47acsqQjDVBkepBb' \
+    --ticket 'kDQoSB8hXjmiKB4W' \
     > test.out 2>&1
-eval_tap $? 192 'AdminPlatformLinkV3' test.out
+eval_tap $? 197 'AdminPlatformLinkV3' test.out
 
-#- 193 AdminDeleteUserLinkingHistoryByPlatformIDV3
-eval_tap 0 193 'AdminDeleteUserLinkingHistoryByPlatformIDV3 # SKIP deprecated' test.out
+#- 198 AdminDeleteUserLinkingHistoryByPlatformIDV3
+eval_tap 0 198 'AdminDeleteUserLinkingHistoryByPlatformIDV3 # SKIP deprecated' test.out
 
-#- 194 AdminDeleteUserLinkingRestrictionByPlatformIDV3
+#- 199 AdminDeleteUserLinkingRestrictionByPlatformIDV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserLinkingRestrictionByPlatformIDV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'fLCvuz6jMNBuqGO3' \
-    --userId 'YQiMLnWRdP4fTydT' \
+    --platformId 'qqayZ0xZJ78Vfdu5' \
+    --userId 'YFHoD1yMW1UamXAn' \
     > test.out 2>&1
-eval_tap $? 194 'AdminDeleteUserLinkingRestrictionByPlatformIDV3' test.out
+eval_tap $? 199 'AdminDeleteUserLinkingRestrictionByPlatformIDV3' test.out
 
-#- 195 AdminGetThirdPartyPlatformTokenLinkStatusV3
+#- 200 AdminGetThirdPartyPlatformTokenLinkStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetThirdPartyPlatformTokenLinkStatusV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'rkdla6LrFuKQ3Rtc' \
-    --userId 'lhoWjj2YmqDSPWPp' \
-    --platformToken 'FauCRiRzcrIhTZVE' \
+    --platformId 'RUC4F36wQH2ATx5A' \
+    --userId 'CpqWKrhzIE5lvPBA' \
+    --platformToken 'piMq6Fh1qTz90wzs' \
     > test.out 2>&1
-eval_tap $? 195 'AdminGetThirdPartyPlatformTokenLinkStatusV3' test.out
+eval_tap $? 200 'AdminGetThirdPartyPlatformTokenLinkStatusV3' test.out
 
-#- 196 AdminGetUserSinglePlatformAccount
+#- 201 AdminGetUserSinglePlatformAccount
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserSinglePlatformAccount \
     --namespace $AB_NAMESPACE \
-    --platformId 'l13giNlnnOof9tQ3' \
-    --userId 'FFkiQ4WmZZZotLiU' \
+    --platformId 'dYPxaedP92EgPWXD' \
+    --userId 'RhFY9gixlAhQaatb' \
+    --crossNamespace 'false' \
     > test.out 2>&1
-eval_tap $? 196 'AdminGetUserSinglePlatformAccount' test.out
+eval_tap $? 201 'AdminGetUserSinglePlatformAccount' test.out
 
-#- 197 AdminDeleteUserRolesV3
+#- 202 AdminDeleteUserRolesV3
 # body param: body
-echo '["Kp8OSgjFJIZ2XxEW", "eeo3avj65c1CIW0V", "wh6hxHnX05KDdo9N"]' > $TEMP_JSON_INPUT
+echo '["K9iLegHJR4pTGeJy", "30Xn9IFac5X0XQya", "OCpKxdKneLKmWOZk"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserRolesV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'yquqieQVxrSEjmkF' \
+    --userId '0wBAtcQLyhAYX2av' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 197 'AdminDeleteUserRolesV3' test.out
+eval_tap $? 202 'AdminDeleteUserRolesV3' test.out
 
-#- 198 AdminSaveUserRoleV3
+#- 203 AdminSaveUserRoleV3
 # body param: body
-echo '[{"namespace": "sfCcuPynbD8TPCQG", "roleId": "6V5iUc3e7oF5TLcv"}, {"namespace": "pCOUf51VAIgrF3Ut", "roleId": "mHXbgoCIMEGvY7mL"}, {"namespace": "rRO6kznnRU4r4er8", "roleId": "CpVseJ0OOYlyEvZI"}]' > $TEMP_JSON_INPUT
+echo '[{"namespace": "S5TMAH8Md96Fu0XA", "roleId": "m4jlgzYtaWyBPNRq"}, {"namespace": "eD8NkIN7epyjjT3N", "roleId": "H4SpmKRPSMlrr981"}, {"namespace": "BzGIrThF2bz3hxBq", "roleId": "bgk9VPwweJIlIb5Y"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminSaveUserRoleV3 \
     --namespace $AB_NAMESPACE \
-    --userId '7W3nsA9DovCHs03S' \
+    --userId 'hp6i99Cb70tdHp4x' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 198 'AdminSaveUserRoleV3' test.out
+eval_tap $? 203 'AdminSaveUserRoleV3' test.out
 
-#- 199 AdminAddUserRoleV3
+#- 204 AdminAddUserRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserRoleV3 \
     --namespace $AB_NAMESPACE \
-    --roleId '5Xf0AX94THJpa9VQ' \
-    --userId 'aCPmeVorRlckf8Tk' \
+    --roleId '4RHujumtHdudQFJe' \
+    --userId 'fo4bdrt1p2NFSnTg' \
     > test.out 2>&1
-eval_tap $? 199 'AdminAddUserRoleV3' test.out
+eval_tap $? 204 'AdminAddUserRoleV3' test.out
 
-#- 200 AdminDeleteUserRoleV3
+#- 205 AdminDeleteUserRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteUserRoleV3 \
     --namespace $AB_NAMESPACE \
-    --roleId 'fzJ2qc1VZXNtB0wG' \
-    --userId 'SlEscbJYK1ORFsGG' \
+    --roleId 'wiBPO72ZkwmKqQDG' \
+    --userId 'W7B7emfkAq1empzd' \
     > test.out 2>&1
-eval_tap $? 200 'AdminDeleteUserRoleV3' test.out
+eval_tap $? 205 'AdminDeleteUserRoleV3' test.out
 
-#- 201 AdminUpdateUserStatusV3
+#- 206 AdminUpdateUserStatusV3
 # body param: body
-echo '{"enabled": true, "reason": "IvNMB3SANEInGGk3"}' > $TEMP_JSON_INPUT
+echo '{"enabled": true, "reason": "Ui7uy360VpYzz2I0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserStatusV3 \
     --namespace $AB_NAMESPACE \
-    --userId '2HEHfcu1Fy4cXh7O' \
+    --userId 'bc5mKsGJuLLjLEdl' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 201 'AdminUpdateUserStatusV3' test.out
+eval_tap $? 206 'AdminUpdateUserStatusV3' test.out
 
-#- 202 AdminTrustlyUpdateUserIdentity
+#- 207 AdminTrustlyUpdateUserIdentity
 # body param: body
-echo '{"emailAddress": "VQysRitHLbViGiai", "password": "4sK9iLegHJR4pTGe"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "NUgqi3FAFsiHboJd", "password": "QAhWGk0WIWQtnuoe"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminTrustlyUpdateUserIdentity \
     --namespace $AB_NAMESPACE \
-    --userId 'Jy30Xn9IFac5X0XQ' \
+    --userId 'nJ7sRGrdfKlLP7mi' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 202 'AdminTrustlyUpdateUserIdentity' test.out
+eval_tap $? 207 'AdminTrustlyUpdateUserIdentity' test.out
 
-#- 203 AdminVerifyUserWithoutVerificationCodeV3
+#- 208 AdminVerifyUserWithoutVerificationCodeV3
 $CLI_EXE \
     --sn iam \
     --op AdminVerifyUserWithoutVerificationCodeV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'yaOCpKxdKneLKmWO' \
+    --userId '79HF3qTCLFW0BJBX' \
     > test.out 2>&1
-eval_tap $? 203 'AdminVerifyUserWithoutVerificationCodeV3' test.out
+eval_tap $? 208 'AdminVerifyUserWithoutVerificationCodeV3' test.out
 
-#- 204 AdminUpdateClientSecretV3
+#- 209 AdminUpdateClientSecretV3
 # body param: body
-echo '{"newSecret": "Zk0wBAtcQLyhAYX2"}' > $TEMP_JSON_INPUT
+echo '{"newSecret": "GssAhdWiVOWAO0ab"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateClientSecretV3 \
-    --clientId 'avS5TMAH8Md96Fu0' \
+    --clientId 'wE3Rt5kZ5QLZZFrj' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 204 'AdminUpdateClientSecretV3' test.out
+eval_tap $? 209 'AdminUpdateClientSecretV3' test.out
 
-#- 205 AdminCheckThirdPartyLoginPlatformAvailabilityV3
+#- 210 AdminCheckThirdPartyLoginPlatformAvailabilityV3
 $CLI_EXE \
     --sn iam \
     --op AdminCheckThirdPartyLoginPlatformAvailabilityV3 \
-    --platformId 'XAm4jlgzYtaWyBPN' \
+    --platformId 'nKEBQhOYyuUyFQak' \
     > test.out 2>&1
-eval_tap $? 205 'AdminCheckThirdPartyLoginPlatformAvailabilityV3' test.out
+eval_tap $? 210 'AdminCheckThirdPartyLoginPlatformAvailabilityV3' test.out
 
-#- 206 AdminGetRolesV3
+#- 211 AdminGetRolesV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRolesV3 \
-    --after 'RqeD8NkIN7epyjjT' \
-    --before '3NH4SpmKRPSMlrr9' \
-    --isWildcard 'true' \
-    --limit '66' \
+    --after 'gtQEh1oveMW8hdTK' \
+    --before 'FwLMpUFeM9Hzmg1p' \
+    --isWildcard 'false' \
+    --limit '74' \
     > test.out 2>&1
-eval_tap $? 206 'AdminGetRolesV3' test.out
+eval_tap $? 211 'AdminGetRolesV3' test.out
 
-#- 207 AdminCreateRoleV3
+#- 212 AdminCreateRoleV3
 # body param: body
-echo '{"adminRole": true, "deletable": true, "isWildcard": false, "managers": [{"displayName": "IrThF2bz3hxBqbgk", "namespace": "9VPwweJIlIb5Yhp6", "userId": "i99Cb70tdHp4x4RH"}, {"displayName": "ujumtHdudQFJefo4", "namespace": "bdrt1p2NFSnTgwiB", "userId": "PO72ZkwmKqQDGW7B"}, {"displayName": "7emfkAq1empzdHDc", "namespace": "zBSOn1dRkcqexDjW", "userId": "v9Yoxt0xWgID7tFi"}], "members": [{"displayName": "BZBDwBAghEaZhjH4", "namespace": "3fBfD6QpeW9xZolY", "userId": "pyAud59a9TFS26P3"}, {"displayName": "VAfAKxtUC4aQx0Wu", "namespace": "alCieNIhjOuLsrxt", "userId": "L5zdrXbdajrxUmyd"}, {"displayName": "xSyWnwKJXPc9kW7p", "namespace": "SiNiYZ62ERD0ri6V", "userId": "hDmnVWrhChp6lORK"}], "permissions": [{"action": 16, "resource": "TzAOeIUdtRXZqrFl", "schedAction": 77, "schedCron": "uyMMvfaXBARLFdP2", "schedRange": ["LQEsrMY5jEW33cJz", "Gvbrbk8tL20cLvmr", "zcMWDHzan9Qn7V0Z"]}, {"action": 82, "resource": "b9b0wI2wgfhXCVE6", "schedAction": 40, "schedCron": "HUV1017nN6CmSz87", "schedRange": ["aflJD3aWpfNFMPW8", "ebGzUTT0Vhr6Y5aI", "wftrNjjFt4H48YsF"]}, {"action": 20, "resource": "5qhEqFIcPPuCjqv4", "schedAction": 39, "schedCron": "6bxaT2HuM0ba7Ki9", "schedRange": ["rzy7iln0Y3PQGasF", "swsQAcT93kP8LHzS", "kGttE8LhIRPk7OIo"]}], "roleName": "ihy4DEXPp1b6uDiR"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": false, "deletable": false, "isWildcard": true, "managers": [{"displayName": "qAkSRQ5VluLd1kLu", "namespace": "yMMvfaXBARLFdP2L", "userId": "QEsrMY5jEW33cJzG"}, {"displayName": "vbrbk8tL20cLvmrz", "namespace": "cMWDHzan9Qn7V0Z5", "userId": "b9b0wI2wgfhXCVE6"}, {"displayName": "tPeMYkO5vnbALiJG", "namespace": "mTxsyzvChqxjojFO", "userId": "s10WYevc3367a0Bb"}], "members": [{"displayName": "etWsBQNiGXq49Xni", "namespace": "D5qhEqFIcPPuCjqv", "userId": "4tqGEpO3HkWR36Vi"}, {"displayName": "1UXGYQFMeSHvz1uV", "namespace": "mlBHr9b0kOA0ATHs", "userId": "pAa2061d5ISbmJA1"}, {"displayName": "btrC5jnLTBX1uULo", "namespace": "2vEYPvwtjuWuqHSw", "userId": "NKfVRO07q0pA952E"}], "permissions": [{"action": 18, "resource": "LaBk4i8fX2SxIVMm", "schedAction": 38, "schedCron": "20Hq9jOdsymQsQkC", "schedRange": ["gYZeeQUtegde6CoZ", "TmYdUzDklfFrIMgH", "B2WFwqWHhwmdcVMd"]}, {"action": 19, "resource": "HF53jyjABT98nuS7", "schedAction": 9, "schedCron": "RyMkmfKtoyW6LGOe", "schedRange": ["Y499CiR0LTnYSnW7", "egxd2tGBE0OPXG9v", "rMGoadUYbJ8Z6Kkq"]}, {"action": 57, "resource": "UUiDdy9BamLf6vLM", "schedAction": 21, "schedCron": "TKUeVcmxP9RuvWUd", "schedRange": ["1aJEqciDAih6rFn4", "pJB54ogd9tmEFEDH", "LArBBScenriXZcF2"]}], "roleName": "vaEzEGjUzVrVjsRq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateRoleV3 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 207 'AdminCreateRoleV3' test.out
+eval_tap $? 212 'AdminCreateRoleV3' test.out
 
-#- 208 AdminGetRoleV3
+#- 213 AdminGetRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleV3 \
-    --roleId 'lMYhChf4Iv7Hrxhf' \
+    --roleId '3saazudDxxc2ZBIc' \
     > test.out 2>&1
-eval_tap $? 208 'AdminGetRoleV3' test.out
+eval_tap $? 213 'AdminGetRoleV3' test.out
 
-#- 209 AdminDeleteRoleV3
+#- 214 AdminDeleteRoleV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRoleV3 \
-    --roleId 'kjSfOWpIoqppdSpj' \
+    --roleId 'V0VTrJ4pX7z0ljaw' \
     > test.out 2>&1
-eval_tap $? 209 'AdminDeleteRoleV3' test.out
+eval_tap $? 214 'AdminDeleteRoleV3' test.out
 
-#- 210 AdminUpdateRoleV3
+#- 215 AdminUpdateRoleV3
 # body param: body
-echo '{"deletable": false, "isWildcard": true, "roleName": "pkGvAgSl6tOtVw20"}' > $TEMP_JSON_INPUT
+echo '{"deletable": true, "isWildcard": true, "roleName": "JUftNpMXmFXKRcPO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRoleV3 \
-    --roleId 'Hq9jOdsymQsQkCgY' \
+    --roleId 'xfeRMUGdY40T7p4s' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 210 'AdminUpdateRoleV3' test.out
+eval_tap $? 215 'AdminUpdateRoleV3' test.out
 
-#- 211 AdminGetRoleAdminStatusV3
+#- 216 AdminGetRoleAdminStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleAdminStatusV3 \
-    --roleId 'ZeeQUtegde6CoZTm' \
+    --roleId '8LFtBK24wgxX85sn' \
     > test.out 2>&1
-eval_tap $? 211 'AdminGetRoleAdminStatusV3' test.out
+eval_tap $? 216 'AdminGetRoleAdminStatusV3' test.out
 
-#- 212 AdminUpdateAdminRoleStatusV3
+#- 217 AdminUpdateAdminRoleStatusV3
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateAdminRoleStatusV3 \
-    --roleId 'YdUzDklfFrIMgHB2' \
+    --roleId 'd2azKpFdnRmV5Owc' \
     > test.out 2>&1
-eval_tap $? 212 'AdminUpdateAdminRoleStatusV3' test.out
+eval_tap $? 217 'AdminUpdateAdminRoleStatusV3' test.out
 
-#- 213 AdminRemoveRoleAdminV3
+#- 218 AdminRemoveRoleAdminV3
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveRoleAdminV3 \
-    --roleId 'WFwqWHhwmdcVMdjr' \
+    --roleId 'SHYFcWbdMNO0Abay' \
     > test.out 2>&1
-eval_tap $? 213 'AdminRemoveRoleAdminV3' test.out
+eval_tap $? 218 'AdminRemoveRoleAdminV3' test.out
 
-#- 214 AdminGetRoleManagersV3
+#- 219 AdminGetRoleManagersV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleManagersV3 \
-    --roleId 'wDdE1BiCzT9eOI4R' \
-    --after 'yMkmfKtoyW6LGOeY' \
-    --before '499CiR0LTnYSnW7e' \
-    --limit '13' \
+    --roleId 'qAom8TzKF6R6FelP' \
+    --after 'j2PJerDLRSzyQ0eF' \
+    --before 'mcYwethXBQPzzSwj' \
+    --limit '45' \
     > test.out 2>&1
-eval_tap $? 214 'AdminGetRoleManagersV3' test.out
+eval_tap $? 219 'AdminGetRoleManagersV3' test.out
 
-#- 215 AdminAddRoleManagersV3
+#- 220 AdminAddRoleManagersV3
 # body param: body
-echo '{"managers": [{"displayName": "xLPrjvxtlrt6Ajcl", "namespace": "h7lBDHgfPl0n95dU", "userId": "UiDdy9BamLf6vLMX"}, {"displayName": "6TKUeVcmxP9RuvWU", "namespace": "d1aJEqciDAih6rFn", "userId": "4pJB54ogd9tmEFED"}, {"displayName": "HLArBBScenriXZcF", "namespace": "2vaEzEGjUzVrVjsR", "userId": "q3saazudDxxc2ZBI"}]}' > $TEMP_JSON_INPUT
+echo '{"managers": [{"displayName": "k9hYcfZejAM2ltgi", "namespace": "dMt8A7trVgOgbryF", "userId": "AkCkxCOFcMrB8Aef"}, {"displayName": "tpThcF13hTovFA3n", "namespace": "NwejGtIIQuVi4Xid", "userId": "2JIJqeUZtcJQU5cb"}, {"displayName": "fQ07zBbU3BM4l9oj", "namespace": "CRtHLgg3L2iNMV0m", "userId": "nQYmsEUczil8DJfV"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRoleManagersV3 \
-    --roleId 'cV0VTrJ4pX7z0lja' \
+    --roleId 'NMQJ3l5pMtIbgBFP' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 215 'AdminAddRoleManagersV3' test.out
+eval_tap $? 220 'AdminAddRoleManagersV3' test.out
 
-#- 216 AdminRemoveRoleManagersV3
+#- 221 AdminRemoveRoleManagersV3
 # body param: body
-echo '{"managers": [{"displayName": "wHpJUftNpMXmFXKR", "namespace": "cPOxfeRMUGdY40T7", "userId": "p4s8LFtBK24wgxX8"}, {"displayName": "5snd2azKpFdnRmV5", "namespace": "OwcSHYFcWbdMNO0A", "userId": "bayqAom8TzKF6R6F"}, {"displayName": "elPj2PJerDLRSzyQ", "namespace": "0eFmcYwethXBQPzz", "userId": "SwjvbmlsW2GQjTto"}]}' > $TEMP_JSON_INPUT
+echo '{"managers": [{"displayName": "5buu10umiO8Xt8Tp", "namespace": "dOGsFINvHda3b6gU", "userId": "Msmp3KcOASxqHM14"}, {"displayName": "ksdANlw7maIO97jz", "namespace": "K9VC1ICqyZU3RTIN", "userId": "dmAC7sUwjU70o9sm"}, {"displayName": "2HR0hpAR8JziLYrx", "namespace": "A4mqP47t4aFC7HPS", "userId": "fDaQTLy3GnXu9a6b"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveRoleManagersV3 \
-    --roleId 'MNptmDC2X4jtKF1V' \
+    --roleId 'jwTc9EJlVwRxj2wH' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 216 'AdminRemoveRoleManagersV3' test.out
+eval_tap $? 221 'AdminRemoveRoleManagersV3' test.out
 
-#- 217 AdminGetRoleMembersV3
+#- 222 AdminGetRoleMembersV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleMembersV3 \
-    --roleId 'wZjFlOoFJeOdazdY' \
-    --after 'o59WIBKN3oJPd3Ye' \
-    --before 'TDuluCekVwiXeotI' \
-    --limit '2' \
+    --roleId 'vmUlCmzsADzeDJUi' \
+    --after 'jjoEI7TyyVonb00R' \
+    --before 't6WT8ik725YzUQEF' \
+    --limit '14' \
     > test.out 2>&1
-eval_tap $? 217 'AdminGetRoleMembersV3' test.out
+eval_tap $? 222 'AdminGetRoleMembersV3' test.out
 
-#- 218 AdminAddRoleMembersV3
+#- 223 AdminAddRoleMembersV3
 # body param: body
-echo '{"members": [{"displayName": "Xid2JIJqeUZtcJQU", "namespace": "5cbfQ07zBbU3BM4l", "userId": "9ojCRtHLgg3L2iNM"}, {"displayName": "V0mnQYmsEUczil8D", "namespace": "JfVNMQJ3l5pMtIbg", "userId": "BFP5buu10umiO8Xt"}, {"displayName": "8TpdOGsFINvHda3b", "namespace": "6gUMsmp3KcOASxqH", "userId": "M14ksdANlw7maIO9"}]}' > $TEMP_JSON_INPUT
+echo '{"members": [{"displayName": "wPsJERKfj5SKYRQx", "namespace": "Q0UD6HIeEiIy4Zn7", "userId": "cj3FCshef3YQ5L3M"}, {"displayName": "oZhgBZpxJow2xVGR", "namespace": "V5nBbYt7pAqGMydc", "userId": "c8ZFzkVJOLJ3lit5"}, {"displayName": "zvoNR3kdbkt4huxj", "namespace": "ZUnjIaYNlrmj0Jmj", "userId": "cQPFKkAFsgRgAwYm"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRoleMembersV3 \
-    --roleId '7jzK9VC1ICqyZU3R' \
+    --roleId 'oR3JLPL0A6ZH05CG' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 218 'AdminAddRoleMembersV3' test.out
+eval_tap $? 223 'AdminAddRoleMembersV3' test.out
 
-#- 219 AdminRemoveRoleMembersV3
-# body param: body
-echo '{"members": [{"displayName": "TINdmAC7sUwjU70o", "namespace": "9sm2HR0hpAR8JziL", "userId": "YrxA4mqP47t4aFC7"}, {"displayName": "HPSfDaQTLy3GnXu9", "namespace": "a6bjwTc9EJlVwRxj", "userId": "2wHvmUlCmzsADzeD"}, {"displayName": "JUijjoEI7TyyVonb", "namespace": "00Rt6WT8ik725YzU", "userId": "QEFhNV5HkiwA4ec3"}]}' > $TEMP_JSON_INPUT
-$CLI_EXE \
-    --sn iam \
-    --op AdminRemoveRoleMembersV3 \
-    --roleId 'ho1BDh134VCIS8m7' \
-    --reqfile $TEMP_JSON_INPUT \
-    > test.out 2>&1
-eval_tap $? 219 'AdminRemoveRoleMembersV3' test.out
+#- 224 AdminRemoveRoleMembersV3
+eval_tap 0 224 'AdminRemoveRoleMembersV3 # SKIP deprecated' test.out
 
-#- 220 AdminUpdateRolePermissionsV3
+#- 225 AdminUpdateRolePermissionsV3
 # body param: body
-echo '{"permissions": [{"action": 91, "resource": "Zn7cj3FCshef3YQ5", "schedAction": 77, "schedCron": "wyTyEhzkQXbHd19a", "schedRange": ["PJkOMu0zJgNmam6b", "GiQGM1AvGkDnaAqF", "vSNBRL9JtkaqwXRu"]}, {"action": 31, "resource": "xjZUnjIaYNlrmj0J", "schedAction": 25, "schedCron": "J899vjFRJyTNQYKL", "schedRange": ["Z4jsBFJv9nZZObdA", "VbtMtc4XmNOibMtE", "cqRsgheZG5emHXLH"]}, {"action": 7, "resource": "n8uo0jobz5evVeUs", "schedAction": 47, "schedCron": "zn360pG3mKRoD53U", "schedRange": ["urTLKflEt43dMWFz", "Y0v0JbkF6FfwWiez", "A8jDzHsJXyoGovfS"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 76, "resource": "tMtc4XmNOibMtEcq", "schedAction": 90, "schedCron": "lj9l6yw2tJwi6BYd", "schedRange": ["fnxfRsE24qJSsySM", "zn360pG3mKRoD53U", "urTLKflEt43dMWFz"]}, {"action": 59, "resource": "0v0JbkF6FfwWiezA", "schedAction": 51, "schedCron": "jDzHsJXyoGovfSPa", "schedRange": ["TAtAurCRbo84FcGo", "Q1Hgfiov3QF97FNV", "Pz3eTJEVf9gfcX52"]}, {"action": 36, "resource": "pKjKmLpeM7XCm5Y4", "schedAction": 24, "schedCron": "2kUXcQyhDVC2jTeG", "schedRange": ["Iownn9Tbyb51cgZ9", "qPqTEO34dYlCka3t", "FsrluWQ8T1r9xRpc"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRolePermissionsV3 \
-    --roleId 'PaTAtAurCRbo84Fc' \
+    --roleId 'LK3S1k6rZEqIn8VE' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 220 'AdminUpdateRolePermissionsV3' test.out
+eval_tap $? 225 'AdminUpdateRolePermissionsV3' test.out
 
-#- 221 AdminAddRolePermissionsV3
+#- 226 AdminAddRolePermissionsV3
 # body param: body
-echo '{"permissions": [{"action": 67, "resource": "PzBu5e2m3J6K5t6D", "schedAction": 6, "schedCron": "VPz3eTJEVf9gfcX5", "schedRange": ["2rO5eFEXw6Soeso5", "1I2kUXcQyhDVC2jT", "eGIownn9Tbyb51cg"]}, {"action": 95, "resource": "9qPqTEO34dYlCka3", "schedAction": 40, "schedCron": "VJzjSx8AFvfpF3L0", "schedRange": ["IrMbiiYnxI5FnDmT", "GAyeNaETQxbCsXK0", "LxZhus8nYdQ3awCH"]}, {"action": 18, "resource": "V4BTYMT3X8lGA6XR", "schedAction": 61, "schedCron": "k79msR8RIEmMdTDp", "schedRange": ["6u6cpLMvOMW8sLBK", "JiqCN6hhXYXvrPZ0", "qkJ7qKy5CNCPvJEY"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 85, "resource": "AyeNaETQxbCsXK0L", "schedAction": 48, "schedCron": "p6wlJNSl5JxMr033", "schedRange": ["V4BTYMT3X8lGA6XR", "DLO2EotaRe0lhOSE", "ThhhtVNvrOXKAxha"]}, {"action": 88, "resource": "JiqCN6hhXYXvrPZ0", "schedAction": 34, "schedCron": "mGz6JMPspnYE5EwV", "schedRange": ["J287TwZMvSk7H24N", "B8KtITPsCo6PTrgh", "zHUc4oButfdE4yGs"]}, {"action": 96, "resource": "kv8Iis5VsIgUwOZe", "schedAction": 53, "schedCron": "JnOPDoE3jzHXmU9y", "schedRange": ["rFIyNa4q6J1j7A67", "J7TdNKZVHhBOuX48", "REyH13S41RCqenqe"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRolePermissionsV3 \
-    --roleId 'mSqo70TN3Pt15Nql' \
+    --roleId 'ro5Ib2HMljCmKs4v' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 221 'AdminAddRolePermissionsV3' test.out
+eval_tap $? 226 'AdminAddRolePermissionsV3' test.out
 
-#- 222 AdminDeleteRolePermissionsV3
+#- 227 AdminDeleteRolePermissionsV3
 # body param: body
-echo '["spG4Z5ENPCUeInj6", "oqoqbgh3cm1mjrF7", "HUeAu754uAn1Jsmg"]' > $TEMP_JSON_INPUT
+echo '["mW163rsDXCkkHfey", "L83Ky5SCfeMexfgx", "YOl0PsxH2NQWDv9y"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionsV3 \
-    --roleId 'r7JnOPDoE3jzHXmU' \
+    --roleId 'tC4WLvYjyEbD8ZAm' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 222 'AdminDeleteRolePermissionsV3' test.out
+eval_tap $? 227 'AdminDeleteRolePermissionsV3' test.out
 
-#- 223 AdminDeleteRolePermissionV3
+#- 228 AdminDeleteRolePermissionV3
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionV3 \
-    --action '100' \
-    --resource 'yrFIyNa4q6J1j7A6' \
-    --roleId '7J7TdNKZVHhBOuX4' \
+    --action '38' \
+    --resource 'rzvhxBpG2Uzh4L0k' \
+    --roleId 'Bd7hZ83EuGDQsj2O' \
     > test.out 2>&1
-eval_tap $? 223 'AdminDeleteRolePermissionV3' test.out
+eval_tap $? 228 'AdminDeleteRolePermissionV3' test.out
 
-#- 224 AdminGetMyUserV3
+#- 229 AdminGetMyUserV3
 $CLI_EXE \
     --sn iam \
     --op AdminGetMyUserV3 \
     > test.out 2>&1
-eval_tap $? 224 'AdminGetMyUserV3' test.out
+eval_tap $? 229 'AdminGetMyUserV3' test.out
 
-#- 225 UserAuthenticationV3
+#- 230 UserAuthenticationV3
 $CLI_EXE \
     --sn iam \
     --op UserAuthenticationV3 \
-    --client_id '8REyH13S41RCqenq' \
-    --extend_exp 'false' \
-    --redirect_uri 'uoR91UoLUiPjXWpK' \
-    --password '1H6be3IlBqMAaCTS' \
-    --request_id 'RrHDj2awMgsmjHip' \
-    --user_name 'OFkigjeCWCEhoAQA' \
+    --client_id 'dxoDZJuHSt6EykK4' \
+    --extend_exp 'true' \
+    --redirect_uri 'vdIMOww3i9EMRsxi' \
+    --password 'w25VzXq9sqz1VO2O' \
+    --request_id 'BrTXq0K8iEeHf8Xl' \
+    --user_name '2euBwxtEgNHv4VJJ' \
     > test.out 2>&1
-eval_tap $? 225 'UserAuthenticationV3' test.out
+eval_tap $? 230 'UserAuthenticationV3' test.out
 
-#- 226 AuthenticationWithPlatformLinkV3
+#- 231 AuthenticationWithPlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op AuthenticationWithPlatformLinkV3 \
     --extend_exp 'true' \
-    --client_id 'XuZ60MzQKWwCJzGb' \
-    --linkingToken 'rzvhxBpG2Uzh4L0k' \
-    --password 'Bd7hZ83EuGDQsj2O' \
-    --username 'dxoDZJuHSt6EykK4' \
+    --client_id 'n3pVcLw3kFtCl6hq' \
+    --linkingToken 'JobodMFHdYzbgDBZ' \
+    --password 'T6vZ2uhiNTu5XT7z' \
+    --username '7qeXu5cmLXqeOsuD' \
     > test.out 2>&1
-eval_tap $? 226 'AuthenticationWithPlatformLinkV3' test.out
+eval_tap $? 231 'AuthenticationWithPlatformLinkV3' test.out
 
-#- 227 GenerateTokenByNewHeadlessAccountV3
+#- 232 GenerateTokenByNewHeadlessAccountV3
 $CLI_EXE \
     --sn iam \
     --op GenerateTokenByNewHeadlessAccountV3 \
-    --additionalData 'qUBmFSDjt20X3MvJ' \
-    --extend_exp 'false' \
-    --linkingToken 'w25VzXq9sqz1VO2O' \
+    --additionalData 'FPNpkxNEGw1tag3U' \
+    --extend_exp 'true' \
+    --linkingToken '2ZFlf3AdH9RGkRXZ' \
     > test.out 2>&1
-eval_tap $? 227 'GenerateTokenByNewHeadlessAccountV3' test.out
+eval_tap $? 232 'GenerateTokenByNewHeadlessAccountV3' test.out
 
-#- 228 RequestOneTimeLinkingCodeV3
+#- 233 RequestOneTimeLinkingCodeV3
 $CLI_EXE \
     --sn iam \
     --op RequestOneTimeLinkingCodeV3 \
-    --platformId 'BrTXq0K8iEeHf8Xl' \
+    --platformId 'B81cZS6UeF3Pj9Dz' \
     > test.out 2>&1
-eval_tap $? 228 'RequestOneTimeLinkingCodeV3' test.out
+eval_tap $? 233 'RequestOneTimeLinkingCodeV3' test.out
 
-#- 229 ValidateOneTimeLinkingCodeV3
+#- 234 ValidateOneTimeLinkingCodeV3
 $CLI_EXE \
     --sn iam \
     --op ValidateOneTimeLinkingCodeV3 \
-    --oneTimeLinkCode '2euBwxtEgNHv4VJJ' \
+    --oneTimeLinkCode 'B37aQvGNgSmBEJmF' \
     > test.out 2>&1
-eval_tap $? 229 'ValidateOneTimeLinkingCodeV3' test.out
+eval_tap $? 234 'ValidateOneTimeLinkingCodeV3' test.out
 
-#- 230 RequestTokenByOneTimeLinkCodeResponseV3
+#- 235 RequestTokenByOneTimeLinkCodeResponseV3
 $CLI_EXE \
     --sn iam \
     --op RequestTokenByOneTimeLinkCodeResponseV3 \
-    --additionalData 'qgEw0uAeCT0yBbnN' \
+    --additionalData 'cLCGmoIShTYBNnmF' \
     --isTransient 'false' \
-    --client_id 'IVzioKih0sQR1PRN' \
-    --oneTimeLinkCode 'zYugc3g75W8k0Mew' \
+    --client_id 'jSvzuiwn89SwexRF' \
+    --oneTimeLinkCode 'j344xh1CwNSevL8p' \
     > test.out 2>&1
-eval_tap $? 230 'RequestTokenByOneTimeLinkCodeResponseV3' test.out
+eval_tap $? 235 'RequestTokenByOneTimeLinkCodeResponseV3' test.out
 
-#- 231 GetCountryLocationV3
+#- 236 GetCountryLocationV3
 $CLI_EXE \
     --sn iam \
     --op GetCountryLocationV3 \
     > test.out 2>&1
-eval_tap $? 231 'GetCountryLocationV3' test.out
+eval_tap $? 236 'GetCountryLocationV3' test.out
 
-#- 232 Logout
+#- 237 Logout
 $CLI_EXE \
     --sn iam \
     --op Logout \
     > test.out 2>&1
-eval_tap $? 232 'Logout' test.out
+eval_tap $? 237 'Logout' test.out
 
-#- 233 RequestTokenExchangeCodeV3
+#- 238 RequestTokenExchangeCodeV3
 $CLI_EXE \
     --sn iam \
     --op RequestTokenExchangeCodeV3 \
     --namespace $AB_NAMESPACE \
-    --codeChallenge 'bUyzXDKSeBx9KkYf' \
-    --codeChallengeMethod 'plain' \
-    --client_id 'pkxNEGw1tag3U7AX' \
+    --codeChallenge 'DygWMCQjIJDYf490' \
+    --codeChallengeMethod 'S256' \
+    --client_id 'brTOopWMvu6v0ryD' \
     > test.out 2>&1
-eval_tap $? 233 'RequestTokenExchangeCodeV3' test.out
+eval_tap $? 238 'RequestTokenExchangeCodeV3' test.out
 
-#- 234 AdminRetrieveUserThirdPartyPlatformTokenV3
+#- 239 AdminRetrieveUserThirdPartyPlatformTokenV3
 $CLI_EXE \
     --sn iam \
     --op AdminRetrieveUserThirdPartyPlatformTokenV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'zXAICJGDo69bkGFv' \
-    --userId 'n9DLDgd21yXbMwzD' \
-    --platformUserId 'aT1GkDQoazFv6dJz' \
+    --platformId 'qNC1lVv7rSGrBCgR' \
+    --userId '9pN6mJ3yZzXQBPMv' \
+    --platformUserId 'YSc98hDqhirI7VPD' \
     > test.out 2>&1
-eval_tap $? 234 'AdminRetrieveUserThirdPartyPlatformTokenV3' test.out
+eval_tap $? 239 'AdminRetrieveUserThirdPartyPlatformTokenV3' test.out
 
-#- 235 RevokeUserV3
+#- 240 RevokeUserV3
 $CLI_EXE \
     --sn iam \
     --op RevokeUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'SZkHofQDS1by9r6T' \
+    --userId '4HvqAwc0RHxIhFrw' \
     --includeGameNamespace 'false' \
     > test.out 2>&1
-eval_tap $? 235 'RevokeUserV3' test.out
+eval_tap $? 240 'RevokeUserV3' test.out
 
-#- 236 AuthorizeV3
+#- 241 AuthorizeV3
 $CLI_EXE \
     --sn iam \
     --op AuthorizeV3 \
-    --codeChallenge 'jSvzuiwn89SwexRF' \
+    --codeChallenge 'PnAr3O7CWzjx7geZ' \
     --codeChallengeMethod 'S256' \
     --createHeadless 'false' \
-    --oneTimeLinkCode '4xh1CwNSevL8pDyg' \
-    --redirectUri 'WMCQjIJDYf490nHT' \
-    --scope 'n4o3uLIKIZWua1id' \
-    --state 'minDtdrpnWgdxxvm' \
-    --targetAuthPage 'WeWquBuD9bPIpdz0' \
+    --oneTimeLinkCode 'Hsi8WWl9cXOyyUyX' \
+    --redirectUri '2XwmIa4R4oiMtaLQ' \
+    --scope 'Pwkt68Lub5sHW7gh' \
+    --state 'xFTNmv4ljaS6aXt0' \
+    --targetAuthPage 'KHphzwDPGyP0KInw' \
     --useRedirectUriAsLoginUrlWhenLocked 'false' \
-    --clientId 'QQUZzQ5oiSFnqV38' \
+    --clientId 'Y22rebaWHAL7DM0S' \
     --responseType 'code' \
     > test.out 2>&1
-eval_tap $? 236 'AuthorizeV3' test.out
+eval_tap $? 241 'AuthorizeV3' test.out
 
-#- 237 TokenIntrospectionV3
+#- 242 TokenIntrospectionV3
 $CLI_EXE \
     --sn iam \
     --op TokenIntrospectionV3 \
-    --token 'IV3GITH5YU7KPnAr' \
+    --token 'UZxgsAba5ICidhFP' \
     > test.out 2>&1
-eval_tap $? 237 'TokenIntrospectionV3' test.out
+eval_tap $? 242 'TokenIntrospectionV3' test.out
 
-#- 238 GetJWKSV3
+#- 243 GetJWKSV3
 $CLI_EXE \
     --sn iam \
     --op GetJWKSV3 \
     > test.out 2>&1
-eval_tap $? 238 'GetJWKSV3' test.out
+eval_tap $? 243 'GetJWKSV3' test.out
 
-#- 239 SendMFAAuthenticationCode
+#- 244 SendMFAAuthenticationCode
 $CLI_EXE \
     --sn iam \
     --op SendMFAAuthenticationCode \
-    --clientId '3O7CWzjx7geZ6e1A' \
-    --factor 'PuoYM6p8L1DmyOXo' \
-    --mfaToken 'MKiHkajBvSEhpJDt' \
+    --clientId 'jHAAQfOkU10lCUlO' \
+    --factor '4jh1KMVnEm4Xd1UW' \
+    --mfaToken 'pttZo5kU2hQhgVUV' \
     > test.out 2>&1
-eval_tap $? 239 'SendMFAAuthenticationCode' test.out
+eval_tap $? 244 'SendMFAAuthenticationCode' test.out
 
-#- 240 Change2faMethod
+#- 245 Change2faMethod
 $CLI_EXE \
     --sn iam \
     --op Change2faMethod \
-    --factor 'ewKpbKblTYyGHXaE' \
-    --mfaToken 'Y5KNeUe2BnbKhBrr' \
+    --factor 'reGQumplZV5y6VQV' \
+    --mfaToken '1dDU5FsCWXRCwUNM' \
     > test.out 2>&1
-eval_tap $? 240 'Change2faMethod' test.out
+eval_tap $? 245 'Change2faMethod' test.out
 
-#- 241 Verify2faCode
+#- 246 Verify2faCode
 $CLI_EXE \
     --sn iam \
     --op Verify2faCode \
-    --code 'skkUXhysh35DnAY2' \
-    --factor '2rebaWHAL7DM0S8R' \
-    --mfaToken 'FUZxgsAba5ICidhF' \
+    --code 'j0gmNiv02zamBsk1' \
+    --factor 'ceWcshKUqR2V5aTE' \
+    --mfaToken 'sNAbMQBYGNfYTCVS' \
     --rememberDevice 'false' \
     > test.out 2>&1
-eval_tap $? 241 'Verify2faCode' test.out
+eval_tap $? 246 'Verify2faCode' test.out
 
-#- 242 RetrieveUserThirdPartyPlatformTokenV3
+#- 247 RetrieveUserThirdPartyPlatformTokenV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveUserThirdPartyPlatformTokenV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'UroThWF1rpxjGbLy' \
-    --userId '5cluls6hlWyZoHF0' \
+    --platformId 'czImZhNXnEF30Gt7' \
+    --userId 'BGOnQU0G3W3UEpsk' \
     > test.out 2>&1
-eval_tap $? 242 'RetrieveUserThirdPartyPlatformTokenV3' test.out
+eval_tap $? 247 'RetrieveUserThirdPartyPlatformTokenV3' test.out
 
-#- 243 AuthCodeRequestV3
+#- 248 AuthCodeRequestV3
 $CLI_EXE \
     --sn iam \
     --op AuthCodeRequestV3 \
-    --platformId 'dXwPpkLNhPNSrmuD' \
-    --clientId 'h5nUr4VjhIWdEA0n' \
-    --redirectUri 'kK8kMmDqcV7bASWM' \
-    --requestId 'gY2lM0NGbIfuabiT' \
+    --platformId 'WKpVNQ9cCkhtHCzC' \
+    --clientId 'eunEfNCBzmoVrPid' \
+    --redirectUri 'RXP0SHC7wwCcq722' \
+    --requestId 'ozNfZcLNyZdKR2DD' \
     > test.out 2>&1
-eval_tap $? 243 'AuthCodeRequestV3' test.out
+eval_tap $? 248 'AuthCodeRequestV3' test.out
 
-#- 244 PlatformTokenGrantV3
+#- 249 PlatformTokenGrantV3
 $CLI_EXE \
     --sn iam \
     --op PlatformTokenGrantV3 \
-    --platformId 'tN6vBiRyBHfb5xa5' \
-    --additionalData 'L0ALRw8yzp2WWxpG' \
-    --client_id 'czImZhNXnEF30Gt7' \
-    --createHeadless 'true' \
-    --device_id 'QiGTgBDVVtUJGtN6' \
-    --macAddress 'hBSUhqK9NEDi3ixE' \
-    --platform_token '5n9hkMyZLjDXHp9k' \
-    --serviceLabel '0.1287599786826592' \
-    --skipSetCookie 'false' \
+    --platformId 'uXSeYalmguh9nUOv' \
+    --additionalData 'sx688lqJPZrgQ5hj' \
+    --client_id 'TbTfU34PBVULKBGS' \
+    --createHeadless 'false' \
+    --device_id 'TeRH3qU9HQob50wM' \
+    --macAddress 'ZDQSOqNumwQ67G4W' \
+    --platform_token '7SUvQtDpUaEvvtFk' \
+    --serviceLabel '0.38456896932448204' \
+    --skipSetCookie 'true' \
     > test.out 2>&1
-eval_tap $? 244 'PlatformTokenGrantV3' test.out
+eval_tap $? 249 'PlatformTokenGrantV3' test.out
 
-#- 245 GetRevocationListV3
+#- 250 GetRevocationListV3
 $CLI_EXE \
     --sn iam \
     --op GetRevocationListV3 \
     > test.out 2>&1
-eval_tap $? 245 'GetRevocationListV3' test.out
+eval_tap $? 250 'GetRevocationListV3' test.out
 
-#- 246 TokenRevocationV3
+#- 251 TokenRevocationV3
 $CLI_EXE \
     --sn iam \
     --op TokenRevocationV3 \
-    --token 'P0SHC7wwCcq722oz' \
+    --token 'KhutnnSzg7kOBNDh' \
     > test.out 2>&1
-eval_tap $? 246 'TokenRevocationV3' test.out
+eval_tap $? 251 'TokenRevocationV3' test.out
 
-#- 247 SimultaneousLoginV3
+#- 252 SimultaneousLoginV3
 $CLI_EXE \
     --sn iam \
     --op SimultaneousLoginV3 \
-    --simultaneousPlatform 'NfZcLNyZdKR2DDuX' \
-    --simultaneousTicket 'SeYalmguh9nUOvsx' \
+    --simultaneousPlatform '77rNbLaBFu0Svi1r' \
+    --simultaneousTicket '1LSGvPrdqUhTGI6e' \
     --nativePlatform 'epicgames' \
-    --nativePlatformTicket 'pWIjDKAvfzFx3oSa' \
+    --nativePlatformTicket 'zgxalYccjvzbjAro' \
     > test.out 2>&1
-eval_tap $? 247 'SimultaneousLoginV3' test.out
+eval_tap $? 252 'SimultaneousLoginV3' test.out
 
-#- 248 TokenGrantV3
+#- 253 TokenGrantV3
 $CLI_EXE \
     --sn iam \
     --op TokenGrantV3 \
-    --additionalData 'tokUtRyold7TeRH3' \
-    --client_id 'qU9HQob50wMZDQSO' \
-    --client_secret 'qNumwQ67G4W7SUvQ' \
-    --code 'tDpUaEvvtFkxDGNk' \
-    --code_verifier 'I3Zby82iPizdDZme' \
-    --extendNamespace 'DlsuJqajORCIcL07' \
+    --additionalData 'pHMv5aKF8OK8syGT' \
+    --client_id '7P3sY2hA1F4Lj19I' \
+    --client_secret '18JDjAxbEGxhq59p' \
+    --code '8WJcwrHgc90WS1EQ' \
+    --code_verifier '8JGLr7XPU8QtZO4a' \
+    --extendNamespace 'xQWjT0Y6BWPbBmrE' \
     --extend_exp 'true' \
-    --password 'biXIfQ6ldF18zgxa' \
-    --redirect_uri 'lYccjvzbjAropHMv' \
-    --refresh_token '5aKF8OK8syGT7P3s' \
-    --username 'Y2hA1F4Lj19I18JD' \
-    --grant_type 'client_credentials' \
+    --password 'ObGUaXMrnPwIqrYj' \
+    --redirect_uri 'U3vhWm8DGF2ZRgb0' \
+    --refresh_token 'A825b4KQniJAhKkN' \
+    --username 'AtrzXcANqsTsYv57' \
+    --grant_type 'authorization_code' \
     > test.out 2>&1
-eval_tap $? 248 'TokenGrantV3' test.out
+eval_tap $? 253 'TokenGrantV3' test.out
 
-#- 249 VerifyTokenV3
+#- 254 VerifyTokenV3
 $CLI_EXE \
     --sn iam \
     --op VerifyTokenV3 \
-    --token 'sjWkQy5Q0Uf6UI3t' \
+    --token 'CB2NHrijQ0GiRyyB' \
     > test.out 2>&1
-eval_tap $? 249 'VerifyTokenV3' test.out
+eval_tap $? 254 'VerifyTokenV3' test.out
 
-#- 250 PlatformAuthenticationV3
+#- 255 PlatformAuthenticationV3
 $CLI_EXE \
     --sn iam \
     --op PlatformAuthenticationV3 \
-    --platformId 'm6GmtlBgMniMmsIg' \
-    --code 'P1pvXcx6QxdATNOG' \
-    --error 'mWtJhIYrpkfaObGU' \
-    --openidAssocHandle 'aXMrnPwIqrYjU3vh' \
-    --openidClaimedId 'Wm8DGF2ZRgb0A825' \
-    --openidIdentity 'b4KQniJAhKkNAtrz' \
-    --openidMode 'XcANqsTsYv579eRj' \
-    --openidNs 'x4zZI2p58TjHTPJd' \
-    --openidOpEndpoint 'fadFRPTTXH9AelTo' \
-    --openidResponseNonce 'HoXOjT0Ond0V4wCo' \
-    --openidReturnTo 'Ts4encKKweexDslw' \
-    --openidSig 'RnIc8ObOb52KbQeL' \
-    --openidSigned '5jSbNxwdPlvT7DDB' \
-    --state 'jvAxUbqmJNOB7MQO' \
+    --platformId '1RIqJKjGFLtTbezx' \
+    --code 'ilbgYctI00gKSJfc' \
+    --error 'WkikZL5NUGJ5Ke08' \
+    --openidAssocHandle 'TkDJCRD42j5bLx8W' \
+    --openidClaimedId 'pK551fPsLu4Ccf5x' \
+    --openidIdentity 'DpsDEaQ0te91CoYE' \
+    --openidMode 'o0hun7A3Yoj86O1Y' \
+    --openidNs 'PwVUSpuCU57DkSFE' \
+    --openidOpEndpoint 'lOwraUoGUQCLN7M1' \
+    --openidResponseNonce 'coPS9FIGU4If34Bj' \
+    --openidReturnTo 'WssPI3Fb6bzOQE2z' \
+    --openidSig 'uty383eXLMf1S2y6' \
+    --openidSigned 'JhgR3x0WVrPjUkAv' \
+    --state 'zGZSZzzrLbWLACYo' \
     > test.out 2>&1
-eval_tap $? 250 'PlatformAuthenticationV3' test.out
+eval_tap $? 255 'PlatformAuthenticationV3' test.out
 
-#- 251 PlatformTokenRefreshV3
+#- 256 PlatformTokenRefreshV3
 $CLI_EXE \
     --sn iam \
     --op PlatformTokenRefreshV3 \
-    --platformId 'd3kIYzHcEcCeD9Du' \
-    --platform_token 'vPqBb8rzjD3np0cW' \
+    --platformId 'IYseWrULOV6T5Gv6' \
+    --platform_token '2CjxObXHk4kWAU5M' \
     > test.out 2>&1
-eval_tap $? 251 'PlatformTokenRefreshV3' test.out
+eval_tap $? 256 'PlatformTokenRefreshV3' test.out
 
-#- 252 PublicGetInputValidations
+#- 257 PublicGetInputValidations
 $CLI_EXE \
     --sn iam \
     --op PublicGetInputValidations \
     --defaultOnEmpty 'true' \
-    --languageCode 'raUoGUQCLN7M1coP' \
+    --languageCode 'ovyETKqhTyT4lDa0' \
     > test.out 2>&1
-eval_tap $? 252 'PublicGetInputValidations' test.out
+eval_tap $? 257 'PublicGetInputValidations' test.out
 
-#- 253 PublicGetInputValidationByField
+#- 258 PublicGetInputValidationByField
 $CLI_EXE \
     --sn iam \
     --op PublicGetInputValidationByField \
-    --field 'S9FIGU4If34BjWss' \
+    --field 'M4Buod4Dha0C9Zok' \
     > test.out 2>&1
-eval_tap $? 253 'PublicGetInputValidationByField' test.out
+eval_tap $? 258 'PublicGetInputValidationByField' test.out
 
-#- 254 PublicGetCountryAgeRestrictionV3
+#- 259 PublicGetCountryAgeRestrictionV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetCountryAgeRestrictionV3 \
-    --countryCode 'PI3Fb6bzOQE2zuty' \
+    --countryCode 'mxNeoJpSNXh7Leq2' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 254 'PublicGetCountryAgeRestrictionV3' test.out
+eval_tap $? 259 'PublicGetCountryAgeRestrictionV3' test.out
 
-#- 255 PublicGetConfigValueV3
+#- 260 PublicGetConfigValueV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetConfigValueV3 \
-    --configKey '383eXLMf1S2y6Jhg' \
+    --configKey 'o4qMm8XQjPa9qdYs' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 255 'PublicGetConfigValueV3' test.out
+eval_tap $? 260 'PublicGetConfigValueV3' test.out
 
-#- 256 PublicGetCountryListV3
+#- 261 PublicGetCountryListV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetCountryListV3 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 256 'PublicGetCountryListV3' test.out
+eval_tap $? 261 'PublicGetCountryListV3' test.out
 
-#- 257 RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3
+#- 262 RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 257 'RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3' test.out
+eval_tap $? 262 'RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3' test.out
 
-#- 258 RetrieveActiveOIDCClientsPublicV3
+#- 263 RetrieveActiveOIDCClientsPublicV3
 $CLI_EXE \
     --sn iam \
     --op RetrieveActiveOIDCClientsPublicV3 \
     --namespace $AB_NAMESPACE \
-    --clientId 'R3x0WVrPjUkAvzGZ' \
+    --clientId 'eW61XKHCdEaJNn20' \
     > test.out 2>&1
-eval_tap $? 258 'RetrieveActiveOIDCClientsPublicV3' test.out
+eval_tap $? 263 'RetrieveActiveOIDCClientsPublicV3' test.out
 
-#- 259 PublicListUserIDByPlatformUserIDsV3
-eval_tap 0 259 'PublicListUserIDByPlatformUserIDsV3 # SKIP deprecated' test.out
+#- 264 PublicListUserIDByPlatformUserIDsV3
+eval_tap 0 264 'PublicListUserIDByPlatformUserIDsV3 # SKIP deprecated' test.out
 
-#- 260 PublicGetUserByPlatformUserIDV3
+#- 265 PublicGetUserByPlatformUserIDV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserByPlatformUserIDV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'SZzzrLbWLACYoIYs' \
-    --platformUserId 'eWrULOV6T5Gv62Cj' \
+    --platformId 'nEX4mFlWC2BhFv7m' \
+    --platformUserId 'jPF52kxFJwgTumfZ' \
     > test.out 2>&1
-eval_tap $? 260 'PublicGetUserByPlatformUserIDV3' test.out
+eval_tap $? 265 'PublicGetUserByPlatformUserIDV3' test.out
 
-#- 261 PublicGetAsyncStatus
+#- 266 PublicGetAsyncStatus
 $CLI_EXE \
     --sn iam \
     --op PublicGetAsyncStatus \
     --namespace $AB_NAMESPACE \
-    --requestId 'xObXHk4kWAU5MB0G' \
+    --requestId 't70JCI4XAS5P7fDe' \
     > test.out 2>&1
-eval_tap $? 261 'PublicGetAsyncStatus' test.out
+eval_tap $? 266 'PublicGetAsyncStatus' test.out
 
-#- 262 PublicSearchUserV3
+#- 267 PublicSearchUserV3
 $CLI_EXE \
     --sn iam \
     --op PublicSearchUserV3 \
     --namespace $AB_NAMESPACE \
-    --by '6CH85TzVYcGdLddR' \
-    --limit '42' \
-    --offset '67' \
-    --platformBy 'od4Dha0C9ZokmxNe' \
-    --platformId 'oJpSNXh7Leq2o4qM' \
-    --query 'm8XQjPa9qdYseW61' \
+    --by 'L8Af1D4tqTdxZVw2' \
+    --limit '24' \
+    --offset '21' \
+    --platformBy 'z8pgO7yEx8Kei0YL' \
+    --platformId 'XQPldIBwWu59xlVn' \
+    --query 'umHXxy38J5CMiTrV' \
     > test.out 2>&1
-eval_tap $? 262 'PublicSearchUserV3' test.out
+eval_tap $? 267 'PublicSearchUserV3' test.out
 
-#- 263 PublicCreateUserV3
+#- 268 PublicCreateUserV3
 # body param: body
-echo '{"PasswordMD5Sum": "XKHCdEaJNn20nEX4", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "KexAs9pwPpKdxuWW", "policyId": "2qWNku7iIxfvaeze", "policyVersionId": "6AjxCA76VtvoIRmP"}, {"isAccepted": true, "localizedPolicyVersionId": "YpKuqdPp14i7z8pg", "policyId": "O7yEx8Kei0YLXQPl", "policyVersionId": "dIBwWu59xlVnumHX"}, {"isAccepted": true, "localizedPolicyVersionId": "8mJJvk76BUKXsS1Y", "policyId": "t50aPRkTowrp44zt", "policyVersionId": "C3ZWCN2U0EH2hPQS"}], "authType": "89lhVEYCPYLcJDcB", "code": "SjSQtdfawL0Tq6RY", "country": "nbvuFsIt6lBnHOLB", "dateOfBirth": "Ou0hMrChnEaSHwep", "displayName": "uVxwGN6VE3mRMYqy", "emailAddress": "BDawTyXGlDO6ZxoP", "password": "SV7uPqhkd6cJ9vUQ", "reachMinimumAge": true, "uniqueDisplayName": "exbhwlfGLQn9y9sH"}' > $TEMP_JSON_INPUT
+echo '{"PasswordMD5Sum": "3cfsf78PmeTw02h7", "acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "44ztC3ZWCN2U0EH2", "policyId": "hPQS89lhVEYCPYLc", "policyVersionId": "JDcBSjSQtdfawL0T"}, {"isAccepted": true, "localizedPolicyVersionId": "Pf2FbyKjdefnVXYH", "policyId": "yHV2how09baUtR2v", "policyVersionId": "sQ6kwwxZypcty7nE"}, {"isAccepted": true, "localizedPolicyVersionId": "YqyBDawTyXGlDO6Z", "policyId": "xoPSV7uPqhkd6cJ9", "policyVersionId": "vUQQCnQ4NtJx4pe9"}], "authType": "ET2Ci8ctEIJwDbPV", "code": "SDRyktmfrDG0TMTZ", "country": "d7NICbqWlgab71ax", "dateOfBirth": "JqJoaRZHiELMCb8i", "displayName": "lhJpw3U5EAxQEFtK", "emailAddress": "fc15sFHIBsSKfpWh", "password": "sDGKniGKeZwMAoGZ", "reachMinimumAge": false, "uniqueDisplayName": "l0SHZxeb7jMs2Dzz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 263 'PublicCreateUserV3' test.out
+eval_tap $? 268 'PublicCreateUserV3' test.out
 
-#- 264 CheckUserAvailability
+#- 269 CheckUserAvailability
 $CLI_EXE \
     --sn iam \
     --op CheckUserAvailability \
     --namespace $AB_NAMESPACE \
-    --field 'mBMmMNgQeESHuxZF' \
-    --query 'MHSmF5EJdzFKuLb3' \
+    --field 'RQlOJdoeTWNU64vb' \
+    --query 'ZNbtvs3jgiELcpHN' \
     > test.out 2>&1
-eval_tap $? 264 'CheckUserAvailability' test.out
+eval_tap $? 269 'CheckUserAvailability' test.out
 
-#- 265 PublicBulkGetUsers
+#- 270 PublicBulkGetUsers
 # body param: body
-echo '{"userIds": ["uu9yYK80u5lFsT2p", "FU6wJLAFoI8X2Ds9", "JkQFhfRCQ0OeQGTF"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["GYN54ntS5f9BgmoV", "3N90r7sMlJ1cf2l2", "Mr2Vwg8MxxOylSVL"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicBulkGetUsers \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 265 'PublicBulkGetUsers' test.out
+eval_tap $? 270 'PublicBulkGetUsers' test.out
 
-#- 266 PublicSendRegistrationCode
+#- 271 PublicSendRegistrationCode
 # body param: body
-echo '{"emailAddress": "OKjrn7CyBXHOhkfJ", "languageTag": "70y9dXJfOPuBNl0S"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "Kd5F4ddfzOqCITWU", "languageTag": "5jiZbaUjhzPzbG8D"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicSendRegistrationCode \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 266 'PublicSendRegistrationCode' test.out
+eval_tap $? 271 'PublicSendRegistrationCode' test.out
 
-#- 267 PublicVerifyRegistrationCode
+#- 272 PublicVerifyRegistrationCode
 # body param: body
-echo '{"code": "HZxeb7jMs2DzzRQl", "emailAddress": "OJdoeTWNU64vbZNb"}' > $TEMP_JSON_INPUT
+echo '{"code": "ABOzXo0zYRGaYn2w", "emailAddress": "vqEeHghhJSCwKHiS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicVerifyRegistrationCode \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 267 'PublicVerifyRegistrationCode' test.out
+eval_tap $? 272 'PublicVerifyRegistrationCode' test.out
 
-#- 268 PublicForgotPasswordV3
+#- 273 PublicForgotPasswordV3
 # body param: body
-echo '{"emailAddress": "tvs3jgiELcpHNGYN", "languageTag": "54ntS5f9BgmoV3N9"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "NeV4MYWage2hr4yx", "languageTag": "joJDQCe5ygmoW6gn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicForgotPasswordV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 268 'PublicForgotPasswordV3' test.out
+eval_tap $? 273 'PublicForgotPasswordV3' test.out
 
-#- 269 PublicValidateUserInput
+#- 274 PublicValidateUserInput
 # body param: body
-echo '{"displayName": "0r7sMlJ1cf2l2Mr2", "uniqueDisplayName": "Vwg8MxxOylSVLKd5", "username": "F4ddfzOqCITWU5ji"}' > $TEMP_JSON_INPUT
+echo '{"displayName": "otlWUFhPQYrnyHl6", "password": "CIvSirnRXbnCUUTR", "uniqueDisplayName": "HTLb0eqOcteeCdOh", "username": "As9EKwYzDu1tK50K"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicValidateUserInput \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 269 'PublicValidateUserInput' test.out
+eval_tap $? 274 'PublicValidateUserInput' test.out
 
-#- 270 GetAdminInvitationV3
+#- 275 GetAdminInvitationV3
 $CLI_EXE \
     --sn iam \
     --op GetAdminInvitationV3 \
-    --invitationId 'ZbaUjhzPzbG8DABO' \
+    --invitationId 'mhSYoEAiY0zxSycT' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 270 'GetAdminInvitationV3' test.out
+eval_tap $? 275 'GetAdminInvitationV3' test.out
 
-#- 271 CreateUserFromInvitationV3
+#- 276 CreateUserFromInvitationV3
 # body param: body
-echo '{"PasswordMD5Sum": "zXo0zYRGaYn2wvqE", "acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "krgHaaM84LoOgWMx", "policyId": "szqwRCbWPIRch9Vc", "policyVersionId": "vtExYLBbyzpRZ48j"}, {"isAccepted": false, "localizedPolicyVersionId": "UFhPQYrnyHl6CIvS", "policyId": "irnRXbnCUUTRHTLb", "policyVersionId": "0eqOcteeCdOhAs9E"}, {"isAccepted": false, "localizedPolicyVersionId": "wYzDu1tK50KmhSYo", "policyId": "EAiY0zxSycTYYnFS", "policyVersionId": "DX31e0PqbWqxQ1Rt"}], "authType": "34Xlc6Zi46dUvqtk", "code": "tUzZevkFkEtWRdeH", "country": "cdGcXWPGk9g9o4ZW", "dateOfBirth": "r20TtVASVUB72Rop", "displayName": "rjhe1BQ3WyL3WXZ7", "emailAddress": "1yOUwZT9AOydyI4I", "password": "ppp7a7eBaQmzW5GU", "reachMinimumAge": true, "uniqueDisplayName": "UMHTlWcnJTRndaSh"}' > $TEMP_JSON_INPUT
+echo '{"PasswordMD5Sum": "YYnFSDX31e0PqbWq", "acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "KJm6ZE19elq1AQS5", "policyId": "T2irgcG56QuPIwtH", "policyVersionId": "47gzj2c8HcBKDVPx"}, {"isAccepted": false, "localizedPolicyVersionId": "Mn9YfBbVTSJs3kFG", "policyId": "7LtOqO3Yik6Joq70", "policyVersionId": "RPRUULBn7z2AO1v1"}, {"isAccepted": true, "localizedPolicyVersionId": "I4Ippp7a7eBaQmzW", "policyId": "5GUEV3INtlxMMqG0", "policyVersionId": "kuoQsHblRWi3iM6L"}], "authType": "jneQzIOlEpfw2hIL", "code": "zhfliBTnyiGFuZS5", "country": "sEeLaES1kqvFWMvO", "dateOfBirth": "TeeTzcNn9JwgzVNj", "displayName": "MP2O21s8WMA955Oy", "emailAddress": "8qa8fPM6kgsr2u8j", "password": "Zq0MAaAk2xsaWBH3", "reachMinimumAge": true, "uniqueDisplayName": "DcGl9weB8cyJMVGa"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op CreateUserFromInvitationV3 \
-    --invitationId 'KpGMbwIUb1vUfgTS' \
+    --invitationId 'TYPwEB9IQaIAoGdn' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 271 'CreateUserFromInvitationV3' test.out
+eval_tap $? 276 'CreateUserFromInvitationV3' test.out
 
-#- 272 UpdateUserV3
+#- 277 UpdateUserV3
 # body param: body
-echo '{"avatarUrl": "blo14YTsBoStpmbL", "country": "Xx8f9Gk1ihxx6Q4D", "dateOfBirth": "6SweEUyWX2oiyxXS", "displayName": "N3D5t0H7uGHolFYq", "languageTag": "yxw8MKwmiHQNZNPu", "uniqueDisplayName": "coJJtNClZ28GvRW3", "userName": "Bep4V2ZEFH62dVDc"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "GlHHx3qMwPDtr7ej", "country": "nj0OTnXc2tpCjKIR", "dateOfBirth": "zcYeJbBJvKO9h5xb", "displayName": "ZKPG24wSHdx7rVzc", "languageTag": "4EjIgU6E3ydSulEO", "uniqueDisplayName": "JJFZXE5wUTy5jAiW", "userName": "jbo6dy4EIVorNWRy"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op UpdateUserV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 272 'UpdateUserV3' test.out
+eval_tap $? 277 'UpdateUserV3' test.out
 
-#- 273 PublicPartialUpdateUserV3
+#- 278 PublicPartialUpdateUserV3
 # body param: body
-echo '{"avatarUrl": "Gl9weB8cyJMVGaTY", "country": "PwEB9IQaIAoGdnGl", "dateOfBirth": "HHx3qMwPDtr7ejnj", "displayName": "0OTnXc2tpCjKIRzc", "languageTag": "YeJbBJvKO9h5xbZK", "uniqueDisplayName": "PG24wSHdx7rVzc4E", "userName": "jIgU6E3ydSulEOJJ"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "tAEjZD8dYUemoyeU", "country": "Rgkp5TvHlox1uM3Y", "dateOfBirth": "Xq1NhRVIExczy0jh", "displayName": "sQe6Es4YzSrCXG1H", "languageTag": "8DmRnYweB4PJoFvG", "uniqueDisplayName": "nLlUvDAOneZXLWTW", "userName": "kR0RAGgoHpxBuE16"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicPartialUpdateUserV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 273 'PublicPartialUpdateUserV3' test.out
+eval_tap $? 278 'PublicPartialUpdateUserV3' test.out
 
-#- 274 PublicSendVerificationCodeV3
+#- 279 PublicSendVerificationCodeV3
 # body param: body
-echo '{"context": "FZXE5wUTy5jAiWjb", "emailAddress": "o6dy4EIVorNWRytA", "languageTag": "EjZD8dYUemoyeURg"}' > $TEMP_JSON_INPUT
+echo '{"context": "GD5TALEFs4iv4KPD", "emailAddress": "VIGmuKco4zMotDuo", "languageTag": "WR2Sy9d0LOrtHuXT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicSendVerificationCodeV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 274 'PublicSendVerificationCodeV3' test.out
+eval_tap $? 279 'PublicSendVerificationCodeV3' test.out
 
-#- 275 PublicUserVerificationV3
+#- 280 PublicUserVerificationV3
 # body param: body
-echo '{"code": "kp5TvHlox1uM3YXq", "contactType": "1NhRVIExczy0jhsQ", "languageTag": "e6Es4YzSrCXG1H8D", "validateOnly": false}' > $TEMP_JSON_INPUT
+echo '{"code": "4ACAZUZ8Rs9mjRlJ", "contactType": "eb3FDTIkDx3JX7BC", "languageTag": "39YIRfYNYRzrbVAC", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUserVerificationV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 275 'PublicUserVerificationV3' test.out
+eval_tap $? 280 'PublicUserVerificationV3' test.out
 
-#- 276 PublicUpgradeHeadlessAccountV3
+#- 281 PublicUpgradeHeadlessAccountV3
 # body param: body
-echo '{"code": "vI9vg44W1dOrITa7", "country": "b5exdeznarHIIQ3B", "dateOfBirth": "ZqgqVn47lxWpSiaP", "displayName": "lUHqgPuSOxmu77ar", "emailAddress": "xcGmTyPTBU3Gd8Q1", "password": "bK9hSZnwvIAZ72zb", "uniqueDisplayName": "PgGppj5VnhNcG6xx", "validateOnly": true}' > $TEMP_JSON_INPUT
+echo '{"code": "4svXPvqSHzQP4r11", "country": "zNzbKseToolMT1an", "dateOfBirth": "oumIdfOy8B8ua5Yz", "displayName": "PLvBsYt9hHSQO7N3", "emailAddress": "pSdcHfXR8nRDKnrN", "password": "0NqxBK8G9ctXWpDs", "uniqueDisplayName": "3mwyLTqCqebCa9PY", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 276 'PublicUpgradeHeadlessAccountV3' test.out
+eval_tap $? 281 'PublicUpgradeHeadlessAccountV3' test.out
 
-#- 277 PublicVerifyHeadlessAccountV3
+#- 282 PublicVerifyHeadlessAccountV3
 # body param: body
-echo '{"emailAddress": "FDTIkDx3JX7BC39Y", "password": "IRfYNYRzrbVAC1mv"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "xGbqqAJMO8EgRInJ", "password": "O3xlVl5j0MJbsvnR"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicVerifyHeadlessAccountV3 \
@@ -2153,1215 +2197,1223 @@ $CLI_EXE \
     --needVerificationCode 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 277 'PublicVerifyHeadlessAccountV3' test.out
+eval_tap $? 282 'PublicVerifyHeadlessAccountV3' test.out
 
-#- 278 PublicUpdatePasswordV3
+#- 283 PublicUpdatePasswordV3
 # body param: body
-echo '{"languageTag": "vXPvqSHzQP4r11zN", "mfaToken": "zbKseToolMT1anou", "newPassword": "mIdfOy8B8ua5YzPL", "oldPassword": "vBsYt9hHSQO7N3pS"}' > $TEMP_JSON_INPUT
+echo '{"languageTag": "7g7yAkjozsWn2VP1", "mfaToken": "fLSzYwfuc7VGLXl6", "newPassword": "fm04DA2apK8T0reo", "oldPassword": "LbuyVjOV1xjy9cUM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdatePasswordV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 278 'PublicUpdatePasswordV3' test.out
+eval_tap $? 283 'PublicUpdatePasswordV3' test.out
 
-#- 279 PublicCreateJusticeUser
+#- 284 PublicCreateJusticeUser
 $CLI_EXE \
     --sn iam \
     --op PublicCreateJusticeUser \
     --namespace $AB_NAMESPACE \
-    --targetNamespace 'dcHfXR8nRDKnrN0N' \
+    --targetNamespace '889lnk79pMiBy7Hk' \
     > test.out 2>&1
-eval_tap $? 279 'PublicCreateJusticeUser' test.out
+eval_tap $? 284 'PublicCreateJusticeUser' test.out
 
-#- 280 PublicPlatformLinkV3
+#- 285 PublicPlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformLinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'qxBK8G9ctXWpDs3m' \
-    --redirectUri 'wyLTqCqebCa9PYdZ' \
-    --ticket 'w5T7NWQEemAkZ8Uj' \
+    --platformId 'k6nkuXMCMZwR2qAu' \
+    --redirectUri 'KrkxzUJ2Gsi7lTvm' \
+    --ticket 'FffqVjMckOXR8jGZ' \
     > test.out 2>&1
-eval_tap $? 280 'PublicPlatformLinkV3' test.out
+eval_tap $? 285 'PublicPlatformLinkV3' test.out
 
-#- 281 PublicPlatformUnlinkV3
-eval_tap 0 281 'PublicPlatformUnlinkV3 # SKIP deprecated' test.out
+#- 286 PublicPlatformUnlinkV3
+eval_tap 0 286 'PublicPlatformUnlinkV3 # SKIP deprecated' test.out
 
-#- 282 PublicPlatformUnlinkAllV3
+#- 287 PublicPlatformUnlinkAllV3
 $CLI_EXE \
     --sn iam \
     --op PublicPlatformUnlinkAllV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'WotgedEWqA2OuAo7' \
+    --platformId 'EdEMOhsJeGtkZlOu' \
     > test.out 2>&1
-eval_tap $? 282 'PublicPlatformUnlinkAllV3' test.out
+eval_tap $? 287 'PublicPlatformUnlinkAllV3' test.out
 
-#- 283 PublicForcePlatformLinkV3
+#- 288 PublicForcePlatformLinkV3
 $CLI_EXE \
     --sn iam \
     --op PublicForcePlatformLinkV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'g7yAkjozsWn2VP1f' \
-    --ticket 'LSzYwfuc7VGLXl6f' \
+    --platformId 'f5Dh3U6YnASqFMuZ' \
+    --ticket 'Qt3kQ1BKeS4SOpiS' \
     > test.out 2>&1
-eval_tap $? 283 'PublicForcePlatformLinkV3' test.out
+eval_tap $? 288 'PublicForcePlatformLinkV3' test.out
 
-#- 284 PublicWebLinkPlatform
+#- 289 PublicWebLinkPlatform
 $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatform \
     --namespace $AB_NAMESPACE \
-    --platformId 'm04DA2apK8T0reoL' \
-    --clientId 'buyVjOV1xjy9cUM8' \
-    --redirectUri '89lnk79pMiBy7Hkk' \
+    --platformId 'vjOfi8bFGNqzfi1d' \
+    --clientId '8mVghHy4nqk767Rs' \
+    --redirectUri 'ti6pzRMPn7N4BjbO' \
     > test.out 2>&1
-eval_tap $? 284 'PublicWebLinkPlatform' test.out
+eval_tap $? 289 'PublicWebLinkPlatform' test.out
 
-#- 285 PublicWebLinkPlatformEstablish
+#- 290 PublicWebLinkPlatformEstablish
 $CLI_EXE \
     --sn iam \
     --op PublicWebLinkPlatformEstablish \
     --namespace $AB_NAMESPACE \
-    --platformId '6nkuXMCMZwR2qAuK' \
-    --code 'rkxzUJ2Gsi7lTvmF' \
-    --state 'ffqVjMckOXR8jGZE' \
+    --platformId 'Mf0RTVK5Cic0udPj' \
+    --code '4Q1835AphZZl5Trx' \
+    --state '0FYUPbImbC0nvUT0' \
     > test.out 2>&1
-eval_tap $? 285 'PublicWebLinkPlatformEstablish' test.out
+eval_tap $? 290 'PublicWebLinkPlatformEstablish' test.out
 
-#- 286 PublicProcessWebLinkPlatformV3
+#- 291 PublicProcessWebLinkPlatformV3
 $CLI_EXE \
     --sn iam \
     --op PublicProcessWebLinkPlatformV3 \
     --namespace $AB_NAMESPACE \
-    --platformId 'dEMOhsJeGtkZlOuf' \
-    --code '5Dh3U6YnASqFMuZQ' \
-    --state 't3kQ1BKeS4SOpiSv' \
+    --platformId 'gfCJHNWMtnkgQL6l' \
+    --code 'AlJolL3iDOTJ0Wyc' \
+    --state 'rQ56Pv4Mqu5tWr8n' \
     > test.out 2>&1
-eval_tap $? 286 'PublicProcessWebLinkPlatformV3' test.out
+eval_tap $? 291 'PublicProcessWebLinkPlatformV3' test.out
 
-#- 287 PublicGetUsersPlatformInfosV3
+#- 292 PublicGetUsersPlatformInfosV3
 # body param: body
-echo '{"platformId": "jOfi8bFGNqzfi1d8", "userIds": ["mVghHy4nqk767Rst", "i6pzRMPn7N4BjbOM", "f0RTVK5Cic0udPj4"]}' > $TEMP_JSON_INPUT
+echo '{"platformId": "xtiW6Lm69ZWFLlAn", "userIds": ["EJruKbRj2SEjTbgd", "Bxgn67BAXvbfSGj9", "9YrStfLNWj1wb7Go"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicGetUsersPlatformInfosV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 287 'PublicGetUsersPlatformInfosV3' test.out
+eval_tap $? 292 'PublicGetUsersPlatformInfosV3' test.out
 
-#- 288 ResetPasswordV3
+#- 293 ResetPasswordV3
 # body param: body
-echo '{"code": "Q1835AphZZl5Trx0", "emailAddress": "FYUPbImbC0nvUT0g", "languageTag": "fCJHNWMtnkgQL6lA", "newPassword": "lJolL3iDOTJ0Wycr"}' > $TEMP_JSON_INPUT
+echo '{"clientId": "kaphoH8MFtvFmyaV", "code": "3eUydSaJlN3WJCRL", "emailAddress": "qbmS7qxl3A1675nR", "languageTag": "sd8CX6fx703XQFpr", "newPassword": "gAn8AZibWadSASoZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op ResetPasswordV3 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 288 'ResetPasswordV3' test.out
+eval_tap $? 293 'ResetPasswordV3' test.out
 
-#- 289 PublicGetUserByUserIdV3
-eval_tap 0 289 'PublicGetUserByUserIdV3 # SKIP deprecated' test.out
+#- 294 PublicGetUserByUserIdV3
+eval_tap 0 294 'PublicGetUserByUserIdV3 # SKIP deprecated' test.out
 
-#- 290 PublicGetUserBanHistoryV3
+#- 295 PublicGetUserBanHistoryV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserBanHistoryV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'Q56Pv4Mqu5tWr8nx' \
-    --activeOnly 'true' \
-    --after 'uerWpGGCzESrY0jo' \
-    --before 'L5WcP0L6QeQYsnOx' \
-    --limit '66' \
+    --userId 'Bx9MHx6Q7GNDotRA' \
+    --activeOnly 'false' \
+    --after 'n9kR082uMxHdTJHg' \
+    --before 'qj90Np0zRnp9hPHu' \
+    --limit '49' \
     > test.out 2>&1
-eval_tap $? 290 'PublicGetUserBanHistoryV3' test.out
+eval_tap $? 295 'PublicGetUserBanHistoryV3' test.out
 
-#- 291 PublicListUserAllPlatformAccountsDistinctV3
+#- 296 PublicListUserAllPlatformAccountsDistinctV3
 $CLI_EXE \
     --sn iam \
     --op PublicListUserAllPlatformAccountsDistinctV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'gn67BAXvbfSGj99Y' \
+    --userId 'auoZqAAhRvFME2jF' \
     > test.out 2>&1
-eval_tap $? 291 'PublicListUserAllPlatformAccountsDistinctV3' test.out
+eval_tap $? 296 'PublicListUserAllPlatformAccountsDistinctV3' test.out
 
-#- 292 PublicGetUserInformationV3
+#- 297 PublicGetUserInformationV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserInformationV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'rStfLNWj1wb7Goka' \
+    --userId 'w5QEDqVw6RsHBxax' \
     > test.out 2>&1
-eval_tap $? 292 'PublicGetUserInformationV3' test.out
+eval_tap $? 297 'PublicGetUserInformationV3' test.out
 
-#- 293 PublicGetUserLoginHistoriesV3
+#- 298 PublicGetUserLoginHistoriesV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserLoginHistoriesV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'phoH8MFtvFmyaV3e' \
-    --after '0.7450793349043637' \
-    --before '0.39033132036719387' \
-    --limit '8' \
+    --userId 'eYCbmAEWlFpMp4e0' \
+    --after '0.2558472548049001' \
+    --before '0.39037214529373254' \
+    --limit '19' \
     > test.out 2>&1
-eval_tap $? 293 'PublicGetUserLoginHistoriesV3' test.out
+eval_tap $? 298 'PublicGetUserLoginHistoriesV3' test.out
 
-#- 294 PublicGetUserPlatformAccountsV3
+#- 299 PublicGetUserPlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserPlatformAccountsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'XeW1C4x2sfLjZ071' \
-    --after 'CzgKVMhy6r1FH5tl' \
-    --before '88v0LIbkSCsd0XVY' \
-    --limit '87' \
-    --platformId 'ZibWadSASoZBx9MH' \
+    --userId 'i8JrBvIvlFm59iDC' \
+    --after 'Iz1LkqKFGwCkddPT' \
+    --before 'wicY2DXwYtb1PVxe' \
+    --limit '65' \
+    --platformId 'uPSF0m6rlv9kARU6' \
     > test.out 2>&1
-eval_tap $? 294 'PublicGetUserPlatformAccountsV3' test.out
+eval_tap $? 299 'PublicGetUserPlatformAccountsV3' test.out
 
-#- 295 PublicListJusticePlatformAccountsV3
+#- 300 PublicListJusticePlatformAccountsV3
 $CLI_EXE \
     --sn iam \
     --op PublicListJusticePlatformAccountsV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'x6Q7GNDotRARhe1l' \
+    --userId 'Kq4IZiqv4QzdiOja' \
     > test.out 2>&1
-eval_tap $? 295 'PublicListJusticePlatformAccountsV3' test.out
+eval_tap $? 300 'PublicListJusticePlatformAccountsV3' test.out
 
-#- 296 PublicLinkPlatformAccount
+#- 301 PublicLinkPlatformAccount
 # body param: body
-echo '{"platformId": "SxVMm64my8NJg0xj", "platformUserId": "d7zZP1ei1VYenauo"}' > $TEMP_JSON_INPUT
+echo '{"platformId": "Qdi9lUpXiU9fHSKd", "platformUserId": "EvYvg4xCfZVYplLc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicLinkPlatformAccount \
     --namespace $AB_NAMESPACE \
-    --userId 'ZqAAhRvFME2jFw5Q' \
+    --userId '9kBMqghZzLI2emJO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 296 'PublicLinkPlatformAccount' test.out
+eval_tap $? 301 'PublicLinkPlatformAccount' test.out
 
-#- 297 PublicForceLinkPlatformWithProgression
+#- 302 PublicForceLinkPlatformWithProgression
 # body param: body
-echo '{"chosenNamespaces": ["EDqVw6RsHBxaxeYC", "bmAEWlFpMp4e0pyj", "Uk5aLKVPtjrrr41v"], "requestId": "2PLVH85tRfNnSFhP"}' > $TEMP_JSON_INPUT
+echo '{"chosenNamespaces": ["c25uPGFL1Z2n2DF9", "lcoWide3ErFpWkGk", "9eM9tncBZy1tmt9I"], "requestId": "btBjgrvONKfxXxpb"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicForceLinkPlatformWithProgression \
     --namespace $AB_NAMESPACE \
-    --userId 'fnG4yqcnl2lXuPz8' \
+    --userId '0sLK0kVnz62UtJlz' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 297 'PublicForceLinkPlatformWithProgression' test.out
+eval_tap $? 302 'PublicForceLinkPlatformWithProgression' test.out
 
-#- 298 PublicGetPublisherUserV3
+#- 303 PublicGetPublisherUserV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetPublisherUserV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'uPSF0m6rlv9kARU6' \
+    --userId '2o6IOMMjYX53FXXw' \
     > test.out 2>&1
-eval_tap $? 298 'PublicGetPublisherUserV3' test.out
+eval_tap $? 303 'PublicGetPublisherUserV3' test.out
 
-#- 299 PublicValidateUserByUserIDAndPasswordV3
+#- 304 PublicValidateUserByUserIDAndPasswordV3
 $CLI_EXE \
     --sn iam \
     --op PublicValidateUserByUserIDAndPasswordV3 \
     --namespace $AB_NAMESPACE \
-    --userId 'Kq4IZiqv4QzdiOja' \
-    --password 'Qdi9lUpXiU9fHSKd' \
+    --userId '54ouq2MEJDqEBSnO' \
+    --password 'ND9NvqjhOySePLqp' \
     > test.out 2>&1
-eval_tap $? 299 'PublicValidateUserByUserIDAndPasswordV3' test.out
+eval_tap $? 304 'PublicValidateUserByUserIDAndPasswordV3' test.out
 
-#- 300 PublicGetRolesV3
+#- 305 PublicGetRolesV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetRolesV3 \
-    --after 'EvYvg4xCfZVYplLc' \
-    --before '9kBMqghZzLI2emJO' \
+    --after 'nuv1X1GSRAWYuXAu' \
+    --before 'HtF8xMU66OlK3cQi' \
     --isWildcard 'false' \
-    --limit '33' \
+    --limit '24' \
     > test.out 2>&1
-eval_tap $? 300 'PublicGetRolesV3' test.out
+eval_tap $? 305 'PublicGetRolesV3' test.out
 
-#- 301 PublicGetRoleV3
+#- 306 PublicGetRoleV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetRoleV3 \
-    --roleId '5uPGFL1Z2n2DF9lc' \
+    --roleId 'd51CZjmy5EBmpFxK' \
     > test.out 2>&1
-eval_tap $? 301 'PublicGetRoleV3' test.out
+eval_tap $? 306 'PublicGetRoleV3' test.out
 
-#- 302 PublicGetMyUserV3
+#- 307 PublicGetMyUserV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetMyUserV3 \
     --includeAllPlatforms 'false' \
     > test.out 2>&1
-eval_tap $? 302 'PublicGetMyUserV3' test.out
+eval_tap $? 307 'PublicGetMyUserV3' test.out
 
-#- 303 PublicGetLinkHeadlessAccountToMyAccountConflictV3
+#- 308 PublicGetLinkHeadlessAccountToMyAccountConflictV3
 $CLI_EXE \
     --sn iam \
     --op PublicGetLinkHeadlessAccountToMyAccountConflictV3 \
-    --oneTimeLinkCode 'toeJYDOkCKkp9EpP' \
+    --oneTimeLinkCode 'Z05tf26FaU6cDORm' \
     > test.out 2>&1
-eval_tap $? 303 'PublicGetLinkHeadlessAccountToMyAccountConflictV3' test.out
+eval_tap $? 308 'PublicGetLinkHeadlessAccountToMyAccountConflictV3' test.out
 
-#- 304 LinkHeadlessAccountToMyAccountV3
+#- 309 LinkHeadlessAccountToMyAccountV3
 # body param: body
-echo '{"chosenNamespaces": ["KEJ74M6M47JDKdzl", "sROpj34wSnSR9kX7", "pWt22ktISmOiiYsm"], "oneTimeLinkCode": "wHF2Jwfb6WpYyRBz"}' > $TEMP_JSON_INPUT
+echo '{"chosenNamespaces": ["SP8Bab08P4PZuT4b", "Zvq90QUOkyJZjTE7", "5wWxkeJQ8Bxl4IOE"], "oneTimeLinkCode": "LSriLqHewlMmJSVK"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op LinkHeadlessAccountToMyAccountV3 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 304 'LinkHeadlessAccountToMyAccountV3' test.out
+eval_tap $? 309 'LinkHeadlessAccountToMyAccountV3' test.out
 
-#- 305 PublicSendVerificationLinkV3
+#- 310 PublicSendVerificationLinkV3
 # body param: body
-echo '{"languageTag": "E8Zrdpa5YF5rKU0W"}' > $TEMP_JSON_INPUT
+echo '{"languageTag": "EFyWDHH9ml45hprx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicSendVerificationLinkV3 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 305 'PublicSendVerificationLinkV3' test.out
+eval_tap $? 310 'PublicSendVerificationLinkV3' test.out
 
-#- 306 PublicVerifyUserByLinkV3
+#- 311 PublicVerifyUserByLinkV3
 $CLI_EXE \
     --sn iam \
     --op PublicVerifyUserByLinkV3 \
-    --code 'K8RX0gla22fqPh21' \
+    --code 'VBoZ7D89mnxU7vqk' \
     > test.out 2>&1
-eval_tap $? 306 'PublicVerifyUserByLinkV3' test.out
+eval_tap $? 311 'PublicVerifyUserByLinkV3' test.out
 
-#- 307 PlatformAuthenticateSAMLV3Handler
+#- 312 PlatformAuthenticateSAMLV3Handler
 $CLI_EXE \
     --sn iam \
     --op PlatformAuthenticateSAMLV3Handler \
-    --platformId 'pr54bLuzh1GGQSh8' \
-    --code 'pxqtVDktzs65RA5l' \
-    --error 'mgq772daT8HeLE3G' \
-    --state 'mgBHYhzcOCOCSa0t' \
+    --platformId 'Gzh4p9s2D7EZOYgf' \
+    --code 'EN7E47p0IoqaVP0k' \
+    --error 'AMD5TdTragS5bIpc' \
+    --state 'RYRqosyjQOyaH0Fh' \
     > test.out 2>&1
-eval_tap $? 307 'PlatformAuthenticateSAMLV3Handler' test.out
+eval_tap $? 312 'PlatformAuthenticateSAMLV3Handler' test.out
 
-#- 308 LoginSSOClient
+#- 313 LoginSSOClient
 $CLI_EXE \
     --sn iam \
     --op LoginSSOClient \
-    --platformId 'zMb12PIZm6Eh2jeN' \
-    --payload 'zU34cspxe83NO3Jb' \
+    --platformId 'RgEC9cLpuL04fMZR' \
+    --payload 'U83V7YmCxroldX3U' \
     > test.out 2>&1
-eval_tap $? 308 'LoginSSOClient' test.out
+eval_tap $? 313 'LoginSSOClient' test.out
 
-#- 309 LogoutSSOClient
+#- 314 LogoutSSOClient
 $CLI_EXE \
     --sn iam \
     --op LogoutSSOClient \
-    --platformId 'SXfwoPATitSbsAEf' \
+    --platformId 'Hie2jgkOkOKSN9sk' \
     > test.out 2>&1
-eval_tap $? 309 'LogoutSSOClient' test.out
+eval_tap $? 314 'LogoutSSOClient' test.out
 
-#- 310 RequestTargetTokenResponseV3
+#- 315 RequestTargetTokenResponseV3
 $CLI_EXE \
     --sn iam \
     --op RequestTargetTokenResponseV3 \
-    --additionalData '8Vsb844I8DdkBtUy' \
-    --code 'TU6KUyzRgYjURVbS' \
+    --additionalData 'nA6AKlMrIB2Rfdbf' \
+    --code 'CeSRn1LKFtcxP5XZ' \
     > test.out 2>&1
-eval_tap $? 310 'RequestTargetTokenResponseV3' test.out
+eval_tap $? 315 'RequestTargetTokenResponseV3' test.out
 
-#- 311 AdminListInvitationHistoriesV4
+#- 316 AdminListInvitationHistoriesV4
 $CLI_EXE \
     --sn iam \
     --op AdminListInvitationHistoriesV4 \
-    --limit '98' \
-    --namespace_ '63TQB7WhJhpKTyYd' \
-    --offset '33' \
+    --limit '47' \
+    --namespace_ 'A93CCQqF9YI4KUOK' \
+    --offset '74' \
     > test.out 2>&1
-eval_tap $? 311 'AdminListInvitationHistoriesV4' test.out
+eval_tap $? 316 'AdminListInvitationHistoriesV4' test.out
 
-#- 312 AdminGetDevicesByUserV4
+#- 317 AdminGetDevicesByUserV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetDevicesByUserV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'zh4p9s2D7EZOYgfE' \
+    --userId 'dZq5V9Hwh3EMHjgs' \
     > test.out 2>&1
-eval_tap $? 312 'AdminGetDevicesByUserV4' test.out
+eval_tap $? 317 'AdminGetDevicesByUserV4' test.out
 
-#- 313 AdminGetBannedDevicesV4
+#- 318 AdminGetBannedDevicesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetBannedDevicesV4 \
     --namespace $AB_NAMESPACE \
-    --deviceType 'N7E47p0IoqaVP0kA' \
-    --endDate 'MD5TdTragS5bIpcR' \
-    --limit '61' \
-    --offset '90' \
-    --startDate 'kbkjfZQxT6mUc5hR' \
+    --deviceType '8sCTnZfOJduTGUSv' \
+    --endDate 'uNzar9GcsJUWujgm' \
+    --limit '65' \
+    --offset '46' \
+    --startDate 'Tz5nbwVVGSTZXa2e' \
     > test.out 2>&1
-eval_tap $? 313 'AdminGetBannedDevicesV4' test.out
+eval_tap $? 318 'AdminGetBannedDevicesV4' test.out
 
-#- 314 AdminGetUserDeviceBansV4
+#- 319 AdminGetUserDeviceBansV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetUserDeviceBansV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'djC2J0BuTl33e5ys' \
+    --userId 'xAYMk1HNjuaONjqg' \
     > test.out 2>&1
-eval_tap $? 314 'AdminGetUserDeviceBansV4' test.out
+eval_tap $? 319 'AdminGetUserDeviceBansV4' test.out
 
-#- 315 AdminBanDeviceV4
+#- 320 AdminBanDeviceV4
 # body param: body
-echo '{"comment": "dyyTBvYihJ6LMKza", "deviceId": "irhR1PW5Z9CVSSCI", "deviceType": "91zxbVmqiagoD1fd", "enabled": false, "endDate": "Rn1LKFtcxP5XZwXh", "ext": {"WCG2kkWQJsDs3RKP": {}, "1Urpj4x8PnX6KfY2": {}, "p9PKAhdHieJ9g7W2": {}}, "reason": "2eZI7djKNQnn7Ziw"}' > $TEMP_JSON_INPUT
+echo '{"comment": "yXtjlYgRK89LEL97", "deviceId": "Dud4mCokAXVlt043", "deviceType": "grYOG7ifMAFhcuL1", "enabled": true, "endDate": "nOFLXgjUnlJ0zWPx", "ext": {"Kc2emQbAM3AdFc2U": {}, "coBb2ic9jzBAFVEB": {}, "lyj3wejU310zNVf7": {}}, "reason": "VbKfbD1HmWDnEBTC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBanDeviceV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 315 'AdminBanDeviceV4' test.out
+eval_tap $? 320 'AdminBanDeviceV4' test.out
 
-#- 316 AdminGetDeviceBanV4
+#- 321 AdminGetDeviceBanV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetDeviceBanV4 \
-    --banId '6Rz26ZCWqtOusNU0' \
+    --banId '2Pea6bhf2Mp2tdJ1' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 316 'AdminGetDeviceBanV4' test.out
+eval_tap $? 321 'AdminGetDeviceBanV4' test.out
 
-#- 317 AdminUpdateDeviceBanV4
+#- 322 AdminUpdateDeviceBanV4
 # body param: body
-echo '{"enabled": true}' > $TEMP_JSON_INPUT
+echo '{"enabled": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateDeviceBanV4 \
-    --banId 'SLD2KM5e8cP0Ivvm' \
+    --banId 'mK60GUMUjXEeQRoZ' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 317 'AdminUpdateDeviceBanV4' test.out
+eval_tap $? 322 'AdminUpdateDeviceBanV4' test.out
 
-#- 318 AdminGenerateReportV4
+#- 323 AdminGenerateReportV4
 $CLI_EXE \
     --sn iam \
     --op AdminGenerateReportV4 \
     --namespace $AB_NAMESPACE \
-    --endDate 'NmmxWkY3Rq5xUK5Q' \
-    --startDate 'PKJjpWGiXt023GeD' \
-    --deviceType 'fnwC9CgnS19uSQ4R' \
+    --endDate '7AckKI4cR0Rh1BLu' \
+    --startDate 'UhL0K3dsslCPTxEC' \
+    --deviceType 'p8XyhA1qDASciKbU' \
     > test.out 2>&1
-eval_tap $? 318 'AdminGenerateReportV4' test.out
+eval_tap $? 323 'AdminGenerateReportV4' test.out
 
-#- 319 AdminGetDeviceTypesV4
+#- 324 AdminGetDeviceTypesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetDeviceTypesV4 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 319 'AdminGetDeviceTypesV4' test.out
+eval_tap $? 324 'AdminGetDeviceTypesV4' test.out
 
-#- 320 AdminGetDeviceBansV4
+#- 325 AdminGetDeviceBansV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetDeviceBansV4 \
-    --deviceId 's5SR1qQhoFDE9B8l' \
+    --deviceId '9EPAkk5bjfdkeGAC' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 320 'AdminGetDeviceBansV4' test.out
+eval_tap $? 325 'AdminGetDeviceBansV4' test.out
 
-#- 321 AdminDecryptDeviceV4
+#- 326 AdminDecryptDeviceV4
 $CLI_EXE \
     --sn iam \
     --op AdminDecryptDeviceV4 \
-    --deviceId 'NeAMJdoDJPWLmbrY' \
+    --deviceId 'FGh7xrSUjJrpMq3L' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 321 'AdminDecryptDeviceV4' test.out
+eval_tap $? 326 'AdminDecryptDeviceV4' test.out
 
-#- 322 AdminUnbanDeviceV4
+#- 327 AdminUnbanDeviceV4
 $CLI_EXE \
     --sn iam \
     --op AdminUnbanDeviceV4 \
-    --deviceId 'AAOF7J8Se7XWEA7P' \
+    --deviceId 'vNWp7O3w7jOC1T9E' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 322 'AdminUnbanDeviceV4' test.out
+eval_tap $? 327 'AdminUnbanDeviceV4' test.out
 
-#- 323 AdminGetUsersByDeviceV4
+#- 328 AdminGetUsersByDeviceV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetUsersByDeviceV4 \
-    --deviceId 'CaJsWf7zTNQScMSm' \
+    --deviceId 'kCNMr1WDLDr8neSE' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 323 'AdminGetUsersByDeviceV4' test.out
+eval_tap $? 328 'AdminGetUsersByDeviceV4' test.out
 
-#- 324 AdminGetNamespaceInvitationHistoryV4
+#- 329 AdminGetNamespaceInvitationHistoryV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetNamespaceInvitationHistoryV4 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 324 'AdminGetNamespaceInvitationHistoryV4' test.out
+eval_tap $? 329 'AdminGetNamespaceInvitationHistoryV4' test.out
 
-#- 325 AdminGetNamespaceUserInvitationHistoryV4
+#- 330 AdminGetNamespaceUserInvitationHistoryV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetNamespaceUserInvitationHistoryV4 \
     --namespace $AB_NAMESPACE \
-    --limit '21' \
-    --offset '97' \
+    --limit '51' \
+    --offset '24' \
     > test.out 2>&1
-eval_tap $? 325 'AdminGetNamespaceUserInvitationHistoryV4' test.out
+eval_tap $? 330 'AdminGetNamespaceUserInvitationHistoryV4' test.out
 
-#- 326 AdminCreateTestUsersV4
+#- 331 AdminCreateTestUsersV4
 # body param: body
-echo '{"count": 3}' > $TEMP_JSON_INPUT
+echo '{"count": 16}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateTestUsersV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 326 'AdminCreateTestUsersV4' test.out
+eval_tap $? 331 'AdminCreateTestUsersV4' test.out
 
-#- 327 AdminCreateUserV4
+#- 332 AdminCreateUserV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "KfbD1HmWDnEBTC2P", "policyId": "ea6bhf2Mp2tdJ1oc", "policyVersionId": "FcroUFtf0upKmTbV"}, {"isAccepted": false, "localizedPolicyVersionId": "KIImmnCj4qILQuTE", "policyId": "Iyc23SJz1wGXddME", "policyVersionId": "6xYI8I1HXE1R2cmS"}, {"isAccepted": false, "localizedPolicyVersionId": "Akk5bjfdkeGACFGh", "policyId": "7xrSUjJrpMq3LvNW", "policyVersionId": "p7O3w7jOC1T9EkCN"}], "authType": "EMAILPASSWD", "code": "r1WDLDr8neSEyh0S", "country": "J4TgyHTSeVZ9sUCy", "dateOfBirth": "c6yo2IFaegO6YcRH", "displayName": "LZ51PkQmxX4it40Z", "emailAddress": "V27RNtk4Z1lji4Wn", "password": "qXGgNPG5TfUC9SEX", "passwordMD5Sum": "9TSDezmmwqYpb55A", "reachMinimumAge": true, "uniqueDisplayName": "kp9cQaQJMfLAFMpT", "username": "XDjvHKt0BbtoXLFi"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "0SJ4TgyHTSeVZ9sU", "policyId": "Cyc6yo2IFaegO6Yc", "policyVersionId": "RHLZ51PkQmxX4it4"}, {"isAccepted": true, "localizedPolicyVersionId": "ZV27RNtk4Z1lji4W", "policyId": "nqXGgNPG5TfUC9SE", "policyVersionId": "X9TSDezmmwqYpb55"}, {"isAccepted": true, "localizedPolicyVersionId": "Ckp9cQaQJMfLAFMp", "policyId": "TXDjvHKt0BbtoXLF", "policyVersionId": "iCMgGuMXDUvU8J0W"}], "authType": "EMAILPASSWD", "code": "5ZhkzCBB3DOw50MY", "country": "50NZJGK2PRGthDUv", "dateOfBirth": "00t9ITsgoisAvB2k", "displayName": "M2Vwo46zJHrFApYN", "emailAddress": "zD2UsTHB9B47YV1Y", "password": "lVbJKdbMSSB022Fh", "passwordMD5Sum": "h6zwJoLh8K1cysbB", "reachMinimumAge": false, "uniqueDisplayName": "3zCECqax4mEM4pBp", "username": "DmmFJ3aTXcnsJmlN"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateUserV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 327 'AdminCreateUserV4' test.out
+eval_tap $? 332 'AdminCreateUserV4' test.out
 
-#- 328 AdminBulkUpdateUserAccountTypeV4
+#- 333 AdminBulkUpdateUserAccountTypeV4
 # body param: body
-echo '{"testAccount": true, "userIds": ["UescvgzU9ocaJNku", "RnrtuktLpQOb9HIV", "8N9iovJOwH9vcNMZ"]}' > $TEMP_JSON_INPUT
+echo '{"testAccount": false, "userIds": ["1Mwky9Zpm9XDAAyf", "3l5nIleIBMKvyPFO", "lUP2vbEu7bjykjP8"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBulkUpdateUserAccountTypeV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 328 'AdminBulkUpdateUserAccountTypeV4' test.out
+eval_tap $? 333 'AdminBulkUpdateUserAccountTypeV4' test.out
 
-#- 329 AdminBulkCheckValidUserIDV4
+#- 334 AdminBulkCheckValidUserIDV4
 # body param: body
-echo '{"userIds": ["TF6Ya3JzqDN6FIqw", "3EsxntLxnmdZggFw", "cYSc1fOn4Ku1Qb4b"]}' > $TEMP_JSON_INPUT
+echo '{"userIds": ["RXRRettGWg9cUWqr", "CDKglQsb3FLY9qt9", "ZVVp85TcLlcvd867"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminBulkCheckValidUserIDV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 329 'AdminBulkCheckValidUserIDV4' test.out
+eval_tap $? 334 'AdminBulkCheckValidUserIDV4' test.out
 
-#- 330 AdminUpdateUserV4
+#- 335 AdminUpdateUserV4
 # body param: body
-echo '{"avatarUrl": "KJacV43wPzos85xB", "country": "cySAhByZbHh9We9P", "dateOfBirth": "MduR9c0Foni6qLdI", "displayName": "uMAv3wLMw4sXOtQ3", "languageTag": "Sw1Mwky9Zpm9XDAA", "skipLoginQueue": true, "uniqueDisplayName": "MRFVL8UcjqaWbJC3", "userName": "A5HOSjYoOypDWGhw"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "jkXQXMm7YF9HKNLL", "country": "Ga2KFmyA4CyG83CS", "dateOfBirth": "ak2Pd7eYZ2Vm1aUp", "displayName": "FVDrB5QJy5GJlv4d", "languageTag": "ES5fJuJHp6M2JKxA", "skipLoginQueue": false, "uniqueDisplayName": "23lCbQmY7a5dOwGt", "userName": "J1l4KzupwRAHoVXx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'fhJ3pzHjifPvQVXX' \
+    --userId 'weFHZ7hImZQZWgUO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 330 'AdminUpdateUserV4' test.out
+eval_tap $? 335 'AdminUpdateUserV4' test.out
 
-#- 331 AdminUpdateUserEmailAddressV4
+#- 336 AdminUpdateUserEmailAddressV4
 # body param: body
-echo '{"code": "4wK2cAUG95eW7045", "emailAddress": "K9pDFNHkJ5pnRnD3"}' > $TEMP_JSON_INPUT
+echo '{"code": "7coxZaztH0MVGKvE", "emailAddress": "XM2iXkpnCMGOUVSO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserEmailAddressV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'aaQL9yHn9HxT6gUA' \
+    --userId 'cXWhHrLNvzo03lGC' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 331 'AdminUpdateUserEmailAddressV4' test.out
+eval_tap $? 336 'AdminUpdateUserEmailAddressV4' test.out
 
-#- 332 AdminDisableUserMFAV4
+#- 337 AdminDisableUserMFAV4
 $CLI_EXE \
     --sn iam \
     --op AdminDisableUserMFAV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'MzdtH0hVtR3UmuZK' \
+    --userId 'p9gCKWMfA4tyUAGB' \
     > test.out 2>&1
-eval_tap $? 332 'AdminDisableUserMFAV4' test.out
+eval_tap $? 337 'AdminDisableUserMFAV4' test.out
 
-#- 333 AdminListUserRolesV4
+#- 338 AdminListUserRolesV4
 $CLI_EXE \
     --sn iam \
     --op AdminListUserRolesV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'FdXIE0SEbOgIsYSZ' \
+    --userId '7ZxZPmx5XAJMBIyH' \
     > test.out 2>&1
-eval_tap $? 333 'AdminListUserRolesV4' test.out
+eval_tap $? 338 'AdminListUserRolesV4' test.out
 
-#- 334 AdminUpdateUserRoleV4
+#- 339 AdminUpdateUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["ak5eni7UwH13Xmas", "pk5B8mJtzf2QUmRk", "SoT23lCbQmY7a5dO"], "roleId": "wGtJ1l4KzupwRAHo"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["ShPJXrTXfnrEfN3Y", "vHPJofvf9b4Vcqoj", "CfY3BjGJla6OPXyi"], "roleId": "Jp9tMUlR7XEYoZ64"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateUserRoleV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'VXxweFHZ7hImZQZW' \
+    --userId 'xeGSHd1EV0DBWvvF' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 334 'AdminUpdateUserRoleV4' test.out
+eval_tap $? 339 'AdminUpdateUserRoleV4' test.out
 
-#- 335 AdminAddUserRoleV4
+#- 340 AdminAddUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["gUO7coxZaztH0MVG", "KvEXM2iXkpnCMGOU", "VSOcXWhHrLNvzo03"], "roleId": "lGCp9gCKWMfA4tyU"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["oDq0dVc9IrTjCAlA", "UuchqyTDPBQHgLGS", "uzJEEUvanIRJmG74"], "roleId": "ka6Uj5lGE7Td9K4c"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddUserRoleV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'AGB7ZxZPmx5XAJMB' \
+    --userId '6ZeD188oYspYEqkD' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 335 'AdminAddUserRoleV4' test.out
+eval_tap $? 340 'AdminAddUserRoleV4' test.out
 
-#- 336 AdminRemoveUserRoleV4
+#- 341 AdminRemoveUserRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["IyHShPJXrTXfnrEf", "N3YvHPJofvf9b4Vc", "qojCfY3BjGJla6OP"], "roleId": "XyiJp9tMUlR7XEYo"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["HJhGm146TDL0hi6F", "9AkmoCaHwRAdgXpC", "tM70VaL0C7PMU9L8"], "roleId": "xz5eZOaW7FfQxUxS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRemoveUserRoleV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'Z64xeGSHd1EV0DBW' \
+    --userId 'fNizt2YcAtCqYmbp' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 336 'AdminRemoveUserRoleV4' test.out
+eval_tap $? 341 'AdminRemoveUserRoleV4' test.out
 
-#- 337 AdminGetRolesV4
+#- 342 AdminGetRolesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetRolesV4 \
-    --adminRole 'true' \
+    --adminRole 'false' \
     --isWildcard 'true' \
-    --limit '66' \
-    --offset '64' \
+    --limit '60' \
+    --offset '91' \
     > test.out 2>&1
-eval_tap $? 337 'AdminGetRolesV4' test.out
+eval_tap $? 342 'AdminGetRolesV4' test.out
 
-#- 338 AdminCreateRoleV4
+#- 343 AdminCreateRoleV4
 # body param: body
-echo '{"adminRole": false, "deletable": true, "isWildcard": false, "roleName": "q0dVc9IrTjCAlAUu"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": true, "deletable": true, "isWildcard": false, "roleName": "TeDQiKTrUTlWSr0I"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminCreateRoleV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 338 'AdminCreateRoleV4' test.out
+eval_tap $? 343 'AdminCreateRoleV4' test.out
 
-#- 339 AdminGetRoleV4
+#- 344 AdminGetRoleV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetRoleV4 \
-    --roleId 'chqyTDPBQHgLGSuz' \
+    --roleId 'ePQpNdDiLcFo8NMZ' \
     > test.out 2>&1
-eval_tap $? 339 'AdminGetRoleV4' test.out
+eval_tap $? 344 'AdminGetRoleV4' test.out
 
-#- 340 AdminDeleteRoleV4
+#- 345 AdminDeleteRoleV4
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRoleV4 \
-    --roleId 'JEEUvanIRJmG74ka' \
+    --roleId 'D0cTvWN23RlmJrtI' \
     > test.out 2>&1
-eval_tap $? 340 'AdminDeleteRoleV4' test.out
+eval_tap $? 345 'AdminDeleteRoleV4' test.out
 
-#- 341 AdminUpdateRoleV4
+#- 346 AdminUpdateRoleV4
 # body param: body
-echo '{"adminRole": false, "deletable": false, "isWildcard": true, "roleName": "tcfWe6OaeDIvEBw4"}' > $TEMP_JSON_INPUT
+echo '{"adminRole": false, "deletable": false, "isWildcard": true, "roleName": "LewsUzDEZ5eUOfo9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRoleV4 \
-    --roleId '8pYhCTLUxeiTmdUa' \
+    --roleId '1e0lMShFfMYvio6o' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 341 'AdminUpdateRoleV4' test.out
+eval_tap $? 346 'AdminUpdateRoleV4' test.out
 
-#- 342 AdminUpdateRolePermissionsV4
+#- 347 AdminUpdateRolePermissionsV4
 # body param: body
-echo '{"permissions": [{"action": 56, "resource": "DL0hi6F9AkmoCaHw", "schedAction": 90, "schedCron": "d5M0dHjO0ZEgd535", "schedRange": ["VU5z4X9LvggIFBAl", "T7joAq4aEWpkvGVi", "RBWLGfOBS0QO39QJ"]}, {"action": 91, "resource": "c5V2M1iRQxkKzZhu", "schedAction": 53, "schedCron": "ePQpNdDiLcFo8NMZ", "schedRange": ["D0cTvWN23RlmJrtI", "68BaaCof1MIOGhUl", "26db4jvIL2gyX5Rs"]}, {"action": 16, "resource": "oIJUO4ZDBNrjBkQ9", "schedAction": 22, "schedCron": "HFDdSdhYtyCiFCQ3", "schedRange": ["omG3bXxwjPlCoRCH", "nr75ij439jArzlha", "aQlIeLLGAHW3Gq4v"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 70, "resource": "B95ZFBleyvM9qdrH", "schedAction": 64, "schedCron": "tuVZJox6XHxODQma", "schedRange": ["2aaqOln6s8m8bOZo", "Tc6rkfb8FU7nQx8Y", "xdCImer6KoD7Fumc"]}, {"action": 64, "resource": "2jgrXPZdPPidgh0B", "schedAction": 64, "schedCron": "gIXKLdkqATCMYCqy", "schedRange": ["dgXXGv8oMzxR8uzD", "BzgRACTsWjJqKY7y", "IBsjfkrkmy2pa1mv"]}, {"action": 19, "resource": "BKaG3V1TH3jTEwOo", "schedAction": 51, "schedCron": "9Nqmx4aPNuc4fXvk", "schedRange": ["8BTktYjmr3d9Xlo6", "lP72MCXxeBFOGYSD", "iIlNPO0fQxYgQT9R"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateRolePermissionsV4 \
-    --roleId 'Ci2jgrXPZdPPidgh' \
+    --roleId '9V7G4Mia6kEP5PHk' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 342 'AdminUpdateRolePermissionsV4' test.out
+eval_tap $? 347 'AdminUpdateRolePermissionsV4' test.out
 
-#- 343 AdminAddRolePermissionsV4
+#- 348 AdminAddRolePermissionsV4
 # body param: body
-echo '{"permissions": [{"action": 60, "resource": "BF8iVsGmct4IMh2W", "schedAction": 25, "schedCron": "ydgXXGv8oMzxR8uz", "schedRange": ["DBzgRACTsWjJqKY7", "yIBsjfkrkmy2pa1m", "vjvtAH3X6wBKx5Fq"]}, {"action": 2, "resource": "ozniv0dUvC53HJrc", "schedAction": 16, "schedCron": "k8BTktYjmr3d9Xlo", "schedRange": ["6lP72MCXxeBFOGYS", "DiIlNPO0fQxYgQT9", "R9V7G4Mia6kEP5PH"]}, {"action": 20, "resource": "h4oU6S9LyTlEO2np", "schedAction": 43, "schedCron": "g92oXeCkkhmsgtWv", "schedRange": ["37P4pfEg7wBpEqmX", "N3QXtZ3aArzYynpp", "k4KrG5Fg2ohFs6Ua"]}]}' > $TEMP_JSON_INPUT
+echo '{"permissions": [{"action": 17, "resource": "4oU6S9LyTlEO2npX", "schedAction": 43, "schedCron": "g92oXeCkkhmsgtWv", "schedRange": ["37P4pfEg7wBpEqmX", "N3QXtZ3aArzYynpp", "k4KrG5Fg2ohFs6Ua"]}, {"action": 71, "resource": "9M1w4JGLt99CkfkP", "schedAction": 81, "schedCron": "Wmhr5chAceXIoPaS", "schedRange": ["9gDbVDl2Xqqgxkwv", "bYlzD3P1LYcqngoP", "KEFzFqlSdRFvq6C8"]}, {"action": 3, "resource": "RcQyrFXrpR9k1Aea", "schedAction": 58, "schedCron": "KuMfYVOasO4k594C", "schedRange": ["nvzRwnhp5CY7gtlr", "AgARC43wrfOYqM0E", "jtQP5GHq3GLrAjE7"]}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAddRolePermissionsV4 \
-    --roleId 'IuqZ21BA4tnOB62v' \
+    --roleId 'N7Gbjo03cIlYR0HE' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 343 'AdminAddRolePermissionsV4' test.out
+eval_tap $? 348 'AdminAddRolePermissionsV4' test.out
 
-#- 344 AdminDeleteRolePermissionsV4
+#- 349 AdminDeleteRolePermissionsV4
 # body param: body
-echo '["ZWmhr5chAceXIoPa", "S9gDbVDl2Xqqgxkw", "vbYlzD3P1LYcqngo"]' > $TEMP_JSON_INPUT
+echo '["xQSNRs5LHqEYUCO7", "wldjMii4xJJsv4TJ", "jgACmdlVzvbdRQik"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDeleteRolePermissionsV4 \
-    --roleId 'PKEFzFqlSdRFvq6C' \
+    --roleId 'sycIG9cY9iPm8u36' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 344 'AdminDeleteRolePermissionsV4' test.out
+eval_tap $? 349 'AdminDeleteRolePermissionsV4' test.out
 
-#- 345 AdminListAssignedUsersV4
+#- 350 AdminListAssignedUsersV4
 $CLI_EXE \
     --sn iam \
     --op AdminListAssignedUsersV4 \
-    --roleId '8bxKXgCZx5IaOx3G' \
-    --after 'LdKuMfYVOasO4k59' \
-    --before '4CnvzRwnhp5CY7gt' \
-    --limit '24' \
+    --roleId 'oHx73WfHDnIAQatU' \
+    --after 'WqWvCigXgzVKxn41' \
+    --before 'qiwKNHIMgaRlHtOv' \
+    --limit '100' \
     > test.out 2>&1
-eval_tap $? 345 'AdminListAssignedUsersV4' test.out
+eval_tap $? 350 'AdminListAssignedUsersV4' test.out
 
-#- 346 AdminAssignUserToRoleV4
+#- 351 AdminAssignUserToRoleV4
 # body param: body
-echo '{"assignedNamespaces": ["z7wr35PgvXVTMs9Z", "fCmNKmLAmLjg9XhG", "yf4eTLnH91HZxY19"], "namespace": "zsCNYIv4BrXUFKKi", "userId": "aqD2ITPZPq8bQdy5"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["72tG3eweQWakFJ7y", "qI1n8b7V7rmxeeLs", "vnjrgxMKRUpS0jZX"], "namespace": "OCphJRNytDpuHb6m", "userId": "4nmaSg0BnbMwWCWL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminAssignUserToRoleV4 \
-    --roleId 'paINv4eIGuF4bhXb' \
+    --roleId 'Pwdii1ibGbJeRJ4W' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 346 'AdminAssignUserToRoleV4' test.out
+eval_tap $? 351 'AdminAssignUserToRoleV4' test.out
 
-#- 347 AdminRevokeUserFromRoleV4
+#- 352 AdminRevokeUserFromRoleV4
 # body param: body
-echo '{"namespace": "uDyB8qHT0w0lNwdB", "userId": "VUqMoUH1e5Q322ox"}' > $TEMP_JSON_INPUT
+echo '{"namespace": "eoITlX1VyRLOCb8D", "userId": "yE4dKhhnChzQvnrZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminRevokeUserFromRoleV4 \
-    --roleId 'cScPK1qKkxpAutPJ' \
+    --roleId 'SQVxOXTreXkHRmMp' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 347 'AdminRevokeUserFromRoleV4' test.out
+eval_tap $? 352 'AdminRevokeUserFromRoleV4' test.out
 
-#- 348 AdminInviteUserNewV4
+#- 353 AdminInviteUserNewV4
 # body param: body
-echo '{"assignedNamespaces": ["9AfgIoSZgc3thsIV", "BB72tG3eweQWakFJ", "7yqI1n8b7V7rmxee"], "emailAddresses": ["LsvnjrgxMKRUpS0j", "ZXOCphJRNytDpuHb", "6m4nmaSg0BnbMwWC"], "isAdmin": true, "isNewStudio": true, "languageTag": "sRsQZYNrVP6EcRDO", "namespace": "ksWj3BnQ9uhcqaBk", "roleId": "3GRa3KTCJPwrfsKj"}' > $TEMP_JSON_INPUT
+echo '{"assignedNamespaces": ["x5hgJx2o9IZSVZqf", "quVI7QOJ3BlwvOcF", "xeMbzEcWkcksaUjK"], "emailAddresses": ["QAo0Mzy8F2TxzkKg", "zKOI7JNfo3r6fcdh", "tI4ugD3eQ35QawWc"], "isAdmin": false, "isNewStudio": true, "languageTag": "OMOPbpNP6WnDtDxE", "namespace": "da8kF9iow6YUSZ5Y", "roleId": "0yfIgDMzYqjrtKtC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminInviteUserNewV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 348 'AdminInviteUserNewV4' test.out
+eval_tap $? 353 'AdminInviteUserNewV4' test.out
 
-#- 349 AdminUpdateMyUserV4
+#- 354 AdminUpdateMyUserV4
 # body param: body
-echo '{"avatarUrl": "RadEXa0Yg9rNdyYh", "country": "rs5zQhssm3qmzy2F", "dateOfBirth": "NCnVGwIfRSjUNB4S", "displayName": "FrgcidZdlEzO5n9F", "languageTag": "9TGL4k9UlH7X6do6", "skipLoginQueue": false, "uniqueDisplayName": "OI7JNfo3r6fcdhtI", "userName": "4ugD3eQ35QawWcnO"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "rG0BlFFURgCV14Nf", "country": "1gOlW79lUGbclJDu", "dateOfBirth": "p68VVj4feoVsUqG6", "displayName": "hm0ele5GHIzkJ6PR", "languageTag": "kz58UyPjN4IyK4Cq", "skipLoginQueue": false, "uniqueDisplayName": "I5dVWedRId2Suwpp", "userName": "ZedrBu0X6fc3mv4b"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminUpdateMyUserV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 349 'AdminUpdateMyUserV4' test.out
+eval_tap $? 354 'AdminUpdateMyUserV4' test.out
 
-#- 350 AdminDisableMyAuthenticatorV4
+#- 355 AdminDisableMyAuthenticatorV4
 # body param: body
-echo '{"mfaToken": "M7OMOPbpNP6WnDtD"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "FvwxmH3RweFcY59S"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDisableMyAuthenticatorV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 350 'AdminDisableMyAuthenticatorV4' test.out
+eval_tap $? 355 'AdminDisableMyAuthenticatorV4' test.out
 
-#- 351 AdminEnableMyAuthenticatorV4
+#- 356 AdminEnableMyAuthenticatorV4
 $CLI_EXE \
     --sn iam \
     --op AdminEnableMyAuthenticatorV4 \
-    --code 'xEda8kF9iow6YUSZ' \
+    --code 'RO2ii95Ul1nUdJu7' \
     > test.out 2>&1
-eval_tap $? 351 'AdminEnableMyAuthenticatorV4' test.out
+eval_tap $? 356 'AdminEnableMyAuthenticatorV4' test.out
 
-#- 352 AdminGenerateMyAuthenticatorKeyV4
+#- 357 AdminGenerateMyAuthenticatorKeyV4
 $CLI_EXE \
     --sn iam \
     --op AdminGenerateMyAuthenticatorKeyV4 \
     > test.out 2>&1
-eval_tap $? 352 'AdminGenerateMyAuthenticatorKeyV4' test.out
+eval_tap $? 357 'AdminGenerateMyAuthenticatorKeyV4' test.out
 
-#- 353 AdminGetMyBackupCodesV4
-eval_tap 0 353 'AdminGetMyBackupCodesV4 # SKIP deprecated' test.out
+#- 358 AdminGetMyBackupCodesV4
+eval_tap 0 358 'AdminGetMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 354 AdminGenerateMyBackupCodesV4
-eval_tap 0 354 'AdminGenerateMyBackupCodesV4 # SKIP deprecated' test.out
+#- 359 AdminGenerateMyBackupCodesV4
+eval_tap 0 359 'AdminGenerateMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 355 AdminDisableMyBackupCodesV4
+#- 360 AdminDisableMyBackupCodesV4
 # body param: body
-echo '{"mfaToken": "5Y0yfIgDMzYqjrtK"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "rzo9rg7DM7xJNZdy"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDisableMyBackupCodesV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 355 'AdminDisableMyBackupCodesV4' test.out
+eval_tap $? 360 'AdminDisableMyBackupCodesV4' test.out
 
-#- 356 AdminDownloadMyBackupCodesV4
-eval_tap 0 356 'AdminDownloadMyBackupCodesV4 # SKIP deprecated' test.out
+#- 361 AdminDownloadMyBackupCodesV4
+eval_tap 0 361 'AdminDownloadMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 357 AdminEnableMyBackupCodesV4
-eval_tap 0 357 'AdminEnableMyBackupCodesV4 # SKIP deprecated' test.out
+#- 362 AdminEnableMyBackupCodesV4
+eval_tap 0 362 'AdminEnableMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 358 AdminGetBackupCodesV4
+#- 363 AdminGetBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetBackupCodesV4 \
-    --languageTag 'tCrG0BlFFURgCV14' \
+    --languageTag 'piT1yPT4I31cvUbF' \
     > test.out 2>&1
-eval_tap $? 358 'AdminGetBackupCodesV4' test.out
+eval_tap $? 363 'AdminGetBackupCodesV4' test.out
 
-#- 359 AdminGenerateBackupCodesV4
+#- 364 AdminGenerateBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op AdminGenerateBackupCodesV4 \
-    --languageTag 'Nf1gOlW79lUGbclJ' \
+    --languageTag 'BUPwwTWSCCMK3C0w' \
     > test.out 2>&1
-eval_tap $? 359 'AdminGenerateBackupCodesV4' test.out
+eval_tap $? 364 'AdminGenerateBackupCodesV4' test.out
 
-#- 360 AdminEnableBackupCodesV4
+#- 365 AdminEnableBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op AdminEnableBackupCodesV4 \
-    --languageTag 'Dup68VVj4feoVsUq' \
+    --languageTag 'kC5IRQPeBgP4uv5k' \
     > test.out 2>&1
-eval_tap $? 360 'AdminEnableBackupCodesV4' test.out
+eval_tap $? 365 'AdminEnableBackupCodesV4' test.out
 
-#- 361 AdminChallengeMyMFAV4
+#- 366 AdminChallengeMyMFAV4
 $CLI_EXE \
     --sn iam \
     --op AdminChallengeMyMFAV4 \
-    --code 'G6hm0ele5GHIzkJ6' \
-    --factor 'PRkz58UyPjN4IyK4' \
+    --code '2uomHeKf0HiJMsNH' \
+    --factor '1j5fE8DPBLgLz6oT' \
     > test.out 2>&1
-eval_tap $? 361 'AdminChallengeMyMFAV4' test.out
+eval_tap $? 366 'AdminChallengeMyMFAV4' test.out
 
-#- 362 AdminSendMyMFAEmailCodeV4
+#- 367 AdminSendMyMFAEmailCodeV4
 $CLI_EXE \
     --sn iam \
     --op AdminSendMyMFAEmailCodeV4 \
-    --action 'CqRFTI5dVWedRId2' \
+    --action '9VUDEG4xa9pp3b6s' \
+    --languageTag 'qZRfPhpVH054mJJc' \
     > test.out 2>&1
-eval_tap $? 362 'AdminSendMyMFAEmailCodeV4' test.out
+eval_tap $? 367 'AdminSendMyMFAEmailCodeV4' test.out
 
-#- 363 AdminDisableMyEmailV4
+#- 368 AdminDisableMyEmailV4
 # body param: body
-echo '{"mfaToken": "SuwppZedrBu0X6fc"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "otvFwrVArR8phjqQ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op AdminDisableMyEmailV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 363 'AdminDisableMyEmailV4' test.out
+eval_tap $? 368 'AdminDisableMyEmailV4' test.out
 
-#- 364 AdminEnableMyEmailV4
+#- 369 AdminEnableMyEmailV4
 $CLI_EXE \
     --sn iam \
     --op AdminEnableMyEmailV4 \
-    --code '3mv4bFvwxmH3RweF' \
+    --code 'bOtRpl9podsRXX3L' \
     > test.out 2>&1
-eval_tap $? 364 'AdminEnableMyEmailV4' test.out
+eval_tap $? 369 'AdminEnableMyEmailV4' test.out
 
-#- 365 AdminGetMyEnabledFactorsV4
+#- 370 AdminGetMyEnabledFactorsV4
 $CLI_EXE \
     --sn iam \
     --op AdminGetMyEnabledFactorsV4 \
     > test.out 2>&1
-eval_tap $? 365 'AdminGetMyEnabledFactorsV4' test.out
+eval_tap $? 370 'AdminGetMyEnabledFactorsV4' test.out
 
-#- 366 AdminMakeFactorMyDefaultV4
+#- 371 AdminMakeFactorMyDefaultV4
 $CLI_EXE \
     --sn iam \
     --op AdminMakeFactorMyDefaultV4 \
-    --factor 'cY59SRO2ii95Ul1n' \
+    --factor 'hJVORlac62SBmv6O' \
     > test.out 2>&1
-eval_tap $? 366 'AdminMakeFactorMyDefaultV4' test.out
+eval_tap $? 371 'AdminMakeFactorMyDefaultV4' test.out
 
-#- 367 AdminGetMyMFAStatusV4
+#- 372 AdminGetMyOwnMFAStatusV4
 $CLI_EXE \
     --sn iam \
-    --op AdminGetMyMFAStatusV4 \
+    --op AdminGetMyOwnMFAStatusV4 \
     > test.out 2>&1
-eval_tap $? 367 'AdminGetMyMFAStatusV4' test.out
+eval_tap $? 372 'AdminGetMyOwnMFAStatusV4' test.out
 
-#- 368 AdminInviteUserV4
-eval_tap 0 368 'AdminInviteUserV4 # SKIP deprecated' test.out
+#- 373 AdminGetMyMFAStatusV4
+eval_tap 0 373 'AdminGetMyMFAStatusV4 # SKIP deprecated' test.out
 
-#- 369 AuthenticationWithPlatformLinkV4
+#- 374 AdminInviteUserV4
+eval_tap 0 374 'AdminInviteUserV4 # SKIP deprecated' test.out
+
+#- 375 AuthenticationWithPlatformLinkV4
 $CLI_EXE \
     --sn iam \
     --op AuthenticationWithPlatformLinkV4 \
-    --extend_exp 'true' \
-    --client_id 'dJu7rzo9rg7DM7xJ' \
-    --linkingToken 'NZdypiT1yPT4I31c' \
-    --password 'vUbFBUPwwTWSCCMK' \
-    --username '3C0wkC5IRQPeBgP4' \
+    --extend_exp 'false' \
+    --client_id 'Wfsmjq1Z7DYl2YJY' \
+    --linkingToken 'qUCIIQl3syYvoOAK' \
+    --password 'rMLdvnYSs6EFyJmz' \
+    --username 'lL0IUkGRe6qnIXDi' \
     > test.out 2>&1
-eval_tap $? 369 'AuthenticationWithPlatformLinkV4' test.out
+eval_tap $? 375 'AuthenticationWithPlatformLinkV4' test.out
 
-#- 370 GenerateTokenByNewHeadlessAccountV4
+#- 376 GenerateTokenByNewHeadlessAccountV4
 $CLI_EXE \
     --sn iam \
     --op GenerateTokenByNewHeadlessAccountV4 \
-    --additionalData 'uv5k2uomHeKf0HiJ' \
-    --extend_exp 'false' \
-    --linkingToken 'sNH1j5fE8DPBLgLz' \
+    --additionalData 'hGZJI1b0BY1qMGBy' \
+    --extend_exp 'true' \
+    --linkingToken 'xkZ6O71ARVqNa4oM' \
     > test.out 2>&1
-eval_tap $? 370 'GenerateTokenByNewHeadlessAccountV4' test.out
+eval_tap $? 376 'GenerateTokenByNewHeadlessAccountV4' test.out
 
-#- 371 Verify2faCodeV4
+#- 377 Verify2faCodeV4
 $CLI_EXE \
     --sn iam \
     --op Verify2faCodeV4 \
-    --code '6oT9VUDEG4xa9pp3' \
-    --factor 'b6sqZRfPhpVH054m' \
-    --mfaToken 'JJcotvFwrVArR8ph' \
+    --code 'EeZiyebKAc2nT0X0' \
+    --factor 'F0ASWco2P2op8Lad' \
+    --mfaToken 'rF0dpYwqfMY5g5CL' \
     --rememberDevice 'false' \
     > test.out 2>&1
-eval_tap $? 371 'Verify2faCodeV4' test.out
+eval_tap $? 377 'Verify2faCodeV4' test.out
 
-#- 372 PlatformTokenGrantV4
+#- 378 PlatformTokenGrantV4
 $CLI_EXE \
     --sn iam \
     --op PlatformTokenGrantV4 \
-    --platformId 'LN2dI9QR3Vmzs4Z4' \
-    --codeChallenge 'koUp2RJNuBoJQQ83' \
-    --codeChallengeMethod 'plain' \
-    --additionalData '6OgC5hCf4kLjeXoZ' \
-    --client_id 'DIL56VgkydakhA2n' \
-    --createHeadless 'true' \
-    --device_id 'S6Hzy7ixQNvYL45J' \
-    --macAddress '40a1c4MjCImMY40A' \
-    --platform_token 'dJYMykUd6vZqeqPF' \
-    --serviceLabel '0.8826266258055119' \
-    --skipSetCookie 'false' \
+    --platformId '2Wj8rpcYd5dacBoF' \
+    --codeChallenge '1rMUvB9l9fI5ZTtv' \
+    --codeChallengeMethod 'S256' \
+    --additionalData 'N42QVITyQuDblexz' \
+    --client_id 'S13wCJacZNR7FV9U' \
+    --createHeadless 'false' \
+    --device_id 'Rx7xm062uD37lHl3' \
+    --macAddress '2yy5JHMgzG4XNs9a' \
+    --platform_token 'sAjfnjRNeLZYwD4v' \
+    --serviceLabel '0.32917851792091235' \
+    --skipSetCookie 'true' \
     > test.out 2>&1
-eval_tap $? 372 'PlatformTokenGrantV4' test.out
+eval_tap $? 378 'PlatformTokenGrantV4' test.out
 
-#- 373 SimultaneousLoginV4
+#- 379 SimultaneousLoginV4
 $CLI_EXE \
     --sn iam \
     --op SimultaneousLoginV4 \
-    --codeChallenge 'u9JBEomVoPLPlWwO' \
+    --codeChallenge 'i7kQoXcuyWmRqfLc' \
     --codeChallengeMethod 'plain' \
-    --simultaneousPlatform 'pKWTwqG2jw3LVrQy' \
-    --simultaneousTicket 'BiBnuuq29V5aVCxx' \
-    --nativePlatform 'steam' \
-    --nativePlatformTicket 'dpYwqfMY5g5CLY52' \
+    --simultaneousPlatform 'kzvjKmQZyIV8dByW' \
+    --simultaneousTicket '9I9MpjwryV3PqJQP' \
+    --nativePlatform 'epicgames' \
+    --nativePlatformTicket 'gsK9J6p9lhm2knaZ' \
     > test.out 2>&1
-eval_tap $? 373 'SimultaneousLoginV4' test.out
+eval_tap $? 379 'SimultaneousLoginV4' test.out
 
-#- 374 TokenGrantV4
+#- 380 TokenGrantV4
 $CLI_EXE \
     --sn iam \
     --op TokenGrantV4 \
-    --codeChallenge 'Wj8rpcYd5dacBoF1' \
+    --codeChallenge '9KZfxVCIHOGmhnq0' \
     --codeChallengeMethod 'plain' \
-    --additionalData 'zqxbvOTRQueT8LFb' \
-    --client_id 'v0hNClNhdnPsYvru' \
-    --client_secret 'l98OmybpAHJj4Q3p' \
-    --code 'Rx7xm062uD37lHl3' \
-    --code_verifier '2yy5JHMgzG4XNs9a' \
-    --extendNamespace 'sAjfnjRNeLZYwD4v' \
-    --extend_exp 'true' \
-    --login_queue_ticket 'Wi7kQoXcuyWmRqfL' \
-    --password 'cAMRarSu2ucpGqTu' \
-    --redirect_uri '2GVrN8sVQfB2Ch4w' \
-    --refresh_token '9cYgsK9J6p9lhm2k' \
-    --username 'naZ9KZfxVCIHOGmh' \
-    --grant_type 'client_credentials' \
+    --additionalData 'di5LNPz6FH8YgfNQ' \
+    --client_id 'mF9CllSy3gNQkk6u' \
+    --client_secret 'Y8nO5TMxFHsYfiC8' \
+    --code 'N4k8DY289tVfdTki' \
+    --code_verifier 'WKI2O9TRBYUvcg8N' \
+    --extendNamespace '6oZh4qhgANxOvOsW' \
+    --extend_exp 'false' \
+    --login_queue_ticket 'RaFLWDMSQoKBWYKg' \
+    --password 'Jad2nKzJKW695eJH' \
+    --redirect_uri 'VcOhcwBlQsiKWFci' \
+    --refresh_token 'pi4BC72Dy0MEqzfp' \
+    --username 'z9yhDSOtI2dBlqqV' \
+    --grant_type 'urn:ietf:params:oauth:grant-type:extend_client_credentials' \
     > test.out 2>&1
-eval_tap $? 374 'TokenGrantV4' test.out
+eval_tap $? 380 'TokenGrantV4' test.out
 
-#- 375 RequestTargetTokenResponseV4
+#- 381 RequestTargetTokenResponseV4
 $CLI_EXE \
     --sn iam \
     --op RequestTargetTokenResponseV4 \
-    --additionalData 'Dzidi5LNPz6FH8Yg' \
-    --code 'fNQmF9CllSy3gNQk' \
+    --additionalData 'CVJzDvBwVQ48LhcK' \
+    --code 'NQVZ1mc7GUXm3YvT' \
     > test.out 2>&1
-eval_tap $? 375 'RequestTargetTokenResponseV4' test.out
+eval_tap $? 381 'RequestTargetTokenResponseV4' test.out
 
-#- 376 PublicListUserIDByPlatformUserIDsV4
+#- 382 PublicListUserIDByPlatformUserIDsV4
 # body param: body
-echo '{"platformUserIds": ["k6uY8nO5TMxFHsYf", "iC8N4k8DY289tVfd", "TkiWKI2O9TRBYUvc"]}' > $TEMP_JSON_INPUT
+echo '{"platformUserIds": ["9ZWVPnwu7EFBP33e", "oobPaBAu5YOZDhBM", "q8ZwzON3dh5aNboc"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicListUserIDByPlatformUserIDsV4 \
     --namespace $AB_NAMESPACE \
-    --platformId 'g8N6oZh4qhgANxOv' \
+    --platformId 'Q9HbNUPKCOYVCYyx' \
     --rawPUID 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 376 'PublicListUserIDByPlatformUserIDsV4' test.out
+eval_tap $? 382 'PublicListUserIDByPlatformUserIDsV4' test.out
 
-#- 377 PublicCreateTestUserV4
+#- 383 PublicCreateTestUserV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "Wj1r9P4aCsnr1UKT", "policyId": "hjuEVehCPAeU0ud3", "policyVersionId": "QrocvtXwAvyiLFHT"}, {"isAccepted": false, "localizedPolicyVersionId": "0I90nYhUdS3Kl8bq", "policyId": "cyeLxRd1FNYQTbEZ", "policyVersionId": "RCVJzDvBwVQ48Lhc"}, {"isAccepted": true, "localizedPolicyVersionId": "QVZ1mc7GUXm3YvT9", "policyId": "ZWVPnwu7EFBP33eo", "policyVersionId": "obPaBAu5YOZDhBMq"}], "authType": "EMAILPASSWD", "country": "ZwzON3dh5aNbocQ9", "dateOfBirth": "HbNUPKCOYVCYyxZs", "displayName": "gUYk5bVs6QtuZA4F", "emailAddress": "9ymsWM10fdtjZBrp", "password": "n9sFqiSbXpv3aqCL", "passwordMD5Sum": "B0CAxFI71ym5vDHo", "uniqueDisplayName": "WIff83L5AckXCtll", "username": "UcO9h1d1jqC3vgQn", "verified": false}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "b057SRNt3fLKBrDM", "policyId": "0dMEWrXdZmnIbpVX", "policyVersionId": "OtTq9unfz5DleKrE"}, {"isAccepted": false, "localizedPolicyVersionId": "CAxFI71ym5vDHoWI", "policyId": "ff83L5AckXCtllUc", "policyVersionId": "O9h1d1jqC3vgQn17"}, {"isAccepted": false, "localizedPolicyVersionId": "Q891MOIcurf7Yn7p", "policyId": "TICWVQB849FVLNMI", "policyVersionId": "QAxxFmCl6XR3eZ6Y"}], "authType": "EMAILPASSWD", "country": "NtE7mm4nMK6ApENq", "dateOfBirth": "XTsl1EqX4gX0OpC8", "displayName": "JMWGTRRUpL9FHOVj", "emailAddress": "C1OvDr4wRfCWQXlb", "password": "rIj7IVIZ6Zab16Yz", "passwordMD5Sum": "RjBspB561Rlb5JvB", "uniqueDisplayName": "BMx6pKNwAwkgkxLp", "username": "wVh4SPMqZWbdO0Pr", "verified": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateTestUserV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 377 'PublicCreateTestUserV4' test.out
+eval_tap $? 383 'PublicCreateTestUserV4' test.out
 
-#- 378 PublicCreateUserV4
+#- 384 PublicCreateUserV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "891MOIcurf7Yn7pT", "policyId": "ICWVQB849FVLNMIQ", "policyVersionId": "AxxFmCl6XR3eZ6YU"}, {"isAccepted": false, "localizedPolicyVersionId": "NtE7mm4nMK6ApENq", "policyId": "XTsl1EqX4gX0OpC8", "policyVersionId": "JMWGTRRUpL9FHOVj"}, {"isAccepted": true, "localizedPolicyVersionId": "nlPTO0L04PrdXKBB", "policyId": "l9QdLUekKVadJ5QK", "policyVersionId": "db4hz49lI1ZyYYvG"}], "authType": "EMAILPASSWD", "code": "Mx6pKNwAwkgkxLpw", "country": "Vh4SPMqZWbdO0PrB", "dateOfBirth": "10fnyRc7uVoR7QGi", "displayName": "CodLAOmXVAuJSGkQ", "emailAddress": "jskXGEJqZWmTVU4m", "password": "5cEotYp1pt33qHSj", "passwordMD5Sum": "hShxdCCoWwLCC7nH", "reachMinimumAge": false, "uniqueDisplayName": "bVv1XSlM1MVcl0Rp", "username": "xL1Jpdq5HNra4fDy"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "10fnyRc7uVoR7QGi", "policyId": "CodLAOmXVAuJSGkQ", "policyVersionId": "jskXGEJqZWmTVU4m"}, {"isAccepted": false, "localizedPolicyVersionId": "GdMxCr7vfWz8UGcS", "policyId": "oSzsr4ojdal6jPUb", "policyVersionId": "XEOEsUeCnnCO2abQ"}, {"isAccepted": true, "localizedPolicyVersionId": "L1Jpdq5HNra4fDyH", "policyId": "JDYptI4ZgKP5ODxx", "policyVersionId": "aVWrvGN7UhkZm9c2"}], "authType": "EMAILPASSWD", "code": "nrBMRv3D1zHAJfTJ", "country": "5XjChRGPZmBmCI8m", "dateOfBirth": "VEBlwILzsvu5QRE9", "displayName": "JqosQeqm2d3LSjJ5", "emailAddress": "QPkCKfl5uYTiPGCX", "password": "2sPujD2xHrZAwlCR", "passwordMD5Sum": "slyk9J1aIwbJXMjq", "reachMinimumAge": true, "uniqueDisplayName": "y8XjkJW0EedHpIsG", "username": "odV3cEKEqItkLbgZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicCreateUserV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 378 'PublicCreateUserV4' test.out
+eval_tap $? 384 'PublicCreateUserV4' test.out
 
-#- 379 CreateUserFromInvitationV4
+#- 385 CreateUserFromInvitationV4
 # body param: body
-echo '{"acceptedPolicies": [{"isAccepted": true, "localizedPolicyVersionId": "bZn1zrava2wEa8jt", "policyId": "9ac6x1Sm7avXmrPn", "policyVersionId": "rBMRv3D1zHAJfTJ5"}, {"isAccepted": false, "localizedPolicyVersionId": "Os9xfVVdjfNWXLq9", "policyId": "LF7YEseMU8lClQMK", "policyVersionId": "xp3P7zZv1f69Sqfv"}, {"isAccepted": true, "localizedPolicyVersionId": "9y3GcQh7qb5bBU9N", "policyId": "VZNjYu5Xq3QHJCQG", "policyVersionId": "lWedvpl1CoWa7J4C"}], "authType": "EMAILPASSWD", "code": "8XjkJW0EedHpIsGo", "country": "dV3cEKEqItkLbgZ4", "dateOfBirth": "c2IzFS0zOCV0CVII", "displayName": "FukkHwSkFG4hr5mK", "emailAddress": "aS7JcqYqh1i5iC3U", "password": "0dsppoxx37sygOFk", "passwordMD5Sum": "iVfK5ZNm6P4GSnjd", "reachMinimumAge": false, "uniqueDisplayName": "lMEl0of9lAERA0cn", "username": "q2dCmNiHVfV96v3c"}' > $TEMP_JSON_INPUT
+echo '{"acceptedPolicies": [{"isAccepted": false, "localizedPolicyVersionId": "CzxEQdm8jxnv8JLV", "policyId": "4cWIk7UdPggnGcn4", "policyVersionId": "pBu7wVYxfaCNM9vy"}, {"isAccepted": true, "localizedPolicyVersionId": "dsppoxx37sygOFki", "policyId": "VfK5ZNm6P4GSnjdf", "policyVersionId": "ld3dssVZ96pmYDXH"}, {"isAccepted": true, "localizedPolicyVersionId": "2dCmNiHVfV96v3cm", "policyId": "bmhG8XC1LUjN0GFC", "policyVersionId": "5EF27ofqHSIRaOvs"}], "authType": "EMAILPASSWD", "code": "YFKzxXUx4qHbOvn8", "country": "h9IB9iDVRcG6CUVt", "dateOfBirth": "xrQVYV2CJjb7XRy3", "displayName": "s27b95yOaOnU224a", "emailAddress": "GZksmZRSolsB8FnI", "password": "HiSv2qPoO9APDw37", "passwordMD5Sum": "NBRXB82kk8UrAjp6", "reachMinimumAge": false, "uniqueDisplayName": "5GbcToPVdC2v9nQr", "username": "mtTQhT9wZqliWPin"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op CreateUserFromInvitationV4 \
-    --invitationId 'mbmhG8XC1LUjN0GF' \
+    --invitationId 'kz7PKKL6BQCOk1Hb' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 379 'CreateUserFromInvitationV4' test.out
+eval_tap $? 385 'CreateUserFromInvitationV4' test.out
 
-#- 380 PublicUpdateUserV4
+#- 386 PublicUpdateUserV4
 # body param: body
-echo '{"avatarUrl": "C5EF27ofqHSIRaOv", "country": "sFYFKzxXUx4qHbOv", "dateOfBirth": "n8h9IB9iDVRcG6CU", "displayName": "VtxrQVYV2CJjb7XR", "languageTag": "y3s27b95yOaOnU22", "uniqueDisplayName": "4aGZksmZRSolsB8F", "userName": "nIHiSv2qPoO9APDw"}' > $TEMP_JSON_INPUT
+echo '{"avatarUrl": "4F1WXWeNIpmnsIdl", "country": "80fGn2TAamDnA4lN", "dateOfBirth": "hCKKENFNiVKpfUqk", "displayName": "LETBc0NHEpbRbSUq", "languageTag": "jxBEByvrXTZla79s", "uniqueDisplayName": "tE1v9tKVoDlhMz0O", "userName": "AX3HMwdvyQobvMmP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 380 'PublicUpdateUserV4' test.out
+eval_tap $? 386 'PublicUpdateUserV4' test.out
 
-#- 381 PublicUpdateUserEmailAddressV4
+#- 387 PublicUpdateUserEmailAddressV4
 # body param: body
-echo '{"code": "37NBRXB82kk8UrAj", "emailAddress": "p6eH59mrBbl504VV"}' > $TEMP_JSON_INPUT
+echo '{"code": "Xkc0tFYDW2H5rWl5", "emailAddress": "K47WpDUUtpiqgFeg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpdateUserEmailAddressV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 381 'PublicUpdateUserEmailAddressV4' test.out
+eval_tap $? 387 'PublicUpdateUserEmailAddressV4' test.out
 
-#- 382 PublicUpgradeHeadlessAccountWithVerificationCodeV4
+#- 388 PublicUpgradeHeadlessAccountWithVerificationCodeV4
 # body param: body
-echo '{"code": "Ker4BxZubnQEtxBe", "country": "EUTCNnysD9AbBbvO", "dateOfBirth": "fs8NUjnafMxHVrmc", "displayName": "1R8yDSxDFaFkUa2G", "emailAddress": "adHWFLAJ624usmgO", "password": "HAELVMAD3hkatrbf", "reachMinimumAge": true, "uniqueDisplayName": "qjxBEByvrXTZla79", "username": "stE1v9tKVoDlhMz0", "validateOnly": false}' > $TEMP_JSON_INPUT
+echo '{"code": "dwJB6rjLUSji0PgW", "country": "gLaohwbczLnuOquK", "dateOfBirth": "CMP0NOedLMxn2tcC", "displayName": "YBKgUAEGYW48E6Jh", "emailAddress": "yu1drlws8szP1gOm", "password": "TrNSmhyqCgOcX0eV", "reachMinimumAge": false, "uniqueDisplayName": "frX7sWhViNyyySjc", "username": "nBdKzADqDfrazFW9", "validateOnly": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountWithVerificationCodeV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 382 'PublicUpgradeHeadlessAccountWithVerificationCodeV4' test.out
+eval_tap $? 388 'PublicUpgradeHeadlessAccountWithVerificationCodeV4' test.out
 
-#- 383 PublicUpgradeHeadlessAccountV4
+#- 389 PublicUpgradeHeadlessAccountV4
 # body param: body
-echo '{"emailAddress": "AX3HMwdvyQobvMmP", "password": "Xkc0tFYDW2H5rWl5", "username": "K47WpDUUtpiqgFeg"}' > $TEMP_JSON_INPUT
+echo '{"emailAddress": "NwDEL2c0BtAtSQrJ", "password": "Gi72DTg2jkEmKDBc", "username": "tpsmit90zCIRgo3o"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicUpgradeHeadlessAccountV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 383 'PublicUpgradeHeadlessAccountV4' test.out
+eval_tap $? 389 'PublicUpgradeHeadlessAccountV4' test.out
 
-#- 384 PublicDisableMyAuthenticatorV4
+#- 390 PublicDisableMyAuthenticatorV4
 # body param: body
-echo '{"mfaToken": "dwJB6rjLUSji0PgW"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "2zFIOBnbodVCwZRq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicDisableMyAuthenticatorV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 384 'PublicDisableMyAuthenticatorV4' test.out
+eval_tap $? 390 'PublicDisableMyAuthenticatorV4' test.out
 
-#- 385 PublicEnableMyAuthenticatorV4
+#- 391 PublicEnableMyAuthenticatorV4
 $CLI_EXE \
     --sn iam \
     --op PublicEnableMyAuthenticatorV4 \
     --namespace $AB_NAMESPACE \
-    --code 'gLaohwbczLnuOquK' \
+    --code 'RlnVZz9NvV8eKbCr' \
     > test.out 2>&1
-eval_tap $? 385 'PublicEnableMyAuthenticatorV4' test.out
+eval_tap $? 391 'PublicEnableMyAuthenticatorV4' test.out
 
-#- 386 PublicGenerateMyAuthenticatorKeyV4
+#- 392 PublicGenerateMyAuthenticatorKeyV4
 $CLI_EXE \
     --sn iam \
     --op PublicGenerateMyAuthenticatorKeyV4 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 386 'PublicGenerateMyAuthenticatorKeyV4' test.out
+eval_tap $? 392 'PublicGenerateMyAuthenticatorKeyV4' test.out
 
-#- 387 PublicGetMyBackupCodesV4
-eval_tap 0 387 'PublicGetMyBackupCodesV4 # SKIP deprecated' test.out
+#- 393 PublicGetMyBackupCodesV4
+eval_tap 0 393 'PublicGetMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 388 PublicGenerateMyBackupCodesV4
-eval_tap 0 388 'PublicGenerateMyBackupCodesV4 # SKIP deprecated' test.out
+#- 394 PublicGenerateMyBackupCodesV4
+eval_tap 0 394 'PublicGenerateMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 389 PublicDisableMyBackupCodesV4
+#- 395 PublicDisableMyBackupCodesV4
 # body param: body
-echo '{"mfaToken": "CMP0NOedLMxn2tcC"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "XoynFnJC21KESxj2"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicDisableMyBackupCodesV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 389 'PublicDisableMyBackupCodesV4' test.out
+eval_tap $? 395 'PublicDisableMyBackupCodesV4' test.out
 
-#- 390 PublicDownloadMyBackupCodesV4
-eval_tap 0 390 'PublicDownloadMyBackupCodesV4 # SKIP deprecated' test.out
+#- 396 PublicDownloadMyBackupCodesV4
+eval_tap 0 396 'PublicDownloadMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 391 PublicEnableMyBackupCodesV4
-eval_tap 0 391 'PublicEnableMyBackupCodesV4 # SKIP deprecated' test.out
+#- 397 PublicEnableMyBackupCodesV4
+eval_tap 0 397 'PublicEnableMyBackupCodesV4 # SKIP deprecated' test.out
 
-#- 392 PublicGetBackupCodesV4
+#- 398 PublicGetBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op PublicGetBackupCodesV4 \
     --namespace $AB_NAMESPACE \
-    --languageTag 'YBKgUAEGYW48E6Jh' \
+    --languageTag 'vSr1EMWXTIH72hnz' \
     > test.out 2>&1
-eval_tap $? 392 'PublicGetBackupCodesV4' test.out
+eval_tap $? 398 'PublicGetBackupCodesV4' test.out
 
-#- 393 PublicGenerateBackupCodesV4
+#- 399 PublicGenerateBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op PublicGenerateBackupCodesV4 \
     --namespace $AB_NAMESPACE \
-    --languageTag 'yu1drlws8szP1gOm' \
+    --languageTag 'wJ1KnEb3iFQBm1aI' \
     > test.out 2>&1
-eval_tap $? 393 'PublicGenerateBackupCodesV4' test.out
+eval_tap $? 399 'PublicGenerateBackupCodesV4' test.out
 
-#- 394 PublicEnableBackupCodesV4
+#- 400 PublicEnableBackupCodesV4
 $CLI_EXE \
     --sn iam \
     --op PublicEnableBackupCodesV4 \
     --namespace $AB_NAMESPACE \
-    --languageTag 'TrNSmhyqCgOcX0eV' \
+    --languageTag 'EX7qSohdH02W2qaK' \
     > test.out 2>&1
-eval_tap $? 394 'PublicEnableBackupCodesV4' test.out
+eval_tap $? 400 'PublicEnableBackupCodesV4' test.out
 
-#- 395 PublicChallengeMyMFAV4
+#- 401 PublicChallengeMyMFAV4
 $CLI_EXE \
     --sn iam \
     --op PublicChallengeMyMFAV4 \
     --namespace $AB_NAMESPACE \
-    --code 'dvOgAMgJBjhh4A4A' \
-    --factor 'bD1C2IFCrscP4pDM' \
+    --code 'NecMOcwlmEGJ2IIB' \
+    --factor 'OIUCEEG330beX0Vy' \
     > test.out 2>&1
-eval_tap $? 395 'PublicChallengeMyMFAV4' test.out
+eval_tap $? 401 'PublicChallengeMyMFAV4' test.out
 
-#- 396 PublicRemoveTrustedDeviceV4
+#- 402 PublicRemoveTrustedDeviceV4
 $CLI_EXE \
     --sn iam \
     --op PublicRemoveTrustedDeviceV4 \
     --namespace $AB_NAMESPACE \
-    --device_token 'bZfhmljzdl57z7Ft' \
+    --device_token 'j6ShI0TNABB08406' \
     > test.out 2>&1
-eval_tap $? 396 'PublicRemoveTrustedDeviceV4' test.out
+eval_tap $? 402 'PublicRemoveTrustedDeviceV4' test.out
 
-#- 397 PublicSendMyMFAEmailCodeV4
+#- 403 PublicSendMyMFAEmailCodeV4
 $CLI_EXE \
     --sn iam \
     --op PublicSendMyMFAEmailCodeV4 \
     --namespace $AB_NAMESPACE \
-    --action 'NzWndmHh45CbtAeE' \
+    --action 'Q9fvo441ZV5npIWv' \
+    --languageTag 'bFgxzICYmUDC3fi6' \
     > test.out 2>&1
-eval_tap $? 397 'PublicSendMyMFAEmailCodeV4' test.out
+eval_tap $? 403 'PublicSendMyMFAEmailCodeV4' test.out
 
-#- 398 PublicDisableMyEmailV4
+#- 404 PublicDisableMyEmailV4
 # body param: body
-echo '{"mfaToken": "YHBuHZ61Ul5IBffB"}' > $TEMP_JSON_INPUT
+echo '{"mfaToken": "HMFrRujMgadvsTSf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicDisableMyEmailV4 \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 398 'PublicDisableMyEmailV4' test.out
+eval_tap $? 404 'PublicDisableMyEmailV4' test.out
 
-#- 399 PublicEnableMyEmailV4
+#- 405 PublicEnableMyEmailV4
 $CLI_EXE \
     --sn iam \
     --op PublicEnableMyEmailV4 \
     --namespace $AB_NAMESPACE \
-    --code 'wvCjpX9AoAzdk7fx' \
+    --code 'OTbe7BHpKP93i8XO' \
     > test.out 2>&1
-eval_tap $? 399 'PublicEnableMyEmailV4' test.out
+eval_tap $? 405 'PublicEnableMyEmailV4' test.out
 
-#- 400 PublicGetMyEnabledFactorsV4
+#- 406 PublicGetMyEnabledFactorsV4
 $CLI_EXE \
     --sn iam \
     --op PublicGetMyEnabledFactorsV4 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 400 'PublicGetMyEnabledFactorsV4' test.out
+eval_tap $? 406 'PublicGetMyEnabledFactorsV4' test.out
 
-#- 401 PublicMakeFactorMyDefaultV4
+#- 407 PublicMakeFactorMyDefaultV4
 $CLI_EXE \
     --sn iam \
     --op PublicMakeFactorMyDefaultV4 \
     --namespace $AB_NAMESPACE \
-    --factor 'DvPOIiLXgIwgbskN' \
+    --factor '5jjmMRA2XUNd2aMy' \
     > test.out 2>&1
-eval_tap $? 401 'PublicMakeFactorMyDefaultV4' test.out
+eval_tap $? 407 'PublicMakeFactorMyDefaultV4' test.out
 
-#- 402 PublicGetMyMFAStatusV4
+#- 408 PublicGetMyOwnMFAStatusV4
 $CLI_EXE \
     --sn iam \
-    --op PublicGetMyMFAStatusV4 \
+    --op PublicGetMyOwnMFAStatusV4 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 402 'PublicGetMyMFAStatusV4' test.out
+eval_tap $? 408 'PublicGetMyOwnMFAStatusV4' test.out
 
-#- 403 PublicGetUserPublicInfoByUserIdV4
+#- 409 PublicGetMyMFAStatusV4
+eval_tap 0 409 'PublicGetMyMFAStatusV4 # SKIP deprecated' test.out
+
+#- 410 PublicGetUserPublicInfoByUserIdV4
 $CLI_EXE \
     --sn iam \
     --op PublicGetUserPublicInfoByUserIdV4 \
     --namespace $AB_NAMESPACE \
-    --userId 'Gv3diMiQz40PawhH' \
+    --userId 'v47c2CIuJH5mmbaL' \
     > test.out 2>&1
-eval_tap $? 403 'PublicGetUserPublicInfoByUserIdV4' test.out
+eval_tap $? 410 'PublicGetUserPublicInfoByUserIdV4' test.out
 
-#- 404 PublicInviteUserV4
+#- 411 PublicInviteUserV4
 # body param: body
-echo '{"additionalData": "hzGKSN8dAKi3Ojw2", "emailAddress": "hJaUyNA2heaB1EzM", "languageTag": "Esy2IEYgLtY5LpHy", "namespace": "PlWiZshhsSLkvv5Z", "namespaceDisplayName": "nyaJgdWLm4kZ5GDS"}' > $TEMP_JSON_INPUT
+echo '{"additionalData": "SqKHPVvUkGskjCLX", "emailAddress": "82TjSiPE4CCzuqsw", "languageTag": "NoDSoL6PdPwjpODv", "namespace": "958FDmNJAyFfjY3y", "namespaceDisplayName": "IOZEKmShqe4sbVUg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn iam \
     --op PublicInviteUserV4 \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 404 'PublicInviteUserV4' test.out
+eval_tap $? 411 'PublicInviteUserV4' test.out
 
 
 # remove artifacts

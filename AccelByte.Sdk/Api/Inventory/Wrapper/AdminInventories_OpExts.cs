@@ -146,6 +146,40 @@ namespace AccelByte.Sdk.Api
 
             await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).DeleteInventoryAsync(op);
         }
+        public static List<Inventory.Model.ApimodelsInventoryResp>? Execute(
+            this AdminUpdateUserInventoriesByInventoryCode.AdminUpdateUserInventoriesByInventoryCodeBuilder builder,
+            ApimodelsUpdateInventoryReq body,
+            string inventoryConfigurationCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserInventoriesByInventoryCode op = builder.Build(
+                body,
+                inventoryConfigurationCode,
+                namespace_,
+                userId
+            );
+
+            return ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminUpdateUserInventoriesByInventoryCode(op);
+        }
+        public static async Task<List<Inventory.Model.ApimodelsInventoryResp>?> ExecuteAsync(
+            this AdminUpdateUserInventoriesByInventoryCode.AdminUpdateUserInventoriesByInventoryCodeBuilder builder,
+            ApimodelsUpdateInventoryReq body,
+            string inventoryConfigurationCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminUpdateUserInventoriesByInventoryCode op = builder.Build(
+                body,
+                inventoryConfigurationCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Inventory.Wrapper.AdminInventories)builder.WrapperObject!).AdminUpdateUserInventoriesByInventoryCodeAsync(op);
+        }
         public static void Execute(
             this AdminPurchasable.AdminPurchasableBuilder builder,
             ApimodelsPurchaseValidationReq body,

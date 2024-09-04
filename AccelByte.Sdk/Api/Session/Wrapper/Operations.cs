@@ -23,6 +23,50 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.GetHealthcheckInfo.Builder.SetWrapperObject(this); }
         }
+        public PprofHandler.PprofHandlerBuilder PprofHandlerOp
+        {
+            get { return Operation.PprofHandler.Builder.SetWrapperObject(this); }
+        }
+        public AllocsHandler.AllocsHandlerBuilder AllocsHandlerOp
+        {
+            get { return Operation.AllocsHandler.Builder.SetWrapperObject(this); }
+        }
+        public BlockHandler.BlockHandlerBuilder BlockHandlerOp
+        {
+            get { return Operation.BlockHandler.Builder.SetWrapperObject(this); }
+        }
+        public CmdlineHandler.CmdlineHandlerBuilder CmdlineHandlerOp
+        {
+            get { return Operation.CmdlineHandler.Builder.SetWrapperObject(this); }
+        }
+        public GoroutineHandler.GoroutineHandlerBuilder GoroutineHandlerOp
+        {
+            get { return Operation.GoroutineHandler.Builder.SetWrapperObject(this); }
+        }
+        public HeapHandler.HeapHandlerBuilder HeapHandlerOp
+        {
+            get { return Operation.HeapHandler.Builder.SetWrapperObject(this); }
+        }
+        public MutexHandler.MutexHandlerBuilder MutexHandlerOp
+        {
+            get { return Operation.MutexHandler.Builder.SetWrapperObject(this); }
+        }
+        public Profile.ProfileBuilder ProfileOp
+        {
+            get { return Operation.Profile.Builder.SetWrapperObject(this); }
+        }
+        public SymbolHandler.SymbolHandlerBuilder SymbolHandlerOp
+        {
+            get { return Operation.SymbolHandler.Builder.SetWrapperObject(this); }
+        }
+        public ThreadcreateHandler.ThreadcreateHandlerBuilder ThreadcreateHandlerOp
+        {
+            get { return Operation.ThreadcreateHandler.Builder.SetWrapperObject(this); }
+        }
+        public TraceHandler.TraceHandlerBuilder TraceHandlerOp
+        {
+            get { return Operation.TraceHandler.Builder.SetWrapperObject(this); }
+        }
         public GetHealthcheckInfoV1.GetHealthcheckInfoV1Builder GetHealthcheckInfoV1Op
         {
             get { return Operation.GetHealthcheckInfoV1.Builder.SetWrapperObject(this); }
@@ -38,6 +82,182 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task GetHealthcheckInfoAsync(GetHealthcheckInfo input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PprofHandler(PprofHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PprofHandlerAsync(PprofHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AllocsHandler(AllocsHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AllocsHandlerAsync(AllocsHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void BlockHandler(BlockHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task BlockHandlerAsync(BlockHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void CmdlineHandler(CmdlineHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task CmdlineHandlerAsync(CmdlineHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void GoroutineHandler(GoroutineHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task GoroutineHandlerAsync(GoroutineHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void HeapHandler(HeapHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task HeapHandlerAsync(HeapHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void MutexHandler(MutexHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task MutexHandlerAsync(MutexHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void Profile(Profile input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ProfileAsync(Profile input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void SymbolHandler(SymbolHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task SymbolHandlerAsync(SymbolHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ThreadcreateHandler(ThreadcreateHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ThreadcreateHandlerAsync(ThreadcreateHandler input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void TraceHandler(TraceHandler input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task TraceHandlerAsync(TraceHandler input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

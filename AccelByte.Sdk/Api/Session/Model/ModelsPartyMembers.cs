@@ -10,9 +10,11 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ModelsPartyMembers : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("partyID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PartyID { get; set; }
 
         [JsonPropertyName("userIDs")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIDs { get; set; }
 
     }

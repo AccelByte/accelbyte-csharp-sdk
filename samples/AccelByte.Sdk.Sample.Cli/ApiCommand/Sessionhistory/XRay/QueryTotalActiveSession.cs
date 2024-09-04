@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("matchPool")]
+        public List<string>? MatchPool { get; set; }
+
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
 
@@ -51,6 +54,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
 
             var opBuilder = AccelByte.Sdk.Api.Sessionhistory.Operation.QueryTotalActiveSession.Builder;
 
+            if (MatchPool != null)
+                opBuilder.SetMatchPool((List<string>)MatchPool);
             if (Region != null)
                 opBuilder.SetRegion((string)Region);
 

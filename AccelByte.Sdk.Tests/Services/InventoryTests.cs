@@ -40,12 +40,12 @@ namespace AccelByte.Sdk.Tests.Services
             #region Create an inventory configuration
             ApimodelsCreateInventoryConfigurationReq cInventoryConfigBody = new ApimodelsCreateInventoryConfigurationReq()
             {
-                Code=                codeInventory,
-                Description=         "testing",
-                InitialMaxSlots=     3,
-                MaxInstancesPerUser= 2,
-                MaxUpgradeSlots=     5,
-                Name=                codeInventory
+                Code = codeInventory,
+                Description = "testing",
+                InitialMaxSlots = 3,
+                MaxInstancesPerUser = 2,
+                MaxUpgradeSlots = 5,
+                Name = codeInventory
             };
 
             AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryConfigurationResp? configInventory = _Sdk.Inventory.AdminInventoryConfigurations.AdminCreateInventoryConfigurationOp

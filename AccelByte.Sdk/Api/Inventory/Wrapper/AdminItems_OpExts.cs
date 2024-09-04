@@ -313,6 +313,40 @@ namespace AccelByte.Sdk.Api
 
             return await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkRemoveItemsAsync(op);
         }
+        public static List<Inventory.Model.ApimodelsBulkSaveItemResp>? Execute(
+            this AdminBulkSaveItemToInventory.AdminBulkSaveItemToInventoryBuilder builder,
+            List<ApimodelsSaveItemToInventoryReq> body,
+            string inventoryId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkSaveItemToInventory op = builder.Build(
+                body,
+                inventoryId,
+                namespace_,
+                userId
+            );
+
+            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkSaveItemToInventory(op);
+        }
+        public static async Task<List<Inventory.Model.ApimodelsBulkSaveItemResp>?> ExecuteAsync(
+            this AdminBulkSaveItemToInventory.AdminBulkSaveItemToInventoryBuilder builder,
+            List<ApimodelsSaveItemToInventoryReq> body,
+            string inventoryId,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkSaveItemToInventory op = builder.Build(
+                body,
+                inventoryId,
+                namespace_,
+                userId
+            );
+
+            return await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkSaveItemToInventoryAsync(op);
+        }
         public static Inventory.Model.ApimodelsItemResp? Execute(
             this AdminSaveItem.AdminSaveItemBuilder builder,
             ApimodelsSaveItemReq body,
@@ -373,6 +407,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminSaveItemAsync<T1, T2, T3>(op);
+        }
+        public static List<Inventory.Model.ApimodelsBulkSaveItemResp>? Execute(
+            this AdminBulkSaveItem.AdminBulkSaveItemBuilder builder,
+            List<ApimodelsSaveItemReq> body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkSaveItem op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkSaveItem(op);
+        }
+        public static async Task<List<Inventory.Model.ApimodelsBulkSaveItemResp>?> ExecuteAsync(
+            this AdminBulkSaveItem.AdminBulkSaveItemBuilder builder,
+            List<ApimodelsSaveItemReq> body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkSaveItem op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Inventory.Wrapper.AdminItems)builder.WrapperObject!).AdminBulkSaveItemAsync(op);
         }
         public static void Execute(
             this AdminSyncUserEntitlements.AdminSyncUserEntitlementsBuilder builder,

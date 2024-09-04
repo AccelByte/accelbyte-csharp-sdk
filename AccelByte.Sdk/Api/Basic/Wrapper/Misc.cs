@@ -150,7 +150,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Dictionary<string, object>? GetLanguages(GetLanguages input)
+        public Dictionary<string, string>? GetLanguages(GetLanguages input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -158,7 +158,7 @@ namespace AccelByte.Sdk.Api.Basic.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Dictionary<string, object>?> GetLanguagesAsync(GetLanguages input)
+        public async Task<Dictionary<string, string>?> GetLanguagesAsync(GetLanguages input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

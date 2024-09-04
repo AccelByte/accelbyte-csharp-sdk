@@ -29,6 +29,10 @@ namespace AccelByte.Sdk.Api.Legal.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsHidden { get; set; }
 
+        [JsonPropertyName("isHiddenPublic")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IsHiddenPublic { get; set; }
+
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }

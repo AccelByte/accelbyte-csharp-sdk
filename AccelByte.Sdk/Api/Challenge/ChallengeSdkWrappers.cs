@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private GoalConfiguration? _GoalConfiguration = null;
 
+        public Plugins Plugins
+        {
+            get
+            {
+                if (_Plugins == null)
+                    _Plugins = new Plugins(_SdkObject);
+                return _Plugins;
+            }
+        }
+        private Plugins? _Plugins = null;
+
         public ChallengeProgression ChallengeProgression
         {
             get

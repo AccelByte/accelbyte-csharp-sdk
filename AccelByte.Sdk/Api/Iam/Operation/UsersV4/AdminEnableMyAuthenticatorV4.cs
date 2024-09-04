@@ -17,6 +17,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminEnableMyAuthenticatorV4
     ///
     /// This endpoint is used to enable 2FA authenticator.
+    /// ----------
+    /// Prerequisites:
+    /// - Generate the secret key/QR code uri by **_/iam/v4/admin/users/me/mfa/authenticator/key_**
+    /// - Consume the secret key/QR code by an authenticator app
+    /// - Get the code from the authenticator app
     /// </summary>
     public class AdminEnableMyAuthenticatorV4 : AccelByte.Sdk.Core.Operation
     {
@@ -29,8 +34,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            public string? Code { get; set; }
-
 
 
             internal AdminEnableMyAuthenticatorV4Builder() { }
@@ -38,18 +41,14 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
-            public AdminEnableMyAuthenticatorV4Builder SetCode(string _code)
-            {
-                Code = _code;
-                return this;
-            }
-
 
 
             public AdminEnableMyAuthenticatorV4 Build(
+                string code
             )
             {
-                AdminEnableMyAuthenticatorV4 op = new AdminEnableMyAuthenticatorV4(this
+                AdminEnableMyAuthenticatorV4 op = new AdminEnableMyAuthenticatorV4(this,
+                    code
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -60,12 +59,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             }
         }
 
-        private AdminEnableMyAuthenticatorV4(AdminEnableMyAuthenticatorV4Builder builder
+        private AdminEnableMyAuthenticatorV4(AdminEnableMyAuthenticatorV4Builder builder,
+            string code
         )
         {
 
 
-            if (builder.Code is not null) FormParams["code"] = builder.Code;
+            if (code is not null) FormParams["code"] = code;
 
 
 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AdminEnableMyAuthenticatorV4(
-            string? code
+            string code
         )
         {
 

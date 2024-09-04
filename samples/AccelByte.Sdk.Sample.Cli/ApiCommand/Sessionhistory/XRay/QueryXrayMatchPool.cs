@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("poolName")]
-        public string PoolName { get; set; } = String.Empty;
+        public List<string> PoolName { get; set; } = new List<string>();
 
         [SdkCommandArgument("endDate")]
         public string EndDate { get; set; } = String.Empty;

@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             get { return Operation.DeleteInventory.Builder.SetWrapperObject(this); }
         }
+        public AdminUpdateUserInventoriesByInventoryCode.AdminUpdateUserInventoriesByInventoryCodeBuilder AdminUpdateUserInventoriesByInventoryCodeOp
+        {
+            get { return Operation.AdminUpdateUserInventoriesByInventoryCode.Builder.SetWrapperObject(this); }
+        }
         public AdminPurchasable.AdminPurchasableBuilder AdminPurchasableOp
         {
             get { return Operation.AdminPurchasable.Builder.SetWrapperObject(this); }
@@ -121,6 +125,22 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ApimodelsInventoryResp>? AdminUpdateUserInventoriesByInventoryCode(AdminUpdateUserInventoriesByInventoryCode input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsInventoryResp>?> AdminUpdateUserInventoriesByInventoryCodeAsync(AdminUpdateUserInventoriesByInventoryCode input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

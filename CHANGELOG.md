@@ -1,3 +1,34 @@
+<a name="v0.65.0"></a>
+## [v0.65.0]
+### feat
+- **core:** implement ws reconnect
+- **lobby:** implement lobby session id process
+- **test:** add ws reconnect test for lobby service
+- **:** add binary upload and download helper
+- **test:** add integration test for upload and download
+### docs
+- **:** add ws usage in readme
+- **:** add migration guide draft for 0.65
+- **:** update platform service op index
+### fix
+- **:** set ws default deflate option
+- **cli:** add delay after ws connect
+- **cli:** merge connect and listen async and add delay before send
+- **cli:** move delay to before send ws message
+- **test:** update any integration tests that use create store
+- **cli:** allow parse of int list input param
+- **cli:** handle json array format for list int
+### chore
+- **cli:** change ws mock logging level
+- **makefile:** clean up test_core target commands
+- **makefile:** update test_cli to use standalone ws mock server
+- **:** regenerate platform service for 3.77 adjustment
+### test
+- **cli:** lobby - use standalone ws mock server
+- **integration:** match2 - fix ruleset test payload
+- **integration:** add inventory test
+
+
 <a name="v0.64.1"></a>
 ## [v0.64.1]
 ### fix

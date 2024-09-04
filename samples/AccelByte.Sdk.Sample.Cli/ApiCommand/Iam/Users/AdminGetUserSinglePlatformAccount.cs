@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("crossNamespace")]
+        public bool? CrossNamespace { get; set; }
+
         public AdminGetUserSinglePlatformAccountCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminGetUserSinglePlatformAccount.Builder;
 
+            if (CrossNamespace != null)
+                opBuilder.SetCrossNamespace((bool)CrossNamespace);
 
 
 

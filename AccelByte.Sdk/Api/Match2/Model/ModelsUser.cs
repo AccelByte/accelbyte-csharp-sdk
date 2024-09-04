@@ -18,8 +18,15 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("PlatformUserID")]
         public string? PlatformUserID { get; set; }
 
+        [JsonPropertyName("PreviousStatus")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PreviousStatus { get; set; }
+
         [JsonPropertyName("Status")]
         public string? Status { get; set; }
+
+        [JsonPropertyName("StatusV2")]
+        public string? StatusV2 { get; set; }
 
         [JsonPropertyName("UpdatedAt")]
         public DateTime? UpdatedAt { get; set; }

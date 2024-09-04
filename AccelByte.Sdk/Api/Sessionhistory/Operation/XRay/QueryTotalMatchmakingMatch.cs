@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             : OperationBuilder<QueryTotalMatchmakingMatchBuilder>
         {
 
-            public string? MatchPool { get; set; }
+            public List<string>? MatchPool { get; set; }
 
 
 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             internal QueryTotalMatchmakingMatchBuilder() { }
 
 
-            public QueryTotalMatchmakingMatchBuilder SetMatchPool(string _matchPool)
+            public QueryTotalMatchmakingMatchBuilder SetMatchPool(List<string> _matchPool)
             {
                 MatchPool = _matchPool;
                 return this;
@@ -80,6 +80,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 
@@ -89,7 +90,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public QueryTotalMatchmakingMatch(
             string namespace_,
-            string? matchPool,
+            List<string>? matchPool,
             string endDate,
             string startDate
         )
@@ -102,6 +103,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 

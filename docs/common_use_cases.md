@@ -653,11 +653,48 @@ Source: [MatchV2Tests.cs](../AccelByte.Sdk.Tests/Services/MatchV2Tests.cs)
 ApiRuleSetPayload cRuleSetBody = new ApiRuleSetPayload()
 {
     Name = rulesetName,
-    Data = new Dictionary<string, object>()
-    {
-        {"param_1", 40},
-        {"param_2", "A"}
-    }
+    Data = JsonSerializer.Deserialize<Dictionary<string, object>>(@"
+        {
+            ""alliance"": {
+                ""min_number"": 2,
+                ""max_number"": 10,
+                ""player_min_number"": 2,
+                ""player_max_number"": 4
+            },
+            ""matchingRules"": [
+                {
+                ""attribute"": """",
+                ""criteria"": ""distance"",
+                ""reference"": """"
+                }
+            ],
+            ""flexingRules"": [
+                {
+                ""duration"": 600,
+                ""attribute"": """",
+                ""criteria"": ""distance"",
+                ""reference"": """"
+                }
+            ],
+            ""match_options"": {
+                ""options"": [
+                {
+                    ""name"": """",
+                    ""type"": ""any""
+                }
+                ]
+            },
+            ""alliance_flexing_rule"": [
+                {
+                ""duration"": 600,
+                ""min_number"": 1,
+                ""max_number"": 2,
+                ""player_min_number"": 1,
+                ""player_max_number"": 2
+                }
+            ]
+        }
+    ")
 };
 
 _Sdk.Match2.RuleSets.CreateRuleSetOp
@@ -753,8 +790,7 @@ StoreCreate createStore = new StoreCreate()
 };
 
 StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
-    .SetBody(createStore)
-    .Execute(_Sdk.Namespace);
+    .Execute(createStore, _Sdk.Namespace);
 ```
 
 ### Get a store
@@ -772,8 +808,7 @@ StoreUpdate updateStore = new StoreUpdate()
     Description = "Updated description."
 };
 StoreInfo? cStoreUpdate = _Sdk.Platform.Store.UpdateStoreOp
-    .SetBody(updateStore)
-    .Execute(_Sdk.Namespace, store_id);
+    .Execute(updateStore, _Sdk.Namespace, store_id);
 ```
 
 ### Delete a store
@@ -818,8 +853,7 @@ StoreCreate createStore = new StoreCreate()
 };
 
 StoreInfo? cStore = _Sdk.Platform.Store.CreateStoreOp
-    .SetBody(createStore)
-    .Execute(_Sdk.Namespace);
+    .Execute(createStore, _Sdk.Namespace);
 ```
 
 ### Create a season

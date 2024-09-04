@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// **Supported config key:**
     /// * uniqueDisplayNameEnabled
     /// * usernameDisabled
+    /// * mandatoryEmailVerificationEnabled
     /// </summary>
     public class PublicGetConfigValueV3 : AccelByte.Sdk.Core.Operation
     {

@@ -63,25 +63,26 @@ $CLI_EXE \
     --sn gametelemetry \
     --op GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet \
     --namespace $AB_NAMESPACE \
-    --endTime 'bBuz5zkoaUEzGS3q' \
-    --eventId 'Zf0PbemSBELbZ0VB' \
-    --eventName 'UGA7nkDeev2Oj060' \
-    --eventPayload 'HnOf5S8X1LxkZs42' \
-    --flightId '33oQWoXFeqeuI2oM' \
-    --limit '73' \
-    --offset '32' \
-    --startTime '0cgAoGfXepE3r5AQ' \
-    --userId 'UBqS8KtTYZLJ58Qq' \
+    --deviceType 'bBuz5zkoaUEzGS3q' \
+    --endTime 'Zf0PbemSBELbZ0VB' \
+    --eventId 'UGA7nkDeev2Oj060' \
+    --eventName 'HnOf5S8X1LxkZs42' \
+    --eventPayload '33oQWoXFeqeuI2oM' \
+    --flightId 'J0cgAoGfXepE3r5A' \
+    --limit '87' \
+    --offset '95' \
+    --startTime 'tZ5GZi5P12c61ts3' \
+    --userId 'fMI04rm2jUc9iav3' \
     > test.out 2>&1
 eval_tap $? 3 'GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet' test.out
 
 #- 4 ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost
 # body param: body
-echo '[{"ClientTimestamp": "1972-02-16T00:00:00Z", "EventId": "V3IcuNs9MF5BT2KD", "EventName": "18yrWorpC65VJh4q", "EventNamespace": "1z1KJmKedBfbWvKa", "EventTimestamp": "1973-11-27T00:00:00Z", "Payload": {"JDYa1TJPUszmFGEk": {}, "JVvqDSU3PDyIAGfG": {}, "q1FNmRWvUvDPnKoE": {}}}, {"ClientTimestamp": "1985-06-29T00:00:00Z", "EventId": "jGUg867xodwuG14I", "EventName": "D5l5wj6K2wEMnckj", "EventNamespace": "lW6BywsSSZTGlubs", "EventTimestamp": "1977-08-15T00:00:00Z", "Payload": {"hjXcScOUvrjJBO7t": {}, "bkTGYKqRMSTisP0M": {}, "rSdaFy0pJYCdfkfy": {}}}, {"ClientTimestamp": "1981-09-29T00:00:00Z", "EventId": "09ro5fHdWqJTNjrm", "EventName": "pnnEckHH8kT9oXVa", "EventNamespace": "ndercf1nq4Hf32SL", "EventTimestamp": "1977-12-06T00:00:00Z", "Payload": {"OBlfUOqv7WmCuqcs": {}, "NM7YAnbq4DjmYUMh": {}, "D9qU89D356pVsUtN": {}}}]' > $TEMP_JSON_INPUT
+echo '[{"ClientTimestamp": "1981-05-13T00:00:00Z", "DeviceType": "yrWorpC65VJh4q1z", "EventId": "1KJmKedBfbWvKa5O", "EventName": "u124TsbQsxYFxGGH", "EventNamespace": "rfQkgXkiA5IZPqCq", "EventTimestamp": "1978-09-19T00:00:00Z", "Payload": {"vcyt67WAfWXfUfwG": {}, "B03tz8qIH4uRdNO0": {}, "8HN6s9p8Y5c9eItJ": {}}}, {"ClientTimestamp": "1981-03-07T00:00:00Z", "DeviceType": "BywsSSZTGlubsmhj", "EventId": "XcScOUvrjJBO7tbk", "EventName": "TGYKqRMSTisP0MrS", "EventNamespace": "daFy0pJYCdfkfyt0", "EventTimestamp": "1988-05-18T00:00:00Z", "Payload": {"bOjpls9BZTYc5Bsd": {}, "SSVaAzzn4GbgkKeC": {}, "aS6qyUCscHXs8PlO": {}}}, {"ClientTimestamp": "1985-01-04T00:00:00Z", "DeviceType": "lfUOqv7WmCuqcsNM", "EventId": "7YAnbq4DjmYUMhD9", "EventName": "qU89D356pVsUtNan", "EventNamespace": "ddzgwxYdQc5hEfef", "EventTimestamp": "1972-02-12T00:00:00Z", "Payload": {"opcEM0JHfof2Hwi7": {}, "vg3osbh0fL2h7eJv": {}, "AS2W4uqkhwSC7Eaj": {}}}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost \
-    --access_token 'anddzgwxYdQc5hEf' \
+    --access_token 'wHO3LfvwPewrf19N' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 4 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
@@ -90,8 +91,8 @@ eval_tap $? 4 'ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost' test.out
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet \
-    --steamId 'efdopcEM0JHfof2H' \
-    --access_token 'wi7vg3osbh0fL2h7' \
+    --steamId 'jm50xCDlPeNq0CvM' \
+    --access_token 'XtyUWXrdZaFeacGT' \
     > test.out 2>&1
 eval_tap $? 5 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGet' test.out
 
@@ -99,9 +100,9 @@ eval_tap $? 5 'ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlayti
 $CLI_EXE \
     --sn gametelemetry \
     --op ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut \
-    --playtime 'eJvAS2W4uqkhwSC7' \
-    --steamId 'EajwHO3LfvwPewrf' \
-    --access_token '19Njm50xCDlPeNq0' \
+    --playtime '2x6o28Njxyw7RHld' \
+    --steamId 'q0m7NjUZ95Z5XDLB' \
+    --access_token 'N9YGVPtkjt0OyBlJ' \
     > test.out 2>&1
 eval_tap $? 6 'ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePut' test.out
 

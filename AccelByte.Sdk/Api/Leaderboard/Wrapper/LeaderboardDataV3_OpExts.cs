@@ -69,6 +69,70 @@ namespace AccelByte.Sdk.Api
             return await ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).GetCurrentCycleLeaderboardRankingAdminV3Async(op);
         }
         public static void Execute(
+            this DeleteAllUserRankingByCycleIdAdminV3.DeleteAllUserRankingByCycleIdAdminV3Builder builder,
+            string cycleId,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            DeleteAllUserRankingByCycleIdAdminV3 op = builder.Build(
+                cycleId,
+                leaderboardCode,
+                namespace_
+            );
+
+            ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).DeleteAllUserRankingByCycleIdAdminV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteAllUserRankingByCycleIdAdminV3.DeleteAllUserRankingByCycleIdAdminV3Builder builder,
+            string cycleId,
+            string leaderboardCode,
+            string namespace_
+        )
+        {
+            DeleteAllUserRankingByCycleIdAdminV3 op = builder.Build(
+                cycleId,
+                leaderboardCode,
+                namespace_
+            );
+
+            await ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).DeleteAllUserRankingByCycleIdAdminV3Async(op);
+        }
+        public static void Execute(
+            this DeleteUserRankingByCycleIdAdminV3.DeleteUserRankingByCycleIdAdminV3Builder builder,
+            string cycleId,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteUserRankingByCycleIdAdminV3 op = builder.Build(
+                cycleId,
+                leaderboardCode,
+                namespace_,
+                userId
+            );
+
+            ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).DeleteUserRankingByCycleIdAdminV3(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteUserRankingByCycleIdAdminV3.DeleteUserRankingByCycleIdAdminV3Builder builder,
+            string cycleId,
+            string leaderboardCode,
+            string namespace_,
+            string userId
+        )
+        {
+            DeleteUserRankingByCycleIdAdminV3 op = builder.Build(
+                cycleId,
+                leaderboardCode,
+                namespace_,
+                userId
+            );
+
+            await ((Leaderboard.Wrapper.LeaderboardDataV3)builder.WrapperObject!).DeleteUserRankingByCycleIdAdminV3Async(op);
+        }
+        public static void Execute(
             this DeleteUserRankingByLeaderboardCodeAdminV3.DeleteUserRankingByLeaderboardCodeAdminV3Builder builder,
             string leaderboardCode,
             string namespace_

@@ -18,6 +18,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("backfill_ticket_expiration_seconds")]
         public int? BackfillTicketExpirationSeconds { get; set; }
 
+        [JsonPropertyName("best_latency_calculation_method")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? BestLatencyCalculationMethod { get; set; }
+
         [JsonPropertyName("crossplay_disabled")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? CrossplayDisabled { get; set; }

@@ -198,6 +198,75 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminUpdateOfficialContentV2Async<T1>(op);
         }
+        public static Ugc.Model.ModelsContentDownloadResponseV2? Execute(
+            this AdminCopyContent.AdminCopyContentBuilder builder,
+            ModelsCopyContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminCopyContent op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCopyContent(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2?> ExecuteAsync(
+            this AdminCopyContent.AdminCopyContentBuilder builder,
+            ModelsCopyContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminCopyContent op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCopyContentAsync(op);
+        }
+
+        public static Ugc.Model.ModelsContentDownloadResponseV2<T1>? Execute<T1>(
+            this AdminCopyContent.AdminCopyContentBuilder builder,
+            ModelsCopyContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminCopyContent op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCopyContent<T1>(op);
+        }
+        public static async Task<Ugc.Model.ModelsContentDownloadResponseV2<T1>?> ExecuteAsync<T1>(
+            this AdminCopyContent.AdminCopyContentBuilder builder,
+            ModelsCopyContentRequest body,
+            string channelId,
+            string contentId,
+            string namespace_
+        )
+        {
+            AdminCopyContent op = builder.Build(
+                body,
+                channelId,
+                contentId,
+                namespace_
+            );
+
+            return await ((Ugc.Wrapper.AdminContentV2)builder.WrapperObject!).AdminCopyContentAsync<T1>(op);
+        }
         public static Ugc.Model.ModelsUpdateContentResponseV2? Execute(
             this AdminUpdateOfficialContentFileLocation.AdminUpdateOfficialContentFileLocationBuilder builder,
             ModelsUpdateFileLocationRequest body,

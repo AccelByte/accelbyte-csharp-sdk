@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("action")]
         public string Action { get; set; } = String.Empty;
 
+        [SdkCommandArgument("languageTag")]
+        public string LanguageTag { get; set; } = String.Empty;
+
         public PublicSendMyMFAEmailCodeV4Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,6 +52,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             if (Action != null)
                 opBuilder.SetAction((string)Action);
+            if (LanguageTag != null)
+                opBuilder.SetLanguageTag((string)LanguageTag);
 
 
             PublicSendMyMFAEmailCodeV4 operation = opBuilder.Build(

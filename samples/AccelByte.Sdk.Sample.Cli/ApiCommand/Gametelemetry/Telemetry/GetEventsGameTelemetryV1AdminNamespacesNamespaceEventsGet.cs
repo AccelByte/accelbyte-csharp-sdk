@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("deviceType")]
+        public string? DeviceType { get; set; }
+
         [SdkCommandArgument("endTime")]
         public string? EndTime { get; set; }
 
@@ -69,6 +72,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gametelemetry
 
             var opBuilder = AccelByte.Sdk.Api.Gametelemetry.Operation.GetEventsGameTelemetryV1AdminNamespacesNamespaceEventsGet.Builder;
 
+            if (DeviceType != null)
+                opBuilder.SetDeviceType((string)DeviceType);
             if (EndTime != null)
                 opBuilder.SetEndTime((string)EndTime);
             if (EventId != null)

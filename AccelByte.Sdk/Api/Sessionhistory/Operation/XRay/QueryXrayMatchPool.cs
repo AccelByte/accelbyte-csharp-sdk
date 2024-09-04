@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
     /// queryXrayMatchPool
     ///
     /// Query xray match pool.
+    /// query can using matchpool array with separate ","
     /// </summary>
     public class QueryXrayMatchPool : AccelByte.Sdk.Core.Operation
     {
@@ -40,7 +41,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             public QueryXrayMatchPool Build(
                 string namespace_,
-                string poolName,
+                List<string> poolName,
                 string endDate,
                 string startDate
             )
@@ -62,13 +63,13 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         private QueryXrayMatchPool(QueryXrayMatchPoolBuilder builder,
             string namespace_,
-            string poolName,
+            List<string> poolName,
             string endDate,
             string startDate
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["poolName"] = poolName;
+            PathParams["poolName"] = Convert.ToString(poolName);
 
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
@@ -84,13 +85,13 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public QueryXrayMatchPool(
             string namespace_,
-            string poolName,
+            List<string> poolName,
             string endDate,
             string startDate
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["poolName"] = poolName;
+            PathParams["poolName"] = Convert.ToString(poolName);
 
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;

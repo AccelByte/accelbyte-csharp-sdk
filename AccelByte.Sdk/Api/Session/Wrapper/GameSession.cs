@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminSetDSReady.Builder.SetWrapperObject(this); }
         }
+        public AdminKickGameSessionMember.AdminKickGameSessionMemberBuilder AdminKickGameSessionMemberOp
+        {
+            get { return Operation.AdminKickGameSessionMember.Builder.SetWrapperObject(this); }
+        }
         public AdminUpdateGameSessionMember.AdminUpdateGameSessionMemberBuilder AdminUpdateGameSessionMemberOp
         {
             get { return Operation.AdminUpdateGameSessionMember.Builder.SetWrapperObject(this); }
@@ -98,6 +102,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         public LeaveGameSession.LeaveGameSessionBuilder LeaveGameSessionOp
         {
             get { return Operation.LeaveGameSession.Builder.SetWrapperObject(this); }
+        }
+        public PublicKickGameSessionMember.PublicKickGameSessionMemberBuilder PublicKickGameSessionMemberOp
+        {
+            get { return Operation.PublicKickGameSessionMember.Builder.SetWrapperObject(this); }
         }
         public PublicGameSessionReject.PublicGameSessionRejectBuilder PublicGameSessionRejectOp
         {
@@ -178,6 +186,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task AdminSetDSReadyAsync(AdminSetDSReady input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminKickGameSessionMember(AdminKickGameSessionMember input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminKickGameSessionMemberAsync(AdminKickGameSessionMember input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -614,6 +638,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task LeaveGameSessionAsync(LeaveGameSession input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicKickGameSessionMember(PublicKickGameSessionMember input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicKickGameSessionMemberAsync(PublicKickGameSessionMember input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

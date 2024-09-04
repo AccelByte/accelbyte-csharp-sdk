@@ -155,6 +155,11 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminMakeFactorMyDefaultV4.Builder.SetWrapperObject(this); }
         }
+        public AdminGetMyOwnMFAStatusV4.AdminGetMyOwnMFAStatusV4Builder AdminGetMyOwnMFAStatusV4Op
+        {
+            get { return Operation.AdminGetMyOwnMFAStatusV4.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetMyMFAStatusV4.AdminGetMyMFAStatusV4Builder AdminGetMyMFAStatusV4Op
         {
             get { return Operation.AdminGetMyMFAStatusV4.Builder.SetWrapperObject(this); }
@@ -272,6 +277,11 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicMakeFactorMyDefaultV4.Builder.SetWrapperObject(this); }
         }
+        public PublicGetMyOwnMFAStatusV4.PublicGetMyOwnMFAStatusV4Builder PublicGetMyOwnMFAStatusV4Op
+        {
+            get { return Operation.PublicGetMyOwnMFAStatusV4.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetMyMFAStatusV4.PublicGetMyMFAStatusV4Builder PublicGetMyMFAStatusV4Op
         {
             get { return Operation.PublicGetMyMFAStatusV4.Builder.SetWrapperObject(this); }
@@ -826,6 +836,24 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelUserMFAStatusResponseV4? AdminGetMyOwnMFAStatusV4(AdminGetMyOwnMFAStatusV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserMFAStatusResponseV4?> AdminGetMyOwnMFAStatusV4Async(AdminGetMyOwnMFAStatusV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelUserMFAStatusResponseV4? AdminGetMyMFAStatusV4(AdminGetMyMFAStatusV4 input)
         {
             var response = _sdk.RunRequest(input);
@@ -842,6 +870,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelInviteUserResponseV3? AdminInviteUserV4(AdminInviteUserV4 input)
@@ -1289,6 +1318,24 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelUserMFAStatusResponseV4? PublicGetMyOwnMFAStatusV4(PublicGetMyOwnMFAStatusV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserMFAStatusResponseV4?> PublicGetMyOwnMFAStatusV4Async(PublicGetMyOwnMFAStatusV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelUserMFAStatusResponseV4? PublicGetMyMFAStatusV4(PublicGetMyMFAStatusV4 input)
         {
             var response = _sdk.RunRequest(input);
@@ -1305,6 +1352,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ModelUserPublicInfoResponseV4? PublicGetUserPublicInfoByUserIdV4(PublicGetUserPublicInfoByUserIdV4 input)
         {
             var response = _sdk.RunRequest(input);

@@ -447,19 +447,23 @@ namespace AccelByte.Sdk.Api
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableMyAuthenticatorV4Async(op);
         }
         public static void Execute(
-            this AdminEnableMyAuthenticatorV4.AdminEnableMyAuthenticatorV4Builder builder
+            this AdminEnableMyAuthenticatorV4.AdminEnableMyAuthenticatorV4Builder builder,
+            string code
         )
         {
             AdminEnableMyAuthenticatorV4 op = builder.Build(
+                code
             );
 
             ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableMyAuthenticatorV4(op);
         }
         public static async Task ExecuteAsync(
-            this AdminEnableMyAuthenticatorV4.AdminEnableMyAuthenticatorV4Builder builder
+            this AdminEnableMyAuthenticatorV4.AdminEnableMyAuthenticatorV4Builder builder,
+            string code
         )
         {
             AdminEnableMyAuthenticatorV4 op = builder.Build(
+                code
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminEnableMyAuthenticatorV4Async(op);
@@ -755,6 +759,25 @@ namespace AccelByte.Sdk.Api
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminMakeFactorMyDefaultV4Async(op);
         }
         public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
+            this AdminGetMyOwnMFAStatusV4.AdminGetMyOwnMFAStatusV4Builder builder
+        )
+        {
+            AdminGetMyOwnMFAStatusV4 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetMyOwnMFAStatusV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFAStatusResponseV4?> ExecuteAsync(
+            this AdminGetMyOwnMFAStatusV4.AdminGetMyOwnMFAStatusV4Builder builder
+        )
+        {
+            AdminGetMyOwnMFAStatusV4 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetMyOwnMFAStatusV4Async(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
             this AdminGetMyMFAStatusV4.AdminGetMyMFAStatusV4Builder builder
         )
         {
@@ -1039,10 +1062,12 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this PublicEnableMyAuthenticatorV4.PublicEnableMyAuthenticatorV4Builder builder,
+            string code,
             string namespace_
         )
         {
             PublicEnableMyAuthenticatorV4 op = builder.Build(
+                code,
                 namespace_
             );
 
@@ -1050,10 +1075,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this PublicEnableMyAuthenticatorV4.PublicEnableMyAuthenticatorV4Builder builder,
+            string code,
             string namespace_
         )
         {
             PublicEnableMyAuthenticatorV4 op = builder.Build(
+                code,
                 namespace_
             );
 
@@ -1435,6 +1462,29 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicMakeFactorMyDefaultV4Async(op);
         }
+        public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
+            this PublicGetMyOwnMFAStatusV4.PublicGetMyOwnMFAStatusV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetMyOwnMFAStatusV4 op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetMyOwnMFAStatusV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFAStatusResponseV4?> ExecuteAsync(
+            this PublicGetMyOwnMFAStatusV4.PublicGetMyOwnMFAStatusV4Builder builder,
+            string namespace_
+        )
+        {
+            PublicGetMyOwnMFAStatusV4 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetMyOwnMFAStatusV4Async(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
             this PublicGetMyMFAStatusV4.PublicGetMyMFAStatusV4Builder builder,
             string namespace_

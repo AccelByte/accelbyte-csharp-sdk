@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..36"
+echo "1..37"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -205,9 +205,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayMatchPool \
     --namespace $AB_NAMESPACE \
-    --poolName 'h7eJvAS2W4uqkhwS' \
-    --endDate 'C7EajwHO3LfvwPew' \
-    --startDate 'rf19Njm50xCDlPeN' \
+    --poolName '["h7eJvAS2W4uqkhwS", "C7EajwHO3LfvwPew", "rf19Njm50xCDlPeN"]' \
+    --endDate 'q0CvMXtyUWXrdZaF' \
+    --startDate 'eacGT2x6o28Njxyw' \
     > test.out 2>&1
 eval_tap $? 16 'QueryXrayMatchPool' test.out
 
@@ -216,13 +216,13 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPool \
     --namespace $AB_NAMESPACE \
-    --podName 'q0CvMXtyUWXrdZaF' \
-    --poolName 'eacGT2x6o28Njxyw' \
+    --podName '7RHldq0m7NjUZ95Z' \
+    --poolName '5XDLBN9YGVPtkjt0' \
     --all 'true' \
-    --limit '90' \
-    --offset '81' \
-    --endDate 'Hldq0m7NjUZ95Z5X' \
-    --startDate 'DLBN9YGVPtkjt0Oy' \
+    --limit '50' \
+    --offset '51' \
+    --endDate 'BlJi4RbZ0Iy11mfO' \
+    --startDate 'FjCzZVcGomWF1oAq' \
     > test.out 2>&1
 eval_tap $? 17 'QueryDetailTickMatchPool' test.out
 
@@ -231,9 +231,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPoolMatches \
     --namespace $AB_NAMESPACE \
-    --podName 'BlJi4RbZ0Iy11mfO' \
-    --poolName 'FjCzZVcGomWF1oAq' \
-    --tickId 'UNFDtXnXLvOAsW8w' \
+    --podName 'UNFDtXnXLvOAsW8w' \
+    --poolName 'Yh4gq7pRVZVLJiDx' \
+    --tickId '3au9b9QjhzDlnJmi' \
     > test.out 2>&1
 eval_tap $? 18 'QueryDetailTickMatchPoolMatches' test.out
 
@@ -242,9 +242,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryDetailTickMatchPoolTicket \
     --namespace $AB_NAMESPACE \
-    --podName 'Yh4gq7pRVZVLJiDx' \
-    --poolName '3au9b9QjhzDlnJmi' \
-    --tickId '4XaBTgoXjfdUQHa3' \
+    --podName '4XaBTgoXjfdUQHa3' \
+    --poolName 'RxspSqwdbTR2sgzf' \
+    --tickId 'aQrUCW9fgo69uv1b' \
     > test.out 2>&1
 eval_tap $? 19 'QueryDetailTickMatchPoolTicket' test.out
 
@@ -252,10 +252,10 @@ eval_tap $? 19 'QueryDetailTickMatchPoolTicket' test.out
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchHistories \
-    --matchId 'RxspSqwdbTR2sgzf' \
+    --matchId 'kFx8DmbC9UqYdYrd' \
     --namespace $AB_NAMESPACE \
-    --limit '1' \
-    --offset '86' \
+    --limit '48' \
+    --offset '31' \
     > test.out 2>&1
 eval_tap $? 20 'QueryMatchHistories' test.out
 
@@ -263,7 +263,7 @@ eval_tap $? 20 'QueryMatchHistories' test.out
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchTicketHistories \
-    --matchId '7HSCYZaL46I3PgCc' \
+    --matchId 'NnuMcAwrSzYnrcet' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 21 'QueryMatchTicketHistories' test.out
@@ -272,7 +272,7 @@ eval_tap $? 21 'QueryMatchTicketHistories' test.out
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayMatch \
-    --matchId 'Q0axTWnmyEYLZQTp' \
+    --matchId 'xObeisZelKuD0iJ6' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 22 'QueryXrayMatch' test.out
@@ -282,8 +282,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryAcquiringDS \
     --namespace $AB_NAMESPACE \
-    --endDate 'vLH6QPEBP8kSSFje' \
-    --startDate 'uL3wQQPYwmYFbxRv' \
+    --matchPool '["fs3zL9H4WxGWRH7f", "z4BdPhLtHRJOImSq", "37aeAaGq0NIj53gX"]' \
+    --endDate 'kmrayvcIYiWxIAxf' \
+    --startDate 'vLzSpDFY3lxe16Ks' \
     > test.out 2>&1
 eval_tap $? 23 'QueryAcquiringDS' test.out
 
@@ -292,8 +293,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryAcquiringDSWaitTimeAvg \
     --namespace $AB_NAMESPACE \
-    --endDate 'HYDCYwoGdmzXgf1e' \
-    --startDate 'wUTvnu0ensa3MZF7' \
+    --matchPool '["SRzkf2HzBcEio5Uy", "vuFv5z6wosJGnUyC", "MEbHh1uE4DmJ4Suj"]' \
+    --endDate '6DjUw36GtZ83Jp2f' \
+    --startDate '9f1FCoIo3L24DKGw' \
     > test.out 2>&1
 eval_tap $? 24 'QueryAcquiringDSWaitTimeAvg' test.out
 
@@ -302,8 +304,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchLengthDurationpAvg \
     --namespace $AB_NAMESPACE \
-    --endDate 'DTswnkSyuJTVjKQ1' \
-    --startDate 'ORLEIAePvDO2xkVg' \
+    --matchPool '["gZ85vyFJR8euQBLV", "u27iwplLJdzYS9K0", "VvwE6MAqPc8lGIYW"]' \
+    --endDate 'TwxyqQQIXVmrtRlq' \
+    --startDate '1jv60HTnmFrl3gYx' \
     > test.out 2>&1
 eval_tap $? 25 'QueryMatchLengthDurationpAvg' test.out
 
@@ -312,8 +315,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryMatchLengthDurationp99 \
     --namespace $AB_NAMESPACE \
-    --endDate 'yRk10b27RdU8VceY' \
-    --startDate 'Q9erPYQ5yVcQuvDb' \
+    --matchPool '["6Xmv1DzPHux3k3sk", "hn3mWZjTYM95e4aa", "8xOJu7rNRVdygfKm"]' \
+    --endDate 'Ukzj9mHFpff2vDkz' \
+    --startDate '68zorEgcExv9nKMO' \
     > test.out 2>&1
 eval_tap $? 26 'QueryMatchLengthDurationp99' test.out
 
@@ -322,9 +326,10 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalActiveSession \
     --namespace $AB_NAMESPACE \
-    --region 'GMqbEHkCQwMBcQUN' \
-    --endDate 'PHN8YZT0yJJ0uCjj' \
-    --startDate 'aNCRV3hSIiTEoTCS' \
+    --matchPool '["gO5W8SUaZjCpNtJS", "Mm8kDi3Rwubq7wtR", "GdT447Oa51m6VLfj"]' \
+    --region 'sw270pMmOQJrpEBb' \
+    --endDate 'VvBn8Lsf2qSAtizV' \
+    --startDate '9hzsVbpJLtEZjuyF' \
     > test.out 2>&1
 eval_tap $? 27 'QueryTotalActiveSession' test.out
 
@@ -333,9 +338,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingMatch \
     --namespace $AB_NAMESPACE \
-    --matchPool 'xjAqg9oGVEdC8mQi' \
-    --endDate 'r1Af0G6OrPH6Zsjp' \
-    --startDate 'PgHKISHtB8tWdJM9' \
+    --matchPool '["hvbxX2DNbknfVv4n", "m70TCayYAkF18YBw", "RxcREyU5CwqGJF6n"]' \
+    --endDate 'Di33Iztr2QcwlRrR' \
+    --startDate 'eRajlpk8lfuiJVck' \
     > test.out 2>&1
 eval_tap $? 28 'QueryTotalMatchmakingMatch' test.out
 
@@ -344,8 +349,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalPlayerPersession \
     --namespace $AB_NAMESPACE \
-    --endDate 'Qc5HmR0vknXO45AU' \
-    --startDate 'tNXSTItt35OJTfJB' \
+    --matchPool '["tlx9zJZVVCc9bpIH", "EWQMmCkIqwqpoTVC", "NrcaVozsjIXO2EUs"]' \
+    --endDate 'AfBvo6Llcalks2R3' \
+    --startDate 'VMtipTVxXAF8KhOK' \
     > test.out 2>&1
 eval_tap $? 29 'QueryTotalPlayerPersession' test.out
 
@@ -354,9 +360,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingCanceled \
     --namespace $AB_NAMESPACE \
-    --matchPool 'ZX62yI9g5RDrlzPF' \
-    --endDate 'QmNu3ERxV0UTaiSz' \
-    --startDate 'fi0FnBERe8qNYRTY' \
+    --matchPool '["qbrECijFxOpOzxeT", "LJQsZcTEzXaXUzps", "AV6ct6XITL0QEkad"]' \
+    --endDate 'MSQluAoED9oYwS8o' \
+    --startDate 'LyErKvRtHFGJRoGW' \
     > test.out 2>&1
 eval_tap $? 30 'QueryTotalMatchmakingCanceled' test.out
 
@@ -365,9 +371,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingCreated \
     --namespace $AB_NAMESPACE \
-    --matchPool 'SaZw4NqSNylcljuN' \
-    --endDate 'M3eUUSD1pZGMfPdG' \
-    --startDate 'IOAZ86un0L98WUoX' \
+    --matchPool '["7VBG1VB2sp2x9msz", "GGoyhGZAzt2OVBTL", "wSH8hWRU9pbItGQ7"]' \
+    --endDate 'VUWBhGolwafIfbF1' \
+    --startDate 'GLFnrQ4T5cmw7U1T' \
     > test.out 2>&1
 eval_tap $? 31 'QueryTotalMatchmakingCreated' test.out
 
@@ -376,9 +382,9 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingExpired \
     --namespace $AB_NAMESPACE \
-    --matchPool 'vfU4qMIpfgxw2ff5' \
-    --endDate 'twRYbtdK2r4wWs6I' \
-    --startDate 'pYBxafo9b4xJyNnv' \
+    --matchPool '["xiS06UEoaDZpXOWz", "pXOi2cpajtqcXjPk", "j2IzU3MEpCt1Ijlf"]' \
+    --endDate 'HJM92t9j1XT2ErwI' \
+    --startDate 'xkaTnYtr1YDnaXB0' \
     > test.out 2>&1
 eval_tap $? 32 'QueryTotalMatchmakingExpired' test.out
 
@@ -387,15 +393,15 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryTotalMatchmakingMatchTicket \
     --namespace $AB_NAMESPACE \
-    --matchPool 'HKrm8UuNlT86N9yO' \
-    --endDate '0vyD6J5brVo20e6P' \
-    --startDate 'OTjrinAVVovpAAXN' \
+    --matchPool '["JOS4XKVT66sHYPgV", "sfhoEidKw4IP0NVn", "aangorhVFpTRuQyM"]' \
+    --endDate 'roT2hNfKJ7q8sifS' \
+    --startDate 'PmYSsBxtyKWssEn5' \
     > test.out 2>&1
 eval_tap $? 33 'QueryTotalMatchmakingMatchTicket' test.out
 
 #- 34 CreateXrayTicketObservability
 # body param: body
-echo '{"action": "zcpbmX3lLFeXCiaX", "activeAllianceRule": {"max_number": 84, "min_number": 20, "player_max_number": 94, "player_min_number": 55}, "activeMatchingRule": [{"attribute": "CayYAkF18YBwRxcR", "criteria": "EyU5CwqGJF6nDi33", "reference": 0.5533938535152885}, {"attribute": "ztr2QcwlRrReRajl", "criteria": "pk8lfuiJVcktlx9z", "reference": 0.5720797330627989}, {"attribute": "ZVVCc9bpIHEWQMmC", "criteria": "kIqwqpoTVCNrcaVo", "reference": 0.4114572817215185}], "function": "sjIXO2EUsAfBvo6L", "gameMode": "lcalks2R3VMtipTV", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 72, "matchID": "AF8KhOKqbrECijFx", "namespace": "OpOzxeTLJQsZcTEz", "partyID": "XaXUzpsAV6ct6XIT", "remainingPlayersPerTicket": [77, 39, 67], "remainingTickets": 87, "sessionTickID": "CwQSHHdPLwjTngrv", "tickID": 3, "timeToMatchSec": 0.36902311358083284, "timestamp": "1994-09-03T00:00:00Z", "unbackfillReason": "8oLyErKvRtHFGJRo", "unmatchReason": "GW7VBG1VB2sp2x9m"}' > $TEMP_JSON_INPUT
+echo '{"action": "VEvIMEB4pl506fLC", "activeAllianceRule": {"max_number": 66, "min_number": 3, "player_max_number": 23, "player_min_number": 62}, "activeMatchingRule": [{"attribute": "vnfNiABRf1gdXM7Q", "criteria": "lAlnjAfgxOdZdf9t", "reference": 0.6095866669301306}, {"attribute": "HO1qrNyhmUEADczz", "criteria": "rL31HuYKsCBBgwb1", "reference": 0.1237534696372321}, {"attribute": "GjHJgxrcEvnfJqU4", "criteria": "hCv5egSQDePKSZKp", "reference": 0.949101342784212}], "function": "zwDQS1atvJrALaip", "gameMode": "lJgRhedl5Ewh3jDa", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 69, "matchID": "StUiBB1yz3iP8gH8", "namespace": "8UenlMVzIOP8NOf9", "partyID": "1LsD7cWWOgAs8ThM", "remainingPlayersPerTicket": [32, 41, 54], "remainingTickets": 60, "sessionTickID": "GIapYftYZkBXiEhd", "tickID": 17, "timeToMatchSec": 0.8415652045127597, "timestamp": "1975-06-16T00:00:00Z", "unbackfillReason": "VBAEUvoBlbH02bob", "unmatchReason": "xtljIfHBgjP9onbx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionhistory \
     --op CreateXrayTicketObservability \
@@ -404,31 +410,42 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 34 'CreateXrayTicketObservability' test.out
 
-#- 35 QueryXrayTimelineByTicketID
+#- 35 CreateXrayBulkTicketObservability
+# body param: body
+echo '{"ticketObservabilities": [{"action": "FcxS2OZZfXO3HkJT", "activeAllianceRule": {"max_number": 83, "min_number": 86, "player_max_number": 38, "player_min_number": 6}, "activeMatchingRule": [{"attribute": "AopmjI7CbY2WuwRU", "criteria": "T9IivgC4mJ5OHuNE", "reference": 0.7621623430243994}, {"attribute": "QK4Mvk00I9GqAhhj", "criteria": "NIivdIcaEQfNETQC", "reference": 0.4439608579922527}, {"attribute": "PK1mYwKVQoydbYjX", "criteria": "ZyBpqhCJBtFOm3iC", "reference": 0.24236125557556087}], "function": "u0lhhgutt3rQuKP1", "gameMode": "OEtKFBjNihHU8GP8", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 23, "matchID": "SvYXKz4BGjbsrRBV", "namespace": "8aztJ86yQK1AsC18", "partyID": "UO6JcXmwQfkseTpH", "remainingPlayersPerTicket": [61, 23, 77], "remainingTickets": 60, "sessionTickID": "zaOwIF5tEsCwoAVc", "tickID": 47, "timeToMatchSec": 0.46105367839224687, "timestamp": "1994-03-15T00:00:00Z", "unbackfillReason": "j80gzFvpvIerFEyx", "unmatchReason": "TugoTd50RmJFX9v4"}, {"action": "GPfyGuQ2UEl0U5Z9", "activeAllianceRule": {"max_number": 95, "min_number": 57, "player_max_number": 27, "player_min_number": 50}, "activeMatchingRule": [{"attribute": "QmZqX15hBb4dlNTI", "criteria": "BDtHunwNLLfKCQKu", "reference": 0.3268301109829801}, {"attribute": "2MWXpEpNjHWPcFSn", "criteria": "M7GAvk19sXDish7K", "reference": 0.7444467671483146}, {"attribute": "VhmAwmAygsnn8pM7", "criteria": "l6v0elLMceGGgb5F", "reference": 0.5674795737554975}], "function": "HWE6s13b7dmnPijw", "gameMode": "6U8GGp0E886E90E4", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 29, "matchID": "ia6cqoWmnhtuzxir", "namespace": "12r0VUWI0kJAczj5", "partyID": "ApcsiEQ65llgGnTH", "remainingPlayersPerTicket": [55, 19, 37], "remainingTickets": 93, "sessionTickID": "DosOo2kSUfIA1guT", "tickID": 81, "timeToMatchSec": 0.09557541002675951, "timestamp": "1981-01-23T00:00:00Z", "unbackfillReason": "haejXSV2oH2uH8S4", "unmatchReason": "Zx0ACteueMOmYP4S"}, {"action": "gxAIQTTKsdmtHu1d", "activeAllianceRule": {"max_number": 67, "min_number": 66, "player_max_number": 52, "player_min_number": 42}, "activeMatchingRule": [{"attribute": "oQLYIWPPZvyPupim", "criteria": "CENHEenqjRSxO9oZ", "reference": 0.8415280858770954}, {"attribute": "fCxLR0GfjwCmDrbD", "criteria": "R0Q0ixpqYtkZuhL6", "reference": 0.26349588290197434}, {"attribute": "bAhRExsnbWSH45La", "criteria": "rTmOqto4OtwF9uPU", "reference": 0.43063412907103726}], "function": "xerdIqWmOoMyYp2t", "gameMode": "SrLxpJnj9JtgjWmj", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 81, "matchID": "JTYuHpnpVX5u4gw4", "namespace": "XBXDD7BG73sDdDoX", "partyID": "nB8F5X05KUgGKfDS", "remainingPlayersPerTicket": [67, 83, 15], "remainingTickets": 60, "sessionTickID": "3vQFPSYCi8WEjR3w", "tickID": 33, "timeToMatchSec": 0.5839554238505302, "timestamp": "1986-04-17T00:00:00Z", "unbackfillReason": "nx8cNfDK45zWtwYh", "unmatchReason": "RoNPwKema6caMTOc"}]}' > $TEMP_JSON_INPUT
+$CLI_EXE \
+    --sn sessionhistory \
+    --op CreateXrayBulkTicketObservability \
+    --namespace $AB_NAMESPACE \
+    --reqfile $TEMP_JSON_INPUT \
+    > test.out 2>&1
+eval_tap $? 35 'CreateXrayBulkTicketObservability' test.out
+
+#- 36 QueryXrayTimelineByTicketID
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByTicketID \
     --namespace $AB_NAMESPACE \
-    --ticketId 'szGGoyhGZAzt2OVB' \
-    --limit '93' \
-    --offset '43' \
-    --endDate 'LwSH8hWRU9pbItGQ' \
-    --startDate '7VUWBhGolwafIfbF' \
+    --ticketId 'ivPAkmP8Awb0Nqtv' \
+    --limit '91' \
+    --offset '64' \
+    --endDate 'R9q6l5k9BLQMrPoT' \
+    --startDate 'uxdzEYAw5VdW05Wn' \
     > test.out 2>&1
-eval_tap $? 35 'QueryXrayTimelineByTicketID' test.out
+eval_tap $? 36 'QueryXrayTimelineByTicketID' test.out
 
-#- 36 QueryXrayTimelineByUserID
+#- 37 QueryXrayTimelineByUserID
 $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByUserID \
     --namespace $AB_NAMESPACE \
-    --userId '1GLFnrQ4T5cmw7U1' \
-    --limit '94' \
-    --offset '11' \
-    --endDate 'xiS06UEoaDZpXOWz' \
-    --startDate 'pXOi2cpajtqcXjPk' \
+    --userId 'QEAbK416LN2N6D6y' \
+    --limit '4' \
+    --offset '52' \
+    --endDate 'mU8UvONyjv3GQuLH' \
+    --startDate 'oQ6ehLLK5h1bE9WU' \
     > test.out 2>&1
-eval_tap $? 36 'QueryXrayTimelineByUserID' test.out
+eval_tap $? 37 'QueryXrayTimelineByUserID' test.out
 
 
 # remove artifacts

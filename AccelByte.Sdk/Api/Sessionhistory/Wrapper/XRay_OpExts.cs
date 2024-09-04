@@ -15,7 +15,7 @@ namespace AccelByte.Sdk.Api
         public static Sessionhistory.Model.ApimodelsXRayMatchPoolQueryResponse? Execute(
             this QueryXrayMatchPool.QueryXrayMatchPoolBuilder builder,
             string namespace_,
-            string poolName,
+            List<string> poolName,
             string endDate,
             string startDate
         )
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api
         public static async Task<Sessionhistory.Model.ApimodelsXRayMatchPoolQueryResponse?> ExecuteAsync(
             this QueryXrayMatchPool.QueryXrayMatchPoolBuilder builder,
             string namespace_,
-            string poolName,
+            List<string> poolName,
             string endDate,
             string startDate
         )
@@ -585,6 +585,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).CreateXrayTicketObservabilityAsync(op);
+        }
+        public static Sessionhistory.Model.ApimodelsXRayBulkTicketObservabilityResponse? Execute(
+            this CreateXrayBulkTicketObservability.CreateXrayBulkTicketObservabilityBuilder builder,
+            ApimodelsXRayBulkTicketObservabilityRequest body,
+            string namespace_
+        )
+        {
+            CreateXrayBulkTicketObservability op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).CreateXrayBulkTicketObservability(op);
+        }
+        public static async Task<Sessionhistory.Model.ApimodelsXRayBulkTicketObservabilityResponse?> ExecuteAsync(
+            this CreateXrayBulkTicketObservability.CreateXrayBulkTicketObservabilityBuilder builder,
+            ApimodelsXRayBulkTicketObservabilityRequest body,
+            string namespace_
+        )
+        {
+            CreateXrayBulkTicketObservability op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Sessionhistory.Wrapper.XRay)builder.WrapperObject!).CreateXrayBulkTicketObservabilityAsync(op);
         }
         public static Sessionhistory.Model.ApimodelsXRayTicketQueryResponse? Execute(
             this QueryXrayTimelineByTicketID.QueryXrayTimelineByTicketIDBuilder builder,

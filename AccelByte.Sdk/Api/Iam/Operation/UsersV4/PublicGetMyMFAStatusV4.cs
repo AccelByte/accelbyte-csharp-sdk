@@ -17,7 +17,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetMyMFAStatusV4
     ///
     /// This endpoint will get user's' MFA status.
+    /// ---------
+    /// **Substitute endpoint**: /iam/v4/public/namespaces/{namespace}/users/me/mfa/status [GET]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetMyMFAStatusV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -66,6 +66,8 @@ namespace AccelByte.Sdk.Api.Gametelemetry.Operation
     /// 
     /// 
     /// - **ClientTimestamp (optional)**: Timestamp of the event captured by the client SDK.
+    /// 
+    /// - **DeviceType (optional)**: The device type of the user.
     /// </summary>
     public class ProtectedSaveEventsGameTelemetryV1ProtectedEventsPost : AccelByte.Sdk.Core.Operation
     {

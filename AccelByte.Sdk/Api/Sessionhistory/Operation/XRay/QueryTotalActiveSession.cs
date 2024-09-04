@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             : OperationBuilder<QueryTotalActiveSessionBuilder>
         {
 
+            public List<string>? MatchPool { get; set; }
+
             public string? Region { get; set; }
 
 
@@ -35,6 +37,12 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             internal QueryTotalActiveSessionBuilder() { }
 
+
+            public QueryTotalActiveSessionBuilder SetMatchPool(List<string> _matchPool)
+            {
+                MatchPool = _matchPool;
+                return this;
+            }
 
             public QueryTotalActiveSessionBuilder SetRegion(string _region)
             {
@@ -74,12 +82,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.MatchPool is not null) QueryParams["matchPool"] = builder.MatchPool;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 
@@ -89,6 +99,7 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public QueryTotalActiveSession(
             string namespace_,
+            List<string>? matchPool,
             string? region,
             string endDate,
             string startDate
@@ -96,12 +107,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (matchPool is not null) QueryParams["matchPool"] = matchPool;
             if (region is not null) QueryParams["region"] = region;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
 
 
+            CollectionFormatMap["matchPool"] = "csv";
 
 
 

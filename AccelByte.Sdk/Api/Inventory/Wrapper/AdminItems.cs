@@ -43,9 +43,17 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             get { return Operation.AdminBulkRemoveItems.Builder.SetWrapperObject(this); }
         }
+        public AdminBulkSaveItemToInventory.AdminBulkSaveItemToInventoryBuilder AdminBulkSaveItemToInventoryOp
+        {
+            get { return Operation.AdminBulkSaveItemToInventory.Builder.SetWrapperObject(this); }
+        }
         public AdminSaveItem.AdminSaveItemBuilder AdminSaveItemOp
         {
             get { return Operation.AdminSaveItem.Builder.SetWrapperObject(this); }
+        }
+        public AdminBulkSaveItem.AdminBulkSaveItemBuilder AdminBulkSaveItemOp
+        {
+            get { return Operation.AdminBulkSaveItem.Builder.SetWrapperObject(this); }
         }
         public AdminSyncUserEntitlements.AdminSyncUserEntitlementsBuilder AdminSyncUserEntitlementsOp
         {
@@ -203,6 +211,22 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ApimodelsBulkSaveItemResp>? AdminBulkSaveItemToInventory(AdminBulkSaveItemToInventory input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsBulkSaveItemResp>?> AdminBulkSaveItemToInventoryAsync(AdminBulkSaveItemToInventory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsItemResp? AdminSaveItem(AdminSaveItem input)
         {
             var response = _sdk.RunRequest(input);
@@ -233,6 +257,22 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1, T2, T3>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ApimodelsBulkSaveItemResp>? AdminBulkSaveItem(AdminBulkSaveItem input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ApimodelsBulkSaveItemResp>?> AdminBulkSaveItemAsync(AdminBulkSaveItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

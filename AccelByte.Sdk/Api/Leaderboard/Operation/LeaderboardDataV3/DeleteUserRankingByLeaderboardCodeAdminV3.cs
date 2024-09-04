@@ -18,17 +18,12 @@ namespace AccelByte.Sdk.Api.Leaderboard.Operation
     ///
     /// 
     /// 
-    ///  [Test Facility Only]
-    /// 
-    /// 
-    /// 
-    /// 
     /// This endpoint will delete user ranking by leaderboard code
     /// 
     /// 
     /// 
     /// 
-    /// Note: this endpoint only works on development environment.
+    /// Warning : This will permanently delete your data. Make sure to back up anything important before continuing.
     /// </summary>
     public class DeleteUserRankingByLeaderboardCodeAdminV3 : AccelByte.Sdk.Core.Operation
     {

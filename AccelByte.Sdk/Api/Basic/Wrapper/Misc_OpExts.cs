@@ -131,7 +131,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Basic.Wrapper.Misc)builder.WrapperObject!).DeleteCountryGroupAsync(op);
         }
-        public static Dictionary<string, object>? Execute(
+        public static Dictionary<string, string>? Execute(
             this GetLanguages.GetLanguagesBuilder builder,
             string namespace_
         )
@@ -142,7 +142,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Basic.Wrapper.Misc)builder.WrapperObject!).GetLanguages(op);
         }
-        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+        public static async Task<Dictionary<string, string>?> ExecuteAsync(
             this GetLanguages.GetLanguagesBuilder builder,
             string namespace_
         )

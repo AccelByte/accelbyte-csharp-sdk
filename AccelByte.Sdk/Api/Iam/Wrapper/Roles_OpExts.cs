@@ -741,6 +741,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Roles)builder.WrapperObject!).AdminAddRoleMembersV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminRemoveRoleMembersV3.AdminRemoveRoleMembersV3Builder builder,
             ModelRoleMembersRequestV3 body,

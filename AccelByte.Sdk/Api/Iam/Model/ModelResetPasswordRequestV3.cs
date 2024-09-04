@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelResetPasswordRequestV3 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("clientId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ClientId { get; set; }
+
         [JsonPropertyName("code")]
         public string? Code { get; set; }
 

@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("matchPool")]
+        public List<string>? MatchPool { get; set; }
+
         [SdkCommandArgument("endDate")]
         public string EndDate { get; set; } = String.Empty;
 
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
 
             var opBuilder = AccelByte.Sdk.Api.Sessionhistory.Operation.QueryMatchLengthDurationp99.Builder;
 
+            if (MatchPool != null)
+                opBuilder.SetMatchPool((List<string>)MatchPool);
 
 
 

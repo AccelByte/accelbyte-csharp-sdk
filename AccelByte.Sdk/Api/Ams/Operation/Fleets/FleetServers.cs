@@ -27,12 +27,28 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<FleetServersBuilder>
         {
 
+            public string? Count { get; set; }
+
+            public long? Offset { get; set; }
+
 
 
 
 
             internal FleetServersBuilder() { }
 
+
+            public FleetServersBuilder SetCount(string _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public FleetServersBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
 
 
 
@@ -64,6 +80,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
+            if (builder.Count is not null) QueryParams["count"] = builder.Count;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
 
@@ -76,12 +94,16 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
         public FleetServers(
             string fleetID,
-            string namespace_
+            string namespace_,
+            string? count,
+            long? offset
         )
         {
             PathParams["fleetID"] = fleetID;
             PathParams["namespace"] = namespace_;
 
+            if (count is not null) QueryParams["count"] = count;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 
 

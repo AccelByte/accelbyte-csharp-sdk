@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiFleetServersResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("paging")]
+        public ApiPagingInfo? Paging { get; set; }
+
         [JsonPropertyName("regions")]
         public List<ApiFleetRegionalServerCounts>? Regions { get; set; }
 
