@@ -1,7 +1,26 @@
 <a name="v0.65.0"></a>
-## [v0.65.0] - 2024-09-05 - DRAFT
+## [v0.65.0] - 2024-09-05
 
 ### BREAKING CHANGE
+
+### Basic
+
+The following operation(s) has been updated.
+- Operation `AccelByte.Sdk/Api/Basic/Operation/Misc/GetLanguages`
+    - response changed from `Dictionary<string, object>?` to `Dictionary<string, string>?`.
+
+### IAM
+
+The following operation(s) has been updated.
+- Operation `AccelByte.Sdk/Api/Iam/Operation/UsersV4/AdminEnableMyAuthenticatorV4`
+    - field `Code` is now required.
+- Operation `AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicEnableMyAuthenticatorV4`
+    - field `Code` is now required.
+
+### Inventory
+
+- Model `AccelByte.Sdk.Api.Inventory.Model.ApimodelsCreateItem`
+    - field `Source` type change from `string?` to `ApimodelsCreateItemSource?`.
 
 ### Platform
 
@@ -292,3 +311,21 @@ The following operation(s) has been updated.
     - request body is now required.
 - Operation `AccelByte.Sdk/Api/Platform/Operation/Wallet/UpdatePlatformWalletConfig`
     - request body is now required.
+
+### Session History
+
+The following operation(s) has been updated.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingCanceled`
+    - `MatchPool` parameter changed from `string?` to `List<string>?`.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingCreated`
+    - `MatchPool` parameter changed from `string?` to `List<string>?`.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingExpired`
+    - `MatchPool` parameter changed from `string?` to `List<string>?`.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingMatch`
+    - `MatchPool` parameter changed from `string?` to `List<string>?`.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryTotalMatchmakingMatchTicket`
+    - `MatchPool` parameter changed from `string?` to `List<string>?`.
+- Operation `AccelByte.Sdk/Api/Sessionhistory/Operation/XRay/QueryXrayMatchPool`
+    - `poolName` parameter changed from `string` to `List<string>`.
+
+[v0.65.0]: https://github.com/AccelByte/accelbyte-csharp-sdk/compare/v0.64.0...v0.65.0
