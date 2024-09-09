@@ -180,32 +180,6 @@ _Sdk.Cloudsave.PublicGameRecord.PutGameRecordHandlerV1Op
 _Sdk.Cloudsave.PublicGameRecord.DeleteGameRecordHandlerV1Op
     .Execute("foo_bar_record", _Sdk.Namespace);
 ```
-## EventLog
-
-Source: [EventLogTests.cs](../AccelByte.Sdk.Tests/Services/EventLogTests.cs)
-
-### Query event stream
-
-```csharp
-ModelsGenericQueryPayload eQueryPayload = new ModelsGenericQueryPayload()
-{
-    ClientId = _Sdk.Configuration.ConfigRepository.ClientId
-};
-
-ModelsEventResponseV2? eResp = _Sdk.Eventlog.EventV2.QueryEventStreamHandlerOp
-    .SetOffset(0)
-    .SetPageSize(10)
-    .Execute(eQueryPayload, _Sdk.Namespace);
-```
-
-### Get specific user's event
-
-```csharp
-ModelsEventResponseV2? cResp = _Sdk.Eventlog.EventV2.GetEventSpecificUserV2HandlerOp
-    .SetOffset(0)
-    .SetPageSize(10)
-    .Execute(_Sdk.Namespace, _Sdk.Configuration.Credential!.UserId);
-```
 ## GameTelemetry
 
 Source: [GameTelemetryTests.cs](../AccelByte.Sdk.Tests/Services/GameTelemetryTests.cs)
