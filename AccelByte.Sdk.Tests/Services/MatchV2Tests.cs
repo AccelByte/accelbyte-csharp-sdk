@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Tests.Services
                         ""match_options"": {
                             ""options"": [
                             {
-                                ""name"": """",
+                                ""name"": ""myopt"",
                                 ""type"": ""any""
                             }
                             ]
