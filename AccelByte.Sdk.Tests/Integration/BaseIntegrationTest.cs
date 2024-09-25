@@ -29,7 +29,9 @@ namespace AccelByte.Sdk.Tests.Integration
 
         public bool IsUsingAGSStarter()
         {
-            return _Sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io");
+            if (_Sdk != null)
+                return _Sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io");
+            return false;
         }
     }
 }

@@ -18,7 +18,10 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class InventoryTests : BaseServiceTests
     {
-        private AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryConfigurationResp? configInventory; // Store the created inventory config for teardown
+        /// <summary>
+        /// Store the created inventory config for teardown
+        /// </summary>
+        private ApimodelsInventoryConfigurationResp? _ConfigInventory = null;
 
         public InventoryTests() : base(true) { }
 
@@ -48,27 +51,30 @@ namespace AccelByte.Sdk.Tests.Services
                 Name = codeInventory
             };
 
-            AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryConfigurationResp? configInventory = _Sdk.Inventory.AdminInventoryConfigurations.AdminCreateInventoryConfigurationOp
+            _ConfigInventory = _Sdk.Inventory.AdminInventoryConfigurations.AdminCreateInventoryConfigurationOp
                 .Execute(cInventoryConfigBody, _Sdk.Namespace);
             #endregion
-            Assert.IsNotNull(configInventory);
+            Assert.IsNotNull(_ConfigInventory);
 
             #region Create an inventory
             string userId = _Sdk.Configuration.Credential!.UserId;
             ApimodelsCreateInventoryReq cInventoryBody = new ApimodelsCreateInventoryReq()
             {
-                InventoryConfigurationCode = configInventory!.Code,
+                InventoryConfigurationCode = codeInventory,
                 UserId = userId,
             };
 
-            AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryResp? cInventory = _Sdk.Inventory.AdminInventories.AdminCreateInventoryOp
+            string inventoryId = "";
+            ApimodelsInventoryResp? cInventory = _Sdk.Inventory.AdminInventories.AdminCreateInventoryOp
                 .Execute(cInventoryBody, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(cInventory);
+            if (cInventory != null && cInventory.Id != null)
+                inventoryId = cInventory.Id;
 
             #region Get an inventory
-            AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryResp? gInventory = _Sdk.Inventory.AdminInventories.AdminGetInventoryOp
-                .Execute(cInventory.Id, _Sdk.Namespace);
+            ApimodelsInventoryResp? gInventory = _Sdk.Inventory.AdminInventories.AdminGetInventoryOp
+                .Execute(inventoryId, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(gInventory);
 
@@ -78,8 +84,8 @@ namespace AccelByte.Sdk.Tests.Services
                 IncMaxSlots = 2,
             };
 
-            AccelByte.Sdk.Api.Inventory.Model.ApimodelsInventoryResp? uInventory = _Sdk.Inventory.AdminInventories.AdminUpdateInventoryOp
-                .Execute(uInventoryBody, cInventory.Id, _Sdk.Namespace);
+            ApimodelsInventoryResp? uInventory = _Sdk.Inventory.AdminInventories.AdminUpdateInventoryOp
+                .Execute(uInventoryBody, inventoryId, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(uInventory);
 
@@ -89,7 +95,7 @@ namespace AccelByte.Sdk.Tests.Services
                 Message = "delete",
             };
             _Sdk.Inventory.AdminInventories.DeleteInventoryOp
-                .Execute(dInventoryBody, cInventory.Id, _Sdk.Namespace);
+                .Execute(dInventoryBody, inventoryId, _Sdk.Namespace);
             #endregion
         }
 
@@ -97,12 +103,12 @@ namespace AccelByte.Sdk.Tests.Services
         public void TearDown()
         {
             Assert.IsNotNull(_Sdk);
-            if (_Sdk == null || configInventory == null)
+            if (_Sdk == null || _ConfigInventory == null)
                 return;
 
             // Clean up Inventory configuration
             _Sdk.Inventory.AdminInventoryConfigurations.AdminDeleteInventoryConfigurationOp
-                .Execute(configInventory.Id, _Sdk.Namespace);
+                .Execute(_ConfigInventory.Id!, _Sdk.Namespace);
         }
     }
 }
