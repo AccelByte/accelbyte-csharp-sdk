@@ -197,7 +197,7 @@ namespace AccelByte.Sdk.Core
             var buffer = new ArraySegment<byte>(new byte[2048]);
             do
             {
-                WebSocketReceiveResult? result = null;
+                WebSocketReceiveResult? result;
                 bool isReceiveError = false;
                 using (MemoryStream ms = new MemoryStream())
                 {
@@ -210,6 +210,7 @@ namespace AccelByte.Sdk.Core
                         }
                         catch (Exception x)
                         {
+                            result = null;
                             if (x.Message == "The WebSocket received an invalid control message.")
                                 OnReceiveError?.Invoke(x.Message, ERROR_INVALID_CONTROL_MESSAGE);
                             else if (x.Message == "The WebSocket received compressed frame when compression is not enabled.")
