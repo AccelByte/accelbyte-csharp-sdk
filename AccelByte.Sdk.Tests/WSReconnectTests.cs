@@ -78,59 +78,67 @@ namespace AccelByte.Sdk.Tests
 
             }, null, Timeout.Infinite, Timeout.Infinite);
 
-
-            int connectCount = 0;
-            int disconnectCount = 0;
-            List<string> sessionIds = new();
-
-            lobbyWs.OnConnected = () =>
+            try
             {
-                connectCount++;
-            };
+                int connectCount = 0;
+                int disconnectCount = 0;
+                List<string> sessionIds = new();
 
-            lobbyWs.OnClosed = (code, isError) =>
+                lobbyWs.OnConnected = () =>
+                {
+                    connectCount++;
+                };
+
+                lobbyWs.OnClosed = (code, isError) =>
+                {
+                    disconnectCount++;
+                };
+
+                lobbyWs.OnMessagePrehandled = () =>
+                {
+                    if (lobbyWs.AdditionalHeaders.ContainsKey("X-Ab-LobbySessionID"))
+                        sessionIds.Add(lobbyWs.AdditionalHeaders["X-Ab-LobbySessionID"]);
+                };
+
+                //start connect
+                await lobbyWs.Connect(false);
+
+                //tell mock server to close connection in 2s
+                forceCloseTimer.Change(2000, Timeout.Infinite);
+
+                //close lobby ws after 4s
+                finishTimer.Change(4000, Timeout.Infinite);
+
+                //start listen
+                await lobbyWs.Listen();
+
+                //connect count must be greater or equal than 2, why?
+                //first from normal connect
+                //second from reconnect after force close
+                //if less than 2, then something is not working
+                Assert.GreaterOrEqual(connectCount, 2, "Connect count is under 2, reconnect didn't happen");
+
+                //disconnect count must be greater or equal than 2, why?
+                //first from forced close
+                //second from normal closure
+                //if less than 2, then something is not working
+                Assert.GreaterOrEqual(disconnectCount, 2, "Disconnect count is under 2, reconnect didn't happen");
+
+                //every connect/reconnect will store session id in above logic
+                //this assertion is to make sure that all stored ids are same.
+                var isSameId = sessionIds.All(x => x == sessionIds.First());
+                Assert.IsTrue(isSameId, "Session id is different between connect session(s).");                
+            }
+            catch (Exception ex)
             {
-                disconnectCount++;
-            };
-
-            lobbyWs.OnMessagePrehandled = () =>
+                Assert.Fail(ex.ToString());
+            }
+            finally
             {
-                if (lobbyWs.AdditionalHeaders.ContainsKey("X-Ab-LobbySessionID"))
-                    sessionIds.Add(lobbyWs.AdditionalHeaders["X-Ab-LobbySessionID"]);
-            };
-
-            //start connect
-            await lobbyWs.Connect(false);
-
-            //tell mock server to close connection in 2s
-            forceCloseTimer.Change(2000, Timeout.Infinite);
-
-            //close lobby ws after 4s
-            finishTimer.Change(4000, Timeout.Infinite);
-
-            //start listen
-            await lobbyWs.Listen();
-
-            //connect count must be greater or equal than 2, why?
-            //first from normal connect
-            //second from reconnect after force close
-            //if less than 2, then something is not working
-            Assert.GreaterOrEqual(connectCount, 2, "Connect count is under 2, reconnect didn't happen");
-
-            //disconnect count must be greater or equal than 2, why?
-            //first from forced close
-            //second from normal closure
-            //if less than 2, then something is not working
-            Assert.GreaterOrEqual(disconnectCount, 2, "Disconnect count is under 2, reconnect didn't happen");
-
-            //every connect/reconnect will store session id in above logic
-            //this assertion is to make sure that all stored ids are same.
-            var isSameId = sessionIds.All(x => x == sessionIds.First());
-            Assert.IsTrue(isSameId, "Session id is different between connect session(s).");
-
-            //dispose disposable
-            finishTimer.Dispose();
-            forceCloseTimer.Dispose();
+                //dispose disposable
+                finishTimer.Dispose();
+                forceCloseTimer.Dispose();
+            }
         }
 
         [Test]
@@ -162,58 +170,70 @@ namespace AccelByte.Sdk.Tests
 
             }, null, Timeout.Infinite, Timeout.Infinite);
 
-
-            int connectCount = 0;
-            int disconnectCount = 0;
-            List<string> sessionIds = new();
-
-            lobbyWs.OnConnected = () =>
+            try
             {
-                connectCount++;
-            };
+                int connectCount = 0;
+                int disconnectCount = 0;
+                List<string> sessionIds = new();
 
-            lobbyWs.OnClosed = (code, isError) =>
+                lobbyWs.OnConnected = () =>
+                {
+                    connectCount++;
+                };
+
+                lobbyWs.OnClosed = (code, isError) =>
+                {
+                    disconnectCount++;
+                };
+
+                lobbyWs.OnMessagePrehandled = () =>
+                {
+                    if (lobbyWs.AdditionalHeaders.ContainsKey("X-Ab-LobbySessionID"))
+                        sessionIds.Add(lobbyWs.AdditionalHeaders["X-Ab-LobbySessionID"]);
+                };
+
+                //start connect
+                await lobbyWs.Connect(false);
+
+                //tell mock server to send disconnect notif
+                forceCloseTimer.Change(2000, Timeout.Infinite);
+
+                //start listen
+                await lobbyWs.Listen();
+
+                //should be normally closed, assert connect and disconnect count
+                Assert.AreEqual(1, connectCount, "Unexpected connect count. WS issue?");
+                Assert.AreEqual(1, disconnectCount, "Unexpected disconnect count. WS issue?");
+
+                //reset
+                connectCount = 0;
+                disconnectCount = 0;
+
+                //start connect (again)
+                await lobbyWs.Connect(false);
+
+                //tell mock server to send disconnect notif
+                forceCloseTimer.Change(2000, Timeout.Infinite);
+
+                //start listen
+                await lobbyWs.Listen();
+
+                //should be normally closed, assert connect and disconnect count
+                //But now we'll be only check session ids.
+
+                var isSameId = sessionIds.All(x => x == sessionIds.First());
+                Assert.IsFalse(isSameId, "Session id is not different between connect session(s).");
+            }
+            catch (Exception ex)
             {
-                disconnectCount++;
-            };
-
-            lobbyWs.OnMessagePrehandled = () =>
+                Assert.Fail(ex.ToString());
+            }
+            finally
             {
-                if (lobbyWs.AdditionalHeaders.ContainsKey("X-Ab-LobbySessionID"))
-                    sessionIds.Add(lobbyWs.AdditionalHeaders["X-Ab-LobbySessionID"]);
-            };
-
-            //start connect
-            await lobbyWs.Connect(false);
-
-            //tell mock server to send disconnect notif
-            forceCloseTimer.Change(2000, Timeout.Infinite);
-
-            //start listen
-            await lobbyWs.Listen();
-
-            //should be normally closed, assert connect and disconnect count
-            Assert.AreEqual(1, connectCount, "Unexpected connect count. WS issue?");
-            Assert.AreEqual(1, disconnectCount, "Unexpected disconnect count. WS issue?");
-
-            //reset
-            connectCount = 0;
-            disconnectCount = 0;
-
-            //start connect (again)
-            await lobbyWs.Connect(false);
-
-            //tell mock server to send disconnect notif
-            forceCloseTimer.Change(2000, Timeout.Infinite);
-
-            //start listen
-            await lobbyWs.Listen();
-
-            //should be normally closed, assert connect and disconnect count
-            //But now we'll be only check session ids.
-
-            var isSameId = sessionIds.All(x => x == sessionIds.First());
-            Assert.IsFalse(isSameId, "Session id is not different between connect session(s).");
+                //dispose disposable
+                finishTimer.Dispose();
+                forceCloseTimer.Dispose();
+            }
         }
     }
 }
