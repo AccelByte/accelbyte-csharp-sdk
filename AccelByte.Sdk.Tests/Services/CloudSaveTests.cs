@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Tests.Services
         public CloudSaveTests() : base(true) { }
 
         [Test]
-        public void CloudSaveServiceTests()
+        public void CloudSaveGameRecordTests()
         {
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
@@ -95,6 +95,83 @@ namespace AccelByte.Sdk.Tests.Services
                 DisableRetry();
                 gRecord = _Sdk.Cloudsave.PublicGameRecord.GetGameRecordHandlerV1Op
                     .Execute("foo_bar_record", _Sdk.Namespace);
+            });
+        }
+
+        [Test]
+        public void CloudSavePlayerRecordTests()
+        {
+            Assert.IsNotNull(_Sdk);
+            if (_Sdk == null)
+                return;
+
+            string userId = _Sdk.Configuration.Credential!.UserId;
+
+            #region Create new player record
+            ModelsPlayerRecordRequestForTest playerRecord = new ModelsPlayerRecordRequestForTest()
+            {
+                Foo = "bar",
+                FooBar = "foo",
+                FooValue = 4893
+            };
+
+            _Sdk.Cloudsave.PublicPlayerRecord.PostPlayerRecordHandlerV1Op
+                .Execute(playerRecord, "foo_bar_record", _Sdk.Namespace, userId);
+            #endregion
+
+            Wait();
+
+            #region Get player record
+            ModelsPlayerRecordResponse? gRecord = _Sdk.Cloudsave.PublicPlayerRecord.GetPlayerRecordHandlerV1Op
+                .Execute("foo_bar_record", _Sdk.Namespace, userId);
+            #endregion
+            Assert.IsNotNull(gRecord);
+            Assert.IsNotNull(gRecord!.Value);
+
+            Dictionary<string, object> recValue = gRecord.Value!;
+            Assert.IsTrue(recValue.ContainsKey("foo_bar"));
+            Assert.AreEqual("foo", recValue["foo_bar"].ToString());
+
+            #region Update player record
+            ModelsPlayerRecordRequestForTest updateRecord = new ModelsPlayerRecordRequestForTest()
+            {
+                Foo = "bar",
+                FooBar = "update",
+                FooValue = 4893
+            };
+
+            _Sdk.Cloudsave.PublicPlayerRecord.PutPlayerRecordHandlerV1Op
+                .Execute(updateRecord, "foo_bar_record", _Sdk.Namespace, userId);
+            #endregion
+
+            Wait();
+
+            //re-check updated player record
+            gRecord = _Sdk.Cloudsave.PublicPlayerRecord.GetPlayerRecordHandlerV1Op
+                .Execute("foo_bar_record", _Sdk.Namespace, userId);
+            Assert.IsNotNull(gRecord);
+            Assert.IsNotNull(gRecord!.Value);
+
+            recValue = gRecord.Value!;
+            Assert.IsTrue(recValue.ContainsKey("foo"));
+            Assert.AreEqual("bar", recValue["foo"].ToString());
+
+            Assert.IsTrue(recValue.ContainsKey("foo_bar"));
+            Assert.AreEqual("update", recValue["foo_bar"].ToString());
+
+            #region Delete player record
+            _Sdk.Cloudsave.PublicPlayerRecord.DeletePlayerRecordHandlerV1Op
+                .Execute("foo_bar_record", _Sdk.Namespace, userId);
+            #endregion
+
+            Wait();
+
+            //Finally, recheck if the data is truly deleted.
+            HttpResponseException? hrx = Assert.Throws<HttpResponseException>(() =>
+            {
+                DisableRetry();
+                gRecord = _Sdk.Cloudsave.PublicPlayerRecord.GetPlayerRecordHandlerV1Op
+                    .Execute("foo_bar_record", _Sdk.Namespace, userId);
             });
         }
 
