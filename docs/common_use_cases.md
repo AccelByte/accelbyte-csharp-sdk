@@ -180,6 +180,48 @@ _Sdk.Cloudsave.PublicGameRecord.PutGameRecordHandlerV1Op
 _Sdk.Cloudsave.PublicGameRecord.DeleteGameRecordHandlerV1Op
     .Execute("foo_bar_record", _Sdk.Namespace);
 ```
+
+### Create new player record
+
+```csharp
+ModelsPlayerRecordRequestForTest playerRecord = new ModelsPlayerRecordRequestForTest()
+{
+    Foo = "bar",
+    FooBar = "foo",
+    FooValue = 4893
+};
+
+_Sdk.Cloudsave.PublicPlayerRecord.PostPlayerRecordHandlerV1Op
+    .Execute(playerRecord, "foo_bar_record", _Sdk.Namespace, userId);
+```
+
+### Get player record
+
+```csharp
+ModelsPlayerRecordResponse? gRecord = _Sdk.Cloudsave.PublicPlayerRecord.GetPlayerRecordHandlerV1Op
+    .Execute("foo_bar_record", _Sdk.Namespace, userId);
+```
+
+### Update player record
+
+```csharp
+ModelsPlayerRecordRequestForTest updateRecord = new ModelsPlayerRecordRequestForTest()
+{
+    Foo = "bar",
+    FooBar = "update",
+    FooValue = 4893
+};
+
+_Sdk.Cloudsave.PublicPlayerRecord.PutPlayerRecordHandlerV1Op
+    .Execute(updateRecord, "foo_bar_record", _Sdk.Namespace, userId);
+```
+
+### Delete player record
+
+```csharp
+_Sdk.Cloudsave.PublicPlayerRecord.DeletePlayerRecordHandlerV1Op
+    .Execute("foo_bar_record", _Sdk.Namespace, userId);
+```
 ## GameTelemetry
 
 Source: [GameTelemetryTests.cs](../AccelByte.Sdk.Tests/Services/GameTelemetryTests.cs)
@@ -543,7 +585,6 @@ ModelFreeFormNotificationRequest notifBody = new ModelFreeFormNotificationReques
 _Sdk.Lobby.Admin.FreeFormNotificationOp
     .Execute(notifBody, _Sdk.Namespace);
 ```
-
 ## MatchmakingV2
 
 Source: [MatchV2Tests.cs](../AccelByte.Sdk.Tests/Services/MatchV2Tests.cs)
@@ -580,7 +621,7 @@ ApiRuleSetPayload cRuleSetBody = new ApiRuleSetPayload()
             ""match_options"": {
                 ""options"": [
                 {
-                    ""name"": """",
+                    ""name"": ""myopt"",
                     ""type"": ""any""
                 }
                 ]
@@ -946,7 +987,6 @@ ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp
 sdk.Session.Party.PublicPartyLeaveOp
     .Execute(sdk.Namespace, partyId);
 ```
-
 ## Social
 
 Source: [SocialTests.cs](../AccelByte.Sdk.Tests/Services/SocialTests.cs)
