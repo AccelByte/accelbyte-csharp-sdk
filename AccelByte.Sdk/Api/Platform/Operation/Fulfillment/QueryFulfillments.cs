@@ -19,7 +19,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     ///  [Not supported yet in AGS Shared Cloud] Query fulfillments in a namespace.
     /// Other detail info:
     /// 
-    ///   * Returns : list of fulfillment info, storeId field can be ignored.
+    ///   * Returns : list of fulfillment info:
+    ///     * storeId in items can be ignored
+    ///     * error in successList will always be null
     /// </summary>
     public class QueryFulfillments : AccelByte.Sdk.Core.Operation
     {
@@ -176,7 +178,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.FulfillmentHistoryPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.FulfillmentPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -185,13 +187,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.FulfillmentHistoryPagingSlicedResult>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.FulfillmentPagingSlicedResult>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.FulfillmentHistoryPagingSlicedResult>(payload);
+                    return JsonSerializer.Deserialize<Model.FulfillmentPagingSlicedResult>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.FulfillmentHistoryPagingSlicedResult>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.FulfillmentPagingSlicedResult>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

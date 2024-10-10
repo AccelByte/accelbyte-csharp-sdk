@@ -44,9 +44,6 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
-        [JsonPropertyName("partyID")]
-        public string? PartyID { get; set; }
-
         [JsonPropertyName("remainingPlayersPerTicket")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<int>? RemainingPlayersPerTicket { get; set; }
@@ -60,6 +57,9 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
         [JsonPropertyName("tickID")]
         public long? TickID { get; set; }
+
+        [JsonPropertyName("ticketID")]
+        public string? TicketID { get; set; }
 
         [JsonPropertyName("timeToMatchSec")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

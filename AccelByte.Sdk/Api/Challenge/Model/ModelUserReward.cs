@@ -52,8 +52,8 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 
     public class ModelUserRewardStatus : StringEnum<ModelUserRewardStatus>
     {
-        public static readonly ModelUserRewardStatus CLAIM
-            = new ModelUserRewardStatus("CLAIM");
+        public static readonly ModelUserRewardStatus CLAIMED
+            = new ModelUserRewardStatus("CLAIMED");
 
         public static readonly ModelUserRewardStatus UNCLAIMED
             = new ModelUserRewardStatus("UNCLAIMED");

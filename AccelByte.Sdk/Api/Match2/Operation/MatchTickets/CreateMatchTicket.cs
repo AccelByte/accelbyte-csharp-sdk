@@ -52,6 +52,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// * Cross Platform can be disabled with specify only ONE cross_platform. Current matchmaking use this behavior. e.g. cross_platform:[xbox]
     /// * Multiple cross_platform values is considered to be crossplay enabled
     /// 4. This behavior only works for Default Matchmaker. Custom matchmaker (custom gRPC matchmaker) need to consider this on its own implementation.
+    /// 
+    /// ExcludedSessions: allow player to list out game sessions that they want to avoid matching, for example a match that they've recently left or get kicked out from.
     /// </summary>
     public class CreateMatchTicket : AccelByte.Sdk.Core.Operation
     {

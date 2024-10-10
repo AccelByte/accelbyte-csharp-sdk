@@ -1,3 +1,22 @@
+<a name="v0.66.0"></a>
+## [v0.66.0]
+### chore
+- **test:** remove event log integration test
+- **:** repull branch
+- **:** refactor inventory test to cleanup warnings
+- **:** remove eventlog support
+- **:** remove mmv1 and sessionbrowser test
+- **integration:** add player record cloudsave test
+- **docs:** add player record cloudsave integration test
+### docs
+- **:** update common use case to remove eventlog
+- **common use case:** remove deprecated services
+### fix
+- **test:** fill name for match option in match pool integration test
+- **:** update ws reconnect test code
+- **test:** attempt to fix issue found by coverity
+
+
 <a name="v0.65.0"></a>
 ## [v0.65.0]
 ### feat

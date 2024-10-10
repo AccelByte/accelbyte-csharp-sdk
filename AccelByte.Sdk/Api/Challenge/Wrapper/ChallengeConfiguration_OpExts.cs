@@ -60,6 +60,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminCreateChallengeAsync(op);
         }
+        public static Challenge.Model.ModelListChallengeResponse? Execute(
+            this AdminGetActiveChallenges.AdminGetActiveChallengesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetActiveChallenges op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetActiveChallenges(op);
+        }
+        public static async Task<Challenge.Model.ModelListChallengeResponse?> ExecuteAsync(
+            this AdminGetActiveChallenges.AdminGetActiveChallengesBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetActiveChallenges op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminGetActiveChallengesAsync(op);
+        }
         public static Challenge.Model.ModelChallengeResponse? Execute(
             this AdminGetChallenge.AdminGetChallengeBuilder builder,
             string challengeCode,
@@ -219,6 +245,36 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminDeleteTiedChallengeAsync(op);
+        }
+        public static Challenge.Model.ModelChallengeResponse? Execute(
+            this AdminUpdateTiedChallengeSchedule.AdminUpdateTiedChallengeScheduleBuilder builder,
+            ModelUpdateChallengeScheduleRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminUpdateTiedChallengeSchedule op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminUpdateTiedChallengeSchedule(op);
+        }
+        public static async Task<Challenge.Model.ModelChallengeResponse?> ExecuteAsync(
+            this AdminUpdateTiedChallengeSchedule.AdminUpdateTiedChallengeScheduleBuilder builder,
+            ModelUpdateChallengeScheduleRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            AdminUpdateTiedChallengeSchedule op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.ChallengeConfiguration)builder.WrapperObject!).AdminUpdateTiedChallengeScheduleAsync(op);
         }
     }
 }

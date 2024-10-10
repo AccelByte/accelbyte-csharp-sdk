@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("enabled")]
         public List<string>? Enabled { get; set; }
 
+        [JsonPropertyName("remainingBackupCodeCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RemainingBackupCodeCount { get; set; }
+
     }
 
 

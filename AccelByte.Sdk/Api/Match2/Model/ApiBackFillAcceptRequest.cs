@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
 {
     public class ApiBackFillAcceptRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acceptedTicketIds")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? AcceptedTicketIds { get; set; }
+
         [JsonPropertyName("proposalId")]
         public string? ProposalId { get; set; }
 

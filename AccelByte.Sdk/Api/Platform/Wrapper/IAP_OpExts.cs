@@ -82,6 +82,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Platform.Wrapper.IAP)builder.WrapperObject!).DeleteAppleIAPConfigAsync(op);
         }
+        public static Platform.Model.AppleIAPConfigInfo? Execute(
+            this UpdateAppleP8File.UpdateAppleP8FileBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateAppleP8File op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateAppleP8File(op);
+        }
+        public static async Task<Platform.Model.AppleIAPConfigInfo?> ExecuteAsync(
+            this UpdateAppleP8File.UpdateAppleP8FileBuilder builder,
+            string namespace_
+        )
+        {
+            UpdateAppleP8File op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateAppleP8FileAsync(op);
+        }
         public static Platform.Model.EpicGamesIAPConfigInfo? Execute(
             this GetEpicGamesIAPConfig.GetEpicGamesIAPConfigBuilder builder,
             string namespace_
@@ -842,6 +864,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItemAsync(op);
         }
+        public static Platform.Model.AppleIAPConfigVersionInfo? Execute(
+            this GetAppleConfigVersion.GetAppleConfigVersionBuilder builder,
+            string namespace_
+        )
+        {
+            GetAppleConfigVersion op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetAppleConfigVersion(op);
+        }
+        public static async Task<Platform.Model.AppleIAPConfigVersionInfo?> ExecuteAsync(
+            this GetAppleConfigVersion.GetAppleConfigVersionBuilder builder,
+            string namespace_
+        )
+        {
+            GetAppleConfigVersion op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetAppleConfigVersionAsync(op);
+        }
         public static Platform.Model.IAPItemMappingInfo? Execute(
             this GetIAPItemMapping.GetIAPItemMappingBuilder builder,
             string namespace_
@@ -1143,6 +1187,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncXboxInventoryAsync(op);
+        }
+        public static void Execute(
+            this V2PublicFulfillAppleIAPItem.V2PublicFulfillAppleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            V2PublicFulfillAppleIAPItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).V2PublicFulfillAppleIAPItem(op);
+        }
+        public static async Task ExecuteAsync(
+            this V2PublicFulfillAppleIAPItem.V2PublicFulfillAppleIAPItemBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            V2PublicFulfillAppleIAPItem op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).V2PublicFulfillAppleIAPItemAsync(op);
         }
     }
 }

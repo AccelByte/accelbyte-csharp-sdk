@@ -19,13 +19,13 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
-        public QueryEntitlements.QueryEntitlementsBuilder QueryEntitlementsOp
-        {
-            get { return Operation.QueryEntitlements.Builder.SetWrapperObject(this); }
-        }
         public QueryEntitlements1.QueryEntitlements1Builder QueryEntitlements1Op
         {
             get { return Operation.QueryEntitlements1.Builder.SetWrapperObject(this); }
+        }
+        public QueryEntitlements.QueryEntitlementsBuilder QueryEntitlementsOp
+        {
+            get { return Operation.QueryEntitlements.Builder.SetWrapperObject(this); }
         }
         public EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder EnableEntitlementOriginFeatureOp
         {
@@ -252,22 +252,6 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
-        public Model.EntitlementPagingSlicedResult? QueryEntitlements(QueryEntitlements input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<Model.EntitlementPagingSlicedResult?> QueryEntitlementsAsync(QueryEntitlements input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
         public Model.EntitlementPagingSlicedResult? QueryEntitlements1(QueryEntitlements1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -277,6 +261,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.EntitlementPagingSlicedResult?> QueryEntitlements1Async(QueryEntitlements1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EntitlementPagingSlicedResult? QueryEntitlements(QueryEntitlements input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.EntitlementPagingSlicedResult?> QueryEntitlementsAsync(QueryEntitlements input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

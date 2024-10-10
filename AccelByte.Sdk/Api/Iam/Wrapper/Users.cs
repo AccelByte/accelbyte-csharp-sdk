@@ -764,6 +764,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.LinkHeadlessAccountToMyAccountV3.Builder.SetWrapperObject(this); }
         }
+        public PublicGetMyProfileAllowUpdateStatusV3.PublicGetMyProfileAllowUpdateStatusV3Builder PublicGetMyProfileAllowUpdateStatusV3Op
+        {
+            get { return Operation.PublicGetMyProfileAllowUpdateStatusV3.Builder.SetWrapperObject(this); }
+        }
         public PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder PublicSendVerificationLinkV3Op
         {
             get { return Operation.PublicSendVerificationLinkV3.Builder.SetWrapperObject(this); }
@@ -3735,6 +3739,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserProfileUpdateAllowStatus? PublicGetMyProfileAllowUpdateStatusV3(PublicGetMyProfileAllowUpdateStatusV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserProfileUpdateAllowStatus?> PublicGetMyProfileAllowUpdateStatusV3Async(PublicGetMyProfileAllowUpdateStatusV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

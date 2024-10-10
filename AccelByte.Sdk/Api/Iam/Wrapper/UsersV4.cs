@@ -59,6 +59,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminDisableUserMFAV4.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserMFAStatusV4.AdminGetUserMFAStatusV4Builder AdminGetUserMFAStatusV4Op
+        {
+            get { return Operation.AdminGetUserMFAStatusV4.Builder.SetWrapperObject(this); }
+        }
         public AdminListUserRolesV4.AdminListUserRolesV4Builder AdminListUserRolesV4Op
         {
             get { return Operation.AdminListUserRolesV4.Builder.SetWrapperObject(this); }
@@ -452,6 +456,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserMFAStatusResponseV4? AdminGetUserMFAStatusV4(AdminGetUserMFAStatusV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserMFAStatusResponseV4?> AdminGetUserMFAStatusV4Async(AdminGetUserMFAStatusV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -38,6 +38,40 @@ namespace AccelByte.Sdk.Api
 
             return await ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).AdminClaimUsersRewardsAsync(op);
         }
+        public static List<Challenge.Model.ModelUserReward>? Execute(
+            this AdminClaimUserRewardsByGoalCode.AdminClaimUserRewardsByGoalCodeBuilder builder,
+            ModelClaimUserRewardsByGoalCodeRequest body,
+            string challengeCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminClaimUserRewardsByGoalCode op = builder.Build(
+                body,
+                challengeCode,
+                namespace_,
+                userId
+            );
+
+            return ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).AdminClaimUserRewardsByGoalCode(op);
+        }
+        public static async Task<List<Challenge.Model.ModelUserReward>?> ExecuteAsync(
+            this AdminClaimUserRewardsByGoalCode.AdminClaimUserRewardsByGoalCodeBuilder builder,
+            ModelClaimUserRewardsByGoalCodeRequest body,
+            string challengeCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminClaimUserRewardsByGoalCode op = builder.Build(
+                body,
+                challengeCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).AdminClaimUserRewardsByGoalCodeAsync(op);
+        }
         public static Challenge.Model.ModelListUserRewardsResponse? Execute(
             this AdminGetUserRewards.AdminGetUserRewardsBuilder builder,
             string namespace_,
@@ -93,6 +127,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).AdminClaimUserRewardsAsync(op);
+        }
+        public static List<Challenge.Model.ModelUserReward>? Execute(
+            this PublicClaimUserRewardsByGoalCode.PublicClaimUserRewardsByGoalCodeBuilder builder,
+            ModelClaimUserRewardsByGoalCodeRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            PublicClaimUserRewardsByGoalCode op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).PublicClaimUserRewardsByGoalCode(op);
+        }
+        public static async Task<List<Challenge.Model.ModelUserReward>?> ExecuteAsync(
+            this PublicClaimUserRewardsByGoalCode.PublicClaimUserRewardsByGoalCodeBuilder builder,
+            ModelClaimUserRewardsByGoalCodeRequest body,
+            string challengeCode,
+            string namespace_
+        )
+        {
+            PublicClaimUserRewardsByGoalCode op = builder.Build(
+                body,
+                challengeCode,
+                namespace_
+            );
+
+            return await ((Challenge.Wrapper.PlayerReward)builder.WrapperObject!).PublicClaimUserRewardsByGoalCodeAsync(op);
         }
         public static Challenge.Model.ModelListUserRewardsResponse? Execute(
             this PublicGetUserRewards.PublicGetUserRewardsBuilder builder,

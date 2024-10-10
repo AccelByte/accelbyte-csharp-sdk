@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This is the endpoint for an admin to decrypt device id
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDecryptDeviceV4 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

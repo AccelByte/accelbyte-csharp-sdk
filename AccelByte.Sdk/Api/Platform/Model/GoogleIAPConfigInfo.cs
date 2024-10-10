@@ -16,9 +16,21 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("notificationTokenAudience")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? NotificationTokenAudience { get; set; }
+
+        [JsonPropertyName("notificationTokenEmail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? NotificationTokenEmail { get; set; }
+
         [JsonPropertyName("p12FileName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? P12FileName { get; set; }
+
+        [JsonPropertyName("packageName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PackageName { get; set; }
 
         [JsonPropertyName("serviceAccountId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

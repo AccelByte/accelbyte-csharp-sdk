@@ -4840,6 +4840,24 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).LinkHeadlessAccountToMyAccountV3Async(op);
         }
+        public static Iam.Model.ModelUserProfileUpdateAllowStatus? Execute(
+            this PublicGetMyProfileAllowUpdateStatusV3.PublicGetMyProfileAllowUpdateStatusV3Builder builder
+        )
+        {
+            PublicGetMyProfileAllowUpdateStatusV3 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyProfileAllowUpdateStatusV3(op);
+        }
+        public static async Task<Iam.Model.ModelUserProfileUpdateAllowStatus?> ExecuteAsync(
+            this PublicGetMyProfileAllowUpdateStatusV3.PublicGetMyProfileAllowUpdateStatusV3Builder builder
+        )
+        {
+            PublicGetMyProfileAllowUpdateStatusV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyProfileAllowUpdateStatusV3Async(op);
+        }
         public static void Execute(
             this PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder builder,
             ModelSendVerificationLinkRequest body

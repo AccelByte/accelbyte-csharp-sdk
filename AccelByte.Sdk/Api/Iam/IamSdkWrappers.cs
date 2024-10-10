@@ -112,6 +112,17 @@ namespace AccelByte.Sdk.Core
         }
         private Country? _Country = null;
 
+        public LoginAllowlist LoginAllowlist
+        {
+            get
+            {
+                if (_LoginAllowlist == null)
+                    _LoginAllowlist = new LoginAllowlist(_SdkObject);
+                return _LoginAllowlist;
+            }
+        }
+        private LoginAllowlist? _LoginAllowlist = null;
+
         public ThirdPartyCredential ThirdPartyCredential
         {
             get
@@ -133,6 +144,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private SSOCredential? _SSOCredential = null;
+
+        public ProfileUpdateStrategy ProfileUpdateStrategy
+        {
+            get
+            {
+                if (_ProfileUpdateStrategy == null)
+                    _ProfileUpdateStrategy = new ProfileUpdateStrategy(_SdkObject);
+                return _ProfileUpdateStrategy;
+            }
+        }
+        private ProfileUpdateStrategy? _ProfileUpdateStrategy = null;
 
         public OverrideRoleConfigV3 OverrideRoleConfigV3
         {

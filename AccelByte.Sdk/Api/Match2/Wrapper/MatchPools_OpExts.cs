@@ -220,5 +220,31 @@ namespace AccelByte.Sdk.Api
 
             return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).AdminGetMatchPoolTicketsAsync(op);
         }
+        public static Match2.Model.ApiPlayerMetricRecord? Execute(
+            this PublicGetPlayerMetric.PublicGetPlayerMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            PublicGetPlayerMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return ((Match2.Wrapper.MatchPools)builder.WrapperObject!).PublicGetPlayerMetric(op);
+        }
+        public static async Task<Match2.Model.ApiPlayerMetricRecord?> ExecuteAsync(
+            this PublicGetPlayerMetric.PublicGetPlayerMetricBuilder builder,
+            string namespace_,
+            string pool
+        )
+        {
+            PublicGetPlayerMetric op = builder.Build(
+                namespace_,
+                pool
+            );
+
+            return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).PublicGetPlayerMetricAsync(op);
+        }
     }
 }

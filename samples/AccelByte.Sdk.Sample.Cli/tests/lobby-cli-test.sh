@@ -237,7 +237,7 @@ eval_tap $? 19 'AdminGetLogConfig' test.out
 
 #- 20 AdminPatchUpdateLogConfig
 # body param: body
-echo '{"logLevel": "trace", "socketLogEnabled": false}' > $TEMP_JSON_INPUT
+echo '{"logLevel": "trace", "logLevelDB": "warning", "slowQueryThreshold": 20, "socketLogEnabled": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminPatchUpdateLogConfig \
@@ -255,7 +255,7 @@ eval_tap $? 21 'AdminGetConfigV1' test.out
 
 #- 22 AdminUpdateConfigV1
 # body param: body
-echo '{"allowInviteNonConnectedUser": false, "allowJoinPartyDuringMatchmaking": false, "autoKickOnDisconnect": false, "autoKickOnDisconnectDelay": 88, "cancelTicketOnDisconnect": true, "chatRateLimitBurst": 62, "chatRateLimitDuration": 59, "concurrentUsersLimit": 60, "disableInvitationOnJoinParty": false, "enableChat": false, "entitlementCheck": true, "entitlementItemID": "eNq0CvMXtyUWXrdZ", "generalRateLimitBurst": 0, "generalRateLimitDuration": 81, "keepPresenceActivityOnDisconnect": true, "maxDSWaitTime": 8, "maxFriendsLimit": 67, "maxPartyMember": 1, "profanityFilter": false, "readyConsentTimeout": 42, "unregisterDelay": 66}' > $TEMP_JSON_INPUT
+echo '{"allowInviteNonConnectedUser": false, "allowJoinPartyDuringMatchmaking": false, "autoKickOnDisconnect": true, "autoKickOnDisconnectDelay": 62, "cancelTicketOnDisconnect": true, "chatRateLimitBurst": 60, "chatRateLimitDuration": 27, "concurrentUsersLimit": 24, "disableInvitationOnJoinParty": true, "enableChat": false, "entitlementCheck": false, "entitlementItemID": "Nq0CvMXtyUWXrdZa", "generalRateLimitBurst": 65, "generalRateLimitDuration": 44, "keepPresenceActivityOnDisconnect": false, "maxDSWaitTime": 67, "maxFriendsLimit": 1, "maxPartyMember": 5, "profanityFilter": true, "readyConsentTimeout": 66, "unregisterDelay": 87}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op AdminUpdateConfigV1 \
@@ -288,11 +288,11 @@ $CLI_EXE \
     --sn lobby \
     --op GetListOfFriends \
     --namespace $AB_NAMESPACE \
-    --userId 'Q14AhsxaALiBwpNJ' \
-    --friendId 'ornrCQpMJj5igqat' \
-    --friendIds '["8xnPoWTdHAkcyAy4", "drHlPcXGGl0Xw3ve", "BfrpCrnbaxhEvn3S"]' \
-    --limit '67' \
-    --offset '64' \
+    --userId 'T2x6o28Njxyw7RHl' \
+    --friendId 'dq0m7NjUZ95Z5XDL' \
+    --friendIds '["BN9YGVPtkjt0OyBl", "Ji4RbZ0Iy11mfOFj", "CzZVcGomWF1oAqUN"]' \
+    --limit '64' \
+    --offset '33' \
     > test.out 2>&1
 eval_tap $? 25 'GetListOfFriends' test.out
 
@@ -301,10 +301,10 @@ $CLI_EXE \
     --sn lobby \
     --op GetIncomingFriendRequests \
     --namespace $AB_NAMESPACE \
-    --userId 'qcH91fC3aJEoqWaF' \
-    --friendId 'AGD6PRg95m07l03v' \
-    --limit '40' \
-    --offset '22' \
+    --userId 'DtXnXLvOAsW8wYh4' \
+    --friendId 'gq7pRVZVLJiDx3au' \
+    --limit '22' \
+    --offset '2' \
     > test.out 2>&1
 eval_tap $? 26 'GetIncomingFriendRequests' test.out
 
@@ -313,9 +313,9 @@ $CLI_EXE \
     --sn lobby \
     --op AdminListFriendsOfFriends \
     --namespace $AB_NAMESPACE \
-    --userId 'b9QjhzDlnJmi4XaB' \
-    --friendId 'TgoXjfdUQHa3Rxsp' \
-    --limit '92' \
+    --userId 'MFzeiMRkcOr1L0TM' \
+    --friendId 'IczbYilOziwG8CPL' \
+    --limit '82' \
     --nopaging 'true' \
     --offset '52' \
     > test.out 2>&1

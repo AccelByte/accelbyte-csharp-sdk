@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
     ///         *  Returns : updated stat
     ///         *  Field globalAggregationMethod will be ignored when the stat is not set as global
     ///         *  Field globalAggregationMethod is not updatable when the stat status is TIED
+    ///         *  Field visibility is not updatable when the stat status is TIED
     /// </summary>
     public class UpdateStat : AccelByte.Sdk.Core.Operation
     {

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelDisableMFARequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("factor")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Factor { get; set; }
+
         [JsonPropertyName("mfaToken")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? MfaToken { get; set; }

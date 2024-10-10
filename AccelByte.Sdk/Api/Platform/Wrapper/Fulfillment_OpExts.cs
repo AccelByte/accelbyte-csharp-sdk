@@ -184,7 +184,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).PublicRedeemCodeAsync(op);
         }
-        public static Platform.Model.FulfillmentHistoryPagingSlicedResult? Execute(
+        public static Platform.Model.FulfillmentPagingSlicedResult? Execute(
             this QueryFulfillments.QueryFulfillmentsBuilder builder,
             string namespace_
         )
@@ -195,7 +195,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).QueryFulfillments(op);
         }
-        public static async Task<Platform.Model.FulfillmentHistoryPagingSlicedResult?> ExecuteAsync(
+        public static async Task<Platform.Model.FulfillmentPagingSlicedResult?> ExecuteAsync(
             this QueryFulfillments.QueryFulfillmentsBuilder builder,
             string namespace_
         )
@@ -269,6 +269,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemsAsync(op);
+        }
+        public static Platform.Model.FulfillmentV2Result? Execute(
+            this RetryFulfillItems.RetryFulfillItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RetryFulfillItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RetryFulfillItems(op);
+        }
+        public static async Task<Platform.Model.FulfillmentV2Result?> ExecuteAsync(
+            this RetryFulfillItems.RetryFulfillItemsBuilder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RetryFulfillItems op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RetryFulfillItemsAsync(op);
         }
         public static Platform.Model.RevokeFulfillmentV2Result? Execute(
             this RevokeItems.RevokeItemsBuilder builder,

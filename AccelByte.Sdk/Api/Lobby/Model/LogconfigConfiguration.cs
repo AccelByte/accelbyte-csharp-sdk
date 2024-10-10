@@ -16,6 +16,15 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonStringEnum]
         public LogconfigConfigurationLogLevel? LogLevel { get; set; }
 
+        [JsonPropertyName("logLevelDB")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public LogconfigConfigurationLogLevelDB? LogLevelDB { get; set; }
+
+        [JsonPropertyName("slowQueryThreshold")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? SlowQueryThreshold { get; set; }
+
         [JsonPropertyName("socketLogEnabled")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? SocketLogEnabled { get; set; }
@@ -54,6 +63,42 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         }
 
         public LogconfigConfigurationLogLevel(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class LogconfigConfigurationLogLevelDB : StringEnum<LogconfigConfigurationLogLevelDB>
+    {
+        public static readonly LogconfigConfigurationLogLevelDB Debug
+            = new LogconfigConfigurationLogLevelDB("debug");
+
+        public static readonly LogconfigConfigurationLogLevelDB Error
+            = new LogconfigConfigurationLogLevelDB("error");
+
+        public static readonly LogconfigConfigurationLogLevelDB Fatal
+            = new LogconfigConfigurationLogLevelDB("fatal");
+
+        public static readonly LogconfigConfigurationLogLevelDB Info
+            = new LogconfigConfigurationLogLevelDB("info");
+
+        public static readonly LogconfigConfigurationLogLevelDB Panic
+            = new LogconfigConfigurationLogLevelDB("panic");
+
+        public static readonly LogconfigConfigurationLogLevelDB Trace
+            = new LogconfigConfigurationLogLevelDB("trace");
+
+        public static readonly LogconfigConfigurationLogLevelDB Warning
+            = new LogconfigConfigurationLogLevelDB("warning");
+
+
+        public static implicit operator LogconfigConfigurationLogLevelDB(string value)
+        {
+            return NewValue(value);
+        }
+
+        public LogconfigConfigurationLogLevelDB(string enumValue)
             : base(enumValue)
         {
 

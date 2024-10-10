@@ -56,6 +56,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PlatformId { get; set; }
 
+        [JsonPropertyName("remainingBackupCodeCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RemainingBackupCodeCount { get; set; }
+
         [JsonPropertyName("userBan")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public OauthmodelUserBan? UserBan { get; set; }

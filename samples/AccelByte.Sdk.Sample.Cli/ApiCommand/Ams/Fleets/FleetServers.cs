@@ -35,10 +35,25 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("count")]
-        public string? Count { get; set; }
+        public long? Count { get; set; }
 
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
+
+        [SdkCommandArgument("region")]
+        public string? Region { get; set; }
+
+        [SdkCommandArgument("serverId")]
+        public string? ServerId { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
+        [SdkCommandArgument("sortDirection")]
+        public string? SortDirection { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
 
         public FleetServersCommand(AccelByteSDK sdk)
         {
@@ -52,9 +67,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.FleetServers.Builder;
 
             if (Count != null)
-                opBuilder.SetCount((string)Count);
+                opBuilder.SetCount((long)Count);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (Region != null)
+                opBuilder.SetRegion((string)Region);
+            if (ServerId != null)
+                opBuilder.SetServerId((string)ServerId);
+            if (SortBy != null)
+                opBuilder.SetSortBy((string)SortBy);
+            if (SortDirection != null)
+                opBuilder.SetSortDirection(FleetServersSortDirection.NewValue(SortDirection));
+            if (Status != null)
+                opBuilder.SetStatus(FleetServersStatus.NewValue(Status));
 
 
 

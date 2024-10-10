@@ -183,8 +183,8 @@
 ### Entitlement Wrapper:  [Entitlement](../../AccelByte.Sdk/Api/Platform/Wrapper/Entitlement.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/platform/admin/namespaces/{namespace}/entitlements` | GET | QueryEntitlements | [QueryEntitlements](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/QueryEntitlements.cs) | [QueryEntitlements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/QueryEntitlements.cs) |
-| `/platform/admin/namespaces/{namespace}/entitlements/byItemIds` | GET | QueryEntitlements1 | [QueryEntitlements1](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/QueryEntitlements1.cs) | [QueryEntitlements1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/QueryEntitlements1.cs) |
+| `/platform/admin/namespaces/{namespace}/entitlements` | GET | QueryEntitlements1 | [QueryEntitlements1](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/QueryEntitlements1.cs) | [QueryEntitlements1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/QueryEntitlements1.cs) |
+| `/platform/admin/namespaces/{namespace}/entitlements/byItemIds` | GET | QueryEntitlements | [QueryEntitlements](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/QueryEntitlements.cs) | [QueryEntitlements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/QueryEntitlements.cs) |
 | `/platform/admin/namespaces/{namespace}/entitlements/config/entitlementOrigin/enable` | PUT | EnableEntitlementOriginFeature | [EnableEntitlementOriginFeature](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/EnableEntitlementOriginFeature.cs) | [EnableEntitlementOriginFeature](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/EnableEntitlementOriginFeature.cs) |
 | `/platform/admin/namespaces/{namespace}/entitlements/config/info` | GET | GetEntitlementConfigInfo | [GetEntitlementConfigInfo](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GetEntitlementConfigInfo.cs) | [GetEntitlementConfigInfo](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GetEntitlementConfigInfo.cs) |
 | `/platform/admin/namespaces/{namespace}/entitlements/grant` | POST | GrantEntitlements | [GrantEntitlements](../../AccelByte.Sdk/Api/Platform/Operation/Entitlement/GrantEntitlements.cs) | [GrantEntitlements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Entitlement/GrantEntitlements.cs) |
@@ -253,6 +253,7 @@
 | `/platform/v2/admin/namespaces/{namespace}/fulfillments` | GET | QueryFulfillments | [QueryFulfillments](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/QueryFulfillments.cs) | [QueryFulfillments](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/QueryFulfillments.cs) |
 | `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillment/rewards` | POST | FulfillRewardsV2 | [FulfillRewardsV2](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillRewardsV2.cs) | [FulfillRewardsV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillRewardsV2.cs) |
 | `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}` | PUT | FulfillItems | [FulfillItems](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/FulfillItems.cs) | [FulfillItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/FulfillItems.cs) |
+| `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry` | PUT | RetryFulfillItems | [RetryFulfillItems](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/RetryFulfillItems.cs) | [RetryFulfillItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/RetryFulfillItems.cs) |
 | `/platform/v2/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke` | PUT | RevokeItems | [RevokeItems](../../AccelByte.Sdk/Api/Platform/Operation/Fulfillment/RevokeItems.cs) | [RevokeItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Fulfillment/RevokeItems.cs) |
 
 ### Clawback Wrapper:  [Clawback](../../AccelByte.Sdk/Api/Platform/Wrapper/Clawback.cs)
@@ -267,6 +268,7 @@
 | `/platform/admin/namespaces/{namespace}/iap/config/apple` | GET | GetAppleIAPConfig | [GetAppleIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetAppleIAPConfig.cs) | [GetAppleIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetAppleIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/apple` | PUT | UpdateAppleIAPConfig | [UpdateAppleIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateAppleIAPConfig.cs) | [UpdateAppleIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdateAppleIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/apple` | DELETE | DeleteAppleIAPConfig | [DeleteAppleIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/DeleteAppleIAPConfig.cs) | [DeleteAppleIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/DeleteAppleIAPConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/iap/config/apple/cert` | PUT | UpdateAppleP8File | [UpdateAppleP8File](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateAppleP8File.cs) | [UpdateAppleP8File](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdateAppleP8File.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/epicgames` | GET | GetEpicGamesIAPConfig | [GetEpicGamesIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetEpicGamesIAPConfig.cs) | [GetEpicGamesIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetEpicGamesIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/epicgames` | PUT | UpdateEpicGamesIAPConfig | [UpdateEpicGamesIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/UpdateEpicGamesIAPConfig.cs) | [UpdateEpicGamesIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/UpdateEpicGamesIAPConfig.cs) |
 | `/platform/admin/namespaces/{namespace}/iap/config/epicgames` | DELETE | DeleteEpicGamesIAPConfig | [DeleteEpicGamesIAPConfig](../../AccelByte.Sdk/Api/Platform/Operation/IAP/DeleteEpicGamesIAPConfig.cs) | [DeleteEpicGamesIAPConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/DeleteEpicGamesIAPConfig.cs) |
@@ -299,6 +301,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/all` | GET | QueryAllUserIAPOrders | [QueryAllUserIAPOrders](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryAllUserIAPOrders.cs) | [QueryAllUserIAPOrders](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryAllUserIAPOrders.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/consume/history` | GET | QueryUserIAPConsumeHistory | [QueryUserIAPConsumeHistory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/QueryUserIAPConsumeHistory.cs) | [QueryUserIAPConsumeHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/QueryUserIAPConsumeHistory.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/mock/receipt` | PUT | MockFulfillIAPItem | [MockFulfillIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/MockFulfillIAPItem.cs) | [MockFulfillIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/MockFulfillIAPItem.cs) |
+| `/platform/public/namespaces/{namespace}/iap/apple/config/version` | GET | GetAppleConfigVersion | [GetAppleConfigVersion](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetAppleConfigVersion.cs) | [GetAppleConfigVersion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetAppleConfigVersion.cs) |
 | `/platform/public/namespaces/{namespace}/iap/item/mapping` | GET | GetIAPItemMapping | [GetIAPItemMapping](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetIAPItemMapping.cs) | [GetIAPItemMapping](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetIAPItemMapping.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement | [SyncTwitchDropsEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement.cs) | [SyncTwitchDropsEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt` | PUT | PublicFulfillAppleIAPItem | [PublicFulfillAppleIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/PublicFulfillAppleIAPItem.cs) | [PublicFulfillAppleIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/PublicFulfillAppleIAPItem.cs) |
@@ -310,6 +313,27 @@
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/steam/sync` | PUT | SyncSteamInventory | [SyncSteamInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncSteamInventory.cs) | [SyncSteamInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncSteamInventory.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement1 | [SyncTwitchDropsEntitlement1](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement1.cs) | [SyncTwitchDropsEntitlement1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement1.cs) |
 | `/platform/public/namespaces/{namespace}/users/{userId}/iap/xbl/sync` | PUT | SyncXboxInventory | [SyncXboxInventory](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncXboxInventory.cs) | [SyncXboxInventory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncXboxInventory.cs) |
+| `/platform/v2/public/namespaces/{namespace}/users/{userId}/iap/apple/receipt` | PUT | V2PublicFulfillAppleIAPItem | [V2PublicFulfillAppleIAPItem](../../AccelByte.Sdk/Api/Platform/Operation/IAP/V2PublicFulfillAppleIAPItem.cs) | [V2PublicFulfillAppleIAPItem](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/V2PublicFulfillAppleIAPItem.cs) |
+
+### IAP(Notification) Wrapper:  [IAPNotification](../../AccelByte.Sdk/Api/Platform/Wrapper/IAPNotification.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/iap/notifications` | GET | QueryThirdPartyNotifications | [QueryThirdPartyNotifications](../../AccelByte.Sdk/Api/Platform/Operation/IAPNotification/QueryThirdPartyNotifications.cs) | [QueryThirdPartyNotifications](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPNotification/QueryThirdPartyNotifications.cs) |
+
+### IAP(Subscription) Wrapper:  [IAPSubscription](../../AccelByte.Sdk/Api/Platform/Wrapper/IAPSubscription.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/platform/admin/namespaces/{namespace}/iap/subscriptions` | GET | QueryThirdPartySubscription | [QueryThirdPartySubscription](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/QueryThirdPartySubscription.cs) | [QueryThirdPartySubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/QueryThirdPartySubscription.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions` | GET | QueryUserThirdPartySubscription | [QueryUserThirdPartySubscription](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/QueryUserThirdPartySubscription.cs) | [QueryUserThirdPartySubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/QueryUserThirdPartySubscription.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/platforms/{platform}/ownership/byGroupId` | GET | GetThirdPartyPlatformSubscriptionOwnershipByGroupId | [GetThirdPartyPlatformSubscriptionOwnershipByGroupId](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/GetThirdPartyPlatformSubscriptionOwnershipByGroupId.cs) | [GetThirdPartyPlatformSubscriptionOwnershipByGroupId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/GetThirdPartyPlatformSubscriptionOwnershipByGroupId.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/platforms/{platform}/ownership/byProductId` | GET | GetThirdPartyPlatformSubscriptionOwnershipByProductId | [GetThirdPartyPlatformSubscriptionOwnershipByProductId](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/GetThirdPartyPlatformSubscriptionOwnershipByProductId.cs) | [GetThirdPartyPlatformSubscriptionOwnershipByProductId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/GetThirdPartyPlatformSubscriptionOwnershipByProductId.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions` | GET | QueryUserThirdPartySubscriptionTransactions | [QueryUserThirdPartySubscriptionTransactions](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/QueryUserThirdPartySubscriptionTransactions.cs) | [QueryUserThirdPartySubscriptionTransactions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/QueryUserThirdPartySubscriptionTransactions.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions/{id}` | GET | GetThirdPartySubscriptionDetails | [GetThirdPartySubscriptionDetails](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/GetThirdPartySubscriptionDetails.cs) | [GetThirdPartySubscriptionDetails](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/GetThirdPartySubscriptionDetails.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions/{id}/histories` | GET | GetSubscriptionHistory | [GetSubscriptionHistory](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/GetSubscriptionHistory.cs) | [GetSubscriptionHistory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/GetSubscriptionHistory.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/transactions/{id}/sync` | PUT | SyncSubscriptionTransaction | [SyncSubscriptionTransaction](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/SyncSubscriptionTransaction.cs) | [SyncSubscriptionTransaction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/SyncSubscriptionTransaction.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/{id}` | GET | GetThirdPartyUserSubscriptionDetails | [GetThirdPartyUserSubscriptionDetails](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/GetThirdPartyUserSubscriptionDetails.cs) | [GetThirdPartyUserSubscriptionDetails](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/GetThirdPartyUserSubscriptionDetails.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/subscriptions/{id}/sync` | PUT | SyncSubscription | [SyncSubscription](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/SyncSubscription.cs) | [SyncSubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/SyncSubscription.cs) |
+| `/platform/public/namespaces/{namespace}/users/{userId}/iap/subscriptions/platforms/{platform}` | GET | PublicQueryUserThirdPartySubscription | [PublicQueryUserThirdPartySubscription](../../AccelByte.Sdk/Api/Platform/Operation/IAPSubscription/PublicQueryUserThirdPartySubscription.cs) | [PublicQueryUserThirdPartySubscription](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAPSubscription/PublicQueryUserThirdPartySubscription.cs) |
 
 ### Invoice Wrapper:  [Invoice](../../AccelByte.Sdk/Api/Platform/Wrapper/Invoice.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -664,6 +688,14 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### IAP(Notification) Wrapper:  [IAPNotification](../../AccelByte.Sdk/Api/Platform/Wrapper/IAPNotification.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### IAP(Subscription) Wrapper:  [IAPSubscription](../../AccelByte.Sdk/Api/Platform/Wrapper/IAPSubscription.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Invoice Wrapper:  [Invoice](../../AccelByte.Sdk/Api/Platform/Wrapper/Invoice.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -788,7 +820,9 @@
 | `AppUpdate` | [AppUpdate](../../AccelByte.Sdk/Api/Platform/Model/AppUpdate.cs) |
 | `AppleIAPConfigInfo` | [AppleIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPConfigInfo.cs) |
 | `AppleIAPConfigRequest` | [AppleIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPConfigRequest.cs) |
+| `AppleIAPConfigVersionInfo` | [AppleIAPConfigVersionInfo](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPConfigVersionInfo.cs) |
 | `AppleIAPReceipt` | [AppleIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPReceipt.cs) |
+| `AppleIAPRequest` | [AppleIAPRequest](../../AccelByte.Sdk/Api/Platform/Model/AppleIAPRequest.cs) |
 | `AvailableComparison` | [AvailableComparison](../../AccelByte.Sdk/Api/Platform/Model/AvailableComparison.cs) |
 | `AvailablePredicate` | [AvailablePredicate](../../AccelByte.Sdk/Api/Platform/Model/AvailablePredicate.cs) |
 | `AvailablePrice` | [AvailablePrice](../../AccelByte.Sdk/Api/Platform/Model/AvailablePrice.cs) |
@@ -799,6 +833,7 @@
 | `BillingAccount` | [BillingAccount](../../AccelByte.Sdk/Api/Platform/Model/BillingAccount.cs) |
 | `BillingHistoryInfo` | [BillingHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/BillingHistoryInfo.cs) |
 | `BillingHistoryPagingSlicedResult` | [BillingHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/BillingHistoryPagingSlicedResult.cs) |
+| `BinarySchema` | [BinarySchema](../../AccelByte.Sdk/Api/Platform/Model/BinarySchema.cs) |
 | `BoxItem` | [BoxItem](../../AccelByte.Sdk/Api/Platform/Model/BoxItem.cs) |
 | `BulkCreditRequest` | [BulkCreditRequest](../../AccelByte.Sdk/Api/Platform/Model/BulkCreditRequest.cs) |
 | `BulkCreditResult` | [BulkCreditResult](../../AccelByte.Sdk/Api/Platform/Model/BulkCreditResult.cs) |
@@ -918,10 +953,13 @@
 | `FulfillBundledItemResult` | [FulfillBundledItemResult](../../AccelByte.Sdk/Api/Platform/Model/FulfillBundledItemResult.cs) |
 | `FulfillCodeRequest` | [FulfillCodeRequest](../../AccelByte.Sdk/Api/Platform/Model/FulfillCodeRequest.cs) |
 | `FulfillItemResult` | [FulfillItemResult](../../AccelByte.Sdk/Api/Platform/Model/FulfillItemResult.cs) |
+| `FulfillmentActionHistory` | [FulfillmentActionHistory](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentActionHistory.cs) |
 | `FulfillmentError` | [FulfillmentError](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentError.cs) |
 | `FulfillmentHistoryInfo` | [FulfillmentHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentHistoryInfo.cs) |
 | `FulfillmentHistoryPagingSlicedResult` | [FulfillmentHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentHistoryPagingSlicedResult.cs) |
+| `FulfillmentInfo` | [FulfillmentInfo](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentInfo.cs) |
 | `FulfillmentItem` | [FulfillmentItem](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentItem.cs) |
+| `FulfillmentPagingSlicedResult` | [FulfillmentPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentPagingSlicedResult.cs) |
 | `FulfillmentRequest` | [FulfillmentRequest](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentRequest.cs) |
 | `FulfillmentResult` | [FulfillmentResult](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentResult.cs) |
 | `FulfillmentScriptCreate` | [FulfillmentScriptCreate](../../AccelByte.Sdk/Api/Platform/Model/FulfillmentScriptCreate.cs) |
@@ -1002,6 +1040,7 @@
 | `LootBoxReward` | [LootBoxReward](../../AccelByte.Sdk/Api/Platform/Model/LootBoxReward.cs) |
 | `MockIAPReceipt` | [MockIAPReceipt](../../AccelByte.Sdk/Api/Platform/Model/MockIAPReceipt.cs) |
 | `NeonPayConfig` | [NeonPayConfig](../../AccelByte.Sdk/Api/Platform/Model/NeonPayConfig.cs) |
+| `NotificationPagingSlicedResult` | [NotificationPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/NotificationPagingSlicedResult.cs) |
 | `NotificationProcessResult` | [NotificationProcessResult](../../AccelByte.Sdk/Api/Platform/Model/NotificationProcessResult.cs) |
 | `OculusIAPConfigInfo` | [OculusIAPConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigInfo.cs) |
 | `OculusIAPConfigRequest` | [OculusIAPConfigRequest](../../AccelByte.Sdk/Api/Platform/Model/OculusIAPConfigRequest.cs) |
@@ -1176,6 +1215,13 @@
 | `TLSConfig` | [TLSConfig](../../AccelByte.Sdk/Api/Platform/Model/TLSConfig.cs) |
 | `TaxResult` | [TaxResult](../../AccelByte.Sdk/Api/Platform/Model/TaxResult.cs) |
 | `TestResult` | [TestResult](../../AccelByte.Sdk/Api/Platform/Model/TestResult.cs) |
+| `ThirdPartySubscriptionOwnership` | [ThirdPartySubscriptionOwnership](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartySubscriptionOwnership.cs) |
+| `ThirdPartySubscriptionTransactionHistoryInfo` | [ThirdPartySubscriptionTransactionHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartySubscriptionTransactionHistoryInfo.cs) |
+| `ThirdPartySubscriptionTransactionHistoryPagingSlicedResult` | [ThirdPartySubscriptionTransactionHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartySubscriptionTransactionHistoryPagingSlicedResult.cs) |
+| `ThirdPartySubscriptionTransactionInfo` | [ThirdPartySubscriptionTransactionInfo](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartySubscriptionTransactionInfo.cs) |
+| `ThirdPartySubscriptionTransactionPagingSlicedResult` | [ThirdPartySubscriptionTransactionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartySubscriptionTransactionPagingSlicedResult.cs) |
+| `ThirdPartyUserSubscriptionInfo` | [ThirdPartyUserSubscriptionInfo](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartyUserSubscriptionInfo.cs) |
+| `ThirdPartyUserSubscriptionPagingSlicedResult` | [ThirdPartyUserSubscriptionPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/ThirdPartyUserSubscriptionPagingSlicedResult.cs) |
 | `TicketAcquireRequest` | [TicketAcquireRequest](../../AccelByte.Sdk/Api/Platform/Model/TicketAcquireRequest.cs) |
 | `TicketAcquireResult` | [TicketAcquireResult](../../AccelByte.Sdk/Api/Platform/Model/TicketAcquireResult.cs) |
 | `TicketBoothID` | [TicketBoothID](../../AccelByte.Sdk/Api/Platform/Model/TicketBoothID.cs) |

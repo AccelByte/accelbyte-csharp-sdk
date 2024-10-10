@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public byte[]? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.BinarySchema? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -111,19 +111,14 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
             else if (code == (HttpStatusCode)201)
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    payload.CopyTo(ms);
-                    return ms.ToArray();
-                }
+                if (ResponseJsonOptions != null)
+                    return JsonSerializer.Deserialize<Model.BinarySchema>(payload, ResponseJsonOptions);
+                else
+                    return JsonSerializer.Deserialize<Model.BinarySchema>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    payload.CopyTo(ms);
-                    return ms.ToArray();
-                }
+                return JsonSerializer.Deserialize<Model.BinarySchema>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

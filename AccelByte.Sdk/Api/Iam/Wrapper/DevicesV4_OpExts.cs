@@ -238,6 +238,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.DevicesV4)builder.WrapperObject!).AdminGetDeviceBansV4Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelDeviceIDDecryptResponseV4? Execute(
             this AdminDecryptDeviceV4.AdminDecryptDeviceV4Builder builder,
             string deviceId,

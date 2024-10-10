@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
     /// 
     /// 
     /// Required permission
-    /// `NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [READ]` and scope `social`
+    /// `NAMESPACE:{namespace}:USER:{userId}:ACHIEVEMENT [UPDATE]` and scope `social`
     /// 
     /// 
     /// 

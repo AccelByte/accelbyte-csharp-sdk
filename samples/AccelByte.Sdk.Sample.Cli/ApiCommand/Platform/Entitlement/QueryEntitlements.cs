@@ -34,29 +34,14 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("activeOnly")]
         public bool? ActiveOnly { get; set; }
 
-        [SdkCommandArgument("appType")]
-        public string? AppType { get; set; }
-
-        [SdkCommandArgument("entitlementClazz")]
-        public string? EntitlementClazz { get; set; }
-
-        [SdkCommandArgument("entitlementName")]
-        public string? EntitlementName { get; set; }
-
-        [SdkCommandArgument("itemId")]
-        public List<string>? ItemId { get; set; }
+        [SdkCommandArgument("itemIds")]
+        public List<string>? ItemIds { get; set; }
 
         [SdkCommandArgument("limit")]
         public int? Limit { get; set; }
 
         [SdkCommandArgument("offset")]
         public int? Offset { get; set; }
-
-        [SdkCommandArgument("origin")]
-        public string? Origin { get; set; }
-
-        [SdkCommandArgument("userId")]
-        public string? UserId { get; set; }
 
         public QueryEntitlementsCommand(AccelByteSDK sdk)
         {
@@ -71,22 +56,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
             if (ActiveOnly != null)
                 opBuilder.SetActiveOnly((bool)ActiveOnly);
-            if (AppType != null)
-                opBuilder.SetAppType(QueryEntitlementsAppType.NewValue(AppType));
-            if (EntitlementClazz != null)
-                opBuilder.SetEntitlementClazz(QueryEntitlementsEntitlementClazz.NewValue(EntitlementClazz));
-            if (EntitlementName != null)
-                opBuilder.SetEntitlementName((string)EntitlementName);
-            if (ItemId != null)
-                opBuilder.SetItemId((List<string>)ItemId);
+            if (ItemIds != null)
+                opBuilder.SetItemIds((List<string>)ItemIds);
             if (Limit != null)
                 opBuilder.SetLimit((int)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((int)Offset);
-            if (Origin != null)
-                opBuilder.SetOrigin(QueryEntitlementsOrigin.NewValue(Origin));
-            if (UserId != null)
-                opBuilder.SetUserId((string)UserId);
 
 
 

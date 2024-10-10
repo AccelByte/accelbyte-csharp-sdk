@@ -411,7 +411,7 @@ eval_tap $? 33 'AdminGetLogConfig' test.out
 
 #- 34 AdminPatchUpdateLogConfig
 # body param: body
-echo '{"logLevel": "info", "socketLogEnabled": true}' > $TEMP_JSON_INPUT
+echo '{"logLevel": "info", "logLevelDB": "panic", "slowQueryThreshold": 98, "socketLogEnabled": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn chat \
     --op AdminPatchUpdateLogConfig \

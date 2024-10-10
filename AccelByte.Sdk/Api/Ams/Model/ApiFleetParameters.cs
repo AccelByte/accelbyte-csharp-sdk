@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public List<string>? ClaimKeys { get; set; }
 
         [JsonPropertyName("dsHostConfiguration")]
-        public ApiDSHostConfiguration? DsHostConfiguration { get; set; }
+        public ApiDSHostConfigurationParameters? DsHostConfiguration { get; set; }
 
         [JsonPropertyName("imageDeploymentProfile")]
         public ApiImageDeploymentProfile? ImageDeploymentProfile { get; set; }

@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("image")]
         public string? Image { get; set; }
 
+        [JsonPropertyName("instanceProvider")]
+        public string? InstanceProvider { get; set; }
+
         [JsonPropertyName("isLocal")]
         public bool? IsLocal { get; set; }
 

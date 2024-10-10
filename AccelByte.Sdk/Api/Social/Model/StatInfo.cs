@@ -74,6 +74,11 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonPropertyName("updatedAt")]
         public DateTime? UpdatedAt { get; set; }
 
+        [JsonPropertyName("visibility")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public StatInfoVisibility? Visibility { get; set; }
+
     }
 
 
@@ -141,6 +146,27 @@ namespace AccelByte.Sdk.Api.Social.Model
         }
 
         public StatInfoStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class StatInfoVisibility : StringEnum<StatInfoVisibility>
+    {
+        public static readonly StatInfoVisibility SERVERONLY
+            = new StatInfoVisibility("SERVERONLY");
+
+        public static readonly StatInfoVisibility SHOWALL
+            = new StatInfoVisibility("SHOWALL");
+
+
+        public static implicit operator StatInfoVisibility(string value)
+        {
+            return NewValue(value);
+        }
+
+        public StatInfoVisibility(string enumValue)
             : base(enumValue)
         {
 

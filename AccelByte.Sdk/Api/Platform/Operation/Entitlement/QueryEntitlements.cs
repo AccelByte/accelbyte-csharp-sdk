@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// queryEntitlements
     ///
-    /// Query entitlements.
+    /// Query entitlements by Item Ids.
     /// 
     /// Other detail info:
     /// 
@@ -33,21 +33,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? ActiveOnly { get; set; }
 
-            public QueryEntitlementsAppType? AppType { get; set; }
-
-            public QueryEntitlementsEntitlementClazz? EntitlementClazz { get; set; }
-
-            public string? EntitlementName { get; set; }
-
-            public List<string>? ItemId { get; set; }
+            public List<string>? ItemIds { get; set; }
 
             public int? Limit { get; set; }
 
             public int? Offset { get; set; }
-
-            public QueryEntitlementsOrigin? Origin { get; set; }
-
-            public string? UserId { get; set; }
 
 
 
@@ -62,27 +52,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
                 return this;
             }
 
-            public QueryEntitlementsBuilder SetAppType(QueryEntitlementsAppType _appType)
+            public QueryEntitlementsBuilder SetItemIds(List<string> _itemIds)
             {
-                AppType = _appType;
-                return this;
-            }
-
-            public QueryEntitlementsBuilder SetEntitlementClazz(QueryEntitlementsEntitlementClazz _entitlementClazz)
-            {
-                EntitlementClazz = _entitlementClazz;
-                return this;
-            }
-
-            public QueryEntitlementsBuilder SetEntitlementName(string _entitlementName)
-            {
-                EntitlementName = _entitlementName;
-                return this;
-            }
-
-            public QueryEntitlementsBuilder SetItemId(List<string> _itemId)
-            {
-                ItemId = _itemId;
+                ItemIds = _itemIds;
                 return this;
             }
 
@@ -95,18 +67,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryEntitlementsBuilder SetOffset(int _offset)
             {
                 Offset = _offset;
-                return this;
-            }
-
-            public QueryEntitlementsBuilder SetOrigin(QueryEntitlementsOrigin _origin)
-            {
-                Origin = _origin;
-                return this;
-            }
-
-            public QueryEntitlementsBuilder SetUserId(string _userId)
-            {
-                UserId = _userId;
                 return this;
             }
 
@@ -137,18 +97,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.AppType is not null) QueryParams["appType"] = builder.AppType.Value;
-            if (builder.EntitlementClazz is not null) QueryParams["entitlementClazz"] = builder.EntitlementClazz.Value;
-            if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
-            if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
+            if (builder.ItemIds is not null) QueryParams["itemIds"] = builder.ItemIds;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.Origin is not null) QueryParams["origin"] = builder.Origin.Value;
-            if (builder.UserId is not null) QueryParams["userId"] = builder.UserId;
 
 
 
-            CollectionFormatMap["itemId"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
 
 
 
@@ -159,38 +114,28 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public QueryEntitlements(
             string namespace_,
             bool? activeOnly,
-            QueryEntitlementsAppType? appType,
-            QueryEntitlementsEntitlementClazz? entitlementClazz,
-            string? entitlementName,
-            List<string>? itemId,
+            List<string>? itemIds,
             int? limit,
-            int? offset,
-            QueryEntitlementsOrigin? origin,
-            string? userId
+            int? offset
         )
         {
             PathParams["namespace"] = namespace_;
 
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (appType is not null) QueryParams["appType"] = appType.Value;
-            if (entitlementClazz is not null) QueryParams["entitlementClazz"] = entitlementClazz.Value;
-            if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
-            if (itemId is not null) QueryParams["itemId"] = itemId;
+            if (itemIds is not null) QueryParams["itemIds"] = itemIds;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (origin is not null) QueryParams["origin"] = origin.Value;
-            if (userId is not null) QueryParams["userId"] = userId;
 
 
 
-            CollectionFormatMap["itemId"] = "multi";
+            CollectionFormatMap["itemIds"] = "multi";
 
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/entitlements";
+        public override string Path => "/platform/admin/namespaces/{namespace}/entitlements/byItemIds";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -222,117 +167,6 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
-        }
-    }
-
-    public class QueryEntitlementsAppType : StringEnum<QueryEntitlementsAppType>
-    {
-        public static readonly QueryEntitlementsAppType DEMO
-            = new QueryEntitlementsAppType("DEMO");
-
-        public static readonly QueryEntitlementsAppType DLC
-            = new QueryEntitlementsAppType("DLC");
-
-        public static readonly QueryEntitlementsAppType GAME
-            = new QueryEntitlementsAppType("GAME");
-
-        public static readonly QueryEntitlementsAppType SOFTWARE
-            = new QueryEntitlementsAppType("SOFTWARE");
-
-
-        public static implicit operator QueryEntitlementsAppType(string value)
-        {
-            return NewValue(value);
-        }
-
-        public QueryEntitlementsAppType(string enumValue)
-            : base(enumValue)
-        {
-
-        }
-    }
-
-    public class QueryEntitlementsEntitlementClazz : StringEnum<QueryEntitlementsEntitlementClazz>
-    {
-        public static readonly QueryEntitlementsEntitlementClazz APP
-            = new QueryEntitlementsEntitlementClazz("APP");
-
-        public static readonly QueryEntitlementsEntitlementClazz CODE
-            = new QueryEntitlementsEntitlementClazz("CODE");
-
-        public static readonly QueryEntitlementsEntitlementClazz ENTITLEMENT
-            = new QueryEntitlementsEntitlementClazz("ENTITLEMENT");
-
-        public static readonly QueryEntitlementsEntitlementClazz LOOTBOX
-            = new QueryEntitlementsEntitlementClazz("LOOTBOX");
-
-        public static readonly QueryEntitlementsEntitlementClazz MEDIA
-            = new QueryEntitlementsEntitlementClazz("MEDIA");
-
-        public static readonly QueryEntitlementsEntitlementClazz OPTIONBOX
-            = new QueryEntitlementsEntitlementClazz("OPTIONBOX");
-
-        public static readonly QueryEntitlementsEntitlementClazz SUBSCRIPTION
-            = new QueryEntitlementsEntitlementClazz("SUBSCRIPTION");
-
-
-        public static implicit operator QueryEntitlementsEntitlementClazz(string value)
-        {
-            return NewValue(value);
-        }
-
-        public QueryEntitlementsEntitlementClazz(string enumValue)
-            : base(enumValue)
-        {
-
-        }
-    }
-
-    public class QueryEntitlementsOrigin : StringEnum<QueryEntitlementsOrigin>
-    {
-        public static readonly QueryEntitlementsOrigin Epic
-            = new QueryEntitlementsOrigin("Epic");
-
-        public static readonly QueryEntitlementsOrigin GooglePlay
-            = new QueryEntitlementsOrigin("GooglePlay");
-
-        public static readonly QueryEntitlementsOrigin IOS
-            = new QueryEntitlementsOrigin("IOS");
-
-        public static readonly QueryEntitlementsOrigin Nintendo
-            = new QueryEntitlementsOrigin("Nintendo");
-
-        public static readonly QueryEntitlementsOrigin Oculus
-            = new QueryEntitlementsOrigin("Oculus");
-
-        public static readonly QueryEntitlementsOrigin Other
-            = new QueryEntitlementsOrigin("Other");
-
-        public static readonly QueryEntitlementsOrigin Playstation
-            = new QueryEntitlementsOrigin("Playstation");
-
-        public static readonly QueryEntitlementsOrigin Steam
-            = new QueryEntitlementsOrigin("Steam");
-
-        public static readonly QueryEntitlementsOrigin System
-            = new QueryEntitlementsOrigin("System");
-
-        public static readonly QueryEntitlementsOrigin Twitch
-            = new QueryEntitlementsOrigin("Twitch");
-
-        public static readonly QueryEntitlementsOrigin Xbox
-            = new QueryEntitlementsOrigin("Xbox");
-
-
-        public static implicit operator QueryEntitlementsOrigin(string value)
-        {
-            return NewValue(value);
-        }
-
-        public QueryEntitlementsOrigin(string enumValue)
-            : base(enumValue)
-        {
-
         }
     }
 

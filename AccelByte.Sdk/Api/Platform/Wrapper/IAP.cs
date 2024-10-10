@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeleteAppleIAPConfig.Builder.SetWrapperObject(this); }
         }
+        public UpdateAppleP8File.UpdateAppleP8FileBuilder UpdateAppleP8FileOp
+        {
+            get { return Operation.UpdateAppleP8File.Builder.SetWrapperObject(this); }
+        }
         public GetEpicGamesIAPConfig.GetEpicGamesIAPConfigBuilder GetEpicGamesIAPConfigOp
         {
             get { return Operation.GetEpicGamesIAPConfig.Builder.SetWrapperObject(this); }
@@ -159,6 +163,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.MockFulfillIAPItem.Builder.SetWrapperObject(this); }
         }
+        public GetAppleConfigVersion.GetAppleConfigVersionBuilder GetAppleConfigVersionOp
+        {
+            get { return Operation.GetAppleConfigVersion.Builder.SetWrapperObject(this); }
+        }
         public GetIAPItemMapping.GetIAPItemMappingBuilder GetIAPItemMappingOp
         {
             get { return Operation.GetIAPItemMapping.Builder.SetWrapperObject(this); }
@@ -202,6 +210,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public SyncXboxInventory.SyncXboxInventoryBuilder SyncXboxInventoryOp
         {
             get { return Operation.SyncXboxInventory.Builder.SetWrapperObject(this); }
+        }
+        public V2PublicFulfillAppleIAPItem.V2PublicFulfillAppleIAPItemBuilder V2PublicFulfillAppleIAPItemOp
+        {
+            get { return Operation.V2PublicFulfillAppleIAPItem.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -249,6 +261,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.AppleIAPConfigInfo? UpdateAppleP8File(UpdateAppleP8File input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AppleIAPConfigInfo?> UpdateAppleP8FileAsync(UpdateAppleP8File input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -765,6 +793,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.AppleIAPConfigVersionInfo? GetAppleConfigVersion(GetAppleConfigVersion input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.AppleIAPConfigVersionInfo?> GetAppleConfigVersionAsync(GetAppleConfigVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.IAPItemMappingInfo? GetIAPItemMapping(GetIAPItemMapping input)
         {
             var response = _sdk.RunRequest(input);
@@ -937,6 +981,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void V2PublicFulfillAppleIAPItem(V2PublicFulfillAppleIAPItem input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task V2PublicFulfillAppleIAPItemAsync(V2PublicFulfillAppleIAPItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

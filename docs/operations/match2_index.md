@@ -54,6 +54,7 @@
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics` | GET | MatchPoolMetric | [MatchPoolMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/MatchPoolMetric.cs) | [MatchPoolMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/MatchPoolMetric.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/player` | GET | GetPlayerMetric | [GetPlayerMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/GetPlayerMetric.cs) | [GetPlayerMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/GetPlayerMetric.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/tickets` | GET | AdminGetMatchPoolTickets | [AdminGetMatchPoolTickets](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/AdminGetMatchPoolTickets.cs) | [AdminGetMatchPoolTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/AdminGetMatchPoolTickets.cs) |
+| `/match2/v1/public/namespaces/{namespace}/match-pools/{pool}/metrics/player` | GET | PublicGetPlayerMetric | [PublicGetPlayerMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/PublicGetPlayerMetric.cs) | [PublicGetPlayerMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/PublicGetPlayerMetric.cs) |
 
 ### Match-Tickets Wrapper:  [MatchTickets](../../AccelByte.Sdk/Api/Match2/Wrapper/MatchTickets.cs)
 | Endpoint | Method | ID | Class | Example |

@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("instanceId")]
         public string? InstanceId { get; set; }
 
+        [JsonPropertyName("instanceProvider")]
+        public string? InstanceProvider { get; set; }
+
         [JsonPropertyName("instanceType")]
         public string? InstanceType { get; set; }
 

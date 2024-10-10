@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? AutoAck { get; set; }
 
+        [JsonPropertyName("autoConsume")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoConsume { get; set; }
+
         [JsonPropertyName("language")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Language { get; set; }
@@ -24,9 +28,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public string? PackageName { get; set; }
 
         [JsonPropertyName("productId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ProductId { get; set; }
 
         [JsonPropertyName("purchaseTime")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? PurchaseTime { get; set; }
 
         [JsonPropertyName("purchaseToken")]
@@ -35,6 +41,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("region")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Region { get; set; }
+
+        [JsonPropertyName("subscriptionPurchase")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SubscriptionPurchase { get; set; }
 
     }
 

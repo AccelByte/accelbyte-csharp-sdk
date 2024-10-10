@@ -401,7 +401,7 @@ eval_tap $? 33 'QueryTotalMatchmakingMatchTicket' test.out
 
 #- 34 CreateXrayTicketObservability
 # body param: body
-echo '{"action": "VEvIMEB4pl506fLC", "activeAllianceRule": {"max_number": 66, "min_number": 3, "player_max_number": 23, "player_min_number": 62}, "activeMatchingRule": [{"attribute": "vnfNiABRf1gdXM7Q", "criteria": "lAlnjAfgxOdZdf9t", "reference": 0.6095866669301306}, {"attribute": "HO1qrNyhmUEADczz", "criteria": "rL31HuYKsCBBgwb1", "reference": 0.1237534696372321}, {"attribute": "GjHJgxrcEvnfJqU4", "criteria": "hCv5egSQDePKSZKp", "reference": 0.949101342784212}], "function": "zwDQS1atvJrALaip", "gameMode": "lJgRhedl5Ewh3jDa", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 69, "matchID": "StUiBB1yz3iP8gH8", "namespace": "8UenlMVzIOP8NOf9", "partyID": "1LsD7cWWOgAs8ThM", "remainingPlayersPerTicket": [32, 41, 54], "remainingTickets": 60, "sessionTickID": "GIapYftYZkBXiEhd", "tickID": 17, "timeToMatchSec": 0.8415652045127597, "timestamp": "1975-06-16T00:00:00Z", "unbackfillReason": "VBAEUvoBlbH02bob", "unmatchReason": "xtljIfHBgjP9onbx"}' > $TEMP_JSON_INPUT
+echo '{"action": "VEvIMEB4pl506fLC", "activeAllianceRule": {"max_number": 66, "min_number": 3, "player_max_number": 23, "player_min_number": 62}, "activeMatchingRule": [{"attribute": "vnfNiABRf1gdXM7Q", "criteria": "lAlnjAfgxOdZdf9t", "reference": 0.6095866669301306}, {"attribute": "HO1qrNyhmUEADczz", "criteria": "rL31HuYKsCBBgwb1", "reference": 0.1237534696372321}, {"attribute": "GjHJgxrcEvnfJqU4", "criteria": "hCv5egSQDePKSZKp", "reference": 0.949101342784212}], "function": "zwDQS1atvJrALaip", "gameMode": "lJgRhedl5Ewh3jDa", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 69, "matchID": "StUiBB1yz3iP8gH8", "namespace": "8UenlMVzIOP8NOf9", "remainingPlayersPerTicket": [92, 77, 71], "remainingTickets": 38, "sessionTickID": "2IFcRwSoMTuJziuD", "tickID": 81, "ticketID": "IapYftYZkBXiEhdi", "timeToMatchSec": 0.7135579670408009, "timestamp": "1994-06-11T00:00:00Z", "unbackfillReason": "VBAEUvoBlbH02bob", "unmatchReason": "xtljIfHBgjP9onbx"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionhistory \
     --op CreateXrayTicketObservability \
@@ -412,7 +412,7 @@ eval_tap $? 34 'CreateXrayTicketObservability' test.out
 
 #- 35 CreateXrayBulkTicketObservability
 # body param: body
-echo '{"ticketObservabilities": [{"action": "FcxS2OZZfXO3HkJT", "activeAllianceRule": {"max_number": 83, "min_number": 86, "player_max_number": 38, "player_min_number": 6}, "activeMatchingRule": [{"attribute": "AopmjI7CbY2WuwRU", "criteria": "T9IivgC4mJ5OHuNE", "reference": 0.7621623430243994}, {"attribute": "QK4Mvk00I9GqAhhj", "criteria": "NIivdIcaEQfNETQC", "reference": 0.4439608579922527}, {"attribute": "PK1mYwKVQoydbYjX", "criteria": "ZyBpqhCJBtFOm3iC", "reference": 0.24236125557556087}], "function": "u0lhhgutt3rQuKP1", "gameMode": "OEtKFBjNihHU8GP8", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 23, "matchID": "SvYXKz4BGjbsrRBV", "namespace": "8aztJ86yQK1AsC18", "partyID": "UO6JcXmwQfkseTpH", "remainingPlayersPerTicket": [61, 23, 77], "remainingTickets": 60, "sessionTickID": "zaOwIF5tEsCwoAVc", "tickID": 47, "timeToMatchSec": 0.46105367839224687, "timestamp": "1994-03-15T00:00:00Z", "unbackfillReason": "j80gzFvpvIerFEyx", "unmatchReason": "TugoTd50RmJFX9v4"}, {"action": "GPfyGuQ2UEl0U5Z9", "activeAllianceRule": {"max_number": 95, "min_number": 57, "player_max_number": 27, "player_min_number": 50}, "activeMatchingRule": [{"attribute": "QmZqX15hBb4dlNTI", "criteria": "BDtHunwNLLfKCQKu", "reference": 0.3268301109829801}, {"attribute": "2MWXpEpNjHWPcFSn", "criteria": "M7GAvk19sXDish7K", "reference": 0.7444467671483146}, {"attribute": "VhmAwmAygsnn8pM7", "criteria": "l6v0elLMceGGgb5F", "reference": 0.5674795737554975}], "function": "HWE6s13b7dmnPijw", "gameMode": "6U8GGp0E886E90E4", "isBackfillMatch": false, "isRuleSetFlexed": false, "iteration": 29, "matchID": "ia6cqoWmnhtuzxir", "namespace": "12r0VUWI0kJAczj5", "partyID": "ApcsiEQ65llgGnTH", "remainingPlayersPerTicket": [55, 19, 37], "remainingTickets": 93, "sessionTickID": "DosOo2kSUfIA1guT", "tickID": 81, "timeToMatchSec": 0.09557541002675951, "timestamp": "1981-01-23T00:00:00Z", "unbackfillReason": "haejXSV2oH2uH8S4", "unmatchReason": "Zx0ACteueMOmYP4S"}, {"action": "gxAIQTTKsdmtHu1d", "activeAllianceRule": {"max_number": 67, "min_number": 66, "player_max_number": 52, "player_min_number": 42}, "activeMatchingRule": [{"attribute": "oQLYIWPPZvyPupim", "criteria": "CENHEenqjRSxO9oZ", "reference": 0.8415280858770954}, {"attribute": "fCxLR0GfjwCmDrbD", "criteria": "R0Q0ixpqYtkZuhL6", "reference": 0.26349588290197434}, {"attribute": "bAhRExsnbWSH45La", "criteria": "rTmOqto4OtwF9uPU", "reference": 0.43063412907103726}], "function": "xerdIqWmOoMyYp2t", "gameMode": "SrLxpJnj9JtgjWmj", "isBackfillMatch": true, "isRuleSetFlexed": true, "iteration": 81, "matchID": "JTYuHpnpVX5u4gw4", "namespace": "XBXDD7BG73sDdDoX", "partyID": "nB8F5X05KUgGKfDS", "remainingPlayersPerTicket": [67, 83, 15], "remainingTickets": 60, "sessionTickID": "3vQFPSYCi8WEjR3w", "tickID": 33, "timeToMatchSec": 0.5839554238505302, "timestamp": "1986-04-17T00:00:00Z", "unbackfillReason": "nx8cNfDK45zWtwYh", "unmatchReason": "RoNPwKema6caMTOc"}]}' > $TEMP_JSON_INPUT
+echo '{"ticketObservabilities": [{"action": "FcxS2OZZfXO3HkJT", "activeAllianceRule": {"max_number": 83, "min_number": 86, "player_max_number": 38, "player_min_number": 6}, "activeMatchingRule": [{"attribute": "AopmjI7CbY2WuwRU", "criteria": "T9IivgC4mJ5OHuNE", "reference": 0.7621623430243994}, {"attribute": "QK4Mvk00I9GqAhhj", "criteria": "NIivdIcaEQfNETQC", "reference": 0.4439608579922527}, {"attribute": "PK1mYwKVQoydbYjX", "criteria": "ZyBpqhCJBtFOm3iC", "reference": 0.24236125557556087}], "function": "u0lhhgutt3rQuKP1", "gameMode": "OEtKFBjNihHU8GP8", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 23, "matchID": "SvYXKz4BGjbsrRBV", "namespace": "8aztJ86yQK1AsC18", "remainingPlayersPerTicket": [95, 27, 82], "remainingTickets": 73, "sessionTickID": "6JcXmwQfkseTpH6l", "tickID": 77, "ticketID": "Dv8SvqYKc56PcPSL", "timeToMatchSec": 0.879251083967181, "timestamp": "1982-08-23T00:00:00Z", "unbackfillReason": "mjViKkKw4gHA4CaL", "unmatchReason": "sPqRsTdKzcKtkGcv"}, {"action": "n44NWse6VLPkM1VT", "activeAllianceRule": {"max_number": 36, "min_number": 87, "player_max_number": 95, "player_min_number": 57}, "activeMatchingRule": [{"attribute": "nQmZqX15hBb4dlNT", "criteria": "IBDtHunwNLLfKCQK", "reference": 0.3311087593125619}, {"attribute": "u2MWXpEpNjHWPcFS", "criteria": "nM7GAvk19sXDish7", "reference": 0.5885329330507895}, {"attribute": "UVhmAwmAygsnn8pM", "criteria": "7l6v0elLMceGGgb5", "reference": 0.5131160022466256}], "function": "JHWE6s13b7dmnPij", "gameMode": "w6U8GGp0E886E90E", "isBackfillMatch": true, "isRuleSetFlexed": false, "iteration": 16, "matchID": "oiXT1Uy0gArtDpQE", "namespace": "4bOtoiAjHXcVVOsV", "remainingPlayersPerTicket": [50, 55, 46], "remainingTickets": 31, "sessionTickID": "U6uisejapftqoxuj", "tickID": 93, "ticketID": "DosOo2kSUfIA1guT", "timeToMatchSec": 0.6385159946648434, "timestamp": "1983-06-15T00:00:00Z", "unbackfillReason": "7haejXSV2oH2uH8S", "unmatchReason": "4Zx0ACteueMOmYP4"}, {"action": "SgxAIQTTKsdmtHu1", "activeAllianceRule": {"max_number": 6, "min_number": 89, "player_max_number": 67, "player_min_number": 66}, "activeMatchingRule": [{"attribute": "0us7kIWLcgKgU940", "criteria": "6tdRDqr3cpVbaH69", "reference": 0.6345003159653746}, {"attribute": "yTfGE59942bCwgpz", "criteria": "UfcmTQjRmV0CPt1L", "reference": 0.7514359350487222}, {"attribute": "aTvrFaxzOfG3pTdd", "criteria": "IA0Rt6wM5oQvTMIC", "reference": 0.3198279720243198}], "function": "WyUtVDnhgTGXO8Ut", "gameMode": "pwxug8MpqczRvUdK", "isBackfillMatch": false, "isRuleSetFlexed": true, "iteration": 48, "matchID": "OV1ZJTYuHpnpVX5u", "namespace": "4gw4XBXDD7BG73sD", "remainingPlayersPerTicket": [7, 35, 61], "remainingTickets": 16, "sessionTickID": "oXnB8F5X05KUgGKf", "tickID": 61, "ticketID": "OwODWBAz6skHMfl4", "timeToMatchSec": 0.5394668631259848, "timestamp": "1975-07-03T00:00:00Z", "unbackfillReason": "wqpnMdSNskxhl3O3", "unmatchReason": "kGloooh7kL598P7F"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn sessionhistory \
     --op CreateXrayBulkTicketObservability \
@@ -426,11 +426,11 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByTicketID \
     --namespace $AB_NAMESPACE \
-    --ticketId 'ivPAkmP8Awb0Nqtv' \
-    --limit '91' \
-    --offset '64' \
-    --endDate 'R9q6l5k9BLQMrPoT' \
-    --startDate 'uxdzEYAw5VdW05Wn' \
+    --ticketId '3IKhiNdx1V7199NT' \
+    --limit '34' \
+    --offset '73' \
+    --endDate 'tvSR9q6l5k9BLQMr' \
+    --startDate 'PoTuxdzEYAw5VdW0' \
     > test.out 2>&1
 eval_tap $? 36 'QueryXrayTimelineByTicketID' test.out
 
@@ -439,11 +439,11 @@ $CLI_EXE \
     --sn sessionhistory \
     --op QueryXrayTimelineByUserID \
     --namespace $AB_NAMESPACE \
-    --userId 'QEAbK416LN2N6D6y' \
-    --limit '4' \
-    --offset '52' \
-    --endDate 'mU8UvONyjv3GQuLH' \
-    --startDate 'oQ6ehLLK5h1bE9WU' \
+    --userId '5WnQEAbK416LN2N6' \
+    --limit '60' \
+    --offset '95' \
+    --endDate '6yczitn4OkZfx0Xa' \
+    --startDate '6sgegAWYz2z4qSPP' \
     > test.out 2>&1
 eval_tap $? 37 'QueryXrayTimelineByUserID' test.out
 

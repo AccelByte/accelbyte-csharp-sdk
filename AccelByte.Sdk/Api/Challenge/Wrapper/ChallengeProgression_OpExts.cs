@@ -38,6 +38,36 @@ namespace AccelByte.Sdk.Api
 
             await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminEvaluateProgressAsync(op);
         }
+        public static Challenge.Model.ModelUserProgressionResponse? Execute(
+            this AdminGetUserProgression.AdminGetUserProgressionBuilder builder,
+            string challengeCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserProgression op = builder.Build(
+                challengeCode,
+                namespace_,
+                userId
+            );
+
+            return ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminGetUserProgression(op);
+        }
+        public static async Task<Challenge.Model.ModelUserProgressionResponse?> ExecuteAsync(
+            this AdminGetUserProgression.AdminGetUserProgressionBuilder builder,
+            string challengeCode,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserProgression op = builder.Build(
+                challengeCode,
+                namespace_,
+                userId
+            );
+
+            return await ((Challenge.Wrapper.ChallengeProgression)builder.WrapperObject!).AdminGetUserProgressionAsync(op);
+        }
         public static void Execute(
             this EvaluateMyProgress.EvaluateMyProgressBuilder builder,
             string namespace_

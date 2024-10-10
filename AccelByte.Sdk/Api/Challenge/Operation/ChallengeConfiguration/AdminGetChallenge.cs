@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// adminGetChallenge
     ///
     /// 
-    /// 
     ///   * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
     /// </summary>
     public class AdminGetChallenge : AccelByte.Sdk.Core.Operation

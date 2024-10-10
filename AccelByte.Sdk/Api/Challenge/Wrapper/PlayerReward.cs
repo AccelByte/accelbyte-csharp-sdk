@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             get { return Operation.AdminClaimUsersRewards.Builder.SetWrapperObject(this); }
         }
+        public AdminClaimUserRewardsByGoalCode.AdminClaimUserRewardsByGoalCodeBuilder AdminClaimUserRewardsByGoalCodeOp
+        {
+            get { return Operation.AdminClaimUserRewardsByGoalCode.Builder.SetWrapperObject(this); }
+        }
         public AdminGetUserRewards.AdminGetUserRewardsBuilder AdminGetUserRewardsOp
         {
             get { return Operation.AdminGetUserRewards.Builder.SetWrapperObject(this); }
@@ -30,6 +34,10 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         public AdminClaimUserRewards.AdminClaimUserRewardsBuilder AdminClaimUserRewardsOp
         {
             get { return Operation.AdminClaimUserRewards.Builder.SetWrapperObject(this); }
+        }
+        public PublicClaimUserRewardsByGoalCode.PublicClaimUserRewardsByGoalCodeBuilder PublicClaimUserRewardsByGoalCodeOp
+        {
+            get { return Operation.PublicClaimUserRewardsByGoalCode.Builder.SetWrapperObject(this); }
         }
         public PublicGetUserRewards.PublicGetUserRewardsBuilder PublicGetUserRewardsOp
         {
@@ -50,6 +58,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.Payload);
         }
         public async Task<List<Model.ModelClaimUsersRewardsResponse>?> AdminClaimUsersRewardsAsync(AdminClaimUsersRewards input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelUserReward>? AdminClaimUserRewardsByGoalCode(AdminClaimUserRewardsByGoalCode input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserReward>?> AdminClaimUserRewardsByGoalCodeAsync(AdminClaimUserRewardsByGoalCode input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -82,6 +106,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
                     response.Payload);
         }
         public async Task<List<Model.ModelUserReward>?> AdminClaimUserRewardsAsync(AdminClaimUserRewards input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelUserReward>? PublicClaimUserRewardsByGoalCode(PublicClaimUserRewardsByGoalCode input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelUserReward>?> PublicClaimUserRewardsByGoalCodeAsync(PublicClaimUserRewardsByGoalCode input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

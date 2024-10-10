@@ -240,11 +240,13 @@ namespace AccelByte.Sdk.Api
         }
         public static void Execute(
             this AdminDisableUserMFAV4.AdminDisableUserMFAV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_,
             string userId
         )
         {
             AdminDisableUserMFAV4 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -253,16 +255,44 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task ExecuteAsync(
             this AdminDisableUserMFAV4.AdminDisableUserMFAV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_,
             string userId
         )
         {
             AdminDisableUserMFAV4 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
 
             await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminDisableUserMFAV4Async(op);
+        }
+        public static Iam.Model.ModelUserMFAStatusResponseV4? Execute(
+            this AdminGetUserMFAStatusV4.AdminGetUserMFAStatusV4Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserMFAStatusV4 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetUserMFAStatusV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserMFAStatusResponseV4?> ExecuteAsync(
+            this AdminGetUserMFAStatusV4.AdminGetUserMFAStatusV4Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserMFAStatusV4 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).AdminGetUserMFAStatusV4Async(op);
         }
         public static Iam.Model.ModelListUserRolesV4Response? Execute(
             this AdminListUserRolesV4.AdminListUserRolesV4Builder builder,

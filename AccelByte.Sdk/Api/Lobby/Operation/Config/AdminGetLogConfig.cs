@@ -16,7 +16,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// <summary>
     /// adminGetLogConfig
     ///
-    /// Get Log Configuration.
+    /// 
+    /// Get Log Configuration
+    /// logLevel use for logging in service, the value can use is trace|debug|info|warning|error|fatal|panic
+    /// socketLogEnabled is use for enable socket log
+    /// logLevelDB use for logging in DB, the value can use is trace|debug|info|warning|error|fatal|panic
+    /// slowQueryThreshold use for logging slow threshold in time measure is nano second
     /// </summary>
     public class AdminGetLogConfig : AccelByte.Sdk.Core.Operation
     {

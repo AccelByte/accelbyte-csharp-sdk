@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableUserMFAV4
     ///
-    /// **This endpoint is used to disable user 2FA.**
+    /// This endpoint is used to disable user 2FA.
+    /// -----------
+    /// **Note**: if the factor is not specified, will disable all 2FA methods.
     /// </summary>
     public class AdminDisableUserMFAV4 : AccelByte.Sdk.Core.Operation
     {
@@ -39,11 +41,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public AdminDisableUserMFAV4 Build(
+                ModelDisableMFARequest body,
                 string namespace_,
                 string userId
             )
             {
                 AdminDisableUserMFAV4 op = new AdminDisableUserMFAV4(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -57,6 +61,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private AdminDisableUserMFAV4(AdminDisableUserMFAV4Builder builder,
+            ModelDisableMFARequest body,
             string namespace_,
             string userId
         )
@@ -68,6 +73,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -76,7 +82,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public AdminDisableUserMFAV4(
             string namespace_,
-            string userId
+            string userId,
+            Model.ModelDisableMFARequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -86,6 +93,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -95,7 +103,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Delete;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

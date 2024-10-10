@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             get { return Operation.AdminEvaluateProgress.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserProgression.AdminGetUserProgressionBuilder AdminGetUserProgressionOp
+        {
+            get { return Operation.AdminGetUserProgression.Builder.SetWrapperObject(this); }
+        }
         public EvaluateMyProgress.EvaluateMyProgressBuilder EvaluateMyProgressOp
         {
             get { return Operation.EvaluateMyProgress.Builder.SetWrapperObject(this); }
@@ -49,6 +53,22 @@ namespace AccelByte.Sdk.Api.Challenge.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserProgressionResponse? AdminGetUserProgression(AdminGetUserProgression input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserProgressionResponse?> AdminGetUserProgressionAsync(AdminGetUserProgression input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -17,6 +17,8 @@ namespace AccelByte.Sdk.Api.Match2.Operation
     /// AcceptBackfill
     ///
     /// Accept backfill proposal.
+    /// Field **acceptedTicketIds** can be used to accept specific tickets within a backfill proposal. If the ticketIDs are not mentioned in this field, those tickets will be rejected and reactivated for future proposals.
+    /// If **acceptedTicketIds** is nil or not specified, then all tickets in the proposal will be accepted.
     /// </summary>
     public class AcceptBackfill : AccelByte.Sdk.Core.Operation
     {

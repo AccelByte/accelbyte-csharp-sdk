@@ -145,6 +145,28 @@ namespace AccelByte.Sdk.Core
         }
         private IAP? _IAP = null;
 
+        public IAPNotification IAPNotification
+        {
+            get
+            {
+                if (_IAPNotification == null)
+                    _IAPNotification = new IAPNotification(_SdkObject);
+                return _IAPNotification;
+            }
+        }
+        private IAPNotification? _IAPNotification = null;
+
+        public IAPSubscription IAPSubscription
+        {
+            get
+            {
+                if (_IAPSubscription == null)
+                    _IAPSubscription = new IAPSubscription(_SdkObject);
+                return _IAPSubscription;
+            }
+        }
+        private IAPSubscription? _IAPSubscription = null;
+
         public Invoice Invoice
         {
             get

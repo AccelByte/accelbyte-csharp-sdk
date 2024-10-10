@@ -12,6 +12,14 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("commandLineArguments")]
         public string? CommandLineArguments { get; set; }
 
+        [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("expiresAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? ExpiresAt { get; set; }
+
         [JsonPropertyName("imageId")]
         public string? ImageId { get; set; }
 

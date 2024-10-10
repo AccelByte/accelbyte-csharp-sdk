@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This API is for admin to get user's link history.
     /// 
-    /// 
     /// **Supported Platforms:**
     /// - Steam group (steamnetwork):
     /// - steam

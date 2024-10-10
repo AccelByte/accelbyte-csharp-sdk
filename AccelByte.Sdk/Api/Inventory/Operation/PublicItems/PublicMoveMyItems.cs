@@ -18,10 +18,6 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     ///
     /// 
     /// Move items between inventories that is owned by the same user.
-    /// 
-    /// Currently, this endpoint supports transferring items exclusively from source OTHER.
-    /// Items from source ECOMMERCE are not yet eligible for transfer.
-    /// We are working on expanding support to include source ECOMMERCE in future updates.
     /// </summary>
     public class PublicMoveMyItems : AccelByte.Sdk.Core.Operation
     {

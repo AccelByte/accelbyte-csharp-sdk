@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("attributes")]
         public Dictionary<string, object>? Attributes { get; set; }
 
+        [JsonPropertyName("excludedSessions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? ExcludedSessions { get; set; }
+
         [JsonPropertyName("latencies")]
         public Dictionary<string, long>? Latencies { get; set; }
 
@@ -32,6 +36,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
     {
         [JsonPropertyName("attributes")]
         public T1? Attributes { get; set; }
+
+        [JsonPropertyName("excludedSessions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? ExcludedSessions { get; set; }
 
         [JsonPropertyName("latencies")]
         public Dictionary<string, long>? Latencies { get; set; }

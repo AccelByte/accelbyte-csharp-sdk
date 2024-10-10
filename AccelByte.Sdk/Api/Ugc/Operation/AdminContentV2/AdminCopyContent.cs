@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Ugc.Operation
 {
     /// <summary>
     /// AdminCopyContent
+    ///
+    /// Copy existing content from source channel to target channel.
     /// </summary>
     public class AdminCopyContent : AccelByte.Sdk.Core.Operation
     {

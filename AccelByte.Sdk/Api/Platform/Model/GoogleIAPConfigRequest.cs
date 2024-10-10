@@ -12,6 +12,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("applicationName")]
         public string? ApplicationName { get; set; }
 
+        [JsonPropertyName("notificationTokenAudience")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? NotificationTokenAudience { get; set; }
+
+        [JsonPropertyName("notificationTokenEmail")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? NotificationTokenEmail { get; set; }
+
+        [JsonPropertyName("packageName")]
+        public string? PackageName { get; set; }
+
         [JsonPropertyName("serviceAccountId")]
         public string? ServiceAccountId { get; set; }
 
