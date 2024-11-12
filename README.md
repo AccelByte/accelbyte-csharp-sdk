@@ -6,7 +6,7 @@ This SDK was generated from OpenAPI spec included in the [spec](spec) directory.
 
 ## Setup
 
-This SDK requires .NET 6.0 SDK to be installed.
+This SDK requires .NET 8.0 SDK or at minimum .NET 6.0 to be installed.
 
 ## Adding to Your Project
 

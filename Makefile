@@ -1,25 +1,25 @@
-# Copyright (c) 2021 AccelByte Inc. All Rights Reserved.
+# Copyright (c) 2021-2024 AccelByte Inc. All Rights Reserved.
 # This is licensed software from AccelByte Inc, for limitations
 # and restrictions contact your company contract manager.
 
 SHELL := /bin/bash
 
-DOTNETVER := 6.0.302
+DOTNETVER := 8.0
 
 .PHONY: build
 
 build:
-	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:6.0 dotnet build
+	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) dotnet build
 
 pack:
-	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:6.0 dotnet pack AccelByte.Sdk/AccelByte.Sdk.csproj -c Release
+	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) dotnet pack AccelByte.Sdk/AccelByte.Sdk.csproj -c Release
 
 pack_push:
 	@test -n "$(NUGET_API_KEY)" || (echo "NUGET_API_KEY is not set" ; exit 1)
 	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ \
 		-e HOME="/data" \
 		-e DOTNET_CLI_HOME="/data" \
-		mcr.microsoft.com/dotnet/sdk:6.0 \
+		mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) \
 		dotnet pack AccelByte.Sdk/AccelByte.Sdk.csproj -c Release
 	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ \
 		-e HOME="/data" \
@@ -47,7 +47,7 @@ test_cli:
 			sed -i "s/\r//" samples/AccelByte.Sdk.Sample.Cli/tests/* && \
 			rm -f samples/AccelByte.Sdk.Sample.Cli/tests/*.tap && \
 			(for FILE in $$(ls samples/AccelByte.Sdk.Sample.Cli/tests/*.sh); do \
-					(set -o pipefail; PATH="samples/AccelByte.Sdk.Sample.Cli/bin/Debug/net6.0/linux-x64/publish:$$PATH" bash $$FILE | tee "$${FILE}.tap") || touch test.err; \
+					(set -o pipefail; PATH="samples/AccelByte.Sdk.Sample.Cli/bin/Debug/net8.0/linux-x64/publish:$$PATH" bash $$FILE | tee "$${FILE}.tap") || touch test.err; \
 			done)
 	[ ! -f test.err ]
 
