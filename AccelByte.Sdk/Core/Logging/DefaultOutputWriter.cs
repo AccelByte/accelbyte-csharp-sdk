@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Core.Logging
     public class DefaultOutputWriter : ILogOutputWriter
     {
         private string _FilePath = String.Empty;
+
+#if NET8_0_OR_GREATER
+        private object _FileLock = new object();
+#endif
 
         public DefaultOutputWriter(string filePath)
         {
@@ -46,7 +50,14 @@ namespace AccelByte.Sdk.Core.Logging
             WriteStringDictionary(keyValues, sb, "");
             sb.AppendLine();
 
+#if NET6_0
             File.AppendAllText(_FilePath, sb.ToString());
+#elif NET8_0_OR_GREATER
+            lock (_FileLock)
+            {
+                File.AppendAllText(_FilePath, sb.ToString());
+            }
+#endif
         }
     }
 }
