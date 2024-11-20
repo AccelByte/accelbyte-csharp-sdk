@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     ///     * name: name of the goal.
     ///     * description: text describing the goal (optional).
     ///     * schedule: a time range that indicated the availability of a goal within a timeframe. Used in FIXED assignment rule, this will be required in that case.
-    ///     * requirementGroups: list of conditions that conform with the goal progressions.
+    ///     * requirementGroups: contains array of objects consisting of operator and predicates attribute. When requirements evaluation happened, each item's predicates will be evaluated first, by operating the predicates with given operator. After all items evaluated, the results of the evaluation on each item then will be logically evaluated using OR operator.
     ///       * operator: logical operator used to validate the completion of a goal. a goal is considered complete once complete predicates operated with operator result in true.
     ///       * predicates: list of progression parameters to be tracked.
     ///         * parameterType: the type of parameter for challenge to be progressed with. the available options are:

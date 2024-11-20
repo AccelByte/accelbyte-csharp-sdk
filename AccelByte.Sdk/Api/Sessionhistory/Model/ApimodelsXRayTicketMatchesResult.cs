@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 {
     public class ApimodelsXRayTicketMatchesResult : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("ActualTimeToMatch")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ActualTimeToMatch { get; set; }
+
         [JsonPropertyName("CreatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }
@@ -65,6 +69,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
     public class ApimodelsXRayTicketMatchesResult<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("ActualTimeToMatch")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? ActualTimeToMatch { get; set; }
+
         [JsonPropertyName("CreatedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? CreatedAt { get; set; }

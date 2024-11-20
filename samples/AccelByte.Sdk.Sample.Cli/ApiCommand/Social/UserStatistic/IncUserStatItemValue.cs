@@ -52,12 +52,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.IncUserStatItemValue.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Social.Model.StatItemInc)Body);
 
 
 
             IncUserStatItemValue operation = opBuilder.Build(
+                Body,
                 Namespace,
                 StatCode,
                 UserId

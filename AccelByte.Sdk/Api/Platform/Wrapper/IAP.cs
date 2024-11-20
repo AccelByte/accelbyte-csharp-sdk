@@ -147,6 +147,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.UpdateXblBPCertFile.Builder.SetWrapperObject(this); }
         }
+        public GetIAPOrderConsumeDetails.GetIAPOrderConsumeDetailsBuilder GetIAPOrderConsumeDetailsOp
+        {
+            get { return Operation.GetIAPOrderConsumeDetails.Builder.SetWrapperObject(this); }
+        }
         public QueryUserIAPOrders.QueryUserIAPOrdersBuilder QueryUserIAPOrdersOp
         {
             get { return Operation.QueryUserIAPOrders.Builder.SetWrapperObject(this); }
@@ -722,6 +726,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.XblIAPConfigInfo?> UpdateXblBPCertFileAsync(UpdateXblBPCertFile input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.IAPOrderConsumeDetailInfo>? GetIAPOrderConsumeDetails(GetIAPOrderConsumeDetails input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.IAPOrderConsumeDetailInfo>?> GetIAPOrderConsumeDetailsAsync(GetIAPOrderConsumeDetails input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

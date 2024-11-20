@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        public DeleteLocalizedPolicy.DeleteLocalizedPolicyBuilder DeleteLocalizedPolicyOp
+        {
+            get { return Operation.DeleteLocalizedPolicy.Builder.SetWrapperObject(this); }
+        }
         public RetrieveLocalizedPolicyVersions1.RetrieveLocalizedPolicyVersions1Builder RetrieveLocalizedPolicyVersions1Op
         {
             get { return Operation.RetrieveLocalizedPolicyVersions1.Builder.SetWrapperObject(this); }
@@ -49,6 +53,22 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
 
+        public void DeleteLocalizedPolicy(DeleteLocalizedPolicy input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteLocalizedPolicyAsync(DeleteLocalizedPolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.RetrieveLocalizedPolicyVersionResponse>? RetrieveLocalizedPolicyVersions1(RetrieveLocalizedPolicyVersions1 input)
         {
             var response = _sdk.RunRequest(input);

@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminQueryParties.Builder.SetWrapperObject(this); }
         }
+        public AdminDeleteBulkParties.AdminDeleteBulkPartiesBuilder AdminDeleteBulkPartiesOp
+        {
+            get { return Operation.AdminDeleteBulkParties.Builder.SetWrapperObject(this); }
+        }
         public AdminSyncNativeSession.AdminSyncNativeSessionBuilder AdminSyncNativeSessionOp
         {
             get { return Operation.AdminSyncNativeSession.Builder.SetWrapperObject(this); }
@@ -98,6 +102,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApimodelsPartyQueryResponse?> AdminQueryPartiesAsync(AdminQueryParties input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsDeleteBulkPartySessionsAPIResponse? AdminDeleteBulkParties(AdminDeleteBulkParties input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsDeleteBulkPartySessionsAPIResponse?> AdminDeleteBulkPartiesAsync(AdminDeleteBulkParties input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

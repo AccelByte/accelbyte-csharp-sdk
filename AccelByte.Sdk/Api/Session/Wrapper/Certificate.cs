@@ -19,13 +19,16 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
-        public HandleUploadXboxPFXCertificate.HandleUploadXboxPFXCertificateBuilder HandleUploadXboxPFXCertificateOp
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public AdminUploadXBoxCertificate.AdminUploadXBoxCertificateBuilder AdminUploadXBoxCertificateOp
         {
-            get { return Operation.HandleUploadXboxPFXCertificate.Builder.SetWrapperObject(this); }
+            get { return Operation.AdminUploadXBoxCertificate.Builder.SetWrapperObject(this); }
         }
         #endregion
 
-        public Model.ModelsPlatformCredentials? HandleUploadXboxPFXCertificate(HandleUploadXboxPFXCertificate input)
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public Model.ModelsPlatformCredentials? AdminUploadXBoxCertificate(AdminUploadXBoxCertificate input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -33,7 +36,7 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelsPlatformCredentials?> HandleUploadXboxPFXCertificateAsync(HandleUploadXboxPFXCertificate input)
+        public async Task<Model.ModelsPlatformCredentials?> AdminUploadXBoxCertificateAsync(AdminUploadXBoxCertificate input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -41,5 +44,6 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

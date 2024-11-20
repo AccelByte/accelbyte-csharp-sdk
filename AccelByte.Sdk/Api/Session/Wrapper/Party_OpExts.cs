@@ -34,6 +34,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.Party)builder.WrapperObject!).AdminQueryPartiesAsync(op);
         }
+        public static Session.Model.ApimodelsDeleteBulkPartySessionsAPIResponse? Execute(
+            this AdminDeleteBulkParties.AdminDeleteBulkPartiesBuilder builder,
+            ApimodelsDeleteBulkPartySessionRequest body,
+            string namespace_
+        )
+        {
+            AdminDeleteBulkParties op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Session.Wrapper.Party)builder.WrapperObject!).AdminDeleteBulkParties(op);
+        }
+        public static async Task<Session.Model.ApimodelsDeleteBulkPartySessionsAPIResponse?> ExecuteAsync(
+            this AdminDeleteBulkParties.AdminDeleteBulkPartiesBuilder builder,
+            ApimodelsDeleteBulkPartySessionRequest body,
+            string namespace_
+        )
+        {
+            AdminDeleteBulkParties op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).AdminDeleteBulkPartiesAsync(op);
+        }
         public static void Execute(
             this AdminSyncNativeSession.AdminSyncNativeSessionBuilder builder,
             string namespace_,

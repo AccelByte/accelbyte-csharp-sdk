@@ -9,11 +9,23 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class AccountUpgradeHeadlessAccountRequestV4 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("dateOfBirth")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DateOfBirth { get; set; }
+
+        [JsonPropertyName("displayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? DisplayName { get; set; }
+
         [JsonPropertyName("emailAddress")]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("password")]
         public string? Password { get; set; }
+
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
 
         [JsonPropertyName("username")]
         public string? Username { get; set; }

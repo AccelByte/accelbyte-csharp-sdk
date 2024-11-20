@@ -55,6 +55,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("fuzzyMatchName")]
         public bool? FuzzyMatchName { get; set; }
 
+        [SdkCommandArgument("ignoreActiveDate")]
+        public bool? IgnoreActiveDate { get; set; }
+
         [SdkCommandArgument("itemId")]
         public List<string>? ItemId { get; set; }
 
@@ -92,6 +95,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetFeatures((List<string>)Features);
             if (FuzzyMatchName != null)
                 opBuilder.SetFuzzyMatchName((bool)FuzzyMatchName);
+            if (IgnoreActiveDate != null)
+                opBuilder.SetIgnoreActiveDate((bool)IgnoreActiveDate);
             if (ItemId != null)
                 opBuilder.SetItemId((List<string>)ItemId);
             if (Limit != null)

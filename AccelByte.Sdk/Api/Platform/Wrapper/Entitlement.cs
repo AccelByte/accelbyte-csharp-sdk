@@ -71,6 +71,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.QueryUserEntitlementsByAppType.Builder.SetWrapperObject(this); }
         }
+        public GetUserEntitlementsByIds.GetUserEntitlementsByIdsBuilder GetUserEntitlementsByIdsOp
+        {
+            get { return Operation.GetUserEntitlementsByIds.Builder.SetWrapperObject(this); }
+        }
         public GetUserEntitlementByItemId.GetUserEntitlementByItemIdBuilder GetUserEntitlementByItemIdOp
         {
             get { return Operation.GetUserEntitlementByItemId.Builder.SetWrapperObject(this); }
@@ -453,6 +457,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.AppEntitlementPagingSlicedResult?> QueryUserEntitlementsByAppTypeAsync(QueryUserEntitlementsByAppType input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.EntitlementInfo>? GetUserEntitlementsByIds(GetUserEntitlementsByIds input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.EntitlementInfo>?> GetUserEntitlementsByIdsAsync(GetUserEntitlementsByIds input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

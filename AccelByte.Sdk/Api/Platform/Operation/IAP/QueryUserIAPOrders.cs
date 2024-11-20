@@ -214,6 +214,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryUserIAPOrdersStatus FULFILLED
             = new QueryUserIAPOrdersStatus("FULFILLED");
 
+        public static readonly QueryUserIAPOrdersStatus PARTIALREVOKED
+            = new QueryUserIAPOrdersStatus("PARTIAL_REVOKED");
+
+        public static readonly QueryUserIAPOrdersStatus REVOKED
+            = new QueryUserIAPOrdersStatus("REVOKED");
+
         public static readonly QueryUserIAPOrdersStatus VERIFIED
             = new QueryUserIAPOrdersStatus("VERIFIED");
 

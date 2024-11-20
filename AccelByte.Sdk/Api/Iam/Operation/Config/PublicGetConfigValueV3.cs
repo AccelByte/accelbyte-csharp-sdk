@@ -23,6 +23,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// * uniqueDisplayNameEnabled
     /// * usernameDisabled
     /// * mandatoryEmailVerificationEnabled
+    /// * verificationCodeType
+    /// 
+    /// If the key is verificationCodeType, then possible value format will be '{collection}:{N}'; example: 'ABCDEFGHI:6', 'ABCDEFGHI1234:8','01234567894:7'
     /// </summary>
     public class PublicGetConfigValueV3 : AccelByte.Sdk.Core.Operation
     {

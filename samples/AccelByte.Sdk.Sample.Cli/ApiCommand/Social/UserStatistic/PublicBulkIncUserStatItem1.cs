@@ -49,12 +49,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.PublicBulkIncUserStatItem1.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((List<AccelByte.Sdk.Api.Social.Model.BulkStatItemInc>)Body);
 
 
 
             PublicBulkIncUserStatItem1 operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

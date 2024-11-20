@@ -57,8 +57,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// - `{ "data.2": "value" }`
     /// 2. Cannot use **"$"** as the prefix in key names
     /// - `{ "$data": "value" }`
-    /// 3. Cannot use empty string in key names
-    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Record Metadata

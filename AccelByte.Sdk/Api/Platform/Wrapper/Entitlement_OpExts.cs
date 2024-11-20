@@ -346,6 +346,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryUserEntitlementsByAppTypeAsync(op);
         }
+        public static List<Platform.Model.EntitlementInfo>? Execute(
+            this GetUserEntitlementsByIds.GetUserEntitlementsByIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlementsByIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementsByIds(op);
+        }
+        public static async Task<List<Platform.Model.EntitlementInfo>?> ExecuteAsync(
+            this GetUserEntitlementsByIds.GetUserEntitlementsByIdsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            GetUserEntitlementsByIds op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).GetUserEntitlementsByIdsAsync(op);
+        }
         public static Platform.Model.EntitlementInfo? Execute(
             this GetUserEntitlementByItemId.GetUserEntitlementByItemIdBuilder builder,
             string namespace_,

@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public Model.StatCreate? Body { get; set; }
-
 
 
 
@@ -42,20 +40,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public CreateStatBuilder SetBody(Model.StatCreate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public CreateStat Build(
+                StatCreate body,
                 string namespace_
             )
             {
                 CreateStat op = new CreateStat(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -68,6 +62,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private CreateStat(CreateStatBuilder builder,
+            StatCreate body,
             string namespace_
         )
         {
@@ -77,7 +72,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

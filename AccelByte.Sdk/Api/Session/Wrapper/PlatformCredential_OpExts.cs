@@ -82,5 +82,57 @@ namespace AccelByte.Sdk.Api
 
             await ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminDeletePlatformCredentialsAsync(op);
         }
+        public static void Execute(
+            this AdminDeletePlatformCredentialsByPlatformId.AdminDeletePlatformCredentialsByPlatformIdBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminDeletePlatformCredentialsByPlatformId op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminDeletePlatformCredentialsByPlatformId(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminDeletePlatformCredentialsByPlatformId.AdminDeletePlatformCredentialsByPlatformIdBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminDeletePlatformCredentialsByPlatformId op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            await ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminDeletePlatformCredentialsByPlatformIdAsync(op);
+        }
+        public static Session.Model.ApimodelsXblCertificateResponseBody? Execute(
+            this AdminSyncPlatformCredentials.AdminSyncPlatformCredentialsBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminSyncPlatformCredentials op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            return ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminSyncPlatformCredentials(op);
+        }
+        public static async Task<Session.Model.ApimodelsXblCertificateResponseBody?> ExecuteAsync(
+            this AdminSyncPlatformCredentials.AdminSyncPlatformCredentialsBuilder builder,
+            string namespace_,
+            string platformId
+        )
+        {
+            AdminSyncPlatformCredentials op = builder.Build(
+                namespace_,
+                platformId
+            );
+
+            return await ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminSyncPlatformCredentialsAsync(op);
+        }
     }
 }

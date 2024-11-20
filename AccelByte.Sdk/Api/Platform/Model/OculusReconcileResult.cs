@@ -45,6 +45,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly OculusReconcileResultIapOrderStatus FULFILLED
             = new OculusReconcileResultIapOrderStatus("FULFILLED");
 
+        public static readonly OculusReconcileResultIapOrderStatus PARTIALREVOKED
+            = new OculusReconcileResultIapOrderStatus("PARTIAL_REVOKED");
+
+        public static readonly OculusReconcileResultIapOrderStatus REVOKED
+            = new OculusReconcileResultIapOrderStatus("REVOKED");
+
         public static readonly OculusReconcileResultIapOrderStatus VERIFIED
             = new OculusReconcileResultIapOrderStatus("VERIFIED");
 

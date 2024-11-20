@@ -27,12 +27,36 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<FleetListBuilder>
         {
 
+            public bool? Active { get; set; }
+
+            public string? Name { get; set; }
+
+            public string? Region { get; set; }
+
 
 
 
 
             internal FleetListBuilder() { }
 
+
+            public FleetListBuilder SetActive(bool _active)
+            {
+                Active = _active;
+                return this;
+            }
+
+            public FleetListBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
+            public FleetListBuilder SetRegion(string _region)
+            {
+                Region = _region;
+                return this;
+            }
 
 
 
@@ -60,6 +84,9 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Active != null) QueryParams["active"] = Convert.ToString(builder.Active)!;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
+            if (builder.Region is not null) QueryParams["region"] = builder.Region;
 
 
 
@@ -71,11 +98,17 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         #endregion
 
         public FleetList(
-            string namespace_
+            string namespace_,
+            bool? active,
+            string? name,
+            string? region
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (active != null) QueryParams["active"] = Convert.ToString(active)!;
+            if (name is not null) QueryParams["name"] = name;
+            if (region is not null) QueryParams["region"] = region;
 
 
 

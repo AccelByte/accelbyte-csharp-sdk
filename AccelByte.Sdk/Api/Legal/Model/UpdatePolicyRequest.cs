@@ -9,6 +9,14 @@ namespace AccelByte.Sdk.Api.Legal.Model
 {
     public class UpdatePolicyRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("countries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Countries { get; set; }
+
+        [JsonPropertyName("countryGroupName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CountryGroupName { get; set; }
+
         [JsonPropertyName("description")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }

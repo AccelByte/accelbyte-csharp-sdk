@@ -44,6 +44,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PlayStationReconcileResultStatus FULFILLED
             = new PlayStationReconcileResultStatus("FULFILLED");
 
+        public static readonly PlayStationReconcileResultStatus PARTIALREVOKED
+            = new PlayStationReconcileResultStatus("PARTIAL_REVOKED");
+
+        public static readonly PlayStationReconcileResultStatus REVOKED
+            = new PlayStationReconcileResultStatus("REVOKED");
+
         public static readonly PlayStationReconcileResultStatus VERIFIED
             = new PlayStationReconcileResultStatus("VERIFIED");
 

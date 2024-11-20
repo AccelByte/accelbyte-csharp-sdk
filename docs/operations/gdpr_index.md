@@ -67,6 +67,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/gdpr/s2s/namespaces/{namespace}/requests/finished` | GET | S2SGetListFinishedPersonalDataRequest | [S2SGetListFinishedPersonalDataRequest](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalS2S/S2SGetListFinishedPersonalDataRequest.cs) | [S2SGetListFinishedPersonalDataRequest](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalS2S/S2SGetListFinishedPersonalDataRequest.cs) |
+| `/gdpr/s2s/namespaces/{namespace}/requests/{requestId}` | GET | S2SGetDataRequestByRequestID | [S2SGetDataRequestByRequestID](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalS2S/S2SGetDataRequestByRequestID.cs) | [S2SGetDataRequestByRequestID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalS2S/S2SGetDataRequestByRequestID.cs) |
 | `/gdpr/s2s/namespaces/{namespace}/users/{userId}/requests` | POST | S2SRequestDataRetrieval | [S2SRequestDataRetrieval](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalS2S/S2SRequestDataRetrieval.cs) | [S2SRequestDataRetrieval](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalS2S/S2SRequestDataRetrieval.cs) |
 | `/gdpr/s2s/namespaces/{namespace}/users/{userId}/requests/{requestDate}/generate` | POST | S2SGeneratePersonalDataURL | [S2SGeneratePersonalDataURL](../../AccelByte.Sdk/Api/Gdpr/Operation/DataRetrievalS2S/S2SGeneratePersonalDataURL.cs) | [S2SGeneratePersonalDataURL](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Gdpr/DataRetrievalS2S/S2SGeneratePersonalDataURL.cs) |
 
@@ -117,6 +118,7 @@
 | `dto.ListFinishedDataRequests` | [DtoListFinishedDataRequests](../../AccelByte.Sdk/Api/Gdpr/Model/DtoListFinishedDataRequests.cs) |
 | `dto.PlatformAccountClosureClientRequest` | [DtoPlatformAccountClosureClientRequest](../../AccelByte.Sdk/Api/Gdpr/Model/DtoPlatformAccountClosureClientRequest.cs) |
 | `dto.PlatformAccountClosureClientResponse` | [DtoPlatformAccountClosureClientResponse](../../AccelByte.Sdk/Api/Gdpr/Model/DtoPlatformAccountClosureClientResponse.cs) |
+| `dto.S2SDataRequestSummary` | [DtoS2SDataRequestSummary](../../AccelByte.Sdk/Api/Gdpr/Model/DtoS2SDataRequestSummary.cs) |
 | `dto.ServiceConfigDTO` | [DtoServiceConfigDTO](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigDTO.cs) |
 | `dto.ServiceConfigurationDTO` | [DtoServiceConfigurationDTO](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigurationDTO.cs) |
 | `dto.ServiceConfigurationUpdateRequest` | [DtoServiceConfigurationUpdateRequest](../../AccelByte.Sdk/Api/Gdpr/Model/DtoServiceConfigurationUpdateRequest.cs) |

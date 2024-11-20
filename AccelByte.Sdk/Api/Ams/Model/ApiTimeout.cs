@@ -9,16 +9,24 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiTimeout : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("claim")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? Claim { get; set; }
+
         [JsonPropertyName("creation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Creation { get; set; }
 
         [JsonPropertyName("drain")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Drain { get; set; }
 
         [JsonPropertyName("session")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Session { get; set; }
 
         [JsonPropertyName("unresponsive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? Unresponsive { get; set; }
 
     }

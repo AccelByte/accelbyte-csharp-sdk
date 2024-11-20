@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             if (PreferUnlocked != null)
                 opBuilder.SetPreferUnlocked((bool)PreferUnlocked);
             if (SortBy != null)
-                opBuilder.SetSortBy((string)SortBy);
+                opBuilder.SetSortBy(PublicListUserAchievementsSortBy.NewValue(SortBy));
             if (Tags != null)
                 opBuilder.SetTags((List<string>)Tags);
 

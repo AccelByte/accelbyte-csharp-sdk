@@ -42,6 +42,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Gdpr.Wrapper.DataRetrievalS2S)builder.WrapperObject!).S2SGetListFinishedPersonalDataRequestAsync(op);
         }
+        public static Gdpr.Model.DtoS2SDataRequestSummary? Execute(
+            this S2SGetDataRequestByRequestID.S2SGetDataRequestByRequestIDBuilder builder,
+            string namespace_,
+            string requestId
+        )
+        {
+            S2SGetDataRequestByRequestID op = builder.Build(
+                namespace_,
+                requestId
+            );
+
+            return ((Gdpr.Wrapper.DataRetrievalS2S)builder.WrapperObject!).S2SGetDataRequestByRequestID(op);
+        }
+        public static async Task<Gdpr.Model.DtoS2SDataRequestSummary?> ExecuteAsync(
+            this S2SGetDataRequestByRequestID.S2SGetDataRequestByRequestIDBuilder builder,
+            string namespace_,
+            string requestId
+        )
+        {
+            S2SGetDataRequestByRequestID op = builder.Build(
+                namespace_,
+                requestId
+            );
+
+            return await ((Gdpr.Wrapper.DataRetrievalS2S)builder.WrapperObject!).S2SGetDataRequestByRequestIDAsync(op);
+        }
         public static Gdpr.Model.ModelsS2SDataRetrievalResponse? Execute(
             this S2SRequestDataRetrieval.S2SRequestDataRetrievalBuilder builder,
             string namespace_,

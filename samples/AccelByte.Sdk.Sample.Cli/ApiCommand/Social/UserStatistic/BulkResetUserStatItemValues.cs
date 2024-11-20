@@ -54,12 +54,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             if (AdditionalKey != null)
                 opBuilder.SetAdditionalKey((string)AdditionalKey);
 
-            if (Body != null)
-                opBuilder.SetBody((List<AccelByte.Sdk.Api.Social.Model.ADTOObjectForResettingUserStatItems>)Body);
 
 
 
             BulkResetUserStatItemValues operation = opBuilder.Build(
+                Body,
                 Namespace,
                 UserId
             );

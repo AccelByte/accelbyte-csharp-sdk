@@ -34,8 +34,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
 
     public class DtoFinishedDataDeletionStatus : StringEnum<DtoFinishedDataDeletionStatus>
     {
-        public static readonly DtoFinishedDataDeletionStatus Completed, Failed
-            = new DtoFinishedDataDeletionStatus("Completed,Failed");
+        public static readonly DtoFinishedDataDeletionStatus Completed
+            = new DtoFinishedDataDeletionStatus("Completed");
+
+        public static readonly DtoFinishedDataDeletionStatus Failed
+            = new DtoFinishedDataDeletionStatus("Failed");
 
 
         public static implicit operator DtoFinishedDataDeletionStatus(string value)

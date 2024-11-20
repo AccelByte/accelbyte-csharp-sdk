@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - STEAM
     /// - XBOX
     /// - PSN
+    /// Metadata is optional parameter which will be sent over via invitation notification and is not permanently stored in the game session storage.
     /// </summary>
     public class PublicGameSessionInvite : AccelByte.Sdk.Core.Operation
     {

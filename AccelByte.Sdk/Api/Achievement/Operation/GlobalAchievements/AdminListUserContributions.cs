@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public long? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public AdminListUserContributionsSortBy? SortBy { get; set; }
 
             public List<string>? Tags { get; set; }
 
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 return this;
             }
 
-            public AdminListUserContributionsBuilder SetSortBy(string _sortBy)
+            public AdminListUserContributionsBuilder SetSortBy(AdminListUserContributionsSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -110,7 +110,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.AchievementCodes is not null) QueryParams["achievementCodes"] = builder.AchievementCodes;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
@@ -129,7 +129,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             string? achievementCodes,
             long? limit,
             long? offset,
-            string? sortBy,
+            AdminListUserContributionsSortBy? sortBy,
             List<string>? tags
         )
         {
@@ -139,7 +139,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (achievementCodes is not null) QueryParams["achievementCodes"] = achievementCodes;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (tags is not null) QueryParams["tags"] = tags;
 
 
@@ -183,6 +183,30 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class AdminListUserContributionsSortBy : StringEnum<AdminListUserContributionsSortBy>
+    {
+        public static readonly AdminListUserContributionsSortBy ContributedValue
+            = new AdminListUserContributionsSortBy("contributedValue");
+
+        public static readonly AdminListUserContributionsSortBy ContributedValueasc
+            = new AdminListUserContributionsSortBy("contributedValue:asc");
+
+        public static readonly AdminListUserContributionsSortBy ContributedValuedesc
+            = new AdminListUserContributionsSortBy("contributedValue:desc");
+
+
+        public static implicit operator AdminListUserContributionsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminListUserContributionsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

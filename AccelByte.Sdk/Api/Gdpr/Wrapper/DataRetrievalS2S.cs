@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         {
             get { return Operation.S2SGetListFinishedPersonalDataRequest.Builder.SetWrapperObject(this); }
         }
+        public S2SGetDataRequestByRequestID.S2SGetDataRequestByRequestIDBuilder S2SGetDataRequestByRequestIDOp
+        {
+            get { return Operation.S2SGetDataRequestByRequestID.Builder.SetWrapperObject(this); }
+        }
         public S2SRequestDataRetrieval.S2SRequestDataRetrievalBuilder S2SRequestDataRetrievalOp
         {
             get { return Operation.S2SRequestDataRetrieval.Builder.SetWrapperObject(this); }
@@ -42,6 +46,22 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.Payload);
         }
         public async Task<Model.DtoListFinishedDataRequests?> S2SGetListFinishedPersonalDataRequestAsync(S2SGetListFinishedPersonalDataRequest input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.DtoS2SDataRequestSummary? S2SGetDataRequestByRequestID(S2SGetDataRequestByRequestID input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DtoS2SDataRequestSummary?> S2SGetDataRequestByRequestIDAsync(S2SGetDataRequestByRequestID input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

@@ -21,6 +21,14 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - clientID: Auth Server (Client Credential) ClientID
     /// - clientSecret: Auth Server (Client Credential) Secret. For security, only the first few characters are shown.
     /// - scope: should be psn:s2s.service (For Sync non PSN member to PSN Session)
+    /// 
+    /// XBOX:
+    /// - namespace: namespace of the configuration
+    /// - businessPartnerCertFileName: name of pfx xbox configuration file
+    /// - businessPartnerCertFileBytes: the pfx configuration file
+    /// - updatedAt: date time when the record is updated
+    /// - createdAt: date time when the record is created
+    /// - createdBy: the actor who trigger the xbox configuration sync
     /// </summary>
     public class AdminGetPlatformCredentials : AccelByte.Sdk.Core.Operation
     {
@@ -93,7 +101,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { };
 
         public override string[] Produces => new string[] { "application/json" };
 

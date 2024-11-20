@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public List<Model.BulkUserStatItemInc>? Body { get; set; }
-
 
 
 
@@ -39,20 +37,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public PublicBulkIncUserStatItemValueBuilder SetBody(List<Model.BulkUserStatItemInc> _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public PublicBulkIncUserStatItemValue Build(
+                List<BulkUserStatItemInc> body,
                 string namespace_
             )
             {
                 PublicBulkIncUserStatItemValue op = new PublicBulkIncUserStatItemValue(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private PublicBulkIncUserStatItemValue(PublicBulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
@@ -74,7 +69,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

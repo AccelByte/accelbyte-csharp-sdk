@@ -33,8 +33,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public Model.StatUpdate? Body { get; set; }
-
 
 
 
@@ -42,21 +40,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public UpdateStatBuilder SetBody(Model.StatUpdate _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public UpdateStat Build(
+                StatUpdate body,
                 string namespace_,
                 string statCode
             )
             {
                 UpdateStat op = new UpdateStat(this,
+                    body,
                     namespace_,
                     statCode
                 );
@@ -70,6 +64,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private UpdateStat(UpdateStatBuilder builder,
+            StatUpdate body,
             string namespace_,
             string statCode
         )
@@ -81,7 +76,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

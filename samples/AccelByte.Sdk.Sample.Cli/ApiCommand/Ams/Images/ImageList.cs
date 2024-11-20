@@ -31,6 +31,33 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("count")]
+        public long? Count { get; set; }
+
+        [SdkCommandArgument("inUse")]
+        public string? InUse { get; set; }
+
+        [SdkCommandArgument("isProtected")]
+        public bool? IsProtected { get; set; }
+
+        [SdkCommandArgument("name")]
+        public string? Name { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
+        [SdkCommandArgument("sortDirection")]
+        public string? SortDirection { get; set; }
+
+        [SdkCommandArgument("status")]
+        public string? Status { get; set; }
+
+        [SdkCommandArgument("tag")]
+        public string? Tag { get; set; }
+
         public ImageListCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,6 +69,24 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             var opBuilder = AccelByte.Sdk.Api.Ams.Operation.ImageList.Builder;
 
+            if (Count != null)
+                opBuilder.SetCount((long)Count);
+            if (InUse != null)
+                opBuilder.SetInUse((string)InUse);
+            if (IsProtected != null)
+                opBuilder.SetIsProtected((bool)IsProtected);
+            if (Name != null)
+                opBuilder.SetName((string)Name);
+            if (Offset != null)
+                opBuilder.SetOffset((long)Offset);
+            if (SortBy != null)
+                opBuilder.SetSortBy((string)SortBy);
+            if (SortDirection != null)
+                opBuilder.SetSortDirection((string)SortDirection);
+            if (Status != null)
+                opBuilder.SetStatus((string)Status);
+            if (Tag != null)
+                opBuilder.SetTag((string)Tag);
 
 
 

@@ -20,6 +20,9 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonPropertyName("goalCode")]
         public string? GoalCode { get; set; }
 
+        [JsonPropertyName("goalProgressionId")]
+        public string? GoalProgressionId { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 

@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public Model.StatItemInc? Body { get; set; }
-
 
 
 
@@ -39,22 +37,18 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public IncUserStatItemValueBuilder SetBody(Model.StatItemInc _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public IncUserStatItemValue Build(
+                StatItemInc body,
                 string namespace_,
                 string statCode,
                 string userId
             )
             {
                 IncUserStatItemValue op = new IncUserStatItemValue(this,
+                    body,
                     namespace_,
                     statCode,
                     userId
@@ -69,6 +63,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private IncUserStatItemValue(IncUserStatItemValueBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
@@ -82,7 +77,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

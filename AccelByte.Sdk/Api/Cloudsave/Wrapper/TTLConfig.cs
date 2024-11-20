@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
 
         #region Operation Builders
+        public DeleteAdminGameRecordTTLConfig.DeleteAdminGameRecordTTLConfigBuilder DeleteAdminGameRecordTTLConfigOp
+        {
+            get { return Operation.DeleteAdminGameRecordTTLConfig.Builder.SetWrapperObject(this); }
+        }
         public DeleteGameBinaryRecordTTLConfig.DeleteGameBinaryRecordTTLConfigBuilder DeleteGameBinaryRecordTTLConfigOp
         {
             get { return Operation.DeleteGameBinaryRecordTTLConfig.Builder.SetWrapperObject(this); }
@@ -29,6 +33,22 @@ namespace AccelByte.Sdk.Api.Cloudsave.Wrapper
         }
         #endregion
 
+        public void DeleteAdminGameRecordTTLConfig(DeleteAdminGameRecordTTLConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteAdminGameRecordTTLConfigAsync(DeleteAdminGameRecordTTLConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void DeleteGameBinaryRecordTTLConfig(DeleteGameBinaryRecordTTLConfig input)
         {
             var response = _sdk.RunRequest(input);

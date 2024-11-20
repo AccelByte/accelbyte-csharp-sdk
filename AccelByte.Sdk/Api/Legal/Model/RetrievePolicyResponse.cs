@@ -9,12 +9,24 @@ namespace AccelByte.Sdk.Api.Legal.Model
 {
     public class RetrievePolicyResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("countries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Countries { get; set; }
+
         [JsonPropertyName("countryCode")]
         public string? CountryCode { get; set; }
 
         [JsonPropertyName("countryGroupCode")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? CountryGroupCode { get; set; }
+
+        [JsonPropertyName("countryGroupName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CountryGroupName { get; set; }
+
+        [JsonPropertyName("countryType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CountryType { get; set; }
 
         [JsonPropertyName("createdAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     ///
     /// 
     /// Consume user's own item.
+    /// Client should pass item ID in options if item type is OPTIONBOX
     /// </summary>
     public class PublicConsumeMyItem : AccelByte.Sdk.Core.Operation
     {

@@ -36,8 +36,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public List<Model.BulkUserStatItemUpdate>? Body { get; set; }
-
 
 
 
@@ -45,20 +43,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public BulkUpdateUserStatItemV2Builder SetBody(List<Model.BulkUserStatItemUpdate> _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public BulkUpdateUserStatItemV2 Build(
+                List<BulkUserStatItemUpdate> body,
                 string namespace_
             )
             {
                 BulkUpdateUserStatItemV2 op = new BulkUpdateUserStatItemV2(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -71,6 +65,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private BulkUpdateUserStatItemV2(BulkUpdateUserStatItemV2Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
@@ -80,7 +75,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

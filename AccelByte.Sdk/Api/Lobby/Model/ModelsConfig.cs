@@ -96,6 +96,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? ReadyConsentTimeout { get; set; }
 
+        [JsonPropertyName("requestMetadataMaxSize")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? RequestMetadataMaxSize { get; set; }
+
         [JsonPropertyName("unregisterDelay")]
         public long? UnregisterDelay { get; set; }
 

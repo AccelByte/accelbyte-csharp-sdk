@@ -25,6 +25,9 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonPropertyName("requestDate")]
         public DateTime? RequestDate { get; set; }
 
+        [JsonPropertyName("requestId")]
+        public string? RequestId { get; set; }
+
         [JsonPropertyName("status")]
         [JsonStringEnum]
         public DtoFinishedDataRequestStatus? Status { get; set; }
@@ -38,8 +41,11 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
 
     public class DtoFinishedDataRequestStatus : StringEnum<DtoFinishedDataRequestStatus>
     {
-        public static readonly DtoFinishedDataRequestStatus Completed, Failed
-            = new DtoFinishedDataRequestStatus("Completed,Failed");
+        public static readonly DtoFinishedDataRequestStatus Completed
+            = new DtoFinishedDataRequestStatus("Completed");
+
+        public static readonly DtoFinishedDataRequestStatus Failed
+            = new DtoFinishedDataRequestStatus("Failed");
 
 
         public static implicit operator DtoFinishedDataRequestStatus(string value)

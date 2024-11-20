@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatInfo? Execute(
             this CreateStat.CreateStatBuilder builder,
+            StatCreate body,
             string namespace_
         )
         {
             CreateStat op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatInfo?> ExecuteAsync(
             this CreateStat.CreateStatBuilder builder,
+            StatCreate body,
             string namespace_
         )
         {
             CreateStat op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -180,11 +184,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatInfo? Execute(
             this UpdateStat.UpdateStatBuilder builder,
+            StatUpdate body,
             string namespace_,
             string statCode
         )
         {
             UpdateStat op = builder.Build(
+                body,
                 namespace_,
                 statCode
             );
@@ -193,11 +199,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatInfo?> ExecuteAsync(
             this UpdateStat.UpdateStatBuilder builder,
+            StatUpdate body,
             string namespace_,
             string statCode
         )
         {
             UpdateStat op = builder.Build(
+                body,
                 namespace_,
                 statCode
             );
@@ -232,10 +240,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatInfo? Execute(
             this CreateStat1.CreateStat1Builder builder,
+            StatCreate body,
             string namespace_
         )
         {
             CreateStat1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -243,10 +253,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatInfo?> ExecuteAsync(
             this CreateStat1.CreateStat1Builder builder,
+            StatCreate body,
             string namespace_
         )
         {
             CreateStat1 op = builder.Build(
+                body,
                 namespace_
             );
 

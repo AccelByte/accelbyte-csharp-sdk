@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public string? AdditionalKey { get; set; }
 
 
-            public Model.StatResetInfo? Body { get; set; }
-
 
 
 
@@ -49,22 +47,18 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
 
 
-            public ResetUserStatItemValueBuilder SetBody(Model.StatResetInfo _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public ResetUserStatItemValue Build(
+                StatResetInfo body,
                 string namespace_,
                 string statCode,
                 string userId
             )
             {
                 ResetUserStatItemValue op = new ResetUserStatItemValue(this,
+                    body,
                     namespace_,
                     statCode,
                     userId
@@ -79,6 +73,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private ResetUserStatItemValue(ResetUserStatItemValueBuilder builder,
+            StatResetInfo body,
             string namespace_,
             string statCode,
             string userId
@@ -93,7 +88,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? CycleIds { get; set; }
 
+        [JsonPropertyName("cycleOverrides")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<CycleOverrideRequest>? CycleOverrides { get; set; }
+
         [JsonPropertyName("defaultValue")]
         public double? DefaultValue { get; set; }
 

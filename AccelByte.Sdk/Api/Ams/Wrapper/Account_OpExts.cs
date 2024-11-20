@@ -83,30 +83,30 @@ namespace AccelByte.Sdk.Api
             return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenGetAsync(op);
         }
         public static Ams.Model.ApiAccountLinkResponse? Execute(
-            this AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder builder,
+            this AdminAccountLink.AdminAccountLinkBuilder builder,
             ApiAccountLinkRequest body,
             string namespace_
         )
         {
-            AdminAccountLinkTokenPost op = builder.Build(
+            AdminAccountLink op = builder.Build(
                 body,
                 namespace_
             );
 
-            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenPost(op);
+            return ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLink(op);
         }
         public static async Task<Ams.Model.ApiAccountLinkResponse?> ExecuteAsync(
-            this AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder builder,
+            this AdminAccountLink.AdminAccountLinkBuilder builder,
             ApiAccountLinkRequest body,
             string namespace_
         )
         {
-            AdminAccountLinkTokenPost op = builder.Build(
+            AdminAccountLink op = builder.Build(
                 body,
                 namespace_
             );
 
-            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkTokenPostAsync(op);
+            return await ((Ams.Wrapper.Account)builder.WrapperObject!).AdminAccountLinkAsync(op);
         }
         public static Ams.Model.ApiAccountResponse? Execute(
             this AccountGet.AccountGetBuilder builder,

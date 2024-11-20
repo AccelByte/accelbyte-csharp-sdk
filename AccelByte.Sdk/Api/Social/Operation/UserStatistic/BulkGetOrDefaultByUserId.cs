@@ -35,8 +35,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public string? AdditionalKey { get; set; }
 
 
-            public Model.BulkUserStatItemByStatCodes? Body { get; set; }
-
 
 
 
@@ -50,21 +48,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
 
 
-            public BulkGetOrDefaultByUserIdBuilder SetBody(Model.BulkUserStatItemByStatCodes _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public BulkGetOrDefaultByUserId Build(
+                BulkUserStatItemByStatCodes body,
                 string namespace_,
                 string userId
             )
             {
                 BulkGetOrDefaultByUserId op = new BulkGetOrDefaultByUserId(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -78,6 +72,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private BulkGetOrDefaultByUserId(BulkGetOrDefaultByUserIdBuilder builder,
+            BulkUserStatItemByStatCodes body,
             string namespace_,
             string userId
         )
@@ -90,7 +85,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

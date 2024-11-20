@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public long? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public AdminListGlobalAchievementsSortBy? SortBy { get; set; }
 
             public string? Status { get; set; }
 
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 return this;
             }
 
-            public AdminListGlobalAchievementsBuilder SetSortBy(string _sortBy)
+            public AdminListGlobalAchievementsBuilder SetSortBy(AdminListGlobalAchievementsSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.AchievementCodes is not null) QueryParams["achievementCodes"] = builder.AchievementCodes;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
@@ -143,7 +143,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             string? achievementCodes,
             long? limit,
             long? offset,
-            string? sortBy,
+            AdminListGlobalAchievementsSortBy? sortBy,
             string? status,
             List<string>? tags
         )
@@ -153,7 +153,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (achievementCodes is not null) QueryParams["achievementCodes"] = achievementCodes;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (status is not null) QueryParams["status"] = status;
             if (tags is not null) QueryParams["tags"] = tags;
 
@@ -198,6 +198,39 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class AdminListGlobalAchievementsSortBy : StringEnum<AdminListGlobalAchievementsSortBy>
+    {
+        public static readonly AdminListGlobalAchievementsSortBy AchievedAt
+            = new AdminListGlobalAchievementsSortBy("achievedAt");
+
+        public static readonly AdminListGlobalAchievementsSortBy AchievedAtasc
+            = new AdminListGlobalAchievementsSortBy("achievedAt:asc");
+
+        public static readonly AdminListGlobalAchievementsSortBy AchievedAtdesc
+            = new AdminListGlobalAchievementsSortBy("achievedAt:desc");
+
+        public static readonly AdminListGlobalAchievementsSortBy CreatedAt
+            = new AdminListGlobalAchievementsSortBy("createdAt");
+
+        public static readonly AdminListGlobalAchievementsSortBy CreatedAtasc
+            = new AdminListGlobalAchievementsSortBy("createdAt:asc");
+
+        public static readonly AdminListGlobalAchievementsSortBy CreatedAtdesc
+            = new AdminListGlobalAchievementsSortBy("createdAt:desc");
+
+
+        public static implicit operator AdminListGlobalAchievementsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminListGlobalAchievementsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

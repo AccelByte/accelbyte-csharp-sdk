@@ -22,7 +22,7 @@
 | `/ams/v1/admin/namespaces/{namespace}/account` | GET | AdminAccountGet | [AdminAccountGet](../../AccelByte.Sdk/Api/Ams/Operation/Account/AdminAccountGet.cs) | [AdminAccountGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AdminAccountGet.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/account` | POST | AdminAccountCreate | [AdminAccountCreate](../../AccelByte.Sdk/Api/Ams/Operation/Account/AdminAccountCreate.cs) | [AdminAccountCreate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AdminAccountCreate.cs) |
 | `/ams/v1/admin/namespaces/{namespace}/account/link` | GET | AdminAccountLinkTokenGet | [AdminAccountLinkTokenGet](../../AccelByte.Sdk/Api/Ams/Operation/Account/AdminAccountLinkTokenGet.cs) | [AdminAccountLinkTokenGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AdminAccountLinkTokenGet.cs) |
-| `/ams/v1/admin/namespaces/{namespace}/account/link` | POST | AdminAccountLinkTokenPost | [AdminAccountLinkTokenPost](../../AccelByte.Sdk/Api/Ams/Operation/Account/AdminAccountLinkTokenPost.cs) | [AdminAccountLinkTokenPost](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AdminAccountLinkTokenPost.cs) |
+| `/ams/v1/admin/namespaces/{namespace}/account/link` | POST | AdminAccountLink | [AdminAccountLink](../../AccelByte.Sdk/Api/Ams/Operation/Account/AdminAccountLink.cs) | [AdminAccountLink](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AdminAccountLink.cs) |
 | `/ams/v1/namespaces/{namespace}/account` | GET | AccountGet | [AccountGet](../../AccelByte.Sdk/Api/Ams/Operation/Account/AccountGet.cs) | [AccountGet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Ams/Account/AccountGet.cs) |
 
 ### Artifacts Wrapper:  [Artifacts](../../AccelByte.Sdk/Api/Ams/Wrapper/Artifacts.cs)
@@ -163,9 +163,8 @@
 | `api.ArtifactTypeSamplingRules` | [ApiArtifactTypeSamplingRules](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactTypeSamplingRules.cs) |
 | `api.ArtifactURLResponse` | [ApiArtifactURLResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactURLResponse.cs) |
 | `api.ArtifactUsageResponse` | [ApiArtifactUsageResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiArtifactUsageResponse.cs) |
-| `api.AvailableInstanceType` | [ApiAvailableInstanceType](../../AccelByte.Sdk/Api/Ams/Model/ApiAvailableInstanceType.cs) |
-| `api.AvailableInstanceTypesResponse` | [ApiAvailableInstanceTypesResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiAvailableInstanceTypesResponse.cs) |
 | `api.Capacity` | [ApiCapacity](../../AccelByte.Sdk/Api/Ams/Model/ApiCapacity.cs) |
+| `api.CoredumpSamplingRules` | [ApiCoredumpSamplingRules](../../AccelByte.Sdk/Api/Ams/Model/ApiCoredumpSamplingRules.cs) |
 | `api.DSHistoryEvent` | [ApiDSHistoryEvent](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryEvent.cs) |
 | `api.DSHistoryList` | [ApiDSHistoryList](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHistoryList.cs) |
 | `api.DSHostConfiguration` | [ApiDSHostConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiDSHostConfiguration.cs) |
@@ -195,6 +194,8 @@
 | `api.ImageListItem` | [ApiImageListItem](../../AccelByte.Sdk/Api/Ams/Model/ApiImageListItem.cs) |
 | `api.ImageStorage` | [ApiImageStorage](../../AccelByte.Sdk/Api/Ams/Model/ApiImageStorage.cs) |
 | `api.ImageUpdate` | [ApiImageUpdate](../../AccelByte.Sdk/Api/Ams/Model/ApiImageUpdate.cs) |
+| `api.InstanceTypeForNamespaceResponse` | [ApiInstanceTypeForNamespaceResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypeForNamespaceResponse.cs) |
+| `api.InstanceTypesForNamespaceResponse` | [ApiInstanceTypesForNamespaceResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypesForNamespaceResponse.cs) |
 | `api.PagingInfo` | [ApiPagingInfo](../../AccelByte.Sdk/Api/Ams/Model/ApiPagingInfo.cs) |
 | `api.PortConfiguration` | [ApiPortConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiPortConfiguration.cs) |
 | `api.QoSEndpointResponse` | [ApiQoSEndpointResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiQoSEndpointResponse.cs) |

@@ -17,6 +17,15 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// updateNamespace
     ///
     /// Update namespace basic info.
+    /// displayName rule:
+    /// 
+    /// 
+    ///   * Alphanumeric lowercase and uppercase are allowed
+    ///   * Allowed Special Character: ',. -
+    ///   * Must start and end with alphanumeric
+    ///   * Spaces and special character are allowed but cannot appear twice in a row
+    /// 
+    /// 
     /// Other detail info:
     /// 
     ///   * Action code : 11302

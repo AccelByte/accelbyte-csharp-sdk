@@ -36,6 +36,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly TwitchSyncResultIapOrderStatus FULFILLED
             = new TwitchSyncResultIapOrderStatus("FULFILLED");
 
+        public static readonly TwitchSyncResultIapOrderStatus PARTIALREVOKED
+            = new TwitchSyncResultIapOrderStatus("PARTIAL_REVOKED");
+
+        public static readonly TwitchSyncResultIapOrderStatus REVOKED
+            = new TwitchSyncResultIapOrderStatus("REVOKED");
+
         public static readonly TwitchSyncResultIapOrderStatus VERIFIED
             = new TwitchSyncResultIapOrderStatus("VERIFIED");
 

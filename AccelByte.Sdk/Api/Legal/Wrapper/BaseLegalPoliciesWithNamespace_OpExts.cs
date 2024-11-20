@@ -82,6 +82,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).RetrieveSinglePolicy1Async(op);
         }
+        public static void Execute(
+            this DeleteBasePolicy.DeleteBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            DeleteBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).DeleteBasePolicy(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteBasePolicy.DeleteBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            DeleteBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            await ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).DeleteBasePolicyAsync(op);
+        }
         public static Legal.Model.UpdateBasePolicyResponse? Execute(
             this PartialUpdatePolicy1.PartialUpdatePolicy1Builder builder,
             string basePolicyId,
@@ -137,6 +163,58 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).RetrievePolicyCountry1Async(op);
+        }
+        public static List<Legal.Model.RetrievePoliciesFromBasePolicyResponse>? Execute(
+            this RetrieveAllPoliciesFromBasePolicy.RetrieveAllPoliciesFromBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            RetrieveAllPoliciesFromBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            return ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).RetrieveAllPoliciesFromBasePolicy(op);
+        }
+        public static async Task<List<Legal.Model.RetrievePoliciesFromBasePolicyResponse>?> ExecuteAsync(
+            this RetrieveAllPoliciesFromBasePolicy.RetrieveAllPoliciesFromBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            RetrieveAllPoliciesFromBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).RetrieveAllPoliciesFromBasePolicyAsync(op);
+        }
+        public static Legal.Model.CreatePolicyResponse? Execute(
+            this CreatePolicyUnderBasePolicy.CreatePolicyUnderBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            CreatePolicyUnderBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            return ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).CreatePolicyUnderBasePolicy(op);
+        }
+        public static async Task<Legal.Model.CreatePolicyResponse?> ExecuteAsync(
+            this CreatePolicyUnderBasePolicy.CreatePolicyUnderBasePolicyBuilder builder,
+            string basePolicyId,
+            string namespace_
+        )
+        {
+            CreatePolicyUnderBasePolicy op = builder.Build(
+                basePolicyId,
+                namespace_
+            );
+
+            return await ((Legal.Wrapper.BaseLegalPoliciesWithNamespace)builder.WrapperObject!).CreatePolicyUnderBasePolicyAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyTypeResponse>? Execute(
             this RetrieveAllPolicyTypes1.RetrieveAllPolicyTypes1Builder builder,

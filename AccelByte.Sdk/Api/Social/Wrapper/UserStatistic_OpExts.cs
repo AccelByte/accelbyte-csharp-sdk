@@ -75,10 +75,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItem.BulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -86,10 +88,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkIncUserStatItem.BulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -98,10 +102,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkIncUserStatItem.BulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -109,10 +115,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkIncUserStatItem.BulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -120,10 +128,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItemValue.BulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -131,10 +141,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkIncUserStatItemValue.BulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -143,10 +155,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkIncUserStatItemValue.BulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -154,10 +168,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkIncUserStatItemValue.BulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             BulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -195,10 +211,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItem.BulkResetUserStatItemBuilder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -206,10 +224,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkResetUserStatItem.BulkResetUserStatItemBuilder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -218,10 +238,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkResetUserStatItem.BulkResetUserStatItemBuilder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -229,10 +251,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkResetUserStatItem.BulkResetUserStatItemBuilder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -292,11 +316,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkCreateUserStatItems.BulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             BulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -305,11 +331,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkCreateUserStatItems.BulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             BulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -319,11 +347,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkCreateUserStatItems.BulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             BulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -332,11 +362,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkCreateUserStatItems.BulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             BulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -345,11 +377,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItem1.BulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -358,11 +392,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkIncUserStatItem1.BulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -372,11 +408,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkIncUserStatItem1.BulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -385,11 +423,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkIncUserStatItem1.BulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -398,11 +438,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItemValue1.BulkIncUserStatItemValue1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -411,11 +453,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkIncUserStatItemValue1.BulkIncUserStatItemValue1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -425,11 +469,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkIncUserStatItemValue1.BulkIncUserStatItemValue1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -438,11 +484,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkIncUserStatItemValue1.BulkIncUserStatItemValue1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -451,11 +499,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItem1.BulkResetUserStatItem1Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -464,11 +514,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkResetUserStatItem1.BulkResetUserStatItem1Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -478,11 +530,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkResetUserStatItem1.BulkResetUserStatItem1Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -491,11 +545,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkResetUserStatItem1.BulkResetUserStatItem1Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -564,12 +620,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this IncUserStatItemValue.IncUserStatItemValueBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             IncUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -579,12 +637,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this IncUserStatItemValue.IncUserStatItemValueBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             IncUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -594,12 +654,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this ResetUserStatItemValue.ResetUserStatItemValueBuilder builder,
+            StatResetInfo body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             ResetUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -609,12 +671,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this ResetUserStatItemValue.ResetUserStatItemValueBuilder builder,
+            StatResetInfo body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             ResetUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -685,10 +749,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkIncUserStatItem.PublicBulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -696,10 +762,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this PublicBulkIncUserStatItem.PublicBulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -708,10 +776,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this PublicBulkIncUserStatItem.PublicBulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -719,10 +789,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this PublicBulkIncUserStatItem.PublicBulkIncUserStatItemBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItem op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -730,10 +802,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkIncUserStatItemValue.PublicBulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -741,10 +815,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this PublicBulkIncUserStatItemValue.PublicBulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -753,10 +829,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this PublicBulkIncUserStatItemValue.PublicBulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -764,10 +842,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this PublicBulkIncUserStatItemValue.PublicBulkIncUserStatItemValueBuilder builder,
+            List<BulkUserStatItemInc> body,
             string namespace_
         )
         {
             PublicBulkIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -775,10 +855,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItem2.BulkResetUserStatItem2Builder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -786,10 +868,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkResetUserStatItem2.BulkResetUserStatItem2Builder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -798,10 +882,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkResetUserStatItem2.BulkResetUserStatItem2Builder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -809,10 +895,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkResetUserStatItem2.BulkResetUserStatItem2Builder builder,
+            List<BulkUserStatItemReset> body,
             string namespace_
         )
         {
             BulkResetUserStatItem2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -890,11 +978,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -903,11 +993,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -917,11 +1009,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -930,11 +1024,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder builder,
+            List<BulkStatItemCreate> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkCreateUserStatItems op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -969,11 +1065,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -982,11 +1080,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -996,11 +1096,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1009,11 +1111,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             PublicBulkIncUserStatItem1 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1022,11 +1126,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkIncUserStatItemValue2.BulkIncUserStatItemValue2Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1035,11 +1141,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkIncUserStatItemValue2.BulkIncUserStatItemValue2Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1049,11 +1157,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkIncUserStatItemValue2.BulkIncUserStatItemValue2Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1062,11 +1172,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkIncUserStatItemValue2.BulkIncUserStatItemValue2Builder builder,
+            List<BulkStatItemInc> body,
             string namespace_,
             string userId
         )
         {
             BulkIncUserStatItemValue2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1075,11 +1187,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItem3.BulkResetUserStatItem3Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem3 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1088,11 +1202,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkResetUserStatItem3.BulkResetUserStatItem3Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem3 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1102,11 +1218,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkResetUserStatItem3.BulkResetUserStatItem3Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem3 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1115,11 +1233,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkResetUserStatItem3.BulkResetUserStatItem3Builder builder,
+            List<BulkStatItemReset> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItem3 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1188,12 +1308,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this PublicIncUserStatItem.PublicIncUserStatItemBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             PublicIncUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1203,12 +1325,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this PublicIncUserStatItem.PublicIncUserStatItemBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             PublicIncUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1218,12 +1342,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this PublicIncUserStatItemValue.PublicIncUserStatItemValueBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             PublicIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1233,12 +1359,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this PublicIncUserStatItemValue.PublicIncUserStatItemValueBuilder builder,
+            StatItemInc body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             PublicIncUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1278,10 +1406,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkUpdateUserStatItemV2.BulkUpdateUserStatItemV2Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItemV2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1289,10 +1419,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkUpdateUserStatItemV2.BulkUpdateUserStatItemV2Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItemV2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1301,10 +1433,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkUpdateUserStatItemV2.BulkUpdateUserStatItemV2Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItemV2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1312,10 +1446,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkUpdateUserStatItemV2.BulkUpdateUserStatItemV2Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItemV2 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1379,11 +1515,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1392,11 +1530,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1406,11 +1546,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1419,11 +1561,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkUpdateUserStatItem.BulkUpdateUserStatItemBuilder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1432,11 +1576,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
             this BulkGetOrDefaultByUserId.BulkGetOrDefaultByUserIdBuilder builder,
+            BulkUserStatItemByStatCodes body,
             string namespace_,
             string userId
         )
         {
             BulkGetOrDefaultByUserId op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1445,11 +1591,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.ADTOObjectForUserStatItemValue>?> ExecuteAsync(
             this BulkGetOrDefaultByUserId.BulkGetOrDefaultByUserIdBuilder builder,
+            BulkUserStatItemByStatCodes body,
             string namespace_,
             string userId
         )
         {
             BulkGetOrDefaultByUserId op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1458,11 +1606,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder builder,
+            List<ADTOObjectForResettingUserStatItems> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItemValues op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1471,11 +1621,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder builder,
+            List<ADTOObjectForResettingUserStatItems> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItemValues op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1485,11 +1637,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder builder,
+            List<ADTOObjectForResettingUserStatItems> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItemValues op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1498,11 +1652,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkResetUserStatItemValues.BulkResetUserStatItemValuesBuilder builder,
+            List<ADTOObjectForResettingUserStatItems> body,
             string namespace_,
             string userId
         )
         {
             BulkResetUserStatItemValues op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1541,12 +1697,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this UpdateUserStatItemValue.UpdateUserStatItemValueBuilder builder,
+            StatItemUpdate body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             UpdateUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1556,12 +1714,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this UpdateUserStatItemValue.UpdateUserStatItemValueBuilder builder,
+            StatItemUpdate body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             UpdateUserStatItemValue op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1571,10 +1731,12 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkUpdateUserStatItem1.BulkUpdateUserStatItem1Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItem1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1582,10 +1744,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkUpdateUserStatItem1.BulkUpdateUserStatItem1Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItem1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1594,10 +1758,12 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkUpdateUserStatItem1.BulkUpdateUserStatItem1Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItem1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1605,10 +1771,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkUpdateUserStatItem1.BulkUpdateUserStatItem1Builder builder,
+            List<BulkUserStatItemUpdate> body,
             string namespace_
         )
         {
             BulkUpdateUserStatItem1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -1642,11 +1810,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this BulkUpdateUserStatItem2.BulkUpdateUserStatItem2Builder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1655,11 +1825,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult>?> ExecuteAsync(
             this BulkUpdateUserStatItem2.BulkUpdateUserStatItem2Builder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1669,11 +1841,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatOperationResult<T1>>? Execute<T1>(
             this BulkUpdateUserStatItem2.BulkUpdateUserStatItem2Builder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1682,11 +1856,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkUpdateUserStatItem2.BulkUpdateUserStatItem2Builder builder,
+            List<BulkStatItemUpdate> body,
             string namespace_,
             string userId
         )
         {
             BulkUpdateUserStatItem2 op = builder.Build(
+                body,
                 namespace_,
                 userId
             );
@@ -1695,12 +1871,14 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatItemIncResult? Execute(
             this UpdateUserStatItemValue1.UpdateUserStatItemValue1Builder builder,
+            StatItemUpdate body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             UpdateUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId
@@ -1710,12 +1888,14 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatItemIncResult?> ExecuteAsync(
             this UpdateUserStatItemValue1.UpdateUserStatItemValue1Builder builder,
+            StatItemUpdate body,
             string namespace_,
             string statCode,
             string userId
         )
         {
             UpdateUserStatItemValue1 op = builder.Build(
+                body,
                 namespace_,
                 statCode,
                 userId

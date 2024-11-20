@@ -61,6 +61,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("serverId")]
         public string? ServerId { get; set; }
 
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
+        [SdkCommandArgument("sortDirection")]
+        public string? SortDirection { get; set; }
+
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
 
@@ -98,6 +104,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
                 opBuilder.SetRegion((string)Region);
             if (ServerId != null)
                 opBuilder.SetServerId((string)ServerId);
+            if (SortBy != null)
+                opBuilder.SetSortBy((string)SortBy);
+            if (SortDirection != null)
+                opBuilder.SetSortDirection(ArtifactGetSortDirection.NewValue(SortDirection));
             if (StartDate != null)
                 opBuilder.SetStartDate((string)StartDate);
             if (Status != null)

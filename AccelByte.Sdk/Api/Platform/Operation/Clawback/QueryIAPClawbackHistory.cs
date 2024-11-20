@@ -225,6 +225,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryIAPClawbackHistoryEventType REFUND
             = new QueryIAPClawbackHistoryEventType("REFUND");
 
+        public static readonly QueryIAPClawbackHistoryEventType REVOKED
+            = new QueryIAPClawbackHistoryEventType("REVOKED");
+
 
         public static implicit operator QueryIAPClawbackHistoryEventType(string value)
         {

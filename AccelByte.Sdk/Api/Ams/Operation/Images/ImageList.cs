@@ -29,12 +29,84 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             : OperationBuilder<ImageListBuilder>
         {
 
+            public long? Count { get; set; }
+
+            public string? InUse { get; set; }
+
+            public bool? IsProtected { get; set; }
+
+            public string? Name { get; set; }
+
+            public long? Offset { get; set; }
+
+            public string? SortBy { get; set; }
+
+            public string? SortDirection { get; set; }
+
+            public string? Status { get; set; }
+
+            public string? Tag { get; set; }
+
 
 
 
 
             internal ImageListBuilder() { }
 
+
+            public ImageListBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public ImageListBuilder SetInUse(string _inUse)
+            {
+                InUse = _inUse;
+                return this;
+            }
+
+            public ImageListBuilder SetIsProtected(bool _isProtected)
+            {
+                IsProtected = _isProtected;
+                return this;
+            }
+
+            public ImageListBuilder SetName(string _name)
+            {
+                Name = _name;
+                return this;
+            }
+
+            public ImageListBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
+            public ImageListBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+            public ImageListBuilder SetSortDirection(string _sortDirection)
+            {
+                SortDirection = _sortDirection;
+                return this;
+            }
+
+            public ImageListBuilder SetStatus(string _status)
+            {
+                Status = _status;
+                return this;
+            }
+
+            public ImageListBuilder SetTag(string _tag)
+            {
+                Tag = _tag;
+                return this;
+            }
 
 
 
@@ -62,6 +134,15 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.InUse is not null) QueryParams["inUse"] = builder.InUse;
+            if (builder.IsProtected != null) QueryParams["isProtected"] = Convert.ToString(builder.IsProtected)!;
+            if (builder.Name is not null) QueryParams["name"] = builder.Name;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortDirection is not null) QueryParams["sortDirection"] = builder.SortDirection;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status;
+            if (builder.Tag is not null) QueryParams["tag"] = builder.Tag;
 
 
 
@@ -73,11 +154,29 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         #endregion
 
         public ImageList(
-            string namespace_
+            string namespace_,
+            long? count,
+            string? inUse,
+            bool? isProtected,
+            string? name,
+            long? offset,
+            string? sortBy,
+            string? sortDirection,
+            string? status,
+            string? tag
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
+            if (inUse is not null) QueryParams["inUse"] = inUse;
+            if (isProtected != null) QueryParams["isProtected"] = Convert.ToString(isProtected)!;
+            if (name is not null) QueryParams["name"] = name;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortDirection is not null) QueryParams["sortDirection"] = sortDirection;
+            if (status is not null) QueryParams["status"] = status;
+            if (tag is not null) QueryParams["tag"] = tag;
 
 
 

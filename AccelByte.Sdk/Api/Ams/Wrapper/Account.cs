@@ -31,9 +31,9 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.AdminAccountLinkTokenGet.Builder.SetWrapperObject(this); }
         }
-        public AdminAccountLinkTokenPost.AdminAccountLinkTokenPostBuilder AdminAccountLinkTokenPostOp
+        public AdminAccountLink.AdminAccountLinkBuilder AdminAccountLinkOp
         {
-            get { return Operation.AdminAccountLinkTokenPost.Builder.SetWrapperObject(this); }
+            get { return Operation.AdminAccountLink.Builder.SetWrapperObject(this); }
         }
         public AccountGet.AccountGetBuilder AccountGetOp
         {
@@ -89,7 +89,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiAccountLinkResponse? AdminAccountLinkTokenPost(AdminAccountLinkTokenPost input)
+        public Model.ApiAccountLinkResponse? AdminAccountLink(AdminAccountLink input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ApiAccountLinkResponse?> AdminAccountLinkTokenPostAsync(AdminAccountLinkTokenPost input)
+        public async Task<Model.ApiAccountLinkResponse?> AdminAccountLinkAsync(AdminAccountLink input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

@@ -27,7 +27,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// * **groupName**: name of the group
     /// * **groupRegion**: region of the group
     /// * **groupRules**: rules for specific group. It consists of groupCustomRule that can be used to save custom rule, and groupPredefinedRules that has similar usage with configuration, but this rule only works in specific group
-    /// * **allowedAction**: available action in group service. It consist of joinGroup and inviteGroup
+    /// * **allowedAction**: available action in group service. It consist of joinGroup and createGroup
     /// * **ruleAttribute**: attribute of the player that needs to be checked
     /// * **ruleCriteria**: criteria of the value. The value will be in enum of EQUAL, MINIMUM, MAXIMUM
     /// * **ruleValue**: value that needs to be checked

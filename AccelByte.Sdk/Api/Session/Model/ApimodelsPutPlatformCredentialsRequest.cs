@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Api.Session.Model
     public class ApimodelsPutPlatformCredentialsRequest : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("psn")]
-        public ModelsPSNAppServerCredentials? Psn { get; set; }
+        public ApimodelsPSNAppServerCredentialRecord? Psn { get; set; }
 
     }
 

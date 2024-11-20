@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        public DeletePolicyVersion.DeletePolicyVersionBuilder DeletePolicyVersionOp
+        {
+            get { return Operation.DeletePolicyVersion.Builder.SetWrapperObject(this); }
+        }
         public UpdatePolicyVersion1.UpdatePolicyVersion1Builder UpdatePolicyVersion1Op
         {
             get { return Operation.UpdatePolicyVersion1.Builder.SetWrapperObject(this); }
@@ -26,6 +30,10 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public PublishPolicyVersion1.PublishPolicyVersion1Builder PublishPolicyVersion1Op
         {
             get { return Operation.PublishPolicyVersion1.Builder.SetWrapperObject(this); }
+        }
+        public UnpublishPolicyVersion.UnpublishPolicyVersionBuilder UnpublishPolicyVersionOp
+        {
+            get { return Operation.UnpublishPolicyVersion.Builder.SetWrapperObject(this); }
         }
         public RetrieveSinglePolicyVersion1.RetrieveSinglePolicyVersion1Builder RetrieveSinglePolicyVersion1Op
         {
@@ -37,6 +45,22 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
 
+        public void DeletePolicyVersion(DeletePolicyVersion input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeletePolicyVersionAsync(DeletePolicyVersion input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.UpdatePolicyVersionResponse? UpdatePolicyVersion1(UpdatePolicyVersion1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -62,6 +86,22 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public async Task PublishPolicyVersion1Async(PublishPolicyVersion1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void UnpublishPolicyVersion(UnpublishPolicyVersion input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task UnpublishPolicyVersionAsync(UnpublishPolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

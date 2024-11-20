@@ -12,6 +12,10 @@ namespace AccelByte.Sdk.Api.Inventory.Model
         [JsonPropertyName("inventoryId")]
         public string? InventoryId { get; set; }
 
+        [JsonPropertyName("options")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Options { get; set; }
+
         [JsonPropertyName("qty")]
         public int? Qty { get; set; }
 

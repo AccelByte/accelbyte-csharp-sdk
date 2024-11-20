@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
 
             public long? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public AdminListTagsSortBy? SortBy { get; set; }
 
 
 
@@ -63,7 +63,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
                 return this;
             }
 
-            public AdminListTagsBuilder SetSortBy(string _sortBy)
+            public AdminListTagsBuilder SetSortBy(AdminListTagsSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
 
 
 
@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             long? limit,
             string? name,
             long? offset,
-            string? sortBy
+            AdminListTagsSortBy? sortBy
         )
         {
             PathParams["namespace"] = namespace_;
@@ -122,7 +122,7 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (name is not null) QueryParams["name"] = name;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
 
 
 
@@ -164,6 +164,39 @@ namespace AccelByte.Sdk.Api.Achievement.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class AdminListTagsSortBy : StringEnum<AdminListTagsSortBy>
+    {
+        public static readonly AdminListTagsSortBy CreatedAt
+            = new AdminListTagsSortBy("createdAt");
+
+        public static readonly AdminListTagsSortBy CreatedAtasc
+            = new AdminListTagsSortBy("createdAt:asc");
+
+        public static readonly AdminListTagsSortBy CreatedAtdesc
+            = new AdminListTagsSortBy("createdAt:desc");
+
+        public static readonly AdminListTagsSortBy Name
+            = new AdminListTagsSortBy("name");
+
+        public static readonly AdminListTagsSortBy Nameasc
+            = new AdminListTagsSortBy("name:asc");
+
+        public static readonly AdminListTagsSortBy Namedesc
+            = new AdminListTagsSortBy("name:desc");
+
+
+        public static implicit operator AdminListTagsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminListTagsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

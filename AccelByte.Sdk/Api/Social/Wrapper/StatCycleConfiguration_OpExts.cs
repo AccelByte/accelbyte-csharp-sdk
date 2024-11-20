@@ -36,10 +36,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatCycleInfo? Execute(
             this CreateStatCycle.CreateStatCycleBuilder builder,
+            StatCycleCreate body,
             string namespace_
         )
         {
             CreateStatCycle op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -47,10 +49,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
             this CreateStatCycle.CreateStatCycleBuilder builder,
+            StatCycleCreate body,
             string namespace_
         )
         {
             CreateStatCycle op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -58,10 +62,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.BulkStatCycleResult? Execute(
             this BulkGetStatCycle.BulkGetStatCycleBuilder builder,
+            BulkStatCycleRequest body,
             string namespace_
         )
         {
             BulkGetStatCycle op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -69,10 +75,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.BulkStatCycleResult?> ExecuteAsync(
             this BulkGetStatCycle.BulkGetStatCycleBuilder builder,
+            BulkStatCycleRequest body,
             string namespace_
         )
         {
             BulkGetStatCycle op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -150,11 +158,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.StatCycleInfo? Execute(
             this UpdateStatCycle.UpdateStatCycleBuilder builder,
+            StatCycleUpdate body,
             string cycleId,
             string namespace_
         )
         {
             UpdateStatCycle op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -163,11 +173,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.StatCycleInfo?> ExecuteAsync(
             this UpdateStatCycle.UpdateStatCycleBuilder builder,
+            StatCycleUpdate body,
             string cycleId,
             string namespace_
         )
         {
             UpdateStatCycle op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -202,11 +214,13 @@ namespace AccelByte.Sdk.Api
         }
         public static List<Social.Model.BulkStatCycleOperationResult>? Execute(
             this BulkAddStats.BulkAddStatsBuilder builder,
+            BulkCycleStatsAdd body,
             string cycleId,
             string namespace_
         )
         {
             BulkAddStats op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -215,11 +229,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatCycleOperationResult>?> ExecuteAsync(
             this BulkAddStats.BulkAddStatsBuilder builder,
+            BulkCycleStatsAdd body,
             string cycleId,
             string namespace_
         )
         {
             BulkAddStats op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -229,11 +245,13 @@ namespace AccelByte.Sdk.Api
 
         public static List<Social.Model.BulkStatCycleOperationResult<T1>>? Execute<T1>(
             this BulkAddStats.BulkAddStatsBuilder builder,
+            BulkCycleStatsAdd body,
             string cycleId,
             string namespace_
         )
         {
             BulkAddStats op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -242,11 +260,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<List<Social.Model.BulkStatCycleOperationResult<T1>>?> ExecuteAsync<T1>(
             this BulkAddStats.BulkAddStatsBuilder builder,
+            BulkCycleStatsAdd body,
             string cycleId,
             string namespace_
         )
         {
             BulkAddStats op = builder.Build(
+                body,
                 cycleId,
                 namespace_
             );
@@ -303,10 +323,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Social.Model.BulkStatCycleResult? Execute(
             this BulkGetStatCycle1.BulkGetStatCycle1Builder builder,
+            BulkStatCycleRequest body,
             string namespace_
         )
         {
             BulkGetStatCycle1 op = builder.Build(
+                body,
                 namespace_
             );
 
@@ -314,10 +336,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Social.Model.BulkStatCycleResult?> ExecuteAsync(
             this BulkGetStatCycle1.BulkGetStatCycle1Builder builder,
+            BulkStatCycleRequest body,
             string namespace_
         )
         {
             BulkGetStatCycle1 op = builder.Build(
+                body,
                 namespace_
             );
 

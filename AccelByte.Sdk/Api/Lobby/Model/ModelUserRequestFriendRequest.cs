@@ -17,6 +17,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FriendPublicId { get; set; }
 
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, string>? Metadata { get; set; }
+
     }
 
 

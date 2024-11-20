@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public List<ApiPortConfiguration>? PortConfigurations { get; set; }
 
         [JsonPropertyName("timeout")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApiTimeout? Timeout { get; set; }
 
     }

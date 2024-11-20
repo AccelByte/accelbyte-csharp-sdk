@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
     public class ApiFleetArtifactsSampleRules : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("coredumps")]
-        public ApiArtifactTypeSamplingRules? Coredumps { get; set; }
+        public ApiCoredumpSamplingRules? Coredumps { get; set; }
 
         [JsonPropertyName("logs")]
         public ApiArtifactTypeSamplingRules? Logs { get; set; }

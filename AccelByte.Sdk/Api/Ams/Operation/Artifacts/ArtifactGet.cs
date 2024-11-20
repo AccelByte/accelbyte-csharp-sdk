@@ -49,6 +49,10 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             public string? ServerId { get; set; }
 
+            public string? SortBy { get; set; }
+
+            public ArtifactGetSortDirection? SortDirection { get; set; }
+
             public string? StartDate { get; set; }
 
             public string? Status { get; set; }
@@ -120,6 +124,18 @@ namespace AccelByte.Sdk.Api.Ams.Operation
                 return this;
             }
 
+            public ArtifactGetBuilder SetSortBy(string _sortBy)
+            {
+                SortBy = _sortBy;
+                return this;
+            }
+
+            public ArtifactGetBuilder SetSortDirection(ArtifactGetSortDirection _sortDirection)
+            {
+                SortDirection = _sortDirection;
+                return this;
+            }
+
             public ArtifactGetBuilder SetStartDate(string _startDate)
             {
                 StartDate = _startDate;
@@ -168,6 +184,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
             if (builder.ServerId is not null) QueryParams["serverId"] = builder.ServerId;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortDirection is not null) QueryParams["sortDirection"] = builder.SortDirection.Value;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
             if (builder.Status is not null) QueryParams["status"] = builder.Status;
 
@@ -192,6 +210,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             long? offset,
             string? region,
             string? serverId,
+            string? sortBy,
+            ArtifactGetSortDirection? sortDirection,
             string? startDate,
             string? status
         )
@@ -208,6 +228,8 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
             if (serverId is not null) QueryParams["serverId"] = serverId;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortDirection is not null) QueryParams["sortDirection"] = sortDirection.Value;
             if (startDate is not null) QueryParams["startDate"] = startDate;
             if (status is not null) QueryParams["status"] = status;
 
@@ -251,6 +273,27 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class ArtifactGetSortDirection : StringEnum<ArtifactGetSortDirection>
+    {
+        public static readonly ArtifactGetSortDirection Asc
+            = new ArtifactGetSortDirection("asc");
+
+        public static readonly ArtifactGetSortDirection Desc
+            = new ArtifactGetSortDirection("desc");
+
+
+        public static implicit operator ArtifactGetSortDirection(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ArtifactGetSortDirection(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

@@ -46,12 +46,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.CreateStatCycle.Builder;
 
 
-            if (Body != null)
-                opBuilder.SetBody((AccelByte.Sdk.Api.Social.Model.StatCycleCreate)Body);
 
 
 
             CreateStatCycle operation = opBuilder.Build(
+                Body,
                 Namespace
             );
 

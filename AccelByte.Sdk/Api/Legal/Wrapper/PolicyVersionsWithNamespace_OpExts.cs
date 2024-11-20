@@ -12,6 +12,32 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalPolicyVersionsWithNamespace_OpExts
     {
+        public static void Execute(
+            this DeletePolicyVersion.DeletePolicyVersionBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            DeletePolicyVersion op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).DeletePolicyVersion(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeletePolicyVersion.DeletePolicyVersionBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            DeletePolicyVersion op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).DeletePolicyVersionAsync(op);
+        }
         public static Legal.Model.UpdatePolicyVersionResponse? Execute(
             this UpdatePolicyVersion1.UpdatePolicyVersion1Builder builder,
             string namespace_,
@@ -63,6 +89,32 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).PublishPolicyVersion1Async(op);
+        }
+        public static void Execute(
+            this UnpublishPolicyVersion.UnpublishPolicyVersionBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            UnpublishPolicyVersion op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UnpublishPolicyVersion(op);
+        }
+        public static async Task ExecuteAsync(
+            this UnpublishPolicyVersion.UnpublishPolicyVersionBuilder builder,
+            string namespace_,
+            string policyVersionId
+        )
+        {
+            UnpublishPolicyVersion op = builder.Build(
+                namespace_,
+                policyVersionId
+            );
+
+            await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UnpublishPolicyVersionAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
             this RetrieveSinglePolicyVersion1.RetrieveSinglePolicyVersion1Builder builder,

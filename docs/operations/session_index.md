@@ -51,7 +51,7 @@
 ### Certificate Wrapper:  [Certificate](../../AccelByte.Sdk/Api/Session/Wrapper/Certificate.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl` | PUT | HandleUploadXboxPFXCertificate | [HandleUploadXboxPFXCertificate](../../AccelByte.Sdk/Api/Session/Operation/Certificate/HandleUploadXboxPFXCertificate.cs) | [HandleUploadXboxPFXCertificate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Certificate/HandleUploadXboxPFXCertificate.cs) |
+| [DEPRECATED] `/session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl` | PUT | AdminUploadXBoxCertificate | [AdminUploadXBoxCertificate](../../AccelByte.Sdk/Api/Session/Operation/Certificate/AdminUploadXBoxCertificate.cs) | [AdminUploadXBoxCertificate](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Certificate/AdminUploadXBoxCertificate.cs) |
 
 ### Max Active Wrapper:  [MaxActive](../../AccelByte.Sdk/Api/Session/Wrapper/MaxActive.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -99,6 +99,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/session/v1/admin/namespaces/{namespace}/parties` | GET | AdminQueryParties | [AdminQueryParties](../../AccelByte.Sdk/Api/Session/Operation/Party/AdminQueryParties.cs) | [AdminQueryParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/AdminQueryParties.cs) |
+| `/session/v1/admin/namespaces/{namespace}/parties/bulk` | DELETE | AdminDeleteBulkParties | [AdminDeleteBulkParties](../../AccelByte.Sdk/Api/Session/Operation/Party/AdminDeleteBulkParties.cs) | [AdminDeleteBulkParties](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/AdminDeleteBulkParties.cs) |
 | `/session/v1/admin/namespaces/{namespace}/users/{userId}/native-sync` | POST | AdminSyncNativeSession | [AdminSyncNativeSession](../../AccelByte.Sdk/Api/Session/Operation/Party/AdminSyncNativeSession.cs) | [AdminSyncNativeSession](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/AdminSyncNativeSession.cs) |
 | `/session/v1/public/namespaces/{namespace}/parties/users/me/join/code` | POST | PublicPartyJoinCode | [PublicPartyJoinCode](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicPartyJoinCode.cs) | [PublicPartyJoinCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicPartyJoinCode.cs) |
 | `/session/v1/public/namespaces/{namespace}/parties/{partyId}` | GET | PublicGetParty | [PublicGetParty](../../AccelByte.Sdk/Api/Session/Operation/Party/PublicGetParty.cs) | [PublicGetParty](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/Party/PublicGetParty.cs) |
@@ -122,6 +123,8 @@
 | `/session/v1/admin/namespaces/{namespace}/platform-credentials` | GET | AdminGetPlatformCredentials | [AdminGetPlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminGetPlatformCredentials.cs) | [AdminGetPlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminGetPlatformCredentials.cs) |
 | `/session/v1/admin/namespaces/{namespace}/platform-credentials` | PUT | AdminUpdatePlatformCredentials | [AdminUpdatePlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminUpdatePlatformCredentials.cs) | [AdminUpdatePlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminUpdatePlatformCredentials.cs) |
 | `/session/v1/admin/namespaces/{namespace}/platform-credentials` | DELETE | AdminDeletePlatformCredentials | [AdminDeletePlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminDeletePlatformCredentials.cs) | [AdminDeletePlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminDeletePlatformCredentials.cs) |
+| `/session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}` | DELETE | AdminDeletePlatformCredentialsByPlatformId | [AdminDeletePlatformCredentialsByPlatformId](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminDeletePlatformCredentialsByPlatformId.cs) | [AdminDeletePlatformCredentialsByPlatformId](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminDeletePlatformCredentialsByPlatformId.cs) |
+| `/session/v1/admin/namespaces/{namespace}/platform-credentials/{platformId}/sync` | PUT | AdminSyncPlatformCredentials | [AdminSyncPlatformCredentials](../../AccelByte.Sdk/Api/Session/Operation/PlatformCredential/AdminSyncPlatformCredentials.cs) | [AdminSyncPlatformCredentials](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Session/PlatformCredential/AdminSyncPlatformCredentials.cs) |
 
 ### Recent Player Wrapper:  [RecentPlayer](../../AccelByte.Sdk/Api/Session/Wrapper/RecentPlayer.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -259,6 +262,8 @@
 | `apimodels.DSInformationResponse` | [ApimodelsDSInformationResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsDSInformationResponse.cs) |
 | `apimodels.DeleteBulkGameSessionRequest` | [ApimodelsDeleteBulkGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsDeleteBulkGameSessionRequest.cs) |
 | `apimodels.DeleteBulkGameSessionsAPIResponse` | [ApimodelsDeleteBulkGameSessionsAPIResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsDeleteBulkGameSessionsAPIResponse.cs) |
+| `apimodels.DeleteBulkPartySessionRequest` | [ApimodelsDeleteBulkPartySessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsDeleteBulkPartySessionRequest.cs) |
+| `apimodels.DeleteBulkPartySessionsAPIResponse` | [ApimodelsDeleteBulkPartySessionsAPIResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsDeleteBulkPartySessionsAPIResponse.cs) |
 | `apimodels.EnvironmentVariableListResponse` | [ApimodelsEnvironmentVariableListResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsEnvironmentVariableListResponse.cs) |
 | `apimodels.EnvironmentVariableResponse` | [ApimodelsEnvironmentVariableResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsEnvironmentVariableResponse.cs) |
 | `apimodels.GameSessionQueryResponse` | [ApimodelsGameSessionQueryResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsGameSessionQueryResponse.cs) |
@@ -267,6 +272,7 @@
 | `apimodels.JoinByCodeRequest` | [ApimodelsJoinByCodeRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsJoinByCodeRequest.cs) |
 | `apimodels.KickResponse` | [ApimodelsKickResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsKickResponse.cs) |
 | `apimodels.NativeSessionPagingResponse` | [ApimodelsNativeSessionPagingResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsNativeSessionPagingResponse.cs) |
+| `apimodels.PSNAppServerCredentialRecord` | [ApimodelsPSNAppServerCredentialRecord](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPSNAppServerCredentialRecord.cs) |
 | `apimodels.Pagination` | [ApimodelsPagination](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPagination.cs) |
 | `apimodels.PartyQueryResponse` | [ApimodelsPartyQueryResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartyQueryResponse.cs) |
 | `apimodels.PartySessionResponse` | [ApimodelsPartySessionResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPartySessionResponse.cs) |
@@ -281,6 +287,7 @@
 | `apimodels.PutPlatformCredentialsRequest` | [ApimodelsPutPlatformCredentialsRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsPutPlatformCredentialsRequest.cs) |
 | `apimodels.RequestMember` | [ApimodelsRequestMember](../../AccelByte.Sdk/Api/Session/Model/ApimodelsRequestMember.cs) |
 | `apimodels.ResponseDeleteBulkGameSessions` | [ApimodelsResponseDeleteBulkGameSessions](../../AccelByte.Sdk/Api/Session/Model/ApimodelsResponseDeleteBulkGameSessions.cs) |
+| `apimodels.ResponseDeleteBulkPartySessions` | [ApimodelsResponseDeleteBulkPartySessions](../../AccelByte.Sdk/Api/Session/Model/ApimodelsResponseDeleteBulkPartySessions.cs) |
 | `apimodels.ServerSecret` | [ApimodelsServerSecret](../../AccelByte.Sdk/Api/Session/Model/ApimodelsServerSecret.cs) |
 | `apimodels.SessionInviteRequest` | [ApimodelsSessionInviteRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsSessionInviteRequest.cs) |
 | `apimodels.SessionInviteResponse` | [ApimodelsSessionInviteResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsSessionInviteResponse.cs) |
@@ -292,6 +299,7 @@
 | `apimodels.UpdateGameSessionRequest` | [ApimodelsUpdateGameSessionRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdateGameSessionRequest.cs) |
 | `apimodels.UpdatePartyRequest` | [ApimodelsUpdatePartyRequest](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUpdatePartyRequest.cs) |
 | `apimodels.UserResponse` | [ApimodelsUserResponse](../../AccelByte.Sdk/Api/Session/Model/ApimodelsUserResponse.cs) |
+| `apimodels.XblCertificateResponseBody` | [ApimodelsXblCertificateResponseBody](../../AccelByte.Sdk/Api/Session/Model/ApimodelsXblCertificateResponseBody.cs) |
 | `logconfig.Configuration` | [LogconfigConfiguration](../../AccelByte.Sdk/Api/Session/Model/LogconfigConfiguration.cs) |
 | `model.NativeSession` | [ModelNativeSession](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSession.cs) |
 | `model.NativeSessionMember` | [ModelNativeSessionMember](../../AccelByte.Sdk/Api/Session/Model/ModelNativeSessionMember.cs) |
@@ -310,4 +318,5 @@
 | `models.Team` | [ModelsTeam](../../AccelByte.Sdk/Api/Session/Model/ModelsTeam.cs) |
 | `models.UserInfoResponse` | [ModelsUserInfoResponse](../../AccelByte.Sdk/Api/Session/Model/ModelsUserInfoResponse.cs) |
 | `models.UserPlatformInfo` | [ModelsUserPlatformInfo](../../AccelByte.Sdk/Api/Session/Model/ModelsUserPlatformInfo.cs) |
+| `models.XBLCertificateCredential` | [ModelsXBLCertificateCredential](../../AccelByte.Sdk/Api/Session/Model/ModelsXBLCertificateCredential.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Session/Model/ResponseError.cs) |

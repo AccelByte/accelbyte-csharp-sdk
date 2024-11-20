@@ -45,6 +45,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             public bool? FuzzyMatchName { get; set; }
 
+            public bool? IgnoreActiveDate { get; set; }
+
             public List<string>? ItemId { get; set; }
 
             public int? Limit { get; set; }
@@ -99,6 +101,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             public QueryUserEntitlementsBuilder SetFuzzyMatchName(bool _fuzzyMatchName)
             {
                 FuzzyMatchName = _fuzzyMatchName;
+                return this;
+            }
+
+            public QueryUserEntitlementsBuilder SetIgnoreActiveDate(bool _ignoreActiveDate)
+            {
+                IgnoreActiveDate = _ignoreActiveDate;
                 return this;
             }
 
@@ -163,6 +171,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (builder.EntitlementName is not null) QueryParams["entitlementName"] = builder.EntitlementName;
             if (builder.Features is not null) QueryParams["features"] = builder.Features;
             if (builder.FuzzyMatchName != null) QueryParams["fuzzyMatchName"] = Convert.ToString(builder.FuzzyMatchName)!;
+            if (builder.IgnoreActiveDate != null) QueryParams["ignoreActiveDate"] = Convert.ToString(builder.IgnoreActiveDate)!;
             if (builder.ItemId is not null) QueryParams["itemId"] = builder.ItemId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
@@ -189,6 +198,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             string? entitlementName,
             List<string>? features,
             bool? fuzzyMatchName,
+            bool? ignoreActiveDate,
             List<string>? itemId,
             int? limit,
             int? offset,
@@ -205,6 +215,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             if (entitlementName is not null) QueryParams["entitlementName"] = entitlementName;
             if (features is not null) QueryParams["features"] = features;
             if (fuzzyMatchName != null) QueryParams["fuzzyMatchName"] = Convert.ToString(fuzzyMatchName)!;
+            if (ignoreActiveDate != null) QueryParams["ignoreActiveDate"] = Convert.ToString(ignoreActiveDate)!;
             if (itemId is not null) QueryParams["itemId"] = itemId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;

@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoRegionsAsync(op);
         }
-        public static Ams.Model.ApiAvailableInstanceTypesResponse? Execute(
+        public static Ams.Model.ApiInstanceTypesForNamespaceResponse? Execute(
             this InfoSupportedInstances.InfoSupportedInstancesBuilder builder,
             string namespace_
         )
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Ams.Wrapper.AMSInfo)builder.WrapperObject!).InfoSupportedInstances(op);
         }
-        public static async Task<Ams.Model.ApiAvailableInstanceTypesResponse?> ExecuteAsync(
+        public static async Task<Ams.Model.ApiInstanceTypesForNamespaceResponse?> ExecuteAsync(
             this InfoSupportedInstances.InfoSupportedInstancesBuilder builder,
             string namespace_
         )

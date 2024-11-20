@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 {
     public class ApimodelsSessionInviteRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("metadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, string>? Metadata { get; set; }
+
         [JsonPropertyName("platformID")]
         public string? PlatformID { get; set; }
 

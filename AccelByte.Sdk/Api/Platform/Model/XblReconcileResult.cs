@@ -44,6 +44,12 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly XblReconcileResultIapOrderStatus FULFILLED
             = new XblReconcileResultIapOrderStatus("FULFILLED");
 
+        public static readonly XblReconcileResultIapOrderStatus PARTIALREVOKED
+            = new XblReconcileResultIapOrderStatus("PARTIAL_REVOKED");
+
+        public static readonly XblReconcileResultIapOrderStatus REVOKED
+            = new XblReconcileResultIapOrderStatus("REVOKED");
+
         public static readonly XblReconcileResultIapOrderStatus VERIFIED
             = new XblReconcileResultIapOrderStatus("VERIFIED");
 

@@ -17,6 +17,22 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? BusinessPartnerCertFileName { get; set; }
 
+        [JsonPropertyName("enableClawback")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? EnableClawback { get; set; }
+
+        [JsonPropertyName("entraAppClientId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntraAppClientId { get; set; }
+
+        [JsonPropertyName("entraAppClientSecret")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntraAppClientSecret { get; set; }
+
+        [JsonPropertyName("entraTenantId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EntraTenantId { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

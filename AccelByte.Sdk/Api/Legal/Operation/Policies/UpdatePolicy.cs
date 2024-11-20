@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// updatePolicy
     ///
-    /// Update country-specific policy.
+    /// Update country-specific and country-group policy.
     /// </summary>
     public class UpdatePolicy : AccelByte.Sdk.Core.Operation
     {

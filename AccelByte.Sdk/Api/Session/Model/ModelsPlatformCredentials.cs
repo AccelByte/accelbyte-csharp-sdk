@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 
+        [JsonPropertyName("xbox")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsXBLCertificateCredential? Xbox { get; set; }
+
     }
 
 

@@ -56,8 +56,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// - `{ "data.2": "value" }`
     /// 2. Cannot use **"$"** as the prefix in key names
     /// - `{ "$data": "value" }`
-    /// 3. Cannot use empty string in key names
-    /// - `{ "": "value" }`
     /// 
     /// 
     /// ## Record Metadata
@@ -70,12 +68,20 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// **Metadata List:**
     /// 1. tags (default: *empty array*, type: array of string)
     /// Indicate the tagging for the admin record.
+    /// 2. ttl_config (default: *empty*, type: object)
+    /// Indicate the TTL configuration for the admin record.
+    /// action:
+    /// - DELETE: record will be deleted after TTL is reached
     /// 
     /// **Request Body Example:**
     /// ```
     /// {
     /// "__META": {
-    /// "tags": ["tag1", "tag2"]
+    /// "tags": ["tag1", "tag2"],
+    /// "ttl_config": {
+    /// "expires_at": "2026-01-02T15:04:05Z", // should be in RFC3339 format
+    /// "action": "DELETE"
+    /// },
     /// }
     /// ...
     /// }

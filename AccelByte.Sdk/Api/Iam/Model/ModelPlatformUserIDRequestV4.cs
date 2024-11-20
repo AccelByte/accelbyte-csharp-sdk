@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelPlatformUserIDRequestV4 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("pidType")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PidType { get; set; }
+
         [JsonPropertyName("platformUserIds")]
         public List<string>? PlatformUserIds { get; set; }
 

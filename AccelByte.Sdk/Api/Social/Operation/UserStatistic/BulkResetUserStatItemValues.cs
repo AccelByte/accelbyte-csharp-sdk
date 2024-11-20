@@ -32,8 +32,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
             public string? AdditionalKey { get; set; }
 
 
-            public List<Model.ADTOObjectForResettingUserStatItems>? Body { get; set; }
-
 
 
 
@@ -47,21 +45,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
 
 
-            public BulkResetUserStatItemValuesBuilder SetBody(List<Model.ADTOObjectForResettingUserStatItems> _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public BulkResetUserStatItemValues Build(
+                List<ADTOObjectForResettingUserStatItems> body,
                 string namespace_,
                 string userId
             )
             {
                 BulkResetUserStatItemValues op = new BulkResetUserStatItemValues(this,
+                    body,
                     namespace_,
                     userId
                 );
@@ -75,6 +69,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private BulkResetUserStatItemValues(BulkResetUserStatItemValuesBuilder builder,
+            List<ADTOObjectForResettingUserStatItems> body,
             string namespace_,
             string userId
         )
@@ -87,7 +82,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Achievement
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
             if (SortBy != null)
-                opBuilder.SetSortBy((string)SortBy);
+                opBuilder.SetSortBy(AdminListTagsSortBy.NewValue(SortBy));
 
 
 

@@ -756,6 +756,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFileAsync(op);
         }
+        public static List<Platform.Model.IAPOrderConsumeDetailInfo>? Execute(
+            this GetIAPOrderConsumeDetails.GetIAPOrderConsumeDetailsBuilder builder,
+            string iapOrderNo,
+            string namespace_
+        )
+        {
+            GetIAPOrderConsumeDetails op = builder.Build(
+                iapOrderNo,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPOrderConsumeDetails(op);
+        }
+        public static async Task<List<Platform.Model.IAPOrderConsumeDetailInfo>?> ExecuteAsync(
+            this GetIAPOrderConsumeDetails.GetIAPOrderConsumeDetailsBuilder builder,
+            string iapOrderNo,
+            string namespace_
+        )
+        {
+            GetIAPOrderConsumeDetails op = builder.Build(
+                iapOrderNo,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).GetIAPOrderConsumeDetailsAsync(op);
+        }
         public static Platform.Model.IAPOrderPagingSlicedResult? Execute(
             this QueryUserIAPOrders.QueryUserIAPOrdersBuilder builder,
             string namespace_,

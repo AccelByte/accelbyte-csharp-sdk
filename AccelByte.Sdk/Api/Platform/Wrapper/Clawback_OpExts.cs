@@ -79,5 +79,50 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockPlayStationStreamEventAsync<T1, T2>(op);
         }
+        public static Platform.Model.ClawbackInfo? Execute(
+            this MockXblClawbackEvent.MockXblClawbackEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockXblClawbackEvent op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockXblClawbackEvent(op);
+        }
+        public static async Task<Platform.Model.ClawbackInfo?> ExecuteAsync(
+            this MockXblClawbackEvent.MockXblClawbackEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockXblClawbackEvent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockXblClawbackEventAsync(op);
+        }
+
+        public static Platform.Model.ClawbackInfo<T1, T2>? Execute<T1, T2>(
+            this MockXblClawbackEvent.MockXblClawbackEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockXblClawbackEvent op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockXblClawbackEvent<T1, T2>(op);
+        }
+        public static async Task<Platform.Model.ClawbackInfo<T1, T2>?> ExecuteAsync<T1, T2>(
+            this MockXblClawbackEvent.MockXblClawbackEventBuilder builder,
+            string namespace_
+        )
+        {
+            MockXblClawbackEvent op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Clawback)builder.WrapperObject!).MockXblClawbackEventAsync<T1, T2>(op);
+        }
     }
 }

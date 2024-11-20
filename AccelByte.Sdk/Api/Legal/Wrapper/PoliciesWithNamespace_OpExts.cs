@@ -13,6 +13,32 @@ namespace AccelByte.Sdk.Api
     public static class LegalPoliciesWithNamespace_OpExts
     {
         public static void Execute(
+            this DeletePolicy.DeletePolicyBuilder builder,
+            string namespace_,
+            string policyId
+        )
+        {
+            DeletePolicy op = builder.Build(
+                namespace_,
+                policyId
+            );
+
+            ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).DeletePolicy(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeletePolicy.DeletePolicyBuilder builder,
+            string namespace_,
+            string policyId
+        )
+        {
+            DeletePolicy op = builder.Build(
+                namespace_,
+                policyId
+            );
+
+            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).DeletePolicyAsync(op);
+        }
+        public static void Execute(
             this UpdatePolicy1.UpdatePolicy1Builder builder,
             string namespace_,
             string policyId

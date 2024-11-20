@@ -30,8 +30,6 @@ namespace AccelByte.Sdk.Api.Social.Operation
         {
 
 
-            public Model.BulkStatCycleRequest? Body { get; set; }
-
 
 
 
@@ -39,20 +37,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            public BulkGetStatCycleBuilder SetBody(Model.BulkStatCycleRequest _body)
-            {
-                Body = _body;
-                return this;
-            }
-
 
 
 
             public BulkGetStatCycle Build(
+                BulkStatCycleRequest body,
                 string namespace_
             )
             {
                 BulkGetStatCycle op = new BulkGetStatCycle(this,
+                    body,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -65,6 +59,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         }
 
         private BulkGetStatCycle(BulkGetStatCycleBuilder builder,
+            BulkStatCycleRequest body,
             string namespace_
         )
         {
@@ -74,7 +69,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
 
 
 
-            BodyParams = builder.Body;
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

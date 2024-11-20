@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     ///
     /// 
     /// Consume user's own item
-    /// 
+    /// Client should pass item ID in options if item type is OPTIONBOX
     /// Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [UPDATE]
     /// </summary>
     public class AdminConsumeUserItem : AccelByte.Sdk.Core.Operation

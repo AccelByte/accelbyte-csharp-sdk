@@ -16,26 +16,19 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// <summary>
     /// AdminSaveItem
     ///
+    /// **This endpoint is used to save items to the playerâs inventory based on the inventoryConfigurationCode with the following conditions:**
+    /// - If the player doesn't have the inventory for the specified inventoryConfigurationCode, a new inventory will be created.
+    /// - If the user already has one, it will be added to the existing inventory.
+    /// - If the same item exists within the inventory, the quantity (qty) will be increased.
+    /// - If the inventory is full, the item cannot be added and the request will return the âFailedâ response.
+    /// - If a player has more than one inventory and the initial inventory is full, the service will check the available slot in the other inventory following the order of their creation date and time (createdAt).
+    /// - For Ecommerce items:
+    /// >- Attributes such as slotUsed, serverCustomAttributes, customAttributes, and type will be overridden by the attributes configured in the AccelByte Gaming Services (AGS) Store.
+    /// >- Storing E-commerce items in a particular slot will follow its entitlement and item configuration, such as durable, consumable, stackable and non-stackable.
+    /// >- The quantity is dynamically set based on an itemâs useCount configured in Store. When saving an item, the specified quantity will be multiplied by configured useCount for that particular item. For example, if an Item is configured with a useCount of 5 in the AGS Store and it is saved with a qty of 2, the itemâs quantity will be stored as 2 in the playerâs inventory.
     /// 
-    /// Saving an item.
-    /// The item will be saved in user's inventory,
-    /// If it doesn't exist it'll be created.
-    /// 
-    /// If the item already exists, its qty will be increased,
-    /// so no new item with same sourceItemId will be created
-    /// 
-    /// Tags will be auto-created.
-    /// ItemType will be auto-created.
-    /// 
-    /// For Ecommerce item, this fields will be override by ecommerce configuration
-    /// (slotUsed, serverCustomAttributes, customAttributes, type)
-    /// 
-    /// For Ecommerce items, the quantity saved is dynamically adjusted based on an item's useCount configured in Store.
-    /// When saving items, the quantity specified for each item will be multiplied by the useCount.
-    /// i.e. If the store item is configured with a useCount of 5
-    /// and the quantity of a particular item is set to 2 during saving, it will be stored as 10.
-    /// 
-    /// Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]
+    /// You must have this permission to access this endpoint:
+    /// **Permission:ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]**
     /// </summary>
     public class AdminSaveItem : AccelByte.Sdk.Core.Operation
     {

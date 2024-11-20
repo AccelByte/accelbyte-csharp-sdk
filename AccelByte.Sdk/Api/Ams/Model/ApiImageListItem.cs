@@ -27,6 +27,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
+        [JsonPropertyName("referencingConfigs")]
+        public int? ReferencingConfigs { get; set; }
+
         [JsonPropertyName("referencingFleets")]
         public int? ReferencingFleets { get; set; }
 

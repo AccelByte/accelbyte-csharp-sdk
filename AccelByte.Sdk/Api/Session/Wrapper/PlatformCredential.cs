@@ -31,6 +31,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminDeletePlatformCredentials.Builder.SetWrapperObject(this); }
         }
+        public AdminDeletePlatformCredentialsByPlatformId.AdminDeletePlatformCredentialsByPlatformIdBuilder AdminDeletePlatformCredentialsByPlatformIdOp
+        {
+            get { return Operation.AdminDeletePlatformCredentialsByPlatformId.Builder.SetWrapperObject(this); }
+        }
+        public AdminSyncPlatformCredentials.AdminSyncPlatformCredentialsBuilder AdminSyncPlatformCredentialsOp
+        {
+            get { return Operation.AdminSyncPlatformCredentials.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsPlatformCredentials? AdminGetPlatformCredentials(AdminGetPlatformCredentials input)
@@ -77,6 +85,38 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminDeletePlatformCredentialsByPlatformId(AdminDeletePlatformCredentialsByPlatformId input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminDeletePlatformCredentialsByPlatformIdAsync(AdminDeletePlatformCredentialsByPlatformId input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsXblCertificateResponseBody? AdminSyncPlatformCredentials(AdminSyncPlatformCredentials input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsXblCertificateResponseBody?> AdminSyncPlatformCredentialsAsync(AdminSyncPlatformCredentials input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

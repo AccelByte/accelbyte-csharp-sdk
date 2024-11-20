@@ -12,39 +12,40 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionCertificate_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Session.Model.ModelsPlatformCredentials? Execute(
-            this HandleUploadXboxPFXCertificate.HandleUploadXboxPFXCertificateBuilder builder,
+            this AdminUploadXBoxCertificate.AdminUploadXBoxCertificateBuilder builder,
             string certname,
             Stream file,
             string password,
             string namespace_
         )
         {
-            HandleUploadXboxPFXCertificate op = builder.Build(
+            AdminUploadXBoxCertificate op = builder.Build(
                 certname,
                 file,
                 password,
                 namespace_
             );
 
-            return ((Session.Wrapper.Certificate)builder.WrapperObject!).HandleUploadXboxPFXCertificate(op);
+            return ((Session.Wrapper.Certificate)builder.WrapperObject!).AdminUploadXBoxCertificate(op);
         }
         public static async Task<Session.Model.ModelsPlatformCredentials?> ExecuteAsync(
-            this HandleUploadXboxPFXCertificate.HandleUploadXboxPFXCertificateBuilder builder,
+            this AdminUploadXBoxCertificate.AdminUploadXBoxCertificateBuilder builder,
             string certname,
             Stream file,
             string password,
             string namespace_
         )
         {
-            HandleUploadXboxPFXCertificate op = builder.Build(
+            AdminUploadXBoxCertificate op = builder.Build(
                 certname,
                 file,
                 password,
                 namespace_
             );
 
-            return await ((Session.Wrapper.Certificate)builder.WrapperObject!).HandleUploadXboxPFXCertificateAsync(op);
+            return await ((Session.Wrapper.Certificate)builder.WrapperObject!).AdminUploadXBoxCertificateAsync(op);
         }
     }
 }

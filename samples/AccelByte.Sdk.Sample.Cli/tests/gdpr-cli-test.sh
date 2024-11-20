@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..39"
+echo "1..40"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -394,33 +394,42 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 36 'S2SGetListFinishedPersonalDataRequest' test.out
 
-#- 37 S2SSubmitUserAccountDeletionRequest
+#- 37 S2SGetDataRequestByRequestID
+$CLI_EXE \
+    --sn gdpr \
+    --op S2SGetDataRequestByRequestID \
+    --namespace $AB_NAMESPACE \
+    --requestId 'eRajlpk8lfuiJVck' \
+    > test.out 2>&1
+eval_tap $? 37 'S2SGetDataRequestByRequestID' test.out
+
+#- 38 S2SSubmitUserAccountDeletionRequest
 $CLI_EXE \
     --sn gdpr \
     --op S2SSubmitUserAccountDeletionRequest \
     --namespace $AB_NAMESPACE \
-    --userId 'eRajlpk8lfuiJVck' \
+    --userId 'tlx9zJZVVCc9bpIH' \
     > test.out 2>&1
-eval_tap $? 37 'S2SSubmitUserAccountDeletionRequest' test.out
+eval_tap $? 38 'S2SSubmitUserAccountDeletionRequest' test.out
 
-#- 38 S2SRequestDataRetrieval
+#- 39 S2SRequestDataRetrieval
 $CLI_EXE \
     --sn gdpr \
     --op S2SRequestDataRetrieval \
     --namespace $AB_NAMESPACE \
-    --userId 'tlx9zJZVVCc9bpIH' \
+    --userId 'EWQMmCkIqwqpoTVC' \
     > test.out 2>&1
-eval_tap $? 38 'S2SRequestDataRetrieval' test.out
+eval_tap $? 39 'S2SRequestDataRetrieval' test.out
 
-#- 39 S2SGeneratePersonalDataURL
+#- 40 S2SGeneratePersonalDataURL
 $CLI_EXE \
     --sn gdpr \
     --op S2SGeneratePersonalDataURL \
     --namespace $AB_NAMESPACE \
-    --requestDate 'EWQMmCkIqwqpoTVC' \
-    --userId 'NrcaVozsjIXO2EUs' \
+    --requestDate 'NrcaVozsjIXO2EUs' \
+    --userId 'AfBvo6Llcalks2R3' \
     > test.out 2>&1
-eval_tap $? 39 'S2SGeneratePersonalDataURL' test.out
+eval_tap $? 40 'S2SGeneratePersonalDataURL' test.out
 
 
 # remove artifacts

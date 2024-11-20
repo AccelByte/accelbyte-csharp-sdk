@@ -15,8 +15,17 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("clientSecret")]
         public string? ClientSecret { get; set; }
 
+        [JsonPropertyName("createdAt")]
+        public string? CreatedAt { get; set; }
+
+        [JsonPropertyName("createdBy")]
+        public string? CreatedBy { get; set; }
+
         [JsonPropertyName("scope")]
         public string? Scope { get; set; }
+
+        [JsonPropertyName("updatedAt")]
+        public string? UpdatedAt { get; set; }
 
     }
 

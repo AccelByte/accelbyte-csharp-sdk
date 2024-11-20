@@ -17,6 +17,14 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// createPolicy_1
     ///
     /// Create a legal policy.
+    /// Note:
+    /// 
+    /// 
+    ///   *  countryType field only accept COUNTRY or COUNTRY_GROUP.
+    ///   * COUNTRY_GROUP countryType requires the countryGroupName and affectedCountries fields to be provided.
+    /// 
+    /// 
+    /// * policy with COUNTRY_GROUP type include multiple countries and apply the same policy across the entire list of countries
     /// </summary>
     public class CreatePolicy1 : AccelByte.Sdk.Core.Operation
     {

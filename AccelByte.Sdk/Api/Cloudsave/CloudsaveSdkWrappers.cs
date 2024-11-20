@@ -24,17 +24,6 @@ namespace AccelByte.Sdk.Core
         }
         private AdminRecord? _AdminRecord = null;
 
-        public AdminGameBinaryRecord AdminGameBinaryRecord
-        {
-            get
-            {
-                if (_AdminGameBinaryRecord == null)
-                    _AdminGameBinaryRecord = new AdminGameBinaryRecord(_SdkObject);
-                return _AdminGameBinaryRecord;
-            }
-        }
-        private AdminGameBinaryRecord? _AdminGameBinaryRecord = null;
-
         public TTLConfig TTLConfig
         {
             get
@@ -45,6 +34,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private TTLConfig? _TTLConfig = null;
+
+        public AdminGameBinaryRecord AdminGameBinaryRecord
+        {
+            get
+            {
+                if (_AdminGameBinaryRecord == null)
+                    _AdminGameBinaryRecord = new AdminGameBinaryRecord(_SdkObject);
+                return _AdminGameBinaryRecord;
+            }
+        }
+        private AdminGameBinaryRecord? _AdminGameBinaryRecord = null;
 
         public AdminConcurrentRecord AdminConcurrentRecord
         {

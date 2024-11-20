@@ -21,6 +21,13 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | POST | AdminPostPlayerAdminRecordV1 | [AdminPostPlayerAdminRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPostPlayerAdminRecordV1.cs) | [AdminPostPlayerAdminRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPostPlayerAdminRecordV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | DELETE | AdminDeleteAdminPlayerRecordV1 | [AdminDeleteAdminPlayerRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminDeleteAdminPlayerRecordV1.cs) | [AdminDeleteAdminPlayerRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminDeleteAdminPlayerRecordV1.cs) |
 
+### TTLConfig Wrapper:  [TTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/TTLConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/cloudsave/v1/admin/namespaces/{namespace}/adminrecords/{key}/ttl` | DELETE | DeleteAdminGameRecordTTLConfig | [DeleteAdminGameRecordTTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/TTLConfig/DeleteAdminGameRecordTTLConfig.cs) | [DeleteAdminGameRecordTTLConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/TTLConfig/DeleteAdminGameRecordTTLConfig.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/ttl` | DELETE | DeleteGameBinaryRecordTTLConfig | [DeleteGameBinaryRecordTTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/TTLConfig/DeleteGameBinaryRecordTTLConfig.cs) | [DeleteGameBinaryRecordTTLConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/TTLConfig/DeleteGameBinaryRecordTTLConfig.cs) |
+| `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}/ttl` | DELETE | DeleteGameRecordTTLConfig | [DeleteGameRecordTTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/TTLConfig/DeleteGameRecordTTLConfig.cs) | [DeleteGameRecordTTLConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/TTLConfig/DeleteGameRecordTTLConfig.cs) |
+
 ### AdminGameBinaryRecord Wrapper:  [AdminGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameBinaryRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -31,12 +38,6 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}` | DELETE | AdminDeleteGameBinaryRecordV1 | [AdminDeleteGameBinaryRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminDeleteGameBinaryRecordV1.cs) | [AdminDeleteGameBinaryRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminDeleteGameBinaryRecordV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/metadata` | PUT | AdminPutGameBinaryRecorMetadataV1 | [AdminPutGameBinaryRecorMetadataV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPutGameBinaryRecorMetadataV1.cs) | [AdminPutGameBinaryRecorMetadataV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPutGameBinaryRecorMetadataV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/presigned` | POST | AdminPostGameBinaryPresignedURLV1 | [AdminPostGameBinaryPresignedURLV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminGameBinaryRecord/AdminPostGameBinaryPresignedURLV1.cs) | [AdminPostGameBinaryPresignedURLV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminGameBinaryRecord/AdminPostGameBinaryPresignedURLV1.cs) |
-
-### TTLConfig Wrapper:  [TTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/TTLConfig.cs)
-| Endpoint | Method | ID | Class | Example |
-|---|---|---|---|---|
-| `/cloudsave/v1/admin/namespaces/{namespace}/binaries/{key}/ttl` | DELETE | DeleteGameBinaryRecordTTLConfig | [DeleteGameBinaryRecordTTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/TTLConfig/DeleteGameBinaryRecordTTLConfig.cs) | [DeleteGameBinaryRecordTTLConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/TTLConfig/DeleteGameBinaryRecordTTLConfig.cs) |
-| `/cloudsave/v1/admin/namespaces/{namespace}/records/{key}/ttl` | DELETE | DeleteGameRecordTTLConfig | [DeleteGameRecordTTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Operation/TTLConfig/DeleteGameRecordTTLConfig.cs) | [DeleteGameRecordTTLConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/TTLConfig/DeleteGameRecordTTLConfig.cs) |
 
 ### AdminConcurrentRecord Wrapper:  [AdminConcurrentRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminConcurrentRecord.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -182,11 +183,11 @@
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | PUT | AdminPutAdminPlayerRecordV1 | [AdminPutAdminPlayerRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPutAdminPlayerRecordV1.cs) | [AdminPutAdminPlayerRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPutAdminPlayerRecordV1.cs) |
 | `/cloudsave/v1/admin/namespaces/{namespace}/users/{userId}/adminrecords/{key}` | POST | AdminPostPlayerAdminRecordV1 | [AdminPostPlayerAdminRecordV1](../../AccelByte.Sdk/Api/Cloudsave/Operation/AdminRecord/AdminPostPlayerAdminRecordV1.cs) | [AdminPostPlayerAdminRecordV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Cloudsave/AdminRecord/AdminPostPlayerAdminRecordV1.cs) |
 
-### AdminGameBinaryRecord Wrapper:  [AdminGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameBinaryRecord.cs)
+### TTLConfig Wrapper:  [TTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/TTLConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### TTLConfig Wrapper:  [TTLConfig](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/TTLConfig.cs)
+### AdminGameBinaryRecord Wrapper:  [AdminGameBinaryRecord](../../AccelByte.Sdk/Api/Cloudsave/Wrapper/AdminGameBinaryRecord.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

@@ -22,6 +22,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
 
+        [JsonPropertyName("ttl_config")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsTTLConfigDTO? TtlConfig { get; set; }
+
         [JsonPropertyName("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
@@ -44,6 +48,10 @@ namespace AccelByte.Sdk.Api.Cloudsave.Model
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Tags { get; set; }
+
+        [JsonPropertyName("ttl_config")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelsTTLConfigDTO? TtlConfig { get; set; }
 
         [JsonPropertyName("updated_at")]
         public DateTime? UpdatedAt { get; set; }

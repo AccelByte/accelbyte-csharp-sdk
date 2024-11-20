@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("success")]
         public ApiArtifactSamplingRule? Success { get; set; }
 
+        [JsonPropertyName("unclaimed")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ApiArtifactSamplingRule? Unclaimed { get; set; }
+
     }
 
 

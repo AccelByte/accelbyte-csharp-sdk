@@ -1,3 +1,14 @@
+<a name="v0.67.0"></a>
+## [v0.67.0]
+### feat
+- **:** add challenge service integration tests
+- **:** add net8 support for sdk and tests
+### chore
+- **:** use net8 for docker build
+### ci
+- **coverity:** update to .net 8.0
+
+
 <a name="v0.66.0"></a>
 ## [v0.66.0]
 ### chore

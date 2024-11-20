@@ -12,6 +12,32 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalLocalizedPolicyVersionsWithNamespace_OpExts
     {
+        public static void Execute(
+            this DeleteLocalizedPolicy.DeleteLocalizedPolicyBuilder builder,
+            string localizedPolicyVersionId,
+            string namespace_
+        )
+        {
+            DeleteLocalizedPolicy op = builder.Build(
+                localizedPolicyVersionId,
+                namespace_
+            );
+
+            ((Legal.Wrapper.LocalizedPolicyVersionsWithNamespace)builder.WrapperObject!).DeleteLocalizedPolicy(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteLocalizedPolicy.DeleteLocalizedPolicyBuilder builder,
+            string localizedPolicyVersionId,
+            string namespace_
+        )
+        {
+            DeleteLocalizedPolicy op = builder.Build(
+                localizedPolicyVersionId,
+                namespace_
+            );
+
+            await ((Legal.Wrapper.LocalizedPolicyVersionsWithNamespace)builder.WrapperObject!).DeleteLocalizedPolicyAsync(op);
+        }
         public static List<Legal.Model.RetrieveLocalizedPolicyVersionResponse>? Execute(
             this RetrieveLocalizedPolicyVersions1.RetrieveLocalizedPolicyVersions1Builder builder,
             string namespace_,

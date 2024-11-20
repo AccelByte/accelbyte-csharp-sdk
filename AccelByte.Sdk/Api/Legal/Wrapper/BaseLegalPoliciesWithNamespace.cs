@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.RetrieveSinglePolicy1.Builder.SetWrapperObject(this); }
         }
+        public DeleteBasePolicy.DeleteBasePolicyBuilder DeleteBasePolicyOp
+        {
+            get { return Operation.DeleteBasePolicy.Builder.SetWrapperObject(this); }
+        }
         public PartialUpdatePolicy1.PartialUpdatePolicy1Builder PartialUpdatePolicy1Op
         {
             get { return Operation.PartialUpdatePolicy1.Builder.SetWrapperObject(this); }
@@ -38,6 +42,14 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         public RetrievePolicyCountry1.RetrievePolicyCountry1Builder RetrievePolicyCountry1Op
         {
             get { return Operation.RetrievePolicyCountry1.Builder.SetWrapperObject(this); }
+        }
+        public RetrieveAllPoliciesFromBasePolicy.RetrieveAllPoliciesFromBasePolicyBuilder RetrieveAllPoliciesFromBasePolicyOp
+        {
+            get { return Operation.RetrieveAllPoliciesFromBasePolicy.Builder.SetWrapperObject(this); }
+        }
+        public CreatePolicyUnderBasePolicy.CreatePolicyUnderBasePolicyBuilder CreatePolicyUnderBasePolicyOp
+        {
+            get { return Operation.CreatePolicyUnderBasePolicy.Builder.SetWrapperObject(this); }
         }
         public RetrieveAllPolicyTypes1.RetrieveAllPolicyTypes1Builder RetrieveAllPolicyTypes1Op
         {
@@ -93,6 +105,22 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public void DeleteBasePolicy(DeleteBasePolicy input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteBasePolicyAsync(DeleteBasePolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.UpdateBasePolicyResponse? PartialUpdatePolicy1(PartialUpdatePolicy1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -118,6 +146,38 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.Payload);
         }
         public async Task<Model.RetrievePolicyResponse?> RetrievePolicyCountry1Async(RetrievePolicyCountry1 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.RetrievePoliciesFromBasePolicyResponse>? RetrieveAllPoliciesFromBasePolicy(RetrieveAllPoliciesFromBasePolicy input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.RetrievePoliciesFromBasePolicyResponse>?> RetrieveAllPoliciesFromBasePolicyAsync(RetrieveAllPoliciesFromBasePolicy input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.CreatePolicyResponse? CreatePolicyUnderBasePolicy(CreatePolicyUnderBasePolicy input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.CreatePolicyResponse?> CreatePolicyUnderBasePolicyAsync(CreatePolicyUnderBasePolicy input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

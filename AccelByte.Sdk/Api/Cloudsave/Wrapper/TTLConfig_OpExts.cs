@@ -13,6 +13,32 @@ namespace AccelByte.Sdk.Api
     public static class CloudsaveTTLConfig_OpExts
     {
         public static void Execute(
+            this DeleteAdminGameRecordTTLConfig.DeleteAdminGameRecordTTLConfigBuilder builder,
+            string key,
+            string namespace_
+        )
+        {
+            DeleteAdminGameRecordTTLConfig op = builder.Build(
+                key,
+                namespace_
+            );
+
+            ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteAdminGameRecordTTLConfig(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteAdminGameRecordTTLConfig.DeleteAdminGameRecordTTLConfigBuilder builder,
+            string key,
+            string namespace_
+        )
+        {
+            DeleteAdminGameRecordTTLConfig op = builder.Build(
+                key,
+                namespace_
+            );
+
+            await ((Cloudsave.Wrapper.TTLConfig)builder.WrapperObject!).DeleteAdminGameRecordTTLConfigAsync(op);
+        }
+        public static void Execute(
             this DeleteGameBinaryRecordTTLConfig.DeleteGameBinaryRecordTTLConfigBuilder builder,
             string key,
             string namespace_
