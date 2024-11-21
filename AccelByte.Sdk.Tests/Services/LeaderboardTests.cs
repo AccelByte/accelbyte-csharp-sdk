@@ -49,8 +49,7 @@ namespace AccelByte.Sdk.Tests.Services
             };
 
             StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
-                .SetBody(createStat)
-                .Execute(_Sdk.Namespace);
+                .Execute(createStat, _Sdk.Namespace);
             Assert.IsNotNull(cStat);
             if (cStat != null)
                 Assert.AreEqual("CSharp Server SDK Test Stat", cStat.Name);

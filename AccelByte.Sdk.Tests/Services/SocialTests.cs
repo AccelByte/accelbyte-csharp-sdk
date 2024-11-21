@@ -50,8 +50,7 @@ namespace AccelByte.Sdk.Tests.Services
             };
 
             StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
-                .SetBody(createStat)
-                .Execute(_Sdk.Namespace);
+                .Execute(createStat, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(cStat);
             if (cStat != null)
@@ -72,8 +71,7 @@ namespace AccelByte.Sdk.Tests.Services
             };
 
             StatInfo? uStat = _Sdk.Social.StatConfiguration.UpdateStatOp
-                .SetBody(updateStat)
-                .Execute(_Sdk.Namespace, stat_code);
+                .Execute(updateStat, _Sdk.Namespace, stat_code);
             #endregion
             Assert.IsNotNull(uStat);
             if (uStat != null)
@@ -132,11 +130,10 @@ namespace AccelByte.Sdk.Tests.Services
                 Assert.Greater(gsResult.Data!.Count, 0);
 
             var incResult = _Sdk.Social.UserStatistic.IncUserStatItemValueOp
-                .SetBody(new StatItemInc()
+                .Execute(new StatItemInc()
                 {
                     Inc = 5
-                })
-                .Execute(_Sdk.Namespace, stat_code, user_id);
+                }, _Sdk.Namespace, stat_code, user_id);
             Assert.IsNotNull(incResult);
 
             _Sdk.Social.UserStatistic.DeleteUserStatItemsOp

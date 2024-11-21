@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(regions);
             Assert.GreaterOrEqual(regions!.Regions!.Count, 1);
 
-            ApiAvailableInstanceTypesResponse? instances = _Sdk.Ams.AMSInfo.InfoSupportedInstancesOp
+            var instances = _Sdk.Ams.AMSInfo.InfoSupportedInstancesOp
                 .Execute(_Sdk.Namespace);
             Assert.IsNotNull(instances);
             Assert.GreaterOrEqual(instances!.AvailableInstanceTypes!.Count, 1);
