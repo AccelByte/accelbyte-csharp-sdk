@@ -77,8 +77,6 @@ The following operation(s) has been updated.
     - Body is now required.
 - Operation `AccelByte.Sdk/Api/Social/Operation/StatCycleConfiguration/UpdateStatCycle`
     - Body is now required.
-- Operation `AccelByte.Sdk/Api/Social/Operation/UserStatistic/UpdateStatCycle`
-    - Body is now required.
 - Operation `AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkCreateUserStatItems`
     - Body is now required.
 - Operation `AccelByte.Sdk/Api/Social/Operation/UserStatistic/BulkGetOrDefaultByUserId`
