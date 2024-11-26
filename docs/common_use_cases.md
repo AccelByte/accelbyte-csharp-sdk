@@ -222,6 +222,114 @@ _Sdk.Cloudsave.PublicPlayerRecord.PutPlayerRecordHandlerV1Op
 _Sdk.Cloudsave.PublicPlayerRecord.DeletePlayerRecordHandlerV1Op
     .Execute("foo_bar_record", _Sdk.Namespace, userId);
 ```
+## CSM
+
+Source: [CsmTests.cs](../AccelByte.Sdk.Tests/Services/CsmTests.cs)
+
+### Create an Extend app
+
+```csharp
+var createdApp = _Sdk.Csm.AppV2.CreateAppV2Op
+    .Execute(new ApimodelCreateAppV2Request()
+    {
+        Description = "C# Extend SDK integration test app.",
+        Scenario = "function-override"
+    }, appName, _Sdk.Namespace);
+```
+
+### Get an Extend app
+
+```csharp
+var app = _Sdk.Csm.AppV2.GetAppV2Op
+    .Execute(appName, _Sdk.Namespace);
+```
+
+### Create new env secret entry
+
+```csharp
+var newSecret = _Sdk.Csm.ConfigurationV2.SaveSecretV2Op
+    .Execute(new ApimodelSaveConfigurationV2Request()
+    {
+        ConfigName = envSecretKey,
+        Description = "",
+        Value = envSecretValue,
+        Source = "plaintext",
+        ApplyMask = true
+    }, appName, _Sdk.Namespace);
+```
+
+### Get list of env secrets
+
+```csharp
+var getSecrets = _Sdk.Csm.ConfigurationV2.GetListOfSecretsV2Op
+    .SetOffset(0)
+    .SetLimit(500)
+    .Execute(appName, _Sdk.Namespace);
+```
+
+### Update env secret
+
+```csharp
+var updateSecret = _Sdk.Csm.ConfigurationV2.UpdateSecretV2Op
+    .Execute(new ApimodelUpdateConfigurationV2Request()
+    {
+        Value = envSecretValueNew
+    }, appName, secretId, _Sdk.Namespace);
+```
+
+### Delete env secret
+
+```csharp
+_Sdk.Csm.ConfigurationV2.DeleteSecretV2Op
+    .Execute(appName, secretId, _Sdk.Namespace);
+```
+
+### Create new env variable entry
+
+```csharp
+var newVariable = _Sdk.Csm.ConfigurationV2.SaveVariableV2Op
+    .Execute(new ApimodelSaveConfigurationV2Request()
+    {
+        ConfigName = envVariableKey,
+        Description = "",
+        Value = envVariableValue,
+        Source = "plaintext"
+    }, appName, _Sdk.Namespace);
+```
+
+### Get list of env variables
+
+```csharp
+var getVariables = _Sdk.Csm.ConfigurationV2.GetListOfVariablesV2Op
+    .SetOffset(0)
+    .SetLimit(500)
+    .Execute(appName, _Sdk.Namespace);
+```
+
+### Update env variable
+
+```csharp
+var updateVariable = _Sdk.Csm.ConfigurationV2.UpdateVariableV2Op
+    .Execute(new ApimodelUpdateConfigurationV2Request()
+    {
+        Value = envVariableValueNew
+    }, appName, variableId, _Sdk.Namespace);
+```
+
+### Delete env variable
+
+```csharp
+_Sdk.Csm.ConfigurationV2.DeleteVariableV2Op
+    .Execute(appName, variableId, _Sdk.Namespace);
+```
+
+### Delete an Extend app
+
+```csharp
+_Sdk.Csm.AppV2.DeleteAppV2Op
+    .SetForced("true")
+    .Execute(appName, _Sdk.Namespace);
+```
 ## GameTelemetry
 
 Source: [GameTelemetryTests.cs](../AccelByte.Sdk.Tests/Services/GameTelemetryTests.cs)
@@ -1009,8 +1117,7 @@ StatCreate createStat = new StatCreate()
 };
 
 StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
-    .SetBody(createStat)
-    .Execute(_Sdk.Namespace);
+    .Execute(createStat, _Sdk.Namespace);
 ```
 
 ### Get a stat
@@ -1029,8 +1136,7 @@ StatUpdate updateStat = new StatUpdate()
 };
 
 StatInfo? uStat = _Sdk.Social.StatConfiguration.UpdateStatOp
-    .SetBody(updateStat)
-    .Execute(_Sdk.Namespace, stat_code);
+    .Execute(updateStat, _Sdk.Namespace, stat_code);
 ```
 
 ### Delete a stat
