@@ -47,7 +47,7 @@ test_core:
 test_cli:
 	@test -n "$(SDK_MOCK_SERVER_PATH)" || (echo "SDK_MOCK_SERVER_PATH is not set" ; exit 1)
 	rm -f test.err
-	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER)  dotnet publish -r linux-x64 --no-self-contained --framework net8.0
+	docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ -e HOME="/data" -e DOTNET_CLI_HOME="/data" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER)  dotnet publish -r linux-x64 --no-self-contained --framework net8.0 -c Debug
 	trap "docker stop justice-codegen-sdk-mock-server justice-codegen-sdk-ws-mock-server" EXIT && \
 			(bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec -l DEBUG &) && \
 			(SPEC_DIR=/data/spec bash "$(SDK_MOCK_SERVER_PATH)/ws/ws-mock-server.sh" &) && \
