@@ -51,9 +51,10 @@ namespace AccelByte.Sdk.Core
 
             try
             {
-                var response = sdk.Iam.Roles.AdminGetRoleV4Op.Execute(roleId);
+                var response = sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
+                    .Execute(sdk.Namespace, roleId);
                 if (response == null)
-                    throw new Exception("Null response from Iam::Roles::AdminGetRoleV4Op");
+                    throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
 
                 List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
                 foreach (var item in response.Permissions!)
@@ -81,9 +82,10 @@ namespace AccelByte.Sdk.Core
 
             try
             {
-                var response = await sdk.Iam.Roles.AdminGetRoleV4Op.ExecuteAsync(roleId);
+                var response = await sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
+                    .ExecuteAsync(sdk.Namespace, roleId);
                 if (response == null)
-                    throw new Exception("Null response from Iam::Roles::AdminGetRoleV4Op");
+                    throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
 
                 List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
                 foreach (var item in response.Permissions!)
