@@ -51,7 +51,7 @@ test_cli:
 	trap "docker stop justice-codegen-sdk-mock-server justice-codegen-sdk-ws-mock-server" EXIT && \
 			(bash "$(SDK_MOCK_SERVER_PATH)/mock-server.sh" -s /data/spec -l DEBUG &) && \
 			(SPEC_DIR=/data/spec bash "$(SDK_MOCK_SERVER_PATH)/ws/ws-mock-server.sh" &) && \
-			(for i in $$(seq 1 10); do curl http://localhost:8080/ 2>/dev/null && exit 0 || sleep 10; done; exit 1) && \
+			(for i in $$(seq 1 20); do curl http://localhost:8080/ 2>/dev/null && exit 0 || sleep 10; done; exit 1) && \
 			sed -i "s/\r//" samples/AccelByte.Sdk.Sample.Cli/tests/* && \
 			rm -f samples/AccelByte.Sdk.Sample.Cli/tests/*.tap && \
 			(for FILE in $$(ls samples/AccelByte.Sdk.Sample.Cli/tests/*.sh); do \
