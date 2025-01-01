@@ -19,25 +19,25 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetAppImageListV1.GetAppImageListV1Builder GetAppImageListV1Op
         {
             get { return Operation.GetAppImageListV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public DeleteAppImagesV1.DeleteAppImagesV1Builder DeleteAppImagesV1Op
         {
             get { return Operation.DeleteAppImagesV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedGetAppImageListV1Response? GetAppImageListV1(GetAppImageListV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -45,18 +45,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void DeleteAppImagesV1(DeleteAppImagesV1 input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -64,10 +64,10 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
     }
 }

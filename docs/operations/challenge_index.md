@@ -27,6 +27,14 @@
 | `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}` | PUT | AdminUpdateGoals | [AdminUpdateGoals](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminUpdateGoals.cs) | [AdminUpdateGoals](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminUpdateGoals.cs) |
 | `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}` | DELETE | AdminDeleteGoal | [AdminDeleteGoal](../../AccelByte.Sdk/Api/Challenge/Operation/GoalConfiguration/AdminDeleteGoal.cs) | [AdminDeleteGoal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/GoalConfiguration/AdminDeleteGoal.cs) |
 
+### Schedules Wrapper:  [Schedules](../../AccelByte.Sdk/Api/Challenge/Wrapper/Schedules.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}/schedules` | GET | AdminListSchedulesByGoal | [AdminListSchedulesByGoal](../../AccelByte.Sdk/Api/Challenge/Operation/Schedules/AdminListSchedulesByGoal.cs) | [AdminListSchedulesByGoal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/Schedules/AdminListSchedulesByGoal.cs) |
+| `/challenge/v1/admin/namespaces/{namespace}/challenges/{challengeCode}/schedules` | GET | AdminListSchedules | [AdminListSchedules](../../AccelByte.Sdk/Api/Challenge/Operation/Schedules/AdminListSchedules.cs) | [AdminListSchedules](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/Schedules/AdminListSchedules.cs) |
+| `/challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/goals/{code}/schedules` | GET | PublicListSchedulesByGoal | [PublicListSchedulesByGoal](../../AccelByte.Sdk/Api/Challenge/Operation/Schedules/PublicListSchedulesByGoal.cs) | [PublicListSchedulesByGoal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/Schedules/PublicListSchedulesByGoal.cs) |
+| `/challenge/v1/public/namespaces/{namespace}/challenges/{challengeCode}/schedules` | GET | PublicListSchedules | [PublicListSchedules](../../AccelByte.Sdk/Api/Challenge/Operation/Schedules/PublicListSchedules.cs) | [PublicListSchedules](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Challenge/Schedules/PublicListSchedules.cs) |
+
 ### Plugins Wrapper:  [Plugins](../../AccelByte.Sdk/Api/Challenge/Wrapper/Plugins.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -74,6 +82,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Schedules Wrapper:  [Schedules](../../AccelByte.Sdk/Api/Challenge/Wrapper/Schedules.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Plugins Wrapper:  [Plugins](../../AccelByte.Sdk/Api/Challenge/Wrapper/Plugins.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -109,6 +121,7 @@
 | `model.CreateGoalRequest` | [ModelCreateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelCreateGoalRequest.cs) |
 | `model.EvaluatePlayerProgressionRequest` | [ModelEvaluatePlayerProgressionRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelEvaluatePlayerProgressionRequest.cs) |
 | `model.GetGoalsResponse` | [ModelGetGoalsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGetGoalsResponse.cs) |
+| `model.GoalInSchedulesResponse` | [ModelGoalInSchedulesResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalInSchedulesResponse.cs) |
 | `model.GoalMeta` | [ModelGoalMeta](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalMeta.cs) |
 | `model.GoalOrder` | [ModelGoalOrder](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalOrder.cs) |
 | `model.GoalProgressionResponse` | [ModelGoalProgressionResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalProgressionResponse.cs) |
@@ -116,6 +129,8 @@
 | `model.GoalSchedule` | [ModelGoalSchedule](../../AccelByte.Sdk/Api/Challenge/Model/ModelGoalSchedule.cs) |
 | `model.ListChallengeResponse` | [ModelListChallengeResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListChallengeResponse.cs) |
 | `model.ListPeriodsResponse` | [ModelListPeriodsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListPeriodsResponse.cs) |
+| `model.ListScheduleByGoalResponse` | [ModelListScheduleByGoalResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListScheduleByGoalResponse.cs) |
+| `model.ListSchedulesResponse` | [ModelListSchedulesResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListSchedulesResponse.cs) |
 | `model.ListUserRewardsResponse` | [ModelListUserRewardsResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelListUserRewardsResponse.cs) |
 | `model.Pagination` | [ModelPagination](../../AccelByte.Sdk/Api/Challenge/Model/ModelPagination.cs) |
 | `model.PluginAsignmentAppConfig` | [ModelPluginAsignmentAppConfig](../../AccelByte.Sdk/Api/Challenge/Model/ModelPluginAsignmentAppConfig.cs) |
@@ -128,6 +143,8 @@
 | `model.ResetConfig` | [ModelResetConfig](../../AccelByte.Sdk/Api/Challenge/Model/ModelResetConfig.cs) |
 | `model.Reward` | [ModelReward](../../AccelByte.Sdk/Api/Challenge/Model/ModelReward.cs) |
 | `model.Schedule` | [ModelSchedule](../../AccelByte.Sdk/Api/Challenge/Model/ModelSchedule.cs) |
+| `model.ScheduleByGoalResponse` | [ModelScheduleByGoalResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelScheduleByGoalResponse.cs) |
+| `model.ScheduleResponse` | [ModelScheduleResponse](../../AccelByte.Sdk/Api/Challenge/Model/ModelScheduleResponse.cs) |
 | `model.UpdateChallengeRequest` | [ModelUpdateChallengeRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateChallengeRequest.cs) |
 | `model.UpdateChallengeScheduleRequest` | [ModelUpdateChallengeScheduleRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateChallengeScheduleRequest.cs) |
 | `model.UpdateGoalRequest` | [ModelUpdateGoalRequest](../../AccelByte.Sdk/Api/Challenge/Model/ModelUpdateGoalRequest.cs) |

@@ -224,6 +224,40 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Verify2faCodeAsync(op);
         }
+        public static string Execute(
+            this Verify2faCodeForward.Verify2faCodeForwardBuilder builder,
+            string clientId,
+            string code,
+            string factor,
+            string mfaToken
+        )
+        {
+            Verify2faCodeForward op = builder.Build(
+                clientId,
+                code,
+                factor,
+                mfaToken
+            );
+
+            return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Verify2faCodeForward(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this Verify2faCodeForward.Verify2faCodeForwardBuilder builder,
+            string clientId,
+            string code,
+            string factor,
+            string mfaToken
+        )
+        {
+            Verify2faCodeForward op = builder.Build(
+                clientId,
+                code,
+                factor,
+                mfaToken
+            );
+
+            return await ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Verify2faCodeForwardAsync(op);
+        }
         public static Iam.Model.OauthmodelTokenThirdPartyResponse? Execute(
             this RetrieveUserThirdPartyPlatformTokenV3.RetrieveUserThirdPartyPlatformTokenV3Builder builder,
             string namespace_,

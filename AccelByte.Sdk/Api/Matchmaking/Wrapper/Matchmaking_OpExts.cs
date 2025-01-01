@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class MatchmakingMatchmaking_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsGetChannelsResponse? Execute(
             this GetAllChannelsHandler.GetAllChannelsHandlerBuilder builder,
             string namespace_
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllChannelsHandlerAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsCreateChannelResponse? Execute(
             this CreateChannelHandler.CreateChannelHandlerBuilder builder,
             ModelsChannelRequest body,
@@ -60,6 +62,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).CreateChannelHandlerAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsTicketMetricResultRecord? Execute(
             this GetMatchPoolMetric.GetMatchPoolMetricBuilder builder,
             string channelName,
@@ -86,6 +89,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetMatchPoolMetricAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteChannelHandler.DeleteChannelHandlerBuilder builder,
             string channel,
@@ -112,6 +116,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteChannelHandlerAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsMatchResultResponse? Execute(
             this StoreMatchResults.StoreMatchResultsBuilder builder,
             ModelsMatchResultRequest body,
@@ -138,6 +143,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).StoreMatchResultsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsRebalanceResponse? Execute(
             this Rebalance.RebalanceBuilder builder,
             ModelsRebalanceRequest body,
@@ -164,6 +170,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).RebalanceAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this QueueSessionHandler.QueueSessionHandlerBuilder builder,
             ModelsMatchmakingResult body,
@@ -190,6 +197,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).QueueSessionHandlerAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DequeueSessionHandler.DequeueSessionHandlerBuilder builder,
             ModelsDequeueRequest body,
@@ -216,6 +224,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DequeueSessionHandlerAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsMatchmakingResult? Execute(
             this QuerySessionHandler.QuerySessionHandlerBuilder builder,
             string matchID,
@@ -269,6 +278,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).QuerySessionHandlerAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Dictionary<string, List<Matchmaking.Model.ModelsMatchingParty>>? Execute(
             this GetAllPartyInAllChannel.GetAllPartyInAllChannelBuilder builder,
             string namespace_
@@ -314,6 +324,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInAllChannelAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ModelsMatchmakingResult>? Execute(
             this BulkGetSessions.BulkGetSessionsBuilder builder,
             string namespace_
@@ -359,6 +370,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).BulkGetSessionsAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Stream? Execute(
             this ExportChannels.ExportChannelsBuilder builder,
             string namespace_
@@ -381,6 +393,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).ExportChannelsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsImportConfigResponse? Execute(
             this ImportChannels.ImportChannelsBuilder builder,
             string namespace_
@@ -403,6 +416,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).ImportChannelsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsChannelV1? Execute(
             this GetSingleMatchmakingChannel.GetSingleMatchmakingChannelBuilder builder,
             string channelName,
@@ -429,6 +443,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetSingleMatchmakingChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this UpdateMatchmakingChannel.UpdateMatchmakingChannelBuilder builder,
             ModelsUpdateChannelRequest body,
@@ -459,6 +474,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).UpdateMatchmakingChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ModelsMatchingParty>? Execute(
             this GetAllPartyInChannel.GetAllPartyInChannelBuilder builder,
             string channelName,
@@ -512,6 +528,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllPartyInChannelAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ModelsMatchmakingResult>? Execute(
             this GetAllSessionsInChannel.GetAllSessionsInChannelBuilder builder,
             string channelName,
@@ -565,6 +582,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetAllSessionsInChannelAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AddUserIntoSessionInChannel.AddUserIntoSessionInChannelBuilder builder,
             ModelsMatchAddUserIntoSessionRequest body,
@@ -599,6 +617,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).AddUserIntoSessionInChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteSessionInChannel.DeleteSessionInChannelBuilder builder,
             string channelName,
@@ -629,6 +648,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteSessionInChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteUserFromSessionInChannel.DeleteUserFromSessionInChannelBuilder builder,
             string channelName,
@@ -663,6 +683,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).DeleteUserFromSessionInChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsStatResumeResponse? Execute(
             this GetStatData.GetStatDataBuilder builder,
             string channelName,
@@ -747,6 +768,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).GetSessionHistoryDetailedAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ModelsChannelV1>? Execute(
             this PublicGetAllMatchmakingChannel.PublicGetAllMatchmakingChannelBuilder builder,
             string namespace_
@@ -769,6 +791,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.Matchmaking)builder.WrapperObject!).PublicGetAllMatchmakingChannelAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsChannelV1? Execute(
             this PublicGetSingleMatchmakingChannel.PublicGetSingleMatchmakingChannelBuilder builder,
             string channelName,

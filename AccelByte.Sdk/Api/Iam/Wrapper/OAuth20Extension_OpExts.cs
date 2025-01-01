@@ -76,6 +76,40 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticationWithPlatformLinkV3Async(op);
         }
+        public static string Execute(
+            this AuthenticateAndLinkForwardV3.AuthenticateAndLinkForwardV3Builder builder,
+            string clientId,
+            string linkingToken,
+            string password,
+            string username
+        )
+        {
+            AuthenticateAndLinkForwardV3 op = builder.Build(
+                clientId,
+                linkingToken,
+                password,
+                username
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticateAndLinkForwardV3(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this AuthenticateAndLinkForwardV3.AuthenticateAndLinkForwardV3Builder builder,
+            string clientId,
+            string linkingToken,
+            string password,
+            string username
+        )
+        {
+            AuthenticateAndLinkForwardV3 op = builder.Build(
+                clientId,
+                linkingToken,
+                password,
+                username
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).AuthenticateAndLinkForwardV3Async(op);
+        }
         public static Iam.Model.OauthmodelTokenResponseV3? Execute(
             this GenerateTokenByNewHeadlessAccountV3.GenerateTokenByNewHeadlessAccountV3Builder builder,
             string linkingToken
@@ -303,6 +337,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).RequestTargetTokenResponseV3Async(op);
+        }
+        public static string Execute(
+            this UpgradeAndAuthenticateForwardV3.UpgradeAndAuthenticateForwardV3Builder builder,
+            string clientId,
+            string upgradeSuccessToken
+        )
+        {
+            UpgradeAndAuthenticateForwardV3 op = builder.Build(
+                clientId,
+                upgradeSuccessToken
+            );
+
+            return ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UpgradeAndAuthenticateForwardV3(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this UpgradeAndAuthenticateForwardV3.UpgradeAndAuthenticateForwardV3Builder builder,
+            string clientId,
+            string upgradeSuccessToken
+        )
+        {
+            UpgradeAndAuthenticateForwardV3 op = builder.Build(
+                clientId,
+                upgradeSuccessToken
+            );
+
+            return await ((Iam.Wrapper.OAuth20Extension)builder.WrapperObject!).UpgradeAndAuthenticateForwardV3Async(op);
         }
     }
 }

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Add player to game session
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AddPlayerToSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

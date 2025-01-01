@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","subscribeappnotificationv2")]
-    public class SubscribeAppNotificationV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "subscribeappnotificationv2")]
+    public class SubscribeAppNotificationV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "SubscribeAppNotificationV2"; } }
+        public string OperationName { get { return "SubscribeAppNotificationV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public ApimodelSubscribeNotificationRequest Body { get; set; } = new ApimodelSubscribeNotificationRequest();
-                
+
         public SubscribeAppNotificationV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelSubscribeNotificationResponse? response = wrapper.SubscribeAppNotificationV2(operation);
             if (response == null)
                 return "No response from server.";

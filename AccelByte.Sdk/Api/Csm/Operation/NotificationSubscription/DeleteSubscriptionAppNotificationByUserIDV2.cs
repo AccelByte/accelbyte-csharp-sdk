@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 DeleteSubscriptionAppNotificationByUserIDV2 op = new DeleteSubscriptionAppNotificationByUserIDV2(this,
-                    app,                    
-                    namespace_,                    
-                    userId                    
+                    app,
+                    namespace_,
+                    userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -69,32 +69,32 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteSubscriptionAppNotificationByUserIDV2(
-            string app,            
-            string namespace_,            
-            string userId            
+            string app,
+            string namespace_,
+            string userId
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,16 +109,16 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

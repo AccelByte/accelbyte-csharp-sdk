@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         {
             AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.Matchmaking(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Matchmaking.Operation.DeleteUserFromSessionInChannel.Builder;
 
 
@@ -62,9 +63,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
                 UserID
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.DeleteUserFromSessionInChannel(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

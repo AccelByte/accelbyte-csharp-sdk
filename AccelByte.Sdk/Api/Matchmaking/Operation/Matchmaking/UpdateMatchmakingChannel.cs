@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// Action Code: 510111
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdateMatchmakingChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

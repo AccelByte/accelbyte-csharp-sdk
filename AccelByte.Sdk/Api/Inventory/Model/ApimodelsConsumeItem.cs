@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 {
     public class ApimodelsConsumeItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("dateRangeValidation")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? DateRangeValidation { get; set; }
+
         [JsonPropertyName("inventoryId")]
         public string? InventoryId { get; set; }
 

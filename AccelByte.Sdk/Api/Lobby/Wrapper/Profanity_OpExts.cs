@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyProfanity_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Lobby.Model.ModelsProfanityFilter>? Execute(
             this AdminDebugProfanityFilters.AdminDebugProfanityFiltersBuilder builder,
             ModelsDebugProfanityFilterRequest body,
@@ -38,6 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDebugProfanityFiltersAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsAdminGetProfanityListFiltersV1Response? Execute(
             this AdminGetProfanityListFiltersV1.AdminGetProfanityListFiltersV1Builder builder,
             string list,
@@ -64,6 +66,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListFiltersV1Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminAddProfanityFilterIntoList.AdminAddProfanityFilterIntoListBuilder builder,
             ModelsAdminAddProfanityFilterIntoListRequest body,
@@ -94,6 +97,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFilterIntoListAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminAddProfanityFilters.AdminAddProfanityFiltersBuilder builder,
             ModelsAdminAddProfanityFiltersRequest body,
@@ -124,6 +128,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminAddProfanityFiltersAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminImportProfanityFiltersFromFile.AdminImportProfanityFiltersFromFileBuilder builder,
             List<long> body,
@@ -154,6 +159,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminImportProfanityFiltersFromFileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Lobby.Model.ModelsProfanityFilter>? Execute(
             this AdminDeleteProfanityFilter.AdminDeleteProfanityFilterBuilder builder,
             ModelsAdminDeleteProfanityFilterRequest body,
@@ -184,6 +190,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityFilterAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Lobby.Model.ModelsAdminGetProfanityListsListResponse>? Execute(
             this AdminGetProfanityLists.AdminGetProfanityListsBuilder builder,
             string namespace_
@@ -206,6 +213,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityListsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminCreateProfanityList.AdminCreateProfanityListBuilder builder,
             ModelsAdminCreateProfanityListRequest body,
@@ -232,6 +240,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminCreateProfanityListAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminUpdateProfanityList.AdminUpdateProfanityListBuilder builder,
             ModelsAdminUpdateProfanityList body,
@@ -262,6 +271,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminUpdateProfanityListAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeleteProfanityList.AdminDeleteProfanityListBuilder builder,
             string list,
@@ -288,6 +298,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminDeleteProfanityListAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsProfanityRule? Execute(
             this AdminGetProfanityRule.AdminGetProfanityRuleBuilder builder,
             string namespace_
@@ -310,6 +321,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminGetProfanityRuleAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminSetProfanityRuleForNamespace.AdminSetProfanityRuleForNamespaceBuilder builder,
             ModelsAdminSetProfanityRuleForNamespaceRequest body,
@@ -336,6 +348,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Profanity)builder.WrapperObject!).AdminSetProfanityRuleForNamespaceAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsAdminVerifyMessageProfanityResponse? Execute(
             this AdminVerifyMessageProfanityResponse.AdminVerifyMessageProfanityResponseBuilder builder,
             ModelsAdminVerifyMessageProfanityRequest body,

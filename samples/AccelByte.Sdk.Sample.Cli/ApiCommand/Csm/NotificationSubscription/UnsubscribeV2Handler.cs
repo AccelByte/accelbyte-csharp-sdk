@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","unsubscribev2handler")]
-    public class UnsubscribeV2HandlerCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "unsubscribev2handler")]
+    public class UnsubscribeV2HandlerCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "UnsubscribeV2Handler"; } }
+        public string OperationName { get { return "UnsubscribeV2Handler"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             wrapper.UnsubscribeV2Handler(operation);
             return String.Empty;
         }

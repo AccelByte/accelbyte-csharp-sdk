@@ -134,6 +134,17 @@ namespace AccelByte.Sdk.Core
         }
         private Party? _Party = null;
 
+        public SessionStorage SessionStorage
+        {
+            get
+            {
+                if (_SessionStorage == null)
+                    _SessionStorage = new SessionStorage(_SdkObject);
+                return _SessionStorage;
+            }
+        }
+        private SessionStorage? _SessionStorage = null;
+
         public PlatformCredential PlatformCredential
         {
             get
@@ -155,17 +166,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private RecentPlayer? _RecentPlayer = null;
-
-        public SessionStorage SessionStorage
-        {
-            get
-            {
-                if (_SessionStorage == null)
-                    _SessionStorage = new SessionStorage(_SdkObject);
-                return _SessionStorage;
-            }
-        }
-        private SessionStorage? _SessionStorage = null;
 
         public Player Player
         {

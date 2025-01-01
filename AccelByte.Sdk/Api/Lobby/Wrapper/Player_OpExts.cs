@@ -60,6 +60,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetBulkPlayerBlockedPlayersV1Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsGetAllPlayerSessionAttributeResponse? Execute(
             this AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder builder,
             string namespace_,
@@ -86,6 +87,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminGetAllPlayerSessionAttributeAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminSetPlayerSessionAttribute.AdminSetPlayerSessionAttributeBuilder builder,
             ModelsSetPlayerSessionAttributeRequest body,
@@ -116,6 +118,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Player)builder.WrapperObject!).AdminSetPlayerSessionAttributeAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsGetPlayerSessionAttributeResponse? Execute(
             this AdminGetPlayerSessionAttribute.AdminGetPlayerSessionAttributeBuilder builder,
             string attribute,

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     ///
     /// Add user into the session in a channel.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AddUserIntoSessionInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

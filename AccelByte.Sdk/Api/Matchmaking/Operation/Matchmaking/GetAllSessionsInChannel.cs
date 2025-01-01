@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// if party_id value empty/null, field will not show in response body.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAllSessionsInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getappv2")]
-    public class GetAppV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getappv2")]
+    public class GetAppV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetAppV2"; } }
+        public string OperationName { get { return "GetAppV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelAppItem? response = wrapper.GetAppV2(operation);
             if (response == null)
                 return "No response from server.";

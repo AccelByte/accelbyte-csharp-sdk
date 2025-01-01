@@ -958,6 +958,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.GameSession)builder.WrapperObject!).GetSessionServerSecretAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Session.Model.ApimodelsGameSessionResponse? Execute(
             this AppendTeamGameSession.AppendTeamGameSessionBuilder builder,
             ApimodelsAppendTeamGameSessionRequest body,

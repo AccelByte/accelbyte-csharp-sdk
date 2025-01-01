@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getappimagelistv1")]
-    public class GetAppImageListV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getappimagelistv1")]
+    public class GetAppImageListV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetAppImageListV1"; } }
+        public string OperationName { get { return "GetAppImageListV1"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -52,7 +52,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.Image wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.Image(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.GetAppImageListV1.Builder;
 
             if (Cached != null)
@@ -70,15 +70,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Csm.Model.GeneratedGetAppImageListV1Response? response = wrapper.GetAppImageListV1(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

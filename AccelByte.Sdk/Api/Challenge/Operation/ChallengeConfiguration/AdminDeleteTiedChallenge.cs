@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminDeleteTiedChallenge
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
-    ///     * This endpoint will delete the combination of related data: CHALLENGES, GOALS, SCHEDULES, PLAYER PROGRESSIONS
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
+    /// - This endpoint will delete the combination of related data: CHALLENGES, GOALS, SCHEDULES, PLAYER PROGRESSIONS
     /// </summary>
     public class AdminDeleteTiedChallenge : AccelByte.Sdk.Core.Operation
     {

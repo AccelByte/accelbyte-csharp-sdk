@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class MatchmakingMockMatchmaking_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this CleanAllMocks.CleanAllMocksBuilder builder,
             string channelName,
@@ -38,6 +39,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).CleanAllMocksAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsGetMockMatchesResponse? Execute(
             this GetAllMockMatches.GetAllMockMatchesBuilder builder,
             string channelName,
@@ -64,6 +66,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).GetAllMockMatchesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsGetMockMatchesResponse? Execute(
             this GetMockMatchesByTimestamp.GetMockMatchesByTimestampBuilder builder,
             ModelsQueryMockBy body,
@@ -94,6 +97,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).GetMockMatchesByTimestampAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsGetMockTicketsResponse? Execute(
             this GetAllMockTickets.GetAllMockTicketsBuilder builder,
             string channelName,
@@ -120,6 +124,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).GetAllMockTicketsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.ModelsMockTicket>? Execute(
             this CreateMockTickets.CreateMockTicketsBuilder builder,
             ModelsCreateMockTicket body,
@@ -181,6 +186,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).CreateMockTicketsAsync<T1, T2>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this BulkCreateMockTickets.BulkCreateMockTicketsBuilder builder,
             List<ModelsMatchingParty> body,
@@ -211,6 +217,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.MockMatchmaking)builder.WrapperObject!).BulkCreateMockTicketsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsGetMockTicketsResponse? Execute(
             this GetMockTicketsByTimestamp.GetMockTicketsByTimestampBuilder builder,
             ModelsQueryMockBy body,

@@ -28,6 +28,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "RequestOneTimeLinkingCodeV3"; } }
 
+        [SdkCommandArgument("redirectUri")]
+        public string RedirectUri { get; set; } = String.Empty;
+
+        [SdkCommandArgument("state")]
+        public string State { get; set; } = String.Empty;
+
         [SdkCommandArgument("platformId")]
         public string PlatformId { get; set; } = String.Empty;
 
@@ -44,6 +50,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
 
 
+            if (RedirectUri != null)
+                opBuilder.SetRedirectUri((string)RedirectUri);
+            if (State != null)
+                opBuilder.SetState((string)State);
 
 
             RequestOneTimeLinkingCodeV3 operation = opBuilder.Build(

@@ -16,14 +16,12 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminUpdateTiedChallengeSchedule
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
-    /// 
-    /// Request body:
-    ///     * action: Update the challenge schedule. The available options are:
-    ///       * STOP: Ends the challenge, changing its status to RETIRED. This option supports all types of challenges.
-    ///       * ACCELERATE: Speeds up the challenge's end time. Note that this option does not apply to challenges with an 'endAfter' value.
-    ///     * endDate: The timestamp specifying when the challenge should end (required if the action is ACCELERATE).
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [UPDATE]
+    /// ### Request body:
+    /// - action: Update the challenge schedule. The available options are:
+    /// - STOP: Ends the challenge, changing its status to RETIRED. This option supports all types of challenges.
+    /// - ACCELERATE: Speeds up the challenge's end time. Note that this option does not apply to challenges with an 'endAfter' value.
+    /// - endDate: The timestamp specifying when the challenge should end (required if the action is ACCELERATE).
     /// </summary>
     public class AdminUpdateTiedChallengeSchedule : AccelByte.Sdk.Core.Operation
     {

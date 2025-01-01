@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getappimagelistv2")]
-    public class GetAppImageListV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getappimagelistv2")]
+    public class GetAppImageListV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetAppImageListV2"; } }
+        public string OperationName { get { return "GetAppImageListV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelGetAppImageListV2Response? response = wrapper.GetAppImageListV2(operation);
             if (response == null)
                 return "No response from server.";

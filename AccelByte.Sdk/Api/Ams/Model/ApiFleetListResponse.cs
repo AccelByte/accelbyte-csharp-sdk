@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("fleets")]
         public List<ApiFleetListItemResponse>? Fleets { get; set; }
 
+        [JsonPropertyName("paging")]
+        public PaginationPaginationInfo? Paging { get; set; }
+
     }
 
 

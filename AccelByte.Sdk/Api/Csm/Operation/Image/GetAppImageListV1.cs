@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// 
     /// Default 'cached' parameter is 'true'
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAppImageListV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -73,8 +73,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 GetAppImageListV1 op = new GetAppImageListV1(this,
-                    app,                    
-                    namespace_                    
+                    app,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -92,39 +92,39 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Cached is not null) QueryParams["cached"] = builder.Cached;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetAppImageListV1(
-            string app,            
-            string namespace_,            
-            string? cached,            
-            long? limit,            
-            long? offset            
+            string app,
+            string namespace_,
+            string? cached,
+            long? limit,
+            long? offset
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
+
             if (cached is not null) QueryParams["cached"] = cached;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
-            
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -139,9 +139,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.GeneratedGetAppImageListV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -157,9 +157,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.GeneratedGetAppImageListV1Response>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

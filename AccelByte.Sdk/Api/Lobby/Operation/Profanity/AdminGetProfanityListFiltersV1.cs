@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Get the list of filters inside the list.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetProfanityListFiltersV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

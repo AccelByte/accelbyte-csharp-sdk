@@ -65,6 +65,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Note:
     /// - You can use either platform id or platform group as **platformId** parameter.
     /// - **Nintendo platform user id**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
+    /// 
+    /// ## IP Rate Limit validation
+    /// 
+    /// This API have IP Rate Limit validation, which activates when triggered excessively from the same IP address (throw 429 http error).
+    /// The default rule: 10 max request per 30 seconds (per unique IP address).
+    /// 
+    /// To mitigate potential unexpected issues in your implementation, consider adhering to these best practices as illustrated in the following examples:
+    /// * Delay invoking the Search API if the player continues typing in the search box, and only utilize the latest input provided.
+    /// * Prevent players from double-clicking or making multiple clicks within a short time frame.
     /// </summary>
     public class PublicSearchUserV3 : AccelByte.Sdk.Core.Operation
     {

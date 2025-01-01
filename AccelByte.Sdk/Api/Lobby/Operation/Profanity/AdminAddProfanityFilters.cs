@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Add multiple filters into the list
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminAddProfanityFilters : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

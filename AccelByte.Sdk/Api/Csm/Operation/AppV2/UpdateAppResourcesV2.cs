@@ -47,9 +47,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 UpdateAppResourcesV2 op = new UpdateAppResourcesV2(this,
-                    body,                    
-                    app,                    
-                    namespace_                    
+                    body,
+                    app,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -68,33 +68,33 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateAppResourcesV2(
-            string app,            
-            string namespace_,            
-            Model.ApimodelUpdateAppResourceRequest body            
+            string app,
+            string namespace_,
+            Model.ApimodelUpdateAppResourceRequest body
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -109,9 +109,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApimodelAppItem? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -127,9 +127,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelAppItem>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

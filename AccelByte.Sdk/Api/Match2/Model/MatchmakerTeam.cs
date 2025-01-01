@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<MatchmakerParty>? Parties { get; set; }
 
+        [JsonPropertyName("TeamID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TeamID { get; set; }
+
         [JsonPropertyName("UserIDs")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIDs { get; set; }

@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class MatchmakingSocialMatchmaking_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Matchmaking.Model.ModelsUpdatePlayerPlaytimeWeightResponse? Execute(
             this UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder builder,
             ModelsUpdatePlayTimeWeightRequest body,

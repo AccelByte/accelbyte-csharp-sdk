@@ -13,6 +13,32 @@ namespace AccelByte.Sdk.Api
     public static class SessionSessionStorage_OpExts
     {
         public static Dictionary<string, object>? Execute(
+            this AdminReadPartySessionStorage.AdminReadPartySessionStorageBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminReadPartySessionStorage op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadPartySessionStorage(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this AdminReadPartySessionStorage.AdminReadPartySessionStorageBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            AdminReadPartySessionStorage op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadPartySessionStorageAsync(op);
+        }
+        public static Dictionary<string, object>? Execute(
             this AdminReadSessionStorage.AdminReadSessionStorageBuilder builder,
             string namespace_,
             string sessionId
@@ -93,6 +119,66 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).AdminReadUserSessionStorageAsync(op);
+        }
+        public static Dictionary<string, object>? Execute(
+            this PublicReadPartySessionStorage.PublicReadPartySessionStorageBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicReadPartySessionStorage op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReadPartySessionStorage(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicReadPartySessionStorage.PublicReadPartySessionStorageBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicReadPartySessionStorage op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReadPartySessionStorageAsync(op);
+        }
+        public static Dictionary<string, object>? Execute(
+            this PublicUpdateInsertPartySessionStorageReserved.PublicUpdateInsertPartySessionStorageReservedBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicUpdateInsertPartySessionStorageReserved op = builder.Build(
+                body,
+                namespace_,
+                partyId,
+                userId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertPartySessionStorageReserved(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertPartySessionStorageReserved.PublicUpdateInsertPartySessionStorageReservedBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicUpdateInsertPartySessionStorageReserved op = builder.Build(
+                body,
+                namespace_,
+                partyId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertPartySessionStorageReservedAsync(op);
         }
         public static Dictionary<string, object>? Execute(
             this PublicUpdateInsertSessionStorageLeader.PublicUpdateInsertSessionStorageLeaderBuilder builder,

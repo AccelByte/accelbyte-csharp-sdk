@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Get current profanity rule
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetProfanityRule : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","deletesecretv2")]
-    public class DeleteSecretV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "deletesecretv2")]
+    public class DeleteSecretV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "DeleteSecretV2"; } }
+        public string OperationName { get { return "DeleteSecretV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             wrapper.DeleteSecretV2(operation);
             return String.Empty;
         }

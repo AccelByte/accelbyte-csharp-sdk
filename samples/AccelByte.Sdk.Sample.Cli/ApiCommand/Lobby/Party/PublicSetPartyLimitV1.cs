@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
         {
             AccelByte.Sdk.Api.Lobby.Wrapper.Party wrapper = new AccelByte.Sdk.Api.Lobby.Wrapper.Party(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Lobby.Operation.PublicSetPartyLimitV1.Builder;
 
 
@@ -58,9 +59,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Lobby
                 PartyId
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PublicSetPartyLimitV1(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

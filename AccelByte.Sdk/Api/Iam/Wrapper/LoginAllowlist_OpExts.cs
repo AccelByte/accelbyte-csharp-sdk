@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.LoginAllowlist)builder.WrapperObject!).AdminGetLoginAllowlistV3Async(op);
         }
-        public static Iam.Model.ModelLoginAllowlistResponse? Execute(
+        public static void Execute(
             this AdminUpdateLoginAllowlistV3.AdminUpdateLoginAllowlistV3Builder builder,
             ModelLoginAllowlistRequest body,
             string namespace_
@@ -45,9 +45,9 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Iam.Wrapper.LoginAllowlist)builder.WrapperObject!).AdminUpdateLoginAllowlistV3(op);
+            ((Iam.Wrapper.LoginAllowlist)builder.WrapperObject!).AdminUpdateLoginAllowlistV3(op);
         }
-        public static async Task<Iam.Model.ModelLoginAllowlistResponse?> ExecuteAsync(
+        public static async Task ExecuteAsync(
             this AdminUpdateLoginAllowlistV3.AdminUpdateLoginAllowlistV3Builder builder,
             ModelLoginAllowlistRequest body,
             string namespace_
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return await ((Iam.Wrapper.LoginAllowlist)builder.WrapperObject!).AdminUpdateLoginAllowlistV3Async(op);
+            await ((Iam.Wrapper.LoginAllowlist)builder.WrapperObject!).AdminUpdateLoginAllowlistV3Async(op);
         }
     }
 }

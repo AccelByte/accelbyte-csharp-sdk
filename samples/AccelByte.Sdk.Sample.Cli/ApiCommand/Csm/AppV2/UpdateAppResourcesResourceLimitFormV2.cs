@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","updateappresourcesresourcelimitformv2")]
-    public class UpdateAppResourcesResourceLimitFormV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "updateappresourcesresourcelimitformv2")]
+    public class UpdateAppResourcesResourceLimitFormV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "UpdateAppResourcesResourceLimitFormV2"; } }
+        public string OperationName { get { return "UpdateAppResourcesResourceLimitFormV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public ApimodelIncreaseLimitFormRequest Body { get; set; } = new ApimodelIncreaseLimitFormRequest();
-                
+
         public UpdateAppResourcesResourceLimitFormV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             wrapper.UpdateAppResourcesResourceLimitFormV2(operation);
             return String.Empty;
         }

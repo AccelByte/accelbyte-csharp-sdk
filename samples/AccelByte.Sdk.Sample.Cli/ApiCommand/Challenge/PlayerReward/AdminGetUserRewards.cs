@@ -34,6 +34,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("challengeCode")]
+        public string? ChallengeCode { get; set; }
+
+        [SdkCommandArgument("goalProgressionId")]
+        public string? GoalProgressionId { get; set; }
+
         [SdkCommandArgument("limit")]
         public long? Limit { get; set; }
 
@@ -57,12 +63,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
 
             var opBuilder = AccelByte.Sdk.Api.Challenge.Operation.AdminGetUserRewards.Builder;
 
+            if (ChallengeCode != null)
+                opBuilder.SetChallengeCode((string)ChallengeCode);
+            if (GoalProgressionId != null)
+                opBuilder.SetGoalProgressionId((string)GoalProgressionId);
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
             if (SortBy != null)
-                opBuilder.SetSortBy((string)SortBy);
+                opBuilder.SetSortBy(AdminGetUserRewardsSortBy.NewValue(SortBy));
             if (Status != null)
                 opBuilder.SetStatus(AdminGetUserRewardsStatus.NewValue(Status));
 

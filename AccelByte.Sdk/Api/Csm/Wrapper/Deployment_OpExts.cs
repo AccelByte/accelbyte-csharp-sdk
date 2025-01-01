@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class CsmDeployment_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedCreateDeploymentV1Response? Execute(
             this CreateDeploymentV1.CreateDeploymentV1Builder builder,
             GeneratedCreateDeploymentV1Request body,
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Deployment)builder.WrapperObject!).CreateDeploymentV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetDeploymentListV1Response? Execute(
             this GetListOfDeploymentV1.GetListOfDeploymentV1Builder builder,
             GeneratedGetDeploymentListV1Request body,
@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Deployment)builder.WrapperObject!).GetListOfDeploymentV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetDeploymentV1Response? Execute(
             this GetDeploymentV1.GetDeploymentV1Builder builder,
             string deploymentId,
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Deployment)builder.WrapperObject!).GetDeploymentV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteDeploymentV1.DeleteDeploymentV1Builder builder,
             string deploymentId,

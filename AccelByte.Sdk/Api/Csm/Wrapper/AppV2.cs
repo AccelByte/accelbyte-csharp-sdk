@@ -56,12 +56,12 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
             get { return Operation.StopAppV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ApimodelGetAppListV2Response? GetAppListV2(GetAppListV2 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -109,7 +109,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -117,7 +117,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -125,7 +125,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -133,7 +133,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -141,7 +141,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -149,7 +149,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -157,7 +157,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -165,7 +165,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -173,7 +173,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -181,7 +181,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -189,7 +189,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -197,7 +197,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }

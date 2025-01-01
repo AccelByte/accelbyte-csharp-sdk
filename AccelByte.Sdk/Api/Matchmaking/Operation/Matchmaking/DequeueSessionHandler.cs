@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// This endpoint is intended to be called by game server to let matchmaker know that
     /// the game server does not want more players to its session, even though it is not full.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DequeueSessionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

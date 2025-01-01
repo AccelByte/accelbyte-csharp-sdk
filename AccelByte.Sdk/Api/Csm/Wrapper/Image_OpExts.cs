@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class CsmImage_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetAppImageListV1Response? Execute(
             this GetAppImageListV1.GetAppImageListV1Builder builder,
             string app,
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Image)builder.WrapperObject!).GetAppImageListV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteAppImagesV1.DeleteAppImagesV1Builder builder,
             GeneratedDeleteAppImagesV1Request body,

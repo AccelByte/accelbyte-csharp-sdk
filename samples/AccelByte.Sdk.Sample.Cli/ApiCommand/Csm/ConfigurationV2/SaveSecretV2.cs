@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","savesecretv2")]
-    public class SaveSecretV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "savesecretv2")]
+    public class SaveSecretV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "SaveSecretV2"; } }
+        public string OperationName { get { return "SaveSecretV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public ApimodelSaveConfigurationV2Request Body { get; set; } = new ApimodelSaveConfigurationV2Request();
-                
+
         public SaveSecretV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelSaveConfigurationV2Response? response = wrapper.SaveSecretV2(operation);
             if (response == null)
                 return "No response from server.";

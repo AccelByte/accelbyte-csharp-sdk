@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
         {
             AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session wrapper = new AccelByte.Sdk.Api.Sessionbrowser.Wrapper.Session(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Sessionbrowser.Operation.GetSessionByUserIDs.Builder;
 
 
@@ -54,12 +55,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionbrowser
                 UserIds
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Sessionbrowser.Model.ModelsSessionByUserIDsResponse? response = wrapper.GetSessionByUserIDs(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

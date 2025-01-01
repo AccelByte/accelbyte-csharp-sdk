@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Admin join a player into a party.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminJoinPartyV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

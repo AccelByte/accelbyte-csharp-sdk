@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
 
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
+
         [JsonPropertyName("revokeEntries")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<RevokeEntry>? RevokeEntries { get; set; }
@@ -43,6 +47,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("reason")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Reason { get; set; }
+
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
 
         [JsonPropertyName("revokeEntries")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyThirdParty_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsGetConfigResponse? Execute(
             this AdminGetThirdPartyConfig.AdminGetThirdPartyConfigBuilder builder,
             string namespace_
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminGetThirdPartyConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsUpdateConfigResponse? Execute(
             this AdminUpdateThirdPartyConfig.AdminUpdateThirdPartyConfigBuilder builder,
             ModelsUpdateConfigRequest body,
@@ -60,6 +62,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminUpdateThirdPartyConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsCreateConfigResponse? Execute(
             this AdminCreateThirdPartyConfig.AdminCreateThirdPartyConfigBuilder builder,
             ModelsCreateConfigRequest body,
@@ -86,6 +89,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.ThirdParty)builder.WrapperObject!).AdminCreateThirdPartyConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static string? Execute(
             this AdminDeleteThirdPartyConfig.AdminDeleteThirdPartyConfigBuilder builder,
             string namespace_

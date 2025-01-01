@@ -52,10 +52,10 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 UpdateVariableV2 op = new UpdateVariableV2(this,
-                    body,                    
-                    app,                    
-                    configId,                    
-                    namespace_                    
+                    body,
+                    app,
+                    configId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -76,35 +76,35 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["app"] = app;
             PathParams["configId"] = configId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateVariableV2(
-            string app,            
-            string configId,            
-            string namespace_,            
-            Model.ApimodelUpdateConfigurationV2Request body            
+            string app,
+            string configId,
+            string namespace_,
+            Model.ApimodelUpdateConfigurationV2Request body
         )
         {
             PathParams["app"] = app;
             PathParams["configId"] = configId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -119,9 +119,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApimodelUpdateConfigurationV2Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -137,9 +137,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelUpdateConfigurationV2Response>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

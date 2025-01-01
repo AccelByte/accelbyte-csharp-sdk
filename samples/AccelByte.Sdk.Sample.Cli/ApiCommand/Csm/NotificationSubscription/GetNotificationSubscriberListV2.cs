@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getnotificationsubscriberlistv2")]
-    public class GetNotificationSubscriberListV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getnotificationsubscriberlistv2")]
+    public class GetNotificationSubscriberListV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetNotificationSubscriberListV2"; } }
+        public string OperationName { get { return "GetNotificationSubscriberListV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandArgument("notificationType")]
-        public string? NotificationType { get; set; }
+        public string NotificationType { get; set; } = String.Empty;
 
         public GetNotificationSubscriberListV2Command(AccelByteSDK sdk)
         {
@@ -48,18 +48,17 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.GetNotificationSubscriberListV2.Builder;
 
-            if (NotificationType != null)
-                opBuilder.SetNotificationType((string)NotificationType);
 
 
 
 
             GetNotificationSubscriberListV2 operation = opBuilder.Build(
                 App,
-                Namespace
+                Namespace,
+                NotificationType
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelGetNotificationSubscriberListResponse? response = wrapper.GetNotificationSubscriberListV2(operation);
             if (response == null)
                 return "No response from server.";

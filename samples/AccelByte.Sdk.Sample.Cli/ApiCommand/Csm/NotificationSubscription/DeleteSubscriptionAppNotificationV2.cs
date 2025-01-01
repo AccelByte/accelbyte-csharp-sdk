@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","deletesubscriptionappnotificationv2")]
-    public class DeleteSubscriptionAppNotificationV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "deletesubscriptionappnotificationv2")]
+    public class DeleteSubscriptionAppNotificationV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "DeleteSubscriptionAppNotificationV2"; } }
+        public string OperationName { get { return "DeleteSubscriptionAppNotificationV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.NotificationSubscription wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.NotificationSubscription(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.DeleteSubscriptionAppNotificationV2.Builder;
 
 
@@ -59,12 +59,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 SubscriptionId
             );
 
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.DeleteSubscriptionAppNotificationV2(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

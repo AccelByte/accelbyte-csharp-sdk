@@ -27,6 +27,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         {
             get { return Operation.HandlerV3Healthz.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetMessages.PublicGetMessagesBuilder PublicGetMessagesOp
         {
             get { return Operation.PublicGetMessages.Builder.SetWrapperObject(this); }
@@ -69,6 +70,8 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.LogAppMessageDeclaration>? PublicGetMessages(PublicGetMessages input)
         {
             var response = _sdk.RunRequest(input);
@@ -85,6 +88,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void VersionCheckHandler(VersionCheckHandler input)
         {
             var response = _sdk.RunRequest(input);

@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonPropertyName("errorMessage")]
         public string? ErrorMessage { get; set; }
 
+        [JsonPropertyName("messageVariables")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, string>? MessageVariables { get; set; }
+
     }
 
 

@@ -1,3 +1,23 @@
+<a name="v0.68.0"></a>
+## [v0.68.0]
+### chore
+- **:** generate csm service sdk
+- **test:** disable gametelemetry test for shared cloud
+- **test:** integration - add unique display name and login with email
+- **makefile:** cli - increase waiting time
+### feat
+- **test:** add csm integration tests
+- **test:** add role override test
+- **core:** update get role permission endpoint
+### docs
+- **:** update common use case to add csm part
+- **readme:** update links
+### fix
+- **:** update all project to net8 so publish works correctly
+- **:** force publish to use debug config for test cli
+- **:** update test cli dotnet publish command
+
+
 <a name="v0.67.0"></a>
 ## [v0.67.0]
 ### feat

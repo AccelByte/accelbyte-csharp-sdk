@@ -27,14 +27,17 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         {
             get { return Operation.AdminGetBulkPlayerBlockedPlayersV1.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetAllPlayerSessionAttribute.AdminGetAllPlayerSessionAttributeBuilder AdminGetAllPlayerSessionAttributeOp
         {
             get { return Operation.AdminGetAllPlayerSessionAttribute.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminSetPlayerSessionAttribute.AdminSetPlayerSessionAttributeBuilder AdminSetPlayerSessionAttributeOp
         {
             get { return Operation.AdminSetPlayerSessionAttribute.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetPlayerSessionAttribute.AdminGetPlayerSessionAttributeBuilder AdminGetPlayerSessionAttributeOp
         {
             get { return Operation.AdminGetPlayerSessionAttribute.Builder.SetWrapperObject(this); }
@@ -105,6 +108,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetAllPlayerSessionAttributeResponse? AdminGetAllPlayerSessionAttribute(AdminGetAllPlayerSessionAttribute input)
         {
             var response = _sdk.RunRequest(input);
@@ -121,6 +126,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminSetPlayerSessionAttribute(AdminSetPlayerSessionAttribute input)
         {
             var response = _sdk.RunRequest(input);
@@ -137,6 +145,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetPlayerSessionAttributeResponse? AdminGetPlayerSessionAttribute(AdminGetPlayerSessionAttribute input)
         {
             var response = _sdk.RunRequest(input);
@@ -153,6 +164,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ModelsGetAllPlayerBlockedUsersResponse? AdminGetPlayerBlockedPlayersV1(AdminGetPlayerBlockedPlayersV1 input)
         {
             var response = _sdk.RunRequest(input);

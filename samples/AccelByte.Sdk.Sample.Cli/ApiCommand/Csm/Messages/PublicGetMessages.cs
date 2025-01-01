@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","publicgetmessages")]
-    public class PublicGetMessagesCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "publicgetmessages")]
+    public class PublicGetMessagesCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "PublicGetMessages"; } }
+        public string OperationName { get { return "PublicGetMessages"; } }
 
         public PublicGetMessagesCommand(AccelByteSDK sdk)
         {
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
             PublicGetMessages operation = opBuilder.Build(
             );
 
-            
+
             List<AccelByte.Sdk.Api.Csm.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";

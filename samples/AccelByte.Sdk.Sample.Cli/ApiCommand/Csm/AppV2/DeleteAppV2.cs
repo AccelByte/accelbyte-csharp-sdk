@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","deleteappv2")]
-    public class DeleteAppV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "deleteappv2")]
+    public class DeleteAppV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "DeleteAppV2"; } }
+        public string OperationName { get { return "DeleteAppV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             wrapper.DeleteAppV2(operation);
             return String.Empty;
         }

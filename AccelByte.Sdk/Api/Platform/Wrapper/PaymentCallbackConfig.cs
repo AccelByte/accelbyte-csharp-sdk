@@ -19,16 +19,20 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetPaymentCallbackConfig.GetPaymentCallbackConfigBuilder GetPaymentCallbackConfigOp
         {
             get { return Operation.GetPaymentCallbackConfig.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder UpdatePaymentCallbackConfigOp
         {
             get { return Operation.UpdatePaymentCallbackConfig.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.PaymentCallbackConfigInfo? GetPaymentCallbackConfig(GetPaymentCallbackConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -45,6 +49,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.PaymentCallbackConfigInfo? UpdatePaymentCallbackConfig(UpdatePaymentCallbackConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -61,5 +68,6 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

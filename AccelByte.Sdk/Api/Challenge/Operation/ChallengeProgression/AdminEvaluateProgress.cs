@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminEvaluateProgress
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
-    ///     * Limited up to 10 users per request
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
+    /// - Limited up to 10 users per request
     /// </summary>
     public class AdminEvaluateProgress : AccelByte.Sdk.Core.Operation
     {

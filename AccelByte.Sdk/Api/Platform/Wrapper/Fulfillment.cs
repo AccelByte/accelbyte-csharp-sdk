@@ -51,17 +51,32 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.FulfillRewardsV2.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public FulfillItems.FulfillItemsBuilder FulfillItemsOp
         {
             get { return Operation.FulfillItems.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public RetryFulfillItems.RetryFulfillItemsBuilder RetryFulfillItemsOp
         {
             get { return Operation.RetryFulfillItems.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public RevokeItems.RevokeItemsBuilder RevokeItemsOp
         {
             get { return Operation.RevokeItems.Builder.SetWrapperObject(this); }
+        }
+        public FulfillItemsV3.FulfillItemsV3Builder FulfillItemsV3Op
+        {
+            get { return Operation.FulfillItemsV3.Builder.SetWrapperObject(this); }
+        }
+        public RetryFulfillItemsV3.RetryFulfillItemsV3Builder RetryFulfillItemsV3Op
+        {
+            get { return Operation.RetryFulfillItemsV3.Builder.SetWrapperObject(this); }
+        }
+        public RevokeItemsV3.RevokeItemsV3Builder RevokeItemsV3Op
+        {
+            get { return Operation.RevokeItemsV3.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -193,6 +208,8 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.FulfillmentV2Result? FulfillItems(FulfillItems input)
         {
             var response = _sdk.RunRequest(input);
@@ -209,6 +226,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.FulfillmentV2Result? RetryFulfillItems(RetryFulfillItems input)
         {
             var response = _sdk.RunRequest(input);
@@ -225,6 +245,9 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.RevokeFulfillmentV2Result? RevokeItems(RevokeItems input)
         {
             var response = _sdk.RunRequest(input);
@@ -234,6 +257,55 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.RevokeFulfillmentV2Result?> RevokeItemsAsync(RevokeItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning restore ab_deprecated_operation
+        public Model.FulfillmentV2Result? FulfillItemsV3(FulfillItemsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentV2Result?> FulfillItemsV3Async(FulfillItemsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.FulfillmentV2Result? RetryFulfillItemsV3(RetryFulfillItemsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.FulfillmentV2Result?> RetryFulfillItemsV3Async(RetryFulfillItemsV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.RevokeFulfillmentV2Result? RevokeItemsV3(RevokeItemsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevokeFulfillmentV2Result?> RevokeItemsV3Async(RevokeItemsV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

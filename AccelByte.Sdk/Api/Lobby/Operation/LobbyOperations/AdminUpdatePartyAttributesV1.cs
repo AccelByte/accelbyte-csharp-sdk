@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Update party attributes in a namespace.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUpdatePartyAttributesV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

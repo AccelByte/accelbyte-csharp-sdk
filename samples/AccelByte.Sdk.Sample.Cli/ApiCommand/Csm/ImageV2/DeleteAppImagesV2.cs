@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","deleteappimagesv2")]
-    public class DeleteAppImagesV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "deleteappimagesv2")]
+    public class DeleteAppImagesV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "DeleteAppImagesV2"; } }
+        public string OperationName { get { return "DeleteAppImagesV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public GeneratedDeleteAppImagesV1Request Body { get; set; } = new GeneratedDeleteAppImagesV1Request();
-                
+
         public DeleteAppImagesV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             wrapper.DeleteAppImagesV2(operation);
             return String.Empty;
         }

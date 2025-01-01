@@ -16,11 +16,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// retryFulfillItems
     ///
-    ///  [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
-    /// Other detail info:
     /// 
-    ///   * Returns : fulfillment v2 result, storeId field can be ignored.
+    /// 
+    /// ### The endpoint is going to be deprecated
+    /// 
+    /// [Not supported yet in AGS Shared Cloud] Retry fulfill items by transactionId without sending the original payload.
+    /// Other detail info:
+    ///       * Returns : fulfillment v2 result, storeId field can be ignored.
+    /// 
+    /// ### Endpoint migration guide
+    /// 
+    ///       *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/retry [PUT]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RetryFulfillItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

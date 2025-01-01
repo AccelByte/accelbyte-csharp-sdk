@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.PaymentCallbackConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.PaymentCallbackConfig(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.GetPaymentCallbackConfig.Builder;
 
 
@@ -50,12 +51,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 Namespace
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Platform.Model.PaymentCallbackConfigInfo? response = wrapper.GetPaymentCallbackConfig(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

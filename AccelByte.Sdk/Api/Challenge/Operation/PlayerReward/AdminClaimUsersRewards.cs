@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminClaimUsersRewards
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:REWARD [UPDATE]
     /// </summary>
     public class AdminClaimUsersRewards : AccelByte.Sdk.Core.Operation
     {

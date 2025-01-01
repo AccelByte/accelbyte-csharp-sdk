@@ -12,6 +12,54 @@ namespace AccelByte.Sdk.Api
 {
     public static class GdprPlatformAccountClosureClient_OpExts
     {
+        public static Gdpr.Model.DtoPlatformAccountClosureClientsResponse? Execute(
+            this AdminGetPlatformAccountClosureClients.AdminGetPlatformAccountClosureClientsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetPlatformAccountClosureClients op = builder.Build(
+                namespace_
+            );
+
+            return ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminGetPlatformAccountClosureClients(op);
+        }
+        public static async Task<Gdpr.Model.DtoPlatformAccountClosureClientsResponse?> ExecuteAsync(
+            this AdminGetPlatformAccountClosureClients.AdminGetPlatformAccountClosureClientsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetPlatformAccountClosureClients op = builder.Build(
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminGetPlatformAccountClosureClientsAsync(op);
+        }
+        public static Gdpr.Model.DtoXboxBPCertValidationResponse? Execute(
+            this AdminValidateXboxBPCertFile.AdminValidateXboxBPCertFileBuilder builder,
+            DtoXboxBPCertValidationRequest body,
+            string namespace_
+        )
+        {
+            AdminValidateXboxBPCertFile op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminValidateXboxBPCertFile(op);
+        }
+        public static async Task<Gdpr.Model.DtoXboxBPCertValidationResponse?> ExecuteAsync(
+            this AdminValidateXboxBPCertFile.AdminValidateXboxBPCertFileBuilder builder,
+            DtoXboxBPCertValidationRequest body,
+            string namespace_
+        )
+        {
+            AdminValidateXboxBPCertFile op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminValidateXboxBPCertFileAsync(op);
+        }
         public static Gdpr.Model.DtoPlatformAccountClosureClientResponse? Execute(
             this AdminGetPlatformAccountClosureClient.AdminGetPlatformAccountClosureClientBuilder builder,
             string namespace_,
@@ -93,6 +141,36 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminDeletePlatformAccountClosureClientAsync(op);
+        }
+        public static void Execute(
+            this AdminMockPlatformAccountClosureData.AdminMockPlatformAccountClosureDataBuilder builder,
+            DtoPlatformAccountClosureMockRequest body,
+            string namespace_,
+            string platform
+        )
+        {
+            AdminMockPlatformAccountClosureData op = builder.Build(
+                body,
+                namespace_,
+                platform
+            );
+
+            ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminMockPlatformAccountClosureData(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminMockPlatformAccountClosureData.AdminMockPlatformAccountClosureDataBuilder builder,
+            DtoPlatformAccountClosureMockRequest body,
+            string namespace_,
+            string platform
+        )
+        {
+            AdminMockPlatformAccountClosureData op = builder.Build(
+                body,
+                namespace_,
+                platform
+            );
+
+            await ((Gdpr.Wrapper.PlatformAccountClosureClient)builder.WrapperObject!).AdminMockPlatformAccountClosureDataAsync(op);
         }
     }
 }

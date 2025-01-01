@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Update third party config in a namespace.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUpdateThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

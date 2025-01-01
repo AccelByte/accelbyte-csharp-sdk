@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// EvaluateMyProgress
     ///
-    /// 
-    ///     * Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
+    /// - Required permission: NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [UPDATE]
     /// </summary>
     public class EvaluateMyProgress : AccelByte.Sdk.Core.Operation
     {

@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// Result: queue_time in seconds
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetMatchPoolMetric : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

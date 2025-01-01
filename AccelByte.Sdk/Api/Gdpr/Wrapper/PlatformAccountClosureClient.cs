@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetPlatformAccountClosureClients.AdminGetPlatformAccountClosureClientsBuilder AdminGetPlatformAccountClosureClientsOp
+        {
+            get { return Operation.AdminGetPlatformAccountClosureClients.Builder.SetWrapperObject(this); }
+        }
+        public AdminValidateXboxBPCertFile.AdminValidateXboxBPCertFileBuilder AdminValidateXboxBPCertFileOp
+        {
+            get { return Operation.AdminValidateXboxBPCertFile.Builder.SetWrapperObject(this); }
+        }
         public AdminGetPlatformAccountClosureClient.AdminGetPlatformAccountClosureClientBuilder AdminGetPlatformAccountClosureClientOp
         {
             get { return Operation.AdminGetPlatformAccountClosureClient.Builder.SetWrapperObject(this); }
@@ -31,8 +39,44 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
         {
             get { return Operation.AdminDeletePlatformAccountClosureClient.Builder.SetWrapperObject(this); }
         }
+        public AdminMockPlatformAccountClosureData.AdminMockPlatformAccountClosureDataBuilder AdminMockPlatformAccountClosureDataOp
+        {
+            get { return Operation.AdminMockPlatformAccountClosureData.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
+        public Model.DtoPlatformAccountClosureClientsResponse? AdminGetPlatformAccountClosureClients(AdminGetPlatformAccountClosureClients input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DtoPlatformAccountClosureClientsResponse?> AdminGetPlatformAccountClosureClientsAsync(AdminGetPlatformAccountClosureClients input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.DtoXboxBPCertValidationResponse? AdminValidateXboxBPCertFile(AdminValidateXboxBPCertFile input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DtoXboxBPCertValidationResponse?> AdminValidateXboxBPCertFileAsync(AdminValidateXboxBPCertFile input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.DtoPlatformAccountClosureClientResponse? AdminGetPlatformAccountClosureClient(AdminGetPlatformAccountClosureClient input)
         {
             var response = _sdk.RunRequest(input);
@@ -74,6 +118,22 @@ namespace AccelByte.Sdk.Api.Gdpr.Wrapper
                     response.Payload);
         }
         public async Task AdminDeletePlatformAccountClosureClientAsync(AdminDeletePlatformAccountClosureClient input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminMockPlatformAccountClosureData(AdminMockPlatformAccountClosureData input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminMockPlatformAccountClosureDataAsync(AdminMockPlatformAccountClosureData input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

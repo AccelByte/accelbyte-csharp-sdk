@@ -4796,6 +4796,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyUserV3Async(op);
         }
+        public static string Execute(
+            this PublicSendCodeForwardV3.PublicSendCodeForwardV3Builder builder,
+            ModelSendVerificationCodeRequestV3 body
+        )
+        {
+            PublicSendCodeForwardV3 op = builder.Build(
+                body
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendCodeForwardV3(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this PublicSendCodeForwardV3.PublicSendCodeForwardV3Builder builder,
+            ModelSendVerificationCodeRequestV3 body
+        )
+        {
+            PublicSendCodeForwardV3 op = builder.Build(
+                body
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendCodeForwardV3Async(op);
+        }
         public static Iam.Model.ModelGetLinkHeadlessAccountConflictResponse? Execute(
             this PublicGetLinkHeadlessAccountToMyAccountConflictV3.PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder builder,
             string oneTimeLinkCode
@@ -4840,6 +4862,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).LinkHeadlessAccountToMyAccountV3Async(op);
         }
+        public static Iam.Model.ModelOneTimeCodeLinkRedirectionResponse? Execute(
+            this PublicGetMyRedirectionAfterLinkV3.PublicGetMyRedirectionAfterLinkV3Builder builder,
+            string oneTimeLinkCode
+        )
+        {
+            PublicGetMyRedirectionAfterLinkV3 op = builder.Build(
+                oneTimeLinkCode
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyRedirectionAfterLinkV3(op);
+        }
+        public static async Task<Iam.Model.ModelOneTimeCodeLinkRedirectionResponse?> ExecuteAsync(
+            this PublicGetMyRedirectionAfterLinkV3.PublicGetMyRedirectionAfterLinkV3Builder builder,
+            string oneTimeLinkCode
+        )
+        {
+            PublicGetMyRedirectionAfterLinkV3 op = builder.Build(
+                oneTimeLinkCode
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetMyRedirectionAfterLinkV3Async(op);
+        }
         public static Iam.Model.ModelUserProfileUpdateAllowStatus? Execute(
             this PublicGetMyProfileAllowUpdateStatusV3.PublicGetMyProfileAllowUpdateStatusV3Builder builder
         )
@@ -4879,6 +4923,24 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicSendVerificationLinkV3Async(op);
+        }
+        public static Iam.Model.ModelPublicOpenIDUserInfoResponse? Execute(
+            this PublicGetOpenidUserInfoV3.PublicGetOpenidUserInfoV3Builder builder
+        )
+        {
+            PublicGetOpenidUserInfoV3 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetOpenidUserInfoV3(op);
+        }
+        public static async Task<Iam.Model.ModelPublicOpenIDUserInfoResponse?> ExecuteAsync(
+            this PublicGetOpenidUserInfoV3.PublicGetOpenidUserInfoV3Builder builder
+        )
+        {
+            PublicGetOpenidUserInfoV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicGetOpenidUserInfoV3Async(op);
         }
         public static string Execute(
             this PublicVerifyUserByLinkV3.PublicVerifyUserByLinkV3Builder builder

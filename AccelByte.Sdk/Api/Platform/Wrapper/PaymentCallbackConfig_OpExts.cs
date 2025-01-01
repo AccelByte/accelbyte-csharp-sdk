@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformPaymentCallbackConfig_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.PaymentCallbackConfigInfo? Execute(
             this GetPaymentCallbackConfig.GetPaymentCallbackConfigBuilder builder,
             string namespace_
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.PaymentCallbackConfig)builder.WrapperObject!).GetPaymentCallbackConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.PaymentCallbackConfigInfo? Execute(
             this UpdatePaymentCallbackConfig.UpdatePaymentCallbackConfigBuilder builder,
             PaymentCallbackConfigUpdate body,

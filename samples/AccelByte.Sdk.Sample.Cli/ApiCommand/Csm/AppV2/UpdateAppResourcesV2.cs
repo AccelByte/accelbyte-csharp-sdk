@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","updateappresourcesv2")]
-    public class UpdateAppResourcesV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "updateappresourcesv2")]
+    public class UpdateAppResourcesV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "UpdateAppResourcesV2"; } }
+        public string OperationName { get { return "UpdateAppResourcesV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public ApimodelUpdateAppResourceRequest Body { get; set; } = new ApimodelUpdateAppResourceRequest();
-                
+
         public UpdateAppResourcesV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelAppItem? response = wrapper.UpdateAppResourcesV2(operation);
             if (response == null)
                 return "No response from server.";

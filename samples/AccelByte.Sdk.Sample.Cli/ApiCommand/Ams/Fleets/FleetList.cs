@@ -34,11 +34,23 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("active")]
         public bool? Active { get; set; }
 
+        [SdkCommandArgument("count")]
+        public long? Count { get; set; }
+
+        [SdkCommandArgument("desc")]
+        public string? Desc { get; set; }
+
         [SdkCommandArgument("name")]
         public string? Name { get; set; }
 
+        [SdkCommandArgument("offset")]
+        public long? Offset { get; set; }
+
         [SdkCommandArgument("region")]
         public string? Region { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
 
         public FleetListCommand(AccelByteSDK sdk)
         {
@@ -53,10 +65,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             if (Active != null)
                 opBuilder.SetActive((bool)Active);
+            if (Count != null)
+                opBuilder.SetCount((long)Count);
+            if (Desc != null)
+                opBuilder.SetDesc(FleetListDesc.NewValue(Desc));
             if (Name != null)
                 opBuilder.SetName((string)Name);
+            if (Offset != null)
+                opBuilder.SetOffset((long)Offset);
             if (Region != null)
                 opBuilder.SetRegion((string)Region);
+            if (SortBy != null)
+                opBuilder.SetSortBy(FleetListSortBy.NewValue(SortBy));
 
 
 

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Get party data in a namespace.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetUserPartyV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

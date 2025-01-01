@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminGetUserProgression
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PROGRESSION [READ]
     /// </summary>
     public class AdminGetUserProgression : AccelByte.Sdk.Core.Operation
     {

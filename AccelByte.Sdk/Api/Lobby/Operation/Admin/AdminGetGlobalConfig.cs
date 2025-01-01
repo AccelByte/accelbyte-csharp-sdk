@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Get dsmc global configuration.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetGlobalConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

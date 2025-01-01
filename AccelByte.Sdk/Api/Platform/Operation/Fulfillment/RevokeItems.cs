@@ -16,11 +16,19 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// revokeItems
     ///
-    ///  [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
-    /// Other detail info:
     /// 
-    ///   * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+    /// 
+    /// ### The endpoint is going to be deprecated
+    /// 
+    /// [Not supported yet in AGS Shared Cloud] Revoke items by transactionId.
+    /// Other detail info:
+    ///           * Returns : revoke fulfillment v2 result, storeId field can be ignored.
+    /// 
+    /// ### Endpoint migration guide
+    /// 
+    ///           *  Substitute endpoint: /v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}/revoke [PUT]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RevokeItems : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

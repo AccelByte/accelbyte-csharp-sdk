@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","savevariablev1")]
-    public class SaveVariableV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "savevariablev1")]
+    public class SaveVariableV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "SaveVariableV1"; } }
+        public string OperationName { get { return "SaveVariableV1"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public GeneratedSaveConfigurationV1Request Body { get; set; } = new GeneratedSaveConfigurationV1Request();
-                
+
         public SaveVariableV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -46,7 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.Configuration wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.Configuration(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.SaveVariableV1.Builder;
 
 
@@ -59,15 +59,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Csm.Model.GeneratedSaveConfigurationV1Response? response = wrapper.SaveVariableV1(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

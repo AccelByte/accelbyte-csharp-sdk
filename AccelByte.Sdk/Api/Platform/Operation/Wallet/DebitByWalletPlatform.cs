@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// debitByWalletPlatform
     ///
-    /// Pay with user wallet by currency code and client platform.
+    /// Debit user wallet by currency code and client platform.
     /// Other detail info:
     /// 
     /// 

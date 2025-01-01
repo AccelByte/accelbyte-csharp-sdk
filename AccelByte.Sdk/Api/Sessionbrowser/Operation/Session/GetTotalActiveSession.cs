@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Get all active session
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetTotalActiveSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

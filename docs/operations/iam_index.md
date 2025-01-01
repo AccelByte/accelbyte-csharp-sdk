@@ -212,10 +212,13 @@
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/publisher` | GET | PublicGetPublisherUserV3 | [PublicGetPublisherUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetPublisherUserV3.cs) | [PublicGetPublisherUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetPublisherUserV3.cs) |
 | `/iam/v3/public/namespaces/{namespace}/users/{userId}/validate` | POST | PublicValidateUserByUserIDAndPasswordV3 | [PublicValidateUserByUserIDAndPasswordV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicValidateUserByUserIDAndPasswordV3.cs) | [PublicValidateUserByUserIDAndPasswordV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicValidateUserByUserIDAndPasswordV3.cs) |
 | `/iam/v3/public/users/me` | GET | PublicGetMyUserV3 | [PublicGetMyUserV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetMyUserV3.cs) | [PublicGetMyUserV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetMyUserV3.cs) |
+| `/iam/v3/public/users/me/code/request/forward` | POST | PublicSendCodeForwardV3 | [PublicSendCodeForwardV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicSendCodeForwardV3.cs) | [PublicSendCodeForwardV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicSendCodeForwardV3.cs) |
 | `/iam/v3/public/users/me/headless/link/conflict` | GET | PublicGetLinkHeadlessAccountToMyAccountConflictV3 | [PublicGetLinkHeadlessAccountToMyAccountConflictV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetLinkHeadlessAccountToMyAccountConflictV3.cs) | [PublicGetLinkHeadlessAccountToMyAccountConflictV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetLinkHeadlessAccountToMyAccountConflictV3.cs) |
 | `/iam/v3/public/users/me/headless/linkWithProgression` | POST | LinkHeadlessAccountToMyAccountV3 | [LinkHeadlessAccountToMyAccountV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/LinkHeadlessAccountToMyAccountV3.cs) | [LinkHeadlessAccountToMyAccountV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/LinkHeadlessAccountToMyAccountV3.cs) |
+| `/iam/v3/public/users/me/link/redirection` | GET | PublicGetMyRedirectionAfterLinkV3 | [PublicGetMyRedirectionAfterLinkV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetMyRedirectionAfterLinkV3.cs) | [PublicGetMyRedirectionAfterLinkV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetMyRedirectionAfterLinkV3.cs) |
 | `/iam/v3/public/users/me/profileStatus` | GET | PublicGetMyProfileAllowUpdateStatusV3 | [PublicGetMyProfileAllowUpdateStatusV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetMyProfileAllowUpdateStatusV3.cs) | [PublicGetMyProfileAllowUpdateStatusV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetMyProfileAllowUpdateStatusV3.cs) |
 | `/iam/v3/public/users/me/verify_link/request` | POST | PublicSendVerificationLinkV3 | [PublicSendVerificationLinkV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicSendVerificationLinkV3.cs) | [PublicSendVerificationLinkV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicSendVerificationLinkV3.cs) |
+| `/iam/v3/public/users/userinfo` | GET | PublicGetOpenidUserInfoV3 | [PublicGetOpenidUserInfoV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicGetOpenidUserInfoV3.cs) | [PublicGetOpenidUserInfoV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicGetOpenidUserInfoV3.cs) |
 | `/iam/v3/public/users/verify_link/verify` | GET | PublicVerifyUserByLinkV3 | [PublicVerifyUserByLinkV3](../../AccelByte.Sdk/Api/Iam/Operation/Users/PublicVerifyUserByLinkV3.cs) | [PublicVerifyUserByLinkV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/Users/PublicVerifyUserByLinkV3.cs) |
 
 ### OAuth Wrapper:  [OAuth](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth.cs)
@@ -365,6 +368,7 @@
 |---|---|---|---|---|
 | `/iam/v3/authenticate` | POST | UserAuthenticationV3 | [UserAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/UserAuthenticationV3.cs) | [UserAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/UserAuthenticationV3.cs) |
 | `/iam/v3/authenticateWithLink` | POST | AuthenticationWithPlatformLinkV3 | [AuthenticationWithPlatformLinkV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/AuthenticationWithPlatformLinkV3.cs) | [AuthenticationWithPlatformLinkV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/AuthenticationWithPlatformLinkV3.cs) |
+| `/iam/v3/authenticateWithLink/forward` | POST | AuthenticateAndLinkForwardV3 | [AuthenticateAndLinkForwardV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/AuthenticateAndLinkForwardV3.cs) | [AuthenticateAndLinkForwardV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/AuthenticateAndLinkForwardV3.cs) |
 | `/iam/v3/headless/token` | POST | GenerateTokenByNewHeadlessAccountV3 | [GenerateTokenByNewHeadlessAccountV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/GenerateTokenByNewHeadlessAccountV3.cs) | [GenerateTokenByNewHeadlessAccountV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/GenerateTokenByNewHeadlessAccountV3.cs) |
 | `/iam/v3/link/code/request` | POST | RequestOneTimeLinkingCodeV3 | [RequestOneTimeLinkingCodeV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestOneTimeLinkingCodeV3.cs) | [RequestOneTimeLinkingCodeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestOneTimeLinkingCodeV3.cs) |
 | `/iam/v3/link/code/validate` | POST | ValidateOneTimeLinkingCodeV3 | [ValidateOneTimeLinkingCodeV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/ValidateOneTimeLinkingCodeV3.cs) | [ValidateOneTimeLinkingCodeV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/ValidateOneTimeLinkingCodeV3.cs) |
@@ -375,6 +379,7 @@
 | `/iam/v3/platforms/{platformId}/authenticate` | GET | PlatformAuthenticationV3 | [PlatformAuthenticationV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformAuthenticationV3.cs) | [PlatformAuthenticationV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformAuthenticationV3.cs) |
 | `/iam/v3/platforms/{platformId}/token/verify` | POST | PlatformTokenRefreshV3 | [PlatformTokenRefreshV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/PlatformTokenRefreshV3.cs) | [PlatformTokenRefreshV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/PlatformTokenRefreshV3.cs) |
 | `/iam/v3/token/exchange` | POST | RequestTargetTokenResponseV3 | [RequestTargetTokenResponseV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/RequestTargetTokenResponseV3.cs) | [RequestTargetTokenResponseV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/RequestTargetTokenResponseV3.cs) |
+| `/iam/v3/upgrade/forward` | POST | UpgradeAndAuthenticateForwardV3 | [UpgradeAndAuthenticateForwardV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20Extension/UpgradeAndAuthenticateForwardV3.cs) | [UpgradeAndAuthenticateForwardV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20Extension/UpgradeAndAuthenticateForwardV3.cs) |
 
 ### OAuth2.0 Wrapper:  [OAuth20](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -387,6 +392,7 @@
 | `/iam/v3/oauth/mfa/code` | POST | SendMFAAuthenticationCode | [SendMFAAuthenticationCode](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/SendMFAAuthenticationCode.cs) | [SendMFAAuthenticationCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/SendMFAAuthenticationCode.cs) |
 | `/iam/v3/oauth/mfa/factor/change` | POST | Change2faMethod | [Change2faMethod](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/Change2faMethod.cs) | [Change2faMethod](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/Change2faMethod.cs) |
 | `/iam/v3/oauth/mfa/verify` | POST | Verify2faCode | [Verify2faCode](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/Verify2faCode.cs) | [Verify2faCode](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/Verify2faCode.cs) |
+| `/iam/v3/oauth/mfa/verify/forward` | POST | Verify2faCodeForward | [Verify2faCodeForward](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/Verify2faCodeForward.cs) | [Verify2faCodeForward](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/Verify2faCodeForward.cs) |
 | `/iam/v3/oauth/namespaces/{namespace}/users/{userId}/platforms/{platformId}/platformToken` | GET | RetrieveUserThirdPartyPlatformTokenV3 | [RetrieveUserThirdPartyPlatformTokenV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/RetrieveUserThirdPartyPlatformTokenV3.cs) | [RetrieveUserThirdPartyPlatformTokenV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/RetrieveUserThirdPartyPlatformTokenV3.cs) |
 | `/iam/v3/oauth/platforms/{platformId}/authorize` | GET | AuthCodeRequestV3 | [AuthCodeRequestV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/AuthCodeRequestV3.cs) | [AuthCodeRequestV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/AuthCodeRequestV3.cs) |
 | `/iam/v3/oauth/platforms/{platformId}/token` | POST | PlatformTokenGrantV3 | [PlatformTokenGrantV3](../../AccelByte.Sdk/Api/Iam/Operation/OAuth20/PlatformTokenGrantV3.cs) | [PlatformTokenGrantV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OAuth20/PlatformTokenGrantV3.cs) |
@@ -477,6 +483,7 @@
 | [DEPRECATED] `/iam/v4/public/namespaces/{namespace}/users/me/mfa/status` | POST | PublicGetMyMFAStatusV4 | [PublicGetMyMFAStatusV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetMyMFAStatusV4.cs) | [PublicGetMyMFAStatusV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetMyMFAStatusV4.cs) |
 | `/iam/v4/public/namespaces/{namespace}/users/{userId}` | GET | PublicGetUserPublicInfoByUserIdV4 | [PublicGetUserPublicInfoByUserIdV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) | [PublicGetUserPublicInfoByUserIdV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicGetUserPublicInfoByUserIdV4.cs) |
 | `/iam/v4/public/users/invite` | POST | PublicInviteUserV4 | [PublicInviteUserV4](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicInviteUserV4.cs) | [PublicInviteUserV4](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicInviteUserV4.cs) |
+| `/iam/v4/public/users/me/headless/code/verify/forward` | POST | PublicUpgradeHeadlessWithCodeV4Forward | [PublicUpgradeHeadlessWithCodeV4Forward](../../AccelByte.Sdk/Api/Iam/Operation/UsersV4/PublicUpgradeHeadlessWithCodeV4Forward.cs) | [PublicUpgradeHeadlessWithCodeV4Forward](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/UsersV4/PublicUpgradeHeadlessWithCodeV4Forward.cs) |
 
 ### Devices V4 Wrapper:  [DevicesV4](../../AccelByte.Sdk/Api/Iam/Wrapper/DevicesV4.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -789,6 +796,7 @@
 | `model.LoginHistoriesResponse` | [ModelLoginHistoriesResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelLoginHistoriesResponse.cs) |
 | `model.NamespaceInvitationHistoryUserV4Response` | [ModelNamespaceInvitationHistoryUserV4Response](../../AccelByte.Sdk/Api/Iam/Model/ModelNamespaceInvitationHistoryUserV4Response.cs) |
 | `model.NamespaceRoleRequest` | [ModelNamespaceRoleRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelNamespaceRoleRequest.cs) |
+| `model.OneTimeCodeLinkRedirectionResponse` | [ModelOneTimeCodeLinkRedirectionResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelOneTimeCodeLinkRedirectionResponse.cs) |
 | `model.PermissionDeleteRequest` | [ModelPermissionDeleteRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPermissionDeleteRequest.cs) |
 | `model.PlatformDomainDeleteRequest` | [ModelPlatformDomainDeleteRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformDomainDeleteRequest.cs) |
 | `model.PlatformDomainResponse` | [ModelPlatformDomainResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformDomainResponse.cs) |
@@ -796,7 +804,9 @@
 | `model.PlatformUserIDRequest` | [ModelPlatformUserIDRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformUserIDRequest.cs) |
 | `model.PlatformUserIDRequestV4` | [ModelPlatformUserIDRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformUserIDRequestV4.cs) |
 | `model.PlatformUserInformation` | [ModelPlatformUserInformation](../../AccelByte.Sdk/Api/Iam/Model/ModelPlatformUserInformation.cs) |
+| `model.ProgressionInfo` | [ModelProgressionInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelProgressionInfo.cs) |
 | `model.PublicInviteUserRequestV4` | [ModelPublicInviteUserRequestV4](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicInviteUserRequestV4.cs) |
+| `model.PublicOpenIDUserInfoResponse` | [ModelPublicOpenIDUserInfoResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicOpenIDUserInfoResponse.cs) |
 | `model.PublicThirdPartyPlatformInfo` | [ModelPublicThirdPartyPlatformInfo](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicThirdPartyPlatformInfo.cs) |
 | `model.PublicUserInformationResponseV3` | [ModelPublicUserInformationResponseV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserInformationResponseV3.cs) |
 | `model.PublicUserInformationV3` | [ModelPublicUserInformationV3](../../AccelByte.Sdk/Api/Iam/Model/ModelPublicUserInformationV3.cs) |
@@ -845,6 +855,7 @@
 | `model.SendVerificationCodeRequestV3` | [ModelSendVerificationCodeRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelSendVerificationCodeRequestV3.cs) |
 | `model.SendVerificationLinkRequest` | [ModelSendVerificationLinkRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelSendVerificationLinkRequest.cs) |
 | `model.SimpleProfileUpdateStrategyConfigs` | [ModelSimpleProfileUpdateStrategyConfigs](../../AccelByte.Sdk/Api/Iam/Model/ModelSimpleProfileUpdateStrategyConfigs.cs) |
+| `model.SimpleUserBan` | [ModelSimpleUserBan](../../AccelByte.Sdk/Api/Iam/Model/ModelSimpleUserBan.cs) |
 | `model.ThirdPartyLoginPlatformCredentialRequest` | [ModelThirdPartyLoginPlatformCredentialRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelThirdPartyLoginPlatformCredentialRequest.cs) |
 | `model.ThirdPartyLoginPlatformCredentialResponse` | [ModelThirdPartyLoginPlatformCredentialResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelThirdPartyLoginPlatformCredentialResponse.cs) |
 | `model.TokenThirdPartyLinkStatusResponse` | [ModelTokenThirdPartyLinkStatusResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelTokenThirdPartyLinkStatusResponse.cs) |
@@ -926,6 +937,8 @@
 | `oauthmodel.TokenThirdPartyResponse` | [OauthmodelTokenThirdPartyResponse](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenThirdPartyResponse.cs) |
 | `oauthmodel.TokenWithDeviceCookieResponseV3` | [OauthmodelTokenWithDeviceCookieResponseV3](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelTokenWithDeviceCookieResponseV3.cs) |
 | `oauthmodel.UserBan` | [OauthmodelUserBan](../../AccelByte.Sdk/Api/Iam/Model/OauthmodelUserBan.cs) |
+| `platform.DLCAggResponse` | [PlatformDLCAggResponse](../../AccelByte.Sdk/Api/Iam/Model/PlatformDLCAggResponse.cs) |
+| `platform.WalletAggResponse` | [PlatformWalletAggResponse](../../AccelByte.Sdk/Api/Iam/Model/PlatformWalletAggResponse.cs) |
 | `rest.ErrorResponse` | [RestErrorResponse](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponse.cs) |
 | `rest.ErrorResponseWithConflictedUserPlatformAccounts` | [RestErrorResponseWithConflictedUserPlatformAccounts](../../AccelByte.Sdk/Api/Iam/Model/RestErrorResponseWithConflictedUserPlatformAccounts.cs) |
 | `rest.Permission` | [RestPermission](../../AccelByte.Sdk/Api/Iam/Model/RestPermission.cs) |

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// Read mock matches that has timestamp older than specified timestamp in a channel resulted from matching mock tickets.
     /// '
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetMockMatchesByTimestamp : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

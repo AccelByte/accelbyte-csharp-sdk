@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
+        public AdminReadPartySessionStorage.AdminReadPartySessionStorageBuilder AdminReadPartySessionStorageOp
+        {
+            get { return Operation.AdminReadPartySessionStorage.Builder.SetWrapperObject(this); }
+        }
         public AdminReadSessionStorage.AdminReadSessionStorageBuilder AdminReadSessionStorageOp
         {
             get { return Operation.AdminReadSessionStorage.Builder.SetWrapperObject(this); }
@@ -31,6 +35,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminReadUserSessionStorage.Builder.SetWrapperObject(this); }
         }
+        public PublicReadPartySessionStorage.PublicReadPartySessionStorageBuilder PublicReadPartySessionStorageOp
+        {
+            get { return Operation.PublicReadPartySessionStorage.Builder.SetWrapperObject(this); }
+        }
+        public PublicUpdateInsertPartySessionStorageReserved.PublicUpdateInsertPartySessionStorageReservedBuilder PublicUpdateInsertPartySessionStorageReservedOp
+        {
+            get { return Operation.PublicUpdateInsertPartySessionStorageReserved.Builder.SetWrapperObject(this); }
+        }
         public PublicUpdateInsertSessionStorageLeader.PublicUpdateInsertSessionStorageLeaderBuilder PublicUpdateInsertSessionStorageLeaderOp
         {
             get { return Operation.PublicUpdateInsertSessionStorageLeader.Builder.SetWrapperObject(this); }
@@ -41,6 +53,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
         #endregion
 
+        public Dictionary<string, object>? AdminReadPartySessionStorage(AdminReadPartySessionStorage input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> AdminReadPartySessionStorageAsync(AdminReadPartySessionStorage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Dictionary<string, object>? AdminReadSessionStorage(AdminReadSessionStorage input)
         {
             var response = _sdk.RunRequest(input);
@@ -82,6 +110,38 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task<Dictionary<string, object>?> AdminReadUserSessionStorageAsync(AdminReadUserSessionStorage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicReadPartySessionStorage(PublicReadPartySessionStorage input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicReadPartySessionStorageAsync(PublicReadPartySessionStorage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicUpdateInsertPartySessionStorageReserved(PublicUpdateInsertPartySessionStorageReserved input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicUpdateInsertPartySessionStorageReservedAsync(PublicUpdateInsertPartySessionStorageReserved input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

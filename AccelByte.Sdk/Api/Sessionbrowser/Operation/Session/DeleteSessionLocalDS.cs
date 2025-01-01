@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Only use for local DS entry, will error when calling non local DS entry
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteSessionLocalDS : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

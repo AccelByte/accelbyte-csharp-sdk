@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Update the list
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUpdateProfanityList : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

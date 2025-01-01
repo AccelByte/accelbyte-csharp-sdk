@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getdeploymentv2")]
-    public class GetDeploymentV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getdeploymentv2")]
+    public class GetDeploymentV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetDeploymentV2"; } }
+        public string OperationName { get { return "GetDeploymentV2"; } }
 
         [SdkCommandArgument("deploymentId")]
         public string DeploymentId { get; set; } = String.Empty;
@@ -54,7 +54,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelGetDeploymentListV2DataItem? response = wrapper.GetDeploymentV2(operation);
             if (response == null)
                 return "No response from server.";

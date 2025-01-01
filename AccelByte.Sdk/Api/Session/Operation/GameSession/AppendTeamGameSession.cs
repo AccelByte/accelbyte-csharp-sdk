@@ -16,8 +16,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// appendTeamGameSession
     ///
-    /// Append new member or team to session
+    /// Append new member or team to session. Please use patchUpdateGameSession instead
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AppendTeamGameSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

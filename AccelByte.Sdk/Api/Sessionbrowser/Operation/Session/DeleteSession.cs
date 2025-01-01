@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Delete the session (p2p) by session ID
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

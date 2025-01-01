@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// This end point intended to be called directly by P2P game client host or by DSMC
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class CreateSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

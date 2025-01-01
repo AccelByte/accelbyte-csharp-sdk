@@ -17,6 +17,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// AdminGetPlatformAccountClosureClient
     ///
     /// Get platform account closure config.
+    /// The namespace should be **publisher or studio namespace**
+    /// ----------
+    /// Platform:
+    /// - steamnetwork
+    /// - xbox
+    /// - psn
     /// Scope: account
     /// </summary>
     public class AdminGetPlatformAccountClosureClient : AccelByte.Sdk.Core.Operation

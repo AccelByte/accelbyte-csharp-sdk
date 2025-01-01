@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// 
     /// Remove a user from the notification subscription.
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteSubscriptionAppNotificationV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -48,9 +48,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 DeleteSubscriptionAppNotificationV2 op = new DeleteSubscriptionAppNotificationV2(this,
-                    app,                    
-                    namespace_,                    
-                    subscriptionId                    
+                    app,
+                    namespace_,
+                    subscriptionId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -70,32 +70,32 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
             PathParams["subscriptionId"] = subscriptionId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteSubscriptionAppNotificationV2(
-            string app,            
-            string namespace_,            
-            string subscriptionId            
+            string app,
+            string namespace_,
+            string subscriptionId
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
             PathParams["subscriptionId"] = subscriptionId;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -110,16 +110,16 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)200)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

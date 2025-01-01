@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getlistofdeploymentv1")]
-    public class GetListOfDeploymentV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getlistofdeploymentv1")]
+    public class GetListOfDeploymentV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetListOfDeploymentV1"; } }
+        public string OperationName { get { return "GetListOfDeploymentV1"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public GeneratedGetDeploymentListV1Request Body { get; set; } = new GeneratedGetDeploymentListV1Request();
-                
+
         public GetListOfDeploymentV1Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.Deployment wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.Deployment(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.GetListOfDeploymentV1.Builder;
 
             if (Limit != null)
@@ -65,15 +65,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Csm.Model.GeneratedGetDeploymentListV1Response? response = wrapper.GetListOfDeploymentV1(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

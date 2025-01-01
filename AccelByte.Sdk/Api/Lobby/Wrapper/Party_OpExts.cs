@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyParty_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsPartyData? Execute(
             this AdminGetPartyDataV1.AdminGetPartyDataV1Builder builder,
             string namespace_,
@@ -65,6 +66,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Party)builder.WrapperObject!).AdminGetPartyDataV1Async<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsPartyData? Execute(
             this AdminGetUserPartyV1.AdminGetUserPartyV1Builder builder,
             string namespace_,
@@ -118,6 +120,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Party)builder.WrapperObject!).AdminGetUserPartyV1Async<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsPartyData? Execute(
             this PublicGetPartyDataV1.PublicGetPartyDataV1Builder builder,
             string namespace_,
@@ -171,6 +174,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Party)builder.WrapperObject!).PublicGetPartyDataV1Async<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsPartyData? Execute(
             this PublicUpdatePartyAttributesV1.PublicUpdatePartyAttributesV1Builder builder,
             ModelsPartyPUTCustomAttributesRequest body,
@@ -232,6 +236,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyAttributesV1Async<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicSetPartyLimitV1.PublicSetPartyLimitV1Builder builder,
             ModelsPartyPUTLimitSizeRequest body,

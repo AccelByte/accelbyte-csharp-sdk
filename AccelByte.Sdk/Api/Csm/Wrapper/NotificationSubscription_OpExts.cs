@@ -15,12 +15,14 @@ namespace AccelByte.Sdk.Api
         public static Csm.Model.ApimodelGetNotificationSubscriberListResponse? Execute(
             this GetNotificationSubscriberListV2.GetNotificationSubscriberListV2Builder builder,
             string app,
-            string namespace_
+            string namespace_,
+            string notificationType
         )
         {
             GetNotificationSubscriberListV2 op = builder.Build(
                 app,
-                namespace_
+                namespace_,
+                notificationType
             );
 
             return ((Csm.Wrapper.NotificationSubscription)builder.WrapperObject!).GetNotificationSubscriberListV2(op);
@@ -28,12 +30,14 @@ namespace AccelByte.Sdk.Api
         public static async Task<Csm.Model.ApimodelGetNotificationSubscriberListResponse?> ExecuteAsync(
             this GetNotificationSubscriberListV2.GetNotificationSubscriberListV2Builder builder,
             string app,
-            string namespace_
+            string namespace_,
+            string notificationType
         )
         {
             GetNotificationSubscriberListV2 op = builder.Build(
                 app,
-                namespace_
+                namespace_,
+                notificationType
             );
 
             return await ((Csm.Wrapper.NotificationSubscription)builder.WrapperObject!).GetNotificationSubscriberListV2Async(op);
@@ -210,7 +214,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Csm.Wrapper.NotificationSubscription)builder.WrapperObject!).DeleteSubscriptionAppNotificationByUserIDV2Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteSubscriptionAppNotificationV2.DeleteSubscriptionAppNotificationV2Builder builder,
             string app,

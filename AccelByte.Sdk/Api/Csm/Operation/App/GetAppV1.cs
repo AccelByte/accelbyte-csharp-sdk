@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// 
     /// Gets the App By Name
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAppV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -47,8 +47,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 GetAppV1 op = new GetAppV1(this,
-                    app,                    
-                    namespace_                    
+                    app,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -66,30 +66,30 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetAppV1(
-            string app,            
-            string namespace_            
+            string app,
+            string namespace_
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
-            
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -104,9 +104,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.GeneratedGetAppV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.GeneratedGetAppV1Response>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

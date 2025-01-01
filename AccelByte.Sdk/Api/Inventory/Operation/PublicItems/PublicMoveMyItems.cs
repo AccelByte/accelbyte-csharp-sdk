@@ -16,8 +16,9 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// <summary>
     /// PublicMoveMyItems
     ///
-    /// 
     /// Move items between inventories that is owned by the same user.
+    /// 
+    /// For Ecommerce items, the *qty* is *useCount*. For example, moving 2 of an item's *qty* will move 2 of the entitlement's *useCount*.
     /// </summary>
     public class PublicMoveMyItems : AccelByte.Sdk.Core.Operation
     {

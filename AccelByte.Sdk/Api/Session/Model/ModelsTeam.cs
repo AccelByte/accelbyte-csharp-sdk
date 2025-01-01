@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<ModelsPartyMembers>? Parties { get; set; }
 
+        [JsonPropertyName("teamID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TeamID { get; set; }
+
         [JsonPropertyName("userIDs")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? UserIDs { get; set; }

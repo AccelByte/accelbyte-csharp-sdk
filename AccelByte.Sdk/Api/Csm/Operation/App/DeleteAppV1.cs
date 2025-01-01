@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// 
     /// Required: Valid Access Token
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteAppV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -60,8 +60,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 DeleteAppV1 op = new DeleteAppV1(this,
-                    app,                    
-                    namespace_                    
+                    app,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -79,33 +79,33 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            if (builder.Forced is not null) QueryParams["forced"] = builder.Forced;
-            
 
-            
-            
-            
+            if (builder.Forced is not null) QueryParams["forced"] = builder.Forced;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public DeleteAppV1(
-            string app,            
-            string namespace_,            
-            string? forced            
+            string app,
+            string namespace_,
+            string? forced
         )
         {
             PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
-            
-            if (forced is not null) QueryParams["forced"] = forced;
-            
 
-            
-            
-            
+            if (forced is not null) QueryParams["forced"] = forced;
+
+
+
+
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -120,16 +120,16 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
                 return;
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

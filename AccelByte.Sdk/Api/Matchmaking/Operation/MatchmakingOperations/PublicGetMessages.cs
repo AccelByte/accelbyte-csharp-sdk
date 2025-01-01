@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     ///
     /// get the list of messages.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetMessages : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -20,6 +20,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? LanguageTag { get; set; }
 
+        [JsonPropertyName("upgradeToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UpgradeToken { get; set; }
+
     }
 
 

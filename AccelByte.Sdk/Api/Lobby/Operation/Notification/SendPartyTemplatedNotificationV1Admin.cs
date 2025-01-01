@@ -23,6 +23,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// NotificationTemplate context is the key-value pair defining the value of each handlebar specified in the template content.
     /// Template need to be published before it can be use to send notifications
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class SendPartyTemplatedNotificationV1Admin : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

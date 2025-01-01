@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     ///
     /// Delete a user from a session in the channel.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class DeleteUserFromSessionInChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

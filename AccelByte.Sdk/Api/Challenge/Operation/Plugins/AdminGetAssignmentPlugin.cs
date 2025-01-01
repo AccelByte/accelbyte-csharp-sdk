@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminGetAssignmentPlugin
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PLUGIN [READ]
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE:PLUGIN [READ]
     /// </summary>
     public class AdminGetAssignmentPlugin : AccelByte.Sdk.Core.Operation
     {

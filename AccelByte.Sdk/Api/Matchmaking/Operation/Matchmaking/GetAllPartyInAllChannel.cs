@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     ///
     /// Get all parties queueing in all channels.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAllPartyInAllChannel : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

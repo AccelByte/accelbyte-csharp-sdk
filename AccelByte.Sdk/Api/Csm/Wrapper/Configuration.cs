@@ -19,55 +19,55 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         }
 
         #region Operation Builders
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetListOfSecretsV1.GetListOfSecretsV1Builder GetListOfSecretsV1Op
         {
             get { return Operation.GetListOfSecretsV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public SaveSecretV1.SaveSecretV1Builder SaveSecretV1Op
         {
             get { return Operation.SaveSecretV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public UpdateSecretV1.UpdateSecretV1Builder UpdateSecretV1Op
         {
             get { return Operation.UpdateSecretV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public DeleteSecretV1.DeleteSecretV1Builder DeleteSecretV1Op
         {
             get { return Operation.DeleteSecretV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetListOfVariablesV1.GetListOfVariablesV1Builder GetListOfVariablesV1Op
         {
             get { return Operation.GetListOfVariablesV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public SaveVariableV1.SaveVariableV1Builder SaveVariableV1Op
         {
             get { return Operation.SaveVariableV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public UpdateVariableV1.UpdateVariableV1Builder UpdateVariableV1Op
         {
             get { return Operation.UpdateVariableV1.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public DeleteVariableV1.DeleteVariableV1Builder DeleteVariableV1Op
         {
             get { return Operation.DeleteVariableV1.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedGetListOfConfigurationsV1Response? GetListOfSecretsV1(GetListOfSecretsV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -75,18 +75,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedSaveConfigurationV1Response? SaveSecretV1(SaveSecretV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -94,18 +94,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedUpdateConfigurationV1Response? UpdateSecretV1(UpdateSecretV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -113,18 +113,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void DeleteSecretV1(DeleteSecretV1 input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -132,18 +132,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedGetListOfConfigurationsV1Response? GetListOfVariablesV1(GetListOfVariablesV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -151,18 +151,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedSaveConfigurationV1Response? SaveVariableV1(SaveVariableV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -170,18 +170,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GeneratedUpdateConfigurationV1Response? UpdateVariableV1(UpdateVariableV1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -189,18 +189,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void DeleteVariableV1(DeleteVariableV1 input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -208,10 +208,10 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
     }
 }

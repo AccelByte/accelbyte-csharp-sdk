@@ -20,6 +20,18 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("linkedGames")]
         public List<string>? LinkedGames { get; set; }
 
+        [JsonPropertyName("platformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PlatformId { get; set; }
+
+        [JsonPropertyName("progressions")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ModelProgressionInfo>? Progressions { get; set; }
+
+        [JsonPropertyName("uniqueDisplayName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? UniqueDisplayName { get; set; }
+
         [JsonPropertyName("userName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserName { get; set; }

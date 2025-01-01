@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminUploadXBoxCertificate
     ///
-    /// Upload certificates for XBox. Certificate must be in the valid form of PFX format.
+    /// Upload certificates for XBox. Certificate must be in the valid form of PFX format. 'certname'' must be specified to 'xbl-pfx' for Session Sync to work
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminUploadXBoxCertificate : AccelByte.Sdk.Core.Operation

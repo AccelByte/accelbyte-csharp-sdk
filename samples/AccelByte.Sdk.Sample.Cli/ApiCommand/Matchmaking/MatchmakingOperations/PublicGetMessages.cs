@@ -37,6 +37,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
         {
             AccelByte.Sdk.Api.Matchmaking.Wrapper.MatchmakingOperations wrapper = new AccelByte.Sdk.Api.Matchmaking.Wrapper.MatchmakingOperations(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Matchmaking.Operation.PublicGetMessages.Builder;
 
 
@@ -46,12 +47,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Matchmaking
             PublicGetMessages operation = opBuilder.Build(
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Matchmaking.Model.LogAppMessageDeclaration>? response = wrapper.PublicGetMessages(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

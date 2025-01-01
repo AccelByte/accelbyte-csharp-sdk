@@ -19,14 +19,17 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetGlobalConfig.AdminGetGlobalConfigBuilder AdminGetGlobalConfigOp
         {
             get { return Operation.AdminGetGlobalConfig.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminUpdateGlobalConfig.AdminUpdateGlobalConfigBuilder AdminUpdateGlobalConfigOp
         {
             get { return Operation.AdminUpdateGlobalConfig.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteGlobalConfig.AdminDeleteGlobalConfigBuilder AdminDeleteGlobalConfigOp
         {
             get { return Operation.AdminDeleteGlobalConfig.Builder.SetWrapperObject(this); }
@@ -73,6 +76,8 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelGlobalConfiguration? AdminGetGlobalConfig(AdminGetGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -89,6 +94,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelGlobalConfiguration? AdminUpdateGlobalConfig(AdminUpdateGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -105,6 +113,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public string? AdminDeleteGlobalConfig(AdminDeleteGlobalConfig input)
         {
             var response = _sdk.RunRequest(input);
@@ -121,6 +132,7 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void FreeFormNotification(FreeFormNotification input)
         {
             var response = _sdk.RunRequest(input);

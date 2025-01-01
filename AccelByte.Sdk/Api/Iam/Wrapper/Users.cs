@@ -756,6 +756,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicGetMyUserV3.Builder.SetWrapperObject(this); }
         }
+        public PublicSendCodeForwardV3.PublicSendCodeForwardV3Builder PublicSendCodeForwardV3Op
+        {
+            get { return Operation.PublicSendCodeForwardV3.Builder.SetWrapperObject(this); }
+        }
         public PublicGetLinkHeadlessAccountToMyAccountConflictV3.PublicGetLinkHeadlessAccountToMyAccountConflictV3Builder PublicGetLinkHeadlessAccountToMyAccountConflictV3Op
         {
             get { return Operation.PublicGetLinkHeadlessAccountToMyAccountConflictV3.Builder.SetWrapperObject(this); }
@@ -764,6 +768,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.LinkHeadlessAccountToMyAccountV3.Builder.SetWrapperObject(this); }
         }
+        public PublicGetMyRedirectionAfterLinkV3.PublicGetMyRedirectionAfterLinkV3Builder PublicGetMyRedirectionAfterLinkV3Op
+        {
+            get { return Operation.PublicGetMyRedirectionAfterLinkV3.Builder.SetWrapperObject(this); }
+        }
         public PublicGetMyProfileAllowUpdateStatusV3.PublicGetMyProfileAllowUpdateStatusV3Builder PublicGetMyProfileAllowUpdateStatusV3Op
         {
             get { return Operation.PublicGetMyProfileAllowUpdateStatusV3.Builder.SetWrapperObject(this); }
@@ -771,6 +779,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicSendVerificationLinkV3.PublicSendVerificationLinkV3Builder PublicSendVerificationLinkV3Op
         {
             get { return Operation.PublicSendVerificationLinkV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetOpenidUserInfoV3.PublicGetOpenidUserInfoV3Builder PublicGetOpenidUserInfoV3Op
+        {
+            get { return Operation.PublicGetOpenidUserInfoV3.Builder.SetWrapperObject(this); }
         }
         public PublicVerifyUserByLinkV3.PublicVerifyUserByLinkV3Builder PublicVerifyUserByLinkV3Op
         {
@@ -3711,6 +3723,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public string PublicSendCodeForwardV3(PublicSendCodeForwardV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> PublicSendCodeForwardV3Async(PublicSendCodeForwardV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelGetLinkHeadlessAccountConflictResponse? PublicGetLinkHeadlessAccountToMyAccountConflictV3(PublicGetLinkHeadlessAccountToMyAccountConflictV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3743,6 +3771,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelOneTimeCodeLinkRedirectionResponse? PublicGetMyRedirectionAfterLinkV3(PublicGetMyRedirectionAfterLinkV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelOneTimeCodeLinkRedirectionResponse?> PublicGetMyRedirectionAfterLinkV3Async(PublicGetMyRedirectionAfterLinkV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ModelUserProfileUpdateAllowStatus? PublicGetMyProfileAllowUpdateStatusV3(PublicGetMyProfileAllowUpdateStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3771,6 +3815,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelPublicOpenIDUserInfoResponse? PublicGetOpenidUserInfoV3(PublicGetOpenidUserInfoV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPublicOpenIDUserInfoResponse?> PublicGetOpenidUserInfoV3Async(PublicGetOpenidUserInfoV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -31,6 +31,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// Valid value for criteria is "distance"
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class CreateChannelHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

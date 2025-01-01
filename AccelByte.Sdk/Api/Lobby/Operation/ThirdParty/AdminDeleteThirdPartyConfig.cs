@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// 
     /// delete third party config in a namespace.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDeleteThirdPartyConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

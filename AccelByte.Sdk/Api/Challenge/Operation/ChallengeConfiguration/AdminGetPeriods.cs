@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminGetPeriods
     ///
-    /// 
-    ///     * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
     /// </summary>
     public class AdminGetPeriods : AccelByte.Sdk.Core.Operation
     {

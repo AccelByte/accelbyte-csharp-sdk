@@ -298,6 +298,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicInviteUserV4.Builder.SetWrapperObject(this); }
         }
+        public PublicUpgradeHeadlessWithCodeV4Forward.PublicUpgradeHeadlessWithCodeV4ForwardBuilder PublicUpgradeHeadlessWithCodeV4ForwardOp
+        {
+            get { return Operation.PublicUpgradeHeadlessWithCodeV4Forward.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelListInvitationHistoriesV4Response? AdminListInvitationHistoriesV4(AdminListInvitationHistoriesV4 input)
@@ -1398,6 +1402,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelInviteUserResponseV3?> PublicInviteUserV4Async(PublicInviteUserV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public string PublicUpgradeHeadlessWithCodeV4Forward(PublicUpgradeHeadlessWithCodeV4Forward input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<string> PublicUpgradeHeadlessWithCodeV4ForwardAsync(PublicUpgradeHeadlessWithCodeV4Forward input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

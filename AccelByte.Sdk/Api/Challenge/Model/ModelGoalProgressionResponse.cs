@@ -14,6 +14,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonPropertyName("challengeCode")]
         public string? ChallengeCode { get; set; }
 
+        [JsonPropertyName("completedAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? CompletedAt { get; set; }
+
         [JsonPropertyName("goal")]
         public ModelGoalMeta? Goal { get; set; }
 

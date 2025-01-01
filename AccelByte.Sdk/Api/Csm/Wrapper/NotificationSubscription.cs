@@ -47,18 +47,18 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             get { return Operation.DeleteSubscriptionAppNotificationByUserIDV2.Builder.SetWrapperObject(this); }
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public DeleteSubscriptionAppNotificationV2.DeleteSubscriptionAppNotificationV2Builder DeleteSubscriptionAppNotificationV2Op
         {
             get { return Operation.DeleteSubscriptionAppNotificationV2.Builder.SetWrapperObject(this); }
         }
         #endregion
-        
+
         public Model.ApimodelGetNotificationSubscriberListResponse? GetNotificationSubscriberListV2(GetNotificationSubscriberListV2 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -74,7 +74,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -82,7 +82,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -90,7 +90,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -122,7 +122,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -138,7 +138,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -146,7 +146,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -154,7 +154,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -162,17 +162,17 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning disable ab_deprecated_operation
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void DeleteSubscriptionAppNotificationV2(DeleteSubscriptionAppNotificationV2 input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
@@ -180,10 +180,10 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
-                    response.Code, 
+                    response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        #pragma warning restore ab_deprecated_operation
+#pragma warning restore ab_deprecated_operation
     }
 }

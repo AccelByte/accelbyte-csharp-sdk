@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     ///
     /// Get player's specific session attribute by user id in a namespace.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetPlayerSessionAttribute : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -21,6 +21,7 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
     /// 
     /// Set party limit, only party leader can call this endpoint.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicSetPartyLimitV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

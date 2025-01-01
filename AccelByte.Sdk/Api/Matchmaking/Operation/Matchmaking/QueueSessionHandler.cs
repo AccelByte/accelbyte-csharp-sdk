@@ -28,6 +28,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// renew the queue timeout (e.g. some player left and more empty slot opened up),
     /// simply call this endpoint with the updated session data.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class QueueSessionHandler : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

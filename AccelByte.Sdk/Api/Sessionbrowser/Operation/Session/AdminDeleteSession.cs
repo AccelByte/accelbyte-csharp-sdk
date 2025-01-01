@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Admin delete the session by session ID
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDeleteSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

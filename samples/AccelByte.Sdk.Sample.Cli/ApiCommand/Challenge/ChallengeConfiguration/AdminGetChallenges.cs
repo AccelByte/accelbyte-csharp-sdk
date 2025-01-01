@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
             if (SortBy != null)
-                opBuilder.SetSortBy((string)SortBy);
+                opBuilder.SetSortBy(AdminGetChallengesSortBy.NewValue(SortBy));
             if (Status != null)
                 opBuilder.SetStatus(AdminGetChallengesStatus.NewValue(Status));
 

@@ -9,7 +9,16 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
 {
     public class DtoPlatformAccountClosureClientResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("bpCertExpireAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? BpCertExpireAt { get; set; }
+
+        [JsonPropertyName("bpCertFileName")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? BpCertFileName { get; set; }
+
         [JsonPropertyName("clientId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? ClientId { get; set; }
 
         [JsonPropertyName("namespace")]
@@ -18,7 +27,16 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonPropertyName("platform")]
         public string? Platform { get; set; }
 
+        [JsonPropertyName("publisherKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PublisherKey { get; set; }
+
+        [JsonPropertyName("sandboxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SandboxId { get; set; }
+
         [JsonPropertyName("secret")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Secret { get; set; }
 
         [JsonPropertyName("updatedAt")]

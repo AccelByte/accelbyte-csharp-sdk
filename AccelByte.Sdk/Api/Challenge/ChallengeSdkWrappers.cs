@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private GoalConfiguration? _GoalConfiguration = null;
 
+        public Schedules Schedules
+        {
+            get
+            {
+                if (_Schedules == null)
+                    _Schedules = new Schedules(_SdkObject);
+                return _Schedules;
+            }
+        }
+        private Schedules? _Schedules = null;
+
         public Plugins Plugins
         {
             get

@@ -19,60 +19,75 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDebugProfanityFilters.AdminDebugProfanityFiltersBuilder AdminDebugProfanityFiltersOp
         {
             get { return Operation.AdminDebugProfanityFilters.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetProfanityListFiltersV1.AdminGetProfanityListFiltersV1Builder AdminGetProfanityListFiltersV1Op
         {
             get { return Operation.AdminGetProfanityListFiltersV1.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminAddProfanityFilterIntoList.AdminAddProfanityFilterIntoListBuilder AdminAddProfanityFilterIntoListOp
         {
             get { return Operation.AdminAddProfanityFilterIntoList.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminAddProfanityFilters.AdminAddProfanityFiltersBuilder AdminAddProfanityFiltersOp
         {
             get { return Operation.AdminAddProfanityFilters.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminImportProfanityFiltersFromFile.AdminImportProfanityFiltersFromFileBuilder AdminImportProfanityFiltersFromFileOp
         {
             get { return Operation.AdminImportProfanityFiltersFromFile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteProfanityFilter.AdminDeleteProfanityFilterBuilder AdminDeleteProfanityFilterOp
         {
             get { return Operation.AdminDeleteProfanityFilter.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetProfanityLists.AdminGetProfanityListsBuilder AdminGetProfanityListsOp
         {
             get { return Operation.AdminGetProfanityLists.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminCreateProfanityList.AdminCreateProfanityListBuilder AdminCreateProfanityListOp
         {
             get { return Operation.AdminCreateProfanityList.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminUpdateProfanityList.AdminUpdateProfanityListBuilder AdminUpdateProfanityListOp
         {
             get { return Operation.AdminUpdateProfanityList.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteProfanityList.AdminDeleteProfanityListBuilder AdminDeleteProfanityListOp
         {
             get { return Operation.AdminDeleteProfanityList.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetProfanityRule.AdminGetProfanityRuleBuilder AdminGetProfanityRuleOp
         {
             get { return Operation.AdminGetProfanityRule.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminSetProfanityRuleForNamespace.AdminSetProfanityRuleForNamespaceBuilder AdminSetProfanityRuleForNamespaceOp
         {
             get { return Operation.AdminSetProfanityRuleForNamespace.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminVerifyMessageProfanityResponse.AdminVerifyMessageProfanityResponseBuilder AdminVerifyMessageProfanityResponseOp
         {
             get { return Operation.AdminVerifyMessageProfanityResponse.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.ModelsProfanityFilter>? AdminDebugProfanityFilters(AdminDebugProfanityFilters input)
         {
             var response = _sdk.RunRequest(input);
@@ -89,6 +104,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsAdminGetProfanityListFiltersV1Response? AdminGetProfanityListFiltersV1(AdminGetProfanityListFiltersV1 input)
         {
             var response = _sdk.RunRequest(input);
@@ -105,6 +123,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminAddProfanityFilterIntoList(AdminAddProfanityFilterIntoList input)
         {
             var response = _sdk.RunRequest(input);
@@ -121,6 +142,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminAddProfanityFilters(AdminAddProfanityFilters input)
         {
             var response = _sdk.RunRequest(input);
@@ -137,6 +161,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminImportProfanityFiltersFromFile(AdminImportProfanityFiltersFromFile input)
         {
             var response = _sdk.RunRequest(input);
@@ -153,6 +180,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.ModelsProfanityFilter>? AdminDeleteProfanityFilter(AdminDeleteProfanityFilter input)
         {
             var response = _sdk.RunRequest(input);
@@ -169,6 +199,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.ModelsAdminGetProfanityListsListResponse>? AdminGetProfanityLists(AdminGetProfanityLists input)
         {
             var response = _sdk.RunRequest(input);
@@ -185,6 +218,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminCreateProfanityList(AdminCreateProfanityList input)
         {
             var response = _sdk.RunRequest(input);
@@ -201,6 +237,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminUpdateProfanityList(AdminUpdateProfanityList input)
         {
             var response = _sdk.RunRequest(input);
@@ -217,6 +256,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminDeleteProfanityList(AdminDeleteProfanityList input)
         {
             var response = _sdk.RunRequest(input);
@@ -233,6 +275,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsProfanityRule? AdminGetProfanityRule(AdminGetProfanityRule input)
         {
             var response = _sdk.RunRequest(input);
@@ -249,6 +294,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminSetProfanityRuleForNamespace(AdminSetProfanityRuleForNamespace input)
         {
             var response = _sdk.RunRequest(input);
@@ -265,6 +313,9 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsAdminVerifyMessageProfanityResponse? AdminVerifyMessageProfanityResponse(AdminVerifyMessageProfanityResponse input)
         {
             var response = _sdk.RunRequest(input);
@@ -281,5 +332,6 @@ namespace AccelByte.Sdk.Api.Lobby.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

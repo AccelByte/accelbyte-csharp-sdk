@@ -48,6 +48,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Matchmaking.Wrapper.MatchmakingOperations)builder.WrapperObject!).HandlerV3HealthzAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Matchmaking.Model.LogAppMessageDeclaration>? Execute(
             this PublicGetMessages.PublicGetMessagesBuilder builder
         )

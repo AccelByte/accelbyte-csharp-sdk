@@ -19,12 +19,15 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public UpdatePlayTimeWeight.UpdatePlayTimeWeightBuilder UpdatePlayTimeWeightOp
         {
             get { return Operation.UpdatePlayTimeWeight.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsUpdatePlayerPlaytimeWeightResponse? UpdatePlayTimeWeight(UpdatePlayTimeWeight input)
         {
             var response = _sdk.RunRequest(input);
@@ -41,5 +44,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

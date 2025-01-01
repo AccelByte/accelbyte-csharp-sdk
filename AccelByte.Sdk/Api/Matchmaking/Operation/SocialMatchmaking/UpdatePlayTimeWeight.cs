@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// This endpoint is intended to be called by admin for debugging purpose on social matchmaking rule.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdatePlayTimeWeight : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

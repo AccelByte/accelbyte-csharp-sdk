@@ -64,6 +64,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Notification)builder.WrapperObject!).SendUsersFreeformNotificationV1AdminAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SendPartyFreeformNotificationV1Admin.SendPartyFreeformNotificationV1AdminBuilder builder,
             ModelFreeFormNotificationRequestV1 body,
@@ -94,6 +95,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Lobby.Wrapper.Notification)builder.WrapperObject!).SendPartyFreeformNotificationV1AdminAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this SendPartyTemplatedNotificationV1Admin.SendPartyTemplatedNotificationV1AdminBuilder builder,
             ModelNotificationWithTemplateRequestV1 body,

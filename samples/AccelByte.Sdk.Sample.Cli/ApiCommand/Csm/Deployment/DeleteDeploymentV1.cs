@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","deletedeploymentv1")]
-    public class DeleteDeploymentV1Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "deletedeploymentv1")]
+    public class DeleteDeploymentV1Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "DeleteDeploymentV1"; } }
+        public string OperationName { get { return "DeleteDeploymentV1"; } }
 
         [SdkCommandArgument("deploymentId")]
         public string DeploymentId { get; set; } = String.Empty;
@@ -43,7 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         {
             AccelByte.Sdk.Api.Csm.Wrapper.Deployment wrapper = new AccelByte.Sdk.Api.Csm.Wrapper.Deployment(_SDK);
 
-            #pragma warning disable ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Csm.Operation.DeleteDeploymentV1.Builder;
 
 
@@ -55,12 +55,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            #pragma warning restore ab_deprecated_operation
-            
-            #pragma warning disable ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation
+
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.DeleteDeploymentV1(operation);
             return String.Empty;
-            #pragma warning restore ab_deprecated_operation_wrapper
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

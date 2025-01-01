@@ -1585,5 +1585,27 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicInviteUserV4Async(op);
         }
+        public static string Execute(
+            this PublicUpgradeHeadlessWithCodeV4Forward.PublicUpgradeHeadlessWithCodeV4ForwardBuilder builder,
+            AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body
+        )
+        {
+            PublicUpgradeHeadlessWithCodeV4Forward op = builder.Build(
+                body
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicUpgradeHeadlessWithCodeV4Forward(op);
+        }
+        public static async Task<string> ExecuteAsync(
+            this PublicUpgradeHeadlessWithCodeV4Forward.PublicUpgradeHeadlessWithCodeV4ForwardBuilder builder,
+            AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body
+        )
+        {
+            PublicUpgradeHeadlessWithCodeV4Forward op = builder.Build(
+                body
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicUpgradeHeadlessWithCodeV4ForwardAsync(op);
+        }
     }
 }

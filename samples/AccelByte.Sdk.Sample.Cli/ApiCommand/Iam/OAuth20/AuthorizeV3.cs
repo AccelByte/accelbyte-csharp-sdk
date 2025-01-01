@@ -28,6 +28,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string OperationName { get { return "AuthorizeV3"; } }
 
+        [SdkCommandArgument("blockedPlatformId")]
+        public string? BlockedPlatformId { get; set; }
+
         [SdkCommandArgument("codeChallenge")]
         public string? CodeChallenge { get; set; }
 
@@ -36,6 +39,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         [SdkCommandArgument("createHeadless")]
         public bool? CreateHeadless { get; set; }
+
+        [SdkCommandArgument("loginWebBased")]
+        public bool? LoginWebBased { get; set; }
+
+        [SdkCommandArgument("nonce")]
+        public string? Nonce { get; set; }
 
         [SdkCommandArgument("oneTimeLinkCode")]
         public string? OneTimeLinkCode { get; set; }
@@ -72,12 +81,18 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AuthorizeV3.Builder;
 
+            if (BlockedPlatformId != null)
+                opBuilder.SetBlockedPlatformId((string)BlockedPlatformId);
             if (CodeChallenge != null)
                 opBuilder.SetCodeChallenge((string)CodeChallenge);
             if (CodeChallengeMethod != null)
                 opBuilder.SetCodeChallengeMethod(AuthorizeV3CodeChallengeMethod.NewValue(CodeChallengeMethod));
             if (CreateHeadless != null)
                 opBuilder.SetCreateHeadless((bool)CreateHeadless);
+            if (LoginWebBased != null)
+                opBuilder.SetLoginWebBased((bool)LoginWebBased);
+            if (Nonce != null)
+                opBuilder.SetNonce((string)Nonce);
             if (OneTimeLinkCode != null)
                 opBuilder.SetOneTimeLinkCode((string)OneTimeLinkCode);
             if (RedirectUri != null)

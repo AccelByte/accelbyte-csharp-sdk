@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class CsmConfiguration_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetListOfConfigurationsV1Response? Execute(
             this GetListOfSecretsV1.GetListOfSecretsV1Builder builder,
             string app,
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).GetListOfSecretsV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedSaveConfigurationV1Response? Execute(
             this SaveSecretV1.SaveSecretV1Builder builder,
             GeneratedSaveConfigurationV1Request body,
@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).SaveSecretV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedUpdateConfigurationV1Response? Execute(
             this UpdateSecretV1.UpdateSecretV1Builder builder,
             GeneratedUpdateConfigurationV1Request body,
@@ -105,7 +105,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).UpdateSecretV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteSecretV1.DeleteSecretV1Builder builder,
             string app,
@@ -136,7 +136,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Csm.Wrapper.Configuration)builder.WrapperObject!).DeleteSecretV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetListOfConfigurationsV1Response? Execute(
             this GetListOfVariablesV1.GetListOfVariablesV1Builder builder,
             string app,
@@ -163,7 +163,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).GetListOfVariablesV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedSaveConfigurationV1Response? Execute(
             this SaveVariableV1.SaveVariableV1Builder builder,
             GeneratedSaveConfigurationV1Request body,
@@ -194,7 +194,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).SaveVariableV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedUpdateConfigurationV1Response? Execute(
             this UpdateVariableV1.UpdateVariableV1Builder builder,
             GeneratedUpdateConfigurationV1Request body,
@@ -229,7 +229,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.Configuration)builder.WrapperObject!).UpdateVariableV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteVariableV1.DeleteVariableV1Builder builder,
             string app,

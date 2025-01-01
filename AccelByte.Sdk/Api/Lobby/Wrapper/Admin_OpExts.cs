@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyAdmin_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelGlobalConfiguration? Execute(
             this AdminGetGlobalConfig.AdminGetGlobalConfigBuilder builder
         )
@@ -30,6 +31,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminGetGlobalConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelGlobalConfiguration? Execute(
             this AdminUpdateGlobalConfig.AdminUpdateGlobalConfigBuilder builder,
             ModelPutGlobalConfigurationRequest body
@@ -52,6 +54,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Admin)builder.WrapperObject!).AdminUpdateGlobalConfigAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static string? Execute(
             this AdminDeleteGlobalConfig.AdminDeleteGlobalConfigBuilder builder
         )

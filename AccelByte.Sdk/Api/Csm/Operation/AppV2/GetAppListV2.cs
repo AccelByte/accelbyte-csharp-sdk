@@ -62,8 +62,8 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 GetAppListV2 op = new GetAppListV2(this,
-                    body,                    
-                    namespace_                    
+                    body,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -80,37 +80,37 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            
 
-            
-            
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public GetAppListV2(
-            string namespace_,            
-            long? limit,            
-            long? offset,            
-            Model.ApimodelGetAppListV2Request body            
+            string namespace_,
+            long? limit,
+            long? offset,
+            Model.ApimodelGetAppListV2Request body
         )
         {
             PathParams["namespace"] = namespace_;
-            
+
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            
 
-            
-            
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -125,9 +125,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.ApimodelGetAppListV2Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -143,9 +143,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.ApimodelGetAppListV2Response>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

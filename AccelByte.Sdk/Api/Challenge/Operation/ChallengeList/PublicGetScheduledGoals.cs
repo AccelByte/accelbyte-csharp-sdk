@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// publicGetScheduledGoals
     ///
-    /// 
-    ///     * Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
+    /// - Required permission: NAMESPACE:{namespace}:CHALLENGE [READ]
     /// </summary>
     public class PublicGetScheduledGoals : AccelByte.Sdk.Core.Operation
     {

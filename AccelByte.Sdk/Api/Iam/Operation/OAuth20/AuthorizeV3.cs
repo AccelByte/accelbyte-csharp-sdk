@@ -54,11 +54,17 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<AuthorizeV3Builder>
         {
 
+            public string? BlockedPlatformId { get; set; }
+
             public string? CodeChallenge { get; set; }
 
             public AuthorizeV3CodeChallengeMethod? CodeChallengeMethod { get; set; }
 
             public bool? CreateHeadless { get; set; }
+
+            public bool? LoginWebBased { get; set; }
+
+            public string? Nonce { get; set; }
 
             public string? OneTimeLinkCode { get; set; }
 
@@ -79,6 +85,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             internal AuthorizeV3Builder() { }
 
 
+            public AuthorizeV3Builder SetBlockedPlatformId(string _blockedPlatformId)
+            {
+                BlockedPlatformId = _blockedPlatformId;
+                return this;
+            }
+
             public AuthorizeV3Builder SetCodeChallenge(string _codeChallenge)
             {
                 CodeChallenge = _codeChallenge;
@@ -94,6 +106,18 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public AuthorizeV3Builder SetCreateHeadless(bool _createHeadless)
             {
                 CreateHeadless = _createHeadless;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetLoginWebBased(bool _loginWebBased)
+            {
+                LoginWebBased = _loginWebBased;
+                return this;
+            }
+
+            public AuthorizeV3Builder SetNonce(string _nonce)
+            {
+                Nonce = _nonce;
                 return this;
             }
 
@@ -161,9 +185,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
 
+            if (builder.BlockedPlatformId is not null) QueryParams["blockedPlatformId"] = builder.BlockedPlatformId;
             if (builder.CodeChallenge is not null) QueryParams["code_challenge"] = builder.CodeChallenge;
             if (builder.CodeChallengeMethod is not null) QueryParams["code_challenge_method"] = builder.CodeChallengeMethod.Value;
             if (builder.CreateHeadless != null) QueryParams["createHeadless"] = Convert.ToString(builder.CreateHeadless)!;
+            if (builder.LoginWebBased != null) QueryParams["loginWebBased"] = Convert.ToString(builder.LoginWebBased)!;
+            if (builder.Nonce is not null) QueryParams["nonce"] = builder.Nonce;
             if (builder.OneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = builder.OneTimeLinkCode;
             if (builder.RedirectUri is not null) QueryParams["redirect_uri"] = builder.RedirectUri;
             if (builder.Scope is not null) QueryParams["scope"] = builder.Scope;
@@ -184,9 +211,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         #endregion
 
         public AuthorizeV3(
+            string? blockedPlatformId,
             string? codeChallenge,
             AuthorizeV3CodeChallengeMethod? codeChallengeMethod,
             bool? createHeadless,
+            bool? loginWebBased,
+            string? nonce,
             string? oneTimeLinkCode,
             string? redirectUri,
             string? scope,
@@ -198,9 +228,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         )
         {
 
+            if (blockedPlatformId is not null) QueryParams["blockedPlatformId"] = blockedPlatformId;
             if (codeChallenge is not null) QueryParams["code_challenge"] = codeChallenge;
             if (codeChallengeMethod is not null) QueryParams["code_challenge_method"] = codeChallengeMethod.Value;
             if (createHeadless != null) QueryParams["createHeadless"] = Convert.ToString(createHeadless)!;
+            if (loginWebBased != null) QueryParams["loginWebBased"] = Convert.ToString(loginWebBased)!;
+            if (nonce is not null) QueryParams["nonce"] = nonce;
             if (oneTimeLinkCode is not null) QueryParams["oneTimeLinkCode"] = oneTimeLinkCode;
             if (redirectUri is not null) QueryParams["redirect_uri"] = redirectUri;
             if (scope is not null) QueryParams["scope"] = scope;

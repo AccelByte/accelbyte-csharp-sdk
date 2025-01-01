@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","getresourceslimits")]
-    public class GetResourcesLimitsCommand: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "getresourceslimits")]
+    public class GetResourcesLimitsCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "GetResourcesLimits"; } }
+        public string OperationName { get { return "GetResourcesLimits"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelCSMAppLimitsResponse? response = wrapper.GetResourcesLimits(operation);
             if (response == null)
                 return "No response from server.";

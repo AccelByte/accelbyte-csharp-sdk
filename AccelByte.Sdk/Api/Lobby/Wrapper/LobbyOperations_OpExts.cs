@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LobbyLobbyOperations_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Lobby.Model.ModelsPartyData? Execute(
             this AdminUpdatePartyAttributesV1.AdminUpdatePartyAttributesV1Builder builder,
             ModelsPartyPUTCustomAttributesRequest body,
@@ -73,6 +74,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.LobbyOperations)builder.WrapperObject!).AdminUpdatePartyAttributesV1Async<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminJoinPartyV1.AdminJoinPartyV1Builder builder,
             string namespace_,

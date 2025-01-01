@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Get all active session for custom game, this return only dedicated session type
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetActiveCustomGameSessions : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

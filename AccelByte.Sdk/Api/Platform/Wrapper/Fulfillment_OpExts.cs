@@ -236,6 +236,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillRewardsV2Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.FulfillmentV2Result? Execute(
             this FulfillItems.FulfillItemsBuilder builder,
             FulfillmentV2Request body,
@@ -270,6 +271,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.FulfillmentV2Result? Execute(
             this RetryFulfillItems.RetryFulfillItemsBuilder builder,
             string namespace_,
@@ -300,6 +302,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RetryFulfillItemsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.RevokeFulfillmentV2Result? Execute(
             this RevokeItems.RevokeItemsBuilder builder,
             string namespace_,
@@ -329,6 +332,100 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItemsAsync(op);
+        }
+        public static Platform.Model.FulfillmentV2Result? Execute(
+            this FulfillItemsV3.FulfillItemsV3Builder builder,
+            FulfillmentV2Request body,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            FulfillItemsV3 op = builder.Build(
+                body,
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemsV3(op);
+        }
+        public static async Task<Platform.Model.FulfillmentV2Result?> ExecuteAsync(
+            this FulfillItemsV3.FulfillItemsV3Builder builder,
+            FulfillmentV2Request body,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            FulfillItemsV3 op = builder.Build(
+                body,
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).FulfillItemsV3Async(op);
+        }
+        public static Platform.Model.FulfillmentV2Result? Execute(
+            this RetryFulfillItemsV3.RetryFulfillItemsV3Builder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RetryFulfillItemsV3 op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RetryFulfillItemsV3(op);
+        }
+        public static async Task<Platform.Model.FulfillmentV2Result?> ExecuteAsync(
+            this RetryFulfillItemsV3.RetryFulfillItemsV3Builder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RetryFulfillItemsV3 op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RetryFulfillItemsV3Async(op);
+        }
+        public static Platform.Model.RevokeFulfillmentV2Result? Execute(
+            this RevokeItemsV3.RevokeItemsV3Builder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RevokeItemsV3 op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItemsV3(op);
+        }
+        public static async Task<Platform.Model.RevokeFulfillmentV2Result?> ExecuteAsync(
+            this RevokeItemsV3.RevokeItemsV3Builder builder,
+            string namespace_,
+            string transactionId,
+            string userId
+        )
+        {
+            RevokeItemsV3 op = builder.Build(
+                namespace_,
+                transactionId,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItemsV3Async(op);
         }
     }
 }

@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// publicGetUserRewards
     ///
-    /// 
-    ///     * Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
+    /// - Required permission: NAMESPACE:{namespace}:CHALLENGE:REWARD [READ]
     /// </summary>
     public class PublicGetUserRewards : AccelByte.Sdk.Core.Operation
     {
@@ -28,11 +27,15 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             : OperationBuilder<PublicGetUserRewardsBuilder>
         {
 
+            public string? ChallengeCode { get; set; }
+
+            public string? GoalProgressionId { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
 
-            public string? SortBy { get; set; }
+            public PublicGetUserRewardsSortBy? SortBy { get; set; }
 
             public PublicGetUserRewardsStatus? Status { get; set; }
 
@@ -42,6 +45,18 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             internal PublicGetUserRewardsBuilder() { }
 
+
+            public PublicGetUserRewardsBuilder SetChallengeCode(string _challengeCode)
+            {
+                ChallengeCode = _challengeCode;
+                return this;
+            }
+
+            public PublicGetUserRewardsBuilder SetGoalProgressionId(string _goalProgressionId)
+            {
+                GoalProgressionId = _goalProgressionId;
+                return this;
+            }
 
             public PublicGetUserRewardsBuilder SetLimit(long _limit)
             {
@@ -55,7 +70,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
                 return this;
             }
 
-            public PublicGetUserRewardsBuilder SetSortBy(string _sortBy)
+            public PublicGetUserRewardsBuilder SetSortBy(PublicGetUserRewardsSortBy _sortBy)
             {
                 SortBy = _sortBy;
                 return this;
@@ -93,9 +108,11 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.ChallengeCode is not null) QueryParams["challengeCode"] = builder.ChallengeCode;
+            if (builder.GoalProgressionId is not null) QueryParams["goalProgressionId"] = builder.GoalProgressionId;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
 
 
@@ -109,17 +126,21 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
         public PublicGetUserRewards(
             string namespace_,
+            string? challengeCode,
+            string? goalProgressionId,
             long? limit,
             long? offset,
-            string? sortBy,
+            PublicGetUserRewardsSortBy? sortBy,
             PublicGetUserRewardsStatus? status
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (challengeCode is not null) QueryParams["challengeCode"] = challengeCode;
+            if (goalProgressionId is not null) QueryParams["goalProgressionId"] = goalProgressionId;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (status is not null) QueryParams["status"] = status.Value;
 
 
@@ -162,6 +183,39 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class PublicGetUserRewardsSortBy : StringEnum<PublicGetUserRewardsSortBy>
+    {
+        public static readonly PublicGetUserRewardsSortBy CreatedAt
+            = new PublicGetUserRewardsSortBy("createdAt");
+
+        public static readonly PublicGetUserRewardsSortBy CreatedAtasc
+            = new PublicGetUserRewardsSortBy("createdAt:asc");
+
+        public static readonly PublicGetUserRewardsSortBy CreatedAtdesc
+            = new PublicGetUserRewardsSortBy("createdAt:desc");
+
+        public static readonly PublicGetUserRewardsSortBy UpdatedAt
+            = new PublicGetUserRewardsSortBy("updatedAt");
+
+        public static readonly PublicGetUserRewardsSortBy UpdatedAtasc
+            = new PublicGetUserRewardsSortBy("updatedAt:asc");
+
+        public static readonly PublicGetUserRewardsSortBy UpdatedAtdesc
+            = new PublicGetUserRewardsSortBy("updatedAt:desc");
+
+
+        public static implicit operator PublicGetUserRewardsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicGetUserRewardsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

@@ -19,36 +19,45 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public CleanAllMocks.CleanAllMocksBuilder CleanAllMocksOp
         {
             get { return Operation.CleanAllMocks.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetAllMockMatches.GetAllMockMatchesBuilder GetAllMockMatchesOp
         {
             get { return Operation.GetAllMockMatches.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetMockMatchesByTimestamp.GetMockMatchesByTimestampBuilder GetMockMatchesByTimestampOp
         {
             get { return Operation.GetMockMatchesByTimestamp.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetAllMockTickets.GetAllMockTicketsBuilder GetAllMockTicketsOp
         {
             get { return Operation.GetAllMockTickets.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public CreateMockTickets.CreateMockTicketsBuilder CreateMockTicketsOp
         {
             get { return Operation.CreateMockTickets.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public BulkCreateMockTickets.BulkCreateMockTicketsBuilder BulkCreateMockTicketsOp
         {
             get { return Operation.BulkCreateMockTickets.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetMockTicketsByTimestamp.GetMockTicketsByTimestampBuilder GetMockTicketsByTimestampOp
         {
             get { return Operation.GetMockTicketsByTimestamp.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void CleanAllMocks(CleanAllMocks input)
         {
             var response = _sdk.RunRequest(input);
@@ -65,6 +74,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetMockMatchesResponse? GetAllMockMatches(GetAllMockMatches input)
         {
             var response = _sdk.RunRequest(input);
@@ -81,6 +93,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetMockMatchesResponse? GetMockMatchesByTimestamp(GetMockMatchesByTimestamp input)
         {
             var response = _sdk.RunRequest(input);
@@ -97,6 +112,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetMockTicketsResponse? GetAllMockTickets(GetAllMockTickets input)
         {
             var response = _sdk.RunRequest(input);
@@ -113,6 +131,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.ModelsMockTicket>? CreateMockTickets(CreateMockTickets input)
         {
             var response = _sdk.RunRequest(input);
@@ -147,6 +168,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void BulkCreateMockTickets(BulkCreateMockTickets input)
         {
             var response = _sdk.RunRequest(input);
@@ -163,6 +187,9 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsGetMockTicketsResponse? GetMockTicketsByTimestamp(GetMockTicketsByTimestamp input)
         {
             var response = _sdk.RunRequest(input);
@@ -179,5 +206,6 @@ namespace AccelByte.Sdk.Api.Matchmaking.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

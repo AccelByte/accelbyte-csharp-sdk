@@ -61,6 +61,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Description { get; set; }
 
+        [JsonPropertyName("gameName")]
+        public string? GameName { get; set; }
+
         [JsonPropertyName("memory")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApimodelMemoryResponse? Memory { get; set; }

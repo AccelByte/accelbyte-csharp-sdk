@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionbrowserSession_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionQueryResponse? Execute(
             this AdminQuerySession.AdminQuerySessionBuilder builder,
             string namespace_,
@@ -38,6 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminQuerySessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsCountActiveSessionResponse? Execute(
             this GetTotalActiveSession.GetTotalActiveSessionBuilder builder,
             string namespace_
@@ -60,6 +62,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetTotalActiveSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsActiveCustomGameResponse? Execute(
             this GetActiveCustomGameSessions.GetActiveCustomGameSessionsBuilder builder,
             string namespace_
@@ -82,6 +85,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetActiveCustomGameSessionsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsActiveMatchmakingGameResponse? Execute(
             this GetActiveMatchmakingGameSessions.GetActiveMatchmakingGameSessionsBuilder builder,
             string namespace_
@@ -104,6 +108,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetActiveMatchmakingGameSessionsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsAdminSessionResponse? Execute(
             this AdminGetSession.AdminGetSessionBuilder builder,
             string namespace_,
@@ -130,6 +135,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminGetSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsAdminSessionResponse? Execute(
             this AdminDeleteSession.AdminDeleteSessionBuilder builder,
             string namespace_,
@@ -156,6 +162,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminDeleteSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsGetSessionHistorySearchResponseV2? Execute(
             this AdminSearchSessionsV2.AdminSearchSessionsV2Builder builder,
             string namespace_,
@@ -186,6 +193,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AdminSearchSessionsV2Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Sessionbrowser.Model.ModelsGetSessionHistoryDetailedResponseItem>? Execute(
             this GetSessionHistoryDetailed.GetSessionHistoryDetailedBuilder builder,
             string matchID,
@@ -212,6 +220,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetSessionHistoryDetailedAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionQueryResponse? Execute(
             this UserQuerySession.UserQuerySessionBuilder builder,
             string namespace_,
@@ -238,6 +247,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).UserQuerySessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this CreateSession.CreateSessionBuilder builder,
             ModelsCreateSessionRequest body,
@@ -264,6 +274,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).CreateSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionByUserIDsResponse? Execute(
             this GetSessionByUserIDs.GetSessionByUserIDsBuilder builder,
             string namespace_,
@@ -290,6 +301,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetSessionByUserIDsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this GetSession.GetSessionBuilder builder,
             string namespace_,
@@ -316,6 +328,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).GetSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this UpdateSession.UpdateSessionBuilder builder,
             ModelsUpdateSessionRequest body,
@@ -346,6 +359,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).UpdateSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this DeleteSession.DeleteSessionBuilder builder,
             string namespace_,
@@ -372,6 +386,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).DeleteSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this JoinSession.JoinSessionBuilder builder,
             ModelsJoinGameSessionRequest body,
@@ -402,6 +417,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).JoinSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this DeleteSessionLocalDS.DeleteSessionLocalDSBuilder builder,
             string namespace_,
@@ -428,6 +444,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).DeleteSessionLocalDSAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsAddPlayerResponse? Execute(
             this AddPlayerToSession.AddPlayerToSessionBuilder builder,
             ModelsAddPlayerRequest body,
@@ -458,6 +475,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).AddPlayerToSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsAddPlayerResponse? Execute(
             this RemovePlayerFromSession.RemovePlayerFromSessionBuilder builder,
             string namespace_,
@@ -488,6 +506,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).RemovePlayerFromSessionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsSessionResponse? Execute(
             this UpdateSettings.UpdateSettingsBuilder builder,
             ModelsUpdateSettingsRequest body,
@@ -518,6 +537,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionbrowser.Wrapper.Session)builder.WrapperObject!).UpdateSettingsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Sessionbrowser.Model.ModelsRecentPlayerQueryResponse? Execute(
             this GetRecentPlayer.GetRecentPlayerBuilder builder,
             string namespace_,

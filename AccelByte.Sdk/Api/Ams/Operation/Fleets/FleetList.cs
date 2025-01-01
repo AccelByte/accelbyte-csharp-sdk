@@ -29,9 +29,17 @@ namespace AccelByte.Sdk.Api.Ams.Operation
 
             public bool? Active { get; set; }
 
+            public long? Count { get; set; }
+
+            public FleetListDesc? Desc { get; set; }
+
             public string? Name { get; set; }
 
+            public long? Offset { get; set; }
+
             public string? Region { get; set; }
+
+            public FleetListSortBy? SortBy { get; set; }
 
 
 
@@ -46,15 +54,39 @@ namespace AccelByte.Sdk.Api.Ams.Operation
                 return this;
             }
 
+            public FleetListBuilder SetCount(long _count)
+            {
+                Count = _count;
+                return this;
+            }
+
+            public FleetListBuilder SetDesc(FleetListDesc _desc)
+            {
+                Desc = _desc;
+                return this;
+            }
+
             public FleetListBuilder SetName(string _name)
             {
                 Name = _name;
                 return this;
             }
 
+            public FleetListBuilder SetOffset(long _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
+
             public FleetListBuilder SetRegion(string _region)
             {
                 Region = _region;
+                return this;
+            }
+
+            public FleetListBuilder SetSortBy(FleetListSortBy _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -85,8 +117,12 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             PathParams["namespace"] = namespace_;
 
             if (builder.Active != null) QueryParams["active"] = Convert.ToString(builder.Active)!;
+            if (builder.Count != null) QueryParams["count"] = Convert.ToString(builder.Count)!;
+            if (builder.Desc is not null) QueryParams["desc"] = builder.Desc.Value;
             if (builder.Name is not null) QueryParams["name"] = builder.Name;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Region is not null) QueryParams["region"] = builder.Region;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
 
 
 
@@ -100,15 +136,23 @@ namespace AccelByte.Sdk.Api.Ams.Operation
         public FleetList(
             string namespace_,
             bool? active,
+            long? count,
+            FleetListDesc? desc,
             string? name,
-            string? region
+            long? offset,
+            string? region,
+            FleetListSortBy? sortBy
         )
         {
             PathParams["namespace"] = namespace_;
 
             if (active != null) QueryParams["active"] = Convert.ToString(active)!;
+            if (count != null) QueryParams["count"] = Convert.ToString(count)!;
+            if (desc is not null) QueryParams["desc"] = desc.Value;
             if (name is not null) QueryParams["name"] = name;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (region is not null) QueryParams["region"] = region;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
 
 
 
@@ -150,6 +194,48 @@ namespace AccelByte.Sdk.Api.Ams.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class FleetListDesc : StringEnum<FleetListDesc>
+    {
+        public static readonly FleetListDesc Asc
+            = new FleetListDesc("asc");
+
+        public static readonly FleetListDesc Desc
+            = new FleetListDesc("desc");
+
+
+        public static implicit operator FleetListDesc(string value)
+        {
+            return NewValue(value);
+        }
+
+        public FleetListDesc(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class FleetListSortBy : StringEnum<FleetListSortBy>
+    {
+        public static readonly FleetListSortBy Active
+            = new FleetListSortBy("active");
+
+        public static readonly FleetListSortBy Name
+            = new FleetListSortBy("name");
+
+
+        public static implicit operator FleetListSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public FleetListSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

@@ -19,6 +19,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// Read all mock matches in a channel resulted from matching mock tickets.
     /// '
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAllMockMatches : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

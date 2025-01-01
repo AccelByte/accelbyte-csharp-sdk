@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class CsmApp_OpExts
     {
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetAppListV1Response? Execute(
             this GetAppListV1.GetAppListV1Builder builder,
             GeneratedGetAppListV1Request body,
@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.App)builder.WrapperObject!).GetAppListV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedGetAppV1Response? Execute(
             this GetAppV1.GetAppV1Builder builder,
             string app,
@@ -66,7 +66,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.App)builder.WrapperObject!).GetAppV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedCreateAppV1Response? Execute(
             this CreateAppV1.CreateAppV1Builder builder,
             GeneratedCreateAppV1Request body,
@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.App)builder.WrapperObject!).CreateAppV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this DeleteAppV1.DeleteAppV1Builder builder,
             string app,
@@ -124,7 +124,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Csm.Wrapper.App)builder.WrapperObject!).DeleteAppV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedUpdateAppV1Response? Execute(
             this UpdateAppV1.UpdateAppV1Builder builder,
             GeneratedUpdateAppV1Request body,
@@ -181,7 +181,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.App)builder.WrapperObject!).GetAppReleaseV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedStartAppV1Response? Execute(
             this StartAppV1.StartAppV1Builder builder,
             GeneratedStartAppV1Request body,
@@ -212,7 +212,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.App)builder.WrapperObject!).StartAppV1Async(op);
         }
-        [Obsolete(DiagnosticId ="ab_deprecated_operation_wrapper")]
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Csm.Model.GeneratedStopAppV1Response? Execute(
             this StopAppV1.StopAppV1Builder builder,
             GeneratedStopAppV1Request body,

@@ -17,6 +17,12 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// AdminDeletePlatformAccountClosureClient
     ///
     /// Delete platform account closure client.
+    /// The namespace should be **publisher or studio namespace**
+    /// -------
+    /// Platform:
+    /// - steamnetwork
+    /// - xbox
+    /// - psn
     /// </summary>
     public class AdminDeletePlatformAccountClosureClient : AccelByte.Sdk.Core.Operation
     {

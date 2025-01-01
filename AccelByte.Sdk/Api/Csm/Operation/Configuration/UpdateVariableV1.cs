@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// - description : description of the configuration - Optional.
     /// - applyMask : mask the value in the Helm manifest for sensitive information (true or false) - Optional.
     /// </summary>
-    [Obsolete(DiagnosticId ="ab_deprecated_operation")]
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class UpdateVariableV1 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
@@ -53,10 +53,10 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             )
             {
                 UpdateVariableV1 op = new UpdateVariableV1(this,
-                    body,                    
-                    app,                    
-                    configId,                    
-                    namespace_                    
+                    body,
+                    app,
+                    configId,
+                    namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
                 op.RequestJsonOptions = RequestJsonOptions;
@@ -77,35 +77,35 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             PathParams["app"] = app;
             PathParams["configId"] = configId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
         public UpdateVariableV1(
-            string app,            
-            string configId,            
-            string namespace_,            
-            Model.GeneratedUpdateConfigurationV1Request body            
+            string app,
+            string configId,
+            string namespace_,
+            Model.GeneratedUpdateConfigurationV1Request body
         )
         {
             PathParams["app"] = app;
             PathParams["configId"] = configId;
             PathParams["namespace"] = namespace_;
-            
-            
 
-            
-            
+
+
+
+
             BodyParams = body;
-            
+
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
@@ -120,9 +120,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
-        
+
         public Model.GeneratedUpdateConfigurationV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
-        {            
+        {
             if (code == (HttpStatusCode)204)
             {
                 return null;
@@ -138,9 +138,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             {
                 return JsonSerializer.Deserialize<Model.GeneratedUpdateConfigurationV1Response>(payload, ResponseJsonOptions);
             }
-            
+
             var payloadString = Helper.ConvertInputStreamToString(payload);
-            
+
             throw new HttpResponseException(code, payloadString);
         }
     }

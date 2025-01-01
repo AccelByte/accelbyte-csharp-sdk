@@ -55,11 +55,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.ModelLoginAllowlistResponse? response = wrapper.AdminUpdateLoginAllowlistV3(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.AdminUpdateLoginAllowlistV3(operation);
+            return String.Empty;
         }
     }
 }

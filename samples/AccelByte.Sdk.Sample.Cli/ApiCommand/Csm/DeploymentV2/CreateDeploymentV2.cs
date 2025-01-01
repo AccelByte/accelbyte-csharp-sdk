@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Csm.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 {
-    [SdkConsoleCommand("csm","createdeploymentv2")]
-    public class CreateDeploymentV2Command: ISdkConsoleCommand
+    [SdkConsoleCommand("csm", "createdeploymentv2")]
+    public class CreateDeploymentV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
-        public string ServiceName{ get { return "Csm"; } }
+        public string ServiceName { get { return "Csm"; } }
 
-        public string OperationName{ get { return "CreateDeploymentV2"; } }
+        public string OperationName { get { return "CreateDeploymentV2"; } }
 
         [SdkCommandArgument("app")]
         public string App { get; set; } = String.Empty;
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
 
         [SdkCommandData("body")]
         public ApimodelCreateDeploymentV2Request Body { get; set; } = new ApimodelCreateDeploymentV2Request();
-                
+
         public CreateDeploymentV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
                 Namespace
             );
 
-            
+
             AccelByte.Sdk.Api.Csm.Model.ApimodelCreateDeploymentV2Response? response = wrapper.CreateDeploymentV2(operation);
             if (response == null)
                 return "No response from server.";

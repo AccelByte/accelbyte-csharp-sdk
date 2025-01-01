@@ -494,7 +494,8 @@ ModelUserCreateRequestV3 newUser = new ModelUserCreateRequestV3()
     Password = user_password,
     DisplayName = "CSharp Server SDK Test",
     Country = "ID",
-    DateOfBirth = "1995-01-10"
+    DateOfBirth = "1995-01-10",
+    UniqueDisplayName = user_name
 };
 
 ModelUserCreateResponseV3? cuResp = _Sdk.Iam.Users.PublicCreateUserV3Op
@@ -512,7 +513,8 @@ AccountCreateUserRequestV4 newUser = new AccountCreateUserRequestV4()
     DisplayName = "CSharp Server SDK Test",
     Username = user_name,
     Country = "ID",
-    DateOfBirth = "1995-01-10"
+    DateOfBirth = "1995-01-10",
+    UniqueDisplayName = user_name
 };
 
 AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateUserV4Op

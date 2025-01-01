@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// <summary>
     /// adminGetActiveChallenges
     ///
-    /// 
-    /// 
-    ///   * Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
+    /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [READ]
+    /// The endpoint provides you an access to list of currently active challenges in which the player is participating
     /// </summary>
     public class AdminGetActiveChallenges : AccelByte.Sdk.Core.Operation
     {

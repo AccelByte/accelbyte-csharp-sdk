@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// The tickets input will be used as is.
     /// '
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class BulkCreateMockTickets : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Sessionbrowser.Operation
     ///
     /// Remove player from game session
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RemovePlayerFromSession : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

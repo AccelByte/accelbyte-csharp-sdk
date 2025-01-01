@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Matchmaking.Operation
     /// 
     /// Will return final attribute value
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class StoreMatchResults : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
