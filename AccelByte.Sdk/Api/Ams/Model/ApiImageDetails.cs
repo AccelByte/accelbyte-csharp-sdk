@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("deleteAt")]
-        public ApiTime? DeleteAt { get; set; }
+        public string? DeleteAt { get; set; }
 
         [JsonPropertyName("executable")]
         public string? Executable { get; set; }

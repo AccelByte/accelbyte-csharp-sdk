@@ -4141,7 +4141,7 @@
           "$ref": "#/definitions/time.Time"
         },
         "deleteAt": {
-          "$ref": "#/definitions/api.Time"
+          "type": "string"
         },
         "executable": {
           "type": "string"
@@ -4220,7 +4220,7 @@
           "$ref": "#/definitions/time.Time"
         },
         "deleteAt": {
-          "$ref": "#/definitions/api.Time"
+          "type": "string"
         },
         "executable": {
           "type": "string"
