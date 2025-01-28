@@ -4,8 +4,8 @@
 This tutorial will explain on how to use AccelByte .NET (C#) Extend SDK to create simple Tic Tac Toe backend service and game client. This tutorial also will explain on how to configure and run the provided local server sample as well as AWS Lambda sample.
 
 ## Prerequisites
-- [Create a Game Namespace](https://docs.accelbyte.io/gaming-services/services/access/namespaces/manage-your-namespaces/#create-a-game-namespace) if you don't have one yet. Be sure to keep the namespace's **ID** as you will need it later.
-- [Create and OAuth Client](https://docs.accelbyte.io/gaming-services/services/access/authorization/manage-access-control-for-applications/#create-an-iam-client) with a **confidential** client type. Keep the **Client ID** and the **Client Secret** somewhere safe as you will be using them in this tutorial. Make sure you add these permissions for the oauth client.
+- [Create a Game Namespace](https://docs.accelbyte.io/gaming-services/services/access/reference/namespaces/manage-your-namespaces/) if you don't have one yet. Be sure to keep the namespace's **ID** as you will need it later.
+- [Create and OAuth Client](https://docs.accelbyte.io/gaming-services/services/access/reference/authorization/manage-access-control-for-applications/#create-an-iam-client) with a **confidential** client type. Keep the **Client ID** and the **Client Secret** somewhere safe as you will be using them in this tutorial. Make sure you add these permissions for the oauth client.
 	- `NAMESPACE:<namespace>:USER:*:NOTIFICATION` CREATE, UPDATE
 	- `NAMESPACE:<namespace>:USER` READ
 - Download the latest [AccelByte .NET (C#) SDK](https://github.com/AccelByte/accelbyte-csharp-sdk)
