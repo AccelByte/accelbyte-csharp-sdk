@@ -19,6 +19,15 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// This endpoints will create new player record or replace the existing player record in bulk.
     /// Maximum bulk key limit per request 10.
     /// Maximum total size of the request payload is 5 MB.
+    /// 
+    /// 
+    /// ## Recommended Request Body Size
+    /// 
+    /// To ensure optimal performance and efficient resource utilization, it is recommended that the request body for this endpoint does not exceed 10 update request or 250 KB of whole request body.
+    /// 
+    /// ## Exceeding the recommended limit
+    /// 
+    /// While it's possible to handle larger request, exceeding this limit may lead to increased processing time, potential performance degradation, and potential timeout issues.
     /// </summary>
     public class AdminPutPlayerRecordsHandlerV1 : AccelByte.Sdk.Core.Operation
     {

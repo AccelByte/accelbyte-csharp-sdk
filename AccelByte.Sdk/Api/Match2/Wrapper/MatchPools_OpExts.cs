@@ -168,6 +168,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).MatchPoolMetricAsync(op);
         }
+        public static void Execute(
+            this PostMatchErrorMetric.PostMatchErrorMetricBuilder builder,
+            ApiExternalFailureMetricRecord body,
+            string namespace_,
+            string pool
+        )
+        {
+            PostMatchErrorMetric op = builder.Build(
+                body,
+                namespace_,
+                pool
+            );
+
+            ((Match2.Wrapper.MatchPools)builder.WrapperObject!).PostMatchErrorMetric(op);
+        }
+        public static async Task ExecuteAsync(
+            this PostMatchErrorMetric.PostMatchErrorMetricBuilder builder,
+            ApiExternalFailureMetricRecord body,
+            string namespace_,
+            string pool
+        )
+        {
+            PostMatchErrorMetric op = builder.Build(
+                body,
+                namespace_,
+                pool
+            );
+
+            await ((Match2.Wrapper.MatchPools)builder.WrapperObject!).PostMatchErrorMetricAsync(op);
+        }
         public static Match2.Model.ApiPlayerMetricRecord? Execute(
             this GetPlayerMetric.GetPlayerMetricBuilder builder,
             string namespace_,

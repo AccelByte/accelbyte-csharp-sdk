@@ -51,7 +51,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
             );
 
 
-            AccelByte.Sdk.Api.Ams.Model.ApiInstanceTypesForNamespaceResponse? response = wrapper.InfoSupportedInstances(operation);
+            AccelByte.Sdk.Api.Ams.Model.ApiInstanceTypesResponse? response = wrapper.InfoSupportedInstances(operation);
             if (response == null)
                 return "No response from server.";
 

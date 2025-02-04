@@ -3477,6 +3477,32 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminDeleteUserRoleV3Async(op);
         }
+        public static Iam.Model.ModelUserStateResponseV3? Execute(
+            this AdminGetUserStateByUserIdV3.AdminGetUserStateByUserIdV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserStateByUserIdV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserStateByUserIdV3(op);
+        }
+        public static async Task<Iam.Model.ModelUserStateResponseV3?> ExecuteAsync(
+            this AdminGetUserStateByUserIdV3.AdminGetUserStateByUserIdV3Builder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetUserStateByUserIdV3 op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserStateByUserIdV3Async(op);
+        }
         public static void Execute(
             this AdminUpdateUserStatusV3.AdminUpdateUserStatusV3Builder builder,
             ModelUpdateUserStatusRequest body,
@@ -3638,6 +3664,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListUserIDByPlatformUserIDsV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicGetUserByPlatformUserIDV3.PublicGetUserByPlatformUserIDV3Builder builder,
             string namespace_,
@@ -3799,6 +3826,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).CheckUserAvailabilityAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelListBulkUserResponse? Execute(
             this PublicBulkGetUsers.PublicBulkGetUsersBuilder builder,
             ModelUserIDsRequest body,

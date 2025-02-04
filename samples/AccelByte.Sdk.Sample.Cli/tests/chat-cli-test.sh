@@ -411,7 +411,7 @@ eval_tap $? 33 'AdminGetLogConfig' test.out
 
 #- 34 AdminPatchUpdateLogConfig
 # body param: body
-echo '{"logLevel": "info", "logLevelDB": "panic", "slowQueryThreshold": 98, "socketLogEnabled": true}' > $TEMP_JSON_INPUT
+echo '{"internalAccessLogEnabled": true, "logLevel": "panic", "logLevelDB": "warning", "slowQueryThreshold": 45, "socketLogEnabled": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn chat \
     --op AdminPatchUpdateLogConfig \
@@ -429,7 +429,7 @@ eval_tap $? 35 'AdminGetConfigV1' test.out
 
 #- 36 AdminUpdateConfigV1
 # body param: body
-echo '{"chatRateLimitBurst": 84, "chatRateLimitDuration": 63, "concurrentUsersLimit": 11, "enableClanChat": true, "enableManualTopicCreation": true, "enableProfanityFilter": true, "filterAppName": "AsmC0RuRA8j1AJ3h", "filterParam": "NWWhADRqJvaZrf2q", "filterType": "XQFCzRV1paELj5dw", "generalRateLimitBurst": 73, "generalRateLimitDuration": 77, "maxChatMessageLength": 88, "shardCapacityLimit": 74, "shardDefaultLimit": 37, "shardHardLimit": 13, "spamChatBurst": 6, "spamChatDuration": 85, "spamMuteDuration": 93}' > $TEMP_JSON_INPUT
+echo '{"chatRateLimitBurst": 11, "chatRateLimitDuration": 96, "concurrentUsersLimit": 39, "enableClanChat": true, "enableManualTopicCreation": true, "enablePmSendPlatformId": true, "enableProfanityFilter": false, "filterAppName": "smC0RuRA8j1AJ3hN", "filterParam": "WWhADRqJvaZrf2qX", "filterType": "QFCzRV1paELj5dw3", "generalRateLimitBurst": 77, "generalRateLimitDuration": 88, "maxChatMessageLength": 74, "shardCapacityLimit": 37, "shardDefaultLimit": 13, "shardHardLimit": 6, "spamChatBurst": 85, "spamChatDuration": 93, "spamMuteDuration": 62}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn chat \
     --op AdminUpdateConfigV1 \
@@ -467,7 +467,7 @@ eval_tap $? 39 'AdminGetInboxCategories' test.out
 
 #- 40 AdminAddInboxCategory
 # body param: body
-echo '{"enabled": true, "expiresIn": 14, "hook": {"driver": "zXaXUzpsAV6ct6XI", "params": {"TL0QEkadMSQluAoE": {}, "D9oYwS8oLyErKvRt": {}, "HFGJRoGW7VBG1VB2": {}}}, "jsonSchema": {"sp2x9mszGGoyhGZA": {}, "zt2OVBTLwSH8hWRU": {}, "9pbItGQ7VUWBhGol": {}}, "name": "wafIfbF1GLFnrQ4T", "saveInbox": false, "sendNotification": false}' > $TEMP_JSON_INPUT
+echo '{"enabled": false, "expiresIn": 53, "hook": {"driver": "PPG5sAIfYtYozA2O", "params": {"ntGCwQSHHdPLwjTn": {}, "grvb2E1X9ecBBhRA": {}, "YjR7c4x5bIk8pVpx": {}}}, "jsonSchema": {"dUWOPel3TiwTycqp": {}, "VdINXzvkSp0WbvxQ": {}, "WI0QGCOx7eICkauW": {}}, "name": "bFrSnU7d1Buhdwli", "saveInbox": false, "sendNotification": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn chat \
     --op AdminAddInboxCategory \

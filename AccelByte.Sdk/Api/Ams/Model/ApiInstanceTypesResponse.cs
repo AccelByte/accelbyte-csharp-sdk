@@ -7,10 +7,10 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Ams.Model
 {
-    public class ApiInstanceTypesForNamespaceResponse : AccelByte.Sdk.Core.Model
+    public class ApiInstanceTypesResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("availableInstanceTypes")]
-        public List<ApiInstanceTypeForNamespaceResponse>? AvailableInstanceTypes { get; set; }
+        public List<ApiInstanceType>? AvailableInstanceTypes { get; set; }
 
     }
 

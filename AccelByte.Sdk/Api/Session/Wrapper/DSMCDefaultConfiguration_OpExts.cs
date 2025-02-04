@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionDSMCDefaultConfiguration_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Session.Model.ModelsDefaultDSMCConfig? Execute(
             this AdminGetDSMCConfigurationDefault.AdminGetDSMCConfigurationDefaultBuilder builder
         )

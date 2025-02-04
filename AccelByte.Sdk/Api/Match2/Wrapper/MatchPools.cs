@@ -43,6 +43,10 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             get { return Operation.MatchPoolMetric.Builder.SetWrapperObject(this); }
         }
+        public PostMatchErrorMetric.PostMatchErrorMetricBuilder PostMatchErrorMetricOp
+        {
+            get { return Operation.PostMatchErrorMetric.Builder.SetWrapperObject(this); }
+        }
         public GetPlayerMetric.GetPlayerMetricBuilder GetPlayerMetricOp
         {
             get { return Operation.GetPlayerMetric.Builder.SetWrapperObject(this); }
@@ -149,6 +153,22 @@ namespace AccelByte.Sdk.Api.Match2.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PostMatchErrorMetric(PostMatchErrorMetric input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PostMatchErrorMetricAsync(PostMatchErrorMetric input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

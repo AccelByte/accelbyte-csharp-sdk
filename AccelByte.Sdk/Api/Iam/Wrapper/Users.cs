@@ -565,6 +565,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminDeleteUserRoleV3.Builder.SetWrapperObject(this); }
         }
+        public AdminGetUserStateByUserIdV3.AdminGetUserStateByUserIdV3Builder AdminGetUserStateByUserIdV3Op
+        {
+            get { return Operation.AdminGetUserStateByUserIdV3.Builder.SetWrapperObject(this); }
+        }
         public AdminUpdateUserStatusV3.AdminUpdateUserStatusV3Builder AdminUpdateUserStatusV3Op
         {
             get { return Operation.AdminUpdateUserStatusV3.Builder.SetWrapperObject(this); }
@@ -590,6 +594,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicListUserIDByPlatformUserIDsV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserByPlatformUserIDV3.PublicGetUserByPlatformUserIDV3Builder PublicGetUserByPlatformUserIDV3Op
         {
             get { return Operation.PublicGetUserByPlatformUserIDV3.Builder.SetWrapperObject(this); }
@@ -610,6 +615,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.CheckUserAvailability.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicBulkGetUsers.PublicBulkGetUsersBuilder PublicBulkGetUsersOp
         {
             get { return Operation.PublicBulkGetUsers.Builder.SetWrapperObject(this); }
@@ -2926,6 +2932,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.ModelUserStateResponseV3? AdminGetUserStateByUserIdV3(AdminGetUserStateByUserIdV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserStateResponseV3?> AdminGetUserStateByUserIdV3Async(AdminGetUserStateByUserIdV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public void AdminUpdateUserStatusV3(AdminUpdateUserStatusV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3025,6 +3047,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV3(PublicGetUserByPlatformUserIDV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3041,6 +3065,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ModelLinkRequest? PublicGetAsyncStatus(PublicGetAsyncStatus input)
         {
             var response = _sdk.RunRequest(input);
@@ -3123,6 +3148,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelListBulkUserResponse? PublicBulkGetUsers(PublicBulkGetUsers input)
         {
             var response = _sdk.RunRequest(input);
@@ -3139,6 +3166,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void PublicSendRegistrationCode(PublicSendRegistrationCode input)
         {
             var response = _sdk.RunRequest(input);

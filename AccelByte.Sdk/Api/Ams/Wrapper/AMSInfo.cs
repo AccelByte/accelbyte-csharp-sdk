@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ApiInstanceTypesForNamespaceResponse? InfoSupportedInstances(InfoSupportedInstances input)
+        public Model.ApiInstanceTypesResponse? InfoSupportedInstances(InfoSupportedInstances input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ApiInstanceTypesForNamespaceResponse?> InfoSupportedInstancesAsync(InfoSupportedInstances input)
+        public async Task<Model.ApiInstanceTypesResponse?> InfoSupportedInstancesAsync(InfoSupportedInstances input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

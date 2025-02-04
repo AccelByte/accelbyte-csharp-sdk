@@ -117,6 +117,36 @@ namespace AccelByte.Sdk.Api
             await ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminSetDSReadyAsync(op);
         }
         public static void Execute(
+            this AdminUpdateDSInformation.AdminUpdateDSInformationBuilder builder,
+            ApimodelsUpdateGamesessionDSInformationRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminUpdateDSInformation op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminUpdateDSInformation(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateDSInformation.AdminUpdateDSInformationBuilder builder,
+            ApimodelsUpdateGamesessionDSInformationRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminUpdateDSInformation op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            await ((Session.Wrapper.GameSession)builder.WrapperObject!).AdminUpdateDSInformationAsync(op);
+        }
+        public static void Execute(
             this AdminKickGameSessionMember.AdminKickGameSessionMemberBuilder builder,
             string memberId,
             string namespace_,

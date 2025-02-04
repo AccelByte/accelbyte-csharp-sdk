@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Chat.Wrapper.Profanity)builder.WrapperObject!).AdminProfanityCreateAsync(op);
         }
-        public static Chat.Model.ModelsDictionary? Execute(
+        public static void Execute(
             this AdminProfanityCreateBulk.AdminProfanityCreateBulkBuilder builder,
             ModelsDictionaryInsertBulkRequest body,
             string namespace_
@@ -71,9 +71,9 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Chat.Wrapper.Profanity)builder.WrapperObject!).AdminProfanityCreateBulk(op);
+            ((Chat.Wrapper.Profanity)builder.WrapperObject!).AdminProfanityCreateBulk(op);
         }
-        public static async Task<Chat.Model.ModelsDictionary?> ExecuteAsync(
+        public static async Task ExecuteAsync(
             this AdminProfanityCreateBulk.AdminProfanityCreateBulkBuilder builder,
             ModelsDictionaryInsertBulkRequest body,
             string namespace_
@@ -84,7 +84,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return await ((Chat.Wrapper.Profanity)builder.WrapperObject!).AdminProfanityCreateBulkAsync(op);
+            await ((Chat.Wrapper.Profanity)builder.WrapperObject!).AdminProfanityCreateBulkAsync(op);
         }
         public static Chat.Model.ModelsDictionaryExport? Execute(
             this AdminProfanityExport.AdminProfanityExportBuilder builder,

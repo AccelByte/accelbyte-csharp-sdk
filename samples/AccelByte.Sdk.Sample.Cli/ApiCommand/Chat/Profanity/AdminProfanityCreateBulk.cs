@@ -55,11 +55,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
             );
 
 
-            AccelByte.Sdk.Api.Chat.Model.ModelsDictionary? response = wrapper.AdminProfanityCreateBulk(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.AdminProfanityCreateBulk(operation);
+            return String.Empty;
         }
     }
 }

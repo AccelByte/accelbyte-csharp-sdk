@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("domain")]
         public string? Domain { get; set; }
 
+        [JsonPropertyName("ssoGroups")]
+        public List<string>? SsoGroups { get; set; }
+
     }
 
 

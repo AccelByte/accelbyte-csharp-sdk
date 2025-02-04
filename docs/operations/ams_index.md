@@ -194,8 +194,8 @@
 | `api.ImageListItem` | [ApiImageListItem](../../AccelByte.Sdk/Api/Ams/Model/ApiImageListItem.cs) |
 | `api.ImageStorage` | [ApiImageStorage](../../AccelByte.Sdk/Api/Ams/Model/ApiImageStorage.cs) |
 | `api.ImageUpdate` | [ApiImageUpdate](../../AccelByte.Sdk/Api/Ams/Model/ApiImageUpdate.cs) |
-| `api.InstanceTypeForNamespaceResponse` | [ApiInstanceTypeForNamespaceResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypeForNamespaceResponse.cs) |
-| `api.InstanceTypesForNamespaceResponse` | [ApiInstanceTypesForNamespaceResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypesForNamespaceResponse.cs) |
+| `api.InstanceType` | [ApiInstanceType](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceType.cs) |
+| `api.InstanceTypesResponse` | [ApiInstanceTypesResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiInstanceTypesResponse.cs) |
 | `api.PagingInfo` | [ApiPagingInfo](../../AccelByte.Sdk/Api/Ams/Model/ApiPagingInfo.cs) |
 | `api.PortConfiguration` | [ApiPortConfiguration](../../AccelByte.Sdk/Api/Ams/Model/ApiPortConfiguration.cs) |
 | `api.QoSEndpointResponse` | [ApiQoSEndpointResponse](../../AccelByte.Sdk/Api/Ams/Model/ApiQoSEndpointResponse.cs) |

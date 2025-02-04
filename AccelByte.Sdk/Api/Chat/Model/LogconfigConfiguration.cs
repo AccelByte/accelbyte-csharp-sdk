@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
 {
     public class LogconfigConfiguration : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("internalAccessLogEnabled")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? InternalAccessLogEnabled { get; set; }
+
         [JsonPropertyName("logLevel")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]

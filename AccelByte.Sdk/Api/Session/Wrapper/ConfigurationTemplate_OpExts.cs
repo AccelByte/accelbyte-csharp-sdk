@@ -323,6 +323,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminDeleteConfigurationTemplateV1Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Session.Model.ModelsDSMConfigRecord? Execute(
             this AdminGetDSMCConfiguration.AdminGetDSMCConfigurationBuilder builder,
             string namespace_
@@ -345,6 +346,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.ConfigurationTemplate)builder.WrapperObject!).AdminGetDSMCConfigurationAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Session.Model.ModelsDSMConfigRecord? Execute(
             this AdminSyncDSMCConfiguration.AdminSyncDSMCConfigurationBuilder builder,
             string namespace_

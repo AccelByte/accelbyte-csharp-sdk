@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// DeleteThirdPartyLoginPlatformDomainV3
     ///
     /// This is the API to unregister 3rd Platform domain.
+    /// If there is a ssoGroups in request body, then this request wil only delete the sso group from the target domain, it will not delete domain.
     /// </summary>
     public class DeleteThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {

@@ -268,7 +268,7 @@ eval_tap $? 22 'DeleteReward' test.out
 
 #- 23 UpdateReward
 # body param: body
-echo '{"currency": {"currencyCode": "ugoTd50RmJFX9v4G", "namespace": "PfyGuQ2UEl0U5Z9U"}, "image": {"as": "nQmZqX15hBb4dlNT", "caption": "IBDtHunwNLLfKCQK", "height": 42, "imageUrl": "y6RPBHJuPjj8zDwO", "smallImageUrl": "k0IgmYfUTpFzyQhP", "width": 97}, "itemId": "KUVhmAwmAygsnn8p", "nullFields": ["M7l6v0elLMceGGgb", "5FJHWE6s13b7dmnP", "ijw6U8GGp0E886E9"], "quantity": 81, "type": "ITEM"}' > $TEMP_JSON_INPUT
+echo '{"currency": {"currencyCode": "ugoTd50RmJFX9v4G", "namespace": "PfyGuQ2UEl0U5Z9U"}, "image": {"as": "nQmZqX15hBb4dlNT", "caption": "IBDtHunwNLLfKCQK", "height": 42, "imageUrl": "y6RPBHJuPjj8zDwO", "smallImageUrl": "k0IgmYfUTpFzyQhP", "width": 97}, "itemId": "KUVhmAwmAygsnn8p", "nullFields": ["5FJHWE6s13b7dmnP", "ijw6U8GGp0E886E9", "M7l6v0elLMceGGgb"], "quantity": 81, "type": "ITEM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn seasonpass \
     --op UpdateReward \

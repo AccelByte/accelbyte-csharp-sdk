@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             : OperationBuilder<AdminGetChallengesBuilder>
         {
 
+            public string? Keyword { get; set; }
+
             public long? Limit { get; set; }
 
             public long? Offset { get; set; }
@@ -35,12 +37,20 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             public AdminGetChallengesStatus? Status { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
 
             internal AdminGetChallengesBuilder() { }
 
+
+            public AdminGetChallengesBuilder SetKeyword(string _keyword)
+            {
+                Keyword = _keyword;
+                return this;
+            }
 
             public AdminGetChallengesBuilder SetLimit(long _limit)
             {
@@ -63,6 +73,12 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             public AdminGetChallengesBuilder SetStatus(AdminGetChallengesStatus _status)
             {
                 Status = _status;
+                return this;
+            }
+
+            public AdminGetChallengesBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -92,13 +108,16 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Keyword is not null) QueryParams["keyword"] = builder.Keyword;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 
@@ -108,21 +127,26 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
         public AdminGetChallenges(
             string namespace_,
+            string? keyword,
             long? limit,
             long? offset,
             AdminGetChallengesSortBy? sortBy,
-            AdminGetChallengesStatus? status
+            AdminGetChallengesStatus? status,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (keyword is not null) QueryParams["keyword"] = keyword;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (status is not null) QueryParams["status"] = status.Value;
+            if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 

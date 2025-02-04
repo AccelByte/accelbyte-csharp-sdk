@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// - randomizedPerRotation:
     /// - true: each goal will be randomly assigned to multiple periods
     /// - false: a goal will only be assigned to one period
+    /// - tags: challenge's labels.
     /// </summary>
     public class AdminUpdateChallenge : AccelByte.Sdk.Core.Operation
     {

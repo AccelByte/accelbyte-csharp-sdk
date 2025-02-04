@@ -478,6 +478,8 @@
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/disable` | PUT | DisableUserWallet | [DisableUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/DisableUserWallet.cs) | [DisableUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/DisableUserWallet.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/enable` | PUT | EnableUserWallet | [EnableUserWallet](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/EnableUserWallet.cs) | [EnableUserWallet](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/EnableUserWallet.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/users/{userId}/wallets/{walletId}/transactions` | GET | ListUserWalletTransactions | [ListUserWalletTransactions](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/ListUserWalletTransactions.cs) | [ListUserWalletTransactions](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/ListUserWalletTransactions.cs) |
+| `/platform/admin/namespaces/{namespace}/wallet/config` | GET | GetWalletConfig | [GetWalletConfig](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/GetWalletConfig.cs) | [GetWalletConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/GetWalletConfig.cs) |
+| `/platform/admin/namespaces/{namespace}/wallet/config` | PUT | UpdateWalletConfig | [UpdateWalletConfig](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/UpdateWalletConfig.cs) | [UpdateWalletConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/UpdateWalletConfig.cs) |
 | [DEPRECATED] `/platform/admin/namespaces/{namespace}/wallets` | GET | QueryWallets | [QueryWallets](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/QueryWallets.cs) | [QueryWallets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/QueryWallets.cs) |
 | `/platform/admin/namespaces/{namespace}/wallets/credit` | POST | BulkCredit | [BulkCredit](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/BulkCredit.cs) | [BulkCredit](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/BulkCredit.cs) |
 | `/platform/admin/namespaces/{namespace}/wallets/debit` | POST | BulkDebit | [BulkDebit](../../AccelByte.Sdk/Api/Platform/Operation/Wallet/BulkDebit.cs) | [BulkDebit](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/Wallet/BulkDebit.cs) |
@@ -1256,6 +1258,8 @@
 | `ViewCreate` | [ViewCreate](../../AccelByte.Sdk/Api/Platform/Model/ViewCreate.cs) |
 | `ViewInfo` | [ViewInfo](../../AccelByte.Sdk/Api/Platform/Model/ViewInfo.cs) |
 | `ViewUpdate` | [ViewUpdate](../../AccelByte.Sdk/Api/Platform/Model/ViewUpdate.cs) |
+| `WalletConfigInfo` | [WalletConfigInfo](../../AccelByte.Sdk/Api/Platform/Model/WalletConfigInfo.cs) |
+| `WalletConfigUpdate` | [WalletConfigUpdate](../../AccelByte.Sdk/Api/Platform/Model/WalletConfigUpdate.cs) |
 | `WalletInfo` | [WalletInfo](../../AccelByte.Sdk/Api/Platform/Model/WalletInfo.cs) |
 | `WalletPagingSlicedResult` | [WalletPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/WalletPagingSlicedResult.cs) |
 | `WalletRevocationConfig` | [WalletRevocationConfig](../../AccelByte.Sdk/Api/Platform/Model/WalletRevocationConfig.cs) |

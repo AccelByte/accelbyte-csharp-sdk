@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         public string OperationName { get { return "PublicUpgradeHeadlessWithCodeV4Forward"; } }
 
         [SdkCommandData("body")]
-        public AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 Body { get; set; } = new AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4();
+        public AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4 Body { get; set; } = new AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4();
 
         public PublicUpgradeHeadlessWithCodeV4ForwardCommand(AccelByteSDK sdk)
         {

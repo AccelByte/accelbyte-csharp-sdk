@@ -118,14 +118,12 @@ namespace AccelByte.Sdk.Api
         }
         public static Gdpr.Model.ModelsUserDataURL? Execute(
             this AdminGeneratePersonalDataURL.AdminGeneratePersonalDataURLBuilder builder,
-            string password,
             string namespace_,
             string requestDate,
             string userId
         )
         {
             AdminGeneratePersonalDataURL op = builder.Build(
-                password,
                 namespace_,
                 requestDate,
                 userId
@@ -135,14 +133,12 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Gdpr.Model.ModelsUserDataURL?> ExecuteAsync(
             this AdminGeneratePersonalDataURL.AdminGeneratePersonalDataURLBuilder builder,
-            string password,
             string namespace_,
             string requestDate,
             string userId
         )
         {
             AdminGeneratePersonalDataURL op = builder.Build(
-                password,
                 namespace_,
                 requestDate,
                 userId

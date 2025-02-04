@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApimodelReplicaRequest? Replica { get; set; }
 
+        [JsonPropertyName("vmSharingConfiguration")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? VmSharingConfiguration { get; set; }
+
     }
 
 

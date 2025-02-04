@@ -64,6 +64,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonPropertyName("gameName")]
         public string? GameName { get; set; }
 
+        [JsonPropertyName("isResourceApplied")]
+        public bool? IsResourceApplied { get; set; }
+
         [JsonPropertyName("memory")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApimodelMemoryResponse? Memory { get; set; }
@@ -89,6 +92,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
 
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
+
+        [JsonPropertyName("vmSharingConfiguration")]
+        public string? VmSharingConfiguration { get; set; }
 
     }
 

@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 
         [JsonPropertyName("schedule")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public ModelGoalSchedule? Schedule { get; set; }
+        public ModelGoalScheduleRequest? Schedule { get; set; }
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

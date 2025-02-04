@@ -63,6 +63,10 @@ namespace AccelByte.Sdk.Api.Challenge.Model
         [JsonStringEnum]
         public ModelChallengeResponseStatus? Status { get; set; }
 
+        [JsonPropertyName("tags")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? Tags { get; set; }
+
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 

@@ -878,6 +878,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicListUserIDByPlatformUserIDsV4Async(op);
         }
+        public static Iam.Model.ModelUserResponseV3? Execute(
+            this PublicGetUserByPlatformUserIDV4.PublicGetUserByPlatformUserIDV4Builder builder,
+            string namespace_,
+            string platformId,
+            string platformUserId
+        )
+        {
+            PublicGetUserByPlatformUserIDV4 op = builder.Build(
+                namespace_,
+                platformId,
+                platformUserId
+            );
+
+            return ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetUserByPlatformUserIDV4(op);
+        }
+        public static async Task<Iam.Model.ModelUserResponseV3?> ExecuteAsync(
+            this PublicGetUserByPlatformUserIDV4.PublicGetUserByPlatformUserIDV4Builder builder,
+            string namespace_,
+            string platformId,
+            string platformUserId
+        )
+        {
+            PublicGetUserByPlatformUserIDV4 op = builder.Build(
+                namespace_,
+                platformId,
+                platformUserId
+            );
+
+            return await ((Iam.Wrapper.UsersV4)builder.WrapperObject!).PublicGetUserByPlatformUserIDV4Async(op);
+        }
         public static Iam.Model.AccountCreateUserResponseV4? Execute(
             this PublicCreateTestUserV4.PublicCreateTestUserV4Builder builder,
             AccountCreateTestUserRequestV4 body,
@@ -1587,7 +1617,7 @@ namespace AccelByte.Sdk.Api
         }
         public static string Execute(
             this PublicUpgradeHeadlessWithCodeV4Forward.PublicUpgradeHeadlessWithCodeV4ForwardBuilder builder,
-            AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body
+            AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4 body
         )
         {
             PublicUpgradeHeadlessWithCodeV4Forward op = builder.Build(
@@ -1598,7 +1628,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<string> ExecuteAsync(
             this PublicUpgradeHeadlessWithCodeV4Forward.PublicUpgradeHeadlessWithCodeV4ForwardBuilder builder,
-            AccountUpgradeHeadlessAccountWithVerificationCodeRequestV4 body
+            AccountUpgradeHeadlessAccountWithVerificationCodeForwardRequestV4 body
         )
         {
             PublicUpgradeHeadlessWithCodeV4Forward op = builder.Build(

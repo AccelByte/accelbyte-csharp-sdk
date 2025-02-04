@@ -141,6 +141,11 @@
 |---|---|---|---|---|
 | `/agreement/public/readiness` | GET | CheckReadiness | [CheckReadiness](../../AccelByte.Sdk/Api/Legal/Operation/Utility/CheckReadiness.cs) | [CheckReadiness](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/Utility/CheckReadiness.cs) |
 
+### Policies With Namespace V2 Wrapper:  [PoliciesWithNamespaceV2](../../AccelByte.Sdk/Api/Legal/Wrapper/PoliciesWithNamespaceV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/agreement/v2/public/policies/namespaces/{namespace}/countries/{countryCode}` | GET | RetrieveLatestPoliciesByNamespaceAndCountryPublic1 | [RetrieveLatestPoliciesByNamespaceAndCountryPublic1](../../AccelByte.Sdk/Api/Legal/Operation/PoliciesWithNamespaceV2/RetrieveLatestPoliciesByNamespaceAndCountryPublic1.cs) | [RetrieveLatestPoliciesByNamespaceAndCountryPublic1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Legal/PoliciesWithNamespaceV2/RetrieveLatestPoliciesByNamespaceAndCountryPublic1.cs) |
+
 
 &nbsp;  
 
@@ -210,6 +215,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Policies With Namespace V2 Wrapper:  [PoliciesWithNamespaceV2](../../AccelByte.Sdk/Api/Legal/Wrapper/PoliciesWithNamespaceV2.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 
 &nbsp;  
 
@@ -249,10 +258,13 @@
 | `RetrievePolicyResponse` | [RetrievePolicyResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrievePolicyResponse.cs) |
 | `RetrievePolicyTypeResponse` | [RetrievePolicyTypeResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrievePolicyTypeResponse.cs) |
 | `RetrievePolicyVersionResponse` | [RetrievePolicyVersionResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrievePolicyVersionResponse.cs) |
+| `RetrieveSimplePolicyPublicResponseV2` | [RetrieveSimplePolicyPublicResponseV2](../../AccelByte.Sdk/Api/Legal/Model/RetrieveSimplePolicyPublicResponseV2.cs) |
 | `RetrieveUserAcceptedAgreementResponse` | [RetrieveUserAcceptedAgreementResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserAcceptedAgreementResponse.cs) |
 | `RetrieveUserEligibilitiesIndirectResponse` | [RetrieveUserEligibilitiesIndirectResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserEligibilitiesIndirectResponse.cs) |
 | `RetrieveUserEligibilitiesResponse` | [RetrieveUserEligibilitiesResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserEligibilitiesResponse.cs) |
 | `RetrieveUserInfoCacheStatusResponse` | [RetrieveUserInfoCacheStatusResponse](../../AccelByte.Sdk/Api/Legal/Model/RetrieveUserInfoCacheStatusResponse.cs) |
+| `SimpleLocalizedPolicyVersionObject` | [SimpleLocalizedPolicyVersionObject](../../AccelByte.Sdk/Api/Legal/Model/SimpleLocalizedPolicyVersionObject.cs) |
+| `SimplePolicyVersionWithLocalizedVersionObject` | [SimplePolicyVersionWithLocalizedVersionObject](../../AccelByte.Sdk/Api/Legal/Model/SimplePolicyVersionWithLocalizedVersionObject.cs) |
 | `UpdateBasePolicyRequest` | [UpdateBasePolicyRequest](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyRequest.cs) |
 | `UpdateBasePolicyRequestV2` | [UpdateBasePolicyRequestV2](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyRequestV2.cs) |
 | `UpdateBasePolicyResponse` | [UpdateBasePolicyResponse](../../AccelByte.Sdk/Api/Legal/Model/UpdateBasePolicyResponse.cs) |

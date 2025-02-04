@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     ///
     /// sync dsmc configuration.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminSyncDSMCConfiguration : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -69,6 +69,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableClanChat { get; set; }
 
+        [JsonPropertyName("enablePmSendPlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? EnablePmSendPlatformId { get; set; }
+
         [JsonPropertyName("maxChatMessageLength")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public int? MaxChatMessageLength { get; set; }

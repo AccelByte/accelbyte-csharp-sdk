@@ -177,6 +177,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicListUserIDByPlatformUserIDsV4.Builder.SetWrapperObject(this); }
         }
+        public PublicGetUserByPlatformUserIDV4.PublicGetUserByPlatformUserIDV4Builder PublicGetUserByPlatformUserIDV4Op
+        {
+            get { return Operation.PublicGetUserByPlatformUserIDV4.Builder.SetWrapperObject(this); }
+        }
         public PublicCreateTestUserV4.PublicCreateTestUserV4Builder PublicCreateTestUserV4Op
         {
             get { return Operation.PublicCreateTestUserV4.Builder.SetWrapperObject(this); }
@@ -923,6 +927,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.AccountcommonUserPlatforms?> PublicListUserIDByPlatformUserIDsV4Async(PublicListUserIDByPlatformUserIDsV4 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelUserResponseV3? PublicGetUserByPlatformUserIDV4(PublicGetUserByPlatformUserIDV4 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelUserResponseV3?> PublicGetUserByPlatformUserIDV4Async(PublicGetUserByPlatformUserIDV4 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

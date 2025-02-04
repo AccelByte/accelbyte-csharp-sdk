@@ -7,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Ams.Model
 {
-    public class ApiInstanceTypeForNamespaceResponse : AccelByte.Sdk.Core.Model
+    public class ApiInstanceType : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("capacity")]
         public List<ApiCapacity>? Capacity { get; set; }
@@ -17,6 +17,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 
         [JsonPropertyName("id")]
         public string? Id { get; set; }
+
+        [JsonPropertyName("isBaremetal")]
+        public bool? IsBaremetal { get; set; }
 
         [JsonPropertyName("memoryGiB")]
         public double? MemoryGiB { get; set; }

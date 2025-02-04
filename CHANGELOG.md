@@ -1,3 +1,11 @@
+<a name="v0.69.0"></a>
+## [v0.69.0]
+### fix
+- **ams:** replace deleteAt type with string
+### docs
+- **readme:** update doc links
+
+
 <a name="v0.68.0"></a>
 ## [v0.68.0]
 ### chore

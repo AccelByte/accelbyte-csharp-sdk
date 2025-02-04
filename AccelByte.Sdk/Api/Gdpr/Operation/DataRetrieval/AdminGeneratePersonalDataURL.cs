@@ -16,11 +16,14 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
     /// <summary>
     /// AdminGeneratePersonalDataURL
     ///
-    /// Generate personal data download url.
-    /// Scope: account
     /// 
-    /// ### Request Header:
-    /// - **Content-Type: application/x-www-form-urlencoded**
+    /// 
+    /// Required permission `ADMIN:NAMESPACE:{namespace}:INFORMATION:USER:{userId} [READ]` and scope `account`
+    /// 
+    /// 
+    /// 
+    /// 
+    /// If admin request data for themselves, password is need to be set
     /// </summary>
     public class AdminGeneratePersonalDataURL : AccelByte.Sdk.Core.Operation
     {
@@ -33,6 +36,8 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+            public string? Password { get; set; }
+
 
 
             internal AdminGeneratePersonalDataURLBuilder() { }
@@ -40,17 +45,21 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
 
 
 
+            public AdminGeneratePersonalDataURLBuilder SetPassword(string _password)
+            {
+                Password = _password;
+                return this;
+            }
+
 
 
             public AdminGeneratePersonalDataURL Build(
-                string password,
                 string namespace_,
                 string requestDate,
                 string userId
             )
             {
                 AdminGeneratePersonalDataURL op = new AdminGeneratePersonalDataURL(this,
-                    password,
                     namespace_,
                     requestDate,
                     userId
@@ -65,7 +74,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
         }
 
         private AdminGeneratePersonalDataURL(AdminGeneratePersonalDataURLBuilder builder,
-            string password,
             string namespace_,
             string requestDate,
             string userId
@@ -76,7 +84,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             PathParams["userId"] = userId;
 
 
-            if (password is not null) FormParams["password"] = password;
+            if (builder.Password is not null) FormParams["password"] = builder.Password;
 
 
 
@@ -90,7 +98,7 @@ namespace AccelByte.Sdk.Api.Gdpr.Operation
             string namespace_,
             string requestDate,
             string userId,
-            string password
+            string? password
         )
         {
             PathParams["namespace"] = namespace_;

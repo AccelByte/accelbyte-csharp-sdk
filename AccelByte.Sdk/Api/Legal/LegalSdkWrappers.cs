@@ -189,6 +189,17 @@ namespace AccelByte.Sdk.Core
         }
         private Utility? _Utility = null;
 
+        public PoliciesWithNamespaceV2 PoliciesWithNamespaceV2
+        {
+            get
+            {
+                if (_PoliciesWithNamespaceV2 == null)
+                    _PoliciesWithNamespaceV2 = new PoliciesWithNamespaceV2(_SdkObject);
+                return _PoliciesWithNamespaceV2;
+            }
+        }
+        private PoliciesWithNamespaceV2? _PoliciesWithNamespaceV2 = null;
+
         internal LegalSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

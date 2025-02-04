@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonPropertyName("chatRateLimitDuration")]
         public long? ChatRateLimitDuration { get; set; }
 
+        [JsonPropertyName("enablePmSendPlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? EnablePmSendPlatformId { get; set; }
+
         [JsonPropertyName("generalRateLimitBurst")]
         public int? GeneralRateLimitBurst { get; set; }
 

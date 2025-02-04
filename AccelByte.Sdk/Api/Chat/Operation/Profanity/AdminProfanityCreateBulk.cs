@@ -102,22 +102,11 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.ModelsDictionary? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public void ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
-                return null;
-            }
-            else if (code == (HttpStatusCode)201)
-            {
-                if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.ModelsDictionary>(payload, ResponseJsonOptions);
-                else
-                    return JsonSerializer.Deserialize<Model.ModelsDictionary>(payload);
-            }
-            else if (code == (HttpStatusCode)200)
-            {
-                return JsonSerializer.Deserialize<Model.ModelsDictionary>(payload, ResponseJsonOptions);
+                return;
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

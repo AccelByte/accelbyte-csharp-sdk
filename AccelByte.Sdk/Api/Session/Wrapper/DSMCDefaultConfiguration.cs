@@ -19,12 +19,15 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetDSMCConfigurationDefault.AdminGetDSMCConfigurationDefaultBuilder AdminGetDSMCConfigurationDefaultOp
         {
             get { return Operation.AdminGetDSMCConfigurationDefault.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsDefaultDSMCConfig? AdminGetDSMCConfigurationDefault(AdminGetDSMCConfigurationDefault input)
         {
             var response = _sdk.RunRequest(input);
@@ -41,5 +44,6 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

@@ -89,6 +89,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.ListUserWalletTransactions.Builder.SetWrapperObject(this); }
         }
+        public GetWalletConfig.GetWalletConfigBuilder GetWalletConfigOp
+        {
+            get { return Operation.GetWalletConfig.Builder.SetWrapperObject(this); }
+        }
+        public UpdateWalletConfig.UpdateWalletConfigBuilder UpdateWalletConfigOp
+        {
+            get { return Operation.UpdateWalletConfig.Builder.SetWrapperObject(this); }
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public QueryWallets.QueryWalletsBuilder QueryWalletsOp
         {
@@ -395,6 +403,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
 #pragma warning restore ab_deprecated_operation
+        public Model.WalletConfigInfo? GetWalletConfig(GetWalletConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletConfigInfo?> GetWalletConfigAsync(GetWalletConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.WalletConfigInfo? UpdateWalletConfig(UpdateWalletConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.WalletConfigInfo?> UpdateWalletConfigAsync(UpdateWalletConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.WalletPagingSlicedResult? QueryWallets(QueryWallets input)

@@ -55,10 +55,12 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminDeleteConfigurationTemplateV1.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetDSMCConfiguration.AdminGetDSMCConfigurationBuilder AdminGetDSMCConfigurationOp
         {
             get { return Operation.AdminGetDSMCConfiguration.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminSyncDSMCConfiguration.AdminSyncDSMCConfigurationBuilder AdminSyncDSMCConfigurationOp
         {
             get { return Operation.AdminSyncDSMCConfiguration.Builder.SetWrapperObject(this); }
@@ -263,6 +265,8 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsDSMConfigRecord? AdminGetDSMCConfiguration(AdminGetDSMCConfiguration input)
         {
             var response = _sdk.RunRequest(input);
@@ -279,6 +283,9 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelsDSMConfigRecord? AdminSyncDSMCConfiguration(AdminSyncDSMCConfiguration input)
         {
             var response = _sdk.RunRequest(input);
@@ -295,5 +302,6 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

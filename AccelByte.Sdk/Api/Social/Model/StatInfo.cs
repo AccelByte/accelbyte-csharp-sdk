@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Social.Model
 {
     public class StatInfo : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("capCycleOverride")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CapCycleOverride { get; set; }
+
         [JsonPropertyName("createdAt")]
         public DateTime? CreatedAt { get; set; }
 

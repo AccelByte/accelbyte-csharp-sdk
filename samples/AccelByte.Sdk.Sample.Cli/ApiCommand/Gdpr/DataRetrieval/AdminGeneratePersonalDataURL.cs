@@ -53,10 +53,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Gdpr
 
 
 
+            if (Password != null)
+                opBuilder.SetPassword((string)Password);
 
 
             AdminGeneratePersonalDataURL operation = opBuilder.Build(
-                Password,
                 Namespace,
                 RequestDate,
                 UserId

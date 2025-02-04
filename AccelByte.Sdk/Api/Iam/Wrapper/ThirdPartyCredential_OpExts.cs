@@ -228,6 +228,36 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).DeleteThirdPartyLoginPlatformDomainV3Async(op);
         }
+        public static Iam.Model.ModelPlatformDomainResponse? Execute(
+            this PartialUpdateThirdPartyLoginPlatformDomainV3.PartialUpdateThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainPatchRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PartialUpdateThirdPartyLoginPlatformDomainV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).PartialUpdateThirdPartyLoginPlatformDomainV3(op);
+        }
+        public static async Task<Iam.Model.ModelPlatformDomainResponse?> ExecuteAsync(
+            this PartialUpdateThirdPartyLoginPlatformDomainV3.PartialUpdateThirdPartyLoginPlatformDomainV3Builder builder,
+            ModelPlatformDomainPatchRequest body,
+            string namespace_,
+            string platformId
+        )
+        {
+            PartialUpdateThirdPartyLoginPlatformDomainV3 op = builder.Build(
+                body,
+                namespace_,
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).PartialUpdateThirdPartyLoginPlatformDomainV3Async(op);
+        }
         public static Iam.Model.ModelCheckAvailabilityResponse? Execute(
             this AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder builder,
             string platformId

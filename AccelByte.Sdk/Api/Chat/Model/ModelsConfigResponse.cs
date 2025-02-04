@@ -29,6 +29,10 @@ namespace AccelByte.Sdk.Api.Chat.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableManualTopicCreation { get; set; }
 
+        [JsonPropertyName("enablePmSendPlatformId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? EnablePmSendPlatformId { get; set; }
+
         [JsonPropertyName("enableProfanityFilter")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? EnableProfanityFilter { get; set; }

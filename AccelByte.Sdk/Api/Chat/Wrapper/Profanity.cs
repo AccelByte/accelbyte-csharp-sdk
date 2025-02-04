@@ -85,18 +85,18 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.ModelsDictionary? AdminProfanityCreateBulk(AdminProfanityCreateBulk input)
+        public void AdminProfanityCreateBulk(AdminProfanityCreateBulk input)
         {
             var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.ModelsDictionary?> AdminProfanityCreateBulkAsync(AdminProfanityCreateBulk input)
+        public async Task AdminProfanityCreateBulkAsync(AdminProfanityCreateBulk input)
         {
             var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

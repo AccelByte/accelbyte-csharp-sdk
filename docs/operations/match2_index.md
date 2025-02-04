@@ -52,6 +52,7 @@
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}` | PUT | UpdateMatchPool | [UpdateMatchPool](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/UpdateMatchPool.cs) | [UpdateMatchPool](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/UpdateMatchPool.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}` | DELETE | DeleteMatchPool | [DeleteMatchPool](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/DeleteMatchPool.cs) | [DeleteMatchPool](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/DeleteMatchPool.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics` | GET | MatchPoolMetric | [MatchPoolMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/MatchPoolMetric.cs) | [MatchPoolMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/MatchPoolMetric.cs) |
+| `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/external-failure` | POST | PostMatchErrorMetric | [PostMatchErrorMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/PostMatchErrorMetric.cs) | [PostMatchErrorMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/PostMatchErrorMetric.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/metrics/player` | GET | GetPlayerMetric | [GetPlayerMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/GetPlayerMetric.cs) | [GetPlayerMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/GetPlayerMetric.cs) |
 | `/match2/v1/namespaces/{namespace}/match-pools/{pool}/tickets` | GET | AdminGetMatchPoolTickets | [AdminGetMatchPoolTickets](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/AdminGetMatchPoolTickets.cs) | [AdminGetMatchPoolTickets](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/AdminGetMatchPoolTickets.cs) |
 | `/match2/v1/public/namespaces/{namespace}/match-pools/{pool}/metrics/player` | GET | PublicGetPlayerMetric | [PublicGetPlayerMetric](../../AccelByte.Sdk/Api/Match2/Operation/MatchPools/PublicGetPlayerMetric.cs) | [PublicGetPlayerMetric](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/MatchPools/PublicGetPlayerMetric.cs) |
@@ -125,6 +126,7 @@
 | `api.BackfillCreateResponse` | [ApiBackfillCreateResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillCreateResponse.cs) |
 | `api.BackfillGetResponse` | [ApiBackfillGetResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillGetResponse.cs) |
 | `api.BackfillProposalResponse` | [ApiBackfillProposalResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillProposalResponse.cs) |
+| `api.ExternalFailureMetricRecord` | [ApiExternalFailureMetricRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiExternalFailureMetricRecord.cs) |
 | `api.ListEnvironmentVariablesResponse` | [ApiListEnvironmentVariablesResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListEnvironmentVariablesResponse.cs) |
 | `api.ListMatchFunctionsResponse` | [ApiListMatchFunctionsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchFunctionsResponse.cs) |
 | `api.ListMatchPoolTicketsResponse` | [ApiListMatchPoolTicketsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchPoolTicketsResponse.cs) |

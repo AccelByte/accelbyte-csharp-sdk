@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.DeleteThirdPartyLoginPlatformDomainV3.Builder.SetWrapperObject(this); }
         }
+        public PartialUpdateThirdPartyLoginPlatformDomainV3.PartialUpdateThirdPartyLoginPlatformDomainV3Builder PartialUpdateThirdPartyLoginPlatformDomainV3Op
+        {
+            get { return Operation.PartialUpdateThirdPartyLoginPlatformDomainV3.Builder.SetWrapperObject(this); }
+        }
         public AdminCheckThirdPartyLoginPlatformAvailabilityV3.AdminCheckThirdPartyLoginPlatformAvailabilityV3Builder AdminCheckThirdPartyLoginPlatformAvailabilityV3Op
         {
             get { return Operation.AdminCheckThirdPartyLoginPlatformAvailabilityV3.Builder.SetWrapperObject(this); }
@@ -189,6 +193,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelPlatformDomainResponse? PartialUpdateThirdPartyLoginPlatformDomainV3(PartialUpdateThirdPartyLoginPlatformDomainV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPlatformDomainResponse?> PartialUpdateThirdPartyLoginPlatformDomainV3Async(PartialUpdateThirdPartyLoginPlatformDomainV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

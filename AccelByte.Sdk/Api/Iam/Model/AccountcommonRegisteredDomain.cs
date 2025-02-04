@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("roleId")]
         public string? RoleId { get; set; }
 
+        [JsonPropertyName("ssoCfg")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public AccountcommonSsoConfig? SsoCfg { get; set; }
+
     }
 
 

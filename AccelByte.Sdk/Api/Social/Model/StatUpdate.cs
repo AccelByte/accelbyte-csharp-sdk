@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Social.Model
 {
     public class StatUpdate : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("capCycleOverride")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? CapCycleOverride { get; set; }
+
         [JsonPropertyName("cycleIds")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? CycleIds { get; set; }

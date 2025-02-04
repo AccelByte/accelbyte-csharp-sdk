@@ -514,6 +514,54 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserWalletTransactionsAsync(op);
         }
+        public static Platform.Model.WalletConfigInfo? Execute(
+            this GetWalletConfig.GetWalletConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetWalletConfig op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWalletConfig(op);
+        }
+        public static async Task<Platform.Model.WalletConfigInfo?> ExecuteAsync(
+            this GetWalletConfig.GetWalletConfigBuilder builder,
+            string namespace_
+        )
+        {
+            GetWalletConfig op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).GetWalletConfigAsync(op);
+        }
+        public static Platform.Model.WalletConfigInfo? Execute(
+            this UpdateWalletConfig.UpdateWalletConfigBuilder builder,
+            WalletConfigUpdate body,
+            string namespace_
+        )
+        {
+            UpdateWalletConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdateWalletConfig(op);
+        }
+        public static async Task<Platform.Model.WalletConfigInfo?> ExecuteAsync(
+            this UpdateWalletConfig.UpdateWalletConfigBuilder builder,
+            WalletConfigUpdate body,
+            string namespace_
+        )
+        {
+            UpdateWalletConfig op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).UpdateWalletConfigAsync(op);
+        }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Platform.Model.WalletPagingSlicedResult? Execute(
             this QueryWallets.QueryWalletsBuilder builder,

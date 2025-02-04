@@ -50,14 +50,6 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
     /// `{ "data1": { "data2": "value", "data3": "new value" }`
     /// 
     /// 
-    /// ## Restriction
-    /// This is the restriction of Key Naming for the record:
-    /// 1. Cannot use **"."** as the key name
-    /// - `{ "data.2": "value" }`
-    /// 2. Cannot use **"$"** as the prefix in key names
-    /// - `{ "$data": "value" }`
-    /// 
-    /// 
     /// ## Reserved Word
     /// 
     /// Reserved Word List: **__META**
