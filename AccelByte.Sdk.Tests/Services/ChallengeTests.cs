@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Tests.Services
                         Code = goalCode,
                         Name = goalName,
                         Description = "",
-                        Schedule = new ModelGoalSchedule()
+                        Schedule = new ModelGoalScheduleRequest()
                         {
                             StartTime = DateTime.Now.AddDays(1),
                             Order = 1
