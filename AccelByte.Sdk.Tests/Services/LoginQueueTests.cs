@@ -28,6 +28,12 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
+                return;
+            }
+
             int updateMaxLoginRate = 100;
 
             #region Get configuration
