@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -37,21 +37,25 @@ namespace AccelByte.Sdk.Sample.Cli
 
             if (!tokenRepo.HasToken)
             {
-                Console.WriteLine("No stored token found. Trying to login using supplied credential if any.");
-                if (cArgs.LoginType == CommandArguments.LoginTypeUser)
+                if (cArgs.OperationName == "login")
                 {
-                    if ((cArgs.LoginUsername == String.Empty) || (cArgs.LoginPassword == String.Empty))
-                        throw new Exception("Username and/or password cannot be null for login type user.");
-                    if (!sdk.LoginUser(cArgs.LoginUsername, cArgs.LoginPassword))
-                        throw new Exception("Login for '" + cArgs.LoginUsername + "' has failed!");
-                }
-                else if (cArgs.LoginType == CommandArguments.LoginTypeClient)
-                {
-                    if (!sdk.LoginClient())
-                        throw new Exception("Client login failed!");
+                    if (cArgs.LoginType == CommandArguments.LoginTypeUser)
+                    {
+                        if ((cArgs.LoginUsername == String.Empty) || (cArgs.LoginPassword == String.Empty))
+                            throw new Exception("Username and/or password cannot be null for login type user.");
+                        if (!sdk.LoginUser(cArgs.LoginUsername, cArgs.LoginPassword))
+                            throw new Exception("Login for '" + cArgs.LoginUsername + "' has failed!");
+                    }
+                    else if (cArgs.LoginType == CommandArguments.LoginTypeClient)
+                    {
+                        if (!sdk.LoginClient())
+                            throw new Exception("Client login failed!");
+                    }
+                    else
+                        throw new Exception("Invalid login type.");
                 }
                 else
-                    throw new Exception("Invalid login type.");
+                    throw new Exception("No stored token found. Please login first.");
             }
 
             return sdk;
