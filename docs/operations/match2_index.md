@@ -28,6 +28,7 @@
 ### Backfill Wrapper:  [Backfill](../../AccelByte.Sdk/Api/Match2/Wrapper/Backfill.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/match2/v1/namespaces/{namespace}/backfill` | GET | AdminQueryBackfill | [AdminQueryBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/AdminQueryBackfill.cs) | [AdminQueryBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/AdminQueryBackfill.cs) |
 | `/match2/v1/namespaces/{namespace}/backfill` | POST | CreateBackfill | [CreateBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/CreateBackfill.cs) | [CreateBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/CreateBackfill.cs) |
 | `/match2/v1/namespaces/{namespace}/backfill/proposal` | GET | GetBackfillProposal | [GetBackfillProposal](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/GetBackfillProposal.cs) | [GetBackfillProposal](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/GetBackfillProposal.cs) |
 | `/match2/v1/namespaces/{namespace}/backfill/{backfillID}` | GET | GetBackfill | [GetBackfill](../../AccelByte.Sdk/Api/Match2/Operation/Backfill/GetBackfill.cs) | [GetBackfill](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Backfill/GetBackfill.cs) |
@@ -127,6 +128,7 @@
 | `api.BackfillGetResponse` | [ApiBackfillGetResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillGetResponse.cs) |
 | `api.BackfillProposalResponse` | [ApiBackfillProposalResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiBackfillProposalResponse.cs) |
 | `api.ExternalFailureMetricRecord` | [ApiExternalFailureMetricRecord](../../AccelByte.Sdk/Api/Match2/Model/ApiExternalFailureMetricRecord.cs) |
+| `api.ListBackfillQueryResponse` | [ApiListBackfillQueryResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListBackfillQueryResponse.cs) |
 | `api.ListEnvironmentVariablesResponse` | [ApiListEnvironmentVariablesResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListEnvironmentVariablesResponse.cs) |
 | `api.ListMatchFunctionsResponse` | [ApiListMatchFunctionsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchFunctionsResponse.cs) |
 | `api.ListMatchPoolTicketsResponse` | [ApiListMatchPoolTicketsResponse](../../AccelByte.Sdk/Api/Match2/Model/ApiListMatchPoolTicketsResponse.cs) |

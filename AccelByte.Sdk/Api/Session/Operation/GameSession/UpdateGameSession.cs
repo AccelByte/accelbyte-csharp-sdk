@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// To update only specified fields, please use following endpoint:
     /// method : PATCH
     /// API : /session/v1/public/namespaces/{namespace}/gamesessions/{sessionId}
-    /// 
+    /// - ttlHours is how long the session will active, only non persistent can use this, max value is 168 hours
     /// To update DS attributes (clientVersion, deployment, requestedRegions) it will only be applied only as long as no DS has been requested, otherwise ignored.
     /// </summary>
     public class UpdateGameSession : AccelByte.Sdk.Core.Operation

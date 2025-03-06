@@ -76,6 +76,11 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? StatusReason { get; set; }
 
+        [JsonPropertyName("syncMode")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public IAPOrderInfoSyncMode? SyncMode { get; set; }
+
         [JsonPropertyName("transactionId")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TransactionId { get; set; }
@@ -108,6 +113,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly IAPOrderInfoStatus REVOKED
             = new IAPOrderInfoStatus("REVOKED");
 
+        public static readonly IAPOrderInfoStatus REVOKEFAILED
+            = new IAPOrderInfoStatus("REVOKE_FAILED");
+
         public static readonly IAPOrderInfoStatus VERIFIED
             = new IAPOrderInfoStatus("VERIFIED");
 
@@ -118,6 +126,27 @@ namespace AccelByte.Sdk.Api.Platform.Model
         }
 
         public IAPOrderInfoStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class IAPOrderInfoSyncMode : StringEnum<IAPOrderInfoSyncMode>
+    {
+        public static readonly IAPOrderInfoSyncMode INVENTORY
+            = new IAPOrderInfoSyncMode("INVENTORY");
+
+        public static readonly IAPOrderInfoSyncMode TRANSACTION
+            = new IAPOrderInfoSyncMode("TRANSACTION");
+
+
+        public static implicit operator IAPOrderInfoSyncMode(string value)
+        {
+            return NewValue(value);
+        }
+
+        public IAPOrderInfoSyncMode(string enumValue)
             : base(enumValue)
         {
 

@@ -12,6 +12,28 @@ namespace AccelByte.Sdk.Api
 {
     public static class Match2Backfill_OpExts
     {
+        public static Match2.Model.ApiListBackfillQueryResponse? Execute(
+            this AdminQueryBackfill.AdminQueryBackfillBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryBackfill op = builder.Build(
+                namespace_
+            );
+
+            return ((Match2.Wrapper.Backfill)builder.WrapperObject!).AdminQueryBackfill(op);
+        }
+        public static async Task<Match2.Model.ApiListBackfillQueryResponse?> ExecuteAsync(
+            this AdminQueryBackfill.AdminQueryBackfillBuilder builder,
+            string namespace_
+        )
+        {
+            AdminQueryBackfill op = builder.Build(
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.Backfill)builder.WrapperObject!).AdminQueryBackfillAsync(op);
+        }
         public static Match2.Model.ApiBackfillCreateResponse? Execute(
             this CreateBackfill.CreateBackfillBuilder builder,
             ApiBackFillCreateRequest body,

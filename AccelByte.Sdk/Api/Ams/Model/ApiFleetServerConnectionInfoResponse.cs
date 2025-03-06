@@ -10,7 +10,7 @@ namespace AccelByte.Sdk.Api.Ams.Model
     public class ApiFleetServerConnectionInfoResponse : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("expiresAt")]
-        public ApiTime? ExpiresAt { get; set; }
+        public DateTime? ExpiresAt { get; set; }
 
         [JsonPropertyName("host")]
         public string? Host { get; set; }

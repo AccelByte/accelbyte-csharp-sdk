@@ -12,6 +12,46 @@ namespace AccelByte.Sdk.Api
 {
     public static class SessionhistoryConfig_OpExts
     {
+        public static Sessionhistory.Model.EnvconfigConfiguration? Execute(
+            this AdminGetEnvConfig.AdminGetEnvConfigBuilder builder
+        )
+        {
+            AdminGetEnvConfig op = builder.Build(
+            );
+
+            return ((Sessionhistory.Wrapper.Config)builder.WrapperObject!).AdminGetEnvConfig(op);
+        }
+        public static async Task<Sessionhistory.Model.EnvconfigConfiguration?> ExecuteAsync(
+            this AdminGetEnvConfig.AdminGetEnvConfigBuilder builder
+        )
+        {
+            AdminGetEnvConfig op = builder.Build(
+            );
+
+            return await ((Sessionhistory.Wrapper.Config)builder.WrapperObject!).AdminGetEnvConfigAsync(op);
+        }
+        public static Sessionhistory.Model.EnvconfigConfiguration? Execute(
+            this AdminPatchUpdateEnvConfig.AdminPatchUpdateEnvConfigBuilder builder,
+            EnvconfigConfiguration body
+        )
+        {
+            AdminPatchUpdateEnvConfig op = builder.Build(
+                body
+            );
+
+            return ((Sessionhistory.Wrapper.Config)builder.WrapperObject!).AdminPatchUpdateEnvConfig(op);
+        }
+        public static async Task<Sessionhistory.Model.EnvconfigConfiguration?> ExecuteAsync(
+            this AdminPatchUpdateEnvConfig.AdminPatchUpdateEnvConfigBuilder builder,
+            EnvconfigConfiguration body
+        )
+        {
+            AdminPatchUpdateEnvConfig op = builder.Build(
+                body
+            );
+
+            return await ((Sessionhistory.Wrapper.Config)builder.WrapperObject!).AdminPatchUpdateEnvConfigAsync(op);
+        }
         public static Sessionhistory.Model.LogconfigConfiguration? Execute(
             this AdminGetLogConfig.AdminGetLogConfigBuilder builder
         )

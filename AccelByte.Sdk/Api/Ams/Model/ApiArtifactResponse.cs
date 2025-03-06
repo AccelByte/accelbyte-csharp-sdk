@@ -36,6 +36,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
+        [JsonPropertyName("reason")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Reason { get; set; }
+
         [JsonPropertyName("region")]
         public string? Region { get; set; }
 

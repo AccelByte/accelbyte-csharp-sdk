@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             public AdminGetGoalsSortBy? SortBy { get; set; }
 
+            public List<string>? Tags { get; set; }
+
 
 
 
@@ -55,6 +57,12 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             public AdminGetGoalsBuilder SetSortBy(AdminGetGoalsSortBy _sortBy)
             {
                 SortBy = _sortBy;
+                return this;
+            }
+
+            public AdminGetGoalsBuilder SetTags(List<string> _tags)
+            {
+                Tags = _tags;
                 return this;
             }
 
@@ -91,9 +99,11 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
+            if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 
@@ -106,7 +116,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             string namespace_,
             long? limit,
             long? offset,
-            AdminGetGoalsSortBy? sortBy
+            AdminGetGoalsSortBy? sortBy,
+            List<string>? tags
         )
         {
             PathParams["challengeCode"] = challengeCode;
@@ -115,9 +126,11 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
+            if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["tags"] = "csv";
 
 
 

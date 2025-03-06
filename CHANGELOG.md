@@ -1,3 +1,11 @@
+<a name="v0.70.0"></a>
+## [v0.70.0]
+### test
+- **integration:** skip login queue in ags shared cloud
+### fix
+- **cli:** fix no stored token message
+
+
 <a name="v0.69.0"></a>
 ## [v0.69.0]
 ### fix

@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandArgument("storeId")]
         public string StoreId { get; set; } = String.Empty;
 
+        [SdkCommandData("body")]
+        public ChangeStatusItemRequest Body { get; set; } = new ChangeStatusItemRequest();
+
         public DisableItemCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -49,6 +52,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             var opBuilder = AccelByte.Sdk.Api.Platform.Operation.DisableItem.Builder;
 
 
+            if (Body != null)
+                opBuilder.SetBody((AccelByte.Sdk.Api.Platform.Model.ChangeStatusItemRequest)Body);
 
 
 

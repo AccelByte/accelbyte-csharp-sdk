@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             : OperationBuilder<DeleteItemBuilder>
         {
 
+            public List<DeleteItemFeaturesToCheck>? FeaturesToCheck { get; set; }
+
             public bool? Force { get; set; }
 
             public string? StoreId { get; set; }
@@ -41,6 +43,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
             internal DeleteItemBuilder() { }
 
+
+            public DeleteItemBuilder SetFeaturesToCheck(List<DeleteItemFeaturesToCheck> _featuresToCheck)
+            {
+                FeaturesToCheck = _featuresToCheck;
+                return this;
+            }
 
             public DeleteItemBuilder SetForce(bool _force)
             {
@@ -84,11 +92,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
 
+            if (builder.FeaturesToCheck is not null) QueryParams["featuresToCheck"] = builder.FeaturesToCheck;
             if (builder.Force != null) QueryParams["force"] = Convert.ToString(builder.Force)!;
             if (builder.StoreId is not null) QueryParams["storeId"] = builder.StoreId;
 
 
 
+            CollectionFormatMap["featuresToCheck"] = "multi";
 
 
 
@@ -99,6 +109,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public DeleteItem(
             string itemId,
             string namespace_,
+            List<DeleteItemFeaturesToCheck>? featuresToCheck,
             bool? force,
             string? storeId
         )
@@ -106,11 +117,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             PathParams["itemId"] = itemId;
             PathParams["namespace"] = namespace_;
 
+            if (featuresToCheck is not null) QueryParams["featuresToCheck"] = featuresToCheck;
             if (force != null) QueryParams["force"] = Convert.ToString(force)!;
             if (storeId is not null) QueryParams["storeId"] = storeId;
 
 
 
+            CollectionFormatMap["featuresToCheck"] = "multi";
 
 
 
@@ -138,6 +151,39 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class DeleteItemFeaturesToCheck : StringEnum<DeleteItemFeaturesToCheck>
+    {
+        public static readonly DeleteItemFeaturesToCheck CAMPAIGN
+            = new DeleteItemFeaturesToCheck("CAMPAIGN");
+
+        public static readonly DeleteItemFeaturesToCheck CATALOG
+            = new DeleteItemFeaturesToCheck("CATALOG");
+
+        public static readonly DeleteItemFeaturesToCheck DLC
+            = new DeleteItemFeaturesToCheck("DLC");
+
+        public static readonly DeleteItemFeaturesToCheck ENTITLEMENT
+            = new DeleteItemFeaturesToCheck("ENTITLEMENT");
+
+        public static readonly DeleteItemFeaturesToCheck IAP
+            = new DeleteItemFeaturesToCheck("IAP");
+
+        public static readonly DeleteItemFeaturesToCheck REWARD
+            = new DeleteItemFeaturesToCheck("REWARD");
+
+
+        public static implicit operator DeleteItemFeaturesToCheck(string value)
+        {
+            return NewValue(value);
+        }
+
+        public DeleteItemFeaturesToCheck(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

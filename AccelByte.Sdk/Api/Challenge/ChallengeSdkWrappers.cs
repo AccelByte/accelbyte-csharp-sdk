@@ -24,6 +24,17 @@ namespace AccelByte.Sdk.Core
         }
         private ChallengeConfiguration? _ChallengeConfiguration = null;
 
+        public Utilities Utilities
+        {
+            get
+            {
+                if (_Utilities == null)
+                    _Utilities = new Utilities(_SdkObject);
+                return _Utilities;
+            }
+        }
+        private Utilities? _Utilities = null;
+
         public GoalConfiguration GoalConfiguration
         {
             get

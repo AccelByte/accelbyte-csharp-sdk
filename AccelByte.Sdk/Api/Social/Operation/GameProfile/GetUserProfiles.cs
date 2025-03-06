@@ -16,10 +16,16 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// getUserProfiles
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Returns all profiles' header for a user.
     /// Other detail info:
     ///         *  Returns : list of profiles
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserProfiles : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

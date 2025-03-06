@@ -50,6 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly PlayStationReconcileResultStatus REVOKED
             = new PlayStationReconcileResultStatus("REVOKED");
 
+        public static readonly PlayStationReconcileResultStatus REVOKEFAILED
+            = new PlayStationReconcileResultStatus("REVOKE_FAILED");
+
         public static readonly PlayStationReconcileResultStatus VERIFIED
             = new PlayStationReconcileResultStatus("VERIFIED");
 

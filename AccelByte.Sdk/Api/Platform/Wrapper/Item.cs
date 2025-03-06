@@ -163,6 +163,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.UpdateItemPurchaseCondition.Builder.SetWrapperObject(this); }
         }
+        public QueryItemReferences.QueryItemReferencesBuilder QueryItemReferencesOp
+        {
+            get { return Operation.QueryItemReferences.Builder.SetWrapperObject(this); }
+        }
         public ReturnItem.ReturnItemBuilder ReturnItemOp
         {
             get { return Operation.ReturnItem.Builder.SetWrapperObject(this); }
@@ -1055,6 +1059,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ItemDependency? QueryItemReferences(QueryItemReferences input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ItemDependency?> QueryItemReferencesAsync(QueryItemReferences input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

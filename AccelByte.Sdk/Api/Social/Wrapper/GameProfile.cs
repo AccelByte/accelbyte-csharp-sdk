@@ -19,48 +19,60 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetUserProfiles.GetUserProfilesBuilder GetUserProfilesOp
         {
             get { return Operation.GetUserProfiles.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public GetProfile.GetProfileBuilder GetProfileOp
         {
             get { return Operation.GetProfile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserGameProfiles.PublicGetUserGameProfilesBuilder PublicGetUserGameProfilesOp
         {
             get { return Operation.PublicGetUserGameProfiles.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetUserProfiles.PublicGetUserProfilesBuilder PublicGetUserProfilesOp
         {
             get { return Operation.PublicGetUserProfiles.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicCreateProfile.PublicCreateProfileBuilder PublicCreateProfileOp
         {
             get { return Operation.PublicCreateProfile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetProfile.PublicGetProfileBuilder PublicGetProfileOp
         {
             get { return Operation.PublicGetProfile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicUpdateProfile.PublicUpdateProfileBuilder PublicUpdateProfileOp
         {
             get { return Operation.PublicUpdateProfile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicDeleteProfile.PublicDeleteProfileBuilder PublicDeleteProfileOp
         {
             get { return Operation.PublicDeleteProfile.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetProfileAttribute.PublicGetProfileAttributeBuilder PublicGetProfileAttributeOp
         {
             get { return Operation.PublicGetProfileAttribute.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicUpdateAttribute.PublicUpdateAttributeBuilder PublicUpdateAttributeOp
         {
             get { return Operation.PublicUpdateAttribute.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.GameProfileHeader>? GetUserProfiles(GetUserProfiles input)
         {
             var response = _sdk.RunRequest(input);
@@ -77,6 +89,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GameProfileInfo? GetProfile(GetProfile input)
         {
             var response = _sdk.RunRequest(input);
@@ -93,6 +108,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.UserGameProfiles>? PublicGetUserGameProfiles(PublicGetUserGameProfiles input)
         {
             var response = _sdk.RunRequest(input);
@@ -109,6 +127,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.GameProfileHeader>? PublicGetUserProfiles(PublicGetUserProfiles input)
         {
             var response = _sdk.RunRequest(input);
@@ -125,6 +146,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void PublicCreateProfile(PublicCreateProfile input)
         {
             var response = _sdk.RunRequest(input);
@@ -141,6 +165,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GameProfileInfo? PublicGetProfile(PublicGetProfile input)
         {
             var response = _sdk.RunRequest(input);
@@ -157,6 +184,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GameProfileInfo? PublicUpdateProfile(PublicUpdateProfile input)
         {
             var response = _sdk.RunRequest(input);
@@ -173,6 +203,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void PublicDeleteProfile(PublicDeleteProfile input)
         {
             var response = _sdk.RunRequest(input);
@@ -189,6 +222,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.Attribute? PublicGetProfileAttribute(PublicGetProfileAttribute input)
         {
             var response = _sdk.RunRequest(input);
@@ -205,6 +241,9 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.GameProfileInfo? PublicUpdateAttribute(PublicUpdateAttribute input)
         {
             var response = _sdk.RunRequest(input);
@@ -221,5 +260,6 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

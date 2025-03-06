@@ -31,6 +31,8 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             public long? Offset { get; set; }
 
+            public PublicGetScheduledGoalsSortBy? SortBy { get; set; }
+
             public List<string>? Tags { get; set; }
 
 
@@ -49,6 +51,12 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             public PublicGetScheduledGoalsBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public PublicGetScheduledGoalsBuilder SetSortBy(PublicGetScheduledGoalsSortBy _sortBy)
+            {
+                SortBy = _sortBy;
                 return this;
             }
 
@@ -90,6 +98,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy.Value;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
@@ -107,6 +116,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             string namespace_,
             long? limit,
             long? offset,
+            PublicGetScheduledGoalsSortBy? sortBy,
             List<string>? tags
         )
         {
@@ -115,6 +125,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (sortBy is not null) QueryParams["sortBy"] = sortBy.Value;
             if (tags is not null) QueryParams["tags"] = tags;
 
 
@@ -158,6 +169,39 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class PublicGetScheduledGoalsSortBy : StringEnum<PublicGetScheduledGoalsSortBy>
+    {
+        public static readonly PublicGetScheduledGoalsSortBy CreatedAt
+            = new PublicGetScheduledGoalsSortBy("createdAt");
+
+        public static readonly PublicGetScheduledGoalsSortBy CreatedAtasc
+            = new PublicGetScheduledGoalsSortBy("createdAt:asc");
+
+        public static readonly PublicGetScheduledGoalsSortBy CreatedAtdesc
+            = new PublicGetScheduledGoalsSortBy("createdAt:desc");
+
+        public static readonly PublicGetScheduledGoalsSortBy UpdatedAt
+            = new PublicGetScheduledGoalsSortBy("updatedAt");
+
+        public static readonly PublicGetScheduledGoalsSortBy UpdatedAtasc
+            = new PublicGetScheduledGoalsSortBy("updatedAt:asc");
+
+        public static readonly PublicGetScheduledGoalsSortBy UpdatedAtdesc
+            = new PublicGetScheduledGoalsSortBy("updatedAt:desc");
+
+
+        public static implicit operator PublicGetScheduledGoalsSortBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public PublicGetScheduledGoalsSortBy(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

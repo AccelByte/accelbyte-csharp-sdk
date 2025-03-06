@@ -16,8 +16,14 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// publicDeleteProfile
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Deletes game profile.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicDeleteProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

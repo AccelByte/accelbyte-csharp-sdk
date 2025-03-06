@@ -16,9 +16,12 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// publicQueryUserStatItems
     ///
-    /// Public list all statItems by pagination.
+    /// Public list all statItems of user.
+    /// NOTE:
+    ///         * If stat code does not exist, will ignore this stat code.
+    ///         * If stat item does not exist, will return default value
     /// Other detail info:
-    ///           *  Returns : stat items
+    ///         *  Returns : stat items
     /// </summary>
     public class PublicQueryUserStatItems : AccelByte.Sdk.Core.Operation
     {
@@ -29,15 +32,11 @@ namespace AccelByte.Sdk.Api.Social.Operation
             : OperationBuilder<PublicQueryUserStatItemsBuilder>
         {
 
-            public int? Limit { get; set; }
+            public string? AdditionalKey { get; set; }
 
-            public int? Offset { get; set; }
+            public List<string>? StatCodes { get; set; }
 
-            public string? SortBy { get; set; }
-
-            public string? StatCodes { get; set; }
-
-            public string? Tags { get; set; }
+            public List<string>? Tags { get; set; }
 
 
 
@@ -46,31 +45,19 @@ namespace AccelByte.Sdk.Api.Social.Operation
             internal PublicQueryUserStatItemsBuilder() { }
 
 
-            public PublicQueryUserStatItemsBuilder SetLimit(int _limit)
+            public PublicQueryUserStatItemsBuilder SetAdditionalKey(string _additionalKey)
             {
-                Limit = _limit;
+                AdditionalKey = _additionalKey;
                 return this;
             }
 
-            public PublicQueryUserStatItemsBuilder SetOffset(int _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
-
-            public PublicQueryUserStatItemsBuilder SetSortBy(string _sortBy)
-            {
-                SortBy = _sortBy;
-                return this;
-            }
-
-            public PublicQueryUserStatItemsBuilder SetStatCodes(string _statCodes)
+            public PublicQueryUserStatItemsBuilder SetStatCodes(List<string> _statCodes)
             {
                 StatCodes = _statCodes;
                 return this;
             }
 
-            public PublicQueryUserStatItemsBuilder SetTags(string _tags)
+            public PublicQueryUserStatItemsBuilder SetTags(List<string> _tags)
             {
                 Tags = _tags;
                 return this;
@@ -106,14 +93,14 @@ namespace AccelByte.Sdk.Api.Social.Operation
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
-            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.SortBy is not null) QueryParams["sortBy"] = builder.SortBy;
+            if (builder.AdditionalKey is not null) QueryParams["additionalKey"] = builder.AdditionalKey;
             if (builder.StatCodes is not null) QueryParams["statCodes"] = builder.StatCodes;
             if (builder.Tags is not null) QueryParams["tags"] = builder.Tags;
 
 
 
+            CollectionFormatMap["statCodes"] = "multi";
+            CollectionFormatMap["tags"] = "multi";
 
 
 
@@ -124,31 +111,29 @@ namespace AccelByte.Sdk.Api.Social.Operation
         public PublicQueryUserStatItems(
             string namespace_,
             string userId,
-            int? limit,
-            int? offset,
-            string? sortBy,
-            string? statCodes,
-            string? tags
+            string? additionalKey,
+            List<string>? statCodes,
+            List<string>? tags
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
-            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (sortBy is not null) QueryParams["sortBy"] = sortBy;
+            if (additionalKey is not null) QueryParams["additionalKey"] = additionalKey;
             if (statCodes is not null) QueryParams["statCodes"] = statCodes;
             if (tags is not null) QueryParams["tags"] = tags;
 
 
 
+            CollectionFormatMap["statCodes"] = "multi";
+            CollectionFormatMap["tags"] = "multi";
 
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems";
+        public override string Path => "/social/v1/public/namespaces/{namespace}/users/{userId}/statitems/value/bulk";
 
         public override HttpMethod Method => HttpMethod.Get;
 
@@ -159,7 +144,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.UserStatItemPagingSlicedResult? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.ADTOObjectForUserStatItemValue>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -168,13 +153,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.UserStatItemPagingSlicedResult>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<List<Model.ADTOObjectForUserStatItemValue>>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.UserStatItemPagingSlicedResult>(payload);
+                    return JsonSerializer.Deserialize<List<Model.ADTOObjectForUserStatItemValue>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.UserStatItemPagingSlicedResult>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<List<Model.ADTOObjectForUserStatItemValue>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

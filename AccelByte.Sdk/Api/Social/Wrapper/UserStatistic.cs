@@ -103,17 +103,17 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.PublicListAllMyStatItems.Builder.SetWrapperObject(this); }
         }
-        public PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder PublicQueryUserStatItemsOp
+        public PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder PublicQueryUserStatItems1Op
         {
-            get { return Operation.PublicQueryUserStatItems.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicQueryUserStatItems1.Builder.SetWrapperObject(this); }
         }
         public PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder PublicBulkCreateUserStatItemsOp
         {
             get { return Operation.PublicBulkCreateUserStatItems.Builder.SetWrapperObject(this); }
         }
-        public PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder PublicQueryUserStatItems1Op
+        public PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder PublicQueryUserStatItemsOp
         {
-            get { return Operation.PublicQueryUserStatItems1.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicQueryUserStatItems.Builder.SetWrapperObject(this); }
         }
         public PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder PublicBulkIncUserStatItem1Op
         {
@@ -749,7 +749,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.UserStatItemPagingSlicedResult? PublicQueryUserStatItems(PublicQueryUserStatItems input)
+        public Model.UserStatItemPagingSlicedResult? PublicQueryUserStatItems1(PublicQueryUserStatItems1 input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -757,7 +757,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.UserStatItemPagingSlicedResult?> PublicQueryUserStatItemsAsync(PublicQueryUserStatItems input)
+        public async Task<Model.UserStatItemPagingSlicedResult?> PublicQueryUserStatItems1Async(PublicQueryUserStatItems1 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -799,7 +799,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems1(PublicQueryUserStatItems1 input)
+        public List<Model.ADTOObjectForUserStatItemValue>? PublicQueryUserStatItems(PublicQueryUserStatItems input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -807,7 +807,7 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.ADTOObjectForUserStatItemValue>?> PublicQueryUserStatItems1Async(PublicQueryUserStatItems1 input)
+        public async Task<List<Model.ADTOObjectForUserStatItemValue>?> PublicQueryUserStatItemsAsync(PublicQueryUserStatItems input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

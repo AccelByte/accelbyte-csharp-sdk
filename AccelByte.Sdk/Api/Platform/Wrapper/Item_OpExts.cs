@@ -1429,6 +1429,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Item)builder.WrapperObject!).UpdateItemPurchaseConditionAsync<T1>(op);
         }
+        public static Platform.Model.ItemDependency? Execute(
+            this QueryItemReferences.QueryItemReferencesBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            QueryItemReferences op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItemReferences(op);
+        }
+        public static async Task<Platform.Model.ItemDependency?> ExecuteAsync(
+            this QueryItemReferences.QueryItemReferencesBuilder builder,
+            string itemId,
+            string namespace_
+        )
+        {
+            QueryItemReferences op = builder.Build(
+                itemId,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Item)builder.WrapperObject!).QueryItemReferencesAsync(op);
+        }
         public static void Execute(
             this ReturnItem.ReturnItemBuilder builder,
             ItemReturnRequest body,

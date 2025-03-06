@@ -951,30 +951,30 @@ namespace AccelByte.Sdk.Api
             return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicListAllMyStatItemsAsync(op);
         }
         public static Social.Model.UserStatItemPagingSlicedResult? Execute(
-            this PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder builder,
+            this PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder builder,
             string namespace_,
             string userId
         )
         {
-            PublicQueryUserStatItems op = builder.Build(
+            PublicQueryUserStatItems1 op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems(op);
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems1(op);
         }
         public static async Task<Social.Model.UserStatItemPagingSlicedResult?> ExecuteAsync(
-            this PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder builder,
+            this PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder builder,
             string namespace_,
             string userId
         )
         {
-            PublicQueryUserStatItems op = builder.Build(
+            PublicQueryUserStatItems1 op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItemsAsync(op);
+            return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems1Async(op);
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkCreateUserStatItems.PublicBulkCreateUserStatItemsBuilder builder,
@@ -1038,30 +1038,30 @@ namespace AccelByte.Sdk.Api
             return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicBulkCreateUserStatItemsAsync<T1>(op);
         }
         public static List<Social.Model.ADTOObjectForUserStatItemValue>? Execute(
-            this PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder builder,
+            this PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder builder,
             string namespace_,
             string userId
         )
         {
-            PublicQueryUserStatItems1 op = builder.Build(
+            PublicQueryUserStatItems op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems1(op);
+            return ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems(op);
         }
         public static async Task<List<Social.Model.ADTOObjectForUserStatItemValue>?> ExecuteAsync(
-            this PublicQueryUserStatItems1.PublicQueryUserStatItems1Builder builder,
+            this PublicQueryUserStatItems.PublicQueryUserStatItemsBuilder builder,
             string namespace_,
             string userId
         )
         {
-            PublicQueryUserStatItems1 op = builder.Build(
+            PublicQueryUserStatItems op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItems1Async(op);
+            return await ((Social.Wrapper.UserStatistic)builder.WrapperObject!).PublicQueryUserStatItemsAsync(op);
         }
         public static List<Social.Model.BulkStatOperationResult>? Execute(
             this PublicBulkIncUserStatItem1.PublicBulkIncUserStatItem1Builder builder,

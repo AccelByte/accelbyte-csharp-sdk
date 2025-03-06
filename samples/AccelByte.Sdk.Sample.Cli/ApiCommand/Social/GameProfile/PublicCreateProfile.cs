@@ -46,6 +46,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         {
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.PublicCreateProfile.Builder;
 
 
@@ -59,9 +60,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             wrapper.PublicCreateProfile(operation);
             return String.Empty;
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

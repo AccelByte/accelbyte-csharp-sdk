@@ -365,6 +365,14 @@
 | `/iam/v3/admin/namespaces/{namespace}/roleoverride/status` | PATCH | AdminChangeRoleOverrideConfigStatusV3 | [AdminChangeRoleOverrideConfigStatusV3](../../AccelByte.Sdk/Api/Iam/Operation/OverrideRoleConfigV3/AdminChangeRoleOverrideConfigStatusV3.cs) | [AdminChangeRoleOverrideConfigStatusV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OverrideRoleConfigV3/AdminChangeRoleOverrideConfigStatusV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/roleoverride/{roleId}/permissions` | GET | AdminGetRoleNamespacePermissionV3 | [AdminGetRoleNamespacePermissionV3](../../AccelByte.Sdk/Api/Iam/Operation/OverrideRoleConfigV3/AdminGetRoleNamespacePermissionV3.cs) | [AdminGetRoleNamespacePermissionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OverrideRoleConfigV3/AdminGetRoleNamespacePermissionV3.cs) |
 
+### Account Idenfifier Tag Wrapper:  [AccountIdenfifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdenfifierTag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/iam/v3/admin/namespaces/{namespace}/tags` | GET | AdminQueryTagV3 | [AdminQueryTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminQueryTagV3.cs) | [AdminQueryTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminQueryTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags` | POST | AdminCreateTagV3 | [AdminCreateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminCreateTagV3.cs) | [AdminCreateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminCreateTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | PUT | AdminUpdateTagV3 | [AdminUpdateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminUpdateTagV3.cs) | [AdminUpdateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminUpdateTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | DELETE | AdminDeleteTagV3 | [AdminDeleteTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminDeleteTagV3.cs) | [AdminDeleteTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminDeleteTagV3.cs) |
+
 ### OAuth2.0 - Extension Wrapper:  [OAuth20Extension](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Extension.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -581,6 +589,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Account Idenfifier Tag Wrapper:  [AccountIdenfifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdenfifierTag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### OAuth2.0 - Extension Wrapper:  [OAuth20Extension](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Extension.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -686,6 +698,8 @@
 | `accountcommon.SimpleUserPlatformInfoV3` | [AccountcommonSimpleUserPlatformInfoV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonSimpleUserPlatformInfoV3.cs) |
 | `accountcommon.SsoConfig` | [AccountcommonSsoConfig](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonSsoConfig.cs) |
 | `accountcommon.SsoConfigPatchReq` | [AccountcommonSsoConfigPatchReq](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonSsoConfigPatchReq.cs) |
+| `accountcommon.TagResponse` | [AccountcommonTagResponse](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonTagResponse.cs) |
+| `accountcommon.TagsGetResponseV3` | [AccountcommonTagsGetResponseV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonTagsGetResponseV3.cs) |
 | `accountcommon.UserInformationV3` | [AccountcommonUserInformationV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonUserInformationV3.cs) |
 | `accountcommon.UserLinkedPlatform` | [AccountcommonUserLinkedPlatform](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonUserLinkedPlatform.cs) |
 | `accountcommon.UserLinkedPlatformV3` | [AccountcommonUserLinkedPlatformV3](../../AccelByte.Sdk/Api/Iam/Model/AccountcommonUserLinkedPlatformV3.cs) |
@@ -865,6 +879,8 @@
 | `model.SendVerificationLinkRequest` | [ModelSendVerificationLinkRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelSendVerificationLinkRequest.cs) |
 | `model.SimpleProfileUpdateStrategyConfigs` | [ModelSimpleProfileUpdateStrategyConfigs](../../AccelByte.Sdk/Api/Iam/Model/ModelSimpleProfileUpdateStrategyConfigs.cs) |
 | `model.SimpleUserBan` | [ModelSimpleUserBan](../../AccelByte.Sdk/Api/Iam/Model/ModelSimpleUserBan.cs) |
+| `model.TagCreateRequestV3` | [ModelTagCreateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelTagCreateRequestV3.cs) |
+| `model.TagUpdateRequestV3` | [ModelTagUpdateRequestV3](../../AccelByte.Sdk/Api/Iam/Model/ModelTagUpdateRequestV3.cs) |
 | `model.ThirdPartyLoginPlatformCredentialRequest` | [ModelThirdPartyLoginPlatformCredentialRequest](../../AccelByte.Sdk/Api/Iam/Model/ModelThirdPartyLoginPlatformCredentialRequest.cs) |
 | `model.ThirdPartyLoginPlatformCredentialResponse` | [ModelThirdPartyLoginPlatformCredentialResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelThirdPartyLoginPlatformCredentialResponse.cs) |
 | `model.TokenThirdPartyLinkStatusResponse` | [ModelTokenThirdPartyLinkStatusResponse](../../AccelByte.Sdk/Api/Iam/Model/ModelTokenThirdPartyLinkStatusResponse.cs) |

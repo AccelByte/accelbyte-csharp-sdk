@@ -43,6 +43,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         [SdkCommandArgument("sortBy")]
         public string? SortBy { get; set; }
 
+        [SdkCommandArgument("tags")]
+        public List<string>? Tags { get; set; }
+
         public AdminGetGoalsCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -60,6 +63,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
                 opBuilder.SetOffset((long)Offset);
             if (SortBy != null)
                 opBuilder.SetSortBy(AdminGetGoalsSortBy.NewValue(SortBy));
+            if (Tags != null)
+                opBuilder.SetTags((List<string>)Tags);
 
 
 

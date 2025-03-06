@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
         [SdkCommandArgument("tags")]
         public List<string>? Tags { get; set; }
 
@@ -58,6 +61,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (SortBy != null)
+                opBuilder.SetSortBy(PublicGetScheduledGoalsSortBy.NewValue(SortBy));
             if (Tags != null)
                 opBuilder.SetTags((List<string>)Tags);
 

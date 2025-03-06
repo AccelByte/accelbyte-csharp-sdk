@@ -16,11 +16,17 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// <summary>
     /// publicCreateProfile
     ///
+    /// 
+    /// 
+    /// ## The endpoint is going to be deprecated
+    /// 
+    /// 
     /// Create new profile for user.
     /// Other detail info:
     ///         *  Returns
     /// : created game profile
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicCreateProfile : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -147,6 +147,26 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.UpdateXblBPCertFile.Builder.SetWrapperObject(this); }
         }
+        public QueryAbnormalTransactions.QueryAbnormalTransactionsBuilder QueryAbnormalTransactionsOp
+        {
+            get { return Operation.QueryAbnormalTransactions.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetSteamJobInfo.AdminGetSteamJobInfoBuilder AdminGetSteamJobInfoOp
+        {
+            get { return Operation.AdminGetSteamJobInfo.Builder.SetWrapperObject(this); }
+        }
+        public AdminResetSteamJobTime.AdminResetSteamJobTimeBuilder AdminResetSteamJobTimeOp
+        {
+            get { return Operation.AdminResetSteamJobTime.Builder.SetWrapperObject(this); }
+        }
+        public AdminRefundIAPOrder.AdminRefundIAPOrderBuilder AdminRefundIAPOrderOp
+        {
+            get { return Operation.AdminRefundIAPOrder.Builder.SetWrapperObject(this); }
+        }
+        public QuerySteamReportHistories.QuerySteamReportHistoriesBuilder QuerySteamReportHistoriesOp
+        {
+            get { return Operation.QuerySteamReportHistories.Builder.SetWrapperObject(this); }
+        }
         public GetIAPOrderConsumeDetails.GetIAPOrderConsumeDetailsBuilder GetIAPOrderConsumeDetailsOp
         {
             get { return Operation.GetIAPOrderConsumeDetails.Builder.SetWrapperObject(this); }
@@ -166,6 +186,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public MockFulfillIAPItem.MockFulfillIAPItemBuilder MockFulfillIAPItemOp
         {
             get { return Operation.MockFulfillIAPItem.Builder.SetWrapperObject(this); }
+        }
+        public AdminGetIAPOrderLineItems.AdminGetIAPOrderLineItemsBuilder AdminGetIAPOrderLineItemsOp
+        {
+            get { return Operation.AdminGetIAPOrderLineItems.Builder.SetWrapperObject(this); }
+        }
+        public AdminSyncSteamAbnormalTransaction.AdminSyncSteamAbnormalTransactionBuilder AdminSyncSteamAbnormalTransactionOp
+        {
+            get { return Operation.AdminSyncSteamAbnormalTransaction.Builder.SetWrapperObject(this); }
+        }
+        public AdminSyncSteamIAPByTransaction.AdminSyncSteamIAPByTransactionBuilder AdminSyncSteamIAPByTransactionOp
+        {
+            get { return Operation.AdminSyncSteamIAPByTransaction.Builder.SetWrapperObject(this); }
         }
         public GetAppleConfigVersion.GetAppleConfigVersionBuilder GetAppleConfigVersionOp
         {
@@ -206,6 +238,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public SyncSteamInventory.SyncSteamInventoryBuilder SyncSteamInventoryOp
         {
             get { return Operation.SyncSteamInventory.Builder.SetWrapperObject(this); }
+        }
+        public SyncSteamAbnormalTransaction.SyncSteamAbnormalTransactionBuilder SyncSteamAbnormalTransactionOp
+        {
+            get { return Operation.SyncSteamAbnormalTransaction.Builder.SetWrapperObject(this); }
+        }
+        public SyncSteamIAPByTransaction.SyncSteamIAPByTransactionBuilder SyncSteamIAPByTransactionOp
+        {
+            get { return Operation.SyncSteamIAPByTransaction.Builder.SetWrapperObject(this); }
         }
         public SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder SyncTwitchDropsEntitlement1Op
         {
@@ -733,6 +773,86 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.SteamAbnormalTransactionPagingSlicedResult? QueryAbnormalTransactions(QueryAbnormalTransactions input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SteamAbnormalTransactionPagingSlicedResult?> QueryAbnormalTransactionsAsync(QueryAbnormalTransactions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.SteamReportJobInfo>? AdminGetSteamJobInfo(AdminGetSteamJobInfo input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.SteamReportJobInfo>?> AdminGetSteamJobInfoAsync(AdminGetSteamJobInfo input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.SteamReportJobInfo? AdminResetSteamJobTime(AdminResetSteamJobTime input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SteamReportJobInfo?> AdminResetSteamJobTimeAsync(AdminResetSteamJobTime input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPOrderInfo? AdminRefundIAPOrder(AdminRefundIAPOrder input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.IAPOrderInfo?> AdminRefundIAPOrderAsync(AdminRefundIAPOrder input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.SteamReportInfoPagingSlicedResult? QuerySteamReportHistories(QuerySteamReportHistories input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.SteamReportInfoPagingSlicedResult?> QuerySteamReportHistoriesAsync(QuerySteamReportHistories input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.IAPOrderConsumeDetailInfo>? GetIAPOrderConsumeDetails(GetIAPOrderConsumeDetails input)
         {
             var response = _sdk.RunRequest(input);
@@ -809,6 +929,54 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.IAPOrderLineItemInfo>? AdminGetIAPOrderLineItems(AdminGetIAPOrderLineItems input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.IAPOrderLineItemInfo>?> AdminGetIAPOrderLineItemsAsync(AdminGetIAPOrderLineItems input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPOrderShortInfo? AdminSyncSteamAbnormalTransaction(AdminSyncSteamAbnormalTransaction input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.IAPOrderShortInfo?> AdminSyncSteamAbnormalTransactionAsync(AdminSyncSteamAbnormalTransaction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPOrderShortInfo? AdminSyncSteamIAPByTransaction(AdminSyncSteamIAPByTransaction input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.IAPOrderShortInfo?> AdminSyncSteamIAPByTransactionAsync(AdminSyncSteamIAPByTransaction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
@@ -969,6 +1137,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPOrderShortInfo? SyncSteamAbnormalTransaction(SyncSteamAbnormalTransaction input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.IAPOrderShortInfo?> SyncSteamAbnormalTransactionAsync(SyncSteamAbnormalTransaction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.IAPOrderShortInfo? SyncSteamIAPByTransaction(SyncSteamIAPByTransaction input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.IAPOrderShortInfo?> SyncSteamIAPByTransactionAsync(SyncSteamIAPByTransaction input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

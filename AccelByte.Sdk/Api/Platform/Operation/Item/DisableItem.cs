@@ -31,12 +31,20 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         {
 
 
+            public Model.ChangeStatusItemRequest? Body { get; set; }
+
 
 
 
             internal DisableItemBuilder() { }
 
 
+
+            public DisableItemBuilder SetBody(Model.ChangeStatusItemRequest _body)
+            {
+                Body = _body;
+                return this;
+            }
 
 
 
@@ -75,6 +83,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            BodyParams = builder.Body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -84,7 +93,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public DisableItem(
             string itemId,
             string namespace_,
-            string storeId
+            string storeId,
+            Model.ChangeStatusItemRequest body
         )
         {
             PathParams["itemId"] = itemId;
@@ -95,6 +105,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);

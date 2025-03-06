@@ -78,6 +78,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - The user will be given chance to reconnect within "inactiveTimeout" which you can configure through session configuration. If until "inactiveTimeout" is due and the user doesn't reconnect their websocket, they will be removed from session and their status will change to DROPPED. If the dropped user was the leader of the session, we will promote the next oldest member as leader.
     /// - By default, we will update user's status to what it was before disconnect, when the user reconnects lobby websocket, unless "manualRejoin" sets to True in the session configuration. When "manualRejoin" is enabled, after lobby websocket reconnect, the game client will need to manually invoke join session again to rejoin the session.
     /// - If the user was on INVITED state before the disconnect happened, the user's status will return back to INVITED after they reconnect.
+    /// - ttlHours is how long the session will active, max value is 168 hours
     /// </summary>
     public class PublicCreateParty : AccelByte.Sdk.Core.Operation
     {

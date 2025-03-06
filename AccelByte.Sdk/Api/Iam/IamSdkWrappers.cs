@@ -167,6 +167,17 @@ namespace AccelByte.Sdk.Core
         }
         private OverrideRoleConfigV3? _OverrideRoleConfigV3 = null;
 
+        public AccountIdenfifierTag AccountIdenfifierTag
+        {
+            get
+            {
+                if (_AccountIdenfifierTag == null)
+                    _AccountIdenfifierTag = new AccountIdenfifierTag(_SdkObject);
+                return _AccountIdenfifierTag;
+            }
+        }
+        private AccountIdenfifierTag? _AccountIdenfifierTag = null;
+
         public OAuth20Extension OAuth20Extension
         {
             get

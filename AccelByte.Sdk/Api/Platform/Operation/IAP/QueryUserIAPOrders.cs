@@ -220,6 +220,9 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         public static readonly QueryUserIAPOrdersStatus REVOKED
             = new QueryUserIAPOrdersStatus("REVOKED");
 
+        public static readonly QueryUserIAPOrdersStatus REVOKEFAILED
+            = new QueryUserIAPOrdersStatus("REVOKE_FAILED");
+
         public static readonly QueryUserIAPOrdersStatus VERIFIED
             = new QueryUserIAPOrdersStatus("VERIFIED");
 

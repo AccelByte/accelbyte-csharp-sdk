@@ -102,6 +102,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public string? RefreshToken { get; set; }
 
+            public string? Scope { get; set; }
+
             public string? Username { get; set; }
 
 
@@ -171,6 +173,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
+            public TokenGrantV3Builder SetScope(string _scope)
+            {
+                Scope = _scope;
+                return this;
+            }
+
             public TokenGrantV3Builder SetUsername(string _username)
             {
                 Username = _username;
@@ -211,6 +219,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.Password is not null) FormParams["password"] = builder.Password;
             if (builder.RedirectUri is not null) FormParams["redirect_uri"] = builder.RedirectUri;
             if (builder.RefreshToken is not null) FormParams["refresh_token"] = builder.RefreshToken;
+            if (builder.Scope is not null) FormParams["scope"] = builder.Scope;
             if (builder.Username is not null) FormParams["username"] = builder.Username;
             if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 
@@ -233,6 +242,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? password,
             string? redirectUri,
             string? refreshToken,
+            string? scope,
             string? username,
             TokenGrantV3GrantType grantType
         )
@@ -249,6 +259,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (password is not null) FormParams["password"] = password;
             if (redirectUri is not null) FormParams["redirect_uri"] = redirectUri;
             if (refreshToken is not null) FormParams["refresh_token"] = refreshToken;
+            if (scope is not null) FormParams["scope"] = scope;
             if (username is not null) FormParams["username"] = username;
             if (grantType is not null) FormParams["grant_type"] = grantType.Value;
 

@@ -13,9 +13,17 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
 
+        [JsonPropertyName("items")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<RedeemableItem>? Items { get; set; }
+
         [JsonPropertyName("name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
 
     }
 

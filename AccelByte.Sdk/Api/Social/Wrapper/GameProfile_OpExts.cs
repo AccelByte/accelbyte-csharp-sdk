@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class SocialGameProfile_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Social.Model.GameProfileHeader>? Execute(
             this GetUserProfiles.GetUserProfilesBuilder builder,
             string namespace_,
@@ -38,6 +39,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetUserProfilesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.GameProfileInfo? Execute(
             this GetProfile.GetProfileBuilder builder,
             string namespace_,
@@ -68,6 +70,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).GetProfileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Social.Model.UserGameProfiles>? Execute(
             this PublicGetUserGameProfiles.PublicGetUserGameProfilesBuilder builder,
             string namespace_,
@@ -94,6 +97,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserGameProfilesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Social.Model.GameProfileHeader>? Execute(
             this PublicGetUserProfiles.PublicGetUserProfilesBuilder builder,
             string namespace_,
@@ -120,6 +124,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetUserProfilesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicCreateProfile.PublicCreateProfileBuilder builder,
             string namespace_,
@@ -146,6 +151,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicCreateProfileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.GameProfileInfo? Execute(
             this PublicGetProfile.PublicGetProfileBuilder builder,
             string namespace_,
@@ -176,6 +182,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateProfile.PublicUpdateProfileBuilder builder,
             string namespace_,
@@ -206,6 +213,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicUpdateProfileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicDeleteProfile.PublicDeleteProfileBuilder builder,
             string namespace_,
@@ -236,6 +244,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicDeleteProfileAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.Attribute? Execute(
             this PublicGetProfileAttribute.PublicGetProfileAttributeBuilder builder,
             string attributeName,
@@ -270,6 +279,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Social.Wrapper.GameProfile)builder.WrapperObject!).PublicGetProfileAttributeAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Social.Model.GameProfileInfo? Execute(
             this PublicUpdateAttribute.PublicUpdateAttributeBuilder builder,
             string attributeName,

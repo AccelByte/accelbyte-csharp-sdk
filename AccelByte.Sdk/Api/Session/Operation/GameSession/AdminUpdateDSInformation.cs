@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminUpdateDSInformation
     ///
-    /// Update Game Session DS Information for Asynchronous Process
+    /// This API is used for create custom DS asynchronously flow and is expected to be called after the service receives response from the Async RPC.
     /// </summary>
     public class AdminUpdateDSInformation : AccelByte.Sdk.Core.Operation
     {

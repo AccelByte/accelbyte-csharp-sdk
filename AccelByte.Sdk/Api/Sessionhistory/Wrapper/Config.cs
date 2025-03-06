@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         }
 
         #region Operation Builders
+        public AdminGetEnvConfig.AdminGetEnvConfigBuilder AdminGetEnvConfigOp
+        {
+            get { return Operation.AdminGetEnvConfig.Builder.SetWrapperObject(this); }
+        }
+        public AdminPatchUpdateEnvConfig.AdminPatchUpdateEnvConfigBuilder AdminPatchUpdateEnvConfigOp
+        {
+            get { return Operation.AdminPatchUpdateEnvConfig.Builder.SetWrapperObject(this); }
+        }
         public AdminGetLogConfig.AdminGetLogConfigBuilder AdminGetLogConfigOp
         {
             get { return Operation.AdminGetLogConfig.Builder.SetWrapperObject(this); }
@@ -29,6 +37,38 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         }
         #endregion
 
+        public Model.EnvconfigConfiguration? AdminGetEnvConfig(AdminGetEnvConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.EnvconfigConfiguration?> AdminGetEnvConfigAsync(AdminGetEnvConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.EnvconfigConfiguration? AdminPatchUpdateEnvConfig(AdminPatchUpdateEnvConfig input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.EnvconfigConfiguration?> AdminPatchUpdateEnvConfigAsync(AdminPatchUpdateEnvConfig input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.LogconfigConfiguration? AdminGetLogConfig(AdminGetLogConfig input)
         {
             var response = _sdk.RunRequest(input);

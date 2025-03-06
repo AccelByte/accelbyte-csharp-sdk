@@ -18,6 +18,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("dsHostConfiguration")]
         public ApiDSHostConfiguration? DsHostConfiguration { get; set; }
 
+        [JsonPropertyName("fallbackFleet")]
+        public string? FallbackFleet { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -32,6 +35,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 
         [JsonPropertyName("onDemand")]
         public bool? OnDemand { get; set; }
+
+        [JsonPropertyName("primaryFleet")]
+        public string? PrimaryFleet { get; set; }
 
         [JsonPropertyName("regions")]
         public List<ApiRegionConfig>? Regions { get; set; }

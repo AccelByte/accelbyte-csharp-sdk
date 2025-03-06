@@ -17,9 +17,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminUpdateUserV3
     ///
     /// This Endpoint support update user based on given data. **Single request can update single field or multi fields.**
-    /// Supported field {country, displayName, languageTag, dateOfBirth, avatarUrl, userName}
+    /// Supported field {country, displayName, languageTag, dateOfBirth, avatarUrl, userName, tags}
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
     /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
+    /// Admin can set Tags with array string data e.g. ["10e9a46ef6164b7e86d08e86605bd8cf"].
+    /// Admin also can reset user tags by sending empty array string e.g. [ ].
+    /// Users can have at most 5 tags. No duplicate tags allowed.
     /// 
     /// **Response body logic when user updating email address:**
     /// - User want to update email address of which have been verified, NewEmailAddress response field will be filled with new email address.

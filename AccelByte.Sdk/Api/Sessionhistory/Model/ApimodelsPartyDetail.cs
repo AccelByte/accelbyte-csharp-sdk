@@ -15,6 +15,15 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("histories")]
         public List<ApimodelsPartyHistory>? Histories { get; set; }
 
+        [JsonPropertyName("joinability")]
+        public string? Joinability { get; set; }
+
+        [JsonPropertyName("last_data")]
+        public ModelsParty? LastData { get; set; }
+
+        [JsonPropertyName("leader_id")]
+        public string? LeaderId { get; set; }
+
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 
@@ -23,6 +32,9 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
 
         [JsonPropertyName("session_template")]
         public string? SessionTemplate { get; set; }
+
+        [JsonPropertyName("updated_at")]
+        public DateTime? UpdatedAt { get; set; }
 
     }
 

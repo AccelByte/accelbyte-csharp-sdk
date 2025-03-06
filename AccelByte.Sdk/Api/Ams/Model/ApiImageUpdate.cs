@@ -13,9 +13,11 @@ namespace AccelByte.Sdk.Api.Ams.Model
         public List<string>? AddedTags { get; set; }
 
         [JsonPropertyName("isProtected")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsProtected { get; set; }
 
         [JsonPropertyName("name")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
 
         [JsonPropertyName("removedTags")]

@@ -27,11 +27,23 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             : OperationBuilder<AdminQueryGameSessionDetailBuilder>
         {
 
+            public string? CompletedOnly { get; set; }
+
+            public string? ConfigurationName { get; set; }
+
+            public string? DsPodName { get; set; }
+
             public string? EndDate { get; set; }
 
             public string? GameSessionID { get; set; }
 
+            public string? IsPersistent { get; set; }
+
+            public string? Joinability { get; set; }
+
             public long? Limit { get; set; }
+
+            public string? MatchPool { get; set; }
 
             public long? Offset { get; set; }
 
@@ -41,6 +53,8 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             public string? StartDate { get; set; }
 
+            public string? StatusV2 { get; set; }
+
             public string? UserID { get; set; }
 
 
@@ -49,6 +63,24 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             internal AdminQueryGameSessionDetailBuilder() { }
 
+
+            public AdminQueryGameSessionDetailBuilder SetCompletedOnly(string _completedOnly)
+            {
+                CompletedOnly = _completedOnly;
+                return this;
+            }
+
+            public AdminQueryGameSessionDetailBuilder SetConfigurationName(string _configurationName)
+            {
+                ConfigurationName = _configurationName;
+                return this;
+            }
+
+            public AdminQueryGameSessionDetailBuilder SetDsPodName(string _dsPodName)
+            {
+                DsPodName = _dsPodName;
+                return this;
+            }
 
             public AdminQueryGameSessionDetailBuilder SetEndDate(string _endDate)
             {
@@ -62,9 +94,27 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
                 return this;
             }
 
+            public AdminQueryGameSessionDetailBuilder SetIsPersistent(string _isPersistent)
+            {
+                IsPersistent = _isPersistent;
+                return this;
+            }
+
+            public AdminQueryGameSessionDetailBuilder SetJoinability(string _joinability)
+            {
+                Joinability = _joinability;
+                return this;
+            }
+
             public AdminQueryGameSessionDetailBuilder SetLimit(long _limit)
             {
                 Limit = _limit;
+                return this;
+            }
+
+            public AdminQueryGameSessionDetailBuilder SetMatchPool(string _matchPool)
+            {
+                MatchPool = _matchPool;
                 return this;
             }
 
@@ -89,6 +139,12 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             public AdminQueryGameSessionDetailBuilder SetStartDate(string _startDate)
             {
                 StartDate = _startDate;
+                return this;
+            }
+
+            public AdminQueryGameSessionDetailBuilder SetStatusV2(string _statusV2)
+            {
+                StatusV2 = _statusV2;
                 return this;
             }
 
@@ -124,13 +180,20 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.CompletedOnly is not null) QueryParams["completedOnly"] = builder.CompletedOnly;
+            if (builder.ConfigurationName is not null) QueryParams["configurationName"] = builder.ConfigurationName;
+            if (builder.DsPodName is not null) QueryParams["dsPodName"] = builder.DsPodName;
             if (builder.EndDate is not null) QueryParams["endDate"] = builder.EndDate;
             if (builder.GameSessionID is not null) QueryParams["gameSessionID"] = builder.GameSessionID;
+            if (builder.IsPersistent is not null) QueryParams["isPersistent"] = builder.IsPersistent;
+            if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.MatchPool is not null) QueryParams["matchPool"] = builder.MatchPool;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.StatusV2 is not null) QueryParams["statusV2"] = builder.StatusV2;
             if (builder.UserID is not null) QueryParams["userID"] = builder.UserID;
 
 
@@ -144,25 +207,39 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
         public AdminQueryGameSessionDetail(
             string namespace_,
+            string? completedOnly,
+            string? configurationName,
+            string? dsPodName,
             string? endDate,
             string? gameSessionID,
+            string? isPersistent,
+            string? joinability,
             long? limit,
+            string? matchPool,
             long? offset,
             string? order,
             string? orderBy,
             string? startDate,
+            string? statusV2,
             string? userID
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (completedOnly is not null) QueryParams["completedOnly"] = completedOnly;
+            if (configurationName is not null) QueryParams["configurationName"] = configurationName;
+            if (dsPodName is not null) QueryParams["dsPodName"] = dsPodName;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (gameSessionID is not null) QueryParams["gameSessionID"] = gameSessionID;
+            if (isPersistent is not null) QueryParams["isPersistent"] = isPersistent;
+            if (joinability is not null) QueryParams["joinability"] = joinability;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (matchPool is not null) QueryParams["matchPool"] = matchPool;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (order is not null) QueryParams["order"] = order;
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            if (statusV2 is not null) QueryParams["statusV2"] = statusV2;
             if (userID is not null) QueryParams["userID"] = userID;
 
 

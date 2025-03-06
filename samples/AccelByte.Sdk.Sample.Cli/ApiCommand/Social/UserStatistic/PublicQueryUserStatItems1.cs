@@ -34,14 +34,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
-        [SdkCommandArgument("additionalKey")]
-        public string? AdditionalKey { get; set; }
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
 
         [SdkCommandArgument("statCodes")]
-        public List<string>? StatCodes { get; set; }
+        public string? StatCodes { get; set; }
 
         [SdkCommandArgument("tags")]
-        public List<string>? Tags { get; set; }
+        public string? Tags { get; set; }
 
         public PublicQueryUserStatItems1Command(AccelByteSDK sdk)
         {
@@ -54,12 +60,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
 
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.PublicQueryUserStatItems1.Builder;
 
-            if (AdditionalKey != null)
-                opBuilder.SetAdditionalKey((string)AdditionalKey);
+            if (Limit != null)
+                opBuilder.SetLimit((int)Limit);
+            if (Offset != null)
+                opBuilder.SetOffset((int)Offset);
+            if (SortBy != null)
+                opBuilder.SetSortBy((string)SortBy);
             if (StatCodes != null)
-                opBuilder.SetStatCodes((List<string>)StatCodes);
+                opBuilder.SetStatCodes((string)StatCodes);
             if (Tags != null)
-                opBuilder.SetTags((List<string>)Tags);
+                opBuilder.SetTags((string)Tags);
 
 
 
@@ -70,7 +80,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
             );
 
 
-            List<AccelByte.Sdk.Api.Social.Model.ADTOObjectForUserStatItemValue>? response = wrapper.PublicQueryUserStatItems1(operation);
+            AccelByte.Sdk.Api.Social.Model.UserStatItemPagingSlicedResult? response = wrapper.PublicQueryUserStatItems1(operation);
             if (response == null)
                 return "No response from server.";
 

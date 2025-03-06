@@ -49,6 +49,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
         {
             AccelByte.Sdk.Api.Social.Wrapper.GameProfile wrapper = new AccelByte.Sdk.Api.Social.Wrapper.GameProfile(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Social.Operation.PublicGetProfileAttribute.Builder;
 
 
@@ -62,12 +63,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Social
                 UserId
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Social.Model.Attribute? response = wrapper.PublicGetProfileAttribute(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

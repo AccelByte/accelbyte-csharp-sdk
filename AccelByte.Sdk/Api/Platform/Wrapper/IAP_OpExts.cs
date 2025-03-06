@@ -756,6 +756,124 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFileAsync(op);
         }
+        public static Platform.Model.SteamAbnormalTransactionPagingSlicedResult? Execute(
+            this QueryAbnormalTransactions.QueryAbnormalTransactionsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryAbnormalTransactions op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAbnormalTransactions(op);
+        }
+        public static async Task<Platform.Model.SteamAbnormalTransactionPagingSlicedResult?> ExecuteAsync(
+            this QueryAbnormalTransactions.QueryAbnormalTransactionsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryAbnormalTransactions op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAbnormalTransactionsAsync(op);
+        }
+        public static List<Platform.Model.SteamReportJobInfo>? Execute(
+            this AdminGetSteamJobInfo.AdminGetSteamJobInfoBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetSteamJobInfo op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminGetSteamJobInfo(op);
+        }
+        public static async Task<List<Platform.Model.SteamReportJobInfo>?> ExecuteAsync(
+            this AdminGetSteamJobInfo.AdminGetSteamJobInfoBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetSteamJobInfo op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminGetSteamJobInfoAsync(op);
+        }
+        public static Platform.Model.SteamReportJobInfo? Execute(
+            this AdminResetSteamJobTime.AdminResetSteamJobTimeBuilder builder,
+            ResetJobRequest body,
+            string namespace_
+        )
+        {
+            AdminResetSteamJobTime op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminResetSteamJobTime(op);
+        }
+        public static async Task<Platform.Model.SteamReportJobInfo?> ExecuteAsync(
+            this AdminResetSteamJobTime.AdminResetSteamJobTimeBuilder builder,
+            ResetJobRequest body,
+            string namespace_
+        )
+        {
+            AdminResetSteamJobTime op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminResetSteamJobTimeAsync(op);
+        }
+        public static Platform.Model.IAPOrderInfo? Execute(
+            this AdminRefundIAPOrder.AdminRefundIAPOrderBuilder builder,
+            string iapOrderNo,
+            string namespace_
+        )
+        {
+            AdminRefundIAPOrder op = builder.Build(
+                iapOrderNo,
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminRefundIAPOrder(op);
+        }
+        public static async Task<Platform.Model.IAPOrderInfo?> ExecuteAsync(
+            this AdminRefundIAPOrder.AdminRefundIAPOrderBuilder builder,
+            string iapOrderNo,
+            string namespace_
+        )
+        {
+            AdminRefundIAPOrder op = builder.Build(
+                iapOrderNo,
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminRefundIAPOrderAsync(op);
+        }
+        public static Platform.Model.SteamReportInfoPagingSlicedResult? Execute(
+            this QuerySteamReportHistories.QuerySteamReportHistoriesBuilder builder,
+            string namespace_
+        )
+        {
+            QuerySteamReportHistories op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).QuerySteamReportHistories(op);
+        }
+        public static async Task<Platform.Model.SteamReportInfoPagingSlicedResult?> ExecuteAsync(
+            this QuerySteamReportHistories.QuerySteamReportHistoriesBuilder builder,
+            string namespace_
+        )
+        {
+            QuerySteamReportHistories op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).QuerySteamReportHistoriesAsync(op);
+        }
         public static List<Platform.Model.IAPOrderConsumeDetailInfo>? Execute(
             this GetIAPOrderConsumeDetails.GetIAPOrderConsumeDetailsBuilder builder,
             string iapOrderNo,
@@ -889,6 +1007,92 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItemAsync(op);
+        }
+        public static List<Platform.Model.IAPOrderLineItemInfo>? Execute(
+            this AdminGetIAPOrderLineItems.AdminGetIAPOrderLineItemsBuilder builder,
+            string iapOrderNo,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetIAPOrderLineItems op = builder.Build(
+                iapOrderNo,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminGetIAPOrderLineItems(op);
+        }
+        public static async Task<List<Platform.Model.IAPOrderLineItemInfo>?> ExecuteAsync(
+            this AdminGetIAPOrderLineItems.AdminGetIAPOrderLineItemsBuilder builder,
+            string iapOrderNo,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminGetIAPOrderLineItems op = builder.Build(
+                iapOrderNo,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminGetIAPOrderLineItemsAsync(op);
+        }
+        public static Platform.Model.IAPOrderShortInfo? Execute(
+            this AdminSyncSteamAbnormalTransaction.AdminSyncSteamAbnormalTransactionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncSteamAbnormalTransaction op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncSteamAbnormalTransaction(op);
+        }
+        public static async Task<Platform.Model.IAPOrderShortInfo?> ExecuteAsync(
+            this AdminSyncSteamAbnormalTransaction.AdminSyncSteamAbnormalTransactionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncSteamAbnormalTransaction op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncSteamAbnormalTransactionAsync(op);
+        }
+        public static Platform.Model.IAPOrderShortInfo? Execute(
+            this AdminSyncSteamIAPByTransaction.AdminSyncSteamIAPByTransactionBuilder builder,
+            SteamSyncByTransactionRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncSteamIAPByTransaction op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncSteamIAPByTransaction(op);
+        }
+        public static async Task<Platform.Model.IAPOrderShortInfo?> ExecuteAsync(
+            this AdminSyncSteamIAPByTransaction.AdminSyncSteamIAPByTransactionBuilder builder,
+            SteamSyncByTransactionRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncSteamIAPByTransaction op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncSteamIAPByTransactionAsync(op);
         }
         public static Platform.Model.AppleIAPConfigVersionInfo? Execute(
             this GetAppleConfigVersion.GetAppleConfigVersionBuilder builder,
@@ -1157,6 +1361,62 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamInventoryAsync(op);
+        }
+        public static Platform.Model.IAPOrderShortInfo? Execute(
+            this SyncSteamAbnormalTransaction.SyncSteamAbnormalTransactionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncSteamAbnormalTransaction op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamAbnormalTransaction(op);
+        }
+        public static async Task<Platform.Model.IAPOrderShortInfo?> ExecuteAsync(
+            this SyncSteamAbnormalTransaction.SyncSteamAbnormalTransactionBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncSteamAbnormalTransaction op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamAbnormalTransactionAsync(op);
+        }
+        public static Platform.Model.IAPOrderShortInfo? Execute(
+            this SyncSteamIAPByTransaction.SyncSteamIAPByTransactionBuilder builder,
+            SteamSyncByTransactionRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncSteamIAPByTransaction op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamIAPByTransaction(op);
+        }
+        public static async Task<Platform.Model.IAPOrderShortInfo?> ExecuteAsync(
+            this SyncSteamIAPByTransaction.SyncSteamIAPByTransactionBuilder builder,
+            SteamSyncByTransactionRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncSteamIAPByTransaction op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncSteamIAPByTransactionAsync(op);
         }
         public static void Execute(
             this SyncTwitchDropsEntitlement1.SyncTwitchDropsEntitlement1Builder builder,

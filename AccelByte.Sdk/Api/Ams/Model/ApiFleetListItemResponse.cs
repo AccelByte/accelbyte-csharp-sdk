@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("counts")]
         public List<ApiFleetRegionalServerCounts>? Counts { get; set; }
 
+        [JsonPropertyName("fallbackFleet")]
+        public string? FallbackFleet { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -32,6 +35,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 
         [JsonPropertyName("onDemand")]
         public bool? OnDemand { get; set; }
+
+        [JsonPropertyName("primaryFleet")]
+        public string? PrimaryFleet { get; set; }
 
         [JsonPropertyName("regions")]
         public List<string>? Regions { get; set; }

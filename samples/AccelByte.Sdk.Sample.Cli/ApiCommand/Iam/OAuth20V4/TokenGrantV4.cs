@@ -67,6 +67,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("refresh_token")]
         public string RefreshToken { get; set; } = String.Empty;
 
+        [SdkCommandArgument("scope")]
+        public string Scope { get; set; } = String.Empty;
+
         [SdkCommandArgument("username")]
         public string Username { get; set; } = String.Empty;
 
@@ -112,6 +115,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetRedirectUri((string)RedirectUri);
             if (RefreshToken != null)
                 opBuilder.SetRefreshToken((string)RefreshToken);
+            if (Scope != null)
+                opBuilder.SetScope((string)Scope);
             if (Username != null)
                 opBuilder.SetUsername((string)Username);
 

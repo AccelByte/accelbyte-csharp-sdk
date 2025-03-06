@@ -50,6 +50,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
         public static readonly XblReconcileResultIapOrderStatus REVOKED
             = new XblReconcileResultIapOrderStatus("REVOKED");
 
+        public static readonly XblReconcileResultIapOrderStatus REVOKEFAILED
+            = new XblReconcileResultIapOrderStatus("REVOKE_FAILED");
+
         public static readonly XblReconcileResultIapOrderStatus VERIFIED
             = new XblReconcileResultIapOrderStatus("VERIFIED");
 
