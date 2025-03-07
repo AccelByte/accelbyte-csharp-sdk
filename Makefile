@@ -107,4 +107,23 @@ outstanding_deprecation:
 				exit (count_not_ok ? 1 : 0); \
 			}' \
 		| tee outstanding_deprecation.out
-	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out) 
+	@echo 1..$$(grep -c '^\(not \)\?ok' outstanding_deprecation.out)
+
+prepare_migration_guide:
+	cp -r spec .spec.old
+	cp -r version.txt .version.txt.old
+
+migration_guide:
+	@test -n "$(AMG_TOOL_BINARY)" || (echo "AMG_TOOL_BINARY is not set" ; exit 1)
+	@test -d ".spec.old" || (echo ".spec.old directory does not exists"; exit 1)
+	@test -f ".version.txt.old" || (echo ".version.txt.old file does not exists"; exit 1)
+	VERSION_OLD=$$(cat .version.txt.old) && \
+	VERSION_NEW=$$(cat version.txt) && \
+		"${AMG_TOOL_BINARY}" -o ".spec.old" -n "spec" -t "csharp-mono" \
+			-f "migration-guide-" -w "docs/migration-guides" \
+			-r "$${VERSION_OLD}" -v "$${VERSION_NEW}"
+
+cleanup_migration_guide:
+	rm -rf .spec.old
+	rm -rf .version.txt.old
+
