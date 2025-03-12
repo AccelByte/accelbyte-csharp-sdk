@@ -12,7 +12,7 @@ jobChannel = env.SLACK_CHANNEL_ACTIVITY_EXTEND_CODEGEN_SDK ? env.SLACK_CHANNEL_A
 
 pipeline {
   agent {
-    label "extend-builder-batch"
+    label "extend-builder-batch || lima"
   }
   stages {
     stage('Coverity') {
@@ -25,11 +25,19 @@ pipeline {
       }
       steps {
         script {
-          //sh "apt update && apt install -y curl git && apt clean"
-          sh "curl -L '${env.COV_ANALYSIS_TGZ_SHA1_URL}' -o /opt/cov-analysis.tar.gz.sha1"
-          sh "[ -f /opt/cov-analysis.tar.gz ] || curl -L '${env.COV_ANALYSIS_TGZ_URL}' -o /opt/cov-analysis.tar.gz"
-          sh "(echo \$(cat /opt/cov-analysis.tar.gz.sha1) /opt/cov-analysis.tar.gz | sha1sum -c) || (echo 'Download corrupted. Please try again!' && rm -f /opt/cov-analysis.tar.gz.sha1 /opt/cov-analysis.tar.gz && exit 100)"
-          sh "mkdir -p /opt/cov-analysis && rm -rf /opt/cov-analysis/* && tar xf /opt/cov-analysis.tar.gz -C /opt/cov-analysis --strip-components=1"
+          def arch = sh(script: 'uname -m', returnStdout: true).trim()
+          if (arch == 'aarch64') {
+            sh "curl -L '${env.COV_ANALYSIS_ARM64_TGZ_SHA1_URL}' -o /opt/cov-analysis-arm64.tar.gz.sha1"
+            sh "[ -f /opt/cov-analysis-arm64.tar.gz ] || curl -L '${env.COV_ANALYSIS_ARM64_TGZ_URL}' -o /opt/cov-analysis-arm64.tar.gz"
+            sh "(echo \$(cat /opt/cov-analysis-arm64.tar.gz.sha1) /opt/cov-analysis-arm64.tar.gz | sha1sum -c) || (echo 'Download corrupted. Please try again!' && rm -f /opt/cov-analysis-arm64.tar.gz.sha1 /opt/cov-analysis-arm64.tar.gz && exit 100)"
+            sh "mkdir -p /opt/cov-analysis && rm -rf /opt/cov-analysis/* && tar xf /opt/cov-analysis-arm64.tar.gz -C /opt/cov-analysis --strip-components=1"
+          }
+          else {
+            sh "curl -L '${env.COV_ANALYSIS_TGZ_SHA1_URL}' -o /opt/cov-analysis.tar.gz.sha1"
+            sh "[ -f /opt/cov-analysis.tar.gz ] || curl -L '${env.COV_ANALYSIS_TGZ_URL}' -o /opt/cov-analysis.tar.gz"
+            sh "(echo \$(cat /opt/cov-analysis.tar.gz.sha1) /opt/cov-analysis.tar.gz | sha1sum -c) || (echo 'Download corrupted. Please try again!' && rm -f /opt/cov-analysis.tar.gz.sha1 /opt/cov-analysis.tar.gz && exit 100)"
+            sh "mkdir -p /opt/cov-analysis && rm -rf /opt/cov-analysis/* && tar xf /opt/cov-analysis.tar.gz -C /opt/cov-analysis --strip-components=1"
+          }
 
           sh "git config --global --add safe.directory '*' && git clean -xfd"
           sh "PATH=/opt/cov-analysis/bin:\$PATH cov-build --dir cov-int dotnet build"
