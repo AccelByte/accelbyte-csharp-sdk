@@ -351,31 +351,6 @@ _Sdk.Gametelemetry.GametelemetryOperations.ProtectedSaveEventsGameTelemetryV1Pro
         }
     });
 ```
-
-### Update steam's playtime
-
-```csharp
-try
-{
-    _Sdk.Gametelemetry.GametelemetryOperations.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutOp
-        .Execute(playTime, steamId);
-}
-catch (HttpResponseException e)
-{
-    if (e.Message.ToLower().Contains("user not found"))
-    {
-        Assert.Ignore("User not found.");
-    }
-}
-```
-
-### Get steam's playtime
-
-```csharp
-PlayTimeResponse? resGet = _Sdk.Gametelemetry.GametelemetryOperations
-    .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
-    .Execute(steamId);
-```
 ## GDPR
 
 Source: [GdprTests.cs](../AccelByte.Sdk.Tests/Services/GdprTests.cs)
