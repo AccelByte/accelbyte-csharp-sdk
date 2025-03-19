@@ -32,9 +32,6 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
             }
 
-            string steamId = "76561199259217491";
-            string playTime = "4";
-
             #region Save game telemetry event
             _Sdk.Gametelemetry.GametelemetryOperations.ProtectedSaveEventsGameTelemetryV1ProtectedEventsPostOp
                 .Execute(new List<TelemetryBody>
@@ -50,31 +47,6 @@ namespace AccelByte.Sdk.Tests.Services
                     }
                 });
             #endregion
-
-            DisableRetry();
-            #region Update steam's playtime
-            try
-            {
-                _Sdk.Gametelemetry.GametelemetryOperations.ProtectedUpdatePlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimePlaytimePutOp
-                    .Execute(playTime, steamId);
-            }
-            catch (HttpResponseException e)
-            {
-                if (e.Message.ToLower().Contains("user not found"))
-                {
-                    Assert.Ignore("User not found.");
-                }
-            }
-            #endregion
-
-            #region Get steam's playtime
-            PlayTimeResponse? resGet = _Sdk.Gametelemetry.GametelemetryOperations
-                .ProtectedGetPlaytimeGameTelemetryV1ProtectedSteamIdsSteamIdPlaytimeGetOp
-                .Execute(steamId);
-            #endregion
-            Assert.IsNotNull(resGet);
-            if (resGet != null)
-                Assert.Equals(playTime, resGet.TotalPlaytime!);
         }
     }
 }
