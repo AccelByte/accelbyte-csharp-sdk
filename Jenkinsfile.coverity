@@ -41,7 +41,7 @@ pipeline {
           }
 
           sh "git config --global --add safe.directory '*' && git clean -xfd"
-          sh "PATH=/opt/cov-analysis/bin:\$PATH cov-build --dir cov-int dotnet build"
+          sh "PATH=/opt/cov-analysis/bin:\$PATH cov-build --dir cov-int dotnet build -maxcpucount:1"    // Limit dotnet build maxcpucount to 1 to avoid hangs in build machines
           sh "tar caf cov-int.tar.gz cov-int"
 
           withCredentials([usernamePassword(credentialsId: 'coverity-accelbyte-csharp-sdk', passwordVariable: 'COVERITY_TOKEN', usernameVariable: 'COVERITY_EMAIL')]) {
