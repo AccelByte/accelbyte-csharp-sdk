@@ -41,11 +41,58 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PartySessionID { get; set; }
 
+        [JsonPropertyName("ruleSet")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, object>? RuleSet { get; set; }
+
         [JsonPropertyName("ticketID")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? TicketID { get; set; }
 
     }
 
+    public class ApimodelsMatchmakingDetail<T1> : AccelByte.Sdk.Core.Model
+    {
+        [JsonPropertyName("createdAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? CreatedAt { get; set; }
+
+        [JsonPropertyName("expiredAt")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public DateTime? ExpiredAt { get; set; }
+
+        [JsonPropertyName("gameSessionID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? GameSessionID { get; set; }
+
+        [JsonPropertyName("histories")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<ApimodelsMatchmakingHistory>? Histories { get; set; }
+
+        [JsonPropertyName("matchPool")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MatchPool { get; set; }
+
+        [JsonPropertyName("matchRule")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? MatchRule { get; set; }
+
+        [JsonPropertyName("namespace")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Namespace { get; set; }
+
+        [JsonPropertyName("partySessionID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PartySessionID { get; set; }
+
+        [JsonPropertyName("ruleSet")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public T1? RuleSet { get; set; }
+
+        [JsonPropertyName("ticketID")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? TicketID { get; set; }
+
+    }
 
 }

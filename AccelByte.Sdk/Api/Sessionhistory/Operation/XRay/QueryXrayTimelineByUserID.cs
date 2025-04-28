@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             public long? Offset { get; set; }
 
+            public string? Order { get; set; }
+
+            public string? OrderBy { get; set; }
+
 
 
 
@@ -47,6 +51,18 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             public QueryXrayTimelineByUserIDBuilder SetOffset(long _offset)
             {
                 Offset = _offset;
+                return this;
+            }
+
+            public QueryXrayTimelineByUserIDBuilder SetOrder(string _order)
+            {
+                Order = _order;
+                return this;
+            }
+
+            public QueryXrayTimelineByUserIDBuilder SetOrderBy(string _orderBy)
+            {
+                OrderBy = _orderBy;
                 return this;
             }
 
@@ -88,6 +104,8 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
+            if (builder.Order is not null) QueryParams["order"] = builder.Order;
+            if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 
@@ -105,6 +123,8 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
             string userId,
             long? limit,
             long? offset,
+            string? order,
+            string? orderBy,
             string endDate,
             string startDate
         )
@@ -114,6 +134,8 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Operation
 
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
+            if (order is not null) QueryParams["order"] = order;
+            if (orderBy is not null) QueryParams["orderBy"] = orderBy;
             if (endDate is not null) QueryParams["endDate"] = endDate;
             if (startDate is not null) QueryParams["startDate"] = startDate;
 

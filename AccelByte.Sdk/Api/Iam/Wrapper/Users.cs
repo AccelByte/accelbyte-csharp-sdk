@@ -391,6 +391,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminBulkGetUsersPlatform.Builder.SetWrapperObject(this); }
         }
+        public AdminCursorGetUserV3.AdminCursorGetUserV3Builder AdminCursorGetUserV3Op
+        {
+            get { return Operation.AdminCursorGetUserV3.Builder.SetWrapperObject(this); }
+        }
         public AdminInviteUserV3.AdminInviteUserV3Builder AdminInviteUserV3Op
         {
             get { return Operation.AdminInviteUserV3.Builder.SetWrapperObject(this); }
@@ -757,6 +761,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         public PublicValidateUserByUserIDAndPasswordV3.PublicValidateUserByUserIDAndPasswordV3Builder PublicValidateUserByUserIDAndPasswordV3Op
         {
             get { return Operation.PublicValidateUserByUserIDAndPasswordV3.Builder.SetWrapperObject(this); }
+        }
+        public PublicForgotPasswordWithoutNamespaceV3.PublicForgotPasswordWithoutNamespaceV3Builder PublicForgotPasswordWithoutNamespaceV3Op
+        {
+            get { return Operation.PublicForgotPasswordWithoutNamespaceV3.Builder.SetWrapperObject(this); }
         }
         public PublicGetMyUserV3.PublicGetMyUserV3Builder PublicGetMyUserV3Op
         {
@@ -2213,6 +2221,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelListBulkUserPlatformsResponse?> AdminBulkGetUsersPlatformAsync(AdminBulkGetUsersPlatform input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelCursorGetUserResponse? AdminCursorGetUserV3(AdminCursorGetUserV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelCursorGetUserResponse?> AdminCursorGetUserV3Async(AdminCursorGetUserV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -3731,6 +3755,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelForgotPasswordResponseV3? PublicForgotPasswordWithoutNamespaceV3(PublicForgotPasswordWithoutNamespaceV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelForgotPasswordResponseV3?> PublicForgotPasswordWithoutNamespaceV3Async(PublicForgotPasswordWithoutNamespaceV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

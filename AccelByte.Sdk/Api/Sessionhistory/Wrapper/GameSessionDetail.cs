@@ -125,6 +125,24 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+
+        public Model.ApimodelsMatchmakingDetail<T1>? AdminGetMatchmakingDetailBySessionID<T1>(AdminGetMatchmakingDetailBySessionID input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMatchmakingDetail<T1>?> AdminGetMatchmakingDetailBySessionIDAsync<T1>(AdminGetMatchmakingDetailBySessionID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ApimodelsMatchmakingDetail? AdminGetMatchmakingDetailByTicketID(AdminGetMatchmakingDetailByTicketID input)
         {
             var response = _sdk.RunRequest(input);
@@ -137,6 +155,24 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+
+        public Model.ApimodelsMatchmakingDetail<T1>? AdminGetMatchmakingDetailByTicketID<T1>(AdminGetMatchmakingDetailByTicketID input)
+        {
+            var response = _sdk.RunRequest(input);
+
+            return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsMatchmakingDetail<T1>?> AdminGetMatchmakingDetailByTicketIDAsync<T1>(AdminGetMatchmakingDetailByTicketID input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse<T1>(
                     response.Code,
                     response.ContentType,
                     response.Payload);

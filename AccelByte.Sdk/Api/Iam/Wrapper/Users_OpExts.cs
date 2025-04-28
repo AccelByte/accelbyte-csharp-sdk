@@ -2156,7 +2156,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Iam.Model.ModelListUserInformationResult? Execute(
             this AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder builder,
-            ModelUserIDsRequest body,
+            ModelAdminBulkUserRequest body,
             string namespace_
         )
         {
@@ -2169,7 +2169,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Iam.Model.ModelListUserInformationResult?> ExecuteAsync(
             this AdminListUserIDByUserIDsV3.AdminListUserIDByUserIDsV3Builder builder,
-            ModelUserIDsRequest body,
+            ModelAdminBulkUserRequest body,
             string namespace_
         )
         {
@@ -2205,6 +2205,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminBulkGetUsersPlatformAsync(op);
+        }
+        public static Iam.Model.ModelCursorGetUserResponse? Execute(
+            this AdminCursorGetUserV3.AdminCursorGetUserV3Builder builder,
+            ModelCursorGetUserRequest body,
+            string namespace_
+        )
+        {
+            AdminCursorGetUserV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).AdminCursorGetUserV3(op);
+        }
+        public static async Task<Iam.Model.ModelCursorGetUserResponse?> ExecuteAsync(
+            this AdminCursorGetUserV3.AdminCursorGetUserV3Builder builder,
+            ModelCursorGetUserRequest body,
+            string namespace_
+        )
+        {
+            AdminCursorGetUserV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminCursorGetUserV3Async(op);
         }
         public static Iam.Model.ModelInviteUserResponseV3? Execute(
             this AdminInviteUserV3.AdminInviteUserV3Builder builder,
@@ -4805,6 +4831,28 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicValidateUserByUserIDAndPasswordV3Async(op);
+        }
+        public static Iam.Model.ModelForgotPasswordResponseV3? Execute(
+            this PublicForgotPasswordWithoutNamespaceV3.PublicForgotPasswordWithoutNamespaceV3Builder builder,
+            ModelForgotPasswordWithoutNamespaceRequestV3 body
+        )
+        {
+            PublicForgotPasswordWithoutNamespaceV3 op = builder.Build(
+                body
+            );
+
+            return ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordWithoutNamespaceV3(op);
+        }
+        public static async Task<Iam.Model.ModelForgotPasswordResponseV3?> ExecuteAsync(
+            this PublicForgotPasswordWithoutNamespaceV3.PublicForgotPasswordWithoutNamespaceV3Builder builder,
+            ModelForgotPasswordWithoutNamespaceRequestV3 body
+        )
+        {
+            PublicForgotPasswordWithoutNamespaceV3 op = builder.Build(
+                body
+            );
+
+            return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicForgotPasswordWithoutNamespaceV3Async(op);
         }
         public static Iam.Model.ModelUserResponseV3? Execute(
             this PublicGetMyUserV3.PublicGetMyUserV3Builder builder

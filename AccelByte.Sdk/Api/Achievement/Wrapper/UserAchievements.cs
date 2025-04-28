@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         {
             get { return Operation.AdminListUserAchievements.Builder.SetWrapperObject(this); }
         }
+        public AdminBulkUnlockAchievement.AdminBulkUnlockAchievementBuilder AdminBulkUnlockAchievementOp
+        {
+            get { return Operation.AdminBulkUnlockAchievement.Builder.SetWrapperObject(this); }
+        }
         public AdminResetAchievement.AdminResetAchievementBuilder AdminResetAchievementOp
         {
             get { return Operation.AdminResetAchievement.Builder.SetWrapperObject(this); }
@@ -34,6 +38,10 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
         public PublicListUserAchievements.PublicListUserAchievementsBuilder PublicListUserAchievementsOp
         {
             get { return Operation.PublicListUserAchievements.Builder.SetWrapperObject(this); }
+        }
+        public PublicBulkUnlockAchievement.PublicBulkUnlockAchievementBuilder PublicBulkUnlockAchievementOp
+        {
+            get { return Operation.PublicBulkUnlockAchievement.Builder.SetWrapperObject(this); }
         }
         public PublicUnlockAchievement.PublicUnlockAchievementBuilder PublicUnlockAchievementOp
         {
@@ -50,6 +58,22 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsPaginatedUserAchievementResponse?> AdminListUserAchievementsAsync(AdminListUserAchievements input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsBulkUnlockAchievementResponse>? AdminBulkUnlockAchievement(AdminBulkUnlockAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsBulkUnlockAchievementResponse>?> AdminBulkUnlockAchievementAsync(AdminBulkUnlockAchievement input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -98,6 +122,22 @@ namespace AccelByte.Sdk.Api.Achievement.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsPaginatedUserAchievementResponse?> PublicListUserAchievementsAsync(PublicListUserAchievements input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ModelsBulkUnlockAchievementResponse>? PublicBulkUnlockAchievement(PublicBulkUnlockAchievement input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ModelsBulkUnlockAchievementResponse>?> PublicBulkUnlockAchievementAsync(PublicBulkUnlockAchievement input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

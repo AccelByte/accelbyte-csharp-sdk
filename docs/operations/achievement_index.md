@@ -45,9 +45,11 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements` | GET | AdminListUserAchievements | [AdminListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminListUserAchievements.cs) | [AdminListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminListUserAchievements.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/bulkUnlock` | PUT | AdminBulkUnlockAchievement | [AdminBulkUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminBulkUnlockAchievement.cs) | [AdminBulkUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminBulkUnlockAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/reset` | DELETE | AdminResetAchievement | [AdminResetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminResetAchievement.cs) | [AdminResetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminResetAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | AdminUnlockAchievement | [AdminUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminUnlockAchievement.cs) | [AdminUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminUnlockAchievement.cs) |
 | `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements` | GET | PublicListUserAchievements | [PublicListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/PublicListUserAchievements.cs) | [PublicListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/PublicListUserAchievements.cs) |
+| `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements/bulkUnlock` | PUT | PublicBulkUnlockAchievement | [PublicBulkUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/PublicBulkUnlockAchievement.cs) | [PublicBulkUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/PublicBulkUnlockAchievement.cs) |
 | `/achievement/v1/public/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | PublicUnlockAchievement | [PublicUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/PublicUnlockAchievement.cs) | [PublicUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/PublicUnlockAchievement.cs) |
 
 ### Anonymization Wrapper:  [Anonymization](../../AccelByte.Sdk/Api/Achievement/Wrapper/Anonymization.cs)
@@ -102,6 +104,8 @@
 | `models.AdditionalInfo` | [ModelsAdditionalInfo](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAdditionalInfo.cs) |
 | `models.BulkCreatePSNEventResponse` | [ModelsBulkCreatePSNEventResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEventResponse.cs) |
 | `models.BulkCreatePSNEvents` | [ModelsBulkCreatePSNEvents](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEvents.cs) |
+| `models.BulkUnlockAchievementRequest` | [ModelsBulkUnlockAchievementRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkUnlockAchievementRequest.cs) |
+| `models.BulkUnlockAchievementResponse` | [ModelsBulkUnlockAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkUnlockAchievementResponse.cs) |
 | `models.ContributorResponse` | [ModelsContributorResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsContributorResponse.cs) |
 | `models.CreatePSNEvent` | [ModelsCreatePSNEvent](../../AccelByte.Sdk/Api/Achievement/Model/ModelsCreatePSNEvent.cs) |
 | `models.ErrorDetails` | [ModelsErrorDetails](../../AccelByte.Sdk/Api/Achievement/Model/ModelsErrorDetails.cs) |

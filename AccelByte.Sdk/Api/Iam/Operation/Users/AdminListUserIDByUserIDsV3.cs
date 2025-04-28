@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
 
             public AdminListUserIDByUserIDsV3 Build(
-                ModelUserIDsRequest body,
+                ModelAdminBulkUserRequest body,
                 string namespace_
             )
             {
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         }
 
         private AdminListUserIDByUserIDsV3(AdminListUserIDByUserIDsV3Builder builder,
-            ModelUserIDsRequest body,
+            ModelAdminBulkUserRequest body,
             string namespace_
         )
         {
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public AdminListUserIDByUserIDsV3(
             string namespace_,
-            Model.ModelUserIDsRequest body
+            Model.ModelAdminBulkUserRequest body
         )
         {
             PathParams["namespace"] = namespace_;

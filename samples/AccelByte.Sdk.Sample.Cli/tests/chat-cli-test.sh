@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..64"
+echo "1..65"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -506,7 +506,15 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 43 'AdminGetCategorySchema' test.out
 
-#- 44 AdminDeleteInboxMessage
+#- 44 AdminListKafkaTopic
+$CLI_EXE \
+    --sn chat \
+    --op AdminListKafkaTopic \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 44 'AdminListKafkaTopic' test.out
+
+#- 45 AdminDeleteInboxMessage
 $CLI_EXE \
     --sn chat \
     --op AdminDeleteInboxMessage \
@@ -514,9 +522,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --force 'false' \
     > test.out 2>&1
-eval_tap $? 44 'AdminDeleteInboxMessage' test.out
+eval_tap $? 45 'AdminDeleteInboxMessage' test.out
 
-#- 45 AdminGetInboxMessages
+#- 46 AdminGetInboxMessages
 $CLI_EXE \
     --sn chat \
     --op AdminGetInboxMessages \
@@ -532,9 +540,9 @@ $CLI_EXE \
     --status 'DRAFT' \
     --transient 'false' \
     > test.out 2>&1
-eval_tap $? 45 'AdminGetInboxMessages' test.out
+eval_tap $? 46 'AdminGetInboxMessages' test.out
 
-#- 46 AdminSaveInboxMessage
+#- 47 AdminSaveInboxMessage
 # body param: body
 echo '{"category": "kYGDL2ckC9cdzaLn", "expiredAt": 0, "message": {"U4hCv5egSQDePKSZ": {}, "Kp6zwDQS1atvJrAL": {}, "aiplJgRhedl5Ewh3": {}}, "scope": "NAMESPACE", "status": "SENT", "userIds": ["cgjHQo9HoLLyUnPT", "iCD0038or8wR0tuw", "IJnrSI2IFcRwSoMT"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -543,9 +551,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 46 'AdminSaveInboxMessage' test.out
+eval_tap $? 47 'AdminSaveInboxMessage' test.out
 
-#- 47 AdminUnsendInboxMessage
+#- 48 AdminUnsendInboxMessage
 # body param: body
 echo '{"userIds": ["uJziuDNbOydiu3lO", "aruuYw0iUuts6bCh", "MK1gcx8p9fyv5PoM"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -555,9 +563,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 47 'AdminUnsendInboxMessage' test.out
+eval_tap $? 48 'AdminUnsendInboxMessage' test.out
 
-#- 48 AdminGetInboxUsers
+#- 49 AdminGetInboxUsers
 $CLI_EXE \
     --sn chat \
     --op AdminGetInboxUsers \
@@ -568,9 +576,9 @@ $CLI_EXE \
     --status 'READ' \
     --userId '25C1zEnAMGmFy7w6' \
     > test.out 2>&1
-eval_tap $? 48 'AdminGetInboxUsers' test.out
+eval_tap $? 49 'AdminGetInboxUsers' test.out
 
-#- 49 AdminUpdateInboxMessage
+#- 50 AdminUpdateInboxMessage
 # body param: body
 echo '{"expiredAt": 9, "message": {"gC4mJ5OHuNEVQK4M": {}, "vk00I9GqAhhjNIiv": {}, "dIcaEQfNETQCBPK1": {}}, "scope": "NAMESPACE", "userIds": ["6n9vGZTCCXQ2Lf7j", "texB613cbiJEUePV", "ZQaoEY2zrpLuvrx9"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -580,9 +588,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 49 'AdminUpdateInboxMessage' test.out
+eval_tap $? 50 'AdminUpdateInboxMessage' test.out
 
-#- 50 AdminSendInboxMessage
+#- 51 AdminSendInboxMessage
 # body param: body
 echo '{}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -592,36 +600,36 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 50 'AdminSendInboxMessage' test.out
+eval_tap $? 51 'AdminSendInboxMessage' test.out
 
-#- 51 AdminGetInboxStats
+#- 52 AdminGetInboxStats
 $CLI_EXE \
     --sn chat \
     --op AdminGetInboxStats \
     --namespace $AB_NAMESPACE \
     --messageId '["9MDnKGXqq7Zk705h", "OhenJi6dNVF7zwjX", "qlcD2LzaOwIF5tEs"]' \
     > test.out 2>&1
-eval_tap $? 51 'AdminGetInboxStats' test.out
+eval_tap $? 52 'AdminGetInboxStats' test.out
 
-#- 52 AdminGetChatSnapshot
+#- 53 AdminGetChatSnapshot
 $CLI_EXE \
     --sn chat \
     --op AdminGetChatSnapshot \
     --chatId 'CwoAVcZCSj80gzFv' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 52 'AdminGetChatSnapshot' test.out
+eval_tap $? 53 'AdminGetChatSnapshot' test.out
 
-#- 53 AdminDeleteChatSnapshot
+#- 54 AdminDeleteChatSnapshot
 $CLI_EXE \
     --sn chat \
     --op AdminDeleteChatSnapshot \
     --chatId 'pvIerFEyxTugoTd5' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 53 'AdminDeleteChatSnapshot' test.out
+eval_tap $? 54 'AdminDeleteChatSnapshot' test.out
 
-#- 54 AdminProfanityQuery
+#- 55 AdminProfanityQuery
 $CLI_EXE \
     --sn chat \
     --op AdminProfanityQuery \
@@ -634,9 +642,9 @@ $CLI_EXE \
     --startWith 'w9xy1WQM5qUS8baU' \
     --wordType 'qkzSr41y6RPBHJuP' \
     > test.out 2>&1
-eval_tap $? 54 'AdminProfanityQuery' test.out
+eval_tap $? 55 'AdminProfanityQuery' test.out
 
-#- 55 AdminProfanityCreate
+#- 56 AdminProfanityCreate
 # body param: body
 echo '{"falseNegative": ["jj8zDwOk0IgmYfUT", "pFzyQhPVhRGX9xlU", "KhXI8mL8OIhvP68x"], "falsePositive": ["E68dzohxhbej2caI", "IfkXDY7jnhp3qY6T", "7TUEBotSNIwGhia6"], "word": "cqoWmnhtuzxir12r", "wordType": "0VUWI0kJAczj5Apc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -645,9 +653,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 55 'AdminProfanityCreate' test.out
+eval_tap $? 56 'AdminProfanityCreate' test.out
 
-#- 56 AdminProfanityCreateBulk
+#- 57 AdminProfanityCreateBulk
 # body param: body
 echo '{"dictionaries": [{"falseNegative": ["siEQ65llgGnTHAsT", "CZa7xE4nwGKlbPRx", "fucxoRKFLxxcL9Sy"], "falsePositive": ["uHbvRxR6LaKWgAVj", "ZKDxiezEbuMCz9J4", "dPRGzoQLYIWPPZvy"], "word": "PupimCENHEenqjRS", "wordType": "xO9oZ0fCxLR0Gfjw"}, {"falseNegative": ["CmDrbDR0Q0ixpqYt", "kZuhL6qbAhRExsnb", "WSH45LarTmOqto4O"], "falsePositive": ["twF9uPUAxerdIqWm", "OoMyYp2tSrLxpJnj", "9JtgjWmjx1WuNQq4"], "word": "v8FnVzdbNW1xuV7r", "wordType": "Vei1o9zV6rhVfcQm"}, {"falseNegative": ["LfEn5ZUGeYlOwODW", "BAz6skHMfl4Hjw9K", "Enx8cNfDK45zWtwY"], "falsePositive": ["hRoNPwKema6caMTO", "civPAkmP8Awb0Nqt", "vSR9q6l5k9BLQMrP"], "word": "oTuxdzEYAw5VdW05", "wordType": "WnQEAbK416LN2N6D"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -656,17 +664,17 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 56 'AdminProfanityCreateBulk' test.out
+eval_tap $? 57 'AdminProfanityCreateBulk' test.out
 
-#- 57 AdminProfanityExport
+#- 58 AdminProfanityExport
 $CLI_EXE \
     --sn chat \
     --op AdminProfanityExport \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 57 'AdminProfanityExport' test.out
+eval_tap $? 58 'AdminProfanityExport' test.out
 
-#- 58 AdminProfanityGroup
+#- 59 AdminProfanityGroup
 $CLI_EXE \
     --sn chat \
     --op AdminProfanityGroup \
@@ -674,9 +682,9 @@ $CLI_EXE \
     --limit '98' \
     --offset '51' \
     > test.out 2>&1
-eval_tap $? 58 'AdminProfanityGroup' test.out
+eval_tap $? 59 'AdminProfanityGroup' test.out
 
-#- 59 AdminProfanityImport
+#- 60 AdminProfanityImport
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -687,9 +695,9 @@ $CLI_EXE \
     --showResult 'false' \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 59 'AdminProfanityImport' test.out
+eval_tap $? 60 'AdminProfanityImport' test.out
 
-#- 60 AdminProfanityUpdate
+#- 61 AdminProfanityUpdate
 # body param: body
 echo '{"falseNegative": ["9mU8UvONyjv3GQuL", "HoQ6ehLLK5h1bE9W", "U6w3tjUhSCKySPY7"], "falsePositive": ["yMGOuQOfx6HIFfwB", "BqG51RaZY74Cqdvf", "PAIaPEkCIXX7WQ3y"], "word": "tABCzYWxYbbphuiQ", "wordType": "PU0aS2OIp0B2FWiD"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -699,33 +707,33 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 60 'AdminProfanityUpdate' test.out
+eval_tap $? 61 'AdminProfanityUpdate' test.out
 
-#- 61 AdminProfanityDelete
+#- 62 AdminProfanityDelete
 $CLI_EXE \
     --sn chat \
     --op AdminProfanityDelete \
     --id 'DNisOhjEKFWmj7io' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 61 'AdminProfanityDelete' test.out
+eval_tap $? 62 'AdminProfanityDelete' test.out
 
-#- 62 PublicGetMessages
+#- 63 PublicGetMessages
 $CLI_EXE \
     --sn chat \
     --op PublicGetMessages \
     > test.out 2>&1
-eval_tap $? 62 'PublicGetMessages' test.out
+eval_tap $? 63 'PublicGetMessages' test.out
 
-#- 63 PublicGetConfigV1
+#- 64 PublicGetConfigV1
 $CLI_EXE \
     --sn chat \
     --op PublicGetConfigV1 \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 63 'PublicGetConfigV1' test.out
+eval_tap $? 64 'PublicGetConfigV1' test.out
 
-#- 64 PublicGetChatSnapshot
+#- 65 PublicGetChatSnapshot
 $CLI_EXE \
     --sn chat \
     --op PublicGetChatSnapshot \
@@ -733,7 +741,7 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --topic '57V6b9uLloAA9Koe' \
     > test.out 2>&1
-eval_tap $? 64 'PublicGetChatSnapshot' test.out
+eval_tap $? 65 'PublicGetChatSnapshot' test.out
 
 
 # remove artifacts

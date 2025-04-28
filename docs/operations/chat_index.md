@@ -58,6 +58,7 @@
 | `/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}` | DELETE | AdminDeleteInboxCategory | [AdminDeleteInboxCategory](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminDeleteInboxCategory.cs) | [AdminDeleteInboxCategory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminDeleteInboxCategory.cs) |
 | `/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}` | PATCH | AdminUpdateInboxCategory | [AdminUpdateInboxCategory](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminUpdateInboxCategory.cs) | [AdminUpdateInboxCategory](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminUpdateInboxCategory.cs) |
 | `/chat/v1/admin/inbox/namespaces/{namespace}/categories/{category}/schema.json` | GET | AdminGetCategorySchema | [AdminGetCategorySchema](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminGetCategorySchema.cs) | [AdminGetCategorySchema](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminGetCategorySchema.cs) |
+| `/chat/v1/admin/inbox/namespaces/{namespace}/list/topic/kafka` | GET | AdminListKafkaTopic | [AdminListKafkaTopic](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminListKafkaTopic.cs) | [AdminListKafkaTopic](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminListKafkaTopic.cs) |
 | `/chat/v1/admin/inbox/namespaces/{namespace}/message/{messageId}` | DELETE | AdminDeleteInboxMessage | [AdminDeleteInboxMessage](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminDeleteInboxMessage.cs) | [AdminDeleteInboxMessage](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminDeleteInboxMessage.cs) |
 | `/chat/v1/admin/inbox/namespaces/{namespace}/messages` | GET | AdminGetInboxMessages | [AdminGetInboxMessages](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminGetInboxMessages.cs) | [AdminGetInboxMessages](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminGetInboxMessages.cs) |
 | `/chat/v1/admin/inbox/namespaces/{namespace}/messages` | POST | AdminSaveInboxMessage | [AdminSaveInboxMessage](../../AccelByte.Sdk/Api/Chat/Operation/Inbox/AdminSaveInboxMessage.cs) | [AdminSaveInboxMessage](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Chat/Inbox/AdminSaveInboxMessage.cs) |
@@ -177,6 +178,7 @@
 | `models.GetInboxMessagesResponseData` | [ModelsGetInboxMessagesResponseData](../../AccelByte.Sdk/Api/Chat/Model/ModelsGetInboxMessagesResponseData.cs) |
 | `models.GetInboxStatsResponse` | [ModelsGetInboxStatsResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsGetInboxStatsResponse.cs) |
 | `models.GetInboxUsersResponse` | [ModelsGetInboxUsersResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsGetInboxUsersResponse.cs) |
+| `models.GetListTopicKafkaResponse` | [ModelsGetListTopicKafkaResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsGetListTopicKafkaResponse.cs) |
 | `models.ImportConfigResponse` | [ModelsImportConfigResponse](../../AccelByte.Sdk/Api/Chat/Model/ModelsImportConfigResponse.cs) |
 | `models.JSONSchemaType` | [ModelsJSONSchemaType](../../AccelByte.Sdk/Api/Chat/Model/ModelsJSONSchemaType.cs) |
 | `models.MessageRequest` | [ModelsMessageRequest](../../AccelByte.Sdk/Api/Chat/Model/ModelsMessageRequest.cs) |

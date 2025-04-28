@@ -40,6 +40,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("order")]
+        public string? Order { get; set; }
+
+        [SdkCommandArgument("orderBy")]
+        public string? OrderBy { get; set; }
+
         [SdkCommandArgument("endDate")]
         public string EndDate { get; set; } = String.Empty;
 
@@ -61,6 +67,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Sessionhistory
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (Order != null)
+                opBuilder.SetOrder((string)Order);
+            if (OrderBy != null)
+                opBuilder.SetOrderBy((string)OrderBy);
 
 
 

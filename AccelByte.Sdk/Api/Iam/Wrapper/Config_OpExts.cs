@@ -65,6 +65,24 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Config)builder.WrapperObject!).AdminGetConfigValueV3Async<T1>(op);
         }
+        public static Iam.Model.ModelInternalConfigResponseV3? Execute(
+            this PublicGetSystemConfigV3.PublicGetSystemConfigV3Builder builder
+        )
+        {
+            PublicGetSystemConfigV3 op = builder.Build(
+            );
+
+            return ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetSystemConfigV3(op);
+        }
+        public static async Task<Iam.Model.ModelInternalConfigResponseV3?> ExecuteAsync(
+            this PublicGetSystemConfigV3.PublicGetSystemConfigV3Builder builder
+        )
+        {
+            PublicGetSystemConfigV3 op = builder.Build(
+            );
+
+            return await ((Iam.Wrapper.Config)builder.WrapperObject!).PublicGetSystemConfigV3Async(op);
+        }
         public static Iam.Model.ModelConfigValueResponseV3? Execute(
             this PublicGetConfigValueV3.PublicGetConfigValueV3Builder builder,
             string configKey,

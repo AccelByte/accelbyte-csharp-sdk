@@ -21,7 +21,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
     /// example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
     /// 
-    /// 
     /// **Supported Platforms:**
     /// - Steam group (steamnetwork):
     /// - steam
@@ -57,6 +56,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Note:
     /// - You can use either platform id or platform group as **platformId** parameter.
     /// - **Nintendo platform user id**: NSA ID need to be appended with Environment ID using colon as separator. e.g kmzwa8awaa:dd1
+    /// - **oculus**: if query by app user id, please set the query param **pidType** to **OCULUS_APP_USER_ID** (support game namespace only)
     /// </summary>
     public class AdminGetUserByPlatformUserIDV3 : AccelByte.Sdk.Core.Operation
     {
@@ -67,12 +67,20 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             : OperationBuilder<AdminGetUserByPlatformUserIDV3Builder>
         {
 
+            public string? PidType { get; set; }
+
 
 
 
 
             internal AdminGetUserByPlatformUserIDV3Builder() { }
 
+
+            public AdminGetUserByPlatformUserIDV3Builder SetPidType(string _pidType)
+            {
+                PidType = _pidType;
+                return this;
+            }
 
 
 
@@ -108,6 +116,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["platformId"] = platformId;
             PathParams["platformUserId"] = platformUserId;
 
+            if (builder.PidType is not null) QueryParams["pidType"] = builder.PidType;
 
 
 
@@ -121,13 +130,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
         public AdminGetUserByPlatformUserIDV3(
             string namespace_,
             string platformId,
-            string platformUserId
+            string platformUserId,
+            string? pidType
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["platformId"] = platformId;
             PathParams["platformUserId"] = platformUserId;
 
+            if (pidType is not null) QueryParams["pidType"] = pidType;
 
 
 

@@ -74,6 +74,8 @@
 ### Game Session Detail Wrapper:  [GameSessionDetail](../../AccelByte.Sdk/Api/Sessionhistory/Wrapper/GameSessionDetail.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
+| `/sessionhistory/v1/admin/namespaces/{namespace}/matchmaking/session/{sessionId}` | GET | AdminGetMatchmakingDetailBySessionID | [AdminGetMatchmakingDetailBySessionID](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/AdminGetMatchmakingDetailBySessionID.cs) | [AdminGetMatchmakingDetailBySessionID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/AdminGetMatchmakingDetailBySessionID.cs) |
+| `/sessionhistory/v1/admin/namespaces/{namespace}/matchmaking/ticket/{ticketId}` | GET | AdminGetMatchmakingDetailByTicketID | [AdminGetMatchmakingDetailByTicketID](../../AccelByte.Sdk/Api/Sessionhistory/Operation/GameSessionDetail/AdminGetMatchmakingDetailByTicketID.cs) | [AdminGetMatchmakingDetailByTicketID](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Sessionhistory/GameSessionDetail/AdminGetMatchmakingDetailByTicketID.cs) |
 
 ### XRay Wrapper:  [XRay](../../AccelByte.Sdk/Api/Sessionhistory/Wrapper/XRay.cs)
 | Endpoint | Method | ID | Class | Example |

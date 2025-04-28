@@ -192,6 +192,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetCategorySchemaAsync(op);
         }
+        public static Chat.Model.ModelsGetListTopicKafkaResponse? Execute(
+            this AdminListKafkaTopic.AdminListKafkaTopicBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListKafkaTopic op = builder.Build(
+                namespace_
+            );
+
+            return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminListKafkaTopic(op);
+        }
+        public static async Task<Chat.Model.ModelsGetListTopicKafkaResponse?> ExecuteAsync(
+            this AdminListKafkaTopic.AdminListKafkaTopicBuilder builder,
+            string namespace_
+        )
+        {
+            AdminListKafkaTopic op = builder.Build(
+                namespace_
+            );
+
+            return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminListKafkaTopicAsync(op);
+        }
         public static void Execute(
             this AdminDeleteInboxMessage.AdminDeleteInboxMessageBuilder builder,
             string messageId,

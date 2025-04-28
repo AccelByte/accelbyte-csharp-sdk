@@ -436,6 +436,14 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation AdminListKafkaTopic
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn chat \
+    --op adminlistkafkatopic \
+    --namespace <namespace value>
+```
+
 ### Operation AdminDeleteInboxMessage
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

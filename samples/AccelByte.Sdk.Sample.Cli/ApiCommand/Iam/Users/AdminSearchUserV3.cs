@@ -64,6 +64,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("startDate")]
         public string? StartDate { get; set; }
 
+        [SdkCommandArgument("tagIds")]
+        public string? TagIds { get; set; }
+
         [SdkCommandArgument("testAccount")]
         public bool? TestAccount { get; set; }
 
@@ -100,6 +103,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
                 opBuilder.SetSkipLoginQueue((bool)SkipLoginQueue);
             if (StartDate != null)
                 opBuilder.SetStartDate((string)StartDate);
+            if (TagIds != null)
+                opBuilder.SetTagIds((string)TagIds);
             if (TestAccount != null)
                 opBuilder.SetTestAccount((bool)TestAccount);
 

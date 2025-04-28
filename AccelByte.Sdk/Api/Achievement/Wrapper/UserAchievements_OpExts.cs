@@ -38,6 +38,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminListUserAchievementsAsync(op);
         }
+        public static List<Achievement.Model.ModelsBulkUnlockAchievementResponse>? Execute(
+            this AdminBulkUnlockAchievement.AdminBulkUnlockAchievementBuilder builder,
+            ModelsBulkUnlockAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkUnlockAchievement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminBulkUnlockAchievement(op);
+        }
+        public static async Task<List<Achievement.Model.ModelsBulkUnlockAchievementResponse>?> ExecuteAsync(
+            this AdminBulkUnlockAchievement.AdminBulkUnlockAchievementBuilder builder,
+            ModelsBulkUnlockAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBulkUnlockAchievement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminBulkUnlockAchievementAsync(op);
+        }
         public static void Execute(
             this AdminResetAchievement.AdminResetAchievementBuilder builder,
             string achievementCode,
@@ -123,6 +153,36 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicListUserAchievementsAsync(op);
+        }
+        public static List<Achievement.Model.ModelsBulkUnlockAchievementResponse>? Execute(
+            this PublicBulkUnlockAchievement.PublicBulkUnlockAchievementBuilder builder,
+            ModelsBulkUnlockAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicBulkUnlockAchievement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicBulkUnlockAchievement(op);
+        }
+        public static async Task<List<Achievement.Model.ModelsBulkUnlockAchievementResponse>?> ExecuteAsync(
+            this PublicBulkUnlockAchievement.PublicBulkUnlockAchievementBuilder builder,
+            ModelsBulkUnlockAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            PublicBulkUnlockAchievement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).PublicBulkUnlockAchievementAsync(op);
         }
         public static void Execute(
             this PublicUnlockAchievement.PublicUnlockAchievementBuilder builder,

@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Csm
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ApimodelUpdateConfigurationV2Request Body { get; set; } = new ApimodelUpdateConfigurationV2Request();
+        public ApimodelUpdateSecretConfigurationV2Request Body { get; set; } = new ApimodelUpdateSecretConfigurationV2Request();
 
         public UpdateSecretV2Command(AccelByteSDK sdk)
         {

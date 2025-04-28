@@ -43,6 +43,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
 
+        [SdkCommandArgument("previousVersion")]
+        public long? PreviousVersion { get; set; }
+
         public GetCurrentCycleLeaderboardRankingAdminV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -58,6 +61,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
                 opBuilder.SetLimit((long)Limit);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (PreviousVersion != null)
+                opBuilder.SetPreviousVersion((long)PreviousVersion);
 
 
 

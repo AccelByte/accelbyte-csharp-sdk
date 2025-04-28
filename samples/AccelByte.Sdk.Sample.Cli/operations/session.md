@@ -440,6 +440,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn session \
     --op creategamesession \
     --namespace <namespace value> \
+    --resolveMaxActiveSession <resolveMaxActiveSession value - optional> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.

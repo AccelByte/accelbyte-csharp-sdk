@@ -61,6 +61,32 @@ namespace AccelByte.Sdk.Api
             await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).CreateMatchFunctionAsync(op);
         }
         public static Match2.Model.ApiMatchFunctionConfig? Execute(
+            this MatchFunctionGet.MatchFunctionGetBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            MatchFunctionGet op = builder.Build(
+                name,
+                namespace_
+            );
+
+            return ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).MatchFunctionGet(op);
+        }
+        public static async Task<Match2.Model.ApiMatchFunctionConfig?> ExecuteAsync(
+            this MatchFunctionGet.MatchFunctionGetBuilder builder,
+            string name,
+            string namespace_
+        )
+        {
+            MatchFunctionGet op = builder.Build(
+                name,
+                namespace_
+            );
+
+            return await ((Match2.Wrapper.MatchFunctions)builder.WrapperObject!).MatchFunctionGetAsync(op);
+        }
+        public static Match2.Model.ApiMatchFunctionConfig? Execute(
             this UpdateMatchFunction.UpdateMatchFunctionBuilder builder,
             ApiMatchFunctionRequest body,
             string name,

@@ -470,8 +470,10 @@ $CLI_EXE \
     --userId 'ompTrS7DIOakX65w' \
     --limit '25' \
     --offset '90' \
-    --endDate 'a57V6b9uLloAA9Ko' \
-    --startDate 'etyNPkgWcTCN7aBI' \
+    --order 'a57V6b9uLloAA9Ko' \
+    --orderBy 'etyNPkgWcTCN7aBI' \
+    --endDate 'FfeRdnHpse2T7eZw' \
+    --startDate 'kVrB3GSEmVq8CjR5' \
     > test.out 2>&1
 eval_tap $? 39 'QueryXrayTimelineByUserID' test.out
 

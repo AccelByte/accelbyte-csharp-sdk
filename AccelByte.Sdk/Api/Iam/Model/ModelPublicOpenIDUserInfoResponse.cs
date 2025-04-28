@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("email")]
         public string? Email { get; set; }
 
+        [JsonPropertyName("email_verified")]
+        public bool? EmailVerified { get; set; }
+
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 

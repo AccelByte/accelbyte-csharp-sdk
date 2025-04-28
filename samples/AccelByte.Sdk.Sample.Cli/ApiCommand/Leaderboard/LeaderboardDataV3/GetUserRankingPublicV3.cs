@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("previousVersion")]
+        public long? PreviousVersion { get; set; }
+
         public GetUserRankingPublicV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Leaderboard
 
             var opBuilder = AccelByte.Sdk.Api.Leaderboard.Operation.GetUserRankingPublicV3.Builder;
 
+            if (PreviousVersion != null)
+                opBuilder.SetPreviousVersion((long)PreviousVersion);
 
 
 

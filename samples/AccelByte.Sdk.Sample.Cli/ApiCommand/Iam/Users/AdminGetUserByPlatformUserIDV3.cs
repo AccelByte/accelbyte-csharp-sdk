@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("platformUserId")]
         public string PlatformUserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("pidType")]
+        public string? PidType { get; set; }
+
         public AdminGetUserByPlatformUserIDV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminGetUserByPlatformUserIDV3.Builder;
 
+            if (PidType != null)
+                opBuilder.SetPidType((string)PidType);
 
 
 

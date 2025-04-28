@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// <summary>
     /// adminGetDSMCConfigurationDefault
     ///
-    /// Get dsmc default configuration.
+    /// Get the DSMC default configuration from this service
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminGetDSMCConfigurationDefault : AccelByte.Sdk.Core.Operation

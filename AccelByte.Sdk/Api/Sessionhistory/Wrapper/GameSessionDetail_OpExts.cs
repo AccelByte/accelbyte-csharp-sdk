@@ -108,6 +108,33 @@ namespace AccelByte.Sdk.Api
 
             return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailBySessionIDAsync(op);
         }
+
+        public static Sessionhistory.Model.ApimodelsMatchmakingDetail<T1>? Execute<T1>(
+            this AdminGetMatchmakingDetailBySessionID.AdminGetMatchmakingDetailBySessionIDBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminGetMatchmakingDetailBySessionID op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailBySessionID<T1>(op);
+        }
+        public static async Task<Sessionhistory.Model.ApimodelsMatchmakingDetail<T1>?> ExecuteAsync<T1>(
+            this AdminGetMatchmakingDetailBySessionID.AdminGetMatchmakingDetailBySessionIDBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            AdminGetMatchmakingDetailBySessionID op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailBySessionIDAsync<T1>(op);
+        }
         public static Sessionhistory.Model.ApimodelsMatchmakingDetail? Execute(
             this AdminGetMatchmakingDetailByTicketID.AdminGetMatchmakingDetailByTicketIDBuilder builder,
             string namespace_,
@@ -133,6 +160,33 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailByTicketIDAsync(op);
+        }
+
+        public static Sessionhistory.Model.ApimodelsMatchmakingDetail<T1>? Execute<T1>(
+            this AdminGetMatchmakingDetailByTicketID.AdminGetMatchmakingDetailByTicketIDBuilder builder,
+            string namespace_,
+            string ticketId
+        )
+        {
+            AdminGetMatchmakingDetailByTicketID op = builder.Build(
+                namespace_,
+                ticketId
+            );
+
+            return ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailByTicketID<T1>(op);
+        }
+        public static async Task<Sessionhistory.Model.ApimodelsMatchmakingDetail<T1>?> ExecuteAsync<T1>(
+            this AdminGetMatchmakingDetailByTicketID.AdminGetMatchmakingDetailByTicketIDBuilder builder,
+            string namespace_,
+            string ticketId
+        )
+        {
+            AdminGetMatchmakingDetailByTicketID op = builder.Build(
+                namespace_,
+                ticketId
+            );
+
+            return await ((Sessionhistory.Wrapper.GameSessionDetail)builder.WrapperObject!).AdminGetMatchmakingDetailByTicketIDAsync<T1>(op);
         }
         public static Sessionhistory.Model.ApimodelsPartyDetailQueryResponse? Execute(
             this AdminQueryPartyDetail.AdminQueryPartyDetailBuilder builder,

@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
 {
     public class ApimodelGetAppImageListV2DataItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("IsActive")]
+        public bool? IsActive { get; set; }
+
         [JsonPropertyName("imageDigest")]
         public string? ImageDigest { get; set; }
 

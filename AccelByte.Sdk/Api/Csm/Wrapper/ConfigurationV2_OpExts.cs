@@ -40,7 +40,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Csm.Model.ApimodelSaveConfigurationV2Response? Execute(
             this SaveSecretV2.SaveSecretV2Builder builder,
-            ApimodelSaveConfigurationV2Request body,
+            ApimodelSaveSecretConfigurationV2Request body,
             string app,
             string namespace_
         )
@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Csm.Model.ApimodelSaveConfigurationV2Response?> ExecuteAsync(
             this SaveSecretV2.SaveSecretV2Builder builder,
-            ApimodelSaveConfigurationV2Request body,
+            ApimodelSaveSecretConfigurationV2Request body,
             string app,
             string namespace_
         )
@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Csm.Model.ApimodelUpdateConfigurationV2Response? Execute(
             this UpdateSecretV2.UpdateSecretV2Builder builder,
-            ApimodelUpdateConfigurationV2Request body,
+            ApimodelUpdateSecretConfigurationV2Request body,
             string app,
             string configId,
             string namespace_
@@ -87,7 +87,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Csm.Model.ApimodelUpdateConfigurationV2Response?> ExecuteAsync(
             this UpdateSecretV2.UpdateSecretV2Builder builder,
-            ApimodelUpdateConfigurationV2Request body,
+            ApimodelUpdateSecretConfigurationV2Request body,
             string app,
             string configId,
             string namespace_

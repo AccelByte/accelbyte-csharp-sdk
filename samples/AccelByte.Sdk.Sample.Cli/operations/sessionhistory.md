@@ -420,6 +420,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value> \
     --limit <limit value - optional> \
     --offset <offset value - optional> \
+    --order <order value - optional> \
+    --orderBy <orderBy value - optional> \
     --endDate <endDate value> \
     --startDate <startDate value>
 ```

@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUserPublicInfoResponseV4 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("avatarUrl")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AvatarUrl { get; set; }
+
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
 

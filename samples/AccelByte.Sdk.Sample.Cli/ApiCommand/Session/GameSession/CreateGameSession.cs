@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("resolveMaxActiveSession")]
+        public bool? ResolveMaxActiveSession { get; set; }
+
         [SdkCommandData("body")]
         public ApimodelsCreateGameSessionRequest Body { get; set; } = new ApimodelsCreateGameSessionRequest();
 
@@ -45,6 +48,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
             var opBuilder = AccelByte.Sdk.Api.Session.Operation.CreateGameSession.Builder;
 
+            if (ResolveMaxActiveSession != null)
+                opBuilder.SetResolveMaxActiveSession((bool)ResolveMaxActiveSession);
 
 
 

@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Sessionhistory.Model
         [JsonPropertyName("created_at")]
         public string? CreatedAt { get; set; }
 
+        [JsonPropertyName("ds_status_v2")]
+        public string? DsStatusV2 { get; set; }
+
         [JsonPropertyName("ended")]
         public bool? Ended { get; set; }
 

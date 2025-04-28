@@ -191,6 +191,7 @@
 | `apimodel.ReplicaResponse` | [ApimodelReplicaResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelReplicaResponse.cs) |
 | `apimodel.SaveConfigurationV2Request` | [ApimodelSaveConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSaveConfigurationV2Request.cs) |
 | `apimodel.SaveConfigurationV2Response` | [ApimodelSaveConfigurationV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSaveConfigurationV2Response.cs) |
+| `apimodel.SaveSecretConfigurationV2Request` | [ApimodelSaveSecretConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSaveSecretConfigurationV2Request.cs) |
 | `apimodel.SelfSubscribeNotificationRequest` | [ApimodelSelfSubscribeNotificationRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSelfSubscribeNotificationRequest.cs) |
 | `apimodel.SubscribeNotificationRequest` | [ApimodelSubscribeNotificationRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSubscribeNotificationRequest.cs) |
 | `apimodel.SubscribeNotificationResponse` | [ApimodelSubscribeNotificationResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSubscribeNotificationResponse.cs) |
@@ -200,6 +201,7 @@
 | `apimodel.UpdateAppV2Request` | [ApimodelUpdateAppV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateAppV2Request.cs) |
 | `apimodel.UpdateConfigurationV2Request` | [ApimodelUpdateConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateConfigurationV2Request.cs) |
 | `apimodel.UpdateConfigurationV2Response` | [ApimodelUpdateConfigurationV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateConfigurationV2Response.cs) |
+| `apimodel.UpdateSecretConfigurationV2Request` | [ApimodelUpdateSecretConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateSecretConfigurationV2Request.cs) |
 | `generated.CreateAppV1Request` | [GeneratedCreateAppV1Request](../../AccelByte.Sdk/Api/Csm/Model/GeneratedCreateAppV1Request.cs) |
 | `generated.CreateAppV1Response` | [GeneratedCreateAppV1Response](../../AccelByte.Sdk/Api/Csm/Model/GeneratedCreateAppV1Response.cs) |
 | `generated.CreateDeploymentV1Request` | [GeneratedCreateDeploymentV1Request](../../AccelByte.Sdk/Api/Csm/Model/GeneratedCreateDeploymentV1Request.cs) |

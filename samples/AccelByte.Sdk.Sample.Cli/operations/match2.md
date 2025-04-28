@@ -163,6 +163,15 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation MatchFunctionGet
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op matchfunctionget \
+    --name <name value> \
+    --namespace <namespace value>
+```
+
 ### Operation UpdateMatchFunction
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

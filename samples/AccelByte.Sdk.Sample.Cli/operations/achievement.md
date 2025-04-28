@@ -153,6 +153,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --tags <tags value - optional>
 ```
 
+### Operation AdminBulkUnlockAchievement
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn achievement \
+    --op adminbulkunlockachievement \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminResetAchievement
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -271,6 +282,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sortBy <sortBy value - optional> \
     --tags <tags value - optional>
 ```
+
+### Operation PublicBulkUnlockAchievement
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn achievement \
+    --op publicbulkunlockachievement \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicUnlockAchievement
 ```sh

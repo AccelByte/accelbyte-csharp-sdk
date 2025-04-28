@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public List<string>? Tags { get; set; }
+        public List<ModelTagDetail>? Tags { get; set; }
 
         [JsonPropertyName("testAccount")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

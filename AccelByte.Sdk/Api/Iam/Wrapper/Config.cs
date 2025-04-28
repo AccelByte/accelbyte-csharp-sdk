@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetConfigValueV3.Builder.SetWrapperObject(this); }
         }
+        public PublicGetSystemConfigV3.PublicGetSystemConfigV3Builder PublicGetSystemConfigV3Op
+        {
+            get { return Operation.PublicGetSystemConfigV3.Builder.SetWrapperObject(this); }
+        }
         public PublicGetConfigValueV3.PublicGetConfigValueV3Builder PublicGetConfigValueV3Op
         {
             get { return Operation.PublicGetConfigValueV3.Builder.SetWrapperObject(this); }
@@ -59,6 +63,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelInternalConfigResponseV3? PublicGetSystemConfigV3(PublicGetSystemConfigV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelInternalConfigResponseV3?> PublicGetSystemConfigV3Async(PublicGetSystemConfigV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

@@ -478,7 +478,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op admingetuserbyplatformuseridv3 \
     --namespace <namespace value> \
     --platformId <platformId value> \
-    --platformUserId <platformUserId value>
+    --platformUserId <platformUserId value> \
+    --pidType <pidType value - optional>
 ```
 
 ### Operation AdminGetProfileUpdateStrategyV3
@@ -654,6 +655,16 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation AdminCursorGetUserV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op admincursorgetuserv3 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminInviteUserV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -703,6 +714,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --roleIds <roleIds value - optional> \
     --skipLoginQueue <skipLoginQueue value - optional> \
     --startDate <startDate value - optional> \
+    --tagIds <tagIds value - optional> \
     --testAccount <testAccount value - optional>
 ```
 
@@ -1362,6 +1374,14 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --linkingToken <linkingToken value> \
     --password <password value> \
     --username <username value>
+```
+
+### Operation PublicGetSystemConfigV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicgetsystemconfigv3 \
+
 ```
 
 ### Operation GenerateTokenByNewHeadlessAccountV3
@@ -2117,6 +2137,15 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op publicgetrolev3 \
     --roleId <roleId value>
 ```
+
+### Operation PublicForgotPasswordWithoutNamespaceV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicforgotpasswordwithoutnamespacev3 \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicGetMyUserV3
 ```sh

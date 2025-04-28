@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
         {
             get { return Operation.AdminGetCategorySchema.Builder.SetWrapperObject(this); }
         }
+        public AdminListKafkaTopic.AdminListKafkaTopicBuilder AdminListKafkaTopicOp
+        {
+            get { return Operation.AdminListKafkaTopic.Builder.SetWrapperObject(this); }
+        }
         public AdminDeleteInboxMessage.AdminDeleteInboxMessageBuilder AdminDeleteInboxMessageOp
         {
             get { return Operation.AdminDeleteInboxMessage.Builder.SetWrapperObject(this); }
@@ -182,6 +186,22 @@ namespace AccelByte.Sdk.Api.Chat.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelsJSONSchemaType?> AdminGetCategorySchemaAsync(AdminGetCategorySchema input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelsGetListTopicKafkaResponse? AdminListKafkaTopic(AdminListKafkaTopic input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelsGetListTopicKafkaResponse?> AdminListKafkaTopicAsync(AdminListKafkaTopic input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

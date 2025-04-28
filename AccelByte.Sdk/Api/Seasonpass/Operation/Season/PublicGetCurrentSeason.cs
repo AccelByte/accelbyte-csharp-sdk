@@ -79,6 +79,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
@@ -96,6 +97,7 @@ namespace AccelByte.Sdk.Api.Seasonpass.Operation
 
 
 
+            Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
         public override string Path => "/seasonpass/public/namespaces/{namespace}/seasons/current";

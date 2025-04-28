@@ -17,23 +17,24 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminSearchUserV3
     ///
     /// Endpoint behavior :
-    /// - by default this endpoint searches all users on the specified namespace
-    /// - if query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query
-    /// - if startDate and endDate parameters is defined, endpoint will search users which created on the certain date range
-    /// - if query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range
-    /// - if startDate parameter is defined, endpoint will search users that created start from the defined date
-    /// - if endDate parameter is defined, endpoint will search users that created until the defined date
-    /// - if platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to
-    /// - if platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName
-    /// - if limit is not defined, The default limit is 100
+    /// - By default this endpoint searches all users on the specified namespace.
+    /// - If query parameter is defined, endpoint will search users whose email address, display name, username, or third party partially match with the query.
+    /// - The query parameter length must be between 3 and 30 characters. For email address queries (i.e., contains '@'), the allowed length is 3 to 40 characters. Otherwise, the database will not be queried.
+    /// - If startDate and endDate parameters is defined, endpoint will search users which created on the certain date range.
+    /// - If query, startDate and endDate parameters are defined, endpoint will search users whose email address and display name match and created on the certain date range.
+    /// - If startDate parameter is defined, endpoint will search users that created start from the defined date.
+    /// - If endDate parameter is defined, endpoint will search users that created until the defined date.
+    /// - If platformId parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformId they have linked to.
+    /// - If platformBy parameter is defined and by parameter is using thirdparty, endpoint will search users based on the platformUserId or platformDisplayName they have linked to, example value: platformUserId or platformDisplayName.
+    /// - If limit is not defined, The default limit is 100.
     /// 
-    /// In multi tenant mode :
+    /// In Multi Tenant mode :
     /// 
-    /// - if super admin search in super admin namespace, the result will be all game admin user
-    /// - if super admin search in game studio namespace, the result will be all game admin user and players under the game studio namespace
-    /// - if super admin search in game namespace, the result will be all game admin users and players under the game namespace
-    /// - if game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
-    /// - if game admin search in their game namespace, the result will be all player in the game namespace
+    /// - If super admin search in super admin namespace, the result will be all game admin user
+    /// - If super admin search in game studio namespace, the result will be all game admin user and players under the game studio namespace
+    /// - If super admin search in game namespace, the result will be all game admin users and players under the game namespace
+    /// - If game admin search in their game studio namespace, the result will be all game admin user in the studio namespace
+    /// - If game admin search in their game namespace, the result will be all player in the game namespace
     /// 
     /// action code : 10133
     /// </summary>
@@ -67,6 +68,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             public bool? SkipLoginQueue { get; set; }
 
             public string? StartDate { get; set; }
+
+            public string? TagIds { get; set; }
 
             public bool? TestAccount { get; set; }
 
@@ -143,6 +146,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
+            public AdminSearchUserV3Builder SetTagIds(string _tagIds)
+            {
+                TagIds = _tagIds;
+                return this;
+            }
+
             public AdminSearchUserV3Builder SetTestAccount(bool _testAccount)
             {
                 TestAccount = _testAccount;
@@ -186,6 +195,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (builder.RoleIds is not null) QueryParams["roleIds"] = builder.RoleIds;
             if (builder.SkipLoginQueue != null) QueryParams["skipLoginQueue"] = Convert.ToString(builder.SkipLoginQueue)!;
             if (builder.StartDate is not null) QueryParams["startDate"] = builder.StartDate;
+            if (builder.TagIds is not null) QueryParams["tagIds"] = builder.TagIds;
             if (builder.TestAccount != null) QueryParams["testAccount"] = Convert.ToString(builder.TestAccount)!;
 
 
@@ -210,6 +220,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string? roleIds,
             bool? skipLoginQueue,
             string? startDate,
+            string? tagIds,
             bool? testAccount
         )
         {
@@ -226,6 +237,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             if (roleIds is not null) QueryParams["roleIds"] = roleIds;
             if (skipLoginQueue != null) QueryParams["skipLoginQueue"] = Convert.ToString(skipLoginQueue)!;
             if (startDate is not null) QueryParams["startDate"] = startDate;
+            if (tagIds is not null) QueryParams["tagIds"] = tagIds;
             if (testAccount != null) QueryParams["testAccount"] = Convert.ToString(testAccount)!;
 
 

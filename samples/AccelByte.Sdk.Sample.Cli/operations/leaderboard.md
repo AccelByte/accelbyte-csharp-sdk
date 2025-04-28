@@ -480,7 +480,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
     --limit <limit value - optional> \
-    --offset <offset value - optional>
+    --offset <offset value - optional> \
+    --previousVersion <previousVersion value - optional>
 ```
 
 ### Operation DeleteAllUserRankingByCycleIdAdminV3
@@ -540,7 +541,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op getuserrankingadminv3 \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
-    --userId <userId value>
+    --userId <userId value> \
+    --previousVersion <previousVersion value - optional>
 ```
 
 ### Operation DeleteUserRankingAdminV3
@@ -593,7 +595,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value> \
     --userId <userId value> \
     --limit <limit value - optional> \
-    --offset <offset value - optional>
+    --offset <offset value - optional> \
+    --previousVersion <previousVersion value - optional>
 ```
 
 ### Operation SetUserVisibilityV3
@@ -647,7 +650,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
     --limit <limit value - optional> \
-    --offset <offset value - optional>
+    --offset <offset value - optional> \
+    --previousVersion <previousVersion value - optional>
 ```
 
 ### Operation BulkGetUsersRankingPublicV3
@@ -657,6 +661,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op bulkgetusersrankingpublicv3 \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
+    --previousVersion <previousVersion value - optional> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
@@ -668,6 +673,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op getuserrankingpublicv3 \
     --leaderboardCode <leaderboardCode value> \
     --namespace <namespace value> \
-    --userId <userId value>
+    --userId <userId value> \
+    --previousVersion <previousVersion value - optional>
 ```
 

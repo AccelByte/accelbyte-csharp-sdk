@@ -98,12 +98,20 @@ namespace AccelByte.Sdk.Api.Session.Operation
             : OperationBuilder<CreateGameSessionBuilder>
         {
 
+            public bool? ResolveMaxActiveSession { get; set; }
+
 
 
 
 
             internal CreateGameSessionBuilder() { }
 
+
+            public CreateGameSessionBuilder SetResolveMaxActiveSession(bool _resolveMaxActiveSession)
+            {
+                ResolveMaxActiveSession = _resolveMaxActiveSession;
+                return this;
+            }
 
 
 
@@ -134,6 +142,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.ResolveMaxActiveSession != null) QueryParams["resolveMaxActiveSession"] = Convert.ToString(builder.ResolveMaxActiveSession)!;
 
 
 
@@ -147,11 +156,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public CreateGameSession(
             string namespace_,
+            bool? resolveMaxActiveSession,
             Model.ApimodelsCreateGameSessionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (resolveMaxActiveSession != null) QueryParams["resolveMaxActiveSession"] = Convert.ToString(resolveMaxActiveSession)!;
 
 
 

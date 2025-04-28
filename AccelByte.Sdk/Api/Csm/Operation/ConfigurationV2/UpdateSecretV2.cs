@@ -19,10 +19,10 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:SECRET [UPDATE]`
     /// 
     /// Update an environment secret.
+    /// Secret will always be masked.
     /// Request body:
     /// - value : configuration value - Required.
     /// - description : description of the configuration - Optional.
-    /// - applyMask : mask the value in the Helm manifest for sensitive information (true or false) - Optional.
     /// </summary>
     public class UpdateSecretV2 : AccelByte.Sdk.Core.Operation
     {
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
 
 
             public UpdateSecretV2 Build(
-                ApimodelUpdateConfigurationV2Request body,
+                ApimodelUpdateSecretConfigurationV2Request body,
                 string app,
                 string configId,
                 string namespace_
@@ -67,7 +67,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         }
 
         private UpdateSecretV2(UpdateSecretV2Builder builder,
-            ApimodelUpdateConfigurationV2Request body,
+            ApimodelUpdateSecretConfigurationV2Request body,
             string app,
             string configId,
             string namespace_
@@ -92,7 +92,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             string app,
             string configId,
             string namespace_,
-            Model.ApimodelUpdateConfigurationV2Request body
+            Model.ApimodelUpdateSecretConfigurationV2Request body
         )
         {
             PathParams["app"] = app;
