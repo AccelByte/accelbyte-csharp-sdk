@@ -248,13 +248,12 @@ var app = _Sdk.Csm.AppV2.GetAppV2Op
 
 ```csharp
 var newSecret = _Sdk.Csm.ConfigurationV2.SaveSecretV2Op
-    .Execute(new ApimodelSaveConfigurationV2Request()
+    .Execute(new ApimodelSaveSecretConfigurationV2Request()
     {
         ConfigName = envSecretKey,
         Description = "",
         Value = envSecretValue,
         Source = "plaintext",
-        ApplyMask = true
     }, appName, _Sdk.Namespace);
 ```
 
@@ -271,7 +270,7 @@ var getSecrets = _Sdk.Csm.ConfigurationV2.GetListOfSecretsV2Op
 
 ```csharp
 var updateSecret = _Sdk.Csm.ConfigurationV2.UpdateSecretV2Op
-    .Execute(new ApimodelUpdateConfigurationV2Request()
+    .Execute(new ApimodelUpdateSecretConfigurationV2Request()
     {
         Value = envSecretValueNew
     }, appName, secretId, _Sdk.Namespace);

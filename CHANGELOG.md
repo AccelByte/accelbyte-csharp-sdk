@@ -1,3 +1,20 @@
+<a name="v0.72.0"></a>
+## [v0.72.0]
+### ci
+- **coverity:** add arm64 build machine support
+- **coverity:** this job often stuck in ec2 build machine for certain language
+- **coverity:** change coverity download path
+- **coverity:** workaround to avoid hangs
+### test
+- **integration:** gametelemetry - remove deprecated endpoints
+- **integration:** csm - update changed model
+### docs
+- **common use cases:** update
+- **:** add cli sample app operation list
+### chore
+- **sdk:** generated from openapi spec commit: a2c66653b15e9f6a946f1b0f72073f508f4f1299
+
+
 <a name="v0.71.0"></a>
 ## [v0.71.0]
 ### ci
