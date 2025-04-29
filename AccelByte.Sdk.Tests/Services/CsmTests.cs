@@ -90,13 +90,12 @@ namespace AccelByte.Sdk.Tests.Services
 
                     #region Create new env secret entry
                     var newSecret = _Sdk.Csm.ConfigurationV2.SaveSecretV2Op
-                        .Execute(new ApimodelSaveConfigurationV2Request()
+                        .Execute(new ApimodelSaveSecretConfigurationV2Request()
                         {
                             ConfigName = envSecretKey,
                             Description = "",
                             Value = envSecretValue,
                             Source = "plaintext",
-                            ApplyMask = true
                         }, appName, _Sdk.Namespace);
                     #endregion
                     Assert.IsNotNull(newSecret);
@@ -129,7 +128,7 @@ namespace AccelByte.Sdk.Tests.Services
 
                     #region Update env secret
                     var updateSecret = _Sdk.Csm.ConfigurationV2.UpdateSecretV2Op
-                        .Execute(new ApimodelUpdateConfigurationV2Request()
+                        .Execute(new ApimodelUpdateSecretConfigurationV2Request()
                         {
                             Value = envSecretValueNew
                         }, appName, secretId, _Sdk.Namespace);
