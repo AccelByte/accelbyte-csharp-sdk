@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -96,22 +96,23 @@ namespace AccelByte.Sdk.Tests.Services
             string user_name = ("csharpsdk_" + Helper.GenerateRandomId(8));
             string user_password = Helper.GenerateRandomPassword(10);
             string user_email = (user_name + "@dummy.com");
-            string user_id = String.Empty;
+            string user_id = "";
 
             #region Create a user
-            AccountCreateUserRequestV4 newUser = new AccountCreateUserRequestV4()
+            AccountCreateTestUserRequestV4 newUser = new()
             {
+                Verified = true,
                 AuthType = "EMAILPASSWD",
                 EmailAddress = user_email,
                 Password = user_password,
-                DisplayName = "CSharp Server SDK Test",
+                DisplayName = "CSharp Extend SDK Test",
                 Username = user_name,
                 Country = "ID",
                 DateOfBirth = "1995-01-10",
                 UniqueDisplayName = user_name
             };
 
-            AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateUserV4Op
+            AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateTestUserV4Op
                 .Execute(newUser, _Sdk.Namespace);
             #endregion
             Assert.IsNotNull(cuResp);
@@ -126,7 +127,7 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(_Sdk.Namespace, user_id);
             #endregion
             Assert.IsNotNull(gUser);
-            Assert.AreEqual("CSharp Server SDK Test", gUser!.DisplayName);
+            Assert.AreEqual("CSharp Extend SDK Test", gUser!.DisplayName);
 
             #region Update a user
             ModelUserUpdateRequestV3 updateUser = new ModelUserUpdateRequestV3()

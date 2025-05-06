@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -56,19 +56,20 @@ namespace AccelByte.Sdk.Tests.Integration
             string user_password = Helper.GenerateRandomPassword(10);
             string user_email = $"{_UserName}@dummy.com";
 
-            AccountCreateUserRequestV4 newUser = new AccountCreateUserRequestV4()
+            AccountCreateTestUserRequestV4 newUser = new()
             {
+                Verified = true,
                 AuthType = "EMAILPASSWD",
+                Username = _UserName,
                 EmailAddress = user_email,
                 Password = user_password,
-                DisplayName = $"Server SDK Test Player {GenerateRandomNumber(3)}",
-                Username = _UserName,
                 Country = "ID",
                 DateOfBirth = "1995-01-10",
+                DisplayName = $"Extend SDK Test Player {GenerateRandomNumber(3)}",
                 UniqueDisplayName = _UserName
             };
 
-            AccountCreateUserResponseV4? cuResp = sdkClient.Iam.UsersV4.PublicCreateUserV4Op
+            AccountCreateUserResponseV4? cuResp = sdkClient.Iam.UsersV4.PublicCreateTestUserV4Op
                 .Execute(newUser, sdkClient.Namespace);
             if (cuResp != null)
                 UserId = cuResp.UserId!;
