@@ -203,11 +203,42 @@ namespace AccelByte.Sdk.Tests.Services
             }
             finally
             {
+                // try to get client id information for current extend app
+
+                var getSecrets = _Sdk.Csm.ConfigurationV2.GetListOfSecretsV2Op
+                    .SetOffset(0)
+                    .SetLimit(500)
+                    .Execute(appName, _Sdk.Namespace);
+                if (getSecrets == null)
+                    throw new Exception("NULL result from GetListOfSecretsV2Op");
+                if (getSecrets.Data == null)
+                    throw new Exception("NULL data from GetListOfSecretsV2Op");
+
+                string appClientId = "";
+                foreach (var secret in getSecrets.Data)
+                {
+                    string secretName = secret.ConfigName!.Trim().ToUpper();
+                    if (secretName == "AB_CLIENT_ID")
+                    {
+                        appClientId = secret.Value!.Trim();
+                        break;
+                    }
+                }
+
                 #region Delete an Extend app
                 _Sdk.Csm.AppV2.DeleteAppV2Op
                     .SetForced("true")
                     .Execute(appName, _Sdk.Namespace);
                 #endregion
+
+                //try to delete IAM client id for current extend app
+                if (appClientId != "")
+                {
+                    _Sdk.Iam.Clients.AdminDeleteClientV3Op
+                        .Execute(appClientId, _Sdk.Namespace);
+                }
+                else
+                    Console.WriteLine("Extend app does not have secret for AB_CLIENT_ID.");
             }
 
             ResetPolicy();
