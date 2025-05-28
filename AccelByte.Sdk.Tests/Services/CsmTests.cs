@@ -63,6 +63,9 @@ namespace AccelByte.Sdk.Tests.Services
                     var app = _Sdk.Csm.AppV2.GetAppV2Op
                         .Execute(appName, _Sdk.Namespace);
                     #endregion
+                    if (app == null)
+                        throw new Exception("GetAppV2 response is null.");
+
                     latestAppStatus = app.AppStatus!;
 
                     int checkCount = i + 1;
