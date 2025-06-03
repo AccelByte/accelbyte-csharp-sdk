@@ -712,6 +712,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --platformId <platformId value - optional> \
     --query <query value - optional> \
     --roleIds <roleIds value - optional> \
+    --selectedFields <selectedFields value - optional> \
     --skipLoginQueue <skipLoginQueue value - optional> \
     --startDate <startDate value - optional> \
     --tagIds <tagIds value - optional> \

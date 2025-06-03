@@ -368,13 +368,13 @@
 | `/iam/v3/admin/namespaces/{namespace}/roleoverride/status` | PATCH | AdminChangeRoleOverrideConfigStatusV3 | [AdminChangeRoleOverrideConfigStatusV3](../../AccelByte.Sdk/Api/Iam/Operation/OverrideRoleConfigV3/AdminChangeRoleOverrideConfigStatusV3.cs) | [AdminChangeRoleOverrideConfigStatusV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OverrideRoleConfigV3/AdminChangeRoleOverrideConfigStatusV3.cs) |
 | `/iam/v3/admin/namespaces/{namespace}/roleoverride/{roleId}/permissions` | GET | AdminGetRoleNamespacePermissionV3 | [AdminGetRoleNamespacePermissionV3](../../AccelByte.Sdk/Api/Iam/Operation/OverrideRoleConfigV3/AdminGetRoleNamespacePermissionV3.cs) | [AdminGetRoleNamespacePermissionV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/OverrideRoleConfigV3/AdminGetRoleNamespacePermissionV3.cs) |
 
-### Account Idenfifier Tag Wrapper:  [AccountIdenfifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdenfifierTag.cs)
+### Account Identifier Tag Wrapper:  [AccountIdentifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdentifierTag.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/iam/v3/admin/namespaces/{namespace}/tags` | GET | AdminQueryTagV3 | [AdminQueryTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminQueryTagV3.cs) | [AdminQueryTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminQueryTagV3.cs) |
-| `/iam/v3/admin/namespaces/{namespace}/tags` | POST | AdminCreateTagV3 | [AdminCreateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminCreateTagV3.cs) | [AdminCreateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminCreateTagV3.cs) |
-| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | PUT | AdminUpdateTagV3 | [AdminUpdateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminUpdateTagV3.cs) | [AdminUpdateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminUpdateTagV3.cs) |
-| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | DELETE | AdminDeleteTagV3 | [AdminDeleteTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdenfifierTag/AdminDeleteTagV3.cs) | [AdminDeleteTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdenfifierTag/AdminDeleteTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags` | GET | AdminQueryTagV3 | [AdminQueryTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdentifierTag/AdminQueryTagV3.cs) | [AdminQueryTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdentifierTag/AdminQueryTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags` | POST | AdminCreateTagV3 | [AdminCreateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdentifierTag/AdminCreateTagV3.cs) | [AdminCreateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdentifierTag/AdminCreateTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | PUT | AdminUpdateTagV3 | [AdminUpdateTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdentifierTag/AdminUpdateTagV3.cs) | [AdminUpdateTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdentifierTag/AdminUpdateTagV3.cs) |
+| `/iam/v3/admin/namespaces/{namespace}/tags/{tagId}` | DELETE | AdminDeleteTagV3 | [AdminDeleteTagV3](../../AccelByte.Sdk/Api/Iam/Operation/AccountIdentifierTag/AdminDeleteTagV3.cs) | [AdminDeleteTagV3](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Iam/AccountIdentifierTag/AdminDeleteTagV3.cs) |
 
 ### OAuth2.0 - Extension Wrapper:  [OAuth20Extension](../../AccelByte.Sdk/Api/Iam/Wrapper/OAuth20Extension.cs)
 | Endpoint | Method | ID | Class | Example |
@@ -592,7 +592,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
-### Account Idenfifier Tag Wrapper:  [AccountIdenfifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdenfifierTag.cs)
+### Account Identifier Tag Wrapper:  [AccountIdentifierTag](../../AccelByte.Sdk/Api/Iam/Wrapper/AccountIdentifierTag.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 

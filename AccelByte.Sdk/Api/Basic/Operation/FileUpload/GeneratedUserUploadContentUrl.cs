@@ -20,8 +20,6 @@ namespace AccelByte.Sdk.Api.Basic.Operation
     /// Other detail info:
     /// 
     ///   * Action code : 11102
-    ///   *  Default maximum file count per user : 10 files
-    ///   *  Default maximum file size per user : 104857600 bytes
     ///   *  Returns : URL data
     /// </summary>
     public class GeneratedUserUploadContentUrl : AccelByte.Sdk.Core.Operation

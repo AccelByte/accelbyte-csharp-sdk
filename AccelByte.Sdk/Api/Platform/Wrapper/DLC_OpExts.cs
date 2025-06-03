@@ -12,6 +12,58 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformDLC_OpExts
     {
+        public static Platform.Model.DLCItemConfigHistoryResult? Execute(
+            this GetDLCItemConfigHistory.GetDLCItemConfigHistoryBuilder builder,
+            string namespace_,
+            string dlcId
+        )
+        {
+            GetDLCItemConfigHistory op = builder.Build(
+                namespace_,
+                dlcId
+            );
+
+            return ((Platform.Wrapper.DLC)builder.WrapperObject!).GetDLCItemConfigHistory(op);
+        }
+        public static async Task<Platform.Model.DLCItemConfigHistoryResult?> ExecuteAsync(
+            this GetDLCItemConfigHistory.GetDLCItemConfigHistoryBuilder builder,
+            string namespace_,
+            string dlcId
+        )
+        {
+            GetDLCItemConfigHistory op = builder.Build(
+                namespace_,
+                dlcId
+            );
+
+            return await ((Platform.Wrapper.DLC)builder.WrapperObject!).GetDLCItemConfigHistoryAsync(op);
+        }
+        public static void Execute(
+            this RestoreDLCItemConfigHistory.RestoreDLCItemConfigHistoryBuilder builder,
+            string id,
+            string namespace_
+        )
+        {
+            RestoreDLCItemConfigHistory op = builder.Build(
+                id,
+                namespace_
+            );
+
+            ((Platform.Wrapper.DLC)builder.WrapperObject!).RestoreDLCItemConfigHistory(op);
+        }
+        public static async Task ExecuteAsync(
+            this RestoreDLCItemConfigHistory.RestoreDLCItemConfigHistoryBuilder builder,
+            string id,
+            string namespace_
+        )
+        {
+            RestoreDLCItemConfigHistory op = builder.Build(
+                id,
+                namespace_
+            );
+
+            await ((Platform.Wrapper.DLC)builder.WrapperObject!).RestoreDLCItemConfigHistoryAsync(op);
+        }
         public static Platform.Model.DLCItemConfigInfo? Execute(
             this GetDLCItemConfig.GetDLCItemConfigBuilder builder,
             string namespace_

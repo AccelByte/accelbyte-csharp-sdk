@@ -33,6 +33,32 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation AdminGetPlayFeatureFlag
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op admingetplayfeatureflag \
+    --namespace <namespace value>
+```
+
+### Operation AdminUpsertPlayFeatureFlag
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op adminupsertplayfeatureflag \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation AdminDeletePlayFeatureFlag
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op admindeleteplayfeatureflag \
+    --namespace <namespace value>
+```
+
 ### Operation AdminGetAllConfigV1
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

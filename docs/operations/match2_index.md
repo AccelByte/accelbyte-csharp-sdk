@@ -20,6 +20,13 @@
 | `/match2/v1/config/namespaces/{namespace}` | GET | AdminGetConfigV1 | [AdminGetConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminGetConfigV1.cs) | [AdminGetConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminGetConfigV1.cs) |
 | `/match2/v1/config/namespaces/{namespace}` | PATCH | AdminPatchConfigV1 | [AdminPatchConfigV1](../../AccelByte.Sdk/Api/Match2/Operation/Config/AdminPatchConfigV1.cs) | [AdminPatchConfigV1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/Config/AdminPatchConfigV1.cs) |
 
+### PlayFeatureFlag Wrapper:  [PlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Wrapper/PlayFeatureFlag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/match2/v1/admin/namespaces/{namespace}/playfeatureflag` | GET | AdminGetPlayFeatureFlag | [AdminGetPlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Operation/PlayFeatureFlag/AdminGetPlayFeatureFlag.cs) | [AdminGetPlayFeatureFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/PlayFeatureFlag/AdminGetPlayFeatureFlag.cs) |
+| `/match2/v1/admin/namespaces/{namespace}/playfeatureflag` | POST | AdminUpsertPlayFeatureFlag | [AdminUpsertPlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Operation/PlayFeatureFlag/AdminUpsertPlayFeatureFlag.cs) | [AdminUpsertPlayFeatureFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/PlayFeatureFlag/AdminUpsertPlayFeatureFlag.cs) |
+| `/match2/v1/admin/namespaces/{namespace}/playfeatureflag` | DELETE | AdminDeletePlayFeatureFlag | [AdminDeletePlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Operation/PlayFeatureFlag/AdminDeletePlayFeatureFlag.cs) | [AdminDeletePlayFeatureFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/PlayFeatureFlag/AdminDeletePlayFeatureFlag.cs) |
+
 ### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -86,6 +93,10 @@
 |---|---|---|---|---|
 
 ### Config Wrapper:  [Config](../../AccelByte.Sdk/Api/Match2/Wrapper/Config.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### PlayFeatureFlag Wrapper:  [PlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Wrapper/PlayFeatureFlag.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -169,6 +180,7 @@
 | `models.DSInformation` | [ModelsDSInformation](../../AccelByte.Sdk/Api/Match2/Model/ModelsDSInformation.cs) |
 | `models.GameSession` | [ModelsGameSession](../../AccelByte.Sdk/Api/Match2/Model/ModelsGameSession.cs) |
 | `models.Pagination` | [ModelsPagination](../../AccelByte.Sdk/Api/Match2/Model/ModelsPagination.cs) |
+| `models.PlayFeatureFlag` | [ModelsPlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Model/ModelsPlayFeatureFlag.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Match2/Model/ModelsServer.cs) |
 | `models.User` | [ModelsUser](../../AccelByte.Sdk/Api/Match2/Model/ModelsUser.cs) |
 | `player.PlayerData` | [PlayerPlayerData](../../AccelByte.Sdk/Api/Match2/Model/PlayerPlayerData.cs) |

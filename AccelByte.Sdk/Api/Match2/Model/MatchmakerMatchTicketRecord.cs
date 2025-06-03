@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonPropertyName("CreatedAt")]
         public DateTime? CreatedAt { get; set; }
 
+        [JsonPropertyName("ExpiredAt")]
+        public DateTime? ExpiredAt { get; set; }
+
         [JsonPropertyName("IsActive")]
         public bool? IsActive { get; set; }
 

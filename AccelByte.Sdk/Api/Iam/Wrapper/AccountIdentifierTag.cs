@@ -9,11 +9,11 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api.Iam.Wrapper
 {
-    public class AccountIdenfifierTag
+    public class AccountIdentifierTag
     {
         private readonly AccelByteSDK _sdk;
 
-        public AccountIdenfifierTag(AccelByteSDK sdk)
+        public AccountIdentifierTag(AccelByteSDK sdk)
         {
             _sdk = sdk;
         }

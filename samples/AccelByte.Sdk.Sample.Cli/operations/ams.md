@@ -149,6 +149,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation DevelopmentServerConfigurationPatch
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn ams \
+    --op developmentserverconfigurationpatch \
+    --developmentServerConfigID <developmentServerConfigID value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation FleetList
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..497"
+echo "1..499"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -235,7 +235,7 @@ eval_tap $? 20 'GetCatalogConfig' test.out
 
 #- 21 UpdateCatalogConfig
 # body param: body
-echo '{"enableInventoryCheck": false, "itemDeletionCheckConfig": ["ENTITLEMENT", "DLC", "CAMPAIGN"]}' > $TEMP_JSON_INPUT
+echo '{"enableInventoryCheck": false, "itemDeletionCheckConfig": ["DLC", "CAMPAIGN", "ENTITLEMENT"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateCatalogConfig \
@@ -584,215 +584,233 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 56 'GetCurrencySummary' test.out
 
-#- 57 GetDLCItemConfig
+#- 57 GetDLCItemConfigHistory
+$CLI_EXE \
+    --sn platform \
+    --op GetDLCItemConfigHistory \
+    --namespace $AB_NAMESPACE \
+    --dlcId 'lUKhXI8mL8OIhvP6' \
+    > test.out 2>&1
+eval_tap $? 57 'GetDLCItemConfigHistory' test.out
+
+#- 58 RestoreDLCItemConfigHistory
+$CLI_EXE \
+    --sn platform \
+    --op RestoreDLCItemConfigHistory \
+    --id '8xE68dzohxhbej2c' \
+    --namespace $AB_NAMESPACE \
+    > test.out 2>&1
+eval_tap $? 58 'RestoreDLCItemConfigHistory' test.out
+
+#- 59 GetDLCItemConfig
 $CLI_EXE \
     --sn platform \
     --op GetDLCItemConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 57 'GetDLCItemConfig' test.out
+eval_tap $? 59 'GetDLCItemConfig' test.out
 
-#- 58 UpdateDLCItemConfig
+#- 60 UpdateDLCItemConfig
 # body param: body
-echo '{"data": [{"id": "lUKhXI8mL8OIhvP6", "rewards": [{"currency": {"currencyCode": "8xE68dzohxhbej2c", "namespace": "aIIfkXDY7jnhp3qY"}, "item": {"itemId": "6T7TUEBotSNIwGhi", "itemName": "a6cqoWmnhtuzxir1", "itemSku": "2r0VUWI0kJAczj5A", "itemType": "pcsiEQ65llgGnTHA"}, "quantity": 37, "type": "ITEM"}, {"currency": {"currencyCode": "CZa7xE4nwGKlbPRx", "namespace": "fucxoRKFLxxcL9Sy"}, "item": {"itemId": "uHbvRxR6LaKWgAVj", "itemName": "ZKDxiezEbuMCz9J4", "itemSku": "dPRGzoQLYIWPPZvy", "itemType": "PupimCENHEenqjRS"}, "quantity": 48, "type": "CURRENCY"}, {"currency": {"currencyCode": "NyTfGE59942bCwgp", "namespace": "zUfcmTQjRmV0CPt1"}, "item": {"itemId": "LUaTvrFaxzOfG3pT", "itemName": "ddIA0Rt6wM5oQvTM", "itemSku": "ICtWyUtVDnhgTGXO", "itemType": "8Utpwxug8MpqczRv"}, "quantity": 95, "type": "CURRENCY"}]}, {"id": "dK1uOV1ZJTYuHpnp", "rewards": [{"currency": {"currencyCode": "VX5u4gw4XBXDD7BG", "namespace": "73sDdDoXnB8F5X05"}, "item": {"itemId": "KUgGKfDSGh3vQFPS", "itemName": "YCi8WEjR3wqpnMdS", "itemSku": "Nskxhl3O3kGloooh", "itemType": "7kL598P7F3IKhiNd"}, "quantity": 49, "type": "CURRENCY"}, {"currency": {"currencyCode": "1V7199NT7JTRFV3F", "namespace": "xMl5Rw4YeHqWkG09"}, "item": {"itemId": "iEAFYWhow1WAwCs9", "itemName": "Y0KOemhNPYUVA9mU", "itemSku": "8UvONyjv3GQuLHoQ", "itemType": "6ehLLK5h1bE9WU6w"}, "quantity": 43, "type": "ITEM"}, {"currency": {"currencyCode": "RHbGTC2ynue7Xk4u", "namespace": "DF5mdakWJ2AsKf8U"}, "item": {"itemId": "fQqTQ8v7gXyFuLFZ", "itemName": "ViQbxYQvUyapo6Fm", "itemSku": "My6tZYSCe7du68Ce", "itemType": "6T4pYH3BPyFurT4p"}, "quantity": 29, "type": "ITEM"}]}, {"id": "tJoQQyL1bCDNisOh", "rewards": [{"currency": {"currencyCode": "jEKFWmj7ioi5WZ6Z", "namespace": "ymQeVSZZma57V6b9"}, "item": {"itemId": "uLloAA9KoetyNPkg", "itemName": "WcTCN7aBIFfeRdnH", "itemSku": "pse2T7eZwkVrB3GS", "itemType": "EmVq8CjR5rCx0ZiH"}, "quantity": 47, "type": "ITEM"}, {"currency": {"currencyCode": "vLGLnB4xfqdHhPHA", "namespace": "2ZbIvW1oxENH4MsV"}, "item": {"itemId": "lbCMc5hx0W14Skvo", "itemName": "vINegS29legebqGw", "itemSku": "ej59Ok8EM0OFW93F", "itemType": "kJicmK6qeaDEm9bP"}, "quantity": 59, "type": "CURRENCY"}, {"currency": {"currencyCode": "S2a5WoOtwavdioad", "namespace": "jCN0lC0MZRZAvhZ7"}, "item": {"itemId": "XQmcT57Hl2PvPOKv", "itemName": "c25nnSLnEnv4ipAV", "itemSku": "JzPHM6kTwfu1vSD9", "itemType": "gROMknwVRJfXHGB1"}, "quantity": 36, "type": "CURRENCY"}]}]}' > $TEMP_JSON_INPUT
+echo '{"data": [{"autoUpdate": false, "id": "s13b7dmnPijw6U8G", "rewards": [{"currency": {"currencyCode": "Gp0E886E90E4Zboi", "namespace": "XT1Uy0gArtDpQE4b"}, "item": {"itemId": "OtoiAjHXcVVOsVyw", "itemName": "U6uisejapftqoxuj", "itemSku": "XDosOo2kSUfIA1gu", "itemType": "TNx7haejXSV2oH2u"}, "quantity": 69, "type": "ITEM"}, {"currency": {"currencyCode": "8S4Zx0ACteueMOmY", "namespace": "P4SgxAIQTTKsdmtH"}, "item": {"itemId": "u1dG0us7kIWLcgKg", "itemName": "U9406tdRDqr3cpVb", "itemSku": "aH69NyTfGE59942b", "itemType": "CwgpzUfcmTQjRmV0"}, "quantity": 59, "type": "CURRENCY"}, {"currency": {"currencyCode": "Pt1LUaTvrFaxzOfG", "namespace": "3pTddIA0Rt6wM5oQ"}, "item": {"itemId": "vTMICtWyUtVDnhgT", "itemName": "GXO8Utpwxug8Mpqc", "itemSku": "zRvUdK1uOV1ZJTYu", "itemType": "HpnpVX5u4gw4XBXD"}, "quantity": 61, "type": "CURRENCY"}], "rvn": 16}, {"autoUpdate": true, "id": "1o9zV6rhVfcQmLfE", "rewards": [{"currency": {"currencyCode": "n5ZUGeYlOwODWBAz", "namespace": "6skHMfl4Hjw9KEnx"}, "item": {"itemId": "8cNfDK45zWtwYhRo", "itemName": "NPwKema6caMTOciv", "itemSku": "PAkmP8Awb0NqtvSR", "itemType": "9q6l5k9BLQMrPoTu"}, "quantity": 47, "type": "CURRENCY"}, {"currency": {"currencyCode": "9iEAFYWhow1WAwCs", "namespace": "9Y0KOemhNPYUVA9m"}, "item": {"itemId": "U8UvONyjv3GQuLHo", "itemName": "Q6ehLLK5h1bE9WU6", "itemSku": "w3tjUhSCKySPY7yM", "itemType": "GOuQOfx6HIFfwBBq"}, "quantity": 66, "type": "CURRENCY"}, {"currency": {"currencyCode": "RaZY74CqdvfPAIaP", "namespace": "EkCIXX7WQ3ytABCz"}, "item": {"itemId": "YWxYbbphuiQPU0aS", "itemName": "2OIp0B2FWiDu7POa", "itemSku": "otJoQQyL1bCDNisO", "itemType": "hjEKFWmj7ioi5WZ6"}, "quantity": 71, "type": "ITEM"}], "rvn": 82}, {"autoUpdate": false, "id": "akX65w7RpxY6pd1Q", "rewards": [{"currency": {"currencyCode": "TpFpaxbCjHSCXM7s", "namespace": "L1nnOoRIg7oSh4yV"}, "item": {"itemId": "ttp53wasuHbA0keU", "itemName": "omVCh681OMZFNRw8", "itemSku": "YvLGLnB4xfqdHhPH", "itemType": "A2ZbIvW1oxENH4Ms"}, "quantity": 97, "type": "CURRENCY"}, {"currency": {"currencyCode": "lbCMc5hx0W14Skvo", "namespace": "vINegS29legebqGw"}, "item": {"itemId": "ej59Ok8EM0OFW93F", "itemName": "kJicmK6qeaDEm9bP", "itemSku": "CS2a5WoOtwavdioa", "itemType": "djCN0lC0MZRZAvhZ"}, "quantity": 22, "type": "CURRENCY"}, {"currency": {"currencyCode": "mcT57Hl2PvPOKvc2", "namespace": "5nnSLnEnv4ipAVJz"}, "item": {"itemId": "PHM6kTwfu1vSD9gR", "itemName": "OMknwVRJfXHGB1r6", "itemSku": "6lbNcbMIJEY0BmpF", "itemType": "215jJycJcSyXLzU9"}, "quantity": 96, "type": "ITEM"}], "rvn": 77}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateDLCItemConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 58 'UpdateDLCItemConfig' test.out
+eval_tap $? 60 'UpdateDLCItemConfig' test.out
 
-#- 59 DeleteDLCItemConfig
+#- 61 DeleteDLCItemConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteDLCItemConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 59 'DeleteDLCItemConfig' test.out
+eval_tap $? 61 'DeleteDLCItemConfig' test.out
 
-#- 60 GetPlatformDLCConfig
+#- 62 GetPlatformDLCConfig
 $CLI_EXE \
     --sn platform \
     --op GetPlatformDLCConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 60 'GetPlatformDLCConfig' test.out
+eval_tap $? 62 'GetPlatformDLCConfig' test.out
 
-#- 61 UpdatePlatformDLCConfig
+#- 63 UpdatePlatformDLCConfig
 # body param: body
-echo '{"data": [{"platform": "XBOX", "platformDlcIdMap": {"lbNcbMIJEY0BmpF2": "15jJycJcSyXLzU9U", "qk079uhBLl4yz32R": "qkNzYSNYl4zvyD8S", "UZv2LFFZer6T3W7T": "E5WdocKzvgr3jBU2"}}, {"platform": "EPICGAMES", "platformDlcIdMap": {"oQcFDfKSJymqZ5tD": "VsJ63mFWW0u95r5y", "lQKcWi0o5zcWp7Ni": "TBI4m6PVEQWCNw7D", "HkXx8NqXaR2w60X5": "Vb0TV0x3nmq9UCZb"}}, {"platform": "EPICGAMES", "platformDlcIdMap": {"RDCk0koCGDPfbiGd": "BQ5DNVJAgfAkD0w0", "H6QM5AsRnp9a7p0g": "0szNgC8yVFlwGULK", "eMzn4sG6P5R2lHU9": "mf9rzrxuxtxg98cD"}}]}' > $TEMP_JSON_INPUT
+echo '{"data": [{"platform": "OCULUS", "platformDlcIdMap": {"YlsqYrUpXncYv2BV": "IS1BtMqvdE5QQizM", "BWYPYerJ1FmKBX6U": "18gMIl7TSPm96Mso", "QcFDfKSJymqZ5tDV": "sJ63mFWW0u95r5yl"}}, {"platform": "OCULUS", "platformDlcIdMap": {"KcWi0o5zcWp7NiTB": "I4m6PVEQWCNw7DHk", "Xx8NqXaR2w60X5Vb": "0TV0x3nmq9UCZbdV", "FY3WdZ6luOW977Eg": "otvOrnRjb5UT6Vf5"}}, {"platform": "OCULUS", "platformDlcIdMap": {"QM5AsRnp9a7p0g0s": "zNgC8yVFlwGULKeM", "zn4sG6P5R2lHU9mf": "9rzrxuxtxg98cDF1", "fsD5miAxHczgRu4V": "YjQq4VIVFUqNPuW2"}}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePlatformDLCConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 61 'UpdatePlatformDLCConfig' test.out
+eval_tap $? 63 'UpdatePlatformDLCConfig' test.out
 
-#- 62 DeletePlatformDLCConfig
+#- 64 DeletePlatformDLCConfig
 $CLI_EXE \
     --sn platform \
     --op DeletePlatformDLCConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 62 'DeletePlatformDLCConfig' test.out
+eval_tap $? 64 'DeletePlatformDLCConfig' test.out
 
-#- 63 QueryEntitlements1
+#- 65 QueryEntitlements1
 $CLI_EXE \
     --sn platform \
     --op QueryEntitlements1 \
     --namespace $AB_NAMESPACE \
     --activeOnly 'false' \
     --appType 'GAME' \
-    --entitlementClazz 'ENTITLEMENT' \
-    --entitlementName 'y87yJBlfjPI5tfjb' \
-    --itemId '["yZkYSRLBMgcD5OJg", "p6wHynVKwWgdAibF", "BESdI0Ab1zgjMC3h"]' \
-    --limit '31' \
-    --offset '24' \
+    --entitlementClazz 'LOOTBOX' \
+    --entitlementName '6wHynVKwWgdAibFB' \
+    --itemId '["ESdI0Ab1zgjMC3hp", "1s4tElQhEA9ThpSb", "yAYJeBCrKDcRkI5L"]' \
+    --limit '71' \
+    --offset '8' \
     --origin 'Oculus' \
-    --userId 'rYXaEFcUySnsIREQ' \
+    --userId 'UqivHoIArvDT62Ta' \
     > test.out 2>&1
-eval_tap $? 63 'QueryEntitlements1' test.out
+eval_tap $? 65 'QueryEntitlements1' test.out
 
-#- 64 QueryEntitlements
+#- 66 QueryEntitlements
 $CLI_EXE \
     --sn platform \
     --op QueryEntitlements \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --itemIds '["JeBCrKDcRkI5LI6U", "qivHoIArvDT62TaG", "FSxd4y808Fey8nfa"]' \
-    --limit '67' \
-    --offset '46' \
+    --activeOnly 'true' \
+    --itemIds '["Sxd4y808Fey8nfaG", "Ew6BAuz1YkANj6LH", "aNMxGL2cjWg68JcP"]' \
+    --limit '46' \
+    --offset '97' \
     > test.out 2>&1
-eval_tap $? 64 'QueryEntitlements' test.out
+eval_tap $? 66 'QueryEntitlements' test.out
 
-#- 65 EnableEntitlementOriginFeature
+#- 67 EnableEntitlementOriginFeature
 $CLI_EXE \
     --sn platform \
     --op EnableEntitlementOriginFeature \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 65 'EnableEntitlementOriginFeature' test.out
+eval_tap $? 67 'EnableEntitlementOriginFeature' test.out
 
-#- 66 GetEntitlementConfigInfo
+#- 68 GetEntitlementConfigInfo
 $CLI_EXE \
     --sn platform \
     --op GetEntitlementConfigInfo \
     --namespace $AB_NAMESPACE \
     --withoutCache 'true' \
     > test.out 2>&1
-eval_tap $? 66 'GetEntitlementConfigInfo' test.out
+eval_tap $? 68 'GetEntitlementConfigInfo' test.out
 
-#- 67 GrantEntitlements
+#- 69 GrantEntitlements
 # body param: body
-echo '{"entitlementGrantList": [{"collectionId": "M4qNT3awIjWoFCW5", "endDate": "1985-11-22T00:00:00Z", "grantedCode": "TW9laFjsd7gSFkIV", "itemId": "GnXJLeUdD8XNxAko", "itemNamespace": "eHk0BXouyKC6RnO4", "language": "xCEK-216", "metadata": {"IiLdvpuYVOAU9uuK": {}, "PGNN6m8BLNzJxMR9": {}, "F8QPVUh3Fxn8VCvt": {}}, "origin": "Epic", "quantity": 13, "region": "iiwNMAdIodiW3hcY", "source": "PURCHASE", "startDate": "1971-10-31T00:00:00Z", "storeId": "LSv7uFZXdW5GyQ2m"}, {"collectionId": "veLZEnmSCeWTCXfA", "endDate": "1993-03-31T00:00:00Z", "grantedCode": "x3U3KrfqoZi5xiHi", "itemId": "QI9ieQ8y75Biw4pK", "itemNamespace": "J8hey5JmuUDlojEc", "language": "qflf", "metadata": {"S1VFA1Eo4Rxcnq5D": {}, "tzSaifByaju2TY0Q": {}, "dHndDWB60eGxKadA": {}}, "origin": "GooglePlay", "quantity": 17, "region": "6UL9MkkVf8dHJYJF", "source": "OTHER", "startDate": "1991-02-08T00:00:00Z", "storeId": "cUSJgQSBwkX1FU71"}, {"collectionId": "K0CzXzdQIWh5PSp0", "endDate": "1999-10-02T00:00:00Z", "grantedCode": "4SIhnu3h3uK1jRHh", "itemId": "Q2uS27tXHvtxi6Eb", "itemNamespace": "WHrMrbpZd2bt6P3s", "language": "zebW", "metadata": {"dh450P2HCQEysNYm": {}, "CndtXXQgiHJgjwpC": {}, "xGEBsc3HVarhLlwl": {}}, "origin": "Nintendo", "quantity": 11, "region": "0KrUcPducAeJonNs", "source": "REFERRAL_BONUS", "startDate": "1989-02-01T00:00:00Z", "storeId": "unUYQNVjaoZkB3AI"}], "userIds": ["oI1cMTFoDvnFjF7P", "1r9iOvxo4sO2v2SB", "yPSihYagCDowXpzP"]}' > $TEMP_JSON_INPUT
+echo '{"entitlementGrantList": [{"collectionId": "GnXJLeUdD8XNxAko", "endDate": "1973-10-09T00:00:00Z", "grantedCode": "Hk0BXouyKC6RnO4P", "itemId": "ckO3syHJOMlgAqts", "itemNamespace": "nZlLvEczKKAyiQv9", "language": "NGcB-385", "metadata": {"PVUh3Fxn8VCvtdii": {}, "wNMAdIodiW3hcYuK": {}, "SRkkKQKIVOduQwwD": {}}, "origin": "Oculus", "quantity": 9, "region": "BnpQpIKdlw0Q8Qm0", "source": "IAP", "startDate": "1983-05-07T00:00:00Z", "storeId": "3U3KrfqoZi5xiHiQ"}, {"collectionId": "I9ieQ8y75Biw4pKJ", "endDate": "1982-02-27T00:00:00Z", "grantedCode": "cKUh2wepEjvh8sTP", "itemId": "E7JfL8ZG7IBiOpvS", "itemNamespace": "KRmJcE8fHWU8tF9T", "language": "er", "metadata": {"ndDWB60eGxKadAf6": {}, "UL9MkkVf8dHJYJF1": {}, "9NcUSJgQSBwkX1FU": {}}, "origin": "IOS", "quantity": 97, "region": "K0CzXzdQIWh5PSp0", "source": "REWARD", "startDate": "1992-10-15T00:00:00Z", "storeId": "Ihnu3h3uK1jRHhQ2"}, {"collectionId": "uS27tXHvtxi6EbWH", "endDate": "1980-06-02T00:00:00Z", "grantedCode": "MrbpZd2bt6P3sZXA", "itemId": "Zkdh450P2HCQEysN", "itemNamespace": "YmCndtXXQgiHJgjw", "language": "RdF_fvcy_xA", "metadata": {"arhLlwlmf1l5JhrQ": {}, "SpGlguvTECefhiKK": {}, "uc8Urg4atANoOfyC": {}}, "origin": "Epic", "quantity": 48, "region": "fBoH6zLgTsYmAw4m", "source": "REWARD", "startDate": "1978-07-23T00:00:00Z", "storeId": "DvnFjF7PyPSihYag"}], "userIds": ["CDowXpzPB56b3Olk", "JK0TMs61QJU3NQDg", "VJljnvyeys0Kd9lS"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GrantEntitlements \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 67 'GrantEntitlements' test.out
+eval_tap $? 69 'GrantEntitlements' test.out
 
-#- 68 RevokeEntitlements
+#- 70 RevokeEntitlements
 # body param: body
-echo '["B56b3OlkJK0TMs61", "QJU3NQDgVJljnvye", "ys0Kd9lSy4dXRirN"]' > $TEMP_JSON_INPUT
+echo '["y4dXRirNN1XTVbZI", "NAYTfmDdnbfKLdll", "LcrgG7MUCvBQxDMK"]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RevokeEntitlements \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 68 'RevokeEntitlements' test.out
+eval_tap $? 70 'RevokeEntitlements' test.out
 
-#- 69 GetEntitlement
+#- 71 GetEntitlement
 $CLI_EXE \
     --sn platform \
     --op GetEntitlement \
-    --entitlementId 'N1XTVbZINAYTfmDd' \
+    --entitlementId 'fZnQUHzroRILUYE0' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 69 'GetEntitlement' test.out
+eval_tap $? 71 'GetEntitlement' test.out
 
-#- 70 QueryFulfillmentHistories
+#- 72 QueryFulfillmentHistories
 $CLI_EXE \
     --sn platform \
     --op QueryFulfillmentHistories \
     --namespace $AB_NAMESPACE \
-    --limit '28' \
-    --offset '100' \
-    --status 'FAIL' \
-    --userId '8zADPqu8PVXnN0xl' \
+    --limit '25' \
+    --offset '3' \
+    --status 'SUCCESS' \
+    --userId 'vUdfY0BqpFwpFSBi' \
     > test.out 2>&1
-eval_tap $? 70 'QueryFulfillmentHistories' test.out
+eval_tap $? 72 'QueryFulfillmentHistories' test.out
 
-#- 71 QueryIAPClawbackHistory
+#- 73 QueryIAPClawbackHistory
 $CLI_EXE \
     --sn platform \
     --op QueryIAPClawbackHistory \
     --namespace $AB_NAMESPACE \
-    --endTime '48RoZbNL7cXCVaF9' \
-    --eventType 'REVOKED' \
-    --externalOrderId '1H9bQv7EybPwbHEH' \
-    --limit '47' \
-    --offset '64' \
-    --startTime 'SPaGCQl5y1gekeqH' \
-    --status 'IGNORED' \
-    --userId 'BW4wLASmNzxcUMh0' \
+    --endTime 'tprtx35PWwBW4wLA' \
+    --eventType 'CHARGEBACK_REVERSED' \
+    --externalOrderId '1SmIc5NTRyLbOzAY' \
+    --limit '61' \
+    --offset '43' \
+    --startTime '5IH4deTFCDORAsuT' \
+    --status 'SUCCESS' \
+    --userId 'lseQtOoohdBYhvvw' \
     > test.out 2>&1
-eval_tap $? 71 'QueryIAPClawbackHistory' test.out
+eval_tap $? 73 'QueryIAPClawbackHistory' test.out
 
-#- 72 MockPlayStationStreamEvent
+#- 74 MockPlayStationStreamEvent
 # body param: body
-echo '{"body": {"account": "SvR4rhLLvUwAWnj9", "additionalData": {"entitlement": [{"clientTransaction": [{"amountConsumed": 50, "clientTransactionId": "CDORAsuT0lseQtOo"}, {"amountConsumed": 30, "clientTransactionId": "CjjBQfnFyRj8oJlS"}, {"amountConsumed": 92, "clientTransactionId": "xc2NKFB2qxCiWMNd"}], "entitlementId": "vN9SDRKye6n1t8RX", "usageCount": 64}, {"clientTransaction": [{"amountConsumed": 72, "clientTransactionId": "5qayS4UAMJrRrnNf"}, {"amountConsumed": 6, "clientTransactionId": "Hou1skD80rM9MH0b"}, {"amountConsumed": 67, "clientTransactionId": "7V03QDQjU64lc3oe"}], "entitlementId": "k3RWXWJhPXvS9Omm", "usageCount": 40}, {"clientTransaction": [{"amountConsumed": 34, "clientTransactionId": "Z14XROPpbgqS9a9e"}, {"amountConsumed": 86, "clientTransactionId": "LU0r1txp0vdRA0J8"}, {"amountConsumed": 8, "clientTransactionId": "tXsNfi8EF3mgABwF"}], "entitlementId": "e1N0QNeryssScV8w", "usageCount": 13}], "purpose": "rN40y7aLOJoeZqRw"}, "originalTitleName": "JzTdMg00KvHLdMia", "paymentProductSKU": "je6w7YN9MWtYzurS", "purchaseDate": "McK8c5xZukais9To", "sourceOrderItemId": "pwzyVFe9lNT7v5Qy", "titleName": "cBCxJG7DehSEc6kg"}, "eventDomain": "2UWX8dfboaqkOS5P", "eventSource": "8ijeU7ceEjsJO7xZ", "eventType": "UK7lMGDnKhxDxWqk", "eventVersion": 5, "id": "FyDBDBxAznXS1mfs", "timestamp": "6uZ9OaZwm6pPAdF5"}' > $TEMP_JSON_INPUT
+echo '{"body": {"account": "spKpEPUUxc2NKFB2", "additionalData": {"entitlement": [{"clientTransaction": [{"amountConsumed": 33, "clientTransactionId": "Nsz83B3uSAH6QCBc"}, {"amountConsumed": 52, "clientTransactionId": "6n1t8RXF5qayS4UA"}, {"amountConsumed": 80, "clientTransactionId": "Y3LbL8Ij6Hou1skD"}], "entitlementId": "80rM9MH0bGReYems", "usageCount": 9}, {"clientTransaction": [{"amountConsumed": 19, "clientTransactionId": "R492ILQLV79lT8sZ"}, {"amountConsumed": 47, "clientTransactionId": "PXvS9OmmtZ14XROP"}, {"amountConsumed": 32, "clientTransactionId": "TqfCi5CJgLU0r1tx"}], "entitlementId": "p0vdRA0J8eLCZrcT", "usageCount": 62}, {"clientTransaction": [{"amountConsumed": 62, "clientTransactionId": "F3mgABwFe1N0QNer"}, {"amountConsumed": 50, "clientTransactionId": "ZoLl4yLZgHlatL7n"}, {"amountConsumed": 2, "clientTransactionId": "OJoeZqRwJzTdMg00"}], "entitlementId": "KvHLdMiaje6w7YN9", "usageCount": 79}], "purpose": "cpv0nqsAzwhiinZM"}, "originalTitleName": "K2PQePnMgPL2upEu", "paymentProductSKU": "zGkAuUgSs7KjVR3K", "purchaseDate": "ElIaqQcqk3EvPPbo", "sourceOrderItemId": "GcBp08H0whjTC8Q2", "titleName": "54CIig93OcDTSDDb"}, "eventDomain": "tG4kbF7EcYPAe3TK", "eventSource": "jWJizZ73YhEdqt8L", "eventType": "YH7I8lYD68ZI9yJ2", "eventVersion": 64, "id": "Y7bXyRpFUts9CpuT", "timestamp": "ZNXAvR5mEjDGi8Z9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op MockPlayStationStreamEvent \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 72 'MockPlayStationStreamEvent' test.out
+eval_tap $? 74 'MockPlayStationStreamEvent' test.out
 
-#- 73 MockXblClawbackEvent
+#- 75 MockXblClawbackEvent
 # body param: body
-echo '{"data": {"eventDate": "lHMHzBycY7bXyRpF", "eventState": "Uts9CpuTZNXAvR5m", "lineItemId": "EjDGi8Z9KuTHuT6I", "orderId": "lImbAYCRvUBIHoIh", "productId": "Unq8EtmzVPJFqDDs", "productType": "FmDKPixcJtgNHrTE", "purchasedDate": "QpFB5aeIMGxoyLMq", "sandboxId": "SLDNxuBA95CXk3K2", "skuId": "oLMyvJ6M0zKUQCLk", "subscriptionData": {"consumedDurationInDays": 39, "dateTime": "EzD1HwKEgGh6MctP", "durationInDays": 82, "recurrenceId": "zpayQ1ySXmHgROq1"}}, "datacontenttype": "X5e82zDrJtNcl4zt", "id": "saFwrylG42gHaf4X", "source": "EHX7QBUYvSupGJqp", "specVersion": "wAp0WMu7ZUAbKsKi", "subject": "0fuipdvULHrqNhX3", "time": "eWB4hfA53Ibtklb9", "traceparent": "jB4Gcb0L2EPZQmxE", "type": "O4oKOcsZUbeZJJJy"}' > $TEMP_JSON_INPUT
+echo '{"data": {"eventDate": "KuTHuT6IlImbAYCR", "eventState": "vUBIHoIhUnq8Etmz", "lineItemId": "VPJFqDDsFmDKPixc", "orderId": "JtgNHrTEQpFB5aeI", "productId": "MGxoyLMqSLDNxuBA", "productType": "95CXk3K2oLMyvJ6M", "purchasedDate": "0zKUQCLksfhWE1Oi", "sandboxId": "COozFmZ3hzpayQ1y", "skuId": "SXmHgROq1X5e82zD", "subscriptionData": {"consumedDurationInDays": 36, "dateTime": "k7zrqRFfKg2QLfgP", "durationInDays": 22, "recurrenceId": "42gHaf4XEHX7QBUY"}}, "datacontenttype": "vSupGJqpwAp0WMu7", "id": "ZUAbKsKi0fuipdvU", "source": "LHrqNhX3eWB4hfA5", "specVersion": "3Ibtklb9jB4Gcb0L", "subject": "2EPZQmxEO4oKOcsZ", "time": "UbeZJJJydenJ93Kb", "traceparent": "1pQleHG1UoswJzp9", "type": "GPpGykMepZ0J4UuZ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op MockXblClawbackEvent \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 73 'MockXblClawbackEvent' test.out
+eval_tap $? 75 'MockXblClawbackEvent' test.out
 
-#- 74 GetAppleIAPConfig
+#- 76 GetAppleIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetAppleIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 74 'GetAppleIAPConfig' test.out
+eval_tap $? 76 'GetAppleIAPConfig' test.out
 
-#- 75 UpdateAppleIAPConfig
+#- 77 UpdateAppleIAPConfig
 # body param: body
-echo '{"appAppleId": 7, "bundleId": "WrnMRr0i4i3znplx", "issuerId": "ZVkkzCuWXN0pi9oH", "keyId": "wFFSWlYJSaX14Onx", "password": "c82WUAqFNlxPL5Zj", "version": "V1"}' > $TEMP_JSON_INPUT
+echo '{"appAppleId": 100, "bundleId": "SaX14Onxc82WUAqF", "issuerId": "NlxPL5ZjWvAiWvl1", "keyId": "2EyddbFelmB60OEQ", "password": "rMIsKCf8GsPEl1i9", "version": "V2"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateAppleIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 75 'UpdateAppleIAPConfig' test.out
+eval_tap $? 77 'UpdateAppleIAPConfig' test.out
 
-#- 76 DeleteAppleIAPConfig
+#- 78 DeleteAppleIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteAppleIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 76 'DeleteAppleIAPConfig' test.out
+eval_tap $? 78 'DeleteAppleIAPConfig' test.out
 
-#- 77 UpdateAppleP8File
+#- 79 UpdateAppleP8File
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -801,63 +819,63 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 77 'UpdateAppleP8File' test.out
+eval_tap $? 79 'UpdateAppleP8File' test.out
 
-#- 78 GetEpicGamesIAPConfig
+#- 80 GetEpicGamesIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetEpicGamesIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 78 'GetEpicGamesIAPConfig' test.out
+eval_tap $? 80 'GetEpicGamesIAPConfig' test.out
 
-#- 79 UpdateEpicGamesIAPConfig
+#- 81 UpdateEpicGamesIAPConfig
 # body param: body
-echo '{"sandboxId": "vAiWvl12EyddbFel"}' > $TEMP_JSON_INPUT
+echo '{"sandboxId": "Q9tNv9ZoFgoU8geQ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateEpicGamesIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 79 'UpdateEpicGamesIAPConfig' test.out
+eval_tap $? 81 'UpdateEpicGamesIAPConfig' test.out
 
-#- 80 DeleteEpicGamesIAPConfig
+#- 82 DeleteEpicGamesIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteEpicGamesIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 80 'DeleteEpicGamesIAPConfig' test.out
+eval_tap $? 82 'DeleteEpicGamesIAPConfig' test.out
 
-#- 81 GetGoogleIAPConfig
+#- 83 GetGoogleIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetGoogleIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 81 'GetGoogleIAPConfig' test.out
+eval_tap $? 83 'GetGoogleIAPConfig' test.out
 
-#- 82 UpdateGoogleIAPConfig
+#- 84 UpdateGoogleIAPConfig
 # body param: body
-echo '{"applicationName": "mB60OEQrMIsKCf8G", "notificationTokenAudience": "sPEl1i9RQ9tNv9Zo", "notificationTokenEmail": "FgoU8geQqTHsgesx", "packageName": "Udeb2FJbsqzkOO5T", "serviceAccountId": "gVxhorx7Olr6yZsG"}' > $TEMP_JSON_INPUT
+echo '{"applicationName": "qTHsgesxUdeb2FJb", "notificationTokenAudience": "sqzkOO5TgVxhorx7", "notificationTokenEmail": "Olr6yZsG5AHeXjxQ", "packageName": "Cmc8jD3q7UouREPL", "serviceAccountId": "DNt6Bi4udSrXnIIt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateGoogleIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 82 'UpdateGoogleIAPConfig' test.out
+eval_tap $? 84 'UpdateGoogleIAPConfig' test.out
 
-#- 83 DeleteGoogleIAPConfig
+#- 85 DeleteGoogleIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteGoogleIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 83 'DeleteGoogleIAPConfig' test.out
+eval_tap $? 85 'DeleteGoogleIAPConfig' test.out
 
-#- 84 UpdateGoogleP12File
+#- 86 UpdateGoogleP12File
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -866,190 +884,190 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 84 'UpdateGoogleP12File' test.out
+eval_tap $? 86 'UpdateGoogleP12File' test.out
 
-#- 85 GetIAPItemConfig
+#- 87 GetIAPItemConfig
 $CLI_EXE \
     --sn platform \
     --op GetIAPItemConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 85 'GetIAPItemConfig' test.out
+eval_tap $? 87 'GetIAPItemConfig' test.out
 
-#- 86 UpdateIAPItemConfig
+#- 88 UpdateIAPItemConfig
 # body param: body
-echo '{"data": [{"itemIdentity": "5AHeXjxQCmc8jD3q", "itemIdentityType": "ITEM_ID", "platformProductIdMap": {"pmtV8p2sf0f3uCNx": "JIMiWHlRKeE5RKhr", "eFD6wFvnLOEQR2tp": "6q9pPGaWcS02LciO", "GbTW0UOPodtVEAHU": "TPJcWSRPDFdkQZDr"}}, {"itemIdentity": "W0M7eIDrifb9ovou", "itemIdentityType": "ITEM_SKU", "platformProductIdMap": {"OCHr6PHDU3g8gwrR": "CGr34cRXz9Jsazgd", "XDoGshLr8yn7AoXG": "MgLGDEgjGR3AjETQ", "muBhxdl2hmyNHx2E": "wggD6ThfKbveaNPa"}}, {"itemIdentity": "dM954Klf9ScyQ3Bk", "itemIdentityType": "ITEM_ID", "platformProductIdMap": {"ibYVB9w0ETfSauut": "S9JWgSB39nWJ0AdE", "rhRmHmtCl6M85ELR": "v5NEe9bR9ckNLMJj", "sgaXBRR415WJviuc": "5vA36xYMMPep0zpl"}}]}' > $TEMP_JSON_INPUT
+echo '{"data": [{"itemIdentity": "duiUuy8tq9HCTgLS", "itemIdentityType": "ITEM_SKU", "platformProductIdMap": {"vnLOEQR2tp6q9pPG": "aWcS02LciOGbTW0U", "OPodtVEAHUTPJcWS": "RPDFdkQZDrW0M7eI", "Drifb9ovouuoyV36": "gCehJP43Xpu5gyQ1"}}, {"itemIdentity": "4gMP9Z4mEvMNjtER", "itemIdentityType": "ITEM_SKU", "platformProductIdMap": {"Lr8yn7AoXGMgLGDE": "gjGR3AjETQmuBhxd", "l2hmyNHx2EwggD6T": "hfKbveaNPadM954K", "lf9ScyQ3BkdgTB8X": "sRpozxyzQjkAwoiK"}}, {"itemIdentity": "pqCxRaxD64vrtLT4", "itemIdentityType": "ITEM_ID", "platformProductIdMap": {"tCl6M85ELRv5NEe9": "bR9ckNLMJjsgaXBR", "R415WJviuc5vA36x": "YMMPep0zplFiRg22", "RpUVtQXjItygvyTY": "ykvnB2kvfxE0sqbj"}}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateIAPItemConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 86 'UpdateIAPItemConfig' test.out
+eval_tap $? 88 'UpdateIAPItemConfig' test.out
 
-#- 87 DeleteIAPItemConfig
+#- 89 DeleteIAPItemConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteIAPItemConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 87 'DeleteIAPItemConfig' test.out
+eval_tap $? 89 'DeleteIAPItemConfig' test.out
 
-#- 88 GetOculusIAPConfig
+#- 90 GetOculusIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetOculusIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 88 'GetOculusIAPConfig' test.out
+eval_tap $? 90 'GetOculusIAPConfig' test.out
 
-#- 89 UpdateOculusIAPConfig
+#- 91 UpdateOculusIAPConfig
 # body param: body
-echo '{"appId": "FiRg22RpUVtQXjIt", "appSecret": "ygvyTYykvnB2kvfx"}' > $TEMP_JSON_INPUT
+echo '{"appId": "AHF9QLlS2lC0QB41", "appSecret": "qRS25yYg5fkChtyU"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateOculusIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 89 'UpdateOculusIAPConfig' test.out
+eval_tap $? 91 'UpdateOculusIAPConfig' test.out
 
-#- 90 DeleteOculusIAPConfig
+#- 92 DeleteOculusIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteOculusIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 90 'DeleteOculusIAPConfig' test.out
+eval_tap $? 92 'DeleteOculusIAPConfig' test.out
 
-#- 91 GetPlayStationIAPConfig
+#- 93 GetPlayStationIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetPlayStationIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 91 'GetPlayStationIAPConfig' test.out
+eval_tap $? 93 'GetPlayStationIAPConfig' test.out
 
-#- 92 UpdatePlaystationIAPConfig
+#- 94 UpdatePlaystationIAPConfig
 # body param: body
-echo '{"backOfficeServerClientId": "E0sqbjAHF9QLlS2l", "backOfficeServerClientSecret": "C0QB41qRS25yYg5f", "enableStreamJob": false, "environment": "9jpSUMWJyDVldaDN", "streamName": "tR0AXW63sbPYTKP8", "streamPartnerName": "EQupMajWTKw5FeR8"}' > $TEMP_JSON_INPUT
+echo '{"backOfficeServerClientId": "jcBHShoy4rAmtQke", "backOfficeServerClientSecret": "CoVHY89b92PWEF9g", "enableStreamJob": false, "environment": "jWTKw5FeR8ri3yXr", "streamName": "zd1ieTRurPzBSUlL", "streamPartnerName": "hIUZaqDR1n6aKcCV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePlaystationIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 92 'UpdatePlaystationIAPConfig' test.out
+eval_tap $? 94 'UpdatePlaystationIAPConfig' test.out
 
-#- 93 DeletePlaystationIAPConfig
+#- 95 DeletePlaystationIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeletePlaystationIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 93 'DeletePlaystationIAPConfig' test.out
+eval_tap $? 95 'DeletePlaystationIAPConfig' test.out
 
-#- 94 ValidateExistedPlaystationIAPConfig
+#- 96 ValidateExistedPlaystationIAPConfig
 $CLI_EXE \
     --sn platform \
     --op ValidateExistedPlaystationIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 94 'ValidateExistedPlaystationIAPConfig' test.out
+eval_tap $? 96 'ValidateExistedPlaystationIAPConfig' test.out
 
-#- 95 ValidatePlaystationIAPConfig
+#- 97 ValidatePlaystationIAPConfig
 # body param: body
-echo '{"backOfficeServerClientId": "ri3yXrzd1ieTRurP", "backOfficeServerClientSecret": "zBSUlLhIUZaqDR1n", "enableStreamJob": false, "environment": "CeoZEUNVKjMQUM30", "streamName": "waRuDKnw63w8ZD7G", "streamPartnerName": "zTZ0WS0ZfkVqKowf"}' > $TEMP_JSON_INPUT
+echo '{"backOfficeServerClientId": "L5Fd1b8wgnlhP7Pg", "backOfficeServerClientSecret": "5lC7Ea270WU05apX", "enableStreamJob": false, "environment": "S0ZfkVqKowfa2xO5", "streamName": "BhQtMYVHJohu8Sfs", "streamPartnerName": "3a0odaQ1HgT2WnpH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ValidatePlaystationIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 95 'ValidatePlaystationIAPConfig' test.out
+eval_tap $? 97 'ValidatePlaystationIAPConfig' test.out
 
-#- 96 GetSteamIAPConfig
+#- 98 GetSteamIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetSteamIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 96 'GetSteamIAPConfig' test.out
+eval_tap $? 98 'GetSteamIAPConfig' test.out
 
-#- 97 UpdateSteamIAPConfig
+#- 99 UpdateSteamIAPConfig
 # body param: body
-echo '{"appId": "a2xO5BhQtMYVHJoh", "env": "SANDBOX", "publisherAuthenticationKey": "0u4dtDARQghCkujm", "syncMode": "INVENTORY"}' > $TEMP_JSON_INPUT
+echo '{"appId": "kT1LxGYzolfxvDyx", "env": "LIVE", "publisherAuthenticationKey": "IAAOUeURiiiEgBQn", "syncMode": "TRANSACTION"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateSteamIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 97 'UpdateSteamIAPConfig' test.out
+eval_tap $? 99 'UpdateSteamIAPConfig' test.out
 
-#- 98 DeleteSteamIAPConfig
+#- 100 DeleteSteamIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteSteamIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 98 'DeleteSteamIAPConfig' test.out
+eval_tap $? 100 'DeleteSteamIAPConfig' test.out
 
-#- 99 GetTwitchIAPConfig
+#- 101 GetTwitchIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetTwitchIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 99 'GetTwitchIAPConfig' test.out
+eval_tap $? 101 'GetTwitchIAPConfig' test.out
 
-#- 100 UpdateTwitchIAPConfig
+#- 102 UpdateTwitchIAPConfig
 # body param: body
-echo '{"clientId": "nrNNSLh36UQbPSJQ", "clientSecret": "QhceSla9ERYYip5g", "organizationId": "4u0MAPcVPH3gZ7BL"}' > $TEMP_JSON_INPUT
+echo '{"clientId": "APcVPH3gZ7BL95xB", "clientSecret": "XZ4Q2kZcVEtlghVP", "organizationId": "GnqtFjbFAzllHBMr"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateTwitchIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 100 'UpdateTwitchIAPConfig' test.out
+eval_tap $? 102 'UpdateTwitchIAPConfig' test.out
 
-#- 101 DeleteTwitchIAPConfig
+#- 103 DeleteTwitchIAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteTwitchIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 101 'DeleteTwitchIAPConfig' test.out
+eval_tap $? 103 'DeleteTwitchIAPConfig' test.out
 
-#- 102 GetXblIAPConfig
+#- 104 GetXblIAPConfig
 $CLI_EXE \
     --sn platform \
     --op GetXblIAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 102 'GetXblIAPConfig' test.out
+eval_tap $? 104 'GetXblIAPConfig' test.out
 
-#- 103 UpdateXblIAPConfig
+#- 105 UpdateXblIAPConfig
 # body param: body
-echo '{"enableClawback": true, "entraAppClientId": "5xBXZ4Q2kZcVEtlg", "entraAppClientSecret": "hVPGnqtFjbFAzllH", "entraTenantId": "BMrW7hG67ye23P8D", "relyingPartyCert": "W1ccz649aMbZ9u0O"}' > $TEMP_JSON_INPUT
+echo '{"enableClawback": false, "entraAppClientId": "7hG67ye23P8DW1cc", "entraAppClientSecret": "z649aMbZ9u0Okl1I", "entraTenantId": "Hd8Q5JqhDP8ljUtd", "relyingPartyCert": "mP5zdR2WzZ26M719"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateXblIAPConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 103 'UpdateXblIAPConfig' test.out
+eval_tap $? 105 'UpdateXblIAPConfig' test.out
 
-#- 104 DeleteXblAPConfig
+#- 106 DeleteXblAPConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteXblAPConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 104 'DeleteXblAPConfig' test.out
+eval_tap $? 106 'DeleteXblAPConfig' test.out
 
-#- 105 UpdateXblBPCertFile
+#- 107 UpdateXblBPCertFile
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -1057,829 +1075,829 @@ $CLI_EXE \
     --op UpdateXblBPCertFile \
     --namespace $AB_NAMESPACE \
     --upload file $TEMP_FILE_UPLOAD \
-    --password 'kl1IHd8Q5JqhDP8l' \
+    --password '0BUUMJA2i5Q4vFfX' \
     > test.out 2>&1
-eval_tap $? 105 'UpdateXblBPCertFile' test.out
+eval_tap $? 107 'UpdateXblBPCertFile' test.out
 
-#- 106 QueryThirdPartyNotifications
+#- 108 QueryThirdPartyNotifications
 $CLI_EXE \
     --sn platform \
     --op QueryThirdPartyNotifications \
     --namespace $AB_NAMESPACE \
-    --endDate 'jUtdmP5zdR2WzZ26' \
-    --externalId 'M7190BUUMJA2i5Q4' \
-    --limit '44' \
-    --offset '85' \
-    --source 'XBOX' \
-    --startDate 'CMcCq8KOF1FPASWE' \
-    --status 'PROCESSED' \
-    --type 'vHi2yA6ZsXJoVWUu' \
+    --endDate 'wKGlPrvLQjEMxmSt' \
+    --externalId 'iAYcnCKHJa29YjFC' \
+    --limit '67' \
+    --offset '10' \
+    --source 'STEAM' \
+    --startDate 'XMhnC8iRACppkc2G' \
+    --status 'IGNORED' \
+    --type 'F5bhjI1EEc3WV5k6' \
     > test.out 2>&1
-eval_tap $? 106 'QueryThirdPartyNotifications' test.out
+eval_tap $? 108 'QueryThirdPartyNotifications' test.out
 
-#- 107 QueryAbnormalTransactions
+#- 109 QueryAbnormalTransactions
 $CLI_EXE \
     --sn platform \
     --op QueryAbnormalTransactions \
     --namespace $AB_NAMESPACE \
-    --limit '67' \
-    --offset '10' \
-    --orderId 'PzxvGWXSYKxZFwAJ' \
-    --steamId 'dGF5bhjI1EEc3WV5' \
+    --limit '71' \
+    --offset '85' \
+    --orderId 'QhMyKSxoXxGxkYjD' \
+    --steamId 'cp3pGTMJShikvBpS' \
     > test.out 2>&1
-eval_tap $? 107 'QueryAbnormalTransactions' test.out
+eval_tap $? 109 'QueryAbnormalTransactions' test.out
 
-#- 108 AdminGetSteamJobInfo
+#- 110 AdminGetSteamJobInfo
 $CLI_EXE \
     --sn platform \
     --op AdminGetSteamJobInfo \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 108 'AdminGetSteamJobInfo' test.out
+eval_tap $? 110 'AdminGetSteamJobInfo' test.out
 
-#- 109 AdminResetSteamJobTime
+#- 111 AdminResetSteamJobTime
 # body param: body
-echo '{"env": "LIVE", "lastTime": "1985-10-09T00:00:00Z"}' > $TEMP_JSON_INPUT
+echo '{"env": "LIVE", "lastTime": "1976-02-15T00:00:00Z"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op AdminResetSteamJobTime \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 109 'AdminResetSteamJobTime' test.out
+eval_tap $? 111 'AdminResetSteamJobTime' test.out
 
-#- 110 AdminRefundIAPOrder
+#- 112 AdminRefundIAPOrder
 $CLI_EXE \
     --sn platform \
     --op AdminRefundIAPOrder \
-    --iapOrderNo '9QhMyKSxoXxGxkYj' \
+    --iapOrderNo 'SVhuAqkZqR3gW3Gf' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 110 'AdminRefundIAPOrder' test.out
+eval_tap $? 112 'AdminRefundIAPOrder' test.out
 
-#- 111 QuerySteamReportHistories
+#- 113 QuerySteamReportHistories
 $CLI_EXE \
     --sn platform \
     --op QuerySteamReportHistories \
     --namespace $AB_NAMESPACE \
-    --limit '61' \
-    --offset '5' \
-    --orderId 'jYEiOxHZltYdZOiB' \
-    --processStatus 'ERROR' \
-    --steamId 'kSVhuAqkZqR3gW3G' \
+    --limit '60' \
+    --offset '65' \
+    --orderId 'JtchRl8UCypNxxUb' \
+    --processStatus 'PROCESSED' \
+    --steamId 'gFF9TJrlNNryir2r' \
     > test.out 2>&1
-eval_tap $? 111 'QuerySteamReportHistories' test.out
+eval_tap $? 113 'QuerySteamReportHistories' test.out
 
-#- 112 QueryThirdPartySubscription
+#- 114 QueryThirdPartySubscription
 $CLI_EXE \
     --sn platform \
     --op QueryThirdPartySubscription \
     --namespace $AB_NAMESPACE \
     --activeOnly 'false' \
-    --groupId 'Q0Fb0fOzSwVrTe2P' \
-    --limit '18' \
-    --offset '95' \
-    --platform 'STEAM' \
-    --productId 'bXgFF9TJrlNNryir' \
-    --userId '2rcfzqMDXs2AMIqw' \
+    --groupId 'OveiGttirPw49eDk' \
+    --limit '22' \
+    --offset '39' \
+    --platform 'APPLE' \
+    --productId 'lieINXiZneSGu4x8' \
+    --userId 'wWgDhy2xaMbK98KZ' \
     > test.out 2>&1
-eval_tap $? 112 'QueryThirdPartySubscription' test.out
+eval_tap $? 114 'QueryThirdPartySubscription' test.out
 
-#- 113 GetIAPOrderConsumeDetails
+#- 115 GetIAPOrderConsumeDetails
 $CLI_EXE \
     --sn platform \
     --op GetIAPOrderConsumeDetails \
-    --iapOrderNo 'XxAtcjA062eWYCE2' \
+    --iapOrderNo 'uPAGpzW8YEovlYXM' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 113 'GetIAPOrderConsumeDetails' test.out
+eval_tap $? 115 'GetIAPOrderConsumeDetails' test.out
 
-#- 114 DownloadInvoiceDetails
+#- 116 DownloadInvoiceDetails
 $CLI_EXE \
     --sn platform \
     --op DownloadInvoiceDetails \
     --namespace $AB_NAMESPACE \
-    --endTime 'BZKl6Ks6ND0evlW0' \
-    --feature '5Ize0EKI1ogofwrt' \
-    --itemId 'jPjSrjvrgKMZ79d1' \
-    --itemType 'INGAMEITEM' \
-    --startTime '6PxRbXyacvJKvH2f' \
+    --endTime 'D76ZVrjTwBhG6PxR' \
+    --feature 'bXyacvJKvH2fI227' \
+    --itemId 'sFhXEPpERr10WrTT' \
+    --itemType 'MEDIA' \
+    --startTime 'l9c1J0YV5SAUWFWp' \
     > test.out 2>&1
-eval_tap $? 114 'DownloadInvoiceDetails' test.out
+eval_tap $? 116 'DownloadInvoiceDetails' test.out
 
-#- 115 GenerateInvoiceSummary
+#- 117 GenerateInvoiceSummary
 $CLI_EXE \
     --sn platform \
     --op GenerateInvoiceSummary \
     --namespace $AB_NAMESPACE \
-    --endTime 'I227sFhXEPpERr10' \
-    --feature 'WrTTWC1vHxSVm1rR' \
-    --itemId 'LDUorN8n8OKt3ebT' \
-    --itemType 'SEASON' \
-    --startTime 'Ju2WkeGDSzlCaFt7' \
+    --endTime 'U4iAd1zlFBNJu2Wk' \
+    --feature 'eGDSzlCaFt7Cu0JK' \
+    --itemId 'jLegxbCcIqhcBHRl' \
+    --itemType 'APP' \
+    --startTime 'tn7RtEGUE0zrKNm1' \
     > test.out 2>&1
-eval_tap $? 115 'GenerateInvoiceSummary' test.out
+eval_tap $? 117 'GenerateInvoiceSummary' test.out
 
-#- 116 SyncInGameItem
+#- 118 SyncInGameItem
 # body param: body
-echo '{"categoryPath": "Cu0JKjLegxbCcIqh", "targetItemId": "cBHRl1tn7RtEGUE0", "targetNamespace": "zrKNm1qW2n5ceomr"}' > $TEMP_JSON_INPUT
+echo '{"categoryPath": "qW2n5ceomro5tLlK", "targetItemId": "iW8dBlSc2bkfxl91", "targetNamespace": "A6ODfId1vJ63xKDR"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SyncInGameItem \
     --namespace $AB_NAMESPACE \
-    --storeId 'o5tLlKiW8dBlSc2b' \
+    --storeId 'bcNco2qPofshHt88' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 116 'SyncInGameItem' test.out
+eval_tap $? 118 'SyncInGameItem' test.out
 
-#- 117 CreateItem
+#- 119 CreateItem
 # body param: body
-echo '{"appId": "kfxl91A6ODfId1vJ", "appType": "DEMO", "baseAppId": "3xKDRbcNco2qPofs", "boothName": "hHt88ZrOopYOMqbJ", "categoryPath": "Vfyl0ssL0Nn5BZz9", "clazz": "qxx7lz9uMrrT54dK", "displayOrder": 48, "entitlementType": "CONSUMABLE", "ext": {"RwFRslFsKiWo4atN": {}, "daNIXOzCVa9CaE9m": {}, "VJJqgitULlhI9rKP": {}}, "features": ["PXOOJp91w7ACgmre", "yF7ytpQiDiCAh2lk", "zLCJKLPrwjeYeJi9"], "flexible": true, "images": [{"as": "kSDJwI3p6udT5ywN", "caption": "YrZ3noFX2D35kjfY", "height": 78, "imageUrl": "OjIMnvbwCSAfTUy9", "smallImageUrl": "Iqsv2Y3W67ojKlGp", "width": 58}, {"as": "EBpthoAfzvXP7hfN", "caption": "yBM3W7FEjbI46oLZ", "height": 95, "imageUrl": "T59629Ly5GJfaRlZ", "smallImageUrl": "eRpPnJNyrwdMhlz3", "width": 94}, {"as": "et6qHFzUAAIA1yZD", "caption": "TGyGcJrX2a98isrE", "height": 27, "imageUrl": "yWn4YodSIhZNsnN8", "smallImageUrl": "6SsqD74VrPBlaPDr", "width": 45}], "inventoryConfig": {"customAttributes": {"yqgey4TDsTGVcn6u": {}, "2Y8kRSlfFVNtTCFU": {}, "DbhXFUMPgIsF2FaJ": {}}, "serverCustomAttributes": {"mavnpwvlN5bxb3zV": {}, "GiVgmTiYRqChqmGw": {}, "szlQrWl9mqTkN4IE": {}}, "slotUsed": 42}, "itemIds": ["h9Yi9sIBQbGIITps", "IRyQL5qeScWxFqCo", "2THUCSfVY7SEGOwW"], "itemQty": {"wVPMXi6TiqSRiBbS": 45, "3zat0SbuB1wMD51V": 8, "zihoA8UZno0upxwR": 75}, "itemType": "MEDIA", "listable": true, "localizations": {"Ilaq2KS5yUS265k6": {"description": "o7P49D2nLcCMvTgs", "localExt": {"kvERPzKX3k2xmrmu": {}, "w7Xo6c48Bsc3cv7u": {}, "2wN8c1Kpu4lqYfwm": {}}, "longDescription": "cvvAUS6PzOOwSik7", "title": "CwUa7LxQUNu0laNJ"}, "x3VND1GqpkJeCMYV": {"description": "GaGlXMirtY3mMswJ", "localExt": {"SdKiaNMrgJ4VqWXN": {}, "o76z7J1NW0IoTP97": {}, "wPaRfkXyLS86H3ub": {}}, "longDescription": "7hu9Mf6Qeyu5D0XT", "title": "5fharkK0AIGdEbxs"}, "UwJLzvxAqxaBvYkR": {"description": "H723c57BNNjQJ7TX", "localExt": {"sOwwby9OOnuphq96": {}, "OvBp28vxdZ0sUS14": {}, "l56FKfjkcB2SiFsc": {}}, "longDescription": "U2TIptCl7Mr5hH9G", "title": "excdbT8v3UhVtgg8"}}, "lootBoxConfig": {"rewardCount": 21, "rewards": [{"lootBoxItems": [{"count": 89, "duration": 4, "endDate": "1971-08-12T00:00:00Z", "itemId": "GJsynFlhTJoB9DVD", "itemSku": "zdKc96qCUqhMuZYA", "itemType": "zHXsCOpjW3CTUUFd"}, {"count": 82, "duration": 68, "endDate": "1989-07-08T00:00:00Z", "itemId": "RHv7are1QWJddDrh", "itemSku": "oAaGO0c6aXoFM9Jt", "itemType": "zYynQYA8i8PGEVFt"}, {"count": 59, "duration": 80, "endDate": "1973-11-18T00:00:00Z", "itemId": "GmUXScgZStYmu7rs", "itemSku": "mI2iz8iDqES2enp5", "itemType": "QsuU2SzC5jPZ753V"}], "name": "QLK9K4e0w5qc4U4Z", "odds": 0.22690585638143723, "type": "REWARD_GROUP", "weight": 68}, {"lootBoxItems": [{"count": 58, "duration": 85, "endDate": "1987-01-17T00:00:00Z", "itemId": "oWEdyIcgWEloqldQ", "itemSku": "TXf1RjwLWiMZtnXi", "itemType": "3eLkvnj2FHRRu0um"}, {"count": 47, "duration": 46, "endDate": "1980-07-14T00:00:00Z", "itemId": "YRGs6ndQOUixZzcm", "itemSku": "2OM0B7COBhqguJYs", "itemType": "AONDGwAOmzWmrbHe"}, {"count": 76, "duration": 45, "endDate": "1978-03-03T00:00:00Z", "itemId": "Bc63d2CjPSt7u9HW", "itemSku": "KXy95GCrxrJkGMw7", "itemType": "ZL0l1KamHkjtv5cJ"}], "name": "wGEcC7aGI9Staa4k", "odds": 0.0423863070475996, "type": "PROBABILITY_GROUP", "weight": 71}, {"lootBoxItems": [{"count": 11, "duration": 62, "endDate": "1996-04-22T00:00:00Z", "itemId": "b91iFIok1kMM49oW", "itemSku": "BLBOtyL1dHNmowMh", "itemType": "MKGNED5ygPVLMM3u"}, {"count": 38, "duration": 68, "endDate": "1993-11-24T00:00:00Z", "itemId": "QXneBGj9AjnpSvpM", "itemSku": "Ea0Lvq2wnqyklrvh", "itemType": "ee7EeSqy9kO3ZjWN"}, {"count": 29, "duration": 86, "endDate": "1982-04-30T00:00:00Z", "itemId": "1zjWKMDhaV2fsQ3D", "itemSku": "lrWTmYVuz6shya81", "itemType": "WnWLIEMQX6yIuvLV"}], "name": "2SAA8KoDH2te6X3S", "odds": 0.8910826870248166, "type": "REWARD_GROUP", "weight": 62}], "rollFunction": "DEFAULT"}, "maxCount": 92, "maxCountPerUser": 72, "name": "fYYfcqCesMQk3ZMQ", "optionBoxConfig": {"boxItems": [{"count": 84, "duration": 36, "endDate": "1978-10-15T00:00:00Z", "itemId": "dyprDAzJHzrLAnhM", "itemSku": "LeNzo6AVZOaKsluo", "itemType": "siGaKd0wHfEbWYu5"}, {"count": 40, "duration": 63, "endDate": "1979-05-27T00:00:00Z", "itemId": "2y9tPQEz6JWsYiQT", "itemSku": "5QSZtlA4KQeFg6EM", "itemType": "ZQcwbAhRNgXXGYKI"}, {"count": 43, "duration": 40, "endDate": "1987-01-08T00:00:00Z", "itemId": "GriMXJaukjQprS6C", "itemSku": "mcUjDbwPW4iYqSZF", "itemType": "O9EQt4SdrkfJD71O"}]}, "purchasable": true, "recurring": {"cycle": "QUARTERLY", "fixedFreeDays": 58, "fixedTrialCycles": 26, "graceDays": 98}, "regionData": {"vUcjS4yL7G8PAD8A": [{"currencyCode": "91XiYV8om2lFtO18", "currencyNamespace": "5fesSBanCCZXDbHi", "currencyType": "REAL", "discountAmount": 40, "discountExpireAt": "1977-09-05T00:00:00Z", "discountPercentage": 41, "discountPurchaseAt": "1981-05-20T00:00:00Z", "expireAt": "1993-07-08T00:00:00Z", "price": 94, "purchaseAt": "1981-11-28T00:00:00Z", "trialPrice": 80}, {"currencyCode": "izOsLuBOtvU0dysG", "currencyNamespace": "Q752SjQQxTA0y5W0", "currencyType": "REAL", "discountAmount": 57, "discountExpireAt": "1994-09-15T00:00:00Z", "discountPercentage": 88, "discountPurchaseAt": "1977-09-19T00:00:00Z", "expireAt": "1977-08-21T00:00:00Z", "price": 74, "purchaseAt": "1976-08-19T00:00:00Z", "trialPrice": 60}, {"currencyCode": "BDLO5p7AU8haiJAy", "currencyNamespace": "CejYVpU1pdEtrpKr", "currencyType": "REAL", "discountAmount": 36, "discountExpireAt": "1995-03-23T00:00:00Z", "discountPercentage": 37, "discountPurchaseAt": "1981-04-21T00:00:00Z", "expireAt": "1971-09-23T00:00:00Z", "price": 66, "purchaseAt": "1990-02-22T00:00:00Z", "trialPrice": 26}], "ME7wGiU2biCXBTng": [{"currencyCode": "fX2J8YqvfwThZ7F6", "currencyNamespace": "KgWP0pCW1LZjascU", "currencyType": "VIRTUAL", "discountAmount": 37, "discountExpireAt": "1986-03-06T00:00:00Z", "discountPercentage": 46, "discountPurchaseAt": "1981-10-24T00:00:00Z", "expireAt": "1998-06-19T00:00:00Z", "price": 55, "purchaseAt": "1978-03-05T00:00:00Z", "trialPrice": 46}, {"currencyCode": "kyihhJm1tA5U3YHE", "currencyNamespace": "AnaS5wuVNYIq4a0P", "currencyType": "VIRTUAL", "discountAmount": 16, "discountExpireAt": "1971-07-30T00:00:00Z", "discountPercentage": 7, "discountPurchaseAt": "1986-11-03T00:00:00Z", "expireAt": "1999-12-15T00:00:00Z", "price": 90, "purchaseAt": "1993-05-18T00:00:00Z", "trialPrice": 81}, {"currencyCode": "dZ3uArJ4li30Flwg", "currencyNamespace": "hwRVPRlURfpBbB4n", "currencyType": "REAL", "discountAmount": 68, "discountExpireAt": "1977-05-25T00:00:00Z", "discountPercentage": 78, "discountPurchaseAt": "1988-02-14T00:00:00Z", "expireAt": "1992-12-24T00:00:00Z", "price": 52, "purchaseAt": "1978-11-23T00:00:00Z", "trialPrice": 57}], "fJH1o81DNVWftg4e": [{"currencyCode": "XbI1TK5tf2OW6O9z", "currencyNamespace": "v4LwcYHUKZcfngNW", "currencyType": "VIRTUAL", "discountAmount": 45, "discountExpireAt": "1997-03-14T00:00:00Z", "discountPercentage": 2, "discountPurchaseAt": "1973-09-23T00:00:00Z", "expireAt": "1980-12-08T00:00:00Z", "price": 6, "purchaseAt": "1975-07-25T00:00:00Z", "trialPrice": 42}, {"currencyCode": "JGDob1c5COgUPHzi", "currencyNamespace": "OjddY12BhBK4v8j8", "currencyType": "REAL", "discountAmount": 69, "discountExpireAt": "1991-10-31T00:00:00Z", "discountPercentage": 21, "discountPurchaseAt": "1973-01-04T00:00:00Z", "expireAt": "1983-11-02T00:00:00Z", "price": 58, "purchaseAt": "1991-12-23T00:00:00Z", "trialPrice": 67}, {"currencyCode": "Ng4dQYhCxg6MO5yZ", "currencyNamespace": "pDV5MsRNMVQEyyQU", "currencyType": "REAL", "discountAmount": 73, "discountExpireAt": "1984-08-25T00:00:00Z", "discountPercentage": 88, "discountPurchaseAt": "1989-10-19T00:00:00Z", "expireAt": "1981-12-24T00:00:00Z", "price": 6, "purchaseAt": "1986-01-11T00:00:00Z", "trialPrice": 81}]}, "saleConfig": {"currencyCode": "u7w8ONAaO8ej985D", "price": 8}, "seasonType": "PASS", "sectionExclusive": false, "sellable": true, "sku": "BzMFVvnbGszjKvFI", "stackable": true, "status": "INACTIVE", "tags": ["VtPCh4eQZdo9XVnt", "zEIwBXzY9HlZPJGK", "TkhgWzwSgrTgRRnc"], "targetCurrencyCode": "Q82CYozjxJFKJ1Fi", "targetNamespace": "6h4zCNLliGS9BRtl", "thumbnailUrl": "V78hu8KCGAzw9U3M", "useCount": 67}' > $TEMP_JSON_INPUT
+echo '{"appId": "ZrOopYOMqbJVfyl0", "appType": "GAME", "baseAppId": "IILgTKDtEBnyydnl", "boothName": "mrax9HkcVJkcKNqo", "categoryPath": "ctZZip2UOwEpVOoj", "clazz": "iniOJfBmQBpvpDw5", "displayOrder": 75, "entitlementType": "CONSUMABLE", "ext": {"bvwvhRu00Z9kQ6Cf": {}, "VEKuBGQj6IM6yC2y": {}, "o6eKkz3So92LmNHq": {}}, "features": ["I3p6udT5ywNYrZ3n", "eozPTvTyjHzkSDJw", "oFX2D35kjfYLmyJH"], "flexible": true, "images": [{"as": "VmJhvzYUD7tt15VY", "caption": "MNdywySdXRVEBpth", "height": 29, "imageUrl": "r5beUGEW4t5eLuFO", "smallImageUrl": "uGciip6lhOAT5962", "width": 10}, {"as": "Ly5GJfaRlZeRpPnJ", "caption": "NyrwdMhlz3T4PPNL", "height": 36, "imageUrl": "zUAAIA1yZDTGyGcJ", "smallImageUrl": "rX2a98isrEnWec7C", "width": 27}, {"as": "dSIhZNsnN86SsqD7", "caption": "4VrPBlaPDrv6Eb7C", "height": 2, "imageUrl": "TDsTGVcn6u2Y8kRS", "smallImageUrl": "lfFVNtTCFUDbhXFU", "width": 80}], "inventoryConfig": {"customAttributes": {"PzTV7F70crSgCYgV": {}, "6hpjYneP7VkRsz0E": {}, "1TgaU2K2n1JMpCmL": {}}, "serverCustomAttributes": {"AckoGMrfqXh9Yi9s": {}, "IBQbGIITpsIRyQL5": {}, "qeScWxFqCo2THUCS": {}}, "slotUsed": 11}, "itemIds": ["niuOHHkEMM2LdYul", "OoouVLyY5l3zat0S", "buB1wMD51VeGbfpA"], "itemQty": {"AYyBbEy0fEmRKPyn": 63, "aq2KS5yUS265k6o7": 84, "GOJIPb5iLNRM7JFa": 41}, "itemType": "SEASON", "listable": true, "localizations": {"tVsetZATTbB1ZGFm": {"description": "U24Z5anp1Fr9PhX0", "localExt": {"08zkRCTEr3CbX1jC": {}, "vt8SZQVAQVTEjLxR": {}, "XXw1Ba3BCLDK9EHH": {}}, "longDescription": "019QefK1Zmj8WfGj", "title": "2nDHeEHT96WiKFqO"}, "Euv5vimn63Casxqy": {"description": "2jZLzE1twcaIT8fi", "localExt": {"9jXsmtxDfayxSlb8": {}, "9FR48VT5BKwgRAIQ": {}, "HZN92VP4rbnVQ2wD": {}}, "longDescription": "VZFHDmlKMyosJXwZ", "title": "bP6pG2cmQhEgLUgz"}, "cFvsZ7ws7IsSADlM": {"description": "888Xt8E5iE51ruSZ", "localExt": {"153e9fDb7M4vfe4F": {}, "ykMi3Y9S70xe8Wk0": {}, "MBFmL9yc68k3c9GJ": {}}, "longDescription": "synFlhTJoB9DVDzd", "title": "Kc96qCUqhMuZYAzH"}}, "lootBoxConfig": {"rewardCount": 26, "rewards": [{"lootBoxItems": [{"count": 38, "duration": 60, "endDate": "1985-11-28T00:00:00Z", "itemId": "u0JWhmI5cbJHxH87", "itemSku": "DGHTswv6V7PYLXBx", "itemType": "OdM9zl6FELMoLSWz"}, {"count": 88, "duration": 29, "endDate": "1996-08-02T00:00:00Z", "itemId": "QsOH1Xbs430fGmUX", "itemSku": "ScgZStYmu7rsmI2i", "itemType": "z8iDqES2enp5QsuU"}, {"count": 52, "duration": 91, "endDate": "1989-07-25T00:00:00Z", "itemId": "WNGYBQtqkaX58cIG", "itemSku": "PaIh2fIggFFHPcxO", "itemType": "tLAhTn1phglYoAkb"}], "name": "9a7zwipvdA2x113f", "odds": 0.8499066693125277, "type": "REWARD", "weight": 44}, {"lootBoxItems": [{"count": 32, "duration": 27, "endDate": "1998-03-16T00:00:00Z", "itemId": "vdsCew5mf0wUYRGs", "itemSku": "6ndQOUixZzcm2OM0", "itemType": "B7COBhqguJYsAOND"}, {"count": 67, "duration": 1, "endDate": "1982-08-08T00:00:00Z", "itemId": "dRyWBXrjEfLoBc63", "itemSku": "d2CjPSt7u9HWKXy9", "itemType": "5GCrxrJkGMw7ZL0l"}, {"count": 19, "duration": 75, "endDate": "1995-01-02T00:00:00Z", "itemId": "n6f8aba9YXwFYQFr", "itemSku": "3UBeKJ4xecZaf7ow", "itemType": "lXFBz6IbxIl5dUFT"}], "name": "7bJ07WKDAyNRUJsM", "odds": 0.9978363925565088, "type": "PROBABILITY_GROUP", "weight": 82}, {"lootBoxItems": [{"count": 63, "duration": 60, "endDate": "1986-07-15T00:00:00Z", "itemId": "CdVk7pAhlHOFFTGc", "itemSku": "kEVLOktrETc91ydu", "itemType": "5RGfuFAmP1wOzzLG"}, {"count": 88, "duration": 34, "endDate": "1982-07-22T00:00:00Z", "itemId": "bOmouZ2YIPoumSJ3", "itemSku": "SzT8lUpXxkPntiTr", "itemType": "WD69zuVXfklxnwCn"}, {"count": 80, "duration": 30, "endDate": "1992-11-14T00:00:00Z", "itemId": "X6yIuvLV2SAA8KoD", "itemSku": "H2te6X3S3HwJUMVx", "itemType": "EYAqoGebWDx1rIY7"}], "name": "YgqLazmwaTdH4Cz8", "odds": 0.5176788449580008, "type": "PROBABILITY_GROUP", "weight": 89}], "rollFunction": "DEFAULT"}, "maxCount": 69, "maxCountPerUser": 97, "name": "7IL8v5O1r7P5inUT", "optionBoxConfig": {"boxItems": [{"count": 63, "duration": 68, "endDate": "1992-02-10T00:00:00Z", "itemId": "GSKH2wQE3rMpBR96", "itemSku": "V4wCGhThbt8E3jI5", "itemType": "UoWvqFZQoL3OUkQD"}, {"count": 74, "duration": 88, "endDate": "1973-11-23T00:00:00Z", "itemId": "t6r5a3gptbNLX0aE", "itemSku": "LOa6N75cogVkZy2V", "itemType": "8uOMXE5zaiqfUuDb"}, {"count": 29, "duration": 7, "endDate": "1974-05-28T00:00:00Z", "itemId": "ZiwydwzfWPCVvLLF", "itemSku": "NSKl79V2ucJ4eDQy", "itemType": "H46uQbTHK5X3o94h"}]}, "purchasable": true, "recurring": {"cycle": "MONTHLY", "fixedFreeDays": 28, "fixedTrialCycles": 42, "graceDays": 58}, "regionData": {"q7jQcfShtEtVr2SV": [{"currencyCode": "T1NiSinLANULfgmY", "currencyNamespace": "SJIzEBkXmc2Fhrwr", "currencyType": "VIRTUAL", "discountAmount": 18, "discountExpireAt": "1998-08-14T00:00:00Z", "discountPercentage": 92, "discountPurchaseAt": "1987-12-18T00:00:00Z", "expireAt": "1977-09-19T00:00:00Z", "price": 26, "purchaseAt": "1985-10-23T00:00:00Z", "trialPrice": 23}, {"currencyCode": "CBDLO5p7AU8haiJA", "currencyNamespace": "yCejYVpU1pdEtrpK", "currencyType": "VIRTUAL", "discountAmount": 3, "discountExpireAt": "1980-03-26T00:00:00Z", "discountPercentage": 37, "discountPurchaseAt": "1981-04-21T00:00:00Z", "expireAt": "1971-09-23T00:00:00Z", "price": 66, "purchaseAt": "1990-02-22T00:00:00Z", "trialPrice": 26}, {"currencyCode": "ME7wGiU2biCXBTng", "currencyNamespace": "fX2J8YqvfwThZ7F6", "currencyType": "REAL", "discountAmount": 13, "discountExpireAt": "1995-12-08T00:00:00Z", "discountPercentage": 70, "discountPurchaseAt": "1998-05-02T00:00:00Z", "expireAt": "1980-08-20T00:00:00Z", "price": 62, "purchaseAt": "1995-04-14T00:00:00Z", "trialPrice": 78}], "ZAb49bMTsiu2Ahky": [{"currencyCode": "ihhJm1tA5U3YHEAn", "currencyNamespace": "aS5wuVNYIq4a0PNy", "currencyType": "REAL", "discountAmount": 3, "discountExpireAt": "1984-01-30T00:00:00Z", "discountPercentage": 63, "discountPurchaseAt": "1998-10-31T00:00:00Z", "expireAt": "1999-12-15T00:00:00Z", "price": 90, "purchaseAt": "1993-05-18T00:00:00Z", "trialPrice": 81}, {"currencyCode": "dZ3uArJ4li30Flwg", "currencyNamespace": "hwRVPRlURfpBbB4n", "currencyType": "REAL", "discountAmount": 68, "discountExpireAt": "1977-05-25T00:00:00Z", "discountPercentage": 78, "discountPurchaseAt": "1988-02-14T00:00:00Z", "expireAt": "1992-12-24T00:00:00Z", "price": 52, "purchaseAt": "1978-11-23T00:00:00Z", "trialPrice": 57}, {"currencyCode": "fJH1o81DNVWftg4e", "currencyNamespace": "XbI1TK5tf2OW6O9z", "currencyType": "VIRTUAL", "discountAmount": 78, "discountExpireAt": "1979-07-07T00:00:00Z", "discountPercentage": 5, "discountPurchaseAt": "1988-01-04T00:00:00Z", "expireAt": "1988-10-20T00:00:00Z", "price": 95, "purchaseAt": "1990-10-24T00:00:00Z", "trialPrice": 42}], "ZcfngNWZwjfs9dyJ": [{"currencyCode": "GDob1c5COgUPHziO", "currencyNamespace": "jddY12BhBK4v8j8m", "currencyType": "REAL", "discountAmount": 11, "discountExpireAt": "1971-07-16T00:00:00Z", "discountPercentage": 76, "discountPurchaseAt": "1999-08-16T00:00:00Z", "expireAt": "1991-12-23T00:00:00Z", "price": 67, "purchaseAt": "1991-06-13T00:00:00Z", "trialPrice": 14}, {"currencyCode": "C3ijRNXXURQ3Zzgp", "currencyNamespace": "A1SdFF4nsya3UXah", "currencyType": "VIRTUAL", "discountAmount": 59, "discountExpireAt": "1996-12-15T00:00:00Z", "discountPercentage": 73, "discountPurchaseAt": "1989-06-06T00:00:00Z", "expireAt": "1998-12-20T00:00:00Z", "price": 6, "purchaseAt": "1986-01-11T00:00:00Z", "trialPrice": 81}, {"currencyCode": "u7w8ONAaO8ej985D", "currencyNamespace": "ejuzY3p3EElTLLLb", "currencyType": "VIRTUAL", "discountAmount": 65, "discountExpireAt": "1998-10-07T00:00:00Z", "discountPercentage": 97, "discountPurchaseAt": "1993-08-27T00:00:00Z", "expireAt": "1983-11-08T00:00:00Z", "price": 39, "purchaseAt": "1971-12-12T00:00:00Z", "trialPrice": 20}]}, "saleConfig": {"currencyCode": "Ch4eQZdo9XVntzEI", "price": 46}, "seasonType": "TIER", "sectionExclusive": true, "sellable": true, "sku": "qDmtY3fCWcnjvSFQ", "stackable": false, "status": "ACTIVE", "tags": ["xJFKJ1Fi6h4zCNLl", "grTgRRncQ82CYozj", "iGS9BRtlV78hu8KC"], "targetCurrencyCode": "GAzw9U3MYdrTaU5R", "targetNamespace": "07Qdc1byTwd9znJz", "thumbnailUrl": "mlyE6JvQladJ7DeO", "useCount": 80}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateItem \
     --namespace $AB_NAMESPACE \
-    --storeId 'drTaU5R07Qdc1byT' \
+    --storeId '4Hmr0ApsK8SHyhul' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 117 'CreateItem' test.out
+eval_tap $? 119 'CreateItem' test.out
 
-#- 118 GetItemByAppId
+#- 120 GetItemByAppId
 $CLI_EXE \
     --sn platform \
     --op GetItemByAppId \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'true' \
-    --storeId '4BAqsdhbbnkYPp9i' \
-    --appId '7jjBIxJ14Hmr0Aps' \
+    --activeOnly 'false' \
+    --storeId 'qe4jc0JDNB8BrzqZ' \
+    --appId 'Rrmma5mt7ZRDRarA' \
     > test.out 2>&1
-eval_tap $? 118 'GetItemByAppId' test.out
+eval_tap $? 120 'GetItemByAppId' test.out
 
-#- 119 QueryItems
+#- 121 QueryItems
 $CLI_EXE \
     --sn platform \
     --op QueryItems \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --appType 'SOFTWARE' \
-    --availableDate 'yhula1Q38F5Rpl7t' \
-    --baseAppId 'rQdm2EdQlGL0OD4N' \
-    --categoryPath 'uF1ALr0GCUjtdTgD' \
-    --features '8swTLL8aCMo5By5G' \
+    --activeOnly 'true' \
+    --appType 'GAME' \
+    --availableDate 'bxd4giyeWZqduHEx' \
+    --baseAppId 'f0lauUCN8FtwhxFv' \
+    --categoryPath 'eks81gp3NgWAgmMk' \
+    --features 'sXmJeTMaoq3aBBDU' \
     --includeSubCategoryItem 'true' \
-    --itemType 'INGAMEITEM' \
-    --limit '83' \
-    --offset '15' \
-    --region 'eZEFaSvKATkfxrqT' \
-    --sortBy '["createdAt", "name:desc", "displayOrder"]' \
-    --storeId 'MksXmJeTMaoq3aBB' \
-    --tags 'DUtPeNku4PHFIBiT' \
-    --targetNamespace 'kVcH6FKyrUfHIA3i' \
+    --itemType 'BUNDLE' \
+    --limit '84' \
+    --offset '53' \
+    --region 'eNku4PHFIBiTkVcH' \
+    --sortBy '["name:desc", "displayOrder:desc", "updatedAt:desc"]' \
+    --storeId 'KyrUfHIA3iZu1gWb' \
+    --tags 'FNxnUwTztyVNPlxu' \
+    --targetNamespace 'UEbxhsIyovNQs0ie' \
     > test.out 2>&1
-eval_tap $? 119 'QueryItems' test.out
+eval_tap $? 121 'QueryItems' test.out
 
-#- 120 ListBasicItemsByFeatures
+#- 122 ListBasicItemsByFeatures
 $CLI_EXE \
     --sn platform \
     --op ListBasicItemsByFeatures \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'true' \
-    --features '["YEssL3bB0tBK6SBo", "ElIIIpwn6hgBTwxK", "cx0X8Lcx6NhMffZl"]' \
+    --activeOnly 'false' \
+    --features '["grdsHorFkeFdLNVa", "fKTIxkLIpYhXRzVl", "yArWQReW1cdHvZQC"]' \
     > test.out 2>&1
-eval_tap $? 120 'ListBasicItemsByFeatures' test.out
+eval_tap $? 122 'ListBasicItemsByFeatures' test.out
 
-#- 121 GetItems
+#- 123 GetItems
 $CLI_EXE \
     --sn platform \
     --op GetItems \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'true' \
-    --storeId 'FdLNVafKTIxkLIpY' \
-    --itemIds 'hXRzVlyArWQReW1c' \
+    --activeOnly 'false' \
+    --storeId '9YqT5NwjGP4DNFyM' \
+    --itemIds 'dqC34ZHUbJ82Q45D' \
     > test.out 2>&1
-eval_tap $? 121 'GetItems' test.out
+eval_tap $? 123 'GetItems' test.out
 
-#- 122 GetItemBySku
+#- 124 GetItemBySku
 $CLI_EXE \
     --sn platform \
     --op GetItemBySku \
     --namespace $AB_NAMESPACE \
     --activeOnly 'false' \
-    --storeId '4xhfJRgna2c5LazH' \
-    --sku 'jgsmiSUuvVSZmlYt' \
+    --storeId '5Lxeh4JK55udjMzU' \
+    --sku '9XQyMtQxXu8g8XRi' \
     > test.out 2>&1
-eval_tap $? 122 'GetItemBySku' test.out
+eval_tap $? 124 'GetItemBySku' test.out
 
-#- 123 GetLocaleItemBySku
+#- 125 GetLocaleItemBySku
 $CLI_EXE \
     --sn platform \
     --op GetLocaleItemBySku \
     --namespace $AB_NAMESPACE \
     --activeOnly 'true' \
-    --language 'DSj87ANeK7NbfOXV' \
-    --populateBundle 'true' \
-    --region '2wC19AZiRD7PHirj' \
-    --storeId 'SPaaKc56kf8Lr8MI' \
-    --sku '9ZHjUXr7TOOAJbpp' \
+    --language 'aaKc56kf8Lr8MI9Z' \
+    --populateBundle 'false' \
+    --region '9Na47MaohKS9844b' \
+    --storeId 'Pvp4hH5n0dJ4Ua7H' \
+    --sku 'Nkz2cnn3fjNOnpJ8' \
     > test.out 2>&1
-eval_tap $? 123 'GetLocaleItemBySku' test.out
+eval_tap $? 125 'GetLocaleItemBySku' test.out
 
-#- 124 GetEstimatedPrice
+#- 126 GetEstimatedPrice
 $CLI_EXE \
     --sn platform \
     --op GetEstimatedPrice \
     --namespace $AB_NAMESPACE \
-    --platform 'CaQg5KYRrxXWyNNc' \
-    --region 'Y6HlnIyFofDjPvpw' \
-    --storeId 'kx70YmLkIlie6LNk' \
-    --itemIds 'PhJOcGM8ql7o3t2f' \
-    --userId 'wK0ML6wzefQ12cAf' \
+    --platform 'HpF9kOl45sMektKP' \
+    --region '6oiCgSzIx7SbauCZ' \
+    --storeId 'efNMyuAhwDOsKkI3' \
+    --itemIds 'E8e8YOUCLYTf0LOY' \
+    --userId 'n0UkvnUqIojwgPbm' \
     > test.out 2>&1
-eval_tap $? 124 'GetEstimatedPrice' test.out
+eval_tap $? 126 'GetEstimatedPrice' test.out
 
-#- 125 GetItemIdBySku
+#- 127 GetItemIdBySku
 $CLI_EXE \
     --sn platform \
     --op GetItemIdBySku \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --storeId 'kI3E8e8YOUCLYTf0' \
-    --sku 'LOYn0UkvnUqIojwg' \
+    --activeOnly 'true' \
+    --storeId 'KdbkqgGvT4YTontH' \
+    --sku '2iwtwNshNMeb5569' \
     > test.out 2>&1
-eval_tap $? 125 'GetItemIdBySku' test.out
+eval_tap $? 127 'GetItemIdBySku' test.out
 
-#- 126 GetBulkItemIdBySkus
+#- 128 GetBulkItemIdBySkus
 $CLI_EXE \
     --sn platform \
     --op GetBulkItemIdBySkus \
     --namespace $AB_NAMESPACE \
-    --sku '["PbmzRVxqDG9JCw2G", "6n1nerWgr6k4wDG0", "ymKeZSC9rPk3RoNa"]' \
-    --storeId 'hPKSOyURWcNMiTmY' \
+    --sku '["4d03l14KFGXT8T9e", "Kzqt6wDF2DSG6M78", "RsMxt6QfqT56tevT"]' \
+    --storeId '7Qtbffu9Gqn1jMt8' \
     > test.out 2>&1
-eval_tap $? 126 'GetBulkItemIdBySkus' test.out
+eval_tap $? 128 'GetBulkItemIdBySkus' test.out
 
-#- 127 BulkGetLocaleItems
+#- 129 BulkGetLocaleItems
 $CLI_EXE \
     --sn platform \
     --op BulkGetLocaleItems \
     --namespace $AB_NAMESPACE \
     --activeOnly 'false' \
-    --language 'M78RsMxt6QfqT56t' \
-    --region 'evT7Qtbffu9Gqn1j' \
-    --storeId 'Mt8Lp9XO6cKOOKCr' \
-    --itemIds 'RKqZf9ADd0awqpEH' \
+    --language 'p9XO6cKOOKCrRKqZ' \
+    --region 'f9ADd0awqpEHlzNO' \
+    --storeId 'TTzEEW9PjJkNQ2aM' \
+    --itemIds 'o0m3G0ae844CwOhI' \
     > test.out 2>&1
-eval_tap $? 127 'BulkGetLocaleItems' test.out
+eval_tap $? 129 'BulkGetLocaleItems' test.out
 
-#- 128 GetAvailablePredicateTypes
+#- 130 GetAvailablePredicateTypes
 $CLI_EXE \
     --sn platform \
     --op GetAvailablePredicateTypes \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 128 'GetAvailablePredicateTypes' test.out
+eval_tap $? 130 'GetAvailablePredicateTypes' test.out
 
-#- 129 ValidateItemPurchaseCondition
+#- 131 ValidateItemPurchaseCondition
 # body param: body
-echo '{"itemIds": ["lzNOTTzEEW9PjJkN", "Q2aMo0m3G0ae844C", "wOhIn2FeDyk9FI6Q"]}' > $TEMP_JSON_INPUT
+echo '{"itemIds": ["n2FeDyk9FI6QZRom", "k9pX8dYDs6V8OIXf", "Dyo6SYUFcEVlxvdd"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ValidateItemPurchaseCondition \
     --namespace $AB_NAMESPACE \
-    --platform 'ZRomk9pX8dYDs6V8' \
-    --userId 'OIXfDyo6SYUFcEVl' \
+    --platform 'imzsBogUNRDq18ci' \
+    --userId 'OM3y2gycjSeYWOit' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 129 'ValidateItemPurchaseCondition' test.out
+eval_tap $? 131 'ValidateItemPurchaseCondition' test.out
 
-#- 130 BulkUpdateRegionData
+#- 132 BulkUpdateRegionData
 # body param: body
-echo '{"changes": [{"itemIdentities": ["xvddimzsBogUNRDq", "18ciOM3y2gycjSeY", "WOithHSkznxjwDqH"], "itemIdentityType": "ITEM_SKU", "regionData": {"3FTKod2Rtew3h16g": [{"currencyCode": "7FBpyA8YrOW3Vmch", "currencyNamespace": "YDOCAT6hThgNhaZK", "currencyType": "VIRTUAL", "discountAmount": 67, "discountExpireAt": "1981-03-05T00:00:00Z", "discountPercentage": 69, "discountPurchaseAt": "1977-10-01T00:00:00Z", "discountedPrice": 87, "expireAt": "1971-08-05T00:00:00Z", "price": 5, "purchaseAt": "1979-11-15T00:00:00Z", "trialPrice": 21}, {"currencyCode": "ZrIrd1MJcLp0COqn", "currencyNamespace": "MH0w05JpsXYLfFfz", "currencyType": "VIRTUAL", "discountAmount": 57, "discountExpireAt": "1979-02-12T00:00:00Z", "discountPercentage": 50, "discountPurchaseAt": "1971-02-24T00:00:00Z", "discountedPrice": 8, "expireAt": "1982-09-11T00:00:00Z", "price": 88, "purchaseAt": "1982-01-27T00:00:00Z", "trialPrice": 87}, {"currencyCode": "EUr72DYSCZW3czX8", "currencyNamespace": "CvHQZ7JOBiF3LOGI", "currencyType": "VIRTUAL", "discountAmount": 18, "discountExpireAt": "1974-05-09T00:00:00Z", "discountPercentage": 28, "discountPurchaseAt": "1980-09-21T00:00:00Z", "discountedPrice": 18, "expireAt": "1978-10-11T00:00:00Z", "price": 31, "purchaseAt": "1972-08-20T00:00:00Z", "trialPrice": 76}], "wuvQ0uspxKHWOccE": [{"currencyCode": "4HOaTFU34yyeOCSV", "currencyNamespace": "xO3N0UkJanRenRei", "currencyType": "VIRTUAL", "discountAmount": 76, "discountExpireAt": "1981-06-18T00:00:00Z", "discountPercentage": 9, "discountPurchaseAt": "1982-09-14T00:00:00Z", "discountedPrice": 59, "expireAt": "1973-06-12T00:00:00Z", "price": 23, "purchaseAt": "1983-08-08T00:00:00Z", "trialPrice": 46}, {"currencyCode": "cOPPVffJFw1GBWay", "currencyNamespace": "6riMSIDXaLiQ0t7E", "currencyType": "REAL", "discountAmount": 63, "discountExpireAt": "1994-09-10T00:00:00Z", "discountPercentage": 69, "discountPurchaseAt": "1982-02-17T00:00:00Z", "discountedPrice": 19, "expireAt": "1996-07-07T00:00:00Z", "price": 93, "purchaseAt": "1986-07-02T00:00:00Z", "trialPrice": 31}, {"currencyCode": "X2ks2x1CnjAXdLVz", "currencyNamespace": "ER6fMHuQ02mYN57g", "currencyType": "REAL", "discountAmount": 12, "discountExpireAt": "1977-01-10T00:00:00Z", "discountPercentage": 14, "discountPurchaseAt": "1994-08-07T00:00:00Z", "discountedPrice": 27, "expireAt": "1996-01-16T00:00:00Z", "price": 33, "purchaseAt": "1980-05-11T00:00:00Z", "trialPrice": 60}], "q3kuKpr8jEXhHZs4": [{"currencyCode": "BkIxo0XPFAFUs3qL", "currencyNamespace": "rGKFJ7cUw0ADHKp1", "currencyType": "VIRTUAL", "discountAmount": 10, "discountExpireAt": "1988-04-29T00:00:00Z", "discountPercentage": 33, "discountPurchaseAt": "1991-01-21T00:00:00Z", "discountedPrice": 59, "expireAt": "1982-11-12T00:00:00Z", "price": 67, "purchaseAt": "1986-12-14T00:00:00Z", "trialPrice": 28}, {"currencyCode": "M4nhrJWvhMeXHev6", "currencyNamespace": "dyGLVpeOtNaFyZDM", "currencyType": "REAL", "discountAmount": 93, "discountExpireAt": "1999-03-08T00:00:00Z", "discountPercentage": 51, "discountPurchaseAt": "1973-12-11T00:00:00Z", "discountedPrice": 26, "expireAt": "1982-07-12T00:00:00Z", "price": 74, "purchaseAt": "1979-06-18T00:00:00Z", "trialPrice": 10}, {"currencyCode": "aOcKQADcbZw9CWDx", "currencyNamespace": "GLOggdV2Ia84Nfy3", "currencyType": "REAL", "discountAmount": 69, "discountExpireAt": "1973-12-15T00:00:00Z", "discountPercentage": 68, "discountPurchaseAt": "1985-01-12T00:00:00Z", "discountedPrice": 67, "expireAt": "1998-12-14T00:00:00Z", "price": 100, "purchaseAt": "1974-01-14T00:00:00Z", "trialPrice": 26}]}}, {"itemIdentities": ["sPax3ToNEEcOmbPI", "llsWtlGQQR4aiBfh", "lNlfoCYXmxcovGdL"], "itemIdentityType": "ITEM_ID", "regionData": {"uIOk5ICxK8QSnIY2": [{"currencyCode": "VD8bkeQwvu8jjspc", "currencyNamespace": "c0IbpAW2c6Mt1Vo3", "currencyType": "VIRTUAL", "discountAmount": 8, "discountExpireAt": "1987-05-02T00:00:00Z", "discountPercentage": 13, "discountPurchaseAt": "1982-10-13T00:00:00Z", "discountedPrice": 97, "expireAt": "1990-06-09T00:00:00Z", "price": 26, "purchaseAt": "1984-04-04T00:00:00Z", "trialPrice": 88}, {"currencyCode": "x03QF3bqIdCHTmOF", "currencyNamespace": "jL5nmcK9La2ll1zx", "currencyType": "VIRTUAL", "discountAmount": 19, "discountExpireAt": "1996-08-10T00:00:00Z", "discountPercentage": 21, "discountPurchaseAt": "1974-05-18T00:00:00Z", "discountedPrice": 87, "expireAt": "1979-06-20T00:00:00Z", "price": 83, "purchaseAt": "1989-07-02T00:00:00Z", "trialPrice": 33}, {"currencyCode": "eMAqOhW2SxjARrVu", "currencyNamespace": "nPYAMlPS1l1agviE", "currencyType": "VIRTUAL", "discountAmount": 97, "discountExpireAt": "1975-09-26T00:00:00Z", "discountPercentage": 56, "discountPurchaseAt": "1979-04-17T00:00:00Z", "discountedPrice": 16, "expireAt": "1981-02-04T00:00:00Z", "price": 61, "purchaseAt": "1978-05-18T00:00:00Z", "trialPrice": 22}], "mZUnQezhr8Y6yq6k": [{"currencyCode": "ixGedxA4DZJ8YBOV", "currencyNamespace": "A5CN8JbXzvLl0QvL", "currencyType": "VIRTUAL", "discountAmount": 99, "discountExpireAt": "1983-04-29T00:00:00Z", "discountPercentage": 97, "discountPurchaseAt": "1976-07-09T00:00:00Z", "discountedPrice": 91, "expireAt": "1983-12-01T00:00:00Z", "price": 60, "purchaseAt": "1984-09-14T00:00:00Z", "trialPrice": 51}, {"currencyCode": "rpyGOdThrN2lXYb7", "currencyNamespace": "iiBcWcLuk71f96tG", "currencyType": "VIRTUAL", "discountAmount": 20, "discountExpireAt": "1991-11-11T00:00:00Z", "discountPercentage": 90, "discountPurchaseAt": "1994-06-29T00:00:00Z", "discountedPrice": 73, "expireAt": "1992-06-29T00:00:00Z", "price": 26, "purchaseAt": "1980-02-19T00:00:00Z", "trialPrice": 70}, {"currencyCode": "mk4Spx3x705SZyI1", "currencyNamespace": "AJfaR8ILlmh0sl74", "currencyType": "REAL", "discountAmount": 89, "discountExpireAt": "1982-01-16T00:00:00Z", "discountPercentage": 25, "discountPurchaseAt": "1999-08-09T00:00:00Z", "discountedPrice": 9, "expireAt": "1993-06-20T00:00:00Z", "price": 56, "purchaseAt": "1985-10-27T00:00:00Z", "trialPrice": 98}], "xs06yFXaZF2UDSPN": [{"currencyCode": "CIuAqPaKuiZ2tu9R", "currencyNamespace": "jEkJ3tFjbqKS5hHr", "currencyType": "VIRTUAL", "discountAmount": 5, "discountExpireAt": "1994-11-24T00:00:00Z", "discountPercentage": 46, "discountPurchaseAt": "1997-09-01T00:00:00Z", "discountedPrice": 60, "expireAt": "1971-06-26T00:00:00Z", "price": 1, "purchaseAt": "1986-11-16T00:00:00Z", "trialPrice": 52}, {"currencyCode": "0xN5TQgJs046g4xI", "currencyNamespace": "v2XLzgxR2NsX4L6v", "currencyType": "VIRTUAL", "discountAmount": 35, "discountExpireAt": "1989-01-18T00:00:00Z", "discountPercentage": 85, "discountPurchaseAt": "1995-03-21T00:00:00Z", "discountedPrice": 20, "expireAt": "1986-10-25T00:00:00Z", "price": 27, "purchaseAt": "1981-04-12T00:00:00Z", "trialPrice": 25}, {"currencyCode": "hR93WC797ieouD04", "currencyNamespace": "KNoB6GZPeuofNtHT", "currencyType": "VIRTUAL", "discountAmount": 96, "discountExpireAt": "1978-05-28T00:00:00Z", "discountPercentage": 87, "discountPurchaseAt": "1990-07-11T00:00:00Z", "discountedPrice": 53, "expireAt": "1971-06-07T00:00:00Z", "price": 52, "purchaseAt": "1975-08-10T00:00:00Z", "trialPrice": 54}]}}, {"itemIdentities": ["UH9iCt4bjrbqvJUW", "I3EQ06TDnlZRU5bc", "BAdlPEEoNXcKUUm0"], "itemIdentityType": "ITEM_ID", "regionData": {"pZUkwmaeYD5JnGkW": [{"currencyCode": "jspGouXQKVWTRm38", "currencyNamespace": "xcNMLj2DLcQmCzQb", "currencyType": "REAL", "discountAmount": 20, "discountExpireAt": "1991-08-26T00:00:00Z", "discountPercentage": 95, "discountPurchaseAt": "1982-04-09T00:00:00Z", "discountedPrice": 81, "expireAt": "1991-01-07T00:00:00Z", "price": 90, "purchaseAt": "1997-11-09T00:00:00Z", "trialPrice": 89}, {"currencyCode": "TXK2DtbCe6QWxnxZ", "currencyNamespace": "tTupsQfU6ftlIydC", "currencyType": "REAL", "discountAmount": 82, "discountExpireAt": "1971-11-02T00:00:00Z", "discountPercentage": 12, "discountPurchaseAt": "1995-08-01T00:00:00Z", "discountedPrice": 90, "expireAt": "1975-12-13T00:00:00Z", "price": 85, "purchaseAt": "1985-08-18T00:00:00Z", "trialPrice": 11}, {"currencyCode": "yK6Imd8xONUKTaAL", "currencyNamespace": "IcjHJNAPgw8F9Cs0", "currencyType": "REAL", "discountAmount": 1, "discountExpireAt": "1995-02-11T00:00:00Z", "discountPercentage": 41, "discountPurchaseAt": "1990-08-21T00:00:00Z", "discountedPrice": 62, "expireAt": "1982-01-01T00:00:00Z", "price": 42, "purchaseAt": "1990-07-23T00:00:00Z", "trialPrice": 81}], "jMNBuqGO3YQiMLnW": [{"currencyCode": "RdP4fTydTrkdla6L", "currencyNamespace": "rFuKQ3RtclhoWjj2", "currencyType": "VIRTUAL", "discountAmount": 24, "discountExpireAt": "1999-05-09T00:00:00Z", "discountPercentage": 60, "discountPurchaseAt": "1986-12-03T00:00:00Z", "discountedPrice": 47, "expireAt": "1995-12-05T00:00:00Z", "price": 31, "purchaseAt": "1993-09-11T00:00:00Z", "trialPrice": 74}, {"currencyCode": "auCRiRzcrIhTZVEl", "currencyNamespace": "13giNlnnOof9tQ3F", "currencyType": "REAL", "discountAmount": 38, "discountExpireAt": "1975-04-03T00:00:00Z", "discountPercentage": 88, "discountPurchaseAt": "1973-04-16T00:00:00Z", "discountedPrice": 99, "expireAt": "1997-12-08T00:00:00Z", "price": 30, "purchaseAt": "1971-06-08T00:00:00Z", "trialPrice": 8}, {"currencyCode": "LiUKp8OSgjFJIZ2X", "currencyNamespace": "xEWeeo3avj65c1CI", "currencyType": "VIRTUAL", "discountAmount": 98, "discountExpireAt": "1998-06-28T00:00:00Z", "discountPercentage": 27, "discountPurchaseAt": "1974-11-03T00:00:00Z", "discountedPrice": 15, "expireAt": "1975-07-17T00:00:00Z", "price": 34, "purchaseAt": "1988-11-19T00:00:00Z", "trialPrice": 27}], "5GALCE4XFKs0ggGi": [{"currencyCode": "7nGPIB4PAc9cmkwq", "currencyNamespace": "Py0fDraYgNAmz0ZA", "currencyType": "VIRTUAL", "discountAmount": 9, "discountExpireAt": "1996-08-10T00:00:00Z", "discountPercentage": 30, "discountPurchaseAt": "1980-09-14T00:00:00Z", "discountedPrice": 31, "expireAt": "1996-10-31T00:00:00Z", "price": 17, "purchaseAt": "1972-06-24T00:00:00Z", "trialPrice": 45}, {"currencyCode": "pCOUf51VAIgrF3Ut", "currencyNamespace": "mHXbgoCIMEGvY7mL", "currencyType": "VIRTUAL", "discountAmount": 49, "discountExpireAt": "1993-12-23T00:00:00Z", "discountPercentage": 83, "discountPurchaseAt": "1981-03-30T00:00:00Z", "discountedPrice": 57, "expireAt": "1984-03-20T00:00:00Z", "price": 27, "purchaseAt": "1995-04-20T00:00:00Z", "trialPrice": 37}, {"currencyCode": "RU4r4er8CpVseJ0O", "currencyNamespace": "OYlyEvZI7W3nsA9D", "currencyType": "REAL", "discountAmount": 56, "discountExpireAt": "1982-08-19T00:00:00Z", "discountPercentage": 15, "discountPurchaseAt": "1988-05-29T00:00:00Z", "discountedPrice": 20, "expireAt": "1998-04-05T00:00:00Z", "price": 16, "purchaseAt": "1993-10-22T00:00:00Z", "trialPrice": 57}]}}]}' > $TEMP_JSON_INPUT
+echo '{"changes": [{"itemIdentities": ["hHSkznxjwDqHFxer", "iURZvDUdPdFYZJds", "hhU7xiomI7wqk6uj"], "itemIdentityType": "ITEM_SKU", "regionData": {"S8bfcCW62qIhoGhn": [{"currencyCode": "50bAqk5LxBIGBHkX", "currencyNamespace": "DIvHwPBu7NrTNiVq", "currencyType": "REAL", "discountAmount": 0, "discountExpireAt": "1987-02-15T00:00:00Z", "discountPercentage": 52, "discountPurchaseAt": "1993-08-07T00:00:00Z", "discountedPrice": 57, "expireAt": "1979-02-12T00:00:00Z", "price": 50, "purchaseAt": "1971-02-24T00:00:00Z", "trialPrice": 8}, {"currencyCode": "w1WQdEUr72DYSCZW", "currencyNamespace": "3czX8CvHQZ7JOBiF", "currencyType": "VIRTUAL", "discountAmount": 78, "discountExpireAt": "1996-11-25T00:00:00Z", "discountPercentage": 98, "discountPurchaseAt": "1987-10-27T00:00:00Z", "discountedPrice": 70, "expireAt": "1993-06-27T00:00:00Z", "price": 18, "purchaseAt": "1974-05-09T00:00:00Z", "trialPrice": 28}, {"currencyCode": "sG2iIpCwuvQ0uspx", "currencyNamespace": "KHWOccE4HOaTFU34", "currencyType": "VIRTUAL", "discountAmount": 16, "discountExpireAt": "1983-08-21T00:00:00Z", "discountPercentage": 8, "discountPurchaseAt": "1994-11-25T00:00:00Z", "discountedPrice": 11, "expireAt": "1985-10-09T00:00:00Z", "price": 92, "purchaseAt": "1984-07-12T00:00:00Z", "trialPrice": 76}], "O3N0UkJanRenRei9": [{"currencyCode": "LuvC1l1wGBSlZ4sG", "currencyNamespace": "Qrcq4l41bQTzoLlY", "currencyType": "VIRTUAL", "discountAmount": 17, "discountExpireAt": "1994-12-13T00:00:00Z", "discountPercentage": 40, "discountPurchaseAt": "1980-02-20T00:00:00Z", "discountedPrice": 62, "expireAt": "1986-02-07T00:00:00Z", "price": 13, "purchaseAt": "1986-09-12T00:00:00Z", "trialPrice": 69}, {"currencyCode": "w6YWTZpca78D31y7", "currencyNamespace": "uuuW6freYvPWWHWY", "currencyType": "REAL", "discountAmount": 26, "discountExpireAt": "1972-07-02T00:00:00Z", "discountPercentage": 81, "discountPurchaseAt": "1972-03-19T00:00:00Z", "discountedPrice": 15, "expireAt": "1974-10-07T00:00:00Z", "price": 9, "purchaseAt": "1974-04-17T00:00:00Z", "trialPrice": 2}, {"currencyCode": "hBW3qqYq3kuKpr8j", "currencyNamespace": "EXhHZs4BkIxo0XPF", "currencyType": "VIRTUAL", "discountAmount": 64, "discountExpireAt": "1974-03-19T00:00:00Z", "discountPercentage": 38, "discountPurchaseAt": "1994-08-13T00:00:00Z", "discountedPrice": 33, "expireAt": "1990-05-23T00:00:00Z", "price": 65, "purchaseAt": "1987-10-29T00:00:00Z", "trialPrice": 70}], "FJ7cUw0ADHKp1Jeo": [{"currencyCode": "NcCMEncNbUbiWqyr", "currencyNamespace": "5j636DZ4NEiTROGv", "currencyType": "REAL", "discountAmount": 64, "discountExpireAt": "1982-07-20T00:00:00Z", "discountPercentage": 46, "discountPurchaseAt": "1997-08-30T00:00:00Z", "discountedPrice": 22, "expireAt": "1990-02-27T00:00:00Z", "price": 31, "purchaseAt": "1994-03-09T00:00:00Z", "trialPrice": 51}, {"currencyCode": "fmSxqfRC05lD36Wo", "currencyNamespace": "ctSSIVi042RAadk8", "currencyType": "VIRTUAL", "discountAmount": 92, "discountExpireAt": "1991-09-17T00:00:00Z", "discountPercentage": 11, "discountPurchaseAt": "1981-07-16T00:00:00Z", "discountedPrice": 11, "expireAt": "1999-07-23T00:00:00Z", "price": 31, "purchaseAt": "1988-02-05T00:00:00Z", "trialPrice": 87}, {"currencyCode": "Hb1QgbsPax3ToNEE", "currencyNamespace": "cOmbPIllsWtlGQQR", "currencyType": "REAL", "discountAmount": 13, "discountExpireAt": "1975-08-18T00:00:00Z", "discountPercentage": 42, "discountPurchaseAt": "1973-03-06T00:00:00Z", "discountedPrice": 73, "expireAt": "1976-07-10T00:00:00Z", "price": 80, "purchaseAt": "1993-03-31T00:00:00Z", "trialPrice": 61}]}}, {"itemIdentities": ["foCYXmxcovGdLchA", "21pnSv6IEDQIgDa7", "53Hc61jnOiTAgsVi"], "itemIdentityType": "ITEM_ID", "regionData": {"bpAW2c6Mt1Vo3zep": [{"currencyCode": "vVt4mlx03QF3bqId", "currencyNamespace": "CHTmOFjL5nmcK9La", "currencyType": "VIRTUAL", "discountAmount": 24, "discountExpireAt": "1973-04-01T00:00:00Z", "discountPercentage": 98, "discountPurchaseAt": "1998-07-25T00:00:00Z", "discountedPrice": 63, "expireAt": "1982-05-16T00:00:00Z", "price": 45, "purchaseAt": "1975-08-16T00:00:00Z", "trialPrice": 21}, {"currencyCode": "f1QTuKXeMAqOhW2S", "currencyNamespace": "xjARrVunPYAMlPS1", "currencyType": "REAL", "discountAmount": 77, "discountExpireAt": "1997-12-28T00:00:00Z", "discountPercentage": 100, "discountPurchaseAt": "1974-06-30T00:00:00Z", "discountedPrice": 18, "expireAt": "1996-09-01T00:00:00Z", "price": 62, "purchaseAt": "1998-06-23T00:00:00Z", "trialPrice": 97}, {"currencyCode": "6G4nuD6kAXo5CYHq", "currencyNamespace": "pio9gMa3m49POeky", "currencyType": "REAL", "discountAmount": 73, "discountExpireAt": "1982-10-30T00:00:00Z", "discountPercentage": 95, "discountPurchaseAt": "1985-02-19T00:00:00Z", "discountedPrice": 82, "expireAt": "1974-12-21T00:00:00Z", "price": 54, "purchaseAt": "1989-02-20T00:00:00Z", "trialPrice": 59}], "evZj7ERf5Mi6mk4V": [{"currencyCode": "o9xxZzFrpyGOdThr", "currencyNamespace": "N2lXYb7iiBcWcLuk", "currencyType": "REAL", "discountAmount": 11, "discountExpireAt": "1972-02-03T00:00:00Z", "discountPercentage": 85, "discountPurchaseAt": "1981-03-08T00:00:00Z", "discountedPrice": 67, "expireAt": "1997-08-22T00:00:00Z", "price": 20, "purchaseAt": "1991-11-11T00:00:00Z", "trialPrice": 90}, {"currencyCode": "UwPTmgmk4Spx3x70", "currencyNamespace": "5SZyI1AJfaR8ILlm", "currencyType": "REAL", "discountAmount": 13, "discountExpireAt": "1997-12-26T00:00:00Z", "discountPercentage": 37, "discountPurchaseAt": "1982-04-03T00:00:00Z", "discountedPrice": 57, "expireAt": "1986-01-07T00:00:00Z", "price": 89, "purchaseAt": "1982-01-16T00:00:00Z", "trialPrice": 25}, {"currencyCode": "4evCKxs06yFXaZF2", "currencyNamespace": "UDSPNCIuAqPaKuiZ", "currencyType": "VIRTUAL", "discountAmount": 42, "discountExpireAt": "1977-08-16T00:00:00Z", "discountPercentage": 89, "discountPurchaseAt": "1984-03-20T00:00:00Z", "discountedPrice": 4, "expireAt": "1986-03-28T00:00:00Z", "price": 14, "purchaseAt": "1989-04-04T00:00:00Z", "trialPrice": 10}], "tFjbqKS5hHrXcWwE": [{"currencyCode": "DvEN0xN5TQgJs046", "currencyNamespace": "g4xIv2XLzgxR2NsX", "currencyType": "VIRTUAL", "discountAmount": 77, "discountExpireAt": "1972-04-28T00:00:00Z", "discountPercentage": 44, "discountPurchaseAt": "1998-10-28T00:00:00Z", "discountedPrice": 81, "expireAt": "1988-05-14T00:00:00Z", "price": 35, "purchaseAt": "1989-01-18T00:00:00Z", "trialPrice": 85}, {"currencyCode": "VkKuYm7ZufvKLsud", "currencyNamespace": "rJOK8ewZ9XUE09s8", "currencyType": "REAL", "discountAmount": 65, "discountExpireAt": "1991-11-10T00:00:00Z", "discountPercentage": 40, "discountPurchaseAt": "1982-10-03T00:00:00Z", "discountedPrice": 59, "expireAt": "1994-12-09T00:00:00Z", "price": 51, "purchaseAt": "1995-04-21T00:00:00Z", "trialPrice": 37}, {"currencyCode": "Q6xbzAAcptHncRNh", "currencyNamespace": "ZgiLtMTotDe8u5R8", "currencyType": "VIRTUAL", "discountAmount": 20, "discountExpireAt": "1993-06-07T00:00:00Z", "discountPercentage": 3, "discountPurchaseAt": "1993-01-18T00:00:00Z", "discountedPrice": 56, "expireAt": "1985-04-03T00:00:00Z", "price": 55, "purchaseAt": "1994-01-27T00:00:00Z", "trialPrice": 24}]}}, {"itemIdentities": ["Ir2xhMN43pUeXpZU", "kwmaeYD5JnGkWjsp", "GouXQKVWTRm38xcN"], "itemIdentityType": "ITEM_SKU", "regionData": {"Lj2DLcQmCzQbjNUm": [{"currencyCode": "NRZMTXK2DtbCe6QW", "currencyNamespace": "xnxZtTupsQfU6ftl", "currencyType": "VIRTUAL", "discountAmount": 50, "discountExpireAt": "1978-01-27T00:00:00Z", "discountPercentage": 57, "discountPurchaseAt": "1996-10-19T00:00:00Z", "discountedPrice": 3, "expireAt": "1996-11-22T00:00:00Z", "price": 0, "purchaseAt": "1990-02-16T00:00:00Z", "trialPrice": 98}, {"currencyCode": "8TRPC81Cf4kP3oTf", "currencyNamespace": "jZTpFCTcXoHR4cpW", "currencyType": "VIRTUAL", "discountAmount": 13, "discountExpireAt": "1999-06-26T00:00:00Z", "discountPercentage": 6, "discountPurchaseAt": "1987-02-23T00:00:00Z", "discountedPrice": 73, "expireAt": "1985-06-07T00:00:00Z", "price": 37, "purchaseAt": "1999-12-07T00:00:00Z", "trialPrice": 82}, {"currencyCode": "oVuSEaLYNJJF0oGp", "currencyNamespace": "mR9TSRI3VikDuPgB", "currencyType": "VIRTUAL", "discountAmount": 92, "discountExpireAt": "1980-05-21T00:00:00Z", "discountPercentage": 41, "discountPurchaseAt": "1976-09-30T00:00:00Z", "discountedPrice": 6, "expireAt": "1984-04-04T00:00:00Z", "price": 29, "purchaseAt": "1971-11-19T00:00:00Z", "trialPrice": 37}], "LrFuKQ3RtclhoWjj": [{"currencyCode": "2YmqDSPWPpFauCRi", "currencyNamespace": "RzcrIhTZVEl13giN", "currencyType": "REAL", "discountAmount": 22, "discountExpireAt": "1978-01-15T00:00:00Z", "discountPercentage": 27, "discountPurchaseAt": "1979-11-30T00:00:00Z", "discountedPrice": 45, "expireAt": "1978-02-18T00:00:00Z", "price": 55, "purchaseAt": "1994-06-06T00:00:00Z", "trialPrice": 93}, {"currencyCode": "Q3FFkiQ4WmZZZotL", "currencyNamespace": "iUKp8OSgjFJIZ2Xx", "currencyType": "VIRTUAL", "discountAmount": 26, "discountExpireAt": "1996-02-28T00:00:00Z", "discountPercentage": 8, "discountPurchaseAt": "1992-01-30T00:00:00Z", "discountedPrice": 54, "expireAt": "1978-04-27T00:00:00Z", "price": 21, "purchaseAt": "1971-06-15T00:00:00Z", "trialPrice": 43}, {"currencyCode": "9WsIkoFUTz0n3Ljq", "currencyNamespace": "N5GALCE4XFKs0ggG", "currencyType": "REAL", "discountAmount": 88, "discountExpireAt": "1995-04-17T00:00:00Z", "discountPercentage": 48, "discountPurchaseAt": "1987-05-18T00:00:00Z", "discountedPrice": 84, "expireAt": "1993-10-06T00:00:00Z", "price": 62, "purchaseAt": "1985-03-13T00:00:00Z", "trialPrice": 25}], "PAc9cmkwqPy0fDra": [{"currencyCode": "YgNAmz0ZAyWBrpW2", "currencyNamespace": "iXwnefAQdj8v0AcL", "currencyType": "VIRTUAL", "discountAmount": 95, "discountExpireAt": "1990-06-03T00:00:00Z", "discountPercentage": 26, "discountPurchaseAt": "1984-10-01T00:00:00Z", "discountedPrice": 71, "expireAt": "1996-09-28T00:00:00Z", "price": 4, "purchaseAt": "1985-02-20T00:00:00Z", "trialPrice": 4}, {"currencyCode": "oCIMEGvY7mLrRO6k", "currencyNamespace": "znnRU4r4er8CpVse", "currencyType": "REAL", "discountAmount": 4, "discountExpireAt": "1991-05-31T00:00:00Z", "discountPercentage": 84, "discountPurchaseAt": "1979-12-17T00:00:00Z", "discountedPrice": 23, "expireAt": "1975-07-21T00:00:00Z", "price": 61, "purchaseAt": "1986-06-26T00:00:00Z", "trialPrice": 57}, {"currencyCode": "ZI7W3nsA9DovCHs0", "currencyNamespace": "3S5Xf0AX94THJpa9", "currencyType": "REAL", "discountAmount": 1, "discountExpireAt": "1972-08-23T00:00:00Z", "discountPercentage": 41, "discountPurchaseAt": "1992-04-11T00:00:00Z", "discountedPrice": 10, "expireAt": "1987-10-04T00:00:00Z", "price": 29, "purchaseAt": "1978-05-25T00:00:00Z", "trialPrice": 61}]}}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op BulkUpdateRegionData \
     --namespace $AB_NAMESPACE \
-    --storeId 'Xf0AX94THJpa9VQa' \
+    --storeId 'Rlckf8TkfzJ2qc1V' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 130 'BulkUpdateRegionData' test.out
+eval_tap $? 132 'BulkUpdateRegionData' test.out
 
-#- 131 SearchItems
+#- 133 SearchItems
 $CLI_EXE \
     --sn platform \
     --op SearchItems \
     --namespace $AB_NAMESPACE \
     --activeOnly 'true' \
     --itemType 'INGAMEITEM' \
-    --limit '85' \
-    --offset '26' \
-    --sortBy 'YFHoD1yMW1UamXAn' \
-    --storeId 'RUC4F36wQH2ATx5A' \
-    --keyword 'CpqWKrhzIE5lvPBA' \
-    --language 'piMq6Fh1qTz90wzs' \
+    --limit '87' \
+    --offset '57' \
+    --sortBy 'H2ATx5ACpqWKrhzI' \
+    --storeId 'E5lvPBApiMq6Fh1q' \
+    --keyword 'Tz90wzsdYPxaedP9' \
+    --language '2EgPWXDRhFY9gixl' \
     > test.out 2>&1
-eval_tap $? 131 'SearchItems' test.out
+eval_tap $? 133 'SearchItems' test.out
 
-#- 132 QueryUncategorizedItems
+#- 134 QueryUncategorizedItems
 $CLI_EXE \
     --sn platform \
     --op QueryUncategorizedItems \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --limit '63' \
-    --offset '69' \
-    --sortBy '["displayOrder:asc", "name:asc", "updatedAt"]' \
-    --storeId 'cu1Fy4cXh7OVQysR' \
+    --activeOnly 'true' \
+    --limit '16' \
+    --offset '15' \
+    --sortBy '["displayOrder:asc", "name:desc", "updatedAt:desc"]' \
+    --storeId 'aatbiwdT3FHK9Evu' \
     > test.out 2>&1
-eval_tap $? 132 'QueryUncategorizedItems' test.out
+eval_tap $? 134 'QueryUncategorizedItems' test.out
 
-#- 133 GetItem
+#- 135 GetItem
 $CLI_EXE \
     --sn platform \
     --op GetItem \
-    --itemId 'itHLbViGiai4sK9i' \
+    --itemId 'BgGtfDujo38sHqIv' \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --storeId 'FHK9EvuBgGtfDujo' \
+    --activeOnly 'true' \
+    --storeId 'QyaOCpKxdKneLKmW' \
     > test.out 2>&1
-eval_tap $? 133 'GetItem' test.out
+eval_tap $? 135 'GetItem' test.out
 
-#- 134 UpdateItem
+#- 136 UpdateItem
 # body param: body
-echo '{"appId": "38sHqIvIzZvnHTrF", "appType": "SOFTWARE", "baseAppId": "dKneLKmWOZk0wBAt", "boothName": "cQLyhAYX2avS5TMA", "categoryPath": "H8Md96Fu0XAm4jlg", "clazz": "zYtaWyBPNRqeD8Nk", "displayOrder": 71, "entitlementType": "DURABLE", "ext": {"7epyjjT3NH4SpmKR": {}, "PSMlrr981BzGIrTh": {}, "F2bz3hxBqbgk9VPw": {}}, "features": ["b70tdHp4x4RHujum", "weJIlIb5Yhp6i99C", "tHdudQFJefo4bdrt"], "flexible": false, "images": [{"as": "wHdBcfvronc7zjUW", "caption": "L9rixNbrypQAFosM", "height": 17, "imageUrl": "q1empzdHDczBSOn1", "smallImageUrl": "dRkcqexDjWv9Yoxt", "width": 42}, {"as": "xWgID7tFiBZBDwBA", "caption": "ghEaZhjH43fBfD6Q", "height": 31, "imageUrl": "WQtnuoenJ7sRGrdf", "smallImageUrl": "KlLP7mi79HF3qTCL", "width": 65}, {"as": "C4aQx0WualCieNIh", "caption": "jOuLsrxtL5zdrXbd", "height": 0, "imageUrl": "LZZFrjnKEBQhOYyu", "smallImageUrl": "UyFQakgtQEh1oveM", "width": 99}], "inventoryConfig": {"customAttributes": {"RD0ri6VhDmnVWrhC": {}, "hp6lORKXTzAOeIUd": {}, "tRXZqrFlLa2zl67N": {}}, "serverCustomAttributes": {"P20g0VSCjQKCuEBF": {}, "Gibb38gXunwDm7aS": {}, "SFIrtrNJmgMjbyzT": {}}, "slotUsed": 74}, "itemIds": ["n9Qn7V0Z5b9b0wI2", "wgfhXCVE6tPeMYkO", "5vnbALiJGmTxsyzv"], "itemQty": {"ChqxjojFOs10WYev": 5, "0Vhr6Y5aIwftrNjj": 65, "GXq49XniD5qhEqFI": 6}, "itemType": "INGAMEITEM", "listable": true, "localizations": {"BHiG396bxaT2HuM0": {"description": "ba7Ki9rzy7iln0Y3", "localExt": {"PQGasFswsQAcT93k": {}, "P8LHzSkGttE8LhIR": {}, "Pk7OIoihy4DEXPp1": {}}, "longDescription": "b6uDiRlMYhChf4Iv", "title": "7HrxhfkjSfOWpIoq"}, "ppdSpjWKpkGvAgSl": {"description": "6tOtVw20Hq9jOdsy", "localExt": {"mQsQkCgYZeeQUteg": {}, "de6CoZTmYdUzDklf": {}, "FrIMgHB2WFwqWHhw": {}}, "longDescription": "mdcVMdjrwDdE1BiC", "title": "zT9eOI4RyMkmfKto"}, "yW6LGOeY499CiR0L": {"description": "TnYSnW7egxd2tGBE", "localExt": {"0OPXG9vrMGoadUYb": {}, "J8Z6KkqB7htHSInh": {}, "Ib9bQP9g2kljdsbd": {}}, "longDescription": "asMq57vwpvdaS99a", "title": "NCHY05nnyvEUDmAu"}}, "lootBoxConfig": {"rewardCount": 72, "rewards": [{"lootBoxItems": [{"count": 7, "duration": 78, "endDate": "1981-04-14T00:00:00Z", "itemId": "hbk4qA8E0c3KClYV", "itemSku": "kwCEh6mv0teRJo4f", "itemType": "h4f8hSZRIccUS09D"}, {"count": 8, "duration": 21, "endDate": "1997-08-12T00:00:00Z", "itemId": "FK2UjYLEt1MhpHyj", "itemSku": "TEgUuLoODZkMLXYO", "itemType": "D1Tq7Q7THHJvp4zA"}, {"count": 58, "duration": 32, "endDate": "1984-01-04T00:00:00Z", "itemId": "s8LFtBK24wgxX85s", "itemSku": "nd2azKpFdnRmV5Ow", "itemType": "cSHYFcWbdMNO0Aba"}], "name": "yqAom8TzKF6R6Fel", "odds": 0.6675963612930587, "type": "PROBABILITY_GROUP", "weight": 81}, {"lootBoxItems": [{"count": 34, "duration": 86, "endDate": "1989-10-20T00:00:00Z", "itemId": "lJedE02i0faNrlNC", "itemSku": "m4etFa15Sqiw1k9h", "itemType": "YcfZejAM2ltgidMt"}, {"count": 54, "duration": 39, "endDate": "1975-05-29T00:00:00Z", "itemId": "tKF1VwZjFlOoFJeO", "itemSku": "dazdYo59WIBKN3oJ", "itemType": "Pd3YeTDuluCekVwi"}, {"count": 87, "duration": 9, "endDate": "1981-04-30T00:00:00Z", "itemId": "Vi4Xid2JIJqeUZtc", "itemSku": "JQU5cbfQ07zBbU3B", "itemType": "M4l9ojCRtHLgg3L2"}], "name": "iNMV0mnQYmsEUczi", "odds": 0.18738575853469397, "type": "REWARD", "weight": 61}, {"lootBoxItems": [{"count": 1, "duration": 73, "endDate": "1983-02-11T00:00:00Z", "itemId": "vkk2NyMgExpdGHim", "itemSku": "wTXTexyZOReUyKoH", "itemType": "eCeGJQHW5sIuK7cj"}, {"count": 41, "duration": 95, "endDate": "1998-11-07T00:00:00Z", "itemId": "yaTmbFJjfOka8bY6", "itemSku": "Lciqo5egvOaDWZxm", "itemType": "7mnwW61zflwqrxE6"}, {"count": 6, "duration": 26, "endDate": "1999-08-04T00:00:00Z", "itemId": "7Lj1ujN0huXqk7fq", "itemSku": "CpltWqURpDylx4uQ", "itemType": "BFgJ7e2umBpQI8ou"}], "name": "SUg97kQ7imT23t4d", "odds": 0.8544364798312966, "type": "REWARD", "weight": 63}], "rollFunction": "DEFAULT"}, "maxCount": 24, "maxCountPerUser": 27, "name": "VwRxj2wHvmUlCmzs", "optionBoxConfig": {"boxItems": [{"count": 55, "duration": 75, "endDate": "1986-07-25T00:00:00Z", "itemId": "xrB0Wsn8MdM3BM1o", "itemSku": "71e8UF9GJYYsUatA", "itemType": "lAKKicwPsJERKfj5"}, {"count": 90, "duration": 5, "endDate": "1989-02-27T00:00:00Z", "itemId": "RQxQ0UD6HIeEiIy4", "itemSku": "Zn7cj3FCshef3YQ5", "itemType": "L3MoZhgBZpxJow2x"}, {"count": 97, "duration": 85, "endDate": "1987-10-15T00:00:00Z", "itemId": "RV5nBbYt7pAqGMyd", "itemSku": "cc8ZFzkVJOLJ3lit", "itemType": "5zvoNR3kdbkt4hux"}]}, "purchasable": false, "recurring": {"cycle": "QUARTERLY", "fixedFreeDays": 95, "fixedTrialCycles": 27, "graceDays": 3}, "regionData": {"jIaYNlrmj0JmjcQP": [{"currencyCode": "FKkAFsgRgAwYmoR3", "currencyNamespace": "JLPL0A6ZH05CGKlC", "currencyType": "REAL", "discountAmount": 90, "discountExpireAt": "1996-05-03T00:00:00Z", "discountPercentage": 26, "discountPurchaseAt": "1976-11-19T00:00:00Z", "expireAt": "1987-12-01T00:00:00Z", "price": 17, "purchaseAt": "1980-01-11T00:00:00Z", "trialPrice": 96}, {"currencyCode": "MtEcqRsgheZG5emH", "currencyNamespace": "XLHY1n8uo0jobz5e", "currencyType": "VIRTUAL", "discountAmount": 91, "discountExpireAt": "1995-05-26T00:00:00Z", "discountPercentage": 9, "discountPurchaseAt": "1983-06-02T00:00:00Z", "expireAt": "1991-07-04T00:00:00Z", "price": 51, "purchaseAt": "1989-04-16T00:00:00Z", "trialPrice": 57}, {"currencyCode": "60pG3mKRoD53UurT", "currencyNamespace": "LKflEt43dMWFzY0v", "currencyType": "VIRTUAL", "discountAmount": 3, "discountExpireAt": "1977-03-27T00:00:00Z", "discountPercentage": 51, "discountPurchaseAt": "1987-03-09T00:00:00Z", "expireAt": "1986-09-14T00:00:00Z", "price": 11, "purchaseAt": "1982-07-03T00:00:00Z", "trialPrice": 2}], "WiezA8jDzHsJXyoG": [{"currencyCode": "ovfSPaTAtAurCRbo", "currencyNamespace": "84FcGoQ1Hgfiov3Q", "currencyType": "VIRTUAL", "discountAmount": 64, "discountExpireAt": "1986-11-23T00:00:00Z", "discountPercentage": 6, "discountPurchaseAt": "1995-12-01T00:00:00Z", "expireAt": "1988-07-26T00:00:00Z", "price": 20, "purchaseAt": "1999-08-02T00:00:00Z", "trialPrice": 8}, {"currencyCode": "VyakOvrUDzmFopKj", "currencyNamespace": "KmLpeM7XCm5Y4lKg", "currencyType": "REAL", "discountAmount": 31, "discountExpireAt": "1992-07-13T00:00:00Z", "discountPercentage": 28, "discountPurchaseAt": "1974-08-29T00:00:00Z", "expireAt": "1977-08-21T00:00:00Z", "price": 38, "purchaseAt": "1975-07-29T00:00:00Z", "trialPrice": 94}, {"currencyCode": "8YvUMVN3gTrrjkUM", "currencyNamespace": "3UadRx1uhPW2AML9", "currencyType": "VIRTUAL", "discountAmount": 21, "discountExpireAt": "1981-09-14T00:00:00Z", "discountPercentage": 72, "discountPurchaseAt": "1980-08-01T00:00:00Z", "expireAt": "1979-03-17T00:00:00Z", "price": 22, "purchaseAt": "1994-06-15T00:00:00Z", "trialPrice": 47}], "WQ8T1r9xRpcLK3S1": [{"currencyCode": "k6rZEqIn8VEPcoTB", "currencyNamespace": "bxgWzSAGRWKhp6wl", "currencyType": "REAL", "discountAmount": 92, "discountExpireAt": "1996-03-31T00:00:00Z", "discountPercentage": 6, "discountPurchaseAt": "1992-10-20T00:00:00Z", "expireAt": "1999-07-08T00:00:00Z", "price": 0, "purchaseAt": "1991-06-30T00:00:00Z", "trialPrice": 35}, {"currencyCode": "CH3ieAA8SMBHE9rZ", "currencyNamespace": "zvUGk79msR8RIEmM", "currencyType": "REAL", "discountAmount": 82, "discountExpireAt": "1994-12-26T00:00:00Z", "discountPercentage": 60, "discountPurchaseAt": "1986-05-05T00:00:00Z", "expireAt": "1994-02-26T00:00:00Z", "price": 41, "purchaseAt": "1974-03-04T00:00:00Z", "trialPrice": 4}, {"currencyCode": "tVNvrOXKAxhaQSei", "currencyNamespace": "lLqdQyVTov6xbmGz", "currencyType": "VIRTUAL", "discountAmount": 73, "discountExpireAt": "1989-11-13T00:00:00Z", "discountPercentage": 50, "discountPurchaseAt": "1992-05-31T00:00:00Z", "expireAt": "1985-05-05T00:00:00Z", "price": 80, "purchaseAt": "1978-08-20T00:00:00Z", "trialPrice": 85}]}, "saleConfig": {"currencyCode": "E5EwVJ287TwZMvSk", "price": 68}, "seasonType": "TIER", "sectionExclusive": false, "sellable": true, "sku": "B8KtITPsCo6PTrgh", "stackable": true, "status": "INACTIVE", "tags": ["kv8Iis5VsIgUwOZe", "zMLHGHI1hRpZjhDW", "HUc4oButfdE4yGsX"], "targetCurrencyCode": "wC9Onl5UjEFSAvJ7", "targetNamespace": "vat7UxvBngpPHMwe", "thumbnailUrl": "2d8YRsLxnUap7g2O", "useCount": 43}' > $TEMP_JSON_INPUT
+echo '{"appId": "OZk0wBAtcQLyhAYX", "appType": "GAME", "baseAppId": "avS5TMAH8Md96Fu0", "boothName": "XAm4jlgzYtaWyBPN", "categoryPath": "RqeD8NkIN7epyjjT", "clazz": "3NH4SpmKRPSMlrr9", "displayOrder": 54, "entitlementType": "DURABLE", "ext": {"X7aq5b7O2MtxknK4": {}, "nfPz37K7mCEbk12x": {}, "8b5u3JEvV6iPRljj": {}}, "features": ["UE0uW9A4wHdBcfvr", "onc7zjUWL9rixNbr", "iap9VxA985stoGyA"], "flexible": true, "images": [{"as": "7B7emfkAq1empzdH", "caption": "DczBSOn1dRkcqexD", "height": 19, "imageUrl": "bc5mKsGJuLLjLEdl", "smallImageUrl": "NUgqi3FAFsiHboJd", "width": 87}, {"as": "43fBfD6QpeW9xZol", "caption": "YpyAud59a9TFS26P", "height": 97, "imageUrl": "HF3qTCLFW0BJBXGs", "smallImageUrl": "sAhdWiVOWAO0abwE", "width": 90}, {"as": "zdrXbdajrxUmydxS", "caption": "yWnwKJXPc9kW7pSi", "height": 80, "imageUrl": "h1oveMW8hdTKFwLM", "smallImageUrl": "pUFeM9Hzmg1pf5ik", "width": 34}], "inventoryConfig": {"customAttributes": {"AOeIUdtRXZqrFlLa": {}, "2zl67NP20g0VSCjQ": {}, "KCuEBFGibb38gXun": {}}, "serverCustomAttributes": {"wDm7aSSFIrtrNJmg": {}, "MjbyzTKBmBw9niyO": {}, "D83I1upbHQCiDNsH": {}}, "slotUsed": 68}, "itemIds": ["PeMYkO5vnbALiJGm", "TxsyzvChqxjojFOs", "10WYevc3367a0Bbe"], "itemQty": {"tWsBQNiGXq49XniD": 34, "ZcZ7iFu2IBHiG396": 2, "GEpO3HkWR36Vi1UX": 68}, "itemType": "LOOTBOX", "listable": false, "localizations": {"FMeSHvz1uVmlBHr9": {"description": "b0kOA0ATHspAa206", "localExt": {"1d5ISbmJA1btrC5j": {}, "nLTBX1uULo2vEYPv": {}, "wtjuWuqHSwNKfVRO": {}}, "longDescription": "07q0pA952E2LaBk4", "title": "i8fX2SxIVMmsRynI"}, "VZv9SIkEbj625fFE": {"description": "8SN2TknMJeHWc6to", "localExt": {"96dD33ffbOPuFrL0": {}, "09bFh22hoq6zHF53": {}, "jyjABT98nuS7eTOQ": {}}, "longDescription": "CUZd9TuIg8iM9tzI", "title": "gALH9G998mBe8uxL"}, "Prjvxtlrt6Ajclh7": {"description": "lBDHgfPl0n95dUUi", "localExt": {"Ddy9BamLf6vLMX6T": {}, "KUeVcmxP9RuvWUd1": {}, "aJEqciDAih6rFn4p": {}}, "longDescription": "JB54ogd9tmEFEDHL", "title": "ArBBScenriXZcF2v"}}, "lootBoxConfig": {"rewardCount": 1, "rewards": [{"lootBoxItems": [{"count": 45, "duration": 62, "endDate": "1998-07-21T00:00:00Z", "itemId": "teRJo4fh4f8hSZRI", "itemSku": "ccUS09DdkYFK2UjY", "itemType": "LEt1MhpHyjTEgUuL"}, {"count": 29, "duration": 11, "endDate": "1991-06-09T00:00:00Z", "itemId": "DZkMLXYOD1Tq7Q7T", "itemSku": "HHJvp4zA1CAaA8rK", "itemType": "1sdi20E5oI66pcnc"}, {"count": 96, "duration": 75, "endDate": "1976-05-08T00:00:00Z", "itemId": "JVowciMFVEzDLhuW", "itemSku": "WOtP1DvUI5Zk3glW", "itemType": "cDnUAF3R7gZNqJlJ"}], "name": "edE02i0faNrlNCm4", "odds": 0.07750582787462268, "type": "REWARD", "weight": 65}, {"lootBoxItems": [{"count": 56, "duration": 1, "endDate": "1992-11-30T00:00:00Z", "itemId": "5Sqiw1k9hYcfZejA", "itemSku": "M2ltgidMt8A7trVg", "itemType": "OgbryFAkCkxCOFcM"}, {"count": 36, "duration": 7, "endDate": "1984-05-01T00:00:00Z", "itemId": "AeftpThcF13hTovF", "itemSku": "A3nNwejGtIIQuVi4", "itemType": "Xid2JIJqeUZtcJQU"}, {"count": 73, "duration": 4, "endDate": "1998-01-04T00:00:00Z", "itemId": "n4Z9Z1EEdRcfe94V", "itemSku": "lDQNGf0iymU4ow3r", "itemType": "N3ER1zVy8vCVwayv"}], "name": "kk2NyMgExpdGHimw", "odds": 0.7288639390650615, "type": "PROBABILITY_GROUP", "weight": 93}, {"lootBoxItems": [{"count": 42, "duration": 8, "endDate": "1981-07-09T00:00:00Z", "itemId": "10umiO8Xt8TpdOGs", "itemSku": "FINvHda3b6gUMsmp", "itemType": "3KcOASxqHM14ksdA"}, {"count": 81, "duration": 30, "endDate": "1977-07-02T00:00:00Z", "itemId": "egvOaDWZxm7mnwW6", "itemSku": "1zflwqrxE6c37Lj1", "itemType": "ujN0huXqk7fqCplt"}, {"count": 100, "duration": 89, "endDate": "1979-10-18T00:00:00Z", "itemId": "RpDylx4uQBFgJ7e2", "itemSku": "umBpQI8ouSUg97kQ", "itemType": "7imT23t4d02sJAnn"}], "name": "5eNEqf8LgBRlCEgK", "odds": 0.7370017052267027, "type": "REWARD", "weight": 9}], "rollFunction": "DEFAULT"}, "maxCount": 60, "maxCountPerUser": 55, "name": "JUijjoEI7TyyVonb", "optionBoxConfig": {"boxItems": [{"count": 96, "duration": 89, "endDate": "1987-06-09T00:00:00Z", "itemId": "9GJYYsUatAlAKKic", "itemSku": "wPsJERKfj5SKYRQx", "itemType": "Q0UD6HIeEiIy4Zn7"}, {"count": 5, "duration": 10, "endDate": "1975-11-24T00:00:00Z", "itemId": "3FCshef3YQ5L3MoZ", "itemSku": "hgBZpxJow2xVGRV5", "itemType": "nBbYt7pAqGMydcc8"}, {"count": 64, "duration": 54, "endDate": "1984-06-27T00:00:00Z", "itemId": "kVJOLJ3lit5zvoNR", "itemSku": "3kdbkt4huxjZUnjI", "itemType": "aYNlrmj0JmjcQPFK"}]}, "purchasable": false, "recurring": {"cycle": "YEARLY", "fixedFreeDays": 72, "fixedTrialCycles": 64, "graceDays": 50}, "regionData": {"sgRgAwYmoR3JLPL0": [{"currencyCode": "A6ZH05CGKlC60Rpl", "currencyNamespace": "G9rUh79odlj9l6yw", "currencyType": "REAL", "discountAmount": 39, "discountExpireAt": "1977-10-16T00:00:00Z", "discountPercentage": 69, "discountPurchaseAt": "1982-03-13T00:00:00Z", "expireAt": "1990-09-30T00:00:00Z", "price": 56, "purchaseAt": "1996-01-25T00:00:00Z", "trialPrice": 27}, {"currencyCode": "fnxfRsE24qJSsySM", "currencyNamespace": "zn360pG3mKRoD53U", "currencyType": "VIRTUAL", "discountAmount": 58, "discountExpireAt": "1980-11-09T00:00:00Z", "discountPercentage": 94, "discountPurchaseAt": "1993-10-30T00:00:00Z", "expireAt": "1988-10-26T00:00:00Z", "price": 33, "purchaseAt": "1973-04-17T00:00:00Z", "trialPrice": 23}, {"currencyCode": "c3Rdgbev8VCWC0Dm", "currencyNamespace": "yiEYxb6XtyOylOle", "currencyType": "REAL", "discountAmount": 50, "discountExpireAt": "1984-04-25T00:00:00Z", "discountPercentage": 67, "discountPurchaseAt": "1985-04-24T00:00:00Z", "expireAt": "1971-06-27T00:00:00Z", "price": 29, "purchaseAt": "1973-04-29T00:00:00Z", "trialPrice": 92}], "v1WseyeY9hbxwF9g": [{"currencyCode": "3PzBu5e2m3J6K5t6", "currencyNamespace": "Dc3IjAVyakOvrUDz", "currencyType": "REAL", "discountAmount": 64, "discountExpireAt": "1999-04-24T00:00:00Z", "discountPercentage": 36, "discountPurchaseAt": "1978-12-01T00:00:00Z", "expireAt": "1990-03-18T00:00:00Z", "price": 9, "purchaseAt": "1989-09-11T00:00:00Z", "trialPrice": 26}, {"currencyCode": "EXw6Soeso51I2kUX", "currencyNamespace": "cQyhDVC2jTeGIown", "currencyType": "REAL", "discountAmount": 13, "discountExpireAt": "1994-01-10T00:00:00Z", "discountPercentage": 36, "discountPurchaseAt": "1983-05-25T00:00:00Z", "expireAt": "1971-03-23T00:00:00Z", "price": 20, "purchaseAt": "1998-01-16T00:00:00Z", "trialPrice": 79}, {"currencyCode": "gZ9qPqTEO34dYlCk", "currencyNamespace": "a3tFsrluWQ8T1r9x", "currencyType": "VIRTUAL", "discountAmount": 4, "discountExpireAt": "1988-11-01T00:00:00Z", "discountPercentage": 35, "discountPurchaseAt": "1989-11-13T00:00:00Z", "expireAt": "1999-01-05T00:00:00Z", "price": 91, "purchaseAt": "1975-03-15T00:00:00Z", "trialPrice": 21}], "YnxI5FnDmTGAyeNa": [{"currencyCode": "ETQxbCsXK0LxZhus", "currencyNamespace": "8nYdQ3awCH3ieAA8", "currencyType": "VIRTUAL", "discountAmount": 69, "discountExpireAt": "1996-08-30T00:00:00Z", "discountPercentage": 24, "discountPurchaseAt": "1980-09-28T00:00:00Z", "expireAt": "1997-07-31T00:00:00Z", "price": 51, "purchaseAt": "1981-12-22T00:00:00Z", "trialPrice": 67}, {"currencyCode": "DLO2EotaRe0lhOSE", "currencyNamespace": "ThhhtVNvrOXKAxha", "currencyType": "REAL", "discountAmount": 9, "discountExpireAt": "1979-03-11T00:00:00Z", "discountPercentage": 59, "discountPurchaseAt": "1977-11-20T00:00:00Z", "expireAt": "1990-05-11T00:00:00Z", "price": 15, "purchaseAt": "1972-02-29T00:00:00Z", "trialPrice": 86}, {"currencyCode": "XYXvrPZ0qkJ7qKy5", "currencyNamespace": "CNCPvJEYmSqo70TN", "currencyType": "VIRTUAL", "discountAmount": 84, "discountExpireAt": "1994-06-06T00:00:00Z", "discountPercentage": 21, "discountPurchaseAt": "1998-09-26T00:00:00Z", "expireAt": "1991-05-13T00:00:00Z", "price": 22, "purchaseAt": "1991-05-31T00:00:00Z", "trialPrice": 56}]}, "saleConfig": {"currencyCode": "pG4Z5ENPCUeInj6o", "price": 33}, "seasonType": "PASS", "sectionExclusive": true, "sellable": false, "sku": "bgh3cm1mjrF7HUeA", "stackable": true, "status": "ACTIVE", "tags": ["DoE3jzHXmU9yrFIy", "54uAn1Jsmgr7JnOP", "Na4q6J1j7A67J7Td"], "targetCurrencyCode": "NKZVHhBOuX48REyH", "targetNamespace": "13S41RCqenqero5I", "thumbnailUrl": "b2HMljCmKs4vmW16", "useCount": 35}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateItem \
-    --itemId 'ro5Ib2HMljCmKs4v' \
+    --itemId 'IlBqMAaCTSRrHDj2' \
     --namespace $AB_NAMESPACE \
-    --storeId 'mW163rsDXCkkHfey' \
+    --storeId 'awMgsmjHipOFkigj' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 134 'UpdateItem' test.out
+eval_tap $? 136 'UpdateItem' test.out
 
-#- 135 DeleteItem
+#- 137 DeleteItem
 $CLI_EXE \
     --sn platform \
     --op DeleteItem \
-    --itemId 'L83Ky5SCfeMexfgx' \
+    --itemId 'eCWCEhoAQA0XuZ60' \
     --namespace $AB_NAMESPACE \
-    --featuresToCheck '["IAP", "REWARD", "CATALOG"]' \
-    --force 'false' \
-    --storeId 'igjeCWCEhoAQA0Xu' \
+    --featuresToCheck '["IAP", "ENTITLEMENT", "CATALOG"]' \
+    --force 'true' \
+    --storeId 'KWwCJzGbrzvhxBpG' \
     > test.out 2>&1
-eval_tap $? 135 'DeleteItem' test.out
+eval_tap $? 137 'DeleteItem' test.out
 
-#- 136 AcquireItem
+#- 138 AcquireItem
 # body param: body
-echo '{"count": 100, "orderNo": "60MzQKWwCJzGbrzv"}' > $TEMP_JSON_INPUT
+echo '{"count": 44, "orderNo": "Uzh4L0kBd7hZ83Eu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op AcquireItem \
-    --itemId 'hxBpG2Uzh4L0kBd7' \
+    --itemId 'GDQsj2OdxoDZJuHS' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 136 'AcquireItem' test.out
+eval_tap $? 138 'AcquireItem' test.out
 
-#- 137 GetApp
+#- 139 GetApp
 $CLI_EXE \
     --sn platform \
     --op GetApp \
-    --itemId 'hZ83EuGDQsj2Odxo' \
+    --itemId 't6EykK4qUBmFSDjt' \
     --namespace $AB_NAMESPACE \
     --activeOnly 'true' \
-    --storeId 'IQlXtYDtrhGO8vdI' \
+    --storeId 'X3MvJaQdJCSnMlqD' \
     > test.out 2>&1
-eval_tap $? 137 'GetApp' test.out
+eval_tap $? 139 'GetApp' test.out
 
-#- 138 UpdateApp
+#- 140 UpdateApp
 # body param: body
-echo '{"carousel": [{"alt": "MOww3i9EMRsxiw25", "previewUrl": "VzXq9sqz1VO2OBrT", "thumbnailUrl": "Xq0K8iEeHf8Xl2eu", "type": "video", "url": "OqY5zHq0nSflEn3p", "videoSource": "generic"}, {"alt": "uAeCT0yBbnNKVIVz", "previewUrl": "ioKih0sQR1PRNzYu", "thumbnailUrl": "gc3g75W8k0MewbUy", "type": "video", "url": "5cmLXqeOsuDFPNpk", "videoSource": "vimeo"}, {"alt": "BURYXLi4Xn902ZFl", "previewUrl": "f3AdH9RGkRXZB81c", "thumbnailUrl": "ZS6UeF3Pj9DzB37a", "type": "video", "url": "kDQoazFv6dJzSZkH", "videoSource": "generic"}], "developer": "IShTYBNnmFPNjSvz", "forumUrl": "uiwn89SwexRFj344", "genres": ["RPG", "Action", "Casual"], "localizations": {"mjTcLYG08Cyl12Sa": {"announcement": "YfUzLvowij0brTOo", "slogan": "pWMvu6v0ryDqNC1l"}, "Vv7rSGrBCgR9pN6m": {"announcement": "J3yZzXQBPMvYSc98", "slogan": "hDqhirI7VPD4HvqA"}, "wc0RHxIhFrwQPlLy": {"announcement": "SmqwcZiOCtVUI0nH", "slogan": "si8WWl9cXOyyUyX2"}}, "platformRequirements": {"XwmIa4R4oiMtaLQP": [{"additionals": "wkt68Lub5sHW7ghx", "directXVersion": "FTNmv4ljaS6aXt0K", "diskSpace": "HphzwDPGyP0KInwl", "graphics": "wGHZonLAjclZvJ6R", "label": "52mPsMgtpMfwoeZD", "osVersion": "MR6UroThWF1rpxjG", "processor": "bLy5cluls6hlWyZo", "ram": "HF0dXwPpkLNhPNSr", "soundCard": "muDh5nUr4VjhIWdE"}, {"additionals": "A0nkK8kMmDqcV7bA", "directXVersion": "SWMgY2lM0NGbIfua", "diskSpace": "biTtN6vBiRyBHfb5", "graphics": "xa5L0ALRw8yzp2WW", "label": "xpGczImZhNXnEF30", "osVersion": "Gt7BGOnQU0G3W3UE", "processor": "pskWKpVNQ9cCkhtH", "ram": "CzCeunEfNCBzmoVr", "soundCard": "PidRXP0SHC7wwCcq"}, {"additionals": "722ozNfZcLNyZdKR", "directXVersion": "2DDuXSeYalmguh9n", "diskSpace": "UOvsx688lqJPZrgQ", "graphics": "5hjTbTfU34PBVULK", "label": "BGSozBwBdMskNhhB", "osVersion": "J1seNS2SySjp8opM", "processor": "QGUYdd1803zFsKj4", "ram": "5SfdtKhutnnSzg7k", "soundCard": "OBNDh77rNbLaBFu0"}], "Svi1r1LSGvPrdqUh": [{"additionals": "TGI6eiDQXCmJZDxm", "directXVersion": "il2kfkl570vCSmmN", "diskSpace": "7nCkAZgxds3c4CxM", "graphics": "7I1GdESTrhsjWkQy", "label": "5Q0Uf6UI3tm6Gmtl", "osVersion": "BgMniMmsIgP1pvXc", "processor": "x6QxdATNOGmWtJhI", "ram": "YrpkfaObGUaXMrnP", "soundCard": "wIqrYjU3vhWm8DGF"}, {"additionals": "2ZRgb0A825b4KQni", "directXVersion": "JAhKkNAtrzXcANqs", "diskSpace": "TsYv579eRjx4zZI2", "graphics": "p58TjHTPJdfadFRP", "label": "TTXH9AelToHoXOjT", "osVersion": "0Ond0V4wCoTs4enc", "processor": "KKweexDslwRnIc8O", "ram": "bOb52KbQeL5jSbNx", "soundCard": "wdPlvT7DDBjvAxUb"}, {"additionals": "qmJNOB7MQOd3kIYz", "directXVersion": "HcEcCeD9DuvPqBb8", "diskSpace": "rzjD3np0cWwQMvtS", "graphics": "A8xvJoPeUeKK6W9r", "label": "bRm3VVjMKQDIJLiC", "osVersion": "rlD4Twp3e7kw4JKT", "processor": "s6qzEva5JMtE5bVZ", "ram": "UYQ8Vt2wVrdZyu6Y", "soundCard": "wBO9ciPg523DYcW4"}], "cmPQBAJVeqx7wkbm": [{"additionals": "gHOS33elovyETKqh", "directXVersion": "TyT4lDa0M4Buod4D", "diskSpace": "ha0C9ZokmxNeoJpS", "graphics": "NXh7Leq2o4qMm8XQ", "label": "jPa9qdYseW61XKHC", "osVersion": "dEaJNn20nEX4mFlW", "processor": "C2BhFv7mjPF52kxF", "ram": "JwgTumfZt70JCI4X", "soundCard": "AS5P7fDeL8Af1D4t"}, {"additionals": "qTdxZVw2lkIrzj9p", "directXVersion": "sbudIuZmrqHXSUdp", "diskSpace": "1aNXDPAGnjAc798m", "graphics": "JJvk76BUKXsS1Yt5", "label": "0aPRkTowrp44ztC3", "osVersion": "ZWCN2U0EH2hPQS89", "processor": "lhVEYCPYLcJDcBSj", "ram": "SQtdfawL0Tq6RYnb", "soundCard": "vuFsIt6lBnHOLBOu"}, {"additionals": "0hMrChnEaSHwepuV", "directXVersion": "xwGN6VE3mRMYqyBD", "diskSpace": "awTyXGlDO6ZxoPSV", "graphics": "7uPqhkd6cJ9vUQQC", "label": "nQ4NtJx4pe9ET2Ci", "osVersion": "8ctEIJwDbPVSDRyk", "processor": "tmfrDG0TMTZd7NIC", "ram": "bqWlgab71axJqJoa", "soundCard": "RZHiELMCb8ilhJpw"}]}, "platforms": ["IOS", "Windows", "MacOS"], "players": ["Coop", "MMO", "Coop"], "primaryGenre": "MassivelyMultiplayer", "publisher": "RCQ0OeQGTFOKjrn7", "releaseDate": "1985-10-29T00:00:00Z", "websiteUrl": "yBXHOhkfJ70y9dXJ"}' > $TEMP_JSON_INPUT
+echo '{"carousel": [{"alt": "6g0bqXXJyGYhHPkZ", "previewUrl": "vWusaXY6XOqY5zHq", "thumbnailUrl": "0nSflEn3pVcLw3kF", "type": "video", "url": "yBbnNKVIVzioKih0", "videoSource": "vimeo"}, {"alt": "bgDBZT6vZ2uhiNTu", "previewUrl": "5XT7z7qeXu5cmLXq", "thumbnailUrl": "eOsuDFPNpkxNEGw1", "type": "video", "url": "i4Xn902ZFlf3AdH9", "videoSource": "youtube"}, {"alt": "69bkGFvn9DLDgd21", "previewUrl": "yXbMwzDaT1GkDQoa", "thumbnailUrl": "zFv6dJzSZkHofQDS", "type": "video", "url": "by9r6TcwvqcY1H1F", "videoSource": "generic"}], "developer": "SwexRFj344xh1CwN", "forumUrl": "SevL8pDygWMCQjIJ", "genres": ["Racing", "MassivelyMultiplayer", "FreeToPlay"], "localizations": {"f490nHTn4o3uLIKI": {"announcement": "ZWua1idminDtdrpn", "slogan": "WgdxxvmWeWquBuD9"}, "bPIpdz0OKQQQUZzQ": {"announcement": "5oiSFnqV386IV3GI", "slogan": "TH5YU7KPnAr3O7CW"}, "zjx7geZ6e1APuoYM": {"announcement": "6p8L1DmyOXoMKiHk", "slogan": "ajBvSEhpJDtewKpb"}}, "platformRequirements": {"KblTYyGHXaEY5KNe": [{"additionals": "Ue2BnbKhBrrskkUX", "directXVersion": "hysh35DnAY22reba", "diskSpace": "WHAL7DM0S8RFUZxg", "graphics": "sAba5ICidhFPjHAA", "label": "QfOkU10lCUlO4jh1", "osVersion": "KMVnEm4Xd1UWpttZ", "processor": "o5kU2hQhgVUVreGQ", "ram": "umplZV5y6VQV1dDU", "soundCard": "5FsCWXRCwUNMj0gm"}, {"additionals": "Niv02zamBsk1ceWc", "directXVersion": "shKUqR2V5aTEsNAb", "diskSpace": "MQBYGNfYTCVSewMi", "graphics": "Ql7Cw5p7DP0yAQiG", "label": "TgBDVVtUJGtN6hBS", "osVersion": "UhqK9NEDi3ixE5n9", "processor": "hkMyZLjDXHp9khnR", "ram": "zA3Dd4NeptqXej2p", "soundCard": "1AfdlNBIGgmWcRJN"}, {"additionals": "7ZztQqKRKSBvdmtK", "directXVersion": "V8pWIjDKAvfzFx3o", "diskSpace": "SatokUtRyold7TeR", "graphics": "H3qU9HQob50wMZDQ", "label": "SOqNumwQ67G4W7SU", "osVersion": "vQtDpUaEvvtFkxDG", "processor": "NkI3Zby82iPizdDZ", "ram": "meDlsuJqajORCIcL", "soundCard": "077biXIfQ6ldF18z"}], "gxalYccjvzbjArop": [{"additionals": "HMv5aKF8OK8syGT7", "directXVersion": "P3sY2hA1F4Lj19I1", "diskSpace": "8JDjAxbEGxhq59p8", "graphics": "WJcwrHgc90WS1EQ8", "label": "JGLr7XPU8QtZO4ax", "osVersion": "QWjT0Y6BWPbBmrEC", "processor": "Y3ny1S18YTCvzlDs", "ram": "2ogXBLdEg61NLjaI", "soundCard": "BPmVH6poAkTFkAJN"}, {"additionals": "bT5k0sNM3pVaHx1q", "directXVersion": "3CB2NHrijQ0GiRyy", "diskSpace": "B1RIqJKjGFLtTbez", "graphics": "xilbgYctI00gKSJf", "label": "cWkikZL5NUGJ5Ke0", "osVersion": "8TkDJCRD42j5bLx8", "processor": "WpK551fPsLu4Ccf5", "ram": "xDpsDEaQ0te91CoY", "soundCard": "Eo0hun7A3Yoj86O1"}, {"additionals": "YPwVUSpuCU57DkSF", "directXVersion": "ElOwraUoGUQCLN7M", "diskSpace": "1coPS9FIGU4If34B", "graphics": "jWssPI3Fb6bzOQE2", "label": "zuty383eXLMf1S2y", "osVersion": "6JhgR3x0WVrPjUkA", "processor": "vzGZSZzzrLbWLACY", "ram": "oIYseWrULOV6T5Gv", "soundCard": "62CjxObXHk4kWAU5"}], "MB0G6CH85TzVYcGd": [{"additionals": "LddRZGuOnFNTSeV1", "directXVersion": "IiyTQg45VewYTOjb", "diskSpace": "T9m97uSsWaM7jSwg", "graphics": "0BVA0gxqcsQgNwr5", "label": "On1ZvRKexAs9pwPp", "osVersion": "KdxuWW2qWNku7iIx", "processor": "fvaeze6AjxCA76Vt", "ram": "voIRmPIYpKuqdPp1", "soundCard": "4i7z8pgO7yEx8Kei"}, {"additionals": "0YLXQPldIBwWu59x", "directXVersion": "lVnumHXxy38J5CMi", "diskSpace": "TrV3cfsf78PmeTw0", "graphics": "2h7q42cklkb6WYJT", "label": "pYU5VItBNkNdWpJ5", "osVersion": "hppmnal3o2fvTsOx", "processor": "OM4uPf2FbyKjdefn", "ram": "VXYHyHV2how09baU", "soundCard": "tR2vsQ6kwwxZypct"}, {"additionals": "y7nEsBcy8wCLjs90", "directXVersion": "r5uiwZK5OeotXnRV", "diskSpace": "SgohlFYfIexbhwlf", "graphics": "GLQn9y9sHmBMmMNg", "label": "QeESHuxZFMHSmF5E", "osVersion": "JdzFKuLb3uu9yYK8", "processor": "0u5lFsT2pFU6wJLA", "ram": "FoI8X2Ds9JkQFhfR", "soundCard": "CQ0OeQGTFOKjrn7C"}]}, "platforms": ["MacOS", "Android", "MacOS"], "players": ["LocalCoop", "Multi", "Coop"], "primaryGenre": "Strategy", "publisher": "sDGKniGKeZwMAoGZ", "releaseDate": "1991-02-02T00:00:00Z", "websiteUrl": "l0SHZxeb7jMs2Dzz"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateApp \
-    --itemId 'fOPuBNl0SHZxeb7j' \
+    --itemId 'RQlOJdoeTWNU64vb' \
     --namespace $AB_NAMESPACE \
-    --storeId 'Ms2DzzRQlOJdoeTW' \
+    --storeId 'ZNbtvs3jgiELcpHN' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 138 'UpdateApp' test.out
+eval_tap $? 140 'UpdateApp' test.out
 
-#- 139 DisableItem
+#- 141 DisableItem
 # body param: body
-echo '{"featuresToCheck": ["REWARD"]}' > $TEMP_JSON_INPUT
+echo '{"featuresToCheck": ["REWARD", "IAP"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op DisableItem \
-    --itemId '7xmeqhaBXyRAbSH8' \
+    --itemId 'N54ntS5f9BgmoV3N' \
     --namespace $AB_NAMESPACE \
-    --storeId '2KJt4FPL6JtFbCKC' \
+    --storeId '90r7sMlJ1cf2l2Mr' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 139 'DisableItem' test.out
+eval_tap $? 141 'DisableItem' test.out
 
-#- 140 GetItemDynamicData
+#- 142 GetItemDynamicData
 $CLI_EXE \
     --sn platform \
     --op GetItemDynamicData \
-    --itemId 'jSAJ6DK34s3AAGYz' \
+    --itemId '2Vwg8MxxOylSVLKd' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 140 'GetItemDynamicData' test.out
+eval_tap $? 142 'GetItemDynamicData' test.out
 
-#- 141 EnableItem
+#- 143 EnableItem
 $CLI_EXE \
     --sn platform \
     --op EnableItem \
-    --itemId '036hxduOoX45iWsU' \
+    --itemId '5F4ddfzOqCITWU5j' \
     --namespace $AB_NAMESPACE \
-    --storeId 'O3BxLThuU6QvM7Zq' \
+    --storeId 'iZbaUjhzPzbG8DAB' \
     > test.out 2>&1
-eval_tap $? 141 'EnableItem' test.out
+eval_tap $? 143 'EnableItem' test.out
 
-#- 142 FeatureItem
+#- 144 FeatureItem
 $CLI_EXE \
     --sn platform \
     --op FeatureItem \
-    --feature 'RDJljUDzI8XhV9c5' \
-    --itemId 'mf0Qjs3wwNpfh2qT' \
+    --feature 'OzXo0zYRGaYn2wvq' \
+    --itemId 'EeHghhJSCwKHiSNe' \
     --namespace $AB_NAMESPACE \
-    --storeId 'qbjWnzkGkrgHaaM8' \
+    --storeId 'V4MYWage2hr4yxjo' \
     > test.out 2>&1
-eval_tap $? 142 'FeatureItem' test.out
+eval_tap $? 144 'FeatureItem' test.out
 
-#- 143 DefeatureItem
+#- 145 DefeatureItem
 $CLI_EXE \
     --sn platform \
     --op DefeatureItem \
-    --feature '4LoOgWMxszqwRCbW' \
-    --itemId 'PIRch9VcvtExYLBb' \
+    --feature 'JDQCe5ygmoW6gnot' \
+    --itemId 'lWUFhPQYrnyHl6CI' \
     --namespace $AB_NAMESPACE \
-    --storeId 'yzpRZ48jauhOMLHy' \
+    --storeId 'vSirnRXbnCUUTRHT' \
     > test.out 2>&1
-eval_tap $? 143 'DefeatureItem' test.out
+eval_tap $? 145 'DefeatureItem' test.out
 
-#- 144 GetLocaleItem
+#- 146 GetLocaleItem
 $CLI_EXE \
     --sn platform \
     --op GetLocaleItem \
-    --itemId 'KzigE0WShAS1GH16' \
+    --itemId 'Lb0eqOcteeCdOhAs' \
     --namespace $AB_NAMESPACE \
-    --activeOnly 'false' \
-    --language 'TRHTLb0eqOcteeCd' \
+    --activeOnly 'true' \
+    --language 'EKwYzDu1tK50KmhS' \
     --populateBundle 'false' \
-    --region 'hAs9EKwYzDu1tK50' \
-    --storeId 'KmhSYoEAiY0zxSyc' \
+    --region 'OMXprk3xnlp9dbsR' \
+    --storeId 'XZOiCWpjxyGuKJm6' \
     > test.out 2>&1
-eval_tap $? 144 'GetLocaleItem' test.out
+eval_tap $? 146 'GetLocaleItem' test.out
 
-#- 145 UpdateItemPurchaseCondition
+#- 147 UpdateItemPurchaseCondition
 # body param: body
-echo '{"purchaseCondition": {"conditionGroups": [{"operator": "and", "predicates": [{"anyOf": 3, "code": "nFSDX31e0PqbWqxQ", "comparison": "isGreaterThan", "name": "Rt34Xlc6Zi46dUvq", "predicateType": "SeasonTierPredicate", "value": "rgcG56QuPIwtH47g", "values": ["9YfBbVTSJs3kFG7L", "zj2c8HcBKDVPxLMn", "tOqO3Yik6Joq70RP"]}, {"anyOf": 89, "code": "71yOUwZT9AOydyI4", "comparison": "isGreaterThan", "name": "WQ8lJvBQfZCPcvrJ", "predicateType": "SeasonPassPredicate", "value": "tlxMMqG0kuoQsHbl", "values": ["Epfw2hILzhfliBTn", "RWi3iM6LjneQzIOl", "yiGFuZS5sEeLaES1"]}, {"anyOf": 21, "code": "UyWX2oiyxXSN3D5t", "comparison": "isLessThan", "name": "7uGHolFYqyxw8MKw", "predicateType": "SeasonPassPredicate", "value": "955Oy8qa8fPM6kgs", "values": ["aWBH3TCrvqi76MjF", "swIX3s95J7VtCCGJ", "r2u8jZq0MAaAk2xs"]}]}, {"operator": "or", "predicates": [{"anyOf": 91, "code": "oGdnGlHHx3qMwPDt", "comparison": "isGreaterThanOrEqual", "name": "Va1Li1Pq4xSQjFIF", "predicateType": "StatisticCodePredicate", "value": "wxy4Pp5g4e4q2YLP", "values": ["Qpc5384Qe5UaTM2M", "h9mFiaJoYoUe3vHU", "Vk1AoBX7leIWLUGG"]}, {"anyOf": 3, "code": "bo6dy4EIVorNWRyt", "comparison": "isLessThanOrEqual", "name": "RMIn7imzk0UBG2m0", "predicateType": "EntitlementPredicate", "value": "kp5TvHlox1uM3YXq", "values": ["e6Es4YzSrCXG1H8D", "mRnYweB4PJoFvGnL", "1NhRVIExczy0jhsQ"]}, {"anyOf": 23, "code": "b5exdeznarHIIQ3B", "comparison": "isGreaterThanOrEqual", "name": "AGgoHpxBuE16GD5T", "predicateType": "StatisticCodePredicate", "value": "HqgPuSOxmu77arxc", "values": ["9hSZnwvIAZ72zbPg", "GmTyPTBU3Gd8Q1bK", "Gppj5VnhNcG6xxss"]}]}, {"operator": "and", "predicates": [{"anyOf": 26, "code": "Dx3JX7BC39YIRfYN", "comparison": "isNot", "name": "RzrbVAC1mvzTKIcc", "predicateType": "SeasonTierPredicate", "value": "HzQP4r11zNzbKseT", "values": ["hHSQO7N3pSdcHfXR", "oolMT1anoumIdfOy", "8B8ua5YzPLvBsYt9"]}, {"anyOf": 49, "code": "nRDKnrN0NqxBK8G9", "comparison": "excludes", "name": "ceq2DyZzVBEyr5vh", "predicateType": "EntitlementPredicate", "value": "jdMfrzxGbqqAJMO8", "values": ["YE60wuqEfUq8ktvX", "EgRInJO3xlVl5j0M", "JbsvnRrUUtskIZnt"]}, {"anyOf": 36, "code": "VGLXl6fm04DA2apK", "comparison": "includes", "name": "0reoLbuyVjOV1xjy", "predicateType": "EntitlementPredicate", "value": "3UQPHtsKqcoDQVt1", "values": ["b7vNJiUjEdWwTI0B", "z1YAtkdYRHXMJ9mx", "7uz01VGjXujqSVCy"]}]}]}}' > $TEMP_JSON_INPUT
+echo '{"purchaseCondition": {"conditionGroups": [{"operator": "or", "predicates": [{"anyOf": 23, "code": "elq1AQS5T2irgcG5", "comparison": "includes", "name": "QuPIwtH47gzj2c8H", "predicateType": "EntitlementPredicate", "value": "WPGk9g9o4ZWr20Tt", "values": ["ZT9AOydyI4Ippp7a", "VASVUB72Roprjhe1", "BQ3WyL3WXZ71yOUw"]}, {"anyOf": 44, "code": "eBaQmzW5GUEV3INt", "comparison": "isGreaterThan", "name": "cnJTRndaShKpGMbw", "predicateType": "SeasonPassPredicate", "value": "Ub1vUfgTSblo14YT", "values": ["1ihxx6Q4D6SweEUy", "sBoStpmbLXx8f9Gk", "WX2oiyxXSN3D5t0H"]}, {"anyOf": 12, "code": "uGHolFYqyxw8MKwm", "comparison": "is", "name": "55Oy8qa8fPM6kgsr", "predicateType": "SeasonTierPredicate", "value": "8GvRW3Bep4V2ZEFH", "values": ["62dVDcGl9weB8cyJ", "MVGaTYPwEB9IQaIA", "oGdnGlHHx3qMwPDt"]}]}, {"operator": "or", "predicates": [{"anyOf": 98, "code": "7ejnj0OTnXc2tpCj", "comparison": "isLessThanOrEqual", "name": "wxy4Pp5g4e4q2YLP", "predicateType": "SeasonPassPredicate", "value": "KPG24wSHdx7rVzc4", "values": ["JFZXE5wUTy5jAiWj", "EjIgU6E3ydSulEOJ", "bo6dy4EIVorNWRyt"]}, {"anyOf": 55, "code": "RMIn7imzk0UBG2m0", "comparison": "includes", "name": "kp5TvHlox1uM3YXq", "predicateType": "StatisticCodePredicate", "value": "NhRVIExczy0jhsQe", "values": ["UvDAOneZXLWTWkR0", "RnYweB4PJoFvGnLl", "6Es4YzSrCXG1H8Dm"]}, {"anyOf": 90, "code": "qgqVn47lxWpSiaPl", "comparison": "isLessThanOrEqual", "name": "HqgPuSOxmu77arxc", "predicateType": "SeasonPassPredicate", "value": "co4zMotDuoWR2Sy9", "values": ["Z8Rs9mjRlJeb3FDT", "d0LOrtHuXT4ACAZU", "IkDx3JX7BC39YIRf"]}]}, {"operator": "and", "predicates": [{"anyOf": 56, "code": "RzrbVAC1mvzTKIcc", "comparison": "isLessThan", "name": "HzQP4r11zNzbKseT", "predicateType": "SeasonPassPredicate", "value": "KLZViR2jYnb5cUB1", "values": ["xmyog8xTI34pVeUr", "g2kfFSZOZMEMipW6", "cToN0mxPHRTRA4ul"]}, {"anyOf": 88, "code": "ctXWpDs3mwyLTqCq", "comparison": "includes", "name": "3jdMfrzxGbqqAJMO", "predicateType": "EntitlementPredicate", "value": "EgRInJO3xlVl5j0M", "values": ["r0yF8bS5RiC7Pumu", "JbsvnRrUUtskIZnt", "YE60wuqEfUq8ktvX"]}, {"anyOf": 53, "code": "8T0reoLbuyVjOV1x", "comparison": "is", "name": "cmL3UQPHtsKqcoDQ", "predicateType": "StatisticCodePredicate", "value": "t1b7vNJiUjEdWwTI", "values": ["CyxlaDHclfvES3BD", "mx7uz01VGjXujqSV", "0Bz1YAtkdYRHXMJ9"]}]}]}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateItemPurchaseCondition \
-    --itemId 'xlaDHclfvES3BDPf' \
+    --itemId 'Pf9Pj8DAZ4kYwPdo' \
     --namespace $AB_NAMESPACE \
-    --storeId '9Pj8DAZ4kYwPdoxM' \
+    --storeId 'xMMTaAvVe4btbxdy' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 145 'UpdateItemPurchaseCondition' test.out
+eval_tap $? 147 'UpdateItemPurchaseCondition' test.out
 
-#- 146 QueryItemReferences
+#- 148 QueryItemReferences
 $CLI_EXE \
     --sn platform \
     --op QueryItemReferences \
-    --itemId 'MTaAvVe4btbxdyh8' \
+    --itemId 'h8Fji5zwju1W3X5D' \
     --namespace $AB_NAMESPACE \
-    --featuresToCheck '["IAP", "CATALOG", "CATALOG"]' \
-    --storeId 'SvjOfi8bFGNqzfi1' \
+    --featuresToCheck '["DLC", "CAMPAIGN", "IAP"]' \
+    --storeId 'i1d8mVghHy4nqk76' \
     > test.out 2>&1
-eval_tap $? 146 'QueryItemReferences' test.out
+eval_tap $? 148 'QueryItemReferences' test.out
 
-#- 147 ReturnItem
+#- 149 ReturnItem
 # body param: body
-echo '{"orderNo": "d8mVghHy4nqk767R"}' > $TEMP_JSON_INPUT
+echo '{"orderNo": "7Rsti6pzRMPn7N4B"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ReturnItem \
-    --itemId 'sti6pzRMPn7N4Bjb' \
+    --itemId 'jbOMf0RTVK5Cic0u' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 147 'ReturnItem' test.out
+eval_tap $? 149 'ReturnItem' test.out
 
-#- 148 QueryKeyGroups
+#- 150 QueryKeyGroups
 $CLI_EXE \
     --sn platform \
     --op QueryKeyGroups \
     --namespace $AB_NAMESPACE \
-    --limit '84' \
-    --name 'Va37sGlyVpq9ehPa' \
-    --offset '27' \
-    --tag '4Q1835AphZZl5Trx' \
+    --limit '6' \
+    --name 'PandYLx9SVK8ixYj' \
+    --offset '32' \
+    --tag 'rx0FYUPbImbC0nvU' \
     > test.out 2>&1
-eval_tap $? 148 'QueryKeyGroups' test.out
+eval_tap $? 150 'QueryKeyGroups' test.out
 
-#- 149 CreateKeyGroup
+#- 151 CreateKeyGroup
 # body param: body
-echo '{"description": "0FYUPbImbC0nvUT0", "name": "gfCJHNWMtnkgQL6l", "status": "INACTIVE", "tags": ["BBIGQvoT0krlVfdR", "r1rM2K2e4ZDeMKib", "QuerWpGGCzESrY0j"]}' > $TEMP_JSON_INPUT
+echo '{"description": "T0gfCJHNWMtnkgQL", "name": "6lAlJolL3iDOTJ0W", "status": "INACTIVE", "tags": ["dRr1rM2K2e4ZDeMK", "ibQuerWpGGCzESrY", "0joL5WcP0L6QeQYs"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateKeyGroup \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 149 'CreateKeyGroup' test.out
+eval_tap $? 151 'CreateKeyGroup' test.out
 
-#- 150 GetKeyGroupByBoothName
-eval_tap 0 150 'GetKeyGroupByBoothName # SKIP deprecated' test.out
+#- 152 GetKeyGroupByBoothName
+eval_tap 0 152 'GetKeyGroupByBoothName # SKIP deprecated' test.out
 
-#- 151 GetKeyGroup
+#- 153 GetKeyGroup
 $CLI_EXE \
     --sn platform \
     --op GetKeyGroup \
-    --keyGroupId 'oL5WcP0L6QeQYsnO' \
+    --keyGroupId 'nOxGNEiQQyj4Y41d' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 151 'GetKeyGroup' test.out
+eval_tap $? 153 'GetKeyGroup' test.out
 
-#- 152 UpdateKeyGroup
+#- 154 UpdateKeyGroup
 # body param: body
-echo '{"description": "xGNEiQQyj4Y41dw4", "name": "QFFIWbW3GOr39S7h", "status": "INACTIVE", "tags": ["aphoH8MFtvFmyaV3", "eUydSaJlN3WJCRLq", "bmS7qxl3A1675nRs"]}' > $TEMP_JSON_INPUT
+echo '{"description": "w4QFFIWbW3GOr39S", "name": "7hBQnywUQo9G4Lq4", "status": "INACTIVE", "tags": ["V3eUydSaJlN3WJCR", "LqbmS7qxl3A1675n", "Rsd8CX6fx703XQFp"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateKeyGroup \
-    --keyGroupId 'd8CX6fx703XQFprg' \
+    --keyGroupId 'rgAn8AZibWadSASo' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 152 'UpdateKeyGroup' test.out
+eval_tap $? 154 'UpdateKeyGroup' test.out
 
-#- 153 GetKeyGroupDynamic
+#- 155 GetKeyGroupDynamic
 $CLI_EXE \
     --sn platform \
     --op GetKeyGroupDynamic \
-    --keyGroupId 'An8AZibWadSASoZB' \
+    --keyGroupId 'ZBx9MHx6Q7GNDotR' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 153 'GetKeyGroupDynamic' test.out
+eval_tap $? 155 'GetKeyGroupDynamic' test.out
 
-#- 154 ListKeys
+#- 156 ListKeys
 $CLI_EXE \
     --sn platform \
     --op ListKeys \
-    --keyGroupId 'x9MHx6Q7GNDotRAR' \
+    --keyGroupId 'ARhe1lSxVMm64my8' \
     --namespace $AB_NAMESPACE \
-    --limit '16' \
-    --offset '27' \
+    --limit '81' \
+    --offset '69' \
     --status 'ACQUIRED' \
     > test.out 2>&1
-eval_tap $? 154 'ListKeys' test.out
+eval_tap $? 156 'ListKeys' test.out
 
-#- 155 UploadKeys
+#- 157 UploadKeys
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
     --sn platform \
     --op UploadKeys \
-    --keyGroupId '9kR082uMxHdTJHgq' \
+    --keyGroupId 'g0xjd7zZP1ei1VYe' \
     --namespace $AB_NAMESPACE \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 155 'UploadKeys' test.out
+eval_tap $? 157 'UploadKeys' test.out
 
-#- 156 QueryOrders
+#- 158 QueryOrders
 $CLI_EXE \
     --sn platform \
     --op QueryOrders \
     --namespace $AB_NAMESPACE \
-    --endTime 'j90Np0zRnp9hPHuy' \
-    --limit '42' \
-    --offset '42' \
-    --orderNos '["oZqAAhRvFME2jFw5", "QEDqVw6RsHBxaxeY", "CbmAEWlFpMp4e0py"]' \
-    --sortBy 'jUk5aLKVPtjrrr41' \
-    --startTime 'v2PLVH85tRfNnSFh' \
+    --endTime 'nauoZqAAhRvFME2j' \
+    --limit '64' \
+    --offset '3' \
+    --orderNos '["w5QEDqVw6RsHBxax", "eYCbmAEWlFpMp4e0", "pyjUk5aLKVPtjrrr"]' \
+    --sortBy '41v2PLVH85tRfNnS' \
+    --startTime 'FhPfnG4yqcnl2lXu' \
     --status 'REFUND_FAILED' \
     --withTotal 'true' \
     > test.out 2>&1
-eval_tap $? 156 'QueryOrders' test.out
+eval_tap $? 158 'QueryOrders' test.out
 
-#- 157 GetOrderStatistics
+#- 159 GetOrderStatistics
 $CLI_EXE \
     --sn platform \
     --op GetOrderStatistics \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 157 'GetOrderStatistics' test.out
+eval_tap $? 159 'GetOrderStatistics' test.out
 
-#- 158 GetOrder
+#- 160 GetOrder
 $CLI_EXE \
     --sn platform \
     --op GetOrder \
     --namespace $AB_NAMESPACE \
-    --orderNo 'fnG4yqcnl2lXuPz8' \
+    --orderNo 'z8uPSF0m6rlv9kAR' \
     > test.out 2>&1
-eval_tap $? 158 'GetOrder' test.out
+eval_tap $? 160 'GetOrder' test.out
 
-#- 159 RefundOrder
+#- 161 RefundOrder
 # body param: body
-echo '{"description": "uPSF0m6rlv9kARU6"}' > $TEMP_JSON_INPUT
+echo '{"description": "U6Kq4IZiqv4QzdiO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RefundOrder \
     --namespace $AB_NAMESPACE \
-    --orderNo 'Kq4IZiqv4QzdiOja' \
+    --orderNo 'jaQdi9lUpXiU9fHS' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 159 'RefundOrder' test.out
+eval_tap $? 161 'RefundOrder' test.out
 
-#- 160 GetPaymentCallbackConfig
-eval_tap 0 160 'GetPaymentCallbackConfig # SKIP deprecated' test.out
+#- 162 GetPaymentCallbackConfig
+eval_tap 0 162 'GetPaymentCallbackConfig # SKIP deprecated' test.out
 
-#- 161 UpdatePaymentCallbackConfig
-eval_tap 0 161 'UpdatePaymentCallbackConfig # SKIP deprecated' test.out
+#- 163 UpdatePaymentCallbackConfig
+eval_tap 0 163 'UpdatePaymentCallbackConfig # SKIP deprecated' test.out
 
-#- 162 GetPaymentMerchantConfig
+#- 164 GetPaymentMerchantConfig
 $CLI_EXE \
     --sn platform \
     --op GetPaymentMerchantConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 162 'GetPaymentMerchantConfig' test.out
+eval_tap $? 164 'GetPaymentMerchantConfig' test.out
 
-#- 163 UpdatePaymentDomainWhitelistConfig
+#- 165 UpdatePaymentDomainWhitelistConfig
 # body param: body
-echo '{"domains": ["Qdi9lUpXiU9fHSKd", "EvYvg4xCfZVYplLc", "9kBMqghZzLI2emJO"]}' > $TEMP_JSON_INPUT
+echo '{"domains": ["KdEvYvg4xCfZVYpl", "Lc9kBMqghZzLI2em", "JOc25uPGFL1Z2n2D"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePaymentDomainWhitelistConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 163 'UpdatePaymentDomainWhitelistConfig' test.out
+eval_tap $? 165 'UpdatePaymentDomainWhitelistConfig' test.out
 
-#- 164 QueryPaymentNotifications
+#- 166 QueryPaymentNotifications
 $CLI_EXE \
     --sn platform \
     --op QueryPaymentNotifications \
     --namespace $AB_NAMESPACE \
-    --endDate 'c25uPGFL1Z2n2DF9' \
-    --externalId 'lcoWide3ErFpWkGk' \
-    --limit '31' \
-    --notificationSource 'ALIPAY' \
-    --notificationType 'PKEJ74M6M47JDKdz' \
-    --offset '23' \
-    --paymentOrderNo 'BjgrvONKfxXxpb0s' \
-    --startDate 'LK0kVnz62UtJlz2o' \
-    --status 'PROCESSED' \
+    --endDate 'F9lcoWide3ErFpWk' \
+    --externalId 'Gk9eM9tncBZy1tmt' \
+    --limit '75' \
+    --notificationSource 'XSOLLA' \
+    --notificationType 'dzlsROpj34wSnSR9' \
+    --offset '21' \
+    --paymentOrderNo '0sLK0kVnz62UtJlz' \
+    --startDate '2o6IOMMjYX53FXXw' \
+    --status 'WARN' \
     > test.out 2>&1
-eval_tap $? 164 'QueryPaymentNotifications' test.out
+eval_tap $? 166 'QueryPaymentNotifications' test.out
 
-#- 165 QueryPaymentOrders
+#- 167 QueryPaymentOrders
 $CLI_EXE \
     --sn platform \
     --op QueryPaymentOrders \
     --namespace $AB_NAMESPACE \
-    --channel 'EXTERNAL' \
-    --extTxId 'wfb6WpYyRBzE8Zrd' \
-    --limit '31' \
-    --offset '74' \
-    --status 'AUTHORISED' \
+    --channel 'INTERNAL' \
+    --extTxId 'ouq2MEJDqEBSnOND' \
+    --limit '75' \
+    --offset '81' \
+    --status 'CHARGE_FAILED' \
     > test.out 2>&1
-eval_tap $? 165 'QueryPaymentOrders' test.out
+eval_tap $? 167 'QueryPaymentOrders' test.out
 
-#- 166 CreatePaymentOrderByDedicated
+#- 168 CreatePaymentOrderByDedicated
 # body param: body
-echo '{"currencyCode": "DqEBSnOND9NvqjhO", "currencyNamespace": "ySePLqpnuv1X1GSR", "customParameters": {"AWYuXAuHtF8xMU66": {}, "OlK3cQiUgd51CZjm": {}, "y5EBmpFxKMZ05tf2": {}}, "description": "6FaU6cDORmSP8Bab", "extOrderNo": "08P4PZuT4bZvq90Q", "extUserId": "UOkyJZjTE75wWxke", "itemType": "SEASON", "language": "rJUc_Tbjf", "metadata": {"ELSriLqHewlMmJSV": "KEFyWDHH9ml45hpr", "xVBoZ7D89mnxU7vq": "kGzh4p9s2D7EZOYg", "fEN7E47p0IoqaVP0": "kAMD5TdTragS5bIp"}, "notifyUrl": "cRYRqosyjQOyaH0F", "omitNotification": false, "platform": "5hRdjC2J0BuTl33e", "price": 95, "recurringPaymentOrderNo": "ysdyyTBvYihJ6LMK", "region": "zairhR1PW5Z9CVSS", "returnUrl": "CI91zxbVmqiagoD1", "sandbox": false, "sku": "eSRn1LKFtcxP5XZw", "subscriptionId": "XhWCG2kkWQJsDs3R", "targetNamespace": "KP1Urpj4x8PnX6Kf", "targetUserId": "Y2p9PKAhdHieJ9g7", "title": "W22eZI7djKNQnn7Z"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "RX0gla22fqPh21pr", "currencyNamespace": "54bLuzh1GGQSh8px", "customParameters": {"qtVDktzs65RA5lmg": {}, "q772daT8HeLE3Gmg": {}, "BHYhzcOCOCSa0tzM": {}}, "description": "b12PIZm6Eh2jeNzU", "extOrderNo": "34cspxe83NO3JbSX", "extUserId": "fwoPATitSbsAEf8V", "itemType": "EXTENSION", "language": "BJm_eLEn", "metadata": {"mJSVKEFyWDHH9ml4": "5hprxVBoZ7D89mnx", "U7vqkGzh4p9s2D7E": "ZOYgfEN7E47p0Ioq", "aVP0kAMD5TdTragS": "5bIpcRYRqosyjQOy"}, "notifyUrl": "aH0FhRgEC9cLpuL0", "omitNotification": false, "platform": "fMZRU83V7YmCxrol", "price": 6, "recurringPaymentOrderNo": "6LMKzairhR1PW5Z9", "region": "CVSSCI91zxbVmqia", "returnUrl": "goD1fdfbr8Nlhp5n", "sandbox": true, "sku": "5XZwXhWCG2kkWQJs", "subscriptionId": "Ds3RKP1Urpj4x8Pn", "targetNamespace": "X6KfY2p9PKAhdHie", "targetUserId": "J9g7W22eZI7djKNQ", "title": "nn7Ziw6Rz26ZCWqt"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreatePaymentOrderByDedicated \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 166 'CreatePaymentOrderByDedicated' test.out
+eval_tap $? 168 'CreatePaymentOrderByDedicated' test.out
 
-#- 167 ListExtOrderNoByExtTxId
+#- 169 ListExtOrderNoByExtTxId
 $CLI_EXE \
     --sn platform \
     --op ListExtOrderNoByExtTxId \
     --namespace $AB_NAMESPACE \
-    --extTxId 'iw6Rz26ZCWqtOusN' \
+    --extTxId 'OusNU0ZSLD2KM5e8' \
     > test.out 2>&1
-eval_tap $? 167 'ListExtOrderNoByExtTxId' test.out
+eval_tap $? 169 'ListExtOrderNoByExtTxId' test.out
 
-#- 168 GetPaymentOrder
+#- 170 GetPaymentOrder
 $CLI_EXE \
     --sn platform \
     --op GetPaymentOrder \
     --namespace $AB_NAMESPACE \
-    --paymentOrderNo 'U0ZSLD2KM5e8cP0I' \
+    --paymentOrderNo 'cP0IvvmNmmxWkY3R' \
     > test.out 2>&1
-eval_tap $? 168 'GetPaymentOrder' test.out
+eval_tap $? 170 'GetPaymentOrder' test.out
 
-#- 169 ChargePaymentOrder
+#- 171 ChargePaymentOrder
 # body param: body
-echo '{"extTxId": "vvmNmmxWkY3Rq5xU", "paymentMethod": "K5QPKJjpWGiXt023", "paymentProvider": "XSOLLA"}' > $TEMP_JSON_INPUT
+echo '{"extTxId": "q5xUK5QPKJjpWGiX", "paymentMethod": "t023GeDfnwC9CgnS", "paymentProvider": "ALIPAY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ChargePaymentOrder \
     --namespace $AB_NAMESPACE \
-    --paymentOrderNo '3grYOG7ifMAFhcuL' \
+    --paymentOrderNo '9uSQ4Rs5SR1qQhoF' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 169 'ChargePaymentOrder' test.out
+eval_tap $? 171 'ChargePaymentOrder' test.out
 
-#- 170 RefundPaymentOrderByDedicated
+#- 172 RefundPaymentOrderByDedicated
 # body param: body
-echo '{"description": "1GOnOFLXgjUnlJ0z"}' > $TEMP_JSON_INPUT
+echo '{"description": "DE9B8lNeAMJdoDJP"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op RefundPaymentOrderByDedicated \
     --namespace $AB_NAMESPACE \
-    --paymentOrderNo 'WPxKc2emQbAM3AdF' \
+    --paymentOrderNo 'WLmbrYAAOF7J8Se7' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 170 'RefundPaymentOrderByDedicated' test.out
+eval_tap $? 172 'RefundPaymentOrderByDedicated' test.out
 
-#- 171 SimulatePaymentOrderNotification
+#- 173 SimulatePaymentOrderNotification
 # body param: body
-echo '{"amount": 6, "currencyCode": "rYAAOF7J8Se7XWEA", "notifyType": "REFUND", "paymentProvider": "WXPAY", "salesTax": 58, "vat": 23}' > $TEMP_JSON_INPUT
+echo '{"amount": 57, "currencyCode": "WEA7PCaJsWf7zTNQ", "notifyType": "REFUND", "paymentProvider": "ADYEN", "salesTax": 82, "vat": 78}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op SimulatePaymentOrderNotification \
     --namespace $AB_NAMESPACE \
-    --paymentOrderNo 'aJsWf7zTNQScMSmk' \
+    --paymentOrderNo 'Vf7VbKfbD1HmWDnE' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 171 'SimulatePaymentOrderNotification' test.out
+eval_tap $? 173 'SimulatePaymentOrderNotification' test.out
 
-#- 172 GetPaymentOrderChargeStatus
+#- 174 GetPaymentOrderChargeStatus
 $CLI_EXE \
     --sn platform \
     --op GetPaymentOrderChargeStatus \
     --namespace $AB_NAMESPACE \
-    --paymentOrderNo '6tY7CFtYXuRiMPYh' \
+    --paymentOrderNo 'BTC2Pea6bhf2Mp2t' \
     > test.out 2>&1
-eval_tap $? 172 'GetPaymentOrderChargeStatus' test.out
+eval_tap $? 174 'GetPaymentOrderChargeStatus' test.out
 
-#- 173 GetPsnEntitlementOwnership
+#- 175 GetPsnEntitlementOwnership
 # body param: body
-echo '{"accessToken": "qmDkK8ZWNracQiyL", "serviceLabel": 25}' > $TEMP_JSON_INPUT
+echo '{"accessToken": "dJ1ocFcroUFtf0up", "serviceLabel": 76}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GetPsnEntitlementOwnership \
-    --entitlementLabel 'cFcroUFtf0upKmTb' \
+    --entitlementLabel 'RoZ7AckKI4cR0Rh1' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 173 'GetPsnEntitlementOwnership' test.out
+eval_tap $? 175 'GetPsnEntitlementOwnership' test.out
 
-#- 174 GetXboxEntitlementOwnership
+#- 176 GetXboxEntitlementOwnership
 # body param: body
-echo '{"delegationToken": "VNKIImmnCj4qILQu", "sandboxId": "TEIyc23SJz1wGXdd"}' > $TEMP_JSON_INPUT
+echo '{"delegationToken": "BLuUhL0K3dsslCPT", "sandboxId": "xECp8XyhA1qDASci"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GetXboxEntitlementOwnership \
     --namespace $AB_NAMESPACE \
-    --productSku 'ME6xYI8I1HXE1R2c' \
+    --productSku 'KbU9EPAkk5bjfdke' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 174 'GetXboxEntitlementOwnership' test.out
+eval_tap $? 176 'GetXboxEntitlementOwnership' test.out
 
-#- 175 GetPlatformEntitlementConfig
+#- 177 GetPlatformEntitlementConfig
 $CLI_EXE \
     --sn platform \
     --op GetPlatformEntitlementConfig \
     --namespace $AB_NAMESPACE \
-    --platform 'Nintendo' \
+    --platform 'Xbox' \
     > test.out 2>&1
-eval_tap $? 175 'GetPlatformEntitlementConfig' test.out
+eval_tap $? 177 'GetPlatformEntitlementConfig' test.out
 
-#- 176 UpdatePlatformEntitlementConfig
+#- 178 UpdatePlatformEntitlementConfig
 # body param: body
-echo '{"allowedPlatformOrigins": ["Steam", "Xbox", "GooglePlay"]}' > $TEMP_JSON_INPUT
+echo '{"allowedPlatformOrigins": ["GooglePlay", "Playstation", "Epic"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePlatformEntitlementConfig \
     --namespace $AB_NAMESPACE \
-    --platform 'Playstation' \
+    --platform 'Steam' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 176 'UpdatePlatformEntitlementConfig' test.out
+eval_tap $? 178 'UpdatePlatformEntitlementConfig' test.out
 
-#- 177 GetPlatformWalletConfig
+#- 179 GetPlatformWalletConfig
 $CLI_EXE \
     --sn platform \
     --op GetPlatformWalletConfig \
     --namespace $AB_NAMESPACE \
-    --platform 'IOS' \
+    --platform 'Steam' \
     > test.out 2>&1
-eval_tap $? 177 'GetPlatformWalletConfig' test.out
+eval_tap $? 179 'GetPlatformWalletConfig' test.out
 
-#- 178 UpdatePlatformWalletConfig
+#- 180 UpdatePlatformWalletConfig
 # body param: body
-echo '{"allowedBalanceOrigins": ["System", "IOS", "Xbox"]}' > $TEMP_JSON_INPUT
+echo '{"allowedBalanceOrigins": ["System", "Oculus", "System"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdatePlatformWalletConfig \
@@ -1887,88 +1905,88 @@ $CLI_EXE \
     --platform 'GooglePlay' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 178 'UpdatePlatformWalletConfig' test.out
+eval_tap $? 180 'UpdatePlatformWalletConfig' test.out
 
-#- 179 ResetPlatformWalletConfig
+#- 181 ResetPlatformWalletConfig
 $CLI_EXE \
     --sn platform \
     --op ResetPlatformWalletConfig \
     --namespace $AB_NAMESPACE \
-    --platform 'Epic' \
+    --platform 'IOS' \
     > test.out 2>&1
-eval_tap $? 179 'ResetPlatformWalletConfig' test.out
+eval_tap $? 181 'ResetPlatformWalletConfig' test.out
 
-#- 180 GetRevocationConfig
+#- 182 GetRevocationConfig
 $CLI_EXE \
     --sn platform \
     --op GetRevocationConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 180 'GetRevocationConfig' test.out
+eval_tap $? 182 'GetRevocationConfig' test.out
 
-#- 181 UpdateRevocationConfig
+#- 183 UpdateRevocationConfig
 # body param: body
-echo '{"entitlement": {"consumable": {"enabled": false, "strategy": "REVOKE_OR_REPORT"}, "durable": {"enabled": false, "strategy": "CUSTOM"}}, "wallet": {"enabled": true, "strategy": "ALWAYS_REVOKE"}}' > $TEMP_JSON_INPUT
+echo '{"entitlement": {"consumable": {"enabled": true, "strategy": "REVOKE_OR_REPORT"}, "durable": {"enabled": true, "strategy": "CUSTOM"}}, "wallet": {"enabled": true, "strategy": "REVOKE_OR_REPORT"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateRevocationConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 181 'UpdateRevocationConfig' test.out
+eval_tap $? 183 'UpdateRevocationConfig' test.out
 
-#- 182 DeleteRevocationConfig
+#- 184 DeleteRevocationConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteRevocationConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 182 'DeleteRevocationConfig' test.out
+eval_tap $? 184 'DeleteRevocationConfig' test.out
 
-#- 183 QueryRevocationHistories
+#- 185 QueryRevocationHistories
 $CLI_EXE \
     --sn platform \
     --op QueryRevocationHistories \
     --namespace $AB_NAMESPACE \
-    --endTime 'lMeaBsVlBUgpQwz3' \
-    --limit '80' \
-    --offset '28' \
-    --source 'ORDER' \
-    --startTime '05ptZcyXBrEmAKKq' \
-    --status 'SUCCESS' \
-    --transactionId 'XQnXwJwmW2pYBbJh' \
-    --userId 'olp1gwjFenwuV1oR' \
+    --endTime 'Qwz31n05ptZcyXBr' \
+    --limit '62' \
+    --offset '25' \
+    --source 'IAP' \
+    --startTime 'AKKqG9XQnXwJwmW2' \
+    --status 'FAIL' \
+    --transactionId 'r8neSEyh0SJ4TgyH' \
+    --userId 'TSeVZ9sUCyc6yo2I' \
     > test.out 2>&1
-eval_tap $? 183 'QueryRevocationHistories' test.out
+eval_tap $? 185 'QueryRevocationHistories' test.out
 
-#- 184 GetRevocationPluginConfig
+#- 186 GetRevocationPluginConfig
 $CLI_EXE \
     --sn platform \
     --op GetRevocationPluginConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 184 'GetRevocationPluginConfig' test.out
+eval_tap $? 186 'GetRevocationPluginConfig' test.out
 
-#- 185 UpdateRevocationPluginConfig
+#- 187 UpdateRevocationPluginConfig
 # body param: body
-echo '{"appConfig": {"appName": "5I9LDmfdeMF1ciNe"}, "customConfig": {"connectionType": "TLS", "grpcServerAddress": "YcRHLZ51PkQmxX4i"}, "extendType": "CUSTOM"}' > $TEMP_JSON_INPUT
+echo '{"appConfig": {"appName": "FaegO6YcRHLZ51Pk"}, "customConfig": {"connectionType": "INSECURE", "grpcServerAddress": "abQ5yemwdZ5Gy1Yq"}, "extendType": "CUSTOM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateRevocationPluginConfig \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 185 'UpdateRevocationPluginConfig' test.out
+eval_tap $? 187 'UpdateRevocationPluginConfig' test.out
 
-#- 186 DeleteRevocationPluginConfig
+#- 188 DeleteRevocationPluginConfig
 $CLI_EXE \
     --sn platform \
     --op DeleteRevocationPluginConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 186 'DeleteRevocationPluginConfig' test.out
+eval_tap $? 188 'DeleteRevocationPluginConfig' test.out
 
-#- 187 UploadRevocationPluginConfigCert
+#- 189 UploadRevocationPluginConfigCert
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -1977,40 +1995,40 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 187 'UploadRevocationPluginConfigCert' test.out
+eval_tap $? 189 'UploadRevocationPluginConfigCert' test.out
 
-#- 188 CreateReward
+#- 190 CreateReward
 # body param: body
-echo '{"description": "emwdZ5Gy1Yq8WrEF", "eventTopic": "kWFURd67D46IEttk", "maxAwarded": 21, "maxAwardedPerUser": 92, "namespaceExpression": "rWzJAk4thuxwBRkG", "rewardCode": "SXCkp9cQaQJMfLAF", "rewardConditions": [{"condition": "MpTXDjvHKt0BbtoX", "conditionName": "LFiCMgGuMXDUvU8J", "eventName": "0WJ5ZhkzCBB3DOw5", "rewardItems": [{"duration": 68, "endDate": "1991-10-04T00:00:00Z", "identityType": "ITEM_ID", "itemId": "JGK2PRGthDUv00t9", "quantity": 71, "sku": "a3JzqDN6FIqw3Esx"}, {"duration": 28, "endDate": "1999-06-06T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "xnmdZggFwcYSc1fO", "quantity": 27, "sku": "9B47YV1YlVbJKdbM"}, {"duration": 90, "endDate": "1992-07-26T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "os85xBcySAhByZbH", "quantity": 15, "sku": "cysbBUZ3zCECqax4"}]}, {"condition": "mEM4pBpDmmFJ3aTX", "conditionName": "cnsJmlNfqzUoOOnK", "eventName": "ppOMvFMRFVL8Ucjq", "rewardItems": [{"duration": 0, "endDate": "1991-10-23T00:00:00Z", "identityType": "ITEM_ID", "itemId": "vyPFOlUP2vbEu7bj", "quantity": 49, "sku": "GhwfhJ3pzHjifPvQ"}, {"duration": 97, "endDate": "1995-05-09T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "wK2cAUG95eW7045K", "quantity": 31, "sku": "VVp85TcLlcvd867j"}, {"duration": 21, "endDate": "1990-12-15T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "XMm7YF9HKNLLGa2K", "quantity": 64, "sku": "hVtR3UmuZKFdXIE0"}]}, {"condition": "SEbOgIsYSZak5eni", "conditionName": "7UwH13Xmaspk5B8m", "eventName": "Jtzf2QUmRkSoT23l", "rewardItems": [{"duration": 59, "endDate": "1978-01-16T00:00:00Z", "identityType": "ITEM_ID", "itemId": "mY7a5dOwGtJ1l4Kz", "quantity": 42, "sku": "UFYjgHbY7n6qugc1"}, {"duration": 71, "endDate": "1983-04-15T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "ZWgUO7coxZaztH0M", "quantity": 98, "sku": "s95g34WSF3r33cz4"}, {"duration": 54, "endDate": "1994-03-07T00:00:00Z", "identityType": "ITEM_ID", "itemId": "jhNIlrTvGpQ84IrC", "quantity": 94, "sku": "9gCKWMfA4tyUAGB7"}]}], "userIdExpression": "ZxZPmx5XAJMBIyHS"}' > $TEMP_JSON_INPUT
+echo '{"description": "lji4WnqXGgNPG5Tf", "eventTopic": "UC9SEX9TSDezmmwq", "maxAwarded": 89, "maxAwardedPerUser": 32, "namespaceExpression": "kGSXCkp9cQaQJMfL", "rewardCode": "AFMpTXDjvHKt0Bbt", "rewardConditions": [{"condition": "oXLFiCMgGuMXDUvU", "conditionName": "8J0WJ5ZhkzCBB3DO", "eventName": "w50MY50NZJGK2PRG", "rewardItems": [{"duration": 39, "endDate": "1981-03-02T00:00:00Z", "identityType": "ITEM_ID", "itemId": "DUv00t9ITsgoisAv", "quantity": 56, "sku": "Iqw3EsxntLxnmdZg"}, {"duration": 12, "endDate": "1997-09-10T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "zD2UsTHB9B47YV1Y", "quantity": 23, "sku": "KJacV43wPzos85xB"}, {"duration": 5, "endDate": "1983-08-01T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "AhByZbHh9We9PMdu", "quantity": 90, "sku": "CECqax4mEM4pBpDm"}]}, {"condition": "mFJ3aTXcnsJmlNfq", "conditionName": "zUoOOnKppOMvFMRF", "eventName": "VL8UcjqaWbJC3A5H", "rewardItems": [{"duration": 83, "endDate": "1992-03-13T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "YoOypDWGhwfhJ3pz", "quantity": 68, "sku": "ttGWg9cUWqrCDKgl"}, {"duration": 87, "endDate": "1987-05-27T00:00:00Z", "identityType": "ITEM_ID", "itemId": "5eW7045K9pDFNHkJ", "quantity": 77, "sku": "pnRnD3aaQL9yHn9H"}, {"duration": 48, "endDate": "1987-10-01T00:00:00Z", "identityType": "ITEM_ID", "itemId": "KNLLGa2KFmyA4CyG", "quantity": 75, "sku": "CSak2Pd7eYZ2Vm1a"}]}, {"condition": "UpFVDrB5QJy5GJlv", "conditionName": "4dES5fJuJHp6M2JK", "eventName": "xAMl3mznLlJSwLMf", "rewardItems": [{"duration": 74, "endDate": "1982-03-05T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "QQxMJzpUFYjgHbY7", "quantity": 27, "sku": "weFHZ7hImZQZWgUO"}, {"duration": 79, "endDate": "1972-09-21T00:00:00Z", "identityType": "ITEM_ID", "itemId": "QOTv8PK4bs95g34W", "quantity": 90, "sku": "iXkpnCMGOUVSOcXW"}, {"duration": 16, "endDate": "1988-09-30T00:00:00Z", "identityType": "ITEM_ID", "itemId": "rLNvzo03lGCp9gCK", "quantity": 99, "sku": "SPQV3CgdO2ULNPEn"}]}], "userIdExpression": "52ZjjAH55DfGa27u"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateReward \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 188 'CreateReward' test.out
+eval_tap $? 190 'CreateReward' test.out
 
-#- 189 QueryRewards
+#- 191 QueryRewards
 $CLI_EXE \
     --sn platform \
     --op QueryRewards \
     --namespace $AB_NAMESPACE \
-    --eventTopic 'hPJXrTXfnrEfN3Yv' \
-    --limit '68' \
-    --offset '88' \
-    --sortBy '["rewardCode:asc", "rewardCode:desc"]' \
+    --eventTopic 'J1BRfnr4NxLqQS6q' \
+    --limit '43' \
+    --offset '61' \
+    --sortBy '["namespace", "rewardCode:desc", "rewardCode"]' \
     > test.out 2>&1
-eval_tap $? 189 'QueryRewards' test.out
+eval_tap $? 191 'QueryRewards' test.out
 
-#- 190 ExportRewards
+#- 192 ExportRewards
 $CLI_EXE \
     --sn platform \
     --op ExportRewards \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 190 'ExportRewards' test.out
+eval_tap $? 192 'ExportRewards' test.out
 
-#- 191 ImportRewards
+#- 193 ImportRewards
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -2020,379 +2038,379 @@ $CLI_EXE \
     --replaceExisting 'false' \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 191 'ImportRewards' test.out
+eval_tap $? 193 'ImportRewards' test.out
 
-#- 192 GetReward
+#- 194 GetReward
 $CLI_EXE \
     --sn platform \
     --op GetReward \
     --namespace $AB_NAMESPACE \
-    --rewardId 'q0DQDPMZLh8x8Y9Y' \
+    --rewardId 'PMZLh8x8Y9YZeZ6S' \
     > test.out 2>&1
-eval_tap $? 192 'GetReward' test.out
+eval_tap $? 194 'GetReward' test.out
 
-#- 193 UpdateReward
+#- 195 UpdateReward
 # body param: body
-echo '{"description": "ZeZ6Snl6HUAxl0sp", "eventTopic": "lpfTk7gSuM0UP9OP", "maxAwarded": 78, "maxAwardedPerUser": 7, "namespaceExpression": "bbKJ1dML5GJ6gh1Q", "rewardCode": "M7EZaes1lCu3pc5e", "rewardConditions": [{"condition": "m4PW457uAr3LN96u", "conditionName": "pvMj0zi8MK4ikVGL", "eventName": "S8WtcfWe6OaeDIvE", "rewardItems": [{"duration": 56, "endDate": "1982-04-29T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "pYhCTLUxeiTmdUaB", "quantity": 69, "sku": "L0hi6F9AkmoCaHwR"}, {"duration": 54, "endDate": "1972-11-18T00:00:00Z", "identityType": "ITEM_ID", "itemId": "0dHjO0ZEgd535VU5", "quantity": 52, "sku": "9L8xz5eZOaW7FfQx"}, {"duration": 96, "endDate": "1984-07-07T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "SfNizt2YcAtCqYmb", "quantity": 32, "sku": "OBS0QO39QJSTeDQi"}]}, {"condition": "KTrUTlWSr0IePQpN", "conditionName": "dDiLcFo8NMZD0cTv", "eventName": "WN23RlmJrtI68Baa", "rewardItems": [{"duration": 58, "endDate": "1980-04-26T00:00:00Z", "identityType": "ITEM_ID", "itemId": "zDEZ5eUOfo91e0lM", "quantity": 90, "sku": "L2gyX5Rs1hyB95ZF"}, {"duration": 57, "endDate": "1986-04-01T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "eyvM9qdrHFDdSdhY", "quantity": 40, "sku": "6XHxODQma2aaqOln"}, {"duration": 85, "endDate": "1980-04-01T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "m8bOZoTc6rkfb8FU", "quantity": 52, "sku": "nQx8YxdCImer6KoD"}]}, {"condition": "7FumcFtrGXfxuTp5", "conditionName": "wT0YDTgIXKLdkqAT", "eventName": "CMYCqydgXXGv8oMz", "rewardItems": [{"duration": 48, "endDate": "1978-12-29T00:00:00Z", "identityType": "ITEM_ID", "itemId": "8uzDBzgRACTsWjJq", "quantity": 74, "sku": "M0yClr2XhOgWT8Zz"}, {"duration": 6, "endDate": "1998-06-26T00:00:00Z", "identityType": "ITEM_ID", "itemId": "GnBKaG3V1TH3jTEw", "quantity": 84, "sku": "bM9Nqmx4aPNuc4fX"}, {"duration": 44, "endDate": "1975-03-30T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "8BTktYjmr3d9Xlo6", "quantity": 23, "sku": "MDlpztwWUvQ7TpPe"}]}], "userIdExpression": "bAcXjvofJyOiAwdX"}' > $TEMP_JSON_INPUT
+echo '{"description": "nl6HUAxl0splpfTk", "eventTopic": "7gSuM0UP9OPLbbKJ", "maxAwarded": 60, "maxAwardedPerUser": 7, "namespaceExpression": "BWvvFoDq0dVc9IrT", "rewardCode": "jCAlAUuchqyTDPBQ", "rewardConditions": [{"condition": "HgLGSuzJEEUvanIR", "conditionName": "JmG74ka6Uj5lGE7T", "eventName": "d9K4c6ZeD188oYsp", "rewardItems": [{"duration": 16, "endDate": "1986-08-19T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "TLUxeiTmdUaBHnEK", "quantity": 60, "sku": "6F9AkmoCaHwRAdgX"}, {"duration": 31, "endDate": "1988-08-17T00:00:00Z", "identityType": "ITEM_ID", "itemId": "tM70VaL0C7PMU9L8", "quantity": 48, "sku": "LvggIFBAlT7joAq4"}, {"duration": 0, "endDate": "1991-09-06T00:00:00Z", "identityType": "ITEM_ID", "itemId": "WpkvGViRBWLGfOBS", "quantity": 89, "sku": "QO39QJSTeDQiKTrU"}]}, {"condition": "TlWSr0IePQpNdDiL", "conditionName": "cFo8NMZD0cTvWN23", "eventName": "RlmJrtI68BaaCof1", "rewardItems": [{"duration": 78, "endDate": "1986-10-10T00:00:00Z", "identityType": "ITEM_ID", "itemId": "hUl26db4jvIL2gyX", "quantity": 45, "sku": "Rs1hyB95ZFBleyvM"}, {"duration": 22, "endDate": "1979-12-17T00:00:00Z", "identityType": "ITEM_ID", "itemId": "9kWtuVZJox6XHxOD", "quantity": 87, "sku": "3omG3bXxwjPlCoRC"}, {"duration": 68, "endDate": "1997-04-18T00:00:00Z", "identityType": "ITEM_ID", "itemId": "r75ij439jArzlhaa", "quantity": 86, "sku": "xdCImer6KoD7Fumc"}]}, {"condition": "FtrGXfxuTp5wT0YD", "conditionName": "TgIXKLdkqATCMYCq", "eventName": "ydgXXGv8oMzxR8uz", "rewardItems": [{"duration": 60, "endDate": "1972-08-19T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "zgRACTsWjJqKY7yI", "quantity": 57, "sku": "r2XhOgWT8ZzcwGnB"}, {"duration": 75, "endDate": "1980-01-02T00:00:00Z", "identityType": "ITEM_SKU", "itemId": "G3V1TH3jTEwOozni", "quantity": 45, "sku": "mx4aPNuc4fXvk8BT"}, {"duration": 21, "endDate": "1998-06-05T00:00:00Z", "identityType": "ITEM_ID", "itemId": "Yjmr3d9Xlo6lP72M", "quantity": 58, "sku": "twWUvQ7TpPebAcXj"}]}], "userIdExpression": "vofJyOiAwdXWsN9P"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateReward \
     --namespace $AB_NAMESPACE \
-    --rewardId 'WsN9PkWfmIuUEtMh' \
+    --rewardId 'kWfmIuUEtMh4oU6S' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 193 'UpdateReward' test.out
+eval_tap $? 195 'UpdateReward' test.out
 
-#- 194 DeleteReward
+#- 196 DeleteReward
 $CLI_EXE \
     --sn platform \
     --op DeleteReward \
     --namespace $AB_NAMESPACE \
-    --rewardId '4oU6S9LyTlEO2npX' \
+    --rewardId '9LyTlEO2npXutnbp' \
     > test.out 2>&1
-eval_tap $? 194 'DeleteReward' test.out
+eval_tap $? 196 'DeleteReward' test.out
 
-#- 195 CheckEventCondition
+#- 197 CheckEventCondition
 # body param: body
-echo '{"payload": {"utnbpNRY48xsOxUb": {}, "ardkR9L41vxzKThs": {}, "XAeuxTNqdfYofy1m": {}}}' > $TEMP_JSON_INPUT
+echo '{"payload": {"NRY48xsOxUbardkR": {}, "9L41vxzKThsXAeux": {}, "TNqdfYofy1m9sJEL": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CheckEventCondition \
     --namespace $AB_NAMESPACE \
-    --rewardId '9sJELRrm9rYaYoiF' \
+    --rewardId 'Rrm9rYaYoiFm9M1w' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 195 'CheckEventCondition' test.out
+eval_tap $? 197 'CheckEventCondition' test.out
 
-#- 196 DeleteRewardConditionRecord
+#- 198 DeleteRewardConditionRecord
 # body param: body
-echo '{"conditionName": "m9M1w4JGLt99Ckfk", "userId": "PNppNLbSeaxnTPkM"}' > $TEMP_JSON_INPUT
+echo '{"conditionName": "4JGLt99CkfkPNppN", "userId": "LbSeaxnTPkMUmTaL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op DeleteRewardConditionRecord \
     --namespace $AB_NAMESPACE \
-    --rewardId 'UmTaLUcZaicsz1z0' \
+    --rewardId 'UcZaicsz1z0bnM3h' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 196 'DeleteRewardConditionRecord' test.out
+eval_tap $? 198 'DeleteRewardConditionRecord' test.out
 
-#- 197 QuerySections
+#- 199 QuerySections
 $CLI_EXE \
     --sn platform \
     --op QuerySections \
     --namespace $AB_NAMESPACE \
-    --end 'bnM3hlDck2MxR9Z3' \
-    --limit '26' \
-    --offset '85' \
-    --start 'lKOx7DSj3xH1y967' \
-    --storeId 'lRcQyrFXrpR9k1Ae' \
-    --viewId 'aClGnVjkOCW6zSV5' \
+    --end 'lDck2MxR9Z3mlKOx' \
+    --limit '64' \
+    --offset '60' \
+    --start 'qlSdRFvq6C8bxKXg' \
+    --storeId 'CZx5IaOx3GLdKuMf' \
+    --viewId 'YVOasO4k594CnvzR' \
     > test.out 2>&1
-eval_tap $? 197 'QuerySections' test.out
+eval_tap $? 199 'QuerySections' test.out
 
-#- 198 CreateSection
+#- 200 CreateSection
 # body param: body
-echo '{"active": true, "displayOrder": 74, "endDate": "1977-06-25T00:00:00Z", "ext": {"b8Xssi1mpSMiPz7w": {}, "r35PgvXVTMs9ZfCm": {}, "NKmLAmLjg9XhGyf4": {}}, "fixedPeriodRotationConfig": {"backfillType": "CUSTOM", "duration": 67, "itemCount": 93, "rule": "SEQUENCE"}, "items": [{"id": "LnH91HZxY19zsCNY", "sku": "Iv4BrXUFKKiaqD2I"}, {"id": "TPZPq8bQdy5paINv", "sku": "4eIGuF4bhXbuDyB8"}, {"id": "qHT0w0lNwdBVUqMo", "sku": "UH1e5Q322oxcScPK"}], "localizations": {"1qKkxpAutPJ9AfgI": {"description": "oSZgc3thsIVBB72t", "localExt": {"G3eweQWakFJ7yqI1": {}, "n8b7V7rmxeeLsvnj": {}, "rgxMKRUpS0jZXOCp": {}}, "longDescription": "hJRNytDpuHb6m4nm", "title": "aSg0BnbMwWCWLPwd"}, "ii1ibGbJeRJ4WeoI": {"description": "TlX1VyRLOCb8DyE4", "localExt": {"dKhhnChzQvnrZSQV": {}, "xOXTreXkHRmMpx5h": {}, "gJx2o9IZSVZqfquV": {}}, "longDescription": "I7QOJ3BlwvOcFxeM", "title": "bzEcWkcksaUjKQAo"}, "0Mzy8F2TxzkKgzKO": {"description": "I7JNfo3r6fcdhtI4", "localExt": {"ugD3eQ35QawWcnOM": {}, "7OMOPbpNP6WnDtDx": {}, "Eda8kF9iow6YUSZ5": {}}, "longDescription": "Y0yfIgDMzYqjrtKt", "title": "CrG0BlFFURgCV14N"}}, "name": "f1gOlW79lUGbclJD", "rotationType": "FIXED_PERIOD", "startDate": "1974-05-10T00:00:00Z", "viewId": "yOMUwIOzEe2yjoJs"}' > $TEMP_JSON_INPUT
+echo '{"active": true, "displayOrder": 38, "endDate": "1978-06-04T00:00:00Z", "ext": {"hp5CY7gtlrAgARC4": {}, "3wrfOYqM0EjtQP5G": {}, "Hq3GLrAjE7N7Gbjo": {}}, "fixedPeriodRotationConfig": {"backfillType": "CUSTOM", "duration": 68, "itemCount": 71, "rule": "SEQUENCE"}, "items": [{"id": "xY19zsCNYIv4BrXU", "sku": "FKKiaqD2ITPZPq8b"}, {"id": "Qdy5paINv4eIGuF4", "sku": "bhXbuDyB8qHT0w0l"}, {"id": "NwdBVUqMoUH1e5Q3", "sku": "22oxcScPK1qKkxpA"}], "localizations": {"utPJ9AfgIoSZgc3t": {"description": "hsIVBB72tG3eweQW", "localExt": {"akFJ7yqI1n8b7V7r": {}, "mxeeLsvnjrgxMKRU": {}, "pS0jZXOCphJRNytD": {}}, "longDescription": "puHb6m4nmaSg0Bnb", "title": "MwWCWLPwdii1ibGb"}, "JeRJ4WeoITlX1VyR": {"description": "LOCb8DyE4dKhhnCh", "localExt": {"zQvnrZSQVxOXTreX": {}, "kHRmMpx5hgJx2o9I": {}, "ZSVZqfquVI7QOJ3B": {}}, "longDescription": "lwvOcFxeMbzEcWkc", "title": "ksaUjKQAo0Mzy8F2"}, "TxzkKgzKOI7JNfo3": {"description": "r6fcdhtI4ugD3eQ3", "localExt": {"5QawWcnOM7OMOPbp": {}, "NP6WnDtDxEda8kF9": {}, "iow6YUSZ5Y0yfIgD": {}}, "longDescription": "MzYqjrtKtCrG0BlF", "title": "FURgCV14Nf1gOlW7"}}, "name": "9lUGbclJDup68VVj", "rotationType": "NONE", "startDate": "1973-07-27T00:00:00Z", "viewId": "eoVsUqG6hm0ele5G"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateSection \
     --namespace $AB_NAMESPACE \
-    --storeId 'giG7mmI5bSdPXP5f' \
+    --storeId 'HIzkJ6PRkz58UyPj' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 198 'CreateSection' test.out
+eval_tap $? 200 'CreateSection' test.out
 
-#- 199 PurgeExpiredSection
+#- 201 PurgeExpiredSection
 $CLI_EXE \
     --sn platform \
     --op PurgeExpiredSection \
     --namespace $AB_NAMESPACE \
-    --storeId 'EOfOutqZIPYdCF1l' \
+    --storeId 'N4IyK4CqRFTI5dVW' \
     > test.out 2>&1
-eval_tap $? 199 'PurgeExpiredSection' test.out
+eval_tap $? 201 'PurgeExpiredSection' test.out
 
-#- 200 GetSection
+#- 202 GetSection
 $CLI_EXE \
     --sn platform \
     --op GetSection \
     --namespace $AB_NAMESPACE \
-    --sectionId '4RkJBXQMIBCebxIx' \
-    --storeId 'MiyXGKFHZduagYie' \
+    --sectionId 'edRId2SuwppZedrB' \
+    --storeId 'u0X6fc3mv4bFvwxm' \
     > test.out 2>&1
-eval_tap $? 200 'GetSection' test.out
+eval_tap $? 202 'GetSection' test.out
 
-#- 201 UpdateSection
+#- 203 UpdateSection
 # body param: body
-echo '{"active": true, "displayOrder": 4, "endDate": "1977-09-13T00:00:00Z", "ext": {"6jGWk9p0shz9LPGU": {}, "K4pIH5L22IGtFleL": {}, "ssa7AUpb9yVdfErj": {}}, "fixedPeriodRotationConfig": {"backfillType": "CUSTOM", "duration": 17, "itemCount": 93, "rule": "SEQUENCE"}, "items": [{"id": "1yPT4I31cvUbFBUP", "sku": "wwTWSCCMK3C0wkC5"}, {"id": "IRQPeBgP4uv5k2uo", "sku": "mHeKf0HiJMsNH1j5"}, {"id": "fE8DPBLgLz6oT9VU", "sku": "DEG4xa9pp3b6sqZR"}], "localizations": {"fPhpVH054mJJcotv": {"description": "FwrVArR8phjqQbOt", "localExt": {"Rpl9podsRXX3LhJV": {}, "ORlac62SBmv6OgC5": {}, "hCf4kLjeXoZDIL56": {}}, "longDescription": "VgkydakhA2n9S6Hz", "title": "y7ixQNvYL45J40a1"}, "c4MjCImMY40AdJYM": {"description": "ykUd6vZqeqPF2hxk", "localExt": {"Z6O71ARVqNa4oMEe": {}, "ZiyebKAc2nT0X0F0": {}, "ASWco2P2op8LadrF": {}}, "longDescription": "0dpYwqfMY5g5CLY5", "title": "2Wj8rpcYd5dacBoF"}, "1rMUvB9l9fI5ZTtv": {"description": "2N42QVITyQuDblex", "localExt": {"zS13wCJacZNR7FV9": {}, "Ue2wRqPtxWyoMANs": {}, "AKTHMouxgoLMxHQD": {}}, "longDescription": "28rshl07J1W5D9wq", "title": "G8Wi7kQoXcuyWmRq"}}, "name": "fLcAMRarSu2ucpGq", "rotationType": "NONE", "startDate": "1985-06-20T00:00:00Z", "viewId": "yW9I9MpjwryV3PqJ"}' > $TEMP_JSON_INPUT
+echo '{"active": false, "displayOrder": 89, "endDate": "1997-07-02T00:00:00Z", "ext": {"shz9LPGUK4pIH5L2": {}, "2IGtFleLssa7AUpb": {}, "9yVdfErjh6kQxOF3": {}}, "fixedPeriodRotationConfig": {"backfillType": "CUSTOM", "duration": 87, "itemCount": 4, "rule": "SEQUENCE"}, "items": [{"id": "PBKf0xkJ5CiJyNJx", "sku": "BTw6XK1Xbo0yturu"}, {"id": "2WIJxcmDnly9ZTJO", "sku": "mK6btuWBBFtcjhfC"}, {"id": "AHobg5KuzxeP2fWU", "sku": "Yh6HNSyKpjV71pdb"}], "localizations": {"86jBXURLDx2qyzoQ": {"description": "7LN2dI9QR3Vmzs4Z", "localExt": {"4koUp2RJNuBoJQQ8": {}, "3tk4Wfsmjq1Z7DYl": {}, "2YJYqUCIIQl3syYv": {}}, "longDescription": "oOAKrMLdvnYSs6EF", "title": "yJmzlL0IUkGRe6qn"}, "IXDihGZJI1b0BY1q": {"description": "MGByu9JBEomVoPLP", "localExt": {"lWwOMpKWTwqG2jw3": {}, "LVrQyBiBnuuq29V5": {}, "aVCxxF8soOJChUoD": {}}, "longDescription": "JwMmAGic49StZYjz", "title": "UzBRlowlzqxbvOTR"}, "QueT8LFbv0hNClNh": {"description": "dnPsYvrul98Omybp", "localExt": {"AHJj4Q3pRx7xm062": {}, "uD37lHl32yy5JHMg": {}, "zG4XNs9asAjfnjRN": {}}, "longDescription": "eLZYwD4vuDGvSWUg", "title": "rZa5GpeQXvkzvjKm"}}, "name": "QZyIV8dByW9I9Mpj", "rotationType": "FIXED_PERIOD", "startDate": "1993-05-17T00:00:00Z", "viewId": "fB2Ch4w9cYgsK9J6"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateSection \
     --namespace $AB_NAMESPACE \
-    --sectionId 'QPXeWLkTuHzqjRas' \
-    --storeId 'Y3aCx0PRmMQWvIpv' \
+    --sectionId 'p9lhm2knaZ9KZfxV' \
+    --storeId 'CIHOGmhnq0DhpmJr' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 201 'UpdateSection' test.out
+eval_tap $? 203 'UpdateSection' test.out
 
-#- 202 DeleteSection
+#- 204 DeleteSection
 $CLI_EXE \
     --sn platform \
     --op DeleteSection \
     --namespace $AB_NAMESPACE \
-    --sectionId 'cDzidi5LNPz6FH8Y' \
-    --storeId 'gfNQmF9CllSy3gNQ' \
+    --sectionId 'yKaDahwUpsE5gqjS' \
+    --storeId 'xC2cQXqxoTifpTJt' \
     > test.out 2>&1
-eval_tap $? 202 'DeleteSection' test.out
+eval_tap $? 204 'DeleteSection' test.out
 
-#- 203 ListStores
+#- 205 ListStores
 $CLI_EXE \
     --sn platform \
     --op ListStores \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 203 'ListStores' test.out
+eval_tap $? 205 'ListStores' test.out
 
-#- 204 CreateStore
+#- 206 CreateStore
 # body param: body
-echo '{"defaultLanguage": "kk6uY8nO5TMxFHsY", "defaultRegion": "fiC8N4k8DY289tVf", "description": "dTkiWKI2O9TRBYUv", "supportedLanguages": ["cg8N6oZh4qhgANxO", "vOsWj1r9P4aCsnr1", "UKThjuEVehCPAeU0"], "supportedRegions": ["ud3QrocvtXwAvyiL", "FHT60I90nYhUdS3K", "l8bqcyeLxRd1FNYQ"], "title": "TbEZRCVJzDvBwVQ4"}' > $TEMP_JSON_INPUT
+echo '{"defaultLanguage": "vNTVDtCMuAej3YcN", "defaultRegion": "f0kQlusZjDRGiOBt", "description": "HCPU7kG4GICTGfgT", "supportedLanguages": ["sIMd5nYdMaZRaFLW", "DMSQoKBWYKgJad2n", "KzJKW695eJHVcOhc"], "supportedRegions": ["wBlQsiKWFcipi4BC", "72Dy0MEqzfpz9yhD", "SOtI2dBlqqVJ3RF8"], "title": "BavTEIiRcoU3AZsg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op CreateStore \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 204 'CreateStore' test.out
+eval_tap $? 206 'CreateStore' test.out
 
-#- 205 GetCatalogDefinition
+#- 207 GetCatalogDefinition
 $CLI_EXE \
     --sn platform \
     --op GetCatalogDefinition \
     --namespace $AB_NAMESPACE \
-    --catalogType 'VIEW' \
+    --catalogType 'APP' \
     > test.out 2>&1
-eval_tap $? 205 'GetCatalogDefinition' test.out
+eval_tap $? 207 'GetCatalogDefinition' test.out
 
-#- 206 DownloadCSVTemplates
+#- 208 DownloadCSVTemplates
 $CLI_EXE \
     --sn platform \
     --op DownloadCSVTemplates \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 206 'DownloadCSVTemplates' test.out
+eval_tap $? 208 'DownloadCSVTemplates' test.out
 
-#- 207 ExportStoreByCSV
+#- 209 ExportStoreByCSV
 # body param: body
-echo '{"catalogType": "APP", "fieldsToBeIncluded": ["hcKNQVZ1mc7GUXm3", "YvT9ZWVPnwu7EFBP", "33eoobPaBAu5YOZD"], "idsToBeExported": ["hBMq8ZwzON3dh5aN", "bocQ9HbNUPKCOYVC", "YyxZsgUYk5bVs6Qt"], "storeId": "uZA4F9ymsWM10fdt"}' > $TEMP_JSON_INPUT
+echo '{"catalogType": "CATEGORY", "fieldsToBeIncluded": ["VRmPVfW9ITdGDkyA", "fRNP3kDQ51r6XDHB", "lChULU6CXIGXDmYm"], "idsToBeExported": ["mDbt6eNNdondRMT2", "FDbZRQgtvZR69b05", "7SRNt3fLKBrDM0dM"], "storeId": "EWrXdZmnIbpVXOtT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op ExportStoreByCSV \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 207 'ExportStoreByCSV' test.out
+eval_tap $? 209 'ExportStoreByCSV' test.out
 
-#- 208 ImportStore
-eval_tap 0 208 'ImportStore # SKIP deprecated' test.out
+#- 210 ImportStore
+eval_tap 0 210 'ImportStore # SKIP deprecated' test.out
 
-#- 209 GetPublishedStore
+#- 211 GetPublishedStore
 $CLI_EXE \
     --sn platform \
     --op GetPublishedStore \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 209 'GetPublishedStore' test.out
+eval_tap $? 211 'GetPublishedStore' test.out
 
-#- 210 DeletePublishedStore
+#- 212 DeletePublishedStore
 $CLI_EXE \
     --sn platform \
     --op DeletePublishedStore \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 210 'DeletePublishedStore' test.out
+eval_tap $? 212 'DeletePublishedStore' test.out
 
-#- 211 GetPublishedStoreBackup
+#- 213 GetPublishedStoreBackup
 $CLI_EXE \
     --sn platform \
     --op GetPublishedStoreBackup \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 211 'GetPublishedStoreBackup' test.out
+eval_tap $? 213 'GetPublishedStoreBackup' test.out
 
-#- 212 RollbackPublishedStore
+#- 214 RollbackPublishedStore
 $CLI_EXE \
     --sn platform \
     --op RollbackPublishedStore \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 212 'RollbackPublishedStore' test.out
+eval_tap $? 214 'RollbackPublishedStore' test.out
 
-#- 213 GetStore
+#- 215 GetStore
 $CLI_EXE \
     --sn platform \
     --op GetStore \
     --namespace $AB_NAMESPACE \
-    --storeId 'jZBrpn9sFqiSbXpv' \
+    --storeId 'q9unfz5DleKrE5mo' \
     > test.out 2>&1
-eval_tap $? 213 'GetStore' test.out
+eval_tap $? 215 'GetStore' test.out
 
-#- 214 UpdateStore
+#- 216 UpdateStore
 # body param: body
-echo '{"defaultLanguage": "3aqCLB0CAxFI71ym", "defaultRegion": "5vDHoWIff83L5Ack", "description": "XCtllUcO9h1d1jqC", "supportedLanguages": ["3vgQn17RIY42Q891", "MOIcurf7Yn7pTICW", "VQB849FVLNMIQAxx"], "supportedRegions": ["FmCl6XR3eZ6YUcdf", "yDyexjjLSzPDTI36", "RZfGMTpqxvcKMKRc"], "title": "j4sGFlMzJf48HGnl"}' > $TEMP_JSON_INPUT
+echo '{"defaultLanguage": "1iH32ijAgWwA7a3c", "defaultRegion": "t2TYxl6G7HHSrb70", "description": "KsyjJ2DX1LjAJ1ZX", "supportedLanguages": ["V40bjMwW4ZaY9RBe", "5qZKKH36iJ7ELiFP", "H3f6JAmxcohTblzK"], "supportedRegions": ["8cmtYNtE7mm4nMK6", "ApENqXTsl1EqX4gX", "0OpC8JMWGTRRUpL9"], "title": "FHOVjC1OvDr4wRfC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateStore \
     --namespace $AB_NAMESPACE \
-    --storeId 'PTO0L04PrdXKBBl9' \
+    --storeId 'WQXlbrIj7IVIZ6Za' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 214 'UpdateStore' test.out
+eval_tap $? 216 'UpdateStore' test.out
 
-#- 215 DeleteStore
+#- 217 DeleteStore
 $CLI_EXE \
     --sn platform \
     --op DeleteStore \
     --namespace $AB_NAMESPACE \
-    --storeId 'QdLUekKVadJ5QKdb' \
+    --storeId 'b16YzRjBspB561Rl' \
     > test.out 2>&1
-eval_tap $? 215 'DeleteStore' test.out
+eval_tap $? 217 'DeleteStore' test.out
 
-#- 216 QueryChanges
+#- 218 QueryChanges
 $CLI_EXE \
     --sn platform \
     --op QueryChanges \
     --namespace $AB_NAMESPACE \
-    --storeId '4hz49lI1ZyYYvGdv' \
-    --action 'UPDATE' \
-    --itemSku 'pKNwAwkgkxLpwVh4' \
-    --itemType 'EXTENSION' \
-    --limit '84' \
-    --offset '78' \
-    --selected 'false' \
-    --sortBy '["createdAt", "createdAt:desc", "updatedAt"]' \
-    --status 'PUBLISHED' \
-    --type 'VIEW' \
-    --updatedAtEnd 'O0PrB10fnyRc7uVo' \
-    --updatedAtStart 'R7QGiCodLAOmXVAu' \
-    --withTotal 'true' \
+    --storeId 'b5JvBBMx6pKNwAwk' \
+    --action 'CREATE' \
+    --itemSku 'ztdSEb1NUrXbY24z' \
+    --itemType 'OPTIONBOX' \
+    --limit '82' \
+    --offset '72' \
+    --selected 'true' \
+    --sortBy '["createdAt:desc", "updatedAt:desc"]' \
+    --status 'UNPUBLISHED' \
+    --type 'SECTION' \
+    --updatedAtEnd '10fnyRc7uVoR7QGi' \
+    --updatedAtStart 'CodLAOmXVAuJSGkQ' \
+    --withTotal 'false' \
     > test.out 2>&1
-eval_tap $? 216 'QueryChanges' test.out
+eval_tap $? 218 'QueryChanges' test.out
 
-#- 217 PublishAll
+#- 219 PublishAll
 $CLI_EXE \
     --sn platform \
     --op PublishAll \
     --namespace $AB_NAMESPACE \
-    --storeId 'SGkQjskXGEJqZWmT' \
+    --storeId '6d4EsibO3HOFpw5g' \
     > test.out 2>&1
-eval_tap $? 217 'PublishAll' test.out
+eval_tap $? 219 'PublishAll' test.out
 
-#- 218 PublishSelected
+#- 220 PublishSelected
 $CLI_EXE \
     --sn platform \
     --op PublishSelected \
     --namespace $AB_NAMESPACE \
-    --storeId 'VU4m5cEotYp1pt33' \
+    --storeId 'NGdMxCr7vfWz8UGc' \
     > test.out 2>&1
-eval_tap $? 218 'PublishSelected' test.out
+eval_tap $? 220 'PublishSelected' test.out
 
-#- 219 SelectAllRecords
+#- 221 SelectAllRecords
 $CLI_EXE \
     --sn platform \
     --op SelectAllRecords \
     --namespace $AB_NAMESPACE \
-    --storeId 'qHSjhShxdCCoWwLC' \
+    --storeId 'SoSzsr4ojdal6jPU' \
     > test.out 2>&1
-eval_tap $? 219 'SelectAllRecords' test.out
+eval_tap $? 221 'SelectAllRecords' test.out
 
-#- 220 SelectAllRecordsByCriteria
+#- 222 SelectAllRecordsByCriteria
 $CLI_EXE \
     --sn platform \
     --op SelectAllRecordsByCriteria \
     --namespace $AB_NAMESPACE \
-    --storeId 'C7nHLbVv1XSlM1MV' \
-    --action 'CREATE' \
-    --itemSku 'O2abQAEPdX5Li6Kc' \
-    --itemType 'SEASON' \
+    --storeId 'bXEOEsUeCnnCO2ab' \
+    --action 'UPDATE' \
+    --itemSku 'xL1Jpdq5HNra4fDy' \
+    --itemType 'OPTIONBOX' \
     --selected 'true' \
     --type 'CATEGORY' \
-    --updatedAtEnd 'jQrP6bZn1zrava2w' \
-    --updatedAtStart 'Ea8jt9ac6x1Sm7av' \
+    --updatedAtEnd 'YptI4ZgKP5ODxxaV' \
+    --updatedAtStart 'WrvGN7UhkZm9c2x3' \
     > test.out 2>&1
-eval_tap $? 220 'SelectAllRecordsByCriteria' test.out
+eval_tap $? 222 'SelectAllRecordsByCriteria' test.out
 
-#- 221 GetStatistic
+#- 223 GetStatistic
 $CLI_EXE \
     --sn platform \
     --op GetStatistic \
     --namespace $AB_NAMESPACE \
-    --storeId 'XmrPnrBMRv3D1zHA' \
+    --storeId '1wEmkU3eIifiEpEn' \
     --action 'UPDATE' \
-    --itemSku 'iEpEnIOs9xfVVdjf' \
-    --itemType 'SUBSCRIPTION' \
+    --itemSku 'jChRGPZmBmCI8mVE' \
+    --itemType 'MEDIA' \
     --type 'VIEW' \
-    --updatedAtEnd 'WXLq9LF7YEseMU8l' \
-    --updatedAtStart 'ClQMKxp3P7zZv1f6' \
+    --updatedAtEnd 'lwILzsvu5QRE9Jqo' \
+    --updatedAtStart 'sQeqm2d3LSjJ5QPk' \
     > test.out 2>&1
-eval_tap $? 221 'GetStatistic' test.out
+eval_tap $? 223 'GetStatistic' test.out
 
-#- 222 UnselectAllRecords
+#- 224 UnselectAllRecords
 $CLI_EXE \
     --sn platform \
     --op UnselectAllRecords \
     --namespace $AB_NAMESPACE \
-    --storeId '9SqfvI9y3GcQh7qb' \
+    --storeId 'CKfl5uYTiPGCX2sP' \
     > test.out 2>&1
-eval_tap $? 222 'UnselectAllRecords' test.out
+eval_tap $? 224 'UnselectAllRecords' test.out
 
-#- 223 SelectRecord
+#- 225 SelectRecord
 $CLI_EXE \
     --sn platform \
     --op SelectRecord \
-    --changeId '5bBU9NVZNjYu5Xq3' \
+    --changeId 'ujD2xHrZAwlCRsly' \
     --namespace $AB_NAMESPACE \
-    --storeId 'QHJCQGlWedvpl1Co' \
+    --storeId 'k9J1aIwbJXMjq0F8' \
     > test.out 2>&1
-eval_tap $? 223 'SelectRecord' test.out
+eval_tap $? 225 'SelectRecord' test.out
 
-#- 224 UnselectRecord
+#- 226 UnselectRecord
 $CLI_EXE \
     --sn platform \
     --op UnselectRecord \
-    --changeId 'Wa7J4CwnE8i5vaqP' \
+    --changeId 'y8XjkJW0EedHpIsG' \
     --namespace $AB_NAMESPACE \
-    --storeId 'HUFj4OS0gAVwqN5a' \
+    --storeId 'odV3cEKEqItkLbgZ' \
     > test.out 2>&1
-eval_tap $? 224 'UnselectRecord' test.out
+eval_tap $? 226 'UnselectRecord' test.out
 
-#- 225 CloneStore
+#- 227 CloneStore
 $CLI_EXE \
     --sn platform \
     --op CloneStore \
     --namespace $AB_NAMESPACE \
-    --storeId 'PbyJ7L4CzxEQdm8j' \
-    --targetStoreId 'xnv8JLV4cWIk7UdP' \
+    --storeId '4c2IzFS0zOCV0CVI' \
+    --targetStoreId 'IFukkHwSkFG4hr5m' \
     > test.out 2>&1
-eval_tap $? 225 'CloneStore' test.out
+eval_tap $? 227 'CloneStore' test.out
 
-#- 226 ExportStore
-eval_tap 0 226 'ExportStore # SKIP deprecated' test.out
+#- 228 ExportStore
+eval_tap 0 228 'ExportStore # SKIP deprecated' test.out
 
-#- 227 QueryImportHistory
+#- 229 QueryImportHistory
 $CLI_EXE \
     --sn platform \
     --op QueryImportHistory \
     --namespace $AB_NAMESPACE \
-    --storeId 'ggnGcn4pBu7wVYxf' \
-    --end 'aCNM9vyxx2AWupAu' \
-    --limit '98' \
-    --offset '38' \
-    --sortBy 'qWgkz92qLn9ZNjHN' \
-    --start 'l1goahlMEl0of9lA' \
+    --storeId 'KaS7JcqYqh1i5iC3' \
+    --end 'U0dsppoxx37sygOF' \
+    --limit '22' \
+    --offset '17' \
+    --sortBy '2qLn9ZNjHNl1goah' \
+    --start 'lMEl0of9lAERA0cn' \
     --success 'true' \
     > test.out 2>&1
-eval_tap $? 227 'QueryImportHistory' test.out
+eval_tap $? 229 'QueryImportHistory' test.out
 
-#- 228 ImportStoreByCSV
+#- 230 ImportStoreByCSV
 # form data upload: category
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 # form data upload: display
@@ -2405,276 +2423,276 @@ $CLI_EXE \
     --sn platform \
     --op ImportStoreByCSV \
     --namespace $AB_NAMESPACE \
-    --storeId 'pmYDXHE3sJdQNaW4' \
+    --storeId 'E3sJdQNaW4rB70uD' \
     --upload category $TEMP_FILE_UPLOAD \
     --upload display $TEMP_FILE_UPLOAD \
     --upload item $TEMP_FILE_UPLOAD \
-    --notes 'rB70uDGXDIR99gu1' \
+    --notes 'GXDIR99gu1gKyNaT' \
     --upload section $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 228 'ImportStoreByCSV' test.out
+eval_tap $? 230 'ImportStoreByCSV' test.out
 
-#- 229 QuerySubscriptions
+#- 231 QuerySubscriptions
 $CLI_EXE \
     --sn platform \
     --op QuerySubscriptions \
     --namespace $AB_NAMESPACE \
-    --chargeStatus 'CHARGED' \
-    --itemId 'jN0GFC5EF27ofqHS' \
-    --limit '71' \
-    --offset '79' \
-    --sku 'RaOvsFYFKzxXUx4q' \
+    --chargeStatus 'NEVER' \
+    --itemId '5EF27ofqHSIRaOvs' \
+    --limit '65' \
+    --offset '0' \
+    --sku 'YFKzxXUx4qHbOvn8' \
     --status 'ACTIVE' \
-    --subscribedBy 'USER' \
-    --userId 'a7UIabRvPoajYkH6' \
+    --subscribedBy 'PLATFORM' \
+    --userId 'IB9iDVRcG6CUVtxr' \
     > test.out 2>&1
-eval_tap $? 229 'QuerySubscriptions' test.out
+eval_tap $? 231 'QuerySubscriptions' test.out
 
-#- 230 RecurringChargeSubscription
+#- 232 RecurringChargeSubscription
 $CLI_EXE \
     --sn platform \
     --op RecurringChargeSubscription \
     --namespace $AB_NAMESPACE \
-    --subscriptionId 'DbIUNilaNps3VJk7' \
+    --subscriptionId 'QVYV2CJjb7XRy3s2' \
     > test.out 2>&1
-eval_tap $? 230 'RecurringChargeSubscription' test.out
+eval_tap $? 232 'RecurringChargeSubscription' test.out
 
-#- 231 GetTicketDynamic
+#- 233 GetTicketDynamic
 $CLI_EXE \
     --sn platform \
     --op GetTicketDynamic \
-    --boothName 'OmCYsezVdK4rhIEp' \
+    --boothName '7b95yOaOnU224aGZ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 231 'GetTicketDynamic' test.out
+eval_tap $? 233 'GetTicketDynamic' test.out
 
-#- 232 DecreaseTicketSale
+#- 234 DecreaseTicketSale
 # body param: body
-echo '{"orderNo": "FlCsqL8HfXedVDBt"}' > $TEMP_JSON_INPUT
+echo '{"orderNo": "ksmZRSolsB8FnIHi"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op DecreaseTicketSale \
-    --boothName 'GMJzru6qsRWtdPuS' \
+    --boothName 'Sv2qPoO9APDw37NB' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 232 'DecreaseTicketSale' test.out
+eval_tap $? 234 'DecreaseTicketSale' test.out
 
-#- 233 GetTicketBoothID
+#- 235 GetTicketBoothID
 $CLI_EXE \
     --sn platform \
     --op GetTicketBoothID \
-    --boothName 'fe1tXORHj1SDoSKa' \
+    --boothName 'RXB82kk8UrAjp6eH' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 233 'GetTicketBoothID' test.out
+eval_tap $? 235 'GetTicketBoothID' test.out
 
-#- 234 IncreaseTicketSale
+#- 236 IncreaseTicketSale
 # body param: body
-echo '{"count": 32, "orderNo": "585GbcToPVdC2v9n"}' > $TEMP_JSON_INPUT
+echo '{"count": 2, "orderNo": "9mrBbl504VVKer4B"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op IncreaseTicketSale \
-    --boothName 'QrmtTQhT9wZqliWP' \
+    --boothName 'xZubnQEtxBeEUTCN' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 234 'IncreaseTicketSale' test.out
+eval_tap $? 236 'IncreaseTicketSale' test.out
 
-#- 235 Commit
+#- 237 Commit
 # body param: body
-echo '{"actions": [{"operations": [{"creditPayload": {"balanceOrigin": "IOS", "count": 96, "currencyCode": "nkz7PKKL6BQCOk1H", "expireAt": "1971-11-25T00:00:00Z"}, "debitPayload": {"count": 64, "currencyCode": "UjnafMxHVrmc1R8y", "walletPlatform": "Steam"}, "fulFillItemPayload": {"count": 10, "entitlementCollectionId": "SxDFaFkUa2GadHWF", "entitlementOrigin": "Twitch", "itemIdentity": "KENFNiVKpfUqkLET", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 55, "entitlementId": "c0NHEpbRbSUqjxBE"}, "type": "REVOKE_ENTITLEMENT"}, {"creditPayload": {"balanceOrigin": "Other", "count": 51, "currencyCode": "GqMwOtLos36OOsMu", "expireAt": "1978-10-28T00:00:00Z"}, "debitPayload": {"count": 30, "currencyCode": "VoDlhMz0OAX3HMwd", "walletPlatform": "Other"}, "fulFillItemPayload": {"count": 31, "entitlementCollectionId": "yQobvMmPXkc0tFYD", "entitlementOrigin": "Other", "itemIdentity": "2H5rWl5K47WpDUUt", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 23, "entitlementId": "iqgFegdwJB6rjLUS"}, "type": "DEBIT_WALLET"}, {"creditPayload": {"balanceOrigin": "System", "count": 16, "currencyCode": "OgsBrLnDkALgstNS", "expireAt": "1999-11-25T00:00:00Z"}, "debitPayload": {"count": 61, "currencyCode": "quKCMP0NOedLMxn2", "walletPlatform": "Other"}, "fulFillItemPayload": {"count": 76, "entitlementCollectionId": "cCYBKgUAEGYW48E6", "entitlementOrigin": "Twitch", "itemIdentity": "lOyhzjkv4ajgwTvb", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 24, "entitlementId": "8CycSUje3j7SHPTh"}, "type": "DEBIT_WALLET"}], "userId": "dvOgAMgJBjhh4A4A"}, {"operations": [{"creditPayload": {"balanceOrigin": "Epic", "count": 27, "currencyCode": "D1C2IFCrscP4pDMb", "expireAt": "1997-12-08T00:00:00Z"}, "debitPayload": {"count": 10, "currencyCode": "NwDEL2c0BtAtSQrJ", "walletPlatform": "Xbox"}, "fulFillItemPayload": {"count": 27, "entitlementCollectionId": "i72DTg2jkEmKDBct", "entitlementOrigin": "Nintendo", "itemIdentity": "HZ61Ul5IBffBwvCj", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 65, "entitlementId": "X9AoAzdk7fxDvPOI"}, "type": "DEBIT_WALLET"}, {"creditPayload": {"balanceOrigin": "Twitch", "count": 52, "currencyCode": "gIwgbskNGv3diMiQ", "expireAt": "1984-10-19T00:00:00Z"}, "debitPayload": {"count": 59, "currencyCode": "0PawhHhzGKSN8dAK", "walletPlatform": "IOS"}, "fulFillItemPayload": {"count": 93, "entitlementCollectionId": "3Ojw2hJaUyNA2hea", "entitlementOrigin": "Steam", "itemIdentity": "FQBm1aIEX7qSohdH", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 69, "entitlementId": "2qaKNecMOcwlmEGJ"}, "type": "DEBIT_WALLET"}, {"creditPayload": {"balanceOrigin": "Twitch", "count": 50, "currencyCode": "BOIUCEEG330beX0V", "expireAt": "1983-04-24T00:00:00Z"}, "debitPayload": {"count": 19, "currencyCode": "AmpiPNqpx65xKsCs", "walletPlatform": "GooglePlay"}, "fulFillItemPayload": {"count": 13, "entitlementCollectionId": "fvo441ZV5npIWvbF", "entitlementOrigin": "GooglePlay", "itemIdentity": "2uVHvtF8vwFf90Wu", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 12, "entitlementId": "RujMgadvsTSfOTbe"}, "type": "CREDIT_WALLET"}], "userId": "BHpKP93i8XO5jjmM"}, {"operations": [{"creditPayload": {"balanceOrigin": "Playstation", "count": 49, "currencyCode": "XUNd2aMyv47c2CIu", "expireAt": "1989-09-30T00:00:00Z"}, "debitPayload": {"count": 7, "currencyCode": "5mmbaLSqKHPVvUkG", "walletPlatform": "Oculus"}, "fulFillItemPayload": {"count": 28, "entitlementCollectionId": "kjCLX82TjSiPE4CC", "entitlementOrigin": "Playstation", "itemIdentity": "K2X0s55u9ZL8bRKM", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 32, "entitlementId": "B9HYxGdI3cn3mrQ8"}, "type": "REVOKE_ENTITLEMENT"}, {"creditPayload": {"balanceOrigin": "Oculus", "count": 70, "currencyCode": "mctJLXKtMB7Plj1Z", "expireAt": "1972-11-22T00:00:00Z"}, "debitPayload": {"count": 30, "currencyCode": "vW38MK5nfKA23lV9", "walletPlatform": "Other"}, "fulFillItemPayload": {"count": 38, "entitlementCollectionId": "9JtHYK5Ut4jj6sJL", "entitlementOrigin": "Xbox", "itemIdentity": "GZgVO9gXSUQfGLpQ", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 65, "entitlementId": "7ojjc91c5E0JHy2V"}, "type": "CREDIT_WALLET"}, {"creditPayload": {"balanceOrigin": "Epic", "count": 32, "currencyCode": "94VvkNS7jNJf2Ss3", "expireAt": "1974-01-24T00:00:00Z"}, "debitPayload": {"count": 76, "currencyCode": "fylmNJaP1SldYAiW", "walletPlatform": "IOS"}, "fulFillItemPayload": {"count": 44, "entitlementCollectionId": "HWhU8DrwSVzcBNTF", "entitlementOrigin": "GooglePlay", "itemIdentity": "PUnOKRnKTxwhMlVT", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 68, "entitlementId": "HRW81iRTQhOHgdiQ"}, "type": "CREDIT_WALLET"}], "userId": "Tltsc90paG4YG233"}], "metadata": {"z05SESqZ00EKEA2L": {}, "wkJH8tZZvtsDeRZM": {}, "AjjjEWFBFxDY8fSD": {}}, "needPreCheck": true, "transactionId": "yQyFuuxOPXk0VwaR", "type": "VJOkvhRhsvq58nM3"}' > $TEMP_JSON_INPUT
+echo '{"actions": [{"operations": [{"creditPayload": {"balanceOrigin": "Nintendo", "count": 85, "currencyCode": "ysD9AbBbvOfs8NUj", "expireAt": "1978-01-07T00:00:00Z"}, "debitPayload": {"count": 100, "currencyCode": "fMxHVrmc1R8yDSxD", "walletPlatform": "Xbox"}, "fulFillItemPayload": {"count": 93, "entitlementCollectionId": "aFkUa2GadHWFLAJ6", "entitlementOrigin": "Xbox", "itemIdentity": "4usmgOHAELVMAD3h", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 63, "entitlementId": "atrbfJvfVNLfxGqM"}, "type": "FULFILL_ITEM"}, {"creditPayload": {"balanceOrigin": "Xbox", "count": 40, "currencyCode": "la79stE1v9tKVoDl", "expireAt": "1974-07-02T00:00:00Z"}, "debitPayload": {"count": 79, "currencyCode": "hHLjRsUq5sQpStir", "walletPlatform": "Steam"}, "fulFillItemPayload": {"count": 79, "entitlementCollectionId": "TJ5o9cgSMilw1Meg", "entitlementOrigin": "Twitch", "itemIdentity": "l5K47WpDUUtpiqgF", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 89, "entitlementId": "gdwJB6rjLUSji0Pg"}, "type": "FULFILL_ITEM"}, {"creditPayload": {"balanceOrigin": "GooglePlay", "count": 76, "currencyCode": "LaohwbczLnuOquKC", "expireAt": "1990-11-22T00:00:00Z"}, "debitPayload": {"count": 84, "currencyCode": "fYcEvPE0KlCL5Ur0", "walletPlatform": "GooglePlay"}, "fulFillItemPayload": {"count": 14, "entitlementCollectionId": "JbvitoOhRKFlOyhz", "entitlementOrigin": "IOS", "itemIdentity": "rlws8szP1gOmTrNS", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 96, "entitlementId": "hyqCgOcX0eVdvOgA"}, "type": "CREDIT_WALLET"}], "userId": "hViNyyySjcnBdKzA"}, {"operations": [{"creditPayload": {"balanceOrigin": "Steam", "count": 59, "currencyCode": "qDfrazFW91QNwDEL", "expireAt": "1999-01-24T00:00:00Z"}, "debitPayload": {"count": 4, "currencyCode": "l57z7FtNzWndmHh4", "walletPlatform": "Steam"}, "fulFillItemPayload": {"count": 19, "entitlementCollectionId": "btAeEYHBuHZ61Ul5", "entitlementOrigin": "System", "itemIdentity": "CIRgo3o2zFIOBnbo", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 22, "entitlementId": "VCwZRqRlnVZz9NvV"}, "type": "FULFILL_ITEM"}, {"creditPayload": {"balanceOrigin": "GooglePlay", "count": 21, "currencyCode": "KbCrXoynFnJC21KE", "expireAt": "1993-09-27T00:00:00Z"}, "debitPayload": {"count": 48, "currencyCode": "hzGKSN8dAKi3Ojw2", "walletPlatform": "GooglePlay"}, "fulFillItemPayload": {"count": 28, "entitlementCollectionId": "JaUyNA2heaB1EzME", "entitlementOrigin": "Oculus", "itemIdentity": "IEX7qSohdH02W2qa", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 8, "entitlementId": "ZshhsSLkvv5ZnyaJ"}, "type": "CREDIT_WALLET"}, {"creditPayload": {"balanceOrigin": "Epic", "count": 59, "currencyCode": "WLm4kZ5GDSNloAmp", "expireAt": "1975-10-15T00:00:00Z"}, "debitPayload": {"count": 86, "currencyCode": "0TNABB08406Q9fvo", "walletPlatform": "Epic"}, "fulFillItemPayload": {"count": 94, "entitlementCollectionId": "1ZV5npIWvbFgxzIC", "entitlementOrigin": "Other", "itemIdentity": "mUDC3fi6HMFrRujM", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 1, "entitlementId": "ZVtGGMuQOSZbMq9g"}, "type": "DEBIT_WALLET"}], "userId": "93i8XO5jjmMRA2XU"}, {"operations": [{"creditPayload": {"balanceOrigin": "Xbox", "count": 6, "currencyCode": "fDNW4I8IwiImCYd2", "expireAt": "1978-04-15T00:00:00Z"}, "debitPayload": {"count": 60, "currencyCode": "baLSqKHPVvUkGskj", "walletPlatform": "Steam"}, "fulFillItemPayload": {"count": 33, "entitlementCollectionId": "LX82TjSiPE4CCzuq", "entitlementOrigin": "Oculus", "itemIdentity": "0s55u9ZL8bRKMEB9", "itemIdentityType": "ITEM_SKU"}, "revokeEntitlementPayload": {"count": 48, "entitlementId": "58FDmNJAyFfjY3yI"}, "type": "CREDIT_WALLET"}, {"creditPayload": {"balanceOrigin": "Oculus", "count": 62, "currencyCode": "JLXKtMB7Plj1Zcog", "expireAt": "1987-11-11T00:00:00Z"}, "debitPayload": {"count": 14, "currencyCode": "MK5nfKA23lV9659J", "walletPlatform": "Other"}, "fulFillItemPayload": {"count": 70, "entitlementCollectionId": "HYK5Ut4jj6sJLNNM", "entitlementOrigin": "Steam", "itemIdentity": "VO9gXSUQfGLpQu7o", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 86, "entitlementId": "jc91c5E0JHy2V4Ph"}, "type": "FULFILL_ITEM"}, {"creditPayload": {"balanceOrigin": "Xbox", "count": 47, "currencyCode": "VvkNS7jNJf2Ss35c", "expireAt": "1973-10-08T00:00:00Z"}, "debitPayload": {"count": 49, "currencyCode": "rcl7z9oy2GqezUli", "walletPlatform": "Xbox"}, "fulFillItemPayload": {"count": 26, "entitlementCollectionId": "WhU8DrwSVzcBNTFX", "entitlementOrigin": "Xbox", "itemIdentity": "DAAjkM4k7kPgDDsW", "itemIdentityType": "ITEM_ID"}, "revokeEntitlementPayload": {"count": 90, "entitlementId": "GYEBE5EpoupNSUuT"}, "type": "DEBIT_WALLET"}], "userId": "zJ6ZI89xT44G7MP4"}], "metadata": {"vTZfZs7QNOD5HDsf": {}, "GbdIDgmUpiqRexYQ": {}, "Ut1YBuZ3p4urfnQy": {}}, "needPreCheck": true, "transactionId": "CU5eMF5kBJRtHDJB", "type": "vcHkKz6eqk9dg5tH"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op Commit \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 235 'Commit' test.out
+eval_tap $? 237 'Commit' test.out
 
-#- 236 GetTradeHistoryByCriteria
+#- 238 GetTradeHistoryByCriteria
 $CLI_EXE \
     --sn platform \
     --op GetTradeHistoryByCriteria \
     --namespace $AB_NAMESPACE \
-    --limit '22' \
-    --offset '40' \
-    --status 'FAILED' \
-    --type 'HUTX5DKyRQDEFT7D' \
-    --userId 'T0L8KG8cQkt5RoPp' \
+    --limit '95' \
+    --offset '18' \
+    --status 'SUCCESS' \
+    --type 'nuK8B7Gt4n7tYNSu' \
+    --userId 'uIZlfCCKPp7AZXKZ' \
     > test.out 2>&1
-eval_tap $? 236 'GetTradeHistoryByCriteria' test.out
+eval_tap $? 238 'GetTradeHistoryByCriteria' test.out
 
-#- 237 GetTradeHistoryByTransactionId
+#- 239 GetTradeHistoryByTransactionId
 $CLI_EXE \
     --sn platform \
     --op GetTradeHistoryByTransactionId \
     --namespace $AB_NAMESPACE \
-    --transactionId '1vGDeDhTwGfBDGRa' \
+    --transactionId '7fgEHcYsc79bJYu7' \
     > test.out 2>&1
-eval_tap $? 237 'GetTradeHistoryByTransactionId' test.out
+eval_tap $? 239 'GetTradeHistoryByTransactionId' test.out
 
-#- 238 UnlockSteamUserAchievement
+#- 240 UnlockSteamUserAchievement
 # body param: body
-echo '{"achievements": [{"id": "6YlKFZcHPb98DrZw", "value": 26}, {"id": "hxwa7CSPE0VnOqyH", "value": 21}, {"id": "d0cNXUSuxET6h7Yd", "value": 51}], "steamUserId": "G3rRWEC4unsrqlGj"}' > $TEMP_JSON_INPUT
+echo '{"achievements": [{"id": "1POONplsQSooq0hx", "value": 47}, {"id": "cPV5ftAXtdCNhp5d", "value": 37}, {"id": "cNXUSuxET6h7YdzM", "value": 21}], "steamUserId": "rRWEC4unsrqlGj1w"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UnlockSteamUserAchievement \
     --namespace $AB_NAMESPACE \
-    --userId '1w08vAHuioZ6bWfe' \
+    --userId '08vAHuioZ6bWfeDs' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 238 'UnlockSteamUserAchievement' test.out
+eval_tap $? 240 'UnlockSteamUserAchievement' test.out
 
-#- 239 GetXblUserAchievements
+#- 241 GetXblUserAchievements
 $CLI_EXE \
     --sn platform \
     --op GetXblUserAchievements \
     --namespace $AB_NAMESPACE \
-    --userId 'DsZg1kzAfPZQT8a4' \
-    --xboxUserId 'noYEgCnL6EzjhFqY' \
+    --userId 'Zg1kzAfPZQT8a4no' \
+    --xboxUserId 'YEgCnL6EzjhFqYPS' \
     > test.out 2>&1
-eval_tap $? 239 'GetXblUserAchievements' test.out
+eval_tap $? 241 'GetXblUserAchievements' test.out
 
-#- 240 UpdateXblUserAchievement
+#- 242 UpdateXblUserAchievement
 # body param: body
-echo '{"achievements": [{"id": "PShGGjJ0XlWG3rud", "percentComplete": 16}, {"id": "ZPgWNF7NPII9ZmJP", "percentComplete": 8}, {"id": "z5KI0KYRhZYdUHLA", "percentComplete": 91}], "serviceConfigId": "5f54nIwf3mWfTD44", "titleId": "S0tIMU53Ic9vXG5h", "xboxUserId": "5HtudmXZm4PBDh1C"}' > $TEMP_JSON_INPUT
+echo '{"achievements": [{"id": "hGGjJ0XlWG3rud3Z", "percentComplete": 84}, {"id": "Qq6bbT28KCTnax3z", "percentComplete": 21}, {"id": "KI0KYRhZYdUHLASW", "percentComplete": 28}], "serviceConfigId": "N7BuPRPKc7gC8aEF", "titleId": "TkKS6BwN4oV0tZmQ", "xboxUserId": "XCsiQjD2wF5W6Q69"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op UpdateXblUserAchievement \
     --namespace $AB_NAMESPACE \
-    --userId 'M9hWTF2Xd5QL835s' \
+    --userId '5oPl91XH0eZhE05n' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 240 'UpdateXblUserAchievement' test.out
+eval_tap $? 242 'UpdateXblUserAchievement' test.out
 
-#- 241 AnonymizeCampaign
+#- 243 AnonymizeCampaign
 $CLI_EXE \
     --sn platform \
     --op AnonymizeCampaign \
     --namespace $AB_NAMESPACE \
-    --userId '6uE7BWerlz6mBWFA' \
+    --userId 'C6ktxnA4mXwZ2Zr5' \
     > test.out 2>&1
-eval_tap $? 241 'AnonymizeCampaign' test.out
+eval_tap $? 243 'AnonymizeCampaign' test.out
 
-#- 242 AnonymizeEntitlement
+#- 244 AnonymizeEntitlement
 $CLI_EXE \
     --sn platform \
     --op AnonymizeEntitlement \
     --namespace $AB_NAMESPACE \
-    --userId '1HyJiejYXNZs1gNX' \
+    --userId 'sCb70hu130Vp4OU3' \
     > test.out 2>&1
-eval_tap $? 242 'AnonymizeEntitlement' test.out
+eval_tap $? 244 'AnonymizeEntitlement' test.out
 
-#- 243 AnonymizeFulfillment
+#- 245 AnonymizeFulfillment
 $CLI_EXE \
     --sn platform \
     --op AnonymizeFulfillment \
     --namespace $AB_NAMESPACE \
-    --userId '4qhJIeJrrJLMGE1y' \
+    --userId 'SlPR18H1jyKwJMHy' \
     > test.out 2>&1
-eval_tap $? 243 'AnonymizeFulfillment' test.out
+eval_tap $? 245 'AnonymizeFulfillment' test.out
 
-#- 244 AnonymizeIntegration
+#- 246 AnonymizeIntegration
 $CLI_EXE \
     --sn platform \
     --op AnonymizeIntegration \
     --namespace $AB_NAMESPACE \
-    --userId 'P0aTJzkTEXkMUcyD' \
+    --userId 'gtkMN5DnJbqGLrGA' \
     > test.out 2>&1
-eval_tap $? 244 'AnonymizeIntegration' test.out
+eval_tap $? 246 'AnonymizeIntegration' test.out
 
-#- 245 AnonymizeOrder
+#- 247 AnonymizeOrder
 $CLI_EXE \
     --sn platform \
     --op AnonymizeOrder \
     --namespace $AB_NAMESPACE \
-    --userId 'aLHxjfHUnuy4fZb0' \
+    --userId 'VMDYt9fun5fY3Xnn' \
     > test.out 2>&1
-eval_tap $? 245 'AnonymizeOrder' test.out
+eval_tap $? 247 'AnonymizeOrder' test.out
 
-#- 246 AnonymizePayment
+#- 248 AnonymizePayment
 $CLI_EXE \
     --sn platform \
     --op AnonymizePayment \
     --namespace $AB_NAMESPACE \
-    --userId '3vGkjchEh05pDtr9' \
+    --userId 'WLtTFcymy9TJeFiz' \
     > test.out 2>&1
-eval_tap $? 246 'AnonymizePayment' test.out
+eval_tap $? 248 'AnonymizePayment' test.out
 
-#- 247 AnonymizeRevocation
+#- 249 AnonymizeRevocation
 $CLI_EXE \
     --sn platform \
     --op AnonymizeRevocation \
     --namespace $AB_NAMESPACE \
-    --userId 'iYvCrBE6MQ2lfKeO' \
+    --userId 'Ajx37RWe6qrHyRVT' \
     > test.out 2>&1
-eval_tap $? 247 'AnonymizeRevocation' test.out
+eval_tap $? 249 'AnonymizeRevocation' test.out
 
-#- 248 AnonymizeSubscription
+#- 250 AnonymizeSubscription
 $CLI_EXE \
     --sn platform \
     --op AnonymizeSubscription \
     --namespace $AB_NAMESPACE \
-    --userId 'JLB2ft56uGYvsORl' \
+    --userId 'c6G9RE4r9fsCluHM' \
     > test.out 2>&1
-eval_tap $? 248 'AnonymizeSubscription' test.out
+eval_tap $? 250 'AnonymizeSubscription' test.out
 
-#- 249 AnonymizeWallet
+#- 251 AnonymizeWallet
 $CLI_EXE \
     --sn platform \
     --op AnonymizeWallet \
     --namespace $AB_NAMESPACE \
-    --userId 'Op0SfgLLk1xtxJex' \
+    --userId '7m7atLpReuL8Cj36' \
     > test.out 2>&1
-eval_tap $? 249 'AnonymizeWallet' test.out
+eval_tap $? 251 'AnonymizeWallet' test.out
 
-#- 250 GetUserDLCByPlatform
+#- 252 GetUserDLCByPlatform
 $CLI_EXE \
     --sn platform \
     --op GetUserDLCByPlatform \
     --namespace $AB_NAMESPACE \
-    --userId 'Q4RASfhYC3tst3ef' \
-    --type 'EPICGAMES' \
+    --userId 'lFxCbHIZ40U5az1u' \
+    --type 'STEAM' \
     > test.out 2>&1
-eval_tap $? 250 'GetUserDLCByPlatform' test.out
+eval_tap $? 252 'GetUserDLCByPlatform' test.out
 
-#- 251 GetUserDLC
+#- 253 GetUserDLC
 $CLI_EXE \
     --sn platform \
     --op GetUserDLC \
     --namespace $AB_NAMESPACE \
-    --userId '3jQltwNSQ7M3r037' \
-    --includeAllNamespaces 'false' \
-    --status 'REVOKED' \
-    --type 'PSN' \
+    --userId 'twNSQ7M3r0371YtD' \
+    --includeAllNamespaces 'true' \
+    --status 'FULFILLED' \
+    --type 'STEAM' \
     > test.out 2>&1
-eval_tap $? 251 'GetUserDLC' test.out
+eval_tap $? 253 'GetUserDLC' test.out
 
-#- 252 QueryUserEntitlements
+#- 254 QueryUserEntitlements
 $CLI_EXE \
     --sn platform \
     --op QueryUserEntitlements \
     --namespace $AB_NAMESPACE \
-    --userId 'Dt8j0Q8KE3DzUBhL' \
-    --activeOnly 'true' \
-    --appType 'DEMO' \
-    --collectionId 'iGWGQeWIJhmgeN9L' \
-    --entitlementClazz 'ENTITLEMENT' \
-    --entitlementName 'dF0GCwOWO7DCjIfh' \
-    --features '["NswFXOErwVaipB6D", "CxL8YQVNouzFn7lD", "AvSU5mej93uOTXEu"]' \
+    --userId 'j0Q8KE3DzUBhLPTb' \
+    --activeOnly 'false' \
+    --appType 'GAME' \
+    --collectionId 'eWIJhmgeN9L3x33Q' \
+    --entitlementClazz 'MEDIA' \
+    --entitlementName 'CwOWO7DCjIfhNswF' \
+    --features '["XOErwVaipB6DCxL8", "YQVNouzFn7lDAvSU", "5mej93uOTXEuuUr4"]' \
     --fuzzyMatchName 'true' \
-    --ignoreActiveDate 'true' \
-    --itemId '["Ur4ClmdSsISOYEa3", "biGC1Zq4hJTxepJz", "smiNJnf7bGVwbzth"]' \
-    --limit '58' \
-    --offset '39' \
-    --origin 'Xbox' \
+    --ignoreActiveDate 'false' \
+    --itemId '["lmdSsISOYEa3biGC", "1Zq4hJTxepJzsmiN", "Jnf7bGVwbzthC2Je"]' \
+    --limit '61' \
+    --offset '90' \
+    --origin 'Twitch' \
     > test.out 2>&1
-eval_tap $? 252 'QueryUserEntitlements' test.out
+eval_tap $? 254 'QueryUserEntitlements' test.out
 
-#- 253 GrantUserEntitlement
+#- 255 GrantUserEntitlement
 # body param: body
-echo '[{"collectionId": "JeDRbaeg3rzy4mtv", "endDate": "1977-05-09T00:00:00Z", "grantedCode": "4Z7c3rUjBAfQmhxC", "itemId": "h7CmEhzjwRLF6SQ5", "itemNamespace": "mWJgjnL9zbfn6GAG", "language": "Va-638", "metadata": {"tXKgJUGdgW0G6w66": {}, "aA7PbXD40H8SmBx3": {}, "c3FChdXl1rEGpTqc": {}}, "origin": "IOS", "quantity": 99, "region": "PViqbMmv7N08ww4y", "source": "REFERRAL_BONUS", "startDate": "1998-03-11T00:00:00Z", "storeId": "iun7wshVj3ToCn1u"}, {"collectionId": "eoR52qk1V6L2fj0W", "endDate": "1984-09-12T00:00:00Z", "grantedCode": "49NwMAqtZPxKSdPV", "itemId": "mx8Gty1jVTe0qL5S", "itemNamespace": "j7RgJ8pibFShQGcf", "language": "iNR-qlWi-820", "metadata": {"i7qW9eKY9ZIkww4u": {}, "BPKhHGWY2mheKl6b": {}, "LYahUZ1R3xhjWK9j": {}}, "origin": "Xbox", "quantity": 66, "region": "tTgbtqM4URUGXnxt", "source": "GIFT", "startDate": "1979-06-04T00:00:00Z", "storeId": "96zll17xT6F4bU5V"}, {"collectionId": "FKH9PEnBLUfNWWse", "endDate": "1993-06-02T00:00:00Z", "grantedCode": "ASUeRZhNy4mJpqVQ", "itemId": "P0jC4gwtQYHnP2xF", "itemNamespace": "vbd5RRvbopxjIfIu", "language": "eRt_bYga_546", "metadata": {"RMzBXUzPyIcRwDtU": {}, "YcHm1O7nIr8M1KrN": {}, "xgDbXjOtezfWyOO5": {}}, "origin": "Other", "quantity": 11, "region": "yFqHpXOceEV6RCOw", "source": "PROMOTION", "startDate": "1999-08-21T00:00:00Z", "storeId": "HtcZfYU7DkmvhiGI"}]' > $TEMP_JSON_INPUT
+echo '[{"collectionId": "baeg3rzy4mtvnpWT", "endDate": "1997-01-12T00:00:00Z", "grantedCode": "2UmmZiPBrNwoNhAK", "itemId": "vt6vsvUNsK7gaOHX", "itemNamespace": "uoKpPwec1uIuU3Zz", "language": "Sc-Nspv-qk", "metadata": {"ydYAEnKPIWTlHvuL": {}, "oOJYKDEPtrewYFKE": {}, "o5ZOBQzaJGPsiWL3": {}}, "origin": "Twitch", "quantity": 34, "region": "NiukoCgCkx5oJ15j", "source": "REDEEM_CODE", "startDate": "1981-02-10T00:00:00Z", "storeId": "n7wshVj3ToCn1ueo"}, {"collectionId": "R52qk1V6L2fj0WA4", "endDate": "1984-11-20T00:00:00Z", "grantedCode": "p8n5JCBipYVMDLof", "itemId": "N2NComwMF0StvVkq", "itemNamespace": "2rkMUZsavTEZyrHZ", "language": "zcci-382", "metadata": {"aOduU8GWOiGpb02r": {}, "152qvANhoz5TjTTv": {}, "nJQE6RTEKIYjPBqJ": {}}, "origin": "Xbox", "quantity": 66, "region": "tTgbtqM4URUGXnxt", "source": "GIFT", "startDate": "1979-06-04T00:00:00Z", "storeId": "96zll17xT6F4bU5V"}, {"collectionId": "FKH9PEnBLUfNWWse", "endDate": "1993-06-02T00:00:00Z", "grantedCode": "ASUeRZhNy4mJpqVQ", "itemId": "P0jC4gwtQYHnP2xF", "itemNamespace": "vbd5RRvbopxjIfIu", "language": "eRt_bYga_546", "metadata": {"RMzBXUzPyIcRwDtU": {}, "YcHm1O7nIr8M1KrN": {}, "xgDbXjOtezfWyOO5": {}}, "origin": "Other", "quantity": 11, "region": "yFqHpXOceEV6RCOw", "source": "PROMOTION", "startDate": "1999-08-21T00:00:00Z", "storeId": "HtcZfYU7DkmvhiGI"}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op GrantUserEntitlement \
@@ -2682,9 +2700,9 @@ $CLI_EXE \
     --userId '8gafdnM2InfVRJ7c' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 253 'GrantUserEntitlement' test.out
+eval_tap $? 255 'GrantUserEntitlement' test.out
 
-#- 254 GetUserAppEntitlementByAppId
+#- 256 GetUserAppEntitlementByAppId
 $CLI_EXE \
     --sn platform \
     --op GetUserAppEntitlementByAppId \
@@ -2693,9 +2711,9 @@ $CLI_EXE \
     --activeOnly 'false' \
     --appId 'X0CjYQObCQIomoNI' \
     > test.out 2>&1
-eval_tap $? 254 'GetUserAppEntitlementByAppId' test.out
+eval_tap $? 256 'GetUserAppEntitlementByAppId' test.out
 
-#- 255 QueryUserEntitlementsByAppType
+#- 257 QueryUserEntitlementsByAppType
 $CLI_EXE \
     --sn platform \
     --op QueryUserEntitlementsByAppType \
@@ -2706,9 +2724,9 @@ $CLI_EXE \
     --offset '75' \
     --appType 'DEMO' \
     > test.out 2>&1
-eval_tap $? 255 'QueryUserEntitlementsByAppType' test.out
+eval_tap $? 257 'QueryUserEntitlementsByAppType' test.out
 
-#- 256 GetUserEntitlementsByIds
+#- 258 GetUserEntitlementsByIds
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementsByIds \
@@ -2716,9 +2734,9 @@ $CLI_EXE \
     --userId 'nuLa9bDHDj4MlP4n' \
     --ids '["FdtCLdtI5uQE32xt", "PC81JWRmnX8dkt3j", "AkeW9TwB1v8MSOhl"]' \
     > test.out 2>&1
-eval_tap $? 256 'GetUserEntitlementsByIds' test.out
+eval_tap $? 258 'GetUserEntitlementsByIds' test.out
 
-#- 257 GetUserEntitlementByItemId
+#- 259 GetUserEntitlementByItemId
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementByItemId \
@@ -2729,9 +2747,9 @@ $CLI_EXE \
     --platform 'Z1D6djGbtqs8X4qi' \
     --itemId 'w2tk6knWhttaAmpo' \
     > test.out 2>&1
-eval_tap $? 257 'GetUserEntitlementByItemId' test.out
+eval_tap $? 259 'GetUserEntitlementByItemId' test.out
 
-#- 258 GetUserActiveEntitlementsByItemIds
+#- 260 GetUserActiveEntitlementsByItemIds
 $CLI_EXE \
     --sn platform \
     --op GetUserActiveEntitlementsByItemIds \
@@ -2740,9 +2758,9 @@ $CLI_EXE \
     --ids '["WXxfvTt0n9swagbJ", "cTruzKDtucTYPJBS", "bLyxULC4vFMGGIcS"]' \
     --platform 'mQxc865fcaZAfzvA' \
     > test.out 2>&1
-eval_tap $? 258 'GetUserActiveEntitlementsByItemIds' test.out
+eval_tap $? 260 'GetUserActiveEntitlementsByItemIds' test.out
 
-#- 259 GetUserEntitlementBySku
+#- 261 GetUserEntitlementBySku
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementBySku \
@@ -2753,9 +2771,9 @@ $CLI_EXE \
     --platform 'aGg5KxsGlFwkjH0r' \
     --sku 'hSOZ2C6sqdZuTJg3' \
     > test.out 2>&1
-eval_tap $? 259 'GetUserEntitlementBySku' test.out
+eval_tap $? 261 'GetUserEntitlementBySku' test.out
 
-#- 260 ExistsAnyUserActiveEntitlement
+#- 262 ExistsAnyUserActiveEntitlement
 $CLI_EXE \
     --sn platform \
     --op ExistsAnyUserActiveEntitlement \
@@ -2766,9 +2784,9 @@ $CLI_EXE \
     --platform 'yLDR9FUpHYdQ6Y0Y' \
     --skus '["nvtMsmm6duXAeqXz", "EGMd7M9RKrBrmkbN", "b7tLxmJbn4moZPbi"]' \
     > test.out 2>&1
-eval_tap $? 260 'ExistsAnyUserActiveEntitlement' test.out
+eval_tap $? 262 'ExistsAnyUserActiveEntitlement' test.out
 
-#- 261 ExistsAnyUserActiveEntitlementByItemIds
+#- 263 ExistsAnyUserActiveEntitlementByItemIds
 $CLI_EXE \
     --sn platform \
     --op ExistsAnyUserActiveEntitlementByItemIds \
@@ -2777,9 +2795,9 @@ $CLI_EXE \
     --platform 'IHJM8O3iJ8luAu7P' \
     --itemIds '["ebSmMHXyEtuwhk09", "lYqW17O7MmYPHE4e", "yUOa2l9cvizCBeF9"]' \
     > test.out 2>&1
-eval_tap $? 261 'ExistsAnyUserActiveEntitlementByItemIds' test.out
+eval_tap $? 263 'ExistsAnyUserActiveEntitlementByItemIds' test.out
 
-#- 262 GetUserAppEntitlementOwnershipByAppId
+#- 264 GetUserAppEntitlementOwnershipByAppId
 $CLI_EXE \
     --sn platform \
     --op GetUserAppEntitlementOwnershipByAppId \
@@ -2787,9 +2805,9 @@ $CLI_EXE \
     --userId '86sw8wvIvJAWcHcT' \
     --appId 'AUEo8u6xeokbg4zz' \
     > test.out 2>&1
-eval_tap $? 262 'GetUserAppEntitlementOwnershipByAppId' test.out
+eval_tap $? 264 'GetUserAppEntitlementOwnershipByAppId' test.out
 
-#- 263 GetUserEntitlementOwnershipByItemId
+#- 265 GetUserEntitlementOwnershipByItemId
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementOwnershipByItemId \
@@ -2799,9 +2817,9 @@ $CLI_EXE \
     --platform 'AVJVpWmFrMk3Avn5' \
     --itemId 'NYA6D7aMumIJaMlW' \
     > test.out 2>&1
-eval_tap $? 263 'GetUserEntitlementOwnershipByItemId' test.out
+eval_tap $? 265 'GetUserEntitlementOwnershipByItemId' test.out
 
-#- 264 GetUserEntitlementOwnershipByItemIds
+#- 266 GetUserEntitlementOwnershipByItemIds
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementOwnershipByItemIds \
@@ -2810,9 +2828,9 @@ $CLI_EXE \
     --ids '["8e24wPHAjrQuvk9r", "KEbTPmZAA9eJv3ox", "F2LumSgAjLzlLhe8"]' \
     --platform 'lfLXWQqxWONBvMz5' \
     > test.out 2>&1
-eval_tap $? 264 'GetUserEntitlementOwnershipByItemIds' test.out
+eval_tap $? 266 'GetUserEntitlementOwnershipByItemIds' test.out
 
-#- 265 GetUserEntitlementOwnershipBySku
+#- 267 GetUserEntitlementOwnershipBySku
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementOwnershipBySku \
@@ -2822,18 +2840,18 @@ $CLI_EXE \
     --platform 'bKzzXqv5ilscMKZ4' \
     --sku 'MxCfpgM4Pw2mRhV8' \
     > test.out 2>&1
-eval_tap $? 265 'GetUserEntitlementOwnershipBySku' test.out
+eval_tap $? 267 'GetUserEntitlementOwnershipBySku' test.out
 
-#- 266 RevokeAllEntitlements
+#- 268 RevokeAllEntitlements
 $CLI_EXE \
     --sn platform \
     --op RevokeAllEntitlements \
     --namespace $AB_NAMESPACE \
     --userId 'mNAiVf3RBRmzqpxh' \
     > test.out 2>&1
-eval_tap $? 266 'RevokeAllEntitlements' test.out
+eval_tap $? 268 'RevokeAllEntitlements' test.out
 
-#- 267 RevokeUserEntitlements
+#- 269 RevokeUserEntitlements
 $CLI_EXE \
     --sn platform \
     --op RevokeUserEntitlements \
@@ -2841,9 +2859,9 @@ $CLI_EXE \
     --userId 'SlHFxWcuHiGqkq1f' \
     --entitlementIds '1zNhxUVHsqfsP55n' \
     > test.out 2>&1
-eval_tap $? 267 'RevokeUserEntitlements' test.out
+eval_tap $? 269 'RevokeUserEntitlements' test.out
 
-#- 268 GetUserEntitlement
+#- 270 GetUserEntitlement
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlement \
@@ -2851,9 +2869,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId '7PVCNoFmvEEORgZk' \
     > test.out 2>&1
-eval_tap $? 268 'GetUserEntitlement' test.out
+eval_tap $? 270 'GetUserEntitlement' test.out
 
-#- 269 UpdateUserEntitlement
+#- 271 UpdateUserEntitlement
 # body param: body
 echo '{"collectionId": "zoIVArKPxkgFhxNS", "endDate": "1978-05-06T00:00:00Z", "nullFieldList": ["T0RLP6FLZWv14OH4", "Vdyg6lAaXFN0p1lF", "fpIljbMJwRoU93wl"], "origin": "Playstation", "reason": "lQ6M0eq46fNJxeOQ", "startDate": "1991-03-12T00:00:00Z", "status": "ACTIVE", "useCount": 11}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2864,9 +2882,9 @@ $CLI_EXE \
     --userId 'O9hBOHmeWcoBZGDM' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 269 'UpdateUserEntitlement' test.out
+eval_tap $? 271 'UpdateUserEntitlement' test.out
 
-#- 270 ConsumeUserEntitlement
+#- 272 ConsumeUserEntitlement
 # body param: body
 echo '{"metadata": {"2mBAG53NbHlAS02Q": {}, "5e2IesWFKaHiX3M4": {}, "Jzx4pfJv6FJNFowq": {}}, "options": ["AToub5Tjn3CaJ5BA", "hU8fHO3YU3V4ogDz", "izL1DzXC0zYXgkGX"], "platform": "NrtbKKq1RePuIvf1", "requestId": "hxR2XYp2GFljSdrY", "useCount": 78}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2877,9 +2895,9 @@ $CLI_EXE \
     --userId 'mn4VoXzzARP4u1QB' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 270 'ConsumeUserEntitlement' test.out
+eval_tap $? 272 'ConsumeUserEntitlement' test.out
 
-#- 271 DisableUserEntitlement
+#- 273 DisableUserEntitlement
 $CLI_EXE \
     --sn platform \
     --op DisableUserEntitlement \
@@ -2887,9 +2905,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'CTzqn6l1hDavcSHN' \
     > test.out 2>&1
-eval_tap $? 271 'DisableUserEntitlement' test.out
+eval_tap $? 273 'DisableUserEntitlement' test.out
 
-#- 272 EnableUserEntitlement
+#- 274 EnableUserEntitlement
 $CLI_EXE \
     --sn platform \
     --op EnableUserEntitlement \
@@ -2897,9 +2915,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'G8uq5Ow5lsug7Nbw' \
     > test.out 2>&1
-eval_tap $? 272 'EnableUserEntitlement' test.out
+eval_tap $? 274 'EnableUserEntitlement' test.out
 
-#- 273 GetUserEntitlementHistories
+#- 275 GetUserEntitlementHistories
 $CLI_EXE \
     --sn platform \
     --op GetUserEntitlementHistories \
@@ -2907,9 +2925,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'ie9YGnpZiZFTZjOC' \
     > test.out 2>&1
-eval_tap $? 273 'GetUserEntitlementHistories' test.out
+eval_tap $? 275 'GetUserEntitlementHistories' test.out
 
-#- 274 RevokeUserEntitlement
+#- 276 RevokeUserEntitlement
 # body param: body
 echo '{"metadata": {"8DohVHZX2Euo7wrN": {}, "I1Ur5QXJ3n4wgZnZ": {}, "HvN7VWUX7qbYtDKw": {}}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2920,9 +2938,9 @@ $CLI_EXE \
     --userId 'e8DnBIsq50VppQm2' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 274 'RevokeUserEntitlement' test.out
+eval_tap $? 276 'RevokeUserEntitlement' test.out
 
-#- 275 RevokeUserEntitlementByUseCount
+#- 277 RevokeUserEntitlementByUseCount
 # body param: body
 echo '{"reason": "yoVYLjxHG99DbfY8", "useCount": 14}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2933,9 +2951,9 @@ $CLI_EXE \
     --userId 'GeVNHfZSk2axy9nM' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 275 'RevokeUserEntitlementByUseCount' test.out
+eval_tap $? 277 'RevokeUserEntitlementByUseCount' test.out
 
-#- 276 PreCheckRevokeUserEntitlementByUseCount
+#- 278 PreCheckRevokeUserEntitlementByUseCount
 $CLI_EXE \
     --sn platform \
     --op PreCheckRevokeUserEntitlementByUseCount \
@@ -2944,12 +2962,12 @@ $CLI_EXE \
     --userId 'aInGNHsJALwlXfYU' \
     --quantity '95' \
     > test.out 2>&1
-eval_tap $? 276 'PreCheckRevokeUserEntitlementByUseCount' test.out
+eval_tap $? 278 'PreCheckRevokeUserEntitlementByUseCount' test.out
 
-#- 277 RevokeUseCount
-eval_tap 0 277 'RevokeUseCount # SKIP deprecated' test.out
+#- 279 RevokeUseCount
+eval_tap 0 279 'RevokeUseCount # SKIP deprecated' test.out
 
-#- 278 SellUserEntitlement
+#- 280 SellUserEntitlement
 # body param: body
 echo '{"platform": "bD42S5kAIuob3mII", "requestId": "Imvx86R3EYzI8sTO", "useCount": 61}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2960,9 +2978,9 @@ $CLI_EXE \
     --userId 'TFUJJkLn3Hp6ugCi' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 278 'SellUserEntitlement' test.out
+eval_tap $? 280 'SellUserEntitlement' test.out
 
-#- 279 FulfillItem
+#- 281 FulfillItem
 # body param: body
 echo '{"duration": 78, "endDate": "1988-07-22T00:00:00Z", "entitlementCollectionId": "Sl0TXhgF0LSc7kjE", "entitlementOrigin": "Other", "itemId": "jb9kH4Up37D5ixxo", "itemSku": "hRUX29aDRgGBT0fE", "language": "F02OU6lWpbxD4pZj", "metadata": {"iXxnQLmFswiGGsXl": {}, "3PTfGBIkD6Qujma6": {}, "CEFXwT6nCcSLdYtt": {}}, "order": {"currency": {"currencyCode": "dtCSYRWs7E4RcNXE", "currencySymbol": "3RnVD3bMqkrvPgsN", "currencyType": "REAL", "decimals": 6, "namespace": "0FkwRM4aYRCAsxJ7"}, "ext": {"djQQPUh5IUBZBz65": {}, "wzoXWDcut901MeZ5": {}, "zVHNuUSn88PiZRNt": {}}, "free": false}, "orderNo": "e3Kv8ZnCLU3qXE9I", "origin": "Playstation", "overrideBundleItemQty": {"tYVYOgKt86b5MPqW": 30, "s0ktq0k1nT45N7sU": 27, "pDiiuoMvzxIBYR0j": 7}, "quantity": 41, "region": "MIzenu8laYT8TNxE", "source": "DLC", "startDate": "1982-11-30T00:00:00Z", "storeId": "2SR3ZEUNHaMzyHgV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2972,9 +2990,9 @@ $CLI_EXE \
     --userId 'PIkanteQ9O0HefL0' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 279 'FulfillItem' test.out
+eval_tap $? 281 'FulfillItem' test.out
 
-#- 280 RedeemCode
+#- 282 RedeemCode
 # body param: body
 echo '{"code": "FW2yLDDVhgbpkypJ", "language": "lSI-wlks_yu", "region": "jrSD4S33xx1coQcQ"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2984,9 +3002,9 @@ $CLI_EXE \
     --userId 'TJg1sRYQpieTvSG7' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 280 'RedeemCode' test.out
+eval_tap $? 282 'RedeemCode' test.out
 
-#- 281 PreCheckFulfillItem
+#- 283 PreCheckFulfillItem
 # body param: body
 echo '{"itemId": "ohrccoDBVZNWUoKT", "itemSku": "2EjHbNP4TF18DYjb", "quantity": 78}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -2996,9 +3014,9 @@ $CLI_EXE \
     --userId '5gPgbOn6tuHmTRn1' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 281 'PreCheckFulfillItem' test.out
+eval_tap $? 283 'PreCheckFulfillItem' test.out
 
-#- 282 FulfillRewards
+#- 284 FulfillRewards
 # body param: body
 echo '{"entitlementCollectionId": "gHuPZf7JZvtYgUNU", "entitlementOrigin": "Nintendo", "metadata": {"yamup9S9rTEITQCf": {}, "Wx0Vbr7og4y37RPE": {}, "nBWDxxEShgnYYPQM": {}}, "origin": "Nintendo", "rewards": [{"currency": {"currencyCode": "TdNqEJZ8b31ktPv6", "namespace": "F7hUikum5yrtgpss"}, "item": {"itemId": "GRTMOaMHQ8oGmwUR", "itemName": "IYJTfB59tbbwwQ14", "itemSku": "Ih5vMeSFT7AictRM", "itemType": "O2gaPZWuZ3KOYdoh"}, "quantity": 43, "type": "CURRENCY"}, {"currency": {"currencyCode": "j0AAqEsLh8qJsBbz", "namespace": "NlqVONUuO6ZUADGG"}, "item": {"itemId": "rxayG71Y0tt8Rs6V", "itemName": "XUzVWXCq4Oncfe8k", "itemSku": "poBoLU5kZini1Omp", "itemType": "1GOBTEGIrTamHIKG"}, "quantity": 53, "type": "ITEM"}, {"currency": {"currencyCode": "5hpPCM9DVY9Doi50", "namespace": "9eHU2b8oU3KX8lgy"}, "item": {"itemId": "AKQLXBOBKJhDX4d0", "itemName": "ZDJ0gxWtY5FQZeS5", "itemSku": "QT1d5Awun7ISyoFj", "itemType": "euyMeuOWt4m4VAAX"}, "quantity": 36, "type": "CURRENCY"}], "source": "REFERRAL_BONUS", "transactionId": "uxX29M42DHGQh0hq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3008,9 +3026,9 @@ $CLI_EXE \
     --userId 'eKq7Av7TeZiTTfan' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 282 'FulfillRewards' test.out
+eval_tap $? 284 'FulfillRewards' test.out
 
-#- 283 QueryUserIAPOrders
+#- 285 QueryUserIAPOrders
 $CLI_EXE \
     --sn platform \
     --op QueryUserIAPOrders \
@@ -3024,18 +3042,18 @@ $CLI_EXE \
     --status 'FULFILLED' \
     --type 'OCULUS' \
     > test.out 2>&1
-eval_tap $? 283 'QueryUserIAPOrders' test.out
+eval_tap $? 285 'QueryUserIAPOrders' test.out
 
-#- 284 QueryAllUserIAPOrders
+#- 286 QueryAllUserIAPOrders
 $CLI_EXE \
     --sn platform \
     --op QueryAllUserIAPOrders \
     --namespace $AB_NAMESPACE \
     --userId 'bdV5MKaKcUWHAsGz' \
     > test.out 2>&1
-eval_tap $? 284 'QueryAllUserIAPOrders' test.out
+eval_tap $? 286 'QueryAllUserIAPOrders' test.out
 
-#- 285 QueryUserIAPConsumeHistory
+#- 287 QueryUserIAPConsumeHistory
 $CLI_EXE \
     --sn platform \
     --op QueryUserIAPConsumeHistory \
@@ -3048,9 +3066,9 @@ $CLI_EXE \
     --status 'FAIL' \
     --type 'GOOGLE' \
     > test.out 2>&1
-eval_tap $? 285 'QueryUserIAPConsumeHistory' test.out
+eval_tap $? 287 'QueryUserIAPConsumeHistory' test.out
 
-#- 286 MockFulfillIAPItem
+#- 288 MockFulfillIAPItem
 # body param: body
 echo '{"itemIdentityType": "ITEM_ID", "language": "eWz-lYNN_xo", "productId": "3nRyZbi7VZT5RTH0", "region": "RTCgk73txBt7QbpR", "transactionId": "4F86IASJ2nr62oyU", "type": "STEAM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3060,9 +3078,9 @@ $CLI_EXE \
     --userId 'KjSgLLptvB40Rth5' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 286 'MockFulfillIAPItem' test.out
+eval_tap $? 288 'MockFulfillIAPItem' test.out
 
-#- 287 AdminGetIAPOrderLineItems
+#- 289 AdminGetIAPOrderLineItems
 $CLI_EXE \
     --sn platform \
     --op AdminGetIAPOrderLineItems \
@@ -3070,18 +3088,18 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'N6QcHMDi0yFNmdyD' \
     > test.out 2>&1
-eval_tap $? 287 'AdminGetIAPOrderLineItems' test.out
+eval_tap $? 289 'AdminGetIAPOrderLineItems' test.out
 
-#- 288 AdminSyncSteamAbnormalTransaction
+#- 290 AdminSyncSteamAbnormalTransaction
 $CLI_EXE \
     --sn platform \
     --op AdminSyncSteamAbnormalTransaction \
     --namespace $AB_NAMESPACE \
     --userId 'eHKkxFt0W9OFCdoW' \
     > test.out 2>&1
-eval_tap $? 288 'AdminSyncSteamAbnormalTransaction' test.out
+eval_tap $? 290 'AdminSyncSteamAbnormalTransaction' test.out
 
-#- 289 AdminSyncSteamIAPByTransaction
+#- 291 AdminSyncSteamIAPByTransaction
 # body param: body
 echo '{"orderId": "Lkd9406HDcSinQs9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3091,9 +3109,9 @@ $CLI_EXE \
     --userId 'twYhHJ3xBz1rK9wz' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 289 'AdminSyncSteamIAPByTransaction' test.out
+eval_tap $? 291 'AdminSyncSteamIAPByTransaction' test.out
 
-#- 290 QueryUserThirdPartySubscription
+#- 292 QueryUserThirdPartySubscription
 $CLI_EXE \
     --sn platform \
     --op QueryUserThirdPartySubscription \
@@ -3106,9 +3124,9 @@ $CLI_EXE \
     --platform 'PLAYSTATION' \
     --productId 'IXudJYoBJI5IjJ4e' \
     > test.out 2>&1
-eval_tap $? 290 'QueryUserThirdPartySubscription' test.out
+eval_tap $? 292 'QueryUserThirdPartySubscription' test.out
 
-#- 291 GetThirdPartyPlatformSubscriptionOwnershipByGroupId
+#- 293 GetThirdPartyPlatformSubscriptionOwnershipByGroupId
 $CLI_EXE \
     --sn platform \
     --op GetThirdPartyPlatformSubscriptionOwnershipByGroupId \
@@ -3117,9 +3135,9 @@ $CLI_EXE \
     --userId '5FbrehqKMJb2Bh8F' \
     --groupId 'zLO0UQ3vo9Tw88wW' \
     > test.out 2>&1
-eval_tap $? 291 'GetThirdPartyPlatformSubscriptionOwnershipByGroupId' test.out
+eval_tap $? 293 'GetThirdPartyPlatformSubscriptionOwnershipByGroupId' test.out
 
-#- 292 GetThirdPartyPlatformSubscriptionOwnershipByProductId
+#- 294 GetThirdPartyPlatformSubscriptionOwnershipByProductId
 $CLI_EXE \
     --sn platform \
     --op GetThirdPartyPlatformSubscriptionOwnershipByProductId \
@@ -3128,9 +3146,9 @@ $CLI_EXE \
     --userId 'DJ9gI5BkgPaLLWQ2' \
     --productId 'D9ZobIhneYyeWzqP' \
     > test.out 2>&1
-eval_tap $? 292 'GetThirdPartyPlatformSubscriptionOwnershipByProductId' test.out
+eval_tap $? 294 'GetThirdPartyPlatformSubscriptionOwnershipByProductId' test.out
 
-#- 293 QueryUserThirdPartySubscriptionTransactions
+#- 295 QueryUserThirdPartySubscriptionTransactions
 $CLI_EXE \
     --sn platform \
     --op QueryUserThirdPartySubscriptionTransactions \
@@ -3143,9 +3161,9 @@ $CLI_EXE \
     --platform 'EPICGAMES' \
     --productId 'cos4r3NYWeDjavkE' \
     > test.out 2>&1
-eval_tap $? 293 'QueryUserThirdPartySubscriptionTransactions' test.out
+eval_tap $? 295 'QueryUserThirdPartySubscriptionTransactions' test.out
 
-#- 294 GetThirdPartySubscriptionDetails
+#- 296 GetThirdPartySubscriptionDetails
 $CLI_EXE \
     --sn platform \
     --op GetThirdPartySubscriptionDetails \
@@ -3153,9 +3171,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'fjvUPVFwTw8MoMx1' \
     > test.out 2>&1
-eval_tap $? 294 'GetThirdPartySubscriptionDetails' test.out
+eval_tap $? 296 'GetThirdPartySubscriptionDetails' test.out
 
-#- 295 GetSubscriptionHistory
+#- 297 GetSubscriptionHistory
 $CLI_EXE \
     --sn platform \
     --op GetSubscriptionHistory \
@@ -3165,9 +3183,9 @@ $CLI_EXE \
     --limit '70' \
     --offset '78' \
     > test.out 2>&1
-eval_tap $? 295 'GetSubscriptionHistory' test.out
+eval_tap $? 297 'GetSubscriptionHistory' test.out
 
-#- 296 SyncSubscriptionTransaction
+#- 298 SyncSubscriptionTransaction
 $CLI_EXE \
     --sn platform \
     --op SyncSubscriptionTransaction \
@@ -3175,9 +3193,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'NYo00cEk3QDK4NSZ' \
     > test.out 2>&1
-eval_tap $? 296 'SyncSubscriptionTransaction' test.out
+eval_tap $? 298 'SyncSubscriptionTransaction' test.out
 
-#- 297 GetThirdPartyUserSubscriptionDetails
+#- 299 GetThirdPartyUserSubscriptionDetails
 $CLI_EXE \
     --sn platform \
     --op GetThirdPartyUserSubscriptionDetails \
@@ -3185,9 +3203,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'kewPc0hq2Y474SRx' \
     > test.out 2>&1
-eval_tap $? 297 'GetThirdPartyUserSubscriptionDetails' test.out
+eval_tap $? 299 'GetThirdPartyUserSubscriptionDetails' test.out
 
-#- 298 SyncSubscription
+#- 300 SyncSubscription
 $CLI_EXE \
     --sn platform \
     --op SyncSubscription \
@@ -3195,9 +3213,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'wu3EWYCR4RsGPFcw' \
     > test.out 2>&1
-eval_tap $? 298 'SyncSubscription' test.out
+eval_tap $? 300 'SyncSubscription' test.out
 
-#- 299 QueryUserOrders
+#- 301 QueryUserOrders
 $CLI_EXE \
     --sn platform \
     --op QueryUserOrders \
@@ -3209,11 +3227,11 @@ $CLI_EXE \
     --offset '27' \
     --status 'INIT' \
     > test.out 2>&1
-eval_tap $? 299 'QueryUserOrders' test.out
+eval_tap $? 301 'QueryUserOrders' test.out
 
-#- 300 AdminCreateUserOrder
+#- 302 AdminCreateUserOrder
 # body param: body
-echo '{"currencyCode": "6nEDv14SHkFy8sJw", "currencyNamespace": "FdhSengJkFkrcloV", "discountCodes": ["5XG2UgpniroZzOBV", "Fskufaf4yXTMI1u9", "FuDqyik6avz6hgeQ"], "discountedPrice": 26, "entitlementPlatform": "Xbox", "ext": {"4UOkHMic39Q9YoLP": {}, "R7sPGJJTUMSAnTga": {}, "zYuALzmVQblkUrl4": {}}, "itemId": "qbloxNkcZQiBw4y9", "language": "nphgK67hgB40fty5", "options": {"skipPriceValidation": false}, "platform": "Oculus", "price": 33, "quantity": 99, "region": "8nwJSx8oLrpb6cO5", "returnUrl": "KhzUq8uaD8Tfjein", "sandbox": true, "sectionId": "8xsg9tOtPTclSGlf"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "6nEDv14SHkFy8sJw", "currencyNamespace": "FdhSengJkFkrcloV", "discountCodes": ["5XG2UgpniroZzOBV", "FuDqyik6avz6hgeQ", "Fskufaf4yXTMI1u9"], "discountedPrice": 26, "entitlementPlatform": "Xbox", "ext": {"4UOkHMic39Q9YoLP": {}, "R7sPGJJTUMSAnTga": {}, "zYuALzmVQblkUrl4": {}}, "itemId": "qbloxNkcZQiBw4y9", "language": "nphgK67hgB40fty5", "options": {"skipPriceValidation": false}, "platform": "Oculus", "price": 33, "quantity": 99, "region": "8nwJSx8oLrpb6cO5", "returnUrl": "KhzUq8uaD8Tfjein", "sandbox": true, "sectionId": "8xsg9tOtPTclSGlf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op AdminCreateUserOrder \
@@ -3221,9 +3239,9 @@ $CLI_EXE \
     --userId 'FV4kIfl9romqbWaZ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 300 'AdminCreateUserOrder' test.out
+eval_tap $? 302 'AdminCreateUserOrder' test.out
 
-#- 301 CountOfPurchasedItem
+#- 303 CountOfPurchasedItem
 $CLI_EXE \
     --sn platform \
     --op CountOfPurchasedItem \
@@ -3231,9 +3249,9 @@ $CLI_EXE \
     --userId 'Mb92g3JrAyLpDI5s' \
     --itemId 'iiAmGzuxBLeiDFOn' \
     > test.out 2>&1
-eval_tap $? 301 'CountOfPurchasedItem' test.out
+eval_tap $? 303 'CountOfPurchasedItem' test.out
 
-#- 302 GetUserOrder
+#- 304 GetUserOrder
 $CLI_EXE \
     --sn platform \
     --op GetUserOrder \
@@ -3241,9 +3259,9 @@ $CLI_EXE \
     --orderNo 'Osa0fTDIhxyWjiyw' \
     --userId 'nd2O8f8jJ9BIAI7H' \
     > test.out 2>&1
-eval_tap $? 302 'GetUserOrder' test.out
+eval_tap $? 304 'GetUserOrder' test.out
 
-#- 303 UpdateUserOrderStatus
+#- 305 UpdateUserOrderStatus
 # body param: body
 echo '{"status": "FULFILLED", "statusReason": "cVuSchXCRyzo9819"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3254,9 +3272,9 @@ $CLI_EXE \
     --userId 'hpWmjiSvI43KIFb3' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 303 'UpdateUserOrderStatus' test.out
+eval_tap $? 305 'UpdateUserOrderStatus' test.out
 
-#- 304 FulfillUserOrder
+#- 306 FulfillUserOrder
 $CLI_EXE \
     --sn platform \
     --op FulfillUserOrder \
@@ -3264,12 +3282,12 @@ $CLI_EXE \
     --orderNo '04VqzIrMqMXggJ8I' \
     --userId 'Ul0ZE73CgVyYOArZ' \
     > test.out 2>&1
-eval_tap $? 304 'FulfillUserOrder' test.out
+eval_tap $? 306 'FulfillUserOrder' test.out
 
-#- 305 GetUserOrderGrant
-eval_tap 0 305 'GetUserOrderGrant # SKIP deprecated' test.out
+#- 307 GetUserOrderGrant
+eval_tap 0 307 'GetUserOrderGrant # SKIP deprecated' test.out
 
-#- 306 GetUserOrderHistories
+#- 308 GetUserOrderHistories
 $CLI_EXE \
     --sn platform \
     --op GetUserOrderHistories \
@@ -3277,9 +3295,9 @@ $CLI_EXE \
     --orderNo 'FQQcogiwJfrxlK54' \
     --userId 'atdpnmvbkEBiLTDv' \
     > test.out 2>&1
-eval_tap $? 306 'GetUserOrderHistories' test.out
+eval_tap $? 308 'GetUserOrderHistories' test.out
 
-#- 307 ProcessUserOrderNotification
+#- 309 ProcessUserOrderNotification
 # body param: body
 echo '{"additionalData": {"cardSummary": "MXpnJXTUwKUdsHUP"}, "authorisedTime": "1995-11-18T00:00:00Z", "chargebackReversedTime": "1991-02-22T00:00:00Z", "chargebackTime": "1997-09-21T00:00:00Z", "chargedTime": "1992-06-05T00:00:00Z", "createdTime": "1995-02-11T00:00:00Z", "currency": {"currencyCode": "L45AMaYBu8m8B6pd", "currencySymbol": "OTGQTn8Nnp5cPrXc", "currencyType": "VIRTUAL", "decimals": 97, "namespace": "mPQLPlf02yBoQ9Yi"}, "customParameters": {"gfWed3beERJx3yQ1": {}, "pq1KERX8kMnJHfYO": {}, "Iq0fn3exKzzUqW03": {}}, "extOrderNo": "Qk8zT0O9oVzSxV7a", "extTxId": "NtnrbBCv11gpvWMG", "extUserId": "zcByTM0fmOTpC1yB", "issuedAt": "1990-02-26T00:00:00Z", "metadata": {"2kKWEu7Cj9PUkLDI": "jMxbQtjTjWnlELSa", "ma2S0d6c300Xln8m": "Cr7EP9GBTh9PpTaP", "usk8vxjg7hxgoTWM": "vjg7g8LUVlOoRGaP"}, "namespace": "F4caHL1i0RDJT7SZ", "nonceStr": "Mx6Z8S0Pg1A58Tjf", "paymentData": {"discountAmount": 85, "discountCode": "GHhwoce2OVaDcRNr", "subtotalPrice": 75, "tax": 65, "totalPrice": 62}, "paymentMethod": "sED8WI7OsWO31dnk", "paymentMethodFee": 89, "paymentOrderNo": "ZUYcIzrPWkF6NgxN", "paymentProvider": "WALLET", "paymentProviderFee": 67, "paymentStationUrl": "UJwnuBk3LjUG9B1G", "price": 89, "refundedTime": "1986-02-21T00:00:00Z", "salesTax": 21, "sandbox": false, "sku": "Q7hpUaOWDqycZqEq", "status": "REFUNDING", "statusReason": "25ddYecMzTrar5qK", "subscriptionId": "3eB5ITFEREMEJCwP", "subtotalPrice": 2, "targetNamespace": "29VaQVe3EqfXLYd4", "targetUserId": "upBlbNOtwPjXdTcQ", "tax": 99, "totalPrice": 56, "totalTax": 11, "txEndTime": "1983-01-18T00:00:00Z", "type": "7NGZumtwcCukpNcA", "userId": "E6M0MC3pDcFCfyve", "vat": 12}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3290,9 +3308,9 @@ $CLI_EXE \
     --userId '0zd9rn0I29X3S8pJ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 307 'ProcessUserOrderNotification' test.out
+eval_tap $? 309 'ProcessUserOrderNotification' test.out
 
-#- 308 DownloadUserOrderReceipt
+#- 310 DownloadUserOrderReceipt
 $CLI_EXE \
     --sn platform \
     --op DownloadUserOrderReceipt \
@@ -3300,9 +3318,9 @@ $CLI_EXE \
     --orderNo 's4Rwm5Tbd3KrkbK2' \
     --userId '1jK0suo8FcgzsoAZ' \
     > test.out 2>&1
-eval_tap $? 308 'DownloadUserOrderReceipt' test.out
+eval_tap $? 310 'DownloadUserOrderReceipt' test.out
 
-#- 309 CreateUserPaymentOrder
+#- 311 CreateUserPaymentOrder
 # body param: body
 echo '{"currencyCode": "7AA6Erj3Y1wbEJHN", "currencyNamespace": "HKjsgEhovmUj383d", "customParameters": {"wxZh1yxpCANqtuMS": {}, "xruQokDIp5yOnFkw": {}, "ncGNxqvsATSgWz5F": {}}, "description": "HMVL9esYmlRa1O3L", "extOrderNo": "ycEp1fFe63z4Z20g", "extUserId": "RYtfYQBY0XthS12G", "itemType": "CODE", "language": "Mk-LOWh", "metadata": {"BT1SAIF4mqJZd90p": "nTbLiC5BtwMKd1CT", "NzM2i7QolkL8XQNs": "7kGhyv5DI2Fc1ChA", "a4V9NwdonMY2NB8x": "n64dlPISpodRh9TI"}, "notifyUrl": "PmrNhjbOa7y7aJyf", "omitNotification": false, "platform": "l3mQemEPCCZHjeK9", "price": 91, "recurringPaymentOrderNo": "L0banlZ0PAA0WByL", "region": "DOmibYNzh8xtv95G", "returnUrl": "t3OYke2K1s7702TK", "sandbox": true, "sku": "KMxtpS6JrtECDHKn", "subscriptionId": "Gx8q7rPKL9r4NbJe", "title": "B3jbIgNTpDsRvDss"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3312,9 +3330,9 @@ $CLI_EXE \
     --userId 'B1bXKsSeyehJUQGH' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 309 'CreateUserPaymentOrder' test.out
+eval_tap $? 311 'CreateUserPaymentOrder' test.out
 
-#- 310 RefundUserPaymentOrder
+#- 312 RefundUserPaymentOrder
 # body param: body
 echo '{"description": "GtdgTdZIvNngvr4K"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3325,18 +3343,18 @@ $CLI_EXE \
     --userId 'uhTNbAg8Vlawxhkf' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 310 'RefundUserPaymentOrder' test.out
+eval_tap $? 312 'RefundUserPaymentOrder' test.out
 
-#- 311 GetUserPlatformAccountClosureHistories
+#- 313 GetUserPlatformAccountClosureHistories
 $CLI_EXE \
     --sn platform \
     --op GetUserPlatformAccountClosureHistories \
     --namespace $AB_NAMESPACE \
     --userId '7s64SSMZysWulyJC' \
     > test.out 2>&1
-eval_tap $? 311 'GetUserPlatformAccountClosureHistories' test.out
+eval_tap $? 313 'GetUserPlatformAccountClosureHistories' test.out
 
-#- 312 ApplyUserRedemption
+#- 314 ApplyUserRedemption
 # body param: body
 echo '{"code": "qaaz48saP17yQUF0", "orderNo": "0MNxhM2aox1GADYI"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3346,9 +3364,9 @@ $CLI_EXE \
     --userId 'upUjfEbyZ6NKbQ3C' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 312 'ApplyUserRedemption' test.out
+eval_tap $? 314 'ApplyUserRedemption' test.out
 
-#- 313 DoRevocation
+#- 315 DoRevocation
 # body param: body
 echo '{"meta": {"zU0Me28W7Q4nRBYn": {}, "7FR8Ap7mDBF4Zvu1": {}, "PO9N7FpgMdGDj8Ch": {}}, "reason": "BvCIY4iiAFgq0zeP", "requestId": "WUxso6FjuDlRGgci", "revokeEntries": [{"currency": {"balanceOrigin": "Playstation", "currencyCode": "bxlfBYJKCyuuxXG5", "namespace": "TxnxVFUhrBsyrJvp"}, "entitlement": {"entitlementId": "GyiVcwO9cXPEZJvX"}, "item": {"entitlementOrigin": "IOS", "itemIdentity": "ucNaj0slsb2euIBb", "itemIdentityType": "ITEM_ID", "origin": "Oculus"}, "quantity": 78, "type": "ENTITLEMENT"}, {"currency": {"balanceOrigin": "Other", "currencyCode": "twMAMhxymZx64x7X", "namespace": "IXjih6UIrStr44Fq"}, "entitlement": {"entitlementId": "e6iqXT6jBwq8tCXw"}, "item": {"entitlementOrigin": "Playstation", "itemIdentity": "05HKOm3RD7gWPgN1", "itemIdentityType": "ITEM_ID", "origin": "GooglePlay"}, "quantity": 74, "type": "CURRENCY"}, {"currency": {"balanceOrigin": "Playstation", "currencyCode": "61O7AjZjWSLxbbkh", "namespace": "hWR9ntnLnk2FslLd"}, "entitlement": {"entitlementId": "aXBwuWeZujbcBm4A"}, "item": {"entitlementOrigin": "Steam", "itemIdentity": "ahjG54uwcFL2qkRp", "itemIdentityType": "ITEM_ID", "origin": "Other"}, "quantity": 19, "type": "CURRENCY"}], "source": "DLC", "transactionId": "BucfDSWbiiQSQktC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3358,9 +3376,9 @@ $CLI_EXE \
     --userId 'CmtVeGAuFuQ5T3h9' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 313 'DoRevocation' test.out
+eval_tap $? 315 'DoRevocation' test.out
 
-#- 314 RegisterXblSessions
+#- 316 RegisterXblSessions
 # body param: body
 echo '{"gameSessionId": "WnwCERUwwXGfWbwj", "payload": {"ZXzUQq8T8sqBgTZH": {}, "eeeLZa0nPw5A8Faj": {}, "AkyjeWw7dYZp2juI": {}}, "scid": "Y2I0PsWfbSHb1Uxl", "sessionTemplateName": "7ST6i0fkNYQVyjpe"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3370,9 +3388,9 @@ $CLI_EXE \
     --userId 'i3xMtoNd9dg9lDpM' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 314 'RegisterXblSessions' test.out
+eval_tap $? 316 'RegisterXblSessions' test.out
 
-#- 315 QueryUserSubscriptions
+#- 317 QueryUserSubscriptions
 $CLI_EXE \
     --sn platform \
     --op QueryUserSubscriptions \
@@ -3386,9 +3404,9 @@ $CLI_EXE \
     --status 'CANCELLED' \
     --subscribedBy 'PLATFORM' \
     > test.out 2>&1
-eval_tap $? 315 'QueryUserSubscriptions' test.out
+eval_tap $? 317 'QueryUserSubscriptions' test.out
 
-#- 316 GetUserSubscriptionActivities
+#- 318 GetUserSubscriptionActivities
 $CLI_EXE \
     --sn platform \
     --op GetUserSubscriptionActivities \
@@ -3399,9 +3417,9 @@ $CLI_EXE \
     --offset '34' \
     --subscriptionId 'bJOY2mPsoQADLhYI' \
     > test.out 2>&1
-eval_tap $? 316 'GetUserSubscriptionActivities' test.out
+eval_tap $? 318 'GetUserSubscriptionActivities' test.out
 
-#- 317 PlatformSubscribeSubscription
+#- 319 PlatformSubscribeSubscription
 # body param: body
 echo '{"grantDays": 63, "itemId": "VCbx6HTwA0VPwLdn", "language": "8MoGt3WSl31R0sQC", "reason": "XBBFalaXcoeWy8at", "region": "YgPcxXjpWHHpGhlG", "source": "K8nsbf3flFfMqg6t"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3411,9 +3429,9 @@ $CLI_EXE \
     --userId 'PQTqepvEIRRW0cQM' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 317 'PlatformSubscribeSubscription' test.out
+eval_tap $? 319 'PlatformSubscribeSubscription' test.out
 
-#- 318 CheckUserSubscriptionSubscribableByItemId
+#- 320 CheckUserSubscriptionSubscribableByItemId
 $CLI_EXE \
     --sn platform \
     --op CheckUserSubscriptionSubscribableByItemId \
@@ -3421,9 +3439,9 @@ $CLI_EXE \
     --userId '0fi4qP9fjUet37IC' \
     --itemId 'lzlpjC0sllce7utY' \
     > test.out 2>&1
-eval_tap $? 318 'CheckUserSubscriptionSubscribableByItemId' test.out
+eval_tap $? 320 'CheckUserSubscriptionSubscribableByItemId' test.out
 
-#- 319 GetUserSubscription
+#- 321 GetUserSubscription
 $CLI_EXE \
     --sn platform \
     --op GetUserSubscription \
@@ -3431,9 +3449,9 @@ $CLI_EXE \
     --subscriptionId 'CMI7hZHKhLujiIbK' \
     --userId 'v9deEJDPJL0YePzb' \
     > test.out 2>&1
-eval_tap $? 319 'GetUserSubscription' test.out
+eval_tap $? 321 'GetUserSubscription' test.out
 
-#- 320 DeleteUserSubscription
+#- 322 DeleteUserSubscription
 $CLI_EXE \
     --sn platform \
     --op DeleteUserSubscription \
@@ -3441,9 +3459,9 @@ $CLI_EXE \
     --subscriptionId 'ps1fzvVEZzOivqkf' \
     --userId '1OEUBNGSiYYC4KcU' \
     > test.out 2>&1
-eval_tap $? 320 'DeleteUserSubscription' test.out
+eval_tap $? 322 'DeleteUserSubscription' test.out
 
-#- 321 CancelSubscription
+#- 323 CancelSubscription
 # body param: body
 echo '{"immediate": true, "reason": "B1V0M9VZguy9oVNo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3455,9 +3473,9 @@ $CLI_EXE \
     --force 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 321 'CancelSubscription' test.out
+eval_tap $? 323 'CancelSubscription' test.out
 
-#- 322 GrantDaysToSubscription
+#- 324 GrantDaysToSubscription
 # body param: body
 echo '{"grantDays": 85, "reason": "2WlX1G3PQxcGFYS0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3468,9 +3486,9 @@ $CLI_EXE \
     --userId 'MTrvdruxtd2WL1qA' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 322 'GrantDaysToSubscription' test.out
+eval_tap $? 324 'GrantDaysToSubscription' test.out
 
-#- 323 GetUserSubscriptionBillingHistories
+#- 325 GetUserSubscriptionBillingHistories
 $CLI_EXE \
     --sn platform \
     --op GetUserSubscriptionBillingHistories \
@@ -3481,9 +3499,9 @@ $CLI_EXE \
     --limit '5' \
     --offset '97' \
     > test.out 2>&1
-eval_tap $? 323 'GetUserSubscriptionBillingHistories' test.out
+eval_tap $? 325 'GetUserSubscriptionBillingHistories' test.out
 
-#- 324 ProcessUserSubscriptionNotification
+#- 326 ProcessUserSubscriptionNotification
 # body param: body
 echo '{"additionalData": {"cardSummary": "1w4ASjK44nSFdMXe"}, "authorisedTime": "1975-01-17T00:00:00Z", "chargebackReversedTime": "1996-01-11T00:00:00Z", "chargebackTime": "1977-05-03T00:00:00Z", "chargedTime": "1982-12-15T00:00:00Z", "createdTime": "1993-06-14T00:00:00Z", "currency": {"currencyCode": "n3B73uF18Nm3egAn", "currencySymbol": "VUQyabc3ia3YYa3b", "currencyType": "VIRTUAL", "decimals": 95, "namespace": "HFQJjWzHVl02qRwz"}, "customParameters": {"xYfNMyrnN9l0mw9C": {}, "eXQJtFPC37STA26F": {}, "xxZa07BtKWWCoLwb": {}}, "extOrderNo": "8qlS9TgavR2ibd8i", "extTxId": "m3svfAZNIPw3ek5o", "extUserId": "1moCDuTfe3rrSIwM", "issuedAt": "1991-05-02T00:00:00Z", "metadata": {"IBS4GbHrXBiiAWp7": "glXNbZ3tA75o1xZX", "jZcZrrBHPWE4wdH1": "TscVYborBtrbaKSK", "FyK80Ib8dySbF8SX": "c0rOYXIndUtmCYYb"}, "namespace": "pEGUXYlfQrK2yWDo", "nonceStr": "wazrkPeudxoPZAKB", "paymentData": {"discountAmount": 65, "discountCode": "zEgjYb9gWBVG8lz2", "subtotalPrice": 26, "tax": 58, "totalPrice": 26}, "paymentMethod": "kFTOg8j2Z4VwWz1W", "paymentMethodFee": 28, "paymentOrderNo": "Ut52MOgNWxRioPd8", "paymentProvider": "CHECKOUT", "paymentProviderFee": 67, "paymentStationUrl": "L8Gz6z6dKlcLUsPC", "price": 83, "refundedTime": "1985-11-23T00:00:00Z", "salesTax": 82, "sandbox": false, "sku": "85wFGxIiS4I3LcJ6", "status": "REFUND_FAILED", "statusReason": "pUrC34jkbed1vjzu", "subscriptionId": "V1Stkfulvmt5kpU1", "subtotalPrice": 89, "targetNamespace": "GpJrVYFlOrvsCVuE", "targetUserId": "mLvQghtDxpQUqo8r", "tax": 28, "totalPrice": 45, "totalTax": 73, "txEndTime": "1983-02-19T00:00:00Z", "type": "LgPP8juc570TB45x", "userId": "qypAFe7apqPRUPJe", "vat": 28}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3494,9 +3512,9 @@ $CLI_EXE \
     --userId 'oBh7cr7fKsZSIAC7' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 324 'ProcessUserSubscriptionNotification' test.out
+eval_tap $? 326 'ProcessUserSubscriptionNotification' test.out
 
-#- 325 AcquireUserTicket
+#- 327 AcquireUserTicket
 # body param: body
 echo '{"count": 72, "orderNo": "qJcLSAYfvoLVk2IK"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3507,18 +3525,18 @@ $CLI_EXE \
     --userId 'i9rtuih1p71EKFqR' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 325 'AcquireUserTicket' test.out
+eval_tap $? 327 'AcquireUserTicket' test.out
 
-#- 326 QueryUserCurrencyWallets
+#- 328 QueryUserCurrencyWallets
 $CLI_EXE \
     --sn platform \
     --op QueryUserCurrencyWallets \
     --namespace $AB_NAMESPACE \
     --userId 'QygEM3bJqhSmqyNw' \
     > test.out 2>&1
-eval_tap $? 326 'QueryUserCurrencyWallets' test.out
+eval_tap $? 328 'QueryUserCurrencyWallets' test.out
 
-#- 327 DebitUserWalletByCurrencyCode
+#- 329 DebitUserWalletByCurrencyCode
 # body param: body
 echo '{"allowOverdraft": true, "amount": 46, "balanceOrigin": "Xbox", "balanceSource": "ORDER_REVOCATION", "metadata": {"ZhEjjj7Fj73cPImg": {}, "gwIMuDi1x5u5s24j": {}, "a37YgMjb1p6phZNw": {}}, "reason": "0QaB0zS9TEGG9kw3"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3529,9 +3547,9 @@ $CLI_EXE \
     --userId '56kelp6lXwon4DWL' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 327 'DebitUserWalletByCurrencyCode' test.out
+eval_tap $? 329 'DebitUserWalletByCurrencyCode' test.out
 
-#- 328 ListUserCurrencyTransactions
+#- 330 ListUserCurrencyTransactions
 $CLI_EXE \
     --sn platform \
     --op ListUserCurrencyTransactions \
@@ -3541,9 +3559,9 @@ $CLI_EXE \
     --limit '81' \
     --offset '15' \
     > test.out 2>&1
-eval_tap $? 328 'ListUserCurrencyTransactions' test.out
+eval_tap $? 330 'ListUserCurrencyTransactions' test.out
 
-#- 329 CheckBalance
+#- 331 CheckBalance
 # body param: request
 echo '{"amount": 84, "debitBalanceSource": "EXPIRATION", "metadata": {"nxQio6IQBgA4YK4o": {}, "jpCrDcfXZk5g77hW": {}, "TAtjEhUzQFVd8LAv": {}}, "reason": "nkzOlG9bRFYPBZBw", "walletPlatform": "IOS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3554,12 +3572,12 @@ $CLI_EXE \
     --userId '3JSMIRdoOdUfSXI6' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 329 'CheckBalance' test.out
+eval_tap $? 331 'CheckBalance' test.out
 
-#- 330 CheckWallet
-eval_tap 0 330 'CheckWallet # SKIP deprecated' test.out
+#- 332 CheckWallet
+eval_tap 0 332 'CheckWallet # SKIP deprecated' test.out
 
-#- 331 CreditUserWallet
+#- 333 CreditUserWallet
 # body param: body
 echo '{"amount": 5, "expireAt": "1995-04-26T00:00:00Z", "metadata": {"jhacs2eckNuPnSKj": {}, "pbvXWu2xam9Y4Og2": {}, "n286aoJrWsOjsHHb": {}}, "origin": "Playstation", "reason": "pQGFpbYzNqK0Zmq7", "source": "ACHIEVEMENT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3570,9 +3588,9 @@ $CLI_EXE \
     --userId 'YgB8r1DBlSG3Z69g' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 331 'CreditUserWallet' test.out
+eval_tap $? 333 'CreditUserWallet' test.out
 
-#- 332 DebitByWalletPlatform
+#- 334 DebitByWalletPlatform
 # body param: request
 echo '{"amount": 99, "debitBalanceSource": "OTHER", "metadata": {"QC6cgxa6qt9xrBUb": {}, "rra2scGzdSndLpEU": {}, "JzNTk64p5QFqEVPu": {}}, "reason": "w2S8pgG4YW44lwmp", "walletPlatform": "Nintendo"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3583,9 +3601,9 @@ $CLI_EXE \
     --userId 'Es4vPcv23YTtgqpO' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 332 'DebitByWalletPlatform' test.out
+eval_tap $? 334 'DebitByWalletPlatform' test.out
 
-#- 333 PayWithUserWallet
+#- 335 PayWithUserWallet
 # body param: body
 echo '{"amount": 27, "metadata": {"42necGbNtOfuarIW": {}, "N1FR9HW7q0TYPfX3": {}, "AtcysRfbz1ZFcsKe": {}}, "walletPlatform": "GooglePlay"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3596,33 +3614,33 @@ $CLI_EXE \
     --userId 'KRyDO10i9f45USkB' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 333 'PayWithUserWallet' test.out
+eval_tap $? 335 'PayWithUserWallet' test.out
 
-#- 334 GetUserWallet
-eval_tap 0 334 'GetUserWallet # SKIP deprecated' test.out
+#- 336 GetUserWallet
+eval_tap 0 336 'GetUserWallet # SKIP deprecated' test.out
 
-#- 335 DebitUserWallet
-eval_tap 0 335 'DebitUserWallet # SKIP deprecated' test.out
+#- 337 DebitUserWallet
+eval_tap 0 337 'DebitUserWallet # SKIP deprecated' test.out
 
-#- 336 DisableUserWallet
-eval_tap 0 336 'DisableUserWallet # SKIP deprecated' test.out
+#- 338 DisableUserWallet
+eval_tap 0 338 'DisableUserWallet # SKIP deprecated' test.out
 
-#- 337 EnableUserWallet
-eval_tap 0 337 'EnableUserWallet # SKIP deprecated' test.out
+#- 339 EnableUserWallet
+eval_tap 0 339 'EnableUserWallet # SKIP deprecated' test.out
 
-#- 338 ListUserWalletTransactions
-eval_tap 0 338 'ListUserWalletTransactions # SKIP deprecated' test.out
+#- 340 ListUserWalletTransactions
+eval_tap 0 340 'ListUserWalletTransactions # SKIP deprecated' test.out
 
-#- 339 ListViews
+#- 341 ListViews
 $CLI_EXE \
     --sn platform \
     --op ListViews \
     --namespace $AB_NAMESPACE \
     --storeId 'gqCG2snOrYoSEKXN' \
     > test.out 2>&1
-eval_tap $? 339 'ListViews' test.out
+eval_tap $? 341 'ListViews' test.out
 
-#- 340 CreateView
+#- 342 CreateView
 # body param: body
 echo '{"displayOrder": 18, "localizations": {"BUwb5aRe0eHVKWiN": {"description": "TDFT7UIWhg5gjLxr", "localExt": {"ocCqQNh2Rkb7cVpR": {}, "dQL7AkKLFb6p01oL": {}, "Dy2TLbAT7DdOEP6f": {}}, "longDescription": "KshzFk7lq2SQ8wgx", "title": "a4L0FX2SAuhdvc3t"}, "eYbwUQDPBfxJ7SI4": {"description": "yuuaVXsQyJ4oS6nf", "localExt": {"FcVNZrLCQFxgNARE": {}, "iqEu8ezVEDcbImtv": {}, "aMbtpvWP15Pk6syc": {}}, "longDescription": "Zck0At1wphDhWalc", "title": "W3UZ1jE5tvaxFShz"}, "KSLx72rP98XbH9in": {"description": "AI7kaUojqNShWZLo", "localExt": {"WBYze5un3web7anP": {}, "CzSPMVGfgN7I8f2V": {}, "tFDMUeffkmJhqf9t": {}}, "longDescription": "PRtDrSeRhogvK26p", "title": "a3SEqMMdhpMkf2xq"}}, "name": "bzigZsJONDA4xfaq"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3632,9 +3650,9 @@ $CLI_EXE \
     --storeId 'RVUwpBm0FeSlavlA' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 340 'CreateView' test.out
+eval_tap $? 342 'CreateView' test.out
 
-#- 341 GetView
+#- 343 GetView
 $CLI_EXE \
     --sn platform \
     --op GetView \
@@ -3642,9 +3660,9 @@ $CLI_EXE \
     --viewId 'L9vuGCRfqoJUgquA' \
     --storeId 'wdfMVz4egXFEEQih' \
     > test.out 2>&1
-eval_tap $? 341 'GetView' test.out
+eval_tap $? 343 'GetView' test.out
 
-#- 342 UpdateView
+#- 344 UpdateView
 # body param: body
 echo '{"displayOrder": 53, "localizations": {"Tx3FtGkOle9CV41y": {"description": "tsXRsnVMQHFBKrkE", "localExt": {"xuJ9OHlsmcCYqlU1": {}, "k3nP9mxvWvI5EAYI": {}, "YmK3Kcn3tyWwR944": {}}, "longDescription": "fDOIGPH4WsgRon2Z", "title": "ieYY3LLU09sOqk1A"}, "7nautqBhKyfGUDf0": {"description": "mgpBi8y2bRqCEY7A", "localExt": {"PZ8tNGBW05V7l3Sb": {}, "9lOoZK5XRZ8aVFEj": {}, "1Do51I0bfPBgySeJ": {}}, "longDescription": "twL61lEj797zw9lH", "title": "A7gVISndOkcApYTs"}, "S3AHSueK79RKIJTO": {"description": "MwFKvGSmGPickamz", "localExt": {"4VkhOm2gmNr52qSX": {}, "MMQgTtGovTCFv3fH": {}, "DY6ze4YYkLbAGQXD": {}}, "longDescription": "uA01upAGQQsAMJEp", "title": "1v65HydoZQDGOWlR"}}, "name": "5V2kaFaIiCy1pQyi"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3655,9 +3673,9 @@ $CLI_EXE \
     --storeId 'w0jKIcLqz3uEfJ9i' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 342 'UpdateView' test.out
+eval_tap $? 344 'UpdateView' test.out
 
-#- 343 DeleteView
+#- 345 DeleteView
 $CLI_EXE \
     --sn platform \
     --op DeleteView \
@@ -3665,17 +3683,17 @@ $CLI_EXE \
     --viewId 'dpWpiYibcxQsmWnl' \
     --storeId '8a1rzTtGsVvmtkxH' \
     > test.out 2>&1
-eval_tap $? 343 'DeleteView' test.out
+eval_tap $? 345 'DeleteView' test.out
 
-#- 344 GetWalletConfig
+#- 346 GetWalletConfig
 $CLI_EXE \
     --sn platform \
     --op GetWalletConfig \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 344 'GetWalletConfig' test.out
+eval_tap $? 346 'GetWalletConfig' test.out
 
-#- 345 UpdateWalletConfig
+#- 347 UpdateWalletConfig
 # body param: body
 echo '{"enablePaidForVCExpiration": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3684,37 +3702,37 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 345 'UpdateWalletConfig' test.out
+eval_tap $? 347 'UpdateWalletConfig' test.out
 
-#- 346 QueryWallets
-eval_tap 0 346 'QueryWallets # SKIP deprecated' test.out
+#- 348 QueryWallets
+eval_tap 0 348 'QueryWallets # SKIP deprecated' test.out
 
-#- 347 BulkCredit
+#- 349 BulkCredit
 # body param: body
-echo '[{"creditRequest": {"amount": 57, "expireAt": "1976-06-09T00:00:00Z", "metadata": {"pkt3N9G0HJJKaUvO": {}, "7xiop3EAHZI8TBGV": {}, "aBLRK1mRfE7y0JQD": {}}, "origin": "Playstation", "reason": "e6OqBUfVRl5OYSaT", "source": "PROMOTION"}, "currencyCode": "GVpNi4BHONVQr4zU", "userIds": ["h06XhaYrNaKZR1j0", "QW6wXksmVzhOjDsp", "l57JoCzp6dC3Tnbv"]}, {"creditRequest": {"amount": 96, "expireAt": "1976-06-25T00:00:00Z", "metadata": {"TdXsrjYwWG7nZCgT": {}, "VBx598tUO3in2nv4": {}, "JSIDPnpAz2ym8zqZ": {}}, "origin": "IOS", "reason": "dYaMNCdr6ZGIw9Q5", "source": "IAP_CHARGEBACK_REVERSED"}, "currencyCode": "YXbPxRHP9TGckSgt", "userIds": ["8pKBiRiKghVbKvWX", "h9Z1Xt2CiagYVmcc", "589M1Kgm5fEdGnRd"]}, {"creditRequest": {"amount": 63, "expireAt": "1990-08-26T00:00:00Z", "metadata": {"RTEUjHLcCgQV5FVM": {}, "0wAmKRn4qIvUJTX2": {}, "84OIGwUSQkQw82KS": {}}, "origin": "GooglePlay", "reason": "UpDKb0JCBnPlIdcZ", "source": "REDEEM_CODE"}, "currencyCode": "xcHFJYYj1nRu9gC4", "userIds": ["jgtDtjgNR7k75iLA", "mkw2CZ1Djcqka5qU", "579dx3IVWuIH2f3M"]}]' > $TEMP_JSON_INPUT
+echo '[{"creditRequest": {"amount": 57, "expireAt": "1976-06-09T00:00:00Z", "metadata": {"pkt3N9G0HJJKaUvO": {}, "7xiop3EAHZI8TBGV": {}, "aBLRK1mRfE7y0JQD": {}}, "origin": "Playstation", "reason": "e6OqBUfVRl5OYSaT", "source": "PROMOTION"}, "currencyCode": "GVpNi4BHONVQr4zU", "userIds": ["h06XhaYrNaKZR1j0", "QW6wXksmVzhOjDsp", "l57JoCzp6dC3Tnbv"]}, {"creditRequest": {"amount": 96, "expireAt": "1976-06-25T00:00:00Z", "metadata": {"TdXsrjYwWG7nZCgT": {}, "VBx598tUO3in2nv4": {}, "JSIDPnpAz2ym8zqZ": {}}, "origin": "IOS", "reason": "dYaMNCdr6ZGIw9Q5", "source": "IAP_CHARGEBACK_REVERSED"}, "currencyCode": "YXbPxRHP9TGckSgt", "userIds": ["h9Z1Xt2CiagYVmcc", "589M1Kgm5fEdGnRd", "8pKBiRiKghVbKvWX"]}, {"creditRequest": {"amount": 63, "expireAt": "1990-08-26T00:00:00Z", "metadata": {"RTEUjHLcCgQV5FVM": {}, "0wAmKRn4qIvUJTX2": {}, "84OIGwUSQkQw82KS": {}}, "origin": "GooglePlay", "reason": "UpDKb0JCBnPlIdcZ", "source": "REDEEM_CODE"}, "currencyCode": "xcHFJYYj1nRu9gC4", "userIds": ["jgtDtjgNR7k75iLA", "mkw2CZ1Djcqka5qU", "579dx3IVWuIH2f3M"]}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op BulkCredit \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 347 'BulkCredit' test.out
+eval_tap $? 349 'BulkCredit' test.out
 
-#- 348 BulkDebit
+#- 350 BulkDebit
 # body param: body
-echo '[{"currencyCode": "LwLvP4Q67TE6C8F3", "request": {"allowOverdraft": true, "amount": 1, "balanceOrigin": "Oculus", "balanceSource": "IAP_REVOCATION", "metadata": {"54Je1VDbu1L9VO2H": {}, "5EkRDEuZqhqqXBZ8": {}, "XQ3KCW6AfgexapL0": {}}, "reason": "XwA0iPBN0xVZNMJy"}, "userIds": ["dtAg2IpUnFHvx0JO", "U68R8zcyh4vrM1cc", "QNhIeNDrVf0WmK9w"]}, {"currencyCode": "BrG8nYlDIZ4Lzm0B", "request": {"allowOverdraft": true, "amount": 88, "balanceOrigin": "System", "balanceSource": "PAYMENT", "metadata": {"HKMDKgEe6trrQDZH": {}, "ses6o6MvSQ6dJyc9": {}, "bwdZRTwn3mIquHl8": {}}, "reason": "CKX3eKFqFMXs97Wd"}, "userIds": ["eL1QW1pXk9COUyUA", "JDMjAUaOh3P4KGgC", "VHIbxintdbKHq45A"]}, {"currencyCode": "8cUv26XFGpQrs5Mt", "request": {"allowOverdraft": true, "amount": 17, "balanceOrigin": "GooglePlay", "balanceSource": "TRADE", "metadata": {"egr36M13PKdWcDUK": {}, "gxci2ApCSezxpjsX": {}, "R6QrCCRfOaEGVoJG": {}}, "reason": "U7nXtKtAlsitN13z"}, "userIds": ["f0khqVGdszLDy6Gd", "NwlokuAJh9LtWNp9", "K2PGOYpBNkm1VGeP"]}]' > $TEMP_JSON_INPUT
+echo '[{"currencyCode": "LwLvP4Q67TE6C8F3", "request": {"allowOverdraft": true, "amount": 1, "balanceOrigin": "Oculus", "balanceSource": "IAP_REVOCATION", "metadata": {"54Je1VDbu1L9VO2H": {}, "5EkRDEuZqhqqXBZ8": {}, "XQ3KCW6AfgexapL0": {}}, "reason": "XwA0iPBN0xVZNMJy"}, "userIds": ["QNhIeNDrVf0WmK9w", "dtAg2IpUnFHvx0JO", "U68R8zcyh4vrM1cc"]}, {"currencyCode": "BrG8nYlDIZ4Lzm0B", "request": {"allowOverdraft": true, "amount": 88, "balanceOrigin": "System", "balanceSource": "PAYMENT", "metadata": {"HKMDKgEe6trrQDZH": {}, "ses6o6MvSQ6dJyc9": {}, "bwdZRTwn3mIquHl8": {}}, "reason": "CKX3eKFqFMXs97Wd"}, "userIds": ["JDMjAUaOh3P4KGgC", "VHIbxintdbKHq45A", "eL1QW1pXk9COUyUA"]}, {"currencyCode": "8cUv26XFGpQrs5Mt", "request": {"allowOverdraft": true, "amount": 17, "balanceOrigin": "GooglePlay", "balanceSource": "TRADE", "metadata": {"egr36M13PKdWcDUK": {}, "gxci2ApCSezxpjsX": {}, "R6QrCCRfOaEGVoJG": {}}, "reason": "U7nXtKtAlsitN13z"}, "userIds": ["K2PGOYpBNkm1VGeP", "f0khqVGdszLDy6Gd", "NwlokuAJh9LtWNp9"]}]' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op BulkDebit \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 348 'BulkDebit' test.out
+eval_tap $? 350 'BulkDebit' test.out
 
-#- 349 GetWallet
-eval_tap 0 349 'GetWallet # SKIP deprecated' test.out
+#- 351 GetWallet
+eval_tap 0 351 'GetWallet # SKIP deprecated' test.out
 
-#- 350 SyncOrders
+#- 352 SyncOrders
 $CLI_EXE \
     --sn platform \
     --op SyncOrders \
@@ -3722,9 +3740,9 @@ $CLI_EXE \
     --end 'aHBAIsnyxZR5aL6N' \
     --start '8TqRsdUqDRswN6JS' \
     > test.out 2>&1
-eval_tap $? 350 'SyncOrders' test.out
+eval_tap $? 352 'SyncOrders' test.out
 
-#- 351 TestAdyenConfig
+#- 353 TestAdyenConfig
 # body param: body
 echo '{"allowedPaymentMethods": ["qNzirfxcWUnAgAHP", "jh2yPIOWLCgBjtWs", "0f6FUSPREQRMYKRQ"], "apiKey": "0FKpgEpulmcdi1w0", "authoriseAsCapture": true, "blockedPaymentMethods": ["ctNZ7lciurC4GOSW", "B7P8uwmTw2VTyW3q", "pJ1Pbqv1VADkivK7"], "clientKey": "Lwr7BFgjfRG6gdkZ", "dropInSettings": "HusYtmlD12ohi292", "liveEndpointUrlPrefix": "7dAD2FZEqalmQJIK", "merchantAccount": "5OBha6LgLUcryn2A", "notificationHmacKey": "Q7XM6mWG2mcm7hlx", "notificationPassword": "QwTHp1cnHLbeciBR", "notificationUsername": "uwmIJ4zaTOY3GOAC", "returnUrl": "jy9FQth85aFCZ2YK", "settings": "by3000QOpKwTkBkO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3733,9 +3751,9 @@ $CLI_EXE \
     --sandbox 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 351 'TestAdyenConfig' test.out
+eval_tap $? 353 'TestAdyenConfig' test.out
 
-#- 352 TestAliPayConfig
+#- 354 TestAliPayConfig
 # body param: body
 echo '{"appId": "vBGM9QHkLKjKyMs6", "privateKey": "kFxOtC5sm9sic0rq", "publicKey": "KgEpJJRHTZGfptSF", "returnUrl": "p3PaqDooPsfXpAEc"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3744,9 +3762,9 @@ $CLI_EXE \
     --sandbox 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 352 'TestAliPayConfig' test.out
+eval_tap $? 354 'TestAliPayConfig' test.out
 
-#- 353 TestCheckoutConfig
+#- 355 TestCheckoutConfig
 # body param: body
 echo '{"publicKey": "rjVum0F4glPZQqZH", "secretKey": "mTU2aQ3O5sIKPXiK"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3755,18 +3773,18 @@ $CLI_EXE \
     --sandbox 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 353 'TestCheckoutConfig' test.out
+eval_tap $? 355 'TestCheckoutConfig' test.out
 
-#- 354 DebugMatchedPaymentMerchantConfig
+#- 356 DebugMatchedPaymentMerchantConfig
 $CLI_EXE \
     --sn platform \
     --op DebugMatchedPaymentMerchantConfig \
     --namespace_ 'hAhrXNUPDjtVa15V' \
     --region 'xYNuwz0ZuAn58i4j' \
     > test.out 2>&1
-eval_tap $? 354 'DebugMatchedPaymentMerchantConfig' test.out
+eval_tap $? 356 'DebugMatchedPaymentMerchantConfig' test.out
 
-#- 355 TestNeonPayConfig
+#- 357 TestNeonPayConfig
 # body param: body
 echo '{"apiKey": "8k1wD1PAYApnim02", "webhookSecretKey": "gGIRbsoZSMUHmQGs"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3775,9 +3793,9 @@ $CLI_EXE \
     --sandbox 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 355 'TestNeonPayConfig' test.out
+eval_tap $? 357 'TestNeonPayConfig' test.out
 
-#- 356 TestPayPalConfig
+#- 358 TestPayPalConfig
 # body param: body
 echo '{"clientID": "AMVG3e5UlqVA6R1h", "clientSecret": "OtcLv8gtG2kYjDAJ", "returnUrl": "O4Ph1RIhWjk1GN8g", "webHookId": "akzNO4vdTYAshuyF"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3786,9 +3804,9 @@ $CLI_EXE \
     --sandbox 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 356 'TestPayPalConfig' test.out
+eval_tap $? 358 'TestPayPalConfig' test.out
 
-#- 357 TestStripeConfig
+#- 359 TestStripeConfig
 # body param: body
 echo '{"allowedPaymentMethodTypes": ["5O74G5bVr8iBVOD0", "gfitvxCEvwg7aRhT", "aeeKCK0QVdLFdRuQ"], "publishableKey": "1HOGOGbcuUMmvNcF", "secretKey": "5ntwD99Y88j7QLbd", "webhookSecret": "fI31PnmdxW0hado3"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3797,9 +3815,9 @@ $CLI_EXE \
     --sandbox 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 357 'TestStripeConfig' test.out
+eval_tap $? 359 'TestStripeConfig' test.out
 
-#- 358 TestWxPayConfig
+#- 360 TestWxPayConfig
 # body param: body
 echo '{"appId": "swCy0FyujbLlxnSA", "key": "P2IYN1N7xIOrH3R6", "mchid": "Xjy3vGuUjInSsbP3", "returnUrl": "fnYoSrWN5IHnLKMO"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3807,9 +3825,9 @@ $CLI_EXE \
     --op TestWxPayConfig \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 358 'TestWxPayConfig' test.out
+eval_tap $? 360 'TestWxPayConfig' test.out
 
-#- 359 TestXsollaConfig
+#- 361 TestXsollaConfig
 # body param: body
 echo '{"apiKey": "HLm6tMFzowwybFVc", "flowCompletionUrl": "Kju0pN4nB52bARNs", "merchantId": 9, "projectId": 23, "projectSecretKey": "NUFZ6rX8UcEfMtd1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3817,17 +3835,17 @@ $CLI_EXE \
     --op TestXsollaConfig \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 359 'TestXsollaConfig' test.out
+eval_tap $? 361 'TestXsollaConfig' test.out
 
-#- 360 GetPaymentMerchantConfig1
+#- 362 GetPaymentMerchantConfig1
 $CLI_EXE \
     --sn platform \
     --op GetPaymentMerchantConfig1 \
     --id 'TUbaLazS0Hmhlj1p' \
     > test.out 2>&1
-eval_tap $? 360 'GetPaymentMerchantConfig1' test.out
+eval_tap $? 362 'GetPaymentMerchantConfig1' test.out
 
-#- 361 UpdateAdyenConfig
+#- 363 UpdateAdyenConfig
 # body param: body
 echo '{"allowedPaymentMethods": ["fUitn3eVvmh5bIQI", "DMEFctins0mlrKYB", "ogpknj5r5F1ecg9l"], "apiKey": "uf9JZ3YCKseDpcgs", "authoriseAsCapture": false, "blockedPaymentMethods": ["Erx43h0KwuC5oxfj", "4i1CfIUitEoRqvBT", "C8DOP5u5rXnIWKW0"], "clientKey": "6S0ZY6Dva5Pm4TfT", "dropInSettings": "bfYLjTiCR7AxmeKM", "liveEndpointUrlPrefix": "pOVBeMlgLcC0bF0n", "merchantAccount": "7YSdnTCAipuuANTy", "notificationHmacKey": "IP7cCjz5KY4ZfuRD", "notificationPassword": "jkZkxCCJtn5MeNFZ", "notificationUsername": "RFVZ20EbVv5y7gnW", "returnUrl": "yWsjU339vvMoO52T", "settings": "a7UkVGeZYjxucD0W"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3838,18 +3856,18 @@ $CLI_EXE \
     --validate 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 361 'UpdateAdyenConfig' test.out
+eval_tap $? 363 'UpdateAdyenConfig' test.out
 
-#- 362 TestAdyenConfigById
+#- 364 TestAdyenConfigById
 $CLI_EXE \
     --sn platform \
     --op TestAdyenConfigById \
     --id 'zTEvy13nZJKPd3W9' \
     --sandbox 'true' \
     > test.out 2>&1
-eval_tap $? 362 'TestAdyenConfigById' test.out
+eval_tap $? 364 'TestAdyenConfigById' test.out
 
-#- 363 UpdateAliPayConfig
+#- 365 UpdateAliPayConfig
 # body param: body
 echo '{"appId": "1RFaF03ApwYnOXCO", "privateKey": "iyObqeYCuoLO9kEO", "publicKey": "ocYx1YxD8KWoajBW", "returnUrl": "m8kKMccHFXabzeAr"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3860,18 +3878,18 @@ $CLI_EXE \
     --validate 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 363 'UpdateAliPayConfig' test.out
+eval_tap $? 365 'UpdateAliPayConfig' test.out
 
-#- 364 TestAliPayConfigById
+#- 366 TestAliPayConfigById
 $CLI_EXE \
     --sn platform \
     --op TestAliPayConfigById \
     --id 't0MAnt0rC8C4ls5z' \
     --sandbox 'false' \
     > test.out 2>&1
-eval_tap $? 364 'TestAliPayConfigById' test.out
+eval_tap $? 366 'TestAliPayConfigById' test.out
 
-#- 365 UpdateCheckoutConfig
+#- 367 UpdateCheckoutConfig
 # body param: body
 echo '{"publicKey": "ouKjy4rnLoZ5OBI5", "secretKey": "RuYmjBDeJ0fCQnSG"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3882,18 +3900,18 @@ $CLI_EXE \
     --validate 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 365 'UpdateCheckoutConfig' test.out
+eval_tap $? 367 'UpdateCheckoutConfig' test.out
 
-#- 366 TestCheckoutConfigById
+#- 368 TestCheckoutConfigById
 $CLI_EXE \
     --sn platform \
     --op TestCheckoutConfigById \
     --id 'GEqGr4YUMJr8Ct8M' \
     --sandbox 'true' \
     > test.out 2>&1
-eval_tap $? 366 'TestCheckoutConfigById' test.out
+eval_tap $? 368 'TestCheckoutConfigById' test.out
 
-#- 367 UpdateNeonPayConfig
+#- 369 UpdateNeonPayConfig
 # body param: body
 echo '{"apiKey": "7SZjddDO7bcmc5Tt", "webhookSecretKey": "dYzXdzY1fmFotLDA"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3904,18 +3922,18 @@ $CLI_EXE \
     --validate 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 367 'UpdateNeonPayConfig' test.out
+eval_tap $? 369 'UpdateNeonPayConfig' test.out
 
-#- 368 TestNeonPayConfigById
+#- 370 TestNeonPayConfigById
 $CLI_EXE \
     --sn platform \
     --op TestNeonPayConfigById \
     --id '7VoII3IkgYB1P4Wq' \
     --sandbox 'true' \
     > test.out 2>&1
-eval_tap $? 368 'TestNeonPayConfigById' test.out
+eval_tap $? 370 'TestNeonPayConfigById' test.out
 
-#- 369 UpdatePayPalConfig
+#- 371 UpdatePayPalConfig
 # body param: body
 echo '{"clientID": "HuPaZkFV1ogixKgv", "clientSecret": "pqduJo0y2mKU1giN", "returnUrl": "NqKa80bmKciFu5YN", "webHookId": "YtT3uTkTKKPdkoGC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3926,18 +3944,18 @@ $CLI_EXE \
     --validate 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 369 'UpdatePayPalConfig' test.out
+eval_tap $? 371 'UpdatePayPalConfig' test.out
 
-#- 370 TestPayPalConfigById
+#- 372 TestPayPalConfigById
 $CLI_EXE \
     --sn platform \
     --op TestPayPalConfigById \
     --id 'XabufaNxmbSAJ4Er' \
     --sandbox 'false' \
     > test.out 2>&1
-eval_tap $? 370 'TestPayPalConfigById' test.out
+eval_tap $? 372 'TestPayPalConfigById' test.out
 
-#- 371 UpdateStripeConfig
+#- 373 UpdateStripeConfig
 # body param: body
 echo '{"allowedPaymentMethodTypes": ["1IwTxDOmaxA7XYeQ", "BcbWVxy5qoHC453q", "8dOoXtgoOZsxhfpf"], "publishableKey": "VfubKVWh0x3S1LqH", "secretKey": "kOU0IFxs7UtXkEmB", "webhookSecret": "vpldipRYFeARZGKy"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3948,18 +3966,18 @@ $CLI_EXE \
     --validate 'false' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 371 'UpdateStripeConfig' test.out
+eval_tap $? 373 'UpdateStripeConfig' test.out
 
-#- 372 TestStripeConfigById
+#- 374 TestStripeConfigById
 $CLI_EXE \
     --sn platform \
     --op TestStripeConfigById \
     --id 'uqX5yCY2Nmk8dRVR' \
     --sandbox 'false' \
     > test.out 2>&1
-eval_tap $? 372 'TestStripeConfigById' test.out
+eval_tap $? 374 'TestStripeConfigById' test.out
 
-#- 373 UpdateWxPayConfig
+#- 375 UpdateWxPayConfig
 # body param: body
 echo '{"appId": "eMmkW9zK51cCM8aq", "key": "dViaFjAciFGevjcm", "mchid": "StbKdphxYXDZdeqY", "returnUrl": "yyTmqPwWBrrlwcZL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -3969,9 +3987,9 @@ $CLI_EXE \
     --validate 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 373 'UpdateWxPayConfig' test.out
+eval_tap $? 375 'UpdateWxPayConfig' test.out
 
-#- 374 UpdateWxPayConfigCert
+#- 376 UpdateWxPayConfigCert
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -3980,17 +3998,17 @@ $CLI_EXE \
     --id '6Wr9etlQNsoMcEst' \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 374 'UpdateWxPayConfigCert' test.out
+eval_tap $? 376 'UpdateWxPayConfigCert' test.out
 
-#- 375 TestWxPayConfigById
+#- 377 TestWxPayConfigById
 $CLI_EXE \
     --sn platform \
     --op TestWxPayConfigById \
     --id 'SmH8UePnU59NHMH5' \
     > test.out 2>&1
-eval_tap $? 375 'TestWxPayConfigById' test.out
+eval_tap $? 377 'TestWxPayConfigById' test.out
 
-#- 376 UpdateXsollaConfig
+#- 378 UpdateXsollaConfig
 # body param: body
 echo '{"apiKey": "29kmXxWHLNMnB3AQ", "flowCompletionUrl": "pfFKK4uBqaYJ8oJM", "merchantId": 80, "projectId": 44, "projectSecretKey": "QnwB1qOviY1dZR9U"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4000,17 +4018,17 @@ $CLI_EXE \
     --validate 'true' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 376 'UpdateXsollaConfig' test.out
+eval_tap $? 378 'UpdateXsollaConfig' test.out
 
-#- 377 TestXsollaConfigById
+#- 379 TestXsollaConfigById
 $CLI_EXE \
     --sn platform \
     --op TestXsollaConfigById \
     --id 'Scx55S1MtqU70O39' \
     > test.out 2>&1
-eval_tap $? 377 'TestXsollaConfigById' test.out
+eval_tap $? 379 'TestXsollaConfigById' test.out
 
-#- 378 UpdateXsollaUIConfig
+#- 380 UpdateXsollaUIConfig
 # body param: body
 echo '{"device": "DESKTOP", "showCloseButton": true, "size": "SMALL", "theme": "DEFAULT"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4019,9 +4037,9 @@ $CLI_EXE \
     --id 'ESKDZ6k3w7sbGMhZ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 378 'UpdateXsollaUIConfig' test.out
+eval_tap $? 380 'UpdateXsollaUIConfig' test.out
 
-#- 379 QueryPaymentProviderConfig
+#- 381 QueryPaymentProviderConfig
 $CLI_EXE \
     --sn platform \
     --op QueryPaymentProviderConfig \
@@ -4030,9 +4048,9 @@ $CLI_EXE \
     --offset '43' \
     --region '65yPgSGKGR2JAPIK' \
     > test.out 2>&1
-eval_tap $? 379 'QueryPaymentProviderConfig' test.out
+eval_tap $? 381 'QueryPaymentProviderConfig' test.out
 
-#- 380 CreatePaymentProviderConfig
+#- 382 CreatePaymentProviderConfig
 # body param: body
 echo '{"aggregate": "STRIPE", "namespace": "BtGrJlpK3SM5b8g3", "region": "Mf805rz9wsJaMTux", "sandboxTaxJarApiToken": "5mtllv3nwAErVuGH", "specials": ["ADYEN", "WALLET", "XSOLLA"], "taxJarApiToken": "wN4tZAJkAMaV0Ikx", "taxJarEnabled": true, "useGlobalTaxJarApiToken": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4040,32 +4058,32 @@ $CLI_EXE \
     --op CreatePaymentProviderConfig \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 380 'CreatePaymentProviderConfig' test.out
+eval_tap $? 382 'CreatePaymentProviderConfig' test.out
 
-#- 381 GetAggregatePaymentProviders
+#- 383 GetAggregatePaymentProviders
 $CLI_EXE \
     --sn platform \
     --op GetAggregatePaymentProviders \
     > test.out 2>&1
-eval_tap $? 381 'GetAggregatePaymentProviders' test.out
+eval_tap $? 383 'GetAggregatePaymentProviders' test.out
 
-#- 382 DebugMatchedPaymentProviderConfig
+#- 384 DebugMatchedPaymentProviderConfig
 $CLI_EXE \
     --sn platform \
     --op DebugMatchedPaymentProviderConfig \
     --namespace_ 'oGFAa2nWoZzDdEG8' \
     --region '9sbeEhs27Q290hGX' \
     > test.out 2>&1
-eval_tap $? 382 'DebugMatchedPaymentProviderConfig' test.out
+eval_tap $? 384 'DebugMatchedPaymentProviderConfig' test.out
 
-#- 383 GetSpecialPaymentProviders
+#- 385 GetSpecialPaymentProviders
 $CLI_EXE \
     --sn platform \
     --op GetSpecialPaymentProviders \
     > test.out 2>&1
-eval_tap $? 383 'GetSpecialPaymentProviders' test.out
+eval_tap $? 385 'GetSpecialPaymentProviders' test.out
 
-#- 384 UpdatePaymentProviderConfig
+#- 386 UpdatePaymentProviderConfig
 # body param: body
 echo '{"aggregate": "ADYEN", "namespace": "Fe1hYrI8X2rGnQaP", "region": "RXIry43N31mWJdxg", "sandboxTaxJarApiToken": "H2I2hi5gwgPQgccc", "specials": ["XSOLLA", "ADYEN", "NEONPAY"], "taxJarApiToken": "Vxb6PM22CB62yEOy", "taxJarEnabled": true, "useGlobalTaxJarApiToken": false}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4074,24 +4092,24 @@ $CLI_EXE \
     --id 'bZV0BGuwgsc68YAL' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 384 'UpdatePaymentProviderConfig' test.out
+eval_tap $? 386 'UpdatePaymentProviderConfig' test.out
 
-#- 385 DeletePaymentProviderConfig
+#- 387 DeletePaymentProviderConfig
 $CLI_EXE \
     --sn platform \
     --op DeletePaymentProviderConfig \
     --id 'lNO7ycoeW3TfNRNh' \
     > test.out 2>&1
-eval_tap $? 385 'DeletePaymentProviderConfig' test.out
+eval_tap $? 387 'DeletePaymentProviderConfig' test.out
 
-#- 386 GetPaymentTaxConfig
+#- 388 GetPaymentTaxConfig
 $CLI_EXE \
     --sn platform \
     --op GetPaymentTaxConfig \
     > test.out 2>&1
-eval_tap $? 386 'GetPaymentTaxConfig' test.out
+eval_tap $? 388 'GetPaymentTaxConfig' test.out
 
-#- 387 UpdatePaymentTaxConfig
+#- 389 UpdatePaymentTaxConfig
 # body param: body
 echo '{"sandboxTaxJarApiToken": "F1wnYWTSpJvHZXxy", "taxJarApiToken": "jNUiixyoOxS1UzH4", "taxJarEnabled": false, "taxJarProductCodesMapping": {"F0SgIv0LvHvzl3Tv": "Tbt5VpD7jFSiCjHa", "Nd8Q7DtfGqQLFtWc": "x3sS27F1ybaClsG8", "htKMpQxUOKSWy6vd": "JaOZ0EriQ1ubSnNL"}}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4099,9 +4117,9 @@ $CLI_EXE \
     --op UpdatePaymentTaxConfig \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 387 'UpdatePaymentTaxConfig' test.out
+eval_tap $? 389 'UpdatePaymentTaxConfig' test.out
 
-#- 388 SyncPaymentOrders
+#- 390 SyncPaymentOrders
 $CLI_EXE \
     --sn platform \
     --op SyncPaymentOrders \
@@ -4109,9 +4127,9 @@ $CLI_EXE \
     --end 'UwTQWXLuK0eBpHCJ' \
     --start '38VGS7H5MLot04qv' \
     > test.out 2>&1
-eval_tap $? 388 'SyncPaymentOrders' test.out
+eval_tap $? 390 'SyncPaymentOrders' test.out
 
-#- 389 PublicGetRootCategories
+#- 391 PublicGetRootCategories
 $CLI_EXE \
     --sn platform \
     --op PublicGetRootCategories \
@@ -4119,9 +4137,9 @@ $CLI_EXE \
     --language 'cKSbLIRMwzzzku28' \
     --storeId 'm7w7yWQqiUihEvUI' \
     > test.out 2>&1
-eval_tap $? 389 'PublicGetRootCategories' test.out
+eval_tap $? 391 'PublicGetRootCategories' test.out
 
-#- 390 DownloadCategories
+#- 392 DownloadCategories
 $CLI_EXE \
     --sn platform \
     --op DownloadCategories \
@@ -4129,9 +4147,9 @@ $CLI_EXE \
     --language 'tF36RZ6cMpurSPWa' \
     --storeId 'BkHI96AarOb9hz7k' \
     > test.out 2>&1
-eval_tap $? 390 'DownloadCategories' test.out
+eval_tap $? 392 'DownloadCategories' test.out
 
-#- 391 PublicGetCategory
+#- 393 PublicGetCategory
 $CLI_EXE \
     --sn platform \
     --op PublicGetCategory \
@@ -4140,9 +4158,9 @@ $CLI_EXE \
     --language 'cABHAu3rHSZ4VSyG' \
     --storeId '35ZL4V5s0lwQCHGF' \
     > test.out 2>&1
-eval_tap $? 391 'PublicGetCategory' test.out
+eval_tap $? 393 'PublicGetCategory' test.out
 
-#- 392 PublicGetChildCategories
+#- 394 PublicGetChildCategories
 $CLI_EXE \
     --sn platform \
     --op PublicGetChildCategories \
@@ -4151,9 +4169,9 @@ $CLI_EXE \
     --language 'QqQeDsx7wssaLQou' \
     --storeId 'aUDj2whuxn5cP7o2' \
     > test.out 2>&1
-eval_tap $? 392 'PublicGetChildCategories' test.out
+eval_tap $? 394 'PublicGetChildCategories' test.out
 
-#- 393 PublicGetDescendantCategories
+#- 395 PublicGetDescendantCategories
 $CLI_EXE \
     --sn platform \
     --op PublicGetDescendantCategories \
@@ -4162,44 +4180,44 @@ $CLI_EXE \
     --language 'uZWCLhBqBkPz3Aeg' \
     --storeId '3H49tIUENyKO4OHA' \
     > test.out 2>&1
-eval_tap $? 393 'PublicGetDescendantCategories' test.out
+eval_tap $? 395 'PublicGetDescendantCategories' test.out
 
-#- 394 PublicListCurrencies
+#- 396 PublicListCurrencies
 $CLI_EXE \
     --sn platform \
     --op PublicListCurrencies \
     --namespace $AB_NAMESPACE \
     --currencyType 'VIRTUAL' \
     > test.out 2>&1
-eval_tap $? 394 'PublicListCurrencies' test.out
+eval_tap $? 396 'PublicListCurrencies' test.out
 
-#- 395 GeDLCDurableRewardShortMap
+#- 397 GeDLCDurableRewardShortMap
 $CLI_EXE \
     --sn platform \
     --op GeDLCDurableRewardShortMap \
     --namespace $AB_NAMESPACE \
     --dlcType 'OCULUS' \
     > test.out 2>&1
-eval_tap $? 395 'GeDLCDurableRewardShortMap' test.out
+eval_tap $? 397 'GeDLCDurableRewardShortMap' test.out
 
-#- 396 GetAppleConfigVersion
+#- 398 GetAppleConfigVersion
 $CLI_EXE \
     --sn platform \
     --op GetAppleConfigVersion \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 396 'GetAppleConfigVersion' test.out
+eval_tap $? 398 'GetAppleConfigVersion' test.out
 
-#- 397 GetIAPItemMapping
+#- 399 GetIAPItemMapping
 $CLI_EXE \
     --sn platform \
     --op GetIAPItemMapping \
     --namespace $AB_NAMESPACE \
     --platform 'GOOGLE' \
     > test.out 2>&1
-eval_tap $? 397 'GetIAPItemMapping' test.out
+eval_tap $? 399 'GetIAPItemMapping' test.out
 
-#- 398 PublicGetItemByAppId
+#- 400 PublicGetItemByAppId
 $CLI_EXE \
     --sn platform \
     --op PublicGetItemByAppId \
@@ -4209,9 +4227,9 @@ $CLI_EXE \
     --storeId '6rjK6QbXQ0ghC1pF' \
     --appId '0gKEG1WyKZn0D2aQ' \
     > test.out 2>&1
-eval_tap $? 398 'PublicGetItemByAppId' test.out
+eval_tap $? 400 'PublicGetItemByAppId' test.out
 
-#- 399 PublicQueryItems
+#- 401 PublicQueryItems
 $CLI_EXE \
     --sn platform \
     --op PublicQueryItems \
@@ -4227,13 +4245,13 @@ $CLI_EXE \
     --limit '31' \
     --offset '96' \
     --region 'nJUAPlIYJ1JClvzU' \
-    --sortBy '["createdAt", "createdAt:asc", "updatedAt"]' \
+    --sortBy '["createdAt", "updatedAt", "createdAt:asc"]' \
     --storeId 'euq1uBx3RO0tjeh1' \
     --tags 'OFf9quyfqolADmCY' \
     > test.out 2>&1
-eval_tap $? 399 'PublicQueryItems' test.out
+eval_tap $? 401 'PublicQueryItems' test.out
 
-#- 400 PublicGetItemBySku
+#- 402 PublicGetItemBySku
 $CLI_EXE \
     --sn platform \
     --op PublicGetItemBySku \
@@ -4244,9 +4262,9 @@ $CLI_EXE \
     --storeId '64FEah7UFfFxkBR0' \
     --sku 'mzVFuPNmNNEmmwSW' \
     > test.out 2>&1
-eval_tap $? 400 'PublicGetItemBySku' test.out
+eval_tap $? 402 'PublicGetItemBySku' test.out
 
-#- 401 PublicGetEstimatedPrice
+#- 403 PublicGetEstimatedPrice
 $CLI_EXE \
     --sn platform \
     --op PublicGetEstimatedPrice \
@@ -4255,9 +4273,9 @@ $CLI_EXE \
     --storeId 'n4tQPTX7qkBnYDy8' \
     --itemIds 'DsjWDPwM9i1lWaWd' \
     > test.out 2>&1
-eval_tap $? 401 'PublicGetEstimatedPrice' test.out
+eval_tap $? 403 'PublicGetEstimatedPrice' test.out
 
-#- 402 PublicBulkGetItems
+#- 404 PublicBulkGetItems
 $CLI_EXE \
     --sn platform \
     --op PublicBulkGetItems \
@@ -4268,9 +4286,9 @@ $CLI_EXE \
     --storeId 'TlAmDTFJr79LgkHq' \
     --itemIds 'RKUjoepDZvt0PYIM' \
     > test.out 2>&1
-eval_tap $? 402 'PublicBulkGetItems' test.out
+eval_tap $? 404 'PublicBulkGetItems' test.out
 
-#- 403 PublicValidateItemPurchaseCondition
+#- 405 PublicValidateItemPurchaseCondition
 # body param: body
 echo '{"itemIds": ["rCQ5v900JeQqf7Hm", "vx97hgrHtFsr3DcX", "LyQH7W5RHNVoPlVm"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4279,9 +4297,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 403 'PublicValidateItemPurchaseCondition' test.out
+eval_tap $? 405 'PublicValidateItemPurchaseCondition' test.out
 
-#- 404 PublicSearchItems
+#- 406 PublicSearchItems
 $CLI_EXE \
     --sn platform \
     --op PublicSearchItems \
@@ -4295,9 +4313,9 @@ $CLI_EXE \
     --keyword 'Xl97Lq6Y8iLZhQGy' \
     --language 'snZzqtGYd43kyT03' \
     > test.out 2>&1
-eval_tap $? 404 'PublicSearchItems' test.out
+eval_tap $? 406 'PublicSearchItems' test.out
 
-#- 405 PublicGetApp
+#- 407 PublicGetApp
 $CLI_EXE \
     --sn platform \
     --op PublicGetApp \
@@ -4307,18 +4325,18 @@ $CLI_EXE \
     --region 'XhIUmFLoR3y9TcZn' \
     --storeId 'naSkPJg0UAayGmBf' \
     > test.out 2>&1
-eval_tap $? 405 'PublicGetApp' test.out
+eval_tap $? 407 'PublicGetApp' test.out
 
-#- 406 PublicGetItemDynamicData
+#- 408 PublicGetItemDynamicData
 $CLI_EXE \
     --sn platform \
     --op PublicGetItemDynamicData \
     --itemId 'L9qTKAw0WpyvZeXq' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 406 'PublicGetItemDynamicData' test.out
+eval_tap $? 408 'PublicGetItemDynamicData' test.out
 
-#- 407 PublicGetItem
+#- 409 PublicGetItem
 $CLI_EXE \
     --sn platform \
     --op PublicGetItem \
@@ -4330,12 +4348,12 @@ $CLI_EXE \
     --region '2FQGyFbm3Xy5ZnjH' \
     --storeId 'oKZDt9RAuh0ULFif' \
     > test.out 2>&1
-eval_tap $? 407 'PublicGetItem' test.out
+eval_tap $? 409 'PublicGetItem' test.out
 
-#- 408 GetPaymentCustomization
-eval_tap 0 408 'GetPaymentCustomization # SKIP deprecated' test.out
+#- 410 GetPaymentCustomization
+eval_tap 0 410 'GetPaymentCustomization # SKIP deprecated' test.out
 
-#- 409 PublicGetPaymentUrl
+#- 411 PublicGetPaymentUrl
 # body param: body
 echo '{"neonPayConfig": {"cancelUrl": "vBP2tfsEpSVXmDkh", "successUrl": "rzSTymqmegw79Mjy"}, "paymentOrderNo": "rHihGtlzOYlZOTQR", "paymentProvider": "ALIPAY", "returnUrl": "4HtY8peHZ2woFQDI", "ui": "nBRKPwUfHckjmjlM", "zipCode": "55g1uiqJ2hmyEXVX"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4344,27 +4362,27 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 409 'PublicGetPaymentUrl' test.out
+eval_tap $? 411 'PublicGetPaymentUrl' test.out
 
-#- 410 PublicGetPaymentMethods
+#- 412 PublicGetPaymentMethods
 $CLI_EXE \
     --sn platform \
     --op PublicGetPaymentMethods \
     --namespace $AB_NAMESPACE \
     --paymentOrderNo 'ke1sNQQveCgf1nI7' \
     > test.out 2>&1
-eval_tap $? 410 'PublicGetPaymentMethods' test.out
+eval_tap $? 412 'PublicGetPaymentMethods' test.out
 
-#- 411 PublicGetUnpaidPaymentOrder
+#- 413 PublicGetUnpaidPaymentOrder
 $CLI_EXE \
     --sn platform \
     --op PublicGetUnpaidPaymentOrder \
     --namespace $AB_NAMESPACE \
     --paymentOrderNo 'dcdefvCRpTTEgGbC' \
     > test.out 2>&1
-eval_tap $? 411 'PublicGetUnpaidPaymentOrder' test.out
+eval_tap $? 413 'PublicGetUnpaidPaymentOrder' test.out
 
-#- 412 Pay
+#- 414 Pay
 # body param: body
 echo '{"token": "uq6R8oFqOmqLUvI2"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4376,18 +4394,18 @@ $CLI_EXE \
     --zipCode 'vD1YErX5Ibgpp3pT' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 412 'Pay' test.out
+eval_tap $? 414 'Pay' test.out
 
-#- 413 PublicCheckPaymentOrderPaidStatus
+#- 415 PublicCheckPaymentOrderPaidStatus
 $CLI_EXE \
     --sn platform \
     --op PublicCheckPaymentOrderPaidStatus \
     --namespace $AB_NAMESPACE \
     --paymentOrderNo 'lLGriO40Q7T7gswZ' \
     > test.out 2>&1
-eval_tap $? 413 'PublicCheckPaymentOrderPaidStatus' test.out
+eval_tap $? 415 'PublicCheckPaymentOrderPaidStatus' test.out
 
-#- 414 GetPaymentPublicConfig
+#- 416 GetPaymentPublicConfig
 $CLI_EXE \
     --sn platform \
     --op GetPaymentPublicConfig \
@@ -4396,18 +4414,18 @@ $CLI_EXE \
     --paymentProvider 'ALIPAY' \
     --region 'uxvr1EVcHJBiBl26' \
     > test.out 2>&1
-eval_tap $? 414 'GetPaymentPublicConfig' test.out
+eval_tap $? 416 'GetPaymentPublicConfig' test.out
 
-#- 415 PublicGetQRCode
+#- 417 PublicGetQRCode
 $CLI_EXE \
     --sn platform \
     --op PublicGetQRCode \
     --namespace $AB_NAMESPACE \
     --code 'QOkI8OGGO7SoL5IY' \
     > test.out 2>&1
-eval_tap $? 415 'PublicGetQRCode' test.out
+eval_tap $? 417 'PublicGetQRCode' test.out
 
-#- 416 PublicNormalizePaymentReturnUrl
+#- 418 PublicNormalizePaymentReturnUrl
 $CLI_EXE \
     --sn platform \
     --op PublicNormalizePaymentReturnUrl \
@@ -4428,9 +4446,9 @@ $CLI_EXE \
     --paymentProvider 'PAYPAL' \
     --returnUrl 'lOtvdRQWqEPD73aY' \
     > test.out 2>&1
-eval_tap $? 416 'PublicNormalizePaymentReturnUrl' test.out
+eval_tap $? 418 'PublicNormalizePaymentReturnUrl' test.out
 
-#- 417 GetPaymentTaxValue
+#- 419 GetPaymentTaxValue
 $CLI_EXE \
     --sn platform \
     --op GetPaymentTaxValue \
@@ -4439,18 +4457,18 @@ $CLI_EXE \
     --paymentOrderNo 'uEyYQ1NZfxpyaRgQ' \
     --paymentProvider 'ADYEN' \
     > test.out 2>&1
-eval_tap $? 417 'GetPaymentTaxValue' test.out
+eval_tap $? 419 'GetPaymentTaxValue' test.out
 
-#- 418 GetRewardByCode
+#- 420 GetRewardByCode
 $CLI_EXE \
     --sn platform \
     --op GetRewardByCode \
     --namespace $AB_NAMESPACE \
     --rewardCode 'F4St983defP0czGK' \
     > test.out 2>&1
-eval_tap $? 418 'GetRewardByCode' test.out
+eval_tap $? 420 'GetRewardByCode' test.out
 
-#- 419 QueryRewards1
+#- 421 QueryRewards1
 $CLI_EXE \
     --sn platform \
     --op QueryRewards1 \
@@ -4458,28 +4476,28 @@ $CLI_EXE \
     --eventTopic '39Z62bGMwAZ8yDVV' \
     --limit '38' \
     --offset '90' \
-    --sortBy '["rewardCode:asc", "namespace:asc", "rewardCode:desc"]' \
+    --sortBy '["rewardCode:desc", "namespace:asc", "rewardCode:asc"]' \
     > test.out 2>&1
-eval_tap $? 419 'QueryRewards1' test.out
+eval_tap $? 421 'QueryRewards1' test.out
 
-#- 420 GetReward1
+#- 422 GetReward1
 $CLI_EXE \
     --sn platform \
     --op GetReward1 \
     --namespace $AB_NAMESPACE \
     --rewardId 'hYbNyXWfHJO7220y' \
     > test.out 2>&1
-eval_tap $? 420 'GetReward1' test.out
+eval_tap $? 422 'GetReward1' test.out
 
-#- 421 PublicListStores
+#- 423 PublicListStores
 $CLI_EXE \
     --sn platform \
     --op PublicListStores \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 421 'PublicListStores' test.out
+eval_tap $? 423 'PublicListStores' test.out
 
-#- 422 PublicExistsAnyMyActiveEntitlement
+#- 424 PublicExistsAnyMyActiveEntitlement
 $CLI_EXE \
     --sn platform \
     --op PublicExistsAnyMyActiveEntitlement \
@@ -4488,18 +4506,18 @@ $CLI_EXE \
     --itemIds '["xi5kWQpQvXw2FwaO", "qH3wX5W3rJKGLllj", "coRrwhcjvuNaVUvj"]' \
     --skus '["YgLlg1Ci3MmqCX5y", "ss1B6bN88jHYuzec", "wYDarJvxxWlKCy92"]' \
     > test.out 2>&1
-eval_tap $? 422 'PublicExistsAnyMyActiveEntitlement' test.out
+eval_tap $? 424 'PublicExistsAnyMyActiveEntitlement' test.out
 
-#- 423 PublicGetMyAppEntitlementOwnershipByAppId
+#- 425 PublicGetMyAppEntitlementOwnershipByAppId
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyAppEntitlementOwnershipByAppId \
     --namespace $AB_NAMESPACE \
     --appId 'zCQc8t8ftiXHR5Js' \
     > test.out 2>&1
-eval_tap $? 423 'PublicGetMyAppEntitlementOwnershipByAppId' test.out
+eval_tap $? 425 'PublicGetMyAppEntitlementOwnershipByAppId' test.out
 
-#- 424 PublicGetMyEntitlementOwnershipByItemId
+#- 426 PublicGetMyEntitlementOwnershipByItemId
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyEntitlementOwnershipByItemId \
@@ -4507,9 +4525,9 @@ $CLI_EXE \
     --entitlementClazz 'CODE' \
     --itemId 'cPXBdIx3uQCV9bUk' \
     > test.out 2>&1
-eval_tap $? 424 'PublicGetMyEntitlementOwnershipByItemId' test.out
+eval_tap $? 426 'PublicGetMyEntitlementOwnershipByItemId' test.out
 
-#- 425 PublicGetMyEntitlementOwnershipBySku
+#- 427 PublicGetMyEntitlementOwnershipBySku
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyEntitlementOwnershipBySku \
@@ -4517,9 +4535,9 @@ $CLI_EXE \
     --entitlementClazz 'APP' \
     --sku 'Sj5hBXFXQaqwffWX' \
     > test.out 2>&1
-eval_tap $? 425 'PublicGetMyEntitlementOwnershipBySku' test.out
+eval_tap $? 427 'PublicGetMyEntitlementOwnershipBySku' test.out
 
-#- 426 PublicGetEntitlementOwnershipToken
+#- 428 PublicGetEntitlementOwnershipToken
 $CLI_EXE \
     --sn platform \
     --op PublicGetEntitlementOwnershipToken \
@@ -4528,9 +4546,9 @@ $CLI_EXE \
     --itemIds '["1LmUP8PvftlefdXJ", "k9hESpWuVnc2bU4i", "vP6VVRRXKzA0EAId"]' \
     --skus '["H3LsaYk5vzNDCaa8", "z7lz3zhvmGuurxDM", "RMzgD8oRJbiipHVB"]' \
     > test.out 2>&1
-eval_tap $? 426 'PublicGetEntitlementOwnershipToken' test.out
+eval_tap $? 428 'PublicGetEntitlementOwnershipToken' test.out
 
-#- 427 SyncTwitchDropsEntitlement
+#- 429 SyncTwitchDropsEntitlement
 # body param: body
 echo '{"gameId": "qDvNOpTa33bb8yq9", "language": "ZGOo", "region": "I4bvlcRFlGBl3M8d"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4539,18 +4557,18 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 427 'SyncTwitchDropsEntitlement' test.out
+eval_tap $? 429 'SyncTwitchDropsEntitlement' test.out
 
-#- 428 PublicGetMyWallet
+#- 430 PublicGetMyWallet
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyWallet \
     --currencyCode 'N4r9MY45kztYyWXZ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 428 'PublicGetMyWallet' test.out
+eval_tap $? 430 'PublicGetMyWallet' test.out
 
-#- 429 SyncEpicGameDLC
+#- 431 SyncEpicGameDLC
 # body param: body
 echo '{"epicGamesJwtToken": "HbbN8uN0GBuU3A5C"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4560,18 +4578,18 @@ $CLI_EXE \
     --userId 'q4S1ZRSgc1Md3btx' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 429 'SyncEpicGameDLC' test.out
+eval_tap $? 431 'SyncEpicGameDLC' test.out
 
-#- 430 SyncOculusDLC
+#- 432 SyncOculusDLC
 $CLI_EXE \
     --sn platform \
     --op SyncOculusDLC \
     --namespace $AB_NAMESPACE \
     --userId 'PYoIUsOoPBg2oGgc' \
     > test.out 2>&1
-eval_tap $? 430 'SyncOculusDLC' test.out
+eval_tap $? 432 'SyncOculusDLC' test.out
 
-#- 431 PublicSyncPsnDlcInventory
+#- 433 PublicSyncPsnDlcInventory
 # body param: body
 echo '{"serviceLabel": 2}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4581,9 +4599,9 @@ $CLI_EXE \
     --userId 'oEMSM8JIHtZ8szch' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 431 'PublicSyncPsnDlcInventory' test.out
+eval_tap $? 433 'PublicSyncPsnDlcInventory' test.out
 
-#- 432 PublicSyncPsnDlcInventoryWithMultipleServiceLabels
+#- 434 PublicSyncPsnDlcInventoryWithMultipleServiceLabels
 # body param: body
 echo '{"serviceLabels": [8, 32, 96]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4593,9 +4611,9 @@ $CLI_EXE \
     --userId 'LlwUDvS22UFrsDU5' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 432 'PublicSyncPsnDlcInventoryWithMultipleServiceLabels' test.out
+eval_tap $? 434 'PublicSyncPsnDlcInventoryWithMultipleServiceLabels' test.out
 
-#- 433 SyncSteamDLC
+#- 435 SyncSteamDLC
 # body param: body
 echo '{"appId": "mlUKLaAHPfXEilJD", "steamId": "h7k2ZckmJo5r8MXn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4605,9 +4623,9 @@ $CLI_EXE \
     --userId 'gCZ3RLGYqkARHCBS' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 433 'SyncSteamDLC' test.out
+eval_tap $? 435 'SyncSteamDLC' test.out
 
-#- 434 SyncXboxDLC
+#- 436 SyncXboxDLC
 # body param: body
 echo '{"xstsToken": "6XIOofuR3fqqSXvM"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4617,9 +4635,9 @@ $CLI_EXE \
     --userId 'HTBsVUF7tpJGDTX6' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 434 'SyncXboxDLC' test.out
+eval_tap $? 436 'SyncXboxDLC' test.out
 
-#- 435 PublicQueryUserEntitlements
+#- 437 PublicQueryUserEntitlements
 $CLI_EXE \
     --sn platform \
     --op PublicQueryUserEntitlements \
@@ -4633,9 +4651,9 @@ $CLI_EXE \
     --limit '30' \
     --offset '50' \
     > test.out 2>&1
-eval_tap $? 435 'PublicQueryUserEntitlements' test.out
+eval_tap $? 437 'PublicQueryUserEntitlements' test.out
 
-#- 436 PublicGetUserAppEntitlementByAppId
+#- 438 PublicGetUserAppEntitlementByAppId
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserAppEntitlementByAppId \
@@ -4643,9 +4661,9 @@ $CLI_EXE \
     --userId 'lnJj4baHry4Tcvnh' \
     --appId 'tnvwlWsCh1WIxOBS' \
     > test.out 2>&1
-eval_tap $? 436 'PublicGetUserAppEntitlementByAppId' test.out
+eval_tap $? 438 'PublicGetUserAppEntitlementByAppId' test.out
 
-#- 437 PublicQueryUserEntitlementsByAppType
+#- 439 PublicQueryUserEntitlementsByAppType
 $CLI_EXE \
     --sn platform \
     --op PublicQueryUserEntitlementsByAppType \
@@ -4655,9 +4673,9 @@ $CLI_EXE \
     --offset '1' \
     --appType 'DEMO' \
     > test.out 2>&1
-eval_tap $? 437 'PublicQueryUserEntitlementsByAppType' test.out
+eval_tap $? 439 'PublicQueryUserEntitlementsByAppType' test.out
 
-#- 438 PublicGetUserEntitlementsByIds
+#- 440 PublicGetUserEntitlementsByIds
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementsByIds \
@@ -4666,15 +4684,15 @@ $CLI_EXE \
     --availablePlatformOnly 'false' \
     --ids '["ZQfujYynZ2PPlg3d", "WUAmHgUvFx2VOGA1", "LrIhlZAdrKOkwmjS"]' \
     > test.out 2>&1
-eval_tap $? 438 'PublicGetUserEntitlementsByIds' test.out
+eval_tap $? 440 'PublicGetUserEntitlementsByIds' test.out
 
-#- 439 PublicGetUserEntitlementByItemId
-eval_tap 0 439 'PublicGetUserEntitlementByItemId # SKIP deprecated' test.out
+#- 441 PublicGetUserEntitlementByItemId
+eval_tap 0 441 'PublicGetUserEntitlementByItemId # SKIP deprecated' test.out
 
-#- 440 PublicGetUserEntitlementBySku
-eval_tap 0 440 'PublicGetUserEntitlementBySku # SKIP deprecated' test.out
+#- 442 PublicGetUserEntitlementBySku
+eval_tap 0 442 'PublicGetUserEntitlementBySku # SKIP deprecated' test.out
 
-#- 441 PublicUserEntitlementHistory
+#- 443 PublicUserEntitlementHistory
 $CLI_EXE \
     --sn platform \
     --op PublicUserEntitlementHistory \
@@ -4686,9 +4704,9 @@ $CLI_EXE \
     --offset '28' \
     --startDate 'WCr2aGSurGBNMB1x' \
     > test.out 2>&1
-eval_tap $? 441 'PublicUserEntitlementHistory' test.out
+eval_tap $? 443 'PublicUserEntitlementHistory' test.out
 
-#- 442 PublicExistsAnyUserActiveEntitlement
+#- 444 PublicExistsAnyUserActiveEntitlement
 $CLI_EXE \
     --sn platform \
     --op PublicExistsAnyUserActiveEntitlement \
@@ -4698,9 +4716,9 @@ $CLI_EXE \
     --itemIds '["Ap2zbDvArYSQFUXe", "N5zZEWVOe3e9YWRt", "IeKU1R5sT1ZNuq15"]' \
     --skus '["4ByiPJZQ3flROmd2", "IAKcRQTf4YeYMLUA", "VHCw0WAdQVhYHwxk"]' \
     > test.out 2>&1
-eval_tap $? 442 'PublicExistsAnyUserActiveEntitlement' test.out
+eval_tap $? 444 'PublicExistsAnyUserActiveEntitlement' test.out
 
-#- 443 PublicGetUserAppEntitlementOwnershipByAppId
+#- 445 PublicGetUserAppEntitlementOwnershipByAppId
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserAppEntitlementOwnershipByAppId \
@@ -4708,9 +4726,9 @@ $CLI_EXE \
     --userId 'xD0i7uDPcvAV062w' \
     --appId 'C73L2d4X43hSkrC2' \
     > test.out 2>&1
-eval_tap $? 443 'PublicGetUserAppEntitlementOwnershipByAppId' test.out
+eval_tap $? 445 'PublicGetUserAppEntitlementOwnershipByAppId' test.out
 
-#- 444 PublicGetUserEntitlementOwnershipByItemId
+#- 446 PublicGetUserEntitlementOwnershipByItemId
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementOwnershipByItemId \
@@ -4719,9 +4737,9 @@ $CLI_EXE \
     --entitlementClazz 'LOOTBOX' \
     --itemId '8yVY3lONi9NzsmJd' \
     > test.out 2>&1
-eval_tap $? 444 'PublicGetUserEntitlementOwnershipByItemId' test.out
+eval_tap $? 446 'PublicGetUserEntitlementOwnershipByItemId' test.out
 
-#- 445 PublicGetUserEntitlementOwnershipByItemIds
+#- 447 PublicGetUserEntitlementOwnershipByItemIds
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementOwnershipByItemIds \
@@ -4729,9 +4747,9 @@ $CLI_EXE \
     --userId 'GIGQHBXhod8vEvpa' \
     --ids '["a1zvN8dVbEXVMm9c", "Emf4glSsLS2YlRZZ", "3FUdP4XOq9THr2pG"]' \
     > test.out 2>&1
-eval_tap $? 445 'PublicGetUserEntitlementOwnershipByItemIds' test.out
+eval_tap $? 447 'PublicGetUserEntitlementOwnershipByItemIds' test.out
 
-#- 446 PublicGetUserEntitlementOwnershipBySku
+#- 448 PublicGetUserEntitlementOwnershipBySku
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlementOwnershipBySku \
@@ -4740,9 +4758,9 @@ $CLI_EXE \
     --entitlementClazz 'MEDIA' \
     --sku 'w4SdOfrpsMqyQIe6' \
     > test.out 2>&1
-eval_tap $? 446 'PublicGetUserEntitlementOwnershipBySku' test.out
+eval_tap $? 448 'PublicGetUserEntitlementOwnershipBySku' test.out
 
-#- 447 PublicGetUserEntitlement
+#- 449 PublicGetUserEntitlement
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserEntitlement \
@@ -4750,9 +4768,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'ujqkg3lj3MPBMANn' \
     > test.out 2>&1
-eval_tap $? 447 'PublicGetUserEntitlement' test.out
+eval_tap $? 449 'PublicGetUserEntitlement' test.out
 
-#- 448 PublicConsumeUserEntitlement
+#- 450 PublicConsumeUserEntitlement
 # body param: body
 echo '{"metadata": {"operationSource": "INVENTORY"}, "options": ["FebHFNAXnmDZXRm8", "yP6vzPu7VgTqTp9q", "Y550Ilnge7PGgFlp"], "requestId": "iCkadaUHDx9AKTRI", "useCount": 43}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4763,9 +4781,9 @@ $CLI_EXE \
     --userId 'miiyLCLbr0URKgjC' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 448 'PublicConsumeUserEntitlement' test.out
+eval_tap $? 450 'PublicConsumeUserEntitlement' test.out
 
-#- 449 PublicSellUserEntitlement
+#- 451 PublicSellUserEntitlement
 # body param: body
 echo '{"requestId": "oXJ4kMUt0xE4Qcn3", "useCount": 11}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4776,9 +4794,9 @@ $CLI_EXE \
     --userId 'TAwdhChMJetHzjtB' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 449 'PublicSellUserEntitlement' test.out
+eval_tap $? 451 'PublicSellUserEntitlement' test.out
 
-#- 450 PublicSplitUserEntitlement
+#- 452 PublicSplitUserEntitlement
 # body param: body
 echo '{"metadata": {"operationSource": "INVENTORY"}, "useCount": 43}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4789,9 +4807,9 @@ $CLI_EXE \
     --userId 'jp1VhRcgQOfSkuF8' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 450 'PublicSplitUserEntitlement' test.out
+eval_tap $? 452 'PublicSplitUserEntitlement' test.out
 
-#- 451 PublicTransferUserEntitlement
+#- 453 PublicTransferUserEntitlement
 # body param: body
 echo '{"entitlementId": "xE8GLIoEn6CeqxeD", "metadata": {"operationSource": "INVENTORY"}, "useCount": 93}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4802,9 +4820,9 @@ $CLI_EXE \
     --userId 'WUf5k0Tb4Vl3Xgrk' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 451 'PublicTransferUserEntitlement' test.out
+eval_tap $? 453 'PublicTransferUserEntitlement' test.out
 
-#- 452 PublicRedeemCode
+#- 454 PublicRedeemCode
 # body param: body
 echo '{"code": "EDgUZByUW5EPkvqB", "language": "AZW-vQdZ", "region": "wm2IIrmH0mNoVTQ1"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4814,9 +4832,9 @@ $CLI_EXE \
     --userId '9LQHvNQUi5BCKKBI' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 452 'PublicRedeemCode' test.out
+eval_tap $? 454 'PublicRedeemCode' test.out
 
-#- 453 PublicFulfillAppleIAPItem
+#- 455 PublicFulfillAppleIAPItem
 # body param: body
 echo '{"excludeOldTransactions": true, "language": "Tg-KeOu", "productId": "cADAZKTvZgciigZi", "receiptData": "K6aNNYbwk6U7LIVS", "region": "lqcAxFzCROVJAwCZ", "transactionId": "ZH5vdK8mmru5pMk9"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4826,9 +4844,9 @@ $CLI_EXE \
     --userId 'VZ9BowlembunCWnL' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 453 'PublicFulfillAppleIAPItem' test.out
+eval_tap $? 455 'PublicFulfillAppleIAPItem' test.out
 
-#- 454 SyncEpicGamesInventory
+#- 456 SyncEpicGamesInventory
 # body param: body
 echo '{"epicGamesJwtToken": "HYxNdw60RLYY4cLf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4838,9 +4856,9 @@ $CLI_EXE \
     --userId 'tYcJcoA3tLTsAmJE' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 454 'SyncEpicGamesInventory' test.out
+eval_tap $? 456 'SyncEpicGamesInventory' test.out
 
-#- 455 PublicFulfillGoogleIAPItem
+#- 457 PublicFulfillGoogleIAPItem
 # body param: body
 echo '{"autoAck": true, "autoConsume": false, "language": "peBR", "orderId": "3mqsqd83WRJ2Ovsb", "packageName": "RYJoUHY511X4KOk8", "productId": "TBqzmCRX1SfiAMJU", "purchaseTime": 85, "purchaseToken": "CQj8fiffW44VOVu8", "region": "BeROsA7ICYyly5E2", "subscriptionPurchase": true}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4850,18 +4868,18 @@ $CLI_EXE \
     --userId 'HfKOwm0U74OdyCPu' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 455 'PublicFulfillGoogleIAPItem' test.out
+eval_tap $? 457 'PublicFulfillGoogleIAPItem' test.out
 
-#- 456 SyncOculusConsumableEntitlements
+#- 458 SyncOculusConsumableEntitlements
 $CLI_EXE \
     --sn platform \
     --op SyncOculusConsumableEntitlements \
     --namespace $AB_NAMESPACE \
     --userId 'Zq1cPMSpD9iaeQWQ' \
     > test.out 2>&1
-eval_tap $? 456 'SyncOculusConsumableEntitlements' test.out
+eval_tap $? 458 'SyncOculusConsumableEntitlements' test.out
 
-#- 457 PublicReconcilePlayStationStore
+#- 459 PublicReconcilePlayStationStore
 # body param: body
 echo '{"currencyCode": "zU1OIWQly0JGD8Dc", "price": 0.5745091183081847, "productId": "fLCidXYo9pxN6DWr", "serviceLabel": 74}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4871,9 +4889,9 @@ $CLI_EXE \
     --userId '84dDOt49VXtAk6Dv' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 457 'PublicReconcilePlayStationStore' test.out
+eval_tap $? 459 'PublicReconcilePlayStationStore' test.out
 
-#- 458 PublicReconcilePlayStationStoreWithMultipleServiceLabels
+#- 460 PublicReconcilePlayStationStoreWithMultipleServiceLabels
 # body param: body
 echo '{"currencyCode": "lTRz3l119tq6Ajak", "price": 0.8090150292454377, "productId": "x3IMhE9bl2a5fP2A", "serviceLabels": [41, 35, 9]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4883,9 +4901,9 @@ $CLI_EXE \
     --userId 'g4gTGouZxpLtlm7J' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 458 'PublicReconcilePlayStationStoreWithMultipleServiceLabels' test.out
+eval_tap $? 460 'PublicReconcilePlayStationStoreWithMultipleServiceLabels' test.out
 
-#- 459 SyncSteamInventory
+#- 461 SyncSteamInventory
 # body param: body
 echo '{"appId": "7phh8vKwZl2AS2ub", "currencyCode": "UYKn7ngArzYHdj3b", "language": "tFz_GSJb", "price": 0.3125437220922911, "productId": "Nni8In3mbD4nPV86", "region": "ds5AIxItcUfm2awd", "steamId": "k7OvrWxaQ4NUhRxn"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4895,18 +4913,18 @@ $CLI_EXE \
     --userId 'vpVj18mucwoHlWbH' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 459 'SyncSteamInventory' test.out
+eval_tap $? 461 'SyncSteamInventory' test.out
 
-#- 460 SyncSteamAbnormalTransaction
+#- 462 SyncSteamAbnormalTransaction
 $CLI_EXE \
     --sn platform \
     --op SyncSteamAbnormalTransaction \
     --namespace $AB_NAMESPACE \
     --userId '2XiYo3fLAdR6ML4D' \
     > test.out 2>&1
-eval_tap $? 460 'SyncSteamAbnormalTransaction' test.out
+eval_tap $? 462 'SyncSteamAbnormalTransaction' test.out
 
-#- 461 SyncSteamIAPByTransaction
+#- 463 SyncSteamIAPByTransaction
 # body param: body
 echo '{"orderId": "x99Azv1LsS3xaW5B"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4916,9 +4934,9 @@ $CLI_EXE \
     --userId 'CAWFpr9ffTRnLhf4' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 461 'SyncSteamIAPByTransaction' test.out
+eval_tap $? 463 'SyncSteamIAPByTransaction' test.out
 
-#- 462 PublicQueryUserThirdPartySubscription
+#- 464 PublicQueryUserThirdPartySubscription
 $CLI_EXE \
     --sn platform \
     --op PublicQueryUserThirdPartySubscription \
@@ -4931,9 +4949,9 @@ $CLI_EXE \
     --offset '49' \
     --productId 'J8sHcaQlu4PWA2uw' \
     > test.out 2>&1
-eval_tap $? 462 'PublicQueryUserThirdPartySubscription' test.out
+eval_tap $? 464 'PublicQueryUserThirdPartySubscription' test.out
 
-#- 463 SyncTwitchDropsEntitlement1
+#- 465 SyncTwitchDropsEntitlement1
 # body param: body
 echo '{"gameId": "d4NAK9KuKbIknnZa", "language": "sK_qddI_813", "region": "6MFi1fDS4H93MRzS"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4943,9 +4961,9 @@ $CLI_EXE \
     --userId 'CfKVMnRf65dk6dbD' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 463 'SyncTwitchDropsEntitlement1' test.out
+eval_tap $? 465 'SyncTwitchDropsEntitlement1' test.out
 
-#- 464 SyncXboxInventory
+#- 466 SyncXboxInventory
 # body param: body
 echo '{"currencyCode": "CM4VdOmVVrJSxW5K", "price": 0.6356143372746993, "productId": "BJjlnKp8rO0Vpsmv", "xstsToken": "13lsGGU64HOwgDpL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -4955,9 +4973,9 @@ $CLI_EXE \
     --userId '0JQfMZsBBsEIHeig' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 464 'SyncXboxInventory' test.out
+eval_tap $? 466 'SyncXboxInventory' test.out
 
-#- 465 PublicQueryUserOrders
+#- 467 PublicQueryUserOrders
 $CLI_EXE \
     --sn platform \
     --op PublicQueryUserOrders \
@@ -4969,11 +4987,11 @@ $CLI_EXE \
     --offset '74' \
     --status 'REFUNDED' \
     > test.out 2>&1
-eval_tap $? 465 'PublicQueryUserOrders' test.out
+eval_tap $? 467 'PublicQueryUserOrders' test.out
 
-#- 466 PublicCreateUserOrder
+#- 468 PublicCreateUserOrder
 # body param: body
-echo '{"currencyCode": "wZuzaCPaugx112LA", "discountCodes": ["l2wehkgdpKYtufZG", "Tf0oJZ8OIycQk6iC", "rZcOgVclAQfM2lXS"], "discountedPrice": 58, "ext": {"fGOPxblcSQVeamEe": {}, "1Pf3omJPYc1A5RMX": {}, "Oz179ggvLTLVI6f4": {}}, "itemId": "NRmYbJ0Yxk1uco7L", "language": "JBX_690", "price": 22, "quantity": 21, "region": "qNqnyBF2MDhVxPMJ", "returnUrl": "dRxTAqNuJp7xJZNz", "sectionId": "X9u6qkCUzJKhJmrl"}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "wZuzaCPaugx112LA", "discountCodes": ["Tf0oJZ8OIycQk6iC", "l2wehkgdpKYtufZG", "rZcOgVclAQfM2lXS"], "discountedPrice": 58, "ext": {"fGOPxblcSQVeamEe": {}, "1Pf3omJPYc1A5RMX": {}, "Oz179ggvLTLVI6f4": {}}, "itemId": "NRmYbJ0Yxk1uco7L", "language": "JBX_690", "price": 22, "quantity": 21, "region": "qNqnyBF2MDhVxPMJ", "returnUrl": "dRxTAqNuJp7xJZNz", "sectionId": "X9u6qkCUzJKhJmrl"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicCreateUserOrder \
@@ -4981,11 +4999,11 @@ $CLI_EXE \
     --userId '8xUCvJf9uBXRKsM6' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 466 'PublicCreateUserOrder' test.out
+eval_tap $? 468 'PublicCreateUserOrder' test.out
 
-#- 467 PublicPreviewOrderPrice
+#- 469 PublicPreviewOrderPrice
 # body param: body
-echo '{"currencyCode": "0o9GUVe6UFoQ6OAj", "discountCodes": ["XYLSBJOirFFZUeyE", "8FfpCdoNAqyr303b", "6oluVN70id6xPWtM"], "discountedPrice": 58, "itemId": "FAvo6zzClCfmnssE", "price": 77, "quantity": 29}' > $TEMP_JSON_INPUT
+echo '{"currencyCode": "0o9GUVe6UFoQ6OAj", "discountCodes": ["6oluVN70id6xPWtM", "8FfpCdoNAqyr303b", "XYLSBJOirFFZUeyE"], "discountedPrice": 58, "itemId": "FAvo6zzClCfmnssE", "price": 77, "quantity": 29}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn platform \
     --op PublicPreviewOrderPrice \
@@ -4993,9 +5011,9 @@ $CLI_EXE \
     --userId '3GdSp3CmnSgHVBJJ' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 467 'PublicPreviewOrderPrice' test.out
+eval_tap $? 469 'PublicPreviewOrderPrice' test.out
 
-#- 468 PublicGetUserOrder
+#- 470 PublicGetUserOrder
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserOrder \
@@ -5003,9 +5021,9 @@ $CLI_EXE \
     --orderNo 'mv4scljnYA8ZNdQi' \
     --userId 'zQ0opVLLdZdYZR0F' \
     > test.out 2>&1
-eval_tap $? 468 'PublicGetUserOrder' test.out
+eval_tap $? 470 'PublicGetUserOrder' test.out
 
-#- 469 PublicCancelUserOrder
+#- 471 PublicCancelUserOrder
 $CLI_EXE \
     --sn platform \
     --op PublicCancelUserOrder \
@@ -5013,9 +5031,9 @@ $CLI_EXE \
     --orderNo 'IbrMuJIOJ7LMkJgv' \
     --userId 's2fmFQtaeUgU3ePL' \
     > test.out 2>&1
-eval_tap $? 469 'PublicCancelUserOrder' test.out
+eval_tap $? 471 'PublicCancelUserOrder' test.out
 
-#- 470 PublicGetUserOrderHistories
+#- 472 PublicGetUserOrderHistories
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserOrderHistories \
@@ -5023,9 +5041,9 @@ $CLI_EXE \
     --orderNo 'SoUtPXQWdAw3i5Jt' \
     --userId 'TQXGkqteYl0Z3ru0' \
     > test.out 2>&1
-eval_tap $? 470 'PublicGetUserOrderHistories' test.out
+eval_tap $? 472 'PublicGetUserOrderHistories' test.out
 
-#- 471 PublicDownloadUserOrderReceipt
+#- 473 PublicDownloadUserOrderReceipt
 $CLI_EXE \
     --sn platform \
     --op PublicDownloadUserOrderReceipt \
@@ -5033,18 +5051,18 @@ $CLI_EXE \
     --orderNo 'b81sIs3eZZavA9Ot' \
     --userId '7p0j9KRyT8pg1OKq' \
     > test.out 2>&1
-eval_tap $? 471 'PublicDownloadUserOrderReceipt' test.out
+eval_tap $? 473 'PublicDownloadUserOrderReceipt' test.out
 
-#- 472 PublicGetPaymentAccounts
+#- 474 PublicGetPaymentAccounts
 $CLI_EXE \
     --sn platform \
     --op PublicGetPaymentAccounts \
     --namespace $AB_NAMESPACE \
     --userId 'IqUqTAAUdHQrle6d' \
     > test.out 2>&1
-eval_tap $? 472 'PublicGetPaymentAccounts' test.out
+eval_tap $? 474 'PublicGetPaymentAccounts' test.out
 
-#- 473 PublicDeletePaymentAccount
+#- 475 PublicDeletePaymentAccount
 $CLI_EXE \
     --sn platform \
     --op PublicDeletePaymentAccount \
@@ -5053,9 +5071,9 @@ $CLI_EXE \
     --type 'paypal' \
     --userId '82MHzDUW9BPiGHKj' \
     > test.out 2>&1
-eval_tap $? 473 'PublicDeletePaymentAccount' test.out
+eval_tap $? 475 'PublicDeletePaymentAccount' test.out
 
-#- 474 PublicListActiveSections
+#- 476 PublicListActiveSections
 $CLI_EXE \
     --sn platform \
     --op PublicListActiveSections \
@@ -5067,9 +5085,9 @@ $CLI_EXE \
     --storeId 'OxHpkI2pUWK5LERn' \
     --viewId 'KHJoJRlPTEZHEQUQ' \
     > test.out 2>&1
-eval_tap $? 474 'PublicListActiveSections' test.out
+eval_tap $? 476 'PublicListActiveSections' test.out
 
-#- 475 PublicQueryUserSubscriptions
+#- 477 PublicQueryUserSubscriptions
 $CLI_EXE \
     --sn platform \
     --op PublicQueryUserSubscriptions \
@@ -5083,9 +5101,9 @@ $CLI_EXE \
     --status 'INIT' \
     --subscribedBy 'PLATFORM' \
     > test.out 2>&1
-eval_tap $? 475 'PublicQueryUserSubscriptions' test.out
+eval_tap $? 477 'PublicQueryUserSubscriptions' test.out
 
-#- 476 PublicSubscribeSubscription
+#- 478 PublicSubscribeSubscription
 # body param: body
 echo '{"currencyCode": "A3gUO0aanRksckan", "itemId": "6bY0d0guJSjhmwxL", "language": "WZj-roOT_366", "region": "UT1M1tbjnc2u2JVV", "returnUrl": "f3eVsOrOhqEuyMNA", "source": "OzWIRSwkzS8wtHRe"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5095,9 +5113,9 @@ $CLI_EXE \
     --userId 'wxN7Tt0lMsPGHAT9' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 476 'PublicSubscribeSubscription' test.out
+eval_tap $? 478 'PublicSubscribeSubscription' test.out
 
-#- 477 PublicCheckUserSubscriptionSubscribableByItemId
+#- 479 PublicCheckUserSubscriptionSubscribableByItemId
 $CLI_EXE \
     --sn platform \
     --op PublicCheckUserSubscriptionSubscribableByItemId \
@@ -5105,9 +5123,9 @@ $CLI_EXE \
     --userId 'NExeXUMQ7wmF0LCg' \
     --itemId 'i691ccJ8WACmGWno' \
     > test.out 2>&1
-eval_tap $? 477 'PublicCheckUserSubscriptionSubscribableByItemId' test.out
+eval_tap $? 479 'PublicCheckUserSubscriptionSubscribableByItemId' test.out
 
-#- 478 PublicGetUserSubscription
+#- 480 PublicGetUserSubscription
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserSubscription \
@@ -5115,9 +5133,9 @@ $CLI_EXE \
     --subscriptionId 'Xas4QCpVkbq4ulTA' \
     --userId 'F5OadHxgP9Dtrrv3' \
     > test.out 2>&1
-eval_tap $? 478 'PublicGetUserSubscription' test.out
+eval_tap $? 480 'PublicGetUserSubscription' test.out
 
-#- 479 PublicChangeSubscriptionBillingAccount
+#- 481 PublicChangeSubscriptionBillingAccount
 $CLI_EXE \
     --sn platform \
     --op PublicChangeSubscriptionBillingAccount \
@@ -5125,9 +5143,9 @@ $CLI_EXE \
     --subscriptionId '7P2109f1lQsNnKGf' \
     --userId 'ya6jJqdaH6Z8jtSk' \
     > test.out 2>&1
-eval_tap $? 479 'PublicChangeSubscriptionBillingAccount' test.out
+eval_tap $? 481 'PublicChangeSubscriptionBillingAccount' test.out
 
-#- 480 PublicCancelSubscription
+#- 482 PublicCancelSubscription
 # body param: body
 echo '{"immediate": true, "reason": "GKggNa9g0jSTc1ZC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5138,9 +5156,9 @@ $CLI_EXE \
     --userId 'x65U18BElve4moso' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 480 'PublicCancelSubscription' test.out
+eval_tap $? 482 'PublicCancelSubscription' test.out
 
-#- 481 PublicGetUserSubscriptionBillingHistories
+#- 483 PublicGetUserSubscriptionBillingHistories
 $CLI_EXE \
     --sn platform \
     --op PublicGetUserSubscriptionBillingHistories \
@@ -5151,9 +5169,9 @@ $CLI_EXE \
     --limit '36' \
     --offset '18' \
     > test.out 2>&1
-eval_tap $? 481 'PublicGetUserSubscriptionBillingHistories' test.out
+eval_tap $? 483 'PublicGetUserSubscriptionBillingHistories' test.out
 
-#- 482 PublicListViews
+#- 484 PublicListViews
 $CLI_EXE \
     --sn platform \
     --op PublicListViews \
@@ -5162,9 +5180,9 @@ $CLI_EXE \
     --language 'VGPxejb3tTMa09P6' \
     --storeId 'TvJybuA24RHUrCpH' \
     > test.out 2>&1
-eval_tap $? 482 'PublicListViews' test.out
+eval_tap $? 484 'PublicListViews' test.out
 
-#- 483 PublicGetWallet
+#- 485 PublicGetWallet
 $CLI_EXE \
     --sn platform \
     --op PublicGetWallet \
@@ -5172,9 +5190,9 @@ $CLI_EXE \
     --namespace $AB_NAMESPACE \
     --userId 'FgGIqK0gF0EABPQI' \
     > test.out 2>&1
-eval_tap $? 483 'PublicGetWallet' test.out
+eval_tap $? 485 'PublicGetWallet' test.out
 
-#- 484 PublicListUserWalletTransactions
+#- 486 PublicListUserWalletTransactions
 $CLI_EXE \
     --sn platform \
     --op PublicListUserWalletTransactions \
@@ -5184,18 +5202,18 @@ $CLI_EXE \
     --limit '86' \
     --offset '53' \
     > test.out 2>&1
-eval_tap $? 484 'PublicListUserWalletTransactions' test.out
+eval_tap $? 486 'PublicListUserWalletTransactions' test.out
 
-#- 485 PublicGetMyDLCContent
+#- 487 PublicGetMyDLCContent
 $CLI_EXE \
     --sn platform \
     --op PublicGetMyDLCContent \
     --includeAllNamespaces 'false' \
     --type 'XBOX' \
     > test.out 2>&1
-eval_tap $? 485 'PublicGetMyDLCContent' test.out
+eval_tap $? 487 'PublicGetMyDLCContent' test.out
 
-#- 486 QueryFulfillments
+#- 488 QueryFulfillments
 $CLI_EXE \
     --sn platform \
     --op QueryFulfillments \
@@ -5208,9 +5226,9 @@ $CLI_EXE \
     --transactionId 'tHewAsxCNOGsCbta' \
     --userId 'Zjz6luJrhZzdYfV3' \
     > test.out 2>&1
-eval_tap $? 486 'QueryFulfillments' test.out
+eval_tap $? 488 'QueryFulfillments' test.out
 
-#- 487 QueryItemsV2
+#- 489 QueryItemsV2
 $CLI_EXE \
     --sn platform \
     --op QueryItemsV2 \
@@ -5228,15 +5246,15 @@ $CLI_EXE \
     --offset '68' \
     --region 'Wxm3egJN32Cji58a' \
     --sectionExclusive 'true' \
-    --sortBy '["createdAt:asc", "createdAt:desc", "name"]' \
+    --sortBy '["createdAt:desc", "createdAt:asc", "name"]' \
     --storeId 'yJxOfxLrLJfwi0hc' \
     --tags '4o3JZugxmE1Fct7M' \
     --targetNamespace 'V5vo5iIC23kGqEeC' \
     --withTotal 'false' \
     > test.out 2>&1
-eval_tap $? 487 'QueryItemsV2' test.out
+eval_tap $? 489 'QueryItemsV2' test.out
 
-#- 488 ImportStore1
+#- 490 ImportStore1
 # form data upload: file
 echo 'tmp.dat' > $TEMP_FILE_UPLOAD
 $CLI_EXE \
@@ -5247,9 +5265,9 @@ $CLI_EXE \
     --strictMode 'false' \
     --upload file $TEMP_FILE_UPLOAD \
     > test.out 2>&1
-eval_tap $? 488 'ImportStore1' test.out
+eval_tap $? 490 'ImportStore1' test.out
 
-#- 489 ExportStore1
+#- 491 ExportStore1
 # body param: body
 echo '{"itemIds": ["uh68FN92pq6ZTKOC", "LWhoRrkkLLKLM0KB", "cIJfx5SBHMALw4bz"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5259,9 +5277,9 @@ $CLI_EXE \
     --storeId 'KaNV8lWdNHWJjVb6' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 489 'ExportStore1' test.out
+eval_tap $? 491 'ExportStore1' test.out
 
-#- 490 FulfillRewardsV2
+#- 492 FulfillRewardsV2
 # body param: body
 echo '{"entitlementCollectionId": "9STgFV4BguKGDobf", "entitlementOrigin": "Other", "metadata": {"Q4KxOOcPwA4C3VD0": {}, "6X1qorOelxb17COO": {}, "wV2kePTj8wDJTY81": {}}, "origin": "Other", "rewards": [{"currency": {"currencyCode": "14OOTXEVdpnayQXh", "namespace": "8E4eMpYBwLF475kD"}, "item": {"itemId": "EonqRB5h7g1wXVTg", "itemName": "XIgrrShQqldYnQu9", "itemSku": "I0M96wLfF9UCDX8J", "itemType": "9Vt7qePu4iu42XCz"}, "quantity": 85, "type": "ITEM"}, {"currency": {"currencyCode": "Mp3EaIaMNf1snUqg", "namespace": "8eGzTeiqzLja34t1"}, "item": {"itemId": "ZQEA8UgqeCrqixOY", "itemName": "xsw4ofwz6hfJ8psa", "itemSku": "sJhxJg6ZmQceXgPC", "itemType": "KyfGIginKj3raiGS"}, "quantity": 61, "type": "CURRENCY"}, {"currency": {"currencyCode": "0fpLDO4ho24mJpjk", "namespace": "tYdIFUHDt85mDvEk"}, "item": {"itemId": "2IZnoGTpXVTjDAgx", "itemName": "cpjPNYZjzfZpPwjp", "itemSku": "2w5nUm42zK3lBOpr", "itemType": "BvjJgvdzqiEDgEB4"}, "quantity": 94, "type": "ITEM"}], "source": "CONSUME_ENTITLEMENT", "transactionId": "BUi5UNnL2cB4NBFh"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5271,18 +5289,18 @@ $CLI_EXE \
     --userId 'KdG7KRc5X42FbxTb' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 490 'FulfillRewardsV2' test.out
+eval_tap $? 492 'FulfillRewardsV2' test.out
 
-#- 491 FulfillItems
-eval_tap 0 491 'FulfillItems # SKIP deprecated' test.out
+#- 493 FulfillItems
+eval_tap 0 493 'FulfillItems # SKIP deprecated' test.out
 
-#- 492 RetryFulfillItems
-eval_tap 0 492 'RetryFulfillItems # SKIP deprecated' test.out
+#- 494 RetryFulfillItems
+eval_tap 0 494 'RetryFulfillItems # SKIP deprecated' test.out
 
-#- 493 RevokeItems
-eval_tap 0 493 'RevokeItems # SKIP deprecated' test.out
+#- 495 RevokeItems
+eval_tap 0 495 'RevokeItems # SKIP deprecated' test.out
 
-#- 494 V2PublicFulfillAppleIAPItem
+#- 496 V2PublicFulfillAppleIAPItem
 # body param: body
 echo '{"transactionId": "5JpV2voHIBm68zLC"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5292,9 +5310,9 @@ $CLI_EXE \
     --userId 'vo44fhR8asSlDq4m' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 494 'V2PublicFulfillAppleIAPItem' test.out
+eval_tap $? 496 'V2PublicFulfillAppleIAPItem' test.out
 
-#- 495 FulfillItemsV3
+#- 497 FulfillItemsV3
 # body param: body
 echo '{"items": [{"duration": 85, "endDate": "1997-01-03T00:00:00Z", "entitlementCollectionId": "TBuszeHrJFJUv2Lm", "entitlementOrigin": "Epic", "itemId": "fRXukMPBackmNw6y", "itemSku": "hSoAMAcq3nIS1ayd", "language": "org8HZaMMwAc2fMQ", "metadata": {"URKmu2BDyRCAQLfh": {}, "psVN2soJbi10psj8": {}, "xN4bNZjhu7plJid4": {}}, "orderNo": "qG5RVL83aznk2ts7", "origin": "Steam", "quantity": 34, "region": "Ox0ftGFIuTzJwbmk", "source": "IAP_CHARGEBACK_REVERSED", "startDate": "1986-07-12T00:00:00Z", "storeId": "Hg7e73waavZviQx6"}, {"duration": 59, "endDate": "1990-10-29T00:00:00Z", "entitlementCollectionId": "UW92QVB2xmWNgyco", "entitlementOrigin": "Oculus", "itemId": "xElamXSbxFgI7gHT", "itemSku": "9P2fD1EF3hLXvDhz", "language": "CQbL0BgBwpQaruWS", "metadata": {"jAV7RmtTQeur2Jyv": {}, "0fOKdKHVb5wNge6Q": {}, "Ma5yuruJ8QKwEgUL": {}}, "orderNo": "LDkGK0kYbdg504xi", "origin": "IOS", "quantity": 76, "region": "ejks79oGSSTGqeT9", "source": "GIFT", "startDate": "1972-05-22T00:00:00Z", "storeId": "RFdwMTlFU0xLf7Wh"}, {"duration": 46, "endDate": "1986-04-25T00:00:00Z", "entitlementCollectionId": "eHcFjmCOMbAmeKfO", "entitlementOrigin": "GooglePlay", "itemId": "cr1IVeVP0XolZuJz", "itemSku": "lsywbXKpd0I6CQ50", "language": "L39FDuXLyrB9QqHd", "metadata": {"tLVIdLGDuZ5jVH3R": {}, "CvNUsT6z9DouqNAk": {}, "v83VucBYr612jp4X": {}}, "orderNo": "mV2wHosYX4zeblot", "origin": "Twitch", "quantity": 85, "region": "XmjSgsDE8p7uDmkg", "source": "IAP", "startDate": "1979-05-15T00:00:00Z", "storeId": "JWDQpZNqzY7CkMPg"}]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
@@ -5305,9 +5323,9 @@ $CLI_EXE \
     --userId '2qNXJpDc5ZlMsGKV' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 495 'FulfillItemsV3' test.out
+eval_tap $? 497 'FulfillItemsV3' test.out
 
-#- 496 RetryFulfillItemsV3
+#- 498 RetryFulfillItemsV3
 $CLI_EXE \
     --sn platform \
     --op RetryFulfillItemsV3 \
@@ -5315,9 +5333,9 @@ $CLI_EXE \
     --transactionId 'przcfzVRLQKXQN2Z' \
     --userId '0krlPMyKa7uUr1pE' \
     > test.out 2>&1
-eval_tap $? 496 'RetryFulfillItemsV3' test.out
+eval_tap $? 498 'RetryFulfillItemsV3' test.out
 
-#- 497 RevokeItemsV3
+#- 499 RevokeItemsV3
 $CLI_EXE \
     --sn platform \
     --op RevokeItemsV3 \
@@ -5325,7 +5343,7 @@ $CLI_EXE \
     --transactionId 'QcXsdo2eL9Vzws5K' \
     --userId 'qpFKuf38aI1tEEIG' \
     > test.out 2>&1
-eval_tap $? 497 'RevokeItemsV3' test.out
+eval_tap $? 499 'RevokeItemsV3' test.out
 
 
 # remove artifacts

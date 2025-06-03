@@ -35,6 +35,10 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.DevelopmentServerConfigurationDelete.Builder.SetWrapperObject(this); }
         }
+        public DevelopmentServerConfigurationPatch.DevelopmentServerConfigurationPatchBuilder DevelopmentServerConfigurationPatchOp
+        {
+            get { return Operation.DevelopmentServerConfigurationPatch.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ApiDevelopmentServerConfigurationListResponse? DevelopmentServerConfigurationList(DevelopmentServerConfigurationList input)
@@ -94,6 +98,22 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.Payload);
         }
         public async Task DevelopmentServerConfigurationDeleteAsync(DevelopmentServerConfigurationDelete input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DevelopmentServerConfigurationPatch(DevelopmentServerConfigurationPatch input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DevelopmentServerConfigurationPatchAsync(DevelopmentServerConfigurationPatch input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

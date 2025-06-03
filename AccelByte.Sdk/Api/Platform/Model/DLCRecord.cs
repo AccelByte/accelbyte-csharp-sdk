@@ -11,6 +11,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class DLCRecord : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("dlcRewardVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? DlcRewardVersion { get; set; }
+
         [JsonPropertyName("entitlementOriginSyncResult")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }
@@ -69,6 +73,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class DLCRecord<T1> : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("dlcRewardVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? DlcRewardVersion { get; set; }
+
         [JsonPropertyName("entitlementOriginSyncResult")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<EntitlementOriginSyncResult>? EntitlementOriginSyncResult { get; set; }

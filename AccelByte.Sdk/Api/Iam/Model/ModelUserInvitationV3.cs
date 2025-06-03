@@ -9,9 +9,16 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class ModelUserInvitationV3 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acceptanceLink")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? AcceptanceLink { get; set; }
+
         [JsonPropertyName("additionalData")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AdditionalData { get; set; }
+
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
 
         [JsonPropertyName("email")]
         public string? Email { get; set; }
@@ -26,6 +33,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("isNewStudio")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsNewStudio { get; set; }
+
+        [JsonPropertyName("languageTag")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? LanguageTag { get; set; }
 
         [JsonPropertyName("namespace")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

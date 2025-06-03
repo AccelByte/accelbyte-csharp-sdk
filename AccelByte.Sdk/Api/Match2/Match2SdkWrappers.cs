@@ -35,6 +35,17 @@ namespace AccelByte.Sdk.Core
         }
         private Config? _Config = null;
 
+        public PlayFeatureFlag PlayFeatureFlag
+        {
+            get
+            {
+                if (_PlayFeatureFlag == null)
+                    _PlayFeatureFlag = new PlayFeatureFlag(_SdkObject);
+                return _PlayFeatureFlag;
+            }
+        }
+        private PlayFeatureFlag? _PlayFeatureFlag = null;
+
         public EnvironmentVariables EnvironmentVariables
         {
             get

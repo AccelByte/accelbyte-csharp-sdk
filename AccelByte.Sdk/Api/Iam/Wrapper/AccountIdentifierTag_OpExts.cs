@@ -10,7 +10,7 @@ using AccelByte.Sdk.Core;
 
 namespace AccelByte.Sdk.Api
 {
-    public static class IamAccountIdenfifierTag_OpExts
+    public static class IamAccountIdentifierTag_OpExts
     {
         public static Iam.Model.AccountcommonTagsGetResponseV3? Execute(
             this AdminQueryTagV3.AdminQueryTagV3Builder builder,
@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminQueryTagV3(op);
+            return ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminQueryTagV3(op);
         }
         public static async Task<Iam.Model.AccountcommonTagsGetResponseV3?> ExecuteAsync(
             this AdminQueryTagV3.AdminQueryTagV3Builder builder,
@@ -32,7 +32,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return await ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminQueryTagV3Async(op);
+            return await ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminQueryTagV3Async(op);
         }
         public static Iam.Model.AccountcommonTagResponse? Execute(
             this AdminCreateTagV3.AdminCreateTagV3Builder builder,
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminCreateTagV3(op);
+            return ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminCreateTagV3(op);
         }
         public static async Task<Iam.Model.AccountcommonTagResponse?> ExecuteAsync(
             this AdminCreateTagV3.AdminCreateTagV3Builder builder,
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Api
                 namespace_
             );
 
-            return await ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminCreateTagV3Async(op);
+            return await ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminCreateTagV3Async(op);
         }
         public static Iam.Model.AccountcommonTagResponse? Execute(
             this AdminUpdateTagV3.AdminUpdateTagV3Builder builder,
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api
                 tagId
             );
 
-            return ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminUpdateTagV3(op);
+            return ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminUpdateTagV3(op);
         }
         public static async Task<Iam.Model.AccountcommonTagResponse?> ExecuteAsync(
             this AdminUpdateTagV3.AdminUpdateTagV3Builder builder,
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api
                 tagId
             );
 
-            return await ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminUpdateTagV3Async(op);
+            return await ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminUpdateTagV3Async(op);
         }
         public static void Execute(
             this AdminDeleteTagV3.AdminDeleteTagV3Builder builder,
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Api
                 tagId
             );
 
-            ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminDeleteTagV3(op);
+            ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminDeleteTagV3(op);
         }
         public static async Task ExecuteAsync(
             this AdminDeleteTagV3.AdminDeleteTagV3Builder builder,
@@ -114,7 +114,7 @@ namespace AccelByte.Sdk.Api
                 tagId
             );
 
-            await ((Iam.Wrapper.AccountIdenfifierTag)builder.WrapperObject!).AdminDeleteTagV3Async(op);
+            await ((Iam.Wrapper.AccountIdentifierTag)builder.WrapperObject!).AdminDeleteTagV3Async(op);
         }
     }
 }

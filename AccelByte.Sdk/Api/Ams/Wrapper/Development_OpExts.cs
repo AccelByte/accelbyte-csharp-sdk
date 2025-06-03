@@ -112,5 +112,35 @@ namespace AccelByte.Sdk.Api
 
             await ((Ams.Wrapper.Development)builder.WrapperObject!).DevelopmentServerConfigurationDeleteAsync(op);
         }
+        public static void Execute(
+            this DevelopmentServerConfigurationPatch.DevelopmentServerConfigurationPatchBuilder builder,
+            ApiDevelopmentServerConfigurationUpdateRequest body,
+            string developmentServerConfigID,
+            string namespace_
+        )
+        {
+            DevelopmentServerConfigurationPatch op = builder.Build(
+                body,
+                developmentServerConfigID,
+                namespace_
+            );
+
+            ((Ams.Wrapper.Development)builder.WrapperObject!).DevelopmentServerConfigurationPatch(op);
+        }
+        public static async Task ExecuteAsync(
+            this DevelopmentServerConfigurationPatch.DevelopmentServerConfigurationPatchBuilder builder,
+            ApiDevelopmentServerConfigurationUpdateRequest body,
+            string developmentServerConfigID,
+            string namespace_
+        )
+        {
+            DevelopmentServerConfigurationPatch op = builder.Build(
+                body,
+                developmentServerConfigID,
+                namespace_
+            );
+
+            await ((Ams.Wrapper.Development)builder.WrapperObject!).DevelopmentServerConfigurationPatchAsync(op);
+        }
     }
 }

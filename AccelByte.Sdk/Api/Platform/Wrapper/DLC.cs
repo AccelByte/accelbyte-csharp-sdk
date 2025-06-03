@@ -19,6 +19,14 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public GetDLCItemConfigHistory.GetDLCItemConfigHistoryBuilder GetDLCItemConfigHistoryOp
+        {
+            get { return Operation.GetDLCItemConfigHistory.Builder.SetWrapperObject(this); }
+        }
+        public RestoreDLCItemConfigHistory.RestoreDLCItemConfigHistoryBuilder RestoreDLCItemConfigHistoryOp
+        {
+            get { return Operation.RestoreDLCItemConfigHistory.Builder.SetWrapperObject(this); }
+        }
         public GetDLCItemConfig.GetDLCItemConfigBuilder GetDLCItemConfigOp
         {
             get { return Operation.GetDLCItemConfig.Builder.SetWrapperObject(this); }
@@ -85,6 +93,38 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
+        public Model.DLCItemConfigHistoryResult? GetDLCItemConfigHistory(GetDLCItemConfigHistory input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.DLCItemConfigHistoryResult?> GetDLCItemConfigHistoryAsync(GetDLCItemConfigHistory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void RestoreDLCItemConfigHistory(RestoreDLCItemConfigHistory input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task RestoreDLCItemConfigHistoryAsync(RestoreDLCItemConfigHistory input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.DLCItemConfigInfo? GetDLCItemConfig(GetDLCItemConfig input)
         {
             var response = _sdk.RunRequest(input);

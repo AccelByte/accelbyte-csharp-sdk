@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Tests.Services
                 Username = user_name,
                 Country = "ID",
                 DateOfBirth = "1995-01-10",
-                UniqueDisplayName = user_name                
+                UniqueDisplayName = user_name
             };
 
             var response = _Sdk.Iam.UsersV4.AdminCreateUserV4Op

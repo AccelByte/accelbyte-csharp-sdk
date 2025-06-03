@@ -135,6 +135,168 @@ UserProfilePrivateInfo? updResp = _Sdk.Basic.UserProfile.UpdateMyProfileOp
 UserProfilePrivateInfo? delResp = _Sdk.Basic.UserProfile.DeleteUserProfileOp
     .Execute(_Sdk.Namespace, userId);
 ```
+## Challenge
+
+Source: [ChallengeTests.cs](../AccelByte.Sdk.Tests/Services/ChallengeTests.cs)
+
+### Create a new challenge
+
+```csharp
+var newChallenge = _Sdk.Challenge.ChallengeConfiguration.AdminCreateChallengeOp
+    .Execute(new ModelCreateChallengeRequest()
+    {
+        Code = challengeCode,
+        Description = "",
+        Name = challengeName,
+        AssignmentRule = ModelCreateChallengeRequestAssignmentRule.FIXED,
+        GoalsVisibility = ModelCreateChallengeRequestGoalsVisibility.SHOWALL,
+        Rotation = ModelCreateChallengeRequestRotation.DAILY,
+        StartDate = DateTime.Now.AddDays(1)
+    }, _Sdk.Namespace);
+```
+
+### Get challenge
+
+```csharp
+var challengeData = _Sdk.Challenge.ChallengeConfiguration.AdminGetChallengeOp
+    .Execute(challengeCode, _Sdk.Namespace);
+```
+
+### Update a challenge
+
+```csharp
+var updatedChallenge = _Sdk.Challenge.ChallengeConfiguration.AdminUpdateChallengeOp
+    .Execute(new ModelUpdateChallengeRequest()
+    {
+        Name = $"{challengeName} UPDATED"
+    }, challengeCode, _Sdk.Namespace);
+```
+
+### Create a goal
+
+```csharp
+var newGoal = _Sdk.Challenge.GoalConfiguration.AdminCreateGoalOp
+    .Execute(new ModelCreateGoalRequest()
+    {
+        Code = goalCode,
+        Name = goalName,
+        Description = "",
+        Schedule = new ModelGoalScheduleRequest()
+        {
+            StartTime = DateTime.Now.AddDays(1),
+            Order = 1
+        },
+        RequirementGroups = new List<ModelRequirement>()
+        {
+        new ModelRequirement()
+        {
+            Operator = ModelRequirementOperator.AND,
+            Predicates = new List<ModelPredicate>()
+            {
+                new ModelPredicate()
+                {
+                    ParameterType = ModelPredicateParameterType.USERACCOUNT,
+                    ParameterName = "userAccountVerified",
+                    Matcher = ModelPredicateMatcher.EQUAL,
+                    TargetValue = 1
+                }
+            }
+        }
+        }
+    }, challengeCode, _Sdk.Namespace);
+```
+
+### Delete a goal
+
+```csharp
+_Sdk.Challenge.GoalConfiguration.AdminDeleteGoalOp
+    .Execute(challengeCode, goalCode, _Sdk.Namespace);
+```
+
+### Delete a challenge
+
+```csharp
+_Sdk.Challenge.ChallengeConfiguration.AdminDeleteChallengeOp
+    .Execute(challengeCode, _Sdk.Namespace);
+```
+## Chat
+
+Source: [ChatTests.cs](../AccelByte.Sdk.Tests/Services/ChatTests.cs)
+
+### Register a new profanity word
+
+```csharp
+var createResult = _Sdk.Chat.Profanity.AdminProfanityCreateOp
+    .Execute(new ModelsDictionaryInsertRequest()
+    {
+        Word = profanityWord,
+        WordType = "PROFANITY"
+    }, _Sdk.Namespace);
+```
+
+### Query profanity word
+
+```csharp
+var queryResults = _Sdk.Chat.Profanity.AdminProfanityQueryOp
+    .SetIncludeChildren(false)
+    .SetWordType("PROFANITY")
+    .SetStartWith(profanityWord)
+    .Execute(_Sdk.Namespace);
+```
+
+### Update profanity word
+
+```csharp
+var updateResult = _Sdk.Chat.Profanity.AdminProfanityUpdateOp
+    .Execute(new ModelsDictionaryUpdateRequest()
+    {
+        WordType = "PROFANITY",
+        Word = editProfanityWord
+    }, word.Id!, _Sdk.Namespace);
+```
+
+### Delete profanity word
+
+```csharp
+_Sdk.Chat.Profanity.AdminProfanityDeleteOp
+    .Execute(word.Id!, _Sdk.Namespace);
+```
+
+### Add chat inbox category
+
+```csharp
+var insertResult = _Sdk.Chat.Inbox.AdminAddInboxCategoryOp
+    .Execute(new ModelsAddInboxCategoryRequest()
+    {
+        ExpiresIn = 3600000000,
+        Name = inboxName
+
+    }, _Sdk.Namespace);
+```
+
+### Get chat inbox categories
+
+```csharp
+var getResult = _Sdk.Chat.Inbox.AdminGetInboxCategoriesOp
+    .Execute(_Sdk.Namespace);
+```
+
+### Update chat inbox category
+
+```csharp
+_Sdk.Chat.Inbox.AdminUpdateInboxCategoryOp
+    .Execute(new ModelsUpdateInboxCategoryRequest()
+    {
+        ExpiresIn = 1800000000
+    }, inboxName, _Sdk.Namespace);
+```
+
+### Delete chat inbox category
+
+```csharp
+_Sdk.Chat.Inbox.AdminDeleteInboxCategoryOp
+    .Execute(inboxName, _Sdk.Namespace);
+```
 ## CloudSave
 
 Source: [CloudSaveTests.cs](../AccelByte.Sdk.Tests/Services/CloudSaveTests.cs)
@@ -461,37 +623,39 @@ Source: [IAMTests.cs](../AccelByte.Sdk.Tests/Services/IAMTests.cs)
 ### Create a user (V3)
 
 ```csharp
-ModelUserCreateRequestV3 newUser = new ModelUserCreateRequestV3()
+AccountCreateUserRequestV4 newUser = new AccountCreateUserRequestV4()
 {
     AuthType = "EMAILPASSWD",
     EmailAddress = user_email,
     Password = user_password,
-    DisplayName = "CSharp Server SDK Test",
+    DisplayName = "CSharp Extend SDK Test",
+    Username = user_name,
     Country = "ID",
     DateOfBirth = "1995-01-10",
-    UniqueDisplayName = user_name
+    UniqueDisplayName = user_name                
 };
 
-ModelUserCreateResponseV3? cuResp = _Sdk.Iam.Users.PublicCreateUserV3Op
+var response = _Sdk.Iam.UsersV4.AdminCreateUserV4Op
     .Execute(newUser, _Sdk.Namespace);
 ```
 
 ### Create a user
 
 ```csharp
-AccountCreateUserRequestV4 newUser = new AccountCreateUserRequestV4()
+AccountCreateTestUserRequestV4 newUser = new()
 {
+    Verified = true,
     AuthType = "EMAILPASSWD",
     EmailAddress = user_email,
     Password = user_password,
-    DisplayName = "CSharp Server SDK Test",
+    DisplayName = "CSharp Extend SDK Test",
     Username = user_name,
     Country = "ID",
     DateOfBirth = "1995-01-10",
     UniqueDisplayName = user_name
 };
 
-AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateUserV4Op
+AccountCreateUserResponseV4? cuResp = _Sdk.Iam.UsersV4.PublicCreateTestUserV4Op
     .Execute(newUser, _Sdk.Namespace);
 ```
 
@@ -518,6 +682,71 @@ ModelUserResponseV3? uuResp = _Sdk.Iam.UsersV4.AdminUpdateUserV4Op
 
 ```csharp
 _Sdk.Iam.Users.AdminDeleteUserInformationV3Op.Execute(_Sdk.Namespace, user_id);
+```
+## Inventory
+
+Source: [InventoryTests.cs](../AccelByte.Sdk.Tests/Services/InventoryTests.cs)
+
+### Create an inventory configuration
+
+```csharp
+ApimodelsCreateInventoryConfigurationReq cInventoryConfigBody = new ApimodelsCreateInventoryConfigurationReq()
+{
+    Code = codeInventory,
+    Description = "testing",
+    InitialMaxSlots = 3,
+    MaxInstancesPerUser = 2,
+    MaxUpgradeSlots = 5,
+    Name = codeInventory
+};
+
+_ConfigInventory = _Sdk.Inventory.AdminInventoryConfigurations.AdminCreateInventoryConfigurationOp
+    .Execute(cInventoryConfigBody, _Sdk.Namespace);
+```
+
+### Create an inventory
+
+```csharp
+string userId = _Sdk.Configuration.Credential!.UserId;
+ApimodelsCreateInventoryReq cInventoryBody = new ApimodelsCreateInventoryReq()
+{
+    InventoryConfigurationCode = codeInventory,
+    UserId = userId,
+};
+
+string inventoryId = "";
+ApimodelsInventoryResp? cInventory = _Sdk.Inventory.AdminInventories.AdminCreateInventoryOp
+    .Execute(cInventoryBody, _Sdk.Namespace);
+```
+
+### Get an inventory
+
+```csharp
+ApimodelsInventoryResp? gInventory = _Sdk.Inventory.AdminInventories.AdminGetInventoryOp
+    .Execute(inventoryId, _Sdk.Namespace);
+```
+
+### Update an inventory
+
+```csharp
+var uInventoryBody = new ApimodelsUpdateInventoryReq()
+{
+    IncMaxSlots = 2,
+};
+
+ApimodelsInventoryResp? uInventory = _Sdk.Inventory.AdminInventories.AdminUpdateInventoryOp
+    .Execute(uInventoryBody, inventoryId, _Sdk.Namespace);
+```
+
+### Delete an inventory
+
+```csharp
+var dInventoryBody = new ApimodelsDeleteInventoryReq()
+{
+    Message = "delete",
+};
+_Sdk.Inventory.AdminInventories.DeleteInventoryOp
+    .Execute(dInventoryBody, inventoryId, _Sdk.Namespace);
 ```
 ## Leaderboard
 
@@ -668,6 +897,26 @@ ModelFreeFormNotificationRequest notifBody = new ModelFreeFormNotificationReques
 
 _Sdk.Lobby.Admin.FreeFormNotificationOp
     .Execute(notifBody, _Sdk.Namespace);
+```
+## LoginQueue
+
+Source: [LoginQueueTests.cs](../AccelByte.Sdk.Tests/Services/LoginQueueTests.cs)
+
+### Get configuration
+
+```csharp
+var config = _Sdk.Loginqueue.AdminV1.AdminGetConfigurationOp
+    .Execute(_Sdk.Namespace);
+```
+
+### Update configuration
+
+```csharp
+var configUpdate = _Sdk.Loginqueue.AdminV1.AdminUpdateConfigurationOp
+    .Execute(new ApimodelsConfigurationRequest()
+    {
+        MaxLoginRate = updateMaxLoginRate
+    }, _Sdk.Namespace);
 ```
 ## MatchmakingV2
 
@@ -860,6 +1109,58 @@ ImportStoreResult? result = _Sdk.Platform.Store.ImportStore1Op
     .SetFile(uploadStream)
     .SetStoreId(store_id)
     .Execute(_Sdk.Namespace);
+```
+## Reporting
+
+Source: [ReportingTests.cs](../AccelByte.Sdk.Tests/Services/ReportingTests.cs)
+
+### Create a Reason
+
+```csharp
+Api.Reporting.Model.RestapiCreateReasonRequest createReason = new Api.Reporting.Model.RestapiCreateReasonRequest()
+{
+    Description = title,
+    GroupIds = new List<string>(),
+    Title = title,
+};
+
+Api.Reporting.Model.RestapiAdminReasonResponse? cReason = wAdminReasons.CreateReason(
+    Api.Reporting.Operation.CreateReason.Builder
+    .Build(
+        createReason,
+        _Sdk.Namespace
+    ));
+Assert.IsNotNull(cReason);
+if (cReason != null)
+{
+    Assert.IsNotNull(cReason.Id);
+    if (cReason.Id != null)
+        reasonId = cReason.Id;
+
+    Assert.AreEqual(title, cReason.Title);
+}
+```
+
+### Get single Reason
+
+```csharp
+Api.Reporting.Model.RestapiAdminReasonResponse? cReason2 = wAdminReasons.AdminGetReason(
+    Api.Reporting.Operation.AdminGetReason.Builder
+    .Build(_Sdk.Namespace, reasonId));
+Assert.IsNotNull(cReason2);
+if (cReason2 != null)
+{
+    Assert.IsNotNull(cReason2.Id);
+    Assert.AreEqual(title, cReason2.Title);
+}
+```
+
+### Delete a Reporting
+
+```csharp
+wAdminReasons.DeleteReason(
+    Api.Reporting.Operation.DeleteReason.Builder
+    .Build(_Sdk.Namespace, reasonId));
 ```
 ## SeasonPass
 

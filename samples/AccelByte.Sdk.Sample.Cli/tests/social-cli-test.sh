@@ -318,7 +318,7 @@ eval_tap $? 43 'GetStats' test.out
 
 #- 44 CreateStat
 # body param: body
-echo '{"capCycleOverride": true, "cycleIds": ["eAaGq0NIj53gXkmr", "SpDFY3lxe16KsSRz", "ayvcIYiWxIAxfvLz"], "cycleOverrides": [{"cycleId": "kf2HzBcEio5UyvuF", "maximum": 0.3506612332826069, "minimum": 0.9254229701655569}, {"cycleId": "z6wosJGnUyCMEbHh", "maximum": 0.8570491659123091, "minimum": 0.3312724064216359}, {"cycleId": "E4DmJ4Suj6DjUw36", "maximum": 0.5261544861959553, "minimum": 0.3152695042046392}], "defaultValue": 0.8307199488835333, "description": "83Jp2f9f1FCoIo3L", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.5249350121682071, "minimum": 0.3564241762485918, "name": "gZ85vyFJR8euQBLV", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "7iwplLJdzYS9K0Vv", "tags": ["wE6MAqPc8lGIYWTw", "xyqQQIXVmrtRlq1j", "v60HTnmFrl3gYx6X"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": true, "cycleIds": ["SpDFY3lxe16KsSRz", "ayvcIYiWxIAxfvLz", "eAaGq0NIj53gXkmr"], "cycleOverrides": [{"cycleId": "kf2HzBcEio5UyvuF", "maximum": 0.3506612332826069, "minimum": 0.9254229701655569}, {"cycleId": "z6wosJGnUyCMEbHh", "maximum": 0.8570491659123091, "minimum": 0.3312724064216359}, {"cycleId": "E4DmJ4Suj6DjUw36", "maximum": 0.5261544861959553, "minimum": 0.3152695042046392}], "defaultValue": 0.8307199488835333, "description": "83Jp2f9f1FCoIo3L", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.5249350121682071, "minimum": 0.3564241762485918, "name": "gZ85vyFJR8euQBLV", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "7iwplLJdzYS9K0Vv", "tags": ["xyqQQIXVmrtRlq1j", "v60HTnmFrl3gYx6X", "wE6MAqPc8lGIYWTw"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat \
@@ -380,7 +380,7 @@ eval_tap $? 49 'DeleteStat' test.out
 
 #- 50 UpdateStat
 # body param: body
-echo '{"capCycleOverride": true, "cycleIds": ["cExv9nKMOgO5W8SU", "Fpff2vDkz68zorEg", "aZjCpNtJSMm8kDi3"], "cycleOverrides": [{"cycleId": "Rwubq7wtRGdT447O", "maximum": 0.004357151673468951, "minimum": 0.9299052656917429}, {"cycleId": "1m6VLfjsw270pMmO", "maximum": 0.6827311421289568, "minimum": 0.5785954294714035}, {"cycleId": "rpEBbVvBn8Lsf2qS", "maximum": 0.42955639867925344, "minimum": 0.31065635273350434}], "defaultValue": 0.13231785648807481, "description": "zV9hzsVbpJLtEZju", "globalAggregationMethod": "TOTAL", "ignoreAdditionalDataOnValueRejected": false, "isPublic": true, "name": "vbxX2DNbknfVv4nm", "tags": ["xcREyU5CwqGJF6nD", "70TCayYAkF18YBwR", "i33Iztr2QcwlRrRe"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": true, "cycleIds": ["aZjCpNtJSMm8kDi3", "cExv9nKMOgO5W8SU", "Fpff2vDkz68zorEg"], "cycleOverrides": [{"cycleId": "Rwubq7wtRGdT447O", "maximum": 0.004357151673468951, "minimum": 0.9299052656917429}, {"cycleId": "1m6VLfjsw270pMmO", "maximum": 0.6827311421289568, "minimum": 0.5785954294714035}, {"cycleId": "rpEBbVvBn8Lsf2qS", "maximum": 0.42955639867925344, "minimum": 0.31065635273350434}], "defaultValue": 0.13231785648807481, "description": "zV9hzsVbpJLtEZju", "globalAggregationMethod": "TOTAL", "ignoreAdditionalDataOnValueRejected": false, "isPublic": true, "name": "vbxX2DNbknfVv4nm", "tags": ["i33Iztr2QcwlRrRe", "70TCayYAkF18YBwR", "xcREyU5CwqGJF6nD"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -572,7 +572,7 @@ eval_tap $? 65 'GetStatCycles1' test.out
 
 #- 66 BulkGetStatCycle1
 # body param: body
-echo '{"cycleIds": ["BPK1mYwKVQoydbYj", "NIivdIcaEQfNETQC", "QK4Mvk00I9GqAhhj"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["BPK1mYwKVQoydbYj", "QK4Mvk00I9GqAhhj", "NIivdIcaEQfNETQC"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle1 \
@@ -635,7 +635,7 @@ eval_tap $? 71 'BulkResetUserStatItem2' test.out
 
 #- 72 CreateStat1
 # body param: body
-echo '{"capCycleOverride": false, "cycleIds": ["TNx7haejXSV2oH2u", "XDosOo2kSUfIA1gu", "U6uisejapftqoxuj"], "cycleOverrides": [{"cycleId": "H8S4Zx0ACteueMOm", "maximum": 0.8094815325696993, "minimum": 0.6705776291085968}, {"cycleId": "4SgxAIQTTKsdmtHu", "maximum": 0.8622184147513392, "minimum": 0.050085654100641364}, {"cycleId": "G0us7kIWLcgKgU94", "maximum": 0.8505797843632629, "minimum": 0.944205963678937}], "defaultValue": 0.3098105822730536, "description": "dRDqr3cpVbaH69Ny", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": true, "isPublic": true, "maximum": 0.4992449551794157, "minimum": 0.9319858678328709, "name": "9942bCwgpzUfcmTQ", "setAsGlobal": false, "setBy": "SERVER", "statCode": "RmV0CPt1LUaTvrFa", "tags": ["xzOfG3pTddIA0Rt6", "DnhgTGXO8Utpwxug", "wM5oQvTMICtWyUtV"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": false, "cycleIds": ["TNx7haejXSV2oH2u", "XDosOo2kSUfIA1gu", "U6uisejapftqoxuj"], "cycleOverrides": [{"cycleId": "H8S4Zx0ACteueMOm", "maximum": 0.8094815325696993, "minimum": 0.6705776291085968}, {"cycleId": "4SgxAIQTTKsdmtHu", "maximum": 0.8622184147513392, "minimum": 0.050085654100641364}, {"cycleId": "G0us7kIWLcgKgU94", "maximum": 0.8505797843632629, "minimum": 0.944205963678937}], "defaultValue": 0.3098105822730536, "description": "dRDqr3cpVbaH69Ny", "globalAggregationMethod": "LAST", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": true, "isPublic": true, "maximum": 0.4992449551794157, "minimum": 0.9319858678328709, "name": "9942bCwgpzUfcmTQ", "setAsGlobal": false, "setBy": "SERVER", "statCode": "RmV0CPt1LUaTvrFa", "tags": ["DnhgTGXO8Utpwxug", "xzOfG3pTddIA0Rt6", "wM5oQvTMICtWyUtV"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat1 \
@@ -874,7 +874,7 @@ eval_tap $? 91 'BulkUpdateUserStatItem' test.out
 
 #- 92 BulkGetOrDefaultByUserId
 # body param: body
-echo '{"statCodes": ["HDuaBMlhmWv2CjjB", "QfnFyRj8oJlSSFh8", "hLLvUwAWnj9yPsgb"]}' > $TEMP_JSON_INPUT
+echo '{"statCodes": ["hLLvUwAWnj9yPsgb", "QfnFyRj8oJlSSFh8", "HDuaBMlhmWv2CjjB"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetOrDefaultByUserId \

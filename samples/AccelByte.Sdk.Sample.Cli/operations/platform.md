@@ -507,6 +507,24 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation GetDLCItemConfigHistory
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op getdlcitemconfighistory \
+    --namespace <namespace value> \
+    --dlcId <dlcId value>
+```
+
+### Operation RestoreDLCItemConfigHistory
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op restoredlcitemconfighistory \
+    --id <id value> \
+    --namespace <namespace value>
+```
+
 ### Operation GetDLCItemConfig
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

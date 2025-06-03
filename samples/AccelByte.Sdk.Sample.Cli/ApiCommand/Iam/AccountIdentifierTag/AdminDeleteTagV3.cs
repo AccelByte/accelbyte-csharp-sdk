@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Iam.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 {
-    [SdkConsoleCommand("iam", "adminupdatetagv3")]
-    public class AdminUpdateTagV3Command : ISdkConsoleCommand
+    [SdkConsoleCommand("iam", "admindeletetagv3")]
+    public class AdminDeleteTagV3Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Iam"; } }
 
-        public string OperationName { get { return "AdminUpdateTagV3"; } }
+        public string OperationName { get { return "AdminDeleteTagV3"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,36 +34,29 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("tagId")]
         public string TagId { get; set; } = String.Empty;
 
-        [SdkCommandData("body")]
-        public ModelTagUpdateRequestV3 Body { get; set; } = new ModelTagUpdateRequestV3();
-
-        public AdminUpdateTagV3Command(AccelByteSDK sdk)
+        public AdminDeleteTagV3Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.AccountIdenfifierTag wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.AccountIdenfifierTag(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.AccountIdentifierTag wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.AccountIdentifierTag(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminUpdateTagV3.Builder;
-
-
+            var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminDeleteTagV3.Builder;
 
 
 
-            AdminUpdateTagV3 operation = opBuilder.Build(
-                Body,
+
+
+            AdminDeleteTagV3 operation = opBuilder.Build(
                 Namespace,
                 TagId
             );
 
 
-            AccelByte.Sdk.Api.Iam.Model.AccountcommonTagResponse? response = wrapper.AdminUpdateTagV3(operation);
-            if (response == null)
-                return "No response from server.";
-
-            return SdkHelper.SerializeToJson(response);
+            wrapper.AdminDeleteTagV3(operation);
+            return String.Empty;
         }
     }
 }

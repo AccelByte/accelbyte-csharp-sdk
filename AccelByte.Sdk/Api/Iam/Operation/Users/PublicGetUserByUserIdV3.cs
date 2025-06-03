@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetUserByUserIdV3
     ///
     /// This endpoint retrieve user attributes. action code: 10129
-    /// **Substitute endpoint:** /v4/public/namespaces/{namespace}/users/{userId} [READ]
+    /// **Substitute endpoint:** /v4/public/namespaces/{namespace}/users/{userId} [GET]
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation

@@ -1,3 +1,15 @@
+<a name="v0.72.0"></a>
+## [v0.72.0]
+### fix
+- **test:** use create test user endpoint for integration test
+- **:** delete iam client after csm test
+- **test:** use admin create user v4 for test
+- **:** check getappv2 response against null
+### chore
+- **:** remove mmv1 related apis
+- **:** remove deprecated api cli tests
+
+
 <a name="v0.71.0"></a>
 ## [v0.71.0]
 ### ci

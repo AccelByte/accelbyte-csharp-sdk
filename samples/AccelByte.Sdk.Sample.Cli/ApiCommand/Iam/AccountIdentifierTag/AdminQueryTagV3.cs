@@ -47,7 +47,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
         public string Run()
         {
-            AccelByte.Sdk.Api.Iam.Wrapper.AccountIdenfifierTag wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.AccountIdenfifierTag(_SDK);
+            AccelByte.Sdk.Api.Iam.Wrapper.AccountIdentifierTag wrapper = new AccelByte.Sdk.Api.Iam.Wrapper.AccountIdentifierTag(_SDK);
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminQueryTagV3.Builder;
 

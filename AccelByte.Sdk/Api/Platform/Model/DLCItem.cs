@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
 {
     public class DLCItem : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("autoUpdate")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? AutoUpdate { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -16,6 +20,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonPropertyName("rewards")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<PlatformReward>? Rewards { get; set; }
+
+        [JsonPropertyName("rvn")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? Rvn { get; set; }
 
     }
 
