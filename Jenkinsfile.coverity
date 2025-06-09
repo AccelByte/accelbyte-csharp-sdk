@@ -12,8 +12,7 @@ jobChannel = env.SLACK_CHANNEL_ACTIVITY_EXTEND_CODEGEN_SDK ? env.SLACK_CHANNEL_A
 
 pipeline {
   agent {
-    //label "extend-builder-batch || lima"
-    label "lima"
+    label "extend-builder-batch"
   }
   stages {
     stage('Coverity') {
