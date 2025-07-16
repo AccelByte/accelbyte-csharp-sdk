@@ -280,6 +280,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn session \
     --op adminqueryparties \
     --namespace <namespace value> \
+    --configurationName <configurationName value - optional> \
     --fromTime <fromTime value - optional> \
     --isSoftDeleted <isSoftDeleted value - optional> \
     --joinability <joinability value - optional> \

@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     ///
     /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SUBSCRIPTION [UPDATE]`
     /// 
-    /// Update the subscription the user(s) is an app notification.
+    /// Bulk update of users subscribed to an app's notifications.
     /// 
     /// Request body:
     /// - notificationType : type of the app notification to be subscribed - Required.

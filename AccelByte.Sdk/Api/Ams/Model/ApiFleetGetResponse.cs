@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("fallbackFleet")]
         public string? FallbackFleet { get; set; }
 
+        [JsonPropertyName("hibernateAfterPeriod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? HibernateAfterPeriod { get; set; }
+
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 

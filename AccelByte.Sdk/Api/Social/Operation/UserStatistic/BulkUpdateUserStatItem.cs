@@ -28,6 +28,68 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Other detail info:
     /// + *Returns*: bulk updated result
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ### â ï¸ Important Note on Bulk Update Behavior
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each stat update unique per request.
+    /// We strongly advise against including multiple updates for the same `statCode` with the same `updateStrategy` in a single request,
+    /// as bulk operations are processed concurrently.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Avoid including multiple entries with the same`statCode` but different `updateStrategy` values.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// â Incorrect Example:
+    /// 
+    /// [
+    /// {
+    /// "statCode": "exp",
+    /// "updateStrategy": "OVERRIDE",
+    /// "value": 10
+    /// },
+    /// {
+    /// "statCode": "exp",
+    /// "updateStrategy": "INCREMENT",
+    /// "value": 50
+    /// }
+    /// ]
+    /// 
+    /// â Correct Example:
+    /// 
+    /// [
+    /// {
+    /// "statCode": "exp",
+    /// "updateStrategy": "OVERRIDE",
+    /// "value": 10
+    /// }.
+    /// {
+    /// "statCode": "headshot",
+    /// "updateStrategy": "INCREMENT",
+    /// "value": 10
+    /// }
+    /// ]
     /// </summary>
     public class BulkUpdateUserStatItem : AccelByte.Sdk.Core.Operation
     {

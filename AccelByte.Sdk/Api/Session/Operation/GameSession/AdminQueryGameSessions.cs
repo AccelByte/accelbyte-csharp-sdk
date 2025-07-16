@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? IsSoftDeleted { get; set; }
 
-            public string? Joinability { get; set; }
+            public AdminQueryGameSessionsJoinability? Joinability { get; set; }
 
             public long? Limit { get; set; }
 
@@ -55,9 +55,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? SessionID { get; set; }
 
-            public string? Status { get; set; }
+            public AdminQueryGameSessionsStatus? Status { get; set; }
 
-            public string? StatusV2 { get; set; }
+            public AdminQueryGameSessionsStatusV2? StatusV2 { get; set; }
 
             public string? ToTime { get; set; }
 
@@ -104,7 +104,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
-            public AdminQueryGameSessionsBuilder SetJoinability(string _joinability)
+            public AdminQueryGameSessionsBuilder SetJoinability(AdminQueryGameSessionsJoinability _joinability)
             {
                 Joinability = _joinability;
                 return this;
@@ -152,13 +152,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
-            public AdminQueryGameSessionsBuilder SetStatus(string _status)
+            public AdminQueryGameSessionsBuilder SetStatus(AdminQueryGameSessionsStatus _status)
             {
                 Status = _status;
                 return this;
             }
 
-            public AdminQueryGameSessionsBuilder SetStatusV2(string _statusV2)
+            public AdminQueryGameSessionsBuilder SetStatusV2(AdminQueryGameSessionsStatusV2 _statusV2)
             {
                 StatusV2 = _statusV2;
                 return this;
@@ -202,7 +202,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.GameMode is not null) QueryParams["gameMode"] = builder.GameMode;
             if (builder.IsPersistent is not null) QueryParams["isPersistent"] = builder.IsPersistent;
             if (builder.IsSoftDeleted is not null) QueryParams["isSoftDeleted"] = builder.IsSoftDeleted;
-            if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
+            if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability.Value;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.MatchPool is not null) QueryParams["matchPool"] = builder.MatchPool;
             if (builder.MemberID is not null) QueryParams["memberID"] = builder.MemberID;
@@ -210,8 +210,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
             if (builder.SessionID is not null) QueryParams["sessionID"] = builder.SessionID;
-            if (builder.Status is not null) QueryParams["status"] = builder.Status;
-            if (builder.StatusV2 is not null) QueryParams["statusV2"] = builder.StatusV2;
+            if (builder.Status is not null) QueryParams["status"] = builder.Status.Value;
+            if (builder.StatusV2 is not null) QueryParams["statusV2"] = builder.StatusV2.Value;
             if (builder.ToTime is not null) QueryParams["toTime"] = builder.ToTime;
 
 
@@ -231,7 +231,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             string? gameMode,
             string? isPersistent,
             string? isSoftDeleted,
-            string? joinability,
+            AdminQueryGameSessionsJoinability? joinability,
             long? limit,
             string? matchPool,
             string? memberID,
@@ -239,8 +239,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             string? order,
             string? orderBy,
             string? sessionID,
-            string? status,
-            string? statusV2,
+            AdminQueryGameSessionsStatus? status,
+            AdminQueryGameSessionsStatusV2? statusV2,
             string? toTime
         )
         {
@@ -252,7 +252,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (gameMode is not null) QueryParams["gameMode"] = gameMode;
             if (isPersistent is not null) QueryParams["isPersistent"] = isPersistent;
             if (isSoftDeleted is not null) QueryParams["isSoftDeleted"] = isSoftDeleted;
-            if (joinability is not null) QueryParams["joinability"] = joinability;
+            if (joinability is not null) QueryParams["joinability"] = joinability.Value;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (matchPool is not null) QueryParams["matchPool"] = matchPool;
             if (memberID is not null) QueryParams["memberID"] = memberID;
@@ -260,8 +260,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
             if (order is not null) QueryParams["order"] = order;
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
             if (sessionID is not null) QueryParams["sessionID"] = sessionID;
-            if (status is not null) QueryParams["status"] = status;
-            if (statusV2 is not null) QueryParams["statusV2"] = statusV2;
+            if (status is not null) QueryParams["status"] = status.Value;
+            if (statusV2 is not null) QueryParams["statusV2"] = statusV2.Value;
             if (toTime is not null) QueryParams["toTime"] = toTime;
 
 
@@ -304,6 +304,114 @@ namespace AccelByte.Sdk.Api.Session.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class AdminQueryGameSessionsJoinability : StringEnum<AdminQueryGameSessionsJoinability>
+    {
+        public static readonly AdminQueryGameSessionsJoinability CLOSED
+            = new AdminQueryGameSessionsJoinability("CLOSED");
+
+        public static readonly AdminQueryGameSessionsJoinability FRIENDSOFFRIENDS
+            = new AdminQueryGameSessionsJoinability("FRIENDS_OF_FRIENDS");
+
+        public static readonly AdminQueryGameSessionsJoinability FRIENDSOFLEADER
+            = new AdminQueryGameSessionsJoinability("FRIENDS_OF_LEADER");
+
+        public static readonly AdminQueryGameSessionsJoinability FRIENDSOFMEMBERS
+            = new AdminQueryGameSessionsJoinability("FRIENDS_OF_MEMBERS");
+
+        public static readonly AdminQueryGameSessionsJoinability INVITEONLY
+            = new AdminQueryGameSessionsJoinability("INVITE_ONLY");
+
+        public static readonly AdminQueryGameSessionsJoinability OPEN
+            = new AdminQueryGameSessionsJoinability("OPEN");
+
+
+        public static implicit operator AdminQueryGameSessionsJoinability(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminQueryGameSessionsJoinability(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class AdminQueryGameSessionsStatus : StringEnum<AdminQueryGameSessionsStatus>
+    {
+        public static readonly AdminQueryGameSessionsStatus AVAILABLE
+            = new AdminQueryGameSessionsStatus("AVAILABLE");
+
+        public static readonly AdminQueryGameSessionsStatus DSERROR
+            = new AdminQueryGameSessionsStatus("DS_ERROR");
+
+        public static readonly AdminQueryGameSessionsStatus FAILEDTOREQUEST
+            = new AdminQueryGameSessionsStatus("FAILED_TO_REQUEST");
+
+        public static readonly AdminQueryGameSessionsStatus NEEDTOREQUEST
+            = new AdminQueryGameSessionsStatus("NEED_TO_REQUEST");
+
+        public static readonly AdminQueryGameSessionsStatus PREPARING
+            = new AdminQueryGameSessionsStatus("PREPARING");
+
+        public static readonly AdminQueryGameSessionsStatus REQUESTED
+            = new AdminQueryGameSessionsStatus("REQUESTED");
+
+
+        public static implicit operator AdminQueryGameSessionsStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminQueryGameSessionsStatus(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class AdminQueryGameSessionsStatusV2 : StringEnum<AdminQueryGameSessionsStatusV2>
+    {
+        public static readonly AdminQueryGameSessionsStatusV2 AVAILABLE
+            = new AdminQueryGameSessionsStatusV2("AVAILABLE");
+
+        public static readonly AdminQueryGameSessionsStatusV2 DSCANCELLED
+            = new AdminQueryGameSessionsStatusV2("DS_CANCELLED");
+
+        public static readonly AdminQueryGameSessionsStatusV2 DSERROR
+            = new AdminQueryGameSessionsStatusV2("DS_ERROR");
+
+        public static readonly AdminQueryGameSessionsStatusV2 ENDED
+            = new AdminQueryGameSessionsStatusV2("ENDED");
+
+        public static readonly AdminQueryGameSessionsStatusV2 FAILEDTOREQUEST
+            = new AdminQueryGameSessionsStatusV2("FAILED_TO_REQUEST");
+
+        public static readonly AdminQueryGameSessionsStatusV2 NEEDTOREQUEST
+            = new AdminQueryGameSessionsStatusV2("NEED_TO_REQUEST");
+
+        public static readonly AdminQueryGameSessionsStatusV2 PREPARING
+            = new AdminQueryGameSessionsStatusV2("PREPARING");
+
+        public static readonly AdminQueryGameSessionsStatusV2 REQUESTED
+            = new AdminQueryGameSessionsStatusV2("REQUESTED");
+
+        public static readonly AdminQueryGameSessionsStatusV2 UNKNOWN
+            = new AdminQueryGameSessionsStatusV2("UNKNOWN");
+
+
+        public static implicit operator AdminQueryGameSessionsStatusV2(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminQueryGameSessionsStatusV2(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

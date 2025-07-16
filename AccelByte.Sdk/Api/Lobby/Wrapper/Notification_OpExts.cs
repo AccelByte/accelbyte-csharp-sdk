@@ -588,6 +588,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Lobby.Wrapper.Notification)builder.WrapperObject!).GetMyNotificationsAsync(op);
         }
+        public static Lobby.Model.ModelNotificationsResponse? Execute(
+            this GetMyOfflineNotifications.GetMyOfflineNotificationsBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyOfflineNotifications op = builder.Build(
+                namespace_
+            );
+
+            return ((Lobby.Wrapper.Notification)builder.WrapperObject!).GetMyOfflineNotifications(op);
+        }
+        public static async Task<Lobby.Model.ModelNotificationsResponse?> ExecuteAsync(
+            this GetMyOfflineNotifications.GetMyOfflineNotificationsBuilder builder,
+            string namespace_
+        )
+        {
+            GetMyOfflineNotifications op = builder.Build(
+                namespace_
+            );
+
+            return await ((Lobby.Wrapper.Notification)builder.WrapperObject!).GetMyOfflineNotificationsAsync(op);
+        }
         public static Lobby.Model.ModelTopicByNamespacesResponse? Execute(
             this GetTopicByNamespace.GetTopicByNamespaceBuilder builder,
             string namespace_

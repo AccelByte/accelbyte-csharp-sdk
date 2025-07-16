@@ -30,12 +30,20 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             : OperationBuilder<GetNamespaceContextBuilder>
         {
 
+            public bool? RefreshOnCacheMiss { get; set; }
+
 
 
 
 
             internal GetNamespaceContextBuilder() { }
 
+
+            public GetNamespaceContextBuilder SetRefreshOnCacheMiss(bool _refreshOnCacheMiss)
+            {
+                RefreshOnCacheMiss = _refreshOnCacheMiss;
+                return this;
+            }
 
 
 
@@ -63,6 +71,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.RefreshOnCacheMiss != null) QueryParams["refreshOnCacheMiss"] = Convert.ToString(builder.RefreshOnCacheMiss)!;
 
 
 
@@ -74,11 +83,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         #endregion
 
         public GetNamespaceContext(
-            string namespace_
+            string namespace_,
+            bool? refreshOnCacheMiss
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (refreshOnCacheMiss != null) QueryParams["refreshOnCacheMiss"] = Convert.ToString(refreshOnCacheMiss)!;
 
 
 

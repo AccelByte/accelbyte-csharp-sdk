@@ -31,6 +31,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("refreshOnCacheMiss")]
+        public bool? RefreshOnCacheMiss { get; set; }
+
         public GetNamespaceContextCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -42,6 +45,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 
             var opBuilder = AccelByte.Sdk.Api.Basic.Operation.GetNamespaceContext.Builder;
 
+            if (RefreshOnCacheMiss != null)
+                opBuilder.SetRefreshOnCacheMiss((bool)RefreshOnCacheMiss);
 
 
 

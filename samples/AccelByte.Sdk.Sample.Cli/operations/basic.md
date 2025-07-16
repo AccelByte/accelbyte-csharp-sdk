@@ -97,7 +97,8 @@ To set request body using JSON file, replace `--reqbody` argument with `--reqfil
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn basic \
     --op getnamespacecontext \
-    --namespace <namespace value>
+    --namespace <namespace value> \
+    --refreshOnCacheMiss <refreshOnCacheMiss value - optional>
 ```
 
 ### Operation GeneratedUploadUrl

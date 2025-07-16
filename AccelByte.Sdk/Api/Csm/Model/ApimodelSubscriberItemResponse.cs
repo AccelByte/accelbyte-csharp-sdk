@@ -25,6 +25,7 @@ namespace AccelByte.Sdk.Api.Csm.Model
         public string? NotificationType { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }

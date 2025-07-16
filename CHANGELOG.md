@@ -1,3 +1,19 @@
+<a name="v0.73.0"></a>
+## [v0.73.0]
+### ci
+- **:** consolidate build label lima
+- **:** consolidate extend-builder-batch linux-amd64
+- **github:** change label to extend-builder-ci
+- **integration:** remove redundant Jenkinsfile.integration
+- **generate:** remove cli and integration test stage
+- **nightly:** add params for cli and integration test
+- **nightly-starter:** remove redundant Jenkinsfile.nightly-starter
+### docs
+- **:** fix url
+### chore
+- **:** remove armada related apis
+
+
 <a name="v0.72.0"></a>
 ## [v0.72.0]
 ### REMOVED SERVICE APIS

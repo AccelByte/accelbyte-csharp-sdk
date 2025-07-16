@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     ///
     /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SELF:SUBSCRIPTION [DELETE]`
     /// 
-    /// Unsubscribe to app down notification
+    /// Unsubscribe to app notification
     /// </summary>
     public class UnsubscribeV2Handler : AccelByte.Sdk.Core.Operation
     {

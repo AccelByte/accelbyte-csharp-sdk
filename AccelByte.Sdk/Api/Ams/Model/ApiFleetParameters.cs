@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? FallbackFleet { get; set; }
 
+        [JsonPropertyName("hibernateAfterPeriod")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? HibernateAfterPeriod { get; set; }
+
         [JsonPropertyName("imageDeploymentProfile")]
         public ApiImageDeploymentProfile? ImageDeploymentProfile { get; set; }
 

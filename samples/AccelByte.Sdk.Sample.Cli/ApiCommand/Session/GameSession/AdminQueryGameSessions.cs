@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             if (IsSoftDeleted != null)
                 opBuilder.SetIsSoftDeleted((string)IsSoftDeleted);
             if (Joinability != null)
-                opBuilder.SetJoinability((string)Joinability);
+                opBuilder.SetJoinability(AdminQueryGameSessionsJoinability.NewValue(Joinability));
             if (Limit != null)
                 opBuilder.SetLimit((long)Limit);
             if (MatchPool != null)
@@ -122,9 +122,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
             if (SessionID != null)
                 opBuilder.SetSessionID((string)SessionID);
             if (Status != null)
-                opBuilder.SetStatus((string)Status);
+                opBuilder.SetStatus(AdminQueryGameSessionsStatus.NewValue(Status));
             if (StatusV2 != null)
-                opBuilder.SetStatusV2((string)StatusV2);
+                opBuilder.SetStatusV2(AdminQueryGameSessionsStatusV2.NewValue(StatusV2));
             if (ToTime != null)
                 opBuilder.SetToTime((string)ToTime);
 

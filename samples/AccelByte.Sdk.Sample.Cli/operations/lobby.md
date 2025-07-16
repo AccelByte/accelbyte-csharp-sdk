@@ -598,6 +598,18 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --startTime <startTime value - optional>
 ```
 
+### Operation GetMyOfflineNotifications
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn lobby \
+    --op getmyofflinenotifications \
+    --namespace <namespace value> \
+    --endTime <endTime value - optional> \
+    --limit <limit value - optional> \
+    --offset <offset value - optional> \
+    --startTime <startTime value - optional>
+```
+
 ### Operation NotificationWithTemplate
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

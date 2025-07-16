@@ -37,6 +37,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
         [SdkCommandArgument("userId")]
         public string UserId { get; set; } = String.Empty;
 
+        [SdkCommandArgument("createIfNotFound")]
+        public bool? CreateIfNotFound { get; set; }
+
         public AdminGetUserMappingCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -48,6 +51,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Iam
 
             var opBuilder = AccelByte.Sdk.Api.Iam.Operation.AdminGetUserMapping.Builder;
 
+            if (CreateIfNotFound != null)
+                opBuilder.SetCreateIfNotFound((bool)CreateIfNotFound);
 
 
 

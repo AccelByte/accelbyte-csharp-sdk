@@ -456,21 +456,11 @@ namespace AccelByte.Sdk.Api
         }
         public static Platform.Model.ImportStoreResult? Execute(
             this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
-            Stream category,
-            Stream display,
-            Stream item,
-            string notes,
-            Stream section,
             string namespace_,
             string storeId
         )
         {
             ImportStoreByCSV op = builder.Build(
-                category,
-                display,
-                item,
-                notes,
-                section,
                 namespace_,
                 storeId
             );
@@ -479,21 +469,11 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Platform.Model.ImportStoreResult?> ExecuteAsync(
             this ImportStoreByCSV.ImportStoreByCSVBuilder builder,
-            Stream category,
-            Stream display,
-            Stream item,
-            string notes,
-            Stream section,
             string namespace_,
             string storeId
         )
         {
             ImportStoreByCSV op = builder.Build(
-                category,
-                display,
-                item,
-                notes,
-                section,
                 namespace_,
                 storeId
             );

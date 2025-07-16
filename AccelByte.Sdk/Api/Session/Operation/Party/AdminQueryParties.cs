@@ -27,11 +27,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
             : OperationBuilder<AdminQueryPartiesBuilder>
         {
 
+            public string? ConfigurationName { get; set; }
+
             public string? FromTime { get; set; }
 
             public string? IsSoftDeleted { get; set; }
 
-            public string? Joinability { get; set; }
+            public AdminQueryPartiesJoinability? Joinability { get; set; }
 
             public string? Key { get; set; }
 
@@ -41,7 +43,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
             public string? MemberID { get; set; }
 
-            public string? MemberStatus { get; set; }
+            public AdminQueryPartiesMemberStatus? MemberStatus { get; set; }
 
             public long? Offset { get; set; }
 
@@ -62,6 +64,12 @@ namespace AccelByte.Sdk.Api.Session.Operation
             internal AdminQueryPartiesBuilder() { }
 
 
+            public AdminQueryPartiesBuilder SetConfigurationName(string _configurationName)
+            {
+                ConfigurationName = _configurationName;
+                return this;
+            }
+
             public AdminQueryPartiesBuilder SetFromTime(string _fromTime)
             {
                 FromTime = _fromTime;
@@ -74,7 +82,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
-            public AdminQueryPartiesBuilder SetJoinability(string _joinability)
+            public AdminQueryPartiesBuilder SetJoinability(AdminQueryPartiesJoinability _joinability)
             {
                 Joinability = _joinability;
                 return this;
@@ -104,7 +112,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
                 return this;
             }
 
-            public AdminQueryPartiesBuilder SetMemberStatus(string _memberStatus)
+            public AdminQueryPartiesBuilder SetMemberStatus(AdminQueryPartiesMemberStatus _memberStatus)
             {
                 MemberStatus = _memberStatus;
                 return this;
@@ -172,14 +180,15 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.ConfigurationName is not null) QueryParams["configurationName"] = builder.ConfigurationName;
             if (builder.FromTime is not null) QueryParams["fromTime"] = builder.FromTime;
             if (builder.IsSoftDeleted is not null) QueryParams["isSoftDeleted"] = builder.IsSoftDeleted;
-            if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability;
+            if (builder.Joinability is not null) QueryParams["joinability"] = builder.Joinability.Value;
             if (builder.Key is not null) QueryParams["key"] = builder.Key;
             if (builder.LeaderID is not null) QueryParams["leaderID"] = builder.LeaderID;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
             if (builder.MemberID is not null) QueryParams["memberID"] = builder.MemberID;
-            if (builder.MemberStatus is not null) QueryParams["memberStatus"] = builder.MemberStatus;
+            if (builder.MemberStatus is not null) QueryParams["memberStatus"] = builder.MemberStatus.Value;
             if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.Order is not null) QueryParams["order"] = builder.Order;
             if (builder.OrderBy is not null) QueryParams["orderBy"] = builder.OrderBy;
@@ -198,14 +207,15 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public AdminQueryParties(
             string namespace_,
+            string? configurationName,
             string? fromTime,
             string? isSoftDeleted,
-            string? joinability,
+            AdminQueryPartiesJoinability? joinability,
             string? key,
             string? leaderID,
             long? limit,
             string? memberID,
-            string? memberStatus,
+            AdminQueryPartiesMemberStatus? memberStatus,
             long? offset,
             string? order,
             string? orderBy,
@@ -216,14 +226,15 @@ namespace AccelByte.Sdk.Api.Session.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (configurationName is not null) QueryParams["configurationName"] = configurationName;
             if (fromTime is not null) QueryParams["fromTime"] = fromTime;
             if (isSoftDeleted is not null) QueryParams["isSoftDeleted"] = isSoftDeleted;
-            if (joinability is not null) QueryParams["joinability"] = joinability;
+            if (joinability is not null) QueryParams["joinability"] = joinability.Value;
             if (key is not null) QueryParams["key"] = key;
             if (leaderID is not null) QueryParams["leaderID"] = leaderID;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
             if (memberID is not null) QueryParams["memberID"] = memberID;
-            if (memberStatus is not null) QueryParams["memberStatus"] = memberStatus;
+            if (memberStatus is not null) QueryParams["memberStatus"] = memberStatus.Value;
             if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (order is not null) QueryParams["order"] = order;
             if (orderBy is not null) QueryParams["orderBy"] = orderBy;
@@ -271,6 +282,84 @@ namespace AccelByte.Sdk.Api.Session.Operation
             var payloadString = Helper.ConvertInputStreamToString(payload);
 
             throw new HttpResponseException(code, payloadString);
+        }
+    }
+
+    public class AdminQueryPartiesJoinability : StringEnum<AdminQueryPartiesJoinability>
+    {
+        public static readonly AdminQueryPartiesJoinability CLOSED
+            = new AdminQueryPartiesJoinability("CLOSED");
+
+        public static readonly AdminQueryPartiesJoinability FRIENDSOFFRIENDS
+            = new AdminQueryPartiesJoinability("FRIENDS_OF_FRIENDS");
+
+        public static readonly AdminQueryPartiesJoinability FRIENDSOFLEADER
+            = new AdminQueryPartiesJoinability("FRIENDS_OF_LEADER");
+
+        public static readonly AdminQueryPartiesJoinability FRIENDSOFMEMBERS
+            = new AdminQueryPartiesJoinability("FRIENDS_OF_MEMBERS");
+
+        public static readonly AdminQueryPartiesJoinability INVITEONLY
+            = new AdminQueryPartiesJoinability("INVITE_ONLY");
+
+        public static readonly AdminQueryPartiesJoinability OPEN
+            = new AdminQueryPartiesJoinability("OPEN");
+
+
+        public static implicit operator AdminQueryPartiesJoinability(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminQueryPartiesJoinability(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class AdminQueryPartiesMemberStatus : StringEnum<AdminQueryPartiesMemberStatus>
+    {
+        public static readonly AdminQueryPartiesMemberStatus CANCELLED
+            = new AdminQueryPartiesMemberStatus("CANCELLED");
+
+        public static readonly AdminQueryPartiesMemberStatus CONNECTED
+            = new AdminQueryPartiesMemberStatus("CONNECTED");
+
+        public static readonly AdminQueryPartiesMemberStatus DISCONNECTED
+            = new AdminQueryPartiesMemberStatus("DISCONNECTED");
+
+        public static readonly AdminQueryPartiesMemberStatus DROPPED
+            = new AdminQueryPartiesMemberStatus("DROPPED");
+
+        public static readonly AdminQueryPartiesMemberStatus INVITED
+            = new AdminQueryPartiesMemberStatus("INVITED");
+
+        public static readonly AdminQueryPartiesMemberStatus JOINED
+            = new AdminQueryPartiesMemberStatus("JOINED");
+
+        public static readonly AdminQueryPartiesMemberStatus KICKED
+            = new AdminQueryPartiesMemberStatus("KICKED");
+
+        public static readonly AdminQueryPartiesMemberStatus LEFT
+            = new AdminQueryPartiesMemberStatus("LEFT");
+
+        public static readonly AdminQueryPartiesMemberStatus REJECTED
+            = new AdminQueryPartiesMemberStatus("REJECTED");
+
+        public static readonly AdminQueryPartiesMemberStatus TIMEOUT
+            = new AdminQueryPartiesMemberStatus("TIMEOUT");
+
+
+        public static implicit operator AdminQueryPartiesMemberStatus(string value)
+        {
+            return NewValue(value);
+        }
+
+        public AdminQueryPartiesMemberStatus(string enumValue)
+            : base(enumValue)
+        {
+
         }
     }
 

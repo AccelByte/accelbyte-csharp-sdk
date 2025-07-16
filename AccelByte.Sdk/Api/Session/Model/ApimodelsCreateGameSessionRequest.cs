@@ -53,7 +53,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsCreateGameSessionRequestJoinability? Joinability { get; set; }
 
         [JsonPropertyName("matchPool")]
         public string? MatchPool { get; set; }
@@ -97,7 +98,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsCreateGameSessionRequestType? Type { get; set; }
 
     }
 
@@ -145,7 +147,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsCreateGameSessionRequestJoinability? Joinability { get; set; }
 
         [JsonPropertyName("matchPool")]
         public string? MatchPool { get; set; }
@@ -189,10 +192,44 @@ namespace AccelByte.Sdk.Api.Session.Model
         public bool? TieTeamsSessionLifetime { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsCreateGameSessionRequestType? Type { get; set; }
 
     }
 
+
+    public class ApimodelsCreateGameSessionRequestJoinability : StringEnum<ApimodelsCreateGameSessionRequestJoinability>
+    {
+        public static readonly ApimodelsCreateGameSessionRequestJoinability CLOSED
+            = new ApimodelsCreateGameSessionRequestJoinability("CLOSED");
+
+        public static readonly ApimodelsCreateGameSessionRequestJoinability FRIENDSOFFRIENDS
+            = new ApimodelsCreateGameSessionRequestJoinability("FRIENDS_OF_FRIENDS");
+
+        public static readonly ApimodelsCreateGameSessionRequestJoinability FRIENDSOFLEADER
+            = new ApimodelsCreateGameSessionRequestJoinability("FRIENDS_OF_LEADER");
+
+        public static readonly ApimodelsCreateGameSessionRequestJoinability FRIENDSOFMEMBERS
+            = new ApimodelsCreateGameSessionRequestJoinability("FRIENDS_OF_MEMBERS");
+
+        public static readonly ApimodelsCreateGameSessionRequestJoinability INVITEONLY
+            = new ApimodelsCreateGameSessionRequestJoinability("INVITE_ONLY");
+
+        public static readonly ApimodelsCreateGameSessionRequestJoinability OPEN
+            = new ApimodelsCreateGameSessionRequestJoinability("OPEN");
+
+
+        public static implicit operator ApimodelsCreateGameSessionRequestJoinability(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsCreateGameSessionRequestJoinability(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class ApimodelsCreateGameSessionRequestTextChatMode : StringEnum<ApimodelsCreateGameSessionRequestTextChatMode>
     {
@@ -212,6 +249,30 @@ namespace AccelByte.Sdk.Api.Session.Model
         }
 
         public ApimodelsCreateGameSessionRequestTextChatMode(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class ApimodelsCreateGameSessionRequestType : StringEnum<ApimodelsCreateGameSessionRequestType>
+    {
+        public static readonly ApimodelsCreateGameSessionRequestType DS
+            = new ApimodelsCreateGameSessionRequestType("DS");
+
+        public static readonly ApimodelsCreateGameSessionRequestType NONE
+            = new ApimodelsCreateGameSessionRequestType("NONE");
+
+        public static readonly ApimodelsCreateGameSessionRequestType P2P
+            = new ApimodelsCreateGameSessionRequestType("P2P");
+
+
+        public static implicit operator ApimodelsCreateGameSessionRequestType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsCreateGameSessionRequestType(string enumValue)
             : base(enumValue)
         {
 

@@ -25,6 +25,66 @@ namespace AccelByte.Sdk.Api.Social.Operation
     /// 
     /// Other detail info:
     /// + *Returns*: bulk updated result
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// ### â ï¸ Important Note on Bulk Update Behavior
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To ensure data integrity and avoid inconsistencies or race conditions, it is crucial to make each user/update pair unique per request.
+    /// We strongly advise against including multiple updates for the same `userId` with the same `statCode` and/or `updateStrategy` in a single request,
+    /// as bulk operations are processed concurrently.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// Avoid including multiple entries with the same`userId` and `statCode` but different `updateStrategy` values.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// 
+    /// To apply multiple operations on the same stat, please batch or sequence them in separate requests , according to your business logic.
+    /// 
+    /// 
+    /// 
+    /// 
+    /// â Incorrect Example:
+    /// 
+    /// [
+    /// {
+    /// "userId": "315a070e48a74dae903d559974e6513d",
+    /// "statCode": "exp",
+    /// "updateStrategy": "OVERRIDE",
+    /// "value": 10
+    /// },
+    /// {
+    /// "userId": "315a070e48a74dae903d559974e6513d",
+    /// "statCode": "exp",
+    /// "updateStrategy": "INCREMENT",
+    /// "value": 50
+    /// }
+    /// ]
+    /// 
+    /// â Correct Example:
+    /// 
+    /// [
+    /// {
+    /// "userId": "315a070e48a74dae903d559974e6513d",
+    /// "statCode": "exp",
+    /// "updateStrategy": "INCREMENT",
+    /// "value": 60
+    /// }
+    /// ]
     /// </summary>
     public class BulkUpdateUserStatItem1 : AccelByte.Sdk.Core.Operation
     {

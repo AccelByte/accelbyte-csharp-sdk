@@ -35,19 +35,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         public string StoreId { get; set; } = String.Empty;
 
         [SdkCommandFile("category")]
-        public Stream Category { get; set; } = new MemoryStream();
+        public Stream? Category { get; set; }
 
         [SdkCommandFile("display")]
-        public Stream Display { get; set; } = new MemoryStream();
+        public Stream? Display { get; set; }
 
         [SdkCommandFile("item")]
-        public Stream Item { get; set; } = new MemoryStream();
+        public Stream? Item { get; set; }
 
         [SdkCommandArgument("notes")]
         public string Notes { get; set; } = String.Empty;
 
         [SdkCommandFile("section")]
-        public Stream Section { get; set; } = new MemoryStream();
+        public Stream? Section { get; set; }
 
         public ImportStoreByCSVCommand(AccelByteSDK sdk)
         {
@@ -62,14 +62,19 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 
 
 
+            if (Category != null)
+                opBuilder.SetCategory((Stream)Category);
+            if (Display != null)
+                opBuilder.SetDisplay((Stream)Display);
+            if (Item != null)
+                opBuilder.SetItem((Stream)Item);
+            if (Notes != null)
+                opBuilder.SetNotes((string)Notes);
+            if (Section != null)
+                opBuilder.SetSection((Stream)Section);
 
 
             ImportStoreByCSV operation = opBuilder.Build(
-                Category,
-                Display,
-                Item,
-                Notes,
-                Section,
                 Namespace,
                 StoreId
             );

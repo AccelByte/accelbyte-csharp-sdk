@@ -77,11 +77,23 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("PlatformName")]
         public string? PlatformName { get; set; }
 
+        [JsonPropertyName("PrivateKey")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? PrivateKey { get; set; }
+
         [JsonPropertyName("RedirectUri")]
         public string? RedirectUri { get; set; }
 
         [JsonPropertyName("RegisteredDomains")]
         public List<AccountcommonRegisteredDomain>? RegisteredDomains { get; set; }
+
+        [JsonPropertyName("RelyingParty")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RelyingParty { get; set; }
+
+        [JsonPropertyName("SandboxId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? SandboxId { get; set; }
 
         [JsonPropertyName("Secret")]
         public string? Secret { get; set; }

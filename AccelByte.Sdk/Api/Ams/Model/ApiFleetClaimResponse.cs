@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
 {
     public class ApiFleetClaimResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("fleetId")]
+        public string? FleetId { get; set; }
+
         [JsonPropertyName("ip")]
         public string? Ip { get; set; }
 

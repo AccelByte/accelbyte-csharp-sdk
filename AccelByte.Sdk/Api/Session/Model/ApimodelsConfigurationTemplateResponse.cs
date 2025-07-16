@@ -91,7 +91,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsConfigurationTemplateResponseJoinability? Joinability { get; set; }
 
         [JsonPropertyName("last")]
         public string? Last { get; set; }
@@ -152,7 +153,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? TtlHours { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsConfigurationTemplateResponseType? Type { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
@@ -241,7 +243,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsConfigurationTemplateResponseJoinability? Joinability { get; set; }
 
         [JsonPropertyName("last")]
         public string? Last { get; set; }
@@ -302,13 +305,47 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? TtlHours { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsConfigurationTemplateResponseType? Type { get; set; }
 
         [JsonPropertyName("updatedAt")]
         public string? UpdatedAt { get; set; }
 
     }
 
+
+    public class ApimodelsConfigurationTemplateResponseJoinability : StringEnum<ApimodelsConfigurationTemplateResponseJoinability>
+    {
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability CLOSED
+            = new ApimodelsConfigurationTemplateResponseJoinability("CLOSED");
+
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability FRIENDSOFFRIENDS
+            = new ApimodelsConfigurationTemplateResponseJoinability("FRIENDS_OF_FRIENDS");
+
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability FRIENDSOFLEADER
+            = new ApimodelsConfigurationTemplateResponseJoinability("FRIENDS_OF_LEADER");
+
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability FRIENDSOFMEMBERS
+            = new ApimodelsConfigurationTemplateResponseJoinability("FRIENDS_OF_MEMBERS");
+
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability INVITEONLY
+            = new ApimodelsConfigurationTemplateResponseJoinability("INVITE_ONLY");
+
+        public static readonly ApimodelsConfigurationTemplateResponseJoinability OPEN
+            = new ApimodelsConfigurationTemplateResponseJoinability("OPEN");
+
+
+        public static implicit operator ApimodelsConfigurationTemplateResponseJoinability(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsConfigurationTemplateResponseJoinability(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class ApimodelsConfigurationTemplateResponseTextChatMode : StringEnum<ApimodelsConfigurationTemplateResponseTextChatMode>
     {
@@ -328,6 +365,30 @@ namespace AccelByte.Sdk.Api.Session.Model
         }
 
         public ApimodelsConfigurationTemplateResponseTextChatMode(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class ApimodelsConfigurationTemplateResponseType : StringEnum<ApimodelsConfigurationTemplateResponseType>
+    {
+        public static readonly ApimodelsConfigurationTemplateResponseType DS
+            = new ApimodelsConfigurationTemplateResponseType("DS");
+
+        public static readonly ApimodelsConfigurationTemplateResponseType NONE
+            = new ApimodelsConfigurationTemplateResponseType("NONE");
+
+        public static readonly ApimodelsConfigurationTemplateResponseType P2P
+            = new ApimodelsConfigurationTemplateResponseType("P2P");
+
+
+        public static implicit operator ApimodelsConfigurationTemplateResponseType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsConfigurationTemplateResponseType(string enumValue)
             : base(enumValue)
         {
 

@@ -30,6 +30,7 @@ namespace AccelByte.Sdk.Api.Csm.Model
         public int? SubscriptionsCount { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }

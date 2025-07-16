@@ -83,7 +83,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsPublicConfigurationJoinability? Joinability { get; set; }
 
         [JsonPropertyName("leaderElectionGracePeriod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -138,7 +139,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? TtlHours { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsPublicConfigurationType? Type { get; set; }
 
     }
 
@@ -216,7 +218,8 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? InviteTimeout { get; set; }
 
         [JsonPropertyName("joinability")]
-        public string? Joinability { get; set; }
+        [JsonStringEnum]
+        public ApimodelsPublicConfigurationJoinability? Joinability { get; set; }
 
         [JsonPropertyName("leaderElectionGracePeriod")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -271,10 +274,44 @@ namespace AccelByte.Sdk.Api.Session.Model
         public int? TtlHours { get; set; }
 
         [JsonPropertyName("type")]
-        public string? Type { get; set; }
+        [JsonStringEnum]
+        public ApimodelsPublicConfigurationType? Type { get; set; }
 
     }
 
+
+    public class ApimodelsPublicConfigurationJoinability : StringEnum<ApimodelsPublicConfigurationJoinability>
+    {
+        public static readonly ApimodelsPublicConfigurationJoinability CLOSED
+            = new ApimodelsPublicConfigurationJoinability("CLOSED");
+
+        public static readonly ApimodelsPublicConfigurationJoinability FRIENDSOFFRIENDS
+            = new ApimodelsPublicConfigurationJoinability("FRIENDS_OF_FRIENDS");
+
+        public static readonly ApimodelsPublicConfigurationJoinability FRIENDSOFLEADER
+            = new ApimodelsPublicConfigurationJoinability("FRIENDS_OF_LEADER");
+
+        public static readonly ApimodelsPublicConfigurationJoinability FRIENDSOFMEMBERS
+            = new ApimodelsPublicConfigurationJoinability("FRIENDS_OF_MEMBERS");
+
+        public static readonly ApimodelsPublicConfigurationJoinability INVITEONLY
+            = new ApimodelsPublicConfigurationJoinability("INVITE_ONLY");
+
+        public static readonly ApimodelsPublicConfigurationJoinability OPEN
+            = new ApimodelsPublicConfigurationJoinability("OPEN");
+
+
+        public static implicit operator ApimodelsPublicConfigurationJoinability(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsPublicConfigurationJoinability(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
 
     public class ApimodelsPublicConfigurationTextChatMode : StringEnum<ApimodelsPublicConfigurationTextChatMode>
     {
@@ -294,6 +331,30 @@ namespace AccelByte.Sdk.Api.Session.Model
         }
 
         public ApimodelsPublicConfigurationTextChatMode(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class ApimodelsPublicConfigurationType : StringEnum<ApimodelsPublicConfigurationType>
+    {
+        public static readonly ApimodelsPublicConfigurationType DS
+            = new ApimodelsPublicConfigurationType("DS");
+
+        public static readonly ApimodelsPublicConfigurationType NONE
+            = new ApimodelsPublicConfigurationType("NONE");
+
+        public static readonly ApimodelsPublicConfigurationType P2P
+            = new ApimodelsPublicConfigurationType("P2P");
+
+
+        public static implicit operator ApimodelsPublicConfigurationType(string value)
+        {
+            return NewValue(value);
+        }
+
+        public ApimodelsPublicConfigurationType(string enumValue)
             : base(enumValue)
         {
 

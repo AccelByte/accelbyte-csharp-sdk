@@ -24,6 +24,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonStringEnum]
         public DLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
 
+        [JsonPropertyName("entitlementSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementSummary>? EntitlementSummaries { get; set; }
+
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Id { get; set; }
@@ -85,6 +89,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         [JsonStringEnum]
         public DLCRecordEntitlementOriginSyncStatus? EntitlementOriginSyncStatus { get; set; }
+
+        [JsonPropertyName("entitlementSummaries")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<EntitlementSummary>? EntitlementSummaries { get; set; }
 
         [JsonPropertyName("id")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

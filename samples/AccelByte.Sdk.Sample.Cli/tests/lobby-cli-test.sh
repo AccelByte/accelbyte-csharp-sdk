@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..109"
+echo "1..110"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -771,175 +771,187 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 93 'GetMyNotifications' test.out
 
-#- 94 NotificationWithTemplate
+#- 94 GetMyOfflineNotifications
+$CLI_EXE \
+    --sn lobby \
+    --op GetMyOfflineNotifications \
+    --namespace $AB_NAMESPACE \
+    --endTime '48' \
+    --limit '62' \
+    --offset '27' \
+    --startTime '88' \
+    > test.out 2>&1
+eval_tap $? 94 'GetMyOfflineNotifications' test.out
+
+#- 95 NotificationWithTemplate
 # body param: body
-echo '{"templateContext": {"xnqlbRAPFQsca6n9": "vGZTCCXQ2Lf7jtex", "B613cbiJEUePVZQa": "oEY2zrpLuvrx96OO", "z45vMiR3QYZJKVNl": "K8PTaIXRWFTyA9MD"}, "templateLanguage": "nKGXqq7Zk705hOhe", "templateSlug": "nJi6dNVF7zwjXqlc", "topic": "D2LzaOwIF5tEsCwo"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"qlbRAPFQsca6n9vG": "ZTCCXQ2Lf7jtexB6", "13cbiJEUePVZQaoE": "Y2zrpLuvrx96OOz4", "5vMiR3QYZJKVNlK8": "PTaIXRWFTyA9MDnK"}, "templateLanguage": "GXqq7Zk705hOhenJ", "templateSlug": "i6dNVF7zwjXqlcD2", "topic": "LzaOwIF5tEsCwoAV"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op NotificationWithTemplate \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 94 'NotificationWithTemplate' test.out
+eval_tap $? 95 'NotificationWithTemplate' test.out
 
-#- 95 GetGameTemplate
+#- 96 GetGameTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetGameTemplate \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
-eval_tap $? 95 'GetGameTemplate' test.out
+eval_tap $? 96 'GetGameTemplate' test.out
 
-#- 96 CreateTemplate
+#- 97 CreateTemplate
 # body param: body
-echo '{"templateContent": "AVcZCSj80gzFvpvI", "templateLanguage": "erFEyxTugoTd50Rm", "templateSlug": "JFX9v4GPfyGuQ2UE"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "cZCSj80gzFvpvIer", "templateLanguage": "FEyxTugoTd50RmJF", "templateSlug": "X9v4GPfyGuQ2UEl0"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateTemplate \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 96 'CreateTemplate' test.out
+eval_tap $? 97 'CreateTemplate' test.out
 
-#- 97 GetSlugTemplate
+#- 98 GetSlugTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetSlugTemplate \
     --namespace $AB_NAMESPACE \
-    --templateSlug 'l0U5Z9UnQmZqX15h' \
-    --after 'Bb4dlNTIBDtHunwN' \
-    --before 'LLfKCQKuu2MWXpEp' \
-    --limit '81' \
+    --templateSlug 'U5Z9UnQmZqX15hBb' \
+    --after '4dlNTIBDtHunwNLL' \
+    --before 'fKCQKuu2MWXpEpNj' \
+    --limit '68' \
     > test.out 2>&1
-eval_tap $? 97 'GetSlugTemplate' test.out
+eval_tap $? 98 'GetSlugTemplate' test.out
 
-#- 98 DeleteTemplateSlug
+#- 99 DeleteTemplateSlug
 $CLI_EXE \
     --sn lobby \
     --op DeleteTemplateSlug \
     --namespace $AB_NAMESPACE \
-    --templateSlug 'jj8zDwOk0IgmYfUT' \
+    --templateSlug '8zDwOk0IgmYfUTpF' \
     > test.out 2>&1
-eval_tap $? 98 'DeleteTemplateSlug' test.out
+eval_tap $? 99 'DeleteTemplateSlug' test.out
 
-#- 99 GetLocalizationTemplate
+#- 100 GetLocalizationTemplate
 $CLI_EXE \
     --sn lobby \
     --op GetLocalizationTemplate \
     --namespace $AB_NAMESPACE \
-    --templateLanguage 'pFzyQhPVhRGX9xlU' \
-    --templateSlug 'KhXI8mL8OIhvP68x' \
+    --templateLanguage 'zyQhPVhRGX9xlUKh' \
+    --templateSlug 'XI8mL8OIhvP68xE6' \
     > test.out 2>&1
-eval_tap $? 99 'GetLocalizationTemplate' test.out
+eval_tap $? 100 'GetLocalizationTemplate' test.out
 
-#- 100 UpdateLocalizationTemplate
+#- 101 UpdateLocalizationTemplate
 # body param: body
-echo '{"templateContent": "E68dzohxhbej2caI"}' > $TEMP_JSON_INPUT
+echo '{"templateContent": "8dzohxhbej2caIIf"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateLocalizationTemplate \
     --namespace $AB_NAMESPACE \
-    --templateLanguage 'IfkXDY7jnhp3qY6T' \
-    --templateSlug '7TUEBotSNIwGhia6' \
+    --templateLanguage 'kXDY7jnhp3qY6T7T' \
+    --templateSlug 'UEBotSNIwGhia6cq' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 100 'UpdateLocalizationTemplate' test.out
+eval_tap $? 101 'UpdateLocalizationTemplate' test.out
 
-#- 101 DeleteTemplateLocalization
+#- 102 DeleteTemplateLocalization
 $CLI_EXE \
     --sn lobby \
     --op DeleteTemplateLocalization \
     --namespace $AB_NAMESPACE \
-    --templateLanguage 'cqoWmnhtuzxir12r' \
-    --templateSlug '0VUWI0kJAczj5Apc' \
+    --templateLanguage 'oWmnhtuzxir12r0V' \
+    --templateSlug 'UWI0kJAczj5Apcsi' \
     > test.out 2>&1
-eval_tap $? 101 'DeleteTemplateLocalization' test.out
+eval_tap $? 102 'DeleteTemplateLocalization' test.out
 
-#- 102 PublishTemplate
+#- 103 PublishTemplate
 $CLI_EXE \
     --sn lobby \
     --op PublishTemplate \
     --namespace $AB_NAMESPACE \
-    --templateLanguage 'siEQ65llgGnTHAsT' \
-    --templateSlug 'CZa7xE4nwGKlbPRx' \
+    --templateLanguage 'EQ65llgGnTHAsTCZ' \
+    --templateSlug 'a7xE4nwGKlbPRxfu' \
     > test.out 2>&1
-eval_tap $? 102 'PublishTemplate' test.out
+eval_tap $? 103 'PublishTemplate' test.out
 
-#- 103 GetTopicByNamespace
+#- 104 GetTopicByNamespace
 $CLI_EXE \
     --sn lobby \
     --op GetTopicByNamespace \
     --namespace $AB_NAMESPACE \
-    --after 'fucxoRKFLxxcL9Sy' \
-    --before 'uHbvRxR6LaKWgAVj' \
-    --limit '75' \
+    --after 'cxoRKFLxxcL9SyuH' \
+    --before 'bvRxR6LaKWgAVjZK' \
+    --limit '60' \
     > test.out 2>&1
-eval_tap $? 103 'GetTopicByNamespace' test.out
+eval_tap $? 104 'GetTopicByNamespace' test.out
 
-#- 104 CreateTopic
+#- 105 CreateTopic
 # body param: body
-echo '{"description": "SgxAIQTTKsdmtHu1", "topic": "dG0us7kIWLcgKgU9"}' > $TEMP_JSON_INPUT
+echo '{"description": "gxAIQTTKsdmtHu1d", "topic": "G0us7kIWLcgKgU94"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op CreateTopic \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 104 'CreateTopic' test.out
+eval_tap $? 105 'CreateTopic' test.out
 
-#- 105 GetTopicByTopicName
+#- 106 GetTopicByTopicName
 $CLI_EXE \
     --sn lobby \
     --op GetTopicByTopicName \
     --namespace $AB_NAMESPACE \
-    --topic '406tdRDqr3cpVbaH' \
+    --topic '06tdRDqr3cpVbaH6' \
     > test.out 2>&1
-eval_tap $? 105 'GetTopicByTopicName' test.out
+eval_tap $? 106 'GetTopicByTopicName' test.out
 
-#- 106 UpdateTopicByTopicName
+#- 107 UpdateTopicByTopicName
 # body param: body
-echo '{"description": "69NyTfGE59942bCw"}' > $TEMP_JSON_INPUT
+echo '{"description": "9NyTfGE59942bCwg"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op UpdateTopicByTopicName \
     --namespace $AB_NAMESPACE \
-    --topic 'gpzUfcmTQjRmV0CP' \
+    --topic 'pzUfcmTQjRmV0CPt' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 106 'UpdateTopicByTopicName' test.out
+eval_tap $? 107 'UpdateTopicByTopicName' test.out
 
-#- 107 DeleteTopicByTopicName
+#- 108 DeleteTopicByTopicName
 $CLI_EXE \
     --sn lobby \
     --op DeleteTopicByTopicName \
     --namespace $AB_NAMESPACE \
-    --topic 't1LUaTvrFaxzOfG3' \
+    --topic '1LUaTvrFaxzOfG3p' \
     > test.out 2>&1
-eval_tap $? 107 'DeleteTopicByTopicName' test.out
+eval_tap $? 108 'DeleteTopicByTopicName' test.out
 
-#- 108 FreeFormNotificationByUserID
+#- 109 FreeFormNotificationByUserID
 # body param: body
-echo '{"message": "pTddIA0Rt6wM5oQv", "topic": "TMICtWyUtVDnhgTG"}' > $TEMP_JSON_INPUT
+echo '{"message": "TddIA0Rt6wM5oQvT", "topic": "MICtWyUtVDnhgTGX"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op FreeFormNotificationByUserID \
     --namespace $AB_NAMESPACE \
-    --userId 'XO8Utpwxug8Mpqcz' \
+    --userId 'O8Utpwxug8MpqczR' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 108 'FreeFormNotificationByUserID' test.out
+eval_tap $? 109 'FreeFormNotificationByUserID' test.out
 
-#- 109 NotificationWithTemplateByUserID
+#- 110 NotificationWithTemplateByUserID
 # body param: body
-echo '{"templateContext": {"RvUdK1uOV1ZJTYuH": "pnpVX5u4gw4XBXDD", "7BG73sDdDoXnB8F5": "X05KUgGKfDSGh3vQ", "FPSYCi8WEjR3wqpn": "MdSNskxhl3O3kGlo"}, "templateLanguage": "ooh7kL598P7F3IKh", "templateSlug": "iNdx1V7199NT7JTR", "topic": "FV3FxMl5Rw4YeHqW"}' > $TEMP_JSON_INPUT
+echo '{"templateContext": {"vUdK1uOV1ZJTYuHp": "npVX5u4gw4XBXDD7", "BG73sDdDoXnB8F5X": "05KUgGKfDSGh3vQF", "PSYCi8WEjR3wqpnM": "dSNskxhl3O3kGloo"}, "templateLanguage": "oh7kL598P7F3IKhi", "templateSlug": "Ndx1V7199NT7JTRF", "topic": "V3FxMl5Rw4YeHqWk"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn lobby \
     --op NotificationWithTemplateByUserID \
     --namespace $AB_NAMESPACE \
-    --userId 'kG09iEAFYWhow1WA' \
+    --userId 'G09iEAFYWhow1WAw' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
-eval_tap $? 109 'NotificationWithTemplateByUserID' test.out
+eval_tap $? 110 'NotificationWithTemplateByUserID' test.out
 
 
 # remove artifacts

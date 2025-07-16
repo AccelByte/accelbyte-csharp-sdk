@@ -15,12 +15,6 @@
 
 [csm](./csm.md)
 
-[dsartifact](./dsartifact.md)
-
-[dslogmanager](./dslogmanager.md)
-
-[dsmc](./dsmc.md)
-
 [gametelemetry](./gametelemetry.md)
 
 [gdpr](./gdpr.md)
@@ -43,13 +37,13 @@
 
 [platform](./platform.md)
 
-[qosm](./qosm.md)
-
 [reporting](./reporting.md)
 
 [seasonpass](./seasonpass.md)
 
 [session](./session.md)
+
+[sessionhistory](./sessionhistory.md)
 
 [social](./social.md)
 

@@ -981,7 +981,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op admingetusermapping \
     --namespace <namespace value> \
     --targetNamespace <targetNamespace value> \
-    --userId <userId value>
+    --userId <userId value> \
+    --createIfNotFound <createIfNotFound value - optional>
 ```
 
 ### Operation AdminCreateJusticeUser

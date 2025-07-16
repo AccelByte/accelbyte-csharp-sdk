@@ -134,6 +134,17 @@ namespace AccelByte.Sdk.Core
         }
         private ResourcesLimits? _ResourcesLimits = null;
 
+        public NotificationSubscriptionV3 NotificationSubscriptionV3
+        {
+            get
+            {
+                if (_NotificationSubscriptionV3 == null)
+                    _NotificationSubscriptionV3 = new NotificationSubscriptionV3(_SdkObject);
+                return _NotificationSubscriptionV3;
+            }
+        }
+        private NotificationSubscriptionV3? _NotificationSubscriptionV3 = null;
+
         internal CsmSdkWrappers(AccelByteSDK sdk)
         {
             _SdkObject = sdk;

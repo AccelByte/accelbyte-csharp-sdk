@@ -339,3 +339,24 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation GetNotificationSubscriberListV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getnotificationsubscriberlistv3 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --notificationType <notificationType value>
+```
+
+### Operation DeleteSubscriptionAppNotificationV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletesubscriptionappnotificationv3 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --emailAddress <emailAddress value - optional> \
+    --userId <userId value - optional>
+```
+

@@ -2266,7 +2266,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --upload category <file to upload> \
     --upload display <file to upload> \
     --upload item <file to upload> \
-    --notes <notes value> \
+    --notes <notes value - optional> \
     --upload section <file to upload>
 ```
 

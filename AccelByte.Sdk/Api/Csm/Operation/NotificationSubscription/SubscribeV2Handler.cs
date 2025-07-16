@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     ///
     /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP:ALERT:SELF:SUBSCRIPTION [CREATE]`
     /// 
-    /// Subscribe to app down notification
+    /// Subscribe to app notification
     /// Request body:
     /// - notificationType : type of the app notification to be subscribed - Required.
     /// - values:
