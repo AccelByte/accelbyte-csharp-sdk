@@ -64,6 +64,12 @@ test_integration:
 	bash -c 'docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ --network host -e HOME="/data" -e DOTNET_CLI_HOME="/data" --env-file "$(ENV_FILE_PATH)" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) \
 		dotnet test --nologo --filter "TestCategory=FluentIntegration" --verbosity n'
 
+test_integration_class:
+	@test -n "$(ENV_FILE_PATH)" || (echo "ENV_FILE_PATH is not set" ; exit 1)
+	@test -n "$(FQCN)" || (echo "FQCN is not set" ; exit 1)
+	bash -c 'docker run --rm -u $$(id -u):$$(id -g) -v $$(pwd):/data/ -w /data/ --network host -e HOME="/data" -e DOTNET_CLI_HOME="/data" --env-file "$(ENV_FILE_PATH)" mcr.microsoft.com/dotnet/sdk:$(DOTNETVER) \
+		dotnet test --nologo --filter "FullyQualifiedName=$(FQCN)" --verbosity n'
+
 test_broken_link:
 	@test -n "$(SDK_MD_CRAWLER_PATH)" || (echo "SDK_MD_CRAWLER_PATH is not set" ; exit 1)
 	rm -f test.err

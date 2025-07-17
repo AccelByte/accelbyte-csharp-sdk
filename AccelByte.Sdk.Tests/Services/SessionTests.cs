@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -65,12 +65,12 @@ namespace AccelByte.Sdk.Tests.Services
             ApimodelsCreateConfigurationTemplateRequest cTemplateBody = new ApimodelsCreateConfigurationTemplateRequest()
             {
                 Name = cfgTemplateName,
-                Type = "P2P",
+                Type = ApimodelsCreateConfigurationTemplateRequestType.P2P,
                 MinPlayers = 2,
                 MaxPlayers = 2,
                 InviteTimeout = 60,
                 InactiveTimeout = 60,
-                Joinability = "OPEN",
+                Joinability = ApimodelsCreateConfigurationTemplateRequestJoinability.OPEN,
                 ClientVersion = "1.0.0",
                 RequestedRegions = new List<string>()
                 {
@@ -87,8 +87,8 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(cfgTemplate);
             if (cfgTemplate != null)
             {
-                Assert.AreEqual("P2P", cfgTemplate.Type!);
-                Assert.AreEqual("OPEN", cfgTemplate.Joinability!);
+                Assert.AreEqual(ApimodelsCreateConfigurationTemplateRequestType.P2P, cfgTemplate.Type!);
+                Assert.AreEqual(ApimodelsCreateConfigurationTemplateRequestJoinability.OPEN, cfgTemplate.Joinability!);
                 Assert.AreEqual(2, cfgTemplate.MaxPlayers!);
             }
 
@@ -96,8 +96,8 @@ namespace AccelByte.Sdk.Tests.Services
             ApimodelsUpdateConfigurationTemplateRequest uTemplateBody = new ApimodelsUpdateConfigurationTemplateRequest()
             {
                 Name = cfgTemplateName,
-                Type = "P2P",
-                Joinability = "OPEN",
+                Type = ApimodelsUpdateConfigurationTemplateRequestType.P2P,
+                Joinability = ApimodelsUpdateConfigurationTemplateRequestJoinability.OPEN,
                 MaxPlayers = 4
             };
 
@@ -146,12 +146,12 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(new()
                 {
                     Name = cfgTemplateName,
-                    Type = "P2P",
+                    Type = ApimodelsCreateConfigurationTemplateRequestType.P2P,
                     MinPlayers = 2,
                     MaxPlayers = 2,
                     InviteTimeout = 60,
                     InactiveTimeout = 60,
-                    Joinability = "OPEN",
+                    Joinability = ApimodelsCreateConfigurationTemplateRequestJoinability.OPEN,
                     ClientVersion = "1.0.0",
                     RequestedRegions = new List<string>()
                     {
@@ -266,12 +266,12 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(new()
                 {
                     Name = cfgTemplateName,
-                    Type = "P2P",
+                    Type = ApimodelsCreateConfigurationTemplateRequestType.P2P,
                     MinPlayers = 2,
                     MaxPlayers = 2,
                     InviteTimeout = 60,
                     InactiveTimeout = 60,
-                    Joinability = "OPEN",
+                    Joinability = ApimodelsCreateConfigurationTemplateRequestJoinability.OPEN,
                     ClientVersion = "1.0.0",
                     RequestedRegions = new List<string>()
                     {
@@ -365,7 +365,7 @@ namespace AccelByte.Sdk.Tests.Services
 
                 //Get id of members who are still in party.
                 List<string> userIds = uPartyData.Members!
-                    .Where(item => item.Status! != "LEFT")
+                    .Where(item => item.Status! != ApimodelsUserResponseStatus.LEFT)
                     .Select(item => item.Id!).ToList();
 
                 Assert.Contains(_Player1.UserId, userIds);
