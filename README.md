@@ -177,7 +177,8 @@ AccelByteSDK sdk = AccelByteSDK.Builder
 For `HttpClientPolicy` properties, refer to [this code](AccelByte.Sdk/Core/Client//HttpClientPolicy.cs).
 
 ## Automatically Refresh Access Token
-To enable automatic access token refresh, include `AccelByte.Sdk.Feature.AutoRefreshToken` and instantiate the sdk with following code.
+
+To enable automatic access token refresh, include the `AccelByte.Sdk.Feature.AutoRefreshToken` namespace and instantiate the SDK using the following code.
 ```csharp
 //Add core namespace
 using AccelByte.Sdk.Core;
@@ -187,34 +188,25 @@ using AccelByte.Sdk.Feature.AutoRefreshToken;
 
 AccelByteSDK sdk = AccelByteSDK.Builder
     .UseDefaultHttpClient()
-    // Using DefaultConfigRepository, make sure the required environment variables are set
+    // Use DefaultConfigRepository: ensure the required environment variables are set
     .UseDefaultConfigRepository()
-    // Credential repository is required for auto refresh token to works
-    .UseDefaultCredentialRepository()
     // call this to enable the feature
-    .UseAutoTokenRefresh()
+    .UseOnDemandTokenRefresh()
     .Build();
 ```
-Then when login, use the extension method provided.
-```csharp
-using AccelByte.Sdk.Feature.AutoRefreshToken;
 
-//pass true to the third parameter
-bool login = sdk.LoginUser("myUsername", "myPassword", true);
-if (!login)
-{
-    Console.WriteLine("Login failed");
-}
+To configure on-demand token refresh, set the following environment variables.
 
-//Or simply pass true to the first parameter if username and password are stored and retrieved by credential repository
-bool login = sdk.LoginUser(true);
-if (!login)
-{
-    Console.WriteLine("Login failed");
-}
-```
+| Name                          | Required | Description                                                                                    |
+|-------------------------------|--------- |------------------------------------------------------------------------------------------------|
+| `AB_REFRESH_RATE`             | No       | Fraction of token lifetime before it is refreshed. Value between`0.0` to `1.0`. Default: `0.8` |
+| `AB_REFRESH_MAX_RETRY`        | No       | Maximum number of retries for refresh token requests before failing. Default: `2`              |
+| `AB_REFRESH_ONDEMAND_ENABLED` | No       | Enables token refresh. Default: `true`                                                         |
 
-Alternative to automatic access token refresh is scheduled access token refresh. Scheduled access tokend refresh is using a timer that periodically refresh the access token. To enable it, instead of using `.UseAutoTokenRefresh()`, use `.UseScheduledTokenRefresh()` while instantiate the sdk.
+The `AB_REFRESH_RATE` uses a float value between `0` and `1` representing the fraction of the token's lifetime. For example, if a token is valid for 1 hour (3600 seconds), and `AB_REFRESH_RATE` is set to `0.5`, the SDK will attempt to refresh the token after it has less than 1800 seconds remaining (3600 x 0.5).
+
+On-demand token refresh will trigger when the SDK calls any AGS endpoints. If periodic (background) token refresh is preferred, use `.UseBackgroundTokenRefresh()` instead.
+Background token refresh runs on a timer at a specified interval to check for token expiry. If the token is nearing its expiration time (as determined by the `AB_REFRESH_RATE` value), it will be refreshed automatically.
 ```csharp
 //Add core namespace
 using AccelByte.Sdk.Core;
@@ -224,35 +216,43 @@ using AccelByte.Sdk.Feature.AutoRefreshToken;
 
 AccelByteSDK sdk = AccelByteSDK.Builder
     .UseDefaultHttpClient()
-    // Using DefaultConfigRepository, make sure the required environment variables are set
-    .UseDefaultConfigRepository()
-    // Credential repository is required for auto refresh token to works
-    .UseDefaultCredentialRepository()
-    // call this to enable the scheduled access token refresh
-    .UseScheduledTokenRefresh()
+    // Use DefaultConfigRepository: ensure the required environment variables are set
+    .UseDefaultConfigRepository()    
+    // Call this to enable background token refresh
+    .UseBackgroundTokenRefresh()
     .Build();
 ```
-Since version 0.57, this feature will try to update any open WebSocket connection when refresh action triggered by `AutoTokenRefresh` or `ScheduledTokenRefresh`.
 
-NOTE: Do not use `.UseAutoTokenRefresh()` together with `.UseScheduledTokenRefresh()`. It will introduce unnecessary overhead and possibility of unexpected behaviour.
+To configure background token refresh, set following environment variables.
 
-## On-Demand Refresh Token
-The on-demand refresh token is intended to be used in environment where automatic refresh token cannot work property (e.g. AWS Lambda). To enable it, instantiate the sdk with `UseRefreshIfPossible`.
+| Name                             | Required | Description                                                                                    |
+|----------------------------------|--------- |------------------------------------------------------------------------------------------------|
+| `AB_REFRESH_RATE`                | No       | Fraction of token lifetime before it is refreshed. Value between`0.0` to `1.0`. Default: `0.8` |
+| `AB_REFRESH_MAX_RETRY`           | No       | Maximum number of retries for refresh token requests before failing. Default: `2`              |
+| `AB_REFRESH_BACKGROUND_INTERVAL` | No       | Timer interval (in seconds) to check token expiry. Default: `10`                               |
+| `AB_REFRESH_BACKGROUND_ENABLED`  | No       | Enables background token refresh. Default: `true`                                              |
+
+NOTE: Avoid using both `.UseOnDemandTokenRefresh()` and `.UseBackgroundTokenRefresh()` together, as it introduces unnecessary overhead and may lead to unexpected behavior.
+
+If any login method is expected to be called multiple times (e.g., in a serverless environment), use `.UseRefreshIfPossible()` when building the SDK:
 ```csharp
 AccelByteSDK sdk = AccelByteSDK.Builder
     .UseDefaultHttpClient()
     .UseDefaultConfigRepository()
     .UseDefaultTokenRepository()    
     .UseDefaultCredentialRepository()
-    //use this method while building the sdk to enable on-demand refresh token
+    // Use this to enable conditional refresh before login
     .UseRefreshIfPossible()
     .Build();
 ```
-Then you can use `LoginUser`, `LoginClient`, and/or `LoginPlatform` as usual. With on-demand refresh token, any call to these methods will first check whether the token is expired or not. If it is expired, then it will call refresh token method. If not, then these methods will just return true without executing the actual login process.
 
-NOTE: `LoginClient` does not have refresh token, instead it will execute actual login process if the token is expired.
+Then, use `LoginUser`, `LoginClient`, and/or `LoginPlatform` as usual. With this setup, any call to these methods will first check if the current token is expired:
+- If expired, it will attempt to refresh the token.
+- If still valid, it will return true without re-executing the login process.
 
-Working example code for on-demand refresh token is available in this [sample app](samples/AccelByte.Sdk.Sample.OnDemandTokenRefresh).
+NOTE: `LoginClient` does not support refresh tokens. If its token is expired, it will always perform a full login process.
+
+A working example for on-demand token refresh is available in this [sample app](samples/AccelByte.Sdk.Sample.OnDemandTokenRefresh).
 
 ## Token Validation
 Token validation is available since version 0.27.

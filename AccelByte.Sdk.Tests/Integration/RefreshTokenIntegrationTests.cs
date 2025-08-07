@@ -26,17 +26,17 @@ namespace AccelByte.Sdk.Tests.Integration
     public class RefreshTokenIntegrationTests : BaseIntegrationTest
     {
         [Test]
-        public void UserLoginWithAutoRefreshToken()
+        public void UserLoginWithOnDemandTokenRefresh()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultCredentialRepository()
-                .UseAutoTokenRefresh()
+                .UseOnDemandTokenRefresh()
                 .EnableLog()
                 .Build();
 
-            sdk.LoginUser(true);
+            sdk.LoginUser();
 
             Agreement wLegalAgreement = new Agreement(sdk);
 
@@ -66,17 +66,17 @@ namespace AccelByte.Sdk.Tests.Integration
         }
 
         [Test]
-        public void ClientLoginWithAutoRefreshToken()
+        public void ClientLoginWithOnDemandTokenRefresh()
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultCredentialRepository()
-                .UseAutoTokenRefresh()
+                .UseOnDemandTokenRefresh()
                 .EnableLog()
                 .Build();
 
-            sdk.LoginClient(true);
+            sdk.LoginClient();
 
             //First request, valid token
             ModelsPublicAchievementsResponse? achResp1 = sdk.Achievement.Achievements.PublicListAchievementsOp
@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultCredentialRepository()
-                .UseAutoTokenRefresh()
+                .UseOnDemandTokenRefresh()
                 .EnableLog()
                 .SetOnAfterLoginAction((loginType, authType, tokenData, fSdk) =>
                 {
@@ -120,7 +120,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 })
                 .Build();
 
-            sdk.LoginUser(true);
+            sdk.LoginUser();
 
             bool isRefreshTokenResponseReceived = false;
 

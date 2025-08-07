@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -15,6 +15,7 @@ using AccelByte.Sdk.Core.Pipeline;
 using AccelByte.Sdk.Api.Iam.Operation;
 using AccelByte.Sdk.Api.Iam.Wrapper;
 using AccelByte.Sdk.Api.Iam.Model;
+using AccelByte.Sdk.Feature.AutoTokenRefresh;
 
 namespace AccelByte.Sdk.Core
 {
@@ -216,6 +217,12 @@ namespace AccelByte.Sdk.Core
             if ((Configuration.Credential != null) && (token.UserId != null))
                 Configuration.Credential.UserId = token.UserId;
 
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
+
             onTokenReceived?.Invoke(token);
             Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
             return true;
@@ -338,6 +345,12 @@ namespace AccelByte.Sdk.Core
             if ((Configuration.Credential != null) && (token.UserId != null))
                 Configuration.Credential.UserId = token.UserId;
 
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
+
             onTokenReceived?.Invoke(token);
             Configuration.OnAfterLogin?.Invoke(LoginType.User, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
             return true;
@@ -433,6 +446,14 @@ namespace AccelByte.Sdk.Core
                 throw new Exception($"PlatformTokenGrantV3 returned null");
 
             Configuration.TokenRepository.StoreToken(LoginType.Platform, token);
+            if ((Configuration.Credential != null) && (token.UserId != null))
+                Configuration.Credential.UserId = token.UserId;
+
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
 
             onTokenReceived?.Invoke(token);
             Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
@@ -477,6 +498,14 @@ namespace AccelByte.Sdk.Core
                 throw new Exception($"PlatformTokenGrantV3 returned null");
 
             Configuration.TokenRepository.StoreToken(LoginType.Platform, token);
+            if ((Configuration.Credential != null) && (token.UserId != null))
+                Configuration.Credential.UserId = token.UserId;
+
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
 
             onTokenReceived?.Invoke(token);
             Configuration.OnAfterLogin?.Invoke(LoginType.Platform, AuthActionType.Login, Configuration.TokenRepository.TokenData, this);
@@ -497,6 +526,11 @@ namespace AccelByte.Sdk.Core
                 throw new Exception("TokenGrantV3 for RefreshToken returned null");
 
             Configuration.TokenRepository.UpdateToken(token);
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
             onTokenReceived?.Invoke(token);
 
             if (Configuration.TokenRepository is IObservableTokenRepository)
@@ -522,6 +556,11 @@ namespace AccelByte.Sdk.Core
                 throw new Exception("TokenGrantV3 for RefreshToken returned null");
 
             Configuration.TokenRepository.UpdateToken(token);
+            if ((Configuration.TokenRepository is IRefreshTokenRepository rTokenRepo) &&
+                rTokenRepo.RefreshTokenEnabled)
+            {
+                rTokenRepo.UpdateRefreshToken(token);
+            }
             onTokenReceived?.Invoke(token);
 
             if (Configuration.TokenRepository is IObservableTokenRepository)
