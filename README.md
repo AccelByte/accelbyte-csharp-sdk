@@ -179,34 +179,7 @@ For `HttpClientPolicy` properties, refer to [this code](AccelByte.Sdk/Core/Clien
 ## Automatically Refresh Access Token
 
 To enable automatic access token refresh, include the `AccelByte.Sdk.Feature.AutoRefreshToken` namespace and instantiate the SDK using the following code.
-```csharp
-//Add core namespace
-using AccelByte.Sdk.Core;
 
-//Add feature namespace
-using AccelByte.Sdk.Feature.AutoRefreshToken;
-
-AccelByteSDK sdk = AccelByteSDK.Builder
-    .UseDefaultHttpClient()
-    // Use DefaultConfigRepository: ensure the required environment variables are set
-    .UseDefaultConfigRepository()
-    // call this to enable the feature
-    .UseOnDemandTokenRefresh()
-    .Build();
-```
-
-To configure on-demand token refresh, set the following environment variables.
-
-| Name                          | Required | Description                                                                                    |
-|-------------------------------|--------- |------------------------------------------------------------------------------------------------|
-| `AB_REFRESH_RATE`             | No       | Fraction of token lifetime before it is refreshed. Value between`0.0` to `1.0`. Default: `0.8` |
-| `AB_REFRESH_MAX_RETRY`        | No       | Maximum number of retries for refresh token requests before failing. Default: `2`              |
-| `AB_REFRESH_ONDEMAND_ENABLED` | No       | Enables token refresh. Default: `true`                                                         |
-
-The `AB_REFRESH_RATE` uses a float value between `0` and `1` representing the fraction of the token's lifetime. For example, if a token is valid for 1 hour (3600 seconds), and `AB_REFRESH_RATE` is set to `0.5`, the SDK will attempt to refresh the token after it has less than 1800 seconds remaining (3600 x 0.5).
-
-On-demand token refresh will trigger when the SDK calls any AGS endpoints. If periodic (background) token refresh is preferred, use `.UseBackgroundTokenRefresh()` instead.
-Background token refresh runs on a timer at a specified interval to check for token expiry. If the token is nearing its expiration time (as determined by the `AB_REFRESH_RATE` value), it will be refreshed automatically.
 ```csharp
 //Add core namespace
 using AccelByte.Sdk.Core;
@@ -231,6 +204,37 @@ To configure background token refresh, set following environment variables.
 | `AB_REFRESH_MAX_RETRY`           | No       | Maximum number of retries for refresh token requests before failing. Default: `2`              |
 | `AB_REFRESH_BACKGROUND_INTERVAL` | No       | Timer interval (in seconds) to check token expiry. Default: `10`                               |
 | `AB_REFRESH_BACKGROUND_ENABLED`  | No       | Enables background token refresh. Default: `true`                                              |
+
+NOTE: The `AB_REFRESH_RATE` uses a float value between `0` and `1` representing the fraction of the token's lifetime. For example, if a token is valid for 1 hour (3600 seconds), and `AB_REFRESH_RATE` is set to `0.5`, the SDK will attempt to refresh the token after it has less than 1800 seconds remaining (3600 x 0.5).
+
+Background token refresh runs on a timer at a specified interval to check for token expiry. If the token is nearing its expiration time (as determined by the `AB_REFRESH_RATE` value), it will be refreshed automatically.
+
+If a periodic background process is not preferred, use .UseOnDemandTokenRefresh() instead. This method triggers automatic token refresh whenever the SDK calls any AGS endpoint.
+Please note that this type of token refresh is recommended only for OAuth client logins (using the LoginClient method), as it relies solely on the configured client ID and client secret values. It can be used for other login types, but once the refresh token expires, any subsequent calls will be unauthorized.
+
+```csharp
+//Add core namespace
+using AccelByte.Sdk.Core;
+
+//Add feature namespace
+using AccelByte.Sdk.Feature.AutoRefreshToken;
+
+AccelByteSDK sdk = AccelByteSDK.Builder
+    .UseDefaultHttpClient()
+    // Use DefaultConfigRepository: ensure the required environment variables are set
+    .UseDefaultConfigRepository()
+    // call this to enable the feature
+    .UseOnDemandTokenRefresh()
+    .Build();
+```
+
+To configure on-demand token refresh, set the following environment variables.
+
+| Name                          | Required | Description                                                                                    |
+|-------------------------------|--------- |------------------------------------------------------------------------------------------------|
+| `AB_REFRESH_RATE`             | No       | Fraction of token lifetime before it is refreshed. Value between`0.0` to `1.0`. Default: `0.8` |
+| `AB_REFRESH_MAX_RETRY`        | No       | Maximum number of retries for refresh token requests before failing. Default: `2`              |
+| `AB_REFRESH_ONDEMAND_ENABLED` | No       | Enables token refresh. Default: `true`                                                         |
 
 NOTE: Avoid using both `.UseOnDemandTokenRefresh()` and `.UseBackgroundTokenRefresh()` together, as it introduces unnecessary overhead and may lead to unexpected behavior.
 

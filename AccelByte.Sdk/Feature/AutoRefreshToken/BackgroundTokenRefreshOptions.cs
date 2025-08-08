@@ -35,6 +35,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         public static BackgroundTokenRefreshOptions Default { get => new BackgroundTokenRefreshOptions(); }
 
+        public static BackgroundTokenRefreshOptions Override(Action<BackgroundTokenRefreshOptions> optFunc)
+        {
+            BackgroundTokenRefreshOptions opts = Default;
+            optFunc(opts);
+            return opts;
+        }
+
         public static BackgroundTokenRefreshOptions LoadFromJson(string jsonStr)
         {
             var temp = JsonSerializer.Deserialize<BackgroundTokenRefreshOptions>(jsonStr);
