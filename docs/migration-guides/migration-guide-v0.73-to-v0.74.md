@@ -8,7 +8,3 @@ The default configuration can be overridden via environment variables or by pass
 The old builder methods are still available but deprecated. Using them will apply the default configuration for automatic token refresh.
 
 In addition, the extended login methods are deprecated. Any values set for `autoRefresh` or `refreshThreshold` will be ignored in favor of the new configuration values.
-
-### BREAKING CHANGE
-
-...

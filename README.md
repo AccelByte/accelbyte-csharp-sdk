@@ -254,8 +254,6 @@ Then, use `LoginUser`, `LoginClient`, and/or `LoginPlatform` as usual. With this
 - If expired, it will attempt to refresh the token.
 - If still valid, it will return true without re-executing the login process.
 
-NOTE: `LoginClient` does not support refresh tokens. If its token is expired, it will always perform a full login process.
-
 A working example for on-demand token refresh is available in this [sample app](samples/AccelByte.Sdk.Sample.OnDemandTokenRefresh).
 
 ## Token Validation
