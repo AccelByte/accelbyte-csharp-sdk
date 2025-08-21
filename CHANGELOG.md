@@ -1,3 +1,19 @@
+<a name="v0.74.0"></a>
+## [v0.74.0]
+### feat
+- **:** re-implement automatic token refresh mechanism
+### fix
+- **:** update docs for new auto token refresh
+### docs
+- **:** update readme and migration guide
+### ci
+- **github:** better utilize all available build machines
+- **:** consolidate job channel
+- **github:** consolidate publishtonuget stage
+### chore
+- **:** refresh gitignore
+
+
 <a name="v0.73.0"></a>
 ## [v0.73.0]
 ### ci

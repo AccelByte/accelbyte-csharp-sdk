@@ -46,6 +46,17 @@ namespace AccelByte.Sdk.Core
         }
         private PlayFeatureFlag? _PlayFeatureFlag = null;
 
+        public XRayConfig XRayConfig
+        {
+            get
+            {
+                if (_XRayConfig == null)
+                    _XRayConfig = new XRayConfig(_SdkObject);
+                return _XRayConfig;
+            }
+        }
+        private XRayConfig? _XRayConfig = null;
+
         public EnvironmentVariables EnvironmentVariables
         {
             get

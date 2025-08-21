@@ -10,6 +10,7 @@ namespace AccelByte.Sdk.Api.Loginqueue.Model
     public class ResponseError : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("attributes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, string>? Attributes { get; set; }
 
         [JsonPropertyName("errorCode")]

@@ -13,6 +13,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AvatarUrl { get; set; }
 
+        [JsonPropertyName("createdAt")]
+        public DateTime? CreatedAt { get; set; }
+
         [JsonPropertyName("displayName")]
         public string? DisplayName { get; set; }
 

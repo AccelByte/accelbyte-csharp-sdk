@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Inventory.Model
 {
     public class ApimodelsTradeItemResp : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("id")]
+        public string? Id { get; set; }
+
         [JsonPropertyName("qty")]
         public int? Qty { get; set; }
 

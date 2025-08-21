@@ -27,6 +27,12 @@
 | `/match2/v1/admin/namespaces/{namespace}/playfeatureflag` | POST | AdminUpsertPlayFeatureFlag | [AdminUpsertPlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Operation/PlayFeatureFlag/AdminUpsertPlayFeatureFlag.cs) | [AdminUpsertPlayFeatureFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/PlayFeatureFlag/AdminUpsertPlayFeatureFlag.cs) |
 | `/match2/v1/admin/namespaces/{namespace}/playfeatureflag` | DELETE | AdminDeletePlayFeatureFlag | [AdminDeletePlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Operation/PlayFeatureFlag/AdminDeletePlayFeatureFlag.cs) | [AdminDeletePlayFeatureFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/PlayFeatureFlag/AdminDeletePlayFeatureFlag.cs) |
 
+### XRay Config Wrapper:  [XRayConfig](../../AccelByte.Sdk/Api/Match2/Wrapper/XRayConfig.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/match2/v1/admin/namespaces/{namespace}/xray/config` | GET | AdminGetXRayConfig | [AdminGetXRayConfig](../../AccelByte.Sdk/Api/Match2/Operation/XRayConfig/AdminGetXRayConfig.cs) | [AdminGetXRayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/XRayConfig/AdminGetXRayConfig.cs) |
+| `/match2/v1/admin/namespaces/{namespace}/xray/config` | POST | AdminUpdateXRayConfig | [AdminUpdateXRayConfig](../../AccelByte.Sdk/Api/Match2/Operation/XRayConfig/AdminUpdateXRayConfig.cs) | [AdminUpdateXRayConfig](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Match2/XRayConfig/AdminUpdateXRayConfig.cs) |
+
 ### Environment-Variables Wrapper:  [EnvironmentVariables](../../AccelByte.Sdk/Api/Match2/Wrapper/EnvironmentVariables.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -97,6 +103,10 @@
 |---|---|---|---|---|
 
 ### PlayFeatureFlag Wrapper:  [PlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Wrapper/PlayFeatureFlag.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
+### XRay Config Wrapper:  [XRayConfig](../../AccelByte.Sdk/Api/Match2/Wrapper/XRayConfig.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
@@ -183,5 +193,7 @@
 | `models.PlayFeatureFlag` | [ModelsPlayFeatureFlag](../../AccelByte.Sdk/Api/Match2/Model/ModelsPlayFeatureFlag.cs) |
 | `models.Server` | [ModelsServer](../../AccelByte.Sdk/Api/Match2/Model/ModelsServer.cs) |
 | `models.User` | [ModelsUser](../../AccelByte.Sdk/Api/Match2/Model/ModelsUser.cs) |
+| `models.XRayConfigHttpResponse` | [ModelsXRayConfigHttpResponse](../../AccelByte.Sdk/Api/Match2/Model/ModelsXRayConfigHttpResponse.cs) |
+| `models.XRayConfigHttpUpdateRequest` | [ModelsXRayConfigHttpUpdateRequest](../../AccelByte.Sdk/Api/Match2/Model/ModelsXRayConfigHttpUpdateRequest.cs) |
 | `player.PlayerData` | [PlayerPlayerData](../../AccelByte.Sdk/Api/Match2/Model/PlayerPlayerData.cs) |
 | `response.Error` | [ResponseError](../../AccelByte.Sdk/Api/Match2/Model/ResponseError.cs) |

@@ -118,7 +118,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op developmentserverconfigurationlist \
     --namespace <namespace value> \
     --count <count value - optional> \
-    --offset <offset value - optional>
+    --imageId <imageId value - optional> \
+    --name <name value - optional> \
+    --offset <offset value - optional> \
+    --sortBy <sortBy value - optional> \
+    --sortDirection <sortDirection value - optional>
 ```
 
 ### Operation DevelopmentServerConfigurationCreate

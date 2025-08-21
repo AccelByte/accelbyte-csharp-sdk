@@ -1246,12 +1246,12 @@ Source: [SessionTests.cs](../AccelByte.Sdk.Tests/Services/SessionTests.cs)
 ApimodelsCreateConfigurationTemplateRequest cTemplateBody = new ApimodelsCreateConfigurationTemplateRequest()
 {
     Name = cfgTemplateName,
-    Type = "P2P",
+    Type = ApimodelsCreateConfigurationTemplateRequestType.P2P,
     MinPlayers = 2,
     MaxPlayers = 2,
     InviteTimeout = 60,
     InactiveTimeout = 60,
-    Joinability = "OPEN",
+    Joinability = ApimodelsCreateConfigurationTemplateRequestJoinability.OPEN,
     ClientVersion = "1.0.0",
     RequestedRegions = new List<string>()
     {
@@ -1272,8 +1272,8 @@ ApimodelsConfigurationTemplateResponse? cfgTemplate = _Sdk.Session.Configuration
 ApimodelsUpdateConfigurationTemplateRequest uTemplateBody = new ApimodelsUpdateConfigurationTemplateRequest()
 {
     Name = cfgTemplateName,
-    Type = "P2P",
-    Joinability = "OPEN",
+    Type = ApimodelsUpdateConfigurationTemplateRequestType.P2P,
+    Joinability = ApimodelsUpdateConfigurationTemplateRequestJoinability.OPEN,
     MaxPlayers = 4
 };
 

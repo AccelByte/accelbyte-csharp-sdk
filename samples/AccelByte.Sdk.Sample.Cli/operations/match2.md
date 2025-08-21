@@ -59,6 +59,24 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation AdminGetXRayConfig
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op admingetxrayconfig \
+    --namespace <namespace value>
+```
+
+### Operation AdminUpdateXRayConfig
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn match2 \
+    --op adminupdatexrayconfig \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminGetAllConfigV1
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

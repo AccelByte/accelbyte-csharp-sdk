@@ -7,56 +7,42 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Csm.Model;
+using AccelByte.Sdk.Api.Match2.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Csm.Operation
+namespace AccelByte.Sdk.Api.Match2.Operation
 {
     /// <summary>
-    /// CreateAppV1
+    /// adminGetXRayConfig
     ///
-    /// Required permission : `ADMIN:NAMESPACE:{namespace}:EXTEND:APP [CREATE]`
-    /// 
-    /// Creates new App for AB-Extend Customers
-    /// 
-    /// Available scenario:
-    /// - scenario 1: `function-override`
-    /// - scenario 2: `service-extension`
-    /// - scenario 3: `event-handler`
-    /// 
-    /// Default: `function-override`
+    /// Get XRay config
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
-    public class CreateAppV1 : AccelByte.Sdk.Core.Operation
+    public class AdminGetXRayConfig : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static CreateAppV1Builder Builder { get => new CreateAppV1Builder(); }
+        public static AdminGetXRayConfigBuilder Builder { get => new AdminGetXRayConfigBuilder(); }
 
-        public class CreateAppV1Builder
-            : OperationBuilder<CreateAppV1Builder>
+        public class AdminGetXRayConfigBuilder
+            : OperationBuilder<AdminGetXRayConfigBuilder>
         {
 
 
 
 
 
-            internal CreateAppV1Builder() { }
+            internal AdminGetXRayConfigBuilder() { }
 
 
 
 
 
 
-            public CreateAppV1 Build(
-                GeneratedCreateAppV1Request body,
-                string app,
+            public AdminGetXRayConfig Build(
                 string namespace_
             )
             {
-                CreateAppV1 op = new CreateAppV1(this,
-                    body,
-                    app,
+                AdminGetXRayConfig op = new AdminGetXRayConfig(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -68,48 +54,40 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             }
         }
 
-        private CreateAppV1(CreateAppV1Builder builder,
-            GeneratedCreateAppV1Request body,
-            string app,
+        private AdminGetXRayConfig(AdminGetXRayConfigBuilder builder,
             string namespace_
         )
         {
-            PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public CreateAppV1(
-            string app,
-            string namespace_,
-            Model.GeneratedCreateAppV1Request body
+        public AdminGetXRayConfig(
+            string namespace_
         )
         {
-            PathParams["app"] = app;
             PathParams["namespace"] = namespace_;
 
 
 
 
 
-            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/csm/v1/admin/namespaces/{namespace}/apps/{app}";
+        public override string Path => "/match2/v1/admin/namespaces/{namespace}/xray/config";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Get;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -118,7 +96,7 @@ namespace AccelByte.Sdk.Api.Csm.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.GeneratedCreateAppV1Response? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsXRayConfigHttpResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -127,13 +105,13 @@ namespace AccelByte.Sdk.Api.Csm.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.GeneratedCreateAppV1Response>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsXRayConfigHttpResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.GeneratedCreateAppV1Response>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsXRayConfigHttpResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.GeneratedCreateAppV1Response>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsXRayConfigHttpResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

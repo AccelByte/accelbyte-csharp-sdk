@@ -34,8 +34,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
         [SdkCommandArgument("count")]
         public long? Count { get; set; }
 
+        [SdkCommandArgument("imageId")]
+        public string? ImageId { get; set; }
+
+        [SdkCommandArgument("name")]
+        public string? Name { get; set; }
+
         [SdkCommandArgument("offset")]
         public long? Offset { get; set; }
+
+        [SdkCommandArgument("sortBy")]
+        public string? SortBy { get; set; }
+
+        [SdkCommandArgument("sortDirection")]
+        public string? SortDirection { get; set; }
 
         public DevelopmentServerConfigurationListCommand(AccelByteSDK sdk)
         {
@@ -50,8 +62,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Ams
 
             if (Count != null)
                 opBuilder.SetCount((long)Count);
+            if (ImageId != null)
+                opBuilder.SetImageId((string)ImageId);
+            if (Name != null)
+                opBuilder.SetName((string)Name);
             if (Offset != null)
                 opBuilder.SetOffset((long)Offset);
+            if (SortBy != null)
+                opBuilder.SetSortBy(DevelopmentServerConfigurationListSortBy.NewValue(SortBy));
+            if (SortDirection != null)
+                opBuilder.SetSortDirection(DevelopmentServerConfigurationListSortDirection.NewValue(SortDirection));
 
 
 

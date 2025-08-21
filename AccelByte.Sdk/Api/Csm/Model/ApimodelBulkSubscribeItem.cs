@@ -10,12 +10,14 @@ namespace AccelByte.Sdk.Api.Csm.Model
     public class ApimodelBulkSubscribeItem : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("emailAddress")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? EmailAddress { get; set; }
 
         [JsonPropertyName("notificationType")]
         public Dictionary<string, bool>? NotificationType { get; set; }
 
         [JsonPropertyName("userId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? UserId { get; set; }
 
     }
