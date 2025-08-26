@@ -45,8 +45,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.Custom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.CustomOperation.Tests", "samples\AccelByte.Sdk.Sample.CustomOperation.Tests\AccelByte.Sdk.Sample.CustomOperation.Tests.csproj", "{00CD93EE-4783-4954-BB09-E20115193DD4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AccelByte.Sdk.Sample.OnDemandTokenRefresh", "samples\AccelByte.Sdk.Sample.OnDemandTokenRefresh\AccelByte.Sdk.Sample.OnDemandTokenRefresh.csproj", "{F5E725C2-F302-48E8-8796-C70C28A1FDF8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccelByte.Sdk.Sample.AsyncOperation", "samples\AccelByte.Sdk.Sample.AsyncOperation\AccelByte.Sdk.Sample.AsyncOperation.csproj", "{FA0CE4A8-530C-4FF4-9E20-4ED2444573F2}"
 EndProject
 Global
@@ -111,10 +109,6 @@ Global
 		{00CD93EE-4783-4954-BB09-E20115193DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00CD93EE-4783-4954-BB09-E20115193DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00CD93EE-4783-4954-BB09-E20115193DD4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5E725C2-F302-48E8-8796-C70C28A1FDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F5E725C2-F302-48E8-8796-C70C28A1FDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F5E725C2-F302-48E8-8796-C70C28A1FDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F5E725C2-F302-48E8-8796-C70C28A1FDF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA0CE4A8-530C-4FF4-9E20-4ED2444573F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA0CE4A8-530C-4FF4-9E20-4ED2444573F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA0CE4A8-530C-4FF4-9E20-4ED2444573F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -142,7 +136,6 @@ Global
 		{134E3E4C-0F90-4154-8A90-85AB5B3CA7AF} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{A8099710-9F0A-49CB-93B5-C26478218E2F} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{00CD93EE-4783-4954-BB09-E20115193DD4} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
-		{F5E725C2-F302-48E8-8796-C70C28A1FDF8} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 		{FA0CE4A8-530C-4FF4-9E20-4ED2444573F2} = {7DC471D1-057A-4241-8596-3DC7EB732C56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
