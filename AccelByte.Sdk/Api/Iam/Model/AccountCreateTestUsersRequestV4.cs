@@ -9,6 +9,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
 {
     public class AccountCreateTestUsersRequestV4 : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acceptedPolicies")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<LegalAcceptedPoliciesRequest>? AcceptedPolicies { get; set; }
+
         [JsonPropertyName("count")]
         public int? Count { get; set; }
 

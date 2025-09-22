@@ -56,6 +56,9 @@ namespace AccelByte.Sdk.Api.Platform.Model
 
     public class FixedPeriodRotationConfigRule : StringEnum<FixedPeriodRotationConfigRule>
     {
+        public static readonly FixedPeriodRotationConfigRule LOOP
+            = new FixedPeriodRotationConfigRule("LOOP");
+
         public static readonly FixedPeriodRotationConfigRule SEQUENCE
             = new FixedPeriodRotationConfigRule("SEQUENCE");
 

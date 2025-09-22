@@ -28,12 +28,20 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             : OperationBuilder<AdminEvaluateProgressBuilder>
         {
 
+            public List<string>? ChallengeCode { get; set; }
+
 
 
 
 
             internal AdminEvaluateProgressBuilder() { }
 
+
+            public AdminEvaluateProgressBuilder SetChallengeCode(List<string> _challengeCode)
+            {
+                ChallengeCode = _challengeCode;
+                return this;
+            }
 
 
 
@@ -64,9 +72,11 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.ChallengeCode is not null) QueryParams["challengeCode"] = builder.ChallengeCode;
 
 
 
+            CollectionFormatMap["challengeCode"] = "csv";
 
             BodyParams = body;
 
@@ -77,14 +87,17 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
         public AdminEvaluateProgress(
             string namespace_,
+            List<string>? challengeCode,
             Model.ModelEvaluatePlayerProgressionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (challengeCode is not null) QueryParams["challengeCode"] = challengeCode;
 
 
 
+            CollectionFormatMap["challengeCode"] = "csv";
 
             BodyParams = body;
 

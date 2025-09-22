@@ -116,6 +116,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("name")]
         public string? Name { get; set; }
 
+        [JsonPropertyName("partyCodeLength")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? PartyCodeLength { get; set; }
+
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }
 
@@ -254,6 +258,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }
+
+        [JsonPropertyName("partyCodeLength")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? PartyCodeLength { get; set; }
 
         [JsonPropertyName("persistent")]
         public bool? Persistent { get; set; }

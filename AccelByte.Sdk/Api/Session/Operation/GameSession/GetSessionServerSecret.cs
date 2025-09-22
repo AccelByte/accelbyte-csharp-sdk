@@ -35,6 +35,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// If there is error:
     /// - 400 Invalid path parameters
     /// - 401 unauthorized
+    /// - 403 status forbidden, The User is not active in session
     /// - 404 StatusNotFound
     /// - 500 Internal server error
     /// </summary>

@@ -25,6 +25,10 @@ namespace AccelByte.Sdk.Api.Match2.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? PlatformGroup { get; set; }
 
+        [JsonPropertyName("xrayMaxWhitelistedUserCount")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public int? XrayMaxWhitelistedUserCount { get; set; }
+
     }
 
 

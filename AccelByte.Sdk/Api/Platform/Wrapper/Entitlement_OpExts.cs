@@ -13,28 +13,6 @@ namespace AccelByte.Sdk.Api
     public static class PlatformEntitlement_OpExts
     {
         public static Platform.Model.EntitlementPagingSlicedResult? Execute(
-            this QueryEntitlements1.QueryEntitlements1Builder builder,
-            string namespace_
-        )
-        {
-            QueryEntitlements1 op = builder.Build(
-                namespace_
-            );
-
-            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1(op);
-        }
-        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
-            this QueryEntitlements1.QueryEntitlements1Builder builder,
-            string namespace_
-        )
-        {
-            QueryEntitlements1 op = builder.Build(
-                namespace_
-            );
-
-            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlements1Async(op);
-        }
-        public static Platform.Model.EntitlementPagingSlicedResult? Execute(
             this QueryEntitlements.QueryEntitlementsBuilder builder,
             string namespace_
         )
@@ -55,6 +33,28 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlementsAsync(op);
+        }
+        public static Platform.Model.EntitlementPagingSlicedResult? Execute(
+            this QueryEntitlementsByItemIds.QueryEntitlementsByItemIdsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryEntitlementsByItemIds op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlementsByItemIds(op);
+        }
+        public static async Task<Platform.Model.EntitlementPagingSlicedResult?> ExecuteAsync(
+            this QueryEntitlementsByItemIds.QueryEntitlementsByItemIdsBuilder builder,
+            string namespace_
+        )
+        {
+            QueryEntitlementsByItemIds op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.Entitlement)builder.WrapperObject!).QueryEntitlementsByItemIdsAsync(op);
         }
         public static Platform.Model.EntitlementConfigInfo? Execute(
             this EnableEntitlementOriginFeature.EnableEntitlementOriginFeatureBuilder builder,

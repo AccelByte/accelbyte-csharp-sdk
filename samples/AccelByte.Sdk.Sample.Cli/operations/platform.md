@@ -577,11 +577,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
-### Operation QueryEntitlements1
+### Operation QueryEntitlements
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn platform \
-    --op queryentitlements1 \
+    --op queryentitlements \
     --namespace <namespace value> \
     --activeOnly <activeOnly value - optional> \
     --appType <appType value - optional> \
@@ -594,11 +594,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value - optional>
 ```
 
-### Operation QueryEntitlements
+### Operation QueryEntitlementsByItemIds
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn platform \
-    --op queryentitlements \
+    --op queryentitlementsbyitemids \
     --namespace <namespace value> \
     --activeOnly <activeOnly value - optional> \
     --itemIds <itemIds value - optional> \

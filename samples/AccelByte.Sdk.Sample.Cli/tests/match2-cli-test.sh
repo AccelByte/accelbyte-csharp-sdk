@@ -145,7 +145,7 @@ eval_tap $? 12 'AdminGetConfigV1' test.out
 
 #- 13 AdminPatchConfigV1
 # body param: body
-echo '{"crossPlatformNoCurrentPlatform": false, "extraPlatforms": ["dIabcFbSmeuIBroF", "7bwRgwKvzESbhpxl", "DdEs4igdKeLmy8tZ"], "matchAnyCommon": false, "platformGroup": {"tTYZLJ58QqcV3Icu": ["Ns9MF5BT2KD18yrW", "orpC65VJh4q1z1KJ", "mKedBfbWvKa5Ou12"], "4TsbQsxYFxGGHrfQ": ["kgXkiA5IZPqCqp9v", "cyt67WAfWXfUfwGB", "03tz8qIH4uRdNO08"], "HN6s9p8Y5c9eItJt": ["iNmY3y3n2Rim4NBq", "huNtj8FOvKZjs1tL", "pERf77LzPoORBkRm"]}}' > $TEMP_JSON_INPUT
+echo '{"crossPlatformNoCurrentPlatform": false, "extraPlatforms": ["dIabcFbSmeuIBroF", "7bwRgwKvzESbhpxl", "DdEs4igdKeLmy8tZ"], "matchAnyCommon": false, "platformGroup": {"tTYZLJ58QqcV3Icu": ["Ns9MF5BT2KD18yrW", "orpC65VJh4q1z1KJ", "mKedBfbWvKa5Ou12"], "4TsbQsxYFxGGHrfQ": ["kgXkiA5IZPqCqp9v", "cyt67WAfWXfUfwGB", "03tz8qIH4uRdNO08"], "HN6s9p8Y5c9eItJt": ["iNmY3y3n2Rim4NBq", "huNtj8FOvKZjs1tL", "pERf77LzPoORBkRm"]}, "xrayMaxWhitelistedUserCount": 6}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn match2 \
     --op AdminPatchConfigV1 \
@@ -166,15 +166,15 @@ $CLI_EXE \
     --sn match2 \
     --op AdminQueryBackfill \
     --namespace $AB_NAMESPACE \
-    --fromTime '1997-01-22T00:00:00Z' \
-    --isActive 'false' \
-    --limit '55' \
-    --matchPool 'Fy0pJYCdfkfyt09r' \
-    --offset '28' \
-    --playerID 'Ojpls9BZTYc5BsdS' \
-    --region 'SVaAzzn4GbgkKeCa' \
-    --sessionID 'S6qyUCscHXs8PlOB' \
-    --toTime '1976-02-18T00:00:00Z' \
+    --fromTime '1997-12-26T00:00:00Z' \
+    --isActive 'true' \
+    --limit '64' \
+    --matchPool '2zyZsb4FvWFIHPIb' \
+    --offset '82' \
+    --playerID '5fHdWqJTNjrmpnnE' \
+    --region 'ckHH8kT9oXVander' \
+    --sessionID 'cf1nq4Hf32SL5Pja' \
+    --toTime '1996-02-13T00:00:00Z' \
     > test.out 2>&1
 eval_tap $? 15 'AdminQueryBackfill' test.out
 

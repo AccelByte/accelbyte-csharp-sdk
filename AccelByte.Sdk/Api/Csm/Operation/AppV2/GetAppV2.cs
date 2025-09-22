@@ -21,9 +21,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// Get extend app by name
     /// 
     /// Available scenario:
-    /// - scenario 1: `function-override`
     /// - scenario 2: `service-extension`
     /// - scenario 3: `event-handler`
+    /// - scenario 1: `function-override`
     /// 
     /// 
     /// Available app status:
