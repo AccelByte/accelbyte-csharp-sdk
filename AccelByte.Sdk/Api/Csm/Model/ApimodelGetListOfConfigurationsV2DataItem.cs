@@ -30,7 +30,6 @@ namespace AccelByte.Sdk.Api.Csm.Model
         public string? Description { get; set; }
 
         [JsonPropertyName("editable")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? Editable { get; set; }
 
         [JsonPropertyName("isHidden")]

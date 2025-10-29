@@ -1008,6 +1008,32 @@ namespace AccelByte.Sdk.Api
 
             await ((Platform.Wrapper.IAP)builder.WrapperObject!).MockFulfillIAPItemAsync(op);
         }
+        public static List<Platform.Model.ThirdPartySubscriptionTransactionInfo>? Execute(
+            this AdminSyncOculusSubscriptions.AdminSyncOculusSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncOculusSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncOculusSubscriptions(op);
+        }
+        public static async Task<List<Platform.Model.ThirdPartySubscriptionTransactionInfo>?> ExecuteAsync(
+            this AdminSyncOculusSubscriptions.AdminSyncOculusSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncOculusSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncOculusSubscriptionsAsync(op);
+        }
         public static List<Platform.Model.IAPOrderLineItemInfo>? Execute(
             this AdminGetIAPOrderLineItems.AdminGetIAPOrderLineItemsBuilder builder,
             string iapOrderNo,
@@ -1249,6 +1275,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).PublicFulfillGoogleIAPItemAsync(op);
+        }
+        public static List<Platform.Model.ThirdPartySubscriptionTransactionInfo>? Execute(
+            this SyncOculusSubscriptions.SyncOculusSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncOculusSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncOculusSubscriptions(op);
+        }
+        public static async Task<List<Platform.Model.ThirdPartySubscriptionTransactionInfo>?> ExecuteAsync(
+            this SyncOculusSubscriptions.SyncOculusSubscriptionsBuilder builder,
+            string namespace_,
+            string userId
+        )
+        {
+            SyncOculusSubscriptions op = builder.Build(
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.IAP)builder.WrapperObject!).SyncOculusSubscriptionsAsync(op);
         }
         public static List<Platform.Model.OculusReconcileResult>? Execute(
             this SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder builder,

@@ -13,158 +13,158 @@ namespace AccelByte.Sdk.Api
     public static class LegalLocalizedPolicyVersions_OpExts
     {
         public static List<Legal.Model.RetrieveLocalizedPolicyVersionResponse>? Execute(
-            this RetrieveLocalizedPolicyVersions.RetrieveLocalizedPolicyVersionsBuilder builder,
+            this OldRetrieveLocalizedPolicyVersions.OldRetrieveLocalizedPolicyVersionsBuilder builder,
             string policyVersionId
         )
         {
-            RetrieveLocalizedPolicyVersions op = builder.Build(
+            OldRetrieveLocalizedPolicyVersions op = builder.Build(
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveLocalizedPolicyVersions(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveLocalizedPolicyVersions(op);
         }
         public static async Task<List<Legal.Model.RetrieveLocalizedPolicyVersionResponse>?> ExecuteAsync(
-            this RetrieveLocalizedPolicyVersions.RetrieveLocalizedPolicyVersionsBuilder builder,
+            this OldRetrieveLocalizedPolicyVersions.OldRetrieveLocalizedPolicyVersionsBuilder builder,
             string policyVersionId
         )
         {
-            RetrieveLocalizedPolicyVersions op = builder.Build(
+            OldRetrieveLocalizedPolicyVersions op = builder.Build(
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveLocalizedPolicyVersionsAsync(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveLocalizedPolicyVersionsAsync(op);
         }
         public static Legal.Model.CreateLocalizedPolicyVersionResponse? Execute(
-            this CreateLocalizedPolicyVersion.CreateLocalizedPolicyVersionBuilder builder,
+            this OldCreateLocalizedPolicyVersion.OldCreateLocalizedPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            CreateLocalizedPolicyVersion op = builder.Build(
+            OldCreateLocalizedPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersion(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldCreateLocalizedPolicyVersion(op);
         }
         public static async Task<Legal.Model.CreateLocalizedPolicyVersionResponse?> ExecuteAsync(
-            this CreateLocalizedPolicyVersion.CreateLocalizedPolicyVersionBuilder builder,
+            this OldCreateLocalizedPolicyVersion.OldCreateLocalizedPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            CreateLocalizedPolicyVersion op = builder.Build(
+            OldCreateLocalizedPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).CreateLocalizedPolicyVersionAsync(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldCreateLocalizedPolicyVersionAsync(op);
         }
         public static Legal.Model.RetrieveLocalizedPolicyVersionResponse? Execute(
-            this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
+            this OldRetrieveSingleLocalizedPolicyVersion.OldRetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RetrieveSingleLocalizedPolicyVersion op = builder.Build(
+            OldRetrieveSingleLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveSingleLocalizedPolicyVersion(op);
         }
         public static async Task<Legal.Model.RetrieveLocalizedPolicyVersionResponse?> ExecuteAsync(
-            this RetrieveSingleLocalizedPolicyVersion.RetrieveSingleLocalizedPolicyVersionBuilder builder,
+            this OldRetrieveSingleLocalizedPolicyVersion.OldRetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RetrieveSingleLocalizedPolicyVersion op = builder.Build(
+            OldRetrieveSingleLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersionAsync(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveSingleLocalizedPolicyVersionAsync(op);
         }
         public static Legal.Model.UpdateLocalizedPolicyVersionResponse? Execute(
-            this UpdateLocalizedPolicyVersion.UpdateLocalizedPolicyVersionBuilder builder,
+            this OldUpdateLocalizedPolicyVersion.OldUpdateLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            UpdateLocalizedPolicyVersion op = builder.Build(
+            OldUpdateLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).UpdateLocalizedPolicyVersion(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldUpdateLocalizedPolicyVersion(op);
         }
         public static async Task<Legal.Model.UpdateLocalizedPolicyVersionResponse?> ExecuteAsync(
-            this UpdateLocalizedPolicyVersion.UpdateLocalizedPolicyVersionBuilder builder,
+            this OldUpdateLocalizedPolicyVersion.OldUpdateLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            UpdateLocalizedPolicyVersion op = builder.Build(
+            OldUpdateLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).UpdateLocalizedPolicyVersionAsync(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldUpdateLocalizedPolicyVersionAsync(op);
         }
         public static Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse? Execute(
-            this RequestPresignedURL.RequestPresignedURLBuilder builder,
+            this OldRequestPresignedURL.OldRequestPresignedURLBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RequestPresignedURL op = builder.Build(
+            OldRequestPresignedURL op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RequestPresignedURL(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRequestPresignedURL(op);
         }
         public static async Task<Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse?> ExecuteAsync(
-            this RequestPresignedURL.RequestPresignedURLBuilder builder,
+            this OldRequestPresignedURL.OldRequestPresignedURLBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RequestPresignedURL op = builder.Build(
+            OldRequestPresignedURL op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RequestPresignedURLAsync(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRequestPresignedURLAsync(op);
         }
         public static void Execute(
-            this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
+            this OldSetDefaultLocalizedPolicy.OldSetDefaultLocalizedPolicyBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            SetDefaultPolicy op = builder.Build(
+            OldSetDefaultLocalizedPolicy op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicy(op);
+            ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldSetDefaultLocalizedPolicy(op);
         }
         public static async Task ExecuteAsync(
-            this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
+            this OldSetDefaultLocalizedPolicy.OldSetDefaultLocalizedPolicyBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            SetDefaultPolicy op = builder.Build(
+            OldSetDefaultLocalizedPolicy op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).SetDefaultPolicyAsync(op);
+            await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldSetDefaultLocalizedPolicyAsync(op);
         }
         public static Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse? Execute(
-            this RetrieveSingleLocalizedPolicyVersion2.RetrieveSingleLocalizedPolicyVersion2Builder builder,
+            this OldPublicRetrieveSingleLocalizedPolicyVersion.OldPublicRetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RetrieveSingleLocalizedPolicyVersion2 op = builder.Build(
+            OldPublicRetrieveSingleLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion2(op);
+            return ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldPublicRetrieveSingleLocalizedPolicyVersion(op);
         }
         public static async Task<Legal.Model.RetrieveLocalizedPolicyVersionPublicResponse?> ExecuteAsync(
-            this RetrieveSingleLocalizedPolicyVersion2.RetrieveSingleLocalizedPolicyVersion2Builder builder,
+            this OldPublicRetrieveSingleLocalizedPolicyVersion.OldPublicRetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
         )
         {
-            RetrieveSingleLocalizedPolicyVersion2 op = builder.Build(
+            OldPublicRetrieveSingleLocalizedPolicyVersion op = builder.Build(
                 localizedPolicyVersionId
             );
 
-            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).RetrieveSingleLocalizedPolicyVersion2Async(op);
+            return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldPublicRetrieveSingleLocalizedPolicyVersionAsync(op);
         }
     }
 }

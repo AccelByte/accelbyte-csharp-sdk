@@ -27,44 +27,12 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
             : OperationBuilder<GetMyOfflineNotificationsBuilder>
         {
 
-            public long? EndTime { get; set; }
-
-            public long? Limit { get; set; }
-
-            public long? Offset { get; set; }
-
-            public long? StartTime { get; set; }
-
 
 
 
 
             internal GetMyOfflineNotificationsBuilder() { }
 
-
-            public GetMyOfflineNotificationsBuilder SetEndTime(long _endTime)
-            {
-                EndTime = _endTime;
-                return this;
-            }
-
-            public GetMyOfflineNotificationsBuilder SetLimit(long _limit)
-            {
-                Limit = _limit;
-                return this;
-            }
-
-            public GetMyOfflineNotificationsBuilder SetOffset(long _offset)
-            {
-                Offset = _offset;
-                return this;
-            }
-
-            public GetMyOfflineNotificationsBuilder SetStartTime(long _startTime)
-            {
-                StartTime = _startTime;
-                return this;
-            }
 
 
 
@@ -92,10 +60,6 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         {
             PathParams["namespace"] = namespace_;
 
-            if (builder.EndTime != null) QueryParams["endTime"] = Convert.ToString(builder.EndTime)!;
-            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
-            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
-            if (builder.StartTime != null) QueryParams["startTime"] = Convert.ToString(builder.StartTime)!;
 
 
 
@@ -107,19 +71,11 @@ namespace AccelByte.Sdk.Api.Lobby.Operation
         #endregion
 
         public GetMyOfflineNotifications(
-            string namespace_,
-            long? endTime,
-            long? limit,
-            long? offset,
-            long? startTime
+            string namespace_
         )
         {
             PathParams["namespace"] = namespace_;
 
-            if (endTime != null) QueryParams["endTime"] = Convert.ToString(endTime)!;
-            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
-            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
-            if (startTime != null) QueryParams["startTime"] = Convert.ToString(startTime)!;
 
 
 

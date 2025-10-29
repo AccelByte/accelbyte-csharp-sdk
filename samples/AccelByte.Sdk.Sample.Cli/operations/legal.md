@@ -11,19 +11,19 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveAcceptedAgreements
+### Operation OldRetrieveAcceptedAgreements
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveacceptedagreements \
+    --op oldretrieveacceptedagreements \
     --userId <userId value>
 ```
 
-### Operation RetrieveAllUsersByPolicyVersion
+### Operation OldRetrieveAllUsersByPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveallusersbypolicyversion \
+    --op oldretrieveallusersbypolicyversion \
     --keyword <keyword value - optional> \
     --limit <limit value - optional> \
     --offset <offset value - optional> \
@@ -38,93 +38,93 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --visibleOnly <visibleOnly value - optional>
 ```
 
-### Operation CreatePolicy
+### Operation OldCreatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createpolicy \
+    --op oldcreatepolicy \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveSinglePolicy
+### Operation OldRetrieveSinglePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglepolicy \
+    --op oldretrievesinglepolicy \
     --basePolicyId <basePolicyId value>
 ```
 
-### Operation PartialUpdatePolicy
+### Operation OldPartialUpdatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op partialupdatepolicy \
+    --op oldpartialupdatepolicy \
     --basePolicyId <basePolicyId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrievePolicyCountry
+### Operation OldRetrievePolicyCountry
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievepolicycountry \
+    --op oldretrievepolicycountry \
     --basePolicyId <basePolicyId value> \
     --countryCode <countryCode value>
 ```
 
-### Operation RetrieveLocalizedPolicyVersions
+### Operation OldRetrieveLocalizedPolicyVersions
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievelocalizedpolicyversions \
+    --op oldretrievelocalizedpolicyversions \
     --policyVersionId <policyVersionId value>
 ```
 
-### Operation CreateLocalizedPolicyVersion
+### Operation OldCreateLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createlocalizedpolicyversion \
+    --op oldcreatelocalizedpolicyversion \
     --policyVersionId <policyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveSingleLocalizedPolicyVersion
+### Operation OldRetrieveSingleLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglelocalizedpolicyversion \
+    --op oldretrievesinglelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value>
 ```
 
-### Operation UpdateLocalizedPolicyVersion
+### Operation OldUpdateLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatelocalizedpolicyversion \
+    --op oldupdatelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RequestPresignedURL
+### Operation OldRequestPresignedURL
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op requestpresignedurl \
+    --op oldrequestpresignedurl \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation SetDefaultPolicy
+### Operation OldSetDefaultLocalizedPolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op setdefaultpolicy \
+    --op oldsetdefaultlocalizedpolicy \
     --localizedPolicyVersionId <localizedPolicyVersionId value>
 ```
 
@@ -138,21 +138,21 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveAcceptedAgreements1
+### Operation RetrieveAcceptedAgreements
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveacceptedagreements1 \
+    --op retrieveacceptedagreements \
     --namespace <namespace value> \
     --userId <userId value> \
     --excludeOtherNamespacesPolicies <excludeOtherNamespacesPolicies value - optional>
 ```
 
-### Operation RetrieveAllUsersByPolicyVersion1
+### Operation RetrieveAllUsersByPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveallusersbypolicyversion1 \
+    --op retrieveallusersbypolicyversion \
     --namespace <namespace value> \
     --convertGameUserId <convertGameUserId value - optional> \
     --keyword <keyword value - optional> \
@@ -190,21 +190,21 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --visibleOnly <visibleOnly value - optional>
 ```
 
-### Operation CreatePolicy1
+### Operation CreatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createpolicy1 \
+    --op createpolicy \
     --namespace <namespace value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveSinglePolicy1
+### Operation RetrieveSinglePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglepolicy1 \
+    --op retrievesinglepolicy \
     --basePolicyId <basePolicyId value> \
     --namespace <namespace value>
 ```
@@ -218,22 +218,22 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
-### Operation PartialUpdatePolicy1
+### Operation PartialUpdatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op partialupdatepolicy1 \
+    --op partialupdatepolicy \
     --basePolicyId <basePolicyId value> \
     --namespace <namespace value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrievePolicyCountry1
+### Operation RetrievePolicyCountry
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievepolicycountry1 \
+    --op retrievepolicycountry \
     --basePolicyId <basePolicyId value> \
     --countryCode <countryCode value> \
     --namespace <namespace value>
@@ -268,62 +268,62 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
-### Operation RetrieveLocalizedPolicyVersions1
+### Operation RetrieveLocalizedPolicyVersions
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievelocalizedpolicyversions1 \
+    --op retrievelocalizedpolicyversions \
     --namespace <namespace value> \
     --policyVersionId <policyVersionId value>
 ```
 
-### Operation CreateLocalizedPolicyVersion1
+### Operation CreateLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createlocalizedpolicyversion1 \
+    --op createlocalizedpolicyversion \
     --namespace <namespace value> \
     --policyVersionId <policyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveSingleLocalizedPolicyVersion1
+### Operation RetrieveSingleLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglelocalizedpolicyversion1 \
+    --op retrievesinglelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --namespace <namespace value>
 ```
 
-### Operation UpdateLocalizedPolicyVersion1
+### Operation UpdateLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatelocalizedpolicyversion1 \
+    --op updatelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --namespace <namespace value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RequestPresignedURL1
+### Operation RequestPresignedURL
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op requestpresignedurl1 \
+    --op requestpresignedurl \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --namespace <namespace value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation SetDefaultPolicy1
+### Operation SetDefaultLocalizedPolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op setdefaultpolicy1 \
+    --op setdefaultlocalizedpolicy \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --namespace <namespace value>
 ```
@@ -337,22 +337,22 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --policyVersionId <policyVersionId value>
 ```
 
-### Operation UpdatePolicyVersion1
+### Operation UpdatePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatepolicyversion1 \
+    --op updatepolicyversion \
     --namespace <namespace value> \
     --policyVersionId <policyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation PublishPolicyVersion1
+### Operation PublishPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op publishpolicyversion1 \
+    --op publishpolicyversion \
     --namespace <namespace value> \
     --policyVersionId <policyVersionId value> \
     --shouldNotify <shouldNotify value - optional>
@@ -376,52 +376,52 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --policyId <policyId value>
 ```
 
-### Operation UpdatePolicy1
+### Operation UpdatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatepolicy1 \
+    --op updatepolicy \
     --namespace <namespace value> \
     --policyId <policyId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation SetDefaultPolicy3
+### Operation SetDefaultPolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op setdefaultpolicy3 \
+    --op setdefaultpolicy \
     --namespace <namespace value> \
     --policyId <policyId value>
 ```
 
-### Operation RetrieveSinglePolicyVersion1
+### Operation RetrieveSinglePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglepolicyversion1 \
+    --op retrievesinglepolicyversion \
     --namespace <namespace value> \
     --policyId <policyId value> \
     --versionId <versionId value - optional>
 ```
 
-### Operation CreatePolicyVersion1
+### Operation CreatePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createpolicyversion1 \
+    --op createpolicyversion \
     --namespace <namespace value> \
     --policyId <policyId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveAllPolicyTypes1
+### Operation RetrieveAllPolicyTypes
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveallpolicytypes1 \
+    --op retrieveallpolicytypes \
     --namespace <namespace value> \
     --offset <offset value - optional> \
     --limit <limit value>
@@ -461,67 +461,67 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --countryCode <countryCode value>
 ```
 
-### Operation UpdatePolicyVersion
+### Operation OldUpdatePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatepolicyversion \
+    --op oldupdatepolicyversion \
     --policyVersionId <policyVersionId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation PublishPolicyVersion
+### Operation OldPublishPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op publishpolicyversion \
+    --op oldpublishpolicyversion \
     --policyVersionId <policyVersionId value> \
     --shouldNotify <shouldNotify value - optional>
 ```
 
-### Operation UpdatePolicy
+### Operation OldUpdatePolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op updatepolicy \
+    --op oldupdatepolicy \
     --policyId <policyId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation SetDefaultPolicy2
+### Operation OldSetDefaultPolicy
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op setdefaultpolicy2 \
+    --op oldsetdefaultpolicy \
     --policyId <policyId value>
 ```
 
-### Operation RetrieveSinglePolicyVersion
+### Operation OldRetrieveSinglePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglepolicyversion \
+    --op oldretrievesinglepolicyversion \
     --policyId <policyId value> \
     --versionId <versionId value - optional>
 ```
 
-### Operation CreatePolicyVersion
+### Operation OldCreatePolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op createpolicyversion \
+    --op oldcreatepolicyversion \
     --policyId <policyId value> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation RetrieveAllPolicyTypes
+### Operation OldRetrieveAllPolicyTypes
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrieveallpolicytypes \
+    --op oldretrieveallpolicytypes \
     --offset <offset value - optional> \
     --limit <limit value>
 ```
@@ -542,11 +542,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value>
 ```
 
-### Operation ChangePreferenceConsent1
+### Operation PublicChangePreferenceConsent
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op changepreferenceconsent1 \
+    --op publicchangepreferenceconsent \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
@@ -595,19 +595,19 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value>
 ```
 
-### Operation RetrieveSingleLocalizedPolicyVersion2
+### Operation OldPublicRetrieveSingleLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglelocalizedpolicyversion2 \
+    --op oldpublicretrievesinglelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value>
 ```
 
-### Operation RetrieveSingleLocalizedPolicyVersion3
+### Operation PublicRetrieveSingleLocalizedPolicyVersion
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievesinglelocalizedpolicyversion3 \
+    --op publicretrievesinglelocalizedpolicyversion \
     --localizedPolicyVersionId <localizedPolicyVersionId value> \
     --namespace <namespace value>
 ```
@@ -645,11 +645,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --visibleOnly <visibleOnly value - optional>
 ```
 
-### Operation RetrieveLatestPoliciesByNamespaceAndCountryPublic
+### Operation OldRetrieveLatestPoliciesByNamespaceAndCountryPublic
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievelatestpoliciesbynamespaceandcountrypublic \
+    --op oldretrievelatestpoliciesbynamespaceandcountrypublic \
     --countryCode <countryCode value> \
     --namespace <namespace value> \
     --alwaysIncludeDefault <alwaysIncludeDefault value - optional> \
@@ -667,11 +667,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 
 ```
 
-### Operation RetrieveLatestPoliciesByNamespaceAndCountryPublic1
+### Operation RetrieveLatestPoliciesByNamespaceAndCountryPublic
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
-    --op retrievelatestpoliciesbynamespaceandcountrypublic1 \
+    --op retrievelatestpoliciesbynamespaceandcountrypublic \
     --countryCode <countryCode value> \
     --namespace <namespace value> \
     --clientId <clientId value>

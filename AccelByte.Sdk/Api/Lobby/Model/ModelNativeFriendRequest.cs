@@ -23,6 +23,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? PsnEnv { get; set; }
 
+        [JsonPropertyName("syncDeletedFriend")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SyncDeletedFriend { get; set; }
+
     }
 
 

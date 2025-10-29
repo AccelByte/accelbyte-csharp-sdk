@@ -187,6 +187,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.MockFulfillIAPItem.Builder.SetWrapperObject(this); }
         }
+        public AdminSyncOculusSubscriptions.AdminSyncOculusSubscriptionsBuilder AdminSyncOculusSubscriptionsOp
+        {
+            get { return Operation.AdminSyncOculusSubscriptions.Builder.SetWrapperObject(this); }
+        }
         public AdminGetIAPOrderLineItems.AdminGetIAPOrderLineItemsBuilder AdminGetIAPOrderLineItemsOp
         {
             get { return Operation.AdminGetIAPOrderLineItems.Builder.SetWrapperObject(this); }
@@ -222,6 +226,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         public PublicFulfillGoogleIAPItem.PublicFulfillGoogleIAPItemBuilder PublicFulfillGoogleIAPItemOp
         {
             get { return Operation.PublicFulfillGoogleIAPItem.Builder.SetWrapperObject(this); }
+        }
+        public SyncOculusSubscriptions.SyncOculusSubscriptionsBuilder SyncOculusSubscriptionsOp
+        {
+            get { return Operation.SyncOculusSubscriptions.Builder.SetWrapperObject(this); }
         }
         public SyncOculusConsumableEntitlements.SyncOculusConsumableEntitlementsBuilder SyncOculusConsumableEntitlementsOp
         {
@@ -933,6 +941,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public List<Model.ThirdPartySubscriptionTransactionInfo>? AdminSyncOculusSubscriptions(AdminSyncOculusSubscriptions input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ThirdPartySubscriptionTransactionInfo>?> AdminSyncOculusSubscriptionsAsync(AdminSyncOculusSubscriptions input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public List<Model.IAPOrderLineItemInfo>? AdminGetIAPOrderLineItems(AdminGetIAPOrderLineItems input)
         {
             var response = _sdk.RunRequest(input);
@@ -1070,6 +1094,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.Payload);
         }
         public async Task<Model.GoogleReceiptResolveResult?> PublicFulfillGoogleIAPItemAsync(PublicFulfillGoogleIAPItem input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ThirdPartySubscriptionTransactionInfo>? SyncOculusSubscriptions(SyncOculusSubscriptions input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ThirdPartySubscriptionTransactionInfo>?> SyncOculusSubscriptionsAsync(SyncOculusSubscriptions input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

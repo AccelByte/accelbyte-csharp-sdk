@@ -284,7 +284,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sortBy <sortBy value - optional> \
     --sortDirection <sortDirection value - optional> \
     --status <status value - optional> \
-    --tag <tag value - optional>
+    --tag <tag value - optional> \
+    --targetArchitecture <targetArchitecture value - optional>
 ```
 
 ### Operation ImagesStorage

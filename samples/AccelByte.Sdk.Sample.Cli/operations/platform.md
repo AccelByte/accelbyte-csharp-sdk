@@ -848,6 +848,61 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation ListOculusSubscriptionGroups
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op listoculussubscriptiongroups \
+    --namespace <namespace value>
+```
+
+### Operation CreateOculusSubscriptionGroup
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op createoculussubscriptiongroup \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteOculusSubscriptionGroup
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op deleteoculussubscriptiongroup \
+    --namespace <namespace value> \
+    --sku <sku value>
+```
+
+### Operation ListOculusSubscriptionGroupTier
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op listoculussubscriptiongrouptier \
+    --namespace <namespace value> \
+    --sku <sku value>
+```
+
+### Operation AddTierIntoMetaQuestSubscriptionGroup
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op addtierintometaquestsubscriptiongroup \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteOculusSubscriptionTier
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op deleteoculussubscriptiontier \
+    --namespace <namespace value> \
+    --sku <sku value>
+```
+
 ### Operation GetPlayStationIAPConfig
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -2899,6 +2954,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation AdminSyncOculusSubscriptions
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op adminsyncoculussubscriptions \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminGetIAPOrderLineItems
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -4587,6 +4653,17 @@ To set request body using JSON file, replace `--reqbody` argument with `--reqfil
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn platform \
     --op publicfulfillgoogleiapitem \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation SyncOculusSubscriptions
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op syncoculussubscriptions \
     --namespace <namespace value> \
     --userId <userId value> \
     --reqbody <json string for request body>

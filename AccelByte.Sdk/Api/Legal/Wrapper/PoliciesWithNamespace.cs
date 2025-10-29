@@ -23,13 +23,13 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.DeletePolicy.Builder.SetWrapperObject(this); }
         }
-        public UpdatePolicy1.UpdatePolicy1Builder UpdatePolicy1Op
+        public UpdatePolicy.UpdatePolicyBuilder UpdatePolicyOp
         {
-            get { return Operation.UpdatePolicy1.Builder.SetWrapperObject(this); }
+            get { return Operation.UpdatePolicy.Builder.SetWrapperObject(this); }
         }
-        public SetDefaultPolicy3.SetDefaultPolicy3Builder SetDefaultPolicy3Op
+        public SetDefaultPolicy.SetDefaultPolicyBuilder SetDefaultPolicyOp
         {
-            get { return Operation.SetDefaultPolicy3.Builder.SetWrapperObject(this); }
+            get { return Operation.SetDefaultPolicy.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -49,7 +49,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void UpdatePolicy1(UpdatePolicy1 input)
+        public void UpdatePolicy(UpdatePolicy input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task UpdatePolicy1Async(UpdatePolicy1 input)
+        public async Task UpdatePolicyAsync(UpdatePolicy input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void SetDefaultPolicy3(SetDefaultPolicy3 input)
+        public void SetDefaultPolicy(SetDefaultPolicy input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task SetDefaultPolicy3Async(SetDefaultPolicy3 input)
+        public async Task SetDefaultPolicyAsync(SetDefaultPolicy input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

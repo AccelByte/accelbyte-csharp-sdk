@@ -16,6 +16,10 @@ namespace AccelByte.Sdk.Api.Platform.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? AppSecret { get; set; }
 
+        [JsonPropertyName("webhookVerifyToken")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? WebhookVerifyToken { get; set; }
+
     }
 
 

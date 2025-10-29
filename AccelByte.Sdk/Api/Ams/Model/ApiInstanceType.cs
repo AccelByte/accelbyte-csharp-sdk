@@ -33,6 +33,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("ownerAccountId")]
         public string? OwnerAccountId { get; set; }
 
+        [JsonPropertyName("processorArchitecture")]
+        public string? ProcessorArchitecture { get; set; }
+
         [JsonPropertyName("provider")]
         public string? Provider { get; set; }
 

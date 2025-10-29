@@ -35,48 +35,48 @@ namespace AccelByte.Sdk.Api
             return await ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrievePoliciesAsync(op);
         }
         public static void Execute(
-            this UpdatePolicy.UpdatePolicyBuilder builder,
+            this OldUpdatePolicy.OldUpdatePolicyBuilder builder,
             string policyId
         )
         {
-            UpdatePolicy op = builder.Build(
+            OldUpdatePolicy op = builder.Build(
                 policyId
             );
 
-            ((Legal.Wrapper.Policies)builder.WrapperObject!).UpdatePolicy(op);
+            ((Legal.Wrapper.Policies)builder.WrapperObject!).OldUpdatePolicy(op);
         }
         public static async Task ExecuteAsync(
-            this UpdatePolicy.UpdatePolicyBuilder builder,
+            this OldUpdatePolicy.OldUpdatePolicyBuilder builder,
             string policyId
         )
         {
-            UpdatePolicy op = builder.Build(
+            OldUpdatePolicy op = builder.Build(
                 policyId
             );
 
-            await ((Legal.Wrapper.Policies)builder.WrapperObject!).UpdatePolicyAsync(op);
+            await ((Legal.Wrapper.Policies)builder.WrapperObject!).OldUpdatePolicyAsync(op);
         }
         public static void Execute(
-            this SetDefaultPolicy2.SetDefaultPolicy2Builder builder,
+            this OldSetDefaultPolicy.OldSetDefaultPolicyBuilder builder,
             string policyId
         )
         {
-            SetDefaultPolicy2 op = builder.Build(
+            OldSetDefaultPolicy op = builder.Build(
                 policyId
             );
 
-            ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy2(op);
+            ((Legal.Wrapper.Policies)builder.WrapperObject!).OldSetDefaultPolicy(op);
         }
         public static async Task ExecuteAsync(
-            this SetDefaultPolicy2.SetDefaultPolicy2Builder builder,
+            this OldSetDefaultPolicy.OldSetDefaultPolicyBuilder builder,
             string policyId
         )
         {
-            SetDefaultPolicy2 op = builder.Build(
+            OldSetDefaultPolicy op = builder.Build(
                 policyId
             );
 
-            await ((Legal.Wrapper.Policies)builder.WrapperObject!).SetDefaultPolicy2Async(op);
+            await ((Legal.Wrapper.Policies)builder.WrapperObject!).OldSetDefaultPolicyAsync(op);
         }
         public static List<string>? Execute(
             this RetrieveCountryListWithPolicies.RetrieveCountryListWithPoliciesBuilder builder
@@ -141,30 +141,30 @@ namespace AccelByte.Sdk.Api
             return await ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPoliciesPublicAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyPublicResponse>? Execute(
-            this RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
+            this OldRetrieveLatestPoliciesByNamespaceAndCountryPublic.OldRetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
             string countryCode,
             string namespace_
         )
         {
-            RetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
+            OldRetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
                 countryCode,
                 namespace_
             );
 
-            return ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublic(op);
+            return ((Legal.Wrapper.Policies)builder.WrapperObject!).OldRetrieveLatestPoliciesByNamespaceAndCountryPublic(op);
         }
         public static async Task<List<Legal.Model.RetrievePolicyPublicResponse>?> ExecuteAsync(
-            this RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
+            this OldRetrieveLatestPoliciesByNamespaceAndCountryPublic.OldRetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
             string countryCode,
             string namespace_
         )
         {
-            RetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
+            OldRetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
                 countryCode,
                 namespace_
             );
 
-            return await ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublicAsync(op);
+            return await ((Legal.Wrapper.Policies)builder.WrapperObject!).OldRetrieveLatestPoliciesByNamespaceAndCountryPublicAsync(op);
         }
     }
 }

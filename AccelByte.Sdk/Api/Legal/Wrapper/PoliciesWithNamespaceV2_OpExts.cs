@@ -13,34 +13,34 @@ namespace AccelByte.Sdk.Api
     public static class LegalPoliciesWithNamespaceV2_OpExts
     {
         public static List<Legal.Model.RetrieveSimplePolicyPublicResponseV2>? Execute(
-            this RetrieveLatestPoliciesByNamespaceAndCountryPublic1.RetrieveLatestPoliciesByNamespaceAndCountryPublic1Builder builder,
+            this RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
             string countryCode,
             string namespace_,
             string clientId
         )
         {
-            RetrieveLatestPoliciesByNamespaceAndCountryPublic1 op = builder.Build(
+            RetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
                 countryCode,
                 namespace_,
                 clientId
             );
 
-            return ((Legal.Wrapper.PoliciesWithNamespaceV2)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublic1(op);
+            return ((Legal.Wrapper.PoliciesWithNamespaceV2)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublic(op);
         }
         public static async Task<List<Legal.Model.RetrieveSimplePolicyPublicResponseV2>?> ExecuteAsync(
-            this RetrieveLatestPoliciesByNamespaceAndCountryPublic1.RetrieveLatestPoliciesByNamespaceAndCountryPublic1Builder builder,
+            this RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder builder,
             string countryCode,
             string namespace_,
             string clientId
         )
         {
-            RetrieveLatestPoliciesByNamespaceAndCountryPublic1 op = builder.Build(
+            RetrieveLatestPoliciesByNamespaceAndCountryPublic op = builder.Build(
                 countryCode,
                 namespace_,
                 clientId
             );
 
-            return await ((Legal.Wrapper.PoliciesWithNamespaceV2)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublic1Async(op);
+            return await ((Legal.Wrapper.PoliciesWithNamespaceV2)builder.WrapperObject!).RetrieveLatestPoliciesByNamespaceAndCountryPublicAsync(op);
         }
     }
 }

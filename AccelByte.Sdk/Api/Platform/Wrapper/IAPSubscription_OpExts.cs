@@ -12,6 +12,150 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformIAPSubscription_OpExts
     {
+        public static List<Platform.Model.ThirdPartySubscriptionGroupInfo>? Execute(
+            this ListOculusSubscriptionGroups.ListOculusSubscriptionGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            ListOculusSubscriptionGroups op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).ListOculusSubscriptionGroups(op);
+        }
+        public static async Task<List<Platform.Model.ThirdPartySubscriptionGroupInfo>?> ExecuteAsync(
+            this ListOculusSubscriptionGroups.ListOculusSubscriptionGroupsBuilder builder,
+            string namespace_
+        )
+        {
+            ListOculusSubscriptionGroups op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).ListOculusSubscriptionGroupsAsync(op);
+        }
+        public static Platform.Model.ThirdPartySubscriptionGroupInfo? Execute(
+            this CreateOculusSubscriptionGroup.CreateOculusSubscriptionGroupBuilder builder,
+            string namespace_
+        )
+        {
+            CreateOculusSubscriptionGroup op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).CreateOculusSubscriptionGroup(op);
+        }
+        public static async Task<Platform.Model.ThirdPartySubscriptionGroupInfo?> ExecuteAsync(
+            this CreateOculusSubscriptionGroup.CreateOculusSubscriptionGroupBuilder builder,
+            string namespace_
+        )
+        {
+            CreateOculusSubscriptionGroup op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).CreateOculusSubscriptionGroupAsync(op);
+        }
+        public static void Execute(
+            this DeleteOculusSubscriptionGroup.DeleteOculusSubscriptionGroupBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            DeleteOculusSubscriptionGroup op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).DeleteOculusSubscriptionGroup(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteOculusSubscriptionGroup.DeleteOculusSubscriptionGroupBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            DeleteOculusSubscriptionGroup op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).DeleteOculusSubscriptionGroupAsync(op);
+        }
+        public static List<Platform.Model.ThirdPartySubscriptionTierInfo>? Execute(
+            this ListOculusSubscriptionGroupTier.ListOculusSubscriptionGroupTierBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            ListOculusSubscriptionGroupTier op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).ListOculusSubscriptionGroupTier(op);
+        }
+        public static async Task<List<Platform.Model.ThirdPartySubscriptionTierInfo>?> ExecuteAsync(
+            this ListOculusSubscriptionGroupTier.ListOculusSubscriptionGroupTierBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            ListOculusSubscriptionGroupTier op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            return await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).ListOculusSubscriptionGroupTierAsync(op);
+        }
+        public static Platform.Model.ThirdPartySubscriptionTierInfo? Execute(
+            this AddTierIntoMetaQuestSubscriptionGroup.AddTierIntoMetaQuestSubscriptionGroupBuilder builder,
+            string namespace_
+        )
+        {
+            AddTierIntoMetaQuestSubscriptionGroup op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).AddTierIntoMetaQuestSubscriptionGroup(op);
+        }
+        public static async Task<Platform.Model.ThirdPartySubscriptionTierInfo?> ExecuteAsync(
+            this AddTierIntoMetaQuestSubscriptionGroup.AddTierIntoMetaQuestSubscriptionGroupBuilder builder,
+            string namespace_
+        )
+        {
+            AddTierIntoMetaQuestSubscriptionGroup op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).AddTierIntoMetaQuestSubscriptionGroupAsync(op);
+        }
+        public static void Execute(
+            this DeleteOculusSubscriptionTier.DeleteOculusSubscriptionTierBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            DeleteOculusSubscriptionTier op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).DeleteOculusSubscriptionTier(op);
+        }
+        public static async Task ExecuteAsync(
+            this DeleteOculusSubscriptionTier.DeleteOculusSubscriptionTierBuilder builder,
+            string namespace_,
+            string sku
+        )
+        {
+            DeleteOculusSubscriptionTier op = builder.Build(
+                namespace_,
+                sku
+            );
+
+            await ((Platform.Wrapper.IAPSubscription)builder.WrapperObject!).DeleteOculusSubscriptionTierAsync(op);
+        }
         public static Platform.Model.ThirdPartyUserSubscriptionPagingSlicedResult? Execute(
             this QueryThirdPartySubscription.QueryThirdPartySubscriptionBuilder builder,
             string namespace_

@@ -39,56 +39,56 @@ namespace AccelByte.Sdk.Api
             await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).DeletePolicyVersionAsync(op);
         }
         public static Legal.Model.UpdatePolicyVersionResponse? Execute(
-            this UpdatePolicyVersion1.UpdatePolicyVersion1Builder builder,
+            this UpdatePolicyVersion.UpdatePolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            UpdatePolicyVersion1 op = builder.Build(
+            UpdatePolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UpdatePolicyVersion1(op);
+            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UpdatePolicyVersion(op);
         }
         public static async Task<Legal.Model.UpdatePolicyVersionResponse?> ExecuteAsync(
-            this UpdatePolicyVersion1.UpdatePolicyVersion1Builder builder,
+            this UpdatePolicyVersion.UpdatePolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            UpdatePolicyVersion1 op = builder.Build(
+            UpdatePolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UpdatePolicyVersion1Async(op);
+            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UpdatePolicyVersionAsync(op);
         }
         public static void Execute(
-            this PublishPolicyVersion1.PublishPolicyVersion1Builder builder,
+            this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            PublishPolicyVersion1 op = builder.Build(
+            PublishPolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).PublishPolicyVersion1(op);
+            ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).PublishPolicyVersion(op);
         }
         public static async Task ExecuteAsync(
-            this PublishPolicyVersion1.PublishPolicyVersion1Builder builder,
+            this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            PublishPolicyVersion1 op = builder.Build(
+            PublishPolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).PublishPolicyVersion1Async(op);
+            await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).PublishPolicyVersionAsync(op);
         }
         public static void Execute(
             this UnpublishPolicyVersion.UnpublishPolicyVersionBuilder builder,
@@ -117,56 +117,56 @@ namespace AccelByte.Sdk.Api
             await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).UnpublishPolicyVersionAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
-            this RetrieveSinglePolicyVersion1.RetrieveSinglePolicyVersion1Builder builder,
+            this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            RetrieveSinglePolicyVersion1 op = builder.Build(
+            RetrieveSinglePolicyVersion op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).RetrieveSinglePolicyVersion1(op);
+            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).RetrieveSinglePolicyVersion(op);
         }
         public static async Task<List<Legal.Model.RetrievePolicyVersionResponse>?> ExecuteAsync(
-            this RetrieveSinglePolicyVersion1.RetrieveSinglePolicyVersion1Builder builder,
+            this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            RetrieveSinglePolicyVersion1 op = builder.Build(
+            RetrieveSinglePolicyVersion op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).RetrieveSinglePolicyVersion1Async(op);
+            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).RetrieveSinglePolicyVersionAsync(op);
         }
         public static Legal.Model.CreatePolicyVersionResponse? Execute(
-            this CreatePolicyVersion1.CreatePolicyVersion1Builder builder,
+            this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            CreatePolicyVersion1 op = builder.Build(
+            CreatePolicyVersion op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).CreatePolicyVersion1(op);
+            return ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).CreatePolicyVersion(op);
         }
         public static async Task<Legal.Model.CreatePolicyVersionResponse?> ExecuteAsync(
-            this CreatePolicyVersion1.CreatePolicyVersion1Builder builder,
+            this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            CreatePolicyVersion1 op = builder.Build(
+            CreatePolicyVersion op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).CreatePolicyVersion1Async(op);
+            return await ((Legal.Wrapper.PolicyVersionsWithNamespace)builder.WrapperObject!).CreatePolicyVersionAsync(op);
         }
     }
 }

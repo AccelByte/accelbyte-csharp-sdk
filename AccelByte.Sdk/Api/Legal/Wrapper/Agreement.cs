@@ -23,17 +23,17 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.ChangePreferenceConsent.Builder.SetWrapperObject(this); }
         }
-        public RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder RetrieveAcceptedAgreementsOp
+        public OldRetrieveAcceptedAgreements.OldRetrieveAcceptedAgreementsBuilder OldRetrieveAcceptedAgreementsOp
         {
-            get { return Operation.RetrieveAcceptedAgreements.Builder.SetWrapperObject(this); }
+            get { return Operation.OldRetrieveAcceptedAgreements.Builder.SetWrapperObject(this); }
         }
-        public RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder RetrieveAllUsersByPolicyVersionOp
+        public OldRetrieveAllUsersByPolicyVersion.OldRetrieveAllUsersByPolicyVersionBuilder OldRetrieveAllUsersByPolicyVersionOp
         {
-            get { return Operation.RetrieveAllUsersByPolicyVersion.Builder.SetWrapperObject(this); }
+            get { return Operation.OldRetrieveAllUsersByPolicyVersion.Builder.SetWrapperObject(this); }
         }
-        public ChangePreferenceConsent1.ChangePreferenceConsent1Builder ChangePreferenceConsent1Op
+        public PublicChangePreferenceConsent.PublicChangePreferenceConsentBuilder PublicChangePreferenceConsentOp
         {
-            get { return Operation.ChangePreferenceConsent1.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicChangePreferenceConsent.Builder.SetWrapperObject(this); }
         }
         public AcceptVersionedPolicy.AcceptVersionedPolicyBuilder AcceptVersionedPolicyOp
         {
@@ -53,9 +53,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
             get { return Operation.IndirectBulkAcceptVersionedPolicyV2.Builder.SetWrapperObject(this); }
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder IndirectBulkAcceptVersionedPolicy1Op
+        public PublicIndirectBulkAcceptVersionedPolicy.PublicIndirectBulkAcceptVersionedPolicyBuilder PublicIndirectBulkAcceptVersionedPolicyOp
         {
-            get { return Operation.IndirectBulkAcceptVersionedPolicy1.Builder.SetWrapperObject(this); }
+            get { return Operation.PublicIndirectBulkAcceptVersionedPolicy.Builder.SetWrapperObject(this); }
         }
         #endregion
 
@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements(RetrieveAcceptedAgreements input)
+        public List<Model.RetrieveAcceptedAgreementResponse>? OldRetrieveAcceptedAgreements(OldRetrieveAcceptedAgreements input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> RetrieveAcceptedAgreementsAsync(RetrieveAcceptedAgreements input)
+        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> OldRetrieveAcceptedAgreementsAsync(OldRetrieveAcceptedAgreements input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PagedRetrieveUserAcceptedAgreementResponse? RetrieveAllUsersByPolicyVersion(RetrieveAllUsersByPolicyVersion input)
+        public Model.PagedRetrieveUserAcceptedAgreementResponse? OldRetrieveAllUsersByPolicyVersion(OldRetrieveAllUsersByPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -99,7 +99,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> RetrieveAllUsersByPolicyVersionAsync(RetrieveAllUsersByPolicyVersion input)
+        public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> OldRetrieveAllUsersByPolicyVersionAsync(OldRetrieveAllUsersByPolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -107,7 +107,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void ChangePreferenceConsent1(ChangePreferenceConsent1 input)
+        public void PublicChangePreferenceConsent(PublicChangePreferenceConsent input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -115,7 +115,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task ChangePreferenceConsent1Async(ChangePreferenceConsent1 input)
+        public async Task PublicChangePreferenceConsentAsync(PublicChangePreferenceConsent input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -192,7 +192,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
 #pragma warning restore ab_deprecated_operation
 #pragma warning disable ab_deprecated_operation
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
-        public Model.AcceptAgreementResponse? IndirectBulkAcceptVersionedPolicy1(IndirectBulkAcceptVersionedPolicy1 input)
+        public Model.AcceptAgreementResponse? PublicIndirectBulkAcceptVersionedPolicy(PublicIndirectBulkAcceptVersionedPolicy input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -200,7 +200,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.AcceptAgreementResponse?> IndirectBulkAcceptVersionedPolicy1Async(IndirectBulkAcceptVersionedPolicy1 input)
+        public async Task<Model.AcceptAgreementResponse?> PublicIndirectBulkAcceptVersionedPolicyAsync(PublicIndirectBulkAcceptVersionedPolicy input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

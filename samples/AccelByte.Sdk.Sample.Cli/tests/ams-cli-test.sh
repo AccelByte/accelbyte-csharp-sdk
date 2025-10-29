@@ -340,6 +340,7 @@ $CLI_EXE \
     --sortDirection 'PPG5sAIfYtYozA2O' \
     --status 'ntGCwQSHHdPLwjTn' \
     --tag 'grvb2E1X9ecBBhRA' \
+    --targetArchitecture 'YjR7c4x5bIk8pVpx' \
     > test.out 2>&1
 eval_tap $? 27 'ImageList' test.out
 
@@ -355,7 +356,7 @@ eval_tap $? 28 'ImagesStorage' test.out
 $CLI_EXE \
     --sn ams \
     --op ImageGet \
-    --imageID 'YjR7c4x5bIk8pVpx' \
+    --imageID 'dUWOPel3TiwTycqp' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 29 'ImageGet' test.out
@@ -364,18 +365,18 @@ eval_tap $? 29 'ImageGet' test.out
 $CLI_EXE \
     --sn ams \
     --op ImageMarkForDeletion \
-    --imageID 'dUWOPel3TiwTycqp' \
+    --imageID 'VdINXzvkSp0WbvxQ' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 30 'ImageMarkForDeletion' test.out
 
 #- 31 ImagePatch
 # body param: body
-echo '{"addedTags": ["VdINXzvkSp0WbvxQ", "WI0QGCOx7eICkauW", "bFrSnU7d1Buhdwli"], "isProtected": false, "name": "SDdmGVfegiD3mrVQ", "removedTags": ["aUr3oT88Dfc7114Q", "FGwTzBVDg5v71kGC", "Et7h1mVwIQCJmQkv"]}' > $TEMP_JSON_INPUT
+echo '{"addedTags": ["WI0QGCOx7eICkauW", "bFrSnU7d1Buhdwli", "TSDdmGVfegiD3mrV"], "isProtected": true, "name": "aUr3oT88Dfc7114Q", "removedTags": ["FGwTzBVDg5v71kGC", "Et7h1mVwIQCJmQkv", "WbQrn2W0VkOF0pQO"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op ImagePatch \
-    --imageID 'WbQrn2W0VkOF0pQO' \
+    --imageID 'Y0UCcViiFKNjkT5h' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -385,7 +386,7 @@ eval_tap $? 31 'ImagePatch' test.out
 $CLI_EXE \
     --sn ams \
     --op ImageUnmarkForDeletion \
-    --imageID 'Y0UCcViiFKNjkT5h' \
+    --imageID 'cONCaOyATBFgqLeA' \
     --namespace $AB_NAMESPACE \
     > test.out 2>&1
 eval_tap $? 32 'ImageUnmarkForDeletion' test.out
@@ -395,18 +396,18 @@ $CLI_EXE \
     --sn ams \
     --op QoSRegionsGet \
     --namespace $AB_NAMESPACE \
-    --status 'cONCaOyATBFgqLeA' \
+    --status 'zvdcUEhWRo6ROvbu' \
     > test.out 2>&1
 eval_tap $? 33 'QoSRegionsGet' test.out
 
 #- 34 QoSRegionsUpdate
 # body param: body
-echo '{"status": "zvdcUEhWRo6ROvbu"}' > $TEMP_JSON_INPUT
+echo '{"status": "PQwl9dVfJQGkDR00"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op QoSRegionsUpdate \
     --namespace $AB_NAMESPACE \
-    --region 'PQwl9dVfJQGkDR00' \
+    --region 'ofXsbnEzHiRs0NmG' \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
 eval_tap $? 34 'QoSRegionsUpdate' test.out
@@ -424,7 +425,7 @@ $CLI_EXE \
     --sn ams \
     --op FleetServerInfo \
     --namespace $AB_NAMESPACE \
-    --serverID 'ofXsbnEzHiRs0NmG' \
+    --serverID 'hxv1vuN7Xv6OuG6R' \
     > test.out 2>&1
 eval_tap $? 36 'FleetServerInfo' test.out
 
@@ -433,7 +434,7 @@ $CLI_EXE \
     --sn ams \
     --op FleetServerConnectionInfo \
     --namespace $AB_NAMESPACE \
-    --serverID 'hxv1vuN7Xv6OuG6R' \
+    --serverID 'R1jPh8RblvnfNiAB' \
     > test.out 2>&1
 eval_tap $? 37 'FleetServerConnectionInfo' test.out
 
@@ -442,7 +443,7 @@ $CLI_EXE \
     --sn ams \
     --op ServerHistory \
     --namespace $AB_NAMESPACE \
-    --serverID 'R1jPh8RblvnfNiAB' \
+    --serverID 'Rf1gdXM7QlAlnjAf' \
     > test.out 2>&1
 eval_tap $? 38 'ServerHistory' test.out
 
@@ -464,11 +465,11 @@ eval_tap $? 40 'AccountGet' test.out
 
 #- 41 FleetClaimByID
 # body param: body
-echo '{"region": "Rf1gdXM7QlAlnjAf", "sessionId": "gxOdZdf9tLHO1qrN"}' > $TEMP_JSON_INPUT
+echo '{"region": "gxOdZdf9tLHO1qrN", "sessionId": "yhmUEADczzrL31Hu"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByID \
-    --fleetID 'yhmUEADczzrL31Hu' \
+    --fleetID 'YKsCBBgwb1hGjHJg' \
     --namespace $AB_NAMESPACE \
     --reqfile $TEMP_JSON_INPUT \
     > test.out 2>&1
@@ -479,13 +480,13 @@ $CLI_EXE \
     --sn ams \
     --op LocalWatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'YKsCBBgwb1hGjHJg' \
+    --watchdogID 'xrcEvnfJqU4hCv5e' \
     > test.out 2>&1
 eval_tap $? 42 'LocalWatchdogConnect' test.out
 
 #- 43 FleetClaimByKeys
 # body param: body
-echo '{"claimKeys": ["xrcEvnfJqU4hCv5e", "gSQDePKSZKp6zwDQ", "S1atvJrALaiplJgR"], "regions": ["hedl5Ewh3jDayYSt", "UiBB1yz3iP8gH88U", "enlMVzIOP8NOf91L"], "sessionId": "sD7cWWOgAs8ThMpA"}' > $TEMP_JSON_INPUT
+echo '{"claimKeys": ["gSQDePKSZKp6zwDQ", "S1atvJrALaiplJgR", "hedl5Ewh3jDayYSt"], "regions": ["UiBB1yz3iP8gH88U", "enlMVzIOP8NOf91L", "sD7cWWOgAs8ThMpA"], "sessionId": "GIapYftYZkBXiEhd"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn ams \
     --op FleetClaimByKeys \
@@ -499,7 +500,7 @@ $CLI_EXE \
     --sn ams \
     --op WatchdogConnect \
     --namespace $AB_NAMESPACE \
-    --watchdogID 'GIapYftYZkBXiEhd' \
+    --watchdogID 'iS41VBAEUvoBlbH0' \
     > test.out 2>&1
 eval_tap $? 44 'WatchdogConnect' test.out
 

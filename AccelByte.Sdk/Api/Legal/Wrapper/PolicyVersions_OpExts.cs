@@ -13,92 +13,92 @@ namespace AccelByte.Sdk.Api
     public static class LegalPolicyVersions_OpExts
     {
         public static Legal.Model.UpdatePolicyVersionResponse? Execute(
-            this UpdatePolicyVersion.UpdatePolicyVersionBuilder builder,
+            this OldUpdatePolicyVersion.OldUpdatePolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            UpdatePolicyVersion op = builder.Build(
+            OldUpdatePolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).UpdatePolicyVersion(op);
+            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldUpdatePolicyVersion(op);
         }
         public static async Task<Legal.Model.UpdatePolicyVersionResponse?> ExecuteAsync(
-            this UpdatePolicyVersion.UpdatePolicyVersionBuilder builder,
+            this OldUpdatePolicyVersion.OldUpdatePolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            UpdatePolicyVersion op = builder.Build(
+            OldUpdatePolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).UpdatePolicyVersionAsync(op);
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldUpdatePolicyVersionAsync(op);
         }
         public static void Execute(
-            this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
+            this OldPublishPolicyVersion.OldPublishPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            PublishPolicyVersion op = builder.Build(
+            OldPublishPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).PublishPolicyVersion(op);
+            ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldPublishPolicyVersion(op);
         }
         public static async Task ExecuteAsync(
-            this PublishPolicyVersion.PublishPolicyVersionBuilder builder,
+            this OldPublishPolicyVersion.OldPublishPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            PublishPolicyVersion op = builder.Build(
+            OldPublishPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).PublishPolicyVersionAsync(op);
+            await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldPublishPolicyVersionAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
-            this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
+            this OldRetrieveSinglePolicyVersion.OldRetrieveSinglePolicyVersionBuilder builder,
             string policyId
         )
         {
-            RetrieveSinglePolicyVersion op = builder.Build(
+            OldRetrieveSinglePolicyVersion op = builder.Build(
                 policyId
             );
 
-            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).RetrieveSinglePolicyVersion(op);
+            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldRetrieveSinglePolicyVersion(op);
         }
         public static async Task<List<Legal.Model.RetrievePolicyVersionResponse>?> ExecuteAsync(
-            this RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder builder,
+            this OldRetrieveSinglePolicyVersion.OldRetrieveSinglePolicyVersionBuilder builder,
             string policyId
         )
         {
-            RetrieveSinglePolicyVersion op = builder.Build(
+            OldRetrieveSinglePolicyVersion op = builder.Build(
                 policyId
             );
 
-            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).RetrieveSinglePolicyVersionAsync(op);
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldRetrieveSinglePolicyVersionAsync(op);
         }
         public static Legal.Model.CreatePolicyVersionResponse? Execute(
-            this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
+            this OldCreatePolicyVersion.OldCreatePolicyVersionBuilder builder,
             string policyId
         )
         {
-            CreatePolicyVersion op = builder.Build(
+            OldCreatePolicyVersion op = builder.Build(
                 policyId
             );
 
-            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersion(op);
+            return ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldCreatePolicyVersion(op);
         }
         public static async Task<Legal.Model.CreatePolicyVersionResponse?> ExecuteAsync(
-            this CreatePolicyVersion.CreatePolicyVersionBuilder builder,
+            this OldCreatePolicyVersion.OldCreatePolicyVersionBuilder builder,
             string policyId
         )
         {
-            CreatePolicyVersion op = builder.Build(
+            OldCreatePolicyVersion op = builder.Build(
                 policyId
             );
 
-            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).CreatePolicyVersionAsync(op);
+            return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldCreatePolicyVersionAsync(op);
         }
     }
 }

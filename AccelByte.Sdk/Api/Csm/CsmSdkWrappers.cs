@@ -101,6 +101,17 @@ namespace AccelByte.Sdk.Core
         }
         private ImageV2? _ImageV2 = null;
 
+        public ManagedResources ManagedResources
+        {
+            get
+            {
+                if (_ManagedResources == null)
+                    _ManagedResources = new ManagedResources(_SdkObject);
+                return _ManagedResources;
+            }
+        }
+        private ManagedResources? _ManagedResources = null;
+
         public ConfigurationV2 ConfigurationV2
         {
             get

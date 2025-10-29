@@ -102,6 +102,46 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation CreateNoSQLDatabaseCredentialV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createnosqldatabasecredentialv2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation GetNoSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getnosqldatabasev2 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation CreateNoSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createnosqldatabasev2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteNoSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletenosqldatabasev2 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
 ### Operation UpdateAppResourcesV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -328,6 +368,50 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn csm \
     --op deletedeploymentv2 \
     --deploymentId <deploymentId value> \
+    --namespace <namespace value>
+```
+
+### Operation GetNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getnosqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation UpdateNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op updatenosqlclusterv2 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation CreateNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createnosqlclusterv2 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletenosqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation GetNoSQLAccessTunnelV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getnosqlaccesstunnelv2 \
     --namespace <namespace value>
 ```
 

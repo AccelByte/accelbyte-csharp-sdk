@@ -35,56 +35,56 @@ namespace AccelByte.Sdk.Api
             return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreementsForMultiUsersAsync(op);
         }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
-            this RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder builder,
+            this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
             string namespace_,
             string userId
         )
         {
-            RetrieveAcceptedAgreements1 op = builder.Build(
+            RetrieveAcceptedAgreements op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements1(op);
+            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements(op);
         }
         public static async Task<List<Legal.Model.RetrieveAcceptedAgreementResponse>?> ExecuteAsync(
-            this RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder builder,
+            this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
             string namespace_,
             string userId
         )
         {
-            RetrieveAcceptedAgreements1 op = builder.Build(
+            RetrieveAcceptedAgreements op = builder.Build(
                 namespace_,
                 userId
             );
 
-            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreements1Async(op);
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAcceptedAgreementsAsync(op);
         }
         public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
-            this RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder builder,
+            this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            RetrieveAllUsersByPolicyVersion1 op = builder.Build(
+            RetrieveAllUsersByPolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion1(op);
+            return ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion(op);
         }
         public static async Task<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse?> ExecuteAsync(
-            this RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder builder,
+            this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
             string namespace_,
             string policyVersionId
         )
         {
-            RetrieveAllUsersByPolicyVersion1 op = builder.Build(
+            RetrieveAllUsersByPolicyVersion op = builder.Build(
                 namespace_,
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion1Async(op);
+            return await ((Legal.Wrapper.AgreementWithNamespace)builder.WrapperObject!).RetrieveAllUsersByPolicyVersionAsync(op);
         }
         public static Legal.Model.DownloadExportedAgreementsInCSVResponse? Execute(
             this DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder builder,

@@ -1,3 +1,9 @@
+<a name="v0.76.0"></a>
+## [v0.76.0]
+### chore
+- **:** add renovate.json
+
+
 <a name="v0.75.0"></a>
 ## [v0.75.0]
 ### chore

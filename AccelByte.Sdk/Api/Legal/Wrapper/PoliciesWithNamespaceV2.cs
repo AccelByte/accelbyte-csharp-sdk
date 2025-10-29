@@ -19,13 +19,13 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
-        public RetrieveLatestPoliciesByNamespaceAndCountryPublic1.RetrieveLatestPoliciesByNamespaceAndCountryPublic1Builder RetrieveLatestPoliciesByNamespaceAndCountryPublic1Op
+        public RetrieveLatestPoliciesByNamespaceAndCountryPublic.RetrieveLatestPoliciesByNamespaceAndCountryPublicBuilder RetrieveLatestPoliciesByNamespaceAndCountryPublicOp
         {
-            get { return Operation.RetrieveLatestPoliciesByNamespaceAndCountryPublic1.Builder.SetWrapperObject(this); }
+            get { return Operation.RetrieveLatestPoliciesByNamespaceAndCountryPublic.Builder.SetWrapperObject(this); }
         }
         #endregion
 
-        public List<Model.RetrieveSimplePolicyPublicResponseV2>? RetrieveLatestPoliciesByNamespaceAndCountryPublic1(RetrieveLatestPoliciesByNamespaceAndCountryPublic1 input)
+        public List<Model.RetrieveSimplePolicyPublicResponseV2>? RetrieveLatestPoliciesByNamespaceAndCountryPublic(RetrieveLatestPoliciesByNamespaceAndCountryPublic input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -33,7 +33,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.RetrieveSimplePolicyPublicResponseV2>?> RetrieveLatestPoliciesByNamespaceAndCountryPublic1Async(RetrieveLatestPoliciesByNamespaceAndCountryPublic1 input)
+        public async Task<List<Model.RetrieveSimplePolicyPublicResponseV2>?> RetrieveLatestPoliciesByNamespaceAndCountryPublicAsync(RetrieveLatestPoliciesByNamespaceAndCountryPublic input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

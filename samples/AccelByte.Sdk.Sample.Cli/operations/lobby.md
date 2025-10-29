@@ -603,11 +603,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn lobby \
     --op getmyofflinenotifications \
-    --namespace <namespace value> \
-    --endTime <endTime value - optional> \
-    --limit <limit value - optional> \
-    --offset <offset value - optional> \
-    --startTime <startTime value - optional>
+    --namespace <namespace value>
 ```
 
 ### Operation NotificationWithTemplate

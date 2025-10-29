@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Api.Ams.Model
         [JsonPropertyName("tags")]
         public List<string>? Tags { get; set; }
 
+        [JsonPropertyName("targetArchitecture")]
+        public string? TargetArchitecture { get; set; }
+
         [JsonPropertyName("uploadedAt")]
         public DateTime? UploadedAt { get; set; }
 

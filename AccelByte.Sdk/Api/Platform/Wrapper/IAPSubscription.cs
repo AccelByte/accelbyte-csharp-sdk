@@ -19,6 +19,30 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
 
         #region Operation Builders
+        public ListOculusSubscriptionGroups.ListOculusSubscriptionGroupsBuilder ListOculusSubscriptionGroupsOp
+        {
+            get { return Operation.ListOculusSubscriptionGroups.Builder.SetWrapperObject(this); }
+        }
+        public CreateOculusSubscriptionGroup.CreateOculusSubscriptionGroupBuilder CreateOculusSubscriptionGroupOp
+        {
+            get { return Operation.CreateOculusSubscriptionGroup.Builder.SetWrapperObject(this); }
+        }
+        public DeleteOculusSubscriptionGroup.DeleteOculusSubscriptionGroupBuilder DeleteOculusSubscriptionGroupOp
+        {
+            get { return Operation.DeleteOculusSubscriptionGroup.Builder.SetWrapperObject(this); }
+        }
+        public ListOculusSubscriptionGroupTier.ListOculusSubscriptionGroupTierBuilder ListOculusSubscriptionGroupTierOp
+        {
+            get { return Operation.ListOculusSubscriptionGroupTier.Builder.SetWrapperObject(this); }
+        }
+        public AddTierIntoMetaQuestSubscriptionGroup.AddTierIntoMetaQuestSubscriptionGroupBuilder AddTierIntoMetaQuestSubscriptionGroupOp
+        {
+            get { return Operation.AddTierIntoMetaQuestSubscriptionGroup.Builder.SetWrapperObject(this); }
+        }
+        public DeleteOculusSubscriptionTier.DeleteOculusSubscriptionTierBuilder DeleteOculusSubscriptionTierOp
+        {
+            get { return Operation.DeleteOculusSubscriptionTier.Builder.SetWrapperObject(this); }
+        }
         public QueryThirdPartySubscription.QueryThirdPartySubscriptionBuilder QueryThirdPartySubscriptionOp
         {
             get { return Operation.QueryThirdPartySubscription.Builder.SetWrapperObject(this); }
@@ -65,6 +89,102 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         }
         #endregion
 
+        public List<Model.ThirdPartySubscriptionGroupInfo>? ListOculusSubscriptionGroups(ListOculusSubscriptionGroups input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ThirdPartySubscriptionGroupInfo>?> ListOculusSubscriptionGroupsAsync(ListOculusSubscriptionGroups input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ThirdPartySubscriptionGroupInfo? CreateOculusSubscriptionGroup(CreateOculusSubscriptionGroup input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ThirdPartySubscriptionGroupInfo?> CreateOculusSubscriptionGroupAsync(CreateOculusSubscriptionGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteOculusSubscriptionGroup(DeleteOculusSubscriptionGroup input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteOculusSubscriptionGroupAsync(DeleteOculusSubscriptionGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public List<Model.ThirdPartySubscriptionTierInfo>? ListOculusSubscriptionGroupTier(ListOculusSubscriptionGroupTier input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<List<Model.ThirdPartySubscriptionTierInfo>?> ListOculusSubscriptionGroupTierAsync(ListOculusSubscriptionGroupTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ThirdPartySubscriptionTierInfo? AddTierIntoMetaQuestSubscriptionGroup(AddTierIntoMetaQuestSubscriptionGroup input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ThirdPartySubscriptionTierInfo?> AddTierIntoMetaQuestSubscriptionGroupAsync(AddTierIntoMetaQuestSubscriptionGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void DeleteOculusSubscriptionTier(DeleteOculusSubscriptionTier input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task DeleteOculusSubscriptionTierAsync(DeleteOculusSubscriptionTier input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.ThirdPartyUserSubscriptionPagingSlicedResult? QueryThirdPartySubscription(QueryThirdPartySubscription input)
         {
             var response = _sdk.RunRequest(input);

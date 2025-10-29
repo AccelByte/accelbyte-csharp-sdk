@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? AdditionalData { get; set; }
 
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
+
         [JsonPropertyName("statCode")]
         public string? StatCode { get; set; }
 
@@ -32,6 +36,10 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonPropertyName("additionalData")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public T1? AdditionalData { get; set; }
+
+        [JsonPropertyName("requestId")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? RequestId { get; set; }
 
         [JsonPropertyName("statCode")]
         public string? StatCode { get; set; }

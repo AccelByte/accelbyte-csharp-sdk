@@ -39,56 +39,56 @@ namespace AccelByte.Sdk.Api
             await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).DeletePolicyAsync(op);
         }
         public static void Execute(
-            this UpdatePolicy1.UpdatePolicy1Builder builder,
+            this UpdatePolicy.UpdatePolicyBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            UpdatePolicy1 op = builder.Build(
+            UpdatePolicy op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicy1(op);
+            ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicy(op);
         }
         public static async Task ExecuteAsync(
-            this UpdatePolicy1.UpdatePolicy1Builder builder,
+            this UpdatePolicy.UpdatePolicyBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            UpdatePolicy1 op = builder.Build(
+            UpdatePolicy op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicy1Async(op);
+            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).UpdatePolicyAsync(op);
         }
         public static void Execute(
-            this SetDefaultPolicy3.SetDefaultPolicy3Builder builder,
+            this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            SetDefaultPolicy3 op = builder.Build(
+            SetDefaultPolicy op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicy3(op);
+            ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicy(op);
         }
         public static async Task ExecuteAsync(
-            this SetDefaultPolicy3.SetDefaultPolicy3Builder builder,
+            this SetDefaultPolicy.SetDefaultPolicyBuilder builder,
             string namespace_,
             string policyId
         )
         {
-            SetDefaultPolicy3 op = builder.Build(
+            SetDefaultPolicy op = builder.Build(
                 namespace_,
                 policyId
             );
 
-            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicy3Async(op);
+            await ((Legal.Wrapper.PoliciesWithNamespace)builder.WrapperObject!).SetDefaultPolicyAsync(op);
         }
     }
 }

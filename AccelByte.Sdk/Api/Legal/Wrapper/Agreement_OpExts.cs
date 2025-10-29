@@ -39,66 +39,66 @@ namespace AccelByte.Sdk.Api
             await ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsentAsync(op);
         }
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
-            this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
+            this OldRetrieveAcceptedAgreements.OldRetrieveAcceptedAgreementsBuilder builder,
             string userId
         )
         {
-            RetrieveAcceptedAgreements op = builder.Build(
+            OldRetrieveAcceptedAgreements op = builder.Build(
                 userId
             );
 
-            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAcceptedAgreements(op);
+            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).OldRetrieveAcceptedAgreements(op);
         }
         public static async Task<List<Legal.Model.RetrieveAcceptedAgreementResponse>?> ExecuteAsync(
-            this RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder builder,
+            this OldRetrieveAcceptedAgreements.OldRetrieveAcceptedAgreementsBuilder builder,
             string userId
         )
         {
-            RetrieveAcceptedAgreements op = builder.Build(
+            OldRetrieveAcceptedAgreements op = builder.Build(
                 userId
             );
 
-            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAcceptedAgreementsAsync(op);
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).OldRetrieveAcceptedAgreementsAsync(op);
         }
         public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
-            this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
+            this OldRetrieveAllUsersByPolicyVersion.OldRetrieveAllUsersByPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            RetrieveAllUsersByPolicyVersion op = builder.Build(
+            OldRetrieveAllUsersByPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAllUsersByPolicyVersion(op);
+            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).OldRetrieveAllUsersByPolicyVersion(op);
         }
         public static async Task<Legal.Model.PagedRetrieveUserAcceptedAgreementResponse?> ExecuteAsync(
-            this RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder builder,
+            this OldRetrieveAllUsersByPolicyVersion.OldRetrieveAllUsersByPolicyVersionBuilder builder,
             string policyVersionId
         )
         {
-            RetrieveAllUsersByPolicyVersion op = builder.Build(
+            OldRetrieveAllUsersByPolicyVersion op = builder.Build(
                 policyVersionId
             );
 
-            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).RetrieveAllUsersByPolicyVersionAsync(op);
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).OldRetrieveAllUsersByPolicyVersionAsync(op);
         }
         public static void Execute(
-            this ChangePreferenceConsent1.ChangePreferenceConsent1Builder builder
+            this PublicChangePreferenceConsent.PublicChangePreferenceConsentBuilder builder
         )
         {
-            ChangePreferenceConsent1 op = builder.Build(
+            PublicChangePreferenceConsent op = builder.Build(
             );
 
-            ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsent1(op);
+            ((Legal.Wrapper.Agreement)builder.WrapperObject!).PublicChangePreferenceConsent(op);
         }
         public static async Task ExecuteAsync(
-            this ChangePreferenceConsent1.ChangePreferenceConsent1Builder builder
+            this PublicChangePreferenceConsent.PublicChangePreferenceConsentBuilder builder
         )
         {
-            ChangePreferenceConsent1 op = builder.Build(
+            PublicChangePreferenceConsent op = builder.Build(
             );
 
-            await ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsent1Async(op);
+            await ((Legal.Wrapper.Agreement)builder.WrapperObject!).PublicChangePreferenceConsentAsync(op);
         }
         public static void Execute(
             this AcceptVersionedPolicy.AcceptVersionedPolicyBuilder builder,
@@ -195,26 +195,26 @@ namespace AccelByte.Sdk.Api
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.AcceptAgreementResponse? Execute(
-            this IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder builder,
+            this PublicIndirectBulkAcceptVersionedPolicy.PublicIndirectBulkAcceptVersionedPolicyBuilder builder,
             string userId
         )
         {
-            IndirectBulkAcceptVersionedPolicy1 op = builder.Build(
+            PublicIndirectBulkAcceptVersionedPolicy op = builder.Build(
                 userId
             );
 
-            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy1(op);
+            return ((Legal.Wrapper.Agreement)builder.WrapperObject!).PublicIndirectBulkAcceptVersionedPolicy(op);
         }
         public static async Task<Legal.Model.AcceptAgreementResponse?> ExecuteAsync(
-            this IndirectBulkAcceptVersionedPolicy1.IndirectBulkAcceptVersionedPolicy1Builder builder,
+            this PublicIndirectBulkAcceptVersionedPolicy.PublicIndirectBulkAcceptVersionedPolicyBuilder builder,
             string userId
         )
         {
-            IndirectBulkAcceptVersionedPolicy1 op = builder.Build(
+            PublicIndirectBulkAcceptVersionedPolicy op = builder.Build(
                 userId
             );
 
-            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).IndirectBulkAcceptVersionedPolicy1Async(op);
+            return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).PublicIndirectBulkAcceptVersionedPolicyAsync(op);
         }
     }
 }

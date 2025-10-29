@@ -19,25 +19,25 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
-        public UpdatePolicyVersion.UpdatePolicyVersionBuilder UpdatePolicyVersionOp
+        public OldUpdatePolicyVersion.OldUpdatePolicyVersionBuilder OldUpdatePolicyVersionOp
         {
-            get { return Operation.UpdatePolicyVersion.Builder.SetWrapperObject(this); }
+            get { return Operation.OldUpdatePolicyVersion.Builder.SetWrapperObject(this); }
         }
-        public PublishPolicyVersion.PublishPolicyVersionBuilder PublishPolicyVersionOp
+        public OldPublishPolicyVersion.OldPublishPolicyVersionBuilder OldPublishPolicyVersionOp
         {
-            get { return Operation.PublishPolicyVersion.Builder.SetWrapperObject(this); }
+            get { return Operation.OldPublishPolicyVersion.Builder.SetWrapperObject(this); }
         }
-        public RetrieveSinglePolicyVersion.RetrieveSinglePolicyVersionBuilder RetrieveSinglePolicyVersionOp
+        public OldRetrieveSinglePolicyVersion.OldRetrieveSinglePolicyVersionBuilder OldRetrieveSinglePolicyVersionOp
         {
-            get { return Operation.RetrieveSinglePolicyVersion.Builder.SetWrapperObject(this); }
+            get { return Operation.OldRetrieveSinglePolicyVersion.Builder.SetWrapperObject(this); }
         }
-        public CreatePolicyVersion.CreatePolicyVersionBuilder CreatePolicyVersionOp
+        public OldCreatePolicyVersion.OldCreatePolicyVersionBuilder OldCreatePolicyVersionOp
         {
-            get { return Operation.CreatePolicyVersion.Builder.SetWrapperObject(this); }
+            get { return Operation.OldCreatePolicyVersion.Builder.SetWrapperObject(this); }
         }
         #endregion
 
-        public Model.UpdatePolicyVersionResponse? UpdatePolicyVersion(UpdatePolicyVersion input)
+        public Model.UpdatePolicyVersionResponse? OldUpdatePolicyVersion(OldUpdatePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -45,7 +45,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.UpdatePolicyVersionResponse?> UpdatePolicyVersionAsync(UpdatePolicyVersion input)
+        public async Task<Model.UpdatePolicyVersionResponse?> OldUpdatePolicyVersionAsync(OldUpdatePolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -53,7 +53,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void PublishPolicyVersion(PublishPolicyVersion input)
+        public void OldPublishPolicyVersion(OldPublishPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             input.ParseResponse(
@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task PublishPolicyVersionAsync(PublishPolicyVersion input)
+        public async Task OldPublishPolicyVersionAsync(OldPublishPolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(
@@ -69,7 +69,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrievePolicyVersionResponse>? RetrieveSinglePolicyVersion(RetrieveSinglePolicyVersion input)
+        public List<Model.RetrievePolicyVersionResponse>? OldRetrieveSinglePolicyVersion(OldRetrieveSinglePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -77,7 +77,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.RetrievePolicyVersionResponse>?> RetrieveSinglePolicyVersionAsync(RetrieveSinglePolicyVersion input)
+        public async Task<List<Model.RetrievePolicyVersionResponse>?> OldRetrieveSinglePolicyVersionAsync(OldRetrieveSinglePolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -85,7 +85,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.CreatePolicyVersionResponse? CreatePolicyVersion(CreatePolicyVersion input)
+        public Model.CreatePolicyVersionResponse? OldCreatePolicyVersion(OldCreatePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -93,7 +93,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.CreatePolicyVersionResponse?> CreatePolicyVersionAsync(CreatePolicyVersion input)
+        public async Task<Model.CreatePolicyVersionResponse?> OldCreatePolicyVersionAsync(OldCreatePolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

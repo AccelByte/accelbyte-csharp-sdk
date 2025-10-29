@@ -31,114 +31,114 @@ namespace AccelByte.Sdk.Api
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllLegalPoliciesAsync(op);
         }
         public static Legal.Model.CreateBasePolicyResponse? Execute(
-            this CreatePolicy.CreatePolicyBuilder builder
+            this OldCreatePolicy.OldCreatePolicyBuilder builder
         )
         {
-            CreatePolicy op = builder.Build(
+            OldCreatePolicy op = builder.Build(
             );
 
-            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).CreatePolicy(op);
+            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldCreatePolicy(op);
         }
         public static async Task<Legal.Model.CreateBasePolicyResponse?> ExecuteAsync(
-            this CreatePolicy.CreatePolicyBuilder builder
+            this OldCreatePolicy.OldCreatePolicyBuilder builder
         )
         {
-            CreatePolicy op = builder.Build(
+            OldCreatePolicy op = builder.Build(
             );
 
-            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).CreatePolicyAsync(op);
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldCreatePolicyAsync(op);
         }
         public static Legal.Model.RetrieveBasePolicyResponse? Execute(
-            this RetrieveSinglePolicy.RetrieveSinglePolicyBuilder builder,
+            this OldRetrieveSinglePolicy.OldRetrieveSinglePolicyBuilder builder,
             string basePolicyId
         )
         {
-            RetrieveSinglePolicy op = builder.Build(
+            OldRetrieveSinglePolicy op = builder.Build(
                 basePolicyId
             );
 
-            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveSinglePolicy(op);
+            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrieveSinglePolicy(op);
         }
         public static async Task<Legal.Model.RetrieveBasePolicyResponse?> ExecuteAsync(
-            this RetrieveSinglePolicy.RetrieveSinglePolicyBuilder builder,
+            this OldRetrieveSinglePolicy.OldRetrieveSinglePolicyBuilder builder,
             string basePolicyId
         )
         {
-            RetrieveSinglePolicy op = builder.Build(
+            OldRetrieveSinglePolicy op = builder.Build(
                 basePolicyId
             );
 
-            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveSinglePolicyAsync(op);
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrieveSinglePolicyAsync(op);
         }
         public static Legal.Model.UpdateBasePolicyResponse? Execute(
-            this PartialUpdatePolicy.PartialUpdatePolicyBuilder builder,
+            this OldPartialUpdatePolicy.OldPartialUpdatePolicyBuilder builder,
             string basePolicyId
         )
         {
-            PartialUpdatePolicy op = builder.Build(
+            OldPartialUpdatePolicy op = builder.Build(
                 basePolicyId
             );
 
-            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).PartialUpdatePolicy(op);
+            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldPartialUpdatePolicy(op);
         }
         public static async Task<Legal.Model.UpdateBasePolicyResponse?> ExecuteAsync(
-            this PartialUpdatePolicy.PartialUpdatePolicyBuilder builder,
+            this OldPartialUpdatePolicy.OldPartialUpdatePolicyBuilder builder,
             string basePolicyId
         )
         {
-            PartialUpdatePolicy op = builder.Build(
+            OldPartialUpdatePolicy op = builder.Build(
                 basePolicyId
             );
 
-            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).PartialUpdatePolicyAsync(op);
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldPartialUpdatePolicyAsync(op);
         }
         public static Legal.Model.RetrievePolicyResponse? Execute(
-            this RetrievePolicyCountry.RetrievePolicyCountryBuilder builder,
+            this OldRetrievePolicyCountry.OldRetrievePolicyCountryBuilder builder,
             string basePolicyId,
             string countryCode
         )
         {
-            RetrievePolicyCountry op = builder.Build(
+            OldRetrievePolicyCountry op = builder.Build(
                 basePolicyId,
                 countryCode
             );
 
-            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrievePolicyCountry(op);
+            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrievePolicyCountry(op);
         }
         public static async Task<Legal.Model.RetrievePolicyResponse?> ExecuteAsync(
-            this RetrievePolicyCountry.RetrievePolicyCountryBuilder builder,
+            this OldRetrievePolicyCountry.OldRetrievePolicyCountryBuilder builder,
             string basePolicyId,
             string countryCode
         )
         {
-            RetrievePolicyCountry op = builder.Build(
+            OldRetrievePolicyCountry op = builder.Build(
                 basePolicyId,
                 countryCode
             );
 
-            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrievePolicyCountryAsync(op);
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrievePolicyCountryAsync(op);
         }
         public static List<Legal.Model.RetrievePolicyTypeResponse>? Execute(
-            this RetrieveAllPolicyTypes.RetrieveAllPolicyTypesBuilder builder,
+            this OldRetrieveAllPolicyTypes.OldRetrieveAllPolicyTypesBuilder builder,
             int limit
         )
         {
-            RetrieveAllPolicyTypes op = builder.Build(
+            OldRetrieveAllPolicyTypes op = builder.Build(
                 limit
             );
 
-            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllPolicyTypes(op);
+            return ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrieveAllPolicyTypes(op);
         }
         public static async Task<List<Legal.Model.RetrievePolicyTypeResponse>?> ExecuteAsync(
-            this RetrieveAllPolicyTypes.RetrieveAllPolicyTypesBuilder builder,
+            this OldRetrieveAllPolicyTypes.OldRetrieveAllPolicyTypesBuilder builder,
             int limit
         )
         {
-            RetrieveAllPolicyTypes op = builder.Build(
+            OldRetrieveAllPolicyTypes op = builder.Build(
                 limit
             );
 
-            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllPolicyTypesAsync(op);
+            return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrieveAllPolicyTypesAsync(op);
         }
     }
 }

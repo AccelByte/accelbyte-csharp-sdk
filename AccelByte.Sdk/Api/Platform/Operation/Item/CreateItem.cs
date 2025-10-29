@@ -23,6 +23,8 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// 
     ///     {
     /// 
+    ///        "itemId": "b478be9ad42f4d0f8ba49ef3ef605a83" (optional, UUID V4 without hyphen format)
+    /// 
     ///        "categoryPath": "/games",
     /// 
     ///        "localizations": {

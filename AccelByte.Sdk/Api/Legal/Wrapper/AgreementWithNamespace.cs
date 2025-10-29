@@ -23,13 +23,13 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.RetrieveAcceptedAgreementsForMultiUsers.Builder.SetWrapperObject(this); }
         }
-        public RetrieveAcceptedAgreements1.RetrieveAcceptedAgreements1Builder RetrieveAcceptedAgreements1Op
+        public RetrieveAcceptedAgreements.RetrieveAcceptedAgreementsBuilder RetrieveAcceptedAgreementsOp
         {
-            get { return Operation.RetrieveAcceptedAgreements1.Builder.SetWrapperObject(this); }
+            get { return Operation.RetrieveAcceptedAgreements.Builder.SetWrapperObject(this); }
         }
-        public RetrieveAllUsersByPolicyVersion1.RetrieveAllUsersByPolicyVersion1Builder RetrieveAllUsersByPolicyVersion1Op
+        public RetrieveAllUsersByPolicyVersion.RetrieveAllUsersByPolicyVersionBuilder RetrieveAllUsersByPolicyVersionOp
         {
-            get { return Operation.RetrieveAllUsersByPolicyVersion1.Builder.SetWrapperObject(this); }
+            get { return Operation.RetrieveAllUsersByPolicyVersion.Builder.SetWrapperObject(this); }
         }
         public DownloadExportedAgreementsInCSV.DownloadExportedAgreementsInCSVBuilder DownloadExportedAgreementsInCSVOp
         {
@@ -57,7 +57,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements1(RetrieveAcceptedAgreements1 input)
+        public List<Model.RetrieveAcceptedAgreementResponse>? RetrieveAcceptedAgreements(RetrieveAcceptedAgreements input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -65,7 +65,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> RetrieveAcceptedAgreements1Async(RetrieveAcceptedAgreements1 input)
+        public async Task<List<Model.RetrieveAcceptedAgreementResponse>?> RetrieveAcceptedAgreementsAsync(RetrieveAcceptedAgreements input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -73,7 +73,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.PagedRetrieveUserAcceptedAgreementResponse? RetrieveAllUsersByPolicyVersion1(RetrieveAllUsersByPolicyVersion1 input)
+        public Model.PagedRetrieveUserAcceptedAgreementResponse? RetrieveAllUsersByPolicyVersion(RetrieveAllUsersByPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> RetrieveAllUsersByPolicyVersion1Async(RetrieveAllUsersByPolicyVersion1 input)
+        public async Task<Model.PagedRetrieveUserAcceptedAgreementResponse?> RetrieveAllUsersByPolicyVersionAsync(RetrieveAllUsersByPolicyVersion input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
