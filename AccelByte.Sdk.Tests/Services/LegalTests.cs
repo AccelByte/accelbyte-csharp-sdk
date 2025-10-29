@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Tests.Services
                 //Policy does not exists. so we create it.
 
                 //Retrieving policy type id for Marketing Preference
-                List<RetrievePolicyTypeResponse>? policyTypes = _Sdk.Legal.BaseLegalPolicies.RetrieveAllPolicyTypesOp
+                List<RetrievePolicyTypeResponse>? policyTypes = _Sdk.Legal.BaseLegalPolicies.OldRetrieveAllPolicyTypesOp
                     .SetOffset(0)
                     .Execute(100);
                 Assert.IsNotNull(policyTypes);
@@ -79,7 +79,7 @@ namespace AccelByte.Sdk.Tests.Services
                     AffectedClientIds = new List<string>()
                 };
 
-                CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.CreatePolicyOp
+                CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.OldCreatePolicyOp
                     .SetBody(createPolicy)
                     .Execute();
                 #endregion
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Tests.Services
             }
 
             #region Get single policy by policy id
-            List<RetrievePolicyVersionResponse>? polVers = _Sdk.Legal.PolicyVersions.RetrieveSinglePolicyVersionOp
+            List<RetrievePolicyVersionResponse>? polVers = _Sdk.Legal.PolicyVersions.OldRetrieveSinglePolicyVersionOp
                 .Execute(targetPolicyId);
             #endregion
             Assert.IsNotNull(polVers);
@@ -103,7 +103,7 @@ namespace AccelByte.Sdk.Tests.Services
                 };
 
                 #region Create policy version
-                CreatePolicyVersionResponse? polVerResp = _Sdk.Legal.PolicyVersions.CreatePolicyVersionOp
+                CreatePolicyVersionResponse? polVerResp = _Sdk.Legal.PolicyVersions.OldCreatePolicyVersionOp
                     .SetBody(policyVersion)
                     .Execute(targetPolicyId);
                 #endregion
@@ -115,7 +115,7 @@ namespace AccelByte.Sdk.Tests.Services
                 targetPolicyVersionId = polVers![0].Id!;
             }
 
-            List<RetrieveLocalizedPolicyVersionResponse>? locPolVers = _Sdk.Legal.LocalizedPolicyVersions.RetrieveLocalizedPolicyVersionsOp
+            List<RetrieveLocalizedPolicyVersionResponse>? locPolVers = _Sdk.Legal.LocalizedPolicyVersions.OldRetrieveLocalizedPolicyVersionsOp
                 .Execute(targetPolicyVersionId);
             Assert.IsNotNull(locPolVers);
             if (locPolVers!.Count <= 0)
@@ -128,7 +128,7 @@ namespace AccelByte.Sdk.Tests.Services
                     Description = "Testing CSharp Server SDK legal endpoints."
                 };
 
-                CreateLocalizedPolicyVersionResponse? locPolResp = _Sdk.Legal.LocalizedPolicyVersions.CreateLocalizedPolicyVersionOp
+                CreateLocalizedPolicyVersionResponse? locPolResp = _Sdk.Legal.LocalizedPolicyVersions.OldCreateLocalizedPolicyVersionOp
                     .SetBody(localPolicy)
                     .Execute(targetPolicyVersionId);
                 Assert.IsNotNull(locPolResp);
