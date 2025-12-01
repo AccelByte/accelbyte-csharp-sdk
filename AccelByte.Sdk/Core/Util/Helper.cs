@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2023 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -12,8 +12,8 @@ namespace AccelByte.Sdk.Core.Util
         public static string GenerateCodeVerifier()
         {
             var codeVerifier = new byte[32];
-            var random = new Random();
-            random.NextBytes(codeVerifier);
+            var random = RandomNumberGenerator.Create();
+            random.GetBytes(codeVerifier);
 
             return EncodeBase64Url(codeVerifier);
         }
@@ -67,16 +67,16 @@ namespace AccelByte.Sdk.Core.Util
             return new String(Enumerable.Repeat(chars, length).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-        private static string RandomizeChar(Random random, string source, int length)
+        private static string RandomizeChar(string source, int length)
         {
-            string result = String.Empty;
+            string result = "";
             for (int i = 0; i < length; i++)
-            {
-                char temp = source[random.Next(source.Length)];
+            {                
+                char temp = source[RandomNumberGenerator.GetInt32(source.Length)];
                 while (true)
                 {
                     if (result.IndexOf(temp) > -1)
-                        temp = source[random.Next(source.Length)];
+                        temp = source[RandomNumberGenerator.GetInt32(source.Length)];
                     else
                     {
                         result += temp.ToString();
@@ -89,16 +89,14 @@ namespace AccelByte.Sdk.Core.Util
 
         public static string GenerateRandomPassword(int length)
         {
-            Random random = new Random();
-
-            string final = String.Empty;
+            string final = "";
             int pCount = (length / 3);
 
-            final += RandomizeChar(random, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", pCount);
-            final += RandomizeChar(random, "abcdefghijklmnopqrstuvwxyz", pCount);
+            final += RandomizeChar("ABCDEFGHIJKLMNOPQRSTUVWXYZ", pCount);
+            final += RandomizeChar("abcdefghijklmnopqrstuvwxyz", pCount);
 
             int fCount = (length - (pCount * 2));
-            final += RandomizeChar(random, "0123456789!@#$%^&*()", fCount);
+            final += RandomizeChar("0123456789!@#$%^&*()", fCount);
 
             return final;
         }
