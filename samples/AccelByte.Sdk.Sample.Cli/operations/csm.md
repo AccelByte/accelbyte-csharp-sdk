@@ -70,6 +70,27 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation CreateSubscriptionHandler
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createsubscriptionhandler \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation UnsubscribeTopicHandler
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op unsubscribetopichandler \
+    --app <app value> \
+    --namespace <namespace value> \
+    --topicName <topicName value>
+```
+
 ### Operation CreateDeploymentV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -341,6 +362,38 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation ListTopicsHandler
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op listtopicshandler \
+    --namespace <namespace value> \
+    --fuzzyTopicName <fuzzyTopicName value - optional> \
+    --isSubscribedByAppName <isSubscribedByAppName value - optional> \
+    --isUnsubscribedByAppName <isUnsubscribedByAppName value - optional> \
+    --limit <limit value - optional> \
+    --offset <offset value - optional>
+```
+
+### Operation CreateTopicHandler
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createtopichandler \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteTopicHandler
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletetopichandler \
+    --namespace <namespace value> \
+    --topicName <topicName value>
+```
+
 ### Operation GetListOfDeploymentV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -404,6 +457,22 @@ To set request body using JSON file, replace `--reqbody` argument with `--reqfil
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn csm \
     --op deletenosqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation StartNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op startnosqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation StopNoSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op stopnosqlclusterv2 \
     --namespace <namespace value>
 ```
 

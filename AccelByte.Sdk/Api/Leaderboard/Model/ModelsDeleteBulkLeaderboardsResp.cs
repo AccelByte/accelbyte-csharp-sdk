@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         [JsonPropertyName("failed")]
         public List<ModelsDeleteBulkLeaderboardFailedResp>? Failed { get; set; }
 
+        [JsonPropertyName("success")]
+        public List<ModelsDeleteBulkLeaderboardSuccessResp>? Success { get; set; }
+
     }
 
 

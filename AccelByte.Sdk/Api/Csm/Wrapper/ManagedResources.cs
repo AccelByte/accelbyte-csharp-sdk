@@ -51,6 +51,14 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             get { return Operation.DeleteNoSQLClusterV2.Builder.SetWrapperObject(this); }
         }
+        public StartNoSQLClusterV2.StartNoSQLClusterV2Builder StartNoSQLClusterV2Op
+        {
+            get { return Operation.StartNoSQLClusterV2.Builder.SetWrapperObject(this); }
+        }
+        public StopNoSQLClusterV2.StopNoSQLClusterV2Builder StopNoSQLClusterV2Op
+        {
+            get { return Operation.StopNoSQLClusterV2.Builder.SetWrapperObject(this); }
+        }
         public GetNoSQLAccessTunnelV2.GetNoSQLAccessTunnelV2Builder GetNoSQLAccessTunnelV2Op
         {
             get { return Operation.GetNoSQLAccessTunnelV2.Builder.SetWrapperObject(this); }
@@ -181,6 +189,38 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void StartNoSQLClusterV2(StartNoSQLClusterV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task StartNoSQLClusterV2Async(StartNoSQLClusterV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void StopNoSQLClusterV2(StopNoSQLClusterV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task StopNoSQLClusterV2Async(StopNoSQLClusterV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

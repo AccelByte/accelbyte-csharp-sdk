@@ -17,9 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetUserBanHistoryV3
     ///
     /// Notes:
-    /// - This endpoint retrieve the first page of the data if after and before parameters is empty
-    /// - **The pagination is not working yet**
-    /// 
     /// 
     /// **Authentication:**
     /// The _**userId**_ parameter should match the one in the access token.
@@ -35,11 +32,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
             public bool? ActiveOnly { get; set; }
 
-            public string? After { get; set; }
-
-            public string? Before { get; set; }
-
             public long? Limit { get; set; }
+
+            public long? Offset { get; set; }
 
 
 
@@ -54,21 +49,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
                 return this;
             }
 
-            public PublicGetUserBanHistoryV3Builder SetAfter(string _after)
-            {
-                After = _after;
-                return this;
-            }
-
-            public PublicGetUserBanHistoryV3Builder SetBefore(string _before)
-            {
-                Before = _before;
-                return this;
-            }
-
             public PublicGetUserBanHistoryV3Builder SetLimit(long _limit)
             {
                 Limit = _limit;
+                return this;
+            }
+
+            public PublicGetUserBanHistoryV3Builder SetOffset(long _offset)
+            {
+                Offset = _offset;
                 return this;
             }
 
@@ -103,9 +92,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             PathParams["userId"] = userId;
 
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
-            if (builder.After is not null) QueryParams["after"] = builder.After;
-            if (builder.Before is not null) QueryParams["before"] = builder.Before;
             if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
 
 
 
@@ -120,18 +108,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
             string namespace_,
             string userId,
             bool? activeOnly,
-            string? after,
-            string? before,
-            long? limit
+            long? limit,
+            long? offset
         )
         {
             PathParams["namespace"] = namespace_;
             PathParams["userId"] = userId;
 
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
-            if (after is not null) QueryParams["after"] = after;
-            if (before is not null) QueryParams["before"] = before;
             if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
 
 
 

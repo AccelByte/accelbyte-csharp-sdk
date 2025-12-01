@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// <summary>
     /// retrieveAllLegalPoliciesByNamespace
     ///
-    /// Retrieve all base policies in the namespace.
+    /// Retrieve base policies in the namespace. Set `limit = -1` to retrieve all records
     /// </summary>
     public class RetrieveAllLegalPoliciesByNamespace : AccelByte.Sdk.Core.Operation
     {
@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Legal.Operation
             : OperationBuilder<RetrieveAllLegalPoliciesByNamespaceBuilder>
         {
 
+            public int? Limit { get; set; }
+
+            public int? Offset { get; set; }
+
             public bool? VisibleOnly { get; set; }
 
 
@@ -35,6 +39,18 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
             internal RetrieveAllLegalPoliciesByNamespaceBuilder() { }
 
+
+            public RetrieveAllLegalPoliciesByNamespaceBuilder SetLimit(int _limit)
+            {
+                Limit = _limit;
+                return this;
+            }
+
+            public RetrieveAllLegalPoliciesByNamespaceBuilder SetOffset(int _offset)
+            {
+                Offset = _offset;
+                return this;
+            }
 
             public RetrieveAllLegalPoliciesByNamespaceBuilder SetVisibleOnly(bool _visibleOnly)
             {
@@ -68,6 +84,8 @@ namespace AccelByte.Sdk.Api.Legal.Operation
         {
             PathParams["namespace"] = namespace_;
 
+            if (builder.Limit != null) QueryParams["limit"] = Convert.ToString(builder.Limit)!;
+            if (builder.Offset != null) QueryParams["offset"] = Convert.ToString(builder.Offset)!;
             if (builder.VisibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(builder.VisibleOnly)!;
 
 
@@ -81,11 +99,15 @@ namespace AccelByte.Sdk.Api.Legal.Operation
 
         public RetrieveAllLegalPoliciesByNamespace(
             string namespace_,
+            int? limit,
+            int? offset,
             bool? visibleOnly
         )
         {
             PathParams["namespace"] = namespace_;
 
+            if (limit != null) QueryParams["limit"] = Convert.ToString(limit)!;
+            if (offset != null) QueryParams["offset"] = Convert.ToString(offset)!;
             if (visibleOnly != null) QueryParams["visibleOnly"] = Convert.ToString(visibleOnly)!;
 
 

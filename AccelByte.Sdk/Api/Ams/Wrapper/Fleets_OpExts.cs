@@ -60,6 +60,32 @@ namespace AccelByte.Sdk.Api
 
             return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).FleetCreateAsync(op);
         }
+        public static Ams.Model.ApiFleetBulkDeleteResponse? Execute(
+            this BulkFleetDelete.BulkFleetDeleteBuilder builder,
+            ApiFleetBulkDeleteRequest body,
+            string namespace_
+        )
+        {
+            BulkFleetDelete op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Ams.Wrapper.Fleets)builder.WrapperObject!).BulkFleetDelete(op);
+        }
+        public static async Task<Ams.Model.ApiFleetBulkDeleteResponse?> ExecuteAsync(
+            this BulkFleetDelete.BulkFleetDeleteBuilder builder,
+            ApiFleetBulkDeleteRequest body,
+            string namespace_
+        )
+        {
+            BulkFleetDelete op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Ams.Wrapper.Fleets)builder.WrapperObject!).BulkFleetDeleteAsync(op);
+        }
         public static Ams.Model.ApiFleetGetResponse? Execute(
             this FleetGet.FleetGetBuilder builder,
             string fleetID,

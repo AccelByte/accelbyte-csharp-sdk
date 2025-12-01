@@ -27,6 +27,10 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
         {
             get { return Operation.FleetCreate.Builder.SetWrapperObject(this); }
         }
+        public BulkFleetDelete.BulkFleetDeleteBuilder BulkFleetDeleteOp
+        {
+            get { return Operation.BulkFleetDelete.Builder.SetWrapperObject(this); }
+        }
         public FleetGet.FleetGetBuilder FleetGetOp
         {
             get { return Operation.FleetGet.Builder.SetWrapperObject(this); }
@@ -78,6 +82,22 @@ namespace AccelByte.Sdk.Api.Ams.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApiFleetCreateResponse?> FleetCreateAsync(FleetCreate input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApiFleetBulkDeleteResponse? BulkFleetDelete(BulkFleetDelete input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApiFleetBulkDeleteResponse?> BulkFleetDeleteAsync(BulkFleetDelete input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

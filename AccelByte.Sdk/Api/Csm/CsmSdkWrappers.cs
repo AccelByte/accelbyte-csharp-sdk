@@ -79,6 +79,17 @@ namespace AccelByte.Sdk.Core
         }
         private AppV2? _AppV2 = null;
 
+        public AsyncMessaging AsyncMessaging
+        {
+            get
+            {
+                if (_AsyncMessaging == null)
+                    _AsyncMessaging = new AsyncMessaging(_SdkObject);
+                return _AsyncMessaging;
+            }
+        }
+        private AsyncMessaging? _AsyncMessaging = null;
+
         public DeploymentV2 DeploymentV2
         {
             get

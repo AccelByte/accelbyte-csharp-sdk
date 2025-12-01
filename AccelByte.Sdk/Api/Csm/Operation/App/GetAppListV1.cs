@@ -21,9 +21,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// Gets the List of Apps for AB-Extend Customer
     /// 
     /// Available scenario:
+    /// - scenario 3: `event-handler`
     /// - scenario 1: `function-override`
     /// - scenario 2: `service-extension`
-    /// - scenario 3: `event-handler`
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetAppListV1 : AccelByte.Sdk.Core.Operation

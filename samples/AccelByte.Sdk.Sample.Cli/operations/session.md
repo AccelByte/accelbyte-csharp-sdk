@@ -712,6 +712,18 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --partyId <partyId value>
 ```
 
+### Operation PublicUpdateInsertPartySessionStorage
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicupdateinsertpartysessionstorage \
+    --namespace <namespace value> \
+    --partyId <partyId value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation PublicUpdateInsertPartySessionStorageReserved
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

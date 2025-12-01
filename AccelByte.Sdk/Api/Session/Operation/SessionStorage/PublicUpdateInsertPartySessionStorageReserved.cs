@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicUpdateInsertPartySessionStorageReserved
     ///
     /// **For Internal Use Only**
-    /// Update Insert Party Session Reserved Storage User. User can only update or insert user party session storage data itself.
+    /// Update Insert Party Session Reserved Storage User. User can only update or insert their own reserve storage (non-immutable).
     /// can store generic json
     /// example json can store :
     /// ```

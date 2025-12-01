@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicReadPartySessionStorage.Builder.SetWrapperObject(this); }
         }
+        public PublicUpdateInsertPartySessionStorage.PublicUpdateInsertPartySessionStorageBuilder PublicUpdateInsertPartySessionStorageOp
+        {
+            get { return Operation.PublicUpdateInsertPartySessionStorage.Builder.SetWrapperObject(this); }
+        }
         public PublicUpdateInsertPartySessionStorageReserved.PublicUpdateInsertPartySessionStorageReservedBuilder PublicUpdateInsertPartySessionStorageReservedOp
         {
             get { return Operation.PublicUpdateInsertPartySessionStorageReserved.Builder.SetWrapperObject(this); }
@@ -126,6 +130,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task<Dictionary<string, object>?> PublicReadPartySessionStorageAsync(PublicReadPartySessionStorage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicUpdateInsertPartySessionStorage(PublicUpdateInsertPartySessionStorage input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicUpdateInsertPartySessionStorageAsync(PublicUpdateInsertPartySessionStorage input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

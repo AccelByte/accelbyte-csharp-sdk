@@ -147,6 +147,40 @@ namespace AccelByte.Sdk.Api
             return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReadPartySessionStorageAsync(op);
         }
         public static Dictionary<string, object>? Execute(
+            this PublicUpdateInsertPartySessionStorage.PublicUpdateInsertPartySessionStorageBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicUpdateInsertPartySessionStorage op = builder.Build(
+                body,
+                namespace_,
+                partyId,
+                userId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertPartySessionStorage(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertPartySessionStorage.PublicUpdateInsertPartySessionStorageBuilder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string partyId,
+            string userId
+        )
+        {
+            PublicUpdateInsertPartySessionStorage op = builder.Build(
+                body,
+                namespace_,
+                partyId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertPartySessionStorageAsync(op);
+        }
+        public static Dictionary<string, object>? Execute(
             this PublicUpdateInsertPartySessionStorageReserved.PublicUpdateInsertPartySessionStorageReservedBuilder builder,
             Dictionary<string, object> body,
             string namespace_,

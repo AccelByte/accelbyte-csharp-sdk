@@ -60,6 +60,15 @@
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}/start` | PUT | StartAppV2 | [StartAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/StartAppV2.cs) | [StartAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/StartAppV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/apps/{app}/stop` | PUT | StopAppV2 | [StopAppV2](../../AccelByte.Sdk/Api/Csm/Operation/AppV2/StopAppV2.cs) | [StopAppV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AppV2/StopAppV2.cs) |
 
+### Async Messaging Wrapper:  [AsyncMessaging](../../AccelByte.Sdk/Api/Csm/Wrapper/AsyncMessaging.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+| `/csm/v2/admin/namespaces/{namespace}/apps/{app}/asyncmessaging/topics/subscriptions` | POST | CreateSubscriptionHandler | [CreateSubscriptionHandler](../../AccelByte.Sdk/Api/Csm/Operation/AsyncMessaging/CreateSubscriptionHandler.cs) | [CreateSubscriptionHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AsyncMessaging/CreateSubscriptionHandler.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/apps/{app}/asyncmessaging/topics/{topicName}/subscriptions` | DELETE | UnsubscribeTopicHandler | [UnsubscribeTopicHandler](../../AccelByte.Sdk/Api/Csm/Operation/AsyncMessaging/UnsubscribeTopicHandler.cs) | [UnsubscribeTopicHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AsyncMessaging/UnsubscribeTopicHandler.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/asyncmessaging/topics` | GET | ListTopicsHandler | [ListTopicsHandler](../../AccelByte.Sdk/Api/Csm/Operation/AsyncMessaging/ListTopicsHandler.cs) | [ListTopicsHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AsyncMessaging/ListTopicsHandler.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/asyncmessaging/topics` | POST | CreateTopicHandler | [CreateTopicHandler](../../AccelByte.Sdk/Api/Csm/Operation/AsyncMessaging/CreateTopicHandler.cs) | [CreateTopicHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AsyncMessaging/CreateTopicHandler.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/asyncmessaging/topics/{topicName}` | DELETE | DeleteTopicHandler | [DeleteTopicHandler](../../AccelByte.Sdk/Api/Csm/Operation/AsyncMessaging/DeleteTopicHandler.cs) | [DeleteTopicHandler](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/AsyncMessaging/DeleteTopicHandler.cs) |
+
 ### Deployment V2 Wrapper:  [DeploymentV2](../../AccelByte.Sdk/Api/Csm/Wrapper/DeploymentV2.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -85,6 +94,8 @@
 | `/csm/v2/admin/namespaces/{namespace}/nosql/clusters` | PUT | UpdateNoSQLClusterV2 | [UpdateNoSQLClusterV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/UpdateNoSQLClusterV2.cs) | [UpdateNoSQLClusterV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/UpdateNoSQLClusterV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/nosql/clusters` | POST | CreateNoSQLClusterV2 | [CreateNoSQLClusterV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/CreateNoSQLClusterV2.cs) | [CreateNoSQLClusterV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/CreateNoSQLClusterV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/nosql/clusters` | DELETE | DeleteNoSQLClusterV2 | [DeleteNoSQLClusterV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/DeleteNoSQLClusterV2.cs) | [DeleteNoSQLClusterV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/DeleteNoSQLClusterV2.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/nosql/clusters/start` | PUT | StartNoSQLClusterV2 | [StartNoSQLClusterV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/StartNoSQLClusterV2.cs) | [StartNoSQLClusterV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/StartNoSQLClusterV2.cs) |
+| `/csm/v2/admin/namespaces/{namespace}/nosql/clusters/stop` | PUT | StopNoSQLClusterV2 | [StopNoSQLClusterV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/StopNoSQLClusterV2.cs) | [StopNoSQLClusterV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/StopNoSQLClusterV2.cs) |
 | `/csm/v2/admin/namespaces/{namespace}/nosql/tunnels` | GET | GetNoSQLAccessTunnelV2 | [GetNoSQLAccessTunnelV2](../../AccelByte.Sdk/Api/Csm/Operation/ManagedResources/GetNoSQLAccessTunnelV2.cs) | [GetNoSQLAccessTunnelV2](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Csm/ManagedResources/GetNoSQLAccessTunnelV2.cs) |
 
 ### Configuration V2 Wrapper:  [ConfigurationV2](../../AccelByte.Sdk/Api/Csm/Wrapper/ConfigurationV2.cs)
@@ -151,6 +162,10 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 
+### Async Messaging Wrapper:  [AsyncMessaging](../../AccelByte.Sdk/Api/Csm/Wrapper/AsyncMessaging.cs)
+| Endpoint | Method | ID | Class | Example |
+|---|---|---|---|---|
+
 ### Deployment V2 Wrapper:  [DeploymentV2](../../AccelByte.Sdk/Api/Csm/Wrapper/DeploymentV2.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
@@ -199,6 +214,9 @@
 | `apimodel.CreateDeploymentV2Response` | [ApimodelCreateDeploymentV2Response](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateDeploymentV2Response.cs) |
 | `apimodel.CreateNoSQLAppDatabaseRequest` | [ApimodelCreateNoSQLAppDatabaseRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateNoSQLAppDatabaseRequest.cs) |
 | `apimodel.CreateNoSQLDatabaseCredentialRequest` | [ApimodelCreateNoSQLDatabaseCredentialRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateNoSQLDatabaseCredentialRequest.cs) |
+| `apimodel.CreateSubscriptionRequest` | [ApimodelCreateSubscriptionRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateSubscriptionRequest.cs) |
+| `apimodel.CreateSubscriptionResponse` | [ApimodelCreateSubscriptionResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateSubscriptionResponse.cs) |
+| `apimodel.CreateTopicRequest` | [ApimodelCreateTopicRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelCreateTopicRequest.cs) |
 | `apimodel.DeleteNoSQLResourceResponse` | [ApimodelDeleteNoSQLResourceResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelDeleteNoSQLResourceResponse.cs) |
 | `apimodel.GetAppImageListV2DataItem` | [ApimodelGetAppImageListV2DataItem](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppImageListV2DataItem.cs) |
 | `apimodel.GetAppImageListV2DataItemImageScanResult` | [ApimodelGetAppImageListV2DataItemImageScanResult](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetAppImageListV2DataItemImageScanResult.cs) |
@@ -217,6 +235,7 @@
 | `apimodel.GetNotificationSubscriberListResponseV2` | [ApimodelGetNotificationSubscriberListResponseV2](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetNotificationSubscriberListResponseV2.cs) |
 | `apimodel.GetNotificationSubscriberStatusResponse` | [ApimodelGetNotificationSubscriberStatusResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelGetNotificationSubscriberStatusResponse.cs) |
 | `apimodel.IncreaseLimitFormRequest` | [ApimodelIncreaseLimitFormRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelIncreaseLimitFormRequest.cs) |
+| `apimodel.ListTopicsResponse` | [ApimodelListTopicsResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelListTopicsResponse.cs) |
 | `apimodel.MemoryRequest` | [ApimodelMemoryRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelMemoryRequest.cs) |
 | `apimodel.MemoryResponse` | [ApimodelMemoryResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelMemoryResponse.cs) |
 | `apimodel.NoSQLDatabaseCredentialResponse` | [ApimodelNoSQLDatabaseCredentialResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelNoSQLDatabaseCredentialResponse.cs) |
@@ -224,6 +243,7 @@
 | `apimodel.NoSQLDatabaseResponse` | [ApimodelNoSQLDatabaseResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelNoSQLDatabaseResponse.cs) |
 | `apimodel.NoSQLResourceResponse` | [ApimodelNoSQLResourceResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelNoSQLResourceResponse.cs) |
 | `apimodel.NotificationType` | [ApimodelNotificationType](../../AccelByte.Sdk/Api/Csm/Model/ApimodelNotificationType.cs) |
+| `apimodel.PaginationResponse` | [ApimodelPaginationResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelPaginationResponse.cs) |
 | `apimodel.ReplicaRequest` | [ApimodelReplicaRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelReplicaRequest.cs) |
 | `apimodel.ReplicaResponse` | [ApimodelReplicaResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelReplicaResponse.cs) |
 | `apimodel.SaveConfigurationV2Request` | [ApimodelSaveConfigurationV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSaveConfigurationV2Request.cs) |
@@ -234,6 +254,9 @@
 | `apimodel.SubscribeNotificationResponse` | [ApimodelSubscribeNotificationResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSubscribeNotificationResponse.cs) |
 | `apimodel.SubscriberItemRequest` | [ApimodelSubscriberItemRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSubscriberItemRequest.cs) |
 | `apimodel.SubscriberItemResponse` | [ApimodelSubscriberItemResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelSubscriberItemResponse.cs) |
+| `apimodel.TopicDetailResponse` | [ApimodelTopicDetailResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelTopicDetailResponse.cs) |
+| `apimodel.TopicResponse` | [ApimodelTopicResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelTopicResponse.cs) |
+| `apimodel.TopicSubscription` | [ApimodelTopicSubscription](../../AccelByte.Sdk/Api/Csm/Model/ApimodelTopicSubscription.cs) |
 | `apimodel.TunnelInfoResponse` | [ApimodelTunnelInfoResponse](../../AccelByte.Sdk/Api/Csm/Model/ApimodelTunnelInfoResponse.cs) |
 | `apimodel.UpdateAppResourceRequest` | [ApimodelUpdateAppResourceRequest](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateAppResourceRequest.cs) |
 | `apimodel.UpdateAppV2Request` | [ApimodelUpdateAppV2Request](../../AccelByte.Sdk/Api/Csm/Model/ApimodelUpdateAppV2Request.cs) |
@@ -271,6 +294,8 @@
 | `generated.UpdateConfigurationV1Request` | [GeneratedUpdateConfigurationV1Request](../../AccelByte.Sdk/Api/Csm/Model/GeneratedUpdateConfigurationV1Request.cs) |
 | `generated.UpdateConfigurationV1Response` | [GeneratedUpdateConfigurationV1Response](../../AccelByte.Sdk/Api/Csm/Model/GeneratedUpdateConfigurationV1Response.cs) |
 | `log.AppMessageDeclaration` | [LogAppMessageDeclaration](../../AccelByte.Sdk/Api/Csm/Model/LogAppMessageDeclaration.cs) |
+| `model.AppRedeploymentDetail` | [ModelAppRedeploymentDetail](../../AccelByte.Sdk/Api/Csm/Model/ModelAppRedeploymentDetail.cs) |
+| `model.AppRedeploymentInfo` | [ModelAppRedeploymentInfo](../../AccelByte.Sdk/Api/Csm/Model/ModelAppRedeploymentInfo.cs) |
 | `model.CSMAutoscalingDefaults` | [ModelCSMAutoscalingDefaults](../../AccelByte.Sdk/Api/Csm/Model/ModelCSMAutoscalingDefaults.cs) |
 | `model.ImageScanFinding` | [ModelImageScanFinding](../../AccelByte.Sdk/Api/Csm/Model/ModelImageScanFinding.cs) |
 | `nosqlresource.NoSQLResourceConfiguration` | [NosqlresourceNoSQLResourceConfiguration](../../AccelByte.Sdk/Api/Csm/Model/NosqlresourceNoSQLResourceConfiguration.cs) |

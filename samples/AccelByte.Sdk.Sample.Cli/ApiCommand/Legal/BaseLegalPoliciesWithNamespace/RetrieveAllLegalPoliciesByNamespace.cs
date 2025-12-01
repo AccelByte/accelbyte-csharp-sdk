@@ -31,6 +31,12 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("limit")]
+        public int? Limit { get; set; }
+
+        [SdkCommandArgument("offset")]
+        public int? Offset { get; set; }
+
         [SdkCommandArgument("visibleOnly")]
         public bool? VisibleOnly { get; set; }
 
@@ -45,6 +51,10 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
 
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.RetrieveAllLegalPoliciesByNamespace.Builder;
 
+            if (Limit != null)
+                opBuilder.SetLimit((int)Limit);
+            if (Offset != null)
+                opBuilder.SetOffset((int)Offset);
             if (VisibleOnly != null)
                 opBuilder.SetVisibleOnly((bool)VisibleOnly);
 

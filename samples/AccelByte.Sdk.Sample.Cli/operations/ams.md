@@ -189,6 +189,16 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation BulkFleetDelete
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn ams \
+    --op bulkfleetdelete \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation FleetGet
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

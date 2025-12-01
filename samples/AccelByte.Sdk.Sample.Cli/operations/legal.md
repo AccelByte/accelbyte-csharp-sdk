@@ -187,6 +187,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn legal \
     --op retrievealllegalpoliciesbynamespace \
     --namespace <namespace value> \
+    --limit <limit value - optional> \
+    --offset <offset value - optional> \
     --visibleOnly <visibleOnly value - optional>
 ```
 

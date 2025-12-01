@@ -220,6 +220,50 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).DeleteNoSQLClusterV2Async(op);
         }
+        public static void Execute(
+            this StartNoSQLClusterV2.StartNoSQLClusterV2Builder builder,
+            string namespace_
+        )
+        {
+            StartNoSQLClusterV2 op = builder.Build(
+                namespace_
+            );
+
+            ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).StartNoSQLClusterV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this StartNoSQLClusterV2.StartNoSQLClusterV2Builder builder,
+            string namespace_
+        )
+        {
+            StartNoSQLClusterV2 op = builder.Build(
+                namespace_
+            );
+
+            await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).StartNoSQLClusterV2Async(op);
+        }
+        public static void Execute(
+            this StopNoSQLClusterV2.StopNoSQLClusterV2Builder builder,
+            string namespace_
+        )
+        {
+            StopNoSQLClusterV2 op = builder.Build(
+                namespace_
+            );
+
+            ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).StopNoSQLClusterV2(op);
+        }
+        public static async Task ExecuteAsync(
+            this StopNoSQLClusterV2.StopNoSQLClusterV2Builder builder,
+            string namespace_
+        )
+        {
+            StopNoSQLClusterV2 op = builder.Build(
+                namespace_
+            );
+
+            await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).StopNoSQLClusterV2Async(op);
+        }
         public static Csm.Model.ApimodelTunnelInfoResponse? Execute(
             this GetNoSQLAccessTunnelV2.GetNoSQLAccessTunnelV2Builder builder,
             string namespace_

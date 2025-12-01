@@ -835,7 +835,7 @@ CreateBasePolicyRequest createPolicy = new CreateBasePolicyRequest()
     AffectedClientIds = new List<string>()
 };
 
-CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.CreatePolicyOp
+CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.OldCreatePolicyOp
     .SetBody(createPolicy)
     .Execute();
 ```
@@ -843,14 +843,14 @@ CreateBasePolicyResponse? bPolResp = _Sdk.Legal.BaseLegalPolicies.CreatePolicyOp
 ### Get single policy by policy id
 
 ```csharp
-List<RetrievePolicyVersionResponse>? polVers = _Sdk.Legal.PolicyVersions.RetrieveSinglePolicyVersionOp
+List<RetrievePolicyVersionResponse>? polVers = _Sdk.Legal.PolicyVersions.OldRetrieveSinglePolicyVersionOp
     .Execute(targetPolicyId);
 ```
 
 ### Create policy version
 
 ```csharp
-CreatePolicyVersionResponse? polVerResp = _Sdk.Legal.PolicyVersions.CreatePolicyVersionOp
+CreatePolicyVersionResponse? polVerResp = _Sdk.Legal.PolicyVersions.OldCreatePolicyVersionOp
     .SetBody(policyVersion)
     .Execute(targetPolicyId);
 ```

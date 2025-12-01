@@ -75,6 +75,10 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Message { get; set; }
 
+        [JsonPropertyName("redeploymentInfo")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public ModelAppRedeploymentInfo? RedeploymentInfo { get; set; }
+
         [JsonPropertyName("replica")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public ApimodelReplicaResponse? Replica { get; set; }

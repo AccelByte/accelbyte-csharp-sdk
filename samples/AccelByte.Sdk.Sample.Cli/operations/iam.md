@@ -2023,9 +2023,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value> \
     --userId <userId value> \
     --activeOnly <activeOnly value - optional> \
-    --after <after value - optional> \
-    --before <before value - optional> \
-    --limit <limit value - optional>
+    --limit <limit value - optional> \
+    --offset <offset value - optional>
 ```
 
 ### Operation PublicListUserAllPlatformAccountsDistinctV3
