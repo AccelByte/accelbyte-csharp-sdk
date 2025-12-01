@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2025 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -37,13 +37,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;
@@ -72,19 +66,11 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;
             });
-
-            Thread.Sleep(2000);
 
             string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
             int tAction = 15;
@@ -107,13 +93,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;
@@ -144,19 +124,11 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;
             });
-
-            Thread.Sleep(2000);
 
             string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
             int tAction = 15;
@@ -168,6 +140,7 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void UserPermissionValidationTestUsingDefaultValidator()
         {
+            //first sdk object is for oauth client which has ADMIN:ROLE [READ] permission, since we will assume that default user doesn't have this permission.
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
@@ -175,60 +148,46 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultCredentialRepository()
                 .EnableLog()
                 .Build();
+            sdk.LoginClient();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
+            //we will access user using different sdk object wrapped inside `ExistingTestPlayer` object.
+            var user = new ExistingTestPlayer("AB", true);
 
-            string accessToken = String.Empty;
-            sdk.LoginUser((tokenResp) =>
-            {
-                accessToken = tokenResp.AccessToken!;
-            });
-
-            Thread.Sleep(2000);
-
-            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:USER";
+            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
             int tAction = 2;
 
-            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            //validate user's token against expected permission.
+            bool b = sdk.ValidateToken(user.AccessToken, tPermission, tAction);
             Assert.IsTrue(b);
+
+            user.Logout();
         }
 
         [Test]
         public void UserPermissionValidationTestUsingLocalValidator()
         {
+            //line's comment follows `UserPermissionValidationTestUsingDefaultValidator` test.
+
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
                 .UseLocalTokenValidator()
-                .UseAutoRefreshForTokenRevocationList()
+                .UseAutoRefreshForTokenRevocationList(2000) //refresh revocation every 2s
                 .EnableLog()
                 .Build();
+            sdk.LoginClient();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
+            var user = new ExistingTestPlayer("AB", true);
 
-            string accessToken = String.Empty;
-            sdk.LoginUser((tokenResp) =>
-            {
-                accessToken = tokenResp.AccessToken!;
-            });
-
-            Thread.Sleep(2000);
-
-            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:USER";
+            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
             int tAction = 2;
 
-            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            bool b = sdk.ValidateToken(user.AccessToken, tPermission, tAction);
             Assert.IsTrue(b);
+
+            user.Logout();
         }
 
         [Test]
@@ -242,13 +201,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;
@@ -279,13 +232,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .EnableLog()
                 .Build();
 
-            if (sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io"))
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string accessToken = String.Empty;
+            string accessToken = "";
             sdk.LoginClient((tokenResp) =>
             {
                 accessToken = tokenResp.AccessToken!;

@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Tests.Integration
             }
         }
 
-        public string UserId { get; set; } = String.Empty;
+        public string UserId { get; set; } = "";
         #endregion
     }
 }
