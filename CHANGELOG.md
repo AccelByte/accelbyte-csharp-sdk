@@ -1,5 +1,9 @@
 <a name="v0.77.0"></a>
 ## [v0.77.0]
+### feat
+- **:** use rng from cryptography lib
+### fix
+- **:** fix issue with role permission validation
 
 
 <a name="v0.76.0"></a>
