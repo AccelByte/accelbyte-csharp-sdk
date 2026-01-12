@@ -17,6 +17,9 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// adminDeleteGoal
     ///
     /// - Required permission: ADMIN:NAMESPACE:{namespace}:CHALLENGE [DELETE]
+    /// 
+    /// **Important**
+    /// Delete a goal in a TIED challenge may affect/delete users' data, please do not delete a TIED goal unless it's necessary. User data will be deleted in the next evaluation
     /// </summary>
     public class AdminDeleteGoal : AccelByte.Sdk.Core.Operation
     {

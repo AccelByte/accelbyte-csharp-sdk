@@ -360,6 +360,18 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --platformId <platformId value>
 ```
 
+### Operation AdminUploadPlatformCredentials
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op adminuploadplatformcredentials \
+    --namespace <namespace value> \
+    --platformId <platformId value> \
+    --description <description value - optional> \
+    --upload file <file to upload> \
+    --password <password value>
+```
+
 ### Operation AdminGetRecentPlayer
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

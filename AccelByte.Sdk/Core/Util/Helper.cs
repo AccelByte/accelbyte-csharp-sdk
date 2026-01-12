@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Core.Util
         {
             string result = "";
             for (int i = 0; i < length; i++)
-            {                
+            {
                 char temp = source[RandomNumberGenerator.GetInt32(source.Length)];
                 while (true)
                 {

@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public AccountcommonQueryCursor? Cursor { get; set; }
 
         [JsonPropertyName("data")]
-        public List<ModelCursorGetUserResponseData>? Data { get; set; }
+        public List<Dictionary<string, object>>? Data { get; set; }
 
     }
 

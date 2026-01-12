@@ -38,7 +38,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Cloudsave
         public string UserId { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public ModelsAdminPlayerRecordRequest Body { get; set; } = new ModelsAdminPlayerRecordRequest();
+        public Dictionary<string, object> Body { get; set; } = new Dictionary<string, object>();
 
         public AdminPostPlayerAdminRecordV1Command(AccelByteSDK sdk)
         {

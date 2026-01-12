@@ -13,7 +13,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? Field { get; set; }
 
         [JsonPropertyName("value")]
-        public ClientmodelDefaultFieldValueValue? Value { get; set; }
+        public Dictionary<string, object>? Value { get; set; }
 
     }
 

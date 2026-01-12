@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.AdminSyncPlatformCredentials.Builder.SetWrapperObject(this); }
         }
+        public AdminUploadPlatformCredentials.AdminUploadPlatformCredentialsBuilder AdminUploadPlatformCredentialsOp
+        {
+            get { return Operation.AdminUploadPlatformCredentials.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Model.ModelsPlatformCredentials? AdminGetPlatformCredentials(AdminGetPlatformCredentials input)
@@ -117,6 +121,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminUploadPlatformCredentials(AdminUploadPlatformCredentials input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUploadPlatformCredentialsAsync(AdminUploadPlatformCredentials input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

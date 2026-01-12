@@ -40,13 +40,34 @@ namespace AccelByte.Sdk.Api.Social.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IgnoreAdditionalDataOnValueRejected { get; set; }
 
+        [JsonPropertyName("incrementOnly")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? IncrementOnly { get; set; }
+
         [JsonPropertyName("isPublic")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsPublic { get; set; }
 
+        [JsonPropertyName("maximum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? Maximum { get; set; }
+
+        [JsonPropertyName("minimum")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public double? Minimum { get; set; }
+
         [JsonPropertyName("name")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Name { get; set; }
+
+        [JsonPropertyName("setAsGlobal")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public bool? SetAsGlobal { get; set; }
+
+        [JsonPropertyName("setBy")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonStringEnum]
+        public StatUpdateSetBy? SetBy { get; set; }
 
         [JsonPropertyName("tags")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
@@ -82,6 +103,27 @@ namespace AccelByte.Sdk.Api.Social.Model
         }
 
         public StatUpdateGlobalAggregationMethod(string enumValue)
+            : base(enumValue)
+        {
+
+        }
+    }
+
+    public class StatUpdateSetBy : StringEnum<StatUpdateSetBy>
+    {
+        public static readonly StatUpdateSetBy CLIENT
+            = new StatUpdateSetBy("CLIENT");
+
+        public static readonly StatUpdateSetBy SERVER
+            = new StatUpdateSetBy("SERVER");
+
+
+        public static implicit operator StatUpdateSetBy(string value)
+        {
+            return NewValue(value);
+        }
+
+        public StatUpdateSetBy(string enumValue)
             : base(enumValue)
         {
 

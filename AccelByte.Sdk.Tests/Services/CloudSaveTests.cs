@@ -31,11 +31,11 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             #region Create new game record
-            ModelsGameRecordRequestForTest gameRecord = new ModelsGameRecordRequestForTest()
+            Dictionary<string, object> gameRecord = new Dictionary<string, object>()
             {
-                Foo = "bar",
-                FooBar = "foo",
-                FooValue = 4893
+                { "foo", "bar" },
+                { "foo_bar", "foo" },
+                { "foo_value", 4893 }
             };
 
             _Sdk.Cloudsave.PublicGameRecord.PostGameRecordHandlerV1Op
@@ -56,11 +56,11 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.AreEqual("foo", recValue["foo_bar"].ToString());
 
             #region Update game record
-            ModelsGameRecordRequestForTest updateRecord = new ModelsGameRecordRequestForTest()
+            Dictionary<string, object> updateRecord = new Dictionary<string, object>()
             {
-                Foo = "bar",
-                FooBar = "update",
-                FooValue = 4893
+                { "foo", "bar" },
+                { "foo_bar", "update" },
+                { "foo_value", 4893 }
             };
 
             _Sdk.Cloudsave.PublicGameRecord.PutGameRecordHandlerV1Op
@@ -108,11 +108,11 @@ namespace AccelByte.Sdk.Tests.Services
             string userId = _Sdk.Configuration.Credential!.UserId;
 
             #region Create new player record
-            ModelsPlayerRecordRequestForTest playerRecord = new ModelsPlayerRecordRequestForTest()
+            Dictionary<string, object> playerRecord = new Dictionary<string, object>()
             {
-                Foo = "bar",
-                FooBar = "foo",
-                FooValue = 4893
+                { "foo", "bar" },
+                { "foo_bar", "foo" },
+                { "foo_value", 4893 }
             };
 
             _Sdk.Cloudsave.PublicPlayerRecord.PostPlayerRecordHandlerV1Op
@@ -133,11 +133,11 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.AreEqual("foo", recValue["foo_bar"].ToString());
 
             #region Update player record
-            ModelsPlayerRecordRequestForTest updateRecord = new ModelsPlayerRecordRequestForTest()
+            Dictionary<string, object> updateRecord = new Dictionary<string, object>()
             {
-                Foo = "bar",
-                FooBar = "update",
-                FooValue = 4893
+                { "foo", "bar" },
+                { "foo_bar", "update" },
+                { "foo_value", 4893 }
             };
 
             _Sdk.Cloudsave.PublicPlayerRecord.PutPlayerRecordHandlerV1Op
@@ -186,10 +186,10 @@ namespace AccelByte.Sdk.Tests.Services
 
             string recordKey = "another_foo_bar_record_" + Helper.GenerateRandomId(4);
 
-            AnotherGameRecordForTest_CC myGameRecord = new()
+            Dictionary<string, object> myGameRecord = new Dictionary<string, object>()
             {
-                FooValue = 400,
-                BarValue = "test"
+                { "fooValue", 400 },
+                { "barValue", "test" }
             };
 
             _Sdk.Cloudsave.PublicGameRecord.PostGameRecordHandlerV1Op
@@ -232,10 +232,10 @@ namespace AccelByte.Sdk.Tests.Services
 
             string recordKey = "another_foo_bar_record_" + Helper.GenerateRandomId(4);
 
-            AnotherGameRecordForTest_PC myGameRecord = new()
+            Dictionary<string, object> myGameRecord = new Dictionary<string, object>()
             {
-                FooValue = 400,
-                BarValue = "test"
+                { "fooValue", 400 },
+                { "barValue", "test" }
             };
 
             _Sdk.Cloudsave.PublicGameRecord.PostGameRecordHandlerV1Op

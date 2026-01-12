@@ -71,7 +71,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.SteamAbnormalTransactionPagingSlicedResult? response = wrapper.QueryAbnormalTransactions(operation);
+            Dictionary<string, object>? response = wrapper.QueryAbnormalTransactions(operation);
             if (response == null)
                 return "No response from server.";
 

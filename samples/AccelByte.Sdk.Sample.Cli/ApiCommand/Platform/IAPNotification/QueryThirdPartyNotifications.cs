@@ -91,7 +91,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.NotificationPagingSlicedResult? response = wrapper.QueryThirdPartyNotifications(operation);
+            Dictionary<string, object>? response = wrapper.QueryThirdPartyNotifications(operation);
             if (response == null)
                 return "No response from server.";
 

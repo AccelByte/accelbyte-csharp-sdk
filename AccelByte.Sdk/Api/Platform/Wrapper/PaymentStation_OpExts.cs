@@ -207,7 +207,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).GetPaymentPublicConfigAsync(op);
         }
-        public static Platform.Model.BinarySchema? Execute(
+        public static Dictionary<string, object>? Execute(
             this PublicGetQRCode.PublicGetQRCodeBuilder builder,
             string namespace_,
             string code
@@ -220,7 +220,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.PaymentStation)builder.WrapperObject!).PublicGetQRCode(op);
         }
-        public static async Task<Platform.Model.BinarySchema?> ExecuteAsync(
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
             this PublicGetQRCode.PublicGetQRCodeBuilder builder,
             string namespace_,
             string code

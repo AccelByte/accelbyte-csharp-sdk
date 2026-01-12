@@ -522,7 +522,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Item)builder.WrapperObject!).GetLocaleItemBySkuAsync<T1, T2>(op);
         }
-        public static Platform.Model.EstimatedPriceInfo? Execute(
+        public static List<Platform.Model.EstimatedPriceInfo>? Execute(
             this GetEstimatedPrice.GetEstimatedPriceBuilder builder,
             string namespace_,
             string itemIds,
@@ -537,7 +537,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.Item)builder.WrapperObject!).GetEstimatedPrice(op);
         }
-        public static async Task<Platform.Model.EstimatedPriceInfo?> ExecuteAsync(
+        public static async Task<List<Platform.Model.EstimatedPriceInfo>?> ExecuteAsync(
             this GetEstimatedPrice.GetEstimatedPriceBuilder builder,
             string namespace_,
             string itemIds,

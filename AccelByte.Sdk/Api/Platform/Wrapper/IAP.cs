@@ -781,7 +781,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SteamAbnormalTransactionPagingSlicedResult? QueryAbnormalTransactions(QueryAbnormalTransactions input)
+        public Dictionary<string, object>? QueryAbnormalTransactions(QueryAbnormalTransactions input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -789,7 +789,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.SteamAbnormalTransactionPagingSlicedResult?> QueryAbnormalTransactionsAsync(QueryAbnormalTransactions input)
+        public async Task<Dictionary<string, object>?> QueryAbnormalTransactionsAsync(QueryAbnormalTransactions input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
@@ -845,7 +845,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.SteamReportInfoPagingSlicedResult? QuerySteamReportHistories(QuerySteamReportHistories input)
+        public Dictionary<string, object>? QuerySteamReportHistories(QuerySteamReportHistories input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -853,7 +853,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.SteamReportInfoPagingSlicedResult?> QuerySteamReportHistoriesAsync(QuerySteamReportHistories input)
+        public async Task<Dictionary<string, object>?> QuerySteamReportHistoriesAsync(QuerySteamReportHistories input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

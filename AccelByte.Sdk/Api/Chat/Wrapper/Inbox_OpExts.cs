@@ -166,7 +166,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxCategoryAsync(op);
         }
-        public static Chat.Model.ModelsJSONSchemaType? Execute(
+        public static Dictionary<string, object>? Execute(
             this AdminGetCategorySchema.AdminGetCategorySchemaBuilder builder,
             string category,
             string namespace_
@@ -179,7 +179,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminGetCategorySchema(op);
         }
-        public static async Task<Chat.Model.ModelsJSONSchemaType?> ExecuteAsync(
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
             this AdminGetCategorySchema.AdminGetCategorySchemaBuilder builder,
             string category,
             string namespace_
@@ -315,7 +315,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSaveInboxMessageAsync<T1>(op);
         }
-        public static Chat.Model.ModelsUnsendInboxMessageResponse? Execute(
+        public static Dictionary<string, object>? Execute(
             this AdminUnsendInboxMessage.AdminUnsendInboxMessageBuilder builder,
             ModelsUnsendInboxMessageRequest body,
             string inbox,
@@ -330,7 +330,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUnsendInboxMessage(op);
         }
-        public static async Task<Chat.Model.ModelsUnsendInboxMessageResponse?> ExecuteAsync(
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
             this AdminUnsendInboxMessage.AdminUnsendInboxMessageBuilder builder,
             ModelsUnsendInboxMessageRequest body,
             string inbox,
@@ -401,9 +401,9 @@ namespace AccelByte.Sdk.Api
 
             await ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminUpdateInboxMessageAsync(op);
         }
-        public static Chat.Model.ModelsSendInboxMessageResponse? Execute(
+        public static Dictionary<string, object>? Execute(
             this AdminSendInboxMessage.AdminSendInboxMessageBuilder builder,
-            ModelsSendInboxMessageRequest body,
+            Dictionary<string, object> body,
             string messageId,
             string namespace_
         )
@@ -416,9 +416,9 @@ namespace AccelByte.Sdk.Api
 
             return ((Chat.Wrapper.Inbox)builder.WrapperObject!).AdminSendInboxMessage(op);
         }
-        public static async Task<Chat.Model.ModelsSendInboxMessageResponse?> ExecuteAsync(
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
             this AdminSendInboxMessage.AdminSendInboxMessageBuilder builder,
-            ModelsSendInboxMessageRequest body,
+            Dictionary<string, object> body,
             string messageId,
             string namespace_
         )

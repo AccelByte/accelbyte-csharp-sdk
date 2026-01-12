@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.SteamReportInfoPagingSlicedResult? response = wrapper.QuerySteamReportHistories(operation);
+            Dictionary<string, object>? response = wrapper.QuerySteamReportHistories(operation);
             if (response == null)
                 return "No response from server.";
 

@@ -74,7 +74,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            AccelByte.Sdk.Api.Platform.Model.EstimatedPriceInfo? response = wrapper.GetEstimatedPrice(operation);
+            List<AccelByte.Sdk.Api.Platform.Model.EstimatedPriceInfo>? response = wrapper.GetEstimatedPrice(operation);
             if (response == null)
                 return "No response from server.";
 

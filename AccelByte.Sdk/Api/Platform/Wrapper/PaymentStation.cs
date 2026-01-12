@@ -177,7 +177,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public Model.BinarySchema? PublicGetQRCode(PublicGetQRCode input)
+        public Dictionary<string, object>? PublicGetQRCode(PublicGetQRCode input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -185,7 +185,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<Model.BinarySchema?> PublicGetQRCodeAsync(PublicGetQRCode input)
+        public async Task<Dictionary<string, object>?> PublicGetQRCodeAsync(PublicGetQRCode input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

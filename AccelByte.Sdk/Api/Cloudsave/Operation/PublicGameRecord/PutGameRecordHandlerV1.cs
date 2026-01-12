@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
             public PutGameRecordHandlerV1 Build(
-                ModelsGameRecordRequest body,
+                Dictionary<string, object> body,
                 string key,
                 string namespace_
             )
@@ -95,7 +95,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         }
 
         private PutGameRecordHandlerV1(PutGameRecordHandlerV1Builder builder,
-            ModelsGameRecordRequest body,
+            Dictionary<string, object> body,
             string key,
             string namespace_
         )
@@ -117,7 +117,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         public PutGameRecordHandlerV1(
             string key,
             string namespace_,
-            Model.ModelsGameRecordRequest body
+            Dictionary<string, object> body
         )
         {
             PathParams["key"] = key;

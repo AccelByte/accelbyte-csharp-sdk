@@ -540,8 +540,8 @@
     "path": "/login-queue/apidocs/api.json"
   },
   "x-version": {
-    "buildDate": "2025-11-19T03:13:28+00:00",
-    "gitHash": "2b8e8604f03bd2ddb3cba168bf6ef2b5da7627d9",
+    "buildDate": "2025-12-23T08:51:24+00:00",
+    "gitHash": "16090b6e1b9dbefc0e445a8ce8f54ef7e21194df",
     "name": "justice-login-queue-service",
     "realm": "staging",
     "version": "2.3.3",
