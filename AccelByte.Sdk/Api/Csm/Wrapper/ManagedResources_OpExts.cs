@@ -286,5 +286,31 @@ namespace AccelByte.Sdk.Api
 
             return await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).GetNoSQLAccessTunnelV2Async(op);
         }
+        public static Csm.Model.ApimodelNoSQLAppListResponse? Execute(
+            this GetNoSQLAppListV2.GetNoSQLAppListV2Builder builder,
+            string resourceId,
+            string studioName
+        )
+        {
+            GetNoSQLAppListV2 op = builder.Build(
+                resourceId,
+                studioName
+            );
+
+            return ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).GetNoSQLAppListV2(op);
+        }
+        public static async Task<Csm.Model.ApimodelNoSQLAppListResponse?> ExecuteAsync(
+            this GetNoSQLAppListV2.GetNoSQLAppListV2Builder builder,
+            string resourceId,
+            string studioName
+        )
+        {
+            GetNoSQLAppListV2 op = builder.Build(
+                resourceId,
+                studioName
+            );
+
+            return await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).GetNoSQLAppListV2Async(op);
+        }
     }
 }

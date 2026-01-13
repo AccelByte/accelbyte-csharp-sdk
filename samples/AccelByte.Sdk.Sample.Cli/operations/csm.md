@@ -492,6 +492,19 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation GetNoSQLAppListV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getnosqlapplistv2 \
+    --resourceId <resourceId value> \
+    --studioName <studioName value> \
+    --appName <appName value - optional> \
+    --limit <limit value - optional> \
+    --namespace_ <namespace_ value - optional> \
+    --offset <offset value - optional>
+```
+
 ### Operation GetNotificationSubscriberListV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

@@ -1,3 +1,9 @@
+<a name="v0.78.0"></a>
+## [v0.78.0]
+### chore
+- **sdk:** This reverts commit df4295d5c1efa2c24a2d3281db05a1cde1cf70ce.
+
+
 <a name="v0.77.0"></a>
 ## [v0.77.0]
 ### feat

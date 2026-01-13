@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// With this method, we will be performing sync to Platform Service to retrieve the existing PFX certificate which uploaded through IAP.
     /// If the API returns Not Found, alternatively what you can do is either:
     /// a. upload PFX file to IAP. You can access it from Admin Portal {BASE_URL}/admin/namespaces/{NAMESPACE}/in-app-purchase/xbox, or directly through API /platform/admin/namespaces/{NAMESPACE}/iap/config/xbl/cert.
-    /// b. upload PFX file through Session API /session/v1/admin/namespaces/{namespace}/certificates/pfx/platforms/xbl
+    /// b. upload PFX file through Session API /session/v1/admin/namespaces/{namespace}/platform-credentials/xbox/upload
     /// We recommend approach #a, since you need to only upload the file once, and the service will do the sync.
     /// If you set the PFX through Session service, when this API is invoked, we will sync and replace the existing PFX file with the one from Platform (IAP).
     /// </summary>
