@@ -190,12 +190,6 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
     public class GetChallengesSortBy : StringEnum<GetChallengesSortBy>
     {
-        public static readonly GetChallengesSortBy Codeasc
-            = new GetChallengesSortBy("code:asc");
-
-        public static readonly GetChallengesSortBy Codedesc
-            = new GetChallengesSortBy("code:desc");
-
         public static readonly GetChallengesSortBy CreatedAt
             = new GetChallengesSortBy("createdAt");
 
@@ -204,12 +198,6 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
         public static readonly GetChallengesSortBy CreatedAtdesc
             = new GetChallengesSortBy("createdAt:desc");
-
-        public static readonly GetChallengesSortBy Nameasc
-            = new GetChallengesSortBy("name:asc");
-
-        public static readonly GetChallengesSortBy Namedesc
-            = new GetChallengesSortBy("name:desc");
 
         public static readonly GetChallengesSortBy UpdatedAt
             = new GetChallengesSortBy("updatedAt");

@@ -63,10 +63,6 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             get { return Operation.GetNoSQLAccessTunnelV2.Builder.SetWrapperObject(this); }
         }
-        public GetNoSQLAppListV2.GetNoSQLAppListV2Builder GetNoSQLAppListV2Op
-        {
-            get { return Operation.GetNoSQLAppListV2.Builder.SetWrapperObject(this); }
-        }
         #endregion
 
         public Model.ApimodelNoSQLDatabaseCredentialResponse? CreateNoSQLDatabaseCredentialV2(CreateNoSQLDatabaseCredentialV2 input)
@@ -238,22 +234,6 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApimodelTunnelInfoResponse?> GetNoSQLAccessTunnelV2Async(GetNoSQLAccessTunnelV2 input)
-        {
-            var response = await _sdk.RunRequestAsync(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public Model.ApimodelNoSQLAppListResponse? GetNoSQLAppListV2(GetNoSQLAppListV2 input)
-        {
-            var response = _sdk.RunRequest(input);
-            return input.ParseResponse(
-                    response.Code,
-                    response.ContentType,
-                    response.Payload);
-        }
-        public async Task<Model.ApimodelNoSQLAppListResponse?> GetNoSQLAppListV2Async(GetNoSQLAppListV2 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

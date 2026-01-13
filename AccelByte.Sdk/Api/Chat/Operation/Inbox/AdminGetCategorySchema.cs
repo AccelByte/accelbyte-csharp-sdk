@@ -102,7 +102,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Dictionary<string, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsJSONSchemaType? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -111,13 +111,13 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Dictionary<string, object>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsJSONSchemaType>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Dictionary<string, object>>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsJSONSchemaType>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Dictionary<string, object>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsJSONSchemaType>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

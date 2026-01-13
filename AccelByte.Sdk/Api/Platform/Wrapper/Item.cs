@@ -549,7 +549,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public List<Model.EstimatedPriceInfo>? GetEstimatedPrice(GetEstimatedPrice input)
+        public Model.EstimatedPriceInfo? GetEstimatedPrice(GetEstimatedPrice input)
         {
             var response = _sdk.RunRequest(input);
             return input.ParseResponse(
@@ -557,7 +557,7 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public async Task<List<Model.EstimatedPriceInfo>?> GetEstimatedPriceAsync(GetEstimatedPrice input)
+        public async Task<Model.EstimatedPriceInfo?> GetEstimatedPriceAsync(GetEstimatedPrice input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

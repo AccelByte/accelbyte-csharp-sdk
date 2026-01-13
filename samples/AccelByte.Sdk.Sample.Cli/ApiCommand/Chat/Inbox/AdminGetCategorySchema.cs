@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
             );
 
 
-            Dictionary<string, object>? response = wrapper.AdminGetCategorySchema(operation);
+            AccelByte.Sdk.Api.Chat.Model.ModelsJSONSchemaType? response = wrapper.AdminGetCategorySchema(operation);
             if (response == null)
                 return "No response from server.";
 

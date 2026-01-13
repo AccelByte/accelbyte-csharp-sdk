@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api.Group.Model
     public class ModelsUpdateGroupRequestV1 : AccelByte.Sdk.Core.Model
     {
         [JsonPropertyName("customAttributes")]
-        public Dictionary<string, object>? CustomAttributes { get; set; }
+        public ModelsUpdateGroupRequestV1CustomAttributes? CustomAttributes { get; set; }
 
         [JsonPropertyName("groupDescription")]
         public string? GroupDescription { get; set; }

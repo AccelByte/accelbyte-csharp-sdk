@@ -38,7 +38,7 @@ TEMP_JSON_INPUT="input_json.json"
 TEMP_FILE_UPLOAD="file_upload.bin"
 
 echo "TAP version 13"
-echo "1..75"
+echo "1..74"
 
 #- 1 Login
 $CLI_EXE --op login --lt user --user user --pass user > test.out 2>&1
@@ -629,39 +629,26 @@ $CLI_EXE \
     > test.out 2>&1
 eval_tap $? 72 'GetResourcesLimits' test.out
 
-#- 73 GetNoSQLAppListV2
-$CLI_EXE \
-    --sn csm \
-    --op GetNoSQLAppListV2 \
-    --resourceId 'XZyBpqhCJBtFOm3i' \
-    --studioName 'Cpu0lhhgutt3rQuK' \
-    --appName 'P1OEtKFBjNihHU8G' \
-    --limit '86' \
-    --namespace_ 'YZJKVNlK8PTaIXRW' \
-    --offset '65' \
-    > test.out 2>&1
-eval_tap $? 73 'GetNoSQLAppListV2' test.out
-
-#- 74 GetNotificationSubscriberListV3
+#- 73 GetNotificationSubscriberListV3
 $CLI_EXE \
     --sn csm \
     --op GetNotificationSubscriberListV3 \
-    --app 'bsrRBV8aztJ86yQK' \
+    --app 'XZyBpqhCJBtFOm3i' \
     --namespace $AB_NAMESPACE \
-    --notificationType '1AsC18UO6JcXmwQf' \
+    --notificationType 'Cpu0lhhgutt3rQuK' \
     > test.out 2>&1
-eval_tap $? 74 'GetNotificationSubscriberListV3' test.out
+eval_tap $? 73 'GetNotificationSubscriberListV3' test.out
 
-#- 75 DeleteSubscriptionAppNotificationV3
+#- 74 DeleteSubscriptionAppNotificationV3
 $CLI_EXE \
     --sn csm \
     --op DeleteSubscriptionAppNotificationV3 \
-    --app 'kseTpH6l2Dv8SvqY' \
+    --app 'P1OEtKFBjNihHU8G' \
     --namespace $AB_NAMESPACE \
-    --emailAddress 'Kc56PcPSL2xmjViK' \
-    --userId 'kKw4gHA4CaLsPqRs' \
+    --emailAddress 'P8TRVypSvYXKz4BG' \
+    --userId 'jbsrRBV8aztJ86yQ' \
     > test.out 2>&1
-eval_tap $? 75 'DeleteSubscriptionAppNotificationV3' test.out
+eval_tap $? 74 'DeleteSubscriptionAppNotificationV3' test.out
 
 
 # remove artifacts

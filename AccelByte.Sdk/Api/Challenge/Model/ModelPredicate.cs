@@ -11,10 +11,6 @@ namespace AccelByte.Sdk.Api.Challenge.Model
 {
     public class ModelPredicate : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("id")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Id { get; set; }
-
         [JsonPropertyName("matcher")]
         [JsonStringEnum]
         public ModelPredicateMatcher? Matcher { get; set; }

@@ -97,7 +97,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsGameRecordAdminResponse? Execute(
             this AdminPutGameRecordHandlerV1.AdminPutGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -112,7 +112,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsGameRecordAdminResponse?> ExecuteAsync(
             this AdminPutGameRecordHandlerV1.AdminPutGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -128,7 +128,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsGameRecordAdminResponse<T1>? Execute<T1>(
             this AdminPutGameRecordHandlerV1.AdminPutGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -143,7 +143,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsGameRecordAdminResponse<T1>?> ExecuteAsync<T1>(
             this AdminPutGameRecordHandlerV1.AdminPutGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -158,7 +158,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsGameRecordAdminResponse? Execute(
             this AdminPostGameRecordHandlerV1.AdminPostGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -173,7 +173,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsGameRecordAdminResponse?> ExecuteAsync(
             this AdminPostGameRecordHandlerV1.AdminPostGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -189,7 +189,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsGameRecordAdminResponse<T1>? Execute<T1>(
             this AdminPostGameRecordHandlerV1.AdminPostGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )
@@ -204,7 +204,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsGameRecordAdminResponse<T1>?> ExecuteAsync<T1>(
             this AdminPostGameRecordHandlerV1.AdminPostGameRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsGameRecordRequest body,
             string key,
             string namespace_
         )

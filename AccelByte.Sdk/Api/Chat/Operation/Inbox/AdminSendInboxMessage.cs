@@ -39,7 +39,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
 
 
             public AdminSendInboxMessage Build(
-                Dictionary<string, object> body,
+                ModelsSendInboxMessageRequest body,
                 string messageId,
                 string namespace_
             )
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         }
 
         private AdminSendInboxMessage(AdminSendInboxMessageBuilder builder,
-            Dictionary<string, object> body,
+            ModelsSendInboxMessageRequest body,
             string messageId,
             string namespace_
         )
@@ -81,7 +81,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         public AdminSendInboxMessage(
             string messageId,
             string namespace_,
-            Dictionary<string, object> body
+            Model.ModelsSendInboxMessageRequest body
         )
         {
             PathParams["messageId"] = messageId;
@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Api.Chat.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Dictionary<string, object>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.ModelsSendInboxMessageResponse? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -117,13 +117,13 @@ namespace AccelByte.Sdk.Api.Chat.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Dictionary<string, object>>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.ModelsSendInboxMessageResponse>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Dictionary<string, object>>(payload);
+                    return JsonSerializer.Deserialize<Model.ModelsSendInboxMessageResponse>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Dictionary<string, object>>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.ModelsSendInboxMessageResponse>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

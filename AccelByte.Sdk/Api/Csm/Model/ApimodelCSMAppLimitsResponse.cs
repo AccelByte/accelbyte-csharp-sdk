@@ -18,20 +18,11 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonPropertyName("extendAppEventHandlerCPULimit")]
         public int? ExtendAppEventHandlerCPULimit { get; set; }
 
-        [JsonPropertyName("extendAppEventHandlerMemoryLimit")]
-        public int? ExtendAppEventHandlerMemoryLimit { get; set; }
-
         [JsonPropertyName("extendAppMemoryLimit")]
         public int? ExtendAppMemoryLimit { get; set; }
 
         [JsonPropertyName("extendAppReplicaLimit")]
         public int? ExtendAppReplicaLimit { get; set; }
-
-        [JsonPropertyName("extendAppServiceExtensionCPULimit")]
-        public int? ExtendAppServiceExtensionCPULimit { get; set; }
-
-        [JsonPropertyName("extendAppServiceExtensionMemoryLimit")]
-        public int? ExtendAppServiceExtensionMemoryLimit { get; set; }
 
         [JsonPropertyName("extendAppeEventHandlerMemoryLimit")]
         public int? ExtendAppeEventHandlerMemoryLimit { get; set; }

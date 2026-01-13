@@ -134,39 +134,5 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminSyncPlatformCredentialsAsync(op);
         }
-        public static void Execute(
-            this AdminUploadPlatformCredentials.AdminUploadPlatformCredentialsBuilder builder,
-            Stream file,
-            string password,
-            string namespace_,
-            string platformId
-        )
-        {
-            AdminUploadPlatformCredentials op = builder.Build(
-                file,
-                password,
-                namespace_,
-                platformId
-            );
-
-            ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminUploadPlatformCredentials(op);
-        }
-        public static async Task ExecuteAsync(
-            this AdminUploadPlatformCredentials.AdminUploadPlatformCredentialsBuilder builder,
-            Stream file,
-            string password,
-            string namespace_,
-            string platformId
-        )
-        {
-            AdminUploadPlatformCredentials op = builder.Build(
-                file,
-                password,
-                namespace_,
-                platformId
-            );
-
-            await ((Session.Wrapper.PlatformCredential)builder.WrapperObject!).AdminUploadPlatformCredentialsAsync(op);
-        }
     }
 }

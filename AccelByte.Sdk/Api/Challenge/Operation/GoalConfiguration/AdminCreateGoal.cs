@@ -49,9 +49,6 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
     /// The requirement will have target value and a operator that will evaluate that against an observable playerâs attribute (e.g. statistic, entitlement). Goal belongs to a challenge.
     /// Supported item type for ENTITLEMENT reward type: APP, BUNDLE, CODE, COINS, EXTENSION, INGAMEITEM, LOOTBOX, MEDIA, OPTIONBOX.
     /// Number of goals per challenge is **limited to 100 goals**.
-    /// 
-    /// **Important**
-    /// Add a new goal in a TIED challenge may affect users' data, please do not do this unless it's necessary. Then new goal will take effect in the next evaluation
     /// </summary>
     public class AdminCreateGoal : AccelByte.Sdk.Core.Operation
     {

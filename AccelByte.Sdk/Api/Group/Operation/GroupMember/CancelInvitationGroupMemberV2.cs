@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// This endpoint is used to cancel invitation group member.
     /// 
-    /// cancel invitation group member. This endpoint will cancel invitation to specific user, and also the role permission of the user who accesses this endpoint
+    /// cancel invitation group member. This endpoint will cancel invitation to specific user, and also the role permission of the the user who accesses this endpoint
     /// 
     /// Action Code: 73409
     /// </summary>

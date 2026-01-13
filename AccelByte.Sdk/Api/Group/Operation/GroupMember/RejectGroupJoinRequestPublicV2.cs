@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// This endpoint is used to reject group join request.
     /// 
-    /// Reject group join request. If specific user is not asked to join the specific group ID, it will show the error to show if the user is not asked to join yet.
+    /// Reject group join request. If specific user is not asked to join the specific group ID, it will show the the error to show if the user is not asked to join yet.
     /// 
     /// This endpoint will also check if the specific user is already joined to specific group
     /// 

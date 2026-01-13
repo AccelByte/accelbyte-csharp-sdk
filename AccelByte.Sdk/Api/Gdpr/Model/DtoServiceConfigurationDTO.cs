@@ -18,10 +18,6 @@ namespace AccelByte.Sdk.Api.Gdpr.Model
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
-        [JsonPropertyName("package")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Package { get; set; }
-
         [JsonPropertyName("serviceConfig")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DtoServiceConfigDTO? ServiceConfig { get; set; }

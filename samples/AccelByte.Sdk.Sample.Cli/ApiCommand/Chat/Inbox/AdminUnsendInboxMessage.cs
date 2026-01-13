@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
             );
 
 
-            Dictionary<string, object>? response = wrapper.AdminUnsendInboxMessage(operation);
+            AccelByte.Sdk.Api.Chat.Model.ModelsUnsendInboxMessageResponse? response = wrapper.AdminUnsendInboxMessage(operation);
             if (response == null)
                 return "No response from server.";
 

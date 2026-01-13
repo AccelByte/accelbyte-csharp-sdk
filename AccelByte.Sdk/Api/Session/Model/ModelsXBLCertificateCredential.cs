@@ -21,10 +21,6 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("createdBy")]
         public string? CreatedBy { get; set; }
 
-        [JsonPropertyName("description")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? Description { get; set; }
-
         [JsonPropertyName("namespace")]
         public string? Namespace { get; set; }
 

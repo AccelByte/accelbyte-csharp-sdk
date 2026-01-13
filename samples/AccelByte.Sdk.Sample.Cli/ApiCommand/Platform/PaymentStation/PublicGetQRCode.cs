@@ -55,7 +55,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            Dictionary<string, object>? response = wrapper.PublicGetQRCode(operation);
+            AccelByte.Sdk.Api.Platform.Model.BinarySchema? response = wrapper.PublicGetQRCode(operation);
             if (response == null)
                 return "No response from server.";
 

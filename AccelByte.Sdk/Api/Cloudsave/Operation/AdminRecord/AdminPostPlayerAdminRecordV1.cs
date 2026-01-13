@@ -108,7 +108,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
 
 
             public AdminPostPlayerAdminRecordV1 Build(
-                Dictionary<string, object> body,
+                ModelsAdminPlayerRecordRequest body,
                 string key,
                 string namespace_,
                 string userId
@@ -130,7 +130,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
         }
 
         private AdminPostPlayerAdminRecordV1(AdminPostPlayerAdminRecordV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsAdminPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -155,7 +155,7 @@ namespace AccelByte.Sdk.Api.Cloudsave.Operation
             string key,
             string namespace_,
             string userId,
-            Dictionary<string, object> body
+            Model.ModelsAdminPlayerRecordRequest body
         )
         {
             PathParams["key"] = key;

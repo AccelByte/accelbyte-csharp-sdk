@@ -235,7 +235,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -252,7 +252,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
             this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -270,7 +270,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
             this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -287,7 +287,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
             this PutPlayerRecordHandlerV1.PutPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -304,7 +304,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -321,7 +321,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
             this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -339,7 +339,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
             this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -356,7 +356,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
             this PostPlayerRecordHandlerV1.PostPlayerRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -464,7 +464,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -481,7 +481,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
             this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -499,7 +499,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
             this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -516,7 +516,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
             this PutPlayerPublicRecordHandlerV1.PutPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -533,7 +533,7 @@ namespace AccelByte.Sdk.Api
         }
         public static Cloudsave.Model.ModelsPlayerRecordResponse? Execute(
             this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -550,7 +550,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse?> ExecuteAsync(
             this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -568,7 +568,7 @@ namespace AccelByte.Sdk.Api
 
         public static Cloudsave.Model.ModelsPlayerRecordResponse<T1>? Execute<T1>(
             this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId
@@ -585,7 +585,7 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Cloudsave.Model.ModelsPlayerRecordResponse<T1>?> ExecuteAsync<T1>(
             this PostPlayerPublicRecordHandlerV1.PostPlayerPublicRecordHandlerV1Builder builder,
-            Dictionary<string, object> body,
+            ModelsPlayerRecordRequest body,
             string key,
             string namespace_,
             string userId

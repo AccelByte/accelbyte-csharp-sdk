@@ -756,7 +756,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).UpdateXblBPCertFileAsync(op);
         }
-        public static Dictionary<string, object>? Execute(
+        public static Platform.Model.SteamAbnormalTransactionPagingSlicedResult? Execute(
             this QueryAbnormalTransactions.QueryAbnormalTransactionsBuilder builder,
             string namespace_
         )
@@ -767,7 +767,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QueryAbnormalTransactions(op);
         }
-        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+        public static async Task<Platform.Model.SteamAbnormalTransactionPagingSlicedResult?> ExecuteAsync(
             this QueryAbnormalTransactions.QueryAbnormalTransactionsBuilder builder,
             string namespace_
         )
@@ -852,7 +852,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminRefundIAPOrderAsync(op);
         }
-        public static Dictionary<string, object>? Execute(
+        public static Platform.Model.SteamReportInfoPagingSlicedResult? Execute(
             this QuerySteamReportHistories.QuerySteamReportHistoriesBuilder builder,
             string namespace_
         )
@@ -863,7 +863,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAP)builder.WrapperObject!).QuerySteamReportHistories(op);
         }
-        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+        public static async Task<Platform.Model.SteamReportInfoPagingSlicedResult?> ExecuteAsync(
             this QuerySteamReportHistories.QuerySteamReportHistoriesBuilder builder,
             string namespace_
         )

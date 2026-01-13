@@ -22,7 +22,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// This endpoint is used to get user group status information.
     /// 
-    /// get user group status information. This endpoint will check the member and group information, and also the role permission of the user who accesses this endpoint
+    /// get user group status information. This endpoint will check the member and group information, and also the role permission of the the user who accesses this endpoint
     /// 
     /// Action Code: 73409
     /// </summary>

@@ -12,7 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class PlatformIAPNotification_OpExts
     {
-        public static Dictionary<string, object>? Execute(
+        public static Platform.Model.NotificationPagingSlicedResult? Execute(
             this QueryThirdPartyNotifications.QueryThirdPartyNotificationsBuilder builder,
             string namespace_
         )
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Api
 
             return ((Platform.Wrapper.IAPNotification)builder.WrapperObject!).QueryThirdPartyNotifications(op);
         }
-        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+        public static async Task<Platform.Model.NotificationPagingSlicedResult?> ExecuteAsync(
             this QueryThirdPartyNotifications.QueryThirdPartyNotificationsBuilder builder,
             string namespace_
         )

@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Group.Operation
     /// 
     /// This endpoint is used to join as group member
     /// 
-    /// Join to the group. This endpoint will check the type of the group based on the groupID.
+    /// Join to the group. This endpoint will check the the the type of the group based on the groupID.
     /// 
     /// Additional Information:
     /// 

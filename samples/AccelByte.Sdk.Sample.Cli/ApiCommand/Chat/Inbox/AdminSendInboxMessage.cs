@@ -35,7 +35,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
         public string Namespace { get; set; } = String.Empty;
 
         [SdkCommandData("body")]
-        public Dictionary<string, object> Body { get; set; } = new Dictionary<string, object>();
+        public ModelsSendInboxMessageRequest Body { get; set; } = new ModelsSendInboxMessageRequest();
 
         public AdminSendInboxMessageCommand(AccelByteSDK sdk)
         {
@@ -59,7 +59,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Chat
             );
 
 
-            Dictionary<string, object>? response = wrapper.AdminSendInboxMessage(operation);
+            AccelByte.Sdk.Api.Chat.Model.ModelsSendInboxMessageResponse? response = wrapper.AdminSendInboxMessage(operation);
             if (response == null)
                 return "No response from server.";
 
