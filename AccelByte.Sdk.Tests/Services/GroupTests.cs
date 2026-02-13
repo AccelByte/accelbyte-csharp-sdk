@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class GroupTests : BaseServiceTests
     {
-        public GroupTests() : base(true) { }
+        public GroupTests() : base(true, IntegrationTestConfigRepository.Group) { }
 
         [Test]
         public void GroupServiceTests()

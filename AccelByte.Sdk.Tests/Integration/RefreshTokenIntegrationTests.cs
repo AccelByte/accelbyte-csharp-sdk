@@ -70,7 +70,7 @@ namespace AccelByte.Sdk.Tests.Integration
         {
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .SetConfigRepository(IntegrationTestConfigRepository.Achievement)
                 .UseDefaultCredentialRepository()
                 .UseOnDemandTokenRefresh()
                 .EnableLog()
@@ -79,8 +79,8 @@ namespace AccelByte.Sdk.Tests.Integration
             sdk.LoginClient();
 
             //First request, valid token
-            ModelsPublicAchievementsResponse? achResp1 = sdk.Achievement.Achievements.PublicListAchievementsOp
-                .Execute(sdk.Namespace, "en");
+            var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                .Execute(sdk.Namespace);
             Assert.IsNotNull(achResp1);
 
             //Force token expire
@@ -94,8 +94,8 @@ namespace AccelByte.Sdk.Tests.Integration
             }
 
             //Second request, expired token, try to do refresh
-            ModelsPublicAchievementsResponse? achResp2 = sdk.Achievement.Achievements.PublicListAchievementsOp
-                .Execute(sdk.Namespace, "en");
+            var achResp2 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                .Execute(sdk.Namespace);
             Assert.IsNotNull(achResp2);
 
             sdk.Logout();

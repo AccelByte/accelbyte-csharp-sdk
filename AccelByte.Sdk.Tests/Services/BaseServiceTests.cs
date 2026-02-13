@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022-2024 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -11,6 +11,7 @@ using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Core.Util;
 
 using AccelByte.Sdk.Tests.Integration;
+using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -21,6 +22,8 @@ namespace AccelByte.Sdk.Tests.Services
         private bool _UseUserLogin;
 
         private int _WaitTimeValue = 500; //in milisecs
+
+        private IConfigRepository _ConfigRepository;
 
         protected virtual void OnStartup(AccelByteSDK sdk) { }
 
@@ -33,6 +36,22 @@ namespace AccelByte.Sdk.Tests.Services
 
         public BaseServiceTests(bool useUserLogin)
         {
+            _ConfigRepository = IntegrationTestConfigRepository.Admin;
+            _UseUserLogin = useUserLogin;
+
+            _RetryPolicy = HttpClientPolicy.Default;
+            _RetryPolicy.MaxRetryCount = 3;
+            _RetryPolicy.RetryInterval = 500;
+            _RetryPolicy.RetryLogicHandler = new ResponseCodeCheckLogicHandler("425");
+        }
+
+        public BaseServiceTests(bool useUserLogin, IConfigRepository sharedCloudConfig)
+        {
+            if (IsUsingAGSStarter(sharedCloudConfig))
+                _ConfigRepository = sharedCloudConfig;
+            else
+                _ConfigRepository = IntegrationTestConfigRepository.Admin;
+
             _UseUserLogin = useUserLogin;
 
             _RetryPolicy = HttpClientPolicy.Default;
@@ -48,7 +67,7 @@ namespace AccelByte.Sdk.Tests.Services
                 .SetHttpClient(ReliableHttpClient.Builder
                     .SetDefaultPolicy(_RetryPolicy)
                     .Build())
-                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .SetConfigRepository(_ConfigRepository)
                 .UseDefaultTokenRepository()
                 .SetCredentialRepository(IntegrationTestCredentialRepository.Admin)
                 .EnableLog()

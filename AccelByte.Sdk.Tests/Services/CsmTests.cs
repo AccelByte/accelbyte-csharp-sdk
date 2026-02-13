@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2024-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -16,6 +16,7 @@ using AccelByte.Sdk.Tests.Model;
 using AccelByte.Sdk.Core.Util;
 using System.Diagnostics;
 using System.Threading;
+using AccelByte.Sdk.Tests.Integration;
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -23,7 +24,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class CsmTests : BaseServiceTests
     {
-        public CsmTests() : base(false) { }
+        public CsmTests() : base(false, IntegrationTestConfigRepository.Extend) { }
 
         [Test]
         public void AppTests()
@@ -237,8 +238,14 @@ namespace AccelByte.Sdk.Tests.Services
                 //try to delete IAM client id for current extend app
                 if (appClientId != "")
                 {
-                    _Sdk.Iam.Clients.AdminDeleteClientV3Op
-                        .Execute(appClientId, _Sdk.Namespace);
+                    //You will need an admin user to delete OAuth client.
+                    ExistingTestPlayer adminUser = new ExistingTestPlayer("AB", true);
+                    adminUser.Run((sdk, user) =>
+                    {
+                        sdk.Iam.Clients.AdminDeleteClientV3Op
+                            .Execute(appClientId, sdk.Namespace);
+                    });
+                    adminUser.Logout();
                 }
                 else
                     Console.WriteLine("Extend app does not have secret for AB_CLIENT_ID.");

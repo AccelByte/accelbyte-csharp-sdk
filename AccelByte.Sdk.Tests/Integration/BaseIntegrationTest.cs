@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AccelByte.Sdk.Core;
+using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
@@ -27,11 +28,16 @@ namespace AccelByte.Sdk.Tests.Integration
                 return value;
         }
 
+        public bool IsUsingAGSStarter(IConfigRepository configRepo)
+        {
+            return configRepo.BaseUrl.Contains("gamingservices.accelbyte.io");
+        }
+
         public bool IsUsingAGSStarter()
         {
             if (_Sdk != null)
-                return _Sdk.Configuration.ConfigRepository.BaseUrl.Contains("gamingservices.accelbyte.io");
+                return IsUsingAGSStarter(_Sdk.Configuration.ConfigRepository);
             return false;
-        }
+        }        
     }
 }

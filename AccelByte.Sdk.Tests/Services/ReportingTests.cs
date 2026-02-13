@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class ReportingTests : BaseServiceTests
     {
-        public ReportingTests() : base(true) { }
+        public ReportingTests() : base(true, IntegrationTestConfigRepository.Reporting) { }
 
         [Test]
         public void ReportingServiceTests()
@@ -28,12 +28,6 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
-
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
 
             string title = Helper.GenerateRandomId(32);
             string reasonId = String.Empty;

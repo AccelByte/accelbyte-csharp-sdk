@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -24,7 +24,7 @@ namespace AccelByte.Sdk.Tests.Services
 
         private ITestPlayer? _Player2 = null;
 
-        public SessionTests() : base(false) { }
+        public SessionTests() : base(false, IntegrationTestConfigRepository.Session) { }
 
         protected override void OnStartup(AccelByteSDK sdk)
         {
@@ -50,12 +50,6 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
-
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
-                return;
-            }
 
             DisableRetry();
 
@@ -125,12 +119,6 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
-                return;
-            }
-
             Assert.IsNotNull(_Player1);
             if (_Player1 == null)
                 return;
@@ -159,7 +147,7 @@ namespace AccelByte.Sdk.Tests.Services
                     }
                 }, _Sdk.Namespace);
 
-            string gameSessionId = String.Empty;
+            string gameSessionId = "";
             _Player1.Run((sdk, player) =>
             {
                 #region Create a game session
@@ -245,12 +233,6 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
-                return;
-            }
-
             Assert.IsNotNull(_Player1);
             if (_Player1 == null)
                 return;
@@ -279,8 +261,8 @@ namespace AccelByte.Sdk.Tests.Services
                     }
                 }, _Sdk.Namespace);
 
-            string partyId = String.Empty;
-            string joinCode = String.Empty;
+            string partyId = "";
+            string joinCode = "";
 
             Wait();
 
@@ -334,14 +316,16 @@ namespace AccelByte.Sdk.Tests.Services
             Wait();
 
             #region Get party detail
-            ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp
-                .Execute(_Sdk.Namespace, partyId);
+            ApimodelsPartyQueryResponse? partyData = _Sdk.Session.Party.AdminQueryPartiesOp
+                .SetPartyID(partyId)
+                .Execute(_Sdk.Namespace);
             #endregion
             Assert.IsNotNull(partyData);
-            if (partyData != null)
+            if ((partyData != null) && (partyData.Data != null) && (partyData.Data.Count > 0))
             {
-                Assert.AreEqual(2, partyData.Members!.Count);
-                List<string> userIds = partyData.Members!.Select(item => item.Id!).ToList();
+                var party = partyData.Data[0];
+                Assert.AreEqual(2, party.Members!.Count);
+                List<string> userIds = party.Members!.Select(item => item.Id!).ToList();
                 Assert.Contains(_Player1.UserId, userIds);
                 Assert.Contains(_Player2.UserId, userIds);
             }
@@ -356,11 +340,13 @@ namespace AccelByte.Sdk.Tests.Services
 
             Wait();
 
-            ApimodelsPartySessionResponse? uPartyData = _Sdk.Session.Party.PublicGetPartyOp
-                .Execute(_Sdk.Namespace, partyId);
-            Assert.IsNotNull(uPartyData);
-            if (uPartyData != null)
+            partyData = _Sdk.Session.Party.AdminQueryPartiesOp
+                .SetPartyID(partyId)
+                .Execute(_Sdk.Namespace);
+            Assert.IsNotNull(partyData);
+            if ((partyData != null) && (partyData.Data != null) && (partyData.Data.Count > 0))
             {
+                var uPartyData = partyData.Data[0];
                 Assert.AreEqual(2, uPartyData.Members!.Count);
 
                 //Get id of members who are still in party.

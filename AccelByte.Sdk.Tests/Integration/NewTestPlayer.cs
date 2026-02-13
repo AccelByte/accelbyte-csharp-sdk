@@ -1,4 +1,4 @@
-// Copyright (c) 2022-2025 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     public class NewTestPlayer : ITestPlayer
     {
-        private string _UserName = String.Empty;
+        private string _UserName = "";
 
         private readonly bool _DeleteOnLogout;
 
@@ -76,7 +76,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
             _TokenRepo = new DefaultTokenRepository();
             _Sdk = AccelByteSDK.Builder
-                .UseDefaultConfigRepository()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultHttpClient()
                 .SetTokenRepository(_TokenRepo)
                 .Build();

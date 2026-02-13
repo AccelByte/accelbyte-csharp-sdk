@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023-2025 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -9,6 +9,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
+
 using NUnit.Framework;
 
 using AccelByte.Sdk.Core;
@@ -16,9 +18,7 @@ using AccelByte.Sdk.Api;
 using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Client;
-
 using AccelByte.Sdk.Feature.LocalTokenValidation;
-using System.Threading;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
@@ -60,7 +60,7 @@ namespace AccelByte.Sdk.Tests.Integration
         {
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .SetConfigRepository(IntegrationTestConfigRepository.Basic)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
                 .EnableLog()
@@ -72,8 +72,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 accessToken = tokenResp.AccessToken!;
             });
 
-            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
-            int tAction = 15;
+            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:PROFILE";
+            int tAction = 2;
 
             bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
             Assert.IsTrue(b);
@@ -116,7 +116,7 @@ namespace AccelByte.Sdk.Tests.Integration
         {
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .SetConfigRepository(IntegrationTestConfigRepository.Basic)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
                 .UseLocalTokenValidator()
@@ -130,8 +130,8 @@ namespace AccelByte.Sdk.Tests.Integration
                 accessToken = tokenResp.AccessToken!;
             });
 
-            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
-            int tAction = 15;
+            string tPermission = $"ADMIN:NAMESPACE:{sdk.Namespace}:PROFILE";
+            int tAction = 2;
 
             bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
             Assert.IsTrue(b);
@@ -248,6 +248,56 @@ namespace AccelByte.Sdk.Tests.Integration
 
             b = sdk.ValidateToken(accessToken);
             Assert.IsFalse(b);
+        }
+
+        [Test]
+        public void CustomPermissionValidationTestUsingDefaultValidator()
+        {
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.CustomPermission)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+
+            string accessToken = "";
+            sdk.LoginClient((tokenResp) =>
+            {
+                accessToken = tokenResp.AccessToken!;
+            });
+
+            string tPermission = $"CUSTOM:ADMIN:NAMESPACE:{sdk.Namespace}:GUILD";
+            int tAction = 2;
+
+            bool b = sdk.ValidateToken(accessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+        }
+
+        [Test]
+        public void UserCustomPermissionValidationTestUsingDefaultValidator()
+        {
+            //first sdk object is for oauth client which has ADMIN:ROLE [READ] permission, since we will assume that default user doesn't have this permission.
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+            sdk.LoginClient();
+
+            //we will access user using different sdk object wrapped inside `ExistingTestPlayer` object.
+            var user = new ExistingTestPlayer("AB_PLAYER1", true);
+
+            string tPermission = $"CUSTOM:NAMESPACE:{sdk.Namespace}:GUILD";
+            int tAction = 2;
+
+            //validate user's token against expected permission.
+            bool b = sdk.ValidateToken(user.AccessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+
+            user.Logout();
         }
     }
 }

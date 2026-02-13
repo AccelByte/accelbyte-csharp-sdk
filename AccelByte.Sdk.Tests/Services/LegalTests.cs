@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -21,7 +21,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class LegalTests : BaseServiceTests
     {
-        public LegalTests() : base(true) { }
+        public LegalTests() : base(true, IntegrationTestConfigRepository.Admin) { }
 
         public void CreateMarketingPreferencePolicyAndAcceptTest()
         {
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            string basePolicyName = "CSharp Server SDK Test Policy";
+            string basePolicyName = "CSharp Extend SDK Test Policy";
             string marketingPrefPolicyTypeId = String.Empty;
             string targetPolicyId = String.Empty;
             string targetPolicyVersionId;
@@ -50,7 +50,7 @@ namespace AccelByte.Sdk.Tests.Services
                 }
             }
 
-            if (targetPolicyId == String.Empty)
+            if (targetPolicyId == "")
             {
                 //Policy does not exists. so we create it.
 
@@ -98,7 +98,7 @@ namespace AccelByte.Sdk.Tests.Services
                 CreatePolicyVersionRequest policyVersion = new CreatePolicyVersionRequest()
                 {
                     DisplayVersion = "1.0.0",
-                    Description = "Testing CSharp Server SDK legal endpoints.",
+                    Description = "Testing CSharp Extend SDK legal endpoints.",
                     IsCommitted = false
                 };
 
@@ -124,8 +124,8 @@ namespace AccelByte.Sdk.Tests.Services
                 CreateLocalizedPolicyVersionRequest localPolicy = new CreateLocalizedPolicyVersionRequest()
                 {
                     LocaleCode = "ID",
-                    ContentType = "CSharp Server SDK Legal Content for ID",
-                    Description = "Testing CSharp Server SDK legal endpoints."
+                    ContentType = "CSharp Extend SDK Legal Content for ID",
+                    Description = "Testing CSharp Extend SDK legal endpoints."
                 };
 
                 CreateLocalizedPolicyVersionResponse? locPolResp = _Sdk.Legal.LocalizedPolicyVersions.OldCreateLocalizedPolicyVersionOp

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class UgcTests : BaseServiceTests
     {
-        public UgcTests() : base(true) { }
+        public UgcTests() : base(true, IntegrationTestConfigRepository.UGC) { }
 
         [Test]
         public void UGCServiceTests()
@@ -26,8 +26,8 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            string tag_name = "csharp_server_sdk_test";
-            string tag_name_u = "csharp_server_sdk_test_update";
+            string tag_name = "csharp_extend_sdk_test";
+            string tag_name_u = "csharp_extend_sdk_test_update";
             string tag_id = String.Empty;
 
             #region Create a tag

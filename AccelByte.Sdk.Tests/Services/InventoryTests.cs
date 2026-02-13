@@ -1,4 +1,4 @@
-// Copyright (c) 2024 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2024-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Tests.Services
         /// </summary>
         private ApimodelsInventoryConfigurationResp? _ConfigInventory = null;
 
-        public InventoryTests() : base(true) { }
+        public InventoryTests() : base(true, IntegrationTestConfigRepository.Inventory) { }
 
         [Test]
         public void InventoryTest()
@@ -31,12 +31,6 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
-
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
 
             string codeInventory = "csharp-sdk-code-" + Helper.GenerateRandomId(4);
 

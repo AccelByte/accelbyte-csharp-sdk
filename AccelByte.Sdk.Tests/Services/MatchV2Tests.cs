@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class MatchV2Tests : BaseServiceTests
     {
-        public MatchV2Tests() : base(false) { }
+        public MatchV2Tests() : base(false, IntegrationTestConfigRepository.Matchmaking) { }
 
         [Test]
         public void MatchPoolTests()
@@ -31,12 +31,6 @@ namespace AccelByte.Sdk.Tests.Services
             Assert.IsNotNull(_Sdk);
             if (_Sdk == null)
                 return;
-
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Temporarily disabled in AGS Starter due to issue in session service.");
-                return;
-            }
 
             DisableRetry();
 

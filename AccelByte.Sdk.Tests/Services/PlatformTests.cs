@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class PlatformTests : BaseServiceTests
     {
-        public PlatformTests() : base(true) { }
+        public PlatformTests() : base(true, IntegrationTestConfigRepository.Platform) { }
 
         protected void CheckAndClearStores(AccelByteSDK sdk)
         {
@@ -113,12 +113,12 @@ namespace AccelByte.Sdk.Tests.Services
 
             CheckAndClearStores(_Sdk);
 
-            string store_id = String.Empty;
+            string store_id = "";
 
             StoreCreate createStore = new StoreCreate()
             {
                 Title = "CSharp SDK Store Test",
-                Description = "Description for CSharp Server SDK store service integration test.",
+                Description = "Description for CSharp Extend SDK store service integration test.",
                 DefaultLanguage = "en",
                 DefaultRegion = "US",
                 SupportedLanguages = new List<string>() { "en", "id" },

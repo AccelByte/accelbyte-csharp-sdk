@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class LeaderboardTests : BaseServiceTests
     {
-        public LeaderboardTests() : base(true) { }
+        public LeaderboardTests() : base(true, IntegrationTestConfigRepository.Leaderboard) { }
 
         [Test]
         public void LeaderboardServiceTests()
@@ -29,15 +29,15 @@ namespace AccelByte.Sdk.Tests.Services
 
             DisableRetry();
 
-            string stat_code = "csharpserversdkteststat" + Guid.NewGuid().ToString().Substring(0, 6);
+            string stat_code = "csharpextendsdkteststat" + Guid.NewGuid().ToString().Substring(0, 6);
             string leaderboard_code = "csharpsdklbtest" + Guid.NewGuid().ToString().Substring(0, 6);
             string start_time = DateTime.Now.AddMonths(1).ToString("yyyy-MM-dd'T'HH:mm:ss.ffK");
 
             // Create a stat code first
             StatCreate createStat = new StatCreate()
             {
-                Name = "CSharp Server SDK Test Stat",
-                Description = "CSharp server sdk integration test.",
+                Name = "CSharp Extend SDK Test Stat",
+                Description = "CSharp Extend SDK integration test.",
                 StatCode = stat_code,
                 SetBy = "SERVER",
                 Minimum = 0.0,
@@ -45,14 +45,14 @@ namespace AccelByte.Sdk.Tests.Services
                 DefaultValue = 50.0,
                 IncrementOnly = true,
                 SetAsGlobal = false,
-                Tags = new List<string>() { "csharp", "server_sdk", "test" }
+                Tags = new List<string>() { "csharp", "extend_sdk", "test" }
             };
 
             StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
                 .Execute(createStat, _Sdk.Namespace);
             Assert.IsNotNull(cStat);
             if (cStat != null)
-                Assert.AreEqual("CSharp Server SDK Test Stat", cStat.Name);
+                Assert.AreEqual("CSharp Extend SDK Test Stat", cStat.Name);
 
             #region Create a leaderboard
             ModelsLeaderboardConfigReq newLeaderboard = new ModelsLeaderboardConfigReq()

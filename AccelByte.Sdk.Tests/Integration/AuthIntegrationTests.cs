@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -36,7 +36,7 @@ namespace AccelByte.Sdk.Tests.Integration
             DefaultTokenRepository tokenRepo = new DefaultTokenRepository();
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .UseDefaultConfigRepository()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .SetTokenRepository(tokenRepo)
                 .UseDefaultCredentialRepository()
                 .UseRefreshIfPossible()
@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Tests.Integration
             DefaultTokenRepository tokenRepo = new DefaultTokenRepository();
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .UseDefaultConfigRepository()
+                .SetConfigRepository(IntegrationTestConfigRepository.Achievement)                
                 .SetTokenRepository(tokenRepo)
                 .UseDefaultCredentialRepository()
                 .UseRefreshIfPossible()
@@ -101,7 +101,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 if (!sdk.LoginClient())
                     throw new Exception("Login failed");
 
-                var response = sdk.Achievement.GlobalAchievements.PublicListGlobalAchievementsOp.Execute(sdk.Namespace);
+                var response = sdk.Achievement.GlobalAchievements.AdminListGlobalAchievementsOp.Execute(sdk.Namespace);
                 Assert.IsNotNull(response);
 
                 loopCounter++;

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class GameTelemetryTests : BaseServiceTests
     {
-        public GameTelemetryTests() : base(true) { }
+        public GameTelemetryTests() : base(true, IntegrationTestConfigRepository.Admin) { }
 
         [Test]
         public void GametelemetryServiceTests()

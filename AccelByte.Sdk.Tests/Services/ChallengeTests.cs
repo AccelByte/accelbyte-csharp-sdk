@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2024 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2024-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class ChallengeTests : BaseServiceTests
     {
-        public ChallengeTests() : base(false) { }
+        public ChallengeTests() : base(false, IntegrationTestConfigRepository.Challenge) { }
 
         [Test]
         public void ChallengeAndGoalTests()

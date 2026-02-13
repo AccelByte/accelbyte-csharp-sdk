@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -10,6 +10,9 @@ using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
 
 using AccelByte.Sdk.Api.Social.Model;
+using AccelByte.Sdk.Core.Util;
+using AccelByte.Sdk.Tests.Integration;
+using AccelByte.Sdk.Tests.Model;
 
 namespace AccelByte.Sdk.Tests.Services
 {
@@ -17,7 +20,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SocialTests : BaseServiceTests
     {
-        public SocialTests() : base(true) { }
+        public SocialTests() : base(true, IntegrationTestConfigRepository.Statistics) { }
 
         [Test]
         public void SocialServiceTests()
@@ -26,19 +29,13 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string stat_code = "csharpserversdkteststat";
+            string stat_code = $"csharpsdktest-{Helper.GenerateRandomAlphabet(6)}";
 
             #region Create a stat
             StatCreate createStat = new StatCreate()
             {
-                Name = "CSharp Server SDK Test Stat",
-                Description = "CSharp server sdk integration test.",
+                Name = "CSharp Extend SDK Test Stat",
+                Description = "CSharp extend sdk integration test.",
                 StatCode = stat_code,
                 SetBy = "SERVER",
                 Minimum = 0.0,
@@ -46,7 +43,7 @@ namespace AccelByte.Sdk.Tests.Services
                 DefaultValue = 50.0,
                 IncrementOnly = true,
                 SetAsGlobal = false,
-                Tags = new List<string>() { "csharp", "server_sdk", "test" }
+                Tags = new List<string>() { "csharp", "extend_sdk", "test" }
             };
 
             StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
@@ -54,7 +51,7 @@ namespace AccelByte.Sdk.Tests.Services
             #endregion
             Assert.IsNotNull(cStat);
             if (cStat != null)
-                Assert.AreEqual("CSharp Server SDK Test Stat", cStat.Name);
+                Assert.AreEqual("CSharp Extend SDK Test Stat", cStat.Name);
 
             #region Get a stat
             StatInfo? gStat = _Sdk.Social.StatConfiguration.GetStatOp
@@ -62,7 +59,7 @@ namespace AccelByte.Sdk.Tests.Services
             #endregion
             Assert.IsNotNull(gStat);
             if (gStat != null)
-                Assert.AreEqual("CSharp Server SDK Test Stat", gStat.Name);
+                Assert.AreEqual("CSharp Extend SDK Test Stat", gStat.Name);
 
             #region Update a stat
             StatUpdate updateStat = new StatUpdate()
@@ -88,7 +85,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SocialTestsWithOAuthClient : BaseServiceTests
     {
-        public SocialTestsWithOAuthClient() : base(false) { }
+        public SocialTestsWithOAuthClient() : base(false, IntegrationTestConfigRepository.Statistics) { }
 
         [Test]
         public void OAuthClientTest()
@@ -97,25 +94,44 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            if (IsUsingAGSStarter())
+            ExistingTestPlayer testPlayer = new ExistingTestPlayer("AB_PLAYER1", true);
+            string user_id = testPlayer.UserId;
+
+            string stat_code = $"csharpsdktest-fixstat";
+
+            try
             {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
+                StatInfo? gStat = _Sdk.Social.StatConfiguration.GetStatOp
+                    .Execute(_Sdk.Namespace, stat_code);
             }
+            catch (HttpResponseException x)
+            {
+                ModelErrorResponse? mer = System.Text.Json.JsonSerializer.Deserialize<ModelErrorResponse>(x.Message);
+                if (mer == null)
+                    throw new Exception("Failed to parse error response. Payload was `" + x.Message + "`.");
 
-            string? user_login_id = Environment.GetEnvironmentVariable("AB_USERNAME");
-            if (user_login_id == null)
-                throw new Exception("This test requires the value of AB_USERNAME env var. Please specify one.");
+                if (mer.ErrorCode != 12241)
+                    throw new Exception(mer.ErrorMessage, x);
 
-            user_login_id = UnQuote(user_login_id);
-            string stat_code = "cs-server-sdk-test";
+                //If stat does not exists, create it.
+                StatCreate createStat = new StatCreate()
+                {
+                    Name = "CSharp Extend SDK Fixed Test Stat",
+                    Description = "CSharp extend sdk integration test.",
+                    StatCode = stat_code,
+                    SetBy = "SERVER",
+                    Minimum = 0.0,
+                    Maximum = 100.0,
+                    DefaultValue = 50.0,
+                    IncrementOnly = true,
+                    SetAsGlobal = false,
+                    Tags = new List<string>() { "csharp", "extend_sdk", "test" }
+                };
 
-            var searchResp = _Sdk.Iam.Users.AdminSearchUserV3Op
-                .SetQuery(user_login_id)
-                .Execute(_Sdk.Namespace);
-            Assert.IsNotNull(searchResp);
-
-            string user_id = searchResp!.Data![0].UserId!;
+                StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp
+                    .Execute(createStat, _Sdk.Namespace);
+                Assert.IsNotNull(cStat);
+            }
 
             _Sdk.Social.UserStatistic.CreateUserStatItemOp
                 .Execute(_Sdk.Namespace, stat_code, user_id);
@@ -138,6 +154,8 @@ namespace AccelByte.Sdk.Tests.Services
 
             _Sdk.Social.UserStatistic.DeleteUserStatItemsOp
                 .Execute(_Sdk.Namespace, stat_code, user_id);
+
+            testPlayer.Logout();
         }
     }
 }

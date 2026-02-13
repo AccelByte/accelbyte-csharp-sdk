@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -19,7 +19,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class AchievementTests : BaseServiceTests
     {
-        public AchievementTests() : base(true) { }
+        public AchievementTests() : base(true, IntegrationTestConfigRepository.Achievement) { }
 
         [Test]
         public void AchievementServiceTests()
@@ -29,7 +29,7 @@ namespace AccelByte.Sdk.Tests.Services
                 return;
 
             string achievement_code = "csharp-sdk-test-3";
-            string achievement_name = "CSharp Server SDK Test 3";
+            string achievement_name = "CSharp Extend SDK Test 3";
 
             #region Create an achievement
             ModelsAchievementRequest newAchievement = new ModelsAchievementRequest()
@@ -145,7 +145,7 @@ namespace AccelByte.Sdk.Tests.Services
             await sdk.LoginUserAsync();
 
             string achievement_code = "csharp-sdk-test-3";
-            string achievement_name = "CSharp Server SDK Test 3";
+            string achievement_name = "CSharp Extend SDK Test 3";
 
             ModelsAchievementRequest newAchievement = new ModelsAchievementRequest()
             {

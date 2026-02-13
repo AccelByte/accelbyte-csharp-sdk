@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class BasicTests : BaseServiceTests
     {
-        public BasicTests() : base(true) { }
+        public BasicTests() : base(true, IntegrationTestConfigRepository.Basic) { }
 
         [Test]
         public void BasicServiceTests()
@@ -58,7 +58,7 @@ namespace AccelByte.Sdk.Tests.Services
             UserProfilePrivateCreate createProfile = new UserProfilePrivateCreate()
             {
                 FirstName = "Integration Test",
-                LastName = "CSharp Server SDK",
+                LastName = "CSharp Extend SDK",
                 DateOfBirth = DateTime.ParseExact("2022-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture),
                 Language = "en"
             };
@@ -75,7 +75,7 @@ namespace AccelByte.Sdk.Tests.Services
                 .Execute(_Sdk.Namespace);
             #endregion
             Assert.IsNotNull(ownResp);
-            Assert.AreEqual(ownResp?.LastName!, "CSharp Server SDK");
+            Assert.AreEqual(ownResp?.LastName!, "CSharp Extend SDK");
             string userId = ownResp?.UserId!;
 
             #region Update user's own profile info

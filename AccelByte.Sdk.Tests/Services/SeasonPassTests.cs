@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -18,7 +18,7 @@ namespace AccelByte.Sdk.Tests.Services
     [Explicit]
     public class SeasonPassTests : BaseServiceTests
     {
-        public SeasonPassTests() : base(true) { }
+        public SeasonPassTests() : base(true, IntegrationTestConfigRepository.SeasonPass) { }
 
         [Test]
         public void SeasonPassTest()
@@ -27,13 +27,7 @@ namespace AccelByte.Sdk.Tests.Services
             if (_Sdk == null)
                 return;
 
-            if (IsUsingAGSStarter())
-            {
-                Assert.Inconclusive("Test does not apply to AGS Starter environment.");
-                return;
-            }
-
-            string nameSeason = "CSharpServerSDKTestSeason";
+            string nameSeason = "CSharpExtendSDKTestSeason";
             DateTime? startTime = new DateTime();
             DateTime? endTime = new DateTime().AddDays(2);
             string defaultDraftStoreId = String.Empty;
@@ -89,7 +83,7 @@ namespace AccelByte.Sdk.Tests.Services
                     { "en", categoryPath }
                 }
             };
-            FullCategoryInfo? cCategoryForSeason = _Sdk.Platform.Category.CreateCategoryOp
+            _Sdk.Platform.Category.CreateCategoryOp
                 .Execute(cCategory, _Sdk.Namespace, defaultDraftStoreId);
 
             // Create an item tier in platform
@@ -100,9 +94,9 @@ namespace AccelByte.Sdk.Tests.Services
             {
                 new RegionDataItemDTO()
                 {
-                    CurrencyCode = "USD",
-                    CurrencyNamespace = "accelbyte",
-                    CurrencyType = RegionDataItemDTOCurrencyType.REAL,
+                    CurrencyCode = "TESTING",
+                    CurrencyNamespace = _Sdk.Namespace,
+                    CurrencyType = RegionDataItemDTOCurrencyType.VIRTUAL,
                     Price = price
                 }
             });
