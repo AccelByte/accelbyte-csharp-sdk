@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2023-2024 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2023-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -44,15 +44,16 @@ namespace AccelByte.Sdk.Core
             _NamespaceContextCache.Clear();
         }
 
-        protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId)
+        protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId, string roleNs)
         {
-            if (_PermissionCache.ContainsKey(roleId))
-                return _PermissionCache[roleId];
+            string cacheKey = $"{roleId}-{roleNs}";
+            if (_PermissionCache.ContainsKey(cacheKey))
+                return _PermissionCache[cacheKey];
 
             try
             {
                 var response = sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
-                    .Execute(sdk.Namespace, roleId);
+                    .Execute(roleNs, roleId);
                 if (response == null)
                     throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
 
@@ -65,8 +66,8 @@ namespace AccelByte.Sdk.Core
                         Action = item.Action!.Value
                     });
                 }
-
-                _PermissionCache[roleId] = permissions;
+                
+                _PermissionCache[cacheKey] = permissions;
                 return permissions;
             }
             catch
@@ -75,15 +76,16 @@ namespace AccelByte.Sdk.Core
             }
         }
 
-        protected virtual async Task<List<LocalPermissionItem>> GetRolePermissionAsync(AccelByteSDK sdk, string roleId)
+        protected virtual async Task<List<LocalPermissionItem>> GetRolePermissionAsync(AccelByteSDK sdk, string roleId, string roleNs)
         {
-            if (_PermissionCache.ContainsKey(roleId))
-                return _PermissionCache[roleId];
+            string cacheKey = $"{roleId}-{roleNs}";
+            if (_PermissionCache.ContainsKey(cacheKey))
+                return _PermissionCache[cacheKey];
 
             try
             {
                 var response = await sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
-                    .ExecuteAsync(sdk.Namespace, roleId);
+                    .ExecuteAsync(roleNs, roleId);
                 if (response == null)
                     throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
 
@@ -97,7 +99,7 @@ namespace AccelByte.Sdk.Core
                     });
                 }
 
-                _PermissionCache[roleId] = permissions;
+                _PermissionCache[cacheKey] = permissions;
                 return permissions;
             }
             catch

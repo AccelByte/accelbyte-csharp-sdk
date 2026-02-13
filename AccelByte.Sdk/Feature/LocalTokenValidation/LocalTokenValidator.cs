@@ -228,7 +228,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                             if (r.RoleId == null)
                                 continue;
 
-                            var permissions = GetRolePermission(sdk, r.RoleId);
+                            var permissions = GetRolePermission(sdk, r.RoleId, r.Namespace!);
                             foreach (var p in permissions)
                             {
                                 string aResource = ReplacePlaceholder(p.Resource, pParams);
@@ -301,7 +301,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                             if (r.RoleId == null)
                                 continue;
 
-                            var permissions = GetRolePermission(sdk, r.RoleId);
+                            var permissions = GetRolePermission(sdk, r.RoleId, r.Namespace!);
                             foreach (var p in permissions)
                             {
                                 string aPermission = p.Resource;
@@ -399,7 +399,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                             if (r.RoleId == null)
                                 continue;
 
-                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
+                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId, r.Namespace!);
                             foreach (var p in permissions)
                             {
                                 string aResource = ReplacePlaceholder(p.Resource, pParams);
@@ -472,7 +472,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                             if (r.RoleId == null)
                                 continue;
 
-                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId);
+                            var permissions = await GetRolePermissionAsync(sdk, r.RoleId, r.Namespace!);
                             foreach (var p in permissions)
                             {
                                 string aPermission = p.Resource;
