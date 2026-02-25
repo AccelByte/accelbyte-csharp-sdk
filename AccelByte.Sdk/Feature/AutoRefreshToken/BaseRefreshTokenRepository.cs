@@ -61,7 +61,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
         protected virtual void OnTokenRefreshFailed(Exception x, ref bool rethrowException) { }
 
-        protected virtual void OnRefreshingToken(LoginType loginType) { }
+        protected virtual void OnTryRefreshingToken(LoginType loginType) { }
 
         public BaseRefreshTokenRepository(ITokenRefreshOptions opts)
         {
@@ -133,12 +133,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                 //only try refresh if token exists and it is near expired.
                 if (TryToSetRefreshOnProgressToTrue())
                 {
+                    bool refreshSuccess = false;
                     int retryCount = 0;
                     while (true)
                     {
                         try
                         {
-                            OnRefreshingToken(LoginType);
+                            OnTryRefreshingToken(LoginType);
                             if (LoginType == LoginType.User ||
                                 LoginType == LoginType.Platform)
                             {
@@ -147,8 +148,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                 sdk.RefreshAccessToken(RefreshToken, token => onUpdated?.Invoke());
 
                                 lock (_ROPLock)
-                                    _IsRefreshOnProgress = false;
-                                OnTokenRefreshed();
+                                    _IsRefreshOnProgress = false;                                
                             }
                             else if (LoginType == LoginType.Client)
                             {
@@ -157,21 +157,20 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
                                 lock (_ROPLock)
                                     _IsRefreshOnProgress = false;
-                                OnTokenRefreshed();
                             }
 
+                            refreshSuccess = true;
                             break; //retry success, get out of the loop
                         }
                         catch (Exception x)
                         {
                             retryCount++;
                             if (retryCount >= _MaxRetry)
-                            {                                
+                            {
                                 OnTokenRefreshFailed(x, ref rethrowOnError);
-
-                                onFailed?.Invoke(x);
                                 lock (_ROPLock)
                                     _IsRefreshOnProgress = false;
+                                onFailed?.Invoke(x);
 
                                 if (rethrowOnError)
                                     throw;
@@ -180,6 +179,9 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                             }
                         }
                     }
+
+                    if (refreshSuccess)
+                        OnTokenRefreshed();
                 }
             }
         }
@@ -191,12 +193,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                 //only try refresh if token exists and it is near expired.
                 if (TryToSetRefreshOnProgressToTrue())
                 {
+                    bool refreshSuccess = false;
                     int retryCount = 0;
                     while (true)
                     {
                         try
                         {
-                            OnRefreshingToken(LoginType);
+                            OnTryRefreshingToken(LoginType);
                             if (LoginType == LoginType.User ||
                                 LoginType == LoginType.Platform)
                             {
@@ -205,8 +208,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                 await sdk.RefreshAccessTokenAsync(RefreshToken, token => onUpdated?.Invoke());
 
                                 lock (_ROPLock)
-                                    _IsRefreshOnProgress = false;
-                                OnTokenRefreshed();
+                                    _IsRefreshOnProgress = false;                                
                             }
                             else if (LoginType == LoginType.Client)
                             {
@@ -215,21 +217,20 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
 
                                 lock (_ROPLock)
                                     _IsRefreshOnProgress = false;
-                                OnTokenRefreshed();
                             }
 
+                            refreshSuccess = true;
                             break; //retry success, get out of the loop
                         }
                         catch (Exception x)
                         {
                             retryCount++;
                             if (retryCount >= _MaxRetry)
-                            {                                
+                            {
                                 OnTokenRefreshFailed(x, ref rethrowOnError);
-
-                                onFailed?.Invoke(x);
                                 lock (_ROPLock)
                                     _IsRefreshOnProgress = false;
+                                onFailed?.Invoke(x);
 
                                 if (rethrowOnError)
                                     throw;
@@ -238,6 +239,9 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                             }
                         }
                     }
+
+                    if (refreshSuccess)
+                        OnTokenRefreshed();
                 }
             }
         }

@@ -106,7 +106,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
         }
 
         /// <summary>
-        /// se on-demand token refresh. The default value for `OnDemandTokenRefreshOptions` will be applied, so on-demand token refresh will be enabled.
+        /// Use on-demand token refresh. The default value for `OnDemandTokenRefreshOptions` will be applied, so on-demand token refresh will be enabled.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="builder"></param>

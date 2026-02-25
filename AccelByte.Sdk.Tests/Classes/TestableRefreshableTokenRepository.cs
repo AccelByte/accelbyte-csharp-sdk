@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2026 AccelByte Inc. All Rights Reserved.
+﻿// Copyright (c) 2025-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Tests
         public TestableRefreshableTokenRepository(OnDemandTokenRefreshOptions opts)
             : base(opts) { }
 
-        protected override void OnRefreshingToken(LoginType loginType)
+        protected override void OnTryRefreshingToken(LoginType loginType)
         {
             if (ExceptionFunc != null)
                 throw ExceptionFunc.Invoke(loginType);
