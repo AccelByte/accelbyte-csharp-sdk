@@ -126,9 +126,9 @@ namespace AccelByte.Sdk.Tests.Integration
             for (int i = 0; i < 5; i++)
             {
                 //do request
-                var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                var response = sdk.Achievement.Achievements.AdminListAchievementsOp
                     .Execute(sdk.Namespace);
-                Assert.IsNotNull(achResp1);
+                Assert.IsNotNull(response);
 
                 //force token expire
                 refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds
@@ -174,9 +174,9 @@ namespace AccelByte.Sdk.Tests.Integration
                     refreshTokenRepo.ExceptionFunc = null;
 
                 //do request
-                var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                var response = sdk.Achievement.Achievements.AdminListAchievementsOp
                     .Execute(sdk.Namespace);
-                Assert.IsNotNull(achResp1);
+                Assert.IsNotNull(response);
 
                 //force token expire
                 refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds

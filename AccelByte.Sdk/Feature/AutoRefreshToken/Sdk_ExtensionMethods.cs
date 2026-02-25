@@ -85,8 +85,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             return builder;
         }
 
-        //Token refresh improvement
-
+        /// <summary>
+        /// Use on-demand token refresh. It will be enabled when OnDemandTokenRefreshOptions.IsEnabled is set to true. The default configuration sets this value to true.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="opts"></param>
+        /// <returns></returns>
         public static AccelByteSdkBuilder<T> UseOnDemandTokenRefresh<T>(this AccelByteSdkBuilder<T> builder, OnDemandTokenRefreshOptions opts)
             where T : AccelByteSDK
         {
@@ -100,6 +105,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             return builder;
         }
 
+        /// <summary>
+        /// se on-demand token refresh. The default value for `OnDemandTokenRefreshOptions` will be applied, so on-demand token refresh will be enabled.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="opts"></param>
+        /// <returns></returns>
         public static AccelByteSdkBuilder<T> UseOnDemandTokenRefresh<T>(this AccelByteSdkBuilder<T> builder)
             where T : AccelByteSDK
         {
@@ -107,6 +119,13 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             return builder.UseOnDemandTokenRefresh(opts);
         }
 
+        /// <summary>
+        /// Use on-demand token refresh. It will be enabled depending on the value of the RefreshTokenEnabled property in the token repository object passed as a parameter.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="opts"></param>
+        /// <returns></returns>
         public static AccelByteSdkBuilder<T> UseOnDemandTokenRefresh<T, TRepo>(this AccelByteSdkBuilder<T> builder, TRepo tokenRepo)
             where T : AccelByteSDK
             where TRepo : BaseRefreshTokenRepository
