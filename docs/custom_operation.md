@@ -1,25 +1,24 @@
 # Add Custom Operation into AccelByte SDK
 
 ## Background
-Majority of C# Extend SDK codes are generated from [spec json files](../spec) using codegen tools. Any attemp to customize C# Extend SDK must avoid editing files that are marked as `DO NOT EDIT`.
-Also it is best practice to extend the functionality of C# Extend SDK by inherit the base classes or add new implementation for partial classes to ensure less complications when upgrading C# Extend SDK.
+The majority of C# Extend SDK code is generated from the [spec JSON files](../spec) using code generation tools. Any attempt to customize the C# Extend SDK must avoid editing files that are marked as `DO NOT EDIT`.
+It is also a best practice to extend the functionality of the C# Extend SDK by inheriting base classes or adding new implementations of partial classes to minimize complications when upgrading the C# Extend SDK.
 
 ## How to Create a Custom Operation
 In this guide, we will explain on how to create a custom operation for custom endpoint and integrate it into SDK core.
 
 ### Preparation
-Create a new .NET 6.0 class library project and include dependency to [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/). Refer to these articles for more information on how to create new project.
-- Create a class library [using Visual Studio](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio?pivots=dotnet-6-0).
-- Create a class library [using Visual Studio Code](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio-code?pivots=dotnet-6-0).
+Create a new .NET class library project and add a dependency on [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/). Refer to these articles for more information on how to create a new project:
+- Create a class library [using Visual Studio](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio).
+- Create a class library [using Visual Studio Code](https://learn.microsoft.com/en-us/dotnet/core/tutorials/library-with-visual-studio-code).
 
 ### Goal
-Create an operation class and its wrapper for custom endpoint (for this guide, let's use `GET /achievement/v1/public/namespaces/{namespace}/tags` as an example of custom endpoint).
-This endpoints requires `namespace` as path parameter and a few optional query parameters. Will returns HTTP 200 if success along with the data.
-Let's use `SdkCustomization.CustomOp` as namespace. (Usually the namespace is the name of the project).
-And let us name this custom operation `MyCustomOp`.
+Create an operation class and its wrapper for a custom endpoint (for this guide, we use `GET /achievement/v1/public/namespaces/{namespace}/tags` as an example of a custom endpoint).
+This endpoint requires `namespace` as a path parameter and a few optional query parameters. It returns HTTP 200 on success along with the response data.
+We will use `SdkCustomization.CustomOp` as the namespace (typically the namespace matches the project name), and we will name this custom operation `MyCustomOp`.
 
 ## Create Model classes
-Our example endpoint has this output
+Our example endpoint has this output:
 ```json
 {
   "data": [
@@ -35,7 +34,7 @@ Our example endpoint has this output
   }
 }
 ```
-We need to create model classes that reflect the output.
+We need to create model classes that reflect this output.
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -78,7 +77,7 @@ namespace SdkCustomization.CustomOp
 ```
 
 ## Create an Operation Class
-You can create an operation class following this example
+You can create an operation class following this example:
 ```csharp
 using System;
 using System.IO;
@@ -122,8 +121,8 @@ namespace SdkCustomization.CustomOp
 
         public override string[] Produces => new string[] { "application/json" };
 
-        //Still need to implement this. set "Bearer" for SECURITY_BEARER, and "Basic" for SECURITY_BASIC.
-        //This property requirement will be removed in future release.
+        //Still need to implement this. Set "Bearer" for SECURITY_BEARER, and "Basic" for SECURITY_BASIC.
+        //This property requirement will be removed in a future release.
         [Obsolete("Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
@@ -150,7 +149,7 @@ namespace SdkCustomization.CustomOp
 ```
 
 ## Create a Wrapper Class
-You can create a wrapper class following this example
+You can create a wrapper class following this example:
 ```csharp
 using System;
 using AccelByte.Sdk.Core;
@@ -179,7 +178,7 @@ namespace SdkCustomization.CustomOp
 ```
 
 ## Use Custom Operation
-After you create necessary classes, you can use itu with AccelByte Sdk.
+After you create the necessary classes, you can use them with the AccelByte SDK.
 ```csharp
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
@@ -199,10 +198,10 @@ var response = customWrapper.CallMyCustomOp(newOp);
 ```
 
 ## Implement Builder Pattern for Custom Operation
-As you can notice from the code above, to create `MyCustomOp` object, you will need to pass several null values.
-This null values is optional parameter that will be pass as query parameter.
-To make the operation class intuitive to use, you can implement builder pattern for `MyCustomOp` class.
-See the modified code below as an example of builder pattern implementation.
+As you can see from the code above, to create a `MyCustomOp` object you need to pass several null values.
+These null values are optional parameters that will be passed as query parameters.
+To make the operation class more intuitive to use, you can implement a builder pattern for the `MyCustomOp` class.
+See the modified code below as an example of a builder pattern implementation.
 ```csharp
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
@@ -290,7 +289,7 @@ namespace SdkCustomization.CustomOp
 ```
 
 ## Use Custom Operation with Builder Pattern
-After you do modification to the operation class, you can leverage the builder pattern to instantiate your operation class.
+After you modify the operation class, you can leverage the builder pattern to instantiate your operation class.
 ```csharp
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Api;
@@ -305,10 +304,10 @@ AccelByteSDK sdk = AccelByteSDK.Builder
 
 MyCustomWrapper customWrapper = new MyCustomWrapper(sdk);
 
-//No optional param specified...
+//No optional parameter specified...
 MyCustomOp newOp = MyCustomOp.Builder.Build(sdk.Namespace);
 
-//or, if you need to set the limit parameter..
+//Or, if you need to set the limit parameter...
 MyCustomOp newOp = MyCustomOp.Builder
     .SetLimit(5)
     .Build(sdk.Namespace);
@@ -319,7 +318,7 @@ var response = customWrapper.CallMyCustomOp(newOp);
 ## Implement Fluent Interface for Custom Operation using Custom SDK
 This section can be implemented using C# Extend SDK version v0.34.0 or above.
 
-To further enchance intuitiveness while using the sdk, you can implement fluent interface for your custom operation.
+To further enhance intuitiveness while using the SDK, you can implement a fluent interface for your custom operation.
 See the modified code below as an example of fluent interface implementation.
 
 - Modify custom operation class
@@ -345,7 +344,7 @@ public MyCustomResponseModel? Execute(string namespace_)
 public class MyCustomWrapper
 {
     ...
-    //add this method
+    //Add this method
     public MyCustomOp.MyCustomOpBuilder MyCustomOpOp
     {
         get { return MyCustomOp.Builder.SetWrapperObject(this); }
@@ -363,7 +362,7 @@ namespace SdkCustomization.CustomOp
 {
     public class MyCustomAccelByteSDK : AccelByteSDK
     {
-        //Add your custom sdk builder
+        //Add your custom SDK builder
         public static new AccelByteSdkBuilder<MyCustomAccelByteSDK> Builder { get => new AccelByteSdkBuilder<MyCustomAccelByteSDK>(); }
 
         //Add custom wrapper property
@@ -393,10 +392,10 @@ Example code for testing can be found [here](../samples/AccelByte.Sdk.Sample.Cus
 
 
 ## Testing
-Create a .NET 6 `NUnit Test Project` and include [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/) dependency.
+Create a .NET `NUnit Test Project` and include the [AccelByte.Sdk](https://www.nuget.org/packages/AccelByte.Sdk/) dependency.
 Add reference to your custom operation project inside this test project.
 
-You can use the code template below to start your sdk test class.
+You can use the code template below to start your SDK test class.
 ```csharp
 using System;
 using NUnit.Framework;
