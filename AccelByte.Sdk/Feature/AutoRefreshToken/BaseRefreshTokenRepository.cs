@@ -57,6 +57,12 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             }
         }
 
+        protected virtual void OnTokenRefreshed() { }
+
+        protected virtual void OnTokenRefreshFailed(Exception x, ref bool rethrowException) { }
+
+        protected virtual void OnRefreshingToken(LoginType loginType) { }
+
         public BaseRefreshTokenRepository(ITokenRefreshOptions opts)
         {
             RefreshThreshold = opts.Rate;
@@ -132,17 +138,26 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                     {
                         try
                         {
+                            OnRefreshingToken(LoginType);
                             if (LoginType == LoginType.User ||
                                 LoginType == LoginType.Platform)
                             {
                                 if (!HasRefreshToken)
                                     throw new Exception("No refresh token stored.");
                                 sdk.RefreshAccessToken(RefreshToken, token => onUpdated?.Invoke());
+
+                                lock (_ROPLock)
+                                    _IsRefreshOnProgress = false;
+                                OnTokenRefreshed();
                             }
                             else if (LoginType == LoginType.Client)
                             {
                                 sdk.LoginClient(token => onUpdated?.Invoke());
                                 _ = UpdateObserversWithNewToken();
+
+                                lock (_ROPLock)
+                                    _IsRefreshOnProgress = false;
+                                OnTokenRefreshed();
                             }
 
                             break; //retry success, get out of the loop
@@ -152,6 +167,10 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                             retryCount++;
                             if (retryCount >= _MaxRetry)
                             {
+                                lock (_ROPLock)
+                                    _IsRefreshOnProgress = false;
+                                OnTokenRefreshFailed(x, ref rethrowOnError);
+
                                 onFailed?.Invoke(x);
                                 if (rethrowOnError)
                                     throw;

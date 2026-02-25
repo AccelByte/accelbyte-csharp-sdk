@@ -107,6 +107,20 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
             return builder.UseOnDemandTokenRefresh(opts);
         }
 
+        public static AccelByteSdkBuilder<T> UseOnDemandTokenRefresh<T, TRepo>(this AccelByteSdkBuilder<T> builder, TRepo tokenRepo)
+            where T : AccelByteSDK
+            where TRepo : BaseRefreshTokenRepository
+        {
+            if (tokenRepo.RefreshTokenEnabled)
+            {
+                builder.SetTokenRepository(tokenRepo);
+                builder.AddOperationProcess(new AutoTokenRefreshOperationProcess());
+                return builder;
+            }
+
+            return builder;
+        }
+
         public static AccelByteSdkBuilder<T> UseBackgroundTokenRefresh<T>(this AccelByteSdkBuilder<T> builder, BackgroundTokenRefreshOptions opts)
             where T : AccelByteSDK
         {

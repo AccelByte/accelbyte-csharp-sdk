@@ -28,39 +28,81 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void UserLoginWithOnDemandTokenRefresh()
         {
+            TestableRefreshableTokenRepository refreshTokenRepo = new TestableRefreshableTokenRepository();
+
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultCredentialRepository()
-                .UseOnDemandTokenRefresh()
+                .UseOnDemandTokenRefresh(refreshTokenRepo)
                 .EnableLog()
                 .Build();
-
             sdk.LoginUser();
 
-            Agreement wLegalAgreement = new Agreement(sdk);
-
-            //First request, valid token
-            List<RetrieveAcceptedAgreementResponse>? aggrs1 = wLegalAgreement.RetrieveAgreementsPublic(
-                RetrieveAgreementsPublic
-                .Builder.Build());
-            Assert.IsNotNull(aggrs1);
-
-            //Force token expire
-            if (sdk.Configuration.TokenRepository is RefreshableTokenRepository)
+            //loop to simulate multiple expired session
+            for (int i = 0; i < 5; i++)
             {
-                RefreshableTokenRepository tokenRepo = (RefreshableTokenRepository)sdk.Configuration.TokenRepository;
-                tokenRepo.SetTokenExpiry(5); // expiry in 5 seconds
+                //do request
+                var agreements = sdk.Legal.Agreement.RetrieveAgreementsPublicOp
+                    .Execute();
+                Assert.IsNotNull(agreements);
 
-                //wait for 5 seconds
-                Thread.Sleep(5000);
+                //force token expire
+                refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds
+
+                //wait for 4 seconds
+                Thread.Sleep(4000);
             }
 
-            //Second request, expired token, try to do refresh
-            List<RetrieveAcceptedAgreementResponse>? aggrs2 = wLegalAgreement.RetrieveAgreementsPublic(
-                RetrieveAgreementsPublic
-                .Builder.Build());
-            Assert.IsNotNull(aggrs2);
+            //all http calls should succeed.
+            Assert.AreEqual(4, refreshTokenRepo.RefreshCount);
+            Assert.AreEqual(0, refreshTokenRepo.FailedCount);
+
+            sdk.Logout();
+        }
+
+        [Test]
+        public void UserLoginWithFailedOnDemandTokenRefresh()
+        {
+            TestableRefreshableTokenRepository refreshTokenRepo = new TestableRefreshableTokenRepository();
+
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultCredentialRepository()
+                .UseOnDemandTokenRefresh(refreshTokenRepo)
+                .EnableLog()
+                .Build();
+            sdk.LoginUser();
+
+            //loop to simulate multiple expired session
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 2)
+                {
+                    //introduce exception on third refresh
+                    refreshTokenRepo.ExceptionFunc = (loginType) =>
+                    {
+                        return new Exception("Intentional exception");
+                    };
+                }
+                else
+                    refreshTokenRepo.ExceptionFunc = null;
+
+                //do request
+                var agreements = sdk.Legal.Agreement.RetrieveAgreementsPublicOp
+                    .Execute();
+                Assert.IsNotNull(agreements);
+
+                //force token expire
+                refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds
+
+                //wait for 4 seconds
+                Thread.Sleep(4000);
+            }
+            
+            Assert.AreEqual(3, refreshTokenRepo.RefreshCount);
+            Assert.AreEqual(1, refreshTokenRepo.FailedCount);
 
             sdk.Logout();
         }
@@ -68,35 +110,83 @@ namespace AccelByte.Sdk.Tests.Integration
         [Test]
         public void ClientLoginWithOnDemandTokenRefresh()
         {
+            TestableRefreshableTokenRepository refreshTokenRepo = new TestableRefreshableTokenRepository();
+
             AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
                 .SetConfigRepository(IntegrationTestConfigRepository.Achievement)
                 .UseDefaultCredentialRepository()
-                .UseOnDemandTokenRefresh()
+                .UseOnDemandTokenRefresh(refreshTokenRepo)
                 .EnableLog()
                 .Build();
 
             sdk.LoginClient();
 
-            //First request, valid token
-            var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
-                .Execute(sdk.Namespace);
-            Assert.IsNotNull(achResp1);
-
-            //Force token expire
-            if (sdk.Configuration.TokenRepository is RefreshableTokenRepository)
+            //loop to simulate multiple expired session
+            for (int i = 0; i < 5; i++)
             {
-                RefreshableTokenRepository tokenRepo = (RefreshableTokenRepository)sdk.Configuration.TokenRepository;
-                tokenRepo.SetTokenExpiry(5); // expiry in 5 seconds
+                //do request
+                var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                    .Execute(sdk.Namespace);
+                Assert.IsNotNull(achResp1);
 
-                //wait for 5 seconds
-                Thread.Sleep(5000);
+                //force token expire
+                refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds
+
+                //wait for 4 seconds
+                Thread.Sleep(4000);
             }
 
-            //Second request, expired token, try to do refresh
-            var achResp2 = sdk.Achievement.Achievements.AdminListAchievementsOp
-                .Execute(sdk.Namespace);
-            Assert.IsNotNull(achResp2);
+            //all http calls should succeed.
+            Assert.AreEqual(4, refreshTokenRepo.RefreshCount);
+            Assert.AreEqual(0, refreshTokenRepo.FailedCount);
+
+            sdk.Logout();
+        }
+
+        [Test]
+        public void ClientLoginWithFailedOnDemandTokenRefresh()
+        {
+            TestableRefreshableTokenRepository refreshTokenRepo = new TestableRefreshableTokenRepository();
+
+            AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Achievement)
+                .UseDefaultCredentialRepository()
+                .UseOnDemandTokenRefresh(refreshTokenRepo)
+                .EnableLog()
+                .Build();
+
+            sdk.LoginClient();
+
+            //loop to simulate multiple expired session
+            for (int i = 0; i < 5; i++)
+            {
+                if (i == 2)
+                {
+                    //introduce exception on third refresh
+                    refreshTokenRepo.ExceptionFunc = (loginType) =>
+                    {
+                        return new Exception("Intentional exception");
+                    };
+                }
+                else
+                    refreshTokenRepo.ExceptionFunc = null;
+
+                //do request
+                var achResp1 = sdk.Achievement.Achievements.AdminListAchievementsOp
+                    .Execute(sdk.Namespace);
+                Assert.IsNotNull(achResp1);
+
+                //force token expire
+                refreshTokenRepo.SetTokenExpiry(3);  //expiry in 3 seconds
+
+                //wait for 4 seconds
+                Thread.Sleep(4000);
+            }
+
+            Assert.AreEqual(3, refreshTokenRepo.RefreshCount);
+            Assert.AreEqual(1, refreshTokenRepo.FailedCount);
 
             sdk.Logout();
         }
