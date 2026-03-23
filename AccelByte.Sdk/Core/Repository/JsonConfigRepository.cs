@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -15,22 +15,22 @@ using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Core.Repository
 {
-    public class JsonConfigRepository : IConfigRepository
+    public class JsonConfigRepository : IConfigRepository, ITokenValidationConfig
     {
         [JsonPropertyName("base_url")]
-        public string BaseUrl { get; set; } = String.Empty;
+        public string BaseUrl { get; set; } = "";
 
         [JsonPropertyName("client_id")]
-        public string ClientId { get; set; } = String.Empty;
+        public string ClientId { get; set; } = "";
 
         [JsonPropertyName("client_secret")]
-        public string ClientSecret { get; set; } = String.Empty;
+        public string ClientSecret { get; set; } = "";
 
         [JsonPropertyName("app_name")]
-        public string AppName { get; set; } = String.Empty;
+        public string AppName { get; set; } = "";
 
         [JsonPropertyName("namespace")]
-        public string Namespace { get; set; } = String.Empty;
+        public string Namespace { get; set; } = "";
 
         [JsonPropertyName("trace_id_ver")]
         public string TraceIdVersion { get; set; } = "1";
@@ -40,6 +40,9 @@ namespace AccelByte.Sdk.Core.Repository
 
         [JsonPropertyName("enable_user_agent")]
         public bool EnableUserAgentInfo { get; set; } = true;
+
+        [JsonPropertyName("allow_global_role_fetch")]
+        public bool AllowGlobalRoleFetchForWildcardNamespace { get; set; } = true;
 
         [JsonIgnore]
         public IHttpLogger? Logger { get; set; } = null;

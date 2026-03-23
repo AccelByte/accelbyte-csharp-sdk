@@ -1,4 +1,4 @@
-// Copyright (c) 2022 AccelByte Inc. All Rights Reserved.
+// Copyright (c) 2022-2026 AccelByte Inc. All Rights Reserved.
 // This is licensed software from AccelByte Inc, for limitations
 // and restrictions contact your company contract manager.
 
@@ -16,7 +16,11 @@ namespace AccelByte.Sdk.Tests
 {
     public class IntegrationTestCredentialRepository : ICredentialRepository
     {
-        public static readonly IntegrationTestCredentialRepository Admin = new IntegrationTestCredentialRepository("AB_USERNAME", "AB_PASSWORD");
+        public static readonly IntegrationTestCredentialRepository Admin = new IntegrationTestCredentialRepository("AB");
+
+        public static readonly IntegrationTestCredentialRepository Player1 = new IntegrationTestCredentialRepository("AB_PLAYER1");
+
+        public static readonly IntegrationTestCredentialRepository StudioAdmin = new IntegrationTestCredentialRepository("AB_STUDIOADMIN");
 
         private string _EnvName_Username;
 
@@ -46,7 +50,7 @@ namespace AccelByte.Sdk.Tests
             }
         }
 
-        public string UserId { get; set; } = String.Empty;
+        public string UserId { get; set; } = "";
 
         private string UnQuote(string value)
         {
@@ -60,6 +64,12 @@ namespace AccelByte.Sdk.Tests
         {
             _EnvName_Username = envUsername;
             _EnvName_Password = envPassword;
+        }
+
+        public IntegrationTestCredentialRepository(string envNamePrefix)
+        {
+            _EnvName_Username = $"{envNamePrefix}_USERNAME";
+            _EnvName_Password = $"{envNamePrefix}_PASSWORD";
         }
     }
 }

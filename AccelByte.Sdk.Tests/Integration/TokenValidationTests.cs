@@ -19,6 +19,7 @@ using AccelByte.Sdk.Core.Util;
 using AccelByte.Sdk.Core.Repository;
 using AccelByte.Sdk.Core.Client;
 using AccelByte.Sdk.Feature.LocalTokenValidation;
+using System.Web;
 
 namespace AccelByte.Sdk.Tests.Integration
 {
@@ -298,6 +299,77 @@ namespace AccelByte.Sdk.Tests.Integration
             Assert.IsTrue(b);
 
             user.Logout();
+        }
+
+        [Test]
+        public void UserTokenValidationFromParentNamespaceUsingDefaultValidator()
+        {
+            //first sdk object is for oauth client which has ADMIN:ROLE [READ] permission, since we will assume that default user doesn't have this permission.
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.Admin)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+            sdk.LoginClient();
+
+            var user = SimulateAdminPortalLogin(IntegrationTestCredentialRepository.StudioAdmin);
+
+            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
+            int tAction = 2;
+
+            //validate user's token against expected permission.
+            bool b = sdk.ValidateToken(user.AccessToken, tPermission, tAction);
+            Assert.IsTrue(b);
+
+            user.Logout();
+        }
+
+        public ITestPlayer SimulateAdminPortalLogin(ICredentialRepository credRepo)
+        {
+            var user = new RepoTestPlayer(IntegrationTestConfigRepository.AdminPortalLogin, credRepo, false);
+            user.Run((sdk,player) =>
+            {
+                string codeVerifier = Helper.GenerateCodeVerifier();
+                string codeChallenge = Helper.GenerateCodeChallenge(codeVerifier);
+                string clientId = sdk.Configuration.ConfigRepository.ClientId;
+                string csrf = Guid.NewGuid().ToString().Replace("-", "");
+                string redirectUri = $"{sdk.Configuration.ConfigRepository.BaseUrl}/admin";
+
+                var authorizeResponse = sdk.Iam.OAuth20.AuthorizeV3Op
+                    .SetRedirectUri(redirectUri)
+                    .SetState(csrf)
+                    .SetCodeChallenge(codeChallenge)
+                    .SetCodeChallengeMethod("S256")
+                    .Execute(clientId, "code");
+
+                var authorizeV3Query = HttpUtility.ParseQueryString(new Uri(authorizeResponse).Query);
+                var requestId = authorizeV3Query["request_id"] ??
+                    throw new Exception($"Not getting the expected value from backend (key: request_id)");
+
+                var loginResponse = sdk.Iam.OAuth20Extension.UserAuthenticationV3Op
+                    .SetRedirectUri(redirectUri)
+                    .SetClientId(clientId)
+                    .Execute(credRepo.Password, requestId, credRepo.Username);
+
+                var loginV3Query = HttpUtility.ParseQueryString(new Uri(loginResponse).Query);
+                var code = loginV3Query["code"] ??
+                    throw new Exception($"Not getting the expected value from backend (key: code)");
+
+                var tokenResponse = sdk.Iam.OAuth20.TokenGrantV3Op
+                    .SetRedirectUri(redirectUri)
+                    .SetClientId(clientId)
+                    .SetCode(code)
+                    .SetCodeVerifier(codeVerifier)
+                    .Execute("authorization_code");
+                if (tokenResponse == null)
+                    throw new Exception($"TokenGrantV3 returned null");
+
+                //login succeed
+                sdk.Configuration.TokenRepository.StoreToken(LoginType.User, tokenResponse);
+            });
+            return user;
         }
     }
 }

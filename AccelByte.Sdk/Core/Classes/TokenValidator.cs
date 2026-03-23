@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using AccelByte.Sdk.Api;
+using AccelByte.Sdk.Core.Repository;
 
 namespace AccelByte.Sdk.Core
 {
@@ -46,29 +47,60 @@ namespace AccelByte.Sdk.Core
 
         protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId, string roleNs)
         {
+            if (roleNs.EndsWith("-"))
+                roleNs = roleNs.Substring(0, roleNs.Length - 1);
+
             string cacheKey = $"{roleId}-{roleNs}";
             if (_PermissionCache.ContainsKey(cacheKey))
                 return _PermissionCache[cacheKey];
 
             try
             {
-                var response = sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
-                    .Execute(roleNs, roleId);
-                if (response == null)
-                    throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
+                bool allowGlobalRoleFetch = true;
+                if (sdk.Configuration is ITokenValidationConfig vConfig)
+                    allowGlobalRoleFetch = vConfig.AllowGlobalRoleFetchForWildcardNamespace;
 
-                List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
-                foreach (var item in response.Permissions!)
+                if (roleNs == "*" && allowGlobalRoleFetch)
                 {
-                    permissions.Add(new LocalPermissionItem()
+                    var response = sdk.Iam.Roles.AdminGetRoleV3Op
+                        .Execute(roleId);
+                    if (response == null)
+                        throw new Exception("Null response from AdminGetRoleV3Op");
+
+                    List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                    foreach (var item in response.Permissions!)
                     {
-                        Resource = item.Resource!,
-                        Action = item.Action!.Value
-                    });
+                        permissions.Add(new LocalPermissionItem()
+                        {
+                            Resource = item.Resource!,
+                            Action = item.Action!.Value
+                        });
+                    }
+
+                    _PermissionCache[cacheKey] = permissions;
+                    return permissions;
                 }
-                
-                _PermissionCache[cacheKey] = permissions;
-                return permissions;
+                else
+                {
+
+                    var response = sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
+                        .Execute(roleNs, roleId);
+                    if (response == null)
+                        throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
+
+                    List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                    foreach (var item in response.Permissions!)
+                    {
+                        permissions.Add(new LocalPermissionItem()
+                        {
+                            Resource = item.Resource!,
+                            Action = item.Action!.Value
+                        });
+                    }
+
+                    _PermissionCache[cacheKey] = permissions;
+                    return permissions;
+                }                
             }
             catch
             {
@@ -78,29 +110,59 @@ namespace AccelByte.Sdk.Core
 
         protected virtual async Task<List<LocalPermissionItem>> GetRolePermissionAsync(AccelByteSDK sdk, string roleId, string roleNs)
         {
+            if (roleNs.EndsWith("-"))
+                roleNs = roleNs.Substring(0, roleNs.Length - 1);
+
             string cacheKey = $"{roleId}-{roleNs}";
             if (_PermissionCache.ContainsKey(cacheKey))
                 return _PermissionCache[cacheKey];
 
             try
             {
-                var response = await sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
-                    .ExecuteAsync(roleNs, roleId);
-                if (response == null)
-                    throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
+                bool allowGlobalRoleFetch = true;
+                if (sdk.Configuration is ITokenValidationConfig vConfig)
+                    allowGlobalRoleFetch = vConfig.AllowGlobalRoleFetchForWildcardNamespace;
 
-                List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
-                foreach (var item in response.Permissions!)
+                if (roleNs == "*" && allowGlobalRoleFetch)
                 {
-                    permissions.Add(new LocalPermissionItem()
-                    {
-                        Resource = item.Resource!,
-                        Action = item.Action!.Value
-                    });
-                }
+                    var response = await sdk.Iam.Roles.AdminGetRoleV3Op
+                        .ExecuteAsync(roleId);
+                    if (response == null)
+                        throw new Exception("Null response from AdminGetRoleV3Op");
 
-                _PermissionCache[cacheKey] = permissions;
-                return permissions;
+                    List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                    foreach (var item in response.Permissions!)
+                    {
+                        permissions.Add(new LocalPermissionItem()
+                        {
+                            Resource = item.Resource!,
+                            Action = item.Action!.Value
+                        });
+                    }
+
+                    _PermissionCache[cacheKey] = permissions;
+                    return permissions;
+                }
+                else
+                {
+                    var response = await sdk.Iam.OverrideRoleConfigV3.AdminGetRoleNamespacePermissionV3Op
+                        .ExecuteAsync(roleNs, roleId);
+                    if (response == null)
+                        throw new Exception("Null response from AdminGetRoleNamespacePermissionV3Op");
+
+                    List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
+                    foreach (var item in response.Permissions!)
+                    {
+                        permissions.Add(new LocalPermissionItem()
+                        {
+                            Resource = item.Resource!,
+                            Action = item.Action!.Value
+                        });
+                    }
+
+                    _PermissionCache[cacheKey] = permissions;
+                    return permissions;
+                }   
             }
             catch
             {
@@ -127,6 +189,60 @@ namespace AccelByte.Sdk.Core
             }
             catch
             {
+                // Failed to fetch context for aNamespace (likely a parent namespace
+                // the app doesn't have permission to query). Fall back to fetching the
+                // app's own game namespace and derive the hierarchy from it.
+                string appNamespace = Environment.GetEnvironmentVariable("AB_NAMESPACE") ?? "";
+                if (appNamespace == "" || appNamespace == aNamespace)
+                    return new LocalNamespaceContext();
+
+                try
+                {
+                    var appResponse = sdk.Basic.Namespace.GetNamespaceContextOp.Execute(appNamespace);
+                    if (appResponse == null)
+                        return new LocalNamespaceContext();
+
+                    var gameCtx = new LocalNamespaceContext(appResponse);
+                    if (!_NamespaceContextCache.ContainsKey(appNamespace))
+                        _NamespaceContextCache.Add(appNamespace, gameCtx);
+                    else
+                        _NamespaceContextCache[appNamespace] = gameCtx;
+
+                    if (gameCtx.StudioNamespace != "")
+                    {
+                        var studioCtx = new LocalNamespaceContext()
+                        {
+                            Namespace = gameCtx.StudioNamespace,
+                            Type = NamespaceType.Studio,
+                            PublisherNamespace = gameCtx.PublisherNamespace,
+                            StudioNamespace = ""
+                        };
+                        if (!_NamespaceContextCache.ContainsKey(gameCtx.StudioNamespace))
+                            _NamespaceContextCache.Add(gameCtx.StudioNamespace, studioCtx);
+                        else
+                            _NamespaceContextCache[gameCtx.StudioNamespace] = studioCtx;
+                    }
+
+                    if (gameCtx.PublisherNamespace != "")
+                    {
+                        var publisherCtx = new LocalNamespaceContext()
+                        {
+                            Namespace = gameCtx.PublisherNamespace,
+                            Type = NamespaceType.Publisher,
+                            PublisherNamespace = "",
+                            StudioNamespace = ""
+                        };
+                        if (!_NamespaceContextCache.ContainsKey(gameCtx.PublisherNamespace))
+                            _NamespaceContextCache.Add(gameCtx.PublisherNamespace, publisherCtx);
+                        else
+                            _NamespaceContextCache[gameCtx.PublisherNamespace] = publisherCtx;
+                    }
+
+                    if (_NamespaceContextCache.ContainsKey(aNamespace))
+                        return _NamespaceContextCache[aNamespace];
+                }
+                catch { }
+
                 return new LocalNamespaceContext();
             }
         }
@@ -150,6 +266,60 @@ namespace AccelByte.Sdk.Core
             }
             catch
             {
+                // Failed to fetch context for aNamespace (likely a parent namespace
+                // the app doesn't have permission to query). Fall back to fetching the
+                // app's own game namespace and derive the hierarchy from it.
+                string appNamespace = Environment.GetEnvironmentVariable("AB_NAMESPACE") ?? "";
+                if (appNamespace == "" || appNamespace == aNamespace)
+                    return new LocalNamespaceContext();
+
+                try
+                {
+                    var appResponse = await sdk.Basic.Namespace.GetNamespaceContextOp.ExecuteAsync(appNamespace);
+                    if (appResponse == null)
+                        return new LocalNamespaceContext();
+
+                    var gameCtx = new LocalNamespaceContext(appResponse);
+                    if (!_NamespaceContextCache.ContainsKey(appNamespace))
+                        _NamespaceContextCache.Add(appNamespace, gameCtx);
+                    else
+                        _NamespaceContextCache[appNamespace] = gameCtx;
+
+                    if (gameCtx.StudioNamespace != "")
+                    {
+                        var studioCtx = new LocalNamespaceContext()
+                        {
+                            Namespace = gameCtx.StudioNamespace,
+                            Type = NamespaceType.Studio,
+                            PublisherNamespace = gameCtx.PublisherNamespace,
+                            StudioNamespace = ""
+                        };
+                        if (!_NamespaceContextCache.ContainsKey(gameCtx.StudioNamespace))
+                            _NamespaceContextCache.Add(gameCtx.StudioNamespace, studioCtx);
+                        else
+                            _NamespaceContextCache[gameCtx.StudioNamespace] = studioCtx;
+                    }
+
+                    if (gameCtx.PublisherNamespace != "")
+                    {
+                        var publisherCtx = new LocalNamespaceContext()
+                        {
+                            Namespace = gameCtx.PublisherNamespace,
+                            Type = NamespaceType.Publisher,
+                            PublisherNamespace = "",
+                            StudioNamespace = ""
+                        };
+                        if (!_NamespaceContextCache.ContainsKey(gameCtx.PublisherNamespace))
+                            _NamespaceContextCache.Add(gameCtx.PublisherNamespace, publisherCtx);
+                        else
+                            _NamespaceContextCache[gameCtx.PublisherNamespace] = publisherCtx;
+                    }
+
+                    if (_NamespaceContextCache.ContainsKey(aNamespace))
+                        return _NamespaceContextCache[aNamespace];
+                }
+                catch { }
+
                 return new LocalNamespaceContext();
             }
         }
