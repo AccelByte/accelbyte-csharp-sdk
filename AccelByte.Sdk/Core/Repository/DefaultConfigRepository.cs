@@ -27,6 +27,8 @@ namespace AccelByte.Sdk.Core.Repository
 
         private const string CLIENT_ALLOW_GLOBAL_ROLE_FETCH = "AB_ALLOW_GLOBAL_ROLE_FETCH";
 
+        private const string CLIENT_SUPPRESS_GET_ROLE_ERROR = "AB_SUPPRESS_GET_ROLE_ERROR";
+
         public string BaseUrl
         {
             get => Environment.GetEnvironmentVariable(BASE_URL) ??
@@ -110,6 +112,18 @@ namespace AccelByte.Sdk.Core.Repository
             get
             {
                 string? aEnable = Environment.GetEnvironmentVariable(CLIENT_ALLOW_GLOBAL_ROLE_FETCH);
+                if (aEnable == null)
+                    return true;
+                else
+                    return aEnable.Trim() == "1" || aEnable.Trim().ToLower() == "true";
+            }
+        }
+
+        public bool SuppressGetRoleError
+        {
+            get
+            {
+                string? aEnable = Environment.GetEnvironmentVariable(CLIENT_SUPPRESS_GET_ROLE_ERROR);
                 if (aEnable == null)
                     return true;
                 else

@@ -39,7 +39,10 @@ namespace AccelByte.Sdk.Core
                     throw new Exception("Server did not response to token validation request");
 
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
-                GetNamespaceContext(sdk, sdk.Namespace);
+                var result = GetNamespaceContext(sdk, sdk.Namespace);
+                if (result.IsError)
+                    throw new Exception(result.ErrorMessage);
+
                 pParams.Add("namespace", sdk.Namespace);
 
                 bool foundMatchingPermission = false;
@@ -71,12 +74,6 @@ namespace AccelByte.Sdk.Core
                                 continue;
 
                             var permissions = GetRolePermission(sdk, r.RoleId, r.Namespace!);
-
-                            StringBuilder sb = new StringBuilder();
-                            foreach (var p in permissions)
-                                sb.AppendLine($"{p.Resource} [{p.Action}]");
-                            string test = sb.ToString();
-
                             foreach (var p in permissions)
                             {
                                 string aResource = ReplacePlaceholder(p.Resource, pParams);
@@ -115,7 +112,9 @@ namespace AccelByte.Sdk.Core
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
                 if (aNamespace != null)
                 {
-                    GetNamespaceContext(sdk, aNamespace);
+                    var result = GetNamespaceContext(sdk, aNamespace);
+                    if (result.IsError)
+                        throw new Exception(result.ErrorMessage);
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)
@@ -208,7 +207,10 @@ namespace AccelByte.Sdk.Core
                     throw new Exception("Server did not response to token validation request");
 
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
-                await GetNamespaceContextAsync(sdk, sdk.Namespace);
+                var result = await GetNamespaceContextAsync(sdk, sdk.Namespace);
+                if (result.IsError)
+                    throw new Exception(result.ErrorMessage);
+
                 pParams.Add("namespace", sdk.Namespace);
 
                 bool foundMatchingPermission = false;
@@ -277,7 +279,9 @@ namespace AccelByte.Sdk.Core
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
                 if (aNamespace != null)
                 {
-                    await GetNamespaceContextAsync(sdk, aNamespace);
+                    var result = await GetNamespaceContextAsync(sdk, aNamespace);
+                    if (result.IsError)
+                        throw new Exception(result.ErrorMessage);
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)

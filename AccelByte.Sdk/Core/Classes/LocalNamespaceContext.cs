@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Core
 
         public string StudioNamespace { get; set; } = "";
 
+        public bool IsError { get; set; } = false;
+
+        public string ErrorMessage { get; set; } = "";
+
         public LocalNamespaceContext() { }
 
         public LocalNamespaceContext(NamespaceContext source)
@@ -59,6 +63,12 @@ namespace AccelByte.Sdk.Core
 
             if (source.StudioNamespace != null)
                 StudioNamespace = source.StudioNamespace;
+        }
+
+        public LocalNamespaceContext(string errorMessage)
+        {
+            IsError = true;
+            ErrorMessage = errorMessage;
         }
     }
 }

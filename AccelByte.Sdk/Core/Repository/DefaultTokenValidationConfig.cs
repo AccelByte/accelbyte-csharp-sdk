@@ -10,10 +10,13 @@ using System.Threading.Tasks;
 
 namespace AccelByte.Sdk.Core.Repository
 {
-    public interface ITokenValidationConfig
+    /// <summary>
+    /// Contains default values for ITokenValidationConfig.
+    /// </summary>
+    internal class DefaultTokenValidationConfig : ITokenValidationConfig
     {
-        bool AllowGlobalRoleFetchForWildcardNamespace { get; }
+        public bool AllowGlobalRoleFetchForWildcardNamespace { get; } = true;
 
-        bool SuppressGetRoleError { get; }
+        public bool SuppressGetRoleError { get; } = true;
     }
 }

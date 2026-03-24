@@ -44,6 +44,9 @@ namespace AccelByte.Sdk.Core.Repository
         [JsonPropertyName("allow_global_role_fetch")]
         public bool AllowGlobalRoleFetchForWildcardNamespace { get; set; } = true;
 
+        [JsonPropertyName("suppress_get_role_error")]
+        public bool SuppressGetRoleError { get; set; } = true;
+
         [JsonIgnore]
         public IHttpLogger? Logger { get; set; } = null;
 

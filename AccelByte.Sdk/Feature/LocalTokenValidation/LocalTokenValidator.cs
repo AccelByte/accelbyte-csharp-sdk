@@ -200,7 +200,9 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);
 
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
-                GetNamespaceContext(sdk, sdk.Namespace);
+                var result = GetNamespaceContext(sdk, sdk.Namespace);
+                if (result.IsError)
+                    throw new Exception(result.ErrorMessage);
                 pParams.Add("namespace", sdk.Namespace);
 
                 bool foundMatchingPermission = false;
@@ -266,7 +268,9 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
                 if (aNamespace != null)
                 {
-                    GetNamespaceContext(sdk, aNamespace);
+                    var result = GetNamespaceContext(sdk, aNamespace);
+                    if (result.IsError)
+                        throw new Exception(result.ErrorMessage);
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)
@@ -371,7 +375,9 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);
 
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
-                await GetNamespaceContextAsync(sdk, sdk.Namespace);
+                var result = await GetNamespaceContextAsync(sdk, sdk.Namespace);
+                if (result.IsError)
+                    throw new Exception(result.ErrorMessage);
                 pParams.Add("namespace", sdk.Namespace);
 
                 bool foundMatchingPermission = false;
@@ -437,7 +443,9 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 Dictionary<string, string> pParams = new Dictionary<string, string>();
                 if (aNamespace != null)
                 {
-                    await GetNamespaceContextAsync(sdk, aNamespace);
+                    var result = await GetNamespaceContextAsync(sdk, aNamespace);
+                    if (result.IsError)
+                        throw new Exception(result.ErrorMessage);
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)
