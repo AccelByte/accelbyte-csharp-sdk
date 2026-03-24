@@ -60,13 +60,7 @@ namespace AccelByte.Sdk.Tests
                 return value;
         }
 
-        public IntegrationTestCredentialRepository(string envUsername, string envPassword)
-        {
-            _EnvName_Username = envUsername;
-            _EnvName_Password = envPassword;
-        }
-
-        public IntegrationTestCredentialRepository(string envNamePrefix)
+        private IntegrationTestCredentialRepository(string envNamePrefix)
         {
             _EnvName_Username = $"{envNamePrefix}_USERNAME";
             _EnvName_Password = $"{envNamePrefix}_PASSWORD";

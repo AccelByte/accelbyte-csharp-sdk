@@ -314,7 +314,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 .Build();
             sdk.LoginClient();
 
-            var user = SimulateAdminPortalLogin(IntegrationTestCredentialRepository.StudioAdmin);
+            var user = _SimulateAdminPortalLogin(IntegrationTestCredentialRepository.StudioAdmin);
 
             string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
             int tAction = 2;
@@ -326,7 +326,7 @@ namespace AccelByte.Sdk.Tests.Integration
             user.Logout();
         }
 
-        public ITestPlayer SimulateAdminPortalLogin(ICredentialRepository credRepo)
+        private ITestPlayer _SimulateAdminPortalLogin(ICredentialRepository credRepo)
         {
             var user = new RepoTestPlayer(IntegrationTestConfigRepository.AdminPortalLogin, credRepo, false);
             user.Run((sdk,player) =>
@@ -346,7 +346,7 @@ namespace AccelByte.Sdk.Tests.Integration
 
                 var authorizeV3Query = HttpUtility.ParseQueryString(new Uri(authorizeResponse).Query);
                 var requestId = authorizeV3Query["request_id"] ??
-                    throw new Exception($"Not getting the expected value from backend (key: request_id)");
+                    throw new Exception("AuthorizeV3: Not getting the expected value from backend (key: request_id)");
 
                 var loginResponse = sdk.Iam.OAuth20Extension.UserAuthenticationV3Op
                     .SetRedirectUri(redirectUri)
@@ -355,7 +355,11 @@ namespace AccelByte.Sdk.Tests.Integration
 
                 var loginV3Query = HttpUtility.ParseQueryString(new Uri(loginResponse).Query);
                 var code = loginV3Query["code"] ??
-                    throw new Exception($"Not getting the expected value from backend (key: code)");
+                    throw new Exception("UserAuthenticationV3: Not getting the expected value from backend (key: code)");
+                var state = loginV3Query["state"] ??
+                    throw new Exception("UserAuthenticationV3: Not getting the expected value from backend (key: state)");
+                if (state != csrf)
+                    throw new Exception("State is different from initial CSRF value.");
 
                 var tokenResponse = sdk.Iam.OAuth20.TokenGrantV3Op
                     .SetRedirectUri(redirectUri)
