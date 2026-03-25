@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Tests.Integration
 {
     [TestFixture(Category = "FluentIntegration")]
     [Explicit]
-    public class TokenValidationTests
+    public class TokenValidationTests : BaseIntegrationTest
     {
         [Test]
         public void TokenValidationTestUsingDefaultValidator()
@@ -301,6 +301,35 @@ namespace AccelByte.Sdk.Tests.Integration
             user.Logout();
         }
 
+        /// <summary>
+        /// To test "IsResourceAllowed" function in TokenValidator class.
+        /// </summary>
+        [Test]
+        public void StaticTestTokenValidation()
+        {
+            StaticTestTokenValidator validator = new StaticTestTokenValidator("game1", "studio1", "foundations");
+
+            List<LocalPermissionItem> availablePermissions = new List<LocalPermissionItem>();
+            availablePermissions.Add(new LocalPermissionItem()
+            {
+                Resource = "NAMESPACE:{namespace}:PROFILE",
+                Action = 15
+            });
+            string targetPermission = "NAMESPACE:studio1-game1:PROFILE";
+
+            var testWithGameNs = validator.TestValidateResource(availablePermissions, "studio1-game1", targetPermission);
+            Assert.IsTrue(testWithGameNs);
+
+            var testWithStudioNs = validator.TestValidateResource(availablePermissions, "studio1-", targetPermission);
+            Assert.IsTrue(testWithStudioNs);
+
+            var testWithDifferentGameNs = validator.TestValidateResource(availablePermissions, "studio1-game2", targetPermission);
+            Assert.IsFalse(testWithDifferentGameNs);
+
+            var testWithDifferentStudio = validator.TestValidateResource(availablePermissions, "studio2-", targetPermission);
+            Assert.IsFalse(testWithDifferentStudio);
+        }
+
         [Test]
         public void UserTokenValidationFromParentNamespaceUsingDefaultValidator()
         {
@@ -326,10 +355,40 @@ namespace AccelByte.Sdk.Tests.Integration
             user.Logout();
         }
 
+        [Test]
+        public void UserTokenValidationFromDifferentStudioUsingDefaultValidator()
+        {
+            if (!IsUsingAGSStarter(IntegrationTestConfigRepository.Admin))
+                Assert.Inconclusive("This test currently available for AGS Shared Cloud only");
+
+            //first sdk object is for oauth client which has ADMIN:ROLE [READ] permission, since we will assume that default user doesn't have this permission.
+            using AccelByteSDK sdk = AccelByteSDK.Builder
+                .UseDefaultHttpClient()
+                .SetConfigRepository(IntegrationTestConfigRepository.DifferentStudio)
+                .UseDefaultTokenRepository()
+                .UseDefaultCredentialRepository()
+                .EnableLog()
+                .Build();
+            sdk.LoginClient();
+
+            var user = _SimulateAdminPortalLogin(IntegrationTestCredentialRepository.StudioAdmin);
+
+            string tPermission = $"NAMESPACE:{sdk.Namespace}:PROFILE";
+            int tAction = 2;
+
+            //validate user's token against expected permission.
+            bool b = sdk.ValidateToken(user.AccessToken, tPermission, tAction);
+
+            //Token should invalid because it is not intended for sdk's namespace.
+            Assert.IsFalse(b);
+
+            user.Logout();
+        }
+
         private ITestPlayer _SimulateAdminPortalLogin(ICredentialRepository credRepo)
         {
             var user = new RepoTestPlayer(IntegrationTestConfigRepository.AdminPortalLogin, credRepo, false);
-            user.Run((sdk,player) =>
+            user.Run((sdk, player) =>
             {
                 string codeVerifier = Helper.GenerateCodeVerifier();
                 string codeChallenge = Helper.GenerateCodeChallenge(codeVerifier);

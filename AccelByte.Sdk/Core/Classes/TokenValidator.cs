@@ -47,6 +47,14 @@ namespace AccelByte.Sdk.Core
             _NamespaceContextCache.Clear();
         }
 
+        protected LocalNamespaceContext? GetCachedNamespaceContext(string key)
+        {
+            if (_NamespaceContextCache.ContainsKey(key))
+                return _NamespaceContextCache[key];
+            else
+                return null;
+        }
+
         protected virtual List<LocalPermissionItem> ConvertAndCachePermissionItems(string cacheKey, ModelRoleResponseV3 response)
         {
             List<LocalPermissionItem> permissions = new List<LocalPermissionItem>();
@@ -120,7 +128,7 @@ namespace AccelByte.Sdk.Core
             if (_NamespaceContextCache.ContainsKey(aNamespace))
                 return _NamespaceContextCache[aNamespace];
             else
-                return new LocalNamespaceContext($"No namespace context found for {aNamespace} due to invalid derivation");
+                return new LocalNamespaceContext($"Access denied to invalid namespace context {aNamespace}.");
         }
 
         protected virtual List<LocalPermissionItem> GetRolePermission(AccelByteSDK sdk, string roleId, string roleNs)
@@ -228,7 +236,7 @@ namespace AccelByte.Sdk.Core
                     _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
                 return _NamespaceContextCache[aNamespace];
             }
-            catch
+            catch (HttpResponseException)
             {
                 // Failed to fetch context for aNamespace (likely a parent namespace
                 // the app doesn't have permission to query). Fall back to fetching the
@@ -236,7 +244,7 @@ namespace AccelByte.Sdk.Core
 
                 string appNamespace = sdk.Configuration.ConfigRepository.Namespace;
                 if (appNamespace == "" || appNamespace == aNamespace)
-                    return new LocalNamespaceContext($"AB_NAMESPACE is empty or access denied accessing namespace context for {appNamespace}");
+                    return new LocalNamespaceContext($"Namespace is empty or access denied accessing namespace context for {appNamespace}");
 
                 try
                 {
@@ -269,7 +277,7 @@ namespace AccelByte.Sdk.Core
                     _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
                 return _NamespaceContextCache[aNamespace];
             }
-            catch
+            catch (HttpResponseException)
             {
                 // Failed to fetch context for aNamespace (likely a parent namespace
                 // the app doesn't have permission to query). Fall back to fetching the
@@ -277,7 +285,7 @@ namespace AccelByte.Sdk.Core
 
                 string appNamespace = sdk.Configuration.ConfigRepository.Namespace;
                 if (appNamespace == "" || appNamespace == aNamespace)
-                    return new LocalNamespaceContext($"AB_NAMESPACE is empty or access denied accessing namespace context for {appNamespace}");
+                    return new LocalNamespaceContext($"Namespace is empty or access denied accessing namespace context for {appNamespace}");
 
                 try
                 {

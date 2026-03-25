@@ -26,6 +26,8 @@ namespace AccelByte.Sdk.Tests
 
         public static readonly IntegrationTestConfigRepository AdminPortalLogin = new IntegrationTestConfigRepository("ADMINPORTAL_BASE_URL", "ADMINPORTAL_CLIENT_ID", "", "");
 
+        public static readonly IntegrationTestConfigRepository DifferentStudio = new IntegrationTestConfigRepository("DIFFENV_AB_BASE_URL", "DIFFENV_AB_CLIENT_ID", "DIFFENV_AB_CLIENT_SECRET", "DIFFENV_AB_NAMESPACE");
+
         #region AGS Shared Cloud OAuth Clients
         public static readonly IntegrationTestConfigRepository Achievement = new IntegrationTestConfigRepository("Achievement", true);
 
