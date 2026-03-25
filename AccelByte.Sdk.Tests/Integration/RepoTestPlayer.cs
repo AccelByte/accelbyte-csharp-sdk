@@ -34,7 +34,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultHttpClient()
                 .SetCredentialRepository(_CredentialRepo)
                 .SetTokenRepository(_TokenRepo)
-                .EnableLog()
                 .Build();
 
             if (doLogin)

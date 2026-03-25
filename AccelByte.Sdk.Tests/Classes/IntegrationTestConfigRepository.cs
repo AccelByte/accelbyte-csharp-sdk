@@ -227,7 +227,7 @@ namespace AccelByte.Sdk.Tests
                 return value;
         }
 
-        private IntegrationTestConfigRepository(string envBaseUrl,string envClientId, string envClientSecret, string envNamespace)
+        private IntegrationTestConfigRepository(string envBaseUrl, string envClientId, string envClientSecret, string envNamespace)
         {
             _EnvName_BaseUrl = envBaseUrl;
             _EnvName_ClientId = envClientId;

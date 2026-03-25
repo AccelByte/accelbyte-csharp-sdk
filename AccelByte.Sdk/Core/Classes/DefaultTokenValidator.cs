@@ -151,7 +151,7 @@ namespace AccelByte.Sdk.Core
 
                 var result = GetNamespaceContext(sdk, claimedNamespace);
                 if (result.IsError)
-                    return false; //Access denied to to namespace context error
+                    return false; //Access denied to namespace context error
 
                 //Default filled with sdk's namespace.
                 Dictionary<string, string> pParams = new() { { "namespace", sdk.Namespace } };
@@ -177,7 +177,7 @@ namespace AccelByte.Sdk.Core
                 {
                     var result = GetNamespaceContext(sdk, aNamespace);
                     if (result.IsError)
-                        return false; //Access denied to to namespace context error
+                        return false; //Access denied to namespace context error
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)
@@ -217,12 +217,12 @@ namespace AccelByte.Sdk.Core
 
                 var result = await GetNamespaceContextAsync(sdk, claimedNamespace);
                 if (result.IsError)
-                    return false; //Access denied to to namespace context error
+                    return false; //Access denied to namespace context error
 
                 //Default filled with sdk's namespace.
                 Dictionary<string, string> pParams = new() { { "namespace", sdk.Namespace } };
 
-                return await InternalValidatePermissionAsync(sdk, response, permission, action, pParams);                
+                return await InternalValidatePermissionAsync(sdk, response, permission, action, pParams);
             }
             catch
             {
@@ -243,7 +243,7 @@ namespace AccelByte.Sdk.Core
                 {
                     var result = await GetNamespaceContextAsync(sdk, aNamespace);
                     if (result.IsError)
-                        return false; //Access denied to to namespace context error
+                        return false; //Access denied to namespace context error
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)

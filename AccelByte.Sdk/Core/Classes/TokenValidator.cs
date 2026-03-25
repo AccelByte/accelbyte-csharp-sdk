@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,18 +18,21 @@ namespace AccelByte.Sdk.Core
 {
     public abstract class TokenValidator
     {
-        private Dictionary<string, List<LocalPermissionItem>> _PermissionCache = new();
+        private ConcurrentDictionary<string, List<LocalPermissionItem>> _PermissionCache = new();
 
-        private Dictionary<string, LocalNamespaceContext> _NamespaceContextCache = new();
+        private ConcurrentDictionary<string, LocalNamespaceContext> _NamespaceContextCache = new();
 
         protected void AddPermissionToCache(string key, List<LocalPermissionItem> permissions)
         {
-            _PermissionCache.Add(key, permissions);
+            _PermissionCache.TryAdd(key, permissions);
         }
 
         protected void AddNamespaceContextToCache(string key, LocalNamespaceContext namespaceContext)
         {
-            _NamespaceContextCache.Add(key, namespaceContext);
+            if (!_NamespaceContextCache.ContainsKey(key))
+                _NamespaceContextCache.TryAdd(key, namespaceContext);
+            else
+                _NamespaceContextCache[key] = namespaceContext;
         }
 
         protected void ClearPermissionCache()
@@ -90,10 +94,7 @@ namespace AccelByte.Sdk.Core
         protected virtual LocalNamespaceContext ConvertAndCacheGameNamespaceContext(string aNamespace, string appNamespace, NamespaceContext appResponse)
         {
             var gameCtx = new LocalNamespaceContext(appResponse);
-            if (!_NamespaceContextCache.ContainsKey(appNamespace))
-                _NamespaceContextCache.Add(appNamespace, gameCtx);
-            else
-                _NamespaceContextCache[appNamespace] = gameCtx;
+            AddNamespaceContextToCache(appNamespace, gameCtx);
 
             if (gameCtx.StudioNamespace != "")
             {
@@ -104,10 +105,7 @@ namespace AccelByte.Sdk.Core
                     PublisherNamespace = gameCtx.PublisherNamespace,
                     StudioNamespace = ""
                 };
-                if (!_NamespaceContextCache.ContainsKey(gameCtx.StudioNamespace))
-                    _NamespaceContextCache.Add(gameCtx.StudioNamespace, studioCtx);
-                else
-                    _NamespaceContextCache[gameCtx.StudioNamespace] = studioCtx;
+                AddNamespaceContextToCache(gameCtx.StudioNamespace, studioCtx);
             }
 
             if (gameCtx.PublisherNamespace != "")
@@ -119,10 +117,7 @@ namespace AccelByte.Sdk.Core
                     PublisherNamespace = "",
                     StudioNamespace = ""
                 };
-                if (!_NamespaceContextCache.ContainsKey(gameCtx.PublisherNamespace))
-                    _NamespaceContextCache.Add(gameCtx.PublisherNamespace, publisherCtx);
-                else
-                    _NamespaceContextCache[gameCtx.PublisherNamespace] = publisherCtx;
+                AddNamespaceContextToCache(gameCtx.PublisherNamespace, publisherCtx);
             }
 
             if (_NamespaceContextCache.ContainsKey(aNamespace))
@@ -229,11 +224,7 @@ namespace AccelByte.Sdk.Core
                 var response = sdk.Basic.Namespace.GetNamespaceContextOp.Execute(aNamespace);
                 if (response == null)
                     return new LocalNamespaceContext("Null response from Basic::Namespace::GetNamespaceContextOp");
-
-                if (!_NamespaceContextCache.ContainsKey(aNamespace))
-                    _NamespaceContextCache.Add(aNamespace, new LocalNamespaceContext(response));
-                else
-                    _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
+                AddNamespaceContextToCache(aNamespace, new LocalNamespaceContext(response));
                 return _NamespaceContextCache[aNamespace];
             }
             catch (HttpResponseException)
@@ -271,10 +262,7 @@ namespace AccelByte.Sdk.Core
                 if (response == null)
                     return new LocalNamespaceContext("Null response from Basic::Namespace::GetNamespaceContextOp");
 
-                if (!_NamespaceContextCache.ContainsKey(aNamespace))
-                    _NamespaceContextCache.Add(aNamespace, new LocalNamespaceContext(response));
-                else
-                    _NamespaceContextCache[aNamespace] = new LocalNamespaceContext(response);
+                AddNamespaceContextToCache(aNamespace, new LocalNamespaceContext(response));
                 return _NamespaceContextCache[aNamespace];
             }
             catch (HttpResponseException)

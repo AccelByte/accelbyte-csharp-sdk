@@ -306,7 +306,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
 
                 var result = GetNamespaceContext(sdk, claimedNamespace);
                 if (result.IsError)
-                    return false; //Access denied to to namespace context error
+                    return false; //Access denied to namespace context error
 
                 //Default filled with sdk's namespace.
                 Dictionary<string, string> pParams = new() { { "namespace", sdk.Namespace } };
@@ -331,7 +331,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 {
                     var result = GetNamespaceContext(sdk, aNamespace);
                     if (result.IsError)
-                        return false; //Access denied to to namespace context error
+                        return false; //Access denied to namespace context error
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)
@@ -381,11 +381,12 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
             try
             {
                 var rawJwt = await InternalValidateTokenAsync(sdk, accessToken);
-                AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt); string claimedNamespace = payload.Namespace!;
+                AccessTokenPayload payload = AccessTokenPayload.FromToken(rawJwt);
+                string claimedNamespace = payload.Namespace!;
 
-                var result = GetNamespaceContext(sdk, claimedNamespace);
+                var result = await GetNamespaceContextAsync(sdk, claimedNamespace);
                 if (result.IsError)
-                    return false; //Access denied to to namespace context error
+                    return false; //Access denied to namespace context error
 
                 //Default filled with sdk's namespace.
                 Dictionary<string, string> pParams = new() { { "namespace", sdk.Namespace } };
@@ -410,7 +411,7 @@ namespace AccelByte.Sdk.Feature.LocalTokenValidation
                 {
                     var result = await GetNamespaceContextAsync(sdk, aNamespace);
                     if (result.IsError)
-                        return false; //Access denied to to namespace context error
+                        return false; //Access denied to namespace context error
                     pParams.Add("namespace", aNamespace);
                 }
                 if (userId != null)

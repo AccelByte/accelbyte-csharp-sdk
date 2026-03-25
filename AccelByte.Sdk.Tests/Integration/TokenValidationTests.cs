@@ -35,7 +35,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -64,7 +63,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Basic)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -91,7 +89,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultCredentialRepository()
                 .UseLocalTokenValidator()
                 .UseAutoRefreshForTokenRevocationList(2000) //refresh revocation every 2s
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -122,7 +119,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultCredentialRepository()
                 .UseLocalTokenValidator()
                 .UseAutoRefreshForTokenRevocationList()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -147,7 +143,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
             sdk.LoginClient();
 
@@ -176,7 +171,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .UseDefaultCredentialRepository()
                 .UseLocalTokenValidator()
                 .UseAutoRefreshForTokenRevocationList(2000) //refresh revocation every 2s
-                .EnableLog()
                 .Build();
             sdk.LoginClient();
 
@@ -199,7 +193,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -230,7 +223,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.PublicClient)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -259,7 +251,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.CustomPermission)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
 
             string accessToken = "";
@@ -284,7 +275,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
             sdk.LoginClient();
 
@@ -339,7 +329,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.Admin)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
             sdk.LoginClient();
 
@@ -367,7 +356,6 @@ namespace AccelByte.Sdk.Tests.Integration
                 .SetConfigRepository(IntegrationTestConfigRepository.DifferentStudio)
                 .UseDefaultTokenRepository()
                 .UseDefaultCredentialRepository()
-                .EnableLog()
                 .Build();
             sdk.LoginClient();
 
