@@ -7,7 +7,7 @@ using AccelByte.Sdk.Core.Logging;
 
 namespace AccelByte.Sdk.Core.Repository
 {
-    public class DefaultConfigRepository : IConfigRepository,  ITokenValidationConfig
+    public class DefaultConfigRepository : IConfigRepository, ITokenValidationConfig
     {
         private const string BASE_URL = "AB_BASE_URL";
 

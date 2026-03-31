@@ -362,6 +362,29 @@ namespace AccelByte.Sdk.Api
             await ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).DeleteRevocationPluginConfigAsync(op);
         }
         public static Platform.Model.RevocationPluginConfigInfo? Execute(
+            this UploadRevocationPluginConfigCertV2.UploadRevocationPluginConfigCertV2Builder builder,
+            string namespace_
+        )
+        {
+            UploadRevocationPluginConfigCertV2 op = builder.Build(
+                namespace_
+            );
+
+            return ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UploadRevocationPluginConfigCertV2(op);
+        }
+        public static async Task<Platform.Model.RevocationPluginConfigInfo?> ExecuteAsync(
+            this UploadRevocationPluginConfigCertV2.UploadRevocationPluginConfigCertV2Builder builder,
+            string namespace_
+        )
+        {
+            UploadRevocationPluginConfigCertV2 op = builder.Build(
+                namespace_
+            );
+
+            return await ((Platform.Wrapper.ServicePluginConfig)builder.WrapperObject!).UploadRevocationPluginConfigCertV2Async(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public static Platform.Model.RevocationPluginConfigInfo? Execute(
             this UploadRevocationPluginConfigCert.UploadRevocationPluginConfigCertBuilder builder,
             string namespace_
         )

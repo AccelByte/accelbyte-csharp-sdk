@@ -148,7 +148,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                 sdk.RefreshAccessToken(RefreshToken, token => onUpdated?.Invoke());
 
                                 lock (_ROPLock)
-                                    _IsRefreshOnProgress = false;                                
+                                    _IsRefreshOnProgress = false;
                             }
                             else if (LoginType == LoginType.Client)
                             {
@@ -208,7 +208,7 @@ namespace AccelByte.Sdk.Feature.AutoTokenRefresh
                                 await sdk.RefreshAccessTokenAsync(RefreshToken, token => onUpdated?.Invoke());
 
                                 lock (_ROPLock)
-                                    _IsRefreshOnProgress = false;                                
+                                    _IsRefreshOnProgress = false;
                             }
                             else if (LoginType == LoginType.Client)
                             {

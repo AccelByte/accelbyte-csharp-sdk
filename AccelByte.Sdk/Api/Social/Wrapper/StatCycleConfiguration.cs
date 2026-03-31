@@ -51,6 +51,10 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
         {
             get { return Operation.DeleteStatCycle.Builder.SetWrapperObject(this); }
         }
+        public ResetStatCycle.ResetStatCycleBuilder ResetStatCycleOp
+        {
+            get { return Operation.ResetStatCycle.Builder.SetWrapperObject(this); }
+        }
         public BulkAddStats.BulkAddStatsBuilder BulkAddStatsOp
         {
             get { return Operation.BulkAddStats.Builder.SetWrapperObject(this); }
@@ -194,6 +198,22 @@ namespace AccelByte.Sdk.Api.Social.Wrapper
                     response.Payload);
         }
         public async Task DeleteStatCycleAsync(DeleteStatCycle input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void ResetStatCycle(ResetStatCycle input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task ResetStatCycleAsync(ResetStatCycle input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

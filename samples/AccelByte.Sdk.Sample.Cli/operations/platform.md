@@ -1906,11 +1906,11 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
-### Operation UploadRevocationPluginConfigCert
+### Operation UploadRevocationPluginConfigCertV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn platform \
-    --op uploadrevocationpluginconfigcert \
+    --op uploadrevocationpluginconfigcertv2 \
     --namespace <namespace value> \
     --upload file <file to upload>
 ```
@@ -5082,6 +5082,17 @@ To set request body using JSON file, replace `--reqbody` argument with `--reqfil
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn platform \
     --op v2publicfulfillappleiapitem \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation BulkFulfillItemsV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op bulkfulfillitemsv3 \
     --namespace <namespace value> \
     --userId <userId value> \
     --reqbody <json string for request body>

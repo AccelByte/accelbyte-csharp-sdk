@@ -238,6 +238,7 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op adminevaluateprogress \
     --namespace <namespace value> \
     --challengeCode <challengeCode value - optional> \
+    --includeOneTimeEvent <includeOneTimeEvent value - optional> \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
@@ -373,7 +374,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn challenge \
     --op evaluatemyprogress \
     --namespace <namespace value> \
-    --challengeCode <challengeCode value - optional>
+    --challengeCode <challengeCode value - optional> \
+    --includeOneTimeEvent <includeOneTimeEvent value - optional>
 ```
 
 ### Operation PublicGetUserProgression

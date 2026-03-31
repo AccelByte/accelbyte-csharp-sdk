@@ -99,7 +99,7 @@ Source: [BasicTests.cs](../AccelByte.Sdk.Tests/Services/BasicTests.cs)
 UserProfilePrivateCreate createProfile = new UserProfilePrivateCreate()
 {
     FirstName = "Integration Test",
-    LastName = "CSharp Server SDK",
+    LastName = "CSharp Extend SDK",
     DateOfBirth = DateTime.ParseExact("2022-01-01", "yyyy-MM-dd", CultureInfo.InvariantCulture),
     Language = "en"
 };
@@ -1362,8 +1362,9 @@ ApimodelsPartySessionResponse? joinResponse = sdk.Session.Party.PublicPartyJoinC
 ### Get party detail
 
 ```csharp
-ApimodelsPartySessionResponse? partyData = _Sdk.Session.Party.PublicGetPartyOp
-    .Execute(_Sdk.Namespace, partyId);
+ApimodelsPartyQueryResponse? partyData = _Sdk.Session.Party.AdminQueryPartiesOp
+    .SetPartyID(partyId)
+    .Execute(_Sdk.Namespace);
 ```
 
 ### User leave a party
@@ -1381,8 +1382,8 @@ Source: [SocialTests.cs](../AccelByte.Sdk.Tests/Services/SocialTests.cs)
 ```csharp
 StatCreate createStat = new StatCreate()
 {
-    Name = "CSharp Server SDK Test Stat",
-    Description = "CSharp server sdk integration test.",
+    Name = "CSharp Extend SDK Test Stat",
+    Description = "CSharp extend sdk integration test.",
     StatCode = stat_code,
     SetBy = "SERVER",
     Minimum = 0.0,
@@ -1390,7 +1391,7 @@ StatCreate createStat = new StatCreate()
     DefaultValue = 50.0,
     IncrementOnly = true,
     SetAsGlobal = false,
-    Tags = new List<string>() { "csharp", "server_sdk", "test" }
+    Tags = new List<string>() { "csharp", "extend_sdk", "test" }
 };
 
 StatInfo? cStat = _Sdk.Social.StatConfiguration.CreateStatOp

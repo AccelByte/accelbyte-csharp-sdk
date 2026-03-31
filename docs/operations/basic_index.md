@@ -17,6 +17,7 @@
 | `/basic/v1/admin/namespaces/{namespace}/game` | GET | GetGameNamespaces | [GetGameNamespaces](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/GetGameNamespaces.cs) | [GetGameNamespaces](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/GetGameNamespaces.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/publisher` | GET | GetNamespacePublisher | [GetNamespacePublisher](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/GetNamespacePublisher.cs) | [GetNamespacePublisher](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/GetNamespacePublisher.cs) |
 | `/basic/v1/admin/namespaces/{namespace}/status` | PATCH | ChangeNamespaceStatus | [ChangeNamespaceStatus](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/ChangeNamespaceStatus.cs) | [ChangeNamespaceStatus](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/ChangeNamespaceStatus.cs) |
+| `/basic/v1/admin/namespaces/{namespace}/testingFlag` | PATCH | UpdateTestingFlag | [UpdateTestingFlag](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/UpdateTestingFlag.cs) | [UpdateTestingFlag](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/UpdateTestingFlag.cs) |
 | `/basic/v1/public/namespaces` | GET | PublicGetNamespaces | [PublicGetNamespaces](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/PublicGetNamespaces.cs) | [PublicGetNamespaces](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/PublicGetNamespaces.cs) |
 | `/basic/v1/public/namespaces/{namespace}` | GET | GetNamespace1 | [GetNamespace1](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/GetNamespace1.cs) | [GetNamespace1](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/GetNamespace1.cs) |
 | `/basic/v1/public/namespaces/{namespace}/publisher` | GET | PublicGetNamespacePublisher | [PublicGetNamespacePublisher](../../AccelByte.Sdk/Api/Basic/Operation/Namespace/PublicGetNamespacePublisher.cs) | [PublicGetNamespacePublisher](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Basic/Namespace/PublicGetNamespacePublisher.cs) |
@@ -144,6 +145,7 @@
 | `NamespacePublisherInfo` | [NamespacePublisherInfo](../../AccelByte.Sdk/Api/Basic/Model/NamespacePublisherInfo.cs) |
 | `NamespaceSimpleInfo` | [NamespaceSimpleInfo](../../AccelByte.Sdk/Api/Basic/Model/NamespaceSimpleInfo.cs) |
 | `NamespaceStatusUpdate` | [NamespaceStatusUpdate](../../AccelByte.Sdk/Api/Basic/Model/NamespaceStatusUpdate.cs) |
+| `NamespaceTestingFlagUpdate` | [NamespaceTestingFlagUpdate](../../AccelByte.Sdk/Api/Basic/Model/NamespaceTestingFlagUpdate.cs) |
 | `NamespaceUpdate` | [NamespaceUpdate](../../AccelByte.Sdk/Api/Basic/Model/NamespaceUpdate.cs) |
 | `Permission` | [Permission](../../AccelByte.Sdk/Api/Basic/Model/Permission.cs) |
 | `RetrieveCountryGroupResponse` | [RetrieveCountryGroupResponse](../../AccelByte.Sdk/Api/Basic/Model/RetrieveCountryGroupResponse.cs) |

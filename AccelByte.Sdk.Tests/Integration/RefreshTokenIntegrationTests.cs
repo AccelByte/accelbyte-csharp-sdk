@@ -100,7 +100,7 @@ namespace AccelByte.Sdk.Tests.Integration
                 //wait for 4 seconds
                 Thread.Sleep(4000);
             }
-            
+
             Assert.AreEqual(3, refreshTokenRepo.RefreshCount);
             Assert.AreEqual(1, refreshTokenRepo.FailedCount);
 

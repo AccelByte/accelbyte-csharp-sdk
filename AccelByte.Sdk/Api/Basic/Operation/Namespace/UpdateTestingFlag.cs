@@ -7,50 +7,54 @@
 using System.Net;
 using System.IO;
 using System.Text.Json;
-using AccelByte.Sdk.Api.Social.Model;
+using AccelByte.Sdk.Api.Basic.Model;
 using AccelByte.Sdk.Core;
 using AccelByte.Sdk.Core.Util;
 
-namespace AccelByte.Sdk.Api.Social.Operation
+namespace AccelByte.Sdk.Api.Basic.Operation
 {
     /// <summary>
-    /// updateStatCycle
+    /// updateTestingFlag
     ///
-    /// Update stat cycle.
+    /// Update namespace testing flag.
+    /// In multi-tenant mode, this is only applicable for studio namespaces, not game namespaces.
     /// Other detail info:
-    ///         * STOPPED cycles cannot be updated
-    ///         * If changing the start time of an ACTIVE cycle to a future time, the status will be set to INIT and the related user data will be removed
-    ///         * If changing the cycle type of an ACTIVE cycle, the related user data will be removed
+    /// 
+    ///   * Returns : updated namespace
     /// </summary>
-    public class UpdateStatCycle : AccelByte.Sdk.Core.Operation
+    public class UpdateTestingFlag : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UpdateStatCycleBuilder Builder { get => new UpdateStatCycleBuilder(); }
+        public static UpdateTestingFlagBuilder Builder { get => new UpdateTestingFlagBuilder(); }
 
-        public class UpdateStatCycleBuilder
-            : OperationBuilder<UpdateStatCycleBuilder>
+        public class UpdateTestingFlagBuilder
+            : OperationBuilder<UpdateTestingFlagBuilder>
         {
 
 
-
-
-
-            internal UpdateStatCycleBuilder() { }
-
+            public Model.NamespaceTestingFlagUpdate? Body { get; set; }
 
 
 
 
+            internal UpdateTestingFlagBuilder() { }
 
-            public UpdateStatCycle Build(
-                StatCycleUpdate body,
-                string cycleId,
+
+
+            public UpdateTestingFlagBuilder SetBody(Model.NamespaceTestingFlagUpdate _body)
+            {
+                Body = _body;
+                return this;
+            }
+
+
+
+
+            public UpdateTestingFlag Build(
                 string namespace_
             )
             {
-                UpdateStatCycle op = new UpdateStatCycle(this,
-                    body,
-                    cycleId,
+                UpdateTestingFlag op = new UpdateTestingFlag(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -62,33 +66,28 @@ namespace AccelByte.Sdk.Api.Social.Operation
             }
         }
 
-        private UpdateStatCycle(UpdateStatCycleBuilder builder,
-            StatCycleUpdate body,
-            string cycleId,
+        private UpdateTestingFlag(UpdateTestingFlagBuilder builder,
             string namespace_
         )
         {
-            PathParams["cycleId"] = cycleId;
             PathParams["namespace"] = namespace_;
 
 
 
 
 
-            BodyParams = body;
+            BodyParams = builder.Body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
         #endregion
 
-        public UpdateStatCycle(
-            string cycleId,
+        public UpdateTestingFlag(
             string namespace_,
-            Model.StatCycleUpdate body
+            Model.NamespaceTestingFlagUpdate body
         )
         {
-            PathParams["cycleId"] = cycleId;
             PathParams["namespace"] = namespace_;
 
 
@@ -101,9 +100,9 @@ namespace AccelByte.Sdk.Api.Social.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/social/v1/admin/namespaces/{namespace}/statCycles/{cycleId}";
+        public override string Path => "/basic/v1/admin/namespaces/{namespace}/testingFlag";
 
-        public override HttpMethod Method => HttpMethod.Put;
+        public override HttpMethod Method => HttpMethod.Patch;
 
         public override string[] Consumes => new string[] { "application/json" };
 
@@ -112,7 +111,7 @@ namespace AccelByte.Sdk.Api.Social.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.StatCycleInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public Model.NamespaceInfo? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -121,13 +120,13 @@ namespace AccelByte.Sdk.Api.Social.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.StatCycleInfo>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<Model.NamespaceInfo>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.StatCycleInfo>(payload);
+                    return JsonSerializer.Deserialize<Model.NamespaceInfo>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.StatCycleInfo>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<Model.NamespaceInfo>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

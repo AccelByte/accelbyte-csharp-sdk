@@ -5,7 +5,8 @@
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn basic \
     --op getnamespaces \
-    --activeOnly <activeOnly value - optional>
+    --activeOnly <activeOnly value - optional> \
+    --isTesting <isTesting value - optional>
 ```
 
 ### Operation CreateNamespace
@@ -216,6 +217,16 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn basic \
     --op changenamespacestatus \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation UpdateTestingFlag
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn basic \
+    --op updatetestingflag \
     --namespace <namespace value> \
     --reqbody <json string for request body>
 ```

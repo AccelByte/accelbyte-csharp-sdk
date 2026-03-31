@@ -212,6 +212,32 @@ namespace AccelByte.Sdk.Api
 
             await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).DeleteStatCycleAsync(op);
         }
+        public static void Execute(
+            this ResetStatCycle.ResetStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            ResetStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ResetStatCycle(op);
+        }
+        public static async Task ExecuteAsync(
+            this ResetStatCycle.ResetStatCycleBuilder builder,
+            string cycleId,
+            string namespace_
+        )
+        {
+            ResetStatCycle op = builder.Build(
+                cycleId,
+                namespace_
+            );
+
+            await ((Social.Wrapper.StatCycleConfiguration)builder.WrapperObject!).ResetStatCycleAsync(op);
+        }
         public static List<Social.Model.BulkStatCycleOperationResult>? Execute(
             this BulkAddStats.BulkAddStatsBuilder builder,
             BulkCycleStatsAdd body,

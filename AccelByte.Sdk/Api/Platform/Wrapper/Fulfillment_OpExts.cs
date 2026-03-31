@@ -333,6 +333,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).RevokeItemsAsync(op);
         }
+        public static List<Platform.Model.FulfillmentV2Result>? Execute(
+            this BulkFulfillItemsV3.BulkFulfillItemsV3Builder builder,
+            List<FulfillmentV3Request> body,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkFulfillItemsV3 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).BulkFulfillItemsV3(op);
+        }
+        public static async Task<List<Platform.Model.FulfillmentV2Result>?> ExecuteAsync(
+            this BulkFulfillItemsV3.BulkFulfillItemsV3Builder builder,
+            List<FulfillmentV3Request> body,
+            string namespace_,
+            string userId
+        )
+        {
+            BulkFulfillItemsV3 op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Platform.Wrapper.Fulfillment)builder.WrapperObject!).BulkFulfillItemsV3Async(op);
+        }
         public static Platform.Model.FulfillmentV2Result? Execute(
             this FulfillItemsV3.FulfillItemsV3Builder builder,
             FulfillmentV2Request body,

@@ -7,8 +7,8 @@
     <Product>AccelByte.Sdk</Product>
     <PackageId>AccelByte.Sdk</PackageId>
     <Authors>AccelByte Developers</Authors>
-    <Version>0.78.1</Version>
-    <AssemblyVersion>0.78.1</AssemblyVersion>
+    <Version>0.79.1</Version>
+    <AssemblyVersion>0.79.1</AssemblyVersion>
     <Company>AccelByte</Company>
     <Copyright>Copyright(c) AccelByte 2022-2026</Copyright>
     <Description>AccelByte .NET (C#) SDK

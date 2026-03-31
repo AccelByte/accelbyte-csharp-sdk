@@ -14,44 +14,42 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// fulfillItemsV3
+    /// bulkFulfillItemsV3
     ///
-    ///  [Not supported yet in AGS Shared Cloud] Fulfill items by transactionId.
+    /// [Not supported yet in AGS Shared Cloud] Fulfill multiple transactions.
     /// Other detail info:
-    ///               * Request body : storeId, region, language, and entitlementCollectionId can be ignored.
-    ///               *  Returns : fulfillment v2 result, storeId field can be ignored.
+    ///               * Request body : list of fulfillment v3 requests. storeId, region, language, and entitlementCollectionId can be ignored.
+    ///               *  Returns : list of fulfillment v2 result
     /// </summary>
-    public class FulfillItemsV3 : AccelByte.Sdk.Core.Operation
+    public class BulkFulfillItemsV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static FulfillItemsV3Builder Builder { get => new FulfillItemsV3Builder(); }
+        public static BulkFulfillItemsV3Builder Builder { get => new BulkFulfillItemsV3Builder(); }
 
-        public class FulfillItemsV3Builder
-            : OperationBuilder<FulfillItemsV3Builder>
+        public class BulkFulfillItemsV3Builder
+            : OperationBuilder<BulkFulfillItemsV3Builder>
         {
 
 
 
 
 
-            internal FulfillItemsV3Builder() { }
+            internal BulkFulfillItemsV3Builder() { }
 
 
 
 
 
 
-            public FulfillItemsV3 Build(
-                FulfillmentV2Request body,
+            public BulkFulfillItemsV3 Build(
+                List<FulfillmentV3Request> body,
                 string namespace_,
-                string transactionId,
                 string userId
             )
             {
-                FulfillItemsV3 op = new FulfillItemsV3(this,
+                BulkFulfillItemsV3 op = new BulkFulfillItemsV3(this,
                     body,
                     namespace_,
-                    transactionId,
                     userId
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -63,15 +61,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private FulfillItemsV3(FulfillItemsV3Builder builder,
-            FulfillmentV2Request body,
+        private BulkFulfillItemsV3(BulkFulfillItemsV3Builder builder,
+            List<FulfillmentV3Request> body,
             string namespace_,
-            string transactionId,
             string userId
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["transactionId"] = transactionId;
             PathParams["userId"] = userId;
 
 
@@ -85,15 +81,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public FulfillItemsV3(
+        public BulkFulfillItemsV3(
             string namespace_,
-            string transactionId,
             string userId,
-            Model.FulfillmentV2Request body
+            List<Model.FulfillmentV3Request> body
         )
         {
             PathParams["namespace"] = namespace_;
-            PathParams["transactionId"] = transactionId;
             PathParams["userId"] = userId;
 
 
@@ -106,7 +100,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/{transactionId}";
+        public override string Path => "/platform/v3/admin/namespaces/{namespace}/users/{userId}/fulfillments/bulk";
 
         public override HttpMethod Method => HttpMethod.Put;
 
@@ -117,7 +111,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         [Obsolete("2022-04-19 - Use 'Securities' property instead.")]
         public override string? Security { get; set; } = "Bearer";
 
-        public Model.FulfillmentV2Result? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
+        public List<Model.FulfillmentV2Result>? ParseResponse(HttpStatusCode code, string contentType, Stream payload)
         {
             if (code == (HttpStatusCode)204)
             {
@@ -126,13 +120,13 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             else if (code == (HttpStatusCode)201)
             {
                 if (ResponseJsonOptions != null)
-                    return JsonSerializer.Deserialize<Model.FulfillmentV2Result>(payload, ResponseJsonOptions);
+                    return JsonSerializer.Deserialize<List<Model.FulfillmentV2Result>>(payload, ResponseJsonOptions);
                 else
-                    return JsonSerializer.Deserialize<Model.FulfillmentV2Result>(payload);
+                    return JsonSerializer.Deserialize<List<Model.FulfillmentV2Result>>(payload);
             }
             else if (code == (HttpStatusCode)200)
             {
-                return JsonSerializer.Deserialize<Model.FulfillmentV2Result>(payload, ResponseJsonOptions);
+                return JsonSerializer.Deserialize<List<Model.FulfillmentV2Result>>(payload, ResponseJsonOptions);
             }
 
             var payloadString = Helper.ConvertInputStreamToString(payload);

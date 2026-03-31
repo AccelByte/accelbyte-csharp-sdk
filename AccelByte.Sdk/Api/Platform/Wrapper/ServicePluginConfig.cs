@@ -82,6 +82,11 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.DeleteRevocationPluginConfig.Builder.SetWrapperObject(this); }
         }
+        public UploadRevocationPluginConfigCertV2.UploadRevocationPluginConfigCertV2Builder UploadRevocationPluginConfigCertV2Op
+        {
+            get { return Operation.UploadRevocationPluginConfigCertV2.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public UploadRevocationPluginConfigCert.UploadRevocationPluginConfigCertBuilder UploadRevocationPluginConfigCertOp
         {
             get { return Operation.UploadRevocationPluginConfigCert.Builder.SetWrapperObject(this); }
@@ -337,6 +342,24 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+        public Model.RevocationPluginConfigInfo? UploadRevocationPluginConfigCertV2(UploadRevocationPluginConfigCertV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.RevocationPluginConfigInfo?> UploadRevocationPluginConfigCertV2Async(UploadRevocationPluginConfigCertV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.RevocationPluginConfigInfo? UploadRevocationPluginConfigCert(UploadRevocationPluginConfigCert input)
         {
             var response = _sdk.RunRequest(input);
@@ -353,5 +376,6 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

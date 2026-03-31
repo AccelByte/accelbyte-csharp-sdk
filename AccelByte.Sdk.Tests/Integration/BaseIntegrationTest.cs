@@ -38,6 +38,6 @@ namespace AccelByte.Sdk.Tests.Integration
             if (_Sdk != null)
                 return IsUsingAGSStarter(_Sdk.Configuration.ConfigRepository);
             return false;
-        }        
+        }
     }
 }

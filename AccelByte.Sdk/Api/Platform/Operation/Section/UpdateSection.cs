@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
     /// <summary>
     /// updateSection
     ///
-    /// This API is used to update s section.
+    /// This API is used to update a section.
     /// 
     /// Other detail info:
     /// 

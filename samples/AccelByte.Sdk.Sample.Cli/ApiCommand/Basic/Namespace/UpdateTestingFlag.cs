@@ -19,22 +19,22 @@ using AccelByte.Sdk.Api.Basic.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
 {
-    [SdkConsoleCommand("basic", "getnamespaces")]
-    public class GetNamespacesCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("basic", "updatetestingflag")]
+    public class UpdateTestingFlagCommand : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Basic"; } }
 
-        public string OperationName { get { return "GetNamespaces"; } }
+        public string OperationName { get { return "UpdateTestingFlag"; } }
 
-        [SdkCommandArgument("activeOnly")]
-        public bool? ActiveOnly { get; set; }
+        [SdkCommandArgument("namespace")]
+        public string Namespace { get; set; } = String.Empty;
 
-        [SdkCommandArgument("isTesting")]
-        public bool? IsTesting { get; set; }
+        [SdkCommandData("body")]
+        public NamespaceTestingFlagUpdate Body { get; set; } = new NamespaceTestingFlagUpdate();
 
-        public GetNamespacesCommand(AccelByteSDK sdk)
+        public UpdateTestingFlagCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -43,21 +43,20 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Basic
         {
             AccelByte.Sdk.Api.Basic.Wrapper.Namespace wrapper = new AccelByte.Sdk.Api.Basic.Wrapper.Namespace(_SDK);
 
-            var opBuilder = AccelByte.Sdk.Api.Basic.Operation.GetNamespaces.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Basic.Operation.UpdateTestingFlag.Builder;
 
-            if (ActiveOnly != null)
-                opBuilder.SetActiveOnly((bool)ActiveOnly);
-            if (IsTesting != null)
-                opBuilder.SetIsTesting((bool)IsTesting);
 
+            if (Body != null)
+                opBuilder.SetBody((AccelByte.Sdk.Api.Basic.Model.NamespaceTestingFlagUpdate)Body);
 
 
 
-            GetNamespaces operation = opBuilder.Build(
+            UpdateTestingFlag operation = opBuilder.Build(
+                Namespace
             );
 
 
-            List<AccelByte.Sdk.Api.Basic.Model.NamespaceInfo>? response = wrapper.GetNamespaces(operation);
+            AccelByte.Sdk.Api.Basic.Model.NamespaceInfo? response = wrapper.UpdateTestingFlag(operation);
             if (response == null)
                 return "No response from server.";
 

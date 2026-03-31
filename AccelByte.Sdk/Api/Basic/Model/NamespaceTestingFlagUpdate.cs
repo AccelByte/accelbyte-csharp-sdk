@@ -7,17 +7,10 @@ using System.Text.Json.Serialization;
 
 namespace AccelByte.Sdk.Api.Basic.Model
 {
-    public class NamespaceCreate : AccelByte.Sdk.Core.Model
+    public class NamespaceTestingFlagUpdate : AccelByte.Sdk.Core.Model
     {
-        [JsonPropertyName("displayName")]
-        public string? DisplayName { get; set; }
-
         [JsonPropertyName("isTesting")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsTesting { get; set; }
-
-        [JsonPropertyName("namespace")]
-        public string? Namespace { get; set; }
 
     }
 

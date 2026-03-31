@@ -155,6 +155,7 @@
 | `models.ArchiveLeaderboardSignedURLResponse` | [ModelsArchiveLeaderboardSignedURLResponse](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsArchiveLeaderboardSignedURLResponse.cs) |
 | `models.BulkUserIDsRequest` | [ModelsBulkUserIDsRequest](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsBulkUserIDsRequest.cs) |
 | `models.BulkUserRankingResponseV3` | [ModelsBulkUserRankingResponseV3](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsBulkUserRankingResponseV3.cs) |
+| `models.CycleInfo` | [ModelsCycleInfo](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsCycleInfo.cs) |
 | `models.DailyConfig` | [ModelsDailyConfig](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDailyConfig.cs) |
 | `models.DeleteBulkLeaderboardFailedResp` | [ModelsDeleteBulkLeaderboardFailedResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardFailedResp.cs) |
 | `models.DeleteBulkLeaderboardSuccessResp` | [ModelsDeleteBulkLeaderboardSuccessResp](../../AccelByte.Sdk/Api/Leaderboard/Model/ModelsDeleteBulkLeaderboardSuccessResp.cs) |

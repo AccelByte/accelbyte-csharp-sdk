@@ -83,7 +83,7 @@ namespace AccelByte.Sdk.Tests.Integration
             DefaultTokenRepository tokenRepo = new DefaultTokenRepository();
             using AccelByteSDK sdk = AccelByteSDK.Builder
                 .UseDefaultHttpClient()
-                .SetConfigRepository(IntegrationTestConfigRepository.Achievement)                
+                .SetConfigRepository(IntegrationTestConfigRepository.Achievement)
                 .SetTokenRepository(tokenRepo)
                 .UseDefaultCredentialRepository()
                 .UseRefreshIfPossible()

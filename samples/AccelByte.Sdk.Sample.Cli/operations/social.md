@@ -101,6 +101,15 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation ResetStatCycle
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn social \
+    --op resetstatcycle \
+    --cycleId <cycleId value> \
+    --namespace <namespace value>
+```
+
 ### Operation BulkAddStats
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

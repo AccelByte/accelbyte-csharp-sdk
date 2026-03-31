@@ -33,6 +33,8 @@ namespace AccelByte.Sdk.Api.Basic.Operation
 
             public bool? ActiveOnly { get; set; }
 
+            public bool? IsTesting { get; set; }
+
 
 
 
@@ -43,6 +45,12 @@ namespace AccelByte.Sdk.Api.Basic.Operation
             public GetNamespacesBuilder SetActiveOnly(bool _activeOnly)
             {
                 ActiveOnly = _activeOnly;
+                return this;
+            }
+
+            public GetNamespacesBuilder SetIsTesting(bool _isTesting)
+            {
+                IsTesting = _isTesting;
                 return this;
             }
 
@@ -69,6 +77,7 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         {
 
             if (builder.ActiveOnly != null) QueryParams["activeOnly"] = Convert.ToString(builder.ActiveOnly)!;
+            if (builder.IsTesting != null) QueryParams["isTesting"] = Convert.ToString(builder.IsTesting)!;
 
 
 
@@ -80,11 +89,13 @@ namespace AccelByte.Sdk.Api.Basic.Operation
         #endregion
 
         public GetNamespaces(
-            bool? activeOnly
+            bool? activeOnly,
+            bool? isTesting
         )
         {
 
             if (activeOnly != null) QueryParams["activeOnly"] = Convert.ToString(activeOnly)!;
+            if (isTesting != null) QueryParams["isTesting"] = Convert.ToString(isTesting)!;
 
 
 

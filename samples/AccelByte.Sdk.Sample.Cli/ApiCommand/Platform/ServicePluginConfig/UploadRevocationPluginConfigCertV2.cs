@@ -19,14 +19,14 @@ using AccelByte.Sdk.Api.Platform.Operation;
 
 namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
 {
-    [SdkConsoleCommand("platform", "uploadrevocationpluginconfigcert")]
-    public class UploadRevocationPluginConfigCertCommand : ISdkConsoleCommand
+    [SdkConsoleCommand("platform", "uploadrevocationpluginconfigcertv2")]
+    public class UploadRevocationPluginConfigCertV2Command : ISdkConsoleCommand
     {
         private AccelByteSDK _SDK;
 
         public string ServiceName { get { return "Platform"; } }
 
-        public string OperationName { get { return "UploadRevocationPluginConfigCert"; } }
+        public string OperationName { get { return "UploadRevocationPluginConfigCertV2"; } }
 
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
@@ -34,7 +34,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         [SdkCommandFile("file")]
         public Stream? File { get; set; }
 
-        public UploadRevocationPluginConfigCertCommand(AccelByteSDK sdk)
+        public UploadRevocationPluginConfigCertV2Command(AccelByteSDK sdk)
         {
             _SDK = sdk;
         }
@@ -43,8 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
         {
             AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig wrapper = new AccelByte.Sdk.Api.Platform.Wrapper.ServicePluginConfig(_SDK);
 
-#pragma warning disable ab_deprecated_operation
-            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UploadRevocationPluginConfigCert.Builder;
+            var opBuilder = AccelByte.Sdk.Api.Platform.Operation.UploadRevocationPluginConfigCertV2.Builder;
 
 
 
@@ -52,19 +51,16 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
                 opBuilder.SetFile((Stream)File);
 
 
-            UploadRevocationPluginConfigCert operation = opBuilder.Build(
+            UploadRevocationPluginConfigCertV2 operation = opBuilder.Build(
                 Namespace
             );
 
-#pragma warning restore ab_deprecated_operation
 
-#pragma warning disable ab_deprecated_operation_wrapper
-            AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigInfo? response = wrapper.UploadRevocationPluginConfigCert(operation);
+            AccelByte.Sdk.Api.Platform.Model.RevocationPluginConfigInfo? response = wrapper.UploadRevocationPluginConfigCertV2(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
-#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

@@ -14,19 +14,18 @@ using AccelByte.Sdk.Core.Util;
 namespace AccelByte.Sdk.Api.Platform.Operation
 {
     /// <summary>
-    /// uploadRevocationPluginConfigCert
+    /// uploadRevocationPluginConfigCertV2
     ///
-    /// Upload revocation plugin custom config tls cert. This api has been deprecated, please use /admin/namespaces/{namespace}/revocation/plugins/revocation/customConfig/cert to update revocation certOther detail info:
+    /// Upload revocation plugin custom config tls cert.Other detail info:
     ///   * Returns : updated service plugin config
     /// </summary>
-    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
-    public class UploadRevocationPluginConfigCert : AccelByte.Sdk.Core.Operation
+    public class UploadRevocationPluginConfigCertV2 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part
-        public static UploadRevocationPluginConfigCertBuilder Builder { get => new UploadRevocationPluginConfigCertBuilder(); }
+        public static UploadRevocationPluginConfigCertV2Builder Builder { get => new UploadRevocationPluginConfigCertV2Builder(); }
 
-        public class UploadRevocationPluginConfigCertBuilder
-            : OperationBuilder<UploadRevocationPluginConfigCertBuilder>
+        public class UploadRevocationPluginConfigCertV2Builder
+            : OperationBuilder<UploadRevocationPluginConfigCertV2Builder>
         {
 
 
@@ -35,12 +34,12 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            internal UploadRevocationPluginConfigCertBuilder() { }
+            internal UploadRevocationPluginConfigCertV2Builder() { }
 
 
 
 
-            public UploadRevocationPluginConfigCertBuilder SetFile(Stream _file)
+            public UploadRevocationPluginConfigCertV2Builder SetFile(Stream _file)
             {
                 File = _file;
                 return this;
@@ -48,11 +47,11 @@ namespace AccelByte.Sdk.Api.Platform.Operation
 
 
 
-            public UploadRevocationPluginConfigCert Build(
+            public UploadRevocationPluginConfigCertV2 Build(
                 string namespace_
             )
             {
-                UploadRevocationPluginConfigCert op = new UploadRevocationPluginConfigCert(this,
+                UploadRevocationPluginConfigCertV2 op = new UploadRevocationPluginConfigCertV2(this,
                     namespace_
                 );
                 op.PreferredSecurityMethod = PreferredSecurityMethod;
@@ -64,7 +63,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             }
         }
 
-        private UploadRevocationPluginConfigCert(UploadRevocationPluginConfigCertBuilder builder,
+        private UploadRevocationPluginConfigCertV2(UploadRevocationPluginConfigCertV2Builder builder,
             string namespace_
         )
         {
@@ -81,7 +80,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
         }
         #endregion
 
-        public UploadRevocationPluginConfigCert(
+        public UploadRevocationPluginConfigCertV2(
             string namespace_,
             Stream? file
         )
@@ -98,7 +97,7 @@ namespace AccelByte.Sdk.Api.Platform.Operation
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
         }
 
-        public override string Path => "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation/revocation/customConfig/cert";
+        public override string Path => "/platform/admin/namespaces/{namespace}/revocation/plugins/revocation/customConfig/cert";
 
         public override HttpMethod Method => HttpMethod.Put;
 

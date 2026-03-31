@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         [JsonPropertyName("cycleIds")]
         public List<string>? CycleIds { get; set; }
 
+        [JsonPropertyName("cycleMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, ModelsCycleInfo>? CycleMetadata { get; set; }
+
         [JsonPropertyName("iconURL")]
         public string? IconURL { get; set; }
 

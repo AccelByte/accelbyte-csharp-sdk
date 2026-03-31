@@ -18,6 +18,10 @@ namespace AccelByte.Sdk.Api.Leaderboard.Model
         [JsonPropertyName("cycleIds")]
         public List<string>? CycleIds { get; set; }
 
+        [JsonPropertyName("cycleMetadata")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public Dictionary<string, ModelsCycleInfo>? CycleMetadata { get; set; }
+
         [JsonPropertyName("deletedAt")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public DateTime? DeletedAt { get; set; }
