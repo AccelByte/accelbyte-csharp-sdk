@@ -171,6 +171,12 @@ namespace AccelByte.Sdk.Tests.Services
             int checkCount = 20;
             int checkInterval = 1000;
 
+            if (IsUsingAGSStarter())
+            {
+                Assert.Inconclusive($"AGS Shared Cloud has different default action value than AGS Private Cloud for {resourceToCheck} permission string.");
+                return;
+            }
+
             DisableRetry();
 
             var roles = _Sdk.Iam.Roles.AdminGetRolesV4Op
