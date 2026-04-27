@@ -23,7 +23,7 @@ namespace AccelByte.Sdk.Tests.Services
         /// </summary>
         private ApimodelsInventoryConfigurationResp? _ConfigInventory = null;
 
-        public InventoryTests() : base(true, IntegrationTestConfigRepository.Inventory) { }
+        public InventoryTests() : base(false, IntegrationTestConfigRepository.Inventory) { }
 
         [Test]
         public void InventoryTest()
