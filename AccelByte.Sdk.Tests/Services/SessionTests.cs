@@ -172,8 +172,10 @@ namespace AccelByte.Sdk.Tests.Services
             _Player2.Run((sdk, player) =>
             {
                 #region Join a game session
+                ApimodelsJoinSessionRequest joinRequest = new ApimodelsJoinSessionRequest();
+
                 ApimodelsGameSessionResponse? p2GsJoin = sdk.Session.GameSession.JoinGameSessionOp
-                    .Execute(sdk.Namespace, gameSessionId);
+                    .Execute(joinRequest, sdk.Namespace, gameSessionId);
                 #endregion
                 Assert.IsNotNull(p2GsJoin);
             });
