@@ -38,7 +38,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// _platformNamespace_ need to be specified when the platform ID is 'justice'.
     /// Unlink user's account from justice platform will enable password token grant and password update.
     /// If you want to unlink user's account in a game namespace, you have to specify _platformNamespace_ to that game namespace.
-    /// action code : 10121
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminPlatformUnlinkV3 : AccelByte.Sdk.Core.Operation

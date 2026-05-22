@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminGetRoleAdminStatusV3
     ///
     /// Admin roles has its members listed in the role.
-    /// action code: 10420
     /// </summary>
     public class AdminGetRoleAdminStatusV3 : AccelByte.Sdk.Core.Operation
     {

@@ -184,7 +184,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).ListUserCurrencyTransactionsAsync(op);
         }
-        public static void Execute(
+        public static Platform.Model.CheckBalanceResponse? Execute(
             this CheckBalance.CheckBalanceBuilder builder,
             DebitByWalletPlatformRequest request,
             string currencyCode,
@@ -199,9 +199,9 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalance(op);
+            return ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalance(op);
         }
-        public static async Task ExecuteAsync(
+        public static async Task<Platform.Model.CheckBalanceResponse?> ExecuteAsync(
             this CheckBalance.CheckBalanceBuilder builder,
             DebitByWalletPlatformRequest request,
             string currencyCode,
@@ -216,7 +216,7 @@ namespace AccelByte.Sdk.Api
                 userId
             );
 
-            await ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalanceAsync(op);
+            return await ((Platform.Wrapper.Wallet)builder.WrapperObject!).CheckBalanceAsync(op);
         }
         [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListClientAvailablePermissions
     ///
-    /// List Client available permissions
+    /// Lists all available client permissions.
     /// </summary>
     public class AdminListClientAvailablePermissions : AccelByte.Sdk.Core.Operation
     {

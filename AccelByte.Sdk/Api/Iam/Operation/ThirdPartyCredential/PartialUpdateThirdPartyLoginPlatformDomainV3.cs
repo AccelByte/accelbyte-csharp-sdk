@@ -18,6 +18,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// This is the API to patch update 3rd Platform domain.
     /// This API is a create or partial-update behavior. If it is update, it is a partial update behavior.
+    /// 
+    /// **Request body:** Partial domain configuration update. Only provided fields will be updated.
     /// </summary>
     public class PartialUpdateThirdPartyLoginPlatformDomainV3 : AccelByte.Sdk.Core.Operation
     {

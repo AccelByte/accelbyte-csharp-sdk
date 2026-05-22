@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Update a localized version policy to be the default.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldSetDefaultLocalizedPolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

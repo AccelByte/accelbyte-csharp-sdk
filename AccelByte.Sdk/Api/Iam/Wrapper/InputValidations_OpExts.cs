@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class IamInputValidations_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelInputValidationsResponse? Execute(
             this AdminGetInputValidations.AdminGetInputValidationsBuilder builder
         )
@@ -30,6 +31,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetInputValidationsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder builder,
             List<ModelInputValidationUpdatePayload> body
@@ -52,6 +54,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateInputValidationsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminResetInputValidations.AdminResetInputValidationsBuilder builder,
             string field
@@ -74,6 +77,81 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetInputValidationsAsync(op);
         }
+        public static Iam.Model.ModelInputValidationsResponse? Execute(
+            this AdminGetNamespaceScopedInputValidations.AdminGetNamespaceScopedInputValidationsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetNamespaceScopedInputValidations op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetNamespaceScopedInputValidations(op);
+        }
+        public static async Task<Iam.Model.ModelInputValidationsResponse?> ExecuteAsync(
+            this AdminGetNamespaceScopedInputValidations.AdminGetNamespaceScopedInputValidationsBuilder builder,
+            string namespace_
+        )
+        {
+            AdminGetNamespaceScopedInputValidations op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminGetNamespaceScopedInputValidationsAsync(op);
+        }
+        public static void Execute(
+            this AdminUpdateNamespaceScopedInputValidations.AdminUpdateNamespaceScopedInputValidationsBuilder builder,
+            List<ModelInputValidationUpdatePayload> body,
+            string namespace_
+        )
+        {
+            AdminUpdateNamespaceScopedInputValidations op = builder.Build(
+                body,
+                namespace_
+            );
+
+            ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateNamespaceScopedInputValidations(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateNamespaceScopedInputValidations.AdminUpdateNamespaceScopedInputValidationsBuilder builder,
+            List<ModelInputValidationUpdatePayload> body,
+            string namespace_
+        )
+        {
+            AdminUpdateNamespaceScopedInputValidations op = builder.Build(
+                body,
+                namespace_
+            );
+
+            await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminUpdateNamespaceScopedInputValidationsAsync(op);
+        }
+        public static void Execute(
+            this AdminResetNamespaceScopedInputValidations.AdminResetNamespaceScopedInputValidationsBuilder builder,
+            string field,
+            string namespace_
+        )
+        {
+            AdminResetNamespaceScopedInputValidations op = builder.Build(
+                field,
+                namespace_
+            );
+
+            ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetNamespaceScopedInputValidations(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminResetNamespaceScopedInputValidations.AdminResetNamespaceScopedInputValidationsBuilder builder,
+            string field,
+            string namespace_
+        )
+        {
+            AdminResetNamespaceScopedInputValidations op = builder.Build(
+                field,
+                namespace_
+            );
+
+            await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).AdminResetNamespaceScopedInputValidationsAsync(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelInputValidationsPublicResponse? Execute(
             this PublicGetInputValidations.PublicGetInputValidationsBuilder builder
         )
@@ -92,6 +170,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Iam.Model.ModelInputValidationConfigVersion? Execute(
             this PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder builder,
             string field
@@ -113,6 +192,54 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetInputValidationByFieldAsync(op);
+        }
+        public static Iam.Model.ModelInputValidationsPublicResponse? Execute(
+            this PublicGetNamespaceScopedInputValidations.PublicGetNamespaceScopedInputValidationsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetNamespaceScopedInputValidations op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetNamespaceScopedInputValidations(op);
+        }
+        public static async Task<Iam.Model.ModelInputValidationsPublicResponse?> ExecuteAsync(
+            this PublicGetNamespaceScopedInputValidations.PublicGetNamespaceScopedInputValidationsBuilder builder,
+            string namespace_
+        )
+        {
+            PublicGetNamespaceScopedInputValidations op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetNamespaceScopedInputValidationsAsync(op);
+        }
+        public static Iam.Model.ModelInputValidationConfigVersion? Execute(
+            this PublicGetNamespaceScopedInputValidationByField.PublicGetNamespaceScopedInputValidationByFieldBuilder builder,
+            string field,
+            string namespace_
+        )
+        {
+            PublicGetNamespaceScopedInputValidationByField op = builder.Build(
+                field,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetNamespaceScopedInputValidationByField(op);
+        }
+        public static async Task<Iam.Model.ModelInputValidationConfigVersion?> ExecuteAsync(
+            this PublicGetNamespaceScopedInputValidationByField.PublicGetNamespaceScopedInputValidationByFieldBuilder builder,
+            string field,
+            string namespace_
+        )
+        {
+            PublicGetNamespaceScopedInputValidationByField op = builder.Build(
+                field,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.InputValidations)builder.WrapperObject!).PublicGetNamespaceScopedInputValidationByFieldAsync(op);
         }
     }
 }

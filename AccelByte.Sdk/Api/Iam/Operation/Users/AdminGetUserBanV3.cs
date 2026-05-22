@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserBanV3
     ///
-    /// This endpoint retrieve the first page of the data if after and before parameters is empty
-    /// action code : 10126
+    /// Returns the first page of the data if after and before parameters is empty.
     /// </summary>
     public class AdminGetUserBanV3 : AccelByte.Sdk.Core.Operation
     {

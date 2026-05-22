@@ -16,13 +16,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserJusticePlatformAccount
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// ### Endpoint migration guide
     /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms/justice/{targetNamespace} [GET]_**
     /// 
-    /// This endpoint requires the client access token as the bearer token
+    /// Requires the client access token as the bearer token
     /// 
-    /// The endpoint returns user Justice platform account linked with the given user. If the user Justice platform account doesn't exist in the designated namespace, the endpoint is going to *create and return the new Justice platform account.*
+    /// Returns user Justice platform account linked with the given user. If the user Justice platform account doesn't exist in the designated namespace, automatically *creates and returns the new Justice platform account.*
     /// The newly user Justice platform account is going to be forced to perform token grant through the given user and can't perform password update
     /// 
     /// ### Read Justice Platform Account UserID

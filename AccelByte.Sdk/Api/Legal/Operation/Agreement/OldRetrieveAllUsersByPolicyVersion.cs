@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// This API will return users who has accepted a specific policy version.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldRetrieveAllUsersByPolicyVersion : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

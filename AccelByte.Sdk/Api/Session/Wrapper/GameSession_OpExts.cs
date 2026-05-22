@@ -768,11 +768,13 @@ namespace AccelByte.Sdk.Api
         }
         public static Session.Model.ApimodelsGameSessionResponse? Execute(
             this JoinGameSession.JoinGameSessionBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string sessionId
         )
         {
             JoinGameSession op = builder.Build(
+                body,
                 namespace_,
                 sessionId
             );
@@ -781,11 +783,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Session.Model.ApimodelsGameSessionResponse?> ExecuteAsync(
             this JoinGameSession.JoinGameSessionBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string sessionId
         )
         {
             JoinGameSession op = builder.Build(
+                body,
                 namespace_,
                 sessionId
             );
@@ -795,11 +799,13 @@ namespace AccelByte.Sdk.Api
 
         public static Session.Model.ApimodelsGameSessionResponse<T1, T2>? Execute<T1, T2>(
             this JoinGameSession.JoinGameSessionBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string sessionId
         )
         {
             JoinGameSession op = builder.Build(
+                body,
                 namespace_,
                 sessionId
             );
@@ -808,11 +814,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Session.Model.ApimodelsGameSessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
             this JoinGameSession.JoinGameSessionBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string sessionId
         )
         {
             JoinGameSession op = builder.Build(
+                body,
                 namespace_,
                 sessionId
             );
@@ -935,6 +943,62 @@ namespace AccelByte.Sdk.Api
             );
 
             await ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicKickGameSessionMemberAsync(op);
+        }
+        public static Session.Model.ApimodelsGetPasswordResponse? Execute(
+            this PublicGetGameSessionPassword.PublicGetGameSessionPasswordBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicGetGameSessionPassword op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGetGameSessionPassword(op);
+        }
+        public static async Task<Session.Model.ApimodelsGetPasswordResponse?> ExecuteAsync(
+            this PublicGetGameSessionPassword.PublicGetGameSessionPasswordBuilder builder,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicGetGameSessionPassword op = builder.Build(
+                namespace_,
+                sessionId
+            );
+
+            return await ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicGetGameSessionPasswordAsync(op);
+        }
+        public static void Execute(
+            this PublicUpdateGameSessionPassword.PublicUpdateGameSessionPasswordBuilder builder,
+            ApimodelsUpdatePasswordRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicUpdateGameSessionPassword op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicUpdateGameSessionPassword(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicUpdateGameSessionPassword.PublicUpdateGameSessionPasswordBuilder builder,
+            ApimodelsUpdatePasswordRequest body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicUpdateGameSessionPassword op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            await ((Session.Wrapper.GameSession)builder.WrapperObject!).PublicUpdateGameSessionPasswordAsync(op);
         }
         public static void Execute(
             this PublicGameSessionReject.PublicGameSessionRejectBuilder builder,

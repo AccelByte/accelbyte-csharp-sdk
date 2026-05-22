@@ -19,6 +19,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
+        public GetAuthorizationServerMetadataWithNamespace.GetAuthorizationServerMetadataWithNamespaceBuilder GetAuthorizationServerMetadataWithNamespaceOp
+        {
+            get { return Operation.GetAuthorizationServerMetadataWithNamespace.Builder.SetWrapperObject(this); }
+        }
         public AdminRetrieveUserThirdPartyPlatformTokenV3.AdminRetrieveUserThirdPartyPlatformTokenV3Builder AdminRetrieveUserThirdPartyPlatformTokenV3Op
         {
             get { return Operation.AdminRetrieveUserThirdPartyPlatformTokenV3.Builder.SetWrapperObject(this); }
@@ -55,6 +59,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.Verify2faCodeForward.Builder.SetWrapperObject(this); }
         }
+        public OAuthDynamicClientRegisterWithNamespaceV3.OAuthDynamicClientRegisterWithNamespaceV3Builder OAuthDynamicClientRegisterWithNamespaceV3Op
+        {
+            get { return Operation.OAuthDynamicClientRegisterWithNamespaceV3.Builder.SetWrapperObject(this); }
+        }
         public RetrieveUserThirdPartyPlatformTokenV3.RetrieveUserThirdPartyPlatformTokenV3Builder RetrieveUserThirdPartyPlatformTokenV3Op
         {
             get { return Operation.RetrieveUserThirdPartyPlatformTokenV3.Builder.SetWrapperObject(this); }
@@ -89,6 +97,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
         #endregion
 
+        public Model.OauthcommonASMetadataResponse? GetAuthorizationServerMetadataWithNamespace(GetAuthorizationServerMetadataWithNamespace input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthcommonASMetadataResponse?> GetAuthorizationServerMetadataWithNamespaceAsync(GetAuthorizationServerMetadataWithNamespace input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
         public Model.OauthmodelTokenThirdPartyResponse? AdminRetrieveUserThirdPartyPlatformTokenV3(AdminRetrieveUserThirdPartyPlatformTokenV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -226,6 +250,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<string> Verify2faCodeForwardAsync(Verify2faCodeForward input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.OauthmodelClientRegisterResponse? OAuthDynamicClientRegisterWithNamespaceV3(OAuthDynamicClientRegisterWithNamespaceV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.OauthmodelClientRegisterResponse?> OAuthDynamicClientRegisterWithNamespaceV3Async(OAuthDynamicClientRegisterWithNamespaceV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

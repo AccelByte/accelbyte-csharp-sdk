@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUsersByDeviceV4
     ///
-    /// This is the endpoint for an admin to get users that ever login on the device
+    /// Returns all users that have ever logged in on the specified device (admin operation).
     /// </summary>
     public class AdminGetUsersByDeviceV4 : AccelByte.Sdk.Core.Operation
     {

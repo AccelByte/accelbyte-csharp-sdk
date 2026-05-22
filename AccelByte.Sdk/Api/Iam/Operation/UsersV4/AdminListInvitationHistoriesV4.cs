@@ -16,12 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListInvitationHistoriesV4
     ///
-    /// This endpoint is to list all Invitation Histories for new studio namespace in multi tenant mode.
-    /// It will return error if the service multi tenant mode is set to false.
-    /// Accepted Query:
-    /// - namespace
-    /// - offset
-    /// - limit
+    /// Lists all invitation histories for studio namespaces in multi-tenant mode.
+    /// 
+    /// Returns an error if the service multi-tenant mode is set to false.
     /// </summary>
     public class AdminListInvitationHistoriesV4 : AccelByte.Sdk.Core.Operation
     {

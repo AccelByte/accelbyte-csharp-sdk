@@ -17,8 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicListUserIDByPlatformUserIDsV3
     ///
     /// List User ID By Platform User ID
-    /// This endpoint intended to list game user ID from the given namespace
-    /// This endpoint return list of user ID by given platform ID and list of platform user ID
+    /// Lists game user IDs from the given namespace by given platform ID and list of platform user ID.
     /// 
     /// Supported platform:
     /// - steam

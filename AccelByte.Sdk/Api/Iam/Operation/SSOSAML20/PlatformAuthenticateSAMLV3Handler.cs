@@ -16,11 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// platformAuthenticateSAMLV3Handler
     ///
-    /// This endpoint authenticates user platform for SAML protocol. It validates user to its
+    /// Authenticates user platform for SAML protocol. Validates user to its
     /// respective platforms. Deactivated or login-banned users are unable to login.
     /// ## Supported platforms:
     /// - **azure**
-    /// Microsoft login page will redirects to this endpoint after login success
+    /// Microsoft login page will redirect to this API after login success
     /// as previously defined on authentication request SAML
     /// </summary>
     public class PlatformAuthenticateSAMLV3Handler : AccelByte.Sdk.Core.Operation

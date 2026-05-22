@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetUserPlatformAccounts
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// ### Endpoint migration guide
     /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/{userId}/platforms [GET]_**
     /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/platforms [GET]_**

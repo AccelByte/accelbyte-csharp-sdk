@@ -17,6 +17,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// AdminCreateChainingOperations
     ///
     /// 
+    /// ## The endpoint is going to be deprecated
     /// Create chaining Operations.
     /// This process will run sequentially
     /// 1. remove item process
@@ -33,6 +34,7 @@ namespace AccelByte.Sdk.Api.Inventory.Operation
     /// 
     /// Permission: ADMIN:NAMESPACE:{namespace}:USER:{userId}:INVENTORY:ITEM [CREATE]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminCreateChainingOperations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicDownloadMyBackupCodesV4
     ///
-    /// This endpoint is used to download backup codes.
+    /// Downloads backup codes as a file.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicDownloadMyBackupCodesV4 : AccelByte.Sdk.Core.Operation

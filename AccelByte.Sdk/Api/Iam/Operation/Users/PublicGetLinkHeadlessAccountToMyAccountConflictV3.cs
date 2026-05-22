@@ -20,7 +20,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 1. My account should be full account
     /// 2. My account not linked to request headless account's third platform.
     /// 
-    /// After client resolving the conflict, it will call endpoint `/iam/v3/public/users/me/headless/linkWithProgression [POST]`
+    /// After client resolving the conflict, it will call `/iam/v3/public/users/me/headless/linkWithProgression [POST]`
     /// </summary>
     public class PublicGetLinkHeadlessAccountToMyAccountConflictV3 : AccelByte.Sdk.Core.Operation
     {

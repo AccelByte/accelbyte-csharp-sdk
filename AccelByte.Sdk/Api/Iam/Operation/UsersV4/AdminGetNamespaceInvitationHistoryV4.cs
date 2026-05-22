@@ -16,8 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetNamespaceInvitationHistoryV4
     ///
-    /// This endpoint is to Invitation Historiy for specific new studio namespace in multi tenant mode.
-    /// It will return error if the service multi tenant mode is set to false.
+    /// Retrieves the invitation history for a specific studio namespace in multi-tenant mode.
+    /// 
+    /// Returns an error if the service multi-tenant mode is set to false.
     /// </summary>
     public class AdminGetNamespaceInvitationHistoryV4 : AccelByte.Sdk.Core.Operation
     {

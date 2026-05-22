@@ -16,16 +16,16 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Authorization
     ///
-    /// ## The endpoint is going to be deprecated
-    /// The endpoint supports two response types:
+    /// **This endpoint is deprecated.**
+    /// Supports two response types:
     /// ### 1. Response Type == "code":
-    /// The endpoint returns an authorization code that will be used by the IAM client to exchange for an access token. It supports two different headers, the basic and the bearer header. Each behaves differently.
+    /// Returns an authorization code that will be used by the IAM client to exchange for an access token. It supports two different headers, the basic and the bearer header. Each behaves differently.
     /// - **The basic header**
     /// The basic headerâs value is the base64 of the client ID and client secret. It is used by the developer whenever the developer authorizes a user on a same namespace.
     /// - **The bearer header**
-    /// The bearer headerâs value is an access token. It is used by the developer whenever the developer authorizes a user on a different namespace. The endpoint validates userâs entitlement on the designated namespace for making sure the user is authorized for a designated namespace.
+    /// The bearer headerâs value is an access token. It is used by the developer whenever the developer authorizes a user on a different namespace. Validates userâs entitlement on the designated namespace for making sure the user is authorized for a designated namespace.
     /// 
-    /// Following are the responses returned by the endpoint:
+    /// Following are the responses:
     /// - **Authorize success**: redirects to the given URL with the following information: ?code={authorization code}&state;={state}
     /// - **Authorize failure**: redirects to the given URL with the following information:?error=access_denied&error;_description=...
     /// 

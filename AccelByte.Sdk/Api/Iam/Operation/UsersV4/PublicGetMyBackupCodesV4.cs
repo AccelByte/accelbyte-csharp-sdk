@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetMyBackupCodesV4
     ///
-    /// This endpoint is used to get 8-digits backup codes.
+    /// Returns 8-digit backup codes.
     /// Each code is a one-time code and will be deleted once used.
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

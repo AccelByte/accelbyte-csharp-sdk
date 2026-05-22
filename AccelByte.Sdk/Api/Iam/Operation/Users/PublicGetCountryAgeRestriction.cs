@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetCountryAgeRestriction
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// **Endpoint migration guide**
     /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/agerestrictions/countries/{countryCode} [GET]_**
     /// </summary>

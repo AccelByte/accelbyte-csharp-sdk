@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalBaseLegalPolicies_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrieveBasePolicyResponse>? Execute(
             this RetrieveAllLegalPolicies.RetrieveAllLegalPoliciesBuilder builder
         )
@@ -30,6 +31,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).RetrieveAllLegalPoliciesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.CreateBasePolicyResponse? Execute(
             this OldCreatePolicy.OldCreatePolicyBuilder builder
         )
@@ -48,6 +50,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldCreatePolicyAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.RetrieveBasePolicyResponse? Execute(
             this OldRetrieveSinglePolicy.OldRetrieveSinglePolicyBuilder builder,
             string basePolicyId
@@ -70,6 +73,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrieveSinglePolicyAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.UpdateBasePolicyResponse? Execute(
             this OldPartialUpdatePolicy.OldPartialUpdatePolicyBuilder builder,
             string basePolicyId
@@ -92,6 +96,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldPartialUpdatePolicyAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.RetrievePolicyResponse? Execute(
             this OldRetrievePolicyCountry.OldRetrievePolicyCountryBuilder builder,
             string basePolicyId,
@@ -118,6 +123,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.BaseLegalPolicies)builder.WrapperObject!).OldRetrievePolicyCountryAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrievePolicyTypeResponse>? Execute(
             this OldRetrieveAllPolicyTypes.OldRetrieveAllPolicyTypesBuilder builder,
             int limit

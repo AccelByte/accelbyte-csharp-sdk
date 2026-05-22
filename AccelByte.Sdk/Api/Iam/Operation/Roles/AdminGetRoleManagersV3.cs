@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminGetRoleManagersV3
     ///
     /// Role can only be assigned to other users by the role's manager.
-    /// action code: 10415
     /// </summary>
     public class AdminGetRoleManagersV3 : AccelByte.Sdk.Core.Operation
     {

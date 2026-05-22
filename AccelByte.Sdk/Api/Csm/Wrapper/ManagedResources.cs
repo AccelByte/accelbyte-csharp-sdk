@@ -19,6 +19,11 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         }
 
         #region Operation Builders
+        public CreateNewNoSQLDatabaseCredentialV2.CreateNewNoSQLDatabaseCredentialV2Builder CreateNewNoSQLDatabaseCredentialV2Op
+        {
+            get { return Operation.CreateNewNoSQLDatabaseCredentialV2.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public CreateNoSQLDatabaseCredentialV2.CreateNoSQLDatabaseCredentialV2Builder CreateNoSQLDatabaseCredentialV2Op
         {
             get { return Operation.CreateNoSQLDatabaseCredentialV2.Builder.SetWrapperObject(this); }
@@ -69,6 +74,24 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         }
         #endregion
 
+        public Model.ApimodelNoSQLDatabaseCredentialResponse? CreateNewNoSQLDatabaseCredentialV2(CreateNewNoSQLDatabaseCredentialV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelNoSQLDatabaseCredentialResponse?> CreateNewNoSQLDatabaseCredentialV2Async(CreateNewNoSQLDatabaseCredentialV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ApimodelNoSQLDatabaseCredentialResponse? CreateNoSQLDatabaseCredentialV2(CreateNoSQLDatabaseCredentialV2 input)
         {
             var response = _sdk.RunRequest(input);
@@ -85,6 +108,7 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ApimodelNoSQLDatabaseResponse? GetNoSQLDatabaseV2(GetNoSQLDatabaseV2 input)
         {
             var response = _sdk.RunRequest(input);

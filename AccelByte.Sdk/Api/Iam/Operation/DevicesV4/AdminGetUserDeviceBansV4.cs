@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserDeviceBansV4
     ///
-    /// This is the endpoint for an admin to get device bans of user
+    /// Returns all device bans for a user (admin operation).
     /// </summary>
     public class AdminGetUserDeviceBansV4 : AccelByte.Sdk.Core.Operation
     {

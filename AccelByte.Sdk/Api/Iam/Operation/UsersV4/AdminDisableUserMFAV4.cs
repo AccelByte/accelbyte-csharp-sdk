@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableUserMFAV4
     ///
-    /// This endpoint is used to disable user 2FA.
+    /// Disables user 2FA.
     /// -----------
     /// **Note**: if the factor is not specified, will disable all 2FA methods.
     /// </summary>

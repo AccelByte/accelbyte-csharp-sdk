@@ -16,7 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicLinkPlatformAccount
     ///
-    /// It is going to be **DEPRECATED**.
+    /// ## This API has been deprecated
+    /// **Endpoint migration guide**
+    /// - **Substitute endpoint: _/iam/v3/public/namespaces/{namespace}/users/me/platforms/{platformId}/force [POST]_**
+    /// 
     /// Update Platform Account relation to current User Account.
     /// 
     /// Note: Game progression data (statistics, reward, etc) associated with previous User Account will not be
@@ -26,6 +29,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// **Authentication:**
     /// The _**userId**_ parameter should match the one in the access token.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicLinkPlatformAccount : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

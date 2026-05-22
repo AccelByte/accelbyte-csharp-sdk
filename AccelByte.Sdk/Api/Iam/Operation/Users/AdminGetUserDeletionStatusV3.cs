@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserDeletionStatusV3
     ///
-    /// action code : 10145
+    /// Retrieves the deletion status of the specified user account.
     /// </summary>
     public class AdminGetUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Retrieve all base policies.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class RetrieveAllLegalPolicies : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

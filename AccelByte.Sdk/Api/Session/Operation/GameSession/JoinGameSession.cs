@@ -39,11 +39,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
             public JoinGameSession Build(
+                ApimodelsJoinSessionRequest body,
                 string namespace_,
                 string sessionId
             )
             {
                 JoinGameSession op = new JoinGameSession(this,
+                    body,
                     namespace_,
                     sessionId
                 );
@@ -57,6 +59,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         }
 
         private JoinGameSession(JoinGameSessionBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string sessionId
         )
@@ -68,6 +71,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -76,7 +80,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public JoinGameSession(
             string namespace_,
-            string sessionId
+            string sessionId,
+            Model.ApimodelsJoinSessionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -86,6 +91,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -95,7 +101,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

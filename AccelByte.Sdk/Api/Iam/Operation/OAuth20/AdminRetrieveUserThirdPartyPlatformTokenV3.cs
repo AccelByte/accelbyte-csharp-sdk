@@ -17,8 +17,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminRetrieveUserThirdPartyPlatformTokenV3
     ///
     /// Admin Retrieve User Third Party Platform Token
-    /// This endpoint used for retrieving third party platform token for user that login using third party,
-    /// if user have not link requested platform in game namespace, will try to retrieving third party platform token from publisher namespace.
+    /// Retrieves third party platform token for users that logged in using a third party platform.
+    /// If the user has not linked the requested platform in the game namespace, attempts to retrieve the token from the publisher namespace.
     /// Passing platform group name or it's member will return same access token that can be used across the platform members.
     /// If platformUserId provided, IAM will prefer to get platform token by platform user id.
     /// 

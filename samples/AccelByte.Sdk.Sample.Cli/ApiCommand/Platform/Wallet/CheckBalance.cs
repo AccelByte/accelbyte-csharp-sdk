@@ -63,8 +63,11 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Platform
             );
 
 
-            wrapper.CheckBalance(operation);
-            return String.Empty;
+            AccelByte.Sdk.Api.Platform.Model.CheckBalanceResponse? response = wrapper.CheckBalance(operation);
+            if (response == null)
+                return "No response from server.";
+
+            return SdkHelper.SerializeToJson(response);
         }
     }
 }

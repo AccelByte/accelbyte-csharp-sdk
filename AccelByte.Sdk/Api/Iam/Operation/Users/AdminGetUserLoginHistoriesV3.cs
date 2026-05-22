@@ -16,11 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserLoginHistoriesV3
     ///
-    /// Notes for this endpoint:
-    /// This endpoint retrieve the first page of the data if `after` and `before` parameters is empty.
+    /// - This API only accept publisher/studio namespace and userId.
     /// - The maximum value of the limit is 100 and the minimum value of the limit is 1.
-    /// - This endpoint retrieve the next page of the data if we provide `after` parameters with valid Unix timestamp.
-    /// - This endpoint retrieve the previous page of the data if we provide `before` parameter with valid data Unix timestamp.
+    /// - Returns the first page of the data if `after` and `before` parameters is empty.
+    /// - Returns the next page of the data if we provide `after` parameters with valid Unix timestamp.
+    /// - Returns the previous page of the data if we provide `before` parameter with valid Unix timestamp.
     /// </summary>
     public class AdminGetUserLoginHistoriesV3 : AccelByte.Sdk.Core.Operation
     {

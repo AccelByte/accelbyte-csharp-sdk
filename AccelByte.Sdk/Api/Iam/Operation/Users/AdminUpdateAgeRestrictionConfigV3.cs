@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateAgeRestrictionConfigV3
     ///
-    /// action code: 10122
+    /// Updates the age restriction configuration for the namespace.
     /// </summary>
     public class AdminUpdateAgeRestrictionConfigV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteRoleV4
     ///
-    /// Removes role ID from user's Roles and NamespaceRoles before deleting the role.
-    /// action code: 10403
+    /// Removes the role from all assigned users before deleting it.
     /// </summary>
     public class AdminDeleteRoleV4 : AccelByte.Sdk.Core.Operation
     {

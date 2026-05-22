@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminBulkCheckValidUserIDV4
     ///
-    /// Use this endpoint to check if userID exists or not
+    /// Checks if userIDs exist or not.
     /// Maximum number of userID to be checked is 50
     /// </summary>
     public class AdminBulkCheckValidUserIDV4 : AccelByte.Sdk.Core.Operation

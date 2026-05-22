@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminBanUserV3
     ///
     /// Bans a user with specific type of ban. Ban types and reason can be queried.
-    /// action code : 10141
     /// </summary>
     public class AdminBanUserV3 : AccelByte.Sdk.Core.Operation
     {

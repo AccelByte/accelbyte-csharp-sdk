@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetMyEnabledFactorsV4
     ///
-    /// This endpoint is used to get user enabled factors.
+    /// Returns all enabled 2FA factors for the user.
     /// </summary>
     public class AdminGetMyEnabledFactorsV4 : AccelByte.Sdk.Core.Operation
     {

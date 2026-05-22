@@ -19,14 +19,17 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public RetrievePolicies.RetrievePoliciesBuilder RetrievePoliciesOp
         {
             get { return Operation.RetrievePolicies.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldUpdatePolicy.OldUpdatePolicyBuilder OldUpdatePolicyOp
         {
             get { return Operation.OldUpdatePolicy.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldSetDefaultPolicy.OldSetDefaultPolicyBuilder OldSetDefaultPolicyOp
         {
             get { return Operation.OldSetDefaultPolicy.Builder.SetWrapperObject(this); }
@@ -49,6 +52,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.RetrievePolicyResponse>? RetrievePolicies(RetrievePolicies input)
         {
             var response = _sdk.RunRequest(input);
@@ -65,6 +70,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void OldUpdatePolicy(OldUpdatePolicy input)
         {
             var response = _sdk.RunRequest(input);
@@ -81,6 +89,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void OldSetDefaultPolicy(OldSetDefaultPolicy input)
         {
             var response = _sdk.RunRequest(input);
@@ -97,6 +108,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public List<string>? RetrieveCountryListWithPolicies(RetrieveCountryListWithPolicies input)
         {
             var response = _sdk.RunRequest(input);

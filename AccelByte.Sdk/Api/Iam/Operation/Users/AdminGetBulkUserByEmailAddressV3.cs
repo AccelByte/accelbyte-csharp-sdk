@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetBulkUserByEmailAddressV3
     ///
-    /// This endpoint search user by the list of email addresses
-    /// action code : 10132
+    /// Searches users by the list of email addresses.
     /// </summary>
     public class AdminGetBulkUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation
     {

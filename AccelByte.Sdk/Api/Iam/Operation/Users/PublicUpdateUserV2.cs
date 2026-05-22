@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdateUserV2
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// **Endpoint migration guide**
     /// - **Substitute endpoint([PUT]): _/iam/v3/public/namespaces/{namespace}/users/me [PUT]_**
     /// - **Substitute endpoint([PATCH]): _/iam/v3/public/namespaces/{namespace}/users/me [PATCH]_**
@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 1. Prefer [PATCH] if client support PATCH method
     /// 2. Difference in V3/v4 request body, format difference: Pascal case => Camel case
     /// 
-    /// This Endpoint support update user based on given data. **Single request can update single field or multi fields.**
+    /// Supports updating user based on given data. **Single request can update single field or multi fields.**
     /// Supported field {Country, DisplayName, LanguageTag}
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

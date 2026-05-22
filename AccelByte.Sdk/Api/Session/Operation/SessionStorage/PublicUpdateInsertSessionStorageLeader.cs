@@ -17,17 +17,24 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// publicUpdateInsertSessionStorageLeader
     ///
     /// 
-    /// Update Insert Session Storage Leader. only Leader can update or insert user session storage data Leader.
-    /// can store generic json
-    /// example json can store :
+    /// Update Insert Session Storage Leader. Performs selective merge with existing leader storage data.
+    /// 
+    /// Leader (regular token): Only the session leader can update leader storage. Merges patch with existing data, nil values delete keys.
+    /// Game Admin (client token): Can update leader storage. Merges patch with existing data, nil values delete keys.
+    /// 
+    /// Deep merge: Nested objects are recursively merged, not replaced. Absent keys in patch are preserved in storage.
+    /// Leader storage is separate from per-user storage and identified by session context, not userID.
+    /// Example patch:
     /// {
-    /// "leader": {
-    /// "leader": 1
-    /// },
-    /// "data": 123
+    /// "gameState": {"round": "2"},
+    /// "difficulty": null
     /// }
-    /// game Admin can update or insert session storage
-    /// Session Storage feature only available for Gamesession
+    /// 
+    /// Session Storage feature only available for Gamesession.
+    /// 
+    /// Alternative v2 endpoints available with explicit semantics:
+    /// - PATCH /v2/.../storage/leader - Selective merge with partial updates
+    /// - PUT /v2/.../storage/leader - Complete replacement of entire storage
     /// </summary>
     public class PublicUpdateInsertSessionStorageLeader : AccelByte.Sdk.Core.Operation
     {

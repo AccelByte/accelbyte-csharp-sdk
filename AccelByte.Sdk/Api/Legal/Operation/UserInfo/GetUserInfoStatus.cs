@@ -20,6 +20,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// The query parameter namespaces can be a list of namespace separated by comma.
     /// If query parameter namespaces is empty, user info cache status for all available namespaces will be returned.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class GetUserInfoStatus : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

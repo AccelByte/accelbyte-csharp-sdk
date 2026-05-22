@@ -16,12 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AuthorizeV3
     ///
-    /// Initializes OAuth2.0 authorization code flow
-    /// The endpoint stores authorization request and redirects to login page with the authorization request id.
+    /// Initializes OAuth2.0 authorization code flow.
+    /// Stores the authorization request and redirects to the login page with the authorization request id.
     /// The user can then do the authentication on the login page.
     /// The user will be redirected back to the requesting client with authorization code if successfully authenticated.
     /// 
-    /// Only authorization code flow supported by this endpoint, implicit flow is not supported.
+    /// Only authorization code flow is supported; implicit flow is not supported.
     /// - **Authorize success**:
     /// redirects to login page with the following information: ?request_id={authorization_request_id}
     /// - **Authorize failure**:
@@ -43,7 +43,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - temporarily_unavailable: The authorization server is currently unable to handle the request
     /// due to a temporary overloading or maintenance of the server.
     /// Please refer to the RFC for more information about authorization code flow: https://tools.ietf.org/html/rfc6749#section-4.1
-    /// action code: 10701
     /// </summary>
     public class AuthorizeV3 : AccelByte.Sdk.Core.Operation
     {
@@ -256,7 +255,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 
         public override HttpMethod Method => HttpMethod.Get;
 
-        public override string[] Consumes => new string[] { "application/json" };
+        public override string[] Consumes => new string[] { "*/*" };
 
         public override string[] Produces => new string[] { "application/json" };
 

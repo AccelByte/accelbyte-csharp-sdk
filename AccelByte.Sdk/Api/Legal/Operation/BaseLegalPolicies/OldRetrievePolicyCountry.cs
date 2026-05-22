@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Retrieve a Base Legal Policy based on a Particular Country.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldRetrievePolicyCountry : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

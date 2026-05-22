@@ -15,6 +15,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
 {
     /// <summary>
     /// LoginSSOClient
+    ///
+    /// Redirects the user to the SSO client's login page for the specified platform. An optional 'payload' query parameter can be passed with key-value data from the SSO client.
     /// </summary>
     public class LoginSSOClient : AccelByte.Sdk.Core.Operation
     {

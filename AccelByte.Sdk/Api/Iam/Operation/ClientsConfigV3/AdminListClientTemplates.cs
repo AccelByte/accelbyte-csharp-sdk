@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminListClientTemplates
     ///
-    /// List client templates
+    /// Lists all available client templates.
     /// </summary>
     public class AdminListClientTemplates : AccelByte.Sdk.Core.Operation
     {

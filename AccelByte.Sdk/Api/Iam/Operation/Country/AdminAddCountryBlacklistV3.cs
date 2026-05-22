@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddCountryBlacklistV3
     ///
-    /// Admin update country blacklist
+    /// Updates the country blacklist for the namespace.
     /// </summary>
     public class AdminAddCountryBlacklistV3 : AccelByte.Sdk.Core.Operation
     {

@@ -39,11 +39,13 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
             public PublicPartyJoin Build(
+                ApimodelsJoinSessionRequest body,
                 string namespace_,
                 string partyId
             )
             {
                 PublicPartyJoin op = new PublicPartyJoin(this,
+                    body,
                     namespace_,
                     partyId
                 );
@@ -57,6 +59,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
         }
 
         private PublicPartyJoin(PublicPartyJoinBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string partyId
         )
@@ -68,6 +71,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -76,7 +80,8 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public PublicPartyJoin(
             string namespace_,
-            string partyId
+            string partyId,
+            Model.ApimodelsJoinSessionRequest body
         )
         {
             PathParams["namespace"] = namespace_;
@@ -86,6 +91,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
 
 
+            BodyParams = body;
 
 
             Securities.Add(AccelByte.Sdk.Core.Operation.SECURITY_BEARER);
@@ -95,7 +101,7 @@ namespace AccelByte.Sdk.Api.Session.Operation
 
         public override HttpMethod Method => HttpMethod.Post;
 
-        public override string[] Consumes => new string[] { };
+        public override string[] Consumes => new string[] { "application/json" };
 
         public override string[] Produces => new string[] { "application/json" };
 

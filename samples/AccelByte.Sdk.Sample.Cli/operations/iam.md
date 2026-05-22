@@ -1,5 +1,13 @@
 ## C# Extend SDK CLI Sample App Operation Index for Iam service.
 
+### Operation GetAuthorizationServerMetadataWithNamespace
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op getauthorizationservermetadatawithnamespace \
+    --namespace <namespace value>
+```
+
 ### Operation AdminGetBansTypeV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -44,37 +52,21 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation AdminUpdateModulePackage
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op adminupdatemodulepackage \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminListClientTemplates
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn iam \
     --op adminlistclienttemplates \
 
-```
-
-### Operation AdminGetInputValidations
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op admingetinputvalidations \
-
-```
-
-### Operation AdminUpdateInputValidations
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op adminupdateinputvalidations \
-    --reqbody <json string for request body>
-```
-To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
-
-### Operation AdminResetInputValidations
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op adminresetinputvalidations \
-    --field <field value>
 ```
 
 ### Operation ListAdminsV3
@@ -300,6 +292,33 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation AdminGetNamespaceScopedInputValidations
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op admingetnamespacescopedinputvalidations \
+    --namespace <namespace value>
+```
+
+### Operation AdminUpdateNamespaceScopedInputValidations
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op adminupdatenamespacescopedinputvalidations \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation AdminResetNamespaceScopedInputValidations
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op adminresetnamespacescopedinputvalidations \
+    --field <field value> \
+    --namespace <namespace value>
+```
 
 ### Operation AdminGetLoginAllowlistV3
 ```sh
@@ -1070,17 +1089,6 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --crossNamespace <crossNamespace value - optional>
 ```
 
-### Operation AdminDeleteUserRolesV3
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op admindeleteuserrolesv3 \
-    --namespace <namespace value> \
-    --userId <userId value> \
-    --reqbody <json string for request body>
-```
-To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
-
 ### Operation AdminSaveUserRoleV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -1091,26 +1099,6 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --reqbody <json string for request body>
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
-
-### Operation AdminAddUserRoleV3
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op adminadduserrolev3 \
-    --namespace <namespace value> \
-    --roleId <roleId value> \
-    --userId <userId value>
-```
-
-### Operation AdminDeleteUserRoleV3
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op admindeleteuserrolev3 \
-    --namespace <namespace value> \
-    --roleId <roleId value> \
-    --userId <userId value>
-```
 
 ### Operation AdminGetUserStateByUserIdV3
 ```sh
@@ -1168,6 +1156,14 @@ To set request body using JSON file, replace `--reqbody` argument with `--reqfil
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn iam \
     --op admincheckthirdpartyloginplatformavailabilityv3 \
+    --platformId <platformId value>
+```
+
+### Operation GetThirdPartyLoginPlatformDefaultsV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op getthirdpartyloginplatformdefaultsv3 \
     --platformId <platformId value>
 ```
 
@@ -1554,6 +1550,16 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --mfaToken <mfaToken value>
 ```
 
+### Operation OAuthDynamicClientRegisterWithNamespaceV3
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op oauthdynamicclientregisterwithnamespacev3 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation RetrieveUserThirdPartyPlatformTokenV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -1680,23 +1686,6 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --platform_token <platform_token value>
 ```
 
-### Operation PublicGetInputValidations
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op publicgetinputvalidations \
-    --defaultOnEmpty <defaultOnEmpty value - optional> \
-    --languageCode <languageCode value - optional>
-```
-
-### Operation PublicGetInputValidationByField
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op publicgetinputvalidationbyfield \
-    --field <field value>
-```
-
 ### Operation PublicGetCountryAgeRestrictionV3
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -1720,6 +1709,25 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn iam \
     --op publicgetcountrylistv3 \
+    --namespace <namespace value>
+```
+
+### Operation PublicGetNamespaceScopedInputValidations
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicgetnamespacescopedinputvalidations \
+    --namespace <namespace value> \
+    --defaultOnEmpty <defaultOnEmpty value - optional> \
+    --languageCode <languageCode value - optional>
+```
+
+### Operation PublicGetNamespaceScopedInputValidationByField
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn iam \
+    --op publicgetnamespacescopedinputvalidationbyfield \
+    --field <field value> \
     --namespace <namespace value>
 ```
 
@@ -2078,17 +2086,6 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value> \
     --userId <userId value>
 ```
-
-### Operation PublicLinkPlatformAccount
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn iam \
-    --op publiclinkplatformaccount \
-    --namespace <namespace value> \
-    --userId <userId value> \
-    --reqbody <json string for request body>
-```
-To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicForceLinkPlatformWithProgression
 ```sh

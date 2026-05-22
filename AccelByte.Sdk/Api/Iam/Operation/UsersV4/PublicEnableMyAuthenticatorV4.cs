@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicEnableMyAuthenticatorV4
     ///
-    /// This endpoint is used to enable 2FA authenticator.
+    /// Enables 2FA authenticator.
     /// ----------
     /// Prerequisites:
     /// - Generate the secret key/QR code uri by **_/iam/v4/public/namespaces/{namespace}/users/me/mfa/authenticator/key_**

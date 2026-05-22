@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DeleteSSOLoginPlatformCredentialV3
     ///
-    /// This is the API to Delete SSO Platform Credential.
+    /// Deletes the SSO platform credential for the specified platform.
     /// </summary>
     public class DeleteSSOLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {

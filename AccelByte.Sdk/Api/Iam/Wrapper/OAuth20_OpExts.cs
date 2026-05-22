@@ -12,6 +12,28 @@ namespace AccelByte.Sdk.Api
 {
     public static class IamOAuth20_OpExts
     {
+        public static Iam.Model.OauthcommonASMetadataResponse? Execute(
+            this GetAuthorizationServerMetadataWithNamespace.GetAuthorizationServerMetadataWithNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            GetAuthorizationServerMetadataWithNamespace op = builder.Build(
+                namespace_
+            );
+
+            return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).GetAuthorizationServerMetadataWithNamespace(op);
+        }
+        public static async Task<Iam.Model.OauthcommonASMetadataResponse?> ExecuteAsync(
+            this GetAuthorizationServerMetadataWithNamespace.GetAuthorizationServerMetadataWithNamespaceBuilder builder,
+            string namespace_
+        )
+        {
+            GetAuthorizationServerMetadataWithNamespace op = builder.Build(
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.OAuth20)builder.WrapperObject!).GetAuthorizationServerMetadataWithNamespaceAsync(op);
+        }
         public static Iam.Model.OauthmodelTokenThirdPartyResponse? Execute(
             this AdminRetrieveUserThirdPartyPlatformTokenV3.AdminRetrieveUserThirdPartyPlatformTokenV3Builder builder,
             string namespace_,
@@ -257,6 +279,32 @@ namespace AccelByte.Sdk.Api
             );
 
             return await ((Iam.Wrapper.OAuth20)builder.WrapperObject!).Verify2faCodeForwardAsync(op);
+        }
+        public static Iam.Model.OauthmodelClientRegisterResponse? Execute(
+            this OAuthDynamicClientRegisterWithNamespaceV3.OAuthDynamicClientRegisterWithNamespaceV3Builder builder,
+            OauthmodelClientRegistrationRequest body,
+            string namespace_
+        )
+        {
+            OAuthDynamicClientRegisterWithNamespaceV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return ((Iam.Wrapper.OAuth20)builder.WrapperObject!).OAuthDynamicClientRegisterWithNamespaceV3(op);
+        }
+        public static async Task<Iam.Model.OauthmodelClientRegisterResponse?> ExecuteAsync(
+            this OAuthDynamicClientRegisterWithNamespaceV3.OAuthDynamicClientRegisterWithNamespaceV3Builder builder,
+            OauthmodelClientRegistrationRequest body,
+            string namespace_
+        )
+        {
+            OAuthDynamicClientRegisterWithNamespaceV3 op = builder.Build(
+                body,
+                namespace_
+            );
+
+            return await ((Iam.Wrapper.OAuth20)builder.WrapperObject!).OAuthDynamicClientRegisterWithNamespaceV3Async(op);
         }
         public static Iam.Model.OauthmodelTokenThirdPartyResponse? Execute(
             this RetrieveUserThirdPartyPlatformTokenV3.RetrieveUserThirdPartyPlatformTokenV3Builder builder,

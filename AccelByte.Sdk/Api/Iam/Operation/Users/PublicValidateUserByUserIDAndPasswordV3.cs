@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicValidateUserByUserIDAndPasswordV3
     ///
-    /// This endpoint is used to validate the user password.
-    /// This endpoint validate the user password by specifying the userId and password.
+    /// Validates the user password by specifying the userId and password.
     /// 
     /// 
     /// **Authentication:**

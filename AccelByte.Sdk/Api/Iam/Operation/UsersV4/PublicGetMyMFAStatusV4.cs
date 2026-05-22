@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetMyMFAStatusV4
     ///
-    /// This endpoint will get user's' MFA status.
+    /// Retrieves the user's MFA status.
     /// ---------
     /// **Substitute endpoint**: /iam/v4/public/namespaces/{namespace}/users/me/mfa/status [GET]
     /// </summary>

@@ -111,6 +111,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicKickGameSessionMember.Builder.SetWrapperObject(this); }
         }
+        public PublicGetGameSessionPassword.PublicGetGameSessionPasswordBuilder PublicGetGameSessionPasswordOp
+        {
+            get { return Operation.PublicGetGameSessionPassword.Builder.SetWrapperObject(this); }
+        }
+        public PublicUpdateGameSessionPassword.PublicUpdateGameSessionPasswordBuilder PublicUpdateGameSessionPasswordOp
+        {
+            get { return Operation.PublicUpdateGameSessionPassword.Builder.SetWrapperObject(this); }
+        }
         public PublicGameSessionReject.PublicGameSessionRejectBuilder PublicGameSessionRejectOp
         {
             get { return Operation.PublicGameSessionReject.Builder.SetWrapperObject(this); }
@@ -675,6 +683,38 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task PublicKickGameSessionMemberAsync(PublicKickGameSessionMember input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGetPasswordResponse? PublicGetGameSessionPassword(PublicGetGameSessionPassword input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsGetPasswordResponse?> PublicGetGameSessionPasswordAsync(PublicGetGameSessionPassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicUpdateGameSessionPassword(PublicUpdateGameSessionPassword input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicUpdateGameSessionPasswordAsync(PublicUpdateGameSessionPassword input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

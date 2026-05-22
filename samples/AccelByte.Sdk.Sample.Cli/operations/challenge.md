@@ -181,7 +181,8 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn challenge \
     --op admindeletetiedchallenge \
     --challengeCode <challengeCode value> \
-    --namespace <namespace value>
+    --namespace <namespace value> \
+    --safeDelete <safeDelete value - optional>
 ```
 
 ### Operation AdminUpdateTiedChallengeSchedule

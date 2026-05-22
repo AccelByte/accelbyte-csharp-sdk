@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicMakeFactorMyDefaultV4
     ///
-    /// This endpoint is used to make 2FA factor default.
+    /// Makes 2FA factor default.
     /// </summary>
     public class PublicMakeFactorMyDefaultV4 : AccelByte.Sdk.Core.Operation
     {

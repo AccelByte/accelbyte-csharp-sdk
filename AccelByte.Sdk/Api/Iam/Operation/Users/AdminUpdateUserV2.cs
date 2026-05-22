@@ -16,11 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserV2
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// **Endpoint migration guide**
     /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId} [PATCH]_**
     /// 
-    /// This Endpoint support update user based on given data. **Single request can update single field or multi fields.**
+    /// Supports updating user based on given data. **Single request can update single field or multi fields.**
     /// Supported field {Country, DisplayName, LanguageTag}
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
     /// 

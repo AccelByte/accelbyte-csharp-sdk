@@ -3099,6 +3099,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --userId <userId value>
 ```
 
+### Operation AdminSyncTwitchDropsEntitlement
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn platform \
+    --op adminsynctwitchdropsentitlement \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation QueryUserOrders
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

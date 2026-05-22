@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class InventoryAdminChainingOperations_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Inventory.Model.ApimodelsChainingOperationResp? Execute(
             this AdminCreateChainingOperations.AdminCreateChainingOperationsBuilder builder,
             ApimodelsChainingOperationReq body,

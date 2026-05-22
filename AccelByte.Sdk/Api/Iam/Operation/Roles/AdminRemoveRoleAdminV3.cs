@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminRemoveRoleAdminV3
     ///
-    /// code: 10413
+    /// Removes admin status from a role.
     /// </summary>
     public class AdminRemoveRoleAdminV3 : AccelByte.Sdk.Core.Operation
     {

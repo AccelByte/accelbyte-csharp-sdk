@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDisableMyEmailV4
     ///
-    /// This endpoint is used to disable 2FA email.
+    /// Disables 2FA email.
     /// ------
     /// **Note**: **mfaToken** is required when all the following are enabled:
     /// - The environment variable **SENSITIVE_MFA_AUTH_ENABLED** is true

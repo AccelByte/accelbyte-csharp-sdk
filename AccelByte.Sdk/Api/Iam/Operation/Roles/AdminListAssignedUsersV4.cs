@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminListAssignedUsersV4
     ///
     /// Query all users that has the specified role.
-    /// action code: 10416
     /// </summary>
     public class AdminListAssignedUsersV4 : AccelByte.Sdk.Core.Operation
     {

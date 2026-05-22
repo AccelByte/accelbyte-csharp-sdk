@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// ResetPasswordV3
     ///
-    /// action code: 10105
+    /// Resets a user's password using a valid password reset code sent to their email address.
     /// </summary>
     public class ResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {

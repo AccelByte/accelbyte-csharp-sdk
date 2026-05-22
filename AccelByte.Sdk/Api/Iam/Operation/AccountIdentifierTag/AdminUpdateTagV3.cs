@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateTagV3
     ///
-    /// Update an existing Account Identifier Tag. This endpoint allows administrators to update the details of a tag that is used to identify and categorize user accounts.
+    /// Updates the details of an existing Account Identifier Tag used to identify and categorize user accounts.
     /// </summary>
     public class AdminUpdateTagV3 : AccelByte.Sdk.Core.Operation
     {

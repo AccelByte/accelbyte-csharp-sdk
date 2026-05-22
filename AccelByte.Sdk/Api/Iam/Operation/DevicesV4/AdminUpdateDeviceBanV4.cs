@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateDeviceBanV4
     ///
-    /// This is the endpoint for an admin to update a device ban config
+    /// Updates a device ban configuration (admin operation).
     /// </summary>
     public class AdminUpdateDeviceBanV4 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RetrieveActiveOIDCClientsPublicV3
     ///
-    /// This is the Public API to Get All Active OIDC Platform Credential By Client ID
+    /// Retrieves all active OIDC platform credentials filtered by client ID.
     /// </summary>
     public class RetrieveActiveOIDCClientsPublicV3 : AccelByte.Sdk.Core.Operation
     {

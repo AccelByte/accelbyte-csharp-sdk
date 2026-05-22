@@ -553,6 +553,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminGetUserSinglePlatformAccount.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder AdminDeleteUserRolesV3Op
         {
             get { return Operation.AdminDeleteUserRolesV3.Builder.SetWrapperObject(this); }
@@ -561,10 +562,12 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminSaveUserRoleV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminAddUserRoleV3.AdminAddUserRoleV3Builder AdminAddUserRoleV3Op
         {
             get { return Operation.AdminAddUserRoleV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminDeleteUserRoleV3.AdminDeleteUserRoleV3Builder AdminDeleteUserRoleV3Op
         {
             get { return Operation.AdminDeleteUserRoleV3.Builder.SetWrapperObject(this); }
@@ -746,6 +749,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.PublicListJusticePlatformAccountsV3.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicLinkPlatformAccount.PublicLinkPlatformAccountBuilder PublicLinkPlatformAccountOp
         {
             get { return Operation.PublicLinkPlatformAccount.Builder.SetWrapperObject(this); }
@@ -2892,6 +2896,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminDeleteUserRolesV3(AdminDeleteUserRolesV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2908,6 +2914,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void AdminSaveUserRoleV3(AdminSaveUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2924,6 +2931,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminAddUserRoleV3(AdminAddUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2940,6 +2949,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminDeleteUserRoleV3(AdminDeleteUserRoleV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -2956,6 +2968,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public Model.ModelUserStateResponseV3? AdminGetUserStateByUserIdV3(AdminGetUserStateByUserIdV3 input)
         {
             var response = _sdk.RunRequest(input);
@@ -3695,6 +3708,8 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void PublicLinkPlatformAccount(PublicLinkPlatformAccount input)
         {
             var response = _sdk.RunRequest(input);
@@ -3711,6 +3726,7 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void PublicForceLinkPlatformWithProgression(PublicForceLinkPlatformWithProgression input)
         {
             var response = _sdk.RunRequest(input);

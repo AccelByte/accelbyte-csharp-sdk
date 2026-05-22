@@ -3383,6 +3383,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminGetUserSinglePlatformAccountAsync<T1>(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeleteUserRolesV3.AdminDeleteUserRolesV3Builder builder,
             List<string> body,
@@ -3443,6 +3444,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminSaveUserRoleV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminAddUserRoleV3.AdminAddUserRoleV3Builder builder,
             string namespace_,
@@ -3473,6 +3475,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.Users)builder.WrapperObject!).AdminAddUserRoleV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this AdminDeleteUserRoleV3.AdminDeleteUserRoleV3Builder builder,
             string namespace_,
@@ -4716,6 +4719,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.Users)builder.WrapperObject!).PublicListJusticePlatformAccountsV3Async(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this PublicLinkPlatformAccount.PublicLinkPlatformAccountBuilder builder,
             ModelLinkPlatformAccountRequest body,

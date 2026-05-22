@@ -38,6 +38,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Legal.Wrapper.Agreement)builder.WrapperObject!).ChangePreferenceConsentAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrieveAcceptedAgreementResponse>? Execute(
             this OldRetrieveAcceptedAgreements.OldRetrieveAcceptedAgreementsBuilder builder,
             string userId
@@ -60,6 +61,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.Agreement)builder.WrapperObject!).OldRetrieveAcceptedAgreementsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.PagedRetrieveUserAcceptedAgreementResponse? Execute(
             this OldRetrieveAllUsersByPolicyVersion.OldRetrieveAllUsersByPolicyVersionBuilder builder,
             string policyVersionId

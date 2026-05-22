@@ -16,12 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DisableUserBan
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// ### Endpoint migration guide
     /// - **Substitute endpoint: _/iam/v3/admin/namespaces/{namespace}/users/{userId}/bans/{banId} [PATCH]_**
     /// 
     /// **Notes for using IAM in publisher - game studio scenarios**
-    /// The endpoint allows:
+    /// Allows:
     /// - The admin user in publisher namespace disables userâs ban in publisher namespace.
     /// - The admin user in game namespace disables userâs ban in game namespace.
     /// - The admin user in publisher namespace disables userâs ban in publisher namespace.

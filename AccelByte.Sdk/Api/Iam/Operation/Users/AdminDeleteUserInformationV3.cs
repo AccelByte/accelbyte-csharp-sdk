@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserInformationV3
     ///
-    /// [WARNING] This endpoint is deleting user data from database directly by skipping GDPR flow
+    /// **WARNING:** Deletes user data directly from the database, bypassing the GDPR flow. Use with caution as this action is irreversible.
     /// </summary>
     public class AdminDeleteUserInformationV3 : AccelByte.Sdk.Core.Operation
     {

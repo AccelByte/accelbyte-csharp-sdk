@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetAgeRestrictionStatusV3
     ///
-    /// action code: 10138
+    /// Retrieves the age restriction status for the namespace.
     /// </summary>
     public class AdminGetAgeRestrictionStatusV3 : AccelByte.Sdk.Core.Operation
     {

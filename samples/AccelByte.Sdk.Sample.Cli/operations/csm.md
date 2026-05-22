@@ -1,11 +1,61 @@
 ## C# Extend SDK CLI Sample App Operation Index for Csm service.
 
+### Operation ListAppUI
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op listappui \
+    --namespace <namespace value> \
+    --limit <limit value - optional> \
+    --name <name value - optional> \
+    --offset <offset value - optional>
+```
+
+### Operation CreateAppUI
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createappui \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteAppUI
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deleteappui \
+    --appUiName <appUiName value> \
+    --namespace <namespace value>
+```
+
+### Operation UploadAppUIFile
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op uploadappuifile \
+    --appUiName <appUiName value> \
+    --namespace <namespace value> \
+    --version <version value - optional> \
+    --upload file <file to upload>
+```
+
 ### Operation GetAppReleaseV1
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn csm \
     --op getappreleasev1 \
     --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation GetExtendFile
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getextendfile \
+    --filePath <filePath value> \
     --namespace <namespace value>
 ```
 
@@ -70,6 +120,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation ApplyAppConfigV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op applyappconfigv2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation CreateSubscriptionHandler
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -123,11 +184,51 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
-### Operation CreateNoSQLDatabaseCredentialV2
+### Operation CreateKeyValueCredentialV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
     --sn csm \
-    --op createnosqldatabasecredentialv2 \
+    --op createkeyvaluecredentialv2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation GetIntegrationAppKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getintegrationappkeyvalueclusterv2 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation IntegrateAppKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op integrateappkeyvalueclusterv2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation RemoveIntegrationAppKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op removeintegrationappkeyvalueclusterv2 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation CreateNewNoSQLDatabaseCredentialV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createnewnosqldatabasecredentialv2 \
     --app <app value> \
     --namespace <namespace value> \
     --reqbody <json string for request body>
@@ -226,6 +327,46 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --op deletesecretv2 \
     --app <app value> \
     --configId <configId value> \
+    --namespace <namespace value>
+```
+
+### Operation CreateSQLDatabaseCredentialV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createsqldatabasecredentialv2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation GetSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getsqldatabasev2 \
+    --app <app value> \
+    --namespace <namespace value>
+```
+
+### Operation CreateSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createsqldatabasev2 \
+    --app <app value> \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteSQLDatabaseV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletesqldatabasev2 \
+    --app <app value> \
     --namespace <namespace value>
 ```
 
@@ -424,6 +565,71 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value>
 ```
 
+### Operation GetKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getkeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --resourceId <resourceId value>
+```
+
+### Operation ListKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op listkeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --refresh <refresh value - optional>
+```
+
+### Operation CreateKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createkeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation GetKeyValueClusterLimitConfigV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getkeyvalueclusterlimitconfigv2 \
+    --namespace <namespace value>
+```
+
+### Operation UpdateKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op updatekeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --resourceId <resourceId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletekeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --resourceId <resourceId value>
+```
+
+### Operation GetListIntegratedAppKeyValueClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getlistintegratedappkeyvalueclusterv2 \
+    --namespace <namespace value> \
+    --resourceId <resourceId value>
+```
+
 ### Operation GetNoSQLClusterV2
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -490,6 +696,71 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn csm \
     --op getresourceslimits \
     --namespace <namespace value>
+```
+
+### Operation GetSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getsqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation UpdateSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op updatesqlclusterv2 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation CreateSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op createsqlclusterv2 \
+    --namespace <namespace value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation DeleteSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op deletesqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation StartSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op startsqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation StopSQLClusterV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op stopsqlclusterv2 \
+    --namespace <namespace value>
+```
+
+### Operation GetSQLAppListV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn csm \
+    --op getsqlapplistv2 \
+    --namespace <namespace value> \
+    --resourceId <resourceId value> \
+    --appName <appName value - optional> \
+    --gameNamespace <gameNamespace value - optional> \
+    --limit <limit value - optional> \
+    --offset <offset value - optional>
 ```
 
 ### Operation GetNoSQLAppListV2

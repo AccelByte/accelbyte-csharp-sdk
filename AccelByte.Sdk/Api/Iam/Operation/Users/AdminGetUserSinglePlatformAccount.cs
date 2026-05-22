@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserSinglePlatformAccount
     ///
-    /// This endpoint gets user single platform account metadata.
+    /// Gets user single platform account metadata.
     /// 
     /// 
     /// **Supported Platforms:**

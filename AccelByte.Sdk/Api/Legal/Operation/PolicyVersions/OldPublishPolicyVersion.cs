@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Manually publish a version of a particular country-specific policy.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldPublishPolicyVersion : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

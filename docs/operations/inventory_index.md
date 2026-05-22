@@ -7,7 +7,7 @@
 ### Admin Chaining Operations Wrapper:  [AdminChainingOperations](../../AccelByte.Sdk/Api/Inventory/Wrapper/AdminChainingOperations.cs)
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
-| `/inventory/v1/admin/namespaces/{namespace}/chainingOperations` | POST | AdminCreateChainingOperations | [AdminCreateChainingOperations](../../AccelByte.Sdk/Api/Inventory/Operation/AdminChainingOperations/AdminCreateChainingOperations.cs) | [AdminCreateChainingOperations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminChainingOperations/AdminCreateChainingOperations.cs) |
+| [DEPRECATED] `/inventory/v1/admin/namespaces/{namespace}/chainingOperations` | POST | AdminCreateChainingOperations | [AdminCreateChainingOperations](../../AccelByte.Sdk/Api/Inventory/Operation/AdminChainingOperations/AdminCreateChainingOperations.cs) | [AdminCreateChainingOperations](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Inventory/AdminChainingOperations/AdminCreateChainingOperations.cs) |
 
 ### Admin Integration Configurations Wrapper:  [AdminIntegrationConfigurations](../../AccelByte.Sdk/Api/Inventory/Wrapper/AdminIntegrationConfigurations.cs)
 | Endpoint | Method | ID | Class | Example |

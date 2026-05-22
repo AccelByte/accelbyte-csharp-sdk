@@ -55,6 +55,22 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicUpdateInsertSessionStorage.Builder.SetWrapperObject(this); }
         }
+        public PublicReplaceSessionStorageLeaderV2.PublicReplaceSessionStorageLeaderV2Builder PublicReplaceSessionStorageLeaderV2Op
+        {
+            get { return Operation.PublicReplaceSessionStorageLeaderV2.Builder.SetWrapperObject(this); }
+        }
+        public PublicUpdateInsertSessionStorageLeaderV2.PublicUpdateInsertSessionStorageLeaderV2Builder PublicUpdateInsertSessionStorageLeaderV2Op
+        {
+            get { return Operation.PublicUpdateInsertSessionStorageLeaderV2.Builder.SetWrapperObject(this); }
+        }
+        public PublicReplaceSessionStorageUserV2.PublicReplaceSessionStorageUserV2Builder PublicReplaceSessionStorageUserV2Op
+        {
+            get { return Operation.PublicReplaceSessionStorageUserV2.Builder.SetWrapperObject(this); }
+        }
+        public PublicUpdateInsertSessionStorageUserV2.PublicUpdateInsertSessionStorageUserV2Builder PublicUpdateInsertSessionStorageUserV2Op
+        {
+            get { return Operation.PublicUpdateInsertSessionStorageUserV2.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
         public Dictionary<string, object>? AdminReadPartySessionStorage(AdminReadPartySessionStorage input)
@@ -194,6 +210,70 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
                     response.Payload);
         }
         public async Task<Dictionary<string, object>?> PublicUpdateInsertSessionStorageAsync(PublicUpdateInsertSessionStorage input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicReplaceSessionStorageLeaderV2(PublicReplaceSessionStorageLeaderV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicReplaceSessionStorageLeaderV2Async(PublicReplaceSessionStorageLeaderV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicUpdateInsertSessionStorageLeaderV2(PublicUpdateInsertSessionStorageLeaderV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicUpdateInsertSessionStorageLeaderV2Async(PublicUpdateInsertSessionStorageLeaderV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicReplaceSessionStorageUserV2(PublicReplaceSessionStorageUserV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicReplaceSessionStorageUserV2Async(PublicReplaceSessionStorageUserV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Dictionary<string, object>? PublicUpdateInsertSessionStorageUserV2(PublicUpdateInsertSessionStorageUserV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Dictionary<string, object>?> PublicUpdateInsertSessionStorageUserV2Async(PublicUpdateInsertSessionStorageUserV2 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

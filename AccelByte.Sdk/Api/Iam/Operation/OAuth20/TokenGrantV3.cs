@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenGrantV3
     ///
-    /// This endpoint supports grant type:
+    /// Supports grant type:
     /// 1. Grant Type == `authorization_code`:
     /// It generates the user token by given the authorization
     /// code which generated in "/iam/v3/authenticate" API response. It should also pass
@@ -41,7 +41,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Following is the access tokenâs content:
     /// - **namespace**. It is the namespace the token was generated from.
     /// - **display_name**. The display name of the sub. It is empty if the token is generated from the client credential
-    /// - **roles**. The subâs roles. It is empty if the token is generated from the client credential
+    /// - **roles** (deprecated). The subâs roles. It is empty if the token is generated from the client credential
     /// - **namespace_roles**. The subâs roles scoped to namespace. Improvement from roles, which make the role scoped to specific namespace instead of global to publisher namespace
     /// - **permissions**. The sub or audâ permissions
     /// - **bans**. The subâs list of bans. It is used by the IAM client for validating the token.
@@ -58,18 +58,25 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// ## Bans
     /// The JWT contains user's active bans with its expiry date. List of ban types can be obtained from /bans.
+    /// 
     /// ## Device Cookie Validation
     /// _**For grant type "password" only**_
     /// Device Cookie is used to protect the user account from brute force login attack, [more detail from OWASP.
-    /// This endpoint will read device cookie from request header **Auth-Trust-Id**. If device cookie not found, it will generate a new one and set it into response body **auth_trust_id** when successfully login.
+    /// It will read the device cookie from cookie **Auth-Trust-Id**. If device cookie not found, it will generate a new one and sets it into the response body **auth_trust_id** on successful login.
+    /// 
     /// ## Track Login History
-    /// This endpoint will track login history to detect suspicious login activity, please provide **Device-Id** (alphanumeric) in request header parameter otherwise it will set to "unknown".
+    /// It will track login history to detect suspicious login activity. Provide **Device-Id** (alphanumeric) in the request header, otherwise it will be set to "unknown".
     /// Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
+    /// 
     /// ## 2FA remember device
-    /// To remember device for 2FA, should provide cookie: device_token or header: Device-Token
-    /// ## Response note
-    /// If it is a user token request and user hasn't accepted required legal policy, the field `is_comply` will be false in response and responsed token will have no permission.
-    /// action code: 10703
+    /// To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
+    /// 
+    /// ## Login Queue
+    /// _**For grant type "code" and "password" only**_
+    /// When the Login Queue is enabled and at capacity, this API returns a 401 Unauthorized response, with the queue ticket included in the response body.
+    /// 
+    /// ## Legal eligibility check
+    /// If it is a user token request and user hasn't accepted required legal policy (if any), the field `is_comply` will be false in response and response token will have no permission.
     /// </summary>
     public class TokenGrantV3 : AccelByte.Sdk.Core.Operation
     {

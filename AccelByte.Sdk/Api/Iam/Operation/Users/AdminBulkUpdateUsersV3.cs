@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminBulkUpdateUsersV3
     ///
-    /// This endpoint support to bulk update users based on given data.
+    /// Bulk updates users based on given data.
     /// ------
     /// Supported fields:
     /// * skipLoginQueue

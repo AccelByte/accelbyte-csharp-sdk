@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateClientSecretV3
     ///
-    /// Update Client Secret
+    /// Updates the client secret for the specified OAuth client.
     /// </summary>
     public class AdminUpdateClientSecretV3 : AccelByte.Sdk.Core.Operation
     {

@@ -21,6 +21,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("id")]
         public string? Id { get; set; }
 
+        [JsonPropertyName("package")]
+        public string? Package { get; set; }
+
         [JsonPropertyName("requiredFields")]
         public List<string>? RequiredFields { get; set; }
 

@@ -31,6 +31,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminDeleteConfigPermissionsByGroup.Builder.SetWrapperObject(this); }
         }
+        public AdminUpdateModulePackage.AdminUpdateModulePackageBuilder AdminUpdateModulePackageOp
+        {
+            get { return Operation.AdminUpdateModulePackage.Builder.SetWrapperObject(this); }
+        }
         public AdminListClientTemplates.AdminListClientTemplatesBuilder AdminListClientTemplatesOp
         {
             get { return Operation.AdminListClientTemplates.Builder.SetWrapperObject(this); }
@@ -78,6 +82,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task AdminDeleteConfigPermissionsByGroupAsync(AdminDeleteConfigPermissionsByGroup input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminUpdateModulePackage(AdminUpdateModulePackage input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateModulePackageAsync(AdminUpdateModulePackage input)
         {
             var response = await _sdk.RunRequestAsync(input);
             input.ParseResponse(

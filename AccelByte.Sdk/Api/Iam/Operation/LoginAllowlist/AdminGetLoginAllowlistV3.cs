@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetLoginAllowlistV3
     ///
-    /// This endpoint return login allowlist configuration from specific namespace.
+    /// Returns the login allowlist configuration from the specific namespace.
     /// </summary>
     public class AdminGetLoginAllowlistV3 : AccelByte.Sdk.Core.Operation
     {

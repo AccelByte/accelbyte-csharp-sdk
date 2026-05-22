@@ -21,6 +21,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("moduleId")]
         public string? ModuleId { get; set; }
 
+        [JsonPropertyName("package")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Package { get; set; }
+
     }
 
 

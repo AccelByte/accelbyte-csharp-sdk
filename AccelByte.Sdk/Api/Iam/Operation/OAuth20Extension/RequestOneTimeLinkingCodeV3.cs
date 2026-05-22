@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestOneTimeLinkingCodeV3
     ///
-    /// This endpoint is being used to request the one time code [8 length] for headless account to link or upgrade to a full account.
+    /// Requests a one-time code [8 characters] for a headless account to link or upgrade to a full account.
     /// Should specify the target platform id and current user should already linked to this platform.
     /// Current user should be a headless account.
     /// ## Supported platforms:

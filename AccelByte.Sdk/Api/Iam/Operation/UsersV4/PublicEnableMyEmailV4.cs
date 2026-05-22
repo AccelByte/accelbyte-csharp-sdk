@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicEnableMyEmailV4
     ///
-    /// This endpoint is used to enable 2FA email.
+    /// Enables 2FA email.
     /// </summary>
     public class PublicEnableMyEmailV4 : AccelByte.Sdk.Core.Operation
     {

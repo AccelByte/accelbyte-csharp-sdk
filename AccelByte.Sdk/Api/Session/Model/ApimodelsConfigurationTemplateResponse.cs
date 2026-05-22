@@ -368,6 +368,9 @@ namespace AccelByte.Sdk.Api.Session.Model
         public static readonly ApimodelsConfigurationTemplateResponseTextChatMode GAME
             = new ApimodelsConfigurationTemplateResponseTextChatMode("GAME");
 
+        public static readonly ApimodelsConfigurationTemplateResponseTextChatMode GAMEANDTEAM
+            = new ApimodelsConfigurationTemplateResponseTextChatMode("GAME_AND_TEAM");
+
         public static readonly ApimodelsConfigurationTemplateResponseTextChatMode NONE
             = new ApimodelsConfigurationTemplateResponseTextChatMode("NONE");
 

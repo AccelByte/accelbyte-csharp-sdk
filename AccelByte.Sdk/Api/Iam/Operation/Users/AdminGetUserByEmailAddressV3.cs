@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserByEmailAddressV3
     ///
-    /// This endpoint search user who owns the given email address
-    /// action code : 10132
+    /// Searches for the user who owns the given email address.
     /// </summary>
     public class AdminGetUserByEmailAddressV3 : AccelByte.Sdk.Core.Operation
     {

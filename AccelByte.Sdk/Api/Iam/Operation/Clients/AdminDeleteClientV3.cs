@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteClientV3
     ///
-    /// action code : 10310
+    /// Deletes the specified OAuth client.
     /// </summary>
     public class AdminDeleteClientV3 : AccelByte.Sdk.Core.Operation
     {

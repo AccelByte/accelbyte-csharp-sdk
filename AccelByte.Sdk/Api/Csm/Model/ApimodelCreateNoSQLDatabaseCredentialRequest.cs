@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
 {
     public class ApimodelCreateNoSQLDatabaseCredentialRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acknowledgements")]
+        public ApimodelNoSQLDatabaseAcknowledgements? Acknowledgements { get; set; }
+
         [JsonPropertyName("password")]
         public string? Password { get; set; }
 

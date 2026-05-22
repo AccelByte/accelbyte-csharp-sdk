@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserMFAStatusV4
     ///
-    /// **This endpoint is used to get user's 2FA status.**
+    /// Retrieves the 2FA status for the specified user.
     /// </summary>
     public class AdminGetUserMFAStatusV4 : AccelByte.Sdk.Core.Operation
     {

@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         {
             AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.BaseLegalPolicies(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.RetrieveAllLegalPolicies.Builder;
 
             if (VisibleOnly != null)
@@ -51,12 +52,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             RetrieveAllLegalPolicies operation = opBuilder.Build(
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveBasePolicyResponse>? response = wrapper.RetrieveAllLegalPolicies(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

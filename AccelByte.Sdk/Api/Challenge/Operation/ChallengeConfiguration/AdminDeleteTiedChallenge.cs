@@ -28,12 +28,20 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             : OperationBuilder<AdminDeleteTiedChallengeBuilder>
         {
 
+            public string? SafeDelete { get; set; }
+
 
 
 
 
             internal AdminDeleteTiedChallengeBuilder() { }
 
+
+            public AdminDeleteTiedChallengeBuilder SetSafeDelete(string _safeDelete)
+            {
+                SafeDelete = _safeDelete;
+                return this;
+            }
 
 
 
@@ -65,6 +73,7 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
             PathParams["challengeCode"] = challengeCode;
             PathParams["namespace"] = namespace_;
 
+            if (builder.SafeDelete is not null) QueryParams["safeDelete"] = builder.SafeDelete;
 
 
 
@@ -77,12 +86,14 @@ namespace AccelByte.Sdk.Api.Challenge.Operation
 
         public AdminDeleteTiedChallenge(
             string challengeCode,
-            string namespace_
+            string namespace_,
+            string? safeDelete
         )
         {
             PathParams["challengeCode"] = challengeCode;
             PathParams["namespace"] = namespace_;
 
+            if (safeDelete is not null) QueryParams["safeDelete"] = safeDelete;
 
 
 

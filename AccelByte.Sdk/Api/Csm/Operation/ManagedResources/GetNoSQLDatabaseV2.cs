@@ -23,15 +23,15 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// 
     /// `resourceStatus` field - indicates the NoSQL cluster status:
     /// - `available` : The cluster is accessible.
-    /// - `updating` : The cluster is being modified and is not yet accessible (e.g., updating min/max DCU).
     /// - `creating` : The cluster or instance is being created and is not yet accessible.
+    /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
+    /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
+    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
+    /// - `updating` : The cluster is being modified and is not yet accessible (e.g., updating min/max DCU).
     /// - `deleting` : The cluster is in the process of being deleted and is not accessible.
     /// - `stopped` : The cluster is stopped and not accessible.
     /// - `starting` : The cluster is transitioning from stopped to running, or is rebooting.
     /// - `unknown` : The cluster status is not recognized
-    /// - `failed` : The cluster failed to provision or is in an error state and not accessible.
-    /// - `stopping` : The cluster is in the process of stopping and will soon become inaccessible.
-    /// - `maintenance` : The cluster is undergoing maintenance operations and is not accessible.
     /// </summary>
     public class GetNoSQLDatabaseV2 : AccelByte.Sdk.Core.Operation
     {

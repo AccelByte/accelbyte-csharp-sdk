@@ -22,6 +22,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? FederationMetadataUrl { get; set; }
 
         [JsonPropertyName("isActive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsActive { get; set; }
 
         [JsonPropertyName("redirectUri")]

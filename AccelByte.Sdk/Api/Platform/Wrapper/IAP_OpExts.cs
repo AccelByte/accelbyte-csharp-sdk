@@ -1120,6 +1120,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncSteamIAPByTransactionAsync(op);
         }
+        public static void Execute(
+            this AdminSyncTwitchDropsEntitlement.AdminSyncTwitchDropsEntitlementBuilder builder,
+            TwitchSyncRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncTwitchDropsEntitlement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncTwitchDropsEntitlement(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminSyncTwitchDropsEntitlement.AdminSyncTwitchDropsEntitlementBuilder builder,
+            TwitchSyncRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminSyncTwitchDropsEntitlement op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            await ((Platform.Wrapper.IAP)builder.WrapperObject!).AdminSyncTwitchDropsEntitlementAsync(op);
+        }
         public static Platform.Model.AppleIAPConfigVersionInfo? Execute(
             this GetAppleConfigVersion.GetAppleConfigVersionBuilder builder,
             string namespace_

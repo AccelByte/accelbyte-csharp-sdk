@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetMyOwnMFAStatusV4
     ///
-    /// This endpoint will get user's' MFA status.
+    /// Retrieves the user's MFA status.
     /// </summary>
     public class AdminGetMyOwnMFAStatusV4 : AccelByte.Sdk.Core.Operation
     {

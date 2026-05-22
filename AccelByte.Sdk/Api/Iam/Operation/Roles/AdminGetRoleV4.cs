@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRoleV4
     ///
-    /// action code: 10419
+    /// Retrieves a role by its ID.
     /// </summary>
     public class AdminGetRoleV4 : AccelByte.Sdk.Core.Operation
     {

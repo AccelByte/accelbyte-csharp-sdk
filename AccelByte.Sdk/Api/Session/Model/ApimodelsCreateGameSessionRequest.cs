@@ -65,6 +65,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
+
         [JsonPropertyName("preferredClaimKeys")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? PreferredClaimKeys { get; set; }
@@ -159,6 +163,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
+
         [JsonPropertyName("preferredClaimKeys")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? PreferredClaimKeys { get; set; }
@@ -235,6 +243,9 @@ namespace AccelByte.Sdk.Api.Session.Model
     {
         public static readonly ApimodelsCreateGameSessionRequestTextChatMode GAME
             = new ApimodelsCreateGameSessionRequestTextChatMode("GAME");
+
+        public static readonly ApimodelsCreateGameSessionRequestTextChatMode GAMEANDTEAM
+            = new ApimodelsCreateGameSessionRequestTextChatMode("GAME_AND_TEAM");
 
         public static readonly ApimodelsCreateGameSessionRequestTextChatMode NONE
             = new ApimodelsCreateGameSessionRequestTextChatMode("NONE");

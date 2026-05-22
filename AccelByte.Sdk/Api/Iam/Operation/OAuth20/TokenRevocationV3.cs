@@ -16,9 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenRevocationV3
     ///
-    /// This endpoint revokes a token.
-    /// This endpoint requires authorized requests header with Basic Authentication from client that establish the token.
-    /// action code: 10706
+    /// Revokes a token.
+    /// Requires authorized requests header with Basic Authentication from the client that established the token.
     /// </summary>
     public class TokenRevocationV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetCountryListV3
     ///
-    /// Public get country list, will filter out countries in black list
+    /// Retrieves the list of countries, excluding those on the blacklist.
     /// </summary>
     public class PublicGetCountryListV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Logout
     ///
-    /// This endpoint is used to remove **access_token**, **refresh_token** from cookie.
+    /// Removes **access_token** and **refresh_token** from the cookie.
     /// </summary>
     public class Logout : AccelByte.Sdk.Core.Operation
     {

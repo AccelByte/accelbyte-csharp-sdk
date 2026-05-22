@@ -15,6 +15,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonPropertyName("owner")]
         public string? Owner { get; set; }
 
+        [JsonPropertyName("recommendedMaxAgeDays")]
+        public int? RecommendedMaxAgeDays { get; set; }
+
         [JsonPropertyName("username")]
         public string? Username { get; set; }
 

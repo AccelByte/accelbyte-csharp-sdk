@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateProfileUpdateStrategyV3
     ///
-    /// This API includes upsert behavior.
-    /// Note:
-    /// 1. field 'config'' in request body will only work when type is limited
+    /// Uses upsert behavior.
     /// </summary>
     public class AdminUpdateProfileUpdateStrategyV3 : AccelByte.Sdk.Core.Operation
     {

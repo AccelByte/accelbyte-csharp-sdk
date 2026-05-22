@@ -16,8 +16,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicVerifyHeadlessAccountV3
     ///
-    /// action code : 10124
-    /// 
     /// if set NeedVerificationCode = true, IAM will send verification code into email
     /// user can use that verification code to verify user through /iam/v3/public/namespaces/{namespace}/users/me/code/verify
     /// </summary>

@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminInviteUserNewV4
     ///
-    /// Use this endpoint to invite admin or non-admin user and assign role to them. The role must be scoped to namespace. An admin user can only
-    /// assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of endpoint: [AdminAddUserRoleV4].
+    /// Invites admin or non-admin user and assigns role to them. The role must be scoped to namespace. An admin user can only
+    /// assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of [AdminAddUserRoleV4].
     /// 
     /// Detail request body :
     /// - **emailAddresses** is required, List of email addresses that will be invited

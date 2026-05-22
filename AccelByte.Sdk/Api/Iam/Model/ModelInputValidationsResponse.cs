@@ -12,6 +12,9 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("data")]
         public List<ModelInputValidationData>? Data { get; set; }
 
+        [JsonPropertyName("fromDefault")]
+        public bool? FromDefault { get; set; }
+
         [JsonPropertyName("version")]
         public int? Version { get; set; }
 

@@ -19,6 +19,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// This API is for updating role override config.
     /// Note:
     /// This API has upsert behavior, if there is no config yet, it will create a new one first.
+    /// **Note for Multi Tenant Mode:**
+    /// Studio/game admin:
+    /// * only allow to add custom permission to additions.
     /// </summary>
     public class AdminUpdateRoleOverrideConfigV3 : AccelByte.Sdk.Core.Operation
     {

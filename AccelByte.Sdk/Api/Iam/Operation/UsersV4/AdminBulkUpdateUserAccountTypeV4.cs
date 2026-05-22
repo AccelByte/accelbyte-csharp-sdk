@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminBulkUpdateUserAccountTypeV4
     ///
-    /// This endpoint is used to change users account type
+    /// Changes users account type.
     /// - set **testAccount** to `true` to mark user as test account type
     /// - set **testAccount** to `false` to mark user as default account type
     /// </summary>

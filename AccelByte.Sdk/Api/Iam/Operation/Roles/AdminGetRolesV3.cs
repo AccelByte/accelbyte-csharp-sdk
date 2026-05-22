@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetRolesV3
     ///
-    /// action code: 10414
+    /// Retrieves a paginated list of roles.
     /// </summary>
     public class AdminGetRolesV3 : AccelByte.Sdk.Core.Operation
     {

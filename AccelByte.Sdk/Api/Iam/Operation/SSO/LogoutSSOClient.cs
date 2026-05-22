@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// LogoutSSOClient
     ///
-    /// Logout user's session on platform that logged in using SSO.
+    /// Logs out the user's session on a platform that was authenticated using SSO.
     /// 
     /// Supported platforms:
     /// - discourse

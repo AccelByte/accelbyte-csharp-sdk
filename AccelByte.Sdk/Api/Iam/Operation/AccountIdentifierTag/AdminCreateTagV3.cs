@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateTagV3
     ///
-    /// Create a new Account Identifier Tag for users. This endpoint allows administrators to create tags that can be used to identify and categorize user accounts.
+    /// Creates a new Account Identifier Tag for users, which can be used to identify and categorize user accounts.
     /// </summary>
     public class AdminCreateTagV3 : AccelByte.Sdk.Core.Operation
     {

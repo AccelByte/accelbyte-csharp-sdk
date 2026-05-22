@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserEmailAddressV4
     ///
-    /// This is the endpoint for an admin to update a user email address.
-    /// This endpoint need a valid user token from an admin to verify its identity (email) before updating a user.
+    /// Updates a user email address (admin operation).
+    /// Requires a valid admin user token to verify identity (email) before updating the user.
     /// </summary>
     public class AdminUpdateUserEmailAddressV4 : AccelByte.Sdk.Core.Operation
     {

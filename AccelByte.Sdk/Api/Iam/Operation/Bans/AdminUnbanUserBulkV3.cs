@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminUnbanUserBulkV3
     ///
     /// disable bulk ban user. The maximum limit value is 100
-    /// action code : 10142
     /// </summary>
     public class AdminUnbanUserBulkV3 : AccelByte.Sdk.Core.Operation
     {

@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// This API will return all accepted Legal Agreements for specified user
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldRetrieveAcceptedAgreements : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

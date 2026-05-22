@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGenerateBackupCodesV4
     ///
-    /// This endpoint is used to generate 8-digits backup codes.
-    /// Each codes is a one-time code and will be deleted once used.
+    /// Generates 8-digit backup codes.
+    /// Each code is a one-time code and will be deleted once used.
     /// The codes will be sent through linked email.
     /// </summary>
     public class PublicGenerateBackupCodesV4 : AccelByte.Sdk.Core.Operation

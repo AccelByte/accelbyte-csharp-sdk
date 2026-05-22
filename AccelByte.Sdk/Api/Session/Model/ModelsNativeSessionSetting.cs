@@ -45,6 +45,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("XboxTitleID")]
         public string? XboxTitleID { get; set; }
 
+        [JsonPropertyName("activePlatforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? ActivePlatforms { get; set; }
+
         [JsonPropertyName("localizedSessionName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public Dictionary<string, object>? LocalizedSessionName { get; set; }
@@ -86,6 +90,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("XboxTitleID")]
         public string? XboxTitleID { get; set; }
+
+        [JsonPropertyName("activePlatforms")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<string>? ActivePlatforms { get; set; }
 
         [JsonPropertyName("localizedSessionName")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]

@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminGetMyUserV3
     ///
     /// Get my user data
-    /// action code : 10147
     /// </summary>
     public class AdminGetMyUserV3 : AccelByte.Sdk.Core.Operation
     {

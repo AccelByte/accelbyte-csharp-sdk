@@ -74,6 +74,28 @@ namespace AccelByte.Sdk.Api
 
             await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminDeleteConfigPermissionsByGroupAsync(op);
         }
+        public static void Execute(
+            this AdminUpdateModulePackage.AdminUpdateModulePackageBuilder builder,
+            ClientmodelUpsertPermissionModulePackageRequest body
+        )
+        {
+            AdminUpdateModulePackage op = builder.Build(
+                body
+            );
+
+            ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminUpdateModulePackage(op);
+        }
+        public static async Task ExecuteAsync(
+            this AdminUpdateModulePackage.AdminUpdateModulePackageBuilder builder,
+            ClientmodelUpsertPermissionModulePackageRequest body
+        )
+        {
+            AdminUpdateModulePackage op = builder.Build(
+                body
+            );
+
+            await ((Iam.Wrapper.ClientsConfigV3)builder.WrapperObject!).AdminUpdateModulePackageAsync(op);
+        }
         public static Iam.Model.ClientmodelListTemplatesResponse? Execute(
             this AdminListClientTemplates.AdminListClientTemplatesBuilder builder
         )

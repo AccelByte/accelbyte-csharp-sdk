@@ -573,8 +573,10 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn session \
     --op joingamesession \
     --namespace <namespace value> \
-    --sessionId <sessionId value>
+    --sessionId <sessionId value> \
+    --reqbody <json string for request body>
 ```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicPromoteGameSessionLeader
 ```sh
@@ -605,6 +607,26 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --namespace <namespace value> \
     --sessionId <sessionId value>
 ```
+
+### Operation PublicGetGameSessionPassword
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicgetgamesessionpassword \
+    --namespace <namespace value> \
+    --sessionId <sessionId value>
+```
+
+### Operation PublicUpdateGameSessionPassword
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicupdategamesessionpassword \
+    --namespace <namespace value> \
+    --sessionId <sessionId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicGameSessionReject
 ```sh
@@ -715,6 +737,26 @@ $ AccelByte.Sdk.Sample.Cli.exe \
 ```
 To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
+### Operation PublicGetPartyPassword
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicgetpartypassword \
+    --namespace <namespace value> \
+    --partyId <partyId value>
+```
+
+### Operation PublicUpdatePartyPassword
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicupdatepartypassword \
+    --namespace <namespace value> \
+    --partyId <partyId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation PublicReadPartySessionStorage
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \
@@ -754,8 +796,10 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --sn session \
     --op publicpartyjoin \
     --namespace <namespace value> \
-    --partyId <partyId value>
+    --partyId <partyId value> \
+    --reqbody <json string for request body>
 ```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 
 ### Operation PublicPartyLeave
 ```sh
@@ -903,4 +947,50 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --orderBy <orderBy value - optional> \
     --status <status value - optional>
 ```
+
+### Operation PublicReplaceSessionStorageLeaderV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicreplacesessionstorageleaderv2 \
+    --namespace <namespace value> \
+    --sessionId <sessionId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation PublicUpdateInsertSessionStorageLeaderV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicupdateinsertsessionstorageleaderv2 \
+    --namespace <namespace value> \
+    --sessionId <sessionId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation PublicReplaceSessionStorageUserV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicreplacesessionstorageuserv2 \
+    --namespace <namespace value> \
+    --sessionId <sessionId value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
+### Operation PublicUpdateInsertSessionStorageUserV2
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn session \
+    --op publicupdateinsertsessionstorageuserv2 \
+    --namespace <namespace value> \
+    --sessionId <sessionId value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
 

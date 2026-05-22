@@ -19,28 +19,55 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminGetInputValidations.AdminGetInputValidationsBuilder AdminGetInputValidationsOp
         {
             get { return Operation.AdminGetInputValidations.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminUpdateInputValidations.AdminUpdateInputValidationsBuilder AdminUpdateInputValidationsOp
         {
             get { return Operation.AdminUpdateInputValidations.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminResetInputValidations.AdminResetInputValidationsBuilder AdminResetInputValidationsOp
         {
             get { return Operation.AdminResetInputValidations.Builder.SetWrapperObject(this); }
         }
+        public AdminGetNamespaceScopedInputValidations.AdminGetNamespaceScopedInputValidationsBuilder AdminGetNamespaceScopedInputValidationsOp
+        {
+            get { return Operation.AdminGetNamespaceScopedInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public AdminUpdateNamespaceScopedInputValidations.AdminUpdateNamespaceScopedInputValidationsBuilder AdminUpdateNamespaceScopedInputValidationsOp
+        {
+            get { return Operation.AdminUpdateNamespaceScopedInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public AdminResetNamespaceScopedInputValidations.AdminResetNamespaceScopedInputValidationsBuilder AdminResetNamespaceScopedInputValidationsOp
+        {
+            get { return Operation.AdminResetNamespaceScopedInputValidations.Builder.SetWrapperObject(this); }
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetInputValidations.PublicGetInputValidationsBuilder PublicGetInputValidationsOp
         {
             get { return Operation.PublicGetInputValidations.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public PublicGetInputValidationByField.PublicGetInputValidationByFieldBuilder PublicGetInputValidationByFieldOp
         {
             get { return Operation.PublicGetInputValidationByField.Builder.SetWrapperObject(this); }
         }
+        public PublicGetNamespaceScopedInputValidations.PublicGetNamespaceScopedInputValidationsBuilder PublicGetNamespaceScopedInputValidationsOp
+        {
+            get { return Operation.PublicGetNamespaceScopedInputValidations.Builder.SetWrapperObject(this); }
+        }
+        public PublicGetNamespaceScopedInputValidationByField.PublicGetNamespaceScopedInputValidationByFieldBuilder PublicGetNamespaceScopedInputValidationByFieldOp
+        {
+            get { return Operation.PublicGetNamespaceScopedInputValidationByField.Builder.SetWrapperObject(this); }
+        }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelInputValidationsResponse? AdminGetInputValidations(AdminGetInputValidations input)
         {
             var response = _sdk.RunRequest(input);
@@ -57,6 +84,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminUpdateInputValidations(AdminUpdateInputValidations input)
         {
             var response = _sdk.RunRequest(input);
@@ -73,6 +103,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void AdminResetInputValidations(AdminResetInputValidations input)
         {
             var response = _sdk.RunRequest(input);
@@ -89,6 +122,57 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+        public Model.ModelInputValidationsResponse? AdminGetNamespaceScopedInputValidations(AdminGetNamespaceScopedInputValidations input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelInputValidationsResponse?> AdminGetNamespaceScopedInputValidationsAsync(AdminGetNamespaceScopedInputValidations input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminUpdateNamespaceScopedInputValidations(AdminUpdateNamespaceScopedInputValidations input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminUpdateNamespaceScopedInputValidationsAsync(AdminUpdateNamespaceScopedInputValidations input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminResetNamespaceScopedInputValidations(AdminResetNamespaceScopedInputValidations input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminResetNamespaceScopedInputValidationsAsync(AdminResetNamespaceScopedInputValidations input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelInputValidationsPublicResponse? PublicGetInputValidations(PublicGetInputValidations input)
         {
             var response = _sdk.RunRequest(input);
@@ -105,6 +189,9 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ModelInputValidationConfigVersion? PublicGetInputValidationByField(PublicGetInputValidationByField input)
         {
             var response = _sdk.RunRequest(input);
@@ -114,6 +201,39 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelInputValidationConfigVersion?> PublicGetInputValidationByFieldAsync(PublicGetInputValidationByField input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+#pragma warning restore ab_deprecated_operation
+        public Model.ModelInputValidationsPublicResponse? PublicGetNamespaceScopedInputValidations(PublicGetNamespaceScopedInputValidations input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelInputValidationsPublicResponse?> PublicGetNamespaceScopedInputValidationsAsync(PublicGetNamespaceScopedInputValidations input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelInputValidationConfigVersion? PublicGetNamespaceScopedInputValidationByField(PublicGetNamespaceScopedInputValidationByField input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelInputValidationConfigVersion?> PublicGetNamespaceScopedInputValidationByFieldAsync(PublicGetNamespaceScopedInputValidationByField input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

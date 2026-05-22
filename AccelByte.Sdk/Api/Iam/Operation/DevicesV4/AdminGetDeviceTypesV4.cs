@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetDeviceTypesV4
     ///
-    /// This is the endpoint for an admin to get device types
+    /// Returns all supported device types (admin operation).
     /// </summary>
     public class AdminGetDeviceTypesV4 : AccelByte.Sdk.Core.Operation
     {

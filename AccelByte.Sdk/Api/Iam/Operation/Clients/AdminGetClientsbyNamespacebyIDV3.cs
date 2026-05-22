@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetClientsbyNamespacebyIDV3
     ///
-    /// action code: 10309
+    /// Retrieves an OAuth client by namespace and client ID. In multi-tenant mode, the admin portal client is accessible regardless of the namespace path.
     /// </summary>
     public class AdminGetClientsbyNamespacebyIDV3 : AccelByte.Sdk.Core.Operation
     {

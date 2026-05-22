@@ -43,6 +43,9 @@ namespace AccelByte.Sdk.Api.Session.Operation
     /// - configurationName
     /// - attributes
     /// 
+    /// maxPlayers override rules:
+    /// - maxPlayers can be set to a value lower than or equal to the template's maxPlayers. Values above the template ceiling are ignored and the template value is used instead.
+    /// 
     /// Supported platforms:
     /// 1. STEAM
     /// 2. PSN

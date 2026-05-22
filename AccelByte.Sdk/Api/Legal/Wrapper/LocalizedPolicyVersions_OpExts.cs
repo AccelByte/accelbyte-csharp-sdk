@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalLocalizedPolicyVersions_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrieveLocalizedPolicyVersionResponse>? Execute(
             this OldRetrieveLocalizedPolicyVersions.OldRetrieveLocalizedPolicyVersionsBuilder builder,
             string policyVersionId
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveLocalizedPolicyVersionsAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.CreateLocalizedPolicyVersionResponse? Execute(
             this OldCreateLocalizedPolicyVersion.OldCreateLocalizedPolicyVersionBuilder builder,
             string policyVersionId
@@ -56,6 +58,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldCreateLocalizedPolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.RetrieveLocalizedPolicyVersionResponse? Execute(
             this OldRetrieveSingleLocalizedPolicyVersion.OldRetrieveSingleLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
@@ -78,6 +81,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRetrieveSingleLocalizedPolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.UpdateLocalizedPolicyVersionResponse? Execute(
             this OldUpdateLocalizedPolicyVersion.OldUpdateLocalizedPolicyVersionBuilder builder,
             string localizedPolicyVersionId
@@ -100,6 +104,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldUpdateLocalizedPolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.UploadLocalizedPolicyVersionAttachmentResponse? Execute(
             this OldRequestPresignedURL.OldRequestPresignedURLBuilder builder,
             string localizedPolicyVersionId
@@ -122,6 +127,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.LocalizedPolicyVersions)builder.WrapperObject!).OldRequestPresignedURLAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this OldSetDefaultLocalizedPolicy.OldSetDefaultLocalizedPolicyBuilder builder,
             string localizedPolicyVersionId

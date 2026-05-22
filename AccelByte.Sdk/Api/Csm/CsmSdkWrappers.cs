@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public AppUI AppUI
+        {
+            get
+            {
+                if (_AppUI == null)
+                    _AppUI = new AppUI(_SdkObject);
+                return _AppUI;
+            }
+        }
+        private AppUI? _AppUI = null;
+
         public App App
         {
             get
@@ -56,6 +67,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private Configuration? _Configuration = null;
+
+        public ExtendFiles ExtendFiles
+        {
+            get
+            {
+                if (_ExtendFiles == null)
+                    _ExtendFiles = new ExtendFiles(_SdkObject);
+                return _ExtendFiles;
+            }
+        }
+        private ExtendFiles? _ExtendFiles = null;
 
         public Messages Messages
         {
@@ -112,6 +134,17 @@ namespace AccelByte.Sdk.Core
         }
         private ImageV2? _ImageV2 = null;
 
+        public ManagedResourcesKeyValue ManagedResourcesKeyValue
+        {
+            get
+            {
+                if (_ManagedResourcesKeyValue == null)
+                    _ManagedResourcesKeyValue = new ManagedResourcesKeyValue(_SdkObject);
+                return _ManagedResourcesKeyValue;
+            }
+        }
+        private ManagedResourcesKeyValue? _ManagedResourcesKeyValue = null;
+
         public ManagedResources ManagedResources
         {
             get
@@ -133,6 +166,17 @@ namespace AccelByte.Sdk.Core
             }
         }
         private ConfigurationV2? _ConfigurationV2 = null;
+
+        public ManagedResourcesSQL ManagedResourcesSQL
+        {
+            get
+            {
+                if (_ManagedResourcesSQL == null)
+                    _ManagedResourcesSQL = new ManagedResourcesSQL(_SdkObject);
+                return _ManagedResourcesSQL;
+            }
+        }
+        private ManagedResourcesSQL? _ManagedResourcesSQL = null;
 
         public NotificationSubscription NotificationSubscription
         {

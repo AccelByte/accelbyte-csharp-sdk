@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("partyId")]
         public string PartyId { get; set; } = String.Empty;
 
+        [SdkCommandData("body")]
+        public ApimodelsJoinSessionRequest Body { get; set; } = new ApimodelsJoinSessionRequest();
+
         public PublicPartyJoinCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -50,6 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
 
             PublicPartyJoin operation = opBuilder.Build(
+                Body,
                 Namespace,
                 PartyId
             );

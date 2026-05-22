@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetCountryListV3
     ///
-    /// Admin get country list
+    /// Retrieves the list of countries for the namespace.
     /// </summary>
     public class AdminGetCountryListV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetListCountryAgeRestrictionV3
     ///
-    /// action code : 10139
+    /// Retrieves the list of age restriction settings for all countries.
     /// </summary>
     public class AdminGetListCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation
     {

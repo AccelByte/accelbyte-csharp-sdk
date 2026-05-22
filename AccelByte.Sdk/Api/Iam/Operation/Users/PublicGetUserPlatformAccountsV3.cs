@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserPlatformAccountsV3
     ///
-    /// This endpoint retrieves platform accounts linked to user.
+    /// Retrieves platform accounts linked to user.
     /// 
     /// 
     /// **Supported Platforms:**
@@ -58,8 +58,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// **Authentication:**
     /// The _**userId**_ parameter should match the one in the access token.
-    /// 
-    /// action code: 10128
     /// </summary>
     public class PublicGetUserPlatformAccountsV3 : AccelByte.Sdk.Core.Operation
     {

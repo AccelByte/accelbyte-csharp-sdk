@@ -39,6 +39,10 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
         {
             get { return Operation.UpdateAppV2.Builder.SetWrapperObject(this); }
         }
+        public ApplyAppConfigV2.ApplyAppConfigV2Builder ApplyAppConfigV2Op
+        {
+            get { return Operation.ApplyAppConfigV2.Builder.SetWrapperObject(this); }
+        }
         public UpdateAppResourcesV2.UpdateAppResourcesV2Builder UpdateAppResourcesV2Op
         {
             get { return Operation.UpdateAppResourcesV2.Builder.SetWrapperObject(this); }
@@ -130,6 +134,22 @@ namespace AccelByte.Sdk.Api.Csm.Wrapper
                     response.Payload);
         }
         public async Task<Model.ApimodelAppItem?> UpdateAppV2Async(UpdateAppV2 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelAppItem? ApplyAppConfigV2(ApplyAppConfigV2 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelAppItem?> ApplyAppConfigV2Async(ApplyAppConfigV2 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

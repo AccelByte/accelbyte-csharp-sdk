@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicGetUserByPlatformUserIDV4
     ///
     /// Get User By Platform User ID.
-    /// This endpoint return user information by given platform ID and platform user ID.
+    /// Returns user information by given platform ID and platform user ID.
     /// Several platforms are grouped under account groups, you can use either platform ID or platform group as platformId path parameter.
     /// example: for steam network platform, you can use steamnetwork / steam / steamopenid as platformId path parameter.
     /// If the target platform is not linked to the current user, will only return public information.

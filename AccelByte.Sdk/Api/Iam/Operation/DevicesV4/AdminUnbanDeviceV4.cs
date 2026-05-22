@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUnbanDeviceV4
     ///
-    /// This is the endpoint for an admin to unban device
+    /// Unbans a device (admin operation).
     /// </summary>
     public class AdminUnbanDeviceV4 : AccelByte.Sdk.Core.Operation
     {

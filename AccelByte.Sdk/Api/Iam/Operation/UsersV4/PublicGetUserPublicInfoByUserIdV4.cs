@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetUserPublicInfoByUserIdV4
     ///
-    /// This endpoint only returns user's public information.
-    /// action code: 10129
+    /// Returns only user's public information.
     /// </summary>
     public class PublicGetUserPublicInfoByUserIdV4 : AccelByte.Sdk.Core.Operation
     {

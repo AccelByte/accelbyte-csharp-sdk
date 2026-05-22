@@ -17,7 +17,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminBanUserBulkV3
     ///
     /// Bulk ban user with specific type of ban. Ban types and reason can be queried. The maximum limit value is 100 userIDs
-    /// action code : 10141
     /// </summary>
     public class AdminBanUserBulkV3 : AccelByte.Sdk.Core.Operation
     {

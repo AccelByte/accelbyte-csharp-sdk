@@ -16,16 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicInviteUserV4
     ///
-    /// This endpoint is used to invite a game studio admin user with new namespace in multi tenant mode.
-    /// It will return error if the service multi tenant mode is set to false.
-    /// 
-    /// Request body details:
-    /// - emailAddress: email address of the user to be invited
-    /// - namespace: new namespace of the user to be created
-    /// - namespaceDisplayName: display name of the new namespace
-    /// - additionalData(optional): for utm parameter data
-    /// 
-    /// The invited users will also be assigned with "User" role by default.
+    /// Invites a game studio admin user with a new namespace in multi tenant mode. Returns an error if the service multi tenant mode is set to false. The invited users will also be assigned with "User" role by default. See request body field descriptions for per-field details.
     /// </summary>
     public class PublicInviteUserV4 : AccelByte.Sdk.Core.Operation
     {

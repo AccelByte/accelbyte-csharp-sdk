@@ -203,6 +203,10 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             get { return Operation.AdminSyncSteamIAPByTransaction.Builder.SetWrapperObject(this); }
         }
+        public AdminSyncTwitchDropsEntitlement.AdminSyncTwitchDropsEntitlementBuilder AdminSyncTwitchDropsEntitlementOp
+        {
+            get { return Operation.AdminSyncTwitchDropsEntitlement.Builder.SetWrapperObject(this); }
+        }
         public GetAppleConfigVersion.GetAppleConfigVersionBuilder GetAppleConfigVersionOp
         {
             get { return Operation.GetAppleConfigVersion.Builder.SetWrapperObject(this); }
@@ -1001,6 +1005,22 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void AdminSyncTwitchDropsEntitlement(AdminSyncTwitchDropsEntitlement input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task AdminSyncTwitchDropsEntitlementAsync(AdminSyncTwitchDropsEntitlement input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

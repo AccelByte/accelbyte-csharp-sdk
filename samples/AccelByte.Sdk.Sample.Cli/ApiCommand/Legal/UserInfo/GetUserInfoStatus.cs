@@ -40,6 +40,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
         {
             AccelByte.Sdk.Api.Legal.Wrapper.UserInfo wrapper = new AccelByte.Sdk.Api.Legal.Wrapper.UserInfo(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Legal.Operation.GetUserInfoStatus.Builder;
 
             if (Namespaces != null)
@@ -51,12 +52,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Legal
             GetUserInfoStatus operation = opBuilder.Build(
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             List<AccelByte.Sdk.Api.Legal.Model.RetrieveUserInfoCacheStatusResponse>? response = wrapper.GetUserInfoStatus(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

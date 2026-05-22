@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalUserInfo_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrieveUserInfoCacheStatusResponse>? Execute(
             this GetUserInfoStatus.GetUserInfoStatusBuilder builder
         )

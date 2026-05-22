@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PlatformTokenRequestHandler
     ///
-    /// ## The endpoint is going to be deprecated
-    /// This endpoint requires all requests to have Authorization header set with Basic access authentication
+    /// **This endpoint is deprecated.**
+    /// Requires all requests to have Authorization header set with Basic access authentication
     /// constructed from client id and client secret. For publisher-game namespace schema : Specify only either platform_token or device_id. Device token grant
     /// should be requested along with device_id parameter against game namespace. Another 3rd party platform token grant should be requested
     /// along with platform_token parameter against publisher namespace.

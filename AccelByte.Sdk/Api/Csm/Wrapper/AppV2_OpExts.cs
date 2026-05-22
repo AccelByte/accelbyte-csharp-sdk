@@ -151,6 +151,36 @@ namespace AccelByte.Sdk.Api
             return await ((Csm.Wrapper.AppV2)builder.WrapperObject!).UpdateAppV2Async(op);
         }
         public static Csm.Model.ApimodelAppItem? Execute(
+            this ApplyAppConfigV2.ApplyAppConfigV2Builder builder,
+            ApimodelApplyAppConfigRequest body,
+            string app,
+            string namespace_
+        )
+        {
+            ApplyAppConfigV2 op = builder.Build(
+                body,
+                app,
+                namespace_
+            );
+
+            return ((Csm.Wrapper.AppV2)builder.WrapperObject!).ApplyAppConfigV2(op);
+        }
+        public static async Task<Csm.Model.ApimodelAppItem?> ExecuteAsync(
+            this ApplyAppConfigV2.ApplyAppConfigV2Builder builder,
+            ApimodelApplyAppConfigRequest body,
+            string app,
+            string namespace_
+        )
+        {
+            ApplyAppConfigV2 op = builder.Build(
+                body,
+                app,
+                namespace_
+            );
+
+            return await ((Csm.Wrapper.AppV2)builder.WrapperObject!).ApplyAppConfigV2Async(op);
+        }
+        public static Csm.Model.ApimodelAppItem? Execute(
             this UpdateAppResourcesV2.UpdateAppResourcesV2Builder builder,
             ApimodelUpdateAppResourceRequest body,
             string app,

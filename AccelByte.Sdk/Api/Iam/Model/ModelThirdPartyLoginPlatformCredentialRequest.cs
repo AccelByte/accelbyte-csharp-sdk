@@ -53,6 +53,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public bool? IncludePUID { get; set; }
 
         [JsonPropertyName("IsActive")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public bool? IsActive { get; set; }
 
         [JsonPropertyName("Issuer")]
@@ -122,6 +123,7 @@ namespace AccelByte.Sdk.Api.Iam.Model
         public string? GoogleAdminConsoleKey { get; set; }
 
         [JsonPropertyName("scopes")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public List<string>? Scopes { get; set; }
 
     }

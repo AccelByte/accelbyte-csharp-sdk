@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
 {
     public class ApimodelNoSQLDatabaseResponse : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acceptNosqlSecureCredentialHandling")]
+        public bool? AcceptNosqlSecureCredentialHandling { get; set; }
+
         [JsonPropertyName("appId")]
         public string? AppId { get; set; }
 

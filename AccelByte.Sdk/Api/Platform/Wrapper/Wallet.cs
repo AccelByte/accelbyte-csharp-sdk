@@ -225,18 +225,18 @@ namespace AccelByte.Sdk.Api.Platform.Wrapper
                     response.ContentType,
                     response.Payload);
         }
-        public void CheckBalance(CheckBalance input)
+        public Model.CheckBalanceResponse? CheckBalance(CheckBalance input)
         {
             var response = _sdk.RunRequest(input);
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);
         }
-        public async Task CheckBalanceAsync(CheckBalance input)
+        public async Task<Model.CheckBalanceResponse?> CheckBalanceAsync(CheckBalance input)
         {
             var response = await _sdk.RunRequestAsync(input);
-            input.ParseResponse(
+            return input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

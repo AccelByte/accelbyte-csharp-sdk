@@ -1,15 +1,5 @@
 ## C# Extend SDK CLI Sample App Operation Index for Inventory service.
 
-### Operation AdminCreateChainingOperations
-```sh
-$ AccelByte.Sdk.Sample.Cli.exe \
-    --sn inventory \
-    --op admincreatechainingoperations \
-    --namespace <namespace value> \
-    --reqbody <json string for request body>
-```
-To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
-
 ### Operation AdminListIntegrationConfigurations
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

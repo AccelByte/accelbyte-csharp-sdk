@@ -59,6 +59,10 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
         {
             get { return Operation.AdminCheckThirdPartyLoginPlatformAvailabilityV3.Builder.SetWrapperObject(this); }
         }
+        public GetThirdPartyLoginPlatformDefaultsV3.GetThirdPartyLoginPlatformDefaultsV3Builder GetThirdPartyLoginPlatformDefaultsV3Op
+        {
+            get { return Operation.GetThirdPartyLoginPlatformDefaultsV3.Builder.SetWrapperObject(this); }
+        }
         public RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Op
         {
             get { return Operation.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.Builder.SetWrapperObject(this); }
@@ -222,6 +226,22 @@ namespace AccelByte.Sdk.Api.Iam.Wrapper
                     response.Payload);
         }
         public async Task<Model.ModelCheckAvailabilityResponse?> AdminCheckThirdPartyLoginPlatformAvailabilityV3Async(AdminCheckThirdPartyLoginPlatformAvailabilityV3 input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ModelPlatformDefaultsResponse? GetThirdPartyLoginPlatformDefaultsV3(GetThirdPartyLoginPlatformDefaultsV3 input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ModelPlatformDefaultsResponse?> GetThirdPartyLoginPlatformDefaultsV3Async(GetThirdPartyLoginPlatformDefaultsV3 input)
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse(

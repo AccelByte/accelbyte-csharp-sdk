@@ -280,6 +280,28 @@ namespace AccelByte.Sdk.Api
 
             return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).AdminCheckThirdPartyLoginPlatformAvailabilityV3Async(op);
         }
+        public static Iam.Model.ModelPlatformDefaultsResponse? Execute(
+            this GetThirdPartyLoginPlatformDefaultsV3.GetThirdPartyLoginPlatformDefaultsV3Builder builder,
+            string platformId
+        )
+        {
+            GetThirdPartyLoginPlatformDefaultsV3 op = builder.Build(
+                platformId
+            );
+
+            return ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).GetThirdPartyLoginPlatformDefaultsV3(op);
+        }
+        public static async Task<Iam.Model.ModelPlatformDefaultsResponse?> ExecuteAsync(
+            this GetThirdPartyLoginPlatformDefaultsV3.GetThirdPartyLoginPlatformDefaultsV3Builder builder,
+            string platformId
+        )
+        {
+            GetThirdPartyLoginPlatformDefaultsV3 op = builder.Build(
+                platformId
+            );
+
+            return await ((Iam.Wrapper.ThirdPartyCredential)builder.WrapperObject!).GetThirdPartyLoginPlatformDefaultsV3Async(op);
+        }
         public static List<Iam.Model.ModelPublicThirdPartyPlatformInfo>? Execute(
             this RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3.RetrieveAllActiveThirdPartyLoginPlatformCredentialPublicV3Builder builder,
             string namespace_

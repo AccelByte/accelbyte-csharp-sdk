@@ -321,6 +321,7 @@
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/orders/{iapOrderNo}/line_items` | GET | AdminGetIAPOrderLineItems | [AdminGetIAPOrderLineItems](../../AccelByte.Sdk/Api/Platform/Operation/IAP/AdminGetIAPOrderLineItems.cs) | [AdminGetIAPOrderLineItems](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/AdminGetIAPOrderLineItems.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/steam/syncAbnormalTransaction` | PUT | AdminSyncSteamAbnormalTransaction | [AdminSyncSteamAbnormalTransaction](../../AccelByte.Sdk/Api/Platform/Operation/IAP/AdminSyncSteamAbnormalTransaction.cs) | [AdminSyncSteamAbnormalTransaction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/AdminSyncSteamAbnormalTransaction.cs) |
 | `/platform/admin/namespaces/{namespace}/users/{userId}/iap/steam/syncByTransaction` | PUT | AdminSyncSteamIAPByTransaction | [AdminSyncSteamIAPByTransaction](../../AccelByte.Sdk/Api/Platform/Operation/IAP/AdminSyncSteamIAPByTransaction.cs) | [AdminSyncSteamIAPByTransaction](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/AdminSyncSteamIAPByTransaction.cs) |
+| `/platform/admin/namespaces/{namespace}/users/{userId}/iap/twitch/sync` | PUT | AdminSyncTwitchDropsEntitlement | [AdminSyncTwitchDropsEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/IAP/AdminSyncTwitchDropsEntitlement.cs) | [AdminSyncTwitchDropsEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/AdminSyncTwitchDropsEntitlement.cs) |
 | `/platform/public/namespaces/{namespace}/iap/apple/config/version` | GET | GetAppleConfigVersion | [GetAppleConfigVersion](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetAppleConfigVersion.cs) | [GetAppleConfigVersion](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetAppleConfigVersion.cs) |
 | `/platform/public/namespaces/{namespace}/iap/item/mapping` | GET | GetIAPItemMapping | [GetIAPItemMapping](../../AccelByte.Sdk/Api/Platform/Operation/IAP/GetIAPItemMapping.cs) | [GetIAPItemMapping](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/GetIAPItemMapping.cs) |
 | `/platform/public/namespaces/{namespace}/users/me/iap/twitch/sync` | PUT | SyncTwitchDropsEntitlement | [SyncTwitchDropsEntitlement](../../AccelByte.Sdk/Api/Platform/Operation/IAP/SyncTwitchDropsEntitlement.cs) | [SyncTwitchDropsEntitlement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Platform/IAP/SyncTwitchDropsEntitlement.cs) |
@@ -865,7 +866,6 @@
 | `BillingAccount` | [BillingAccount](../../AccelByte.Sdk/Api/Platform/Model/BillingAccount.cs) |
 | `BillingHistoryInfo` | [BillingHistoryInfo](../../AccelByte.Sdk/Api/Platform/Model/BillingHistoryInfo.cs) |
 | `BillingHistoryPagingSlicedResult` | [BillingHistoryPagingSlicedResult](../../AccelByte.Sdk/Api/Platform/Model/BillingHistoryPagingSlicedResult.cs) |
-| `BinarySchema` | [BinarySchema](../../AccelByte.Sdk/Api/Platform/Model/BinarySchema.cs) |
 | `BoxItem` | [BoxItem](../../AccelByte.Sdk/Api/Platform/Model/BoxItem.cs) |
 | `BulkCreditRequest` | [BulkCreditRequest](../../AccelByte.Sdk/Api/Platform/Model/BulkCreditRequest.cs) |
 | `BulkCreditResult` | [BulkCreditResult](../../AccelByte.Sdk/Api/Platform/Model/BulkCreditResult.cs) |
@@ -896,6 +896,7 @@
 | `CategoryInfo` | [CategoryInfo](../../AccelByte.Sdk/Api/Platform/Model/CategoryInfo.cs) |
 | `CategoryUpdate` | [CategoryUpdate](../../AccelByte.Sdk/Api/Platform/Model/CategoryUpdate.cs) |
 | `ChangeStatusItemRequest` | [ChangeStatusItemRequest](../../AccelByte.Sdk/Api/Platform/Model/ChangeStatusItemRequest.cs) |
+| `CheckBalanceResponse` | [CheckBalanceResponse](../../AccelByte.Sdk/Api/Platform/Model/CheckBalanceResponse.cs) |
 | `CheckoutConfig` | [CheckoutConfig](../../AccelByte.Sdk/Api/Platform/Model/CheckoutConfig.cs) |
 | `ClawbackInfo` | [ClawbackInfo](../../AccelByte.Sdk/Api/Platform/Model/ClawbackInfo.cs) |
 | `ClientRequestParameter` | [ClientRequestParameter](../../AccelByte.Sdk/Api/Platform/Model/ClientRequestParameter.cs) |

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// DeleteRole
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// ### Endpoint migration guide
     /// - **Substitute endpoint: _/iam/v3/admin/roles/{roleId} [DELETE]_**
     /// </summary>

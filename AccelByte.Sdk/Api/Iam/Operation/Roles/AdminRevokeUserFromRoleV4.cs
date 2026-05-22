@@ -16,13 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminRevokeUserFromRoleV4
     ///
-    /// Current implementation will revoke user from role in all assigned namespaces.
-    /// 
-    /// Parameters:
-    /// - userId: string (required)
-    /// - namespace: string (userâs namespace) (required)
-    /// 
-    /// action code: 10411
+    /// Current implementation will revoke user from role in all assigned namespaces. See request body field descriptions for per-field details.
     /// </summary>
     public class AdminRevokeUserFromRoleV4 : AccelByte.Sdk.Core.Operation
     {

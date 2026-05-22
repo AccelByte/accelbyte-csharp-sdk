@@ -19,24 +19,30 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldUpdatePolicyVersion.OldUpdatePolicyVersionBuilder OldUpdatePolicyVersionOp
         {
             get { return Operation.OldUpdatePolicyVersion.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldPublishPolicyVersion.OldPublishPolicyVersionBuilder OldPublishPolicyVersionOp
         {
             get { return Operation.OldPublishPolicyVersion.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrieveSinglePolicyVersion.OldRetrieveSinglePolicyVersionBuilder OldRetrieveSinglePolicyVersionOp
         {
             get { return Operation.OldRetrieveSinglePolicyVersion.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldCreatePolicyVersion.OldCreatePolicyVersionBuilder OldCreatePolicyVersionOp
         {
             get { return Operation.OldCreatePolicyVersion.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.UpdatePolicyVersionResponse? OldUpdatePolicyVersion(OldUpdatePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
@@ -53,6 +59,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public void OldPublishPolicyVersion(OldPublishPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
@@ -69,6 +78,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.RetrievePolicyVersionResponse>? OldRetrieveSinglePolicyVersion(OldRetrieveSinglePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
@@ -85,6 +97,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.CreatePolicyVersionResponse? OldCreatePolicyVersion(OldCreatePolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
@@ -101,5 +116,6 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

@@ -21,9 +21,9 @@ namespace AccelByte.Sdk.Api.Csm.Operation
     /// Create new extend app with name provided by {app} path parameter and specified scenario type
     /// 
     /// Available scenario:
+    /// - scenario 3: `event-handler`
     /// - scenario 1: `function-override`
     /// - scenario 2: `service-extension`
-    /// - scenario 3: `event-handler`
     /// 
     /// 
     /// Available app status:

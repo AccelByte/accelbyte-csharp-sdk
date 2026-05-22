@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserStateByUserIdV3
     ///
-    /// Admin Get User State By User Id
+    /// Retrieves the current account state (enabled/disabled, email verification, deletion status) for the specified user.
     /// </summary>
     public class AdminGetUserStateByUserIdV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicChallengeMyMFAV4
     ///
-    /// This endpoint will verify user's' MFA code and generate a MFA token for the action.
+    /// Verifies the user's MFA code and generates an MFA token for the action.
     /// </summary>
     public class PublicChallengeMyMFAV4 : AccelByte.Sdk.Core.Operation
     {

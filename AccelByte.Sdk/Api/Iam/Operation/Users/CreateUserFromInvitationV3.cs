@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// CreateUserFromInvitationV3
     ///
-    /// This endpoint create user from saved roles when creating invitation and submitted data.
-    /// User will be able to login after completing submitting the data through this endpoint.
+    /// Creates a user from saved roles when creating invitation and submitted data.
+    /// User will be able to login after submitting data.
     /// Available Authentication Types:
     /// EMAILPASSWD: an authentication type used for new user registration through email.
     /// 

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateAvailablePermissionsByModule
     ///
-    /// Update Client available permissions, if module or group not exists, it will auto create.
+    /// Updates client available permissions. If the specified module or group does not exist, it will be automatically created.
     /// </summary>
     public class AdminUpdateAvailablePermissionsByModule : AccelByte.Sdk.Core.Operation
     {

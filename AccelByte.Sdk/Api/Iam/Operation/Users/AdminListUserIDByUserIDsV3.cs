@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminListUserIDByUserIDsV3
     ///
     /// List User By User ID
-    /// This endpoint intended to list user information from the given list of userID and namespace
+    /// Lists user information from the given list of userID and namespace.
     /// </summary>
     public class AdminListUserIDByUserIDsV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserPermissionV3
     ///
-    /// Delete User Permission
+    /// Removes a specific permission (identified by resource and action) from the specified user.
     /// </summary>
     public class AdminDeleteUserPermissionV3 : AccelByte.Sdk.Core.Operation
     {

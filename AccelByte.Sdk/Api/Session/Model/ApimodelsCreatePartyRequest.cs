@@ -36,6 +36,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
+
         [JsonPropertyName("textChat")]
         public bool? TextChat { get; set; }
 
@@ -71,6 +75,10 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
+
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
 
         [JsonPropertyName("textChat")]
         public bool? TextChat { get; set; }

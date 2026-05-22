@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SimultaneousLoginV3
     ///
-    /// # This endpoint is in ALPHA, avoid using this endpoint fow now, reach out to AB support for inquiries
+    /// # This API is in ALPHA, avoid using this API for now, reach out to AB support for inquiries
     /// 
     /// Simultaneous login flow.
     /// 

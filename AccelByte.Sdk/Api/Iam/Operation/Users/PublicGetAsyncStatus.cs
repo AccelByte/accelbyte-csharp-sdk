@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetAsyncStatus
     ///
-    /// This endpoint is used to get linking status.
-    /// This API need logged user and user can only request its own linking status.
+    /// Retrieves the linking status. The user must be logged in and can only request their own linking status.
     /// </summary>
     public class PublicGetAsyncStatus : AccelByte.Sdk.Core.Operation
     {

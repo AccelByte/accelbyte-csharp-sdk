@@ -16,10 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetInputValidations
     ///
-    /// No role required
-    /// This endpoint is to get list of input validation configuration.
+    /// Returns the list of input validation configuration.
     /// `regex` parameter will be returned if `isCustomRegex` is true. Otherwise, it will be empty.
+    /// **Substitute endpoint:** /iam/v3/public/namespaces/{namespace}/inputValidations[GET]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetInputValidations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

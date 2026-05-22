@@ -1,3 +1,31 @@
+<a name="v0.80.1"></a>
+## [v0.80.1]
+### chore
+- **sdk:**  This reverts commit df4295d5c1efa2c24a2d3281db05a1cde1cf70ce. 
+- **sdk:**  generated from openapi spec commit: cde2216382e3d0f848100d329de71c35e4e2a064 
+- **:**  bump up version for hotfix 
+- **:**  refactor token validator 
+- **:**  refactor token validation tests 
+- **sdk:**  generated from openapi spec commit: f978585cf033ca064e014d1ad081e8eb17f67d7d 
+- **:**  regenerate csharp sdk for ags 2026.2 
+### docs
+- **:**  add migration guide for 2026.1 AGS 
+- **:**  update doc portal links 
+- **:**  update custom op guide 
+### fix
+- **core:**  fix role cache key for token validator 
+- **:**  fix iam client auto refresh does not trigger more than once 
+- **:**  fix async refresh token method and some minor fixes 
+- **:**  address minor feedbacks related to toctou window 
+- **:**  fix permission validation process 
+- **:**  fix typo and use concurrent dictionary for cache 
+- **test:**  mark role override test for ags shared cloud 
+- **:**  use oauth client for inventory service tests 
+### feat
+- **:**  update integration tests to properly support shared cloud 
+- **:**  allow token validation from parent namespace 
+
+
 <a name="v0.79.1"></a>
 ## [v0.79.1]
 ### chore

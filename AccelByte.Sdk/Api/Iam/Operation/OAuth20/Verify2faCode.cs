@@ -16,10 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// Verify2FACode
     ///
-    /// Verify 2FA code
-    /// This endpoint is used for verifying 2FA code.
+    /// Verifies the 2FA code.
+    /// 
     /// ## 2FA remember device
-    /// To remember device for 2FA, should provide cookie: device_token or header: Device-Token
+    /// To remember device for 2FA, the request should provide cookie: device_token or header: Device-Token
     /// </summary>
     public class Verify2faCode : AccelByte.Sdk.Core.Operation
     {

@@ -16,38 +16,15 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateClientV3
     ///
-    /// Updates an OAuth 2.0 client.
-    /// Specify only the fields you want to update in the request payload, e.g. {"ClientName":"E-commerce", "BaseUri":"https://example.net"}
+    /// Updates an OAuth 2.0 client. Specify only the fields you want to update in the request payload.
     /// 
     /// **Note for Multi Tenant Mode (Confidential Client):**
-    /// Only Super admin can set permission with resource & action.
-    /// Studio admin & game admin need set permission with permission module.
-    /// 
-    /// action code: 10302
-    /// 
-    /// **Fields Description:**
-    /// - **clientName** : The client name. It should not be empty if the field exists in the body. e.g E-commerce
-    /// - **namespace** : The namespace where the client lives. e.g sample-game
-    /// - **redirectUri** : Contains the redirect URI used in OAuth callback. It should not be empty if the field exists in the body. e.g https://example.net/platform
-    /// - **audiences** : List of target client IDs who is intended to receive the token. e.g ["eaaa65618fe24293b00a61454182b435", "40073ee9bc3446d3a051a71b48509a5d"]
-    /// - **baseUri** : A base URI of the application. It is used in the audience checking for making sure the token is used by the right resource server. Required if the application type is a server. e.g https://example.net/platform
-    /// - **clientPermissions** : Contains the client's permissions
-    /// - **deletable** : The flag to identify whether client is deletable (optional). e.g. true
-    /// - **clientPlatform** : available client platform (optional). default value: "".
-    /// - Playstation
-    /// - Xbox
-    /// - Steam
-    /// - Epic
-    /// - IOS
-    /// - GooglePlay
-    /// - Nintendo
-    /// - Oculus
-    /// - **twoFactorEnabled**: The flag to indicate whether 2FA validation is enable for this client. default value: false
-    /// - **oauthAccessTokenExpiration**: a configurable expiration time for **access_token**, default value: 0 (mean fetch value from environment variable)
-    /// - **oauthRefreshTokenExpiration**: a configurable expiration time for **refresh_token**, default value: 0 (mean fetch value from environment variable)
-    /// - **oauthAccessTokenExpirationTimeUnit**: a configurable expiration time unit for **access_token**, will use previous value if not specified
-    /// - **oauthRefreshTokenExpirationTimeUnit**: a configurable expiration time unit for **refresh_token**, will use previous value if not specified
-    /// - **skipLoginQueue**: a flag to indicate whether this client should be exempted from login queue or not
+    /// Super admin can set any valid format permission with resource & action.
+    /// Studio admin & game admin can only set permission with these 2 ways:
+    /// * Permission module, available from _GET /iam/v3/admin/clientConfig/permissions_
+    /// * Fixed prefix custom permissions, the allowed prefix are:
+    /// 1. ***CUSTOM:ADMIN:NAMESPACE:{namespace}***
+    /// 2. ***CUSTOM:NAMESPACE:{namespace}***
     /// </summary>
     public class AdminUpdateClientV3 : AccelByte.Sdk.Core.Operation
     {

@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminRemoveUserRoleV4
     ///
-    /// Remove a role from user's roles.
+    /// Removes a role from the user's assigned roles.
+    /// 
+    /// **Request body:** Specify the role ID and the allowed namespaces to remove from the user.
     /// </summary>
     public class AdminRemoveUserRoleV4 : AccelByte.Sdk.Core.Operation
     {

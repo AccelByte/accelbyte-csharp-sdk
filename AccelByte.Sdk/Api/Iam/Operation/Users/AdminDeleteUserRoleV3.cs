@@ -16,9 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserRoleV3
     ///
-    /// This endpoint removes role from user
-    /// action code: 10110
+    /// **Deprecated.** Only removes roles from the legacy roles entity.
+    /// 
+    /// **Substitute endpoint:** /iam/v4/admin/namespaces/{namespace}/users/{userId}/roles [DELETE]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminDeleteUserRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

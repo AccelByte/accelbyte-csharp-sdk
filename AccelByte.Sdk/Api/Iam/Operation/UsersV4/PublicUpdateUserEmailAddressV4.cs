@@ -16,8 +16,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicUpdateUserEmailAddressV4
     ///
-    /// The endpoint to update my email address.
-    /// It requires a verification code from `/users/me/code/request` with **UpdateEmailAddress** context.
+    /// Updates the authenticated user's email address.
+    /// Requires a verification code from `/users/me/code/request` with **UpdateEmailAddress** context.
     /// </summary>
     public class PublicUpdateUserEmailAddressV4 : AccelByte.Sdk.Core.Operation
     {

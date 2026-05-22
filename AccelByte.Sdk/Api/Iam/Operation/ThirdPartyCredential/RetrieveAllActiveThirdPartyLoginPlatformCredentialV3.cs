@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RetrieveAllActiveThirdPartyLoginPlatformCredentialV3
     ///
-    /// This is the API to Get All Active 3rd Platform Credential.
+    /// Retrieves all active third-party platform credentials.
     /// </summary>
     public class RetrieveAllActiveThirdPartyLoginPlatformCredentialV3 : AccelByte.Sdk.Core.Operation
     {

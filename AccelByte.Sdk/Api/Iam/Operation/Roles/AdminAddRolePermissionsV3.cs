@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddRolePermissionsV3
     ///
-    /// This endpoint will ATTACH permission(s) into the role
-    /// action code: 10404
+    /// Attaches permission(s) into the role.
     /// Schedule contains cron string or date range (both are UTC, also in cron syntax) to indicate when a permission and action are in effect.
     /// Both schedule types accepts quartz compatible cron syntax e.g. * * * * * * *.
     /// In ranged schedule, first element will be start date, and second one will be end date

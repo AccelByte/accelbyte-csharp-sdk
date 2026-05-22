@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminLinkPlatformAccount
     ///
-    /// Force linking platform account to user User Account. This endpoint intended for admin to forcefully link account to user.
+    /// Force linking platform account to user User Account. Intended for admin to forcefully link account to user.
     /// By default, these cases are not allowed
     /// - The platform account current is linked by another account
     /// - The target account ever linked this platform's another account

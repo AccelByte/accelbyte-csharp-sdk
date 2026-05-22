@@ -16,8 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminResetInputValidations
     ///
-    /// This endpoint is used to reset input validation to the default input validation configurations
+    /// Resets input validation to the default input validation configurations.
+    /// **Substitute endpoint:** /iam/v3/admin/namespaces/{namespace}/inputValidations/{field}[DELETE]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminResetInputValidations : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

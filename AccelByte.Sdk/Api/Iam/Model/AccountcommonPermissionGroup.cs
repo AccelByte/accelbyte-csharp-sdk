@@ -15,6 +15,10 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonPropertyName("groupId")]
         public string? GroupId { get; set; }
 
+        [JsonPropertyName("package")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Package { get; set; }
+
         [JsonPropertyName("permissions")]
         public List<AccountcommonAllowedPermission>? Permissions { get; set; }
 

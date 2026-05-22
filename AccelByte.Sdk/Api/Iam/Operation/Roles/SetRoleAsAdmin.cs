@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// SetRoleAsAdmin
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// Admin roles has its members listed in the role.
     /// 
     /// Role can be set as admin role only when it has at least 1 manager.

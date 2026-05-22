@@ -45,6 +45,7 @@
 | Endpoint | Method | ID | Class | Example |
 |---|---|---|---|---|
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements` | GET | AdminListUserAchievements | [AdminListUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminListUserAchievements.cs) | [AdminListUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminListUserAchievements.cs) |
+| `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/batchQuery` | POST | AdminBatchQueryUserAchievements | [AdminBatchQueryUserAchievements](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminBatchQueryUserAchievements.cs) | [AdminBatchQueryUserAchievements](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminBatchQueryUserAchievements.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/bulkUnlock` | PUT | AdminBulkUnlockAchievement | [AdminBulkUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminBulkUnlockAchievement.cs) | [AdminBulkUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminBulkUnlockAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/reset` | DELETE | AdminResetAchievement | [AdminResetAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminResetAchievement.cs) | [AdminResetAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminResetAchievement.cs) |
 | `/achievement/v1/admin/namespaces/{namespace}/users/{userId}/achievements/{achievementCode}/unlock` | PUT | AdminUnlockAchievement | [AdminUnlockAchievement](../../AccelByte.Sdk/Api/Achievement/Operation/UserAchievements/AdminUnlockAchievement.cs) | [AdminUnlockAchievement](../../samples/AccelByte.Sdk.Sample.Cli/ApiCommand/Achievement/UserAchievements/AdminUnlockAchievement.cs) |
@@ -102,6 +103,7 @@
 | `models.AchievementResponse` | [ModelsAchievementResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementResponse.cs) |
 | `models.AchievementUpdateRequest` | [ModelsAchievementUpdateRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAchievementUpdateRequest.cs) |
 | `models.AdditionalInfo` | [ModelsAdditionalInfo](../../AccelByte.Sdk/Api/Achievement/Model/ModelsAdditionalInfo.cs) |
+| `models.BatchQueryUserAchievementRequest` | [ModelsBatchQueryUserAchievementRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBatchQueryUserAchievementRequest.cs) |
 | `models.BulkCreatePSNEventResponse` | [ModelsBulkCreatePSNEventResponse](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEventResponse.cs) |
 | `models.BulkCreatePSNEvents` | [ModelsBulkCreatePSNEvents](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkCreatePSNEvents.cs) |
 | `models.BulkUnlockAchievementRequest` | [ModelsBulkUnlockAchievementRequest](../../AccelByte.Sdk/Api/Achievement/Model/ModelsBulkUnlockAchievementRequest.cs) |

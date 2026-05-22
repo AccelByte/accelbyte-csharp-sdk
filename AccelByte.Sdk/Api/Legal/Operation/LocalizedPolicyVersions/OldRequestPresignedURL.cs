@@ -18,6 +18,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     ///
     /// Request presigned URL for upload attachment for a particular localized version of base policy.
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldRequestPresignedURL : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

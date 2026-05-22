@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminAddUserRoleV4
     ///
     /// New role will be appended to user's current roles.
-    /// An admin user can only assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of this endpoint.
+    /// An admin user can only assign role with **assignedNamespaces** if the admin user has required permission which is same as the required permission of this API.
     /// </summary>
     public class AdminAddUserRoleV4 : AccelByte.Sdk.Core.Operation
     {

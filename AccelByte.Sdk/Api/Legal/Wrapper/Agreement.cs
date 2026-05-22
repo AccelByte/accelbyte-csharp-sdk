@@ -23,10 +23,12 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         {
             get { return Operation.ChangePreferenceConsent.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrieveAcceptedAgreements.OldRetrieveAcceptedAgreementsBuilder OldRetrieveAcceptedAgreementsOp
         {
             get { return Operation.OldRetrieveAcceptedAgreements.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrieveAllUsersByPolicyVersion.OldRetrieveAllUsersByPolicyVersionBuilder OldRetrieveAllUsersByPolicyVersionOp
         {
             get { return Operation.OldRetrieveAllUsersByPolicyVersion.Builder.SetWrapperObject(this); }
@@ -75,6 +77,8 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.RetrieveAcceptedAgreementResponse>? OldRetrieveAcceptedAgreements(OldRetrieveAcceptedAgreements input)
         {
             var response = _sdk.RunRequest(input);
@@ -91,6 +95,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.PagedRetrieveUserAcceptedAgreementResponse? OldRetrieveAllUsersByPolicyVersion(OldRetrieveAllUsersByPolicyVersion input)
         {
             var response = _sdk.RunRequest(input);
@@ -107,6 +114,7 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
         public void PublicChangePreferenceConsent(PublicChangePreferenceConsent input)
         {
             var response = _sdk.RunRequest(input);

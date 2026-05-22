@@ -30,6 +30,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
+
         [JsonPropertyName("type")]
         [JsonStringEnum]
         public ApimodelsUpdatePartyRequestType? Type { get; set; }
@@ -60,6 +64,10 @@ namespace AccelByte.Sdk.Api.Session.Model
         [JsonPropertyName("minPlayers")]
         public int? MinPlayers { get; set; }
 
+        [JsonPropertyName("password")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? Password { get; set; }
+
         [JsonPropertyName("type")]
         [JsonStringEnum]
         public ApimodelsUpdatePartyRequestType? Type { get; set; }
@@ -89,6 +97,9 @@ namespace AccelByte.Sdk.Api.Session.Model
 
         public static readonly ApimodelsUpdatePartyRequestJoinability OPEN
             = new ApimodelsUpdatePartyRequestJoinability("OPEN");
+
+        public static readonly ApimodelsUpdatePartyRequestJoinability PASSWORDPROTECTED
+            = new ApimodelsUpdatePartyRequestJoinability("PASSWORD_PROTECTED");
 
 
         public static implicit operator ApimodelsUpdatePartyRequestJoinability(string value)

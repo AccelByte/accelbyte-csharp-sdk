@@ -38,6 +38,36 @@ namespace AccelByte.Sdk.Api
 
             return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminListUserAchievementsAsync(op);
         }
+        public static List<Achievement.Model.ModelsUserAchievementResponse>? Execute(
+            this AdminBatchQueryUserAchievements.AdminBatchQueryUserAchievementsBuilder builder,
+            ModelsBatchQueryUserAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBatchQueryUserAchievements op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminBatchQueryUserAchievements(op);
+        }
+        public static async Task<List<Achievement.Model.ModelsUserAchievementResponse>?> ExecuteAsync(
+            this AdminBatchQueryUserAchievements.AdminBatchQueryUserAchievementsBuilder builder,
+            ModelsBatchQueryUserAchievementRequest body,
+            string namespace_,
+            string userId
+        )
+        {
+            AdminBatchQueryUserAchievements op = builder.Build(
+                body,
+                namespace_,
+                userId
+            );
+
+            return await ((Achievement.Wrapper.UserAchievements)builder.WrapperObject!).AdminBatchQueryUserAchievementsAsync(op);
+        }
         public static List<Achievement.Model.ModelsBulkUnlockAchievementResponse>? Execute(
             this AdminBulkUnlockAchievement.AdminBulkUnlockAchievementBuilder builder,
             ModelsBulkUnlockAchievementRequest body,

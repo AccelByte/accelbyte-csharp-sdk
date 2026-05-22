@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteRolePermissionV3
     ///
-    /// action code: 10406
+    /// Deletes a specific permission from a role.
     /// </summary>
     public class AdminDeleteRolePermissionV3 : AccelByte.Sdk.Core.Operation
     {

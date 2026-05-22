@@ -278,5 +278,133 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageAsync(op);
         }
+        public static Dictionary<string, object>? Execute(
+            this PublicReplaceSessionStorageLeaderV2.PublicReplaceSessionStorageLeaderV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicReplaceSessionStorageLeaderV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReplaceSessionStorageLeaderV2(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicReplaceSessionStorageLeaderV2.PublicReplaceSessionStorageLeaderV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicReplaceSessionStorageLeaderV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReplaceSessionStorageLeaderV2Async(op);
+        }
+        public static Dictionary<string, object>? Execute(
+            this PublicUpdateInsertSessionStorageLeaderV2.PublicUpdateInsertSessionStorageLeaderV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicUpdateInsertSessionStorageLeaderV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageLeaderV2(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertSessionStorageLeaderV2.PublicUpdateInsertSessionStorageLeaderV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId
+        )
+        {
+            PublicUpdateInsertSessionStorageLeaderV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageLeaderV2Async(op);
+        }
+        public static Dictionary<string, object>? Execute(
+            this PublicReplaceSessionStorageUserV2.PublicReplaceSessionStorageUserV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicReplaceSessionStorageUserV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReplaceSessionStorageUserV2(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicReplaceSessionStorageUserV2.PublicReplaceSessionStorageUserV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicReplaceSessionStorageUserV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicReplaceSessionStorageUserV2Async(op);
+        }
+        public static Dictionary<string, object>? Execute(
+            this PublicUpdateInsertSessionStorageUserV2.PublicUpdateInsertSessionStorageUserV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicUpdateInsertSessionStorageUserV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageUserV2(op);
+        }
+        public static async Task<Dictionary<string, object>?> ExecuteAsync(
+            this PublicUpdateInsertSessionStorageUserV2.PublicUpdateInsertSessionStorageUserV2Builder builder,
+            Dictionary<string, object> body,
+            string namespace_,
+            string sessionId,
+            string userId
+        )
+        {
+            PublicUpdateInsertSessionStorageUserV2 op = builder.Build(
+                body,
+                namespace_,
+                sessionId,
+                userId
+            );
+
+            return await ((Session.Wrapper.SessionStorage)builder.WrapperObject!).PublicUpdateInsertSessionStorageUserV2Async(op);
+        }
     }
 }

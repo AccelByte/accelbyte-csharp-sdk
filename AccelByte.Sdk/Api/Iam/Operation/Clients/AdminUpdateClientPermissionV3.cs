@@ -17,8 +17,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminUpdateClientPermissionV3
     ///
     /// **Note for Multi Tenant Mode:**
-    /// This is for super admin only.
-    /// action code: 10307
+    /// Studio admin & game admin can only add custom permissions:
+    /// * The allowed prefix are: 1. ***CUSTOM:ADMIN:NAMESPACE:{namespace}*** 2. ***CUSTOM:NAMESPACE:{namespace}***
+    /// * If the request body has new added/delete non-custom permission, the request will fail.
     /// </summary>
     public class AdminUpdateClientPermissionV3 : AccelByte.Sdk.Core.Operation
     {

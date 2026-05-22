@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateCountryAgeRestrictionV3
     ///
-    /// action code: 10123
+    /// Updates the age restriction setting for the specified country.
     /// </summary>
     public class AdminUpdateCountryAgeRestrictionV3 : AccelByte.Sdk.Core.Operation
     {

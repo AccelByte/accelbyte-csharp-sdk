@@ -13,6 +13,17 @@ namespace AccelByte.Sdk.Core
     {
         private AccelByteSDK _SdkObject;
 
+        public OAuth20 OAuth20
+        {
+            get
+            {
+                if (_OAuth20 == null)
+                    _OAuth20 = new OAuth20(_SdkObject);
+                return _OAuth20;
+            }
+        }
+        private OAuth20? _OAuth20 = null;
+
         public Bans Bans
         {
             get
@@ -188,17 +199,6 @@ namespace AccelByte.Sdk.Core
             }
         }
         private OAuth20Extension? _OAuth20Extension = null;
-
-        public OAuth20 OAuth20
-        {
-            get
-            {
-                if (_OAuth20 == null)
-                    _OAuth20 = new OAuth20(_SdkObject);
-                return _OAuth20;
-            }
-        }
-        private OAuth20? _OAuth20 = null;
 
         public SSOSAML20 SSOSAML20
         {

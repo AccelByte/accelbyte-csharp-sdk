@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
         [SdkCommandArgument("sessionId")]
         public string SessionId { get; set; } = String.Empty;
 
+        [SdkCommandData("body")]
+        public ApimodelsJoinSessionRequest Body { get; set; } = new ApimodelsJoinSessionRequest();
+
         public JoinGameSessionCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -50,6 +53,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Session
 
 
             JoinGameSession operation = opBuilder.Build(
+                Body,
                 Namespace,
                 SessionId
             );

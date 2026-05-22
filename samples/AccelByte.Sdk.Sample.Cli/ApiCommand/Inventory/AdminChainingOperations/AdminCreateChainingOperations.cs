@@ -43,6 +43,7 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
         {
             AccelByte.Sdk.Api.Inventory.Wrapper.AdminChainingOperations wrapper = new AccelByte.Sdk.Api.Inventory.Wrapper.AdminChainingOperations(_SDK);
 
+#pragma warning disable ab_deprecated_operation
             var opBuilder = AccelByte.Sdk.Api.Inventory.Operation.AdminCreateChainingOperations.Builder;
 
 
@@ -54,12 +55,15 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Inventory
                 Namespace
             );
 
+#pragma warning restore ab_deprecated_operation
 
+#pragma warning disable ab_deprecated_operation_wrapper
             AccelByte.Sdk.Api.Inventory.Model.ApimodelsChainingOperationResp? response = wrapper.AdminCreateChainingOperations(operation);
             if (response == null)
                 return "No response from server.";
 
             return SdkHelper.SerializeToJson(response);
+#pragma warning restore ab_deprecated_operation_wrapper
         }
     }
 }

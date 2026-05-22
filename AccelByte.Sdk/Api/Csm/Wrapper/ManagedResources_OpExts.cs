@@ -13,6 +13,37 @@ namespace AccelByte.Sdk.Api
     public static class CsmManagedResources_OpExts
     {
         public static Csm.Model.ApimodelNoSQLDatabaseCredentialResponse? Execute(
+            this CreateNewNoSQLDatabaseCredentialV2.CreateNewNoSQLDatabaseCredentialV2Builder builder,
+            ApimodelCreateNoSQLDatabaseCredentialRequest body,
+            string app,
+            string namespace_
+        )
+        {
+            CreateNewNoSQLDatabaseCredentialV2 op = builder.Build(
+                body,
+                app,
+                namespace_
+            );
+
+            return ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).CreateNewNoSQLDatabaseCredentialV2(op);
+        }
+        public static async Task<Csm.Model.ApimodelNoSQLDatabaseCredentialResponse?> ExecuteAsync(
+            this CreateNewNoSQLDatabaseCredentialV2.CreateNewNoSQLDatabaseCredentialV2Builder builder,
+            ApimodelCreateNoSQLDatabaseCredentialRequest body,
+            string app,
+            string namespace_
+        )
+        {
+            CreateNewNoSQLDatabaseCredentialV2 op = builder.Build(
+                body,
+                app,
+                namespace_
+            );
+
+            return await ((Csm.Wrapper.ManagedResources)builder.WrapperObject!).CreateNewNoSQLDatabaseCredentialV2Async(op);
+        }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
+        public static Csm.Model.ApimodelNoSQLDatabaseCredentialResponse? Execute(
             this CreateNoSQLDatabaseCredentialV2.CreateNoSQLDatabaseCredentialV2Builder builder,
             ApimodelCreateNoSQLDatabaseCredentialRequest body,
             string app,

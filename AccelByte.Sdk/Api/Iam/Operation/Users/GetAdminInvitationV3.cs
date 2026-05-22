@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetAdminInvitationV3
     ///
-    /// Endpoint to validate user invitation. When not found, it could also means the invitation has expired.
+    /// Validates a user invitation. When not found, it could also mean the invitation has expired.
     /// </summary>
     public class GetAdminInvitationV3 : AccelByte.Sdk.Core.Operation
     {

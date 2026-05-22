@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteTagV3
     ///
-    /// Delete an Account Identifier Tag. This endpoint allows administrators to delete a tag that is used to identify and categorize user accounts.
+    /// Deletes an Account Identifier Tag used to identify and categorize user accounts.
     /// </summary>
     public class AdminDeleteTagV3 : AccelByte.Sdk.Core.Operation
     {

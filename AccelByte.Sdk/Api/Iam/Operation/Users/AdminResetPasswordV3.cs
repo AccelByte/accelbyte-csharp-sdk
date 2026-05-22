@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminResetPasswordV3
     ///
-    /// Update User Password
+    /// Updates the password for the specified user. This is an admin operation that does not require the user's current password.
     /// </summary>
     public class AdminResetPasswordV3 : AccelByte.Sdk.Core.Operation
     {

@@ -17,13 +17,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminBulkUpdateClientsV3
     ///
     /// Updates multiple OAuth 2.0 clients.
-    /// Specify only the fields you want to update in the request payload, e.g. {"ClientName":"E-commerce", "BaseUri":"https://example.net"}
+    /// Specify only the fields you want to update in the request payload, e.g. {"clientName":"E-commerce", "baseUri":"https://example.net"}
     /// 
     /// **Note for Multi Tenant Mode (Confidential Client):**
-    /// Only Super admin can set permission with resource & action.
-    /// Studio admin & game admin need set permission with permission module.
-    /// 
-    /// action code: 10302
+    /// Only Super Admins can set permission with resource and action.
+    /// Studio admin & game admin can only set permission through the permission module.
+    /// If Studio admin & game admin need to set custom permission string, they must use the non-bulk API.
     /// 
     /// **Fields Description:**
     /// - **clientName** : The client name. It should not be empty if the field exists in the body. e.g E-commerce

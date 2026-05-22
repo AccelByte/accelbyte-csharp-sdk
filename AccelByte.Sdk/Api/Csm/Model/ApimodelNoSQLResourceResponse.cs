@@ -13,6 +13,10 @@ namespace AccelByte.Sdk.Api.Csm.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public NosqlresourceNoSQLResourceConfiguration? Configuration { get; set; }
 
+        [JsonPropertyName("engineVersion")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string? EngineVersion { get; set; }
+
         [JsonPropertyName("hostnames")]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? Hostnames { get; set; }

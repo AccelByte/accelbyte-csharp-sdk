@@ -16,9 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetBannedUsersV3
     ///
-    /// Ban type is the code
-    /// available for ban assignment. It is applicable globally for any namespace.
-    /// action code : 10201
+    /// Retrieves a paginated list of users who have active or history bans, filtered by ban type.
     /// </summary>
     public class AdminGetBannedUsersV3 : AccelByte.Sdk.Core.Operation
     {

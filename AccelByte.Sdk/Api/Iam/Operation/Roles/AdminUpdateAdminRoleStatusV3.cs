@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Admin roles has its members listed in the role.
     /// Role can be set as admin role only when it has at least 1 manager.
-    /// action code: 10412
     /// </summary>
     public class AdminUpdateAdminRoleStatusV3 : AccelByte.Sdk.Core.Operation
     {

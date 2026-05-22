@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserByUserIdV3
     ///
-    /// Admin Get User By User Id
+    /// Retrieves the full user profile including email verification status, ban status, deletion status, and linked platform accounts.
     /// </summary>
     public class AdminGetUserByUserIdV3 : AccelByte.Sdk.Core.Operation
     {

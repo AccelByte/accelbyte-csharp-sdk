@@ -19,7 +19,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Set ban status for a single user for a specific ban. Retrieve
     /// user ban and choose the ban ID. Set the form parameter to true/false to enable
     /// or disable the ban.
-    /// action code : 10142'
     /// </summary>
     public class AdminUpdateUserBanV3 : AccelByte.Sdk.Core.Operation
     {

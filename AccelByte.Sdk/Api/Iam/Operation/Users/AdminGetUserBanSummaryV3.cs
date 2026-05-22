@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetUserBanSummaryV3
     ///
-    /// This endpoint get user's bans summary'
+    /// Retrieves a summary of the user's ban history, including active and expired bans.
     /// </summary>
     public class AdminGetUserBanSummaryV3 : AccelByte.Sdk.Core.Operation
     {

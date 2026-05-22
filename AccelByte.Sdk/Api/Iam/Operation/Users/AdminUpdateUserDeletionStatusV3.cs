@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateUserDeletionStatusV3
     ///
-    /// action code : 10144
+    /// Updates the deletion status of the specified user account.
     /// </summary>
     public class AdminUpdateUserDeletionStatusV3 : AccelByte.Sdk.Core.Operation
     {

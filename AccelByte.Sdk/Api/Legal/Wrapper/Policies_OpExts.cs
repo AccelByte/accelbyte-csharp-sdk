@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalPolicies_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrievePolicyResponse>? Execute(
             this RetrievePolicies.RetrievePoliciesBuilder builder,
             string countryCode
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.Policies)builder.WrapperObject!).RetrievePoliciesAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this OldUpdatePolicy.OldUpdatePolicyBuilder builder,
             string policyId
@@ -56,6 +58,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Legal.Wrapper.Policies)builder.WrapperObject!).OldUpdatePolicyAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this OldSetDefaultPolicy.OldSetDefaultPolicyBuilder builder,
             string policyId

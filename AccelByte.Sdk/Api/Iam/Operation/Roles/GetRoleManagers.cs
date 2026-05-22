@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// GetRoleManagers
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// Role can only be assigned to other users by the role's manager.
     /// 
     /// ### Endpoint migration guide

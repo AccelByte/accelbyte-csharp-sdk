@@ -42,7 +42,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - **netflix**: The ticketâs value is GAT (Gamer Access Token) returned by Netflix backend.
     /// - **snapchat**: The ticketâs value is authorization code returned by Snapchat OAuth.
     /// - **for specific generic oauth (OIDC)**: The platform_tokenâs value should be the same type as created OIDC auth type whether it is auth code, idToken or bearerToken.
-    /// action code : 10144
     /// </summary>
     public class PublicPlatformLinkV3 : AccelByte.Sdk.Core.Operation
     {

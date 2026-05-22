@@ -16,7 +16,9 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGenerateReportV4
     ///
-    /// This is the endpoint for an admin to generate device report
+    /// Generates a device report for the specified namespace.
+    /// 
+    /// **Namespace restriction:** The {namespace} path parameter must be a **game namespace**. Passing a publisher namespace returns HTTP 400.
     /// </summary>
     public class AdminGenerateReportV4 : AccelByte.Sdk.Core.Operation
     {

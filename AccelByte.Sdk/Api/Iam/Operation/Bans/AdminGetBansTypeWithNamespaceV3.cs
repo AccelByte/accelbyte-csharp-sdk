@@ -18,7 +18,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     ///
     /// Ban type is the code
     /// available for ban assignment. It is applicable globally for any namespace.
-    /// action code : 10201
     /// </summary>
     public class AdminGetBansTypeWithNamespaceV3 : AccelByte.Sdk.Core.Operation
     {

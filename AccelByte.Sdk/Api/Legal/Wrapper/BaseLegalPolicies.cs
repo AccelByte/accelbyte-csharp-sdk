@@ -19,32 +19,40 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public RetrieveAllLegalPolicies.RetrieveAllLegalPoliciesBuilder RetrieveAllLegalPoliciesOp
         {
             get { return Operation.RetrieveAllLegalPolicies.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldCreatePolicy.OldCreatePolicyBuilder OldCreatePolicyOp
         {
             get { return Operation.OldCreatePolicy.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrieveSinglePolicy.OldRetrieveSinglePolicyBuilder OldRetrieveSinglePolicyOp
         {
             get { return Operation.OldRetrieveSinglePolicy.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldPartialUpdatePolicy.OldPartialUpdatePolicyBuilder OldPartialUpdatePolicyOp
         {
             get { return Operation.OldPartialUpdatePolicy.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrievePolicyCountry.OldRetrievePolicyCountryBuilder OldRetrievePolicyCountryOp
         {
             get { return Operation.OldRetrievePolicyCountry.Builder.SetWrapperObject(this); }
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public OldRetrieveAllPolicyTypes.OldRetrieveAllPolicyTypesBuilder OldRetrieveAllPolicyTypesOp
         {
             get { return Operation.OldRetrieveAllPolicyTypes.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.RetrieveBasePolicyResponse>? RetrieveAllLegalPolicies(RetrieveAllLegalPolicies input)
         {
             var response = _sdk.RunRequest(input);
@@ -61,6 +69,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.CreateBasePolicyResponse? OldCreatePolicy(OldCreatePolicy input)
         {
             var response = _sdk.RunRequest(input);
@@ -77,6 +88,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.RetrieveBasePolicyResponse? OldRetrieveSinglePolicy(OldRetrieveSinglePolicy input)
         {
             var response = _sdk.RunRequest(input);
@@ -93,6 +107,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.UpdateBasePolicyResponse? OldPartialUpdatePolicy(OldPartialUpdatePolicy input)
         {
             var response = _sdk.RunRequest(input);
@@ -109,6 +126,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.RetrievePolicyResponse? OldRetrievePolicyCountry(OldRetrievePolicyCountry input)
         {
             var response = _sdk.RunRequest(input);
@@ -125,6 +145,9 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public List<Model.RetrievePolicyTypeResponse>? OldRetrieveAllPolicyTypes(OldRetrieveAllPolicyTypes input)
         {
             var response = _sdk.RunRequest(input);
@@ -141,5 +164,6 @@ namespace AccelByte.Sdk.Api.Legal.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

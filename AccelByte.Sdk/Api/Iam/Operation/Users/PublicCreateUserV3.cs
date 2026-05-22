@@ -25,7 +25,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// Country use ISO3166-1 alpha-2 two letter, e.g. US.
     /// Date of Birth format : YYYY-MM-DD, e.g. 2019-04-29.
-    /// This endpoint support accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
+    /// Supports accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
     /// </summary>
     public class PublicCreateUserV3 : AccelByte.Sdk.Core.Operation
     {

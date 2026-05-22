@@ -16,11 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminVerifyUserWithoutVerificationCodeV3
     ///
-    /// This endpoint force verify user
-    /// Note:
-    /// - namespace: only accept publisher/studio namespace
-    /// - userId: only accept publisher/studio userId
-    /// action code: 10118
+    /// Force-verifies a user's account without requiring a verification code.
+    /// 
+    /// **Note:**
+    /// - namespace: only accepts publisher/studio namespaces
+    /// - userId: only accepts publisher/studio user IDs
     /// </summary>
     public class AdminVerifyUserWithoutVerificationCodeV3 : AccelByte.Sdk.Core.Operation
     {

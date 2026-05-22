@@ -9,6 +9,9 @@ namespace AccelByte.Sdk.Api.Csm.Model
 {
     public class ApimodelCreateNoSQLAppDatabaseRequest : AccelByte.Sdk.Core.Model
     {
+        [JsonPropertyName("acknowledgements")]
+        public ApimodelNoSQLDatabaseAcknowledgements? Acknowledgements { get; set; }
+
         [JsonPropertyName("dbName")]
         public string? DbName { get; set; }
 

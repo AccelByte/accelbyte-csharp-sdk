@@ -16,20 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicCreateTestUserV4
     ///
-    /// Create a test user and not send verification code email
-    /// **Required attributes:**
-    /// - verified: this new user is verified or not
-    /// - authType: possible value is EMAILPASSWD
-    /// - emailAddress: Please refer to the rule from /v3/public/inputValidations API.
-    /// - username: Please refer to the rule from /v3/public/inputValidations API.
-    /// - password: Please refer to the rule from /v3/public/inputValidations API.
-    /// - country: ISO3166-1 alpha-2 two letter, e.g. US.
-    /// - dateOfBirth: YYYY-MM-DD, e.g. 1990-01-01. valid values are between 1905-01-01 until current date.
-    /// 
-    /// **Not required attributes:**
-    /// - displayName: Please refer to the rule from /v3/public/inputValidations API.
-    /// 
-    /// This endpoint support accepting agreements for the created user. Supply the accepted agreements in acceptedPolicies attribute.
+    /// Creates a test user without sending a verification code email. Supports accepting agreements for the created user via the acceptedPolicies attribute. See request body field descriptions for per-field details.
     /// </summary>
     public class PublicCreateTestUserV4 : AccelByte.Sdk.Core.Operation
     {

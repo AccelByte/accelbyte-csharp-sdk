@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicWebLinkPlatform
     ///
-    /// This endpoint is used to generate third party login page which will redirected to establish endpoint.
+    /// Generates a third party login page which will redirect to the establish API.
     /// Supported platforms:
     /// - ps4web
     /// - xblweb

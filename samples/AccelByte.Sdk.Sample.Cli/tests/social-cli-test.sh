@@ -170,7 +170,7 @@ eval_tap $? 29 'CreateStatCycle' test.out
 
 #- 30 BulkGetStatCycle
 # body param: body
-echo '{"cycleIds": ["JPUszmFGEkJVvqDS", "XnVaEyjmifJDYa1T", "DPD0Lfle8ESU1MO8"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["DPD0Lfle8ESU1MO8", "XnVaEyjmifJDYa1T", "JPUszmFGEkJVvqDS"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle \
@@ -327,7 +327,7 @@ eval_tap $? 44 'GetStats' test.out
 
 #- 45 CreateStat
 # body param: body
-echo '{"capCycleOverride": false, "cycleIds": ["rPYQ5yVcQuvDbGMq", "10b27RdU8VceYQ9e", "EIAePvDO2xkVgyRk"], "cycleOverrides": [{"cycleId": "bEHkCQwMBcQUNPHN", "maximum": 0.9799819076456033, "minimum": 0.8200118903595891}, {"cycleId": "ZT0yJJ0uCjjaNCRV", "maximum": 0.88773393594438, "minimum": 0.11569235865886862}, {"cycleId": "SIiTEoTCSxjAqg9o", "maximum": 0.5243069521866037, "minimum": 0.7594486892964037}], "defaultValue": 0.49710588069559536, "description": "dC8mQir1Af0G6OrP", "globalAggregationMethod": "MIN", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.7686914968909229, "minimum": 0.3229889472508254, "name": "27iwplLJdzYS9K0V", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "wE6MAqPc8lGIYWTw", "tags": ["v60HTnmFrl3gYx6X", "mv1DzPHux3k3skhn", "xyqQQIXVmrtRlq1j"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": false, "cycleIds": ["EIAePvDO2xkVgyRk", "10b27RdU8VceYQ9e", "rPYQ5yVcQuvDbGMq"], "cycleOverrides": [{"cycleId": "bEHkCQwMBcQUNPHN", "maximum": 0.9799819076456033, "minimum": 0.8200118903595891}, {"cycleId": "ZT0yJJ0uCjjaNCRV", "maximum": 0.88773393594438, "minimum": 0.11569235865886862}, {"cycleId": "SIiTEoTCSxjAqg9o", "maximum": 0.5243069521866037, "minimum": 0.7594486892964037}], "defaultValue": 0.49710588069559536, "description": "dC8mQir1Af0G6OrP", "globalAggregationMethod": "MIN", "ignoreAdditionalDataOnValueRejected": true, "incrementOnly": true, "isPublic": false, "maximum": 0.7686914968909229, "minimum": 0.3229889472508254, "name": "27iwplLJdzYS9K0V", "setAsGlobal": true, "setBy": "CLIENT", "statCode": "wE6MAqPc8lGIYWTw", "tags": ["mv1DzPHux3k3skhn", "v60HTnmFrl3gYx6X", "xyqQQIXVmrtRlq1j"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat \
@@ -389,7 +389,7 @@ eval_tap $? 50 'DeleteStat' test.out
 
 #- 51 UpdateStat
 # body param: body
-echo '{"capCycleOverride": false, "cycleIds": ["ZjCpNtJSMm8kDi3R", "wubq7wtRGdT447Oa", "Exv9nKMOgO5W8SUa"], "cycleOverrides": [{"cycleId": "51m6VLfjsw270pMm", "maximum": 0.6462978212735283, "minimum": 0.6827311421289568}, {"cycleId": "JrpEBbVvBn8Lsf2q", "maximum": 0.7242480832408095, "minimum": 0.42955639867925344}, {"cycleId": "tizV9hzsVbpJLtEZ", "maximum": 0.15573548847942875, "minimum": 0.33169342893594966}], "defaultValue": 0.39316649585726526, "description": "FhvbxX2DNbknfVv4", "globalAggregationMethod": "MAX", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": false, "isPublic": true, "maximum": 0.46758681653803336, "minimum": 0.01193050738646595, "name": "yYAkF18YBwRxcREy", "setAsGlobal": true, "setBy": "CLIENT", "tags": ["QcwlRrReRajlpk8l", "wqGJF6nDi33Iztr2", "fuiJVcktlx9zJZVV"], "visibility": "SHOWALL"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": false, "cycleIds": ["ZjCpNtJSMm8kDi3R", "wubq7wtRGdT447Oa", "Exv9nKMOgO5W8SUa"], "cycleOverrides": [{"cycleId": "51m6VLfjsw270pMm", "maximum": 0.6462978212735283, "minimum": 0.6827311421289568}, {"cycleId": "JrpEBbVvBn8Lsf2q", "maximum": 0.7242480832408095, "minimum": 0.42955639867925344}, {"cycleId": "tizV9hzsVbpJLtEZ", "maximum": 0.15573548847942875, "minimum": 0.33169342893594966}], "defaultValue": 0.39316649585726526, "description": "FhvbxX2DNbknfVv4", "globalAggregationMethod": "MAX", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": false, "isPublic": true, "maximum": 0.46758681653803336, "minimum": 0.01193050738646595, "name": "yYAkF18YBwRxcREy", "setAsGlobal": true, "setBy": "CLIENT", "tags": ["wqGJF6nDi33Iztr2", "fuiJVcktlx9zJZVV", "QcwlRrReRajlpk8l"], "visibility": "SHOWALL"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op UpdateStat \
@@ -581,7 +581,7 @@ eval_tap $? 66 'GetStatCycles1' test.out
 
 #- 67 BulkGetStatCycle1
 # body param: body
-echo '{"cycleIds": ["13cbiJEUePVZQaoE", "ZTCCXQ2Lf7jtexB6", "qlbRAPFQsca6n9vG"]}' > $TEMP_JSON_INPUT
+echo '{"cycleIds": ["ZTCCXQ2Lf7jtexB6", "13cbiJEUePVZQaoE", "qlbRAPFQsca6n9vG"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetStatCycle1 \
@@ -644,7 +644,7 @@ eval_tap $? 72 'BulkResetUserStatItem2' test.out
 
 #- 73 CreateStat1
 # body param: body
-echo '{"capCycleOverride": true, "cycleIds": ["fIA1guTNx7haejXS", "eueMOmYP4SgxAIQT", "V2oH2uH8S4Zx0ACt"], "cycleOverrides": [{"cycleId": "TKsdmtHu1dG0us7k", "maximum": 0.5495657664104676, "minimum": 0.7840287072954629}, {"cycleId": "LcgKgU9406tdRDqr", "maximum": 0.8877291770433531, "minimum": 0.04171832104548645}, {"cycleId": "pVbaH69NyTfGE599", "maximum": 0.919285141636153, "minimum": 0.8752870719803126}], "defaultValue": 0.01644552024150936, "description": "CwgpzUfcmTQjRmV0", "globalAggregationMethod": "TOTAL", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": true, "isPublic": true, "maximum": 0.8646257082156886, "minimum": 0.5994585052764183, "name": "UaTvrFaxzOfG3pTd", "setAsGlobal": false, "setBy": "CLIENT", "statCode": "A0Rt6wM5oQvTMICt", "tags": ["pwxug8MpqczRvUdK", "WyUtVDnhgTGXO8Ut", "1uOV1ZJTYuHpnpVX"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
+echo '{"capCycleOverride": true, "cycleIds": ["eueMOmYP4SgxAIQT", "V2oH2uH8S4Zx0ACt", "fIA1guTNx7haejXS"], "cycleOverrides": [{"cycleId": "TKsdmtHu1dG0us7k", "maximum": 0.5495657664104676, "minimum": 0.7840287072954629}, {"cycleId": "LcgKgU9406tdRDqr", "maximum": 0.8877291770433531, "minimum": 0.04171832104548645}, {"cycleId": "pVbaH69NyTfGE599", "maximum": 0.919285141636153, "minimum": 0.8752870719803126}], "defaultValue": 0.01644552024150936, "description": "CwgpzUfcmTQjRmV0", "globalAggregationMethod": "TOTAL", "ignoreAdditionalDataOnValueRejected": false, "incrementOnly": true, "isPublic": true, "maximum": 0.8646257082156886, "minimum": 0.5994585052764183, "name": "UaTvrFaxzOfG3pTd", "setAsGlobal": false, "setBy": "CLIENT", "statCode": "A0Rt6wM5oQvTMICt", "tags": ["1uOV1ZJTYuHpnpVX", "pwxug8MpqczRvUdK", "WyUtVDnhgTGXO8Ut"], "visibility": "SERVERONLY"}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op CreateStat1 \
@@ -883,7 +883,7 @@ eval_tap $? 92 'BulkUpdateUserStatItem' test.out
 
 #- 93 BulkGetOrDefaultByUserId
 # body param: body
-echo '{"statCodes": ["92ILQLV79lT8sZwa", "opSrf16qAbt38yZT", "qfCi5CJgLU0r1txp"]}' > $TEMP_JSON_INPUT
+echo '{"statCodes": ["qfCi5CJgLU0r1txp", "92ILQLV79lT8sZwa", "opSrf16qAbt38yZT"]}' > $TEMP_JSON_INPUT
 $CLI_EXE \
     --sn social \
     --op BulkGetOrDefaultByUserId \

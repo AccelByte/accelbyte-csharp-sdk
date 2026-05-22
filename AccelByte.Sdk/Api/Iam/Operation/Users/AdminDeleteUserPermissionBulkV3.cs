@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminDeleteUserPermissionBulkV3
     ///
-    /// Delete User Permission
+    /// Removes multiple permissions from a user in bulk.
     /// </summary>
     public class AdminDeleteUserPermissionBulkV3 : AccelByte.Sdk.Core.Operation
     {

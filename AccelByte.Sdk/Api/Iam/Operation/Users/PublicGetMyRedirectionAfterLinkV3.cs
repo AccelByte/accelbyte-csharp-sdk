@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetMyRedirectionAfterLinkV3
     ///
-    /// Get my redirect uri after link, this endpoint will return NotFound(404) if redirect uri is not found
+    /// Returns the redirect URI after link. Returns NotFound(404) if redirect URI is not found.
     /// </summary>
     public class PublicGetMyRedirectionAfterLinkV3 : AccelByte.Sdk.Core.Operation
     {

@@ -19,7 +19,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// Will consume code if validateOnly is set false
     /// Redeems a verification code sent to a user to verify the user's contact address is correct
     /// Available ContactType : **email**
-    /// action code: 10107
     /// </summary>
     public class PublicUserVerificationV3 : AccelByte.Sdk.Core.Operation
     {

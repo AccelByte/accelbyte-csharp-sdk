@@ -16,16 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminCreateRoleV3
     ///
-    /// Create role request body:
-    /// - roleName: specify role name, alphanumeric, cannot have special character (required)
-    /// - permissions: specify the permission that this role have
-    /// - managers: specify list of user that will act as the managers of this role
-    /// - members: specify list of user that will act as the members of this role
-    /// - adminRole: specify if role is for admin user (default false)
-    /// - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    /// - deletable: specify if role can be deleted or not (default true)
-    /// 
-    /// action code: 10401
+    /// Creates a new role.
     /// </summary>
     public class AdminCreateRoleV3 : AccelByte.Sdk.Core.Operation
     {

@@ -61,10 +61,6 @@ namespace AccelByte.Sdk.Api.Iam.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string? OauthRefreshTokenExpirationTimeUnit { get; set; }
 
-        [JsonPropertyName("parentNamespace")]
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        public string? ParentNamespace { get; set; }
-
         [JsonPropertyName("redirectUri")]
         public string? RedirectUri { get; set; }
 

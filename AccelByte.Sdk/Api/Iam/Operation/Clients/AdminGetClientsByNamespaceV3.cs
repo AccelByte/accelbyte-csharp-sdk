@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetClientsByNamespaceV3
     ///
-    /// action code: 10308
+    /// Retrieves all OAuth clients in the namespace.
     /// </summary>
     public class AdminGetClientsByNamespaceV3 : AccelByte.Sdk.Core.Operation
     {

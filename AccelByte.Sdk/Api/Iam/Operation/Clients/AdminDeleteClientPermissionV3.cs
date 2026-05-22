@@ -17,8 +17,8 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// AdminDeleteClientPermissionV3
     ///
     /// **Note for Multi Tenant Mode:**
-    /// This is for super admin only.
-    /// action code : 10304
+    /// Studio admin & game admin are only allowed to delete custom permissions:
+    /// * The allowed prefix are: 1. ***CUSTOM:ADMIN:NAMESPACE:{namespace}*** 2. ***CUSTOM:NAMESPACE:{namespace}***
     /// </summary>
     public class AdminDeleteClientPermissionV3 : AccelByte.Sdk.Core.Operation
     {

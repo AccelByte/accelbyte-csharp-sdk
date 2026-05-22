@@ -19,12 +19,15 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
         }
 
         #region Operation Builders
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public AdminCreateChainingOperations.AdminCreateChainingOperationsBuilder AdminCreateChainingOperationsOp
         {
             get { return Operation.AdminCreateChainingOperations.Builder.SetWrapperObject(this); }
         }
         #endregion
 
+#pragma warning disable ab_deprecated_operation
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public Model.ApimodelsChainingOperationResp? AdminCreateChainingOperations(AdminCreateChainingOperations input)
         {
             var response = _sdk.RunRequest(input);
@@ -41,5 +44,6 @@ namespace AccelByte.Sdk.Api.Inventory.Wrapper
                     response.ContentType,
                     response.Payload);
         }
+#pragma warning restore ab_deprecated_operation
     }
 }

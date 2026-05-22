@@ -17,7 +17,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// PublicForcePlatformLinkV3
     ///
     /// Force linking user account with platform.
-    /// If this platform account was already linked to another user account, this endpoint will perform force linking and remove platform from that conflict user, not only from the current request namespace but also include all the enrolled namespaces.
+    /// If this platform account was already linked to another user account, force linking is performed and the platform is removed from the conflicting user account, not only from the current request namespace but also from all the enrolled namespaces.
     /// If current user have linked to this platform with another platform account (include once linked but it is unlinked now), it will not allow user to perform linking.
     /// ## Supported platforms:
     /// - **steam**: The platform_tokenâs value is the binary ticket returned by Steam.

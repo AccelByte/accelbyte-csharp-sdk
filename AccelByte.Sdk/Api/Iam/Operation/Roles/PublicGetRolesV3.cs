@@ -16,8 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetRolesV3
     ///
-    /// This endpoint is used to get all non-admin role.
-    /// action code: 10418
+    /// Returns all non-admin roles.
     /// </summary>
     public class PublicGetRolesV3 : AccelByte.Sdk.Core.Operation
     {

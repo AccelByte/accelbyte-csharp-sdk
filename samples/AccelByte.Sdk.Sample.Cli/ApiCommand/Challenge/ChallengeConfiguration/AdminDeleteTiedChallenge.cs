@@ -34,6 +34,9 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
         [SdkCommandArgument("namespace")]
         public string Namespace { get; set; } = String.Empty;
 
+        [SdkCommandArgument("safeDelete")]
+        public string? SafeDelete { get; set; }
+
         public AdminDeleteTiedChallengeCommand(AccelByteSDK sdk)
         {
             _SDK = sdk;
@@ -45,6 +48,8 @@ namespace AccelByte.Sdk.Sample.Cli.ApiCommand.Challenge
 
             var opBuilder = AccelByte.Sdk.Api.Challenge.Operation.AdminDeleteTiedChallenge.Builder;
 
+            if (SafeDelete != null)
+                opBuilder.SetSafeDelete((string)SafeDelete);
 
 
 

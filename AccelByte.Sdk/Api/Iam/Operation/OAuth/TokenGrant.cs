@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// TokenGrant
     ///
-    /// ## The endpoint is going to be deprecated
+    /// **This endpoint is deprecated.**
     /// 
     /// ### Endpoint migration guide
     /// 
@@ -24,13 +24,13 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// - **Note: difference in V3 response:**
     /// format differenceï¼Pascal case => Camel case): permissions field from Action => action, Resource => resource
     /// 
-    /// This endpoint requires all requests to have `Authorization` header set with `Basic` access authentication
+    /// Requires all requests to have `Authorization` header set with `Basic` access authentication
     /// constructed from client id and client secret.
     /// 
-    /// This endpoint supports different **grant types**:
+    /// Supports different **grant types**:
     /// 
     /// 1. Grant Type == `client_credentials`:
-    /// This endpoint will check the client credentials provided through Authorization header.
+    /// Checks the client credentials provided through Authorization header.
     /// 2. Grant Type == `password`:
     /// The grant type to use for authenticating a user, whether it's by email / username and password combination
     /// or through platform.
@@ -88,7 +88,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// 
     /// ## Track Login History
     /// 
-    /// This endpoint will track login history to detect suspicious login activity, please provide "device_id" (alphanumeric) in request header parameter otherwise we will set to "unknown".
+    /// Tracks login history to detect suspicious login activity, please provide "device_id" (alphanumeric) in request header parameter otherwise we will set to "unknown".
     /// Align with General Data Protection Regulation in Europe, user login history will be kept within 28 days by default"
     /// </summary>
     [Obsolete(DiagnosticId = "ab_deprecated_operation")]

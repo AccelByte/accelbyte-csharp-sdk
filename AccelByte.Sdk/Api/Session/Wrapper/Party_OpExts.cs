@@ -484,13 +484,71 @@ namespace AccelByte.Sdk.Api
 
             return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicPromotePartyLeaderAsync<T1, T2>(op);
         }
+        public static Session.Model.ApimodelsGetPasswordResponse? Execute(
+            this PublicGetPartyPassword.PublicGetPartyPasswordBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGetPartyPassword op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetPartyPassword(op);
+        }
+        public static async Task<Session.Model.ApimodelsGetPasswordResponse?> ExecuteAsync(
+            this PublicGetPartyPassword.PublicGetPartyPasswordBuilder builder,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicGetPartyPassword op = builder.Build(
+                namespace_,
+                partyId
+            );
+
+            return await ((Session.Wrapper.Party)builder.WrapperObject!).PublicGetPartyPasswordAsync(op);
+        }
+        public static void Execute(
+            this PublicUpdatePartyPassword.PublicUpdatePartyPasswordBuilder builder,
+            ApimodelsUpdatePasswordRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicUpdatePartyPassword op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyPassword(op);
+        }
+        public static async Task ExecuteAsync(
+            this PublicUpdatePartyPassword.PublicUpdatePartyPasswordBuilder builder,
+            ApimodelsUpdatePasswordRequest body,
+            string namespace_,
+            string partyId
+        )
+        {
+            PublicUpdatePartyPassword op = builder.Build(
+                body,
+                namespace_,
+                partyId
+            );
+
+            await ((Session.Wrapper.Party)builder.WrapperObject!).PublicUpdatePartyPasswordAsync(op);
+        }
         public static Session.Model.ApimodelsPartySessionResponse? Execute(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string partyId
         )
         {
             PublicPartyJoin op = builder.Build(
+                body,
                 namespace_,
                 partyId
             );
@@ -499,11 +557,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Session.Model.ApimodelsPartySessionResponse?> ExecuteAsync(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string partyId
         )
         {
             PublicPartyJoin op = builder.Build(
+                body,
                 namespace_,
                 partyId
             );
@@ -513,11 +573,13 @@ namespace AccelByte.Sdk.Api
 
         public static Session.Model.ApimodelsPartySessionResponse<T1, T2>? Execute<T1, T2>(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string partyId
         )
         {
             PublicPartyJoin op = builder.Build(
+                body,
                 namespace_,
                 partyId
             );
@@ -526,11 +588,13 @@ namespace AccelByte.Sdk.Api
         }
         public static async Task<Session.Model.ApimodelsPartySessionResponse<T1, T2>?> ExecuteAsync<T1, T2>(
             this PublicPartyJoin.PublicPartyJoinBuilder builder,
+            ApimodelsJoinSessionRequest body,
             string namespace_,
             string partyId
         )
         {
             PublicPartyJoin op = builder.Build(
+                body,
                 namespace_,
                 partyId
             );

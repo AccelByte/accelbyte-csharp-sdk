@@ -16,8 +16,10 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicGetInputValidationByField
     ///
-    /// This endpoint is to get input validation configuration by field.
+    /// Returns input validation configuration by field.
+    /// **Substitute endpoint:** /iam/v3/public/namespaces/{namespace}/inputValidations/{field}[GET]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class PublicGetInputValidationByField : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

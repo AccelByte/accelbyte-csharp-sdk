@@ -12,6 +12,7 @@ namespace AccelByte.Sdk.Api
 {
     public static class LegalPolicyVersions_OpExts
     {
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.UpdatePolicyVersionResponse? Execute(
             this OldUpdatePolicyVersion.OldUpdatePolicyVersionBuilder builder,
             string policyVersionId
@@ -34,6 +35,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldUpdatePolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static void Execute(
             this OldPublishPolicyVersion.OldPublishPolicyVersionBuilder builder,
             string policyVersionId
@@ -56,6 +58,7 @@ namespace AccelByte.Sdk.Api
 
             await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldPublishPolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static List<Legal.Model.RetrievePolicyVersionResponse>? Execute(
             this OldRetrieveSinglePolicyVersion.OldRetrieveSinglePolicyVersionBuilder builder,
             string policyId
@@ -78,6 +81,7 @@ namespace AccelByte.Sdk.Api
 
             return await ((Legal.Wrapper.PolicyVersions)builder.WrapperObject!).OldRetrieveSinglePolicyVersionAsync(op);
         }
+        [Obsolete(DiagnosticId = "ab_deprecated_operation_wrapper")]
         public static Legal.Model.CreatePolicyVersionResponse? Execute(
             this OldCreatePolicyVersion.OldCreatePolicyVersionBuilder builder,
             string policyId

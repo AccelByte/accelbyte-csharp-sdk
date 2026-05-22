@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicEnableBackupCodesV4
     ///
-    /// This endpoint is used to enable 2FA backup codes.
+    /// Enables 2FA backup codes.
     /// </summary>
     public class PublicEnableBackupCodesV4 : AccelByte.Sdk.Core.Operation
     {

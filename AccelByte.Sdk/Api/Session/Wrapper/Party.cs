@@ -63,6 +63,14 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             get { return Operation.PublicPromotePartyLeader.Builder.SetWrapperObject(this); }
         }
+        public PublicGetPartyPassword.PublicGetPartyPasswordBuilder PublicGetPartyPasswordOp
+        {
+            get { return Operation.PublicGetPartyPassword.Builder.SetWrapperObject(this); }
+        }
+        public PublicUpdatePartyPassword.PublicUpdatePartyPasswordBuilder PublicUpdatePartyPasswordOp
+        {
+            get { return Operation.PublicUpdatePartyPassword.Builder.SetWrapperObject(this); }
+        }
         public PublicPartyJoin.PublicPartyJoinBuilder PublicPartyJoinOp
         {
             get { return Operation.PublicPartyJoin.Builder.SetWrapperObject(this); }
@@ -373,6 +381,38 @@ namespace AccelByte.Sdk.Api.Session.Wrapper
         {
             var response = await _sdk.RunRequestAsync(input);
             return input.ParseResponse<T1, T2>(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public Model.ApimodelsGetPasswordResponse? PublicGetPartyPassword(PublicGetPartyPassword input)
+        {
+            var response = _sdk.RunRequest(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task<Model.ApimodelsGetPasswordResponse?> PublicGetPartyPasswordAsync(PublicGetPartyPassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            return input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public void PublicUpdatePartyPassword(PublicUpdatePartyPassword input)
+        {
+            var response = _sdk.RunRequest(input);
+            input.ParseResponse(
+                    response.Code,
+                    response.ContentType,
+                    response.Payload);
+        }
+        public async Task PublicUpdatePartyPasswordAsync(PublicUpdatePartyPassword input)
+        {
+            var response = await _sdk.RunRequestAsync(input);
+            input.ParseResponse(
                     response.Code,
                     response.ContentType,
                     response.Payload);

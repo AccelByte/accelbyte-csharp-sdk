@@ -153,6 +153,17 @@ $ AccelByte.Sdk.Sample.Cli.exe \
     --tags <tags value - optional>
 ```
 
+### Operation AdminBatchQueryUserAchievements
+```sh
+$ AccelByte.Sdk.Sample.Cli.exe \
+    --sn achievement \
+    --op adminbatchqueryuserachievements \
+    --namespace <namespace value> \
+    --userId <userId value> \
+    --reqbody <json string for request body>
+```
+To set request body using JSON file, replace `--reqbody` argument with `--reqfile <json file>`.
+
 ### Operation AdminBulkUnlockAchievement
 ```sh
 $ AccelByte.Sdk.Sample.Cli.exe \

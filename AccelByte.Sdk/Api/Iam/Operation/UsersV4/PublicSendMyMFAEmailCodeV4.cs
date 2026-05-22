@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// PublicSendMyMFAEmailCodeV4
     ///
-    /// This endpoint is used to send email code.
+    /// Sends an MFA email code.
     /// ----------------
     /// Supported values of action:
     /// * ChangePassword

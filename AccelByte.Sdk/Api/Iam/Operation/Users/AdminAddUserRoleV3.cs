@@ -16,8 +16,11 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminAddUserRoleV3
     ///
-    /// action code: 10109
+    /// **Deprecated.** Only assigns roles in the legacy roles entity.
+    /// 
+    /// **Substitute endpoint:** /iam/v4/admin/namespaces/{namespace}/users/{userId}/roles [POST]
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class AdminAddUserRoleV3 : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

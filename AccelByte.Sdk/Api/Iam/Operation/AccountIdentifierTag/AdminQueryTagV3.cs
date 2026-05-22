@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminQueryTagV3
     ///
-    /// Retrieve Account Identifier Tags. This endpoint allows administrators to retrieve tags that are used to identify and categorize user accounts.
+    /// Retrieves Account Identifier Tags used to identify and categorize user accounts.
     /// Tag Name can be used for partial content search.
     /// </summary>
     public class AdminQueryTagV3 : AccelByte.Sdk.Core.Operation

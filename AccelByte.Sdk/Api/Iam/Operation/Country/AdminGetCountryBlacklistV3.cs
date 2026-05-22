@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminGetCountryBlacklistV3
     ///
-    /// Admin get country blacklist
+    /// Retrieves the country blacklist for the namespace.
     /// </summary>
     public class AdminGetCountryBlacklistV3 : AccelByte.Sdk.Core.Operation
     {

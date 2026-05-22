@@ -26,6 +26,7 @@ namespace AccelByte.Sdk.Api.Legal.Operation
     /// 
     /// * policy with COUNTRY_GROUP type include multiple countries and apply the same policy across the entire list of countries
     /// </summary>
+    [Obsolete(DiagnosticId = "ab_deprecated_operation")]
     public class OldCreatePolicy : AccelByte.Sdk.Core.Operation
     {
         #region Builder Part

@@ -16,13 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// AdminUpdateRoleV4
     ///
-    /// Update role request body:
-    /// - roleName: specify role name, alphanumeric, cannot have special character (required)
-    /// - adminRole: specify if role is for admin user (default false)
-    /// - isWildcard: specify if role can be assigned to wildcard (*) namespace (default false)
-    /// - deletable: specify if role can be deleted (optional)
-    /// 
-    /// action code: 10402
+    /// Updates an existing role. See request body field descriptions for per-field details.
     /// </summary>
     public class AdminUpdateRoleV4 : AccelByte.Sdk.Core.Operation
     {

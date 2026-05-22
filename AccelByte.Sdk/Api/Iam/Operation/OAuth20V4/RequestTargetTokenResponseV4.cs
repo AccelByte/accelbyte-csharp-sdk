@@ -16,9 +16,12 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// RequestTargetTokenResponseV4
     ///
-    /// This endpoint is being used to generate target token.
-    /// It requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request`
-    /// The code should be generated from `/iam/v3/namespace/{namespace}/token/request`.
+    /// Generates target token.
+    /// Requires basic header with ClientID and Secret, it should match the ClientID when call `/iam/v3/namespace/{namespace}/token/request [POST]`
+    /// The code should be generated from `/iam/v3/namespace/{namespace}/token/request [POST]`.
+    /// 
+    /// ## Login Queue
+    /// When the Login Queue is enabled and at capacity, this API returns a 202 Accepted response, with the queue ticket included in the response body.
     /// </summary>
     public class RequestTargetTokenResponseV4 : AccelByte.Sdk.Core.Operation
     {

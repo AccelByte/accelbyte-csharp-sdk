@@ -16,7 +16,7 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// <summary>
     /// VerifyTokenV3
     ///
-    /// This endpoint requires all requests to have Authorization header set with Basic access authentication constructed from client id and client secret.
+    /// Requires Basic authentication (Base64-encoded ClientID:ClientSecret) in the Authorization header.
     /// </summary>
     public class VerifyTokenV3 : AccelByte.Sdk.Core.Operation
     {

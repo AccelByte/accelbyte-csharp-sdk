@@ -34,8 +34,6 @@ namespace AccelByte.Sdk.Api.Iam.Operation
     /// * __EpicGames(epicgames)__
     /// * epic account id
     /// * display name
-    /// 
-    /// action code : 10147
     /// </summary>
     public class PublicGetMyUserV3 : AccelByte.Sdk.Core.Operation
     {

@@ -97,6 +97,10 @@ namespace AccelByte.Sdk.Api.Lobby.Model
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public long? UnregisterDelay { get; set; }
 
+        [JsonPropertyName("wsReadTimeout")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public long? WsReadTimeout { get; set; }
+
     }
 
 
